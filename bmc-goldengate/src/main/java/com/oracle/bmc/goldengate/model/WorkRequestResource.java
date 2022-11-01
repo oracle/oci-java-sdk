@@ -53,14 +53,20 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The way in which this resource is affected by the work tracked in the work request.  When you create, update, or delete a resource, it remains in the IN_PROGRESS state until work is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED, respectively.
+         * The way in which this resource is affected by the work tracked in the work request.  When
+         * you create, update, or delete a resource, it remains in the IN_PROGRESS state until work
+         * is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED,
+         * respectively.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
         /**
-         * The way in which this resource is affected by the work tracked in the work request.  When you create, update, or delete a resource, it remains in the IN_PROGRESS state until work is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED, respectively.
+         * The way in which this resource is affected by the work tracked in the work request.  When
+         * you create, update, or delete a resource, it remains in the IN_PROGRESS state until work
+         * is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED,
+         * respectively.
          *
          * @param actionType the value to set
          * @return this builder
@@ -166,14 +172,20 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request.  When you create, update, or delete a resource, it remains in the IN_PROGRESS state until work is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED, respectively.
+     * The way in which this resource is affected by the work tracked in the work request.  When
+     * you create, update, or delete a resource, it remains in the IN_PROGRESS state until work
+     * is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED,
+     * respectively.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request.  When you create, update, or delete a resource, it remains in the IN_PROGRESS state until work is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED, respectively.
+     * The way in which this resource is affected by the work tracked in the work request.  When
+     * you create, update, or delete a resource, it remains in the IN_PROGRESS state until work
+     * is complete for that resource.  It then transitions to CREATED, UPDATED, or DELETED,
+     * respectively.
      *
      * @return the value
      **/

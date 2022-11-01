@@ -38,14 +38,16 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment.
+         * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
 
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment.
+         * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          *
          * @param deploymentName the value to set
          * @return this builder
@@ -156,14 +158,16 @@ public final class OggDeployment extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * The name given to the GoldenGate service deployment.
+     * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
     private final String deploymentName;
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * The name given to the GoldenGate service deployment.
+     * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      *
      * @return the value
      **/

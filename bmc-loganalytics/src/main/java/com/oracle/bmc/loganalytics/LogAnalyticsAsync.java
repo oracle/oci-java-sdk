@@ -102,6 +102,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This API submits a work request to assign customer encryption key.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AssignEncryptionKeyResponse> assignEncryptionKey(
+            AssignEncryptionKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AssignEncryptionKeyRequest, AssignEncryptionKeyResponse>
+                    handler);
+
+    /**
      * Lists basic information about a specified set of labels in batch.
      *
      *
@@ -1598,6 +1615,22 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             ListConfigWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListConfigWorkRequestsRequest, ListConfigWorkRequestsResponse>
+                    handler);
+
+    /**
+     * This API returns the list of customer owned encryption key info.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEncryptionKeyInfoResponse> listEncryptionKeyInfo(
+            ListEncryptionKeyInfoRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEncryptionKeyInfoRequest, ListEncryptionKeyInfoResponse>
                     handler);
 
     /**

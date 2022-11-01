@@ -3998,6 +3998,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+     * For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
      *
      *
      * @param request The request object containing the details to send
@@ -4464,7 +4465,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
+     * Updates the properties of an Autonomous Container Database, such as display name, maintenance preference, backup retention, and tags.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

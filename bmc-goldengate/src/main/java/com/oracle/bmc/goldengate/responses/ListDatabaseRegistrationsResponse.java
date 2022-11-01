@@ -9,13 +9,15 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -24,18 +26,37 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code page}
+     * parameter for the subsequent GET request to get the next batch of items.
      *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code page}
+     * parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
+    }
+
+    /**
+     * Deprecation date of this API version.
+     *
+     */
+    private String sunset;
+
+    /**
+     * Deprecation date of this API version.
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
     }
 
     /**
@@ -58,6 +79,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         "headers",
         "opcRequestId",
         "opcNextPage",
+        "sunset",
         "databaseRegistrationCollection"
     })
     private ListDatabaseRegistrationsResponse(
@@ -65,11 +87,13 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
+            String sunset,
             com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
                     databaseRegistrationCollection) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
+        this.sunset = sunset;
         this.databaseRegistrationCollection = databaseRegistrationCollection;
     }
 
@@ -89,13 +113,15 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,19 +132,40 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the
+         * response, then a partial list might have been returned. Include this value as the {@code page}
+         * parameter for the subsequent GET request to get the next batch of items.
          *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the
+         * response, then a partial list might have been returned. Include this value as the {@code page}
+         * parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
          */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        /**
+         * Deprecation date of this API version.
+         *
+         */
+        private String sunset;
+
+        /**
+         * Deprecation date of this API version.
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
             return this;
         }
 
@@ -149,6 +196,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
+            sunset(o.getSunset());
             databaseRegistrationCollection(o.getDatabaseRegistrationCollection());
 
             return this;
@@ -164,6 +212,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
                     headers,
                     opcRequestId,
                     opcNextPage,
+                    sunset,
                     databaseRegistrationCollection);
         }
     }
@@ -183,6 +232,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(",databaseRegistrationCollection=")
                 .append(String.valueOf(databaseRegistrationCollection));
         sb.append(")");
@@ -202,6 +252,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.sunset, other.sunset)
                 && java.util.Objects.equals(
                         this.databaseRegistrationCollection, other.databaseRegistrationCollection);
     }
@@ -212,6 +263,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseRegistrationCollection == null

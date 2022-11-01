@@ -51,13 +51,15 @@ public class ListMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     public String getPage() {
@@ -123,13 +125,15 @@ public class ListMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance

@@ -140,7 +140,9 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -148,7 +150,9 @@ public final class CreateDatabaseRegistrationDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -161,6 +165,7 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          **/
@@ -169,6 +174,7 @@ public final class CreateDatabaseRegistrationDetails
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -199,14 +205,16 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+         * The private IP address in the customer's VCN of the customer's endpoint, typically a
+         * database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+         * The private IP address in the customer's VCN of the customer's endpoint, typically a
+         * database.
          *
          * @param ipAddress the value to set
          * @return this builder
@@ -253,14 +261,18 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+         * already exist and be available for use by the database.  It must conform to the security
+         * requirements implemented by the database including length, case sensitivity, and so on.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+         * already exist and be available for use by the database.  It must conform to the security
+         * requirements implemented by the database including length, case sensitivity, and so on.
          *
          * @param username the value to set
          * @return this builder
@@ -271,14 +283,18 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+         * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+         * specific security requirements implemented by the database including length, case
+         * sensitivity, and so on.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+         * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+         * specific security requirements implemented by the database including length, case
+         * sensitivity, and so on.
          *
          * @param password the value to set
          * @return this builder
@@ -289,14 +305,16 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+         * database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
-         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+         * database.
          *
          * @param connectionString the value to set
          * @return this builder
@@ -307,14 +325,20 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+         * The mode of the database connection session to be established by the data client.
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private SessionMode sessionMode;
 
         /**
-         * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+         * The mode of the database connection session to be established by the data client.
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
          *
          * @param sessionMode the value to set
          * @return this builder
@@ -325,14 +349,16 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+         * attribute is expected to be base64 encoded.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
         private String wallet;
 
         /**
-         * The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+         * attribute is expected to be base64 encoded.
          *
          * @param wallet the value to set
          * @return this builder
@@ -361,14 +387,22 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
+         * referenced.
+         * If provided, this will reference a vault which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to manage secrets contained
+         * within this vault.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
+         * referenced.
+         * If provided, this will reference a vault which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to manage secrets contained
+         * within this vault.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -379,14 +413,22 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
+         * referenced.
+         * If provided, this will reference a key which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to utilize this key to
+         * manage secrets.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
+         * referenced.
+         * If provided, this will reference a key which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to utilize this key to
+         * manage secrets.
          *
          * @param keyId the value to set
          * @return this builder
@@ -397,14 +439,22 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
+         * the GGS Secret will be created.
+         * If provided, this will reference a key which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to utilize this Compartment
+         * in which to create a Secret.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
         private String secretCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
+         * the GGS Secret will be created.
+         * If provided, this will reference a key which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to utilize this Compartment
+         * in which to create a Secret.
          *
          * @param secretCompartmentId the value to set
          * @return this builder
@@ -565,7 +615,9 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -573,7 +625,9 @@ public final class CreateDatabaseRegistrationDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -584,6 +638,7 @@ public final class CreateDatabaseRegistrationDetails
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
@@ -592,6 +647,7 @@ public final class CreateDatabaseRegistrationDetails
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -617,14 +673,16 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+     * The private IP address in the customer's VCN of the customer's endpoint, typically a
+     * database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+     * The private IP address in the customer's VCN of the customer's endpoint, typically a
+     * database.
      *
      * @return the value
      **/
@@ -665,14 +723,18 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+     * already exist and be available for use by the database.  It must conform to the security
+     * requirements implemented by the database including length, case sensitivity, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+     * already exist and be available for use by the database.  It must conform to the security
+     * requirements implemented by the database including length, case sensitivity, and so on.
      *
      * @return the value
      **/
@@ -681,14 +743,18 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+     * specific security requirements implemented by the database including length, case
+     * sensitivity, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+     * The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+     * specific security requirements implemented by the database including length, case
+     * sensitivity, and so on.
      *
      * @return the value
      **/
@@ -697,14 +763,16 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+     * database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+     * database.
      *
      * @return the value
      **/
@@ -713,7 +781,10 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      **/
     public enum SessionMode {
@@ -749,14 +820,20 @@ public final class CreateDatabaseRegistrationDetails
         }
     };
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      * @return the value
      **/
@@ -765,14 +842,16 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+     * attribute is expected to be base64 encoded.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
     private final String wallet;
 
     /**
-     * The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+     * attribute is expected to be base64 encoded.
      *
      * @return the value
      **/
@@ -797,14 +876,22 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
+     * referenced.
+     * If provided, this will reference a vault which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to manage secrets contained
+     * within this vault.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
+     * referenced.
+     * If provided, this will reference a vault which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to manage secrets contained
+     * within this vault.
      *
      * @return the value
      **/
@@ -813,14 +900,22 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
+     * referenced.
+     * If provided, this will reference a key which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to utilize this key to
+     * manage secrets.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
+     * referenced.
+     * If provided, this will reference a key which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to utilize this key to
+     * manage secrets.
      *
      * @return the value
      **/
@@ -829,14 +924,22 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
+     * the GGS Secret will be created.
+     * If provided, this will reference a key which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to utilize this Compartment
+     * in which to create a Secret.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
     private final String secretCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
+     * the GGS Secret will be created.
+     * If provided, this will reference a key which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to utilize this Compartment
+     * in which to create a Secret.
      *
      * @return the value
      **/

@@ -608,6 +608,59 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AssignEncryptionKeyResponse> assignEncryptionKey(
+            AssignEncryptionKeyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AssignEncryptionKeyRequest, AssignEncryptionKeyResponse>
+                    handler) {
+        LOG.trace("Called async assignEncryptionKey");
+        final AssignEncryptionKeyRequest interceptedRequest =
+                AssignEncryptionKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AssignEncryptionKeyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "AssignEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/AssignEncryptionKey");
+        final java.util.function.Function<javax.ws.rs.core.Response, AssignEncryptionKeyResponse>
+                transformer =
+                        AssignEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AssignEncryptionKeyRequest, AssignEncryptionKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AssignEncryptionKeyRequest, AssignEncryptionKeyResponse>,
+                        java.util.concurrent.Future<AssignEncryptionKeyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAssignEncryptionKeyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AssignEncryptionKeyRequest, AssignEncryptionKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetBasicInfoResponse> batchGetBasicInfo(
             BatchGetBasicInfoRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5051,6 +5104,53 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListConfigWorkRequestsRequest, ListConfigWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEncryptionKeyInfoResponse> listEncryptionKeyInfo(
+            ListEncryptionKeyInfoRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEncryptionKeyInfoRequest, ListEncryptionKeyInfoResponse>
+                    handler) {
+        LOG.trace("Called async listEncryptionKeyInfo");
+        final ListEncryptionKeyInfoRequest interceptedRequest =
+                ListEncryptionKeyInfoConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEncryptionKeyInfoConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListEncryptionKeyInfo",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListEncryptionKeyInfo");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEncryptionKeyInfoResponse>
+                transformer =
+                        ListEncryptionKeyInfoConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListEncryptionKeyInfoRequest, ListEncryptionKeyInfoResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEncryptionKeyInfoRequest, ListEncryptionKeyInfoResponse>,
+                        java.util.concurrent.Future<ListEncryptionKeyInfoResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEncryptionKeyInfoRequest, ListEncryptionKeyInfoResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

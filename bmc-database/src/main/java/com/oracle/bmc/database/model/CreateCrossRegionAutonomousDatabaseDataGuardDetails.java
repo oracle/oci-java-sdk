@@ -24,7 +24,7 @@ package com.oracle.bmc.database.model;
  *   - licenseModel
  *   - whitelistedIps
  *   - isMtlsConnectionRequired
- * Example I - Creating a cross-region standby with required parameters only:
+ * Example I - Creating a cross-region standby with required parameters only, with OCPU:
  *     {@code {
  *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
  *       "cpuCoreCount": 1,
@@ -34,15 +34,16 @@ package com.oracle.bmc.database.model;
  *       "source": "CROSS_REGION_DATAGUARD",
  *       "adminPassword" : "<var>&lt;password&gt;</var>",
  *     }}
- *  Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters:
+ * Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters, with ECPU:
  *     {@code {
  *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- *       "cpuCoreCount": 1,
+ *       "computeModel": "ECPU",
+ *       "computeCount": 2,
  *       "dbName": "adatabasedb1",
  *       "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
  *       "dataStorageSizeInTBs": 1,
  *       "source": "CROSS_REGION_DATAGUARD",
- *   "adminPassword" : "<var>&lt;password&gt;</var>",
+ *       "adminPassword" : "<var>&lt;password&gt;</var>",
  *       "dbVersion": "19c",
  *       "licenseModel": "LICENSE_INCLUDED",
  *       "isAutoScalingForStorageEnabled": "true"

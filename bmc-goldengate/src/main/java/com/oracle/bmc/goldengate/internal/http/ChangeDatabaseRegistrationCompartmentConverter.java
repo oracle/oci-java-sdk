@@ -147,6 +147,17 @@ public class ChangeDatabaseRegistrationCompartmentConverter {
                                                     String.class));
                                 }
 
+                                java.util.Optional<java.util.List<String>> sunsetHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "sunset");
+                                if (sunsetHeader.isPresent()) {
+                                    builder.sunset(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "sunset",
+                                                    sunsetHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 com.oracle.bmc.goldengate.responses
                                                 .ChangeDatabaseRegistrationCompartmentResponse
                                         responseWrapper = builder.build();

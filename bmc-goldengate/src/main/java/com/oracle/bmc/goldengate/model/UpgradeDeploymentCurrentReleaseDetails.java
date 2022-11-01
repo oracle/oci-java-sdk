@@ -5,7 +5,7 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Definiton of the additional attributes for a Current Release upgrade.
+ * Definition of the additional attributes for a Current Release upgrade.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

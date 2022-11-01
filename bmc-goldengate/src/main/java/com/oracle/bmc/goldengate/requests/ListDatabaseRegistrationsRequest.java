@@ -13,13 +13,13 @@ public class ListDatabaseRegistrationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     public String getCompartmentId() {
@@ -65,13 +65,15 @@ public class ListDatabaseRegistrationsRequest
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     public String getPage() {
@@ -91,13 +93,17 @@ public class ListDatabaseRegistrationsRequest
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      *
      **/
     public enum SortBy {
@@ -134,7 +140,9 @@ public class ListDatabaseRegistrationsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      *
      */
     public SortBy getSortBy() {
@@ -162,13 +170,13 @@ public class ListDatabaseRegistrationsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -231,13 +239,15 @@ public class ListDatabaseRegistrationsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -265,13 +275,17 @@ public class ListDatabaseRegistrationsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance

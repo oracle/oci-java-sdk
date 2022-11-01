@@ -5,7 +5,10 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The API operations that create and configure GoldenGate resources do not take effect immediately. In these cases, the operation spawns an asynchronous workflow to fulfill teh request. Work requests provide visibility into the status of these in-progress, long-running asynchronous workflows.
+ * The API operations that create and configure GoldenGate resources do not take effect
+ * immediately. In these cases, the operation spawns an asynchronous workflow to fulfill the
+ * request. Work requests provide visibility into the status of these in-progress, long-running
+ * asynchronous workflows.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -110,14 +113,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
+         * The ocid of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request
+         * affects multiple resources, and those resources are not in the same compartment, it is up
+         * to the service team to pick the primary resource whose compartment should be used.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
+         * The ocid of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request
+         * affects multiple resources, and those resources are not in the same compartment, it is up
+         * to the service team to pick the primary resource whose compartment should be used.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -164,14 +173,16 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time the request was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
-         * The date and time the request was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeAccepted the value to set
          * @return this builder
@@ -182,14 +193,16 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was started. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was started. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -200,14 +213,16 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was finished. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was finished. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeFinished the value to set
          * @return this builder
@@ -332,14 +347,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
+     * The ocid of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request
+     * affects multiple resources, and those resources are not in the same compartment, it is up
+     * to the service team to pick the primary resource whose compartment should be used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
+     * The ocid of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request
+     * affects multiple resources, and those resources are not in the same compartment, it is up
+     * to the service team to pick the primary resource whose compartment should be used.
      *
      * @return the value
      **/
@@ -380,14 +401,16 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time the request was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
-     * The date and time the request was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -396,14 +419,16 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was started. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was started. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -412,14 +437,16 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was finished. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was finished. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/

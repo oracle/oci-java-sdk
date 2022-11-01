@@ -13,26 +13,26 @@ public class ListDeploymentUpgradesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The ID of the deployment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      *
      */
     private String deploymentId;
 
     /**
-     * The ID of the deployment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      *
      */
     public String getDeploymentId() {
@@ -78,13 +78,15 @@ public class ListDeploymentUpgradesRequest
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     public String getPage() {
@@ -104,13 +106,17 @@ public class ListDeploymentUpgradesRequest
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      *
      **/
     public enum SortBy {
@@ -147,7 +153,9 @@ public class ListDeploymentUpgradesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * timeCreated is the default.
      *
      */
     public SortBy getSortBy() {
@@ -175,13 +183,13 @@ public class ListDeploymentUpgradesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -192,13 +200,13 @@ public class ListDeploymentUpgradesRequest
         }
 
         /**
-         * The ID of the deployment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          *
          */
         private String deploymentId = null;
 
         /**
-         * The ID of the deployment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          *
          * @param deploymentId the value to set
          * @return this builder instance
@@ -261,13 +269,15 @@ public class ListDeploymentUpgradesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -295,13 +305,17 @@ public class ListDeploymentUpgradesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance

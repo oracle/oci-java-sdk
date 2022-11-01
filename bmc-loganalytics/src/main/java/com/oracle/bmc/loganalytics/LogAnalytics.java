@@ -119,6 +119,19 @@ public interface LogAnalytics extends AutoCloseable {
     AppendLookupDataResponse appendLookupData(AppendLookupDataRequest request);
 
     /**
+     * This API submits a work request to assign customer encryption key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/AssignEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AssignEncryptionKey API.
+     */
+    AssignEncryptionKeyResponse assignEncryptionKey(AssignEncryptionKeyRequest request);
+
+    /**
      * Lists basic information about a specified set of labels in batch.
      *
      * @param request The request object containing the details to send
@@ -1324,6 +1337,18 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListConfigWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigWorkRequests API.
      */
     ListConfigWorkRequestsResponse listConfigWorkRequests(ListConfigWorkRequestsRequest request);
+
+    /**
+     * This API returns the list of customer owned encryption key info.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEncryptionKeyInfoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEncryptionKeyInfo API.
+     */
+    ListEncryptionKeyInfoResponse listEncryptionKeyInfo(ListEncryptionKeyInfoRequest request);
 
     /**
      * Return a list of log analytics entities associated with input source log analytics entity.

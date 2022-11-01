@@ -12,26 +12,26 @@ import com.oracle.bmc.goldengate.model.*;
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The ID of the resource in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource in which to list resources.
      *
      */
     private String resourceId;
 
     /**
-     * The ID of the resource in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource in which to list resources.
      *
      */
     public String getResourceId() {
@@ -51,13 +51,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     public String getPage() {
@@ -85,13 +87,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -102,13 +104,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The ID of the resource in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource in which to list resources.
          *
          */
         private String resourceId = null;
 
         /**
-         * The ID of the resource in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource in which to list resources.
          *
          * @param resourceId the value to set
          * @return this builder instance
@@ -136,13 +138,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
