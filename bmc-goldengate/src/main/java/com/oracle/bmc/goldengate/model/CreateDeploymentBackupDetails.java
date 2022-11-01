@@ -158,7 +158,9 @@ public final class CreateDeploymentBackupDetails
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -166,7 +168,9 @@ public final class CreateDeploymentBackupDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -179,6 +183,7 @@ public final class CreateDeploymentBackupDetails
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          **/
@@ -187,6 +192,7 @@ public final class CreateDeploymentBackupDetails
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -351,7 +357,9 @@ public final class CreateDeploymentBackupDetails
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -359,7 +367,9 @@ public final class CreateDeploymentBackupDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -370,6 +380,7 @@ public final class CreateDeploymentBackupDetails
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
@@ -378,6 +389,7 @@ public final class CreateDeploymentBackupDetails
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value

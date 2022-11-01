@@ -12,13 +12,13 @@ import com.oracle.bmc.goldengate.model.*;
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the asynchronous request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous request.
      *
      */
     private String workRequestId;
 
     /**
-     * The ID of the asynchronous request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous request.
      *
      */
     public String getWorkRequestId() {
@@ -38,13 +38,15 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      *
      */
     public String getPage() {
@@ -72,13 +74,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the asynchronous request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous request.
          *
          */
         private String workRequestId = null;
 
         /**
-         * The ID of the asynchronous request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous request.
          *
          * @param workRequestId the value to set
          * @return this builder instance
@@ -106,13 +108,15 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance

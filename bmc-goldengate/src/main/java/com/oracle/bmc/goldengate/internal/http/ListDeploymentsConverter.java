@@ -40,6 +40,30 @@ public class ListDeploymentsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getSupportedConnectionType() != null) {
+            target =
+                    target.queryParam(
+                            "supportedConnectionType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSupportedConnectionType().getValue()));
+        }
+
+        if (request.getAssignedConnectionId() != null) {
+            target =
+                    target.queryParam(
+                            "assignedConnectionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAssignedConnectionId()));
+        }
+
+        if (request.getAssignableConnectionId() != null) {
+            target =
+                    target.queryParam(
+                            "assignableConnectionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAssignableConnectionId()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

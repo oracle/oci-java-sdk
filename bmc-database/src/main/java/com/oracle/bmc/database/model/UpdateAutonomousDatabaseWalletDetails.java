@@ -49,13 +49,13 @@ public final class UpdateAutonomousDatabaseWalletDetails
             return this;
         }
         /**
-         * Grace period in hours to keep the existing wallet valid after rotation.
+         * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
         private Integer gracePeriod;
 
         /**
-         * Grace period in hours to keep the existing wallet valid after rotation.
+         * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
          * @param gracePeriod the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class UpdateAutonomousDatabaseWalletDetails
     }
 
     /**
-     * Grace period in hours to keep the existing wallet valid after rotation.
+     * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
     private final Integer gracePeriod;
 
     /**
-     * Grace period in hours to keep the existing wallet valid after rotation.
+     * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      * @return the value
      **/
     public Integer getGracePeriod() {

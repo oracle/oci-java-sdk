@@ -34,6 +34,235 @@ public class GoldenGatePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listConnectionAssignments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListConnectionAssignmentsResponse> listConnectionAssignmentsResponseIterator(
+            final ListConnectionAssignmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConnectionAssignmentsRequest.Builder, ListConnectionAssignmentsRequest,
+                ListConnectionAssignmentsResponse>(
+                new java.util.function.Supplier<ListConnectionAssignmentsRequest.Builder>() {
+                    @Override
+                    public ListConnectionAssignmentsRequest.Builder get() {
+                        return ListConnectionAssignmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConnectionAssignmentsResponse, String>() {
+                    @Override
+                    public String apply(ListConnectionAssignmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConnectionAssignmentsRequest.Builder>,
+                        ListConnectionAssignmentsRequest>() {
+                    @Override
+                    public ListConnectionAssignmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConnectionAssignmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListConnectionAssignmentsRequest, ListConnectionAssignmentsResponse>() {
+                    @Override
+                    public ListConnectionAssignmentsResponse apply(
+                            ListConnectionAssignmentsRequest request) {
+                        return client.listConnectionAssignments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary} objects
+     * contained in responses from the listConnectionAssignments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary>
+            listConnectionAssignmentsRecordIterator(
+                    final ListConnectionAssignmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConnectionAssignmentsRequest.Builder, ListConnectionAssignmentsRequest,
+                ListConnectionAssignmentsResponse,
+                com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary>(
+                new java.util.function.Supplier<ListConnectionAssignmentsRequest.Builder>() {
+                    @Override
+                    public ListConnectionAssignmentsRequest.Builder get() {
+                        return ListConnectionAssignmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConnectionAssignmentsResponse, String>() {
+                    @Override
+                    public String apply(ListConnectionAssignmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConnectionAssignmentsRequest.Builder>,
+                        ListConnectionAssignmentsRequest>() {
+                    @Override
+                    public ListConnectionAssignmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConnectionAssignmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListConnectionAssignmentsRequest, ListConnectionAssignmentsResponse>() {
+                    @Override
+                    public ListConnectionAssignmentsResponse apply(
+                            ListConnectionAssignmentsRequest request) {
+                        return client.listConnectionAssignments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListConnectionAssignmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.goldengate.model.ConnectionAssignmentSummary>
+                            apply(ListConnectionAssignmentsResponse response) {
+                        return response.getConnectionAssignmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listConnections operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListConnectionsResponse> listConnectionsResponseIterator(
+            final ListConnectionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse>(
+                new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
+                    @Override
+                    public ListConnectionsRequest.Builder get() {
+                        return ListConnectionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConnectionsResponse, String>() {
+                    @Override
+                    public String apply(ListConnectionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConnectionsRequest.Builder>,
+                        ListConnectionsRequest>() {
+                    @Override
+                    public ListConnectionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConnectionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListConnectionsRequest, ListConnectionsResponse>() {
+                    @Override
+                    public ListConnectionsResponse apply(ListConnectionsRequest request) {
+                        return client.listConnections(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionSummary} objects
+     * contained in responses from the listConnections operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.ConnectionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.ConnectionSummary>
+            listConnectionsRecordIterator(final ListConnectionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConnectionsRequest.Builder, ListConnectionsRequest, ListConnectionsResponse,
+                com.oracle.bmc.goldengate.model.ConnectionSummary>(
+                new java.util.function.Supplier<ListConnectionsRequest.Builder>() {
+                    @Override
+                    public ListConnectionsRequest.Builder get() {
+                        return ListConnectionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConnectionsResponse, String>() {
+                    @Override
+                    public String apply(ListConnectionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConnectionsRequest.Builder>,
+                        ListConnectionsRequest>() {
+                    @Override
+                    public ListConnectionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConnectionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListConnectionsRequest, ListConnectionsResponse>() {
+                    @Override
+                    public ListConnectionsResponse apply(ListConnectionsRequest request) {
+                        return client.listConnections(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListConnectionsResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.ConnectionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.ConnectionSummary> apply(
+                            ListConnectionsResponse response) {
+                        return response.getConnectionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDatabaseRegistrations operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -264,6 +493,119 @@ public class GoldenGatePaginators {
                     public java.util.List<com.oracle.bmc.goldengate.model.DeploymentBackupSummary>
                             apply(ListDeploymentBackupsResponse response) {
                         return response.getDeploymentBackupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDeploymentTypesResponse> listDeploymentTypesResponseIterator(
+            final ListDeploymentTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentTypesRequest.Builder, ListDeploymentTypesRequest,
+                ListDeploymentTypesResponse>(
+                new java.util.function.Supplier<ListDeploymentTypesRequest.Builder>() {
+                    @Override
+                    public ListDeploymentTypesRequest.Builder get() {
+                        return ListDeploymentTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentTypesResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentTypesRequest.Builder>,
+                        ListDeploymentTypesRequest>() {
+                    @Override
+                    public ListDeploymentTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentTypesRequest, ListDeploymentTypesResponse>() {
+                    @Override
+                    public ListDeploymentTypesResponse apply(ListDeploymentTypesRequest request) {
+                        return client.listDeploymentTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentTypeSummary} objects
+     * contained in responses from the listDeploymentTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentTypeSummary>
+            listDeploymentTypesRecordIterator(final ListDeploymentTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentTypesRequest.Builder, ListDeploymentTypesRequest,
+                ListDeploymentTypesResponse, com.oracle.bmc.goldengate.model.DeploymentTypeSummary>(
+                new java.util.function.Supplier<ListDeploymentTypesRequest.Builder>() {
+                    @Override
+                    public ListDeploymentTypesRequest.Builder get() {
+                        return ListDeploymentTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentTypesResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentTypesRequest.Builder>,
+                        ListDeploymentTypesRequest>() {
+                    @Override
+                    public ListDeploymentTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentTypesRequest, ListDeploymentTypesResponse>() {
+                    @Override
+                    public ListDeploymentTypesResponse apply(ListDeploymentTypesRequest request) {
+                        return client.listDeploymentTypes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentTypesResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.DeploymentTypeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.DeploymentTypeSummary>
+                            apply(ListDeploymentTypesResponse response) {
+                        return response.getDeploymentTypeCollection().getItems();
                     }
                 });
     }

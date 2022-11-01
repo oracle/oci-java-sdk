@@ -190,14 +190,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was started. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was started. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -208,14 +210,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was finished. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The date and time the request was finished. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeFinished the value to set
          * @return this builder
@@ -244,14 +248,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -262,14 +268,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was last updated. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was last updated. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -316,14 +324,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         * Describes the object's current state in detail. For example, it can be used to provide
+         * actionable information for a resource in a Failed state.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         * Describes the object's current state in detail. For example, it can be used to provide
+         * actionable information for a resource in a Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -334,7 +344,9 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -342,7 +354,9 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -355,6 +369,7 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          **/
@@ -363,6 +378,7 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -375,7 +391,10 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          **/
@@ -383,7 +402,10 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
@@ -589,14 +611,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was started. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was started. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -605,14 +629,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was finished. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The date and time the request was finished. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -637,14 +663,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -653,14 +681,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was last updated. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was last updated. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -701,14 +731,16 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+     * Describes the object's current state in detail. For example, it can be used to provide
+     * actionable information for a resource in a Failed state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+     * Describes the object's current state in detail. For example, it can be used to provide
+     * actionable information for a resource in a Failed state.
      *
      * @return the value
      **/
@@ -717,7 +749,9 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -725,7 +759,9 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -736,6 +772,7 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
@@ -744,6 +781,7 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -753,7 +791,10 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      **/
@@ -761,7 +802,10 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

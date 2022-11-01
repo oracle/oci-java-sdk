@@ -221,7 +221,7 @@ public final class AutonomousDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The protection mode of this Data Guard association. For more information, see
+         * The protection mode of this Autonomous Data Guard association. For more information, see
          * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
          *
@@ -230,7 +230,7 @@ public final class AutonomousDatabaseDataguardAssociation
         private ProtectionMode protectionMode;
 
         /**
-         * The protection mode of this Data Guard association. For more information, see
+         * The protection mode of this Autonomous Data Guard association. For more information, see
          * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
          *
@@ -801,7 +801,7 @@ public final class AutonomousDatabaseDataguardAssociation
     }
 
     /**
-     * The protection mode of this Data Guard association. For more information, see
+     * The protection mode of this Autonomous Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
@@ -852,7 +852,7 @@ public final class AutonomousDatabaseDataguardAssociation
         }
     };
     /**
-     * The protection mode of this Data Guard association. For more information, see
+     * The protection mode of this Autonomous Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
@@ -861,7 +861,7 @@ public final class AutonomousDatabaseDataguardAssociation
     private final ProtectionMode protectionMode;
 
     /**
-     * The protection mode of this Data Guard association. For more information, see
+     * The protection mode of this Autonomous Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *

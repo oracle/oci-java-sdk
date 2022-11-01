@@ -206,13 +206,13 @@ public final class CreateAutonomousVmClusterDetails
             return this;
         }
         /**
-         * The number of OCPU cores to enable per VM cluster node.
+         * The number of CPU cores to enable per VM cluster node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The number of OCPU cores to enable per VM cluster node.
+         * The number of CPU cores to enable per VM cluster node.
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
          **/
@@ -546,13 +546,13 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
-     * The number of OCPU cores to enable per VM cluster node.
+     * The number of CPU cores to enable per VM cluster node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The number of OCPU cores to enable per VM cluster node.
+     * The number of CPU cores to enable per VM cluster node.
      * @return the value
      **/
     public Integer getCpuCoreCountPerNode() {

@@ -69,7 +69,31 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the DatabaseRegistration into a different compartment within the same tenancy. When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves the Connection into a different compartment within the same tenancy. When
+     * provided, If-Match is checked against ETag values of the resource.  For information about
+     * moving resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeConnectionCompartmentResponse> changeConnectionCompartment(
+            ChangeConnectionCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeConnectionCompartmentRequest, ChangeConnectionCompartmentResponse>
+                    handler);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead.
+     * Moves the DatabaseRegistration into a different compartment within the same tenancy. When
+     * provided, If-Match is checked against ETag values of the resource.  For information about
+     * moving resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -88,7 +112,10 @@ public interface GoldenGateAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a DeploymentBackup into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a DeploymentBackup into a different compartment within the same tenancy.  When provided,
+     * If-Match is checked against ETag values of the resource.  For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -107,7 +134,10 @@ public interface GoldenGateAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the Deployment into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves the Deployment into a different compartment within the same tenancy.  When provided,
+     * If-Match is checked against ETag values of the resource.  For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -124,6 +154,39 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new Connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConnectionResponse> createConnection(
+            CreateConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
+                    handler);
+
+    /**
+     * Creates a new Connection Assignment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConnectionAssignmentResponse> createConnectionAssignment(
+            CreateConnectionAssignmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateConnectionAssignmentRequest, CreateConnectionAssignmentResponse>
+                    handler);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Creates a new DatabaseRegistration.
      *
      *
@@ -173,6 +236,39 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a Connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConnectionResponse> deleteConnection(
+            DeleteConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
+                    handler);
+
+    /**
+     * Deletes a Connection Assignment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConnectionAssignmentResponse> deleteConnectionAssignment(
+            DeleteConnectionAssignmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConnectionAssignmentRequest, DeleteConnectionAssignmentResponse>
+                    handler);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes a DatabaseRegistration.
      *
      *
@@ -223,6 +319,40 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a Connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConnectionResponse> getConnection(
+            GetConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
+                    handler);
+
+    /**
+     * Retrieves a Connection Assignment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConnectionAssignmentResponse> getConnectionAssignment(
+            GetConnectionAssignmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetConnectionAssignmentRequest, GetConnectionAssignmentResponse>
+                    handler);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Retrieves a DatabaseRegistration.
      *
      *
@@ -306,6 +436,39 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the Connection Assignments in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConnectionAssignmentsResponse> listConnectionAssignments(
+            ListConnectionAssignmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListConnectionAssignmentsRequest, ListConnectionAssignmentsResponse>
+                    handler);
+
+    /**
+     * Lists the Connections in the compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConnectionsResponse> listConnections(
+            ListConnectionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
+                    handler);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Lists the DatabaseRegistrations in the compartment.
      *
      *
@@ -337,6 +500,23 @@ public interface GoldenGateAsync extends AutoCloseable {
             ListDeploymentBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDeploymentBackupsRequest, ListDeploymentBackupsResponse>
+                    handler);
+
+    /**
+     * Returns an array of DeploymentTypeDescriptor
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDeploymentTypesResponse> listDeploymentTypes(
+            ListDeploymentTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentTypesRequest, ListDeploymentTypesResponse>
                     handler);
 
     /**
@@ -520,6 +700,23 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the Connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
+            UpdateConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
+                    handler);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Updates the DatabaseRegistration.
      *
      *
