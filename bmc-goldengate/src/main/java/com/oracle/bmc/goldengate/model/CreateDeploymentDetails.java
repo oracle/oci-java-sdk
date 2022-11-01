@@ -149,7 +149,9 @@ public final class CreateDeploymentDetails
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -157,7 +159,9 @@ public final class CreateDeploymentDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -170,6 +174,7 @@ public final class CreateDeploymentDetails
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          **/
@@ -178,6 +183,7 @@ public final class CreateDeploymentDetails
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -244,14 +250,14 @@ public final class CreateDeploymentDetails
             return this;
         }
         /**
-         * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+         * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+         * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -316,16 +322,18 @@ public final class CreateDeploymentDetails
             return this;
         }
         /**
-         * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-         *       in favor of the equivalent DATABASE_ORACLE value.
+         * The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
+         *       in favor of the equivalent 'DATABASE_ORACLE' value.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
-         * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-         *       in favor of the equivalent DATABASE_ORACLE value.
+         * The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
+         *       in favor of the equivalent 'DATABASE_ORACLE' value.
          *
          * @param deploymentType the value to set
          * @return this builder
@@ -499,7 +507,9 @@ public final class CreateDeploymentDetails
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -507,7 +517,9 @@ public final class CreateDeploymentDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -518,6 +530,7 @@ public final class CreateDeploymentDetails
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
@@ -526,6 +539,7 @@ public final class CreateDeploymentDetails
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -583,14 +597,14 @@ public final class CreateDeploymentDetails
     }
 
     /**
-     * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      *
      * @return the value
      **/
@@ -647,16 +661,18 @@ public final class CreateDeploymentDetails
     }
 
     /**
-     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-     *       in favor of the equivalent DATABASE_ORACLE value.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
+     *       in favor of the equivalent 'DATABASE_ORACLE' value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
-     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-     *       in favor of the equivalent DATABASE_ORACLE value.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
+     *       in favor of the equivalent 'DATABASE_ORACLE' value.
      *
      * @return the value
      **/

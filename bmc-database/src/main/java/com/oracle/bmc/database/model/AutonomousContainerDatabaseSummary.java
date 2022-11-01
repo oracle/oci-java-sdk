@@ -539,13 +539,15 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         *
          * @param role the value to set
          * @return this builder
          **/
@@ -644,13 +646,13 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
          * @param availableCpus the value to set
          * @return this builder
          **/
@@ -1434,7 +1436,8 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     *
      **/
     public enum Role {
         Primary("PRIMARY"),
@@ -1481,13 +1484,15 @@ public final class AutonomousContainerDatabaseSummary
         }
     };
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     *
      * @return the value
      **/
     public Role getRole() {
@@ -1572,13 +1577,13 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * @return the value
      **/
     public Float getAvailableCpus() {

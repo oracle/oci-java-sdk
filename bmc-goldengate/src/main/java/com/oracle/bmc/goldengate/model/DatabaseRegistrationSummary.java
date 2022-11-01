@@ -89,14 +89,16 @@ public final class DatabaseRegistrationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being
+         * referenced.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being
+         * referenced.
          *
          * @param id the value to set
          * @return this builder
@@ -161,14 +163,16 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was created. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -179,14 +183,16 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was last updated. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the resource was last updated. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -215,14 +221,16 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         * Describes the object's current state in detail. For example, it can be used to provide
+         * actionable information for a resource in a Failed state.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+         * Describes the object's current state in detail. For example, it can be used to provide
+         * actionable information for a resource in a Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -233,7 +241,9 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -241,7 +251,9 @@ public final class DatabaseRegistrationSummary
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -254,6 +266,7 @@ public final class DatabaseRegistrationSummary
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          **/
@@ -262,6 +275,7 @@ public final class DatabaseRegistrationSummary
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
@@ -310,7 +324,10 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          **/
@@ -318,7 +335,10 @@ public final class DatabaseRegistrationSummary
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+         * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
@@ -348,14 +368,18 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+         * already exist and be available for use by the database.  It must conform to the security
+         * requirements implemented by the database including length, case sensitivity, and so on.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+         * already exist and be available for use by the database.  It must conform to the security
+         * requirements implemented by the database including length, case sensitivity, and so on.
          *
          * @param username the value to set
          * @return this builder
@@ -366,14 +390,16 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+         * database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
-         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+         * database.
          *
          * @param connectionString the value to set
          * @return this builder
@@ -384,14 +410,20 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+         * The mode of the database connection session to be established by the data client.
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private SessionMode sessionMode;
 
         /**
-         * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+         * The mode of the database connection session to be established by the data client.
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
          *
          * @param sessionMode the value to set
          * @return this builder
@@ -420,14 +452,20 @@ public final class DatabaseRegistrationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
+         * referenced.
+         * If provided, this will reference a key which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to utilize this Secret
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
+         * referenced.
+         * If provided, this will reference a key which the customer will be required to ensure
+         * the policies are established to permit the GoldenGate Service to utilize this Secret
          *
          * @param secretId the value to set
          * @return this builder
@@ -544,14 +582,16 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being
+     * referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the databaseRegistration being
+     * referenced.
      *
      * @return the value
      **/
@@ -608,14 +648,16 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was created. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -624,14 +666,16 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was last updated. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the resource was last updated. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/
@@ -656,14 +700,16 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+     * Describes the object's current state in detail. For example, it can be used to provide
+     * actionable information for a resource in a Failed state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+     * Describes the object's current state in detail. For example, it can be used to provide
+     * actionable information for a resource in a Failed state.
      *
      * @return the value
      **/
@@ -672,7 +718,9 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -680,7 +728,9 @@ public final class DatabaseRegistrationSummary
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only.
+     * <p>
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -691,6 +741,7 @@ public final class DatabaseRegistrationSummary
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
@@ -699,6 +750,7 @@ public final class DatabaseRegistrationSummary
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -740,7 +792,10 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      **/
@@ -748,7 +803,10 @@ public final class DatabaseRegistrationSummary
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
@@ -774,14 +832,18 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+     * already exist and be available for use by the database.  It must conform to the security
+     * requirements implemented by the database including length, case sensitivity, and so on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+     * already exist and be available for use by the database.  It must conform to the security
+     * requirements implemented by the database including length, case sensitivity, and so on.
      *
      * @return the value
      **/
@@ -790,14 +852,16 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+     * database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+     * database.
      *
      * @return the value
      **/
@@ -806,7 +870,10 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      **/
     public enum SessionMode {
@@ -855,14 +922,20 @@ public final class DatabaseRegistrationSummary
         }
     };
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      * @return the value
      **/
@@ -887,14 +960,20 @@ public final class DatabaseRegistrationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
+     * referenced.
+     * If provided, this will reference a key which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to utilize this Secret
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
+     * referenced.
+     * If provided, this will reference a key which the customer will be required to ensure
+     * the policies are established to permit the GoldenGate Service to utilize this Secret
      *
      * @return the value
      **/

@@ -305,13 +305,13 @@ public final class DatabaseSoftwareImage
             return this;
         }
         /**
-         * The patches included in the image and the version of the image
+         * The patches included in the image and the version of the image.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("includedPatchesSummary")
         private String includedPatchesSummary;
 
         /**
-         * The patches included in the image and the version of the image
+         * The patches included in the image and the version of the image.
          * @param includedPatchesSummary the value to set
          * @return this builder
          **/
@@ -815,13 +815,13 @@ public final class DatabaseSoftwareImage
     }
 
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("includedPatchesSummary")
     private final String includedPatchesSummary;
 
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      * @return the value
      **/
     public String getIncludedPatchesSummary() {

@@ -50,14 +50,16 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time the log message was written.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the log message was written.  The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         * The time the log message was written.  The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timestamp the value to set
          * @return this builder
@@ -119,14 +121,16 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time the log message was written.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the log message was written.  The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time the log message was written.  The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
      **/

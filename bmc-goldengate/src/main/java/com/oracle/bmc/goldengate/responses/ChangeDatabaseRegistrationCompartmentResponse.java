@@ -10,13 +10,15 @@ import com.oracle.bmc.goldengate.model.*;
 public class ChangeDatabaseRegistrationCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      */
     private String opcWorkRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -25,13 +27,15 @@ public class ChangeDatabaseRegistrationCompartmentResponse
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -39,20 +43,38 @@ public class ChangeDatabaseRegistrationCompartmentResponse
         return opcRequestId;
     }
 
+    /**
+     * Deprecation date of this API version.
+     *
+     */
+    private String sunset;
+
+    /**
+     * Deprecation date of this API version.
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
         "opcWorkRequestId",
-        "opcRequestId"
+        "opcRequestId",
+        "sunset"
     })
     private ChangeDatabaseRegistrationCompartmentResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
-            String opcRequestId) {
+            String opcRequestId,
+            String sunset) {
         super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.sunset = sunset;
     }
 
     public static class Builder {
@@ -71,13 +93,15 @@ public class ChangeDatabaseRegistrationCompartmentResponse
         }
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          */
         private String opcWorkRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -88,19 +112,38 @@ public class ChangeDatabaseRegistrationCompartmentResponse
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Deprecation date of this API version.
+         *
+         */
+        private String sunset;
+
+        /**
+         * Deprecation date of this API version.
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
             return this;
         }
 
@@ -113,6 +156,7 @@ public class ChangeDatabaseRegistrationCompartmentResponse
             headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            sunset(o.getSunset());
 
             return this;
         }
@@ -123,7 +167,7 @@ public class ChangeDatabaseRegistrationCompartmentResponse
          */
         public ChangeDatabaseRegistrationCompartmentResponse build() {
             return new ChangeDatabaseRegistrationCompartmentResponse(
-                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, sunset);
         }
     }
 
@@ -142,6 +186,7 @@ public class ChangeDatabaseRegistrationCompartmentResponse
         sb.append("super=").append(super.toString());
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +204,8 @@ public class ChangeDatabaseRegistrationCompartmentResponse
                 (ChangeDatabaseRegistrationCompartmentResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sunset, other.sunset);
     }
 
     @Override
@@ -170,6 +216,7 @@ public class ChangeDatabaseRegistrationCompartmentResponse
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         return result;
     }
 }

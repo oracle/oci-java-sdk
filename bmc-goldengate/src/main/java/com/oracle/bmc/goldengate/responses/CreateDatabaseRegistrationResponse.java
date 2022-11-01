@@ -9,13 +9,15 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      */
     private String opcWorkRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -24,13 +26,15 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -54,6 +58,21 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     }
 
     /**
+     * Deprecation date of this API version.
+     *
+     */
+    private String sunset;
+
+    /**
+     * Deprecation date of this API version.
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
+    /**
      * The returned DatabaseRegistration instance.
      */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
@@ -72,6 +91,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         "opcWorkRequestId",
         "opcRequestId",
         "etag",
+        "sunset",
         "databaseRegistration"
     })
     private CreateDatabaseRegistrationResponse(
@@ -80,11 +100,13 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
+            String sunset,
             com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration) {
         super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
+        this.sunset = sunset;
         this.databaseRegistration = databaseRegistration;
     }
 
@@ -104,13 +126,15 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          */
         private String opcWorkRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -121,13 +145,15 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -151,6 +177,23 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
          */
         public Builder etag(String etag) {
             this.etag = etag;
+            return this;
+        }
+
+        /**
+         * Deprecation date of this API version.
+         *
+         */
+        private String sunset;
+
+        /**
+         * Deprecation date of this API version.
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
             return this;
         }
 
@@ -180,6 +223,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
+            sunset(o.getSunset());
             databaseRegistration(o.getDatabaseRegistration());
 
             return this;
@@ -196,6 +240,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
                     opcWorkRequestId,
                     opcRequestId,
                     etag,
+                    sunset,
                     databaseRegistration);
         }
     }
@@ -216,6 +261,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(",databaseRegistration=").append(String.valueOf(databaseRegistration));
         sb.append(")");
         return sb.toString();
@@ -235,6 +281,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.sunset, other.sunset)
                 && java.util.Objects.equals(this.databaseRegistration, other.databaseRegistration);
     }
 
@@ -247,6 +294,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseRegistration == null

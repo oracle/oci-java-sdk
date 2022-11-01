@@ -684,6 +684,48 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public AssignEncryptionKeyResponse assignEncryptionKey(AssignEncryptionKeyRequest request) {
+        LOG.trace("Called assignEncryptionKey");
+        final AssignEncryptionKeyRequest interceptedRequest =
+                AssignEncryptionKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AssignEncryptionKeyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "AssignEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/AssignEncryptionKey");
+        java.util.function.Function<javax.ws.rs.core.Response, AssignEncryptionKeyResponse>
+                transformer =
+                        AssignEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAssignEncryptionKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public BatchGetBasicInfoResponse batchGetBasicInfo(BatchGetBasicInfoRequest request) {
         LOG.trace("Called batchGetBasicInfo");
         final BatchGetBasicInfoRequest interceptedRequest =
@@ -4233,6 +4275,44 @@ public class LogAnalyticsClient implements LogAnalytics {
         java.util.function.Function<javax.ws.rs.core.Response, ListConfigWorkRequestsResponse>
                 transformer =
                         ListConfigWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListEncryptionKeyInfoResponse listEncryptionKeyInfo(
+            ListEncryptionKeyInfoRequest request) {
+        LOG.trace("Called listEncryptionKeyInfo");
+        final ListEncryptionKeyInfoRequest interceptedRequest =
+                ListEncryptionKeyInfoConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEncryptionKeyInfoConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListEncryptionKeyInfo",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListEncryptionKeyInfo");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEncryptionKeyInfoResponse>
+                transformer =
+                        ListEncryptionKeyInfoConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

@@ -11,6 +11,9 @@ package com.oracle.bmc.goldengate.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum DeploymentType {
     Ogg("OGG"),
+    DatabaseOracle("DATABASE_ORACLE"),
+    Bigdata("BIGDATA"),
+    DatabaseMysql("DATABASE_MYSQL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

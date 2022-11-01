@@ -366,13 +366,13 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The number of OCPU cores enabled per VM cluster node.
+         * The number of CPU cores enabled per VM cluster node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The number of OCPU cores enabled per VM cluster node.
+         * The number of CPU cores enabled per VM cluster node.
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
          **/
@@ -1053,13 +1053,13 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The number of OCPU cores enabled per VM cluster node.
+     * The number of CPU cores enabled per VM cluster node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The number of OCPU cores enabled per VM cluster node.
+     * The number of CPU cores enabled per VM cluster node.
      * @return the value
      **/
     public Integer getCpuCoreCountPerNode() {
