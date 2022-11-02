@@ -32,7 +32,7 @@ import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
  * 2. Disable the use of NoConnectionReuseStrategy for the ApacheConnectorProvider by setting the {@link ApacheClientProperties#REUSE_STRATEGY} to null and
  * {@link ApacheClientProperties#RETRY_HANDLER} to null.
  *
- * This example shows workaround 2,
+ * This example shows workaround 2.
  *
  */
 public class DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample {

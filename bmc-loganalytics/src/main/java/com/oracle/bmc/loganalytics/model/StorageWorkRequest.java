@@ -41,7 +41,9 @@ public final class StorageWorkRequest
         "policyId",
         "storageUsageInBytes",
         "compartmentIdInSubtree",
-        "operationType"
+        "operationType",
+        "keyId",
+        "keyType"
     })
     public StorageWorkRequest(
             String id,
@@ -62,7 +64,9 @@ public final class StorageWorkRequest
             String policyId,
             Long storageUsageInBytes,
             Boolean compartmentIdInSubtree,
-            StorageOperationType operationType) {
+            StorageOperationType operationType,
+            String keyId,
+            EncryptionKeyType keyType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -83,6 +87,8 @@ public final class StorageWorkRequest
         this.storageUsageInBytes = storageUsageInBytes;
         this.compartmentIdInSubtree = compartmentIdInSubtree;
         this.operationType = operationType;
+        this.keyId = keyId;
+        this.keyType = keyType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -376,6 +382,36 @@ public final class StorageWorkRequest
             this.__explicitlySet__.add("operationType");
             return this;
         }
+        /** This is the key ID for encryption key. */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyId")
+        private String keyId;
+
+        /**
+         * This is the key ID for encryption key.
+         *
+         * @param keyId the value to set
+         * @return this builder
+         */
+        public Builder keyId(String keyId) {
+            this.keyId = keyId;
+            this.__explicitlySet__.add("keyId");
+            return this;
+        }
+        /** The type of customer encryption key. It can be archival, active or all. */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyType")
+        private EncryptionKeyType keyType;
+
+        /**
+         * The type of customer encryption key. It can be archival, active or all.
+         *
+         * @param keyType the value to set
+         * @return this builder
+         */
+        public Builder keyType(EncryptionKeyType keyType) {
+            this.keyType = keyType;
+            this.__explicitlySet__.add("keyType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -401,7 +437,9 @@ public final class StorageWorkRequest
                             this.policyId,
                             this.storageUsageInBytes,
                             this.compartmentIdInSubtree,
-                            this.operationType);
+                            this.operationType,
+                            this.keyId,
+                            this.keyType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -466,6 +504,12 @@ public final class StorageWorkRequest
             }
             if (model.wasPropertyExplicitlySet("operationType")) {
                 this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("keyType")) {
+                this.keyType(model.getKeyType());
             }
             return this;
         }
@@ -731,6 +775,32 @@ public final class StorageWorkRequest
         return operationType;
     }
 
+    /** This is the key ID for encryption key. */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyId")
+    private final String keyId;
+
+    /**
+     * This is the key ID for encryption key.
+     *
+     * @return the value
+     */
+    public String getKeyId() {
+        return keyId;
+    }
+
+    /** The type of customer encryption key. It can be archival, active or all. */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyType")
+    private final EncryptionKeyType keyType;
+
+    /**
+     * The type of customer encryption key. It can be archival, active or all.
+     *
+     * @return the value
+     */
+    public EncryptionKeyType getKeyType() {
+        return keyType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -765,6 +835,8 @@ public final class StorageWorkRequest
         sb.append(", storageUsageInBytes=").append(String.valueOf(this.storageUsageInBytes));
         sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(", operationType=").append(String.valueOf(this.operationType));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", keyType=").append(String.valueOf(this.keyType));
         sb.append(")");
         return sb.toString();
     }
@@ -799,6 +871,8 @@ public final class StorageWorkRequest
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.keyType, other.keyType)
                 && super.equals(other);
     }
 
@@ -849,6 +923,8 @@ public final class StorageWorkRequest
         result =
                 (result * PRIME)
                         + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.keyType == null ? 43 : this.keyType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

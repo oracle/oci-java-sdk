@@ -14,7 +14,7 @@ import java.io.InputStream;
  * A wrapper over an {@link java.io.InputStream} that ensures that the delegate {@link
  * javax.ws.rs.core.Response} is closed when the delegate input stream is closed.
  */
-final class WrappedResponseInputStream extends InputStream {
+public final class WrappedResponseInputStream extends InputStream {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(WrappedResponseInputStream.class);
     protected final InputStream delegate;

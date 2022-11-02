@@ -378,12 +378,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
             return this;
         }
-        /** The number of OCPU cores enabled per VM cluster node. */
+        /** The number of CPU cores enabled per VM cluster node. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The number of OCPU cores enabled per VM cluster node.
+         * The number of CPU cores enabled per VM cluster node.
          *
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
@@ -1085,12 +1085,12 @@ public final class AutonomousVmClusterSummary
         return memoryPerOracleComputeUnitInGBs;
     }
 
-    /** The number of OCPU cores enabled per VM cluster node. */
+    /** The number of CPU cores enabled per VM cluster node. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The number of OCPU cores enabled per VM cluster node.
+     * The number of CPU cores enabled per VM cluster node.
      *
      * @return the value
      */

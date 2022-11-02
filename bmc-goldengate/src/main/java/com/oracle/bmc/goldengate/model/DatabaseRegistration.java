@@ -245,14 +245,18 @@ public final class DatabaseRegistration
         }
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Exists for cross-compatibility only.
+         *
+         * <p>Example: {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Exists for cross-compatibility only.
+         *
+         * <p>Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -264,14 +268,16 @@ public final class DatabaseRegistration
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -382,7 +388,8 @@ public final class DatabaseRegistration
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -392,7 +399,8 @@ public final class DatabaseRegistration
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         *
+         * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
@@ -444,7 +452,7 @@ public final class DatabaseRegistration
         }
         /**
          * The mode of the database connection session to be established by the data client.
-         * REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
          * database involves a redirection received from the SCAN listeners to the database node to
          * connect to. By default the mode would be DIRECT.
          */
@@ -453,7 +461,7 @@ public final class DatabaseRegistration
 
         /**
          * The mode of the database connection session to be established by the data client.
-         * REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
          * database involves a redirection received from the SCAN listeners to the database node to
          * connect to. By default the mode would be DIRECT.
          *
@@ -822,14 +830,18 @@ public final class DatabaseRegistration
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
-     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * for cross-compatibility only.
+     *
+     * <p>Example: {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
-     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * for cross-compatibility only.
+     *
+     * <p>Example: {@code {"bar-key": "value"}}
      *
      * @return the value
      */
@@ -838,15 +850,17 @@ public final class DatabaseRegistration
     }
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
      */
@@ -943,8 +957,9 @@ public final class DatabaseRegistration
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -953,8 +968,9 @@ public final class DatabaseRegistration
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
      */
@@ -999,10 +1015,10 @@ public final class DatabaseRegistration
     }
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT -
-     * for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a
-     * redirection received from the SCAN listeners to the database node to connect to. By default
-     * the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT'
+     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
+     * involves a redirection received from the SCAN listeners to the database node to connect to.
+     * By default the mode would be DIRECT.
      */
     public enum SessionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Direct("DIRECT"),
@@ -1050,19 +1066,19 @@ public final class DatabaseRegistration
         }
     };
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT -
-     * for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a
-     * redirection received from the SCAN listeners to the database node to connect to. By default
-     * the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT'
+     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
+     * involves a redirection received from the SCAN listeners to the database node to connect to.
+     * By default the mode would be DIRECT.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT -
-     * for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a
-     * redirection received from the SCAN listeners to the database node to connect to. By default
-     * the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT'
+     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
+     * involves a redirection received from the SCAN listeners to the database node to connect to.
+     * By default the mode would be DIRECT.
      *
      * @return the value
      */

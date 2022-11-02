@@ -214,6 +214,46 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssignEncryptionKeyResponse> assignEncryptionKey(
+            AssignEncryptionKeyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AssignEncryptionKeyRequest, AssignEncryptionKeyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getAssignEncryptionKeyDetails(), "assignEncryptionKeyDetails is required");
+
+        return clientCall(request, AssignEncryptionKeyResponse::builder)
+                .logger(LOG, "assignEncryptionKey")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "AssignEncryptionKey",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/AssignEncryptionKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AssignEncryptionKeyRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("storage")
+                .appendPathParam("actions")
+                .appendPathParam("assignEncryptionKey")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AssignEncryptionKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AssignEncryptionKeyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", AssignEncryptionKeyResponse.Builder::location)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetBasicInfoResponse> batchGetBasicInfo(
             BatchGetBasicInfoRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3502,6 +3542,38 @@ public class LogAnalyticsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-next-page", ListConfigWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListConfigWorkRequestsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEncryptionKeyInfoResponse> listEncryptionKeyInfo(
+            ListEncryptionKeyInfoRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEncryptionKeyInfoRequest, ListEncryptionKeyInfoResponse>
+                    handler) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        return clientCall(request, ListEncryptionKeyInfoResponse::builder)
+                .logger(LOG, "listEncryptionKeyInfo")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "ListEncryptionKeyInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListEncryptionKeyInfo")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEncryptionKeyInfoRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("storage")
+                .appendPathParam("encryptionKeyInfo")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection.class,
+                        ListEncryptionKeyInfoResponse.Builder::encryptionKeyInfoCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEncryptionKeyInfoResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

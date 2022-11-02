@@ -34,8 +34,8 @@ public class ApacheConnectorPropertiesExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         // For bodies with large InputStreams, the ApacheConfigurator.NonBuffering provides the
-        // option to switch off
-        // buffering of large objects in memory, for buffering clients use ApacheConfigurator
+        // option to switch off buffering of large objects in memory, for buffering clients use
+        // ApacheConfigurator
         SSLContext sslContext = null;
 
         final PoolingHttpClientConnectionManager poolConnectionManager =
@@ -62,17 +62,13 @@ public class ApacheConnectorPropertiesExample {
                         .build(provider);
 
         // When using ApacheConnectionClosingStrategy.GracefulClosingStrategy, streams returned from
-        // response are read
-        // till the end of the stream when closing the stream. This can introduce additional time
-        // when closing the stream
-        // with partial read, depending on how large the remaining stream is. Use
-        // ApacheConnectionClosingStrategy.ImmediateClosingStrategy for large files with partial
-        // reads instead for
-        // faster close.
+        // response are read till the end of the stream when closing the stream. This can introduce
+        // additional time when closing the stream with partial read, depending on how large the
+        // remaining stream is. Use ApacheConnectionClosingStrategy.ImmediateClosingStrategy for
+        // large files with partial reads instead for faster close.
         // ApacheConnectionClosingStrategy.ImmediateClosingStrategy on the other hand takes longer
-        // when using partial
-        // read for smaller stream size (< 1MB). Please consider your use-case and change
-        // accordingly.
+        // when using partial read for smaller stream size (< 1MB). Please consider your use-case
+        // and change accordingly.
 
         ObjectStorageClient objectStorageGracefulClosingClient =
                 ObjectStorageClient.builder()

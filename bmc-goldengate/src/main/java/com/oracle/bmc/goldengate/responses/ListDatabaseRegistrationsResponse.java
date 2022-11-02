@@ -42,6 +42,18 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
+    /** Deprecation date of this API version. */
+    private String sunset;
+
+    /**
+     * Deprecation date of this API version.
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
     /** The returned DatabaseRegistrationCollection instance. */
     private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
             databaseRegistrationCollection;
@@ -61,6 +73,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         "headers",
         "opcRequestId",
         "opcNextPage",
+        "sunset",
         "databaseRegistrationCollection"
     })
     private ListDatabaseRegistrationsResponse(
@@ -68,11 +81,13 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
+            String sunset,
             com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
                     databaseRegistrationCollection) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
+        this.sunset = sunset;
         this.databaseRegistrationCollection = databaseRegistrationCollection;
     }
 
@@ -133,6 +148,20 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
+        /** Deprecation date of this API version. */
+        private String sunset;
+
+        /**
+         * Deprecation date of this API version.
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
+            return this;
+        }
+
         /** The returned DatabaseRegistrationCollection instance. */
         private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
                 databaseRegistrationCollection;
@@ -161,6 +190,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
+            sunset(o.getSunset());
             databaseRegistrationCollection(o.getDatabaseRegistrationCollection());
 
             return this;
@@ -178,6 +208,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
                     headers,
                     opcRequestId,
                     opcNextPage,
+                    sunset,
                     databaseRegistrationCollection);
         }
     }
@@ -198,6 +229,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(",databaseRegistrationCollection=")
                 .append(String.valueOf(databaseRegistrationCollection));
         sb.append(")");
@@ -217,6 +249,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.sunset, other.sunset)
                 && java.util.Objects.equals(
                         this.databaseRegistrationCollection, other.databaseRegistrationCollection);
     }
@@ -227,6 +260,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseRegistrationCollection == null

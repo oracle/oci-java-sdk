@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.0.0-beta1</version>
+  <version>3.0.0-beta2</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -35,7 +35,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson.version>2.13.1</jackson.version>
-    <jackson.databind.version>2.13.2.1</jackson.databind.version>
+    <jackson.databind.version>2.13.4.2</jackson.databind.version>
     <jersey.version>2.35</jersey.version>
     <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
     <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
@@ -465,29 +465,6 @@
           </dependencies>
         </plugin>
         <plugin>
-          <groupId>com.oracle.oci.sdk.utilities</groupId>
-          <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
-          <version>1.0.18</version>
-          <executions>
-            <execution>
-              <id>add-files-to-jar-files</id>
-              <!-- Run in pre-integration-test phase, which comes after the package phase. -->
-              <!-- That way, all jar files have been built already. -->
-              <phase>pre-integration-test</phase>
-              <goals>
-                <goal>add</goal>
-              </goals>
-              <configuration>
-                <files>
-                  <file>LICENSE.txt</file>
-                  <file>THIRD_PARTY_LICENSES.txt</file>
-                  <file>NOTICE.txt</file>
-                </files>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
           <!-- http://stdevtools.us.oracle.com:7777/twiki/pub/INTEGTeam/CodeSigningUserDoc/User_Doc_Code_Sign_V3.0.htm#_Toc432167412 -->
           <groupId>com.oracle.ccss</groupId>
           <artifactId>codesign-maven-plugin</artifactId>
@@ -517,10 +494,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>com.oracle.oci.sdk.utilities</groupId>
-        <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

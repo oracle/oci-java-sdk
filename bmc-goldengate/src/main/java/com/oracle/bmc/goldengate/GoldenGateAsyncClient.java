@@ -131,6 +131,45 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeConnectionCompartmentResponse>
+            changeConnectionCompartment(
+                    ChangeConnectionCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeConnectionCompartmentRequest,
+                                    ChangeConnectionCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeConnectionCompartmentDetails(),
+                "changeConnectionCompartmentDetails is required");
+
+        return clientCall(request, ChangeConnectionCompartmentResponse::builder)
+                .logger(LOG, "changeConnectionCompartment")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ChangeConnectionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/ChangeConnectionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeConnectionCompartmentRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeConnectionCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeConnectionCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseRegistrationCompartmentResponse>
             changeDatabaseRegistrationCompartment(
                     ChangeDatabaseRegistrationCompartmentRequest request,
@@ -169,6 +208,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDatabaseRegistrationCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", ChangeDatabaseRegistrationCompartmentResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -251,6 +292,79 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
+            CreateConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateConnectionRequest, CreateConnectionResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateConnectionDetails(), "createConnectionDetails is required");
+
+        return clientCall(request, CreateConnectionResponse::builder)
+                .logger(LOG, "createConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CreateConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/CreateConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Connection.class,
+                        CreateConnectionResponse.Builder::connection)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConnectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateConnectionResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionAssignmentResponse>
+            createConnectionAssignment(
+                    CreateConnectionAssignmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateConnectionAssignmentRequest,
+                                    CreateConnectionAssignmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateConnectionAssignmentDetails(),
+                "createConnectionAssignmentDetails is required");
+
+        return clientCall(request, CreateConnectionAssignmentResponse::builder)
+                .logger(LOG, "createConnectionAssignment")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CreateConnectionAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/ConnectionAssignment/CreateConnectionAssignment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateConnectionAssignmentRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connectionAssignments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.ConnectionAssignment.class,
+                        CreateConnectionAssignmentResponse.Builder::connectionAssignment)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateConnectionAssignmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateConnectionAssignmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateConnectionAssignmentResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDatabaseRegistrationResponse>
             createDatabaseRegistration(
                     CreateDatabaseRegistrationRequest request,
@@ -286,6 +400,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", CreateDatabaseRegistrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateDatabaseRegistrationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "sunset", CreateDatabaseRegistrationResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -356,6 +472,70 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConnectionResponse> deleteConnection(
+            DeleteConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConnectionRequest, DeleteConnectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+
+        return clientCall(request, DeleteConnectionResponse::builder)
+                .logger(LOG, "deleteConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeleteConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/DeleteConnection")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionAssignmentResponse>
+            deleteConnectionAssignment(
+                    DeleteConnectionAssignmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteConnectionAssignmentRequest,
+                                    DeleteConnectionAssignmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getConnectionAssignmentId(), "connectionAssignmentId must not be blank");
+
+        return clientCall(request, DeleteConnectionAssignmentResponse::builder)
+                .logger(LOG, "deleteConnectionAssignment")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeleteConnectionAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/ConnectionAssignment/DeleteConnectionAssignment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteConnectionAssignmentRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connectionAssignments")
+                .appendPathParam(request.getConnectionAssignmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteConnectionAssignmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteConnectionAssignmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDatabaseRegistrationResponse>
             deleteDatabaseRegistration(
                     DeleteDatabaseRegistrationRequest request,
@@ -386,6 +566,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         DeleteDatabaseRegistrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDatabaseRegistrationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", DeleteDatabaseRegistrationResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -451,6 +633,68 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetConnectionResponse> getConnection(
+            GetConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+
+        return clientCall(request, GetConnectionResponse::builder)
+                .logger(LOG, "getConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GetConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/GetConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.Connection.class,
+                        GetConnectionResponse.Builder::connection)
+                .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionAssignmentResponse> getConnectionAssignment(
+            GetConnectionAssignmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetConnectionAssignmentRequest, GetConnectionAssignmentResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getConnectionAssignmentId(), "connectionAssignmentId must not be blank");
+
+        return clientCall(request, GetConnectionAssignmentResponse::builder)
+                .logger(LOG, "getConnectionAssignment")
+                .serviceDetails(
+                        "GoldenGate",
+                        "GetConnectionAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/ConnectionAssignment/GetConnectionAssignment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetConnectionAssignmentRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connectionAssignments")
+                .appendPathParam(request.getConnectionAssignmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.ConnectionAssignment.class,
+                        GetConnectionAssignmentResponse.Builder::connectionAssignment)
+                .handleResponseHeaderString("etag", GetConnectionAssignmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetConnectionAssignmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDatabaseRegistrationResponse> getDatabaseRegistration(
             GetDatabaseRegistrationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -479,6 +723,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .handleResponseHeaderString("etag", GetDatabaseRegistrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDatabaseRegistrationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", GetDatabaseRegistrationResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -608,6 +854,94 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListConnectionAssignmentsResponse> listConnectionAssignments(
+            ListConnectionAssignmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListConnectionAssignmentsRequest, ListConnectionAssignmentsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListConnectionAssignmentsResponse::builder)
+                .logger(LOG, "listConnectionAssignments")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListConnectionAssignments",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/ConnectionAssignment/ListConnectionAssignments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConnectionAssignmentsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connectionAssignments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("deploymentId", request.getDeploymentId())
+                .appendQueryParam("connectionId", request.getConnectionId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.ConnectionAssignmentCollection.class,
+                        ListConnectionAssignmentsResponse.Builder::connectionAssignmentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConnectionAssignmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConnectionAssignmentsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectionsResponse> listConnections(
+            ListConnectionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListConnectionsRequest, ListConnectionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListConnectionsResponse::builder)
+                .logger(LOG, "listConnections")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListConnections",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/ListConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConnectionsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "technologyType",
+                        request.getTechnologyType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "connectionType",
+                        request.getConnectionType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("assignedDeploymentId", request.getAssignedDeploymentId())
+                .appendQueryParam("assignableDeploymentId", request.getAssignableDeploymentId())
+                .appendEnumQueryParam(
+                        "assignableDeploymentType", request.getAssignableDeploymentType())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.ConnectionCollection.class,
+                        ListConnectionsResponse.Builder::connectionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatabaseRegistrationsResponse> listDatabaseRegistrations(
             ListDatabaseRegistrationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -641,6 +975,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListDatabaseRegistrationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDatabaseRegistrationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "sunset", ListDatabaseRegistrationsResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -679,6 +1015,42 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListDeploymentBackupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentBackupsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTypesResponse> listDeploymentTypes(
+            ListDeploymentTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentTypesRequest, ListDeploymentTypesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDeploymentTypesResponse::builder)
+                .logger(LOG, "listDeploymentTypes")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentTypeCollection/ListDeploymentTypes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentTypesRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentTypes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentTypeCollection.class,
+                        ListDeploymentTypesResponse.Builder::deploymentTypeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentTypesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentTypesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -739,6 +1111,10 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .basePath("/20200407")
                 .appendPathParam("deployments")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam(
+                        "supportedConnectionType", request.getSupportedConnectionType())
+                .appendQueryParam("assignedConnectionId", request.getAssignedConnectionId())
+                .appendQueryParam("assignableConnectionId", request.getAssignableConnectionId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -1079,6 +1455,39 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
+            UpdateConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConnectionRequest, UpdateConnectionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConnectionDetails(), "updateConnectionDetails is required");
+
+        return clientCall(request, UpdateConnectionResponse::builder)
+                .logger(LOG, "updateConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "UpdateConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/UpdateConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDatabaseRegistrationResponse>
             updateDatabaseRegistration(
                     UpdateDatabaseRegistrationRequest request,
@@ -1113,6 +1522,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         UpdateDatabaseRegistrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDatabaseRegistrationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", UpdateDatabaseRegistrationResponse.Builder::sunset)
                 .callAsync(handler);
     }
 

@@ -40,20 +40,35 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
+    /** Deprecation date of this API version. */
+    private String sunset;
+
+    /**
+     * Deprecation date of this API version.
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
         "opcWorkRequestId",
-        "opcRequestId"
+        "opcRequestId",
+        "sunset"
     })
     private UpdateDatabaseRegistrationResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
-            String opcRequestId) {
+            String opcRequestId,
+            String sunset) {
         super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.sunset = sunset;
     }
 
     public static class Builder
@@ -111,6 +126,20 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             return this;
         }
 
+        /** Deprecation date of this API version. */
+        private String sunset;
+
+        /**
+         * Deprecation date of this API version.
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          *
@@ -122,6 +151,7 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            sunset(o.getSunset());
 
             return this;
         }
@@ -134,7 +164,7 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         @Override
         public UpdateDatabaseRegistrationResponse build() {
             return new UpdateDatabaseRegistrationResponse(
-                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, sunset);
         }
     }
 
@@ -154,6 +184,7 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         sb.append("super=").append(super.toString());
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(")");
         return sb.toString();
     }
@@ -170,7 +201,8 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         UpdateDatabaseRegistrationResponse other = (UpdateDatabaseRegistrationResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sunset, other.sunset);
     }
 
     @Override
@@ -181,6 +213,7 @@ public class UpdateDatabaseRegistrationResponse extends com.oracle.bmc.responses
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         return result;
     }
 }

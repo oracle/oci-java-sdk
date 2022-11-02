@@ -36,6 +36,18 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
+    /** Deprecation date of this API version. */
+    private String sunset;
+
+    /**
+     * Deprecation date of this API version.
+     *
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
     /** The returned DatabaseRegistration instance. */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
@@ -53,6 +65,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         "headers",
         "etag",
         "opcRequestId",
+        "sunset",
         "databaseRegistration"
     })
     private GetDatabaseRegistrationResponse(
@@ -60,10 +73,12 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
+            String sunset,
             com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.sunset = sunset;
         this.databaseRegistration = databaseRegistration;
     }
 
@@ -118,6 +133,20 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
+        /** Deprecation date of this API version. */
+        private String sunset;
+
+        /**
+         * Deprecation date of this API version.
+         *
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
+            return this;
+        }
+
         /** The returned DatabaseRegistration instance. */
         private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
@@ -144,6 +173,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            sunset(o.getSunset());
             databaseRegistration(o.getDatabaseRegistration());
 
             return this;
@@ -157,7 +187,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         @Override
         public GetDatabaseRegistrationResponse build() {
             return new GetDatabaseRegistrationResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, databaseRegistration);
+                    __httpStatusCode__, headers, etag, opcRequestId, sunset, databaseRegistration);
         }
     }
 
@@ -177,6 +207,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(",databaseRegistration=").append(String.valueOf(databaseRegistration));
         sb.append(")");
         return sb.toString();
@@ -195,6 +226,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sunset, other.sunset)
                 && java.util.Objects.equals(this.databaseRegistration, other.databaseRegistration);
     }
 
@@ -204,6 +236,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseRegistration == null

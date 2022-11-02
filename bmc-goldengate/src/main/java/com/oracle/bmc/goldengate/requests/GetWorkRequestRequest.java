@@ -13,10 +13,16 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the asynchronous request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous request.
+     */
     private String workRequestId;
 
-    /** The ID of the asynchronous request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -34,11 +40,15 @@ public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the asynchronous request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous request.
+         */
         private String workRequestId = null;
 
         /**
-         * The ID of the asynchronous request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous request.
          *
          * @param workRequestId the value to set
          * @return this builder instance

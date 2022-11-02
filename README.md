@@ -94,7 +94,7 @@ For more info on Apache Connector, please look into ApacheConnector-README.
 
 ### OCI Java SDK shows incorrect service details while displaying the logs for BmcException
 
-OCI Java SDK displays wrong service details when a BmcException is thrown. For example, exception generated from service A could see information about service B. This behavior can be seen in versions `2.23.0` to `2.34.0` making it thread unsafe. Please update to version `2.35.0` which has the fix for this issue.
+OCI Java SDK displays wrong service details when a BmcException is thrown. For example, exception generated from service A could see information about service B. This behavior can be seen in versions `2.23.0` to `2.34.0` making it thread unsafe. Please update to version `2.35.0`, which has the fix for this issue, or later.
  
 You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the “Issues” tab of this GitHub repository.
 

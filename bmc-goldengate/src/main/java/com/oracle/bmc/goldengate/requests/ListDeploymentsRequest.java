@@ -13,12 +13,45 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /** The connection type which the deployment must support. */
+    private com.oracle.bmc.goldengate.model.ConnectionType supportedConnectionType;
+
+    /** The connection type which the deployment must support. */
+    public com.oracle.bmc.goldengate.model.ConnectionType getSupportedConnectionType() {
+        return supportedConnectionType;
+    }
+    /** The OCID of the connection which for the deployment must be assigned. */
+    private String assignedConnectionId;
+
+    /** The OCID of the connection which for the deployment must be assigned. */
+    public String getAssignedConnectionId() {
+        return assignedConnectionId;
+    }
+    /**
+     * Filters for compatible deployments which can be, but currently not assigned to the connection
+     * specified by its id.
+     */
+    private String assignableConnectionId;
+
+    /**
+     * Filters for compatible deployments which can be, but currently not assigned to the connection
+     * specified by its id.
+     */
+    public String getAssignableConnectionId() {
+        return assignableConnectionId;
     }
     /** A filter to return only the resources that match the 'lifecycleState' given. */
     private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState;
@@ -142,17 +175,68 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /** The connection type which the deployment must support. */
+        private com.oracle.bmc.goldengate.model.ConnectionType supportedConnectionType = null;
+
+        /**
+         * The connection type which the deployment must support.
+         *
+         * @param supportedConnectionType the value to set
+         * @return this builder instance
+         */
+        public Builder supportedConnectionType(
+                com.oracle.bmc.goldengate.model.ConnectionType supportedConnectionType) {
+            this.supportedConnectionType = supportedConnectionType;
+            return this;
+        }
+
+        /** The OCID of the connection which for the deployment must be assigned. */
+        private String assignedConnectionId = null;
+
+        /**
+         * The OCID of the connection which for the deployment must be assigned.
+         *
+         * @param assignedConnectionId the value to set
+         * @return this builder instance
+         */
+        public Builder assignedConnectionId(String assignedConnectionId) {
+            this.assignedConnectionId = assignedConnectionId;
+            return this;
+        }
+
+        /**
+         * Filters for compatible deployments which can be, but currently not assigned to the
+         * connection specified by its id.
+         */
+        private String assignableConnectionId = null;
+
+        /**
+         * Filters for compatible deployments which can be, but currently not assigned to the
+         * connection specified by its id.
+         *
+         * @param assignableConnectionId the value to set
+         * @return this builder instance
+         */
+        public Builder assignableConnectionId(String assignableConnectionId) {
+            this.assignableConnectionId = assignableConnectionId;
             return this;
         }
 
@@ -325,6 +409,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
          */
         public Builder copy(ListDeploymentsRequest o) {
             compartmentId(o.getCompartmentId());
+            supportedConnectionType(o.getSupportedConnectionType());
+            assignedConnectionId(o.getAssignedConnectionId());
+            assignableConnectionId(o.getAssignableConnectionId());
             lifecycleState(o.getLifecycleState());
             lifecycleSubState(o.getLifecycleSubState());
             displayName(o.getDisplayName());
@@ -369,6 +456,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         public ListDeploymentsRequest buildWithoutInvocationCallback() {
             ListDeploymentsRequest request = new ListDeploymentsRequest();
             request.compartmentId = compartmentId;
+            request.supportedConnectionType = supportedConnectionType;
+            request.assignedConnectionId = assignedConnectionId;
+            request.assignableConnectionId = assignableConnectionId;
             request.lifecycleState = lifecycleState;
             request.lifecycleSubState = lifecycleSubState;
             request.displayName = displayName;
@@ -379,7 +469,8 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDeploymentsRequest(compartmentId, lifecycleState, lifecycleSubState,
+            // new ListDeploymentsRequest(compartmentId, supportedConnectionType,
+            // assignedConnectionId, assignableConnectionId, lifecycleState, lifecycleSubState,
             // displayName, fqdn, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
@@ -392,6 +483,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .supportedConnectionType(supportedConnectionType)
+                .assignedConnectionId(assignedConnectionId)
+                .assignableConnectionId(assignableConnectionId)
                 .lifecycleState(lifecycleState)
                 .lifecycleSubState(lifecycleSubState)
                 .displayName(displayName)
@@ -418,6 +512,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",supportedConnectionType=").append(String.valueOf(this.supportedConnectionType));
+        sb.append(",assignedConnectionId=").append(String.valueOf(this.assignedConnectionId));
+        sb.append(",assignableConnectionId=").append(String.valueOf(this.assignableConnectionId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
@@ -443,6 +540,11 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         ListDeploymentsRequest other = (ListDeploymentsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.supportedConnectionType, other.supportedConnectionType)
+                && java.util.Objects.equals(this.assignedConnectionId, other.assignedConnectionId)
+                && java.util.Objects.equals(
+                        this.assignableConnectionId, other.assignableConnectionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -461,6 +563,21 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedConnectionType == null
+                                ? 43
+                                : this.supportedConnectionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignedConnectionId == null
+                                ? 43
+                                : this.assignedConnectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignableConnectionId == null
+                                ? 43
+                                : this.assignableConnectionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
