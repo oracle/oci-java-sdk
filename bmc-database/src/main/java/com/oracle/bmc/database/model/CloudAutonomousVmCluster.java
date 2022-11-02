@@ -492,12 +492,12 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
-        /** The number of CPU cores enabled on the cloud Autonomous VM cluster. */
+        /** The number of CPU cores on the cloud Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+         * The number of CPU cores on the cloud Autonomous VM cluster.
          *
          * @param cpuCoreCount the value to set
          * @return this builder
@@ -508,15 +508,15 @@ public final class CloudAutonomousVmCluster
             return this;
         }
         /**
-         * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place
-         * is allowed for the fractional part.
+         * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is
+         * allowed for the fractional part.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
         /**
-         * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place
-         * is allowed for the fractional part.
+         * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is
+         * allowed for the fractional part.
          *
          * @param ocpuCount the value to set
          * @return this builder
@@ -1334,12 +1334,12 @@ public final class CloudAutonomousVmCluster
         return dataStorageSizeInGBs;
     }
 
-    /** The number of CPU cores enabled on the cloud Autonomous VM cluster. */
+    /** The number of CPU cores on the cloud Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * The number of CPU cores on the cloud Autonomous VM cluster.
      *
      * @return the value
      */
@@ -1348,15 +1348,15 @@ public final class CloudAutonomousVmCluster
     }
 
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is
-     * allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed
+     * for the fractional part.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Float ocpuCount;
 
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is
-     * allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed
+     * for the fractional part.
      *
      * @return the value
      */

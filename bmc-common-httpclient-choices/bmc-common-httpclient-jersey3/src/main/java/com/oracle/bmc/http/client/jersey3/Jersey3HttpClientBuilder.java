@@ -69,12 +69,13 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private KeyStore trustStore;
     private HostnameVerifier hostnameVerifier;
     private SSLContext sslContext;
+    private boolean useApacheConnector = true;
 
     Jersey3HttpClientBuilder() {
         // buffer by default, for signing and better error messages.
         properties.put(
                 ClientProperties.REQUEST_ENTITY_PROCESSING, RequestEntityProcessing.BUFFERED);
-        if (Jersey3HttpProvider.isApacheDependencyPresent) {
+        if (Jersey3HttpProvider.isApacheDependencyPresent && useApacheConnector) {
             properties.put(
                     ApacheClientProperties.REQUEST_CONFIG,
                     RequestConfig.custom()
@@ -170,6 +171,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             if (proxy.getPassword() != null) {
                 properties.put(ClientProperties.PROXY_PASSWORD, proxy.getPassword());
             }
+        } else if (key == Jersey3ClientProperties.USE_APACHE_CONNECTOR) {
+            useApacheConnector = (Boolean) value;
         } else if (key instanceof Jersey3ClientProperty) {
             properties.put(((Jersey3ClientProperty<T>) key).jerseyProperty, value);
         } else {

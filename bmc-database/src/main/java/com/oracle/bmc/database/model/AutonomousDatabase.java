@@ -646,9 +646,10 @@ public final class AutonomousDatabase
             return this;
         }
         /**
-         * The number of OCPU cores to be made available to the database. For Autonomous Databases
-         * on dedicated Exadata infrastructure, the maximum number of cores is determined by the
-         * infrastructure shape. See [Characteristics of Infrastructure
+         * The number of OCPU cores to be made available to the database. When the ECPU is selected,
+         * the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata
+         * infrastructure, the maximum number of cores is determined by the infrastructure shape.
+         * See [Characteristics of Infrastructure
          * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
          * for shape details.
          *
@@ -658,9 +659,10 @@ public final class AutonomousDatabase
         private Integer cpuCoreCount;
 
         /**
-         * The number of OCPU cores to be made available to the database. For Autonomous Databases
-         * on dedicated Exadata infrastructure, the maximum number of cores is determined by the
-         * infrastructure shape. See [Characteristics of Infrastructure
+         * The number of OCPU cores to be made available to the database. When the ECPU is selected,
+         * the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata
+         * infrastructure, the maximum number of cores is determined by the infrastructure shape.
+         * See [Characteristics of Infrastructure
          * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
          * for shape details.
          *
@@ -2901,9 +2903,10 @@ public final class AutonomousDatabase
     }
 
     /**
-     * The number of OCPU cores to be made available to the database. For Autonomous Databases on
-     * dedicated Exadata infrastructure, the maximum number of cores is determined by the
-     * infrastructure shape. See [Characteristics of Infrastructure
+     * The number of OCPU cores to be made available to the database. When the ECPU is selected, the
+     * value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure,
+     * the maximum number of cores is determined by the infrastructure shape. See [Characteristics
+     * of Infrastructure
      * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
      * for shape details.
      *
@@ -2913,9 +2916,10 @@ public final class AutonomousDatabase
     private final Integer cpuCoreCount;
 
     /**
-     * The number of OCPU cores to be made available to the database. For Autonomous Databases on
-     * dedicated Exadata infrastructure, the maximum number of cores is determined by the
-     * infrastructure shape. See [Characteristics of Infrastructure
+     * The number of OCPU cores to be made available to the database. When the ECPU is selected, the
+     * value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure,
+     * the maximum number of cores is determined by the infrastructure shape. See [Characteristics
+     * of Infrastructure
      * Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1)
      * for shape details.
      *

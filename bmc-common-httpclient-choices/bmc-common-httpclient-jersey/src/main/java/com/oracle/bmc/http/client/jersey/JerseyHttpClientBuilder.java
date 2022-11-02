@@ -70,6 +70,7 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
     private KeyStore trustStore;
     private HostnameVerifier hostnameVerifier;
     private SSLContext sslContext;
+    private boolean useApacheConnector = true;
 
     JerseyHttpClientBuilder() {
         // buffer by default, for signing and better error messages.
@@ -170,6 +171,8 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
             if (proxy.getPassword() != null) {
                 properties.put(ClientProperties.PROXY_PASSWORD, proxy.getPassword());
             }
+        } else if (key == JerseyClientProperties.USE_APACHE_CONNECTOR) {
+            useApacheConnector = (Boolean) value;
         } else if (key instanceof JerseyClientProperty) {
             properties.put(((JerseyClientProperty<T>) key).jerseyProperty, value);
         } else {
@@ -190,7 +193,7 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
     public HttpClient build() {
         ClientBuilder clientBuilder = ClientBuilder.newBuilder();
         ClientConfig clientConfig = new ClientConfig();
-        if (JerseyHttpProvider.isApacheDependencyPresent) {
+        if (JerseyHttpProvider.isApacheDependencyPresent && useApacheConnector) {
             LOG.info("Setting connector provider to ApacheConnectorProvider");
             clientConfig.connectorProvider(new ApacheConnectorProvider());
             // need to configure the client so that it doesn't fail if we provide Content-Length

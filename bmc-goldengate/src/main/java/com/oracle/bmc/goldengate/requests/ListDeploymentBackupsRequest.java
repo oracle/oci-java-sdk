@@ -15,17 +15,29 @@ import com.oracle.bmc.goldengate.model.*;
 public class ListDeploymentBackupsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The ID of the deployment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deployment in which to list resources.
+     */
     private String deploymentId;
 
-    /** The ID of the deployment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deployment in which to list resources.
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -137,11 +149,15 @@ public class ListDeploymentBackupsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -151,11 +167,15 @@ public class ListDeploymentBackupsRequest
             return this;
         }
 
-        /** The ID of the deployment in which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deployment in which to list resources.
+         */
         private String deploymentId = null;
 
         /**
-         * The ID of the deployment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deployment in which to list resources.
          *
          * @param deploymentId the value to set
          * @return this builder instance

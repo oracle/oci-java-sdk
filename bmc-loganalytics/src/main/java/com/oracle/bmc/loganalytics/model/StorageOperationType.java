@@ -13,6 +13,8 @@ public enum StorageOperationType implements com.oracle.bmc.http.internal.BmcEnum
     ReleaseRecalledStorageData("RELEASE_RECALLED_STORAGE_DATA"),
     ArchiveStorageData("ARCHIVE_STORAGE_DATA"),
     CleanupArchivalStorageData("CLEANUP_ARCHIVAL_STORAGE_DATA"),
+    EncryptActiveData("ENCRYPT_ACTIVE_DATA"),
+    EncryptArchivalData("ENCRYPT_ARCHIVAL_DATA"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

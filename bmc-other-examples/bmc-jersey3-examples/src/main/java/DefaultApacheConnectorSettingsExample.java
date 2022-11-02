@@ -22,11 +22,6 @@ public class DefaultApacheConnectorSettingsExample {
 
     /**
      * The entry point for the example.
-     *
-     * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The first argument is the OCID of the compartment for which we will get the namespace</li>
-     * </ul>
      */
     public static void main(String[] args) throws Exception {
         // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file

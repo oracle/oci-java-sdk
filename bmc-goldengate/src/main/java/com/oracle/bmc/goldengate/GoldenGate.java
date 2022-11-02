@@ -71,9 +71,30 @@ public interface GoldenGate extends AutoCloseable {
     CancelDeploymentBackupResponse cancelDeploymentBackup(CancelDeploymentBackupRequest request);
 
     /**
-     * Moves the DatabaseRegistration into a different compartment within the same tenancy. When
-     * provided, If-Match is checked against ETag values of the resource. For information about
-     * moving resources between compartments, see [Moving Resources Between
+     * Moves the Connection into a different compartment within the same tenancy. When provided,
+     * If-Match is checked against ETag values of the resource. For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangeConnectionCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeConnectionCompartment API.
+     */
+    ChangeConnectionCompartmentResponse changeConnectionCompartment(
+            ChangeConnectionCompartmentRequest request);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead. Moves the DatabaseRegistration
+     * into a different compartment within the same tenancy. When provided, If-Match is checked
+     * against ETag values of the resource. For information about moving resources between
+     * compartments, see [Moving Resources Between
      * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -131,7 +152,41 @@ public interface GoldenGate extends AutoCloseable {
             ChangeDeploymentCompartmentRequest request);
 
     /**
-     * Creates a new DatabaseRegistration.
+     * Creates a new Connection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection
+     *     API.
+     */
+    CreateConnectionResponse createConnection(CreateConnectionRequest request);
+
+    /**
+     * Creates a new Connection Assignment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateConnectionAssignmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateConnectionAssignment API.
+     */
+    CreateConnectionAssignmentResponse createConnectionAssignment(
+            CreateConnectionAssignmentRequest request);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead. Creates a new
+     * DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -180,7 +235,40 @@ public interface GoldenGate extends AutoCloseable {
     CreateDeploymentBackupResponse createDeploymentBackup(CreateDeploymentBackupRequest request);
 
     /**
-     * Deletes a DatabaseRegistration.
+     * Deletes a Connection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeleteConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection
+     *     API.
+     */
+    DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
+
+    /**
+     * Deletes a Connection Assignment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeleteConnectionAssignmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteConnectionAssignment API.
+     */
+    DeleteConnectionAssignmentResponse deleteConnectionAssignment(
+            DeleteConnectionAssignmentRequest request);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead. Deletes a DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -229,7 +317,38 @@ public interface GoldenGate extends AutoCloseable {
     DeleteDeploymentBackupResponse deleteDeploymentBackup(DeleteDeploymentBackupRequest request);
 
     /**
-     * Retrieves a DatabaseRegistration.
+     * Retrieves a Connection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
+     */
+    GetConnectionResponse getConnection(GetConnectionRequest request);
+
+    /**
+     * Retrieves a Connection Assignment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetConnectionAssignmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetConnectionAssignment API.
+     */
+    GetConnectionAssignmentResponse getConnectionAssignment(GetConnectionAssignmentRequest request);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead. Retrieves a DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -307,7 +426,41 @@ public interface GoldenGate extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Lists the DatabaseRegistrations in the compartment.
+     * Lists the Connection Assignments in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListConnectionAssignmentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListConnectionAssignments API.
+     */
+    ListConnectionAssignmentsResponse listConnectionAssignments(
+            ListConnectionAssignmentsRequest request);
+
+    /**
+     * Lists the Connections in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListConnectionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections
+     *     API.
+     */
+    ListConnectionsResponse listConnections(ListConnectionsRequest request);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead. Lists the DatabaseRegistrations in
+     * the compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -338,6 +491,22 @@ public interface GoldenGate extends AutoCloseable {
      *     ListDeploymentBackups API.
      */
     ListDeploymentBackupsResponse listDeploymentBackups(ListDeploymentBackupsRequest request);
+
+    /**
+     * Returns an array of DeploymentTypeDescriptor
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentTypesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentTypes
+     *     API.
+     */
+    ListDeploymentTypesResponse listDeploymentTypes(ListDeploymentTypesRequest request);
 
     /**
      * Lists the Deployment Upgrades in a compartment.
@@ -514,7 +683,23 @@ public interface GoldenGate extends AutoCloseable {
     StopDeploymentResponse stopDeployment(StopDeploymentRequest request);
 
     /**
-     * Updates the DatabaseRegistration.
+     * Updates the Connection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpdateConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection
+     *     API.
+     */
+    UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
+
+    /**
+     * Note: Deprecated. Use the new resource model APIs instead. Updates the DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

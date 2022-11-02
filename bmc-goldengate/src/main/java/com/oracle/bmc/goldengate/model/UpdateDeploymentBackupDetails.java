@@ -35,14 +35,18 @@ public final class UpdateDeploymentBackupDetails
     public static class Builder {
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Exists for cross-compatibility only.
+         *
+         * <p>Example: {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Exists for cross-compatibility only.
+         *
+         * <p>Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -54,14 +58,16 @@ public final class UpdateDeploymentBackupDetails
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -108,14 +114,18 @@ public final class UpdateDeploymentBackupDetails
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
-     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * for cross-compatibility only.
+     *
+     * <p>Example: {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
-     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * for cross-compatibility only.
+     *
+     * <p>Example: {@code {"bar-key": "value"}}
      *
      * @return the value
      */
@@ -124,15 +134,17 @@ public final class UpdateDeploymentBackupDetails
     }
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
      */

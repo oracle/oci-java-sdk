@@ -427,6 +427,22 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             this.__explicitlySet__.add("cloneType");
             return this;
         }
+        /** Clone from latest available backup timestamp. */
+        @com.fasterxml.jackson.annotation.JsonProperty("useLatestAvailableBackupTimeStamp")
+        private Boolean useLatestAvailableBackupTimeStamp;
+
+        /**
+         * Clone from latest available backup timestamp.
+         *
+         * @param useLatestAvailableBackupTimeStamp the value to set
+         * @return this builder
+         */
+        public Builder useLatestAvailableBackupTimeStamp(
+                Boolean useLatestAvailableBackupTimeStamp) {
+            this.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+            this.__explicitlySet__.add("useLatestAvailableBackupTimeStamp");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -474,7 +490,8 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                             this.databaseEdition,
                             this.autonomousDatabaseId,
                             this.timestamp,
-                            this.cloneType);
+                            this.cloneType,
+                            this.useLatestAvailableBackupTimeStamp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -608,6 +625,10 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             if (model.wasPropertyExplicitlySet("cloneType")) {
                 this.cloneType(model.getCloneType());
             }
+            if (model.wasPropertyExplicitlySet("useLatestAvailableBackupTimeStamp")) {
+                this.useLatestAvailableBackupTimeStamp(
+                        model.getUseLatestAvailableBackupTimeStamp());
+            }
             return this;
         }
     }
@@ -663,7 +684,8 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             String autonomousDatabaseId,
             java.util.Date timestamp,
-            CloneType cloneType) {
+            CloneType cloneType,
+            Boolean useLatestAvailableBackupTimeStamp) {
         super(
                 compartmentId,
                 characterSet,
@@ -706,6 +728,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;
+        this.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
     }
 
     /**
@@ -788,6 +811,19 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         return cloneType;
     }
 
+    /** Clone from latest available backup timestamp. */
+    @com.fasterxml.jackson.annotation.JsonProperty("useLatestAvailableBackupTimeStamp")
+    private final Boolean useLatestAvailableBackupTimeStamp;
+
+    /**
+     * Clone from latest available backup timestamp.
+     *
+     * @return the value
+     */
+    public Boolean getUseLatestAvailableBackupTimeStamp() {
+        return useLatestAvailableBackupTimeStamp;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -806,6 +842,8 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
+        sb.append(", useLatestAvailableBackupTimeStamp=")
+                .append(String.valueOf(this.useLatestAvailableBackupTimeStamp));
         sb.append(")");
         return sb.toString();
     }
@@ -824,6 +862,9 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         return java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
+                && java.util.Objects.equals(
+                        this.useLatestAvailableBackupTimeStamp,
+                        other.useLatestAvailableBackupTimeStamp)
                 && super.equals(other);
     }
 
@@ -838,6 +879,11 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                                 : this.autonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.useLatestAvailableBackupTimeStamp == null
+                                ? 43
+                                : this.useLatestAvailableBackupTimeStamp.hashCode());
         return result;
     }
 }

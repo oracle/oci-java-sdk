@@ -10,9 +10,9 @@ import java.util.Objects;
 public final class ProxyConfiguration {
     private final Proxy proxy;
     private final String username;
-    private final String password;
+    private final char[] password;
 
-    public ProxyConfiguration(Proxy proxy, String username, String password) {
+    public ProxyConfiguration(Proxy proxy, String username, char[] password) {
         this.proxy = Objects.requireNonNull(proxy, "proxy");
         if (proxy.type() == Proxy.Type.DIRECT) {
             throw new IllegalArgumentException("'DIRECT' proxy is not supported");
@@ -33,7 +33,43 @@ public final class ProxyConfiguration {
         return username;
     }
 
-    public String getPassword() {
+    public char[] getPassword() {
         return password;
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+        private Proxy proxy = null;
+        private String username = null;
+        private char[] password = null;
+
+        private Builder() {}
+
+        public ProxyConfiguration build() {
+            return new ProxyConfiguration(proxy, username, password);
+        }
+
+        public ProxyConfiguration build(Proxy proxy) {
+            this.proxy(proxy);
+            return build();
+        }
+
+        public Builder proxy(Proxy proxy) {
+            this.proxy = proxy;
+            return this;
+        }
+
+        public Builder username(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public Builder password(char[] password) {
+            this.password = password;
+            return this;
+        }
     }
 }

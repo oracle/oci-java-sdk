@@ -135,14 +135,18 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Exists for cross-compatibility only.
+         *
+         * <p>Example: {@code {"bar-key": "value"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Exists for cross-compatibility only.
+         *
+         * <p>Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -154,14 +158,16 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -307,7 +313,7 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * The mode of the database connection session to be established by the data client.
-         * REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
          * database involves a redirection received from the SCAN listeners to the database node to
          * connect to. By default the mode would be DIRECT.
          */
@@ -316,7 +322,7 @@ public final class CreateDatabaseRegistrationDetails
 
         /**
          * The mode of the database connection session to be established by the data client.
-         * REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
          * database involves a redirection received from the SCAN listeners to the database node to
          * connect to. By default the mode would be DIRECT.
          *
@@ -576,14 +582,18 @@ public final class CreateDatabaseRegistrationDetails
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
-     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * for cross-compatibility only.
+     *
+     * <p>Example: {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
-     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * for cross-compatibility only.
+     *
+     * <p>Example: {@code {"bar-key": "value"}}
      *
      * @return the value
      */
@@ -592,15 +602,17 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     *
+     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
      */
@@ -728,10 +740,10 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT -
-     * for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a
-     * redirection received from the SCAN listeners to the database node to connect to. By default
-     * the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT'
+     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
+     * involves a redirection received from the SCAN listeners to the database node to connect to.
+     * By default the mode would be DIRECT.
      */
     public enum SessionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Direct("DIRECT"),
@@ -766,19 +778,19 @@ public final class CreateDatabaseRegistrationDetails
         }
     };
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT -
-     * for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a
-     * redirection received from the SCAN listeners to the database node to connect to. By default
-     * the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT'
+     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
+     * involves a redirection received from the SCAN listeners to the database node to connect to.
+     * By default the mode would be DIRECT.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT -
-     * for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a
-     * redirection received from the SCAN listeners to the database node to connect to. By default
-     * the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT'
+     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
+     * involves a redirection received from the SCAN listeners to the database node to connect to.
+     * By default the mode would be DIRECT.
      *
      * @return the value
      */

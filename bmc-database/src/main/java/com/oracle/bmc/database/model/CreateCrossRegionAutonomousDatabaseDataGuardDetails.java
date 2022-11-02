@@ -21,17 +21,17 @@ package com.oracle.bmc.database.model;
  * parameters contain the same values as the source Autonomous Database: - customerContacts -
  * scheduledOperations - isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel
  * - whitelistedIps - isMtlsConnectionRequired Example I - Creating a cross-region standby with
- * required parameters only: {@code { "compartmentId":
+ * required parameters only, with OCPU: {@code { "compartmentId":
  * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
  * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
  * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :
  * "<var>&lt;password&gt;</var>", }} Example II - Creating a cross-region standby that specifies
- * optional parameters in addition to the required parameters: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
- * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :
- * "<var>&lt;password&gt;</var>", "dbVersion": "19c", "licenseModel": "LICENSE_INCLUDED",
- * "isAutoScalingForStorageEnabled": "true" }} <br>
+ * optional parameters in addition to the required parameters, with ECPU: {@code { "compartmentId":
+ * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "computeModel": "ECPU", "computeCount": 2,
+ * "dbName": "adatabasedb1", "sourceId":
+ * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "dataStorageSizeInTBs": 1,
+ * "source": "CROSS_REGION_DATAGUARD", "adminPassword" : "<var>&lt;password&gt;</var>", "dbVersion":
+ * "19c", "licenseModel": "LICENSE_INCLUDED", "isAutoScalingForStorageEnabled": "true" }} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

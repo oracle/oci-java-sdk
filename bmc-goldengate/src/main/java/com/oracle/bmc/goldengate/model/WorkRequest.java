@@ -6,7 +6,7 @@ package com.oracle.bmc.goldengate.model;
 
 /**
  * The API operations that create and configure GoldenGate resources do not take effect immediately.
- * In these cases, the operation spawns an asynchronous workflow to fulfill teh request. Work
+ * In these cases, the operation spawns an asynchronous workflow to fulfill the request. Work
  * requests provide visibility into the status of these in-progress, long-running asynchronous
  * workflows. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

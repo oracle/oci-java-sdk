@@ -4,16 +4,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## 3.0.0-beta1 - 2022-10-25
+### Breaking Changes
+- HTTP client library is pluggable, choices offered are Jakarta EE 8/Jersey 2, or Jakarta EE 9/Jersey 3
+- The OCI Java SDK does not choose an HTTP client library for you, and there is no default. You have to explicitly choose one, by declaring a dependency on `oci-java-sdk-common-httpclient-jersey` or `oci-java-sdk-common-httpclient-jersey3`
+  - For examples, see the [bmc-other-examples/bmc-jersey-examples/pom.xml](https://github.com/oracle/oci-java-sdk/tree/master/bmc-other-examples/bmc-jersey-examples/pom.xml) and [bmc-other-examples/bmc-jersey3-examples/pom.xml](https://github.com/oracle/oci-java-sdk/tree/master/bmc-other-examples/bmc-jersey3-examples/pom.xml)
+- Guava has been removed, which lead to some breaking changes where Guava types have been replaced with JDK types:
+  - `com.google.common.base.Optional` has been replaced with `java.util.Optional`
+  - `com.google.common.base.Function` has been replaced with `java.util.function.Function`
+  - `com.google.common.base.Predicate` has been replaced with `java.util.function.Predicate`
+  - `com.google.common.base.Supplier` has been replaced with `java.util.function.Supplier`
+- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
+
+- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
+
+- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
+
+- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
+
+- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
+
 ### Added
 - Support for the Disaster Recovery service
 - Support for running code interactively with session applications using statements in the Data Flow service
 - Support for language custom models and language translation in the AI Language service
 
+## 3.0.0-beta2 - 2022-11-01
+### Added
+- Support for cloning from a backup from the last available timestamp in the Database service
+- Support for third-party scanning using Qualys in the Vulnerability Scanning service
+- Support for customer-provided encryption keys in the Logging Analytics service
+- Support for connections for database resources in the GoldenGate service
+
 ### Breaking Changes
-- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
-- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
-- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
-- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration$Vendor` has been removed in the Vulnerability Scanning service
 
 ## 2.46.0 - 2022-10-04
 ### Added

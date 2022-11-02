@@ -233,6 +233,42 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public AssignEncryptionKeyResponse assignEncryptionKey(AssignEncryptionKeyRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getAssignEncryptionKeyDetails(), "assignEncryptionKeyDetails is required");
+
+        return clientCall(request, AssignEncryptionKeyResponse::builder)
+                .logger(LOG, "assignEncryptionKey")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "AssignEncryptionKey",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/AssignEncryptionKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AssignEncryptionKeyRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("storage")
+                .appendPathParam("actions")
+                .appendPathParam("assignEncryptionKey")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AssignEncryptionKeyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AssignEncryptionKeyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", AssignEncryptionKeyResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
     public BatchGetBasicInfoResponse batchGetBasicInfo(BatchGetBasicInfoRequest request) {
 
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
@@ -3254,6 +3290,36 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListConfigWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListConfigWorkRequestsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListEncryptionKeyInfoResponse listEncryptionKeyInfo(
+            ListEncryptionKeyInfoRequest request) {
+
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        return clientCall(request, ListEncryptionKeyInfoResponse::builder)
+                .logger(LOG, "listEncryptionKeyInfo")
+                .serviceDetails(
+                        "LogAnalytics",
+                        "ListEncryptionKeyInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListEncryptionKeyInfo")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEncryptionKeyInfoRequest::builder)
+                .basePath("/20200601")
+                .appendPathParam("namespaces")
+                .appendPathParam(request.getNamespaceName())
+                .appendPathParam("storage")
+                .appendPathParam("encryptionKeyInfo")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection.class,
+                        ListEncryptionKeyInfoResponse.Builder::encryptionKeyInfoCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEncryptionKeyInfoResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

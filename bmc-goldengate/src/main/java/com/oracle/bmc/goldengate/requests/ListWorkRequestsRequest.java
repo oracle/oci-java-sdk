@@ -13,17 +13,29 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The ID of the resource in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * resource in which to list resources.
+     */
     private String resourceId;
 
-    /** The ID of the resource in which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * resource in which to list resources.
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -61,11 +73,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -75,11 +91,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The ID of the resource in which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resource in which to list resources.
+         */
         private String resourceId = null;
 
         /**
-         * The ID of the resource in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resource in which to list resources.
          *
          * @param resourceId the value to set
          * @return this builder instance
