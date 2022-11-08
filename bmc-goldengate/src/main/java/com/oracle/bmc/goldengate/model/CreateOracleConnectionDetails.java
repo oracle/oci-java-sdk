@@ -582,7 +582,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", wallet=").append(String.valueOf(this.wallet));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));

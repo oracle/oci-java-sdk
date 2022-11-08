@@ -540,7 +540,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "AddAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "AddAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/AddAgentDependency");
         java.util.function.Function<javax.ws.rs.core.Response, AddAgentDependencyResponse>
                 transformer =
                         AddAgentDependencyConverter.fromResponse(
@@ -580,7 +583,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ChangeAgentCompartment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ChangeAgentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/ChangeAgentCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeAgentCompartmentResponse>
                 transformer =
                         ChangeAgentCompartmentConverter.fromResponse(
@@ -623,7 +629,7 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
                         "OcbAgentSvc",
                         "ChangeAgentDependencyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/ChangeAgentDependencyCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAgentDependencyCompartmentResponse>
                 transformer =
@@ -668,7 +674,7 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
                         "OcbAgentSvc",
                         "ChangeEnvironmentCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/ChangeEnvironmentCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeEnvironmentCompartmentResponse>
                 transformer =
                         ChangeEnvironmentCompartmentConverter.fromResponse(
@@ -708,7 +714,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "CreateAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "CreateAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/CreateAgent");
         java.util.function.Function<javax.ws.rs.core.Response, CreateAgentResponse> transformer =
                 CreateAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -746,7 +755,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "CreateAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "CreateAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/CreateAgentDependency");
         java.util.function.Function<javax.ws.rs.core.Response, CreateAgentDependencyResponse>
                 transformer =
                         CreateAgentDependencyConverter.fromResponse(
@@ -785,7 +797,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "CreateEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "CreateEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/CreateEnvironment");
         java.util.function.Function<javax.ws.rs.core.Response, CreateEnvironmentResponse>
                 transformer =
                         CreateEnvironmentConverter.fromResponse(
@@ -824,7 +839,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "DeleteAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "DeleteAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/DeleteAgent");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteAgentResponse> transformer =
                 DeleteAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -858,7 +876,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "DeleteAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "DeleteAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/DeleteAgentDependency");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteAgentDependencyResponse>
                 transformer =
                         DeleteAgentDependencyConverter.fromResponse(
@@ -893,7 +914,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "DeleteEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "DeleteEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/DeleteEnvironment");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteEnvironmentResponse>
                 transformer =
                         DeleteEnvironmentConverter.fromResponse(
@@ -927,7 +951,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/GetAgent");
         java.util.function.Function<javax.ws.rs.core.Response, GetAgentResponse> transformer =
                 GetAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -959,7 +986,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/GetAgentDependency");
         java.util.function.Function<javax.ws.rs.core.Response, GetAgentDependencyResponse>
                 transformer =
                         GetAgentDependencyConverter.fromResponse(
@@ -993,7 +1023,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/GetEnvironment");
         java.util.function.Function<javax.ws.rs.core.Response, GetEnvironmentResponse> transformer =
                 GetEnvironmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1024,7 +1057,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetPlugin", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetPlugin",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/GetPlugin");
         java.util.function.Function<javax.ws.rs.core.Response, GetPluginResponse> transformer =
                 GetPluginConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1057,7 +1093,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListAgentDependencies", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListAgentDependencies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependencyCollection/ListAgentDependencies");
         java.util.function.Function<javax.ws.rs.core.Response, ListAgentDependenciesResponse>
                 transformer =
                         ListAgentDependenciesConverter.fromResponse(
@@ -1090,7 +1129,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListAgents", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListAgents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentCollection/ListAgents");
         java.util.function.Function<javax.ws.rs.core.Response, ListAgentsResponse> transformer =
                 ListAgentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1122,7 +1164,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListApplianceImages", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListApplianceImages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/ApplianceImageCollection/ListApplianceImages");
         java.util.function.Function<javax.ws.rs.core.Response, ListApplianceImagesResponse>
                 transformer =
                         ListApplianceImagesConverter.fromResponse(
@@ -1156,7 +1201,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListEnvironments", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/EnvironmentCollection/ListEnvironments");
         java.util.function.Function<javax.ws.rs.core.Response, ListEnvironmentsResponse>
                 transformer =
                         ListEnvironmentsConverter.fromResponse(
@@ -1192,7 +1240,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "RemoveAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "RemoveAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/RemoveAgentDependency");
         java.util.function.Function<javax.ws.rs.core.Response, RemoveAgentDependencyResponse>
                 transformer =
                         RemoveAgentDependencyConverter.fromResponse(
@@ -1231,7 +1282,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdateAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdateAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/UpdateAgent");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateAgentResponse> transformer =
                 UpdateAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1269,7 +1323,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdateAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdateAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/UpdateAgentDependency");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateAgentDependencyResponse>
                 transformer =
                         UpdateAgentDependencyConverter.fromResponse(
@@ -1308,7 +1365,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdateEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdateEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/UpdateEnvironment");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateEnvironmentResponse>
                 transformer =
                         UpdateEnvironmentConverter.fromResponse(
@@ -1346,7 +1406,10 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdatePlugin", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdatePlugin",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/UpdatePlugin");
         java.util.function.Function<javax.ws.rs.core.Response, UpdatePluginResponse> transformer =
                 UpdatePluginConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

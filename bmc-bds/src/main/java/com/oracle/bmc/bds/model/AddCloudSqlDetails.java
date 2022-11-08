@@ -214,7 +214,7 @@ public final class AddCloudSqlDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

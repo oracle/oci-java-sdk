@@ -237,7 +237,7 @@ public final class UpdateOggDeploymentDetails
         sb.append("UpdateOggDeploymentDetails(");
         sb.append("super=").append(super.toString());
         sb.append("adminUsername=").append(String.valueOf(this.adminUsername));
-        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(")");

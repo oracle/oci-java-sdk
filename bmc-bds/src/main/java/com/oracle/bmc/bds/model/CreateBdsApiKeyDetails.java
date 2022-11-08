@@ -228,7 +228,7 @@ public final class CreateBdsApiKeyDetails
         sb.append("CreateBdsApiKeyDetails(");
         sb.append("super=").append(super.toString());
         sb.append("userId=").append(String.valueOf(this.userId));
-        sb.append(", passphrase=").append(String.valueOf(this.passphrase));
+        sb.append(", passphrase=").append("<redacted>");
         sb.append(", defaultRegion=").append(String.valueOf(this.defaultRegion));
         sb.append(", keyAlias=").append(String.valueOf(this.keyAlias));
         sb.append(")");

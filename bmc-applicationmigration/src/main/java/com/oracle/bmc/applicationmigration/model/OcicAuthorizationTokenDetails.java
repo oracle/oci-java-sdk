@@ -146,7 +146,7 @@ public final class OcicAuthorizationTokenDetails extends AuthorizationDetails {
         sb.append("OcicAuthorizationTokenDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", clientAppUrl=").append(String.valueOf(this.clientAppUrl));
-        sb.append(", accessToken=").append(String.valueOf(this.accessToken));
+        sb.append(", accessToken=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

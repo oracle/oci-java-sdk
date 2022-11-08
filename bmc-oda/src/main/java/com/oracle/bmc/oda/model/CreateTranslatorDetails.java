@@ -323,7 +323,7 @@ public final class CreateTranslatorDetails
         sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", baseUrl=").append(String.valueOf(this.baseUrl));
-        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", authToken=").append("<redacted>");
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));

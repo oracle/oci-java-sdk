@@ -246,8 +246,8 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", region=").append(String.valueOf(this.region));
-        sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
-        sb.append(", secretAccessKey=").append(String.valueOf(this.secretAccessKey));
+        sb.append(", accessKeyId=").append("<redacted>");
+        sb.append(", secretAccessKey=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

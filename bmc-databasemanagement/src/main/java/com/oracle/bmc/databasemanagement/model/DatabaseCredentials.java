@@ -252,7 +252,7 @@ public final class DatabaseCredentials extends com.oracle.bmc.http.internal.Expl
         sb.append("DatabaseCredentials(");
         sb.append("super=").append(super.toString());
         sb.append("userName=").append(String.valueOf(this.userName));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(")");

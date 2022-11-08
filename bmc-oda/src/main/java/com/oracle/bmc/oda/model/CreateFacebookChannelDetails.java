@@ -256,8 +256,8 @@ public final class CreateFacebookChannelDetails extends CreateChannelDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFacebookChannelDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", appSecret=").append(String.valueOf(this.appSecret));
-        sb.append(", pageAccessToken=").append(String.valueOf(this.pageAccessToken));
+        sb.append(", appSecret=").append("<redacted>");
+        sb.append(", pageAccessToken=").append("<redacted>");
         sb.append(", botId=").append(String.valueOf(this.botId));
         sb.append(")");
         return sb.toString();

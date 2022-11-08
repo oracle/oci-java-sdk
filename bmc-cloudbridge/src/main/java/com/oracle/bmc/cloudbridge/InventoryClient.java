@@ -539,7 +539,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "AnalyzeAssets", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "AnalyzeAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetAggregation/AnalyzeAssets");
         java.util.function.Function<javax.ws.rs.core.Response, AnalyzeAssetsResponse> transformer =
                 AnalyzeAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -573,7 +576,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ChangeAssetCompartment", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ChangeAssetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetCompartmentResponse>
                 transformer =
                         ChangeAssetCompartmentConverter.fromResponse(
@@ -612,7 +618,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ChangeAssetTags", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ChangeAssetTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetTags");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetTagsResponse>
                 transformer =
                         ChangeAssetTagsConverter.fromResponse(
@@ -651,7 +660,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "CreateAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "CreateAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/CreateAsset");
         java.util.function.Function<javax.ws.rs.core.Response, CreateAssetResponse> transformer =
                 CreateAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -688,7 +700,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "CreateInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "CreateInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/CreateInventory");
         java.util.function.Function<javax.ws.rs.core.Response, CreateInventoryResponse>
                 transformer =
                         CreateInventoryConverter.fromResponse(
@@ -726,7 +741,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "DeleteAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "DeleteAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/DeleteAsset");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteAssetResponse> transformer =
                 DeleteAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -759,7 +777,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "DeleteInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "DeleteInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/DeleteInventory");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteInventoryResponse>
                 transformer =
                         DeleteInventoryConverter.fromResponse(
@@ -793,7 +814,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "GetAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "GetAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/GetAsset");
         java.util.function.Function<javax.ws.rs.core.Response, GetAssetResponse> transformer =
                 GetAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -825,7 +849,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "GetInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "GetInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/GetInventory");
         java.util.function.Function<javax.ws.rs.core.Response, GetInventoryResponse> transformer =
                 GetInventoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -858,7 +885,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ImportInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ImportInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ImportInventory");
         java.util.function.Function<javax.ws.rs.core.Response, ImportInventoryResponse>
                 transformer =
                         ImportInventoryConverter.fromResponse(
@@ -895,7 +925,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListAssets", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ListAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetCollection/ListAssets");
         java.util.function.Function<javax.ws.rs.core.Response, ListAssetsResponse> transformer =
                 ListAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -928,7 +961,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListHistoricalMetrics", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ListHistoricalMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/ListHistoricalMetrics");
         java.util.function.Function<javax.ws.rs.core.Response, ListHistoricalMetricsResponse>
                 transformer =
                         ListHistoricalMetricsConverter.fromResponse(
@@ -962,7 +998,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListInventories", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ListInventories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ListInventories");
         java.util.function.Function<javax.ws.rs.core.Response, ListInventoriesResponse>
                 transformer =
                         ListInventoriesConverter.fromResponse(
@@ -997,7 +1036,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "SubmitHistoricalMetrics", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "SubmitHistoricalMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/SubmitHistoricalMetrics");
         java.util.function.Function<javax.ws.rs.core.Response, SubmitHistoricalMetricsResponse>
                 transformer =
                         SubmitHistoricalMetricsConverter.fromResponse(
@@ -1035,7 +1077,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "UpdateAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "UpdateAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/UpdateAsset");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateAssetResponse> transformer =
                 UpdateAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1071,7 +1116,10 @@ public class InventoryClient implements Inventory {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "UpdateInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "UpdateInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/UpdateInventory");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateInventoryResponse>
                 transformer =
                         UpdateInventoryConverter.fromResponse(

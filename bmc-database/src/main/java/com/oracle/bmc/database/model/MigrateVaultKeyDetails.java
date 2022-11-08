@@ -267,8 +267,8 @@ public final class MigrateVaultKeyDetails
         sb.append("kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
-        sb.append(", tdeWalletPassword=").append(String.valueOf(this.tdeWalletPassword));
-        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", tdeWalletPassword=").append("<redacted>");
+        sb.append(", adminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

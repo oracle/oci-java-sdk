@@ -260,7 +260,7 @@ public final class CreateFusionEnvironmentAdminUserDetails
         sb.append("CreateFusionEnvironmentAdminUserDetails(");
         sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));

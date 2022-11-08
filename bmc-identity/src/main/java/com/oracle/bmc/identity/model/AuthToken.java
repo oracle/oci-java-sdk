@@ -486,7 +486,7 @@ public final class AuthToken extends com.oracle.bmc.http.internal.ExplicitlySetB
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthToken(");
         sb.append("super=").append(super.toString());
-        sb.append("token=").append(String.valueOf(this.token));
+        sb.append("token=").append("<redacted>");
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", description=").append(String.valueOf(this.description));

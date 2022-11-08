@@ -72,6 +72,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStorageCapacityCloudExadataInfrastructureResponse>
+            addStorageCapacityCloudExadataInfrastructure(
+                    AddStorageCapacityCloudExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddStorageCapacityCloudExadataInfrastructureRequest,
+                                    AddStorageCapacityCloudExadataInfrastructureResponse>
+                            handler);
+
+    /**
      * Makes the storage capacity from additional storage servers available for VM Cluster consumption. Applies to Exadata Cloud@Customer instances only.
      *
      *
@@ -88,6 +107,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     AddStorageCapacityExadataInfrastructureRequest,
                                     AddStorageCapacityExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Add Virtual Machines to the Cloud VM cluster. Applies to Exadata Cloud instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddVirtualMachineToCloudVmClusterResponse>
+            addVirtualMachineToCloudVmCluster(
+                    AddVirtualMachineToCloudVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddVirtualMachineToCloudVmClusterRequest,
+                                    AddVirtualMachineToCloudVmClusterResponse>
                             handler);
 
     /**
@@ -2993,6 +3031,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabaseRefreshableClonesResponse>
+            listAutonomousDatabaseRefreshableClones(
+                    ListAutonomousDatabaseRefreshableClonesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseRefreshableClonesRequest,
+                                    ListAutonomousDatabaseRefreshableClonesResponse>
+                            handler);
+
+    /**
      * Gets a list of Autonomous Databases based on the query parameters specified.
      *
      *
@@ -4014,6 +4071,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             RemoteClonePluggableDatabaseRequest,
                             RemoteClonePluggableDatabaseResponse>
                     handler);
+
+    /**
+     * Remove Virtual Machines from the Cloud VM cluster. Applies to Exadata Cloud instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveVirtualMachineFromCloudVmClusterResponse>
+            removeVirtualMachineFromCloudVmCluster(
+                    RemoveVirtualMachineFromCloudVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveVirtualMachineFromCloudVmClusterRequest,
+                                    RemoveVirtualMachineFromCloudVmClusterResponse>
+                            handler);
 
     /**
      * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.

@@ -220,7 +220,7 @@ public final class AddBlockStorageDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddBlockStorageDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
         sb.append(")");

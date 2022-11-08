@@ -34,7 +34,10 @@ public final class TemplateCategorySummary
     public static class Builder {
         /**
          * Unique identifier for the template category.
-         * Possible values are {@code 0} (Quick Starts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Template category labels are displayed in the Console page listing templates.
+         * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+         * Each private template (category 3) is available in the compartment where it was created.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -42,7 +45,10 @@ public final class TemplateCategorySummary
 
         /**
          * Unique identifier for the template category.
-         * Possible values are {@code 0} (Quick Starts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Template category labels are displayed in the Console page listing templates.
+         * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+         * Each private template (category 3) is available in the compartment where it was created.
          *
          * @param id the value to set
          * @return this builder
@@ -105,7 +111,10 @@ public final class TemplateCategorySummary
 
     /**
      * Unique identifier for the template category.
-     * Possible values are {@code 0} (Quick Starts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Template category labels are displayed in the Console page listing templates.
+     * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+     * Each private template (category 3) is available in the compartment where it was created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -113,7 +122,10 @@ public final class TemplateCategorySummary
 
     /**
      * Unique identifier for the template category.
-     * Possible values are {@code 0} (Quick Starts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Template category labels are displayed in the Console page listing templates.
+     * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+     * Each private template (category 3) is available in the compartment where it was created.
      *
      * @return the value
      **/

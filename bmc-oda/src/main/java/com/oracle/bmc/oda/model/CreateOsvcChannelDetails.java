@@ -471,7 +471,7 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", userName=").append(String.valueOf(this.userName));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", totalSessionCount=").append(String.valueOf(this.totalSessionCount));
         sb.append(", channelService=").append(String.valueOf(this.channelService));
         sb.append(", authenticationProviderName=")

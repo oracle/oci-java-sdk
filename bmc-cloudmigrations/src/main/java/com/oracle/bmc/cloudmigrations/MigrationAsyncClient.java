@@ -450,7 +450,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -498,7 +501,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "ChangeMigrationCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/ChangeMigrationCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
                 transformer =
@@ -555,7 +558,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "ChangeMigrationPlanCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ChangeMigrationPlanCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMigrationPlanCompartmentResponse>
                 transformer =
@@ -614,7 +617,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "ChangeReplicationScheduleCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/ChangeReplicationScheduleCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeReplicationScheduleCompartmentResponse>
                 transformer =
@@ -668,7 +671,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateMigration", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "CreateMigration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/CreateMigration");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationResponse>
                 transformer =
                         CreateMigrationConverter.fromResponse(
@@ -717,7 +723,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateMigrationAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "CreateMigrationAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/CreateMigrationAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationAssetResponse>
                 transformer =
                         CreateMigrationAssetConverter.fromResponse(
@@ -767,7 +776,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "CreateMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/CreateMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMigrationPlanResponse>
                 transformer =
                         CreateMigrationPlanConverter.fromResponse(
@@ -820,7 +832,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "CreateReplicationSchedule",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/CreateReplicationSchedule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateReplicationScheduleResponse>
                 transformer =
@@ -872,7 +884,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "CreateTargetAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "CreateTargetAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/CreateTargetAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateTargetAssetResponse>
                 transformer =
                         CreateTargetAssetConverter.fromResponse(
@@ -920,7 +935,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 DeleteMigrationConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteMigration", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "DeleteMigration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/DeleteMigration");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationResponse>
                 transformer =
                         DeleteMigrationConverter.fromResponse(
@@ -963,7 +981,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 DeleteMigrationAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteMigrationAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "DeleteMigrationAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/DeleteMigrationAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationAssetResponse>
                 transformer =
                         DeleteMigrationAssetConverter.fromResponse(
@@ -1007,7 +1028,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 DeleteMigrationPlanConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "DeleteMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/DeleteMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMigrationPlanResponse>
                 transformer =
                         DeleteMigrationPlanConverter.fromResponse(
@@ -1054,7 +1078,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "DeleteReplicationSchedule",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/DeleteReplicationSchedule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteReplicationScheduleResponse>
                 transformer =
@@ -1100,7 +1124,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 DeleteTargetAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "DeleteTargetAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "DeleteTargetAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/DeleteTargetAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteTargetAssetResponse>
                 transformer =
                         DeleteTargetAssetConverter.fromResponse(
@@ -1144,7 +1171,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ExecuteMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ExecuteMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ExecuteMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, ExecuteMigrationPlanResponse>
                 transformer =
                         ExecuteMigrationPlanConverter.fromResponse(
@@ -1198,7 +1228,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ExportMigrationPlanConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ExportMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ExportMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ExportMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, ExportMigrationPlanResponse>
                 transformer =
                         ExportMigrationPlanConverter.fromResponse(
@@ -1241,7 +1274,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetMigrationConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetMigration", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetMigration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/GetMigration");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMigrationResponse>
                 transformer =
                         GetMigrationConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1283,7 +1319,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetMigrationAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetMigrationAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetMigrationAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/GetMigrationAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMigrationAssetResponse>
                 transformer =
                         GetMigrationAssetConverter.fromResponse(
@@ -1326,7 +1365,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetMigrationPlanConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/GetMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMigrationPlanResponse>
                 transformer =
                         GetMigrationPlanConverter.fromResponse(
@@ -1369,7 +1411,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetReplicationProgressConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetReplicationProgress", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetReplicationProgress",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/GetReplicationProgress");
         final java.util.function.Function<javax.ws.rs.core.Response, GetReplicationProgressResponse>
                 transformer =
                         GetReplicationProgressConverter.fromResponse(
@@ -1413,7 +1458,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetReplicationScheduleConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetReplicationSchedule", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetReplicationSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/GetReplicationSchedule");
         final java.util.function.Function<javax.ws.rs.core.Response, GetReplicationScheduleResponse>
                 transformer =
                         GetReplicationScheduleConverter.fromResponse(
@@ -1457,7 +1505,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetTargetAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetTargetAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetTargetAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/GetTargetAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, GetTargetAssetResponse>
                 transformer =
                         GetTargetAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1499,7 +1550,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1549,7 +1603,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ImportMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ImportMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ImportMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, ImportMigrationPlanResponse>
                 transformer =
                         ImportMigrationPlanConverter.fromResponse(
@@ -1603,7 +1660,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListAvailableShapesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListAvailableShapes", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListAvailableShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/AvailableShapesCollection/ListAvailableShapes");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAvailableShapesResponse>
                 transformer =
                         ListAvailableShapesConverter.fromResponse(
@@ -1647,7 +1707,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListMigrationAssetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListMigrationAssets", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListMigrationAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAssetCollection/ListMigrationAssets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMigrationAssetsResponse>
                 transformer =
                         ListMigrationAssetsConverter.fromResponse(
@@ -1691,7 +1754,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListMigrationPlansConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListMigrationPlans", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListMigrationPlans",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlanCollection/ListMigrationPlans");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMigrationPlansResponse>
                 transformer =
                         ListMigrationPlansConverter.fromResponse(
@@ -1734,7 +1800,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListMigrationsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListMigrations", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListMigrations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationCollection/ListMigrations");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMigrationsResponse>
                 transformer =
                         ListMigrationsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1776,7 +1845,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListReplicationSchedulesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListReplicationSchedules", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListReplicationSchedules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationScheduleCollection/ListReplicationSchedules");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListReplicationSchedulesResponse>
                 transformer =
@@ -1821,7 +1893,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListTargetAssetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListTargetAssets", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListTargetAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAssetCollection/ListTargetAssets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListTargetAssetsResponse>
                 transformer =
                         ListTargetAssetsConverter.fromResponse(
@@ -1864,7 +1939,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1908,7 +1986,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1952,7 +2033,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1996,7 +2080,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "RefreshMigration", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "RefreshMigration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/RefreshMigration");
         final java.util.function.Function<javax.ws.rs.core.Response, RefreshMigrationResponse>
                 transformer =
                         RefreshMigrationConverter.fromResponse(
@@ -2040,7 +2127,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "RefreshMigrationAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "RefreshMigrationAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/RefreshMigrationAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, RefreshMigrationAssetResponse>
                 transformer =
                         RefreshMigrationAssetConverter.fromResponse(
@@ -2085,7 +2175,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "RefreshMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "RefreshMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/RefreshMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, RefreshMigrationPlanResponse>
                 transformer =
                         RefreshMigrationPlanConverter.fromResponse(
@@ -2130,7 +2223,10 @@ public class MigrationAsyncClient implements MigrationAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "StartAssetReplication", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "StartAssetReplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/StartAssetReplication");
         final java.util.function.Function<javax.ws.rs.core.Response, StartAssetReplicationResponse>
                 transformer =
                         StartAssetReplicationConverter.fromResponse(
@@ -2178,7 +2274,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "StartMigrationReplication",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/StartMigrationReplication");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, StartMigrationReplicationResponse>
                 transformer =
@@ -2224,7 +2320,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateMigrationConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateMigration", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "UpdateMigration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/UpdateMigration");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationResponse>
                 transformer =
                         UpdateMigrationConverter.fromResponse(
@@ -2272,7 +2371,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateMigrationAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateMigrationAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "UpdateMigrationAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/UpdateMigrationAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationAssetResponse>
                 transformer =
                         UpdateMigrationAssetConverter.fromResponse(
@@ -2321,7 +2423,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateMigrationPlanConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateMigrationPlan", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "UpdateMigrationPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/UpdateMigrationPlan");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMigrationPlanResponse>
                 transformer =
                         UpdateMigrationPlanConverter.fromResponse(
@@ -2373,7 +2478,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                         "Migration",
                         "UpdateReplicationSchedule",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/UpdateReplicationSchedule");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateReplicationScheduleResponse>
                 transformer =
@@ -2424,7 +2529,10 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateTargetAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Migration", "UpdateTargetAsset", ib.getRequestUri().toString(), "");
+                        "Migration",
+                        "UpdateTargetAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/UpdateTargetAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateTargetAssetResponse>
                 transformer =
                         UpdateTargetAssetConverter.fromResponse(

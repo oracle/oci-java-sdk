@@ -452,7 +452,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", isRerun=").append(String.valueOf(this.isRerun));
         sb.append(", tablespace=").append(String.valueOf(this.tablespace));
         sb.append(", isIgnoreErrorsEnabled=").append(String.valueOf(this.isIgnoreErrorsEnabled));
-        sb.append(", seed=").append(String.valueOf(this.seed));
+        sb.append(", seed=").append("<redacted>");
         sb.append(", isMoveInterimTablesEnabled=")
                 .append(String.valueOf(this.isMoveInterimTablesEnabled));
         sb.append(", isExecuteSavedScriptEnabled=")

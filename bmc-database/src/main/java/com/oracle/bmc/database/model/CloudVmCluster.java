@@ -43,6 +43,10 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
         "domain",
         "cpuCoreCount",
         "ocpuCount",
+        "memorySizeInGBs",
+        "dbNodeStorageSizeInGBs",
+        "dataStorageSizeInTBs",
+        "dbServers",
         "clusterName",
         "dataStoragePercentage",
         "isLocalBackupEnabled",
@@ -87,6 +91,10 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
             String domain,
             Integer cpuCoreCount,
             Float ocpuCount,
+            Integer memorySizeInGBs,
+            Integer dbNodeStorageSizeInGBs,
+            Double dataStorageSizeInTBs,
+            java.util.List<String> dbServers,
             String clusterName,
             Integer dataStoragePercentage,
             Boolean isLocalBackupEnabled,
@@ -130,6 +138,10 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
         this.domain = domain;
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.dbServers = dbServers;
         this.clusterName = clusterName;
         this.dataStoragePercentage = dataStoragePercentage;
         this.isLocalBackupEnabled = isLocalBackupEnabled;
@@ -534,6 +546,70 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
+         * The memory to be allocated in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        /**
+         * The memory to be allocated in GBs.
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+        /**
+         * The local node storage to be allocated in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        /**
+         * The local node storage to be allocated in GBs.
+         * @param dbNodeStorageSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+        /**
+         * The data disk group size to be allocated in TBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+        private Double dataStorageSizeInTBs;
+
+        /**
+         * The data disk group size to be allocated in TBs.
+         * @param dataStorageSizeInTBs the value to set
+         * @return this builder
+         **/
+        public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
+            this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+            this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+        /**
+         * The list of Db servers.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        /**
+         * The list of Db servers.
+         * @param dbServers the value to set
+         * @return this builder
+         **/
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
+            return this;
+        }
+        /**
          * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
          *
          **/
@@ -932,6 +1008,10 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
                             this.domain,
                             this.cpuCoreCount,
                             this.ocpuCount,
+                            this.memorySizeInGBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.dataStorageSizeInTBs,
+                            this.dbServers,
                             this.clusterName,
                             this.dataStoragePercentage,
                             this.isLocalBackupEnabled,
@@ -1025,6 +1105,18 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
             }
             if (model.wasPropertyExplicitlySet("clusterName")) {
                 this.clusterName(model.getClusterName());
@@ -1487,6 +1579,62 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
      **/
     public Float getOcpuCount() {
         return ocpuCount;
+    }
+
+    /**
+     * The memory to be allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    private final Integer memorySizeInGBs;
+
+    /**
+     * The memory to be allocated in GBs.
+     * @return the value
+     **/
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
+
+    /**
+     * The local node storage to be allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    private final Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The local node storage to be allocated in GBs.
+     * @return the value
+     **/
+    public Integer getDbNodeStorageSizeInGBs() {
+        return dbNodeStorageSizeInGBs;
+    }
+
+    /**
+     * The data disk group size to be allocated in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+    private final Double dataStorageSizeInTBs;
+
+    /**
+     * The data disk group size to be allocated in TBs.
+     * @return the value
+     **/
+    public Double getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
+
+    /**
+     * The list of Db servers.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    private final java.util.List<String> dbServers;
+
+    /**
+     * The list of Db servers.
+     * @return the value
+     **/
+    public java.util.List<String> getDbServers() {
+        return dbServers;
     }
 
     /**
@@ -1955,6 +2103,10 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", domain=").append(String.valueOf(this.domain));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", clusterName=").append(String.valueOf(this.clusterName));
         sb.append(", dataStoragePercentage=").append(String.valueOf(this.dataStoragePercentage));
         sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
@@ -2014,6 +2166,11 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.clusterName, other.clusterName)
                 && java.util.Objects.equals(this.dataStoragePercentage, other.dataStoragePercentage)
                 && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
@@ -2090,6 +2247,20 @@ public final class CloudVmCluster extends com.oracle.bmc.http.internal.Explicitl
         result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbNodeStorageSizeInGBs == null
+                                ? 43
+                                : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result = (result * PRIME) + (this.clusterName == null ? 43 : this.clusterName.hashCode());
         result =
                 (result * PRIME)

@@ -302,11 +302,10 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
         sb.append("PdbConversionToNewDatabaseDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", cdbName=").append(String.valueOf(this.cdbName));
-        sb.append(", cdbAdminPassword=").append(String.valueOf(this.cdbAdminPassword));
-        sb.append(", pdbAdminPassword=").append(String.valueOf(this.pdbAdminPassword));
-        sb.append(", cdbTdeWalletPassword=").append(String.valueOf(this.cdbTdeWalletPassword));
-        sb.append(", nonCdbTdeWalletPassword=")
-                .append(String.valueOf(this.nonCdbTdeWalletPassword));
+        sb.append(", cdbAdminPassword=").append("<redacted>");
+        sb.append(", pdbAdminPassword=").append("<redacted>");
+        sb.append(", cdbTdeWalletPassword=").append("<redacted>");
+        sb.append(", nonCdbTdeWalletPassword=").append("<redacted>");
         sb.append(", additionalCdbParams=").append(String.valueOf(this.additionalCdbParams));
         sb.append(")");
         return sb.toString();

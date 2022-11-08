@@ -227,6 +227,7 @@ public final class AddWorkerNodesDetails
     public enum NodeType {
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
+        Edge("EDGE"),
         ;
 
         private final String value;
@@ -321,7 +322,7 @@ public final class AddWorkerNodesDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddWorkerNodesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(", numberOfWorkerNodes=").append(String.valueOf(this.numberOfWorkerNodes));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
         sb.append(", shape=").append(String.valueOf(this.shape));

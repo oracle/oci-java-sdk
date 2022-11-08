@@ -131,7 +131,7 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDbSystemSourceImportFromUrlDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", sourceUrl=").append(String.valueOf(this.sourceUrl));
+        sb.append(", sourceUrl=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

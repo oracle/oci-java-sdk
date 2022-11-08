@@ -141,7 +141,7 @@ public final class InstallPatchDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("InstallPatchDetails(");
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

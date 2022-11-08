@@ -100,6 +100,22 @@ public class ListApplicationDependencyVulnerabilitiesConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getRootNodeId() != null) {
+            target =
+                    target.queryParam(
+                            "rootNodeId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRootNodeId()));
+        }
+
+        if (request.getDepth() != null) {
+            target =
+                    target.queryParam(
+                            "depth",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDepth()));
+        }
+
         if (request.getGav() != null) {
             target =
                     target.queryParam(
