@@ -395,7 +395,7 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
         sb.append(", domainName=").append(String.valueOf(this.domainName));
         sb.append(", hostNamePrefix=").append(String.valueOf(this.hostNamePrefix));
         sb.append(", userName=").append(String.valueOf(this.userName));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", clientType=").append(String.valueOf(this.clientType));
         sb.append(")");
         return sb.toString();

@@ -224,8 +224,8 @@ public final class UpdateBdsMetastoreConfigurationDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
-        sb.append(", bdsApiKeyPassphrase=").append(String.valueOf(this.bdsApiKeyPassphrase));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", bdsApiKeyPassphrase=").append("<redacted>");
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

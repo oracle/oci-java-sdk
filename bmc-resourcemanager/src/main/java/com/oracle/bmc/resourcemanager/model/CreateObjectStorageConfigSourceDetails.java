@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Details for the Object Storage bucket that contains Terraform configuration files.
+ * Creation details for an Object Storage bucket that contains Terraform configuration files.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

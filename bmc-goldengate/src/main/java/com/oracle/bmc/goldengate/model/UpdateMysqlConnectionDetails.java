@@ -780,7 +780,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         sb.append("UpdateMysqlConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));

@@ -380,7 +380,7 @@ public final class CreateIosChannelResult extends CreateChannelResult {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateIosChannelResult(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", secretKey=").append("<redacted>");
         sb.append(", maxTokenExpirationTimeInMinutes=")
                 .append(String.valueOf(this.maxTokenExpirationTimeInMinutes));
         sb.append(", isClientAuthenticationEnabled=")

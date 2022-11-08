@@ -449,7 +449,10 @@ public class CommonAsyncClient implements CommonAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -492,7 +495,10 @@ public class CommonAsyncClient implements CommonAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -534,7 +540,10 @@ public class CommonAsyncClient implements CommonAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -578,7 +587,10 @@ public class CommonAsyncClient implements CommonAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -622,7 +634,10 @@ public class CommonAsyncClient implements CommonAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(

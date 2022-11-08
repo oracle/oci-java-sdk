@@ -107,7 +107,7 @@ public final class ResetFusionEnvironmentPasswordDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResetFusionEnvironmentPasswordDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("password=").append(String.valueOf(this.password));
+        sb.append("password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

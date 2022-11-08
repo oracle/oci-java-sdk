@@ -118,7 +118,10 @@ public interface ResourceManagerAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a Stack and it's associated Jobs into a different compartment.
+     * Moves a stack (and its associated jobs) into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -208,10 +211,10 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * Creates a stack in the specified compartment.
      * You can create a stack from a Terraform configuration.
      * The Terraform configuration can be directly uploaded or referenced from a source code control system.
-     * You can also create a stack from an existing compartment.
+     * You can also create a stack from an existing compartment, which generates a Terraform configuration.
      * You can also upload the Terraform configuration from an Object Storage bucket.
      * For more information, see
-     * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#createstack-all).
+     * [Creating Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -276,7 +279,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified stack object.
+     * Deletes the specified stack.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -338,7 +341,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns the specified job along with the job details.
+     * Gets the properties of the specified job.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -384,7 +387,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetJobLogsRequest, GetJobLogsResponse> handler);
 
     /**
-     * Returns a raw log file for the specified job. The raw log file contains console log entries in text format. The maximum number of entries in a file is 100,000.
+     * Returns the raw log file for the specified job in text format.
+     * The file includes a maximum of 100,000 log entries.
      *
      *
      * @param request The request object containing the details to send
@@ -401,8 +405,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the Terraform configuration file for the specified job in .zip format.
-     * Returns an error if no zip file is found.
+     * Returns the Terraform configuration for the specified job in zip format.
+     * If no zip file is found, returns an error.
      *
      *
      * @param request The request object containing the details to send
@@ -420,7 +424,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Returns the output of the specified Terraform plan job in binary or JSON format.
      * For information about running Terraform plan jobs, see
-     * [To run a plan job](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#PlanJobRun).
+     * [Creating Plan Jobs](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -484,7 +488,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a stack using the stack ID.
+     * Gets the specified stack.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -498,7 +502,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetStackRequest, GetStackResponse> handler);
 
     /**
-     * Returns the Terraform configuration file in .zip format for the specified stack.
+     * Returns the Terraform configuration file for the specified stack in zip format.
      * Returns an error if no zip file is found.
      *
      *
@@ -561,7 +565,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the Terraform configuration file in .zip format for the specified template.
+     * Returns the Terraform configuration file in zip format for the specified template.
      * Returns an error if no zip file is found.
      *
      *
@@ -579,7 +583,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return the given work request.
+     * Returns the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -615,11 +619,11 @@ public interface ResourceManagerAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of jobs in a stack or compartment, ordered by time created.
+     * Lists jobs according to the specified filter. By default, the list is ordered by time created.
      * <p>
      * - To list all jobs in a stack, provide the stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * - To list all jobs in a compartment, provide the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * - To return a specific job, provide the job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To return a specific job, provide the job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). (Equivalent to {@link #getStack(GetStackRequest, Consumer, Consumer) getStack}.)
      *
      *
      * @param request The request object containing the details to send
@@ -653,7 +657,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of supported services for Resource Discovery. For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     * Returns a list of supported services for [Resource Discovery](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm).
+     * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
      *
      *
      * @param request The request object containing the details to send
@@ -695,9 +700,9 @@ public interface ResourceManagerAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of stacks.
+     * Lists stacks according to the specified filter.
      * - If called using the compartment ID, returns all stacks in the specified compartment.
-     * - If called using the stack ID, returns the specified stack.
+     * - If called using the stack ID, returns the specified stack. (See also {@link #getStack(GetStackRequest, Consumer, Consumer) getStack}.)
      *
      *
      * @param request The request object containing the details to send
@@ -763,7 +768,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a paginated list of errors for the specified work request.
      *
      *
      * @param request The request object containing the details to send
@@ -780,7 +785,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for the specified work request.
      *
      *
      * @param request The request object containing the details to send
@@ -797,7 +802,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the work requests in a given compartment or for a given resource.
+     * Lists the work requests in the specified compartment or for the specified resource.
      *
      *
      * @param request The request object containing the details to send
@@ -864,12 +869,11 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified stack object.
+     * Updates the specified stack.
      * Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan.
      * For more information, see
-     * [To update a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#UpdateStack) and
-     * [To edit a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#EditStack).
+     * [Updating Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
      *
      *
      * @param request The request object containing the details to send

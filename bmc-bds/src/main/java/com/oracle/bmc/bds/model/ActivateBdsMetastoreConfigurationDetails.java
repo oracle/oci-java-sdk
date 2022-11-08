@@ -143,8 +143,8 @@ public final class ActivateBdsMetastoreConfigurationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActivateBdsMetastoreConfigurationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("bdsApiKeyPassphrase=").append(String.valueOf(this.bdsApiKeyPassphrase));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("bdsApiKeyPassphrase=").append("<redacted>");
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

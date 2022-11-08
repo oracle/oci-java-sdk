@@ -596,7 +596,7 @@ public final class UpdateAuthenticationProviderDetails
                 .append(String.valueOf(this.shortAuthorizationCodeRequestUrl));
         sb.append(", revokeTokenEndpointUrl=").append(String.valueOf(this.revokeTokenEndpointUrl));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
-        sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
+        sb.append(", clientSecret=").append("<redacted>");
         sb.append(", scopes=").append(String.valueOf(this.scopes));
         sb.append(", subjectClaim=").append(String.valueOf(this.subjectClaim));
         sb.append(", refreshTokenRetentionPeriodInDays=")

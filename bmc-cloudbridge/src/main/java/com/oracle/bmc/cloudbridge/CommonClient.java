@@ -539,7 +539,10 @@ public class CommonClient implements Common {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -574,7 +577,10 @@ public class CommonClient implements Common {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -607,7 +613,10 @@ public class CommonClient implements Common {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -641,7 +650,10 @@ public class CommonClient implements Common {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -675,7 +687,10 @@ public class CommonClient implements Common {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Common", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Common",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(

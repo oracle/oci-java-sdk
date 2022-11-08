@@ -311,7 +311,7 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
         sb.append(", sslCaCertificate=").append(String.valueOf(this.sslCaCertificate));
         sb.append(")");

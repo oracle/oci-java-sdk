@@ -106,7 +106,7 @@ public final class StartBdsInstanceDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StartBdsInstanceDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

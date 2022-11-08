@@ -184,7 +184,7 @@ public final class RemoveNodeDetails extends com.oracle.bmc.http.internal.Explic
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RemoveNodeDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(", isForceRemoveEnabled=").append(String.valueOf(this.isForceRemoveEnabled));
         sb.append(", nodeId=").append(String.valueOf(this.nodeId));
         sb.append(")");

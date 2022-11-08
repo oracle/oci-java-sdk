@@ -134,7 +134,7 @@ public final class SqlTuningTaskPasswordCredentialDetails extends SqlTuningTaskC
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningTaskPasswordCredentialDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

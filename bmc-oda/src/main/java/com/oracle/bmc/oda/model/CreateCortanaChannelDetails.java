@@ -257,7 +257,7 @@ public final class CreateCortanaChannelDetails extends CreateChannelDetails {
         sb.append("CreateCortanaChannelDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", msaAppId=").append(String.valueOf(this.msaAppId));
-        sb.append(", msaAppPassword=").append(String.valueOf(this.msaAppPassword));
+        sb.append(", msaAppPassword=").append("<redacted>");
         sb.append(", botId=").append(String.valueOf(this.botId));
         sb.append(")");
         return sb.toString();

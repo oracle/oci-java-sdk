@@ -517,7 +517,7 @@ public final class CreateOSSChannelDetails extends CreateChannelDetails {
         sb.append(", tenancyName=").append(String.valueOf(this.tenancyName));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", streamPoolId=").append(String.valueOf(this.streamPoolId));
-        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", authToken=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

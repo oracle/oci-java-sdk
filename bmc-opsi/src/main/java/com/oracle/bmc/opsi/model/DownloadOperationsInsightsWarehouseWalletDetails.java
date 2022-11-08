@@ -112,8 +112,7 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DownloadOperationsInsightsWarehouseWalletDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("operationsInsightsWarehouseWalletPassword=")
-                .append(String.valueOf(this.operationsInsightsWarehouseWalletPassword));
+        sb.append("operationsInsightsWarehouseWalletPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

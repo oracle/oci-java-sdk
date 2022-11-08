@@ -321,7 +321,7 @@ public final class UpdateConnectionFromMySQL extends UpdateConnectionDetails {
         sb.append("UpdateConnectionFromMySQL(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecret=").append(String.valueOf(this.passwordSecret));
         sb.append(")");
         return sb.toString();

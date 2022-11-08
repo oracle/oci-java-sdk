@@ -971,7 +971,7 @@ public final class CreateDatabaseRegistrationDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", wallet=").append(String.valueOf(this.wallet));

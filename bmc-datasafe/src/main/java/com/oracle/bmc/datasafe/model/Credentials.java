@@ -138,7 +138,7 @@ public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append("Credentials(");
         sb.append("super=").append(super.toString());
         sb.append("userName=").append(String.valueOf(this.userName));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

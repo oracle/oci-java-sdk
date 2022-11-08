@@ -5,15 +5,12 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The properties that define a job. Jobs perform the actions that are defined in your configuration.
- * - **Plan job**. A plan job takes your Terraform configuration, parses it, and creates an execution plan.
- * - **Apply job**. The apply job takes your execution plan, applies it to the associated stack, then executes
- * the configuration's instructions.
- * - **Destroy job**. To clean up the infrastructure controlled by the stack, you run a destroy job.
- * A destroy job does not delete the stack or associated job resources,
- * but instead releases the resources managed by the stack.
- * - **Import_TF_State job**. An import Terraform state job takes a Terraform state file and sets it as the current
- * state of the stack. This is used to migrate local Terraform environments to Resource Manager.
+ * The properties of a job.
+ * A job performs the actions that are defined in your Terraform configuration.
+ * For instructions on managing jobs, see
+ * [Managing Jobs](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm).
+ * For more information about jobs, see
+ * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -34,6 +31,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "compartmentId",
         "displayName",
         "operation",
+        "isThirdPartyProviderExperienceEnabled",
         "isProviderUpgradeRequired",
         "jobOperationDetails",
         "applyJobPlanResolution",
@@ -55,6 +53,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             String compartmentId,
             String displayName,
             Operation operation,
+            Boolean isThirdPartyProviderExperienceEnabled,
             Boolean isProviderUpgradeRequired,
             JobOperationDetails jobOperationDetails,
             ApplyJobPlanResolution applyJobPlanResolution,
@@ -75,6 +74,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.operation = operation;
+        this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
         this.isProviderUpgradeRequired = isProviderUpgradeRequired;
         this.jobOperationDetails = jobOperationDetails;
         this.applyJobPlanResolution = applyJobPlanResolution;
@@ -171,6 +171,33 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
+            return this;
+        }
+        /**
+         * When {@code true}, the stack sources third-party Terraform providers from
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
+        private Boolean isThirdPartyProviderExperienceEnabled;
+
+        /**
+         * When {@code true}, the stack sources third-party Terraform providers from
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         * @param isThirdPartyProviderExperienceEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isThirdPartyProviderExperienceEnabled(
+                Boolean isThirdPartyProviderExperienceEnabled) {
+            this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
+            this.__explicitlySet__.add("isThirdPartyProviderExperienceEnabled");
             return this;
         }
         /**
@@ -435,6 +462,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.compartmentId,
                             this.displayName,
                             this.operation,
+                            this.isThirdPartyProviderExperienceEnabled,
                             this.isProviderUpgradeRequired,
                             this.jobOperationDetails,
                             this.applyJobPlanResolution,
@@ -471,6 +499,10 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             }
             if (model.wasPropertyExplicitlySet("operation")) {
                 this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("isThirdPartyProviderExperienceEnabled")) {
+                this.isThirdPartyProviderExperienceEnabled(
+                        model.getIsThirdPartyProviderExperienceEnabled());
             }
             if (model.wasPropertyExplicitlySet("isProviderUpgradeRequired")) {
                 this.isProviderUpgradeRequired(model.getIsProviderUpgradeRequired());
@@ -593,6 +625,8 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         Apply("APPLY"),
         Destroy("DESTROY"),
         ImportTfState("IMPORT_TF_STATE"),
+        PlanRollback("PLAN_ROLLBACK"),
+        ApplyRollback("APPLY_ROLLBACK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -647,6 +681,30 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      **/
     public Operation getOperation() {
         return operation;
+    }
+
+    /**
+     * When {@code true}, the stack sources third-party Terraform providers from
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
+    private final Boolean isThirdPartyProviderExperienceEnabled;
+
+    /**
+     * When {@code true}, the stack sources third-party Terraform providers from
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     * @return the value
+     **/
+    public Boolean getIsThirdPartyProviderExperienceEnabled() {
+        return isThirdPartyProviderExperienceEnabled;
     }
 
     /**
@@ -944,6 +1002,8 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", isThirdPartyProviderExperienceEnabled=")
+                .append(String.valueOf(this.isThirdPartyProviderExperienceEnabled));
         sb.append(", isProviderUpgradeRequired=")
                 .append(String.valueOf(this.isProviderUpgradeRequired));
         sb.append(", jobOperationDetails=").append(String.valueOf(this.jobOperationDetails));
@@ -979,6 +1039,9 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(
+                        this.isThirdPartyProviderExperienceEnabled,
+                        other.isThirdPartyProviderExperienceEnabled)
+                && java.util.Objects.equals(
                         this.isProviderUpgradeRequired, other.isProviderUpgradeRequired)
                 && java.util.Objects.equals(this.jobOperationDetails, other.jobOperationDetails)
                 && java.util.Objects.equals(
@@ -1008,6 +1071,11 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isThirdPartyProviderExperienceEnabled == null
+                                ? 43
+                                : this.isThirdPartyProviderExperienceEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.isProviderUpgradeRequired == null

@@ -599,7 +599,7 @@ public final class CreateBdsInstanceDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", clusterVersion=").append(String.valueOf(this.clusterVersion));
         sb.append(", clusterPublicKey=").append(String.valueOf(this.clusterPublicKey));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));

@@ -313,7 +313,7 @@ public final class UpdateOperationsInsightsWarehouseUserDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOperationsInsightsWarehouseUserDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("connectionPassword=").append(String.valueOf(this.connectionPassword));
+        sb.append("connectionPassword=").append("<redacted>");
         sb.append(", isAwrDataAccess=").append(String.valueOf(this.isAwrDataAccess));
         sb.append(", isEmDataAccess=").append(String.valueOf(this.isEmDataAccess));
         sb.append(", isOpsiDataAccess=").append(String.valueOf(this.isOpsiDataAccess));

@@ -544,7 +544,7 @@ public class DiscoveryClient implements Discovery {
                         "Discovery",
                         "ChangeAssetSourceCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/ChangeAssetSourceCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetSourceCompartmentResponse>
                 transformer =
                         ChangeAssetSourceCompartmentConverter.fromResponse(
@@ -588,7 +588,7 @@ public class DiscoveryClient implements Discovery {
                         "Discovery",
                         "ChangeDiscoveryScheduleCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/ChangeDiscoveryScheduleCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDiscoveryScheduleCompartmentResponse>
                 transformer =
@@ -629,7 +629,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "CreateAssetSource", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "CreateAssetSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/CreateAssetSource");
         java.util.function.Function<javax.ws.rs.core.Response, CreateAssetSourceResponse>
                 transformer =
                         CreateAssetSourceConverter.fromResponse(
@@ -669,7 +672,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "CreateDiscoverySchedule", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "CreateDiscoverySchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/CreateDiscoverySchedule");
         java.util.function.Function<javax.ws.rs.core.Response, CreateDiscoveryScheduleResponse>
                 transformer =
                         CreateDiscoveryScheduleConverter.fromResponse(
@@ -707,7 +713,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "DeleteAssetSource", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "DeleteAssetSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/DeleteAssetSource");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteAssetSourceResponse>
                 transformer =
                         DeleteAssetSourceConverter.fromResponse(
@@ -743,7 +752,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "DeleteDiscoverySchedule", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "DeleteDiscoverySchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/DeleteDiscoverySchedule");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDiscoveryScheduleResponse>
                 transformer =
                         DeleteDiscoveryScheduleConverter.fromResponse(
@@ -778,7 +790,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "GetAssetSource", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "GetAssetSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/GetAssetSource");
         java.util.function.Function<javax.ws.rs.core.Response, GetAssetSourceResponse> transformer =
                 GetAssetSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -810,7 +825,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "GetDiscoverySchedule", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "GetDiscoverySchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/GetDiscoverySchedule");
         java.util.function.Function<javax.ws.rs.core.Response, GetDiscoveryScheduleResponse>
                 transformer =
                         GetDiscoveryScheduleConverter.fromResponse(
@@ -848,7 +866,7 @@ public class DiscoveryClient implements Discovery {
                         "Discovery",
                         "ListAssetSourceConnections",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/ListAssetSourceConnections");
         java.util.function.Function<javax.ws.rs.core.Response, ListAssetSourceConnectionsResponse>
                 transformer =
                         ListAssetSourceConnectionsConverter.fromResponse(
@@ -883,7 +901,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "ListAssetSources", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "ListAssetSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/ListAssetSources");
         java.util.function.Function<javax.ws.rs.core.Response, ListAssetSourcesResponse>
                 transformer =
                         ListAssetSourcesConverter.fromResponse(
@@ -918,7 +939,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "ListDiscoverySchedules", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "ListDiscoverySchedules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/ListDiscoverySchedules");
         java.util.function.Function<javax.ws.rs.core.Response, ListDiscoverySchedulesResponse>
                 transformer =
                         ListDiscoverySchedulesConverter.fromResponse(
@@ -953,7 +977,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "RefreshAssetSource", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "RefreshAssetSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/RefreshAssetSource");
         java.util.function.Function<javax.ws.rs.core.Response, RefreshAssetSourceResponse>
                 transformer =
                         RefreshAssetSourceConverter.fromResponse(
@@ -988,7 +1015,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "UpdateAssetSource", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "UpdateAssetSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/UpdateAssetSource");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateAssetSourceResponse>
                 transformer =
                         UpdateAssetSourceConverter.fromResponse(
@@ -1027,7 +1057,10 @@ public class DiscoveryClient implements Discovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Discovery", "UpdateDiscoverySchedule", ib.getRequestUri().toString(), "");
+                        "Discovery",
+                        "UpdateDiscoverySchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/UpdateDiscoverySchedule");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDiscoveryScheduleResponse>
                 transformer =
                         UpdateDiscoveryScheduleConverter.fromResponse(

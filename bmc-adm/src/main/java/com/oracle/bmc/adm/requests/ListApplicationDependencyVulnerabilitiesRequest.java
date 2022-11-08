@@ -95,21 +95,29 @@ public class ListApplicationDependencyVulnerabilitiesRequest
     }
     /**
      * The field to sort by. Only one sort order may be provided.
+     * If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
+     * If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
      * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      *
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order may be provided.
+     * If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
+     * If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
      * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      *
      **/
     public enum SortBy {
         Gav("gav"),
         NodeId("nodeId"),
+        Dfs("dfs"),
+        Bfs("bfs"),
         ;
 
         private final String value;
@@ -142,12 +150,45 @@ public class ListApplicationDependencyVulnerabilitiesRequest
 
     /**
      * The field to sort by. Only one sort order may be provided.
+     * If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
+     * If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
      * Default order for gav is ascending where ascending corresponds to alphanumerical order.
      * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+     * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
      *
      */
     public SortBy getSortBy() {
         return sortBy;
+    }
+    /**
+     * A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node.
+     * Query parameters "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" cannot be used in conjunction with this parameter.
+     *
+     */
+    private String rootNodeId;
+
+    /**
+     * A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node.
+     * Query parameters "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" cannot be used in conjunction with this parameter.
+     *
+     */
+    public String getRootNodeId() {
+        return rootNodeId;
+    }
+    /**
+     * A filter to limit depth of the application dependencies tree traversal.
+     * Additionally query parameters such as "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" can't be used in conjunction with this latter.
+     *
+     */
+    private Integer depth;
+
+    /**
+     * A filter to limit depth of the application dependencies tree traversal.
+     * Additionally query parameters such as "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" can't be used in conjunction with this latter.
+     *
+     */
+    public Integer getDepth() {
+        return depth;
     }
     /**
      * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
@@ -290,22 +331,66 @@ public class ListApplicationDependencyVulnerabilitiesRequest
 
         /**
          * The field to sort by. Only one sort order may be provided.
+         * If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
+         * If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
          * Default order for gav is ascending where ascending corresponds to alphanumerical order.
          * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+         * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
          *
          */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Only one sort order may be provided.
+         * If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
+         * If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
          * Default order for gav is ascending where ascending corresponds to alphanumerical order.
          * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+         * Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: "gav", "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual" and "vulnerabilityId".
          *
          * @param sortBy the value to set
          * @return this builder instance
          */
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
+            return this;
+        }
+
+        /**
+         * A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node.
+         * Query parameters "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" cannot be used in conjunction with this parameter.
+         *
+         */
+        private String rootNodeId = null;
+
+        /**
+         * A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node.
+         * Query parameters "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" cannot be used in conjunction with this parameter.
+         *
+         * @param rootNodeId the value to set
+         * @return this builder instance
+         */
+        public Builder rootNodeId(String rootNodeId) {
+            this.rootNodeId = rootNodeId;
+            return this;
+        }
+
+        /**
+         * A filter to limit depth of the application dependencies tree traversal.
+         * Additionally query parameters such as "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" can't be used in conjunction with this latter.
+         *
+         */
+        private Integer depth = null;
+
+        /**
+         * A filter to limit depth of the application dependencies tree traversal.
+         * Additionally query parameters such as "cvssV2GreaterThanOrEqual", "cvssV3GreaterThanOrEqual", "gav" and "vulnerabilityId" can't be used in conjunction with this latter.
+         *
+         * @param depth the value to set
+         * @return this builder instance
+         */
+        public Builder depth(Integer depth) {
+            this.depth = depth;
             return this;
         }
 
@@ -375,6 +460,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            rootNodeId(o.getRootNodeId());
+            depth(o.getDepth());
             gav(o.getGav());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -419,10 +506,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.rootNodeId = rootNodeId;
+            request.depth = depth;
             request.gav = gav;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListApplicationDependencyVulnerabilitiesRequest(vulnerabilityAuditId, vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual, limit, page, sortOrder, sortBy, gav, opcRequestId);
+            // new ListApplicationDependencyVulnerabilitiesRequest(vulnerabilityAuditId, vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual, limit, page, sortOrder, sortBy, rootNodeId, depth, gav, opcRequestId);
         }
     }
 
@@ -440,6 +529,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .rootNodeId(rootNodeId)
+                .depth(depth)
                 .gav(gav)
                 .opcRequestId(opcRequestId);
     }
@@ -467,6 +558,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",rootNodeId=").append(String.valueOf(this.rootNodeId));
+        sb.append(",depth=").append(String.valueOf(this.depth));
         sb.append(",gav=").append(String.valueOf(this.gav));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -495,6 +588,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.rootNodeId, other.rootNodeId)
+                && java.util.Objects.equals(this.depth, other.depth)
                 && java.util.Objects.equals(this.gav, other.gav)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -525,6 +620,8 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.rootNodeId == null ? 43 : this.rootNodeId.hashCode());
+        result = (result * PRIME) + (this.depth == null ? 43 : this.depth.hashCode());
         result = (result * PRIME) + (this.gav == null ? 43 : this.gav.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

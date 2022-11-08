@@ -388,7 +388,7 @@ public final class CreateAppEventChannelResult extends CreateChannelResult {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAppEventChannelResult(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", secretKey=").append("<redacted>");
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", eventSinkBotIds=").append(String.valueOf(this.eventSinkBotIds));
         sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));

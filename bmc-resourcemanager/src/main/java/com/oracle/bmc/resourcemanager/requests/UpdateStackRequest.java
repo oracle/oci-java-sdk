@@ -25,13 +25,13 @@ public class UpdateStackRequest
         return stackId;
     }
     /**
-     * Updated information provided for the stack.
+     * The details for updating a stack.
      *
      */
     private com.oracle.bmc.resourcemanager.model.UpdateStackDetails updateStackDetails;
 
     /**
-     * Updated information provided for the stack.
+     * The details for updating a stack.
      *
      */
     public com.oracle.bmc.resourcemanager.model.UpdateStackDetails getUpdateStackDetails() {
@@ -103,13 +103,13 @@ public class UpdateStackRequest
         }
 
         /**
-         * Updated information provided for the stack.
+         * The details for updating a stack.
          *
          */
         private com.oracle.bmc.resourcemanager.model.UpdateStackDetails updateStackDetails = null;
 
         /**
-         * Updated information provided for the stack.
+         * The details for updating a stack.
          *
          * @param updateStackDetails the value to set
          * @return this builder instance

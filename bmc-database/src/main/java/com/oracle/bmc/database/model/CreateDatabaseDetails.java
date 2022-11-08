@@ -749,7 +749,7 @@ public final class CreateDatabaseDetails
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", pdbName=").append(String.valueOf(this.pdbName));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
-        sb.append(", tdeWalletPassword=").append(String.valueOf(this.tdeWalletPassword));
+        sb.append(", tdeWalletPassword=").append("<redacted>");
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));

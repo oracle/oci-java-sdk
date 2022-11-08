@@ -243,7 +243,7 @@ public final class UpdateMSTeamsChannelDetails extends UpdateChannelDetails {
         sb.append("UpdateMSTeamsChannelDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", msaAppId=").append(String.valueOf(this.msaAppId));
-        sb.append(", msaAppPassword=").append(String.valueOf(this.msaAppPassword));
+        sb.append(", msaAppPassword=").append("<redacted>");
         sb.append(", botId=").append(String.valueOf(this.botId));
         sb.append(")");
         return sb.toString();

@@ -142,7 +142,7 @@ public final class StopBdsInstanceDetails
         sb.append("StopBdsInstanceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("isForceStopJobs=").append(String.valueOf(this.isForceStopJobs));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

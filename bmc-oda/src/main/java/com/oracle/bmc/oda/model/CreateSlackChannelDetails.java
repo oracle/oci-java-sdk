@@ -367,8 +367,8 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", authSuccessUrl=").append(String.valueOf(this.authSuccessUrl));
         sb.append(", authErrorUrl=").append(String.valueOf(this.authErrorUrl));
-        sb.append(", signingSecret=").append(String.valueOf(this.signingSecret));
-        sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
+        sb.append(", signingSecret=").append("<redacted>");
+        sb.append(", clientSecret=").append("<redacted>");
         sb.append(", botId=").append(String.valueOf(this.botId));
         sb.append(")");
         return sb.toString();

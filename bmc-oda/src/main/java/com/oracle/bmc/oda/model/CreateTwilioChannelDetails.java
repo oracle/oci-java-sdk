@@ -366,7 +366,7 @@ public final class CreateTwilioChannelDetails extends CreateChannelDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", accountSID=").append(String.valueOf(this.accountSID));
         sb.append(", phoneNumber=").append(String.valueOf(this.phoneNumber));
-        sb.append(", authToken=").append(String.valueOf(this.authToken));
+        sb.append(", authToken=").append("<redacted>");
         sb.append(", isMmsEnabled=").append(String.valueOf(this.isMmsEnabled));
         sb.append(", originalConnectorsUrl=").append(String.valueOf(this.originalConnectorsUrl));
         sb.append(", botId=").append(String.valueOf(this.botId));

@@ -133,7 +133,7 @@ public final class ManagedDatabasePasswordCredential extends ManagedDatabaseCred
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedDatabasePasswordCredential(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

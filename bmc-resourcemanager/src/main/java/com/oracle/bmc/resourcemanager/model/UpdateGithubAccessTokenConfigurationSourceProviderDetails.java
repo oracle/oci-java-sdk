@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The details for updating a configuration source provider of the type {@code GITHUB_ACCESS_TOKEN}.
+ * Update details for a configuration source provider of the type {@code GITHUB_ACCESS_TOKEN}.
  * This type corresponds to a configuration source provider in GitHub that is authenticated with a personal access token.
  *
  * <br/>
