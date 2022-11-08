@@ -169,8 +169,8 @@ public final class CustomProtectionRule
          * part 2/2" \\ "phase:2, \\ msg:'Detects chained SQL injection attempts 2/2.', \\ id:
          * {{id_2}}, \\ ctl:ruleEngine={{mode}}, \\ deny" }{@code <p>
          *
-         * <p><p>The example contains two }SecRules{@code each having distinct regex expression to
-         * match the }Cookie header value during the second input analysis phase.
+         * <p><p><p>The example contains two }SecRules{@code each having distinct regex expression
+         * to match the }Cookie header value during the second input analysis phase.
          *
          * <p>For more information about custom protection rules, see [Custom Protection
          * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
@@ -209,8 +209,8 @@ public final class CustomProtectionRule
          * part 2/2" \\ "phase:2, \\ msg:'Detects chained SQL injection attempts 2/2.', \\ id:
          * {{id_2}}, \\ ctl:ruleEngine={{mode}}, \\ deny" }{@code <p>
          *
-         * <p><p>The example contains two }SecRules{@code each having distinct regex expression to
-         * match the }Cookie header value during the second input analysis phase.
+         * <p><p><p>The example contains two }SecRules{@code each having distinct regex expression
+         * to match the }Cookie header value during the second input analysis phase.
          *
          * <p>For more information about custom protection rules, see [Custom Protection
          * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
@@ -480,8 +480,8 @@ public final class CustomProtectionRule
      * part 2/2" \\ "phase:2, \\ msg:'Detects chained SQL injection attempts 2/2.', \\ id: {{id_2}},
      * \\ ctl:ruleEngine={{mode}}, \\ deny" }{@code <p>
      *
-     * <p><p>The example contains two }SecRules{@code each having distinct regex expression to match
-     * the }Cookie header value during the second input analysis phase.
+     * <p><p><p>The example contains two }SecRules{@code each having distinct regex expression to
+     * match the }Cookie header value during the second input analysis phase.
      *
      * <p>For more information about custom protection rules, see [Custom Protection
      * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
@@ -519,8 +519,8 @@ public final class CustomProtectionRule
      * part 2/2" \\ "phase:2, \\ msg:'Detects chained SQL injection attempts 2/2.', \\ id: {{id_2}},
      * \\ ctl:ruleEngine={{mode}}, \\ deny" }{@code <p>
      *
-     * <p><p>The example contains two }SecRules{@code each having distinct regex expression to match
-     * the }Cookie header value during the second input analysis phase.
+     * <p><p><p>The example contains two }SecRules{@code each having distinct regex expression to
+     * match the }Cookie header value during the second input analysis phase.
      *
      * <p>For more information about custom protection rules, see [Custom Protection
      * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
