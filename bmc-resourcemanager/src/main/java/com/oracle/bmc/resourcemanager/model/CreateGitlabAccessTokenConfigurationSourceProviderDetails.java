@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The details for creating a configuration source provider of the type {@code GITLAB_ACCESS_TOKEN}.
+ * Creation details for a configuration source provider of the type {@code GITLAB_ACCESS_TOKEN}.
  * This type corresponds to a configuration source provider in GitLab that is authenticated with a
  * personal access token. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

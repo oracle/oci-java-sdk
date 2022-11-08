@@ -26,6 +26,9 @@ public final class UpdateCloudVmClusterDetails
         "displayName",
         "cpuCoreCount",
         "ocpuCount",
+        "memorySizeInGBs",
+        "dbNodeStorageSizeInGBs",
+        "dataStorageSizeInTBs",
         "licenseModel",
         "sshPublicKeys",
         "updateDetails",
@@ -41,6 +44,9 @@ public final class UpdateCloudVmClusterDetails
             String displayName,
             Integer cpuCoreCount,
             Float ocpuCount,
+            Integer memorySizeInGBs,
+            Integer dbNodeStorageSizeInGBs,
+            Double dataStorageSizeInTBs,
             LicenseModel licenseModel,
             java.util.List<String> sshPublicKeys,
             UpdateDetails updateDetails,
@@ -55,6 +61,9 @@ public final class UpdateCloudVmClusterDetails
         this.displayName = displayName;
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
         this.licenseModel = licenseModel;
         this.sshPublicKeys = sshPublicKeys;
         this.updateDetails = updateDetails;
@@ -116,6 +125,51 @@ public final class UpdateCloudVmClusterDetails
         public Builder ocpuCount(Float ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+        /** The memory to be allocated in GBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        /**
+         * The memory to be allocated in GBs.
+         *
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+        /** The local node storage to be allocated in GBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        /**
+         * The local node storage to be allocated in GBs.
+         *
+         * @param dbNodeStorageSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+        /** The data disk group size to be allocated in TBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+        private Double dataStorageSizeInTBs;
+
+        /**
+         * The data disk group size to be allocated in TBs.
+         *
+         * @param dataStorageSizeInTBs the value to set
+         * @return this builder
+         */
+        public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
+            this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+            this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
         /**
@@ -319,6 +373,9 @@ public final class UpdateCloudVmClusterDetails
                             this.displayName,
                             this.cpuCoreCount,
                             this.ocpuCount,
+                            this.memorySizeInGBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.dataStorageSizeInTBs,
                             this.licenseModel,
                             this.sshPublicKeys,
                             this.updateDetails,
@@ -345,6 +402,15 @@ public final class UpdateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -430,6 +496,45 @@ public final class UpdateCloudVmClusterDetails
      */
     public Float getOcpuCount() {
         return ocpuCount;
+    }
+
+    /** The memory to be allocated in GBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    private final Integer memorySizeInGBs;
+
+    /**
+     * The memory to be allocated in GBs.
+     *
+     * @return the value
+     */
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
+
+    /** The local node storage to be allocated in GBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    private final Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The local node storage to be allocated in GBs.
+     *
+     * @return the value
+     */
+    public Integer getDbNodeStorageSizeInGBs() {
+        return dbNodeStorageSizeInGBs;
+    }
+
+    /** The data disk group size to be allocated in TBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+    private final Double dataStorageSizeInTBs;
+
+    /**
+     * The data disk group size to be allocated in TBs.
+     *
+     * @return the value
+     */
+    public Double getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
     }
 
     /**
@@ -650,6 +755,9 @@ public final class UpdateCloudVmClusterDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
         sb.append(", updateDetails=").append(String.valueOf(this.updateDetails));
@@ -677,6 +785,10 @@ public final class UpdateCloudVmClusterDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
                 && java.util.Objects.equals(this.updateDetails, other.updateDetails)
@@ -697,6 +809,19 @@ public final class UpdateCloudVmClusterDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbNodeStorageSizeInGBs == null
+                                ? 43
+                                : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =
                 (result * PRIME)

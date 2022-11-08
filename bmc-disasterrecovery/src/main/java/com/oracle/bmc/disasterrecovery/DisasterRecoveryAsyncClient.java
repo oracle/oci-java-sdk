@@ -111,7 +111,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, AssociateDrProtectionGroupResponse::builder)
                 .logger(LOG, "associateDrProtectionGroup")
-                .serviceDetails("DisasterRecovery", "AssociateDrProtectionGroup", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "AssociateDrProtectionGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/AssociateDrProtectionGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AssociateDrProtectionGroupRequest::builder)
                 .basePath("/20220125")
@@ -146,7 +149,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CancelDrPlanExecutionResponse::builder)
                 .logger(LOG, "cancelDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "CancelDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "CancelDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CancelDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -178,7 +184,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("DisasterRecovery", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20220125")
@@ -209,7 +218,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeDrProtectionGroupCompartmentResponse::builder)
                 .logger(LOG, "changeDrProtectionGroupCompartment")
-                .serviceDetails("DisasterRecovery", "ChangeDrProtectionGroupCompartment", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ChangeDrProtectionGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ChangeDrProtectionGroupCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDrProtectionGroupCompartmentRequest::builder)
                 .basePath("/20220125")
@@ -240,7 +252,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateDrPlanResponse::builder)
                 .logger(LOG, "createDrPlan")
-                .serviceDetails("DisasterRecovery", "CreateDrPlan", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "CreateDrPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/CreateDrPlan")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrPlanRequest::builder)
                 .basePath("/20220125")
@@ -273,7 +288,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateDrPlanExecutionResponse::builder)
                 .logger(LOG, "createDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "CreateDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "CreateDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CreateDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -308,7 +326,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateDrProtectionGroupResponse::builder)
                 .logger(LOG, "createDrProtectionGroup")
-                .serviceDetails("DisasterRecovery", "CreateDrProtectionGroup", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "CreateDrProtectionGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/CreateDrProtectionGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrProtectionGroupRequest::builder)
                 .basePath("/20220125")
@@ -341,7 +362,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteDrPlanResponse::builder)
                 .logger(LOG, "deleteDrPlan")
-                .serviceDetails("DisasterRecovery", "DeleteDrPlan", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "DeleteDrPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/DeleteDrPlan")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrPlanRequest::builder)
                 .basePath("/20220125")
@@ -366,7 +390,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteDrPlanExecutionResponse::builder)
                 .logger(LOG, "deleteDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "DeleteDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "DeleteDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/DeleteDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -395,7 +422,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteDrProtectionGroupResponse::builder)
                 .logger(LOG, "deleteDrProtectionGroup")
-                .serviceDetails("DisasterRecovery", "DeleteDrProtectionGroup", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "DeleteDrProtectionGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DeleteDrProtectionGroup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrProtectionGroupRequest::builder)
                 .basePath("/20220125")
@@ -429,7 +459,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DisassociateDrProtectionGroupResponse::builder)
                 .logger(LOG, "disassociateDrProtectionGroup")
-                .serviceDetails("DisasterRecovery", "DisassociateDrProtectionGroup", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "DisassociateDrProtectionGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DisassociateDrProtectionGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisassociateDrProtectionGroupRequest::builder)
                 .basePath("/20220125")
@@ -461,7 +494,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetDrPlanResponse::builder)
                 .logger(LOG, "getDrPlan")
-                .serviceDetails("DisasterRecovery", "GetDrPlan", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "GetDrPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/GetDrPlan")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrPlanRequest::builder)
                 .basePath("/20220125")
@@ -489,7 +525,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetDrPlanExecutionResponse::builder)
                 .logger(LOG, "getDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "GetDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "GetDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/GetDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -518,7 +557,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetDrProtectionGroupResponse::builder)
                 .logger(LOG, "getDrProtectionGroup")
-                .serviceDetails("DisasterRecovery", "GetDrProtectionGroup", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "GetDrProtectionGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/GetDrProtectionGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrProtectionGroupRequest::builder)
                 .basePath("/20220125")
@@ -546,7 +588,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("DisasterRecovery", "GetWorkRequest", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220125")
@@ -579,7 +624,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, IgnoreDrPlanExecutionResponse::builder)
                 .logger(LOG, "ignoreDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "IgnoreDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "IgnoreDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/IgnoreDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IgnoreDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -610,7 +658,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListDrPlanExecutionsResponse::builder)
                 .logger(LOG, "listDrPlanExecutions")
-                .serviceDetails("DisasterRecovery", "ListDrPlanExecutions", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListDrPlanExecutions",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ListDrPlanExecutions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrPlanExecutionsRequest::builder)
                 .basePath("/20220125")
@@ -645,7 +696,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListDrPlansResponse::builder)
                 .logger(LOG, "listDrPlans")
-                .serviceDetails("DisasterRecovery", "ListDrPlans", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListDrPlans",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/ListDrPlans")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrPlansRequest::builder)
                 .basePath("/20220125")
@@ -681,7 +735,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListDrProtectionGroupsResponse::builder)
                 .logger(LOG, "listDrProtectionGroups")
-                .serviceDetails("DisasterRecovery", "ListDrProtectionGroups", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListDrProtectionGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ListDrProtectionGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrProtectionGroupsRequest::builder)
                 .basePath("/20220125")
@@ -717,7 +774,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("DisasterRecovery", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220125")
@@ -751,7 +811,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("DisasterRecovery", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220125")
@@ -783,7 +846,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("DisasterRecovery", "ListWorkRequests", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220125")
@@ -822,7 +888,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, PauseDrPlanExecutionResponse::builder)
                 .logger(LOG, "pauseDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "PauseDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "PauseDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/PauseDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PauseDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -857,7 +926,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ResumeDrPlanExecutionResponse::builder)
                 .logger(LOG, "resumeDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "ResumeDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "ResumeDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ResumeDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResumeDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -892,7 +964,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, RetryDrPlanExecutionResponse::builder)
                 .logger(LOG, "retryDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "RetryDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "RetryDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/RetryDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RetryDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -924,7 +999,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateDrPlanResponse::builder)
                 .logger(LOG, "updateDrPlan")
-                .serviceDetails("DisasterRecovery", "UpdateDrPlan", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "UpdateDrPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/UpdateDrPlan")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrPlanRequest::builder)
                 .basePath("/20220125")
@@ -955,7 +1033,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateDrPlanExecutionResponse::builder)
                 .logger(LOG, "updateDrPlanExecution")
-                .serviceDetails("DisasterRecovery", "UpdateDrPlanExecution", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "UpdateDrPlanExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/UpdateDrPlanExecution")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrPlanExecutionRequest::builder)
                 .basePath("/20220125")
@@ -988,7 +1069,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateDrProtectionGroupResponse::builder)
                 .logger(LOG, "updateDrProtectionGroup")
-                .serviceDetails("DisasterRecovery", "UpdateDrProtectionGroup", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "UpdateDrProtectionGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrProtectionGroupRequest::builder)
                 .basePath("/20220125")
@@ -1023,7 +1107,10 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateDrProtectionGroupRoleResponse::builder)
                 .logger(LOG, "updateDrProtectionGroupRole")
-                .serviceDetails("DisasterRecovery", "UpdateDrProtectionGroupRole", "")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "UpdateDrProtectionGroupRole",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroupRole")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateDrProtectionGroupRoleRequest::builder)
                 .basePath("/20220125")

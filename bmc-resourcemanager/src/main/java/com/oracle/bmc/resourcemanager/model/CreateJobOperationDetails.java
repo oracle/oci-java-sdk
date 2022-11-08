@@ -25,6 +25,12 @@ package com.oracle.bmc.resourcemanager.model;
             value = CreateImportTfStateJobOperationDetails.class,
             name = "IMPORT_TF_STATE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreatePlanRollbackJobOperationDetails.class,
+            name = "PLAN_ROLLBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateApplyRollbackJobOperationDetails.class,
+            name = "APPLY_ROLLBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateApplyJobOperationDetails.class,
             name = "APPLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

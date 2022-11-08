@@ -8,6 +8,8 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerFactory;
+import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.requests.ListRegionsRequest;
 import com.oracle.bmc.identity.responses.ListRegionsResponse;
@@ -79,12 +81,16 @@ public class CircuitBreakerExample {
                         .build();
 
         // Create Client using above ClientConfiguration
-        IdentityClient identityClient = new IdentityClient(provider, configuration);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        IdentityClient identityClient =
+                IdentityClient.builder()
+                        .region(Region.US_PHOENIX_1)
+                        .configuration(configuration)
+                        .build(provider);
         System.out.println("Querying for list of regions");
         final ListRegionsResponse response =
                 identityClient.listRegions(ListRegionsRequest.builder().build());
         System.out.println("List of regions: " + response.getItems());
+        identityClient.close();
     }
 
     private static void shareCircuitBreakerAmongMultipleClients(
@@ -109,17 +115,24 @@ public class CircuitBreakerExample {
                                                                 .SERVICE_UNAVAILABLE))))
                         .build();
 
+        OciCircuitBreaker cb = CircuitBreakerFactory.build(circuitBreakerConfiguration, null);
         ClientConfiguration clientConfiguration =
                 ClientConfiguration.builder()
                         .retryConfiguration(RetryConfiguration.builder().build())
-                        .circuitBreakerConfiguration(circuitBreakerConfiguration)
+                        .circuitBreaker(cb)
                         .build();
 
         // Create Clients using above ClientConfiguration
-        IdentityClient identityClient = new IdentityClient(provider, clientConfiguration);
-        ObjectStorage client = new ObjectStorageClient(provider, clientConfiguration);
-        identityClient.setRegion(Region.US_PHOENIX_1);
-        client.setRegion(Region.US_PHOENIX_1);
+        IdentityClient identityClient =
+                IdentityClient.builder()
+                        .region(Region.US_PHOENIX_1)
+                        .configuration(clientConfiguration)
+                        .build(provider);
+        ObjectStorage client =
+                ObjectStorageClient.builder()
+                        .region(Region.US_PHOENIX_1)
+                        .configuration(clientConfiguration)
+                        .build(provider);
 
         final ListRegionsResponse response =
                 identityClient.listRegions(ListRegionsRequest.builder().build());
@@ -146,6 +159,7 @@ public class CircuitBreakerExample {
             nextToken = listBucketsResponse.getOpcNextPage();
         } while (nextToken != null);
 
+        identityClient.close();
         client.close();
     }
 }

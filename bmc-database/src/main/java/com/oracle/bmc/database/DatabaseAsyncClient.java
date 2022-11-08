@@ -139,6 +139,52 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<AddStorageCapacityCloudExadataInfrastructureResponse>
+            addStorageCapacityCloudExadataInfrastructure(
+                    AddStorageCapacityCloudExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStorageCapacityCloudExadataInfrastructureRequest,
+                                    AddStorageCapacityCloudExadataInfrastructureResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getCloudExadataInfrastructureId(),
+                "cloudExadataInfrastructureId must not be blank");
+
+        return clientCall(request, AddStorageCapacityCloudExadataInfrastructureResponse::builder)
+                .logger(LOG, "addStorageCapacityCloudExadataInfrastructure")
+                .serviceDetails(
+                        "Database",
+                        "AddStorageCapacityCloudExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/AddStorageCapacityCloudExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddStorageCapacityCloudExadataInfrastructureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudExadataInfrastructures")
+                .appendPathParam(request.getCloudExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("addStorageCapacity")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.database.model.CloudExadataInfrastructure.class,
+                        AddStorageCapacityCloudExadataInfrastructureResponse.Builder
+                                ::cloudExadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddStorageCapacityCloudExadataInfrastructureResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddStorageCapacityCloudExadataInfrastructureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddStorageCapacityCloudExadataInfrastructureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AddStorageCapacityExadataInfrastructureResponse>
             addStorageCapacityExadataInfrastructure(
                     AddStorageCapacityExadataInfrastructureRequest request,
@@ -179,6 +225,52 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         AddStorageCapacityExadataInfrastructureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddVirtualMachineToCloudVmClusterResponse>
+            addVirtualMachineToCloudVmCluster(
+                    AddVirtualMachineToCloudVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddVirtualMachineToCloudVmClusterRequest,
+                                    AddVirtualMachineToCloudVmClusterResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getAddVirtualMachineToCloudVmClusterDetails(),
+                "addVirtualMachineToCloudVmClusterDetails is required");
+
+        Validate.notBlank(request.getCloudVmClusterId(), "cloudVmClusterId must not be blank");
+
+        return clientCall(request, AddVirtualMachineToCloudVmClusterResponse::builder)
+                .logger(LOG, "addVirtualMachineToCloudVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "AddVirtualMachineToCloudVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/AddVirtualMachineToCloudVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddVirtualMachineToCloudVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudVmClusters")
+                .appendPathParam(request.getCloudVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("addVirtualMachine")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.CloudVmCluster.class,
+                        AddVirtualMachineToCloudVmClusterResponse.Builder::cloudVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddVirtualMachineToCloudVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", AddVirtualMachineToCloudVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddVirtualMachineToCloudVmClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -6216,6 +6308,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousDatabaseRefreshableClonesResponse>
+            listAutonomousDatabaseRefreshableClones(
+                    ListAutonomousDatabaseRefreshableClonesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseRefreshableClonesRequest,
+                                    ListAutonomousDatabaseRefreshableClonesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListAutonomousDatabaseRefreshableClonesResponse::builder)
+                .logger(LOG, "listAutonomousDatabaseRefreshableClones")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseRefreshableClones",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseRefreshableClones")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousDatabaseRefreshableClonesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("refreshableClones")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.RefreshableCloneCollection.class,
+                        ListAutonomousDatabaseRefreshableClonesResponse.Builder
+                                ::refreshableCloneCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousDatabaseRefreshableClonesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousDatabaseRefreshableClonesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousDatabasesResponse> listAutonomousDatabases(
             ListAutonomousDatabasesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -8486,6 +8619,52 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoteClonePluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveVirtualMachineFromCloudVmClusterResponse>
+            removeVirtualMachineFromCloudVmCluster(
+                    RemoveVirtualMachineFromCloudVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveVirtualMachineFromCloudVmClusterRequest,
+                                    RemoveVirtualMachineFromCloudVmClusterResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRemoveVirtualMachineFromCloudVmClusterDetails(),
+                "removeVirtualMachineFromCloudVmClusterDetails is required");
+
+        Validate.notBlank(request.getCloudVmClusterId(), "cloudVmClusterId must not be blank");
+
+        return clientCall(request, RemoveVirtualMachineFromCloudVmClusterResponse::builder)
+                .logger(LOG, "removeVirtualMachineFromCloudVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "RemoveVirtualMachineFromCloudVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/RemoveVirtualMachineFromCloudVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveVirtualMachineFromCloudVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudVmClusters")
+                .appendPathParam(request.getCloudVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("removeVirtualMachine")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.CloudVmCluster.class,
+                        RemoveVirtualMachineFromCloudVmClusterResponse.Builder::cloudVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveVirtualMachineFromCloudVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveVirtualMachineFromCloudVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveVirtualMachineFromCloudVmClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

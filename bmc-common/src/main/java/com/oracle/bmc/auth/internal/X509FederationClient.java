@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Supplier;
 
 /**
  * This class gets a security token from the auth service by signing the request with a PKI issued
@@ -145,6 +146,14 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         this.purpose = Validate.notNull(purpose, "purpose must not be null");
         this.clientConfigurator = clientConfigurator;
         this.additionalClientConfigurators = additionalClientConfigurators;
+
+        // load the leaf certificate details dynamically on each invocation in case it has changed,
+        // ex, rotated.
+        // NOTE: because the signer calls both of these independently, there is an edge case where
+        // the certificate
+        // has been rotated and the private key and keyId won't match -- that should be taken care
+        // of by a retry
+        // of the service call.
         KeySupplier<RSAPrivateKey> keySupplier =
                 new KeySupplier<RSAPrivateKey>() {
                     @Nonnull
@@ -161,6 +170,19 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                         }
                     }
                 };
+
+        Supplier<String> keyIdSupplier =
+                new Supplier<String>() {
+                    @Override
+                    public String get() {
+                        return keyIdForX509Request(
+                                tenancyId,
+                                leafCertificateSupplier
+                                        .getCertificateAndKeyPair()
+                                        .getCertificate());
+                    }
+                };
+
         this.httpClient =
                 HttpProvider.getDefault()
                         .newBuilder()
@@ -171,7 +193,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                                         new RequestSignerImpl(
                                                 keySupplier,
                                                 SigningStrategy.STANDARD,
-                                                () -> "mockKeyId"),
+                                                keyIdSupplier),
                                         Collections.emptyMap()))
                         .registerRequestInterceptor(
                                 Priorities.HEADER_DECORATOR, new ClientIdFilter())
@@ -558,5 +580,10 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 return new FederationResponseWrapper(status, token);
             }
         }
+    }
+
+    private static String keyIdForX509Request(String tenancyId, X509Certificate certificate) {
+        return String.format(
+                "%s/fed-x509-sha256/%s", tenancyId, AuthUtils.getFingerPrint(certificate));
     }
 }

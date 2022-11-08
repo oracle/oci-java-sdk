@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.0.0-beta2</version>
+  <version>3.0.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -412,6 +412,7 @@
               <link>https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs</link>
               <link>https://jersey.java.net/apidocs/${jersey.version}/jersey</link>
             </links>
+            <additionalJOptions>--allow-script-in-comments</additionalJOptions>
           </configuration>
         </plugin>
         <plugin>

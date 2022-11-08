@@ -458,6 +458,8 @@ public class ApplicationDependencyManagementAsyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("rootNodeId", request.getRootNodeId())
+                .appendQueryParam("depth", request.getDepth())
                 .appendQueryParam("gav", request.getGav())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

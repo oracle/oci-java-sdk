@@ -10,7 +10,10 @@ import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /** Filter that injects authentication headers into the request. */
 public class AuthnClientFilter implements RequestInterceptor {
@@ -47,8 +50,13 @@ public class AuthnClientFilter implements RequestInterceptor {
                 chosenRequestSigner.signRequest(
                         request.uri(), request.method().name(), oldHeaders, request.body());
 
+        Set<String> oldHeaderNamesLowerCase =
+                oldHeaders.keySet().stream()
+                        .map(s -> s.toLowerCase(Locale.ROOT))
+                        .collect(Collectors.toSet());
+
         for (Map.Entry<String, String> e : authHeaders.entrySet()) {
-            if (!oldHeaders.keySet().contains(e.getKey())) {
+            if (!oldHeaderNamesLowerCase.contains(e.getKey().toLowerCase(Locale.ROOT))) {
                 request.header(e.getKey(), e.getValue());
             }
         }

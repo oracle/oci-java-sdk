@@ -159,8 +159,11 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                         ClientProperties.PROXY_URI,
                         new URI(
                                 scheme,
+                                null,
                                 address.getHostString(),
-                                Integer.toString(address.getPort()),
+                                address.getPort(),
+                                null,
+                                null,
                                 null));
             } catch (URISyntaxException e) {
                 throw new IllegalArgumentException(e);
@@ -169,7 +172,8 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                 properties.put(ClientProperties.PROXY_USERNAME, proxy.getUsername());
             }
             if (proxy.getPassword() != null) {
-                properties.put(ClientProperties.PROXY_PASSWORD, proxy.getPassword());
+                properties.put(
+                        ClientProperties.PROXY_PASSWORD, String.valueOf(proxy.getPassword()));
             }
         } else if (key == JerseyClientProperties.USE_APACHE_CONNECTOR) {
             useApacheConnector = (Boolean) value;

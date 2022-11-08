@@ -6,8 +6,8 @@ package com.oracle.bmc.http.client.jersey;
 
 import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.http.client.HttpResponse;
-import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
-import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
+import com.oracle.bmc.http.client.jersey.io.internal.AutoCloseableContentLengthVerifyingInputStream;
+import com.oracle.bmc.http.client.jersey.io.internal.ContentLengthVerifyingInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

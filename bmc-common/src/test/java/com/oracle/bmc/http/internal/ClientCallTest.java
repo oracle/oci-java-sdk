@@ -8,24 +8,35 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
+import java.util.concurrent.ExecutionException;
+import java.io.InputStream;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.model.BmcException;
 import org.junit.Test;
+import org.junit.Before;
 import org.slf4j.Logger;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.hamcrest.CoreMatchers.instanceOf;
 
 public class ClientCallTest {
     @Test
@@ -218,13 +229,27 @@ public class ClientCallTest {
             return value;
         }
 
-        @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "value"})
+        /** The returned java.io.InputStream instance. */
+        private InputStream inputStream;
+
+        /**
+         * The returned java.io.InputStream instance.
+         *
+         * @return the value
+         */
+        public InputStream getInputStream() {
+            return inputStream;
+        }
+
+        @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "value", "inputStream"})
         private TestResponse(
                 int __httpStatusCode__,
                 java.util.Map<String, java.util.List<String>> headers,
-                String value) {
+                String value,
+                InputStream inputStream) {
             super(__httpStatusCode__, headers);
             this.value = value;
+            this.inputStream = inputStream;
         }
 
         public static class Builder
@@ -259,6 +284,20 @@ public class ClientCallTest {
                 return this;
             }
 
+            /** The returned java.io.InputStream instance. */
+            private InputStream inputStream;
+
+            /**
+             * The returned java.io.InputStream instance.
+             *
+             * @param inputStream the value to set
+             * @return this builder
+             */
+            public Builder inputStream(InputStream inputStream) {
+                this.inputStream = inputStream;
+                return this;
+            }
+
             /**
              * Copy method to populate the builder with values from the given instance.
              *
@@ -270,6 +309,7 @@ public class ClientCallTest {
                 headers(o.getHeaders());
 
                 value(o.getValue());
+                inputStream(o.getInputStream());
 
                 return this;
             }
@@ -281,7 +321,7 @@ public class ClientCallTest {
              */
             @Override
             public TestResponse build() {
-                return new TestResponse(__httpStatusCode__, headers, value);
+                return new TestResponse(__httpStatusCode__, headers, value, inputStream);
             }
         }
 
@@ -300,6 +340,7 @@ public class ClientCallTest {
             sb.append("(");
             sb.append("super=").append(super.toString());
             sb.append(",value=").append(String.valueOf(value));
+            sb.append(",inputStream=").append(String.valueOf(inputStream));
             sb.append(")");
             return sb.toString();
         }
@@ -325,371 +366,369 @@ public class ClientCallTest {
             return result;
         }
     }
-}
 
-// TODO: TODO: DEX-14784 - reimplement these tests
-// public class ResponseHelperTest {
-    //    private static final String OPC_REQUEST_ID = "DummyOPCRequestID";
-    //    private static final MediaType HTML_MEDIA_TYPE = MediaType.TEXT_HTML_TYPE;
-    //    private static final MediaType JSON_MEDIA_TYPE = MediaType.APPLICATION_JSON_TYPE;
-    //    private static final MediaType JSON_MEDIA_TYPE_WITH_CHARSET =
-    //            MediaType.APPLICATION_JSON_TYPE.withCharset("UTF-8");
-    //    private static final Response.Status BAD_GATEWAY_STATUS = Response.Status.BAD_GATEWAY;
-    //
-    //    @Test
-    //    public void test_throwIfNotSuccessful_InvalidHTMLResponse() {
-    //        final Response htmlResponse =
-    //                buildMockResponse(OPC_REQUEST_ID, HTML_MEDIA_TYPE, BAD_GATEWAY_STATUS);
-    //
-    //        try {
-    //            ResponseHelper.throwIfNotSuccessful(htmlResponse);
-    //            fail("Should have thrown");
-    //        } catch (BmcException exception) {
-    //            validateExceptionFields(
-    //                    exception,
-    //                    OPC_REQUEST_ID,
-    //                    BAD_GATEWAY_STATUS,
-    //                    "Unknown",
-    //                    "Unexpected Content-Type: " + HTML_MEDIA_TYPE);
-    //        }
-    //    }
-    //
-    //    @Test
-    //    public void test_throwIfNotSuccessful_ValidJsonResponse() {
-    //        final Response jsonResponse =
-    //                buildMockResponse(OPC_REQUEST_ID, JSON_MEDIA_TYPE, Response.Status.OK);
-    //        ResponseHelper.throwIfNotSuccessful(jsonResponse);
-    //    }
-    //
-    //    @Test
-    //    public void test_throwIfNotSuccessful_InValidJsonResponseExtendedForLocalization() {
-    //        final Response jsonResponse =
-    //                buildMockResponseExtendedForLocalization(OPC_REQUEST_ID, JSON_MEDIA_TYPE,
-    // BAD_GATEWAY_STATUS);
-    //        final String dummyServiceCode = "DummyServiceCode";
-    //        final String dummyMessage = "DummyMessage";
-    //        final String dummyOriginalMessage = "DummyOriginalMessage";
-    //        final String dummyOriginalMessageTemplate = "DummyOriginalMessageTemplate";
-    //        final Map<String, String> dummymessageArguments = new HashMap<>();
-    //        dummymessageArguments.put("DummyTemplateArgumentKey", "DummyTemplateArgumentValue");
-    //        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
-    //                .thenReturn(
-    //                        ResponseHelper.ErrorCodeAndMessage.builder()
-    //                                .code(dummyServiceCode)
-    //                                .message(dummyMessage)
-    //                                .originalMessage(dummyOriginalMessage)
-    //                                .originalMessageTemplate(dummyOriginalMessageTemplate)
-    //                                .messageArguments(dummymessageArguments)
-    //                                .build());
-    //        try {
-    //            ResponseHelper.throwIfNotSuccessful(jsonResponse);
-    //            fail("Should have thrown");
-    //        } catch (BmcException exception) {
-    //            validateExceptionFields(
-    //                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode,
-    // dummyMessage);
-    //            assertEquals(exception.getOriginalMessage(), dummyOriginalMessage);
-    //            assertEquals(exception.getOriginalMessageTemplate(),
-    // dummyOriginalMessageTemplate);
-    //            assertEquals(exception.getMessageArguments(), dummymessageArguments);
-    //        }
-    //    }
-    //
-    //    @Test
-    //    public void test_throwIfNotSuccessful_InValidJsonResponseExtendedForPartialLocalization()
-    // {
-    //        final Response jsonResponse =
-    //                buildMockResponseExtendedForLocalization(OPC_REQUEST_ID, JSON_MEDIA_TYPE,
-    // BAD_GATEWAY_STATUS);
-    //        final String dummyServiceCode = "DummyServiceCode";
-    //        final String dummyMessage = "DummyMessage";
-    //        final String dummyOriginalMessage = "DummyOriginalMessage";
-    //        final Map<String, String> dummymessageArguments = new HashMap<>();
-    //        dummymessageArguments.put("DummyTemplateArgumentKey", "DummyTemplateArgumentValue");
-    //        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
-    //                .thenReturn(
-    //                        ResponseHelper.ErrorCodeAndMessage.builder()
-    //                                .code(dummyServiceCode)
-    //                                .message(dummyMessage)
-    //                                .originalMessage(dummyOriginalMessage)
-    //                                .messageArguments(dummymessageArguments)
-    //                                .build());
-    //        try {
-    //            ResponseHelper.throwIfNotSuccessful(jsonResponse);
-    //            fail("Should have thrown");
-    //        } catch (BmcException exception) {
-    //            validateExceptionFields(
-    //                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode,
-    // dummyMessage);
-    //            assertEquals(exception.getOriginalMessage(), dummyOriginalMessage);
-    //            assertNull(exception.getOriginalMessageTemplate());
-    //            assertEquals(exception.getMessageArguments(), dummymessageArguments);
-    //        }
-    //    }
-    //
-    //    @Test
-    //    public void test_throwIfNotSuccessful_InvalidJsonResponse() {
-    //        final Response jsonResponse =
-    //                buildMockResponse(OPC_REQUEST_ID, JSON_MEDIA_TYPE, BAD_GATEWAY_STATUS);
-    //        final String dummyServiceCode = "DummyServiceCode";
-    //        final String dummyMessage = "DummyMessage";
-    //        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
-    //                .thenReturn(
-    //                        ResponseHelper.ErrorCodeAndMessage.builder()
-    //                                .code(dummyServiceCode)
-    //                                .message(dummyMessage)
-    //                                .build());
-    //
-    //        try {
-    //            ResponseHelper.throwIfNotSuccessful(jsonResponse);
-    //            fail("Should have thrown");
-    //        } catch (BmcException exception) {
-    //            validateExceptionFields(
-    //                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode,
-    // dummyMessage);
-    //        }
-    //    }
-    //
-    //    @Test
-    //    public void test_throwIfNotSuccessful_ValidUTF8JsonResponse() {
-    //        final Response jsonResponse =
-    //                buildMockResponse(OPC_REQUEST_ID, JSON_MEDIA_TYPE_WITH_CHARSET,
-    // BAD_GATEWAY_STATUS);
-    //        final String dummyServiceCode = "DummyServiceCode";
-    //        final String dummyMessage = "DummyMessage";
-    //        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
-    //                .thenReturn(
-    //                        ResponseHelper.ErrorCodeAndMessage.builder()
-    //                                .code(dummyServiceCode)
-    //                                .message(dummyMessage)
-    //                                .build());
-    //
-    //        try {
-    //            ResponseHelper.throwIfNotSuccessful(jsonResponse);
-    //            fail("Should have thrown");
-    //        } catch (BmcException exception) {
-    //            validateExceptionFields(
-    //                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode,
-    // dummyMessage);
-    //        }
-    //    }
-    //
-    //    @Test
-    //    public void testReadEntity_encodedJsonString() throws Exception {
-    //        Response response = mock(Response.class);
-    //        Response.StatusType statusInfo = mock(Response.StatusType.class);
-    //        // with embedded quote
-    //        String jsonEncodedString =
-    //                RestClientFactory.getObjectMapper().writeValueAsString("foo \" bar");
-    //        assertEquals("\"foo \\\" bar\"", jsonEncodedString);
-    //
-    //        Class<String> entityType = String.class;
-    //
-    //        when(response.getStatusInfo()).thenReturn(statusInfo);
-    //        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
-    //        when(response.getHeaderString(HttpHeaders.CONTENT_TYPE))
-    //                .thenReturn(javax.ws.rs.core.MediaType.APPLICATION_JSON);
-    //        when(response.readEntity(entityType)).thenReturn(jsonEncodedString);
-    //
-    //        String responseString = ResponseHelper.readEntity(response, entityType);
-    //
-    //        // embedded quote preserved, outer quotes removed
-    //        assertEquals("foo \" bar", responseString);
-    //        verify(response).bufferEntity();
-    //        verify(statusInfo).getFamily();
-    //        verify(response).readEntity(entityType);
-    //        verify(response).getHeaderString(HttpHeaders.CONTENT_TYPE);
-    //    }
-    //
-    //    @Test
-    //    public void testReadEntity_streamWithContentType() {
-    //        Response response = mock(Response.class);
-    //        Response.StatusType statusInfo = mock(Response.StatusType.class);
-    //        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-    //        List<Object> contentType = Collections.unmodifiableList(Arrays.asList("text"));
-    //        InputStream mockStream = mock(InputStream.class);
-    //
-    //        Class<InputStream> entityType = InputStream.class;
-    //
-    //        when(response.getStatusInfo()).thenReturn(statusInfo);
-    //        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
-    //        when(response.getHeaders()).thenReturn(headers);
-    //        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
-    //        when(response.readEntity(entityType)).thenReturn(mockStream);
-    //
-    //        InputStream inputStream = ResponseHelper.readEntity(response, entityType);
-    //
-    //        assertThat(inputStream, instanceOf(WrappedResponseInputStream.class));
-    //        verify(response).getStatusInfo();
-    //        verify(statusInfo).getFamily();
-    //        verify(response, atLeastOnce()).getHeaders();
-    //        verify(response).readEntity(entityType);
-    //        verify(response, never()).bufferEntity();
-    //        verify(response).getStringHeaders();
-    //        verifyNoMoreInteractions(response, statusInfo, mockStream);
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList(contentType)),
-    //                headers.get(HttpHeaders.CONTENT_TYPE));
-    //    }
-    //
-    //    @Test
-    //    public void testReadEntity_streamWithoutContentType() {
-    //        Response response = mock(Response.class);
-    //        Response.StatusType statusInfo = mock(Response.StatusType.class);
-    //        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-    //        InputStream mockStream = mock(InputStream.class);
-    //
-    //        Class<InputStream> entityType = InputStream.class;
-    //
-    //        when(response.getStatusInfo()).thenReturn(statusInfo);
-    //        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
-    //        when(response.getHeaders()).thenReturn(headers);
-    //        when(response.readEntity(entityType)).thenReturn(mockStream);
-    //
-    //        InputStream inputStream = ResponseHelper.readEntity(response, entityType);
-    //
-    //        assertThat(inputStream, instanceOf(WrappedResponseInputStream.class));
-    //        verify(response).getStatusInfo();
-    //        verify(statusInfo).getFamily();
-    //        verify(response, atLeastOnce()).getHeaders();
-    //        verify(response).readEntity(entityType);
-    //        verify(response, never()).bufferEntity();
-    //        verify(response).getStringHeaders();
-    //        verifyNoMoreInteractions(response, statusInfo, mockStream);
-    //    }
-    //
-    //    @Test
-    //    public void testReadEntity_streamWithContentLength() {
-    //        Response response = mock(Response.class);
-    //        Response.StatusType statusInfo = mock(Response.StatusType.class);
-    //        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-    //        List<Object> contentType =
-    // Collections.unmodifiableList(Arrays.<Object>asList(("text")));
-    //        InputStream mockStream = mock(InputStream.class);
-    //
-    //        Class<InputStream> entityType = InputStream.class;
-    //
-    //        when(response.getStatusInfo()).thenReturn(statusInfo);
-    //        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
-    //        when(response.getHeaders()).thenReturn(headers);
-    //        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
-    //        headers.add(HttpHeaders.CONTENT_LENGTH, "100");
-    //        MultivaluedMap<String, String> stringHeaders = new MultivaluedHashMap<>();
-    //        stringHeaders.putSingle(HttpHeaders.CONTENT_LENGTH, "100");
-    //        when(response.getStringHeaders()).thenReturn(stringHeaders);
-    //        when(response.readEntity(entityType)).thenReturn(mockStream);
-    //
-    //        InputStream inputStream = ResponseHelper.readEntity(response, entityType);
-    //
-    //        assertThat(inputStream, instanceOf(ContentLengthVerifyingInputStream.class));
-    //        verify(response).getStatusInfo();
-    //        verify(statusInfo).getFamily();
-    //        verify(response, atLeastOnce()).getHeaders();
-    //        verify(response).readEntity(entityType);
-    //        verify(response, never()).bufferEntity();
-    //        verify(response).getStringHeaders();
-    //        verifyNoMoreInteractions(response, statusInfo, mockStream);
-    //        headers = response.getHeaders();
-    //        stringHeaders = response.getStringHeaders();
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList(contentType)),
-    //                headers.get(HttpHeaders.CONTENT_TYPE));
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList("100")),
-    //                headers.get(HttpHeaders.CONTENT_LENGTH));
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList("100")),
-    //                stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
-    //    }
-    //
-    //    @Test
-    //    public void testReadEntity_streamWithoutVerifyingContentLength() {
-    //        Response response = mock(Response.class);
-    //        Response.StatusType statusInfo = mock(Response.StatusType.class);
-    //        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-    //        List<Object> contentType =
-    // Collections.unmodifiableList(Arrays.<Object>asList("text"));
-    //        InputStream mockStream = mock(InputStream.class);
-    //
-    //        Class<InputStream> entityType = InputStream.class;
-    //
-    //        when(response.getStatusInfo()).thenReturn(statusInfo);
-    //        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
-    //        when(response.getHeaders()).thenReturn(headers);
-    //        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
-    //        headers.add(HttpHeaders.CONTENT_LENGTH, "100");
-    //        headers.add(HttpHeaders.CONTENT_ENCODING, "gzip");
-    //        MultivaluedMap<String, String> stringHeaders = new MultivaluedHashMap<>();
-    //        stringHeaders.putSingle(HttpHeaders.CONTENT_LENGTH, "100");
-    //        when(response.getStringHeaders()).thenReturn(stringHeaders);
-    //        when(response.readEntity(entityType)).thenReturn(mockStream);
-    //
-    //        InputStream inputStream = ResponseHelper.readEntity(response, entityType);
-    //
-    //        assertFalse(inputStream instanceof ContentLengthVerifyingInputStream);
-    //        assertFalse(inputStream instanceof AutoCloseableContentLengthVerifyingInputStream);
-    //        verify(response).getStatusInfo();
-    //        verify(statusInfo).getFamily();
-    //        verify(response, atLeastOnce()).getHeaders();
-    //        verify(response).readEntity(entityType);
-    //        verify(response, never()).bufferEntity();
-    //        verify(response).getStringHeaders();
-    //        verifyNoMoreInteractions(response, statusInfo, mockStream);
-    //        headers = response.getHeaders();
-    //        stringHeaders = response.getStringHeaders();
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList(contentType)),
-    //                headers.get(HttpHeaders.CONTENT_TYPE));
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList("100")),
-    //                headers.get(HttpHeaders.CONTENT_LENGTH));
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList("100")),
-    //                stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
-    //        assertEquals(
-    //                Collections.unmodifiableList(Arrays.asList("gzip")),
-    //                headers.get(HttpHeaders.CONTENT_ENCODING));
-    //    }
-    //
-    //    private static Response buildMockResponse(
-    //            final String opcRequestId, final MediaType mediaType, final Response.Status
-    // status) {
-    //        final Response response = mock(Response.class);
-    //
-    // when(response.getHeaderString(BmcException.OPC_REQUEST_ID_HEADER)).thenReturn(opcRequestId);
-    //        when(response.getMediaType()).thenReturn(mediaType);
-    //        when(response.getStatusInfo()).thenReturn(status);
-    //        when(response.getStatus()).thenReturn(status.getStatusCode());
-    //        return response;
-    //    }
-    //
-    //    private static Response buildMockResponseExtendedForLocalization(
-    //            final String opcRequestId, final MediaType mediaType, final Response.Status
-    // status) {
-    //        final Response response = mock(Response.class);
-    //
-    // when(response.getHeaderString(BmcException.OPC_REQUEST_ID_HEADER)).thenReturn(opcRequestId);
-    //        when(response.getMediaType()).thenReturn(mediaType);
-    //        when(response.getStatusInfo()).thenReturn(status);
-    //        when(response.getStatus()).thenReturn(status.getStatusCode());
-    //        return response;
-    //    }
-    //
-    //    private static void validateExceptionFields(
-    //            final BmcException exception,
-    //            final String opcRequestId,
-    //            final Response.Status status,
-    //            final String serviceCode,
-    //            final String... messageSubStrings) {
-    //        assertEquals(opcRequestId, exception.getOpcRequestId());
-    //        assertEquals(status.getStatusCode(), exception.getStatusCode());
-    //        assertEquals(serviceCode, exception.getServiceCode());
-    //
-    //        assertTrue(exception.getMessage().contains(opcRequestId));
-    //        assertTrue(exception.getMessage().contains(String.valueOf(status.getStatusCode())));
-    //
-    //        for (String messageSubString : messageSubStrings) {
-    //            assertTrue(exception.getMessage().contains(messageSubString));
-    //        }
-    //    }
-// }
+    public static class TestResponseHelper {
+        private static final String OPC_REQUEST_ID = "DummyOPCRequestID";
+        private static final String JSON_MEDIA_TYPE = "application/json";
+        private static final int BAD_GATEWAY_STATUS = 503;
+        private static final String CONTENT_TYPE = "application/json";
+        private static final String CONTENT_LENGTH = "100";
+        private static final String CONTENT_ENCODING = "gzip";
+        private HttpClient mockClient = mock(HttpClient.class);
+        private HttpRequest mockRequest = mock(HttpRequest.class);
+        private Logger mockLogger = mock(Logger.class);
+        private HttpResponse mockResponse = mock(HttpResponse.class);
+
+        private ResponseHelper.ErrorCodeAndMessage ecm;
+
+        private CompletableFuture<HttpResponse> completableFuture;
+
+        private Supplier<ClientCallTest.TestResponse.Builder> responseBuilder;
+
+        @Before
+        public void setup() throws ExecutionException, InterruptedException, URISyntaxException {
+
+            when(mockClient.createRequest(any())).thenReturn(mockRequest);
+            when(mockRequest.offloadExecutor(any())).thenReturn(mockRequest);
+            when(mockRequest.copy()).thenReturn(mockRequest);
+            URI uri = new URI("https://localhost");
+            when(mockRequest.uri()).thenReturn(uri);
+
+            completableFuture = CompletableFuture.completedFuture(mockResponse);
+            when(mockRequest.execute()).thenReturn(completableFuture);
+
+            when(mockResponse.header("opc-request-id")).thenReturn(OPC_REQUEST_ID);
+
+            responseBuilder = () -> ClientCallTest.TestResponse.builder();
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_ValidJsonResponse() {
+
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(CompletableFuture.completedFuture(ecm));
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn(JSON_MEDIA_TYPE);
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(CompletableFuture.completedFuture(ecm));
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertEquals(OPC_REQUEST_ID, e.getOpcRequestId());
+                assertEquals("Unknown", e.getServiceCode());
+                assertTrue(e.getMessage().contains(OPC_REQUEST_ID));
+            }
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_InvalidHTMLResponse() throws JsonProcessingException {
+
+            String jsonEncodedString =
+                    com.oracle.bmc.http.client.Serialization.getObjectMapper()
+                            .writeValueAsString("Dummy response");
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn("text/html");
+            when(mockResponse.textBody())
+                    .thenReturn(CompletableFuture.completedFuture(jsonEncodedString));
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertEquals(OPC_REQUEST_ID, e.getOpcRequestId());
+                assertEquals("Unknown", e.getServiceCode());
+                assertTrue(e.getMessage().contains(OPC_REQUEST_ID));
+                assertTrue(e.getMessage().contains("Unexpected Content-Type: text/html"));
+            }
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_InValidJsonResponseExtendedForLocalization() {
+            Map<String, String> args = new HashMap<>();
+            args.put("DummyTemplateArgumentKey", "DummyTemplateArgumentValue");
+            ecm =
+                    ResponseHelper.ErrorCodeAndMessage.builder()
+                            .code("DummyServiceCode")
+                            .message("DummyMessage")
+                            .originalMessage("DummyOriginalMessage")
+                            .originalMessageTemplate("DummyOriginalMessageTemplate")
+                            .messageArguments(args)
+                            .build();
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(CompletableFuture.completedFuture(ecm));
+
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn(JSON_MEDIA_TYPE);
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                // expected
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertNotEquals(ecm.getMessage(), e.getMessage());
+                assertTrue(e.getMessage().contains(ecm.getMessage()));
+                assertEquals(ecm.getMessage(), e.getUnmodifiedMessage());
+                assertEquals(ecm.getCode(), e.getServiceCode());
+                assertEquals(ecm.getOriginalMessage(), e.getOriginalMessage());
+                assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
+                assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
+            }
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_InValidJsonResponseExtendedForPartialLocalization() {
+            Map<String, String> args = new HashMap<>();
+            args.put("DummyTemplateArgumentKey", "DummyTemplateArgumentValue");
+            ecm =
+                    ResponseHelper.ErrorCodeAndMessage.builder()
+                            .code("DummyServiceCode")
+                            .message("DummyMessage")
+                            .originalMessage("DummyOriginalMessage")
+                            .messageArguments(args)
+                            .build();
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(CompletableFuture.completedFuture(ecm));
+
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn(JSON_MEDIA_TYPE);
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                // expected
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertNotEquals(ecm.getMessage(), e.getMessage());
+                assertTrue(e.getMessage().contains(ecm.getMessage()));
+                assertEquals(ecm.getMessage(), e.getUnmodifiedMessage());
+                assertEquals(ecm.getCode(), e.getServiceCode());
+                assertEquals(ecm.getOriginalMessage(), e.getOriginalMessage());
+                assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
+                assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
+            }
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_InvalidJsonResponse() {
+            ecm =
+                    ResponseHelper.ErrorCodeAndMessage.builder()
+                            .code("DummyServiceCode")
+                            .message("DummyMessage")
+                            .originalMessage("DummyOriginalMessage")
+                            .build();
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(CompletableFuture.completedFuture(ecm));
+
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn(JSON_MEDIA_TYPE);
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                // expected
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertNotEquals(ecm.getMessage(), e.getMessage());
+                assertTrue(e.getMessage().contains(ecm.getMessage()));
+                assertEquals(ecm.getMessage(), e.getUnmodifiedMessage());
+                assertEquals(ecm.getCode(), e.getServiceCode());
+                assertEquals(ecm.getOriginalMessage(), e.getOriginalMessage());
+                assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
+                assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
+            }
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_ValidUTF8JsonResponse() {
+            ecm =
+                    ResponseHelper.ErrorCodeAndMessage.builder()
+                            .code("DummyServiceCode")
+                            .message("DummyMessage")
+                            .originalMessage("DummyOriginalMessage")
+                            .build();
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(CompletableFuture.completedFuture(ecm));
+
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn("application/json;charset=UTF-8");
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                // expected
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertNotEquals(ecm.getMessage(), e.getMessage());
+                assertTrue(e.getMessage().contains(ecm.getMessage()));
+                assertEquals(ecm.getMessage(), e.getUnmodifiedMessage());
+                assertEquals(ecm.getCode(), e.getServiceCode());
+                assertEquals(ecm.getOriginalMessage(), e.getOriginalMessage());
+                assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
+                assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
+            }
+        }
+
+        @Test
+        public void testReadEntity_encodedJsonString() throws Exception {
+            // with embedded quote
+            String jsonEncodedString =
+                    com.oracle.bmc.http.client.Serialization.getObjectMapper()
+                            .writeValueAsString("foo \" bar");
+            assertEquals("\"foo \\\" bar\"", jsonEncodedString);
+
+            when(mockResponse.header("Content-Type")).thenReturn(JSON_MEDIA_TYPE);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.textBody())
+                    .thenReturn(CompletableFuture.completedFuture(jsonEncodedString));
+
+            TestResponse resResp =
+                    ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                            .logger(mockLogger, "mockLogger")
+                            .method(Method.GET)
+                            .accept(JSON_MEDIA_TYPE)
+                            .handleBody(String.class, TestResponse.Builder::value)
+                            .callSync();
+
+            // embedded quote preserved, outer quotes removed
+            assertEquals("foo \" bar", resResp.getValue());
+            verify(mockResponse).textBody();
+        }
+
+        @Test
+        public void testReadEntity_streamWithContentType() {
+            Map<String, List<String>> headers = new HashMap<>();
+            List<String> contentType = Collections.unmodifiableList(Arrays.asList("text"));
+
+            InputStream mockStream = mock(InputStream.class);
+
+            Class<InputStream> entityType = InputStream.class;
+
+            when(mockResponse.headers()).thenReturn(headers);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.streamBody())
+                    .thenReturn(CompletableFuture.completedFuture(mockStream));
+            headers.put(CONTENT_TYPE, contentType);
+
+            TestResponse resResp =
+                    ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                            .logger(mockLogger, "mockLogger")
+                            .method(Method.GET)
+                            .handleBody(entityType, TestResponse.Builder::inputStream)
+                            .callSync();
+
+            headers = resResp.getHeaders();
+            verify(mockResponse).streamBody();
+            verify(mockResponse, atLeastOnce()).headers();
+            assertEquals(contentType, headers.get(CONTENT_TYPE));
+        }
+
+        @Test
+        public void testReadEntity_streamWithoutContentType() {
+            Map<String, List<String>> headers = new HashMap<>();
+
+            InputStream mockStream = mock(InputStream.class);
+
+            Class<InputStream> entityType = InputStream.class;
+
+            when(mockResponse.headers()).thenReturn(headers);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.streamBody())
+                    .thenReturn(CompletableFuture.completedFuture(mockStream));
+
+            TestResponse resResp =
+                    ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                            .logger(mockLogger, "mockLogger")
+                            .method(Method.GET)
+                            .handleBody(entityType, TestResponse.Builder::inputStream)
+                            .callSync();
+
+            verify(mockResponse).streamBody();
+            verify(mockResponse, atLeastOnce()).headers();
+        }
+
+        @Test
+        public void testReadEntity_streamWithContentLength() {
+            Map<String, List<String>> headers = new HashMap<>();
+            List<String> contentType = Collections.unmodifiableList(Arrays.asList("text"));
+            List<String> contentLength = Collections.unmodifiableList(Arrays.asList("100"));
+
+            InputStream mockStream = mock(InputStream.class);
+
+            Class<InputStream> entityType = InputStream.class;
+
+            when(mockResponse.headers()).thenReturn(headers);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.streamBody())
+                    .thenReturn(CompletableFuture.completedFuture(mockStream));
+            headers.put(CONTENT_TYPE, contentType);
+            headers.put(CONTENT_LENGTH, contentLength);
+
+            TestResponse resResp =
+                    ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                            .logger(mockLogger, "mockLogger")
+                            .method(Method.GET)
+                            .handleBody(entityType, TestResponse.Builder::inputStream)
+                            .callSync();
+            headers = resResp.getHeaders();
+
+            assertThat(resResp.getInputStream(), instanceOf(entityType));
+            verify(mockResponse).streamBody();
+            verify(mockResponse, atLeastOnce()).headers();
+            assertEquals(contentType, headers.get(CONTENT_TYPE));
+            assertEquals(contentLength, headers.get(CONTENT_LENGTH));
+        }
+
+        @Test
+        public void testReadEntity_streamWithoutVerifyingContentLength() {
+
+            Map<String, List<String>> headers = new HashMap<>();
+            List<String> contentType = Collections.unmodifiableList(Arrays.asList("text"));
+            List<String> contentLength = Collections.unmodifiableList(Arrays.asList("100"));
+            List<String> contentEncoding = Collections.unmodifiableList(Arrays.asList("gzip"));
+
+            InputStream mockStream = mock(InputStream.class);
+
+            Class<InputStream> entityType = InputStream.class;
+
+            when(mockResponse.headers()).thenReturn(headers);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.streamBody())
+                    .thenReturn(CompletableFuture.completedFuture(mockStream));
+            headers.put(CONTENT_TYPE, contentType);
+            headers.put(CONTENT_LENGTH, contentLength);
+            headers.put(CONTENT_ENCODING, contentEncoding);
+
+            TestResponse resResp =
+                    ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                            .logger(mockLogger, "mockLogger")
+                            .method(Method.GET)
+                            .handleBody(entityType, TestResponse.Builder::inputStream)
+                            .callSync();
+            headers = resResp.getHeaders();
+
+            assertThat(resResp.getInputStream(), instanceOf(entityType));
+            verify(mockResponse).streamBody();
+            verify(mockResponse, atLeastOnce()).headers();
+            assertEquals(contentType, headers.get(CONTENT_TYPE));
+            assertEquals(contentLength, headers.get(CONTENT_LENGTH));
+            assertEquals(contentEncoding, headers.get(CONTENT_ENCODING));
+        }
+    }
+}

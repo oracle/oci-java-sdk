@@ -24,7 +24,7 @@ public class HttpProxyExample {
     private static final String CONFIG_PROFILE = "DEFAULT";
 
     // Proxy Server configuration
-    private static final String PROXY_URI = "http://localhost";
+    private static final String PROXY_URI = "localhost";
     private static final int PROXY_PORT = 8889;
     private static final String PROXY_USERNAME = "username";
     private static final String PROXY_PASSWORD = "password";
@@ -44,7 +44,7 @@ public class HttpProxyExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         try {
-            // Specify an ApacheProxyConfig when building a new client with the ApacheConfigurator
+            // Create a ProxyConfiguration with proxy scheme, address, port, username and password
             final ProxyConfiguration proxyConfig =
                     ProxyConfiguration.builder()
                             .proxy(
