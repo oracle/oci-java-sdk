@@ -33,11 +33,10 @@ public class ApacheConnectorPropertiesExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        // For bodies with large InputStreams, the ApacheConfigurator.NonBuffering provides the
-        // option to switch off buffering of large objects in memory, for buffering clients use
-        // ApacheConfigurator
+        // Define ssl context for the client
         SSLContext sslContext = null;
 
+        // Define a connection manager and its properties
         final PoolingHttpClientConnectionManager poolConnectionManager =
                 new PoolingHttpClientConnectionManager();
         poolConnectionManager.setMaxTotal(100);

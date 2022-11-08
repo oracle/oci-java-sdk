@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Job details that are specific to the operation type. <br>
+ * A summary of job details that is specific to the operation type. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -22,8 +22,14 @@ package com.oracle.bmc.resourcemanager.model;
         defaultImpl = JobOperationDetailsSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ApplyRollbackJobOperationDetailsSummary.class,
+            name = "APPLY_ROLLBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ImportTfStateJobOperationDetailsSummary.class,
             name = "IMPORT_TF_STATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PlanRollbackJobOperationDetailsSummary.class,
+            name = "PLAN_ROLLBACK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PlanJobOperationDetailsSummary.class,
             name = "PLAN"),

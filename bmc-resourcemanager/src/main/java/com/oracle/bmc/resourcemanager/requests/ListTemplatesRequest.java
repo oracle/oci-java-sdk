@@ -40,14 +40,20 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return compartmentId;
     }
     /**
-     * Unique identifier of the template category. Possible values are {@code 0} (Quick Starts),
-     * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
+     * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
+     * labels are displayed in the Console page listing templates. Quickstarts, Service, and
+     * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
+     * private template (category 3) is available in the compartment where it was created.
      */
     private String templateCategoryId;
 
     /**
-     * Unique identifier of the template category. Possible values are {@code 0} (Quick Starts),
-     * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
+     * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
+     * labels are displayed in the Console page listing templates. Quickstarts, Service, and
+     * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
+     * private template (category 3) is available in the compartment where it was created.
      */
     public String getTemplateCategoryId() {
         return templateCategoryId;
@@ -257,14 +263,20 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique identifier of the template category. Possible values are {@code 0} (Quick Starts),
-         * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
+         * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
+         * labels are displayed in the Console page listing templates. Quickstarts, Service, and
+         * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
+         * private template (category 3) is available in the compartment where it was created.
          */
         private String templateCategoryId = null;
 
         /**
-         * Unique identifier of the template category. Possible values are {@code 0} (Quick Starts),
-         * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
+         * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
+         * labels are displayed in the Console page listing templates. Quickstarts, Service, and
+         * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
+         * private template (category 3) is available in the compartment where it was created.
          *
          * @param templateCategoryId the value to set
          * @return this builder instance

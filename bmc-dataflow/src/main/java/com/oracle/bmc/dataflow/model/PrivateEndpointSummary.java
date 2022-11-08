@@ -34,6 +34,7 @@ public final class PrivateEndpointSummary
         "nsgIds",
         "ownerPrincipalId",
         "ownerUserName",
+        "scanDetails",
         "subnetId",
         "timeCreated",
         "timeUpdated"
@@ -50,6 +51,7 @@ public final class PrivateEndpointSummary
             java.util.List<String> nsgIds,
             String ownerPrincipalId,
             String ownerUserName,
+            java.util.List<Scan> scanDetails,
             String subnetId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated) {
@@ -65,6 +67,7 @@ public final class PrivateEndpointSummary
         this.nsgIds = nsgIds;
         this.ownerPrincipalId = ownerPrincipalId;
         this.ownerUserName = ownerUserName;
+        this.scanDetails = scanDetails;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -276,6 +279,27 @@ public final class PrivateEndpointSummary
             this.__explicitlySet__.add("ownerUserName");
             return this;
         }
+        /**
+         * An array of fqdn/port pairs used to create private endpoint. Each object is a simple
+         * key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com",
+         * port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanDetails")
+        private java.util.List<Scan> scanDetails;
+
+        /**
+         * An array of fqdn/port pairs used to create private endpoint. Each object is a simple
+         * key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com",
+         * port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+         *
+         * @param scanDetails the value to set
+         * @return this builder
+         */
+        public Builder scanDetails(java.util.List<Scan> scanDetails) {
+            this.scanDetails = scanDetails;
+            this.__explicitlySet__.add("scanDetails");
+            return this;
+        }
         /** The OCID of a subnet. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
@@ -351,6 +375,7 @@ public final class PrivateEndpointSummary
                             this.nsgIds,
                             this.ownerPrincipalId,
                             this.ownerUserName,
+                            this.scanDetails,
                             this.subnetId,
                             this.timeCreated,
                             this.timeUpdated);
@@ -394,6 +419,9 @@ public final class PrivateEndpointSummary
             }
             if (model.wasPropertyExplicitlySet("ownerUserName")) {
                 this.ownerUserName(model.getOwnerUserName());
+            }
+            if (model.wasPropertyExplicitlySet("scanDetails")) {
+                this.scanDetails(model.getScanDetails());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -596,6 +624,25 @@ public final class PrivateEndpointSummary
         return ownerUserName;
     }
 
+    /**
+     * An array of fqdn/port pairs used to create private endpoint. Each object is a simple
+     * key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port:
+     * "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanDetails")
+    private final java.util.List<Scan> scanDetails;
+
+    /**
+     * An array of fqdn/port pairs used to create private endpoint. Each object is a simple
+     * key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port:
+     * "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+     *
+     * @return the value
+     */
+    public java.util.List<Scan> getScanDetails() {
+        return scanDetails;
+    }
+
     /** The OCID of a subnet. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
@@ -673,6 +720,7 @@ public final class PrivateEndpointSummary
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
         sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
+        sb.append(", scanDetails=").append(String.valueOf(this.scanDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -701,6 +749,7 @@ public final class PrivateEndpointSummary
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
                 && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
+                && java.util.Objects.equals(this.scanDetails, other.scanDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -730,6 +779,7 @@ public final class PrivateEndpointSummary
         result =
                 (result * PRIME)
                         + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
+        result = (result * PRIME) + (this.scanDetails == null ? 43 : this.scanDetails.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());

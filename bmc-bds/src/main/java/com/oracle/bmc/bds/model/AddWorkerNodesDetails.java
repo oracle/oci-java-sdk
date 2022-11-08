@@ -224,6 +224,7 @@ public final class AddWorkerNodesDetails
     public enum NodeType implements com.oracle.bmc.http.internal.BmcEnum {
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
+        Edge("EDGE"),
         ;
 
         private final String value;

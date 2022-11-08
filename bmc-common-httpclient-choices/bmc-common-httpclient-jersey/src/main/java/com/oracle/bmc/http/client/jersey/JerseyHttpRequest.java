@@ -9,10 +9,10 @@ import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.RequestInterceptor;
-import com.oracle.bmc.http.internal.ApacheDuplicatableInputStreamEntity;
-import com.oracle.bmc.http.internal.ApacheInputStreamEntity;
 import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.jersey.internal.ApacheDuplicatableInputStreamEntity;
+import com.oracle.bmc.http.client.jersey.internal.ApacheInputStreamEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

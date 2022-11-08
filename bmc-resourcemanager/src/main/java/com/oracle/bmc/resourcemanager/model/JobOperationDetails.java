@@ -28,6 +28,12 @@ package com.oracle.bmc.resourcemanager.model;
             value = PlanJobOperationDetails.class,
             name = "PLAN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ApplyRollbackJobOperationDetails.class,
+            name = "APPLY_ROLLBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PlanRollbackJobOperationDetails.class,
+            name = "PLAN_ROLLBACK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ApplyJobOperationDetails.class,
             name = "APPLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

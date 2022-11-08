@@ -81,14 +81,6 @@ public class ApacheConfigurator implements ClientConfigurator {
         setApacheConnectorProperties(builder);
 
         setSslContext(builder);
-
-        // TODO: DEX-14784 - do we need the ContentLengthFilter?
-        // Required for calls to only allow Apache to set the content-length header.
-        // Otherwise, apache will throw an exception if it already exists. For example, such a case
-        // includes
-        // ObjectStorage where the content-length is explicitly set in the header based on the value
-        // in the request.
-        // client.register(new ContentLengthFilter());
     }
 
     /**

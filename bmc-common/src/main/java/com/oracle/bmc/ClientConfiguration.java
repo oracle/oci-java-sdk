@@ -5,6 +5,7 @@
 package com.oracle.bmc;
 
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.retrier.RetryConfiguration;
 
 /** This class provides configuration options for client requests. */
@@ -30,6 +31,9 @@ public class ClientConfiguration {
     /** The circuit-breaker configuration to use. Default is no circuit-breaker. */
     private final CircuitBreakerConfiguration circuitBreakerConfiguration;
 
+    /** The circuit-breaker to use. Default is no circuit-breaker. */
+    private final OciCircuitBreaker circuitBreaker;
+
     // Explicit @Builder on constructor so we can enforce default values.
     private ClientConfiguration(
             Integer connectionTimeoutMillis,
@@ -37,7 +41,8 @@ public class ClientConfiguration {
             Integer maxAsyncThreads,
             Boolean disableDataBufferingOnUpload,
             RetryConfiguration retryConfiguration,
-            CircuitBreakerConfiguration circuitBreakerConfiguration) {
+            CircuitBreakerConfiguration circuitBreakerConfiguration,
+            OciCircuitBreaker circuitBreaker) {
 
         this.connectionTimeoutMillis =
                 getOrDefault(connectionTimeoutMillis, CONNECTION_TIMEOUT_MILLIS);
@@ -45,6 +50,7 @@ public class ClientConfiguration {
         this.maxAsyncThreads = getOrDefault(maxAsyncThreads, MAX_ASYNC_THREADS);
         this.retryConfiguration = retryConfiguration;
         this.circuitBreakerConfiguration = circuitBreakerConfiguration;
+        this.circuitBreaker = circuitBreaker;
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {
@@ -75,6 +81,10 @@ public class ClientConfiguration {
         return this.circuitBreakerConfiguration;
     }
 
+    public OciCircuitBreaker getCircuitBreaker() {
+        return this.circuitBreaker;
+    }
+
     public String toString() {
         return "ClientConfiguration(connectionTimeoutMillis="
                 + this.getConnectionTimeoutMillis()
@@ -86,6 +96,8 @@ public class ClientConfiguration {
                 + this.getRetryConfiguration()
                 + ", circuitBreakerConfiguration="
                 + this.getCircuitBreakerConfiguration()
+                + ", circuitBreaker="
+                + this.getCircuitBreaker()
                 + ")";
     }
 
@@ -96,6 +108,8 @@ public class ClientConfiguration {
         private Boolean disableDataBufferingOnUpload;
         private RetryConfiguration retryConfiguration;
         private CircuitBreakerConfiguration circuitBreakerConfiguration;
+
+        private OciCircuitBreaker circuitBreaker;
 
         ClientConfigurationBuilder() {}
 
@@ -132,6 +146,11 @@ public class ClientConfiguration {
             return this;
         }
 
+        public ClientConfigurationBuilder circuitBreaker(OciCircuitBreaker circuitBreaker) {
+            this.circuitBreaker = circuitBreaker;
+            return this;
+        }
+
         public ClientConfiguration build() {
             return new ClientConfiguration(
                     connectionTimeoutMillis,
@@ -139,7 +158,8 @@ public class ClientConfiguration {
                     maxAsyncThreads,
                     disableDataBufferingOnUpload,
                     retryConfiguration,
-                    circuitBreakerConfiguration);
+                    circuitBreakerConfiguration,
+                    circuitBreaker);
         }
 
         public String toString() {
@@ -155,6 +175,8 @@ public class ClientConfiguration {
                     + this.retryConfiguration
                     + ", circuitBreakerConfiguration="
                     + this.circuitBreakerConfiguration
+                    + ", circuitBreaker="
+                    + this.circuitBreaker
                     + ")";
         }
     }

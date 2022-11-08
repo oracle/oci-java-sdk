@@ -6,8 +6,8 @@ package com.oracle.bmc.http.client.jersey3;
 
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Options;
-import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
-import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
+import com.oracle.bmc.http.client.jersey3.io.internal.AutoCloseableContentLengthVerifyingInputStream;
+import com.oracle.bmc.http.client.jersey3.io.internal.ContentLengthVerifyingInputStream;
 import jakarta.ws.rs.core.GenericType;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;

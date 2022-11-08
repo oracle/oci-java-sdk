@@ -5,8 +5,13 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The stack object. Stacks represent definitions of groups of Oracle Cloud Infrastructure resources
- * that you can act upon as a group. You take action on stacks by using jobs. <br>
+ * The properties that define a stack. A stack is the collection of Oracle Cloud Infrastructure
+ * resources corresponding to a given Terraform configuration. For instructions on managing stacks,
+ * see [Managing
+ * Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/stacks.htm). For more
+ * information about stacks, see [Key
+ * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__stackdefinition).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
