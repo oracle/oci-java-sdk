@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The details for updating a configuration source provider of the type {@code GITLAB_ACCESS_TOKEN}.
+ * Update details for configuration source provider of the type {@code GITLAB_ACCESS_TOKEN}.
  * This type corresponds to a configuration source provider in GitLab that is authenticated with a personal access token.
  *
  * <br/>

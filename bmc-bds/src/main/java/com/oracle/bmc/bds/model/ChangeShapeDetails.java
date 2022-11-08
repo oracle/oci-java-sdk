@@ -126,7 +126,7 @@ public final class ChangeShapeDetails extends com.oracle.bmc.http.internal.Expli
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChangeShapeDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(", nodes=").append(String.valueOf(this.nodes));
         sb.append(")");
         return sb.toString();

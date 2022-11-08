@@ -178,7 +178,7 @@ public final class TestBdsObjectStorageConnectionDetails
         sb.append("TestBdsObjectStorageConnectionDetails(");
         sb.append("super=").append(super.toString());
         sb.append("objectStorageUri=").append(String.valueOf(this.objectStorageUri));
-        sb.append(", passphrase=").append(String.valueOf(this.passphrase));
+        sb.append(", passphrase=").append("<redacted>");
         sb.append(", objectStorageRegion=").append(String.valueOf(this.objectStorageRegion));
         sb.append(")");
         return sb.toString();

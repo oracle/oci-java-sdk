@@ -262,8 +262,8 @@ public final class CreateBdsMetastoreConfigurationDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
-        sb.append(", bdsApiKeyPassphrase=").append(String.valueOf(this.bdsApiKeyPassphrase));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", bdsApiKeyPassphrase=").append("<redacted>");
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

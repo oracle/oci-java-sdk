@@ -352,7 +352,7 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", certificateStoreType=").append(String.valueOf(this.certificateStoreType));
-        sb.append(", storePassword=").append(String.valueOf(this.storePassword));
+        sb.append(", storePassword=").append("<redacted>");
         sb.append(", trustStoreContent=").append(String.valueOf(this.trustStoreContent));
         sb.append(", keyStoreContent=").append(String.valueOf(this.keyStoreContent));
         sb.append(")");

@@ -428,7 +428,7 @@ public final class CreateOperationsInsightsWarehouseUserDetails
                 .append(String.valueOf(this.operationsInsightsWarehouseId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", name=").append(String.valueOf(this.name));
-        sb.append(", connectionPassword=").append(String.valueOf(this.connectionPassword));
+        sb.append(", connectionPassword=").append("<redacted>");
         sb.append(", isAwrDataAccess=").append(String.valueOf(this.isAwrDataAccess));
         sb.append(", isEmDataAccess=").append(String.valueOf(this.isEmDataAccess));
         sb.append(", isOpsiDataAccess=").append(String.valueOf(this.isOpsiDataAccess));

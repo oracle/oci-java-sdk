@@ -450,7 +450,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "AddAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "AddAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/AddAgentDependency");
         final java.util.function.Function<javax.ws.rs.core.Response, AddAgentDependencyResponse>
                 transformer =
                         AddAgentDependencyConverter.fromResponse(
@@ -499,7 +502,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ChangeAgentCompartment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ChangeAgentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/ChangeAgentCompartment");
         final java.util.function.Function<javax.ws.rs.core.Response, ChangeAgentCompartmentResponse>
                 transformer =
                         ChangeAgentCompartmentConverter.fromResponse(
@@ -554,7 +560,7 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                         "OcbAgentSvc",
                         "ChangeAgentDependencyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/ChangeAgentDependencyCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAgentDependencyCompartmentResponse>
                 transformer =
@@ -613,7 +619,7 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                         "OcbAgentSvc",
                         "ChangeEnvironmentCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/ChangeEnvironmentCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeEnvironmentCompartmentResponse>
                 transformer =
@@ -664,7 +670,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "CreateAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "CreateAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/CreateAgent");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateAgentResponse>
                 transformer =
                         CreateAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -712,7 +721,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "CreateAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "CreateAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/CreateAgentDependency");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateAgentDependencyResponse>
                 transformer =
                         CreateAgentDependencyConverter.fromResponse(
@@ -762,7 +774,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "CreateEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "CreateEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/CreateEnvironment");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateEnvironmentResponse>
                 transformer =
                         CreateEnvironmentConverter.fromResponse(
@@ -810,7 +825,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "DeleteAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "DeleteAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/DeleteAgent");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteAgentResponse>
                 transformer =
                         DeleteAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -852,7 +870,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 DeleteAgentDependencyConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "DeleteAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "DeleteAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/DeleteAgentDependency");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteAgentDependencyResponse>
                 transformer =
                         DeleteAgentDependencyConverter.fromResponse(
@@ -896,7 +917,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 DeleteEnvironmentConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "DeleteEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "DeleteEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/DeleteEnvironment");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteEnvironmentResponse>
                 transformer =
                         DeleteEnvironmentConverter.fromResponse(
@@ -937,7 +961,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 GetAgentConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/GetAgent");
         final java.util.function.Function<javax.ws.rs.core.Response, GetAgentResponse> transformer =
                 GetAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAgentRequest, GetAgentResponse> handlerToUse =
@@ -977,7 +1004,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 GetAgentDependencyConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/GetAgentDependency");
         final java.util.function.Function<javax.ws.rs.core.Response, GetAgentDependencyResponse>
                 transformer =
                         GetAgentDependencyConverter.fromResponse(
@@ -1020,7 +1050,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 GetEnvironmentConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/GetEnvironment");
         final java.util.function.Function<javax.ws.rs.core.Response, GetEnvironmentResponse>
                 transformer =
                         GetEnvironmentConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1060,7 +1093,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 GetPluginConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "GetPlugin", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "GetPlugin",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/GetPlugin");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPluginResponse>
                 transformer =
                         GetPluginConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1101,7 +1137,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 ListAgentDependenciesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListAgentDependencies", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListAgentDependencies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependencyCollection/ListAgentDependencies");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAgentDependenciesResponse>
                 transformer =
                         ListAgentDependenciesConverter.fromResponse(
@@ -1143,7 +1182,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 ListAgentsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListAgents", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListAgents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentCollection/ListAgents");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAgentsResponse>
                 transformer =
                         ListAgentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1185,7 +1227,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 ListApplianceImagesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListApplianceImages", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListApplianceImages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/ApplianceImageCollection/ListApplianceImages");
         final java.util.function.Function<javax.ws.rs.core.Response, ListApplianceImagesResponse>
                 transformer =
                         ListApplianceImagesConverter.fromResponse(
@@ -1229,7 +1274,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 ListEnvironmentsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "ListEnvironments", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "ListEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/EnvironmentCollection/ListEnvironments");
         final java.util.function.Function<javax.ws.rs.core.Response, ListEnvironmentsResponse>
                 transformer =
                         ListEnvironmentsConverter.fromResponse(
@@ -1273,7 +1321,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "RemoveAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "RemoveAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/RemoveAgentDependency");
         final java.util.function.Function<javax.ws.rs.core.Response, RemoveAgentDependencyResponse>
                 transformer =
                         RemoveAgentDependencyConverter.fromResponse(
@@ -1322,7 +1373,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdateAgent", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdateAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/UpdateAgent");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateAgentResponse>
                 transformer =
                         UpdateAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1370,7 +1424,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdateAgentDependency", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdateAgentDependency",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/UpdateAgentDependency");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateAgentDependencyResponse>
                 transformer =
                         UpdateAgentDependencyConverter.fromResponse(
@@ -1420,7 +1477,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdateEnvironment", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdateEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/UpdateEnvironment");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateEnvironmentResponse>
                 transformer =
                         UpdateEnvironmentConverter.fromResponse(
@@ -1467,7 +1527,10 @@ public class OcbAgentSvcAsyncClient implements OcbAgentSvcAsync {
                 UpdatePluginConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OcbAgentSvc", "UpdatePlugin", ib.getRequestUri().toString(), "");
+                        "OcbAgentSvc",
+                        "UpdatePlugin",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/UpdatePlugin");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdatePluginResponse>
                 transformer =
                         UpdatePluginConverter.fromResponse(java.util.Optional.of(serviceDetails));

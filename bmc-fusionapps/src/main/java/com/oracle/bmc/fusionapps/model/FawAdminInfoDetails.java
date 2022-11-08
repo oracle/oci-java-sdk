@@ -176,8 +176,8 @@ public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.Expl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FawAdminInfoDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("adwAdminPass=").append(String.valueOf(this.adwAdminPass));
-        sb.append(", fawServicePass=").append(String.valueOf(this.fawServicePass));
+        sb.append("adwAdminPass=").append("<redacted>");
+        sb.append(", fawServicePass=").append("<redacted>");
         sb.append(", notificationEmail=").append(String.valueOf(this.notificationEmail));
         sb.append(")");
         return sb.toString();

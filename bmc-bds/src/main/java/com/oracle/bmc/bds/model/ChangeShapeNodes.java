@@ -29,7 +29,9 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         "utility",
         "utilityShapeConfig",
         "cloudsql",
-        "cloudsqlShapeConfig"
+        "cloudsqlShapeConfig",
+        "edge",
+        "edgeShapeConfig"
     })
     public ChangeShapeNodes(
             String worker,
@@ -41,7 +43,9 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
             String utility,
             ShapeConfigDetails utilityShapeConfig,
             String cloudsql,
-            ShapeConfigDetails cloudsqlShapeConfig) {
+            ShapeConfigDetails cloudsqlShapeConfig,
+            String edge,
+            ShapeConfigDetails edgeShapeConfig) {
         super();
         this.worker = worker;
         this.workerShapeConfig = workerShapeConfig;
@@ -53,6 +57,8 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         this.utilityShapeConfig = utilityShapeConfig;
         this.cloudsql = cloudsql;
         this.cloudsqlShapeConfig = cloudsqlShapeConfig;
+        this.edge = edge;
+        this.edgeShapeConfig = edgeShapeConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -183,6 +189,31 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("cloudsqlShapeConfig");
             return this;
         }
+        /**
+         * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("edge")
+        private String edge;
+
+        /**
+         * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         * @param edge the value to set
+         * @return this builder
+         **/
+        public Builder edge(String edge) {
+            this.edge = edge;
+            this.__explicitlySet__.add("edge");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("edgeShapeConfig")
+        private ShapeConfigDetails edgeShapeConfig;
+
+        public Builder edgeShapeConfig(ShapeConfigDetails edgeShapeConfig) {
+            this.edgeShapeConfig = edgeShapeConfig;
+            this.__explicitlySet__.add("edgeShapeConfig");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -199,7 +230,9 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
                             this.utility,
                             this.utilityShapeConfig,
                             this.cloudsql,
-                            this.cloudsqlShapeConfig);
+                            this.cloudsqlShapeConfig,
+                            this.edge,
+                            this.edgeShapeConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -237,6 +270,12 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("cloudsqlShapeConfig")) {
                 this.cloudsqlShapeConfig(model.getCloudsqlShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("edge")) {
+                this.edge(model.getEdge());
+            }
+            if (model.wasPropertyExplicitlySet("edgeShapeConfig")) {
+                this.edgeShapeConfig(model.getEdgeShapeConfig());
             }
             return this;
         }
@@ -358,6 +397,27 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         return cloudsqlShapeConfig;
     }
 
+    /**
+     * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("edge")
+    private final String edge;
+
+    /**
+     * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     * @return the value
+     **/
+    public String getEdge() {
+        return edge;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("edgeShapeConfig")
+    private final ShapeConfigDetails edgeShapeConfig;
+
+    public ShapeConfigDetails getEdgeShapeConfig() {
+        return edgeShapeConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -383,6 +443,8 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         sb.append(", utilityShapeConfig=").append(String.valueOf(this.utilityShapeConfig));
         sb.append(", cloudsql=").append(String.valueOf(this.cloudsql));
         sb.append(", cloudsqlShapeConfig=").append(String.valueOf(this.cloudsqlShapeConfig));
+        sb.append(", edge=").append(String.valueOf(this.edge));
+        sb.append(", edgeShapeConfig=").append(String.valueOf(this.edgeShapeConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -408,6 +470,8 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.utilityShapeConfig, other.utilityShapeConfig)
                 && java.util.Objects.equals(this.cloudsql, other.cloudsql)
                 && java.util.Objects.equals(this.cloudsqlShapeConfig, other.cloudsqlShapeConfig)
+                && java.util.Objects.equals(this.edge, other.edge)
+                && java.util.Objects.equals(this.edgeShapeConfig, other.edgeShapeConfig)
                 && super.equals(other);
     }
 
@@ -443,6 +507,10 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
                         + (this.cloudsqlShapeConfig == null
                                 ? 43
                                 : this.cloudsqlShapeConfig.hashCode());
+        result = (result * PRIME) + (this.edge == null ? 43 : this.edge.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.edgeShapeConfig == null ? 43 : this.edgeShapeConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

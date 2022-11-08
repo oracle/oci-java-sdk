@@ -233,7 +233,7 @@ public final class UpdateAutoScalingConfigurationDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
-        sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append(", clusterAdminPassword=").append("<redacted>");
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", policyDetails=").append(String.valueOf(this.policyDetails));
         sb.append(")");

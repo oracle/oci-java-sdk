@@ -349,9 +349,9 @@ public final class UpdateDatabaseDetails
         sb.append("super=").append(super.toString());
         sb.append("dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
         sb.append(", dbHomeId=").append(String.valueOf(this.dbHomeId));
-        sb.append(", newAdminPassword=").append(String.valueOf(this.newAdminPassword));
-        sb.append(", oldTdeWalletPassword=").append(String.valueOf(this.oldTdeWalletPassword));
-        sb.append(", newTdeWalletPassword=").append(String.valueOf(this.newTdeWalletPassword));
+        sb.append(", newAdminPassword=").append("<redacted>");
+        sb.append(", oldTdeWalletPassword=").append("<redacted>");
+        sb.append(", newTdeWalletPassword=").append("<redacted>");
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");

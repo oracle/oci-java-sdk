@@ -68,6 +68,21 @@ public interface Database extends AutoCloseable {
             ActivateExadataInfrastructureRequest request);
 
     /**
+     * Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStorageCapacityCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStorageCapacityCloudExadataInfrastructure API.
+     */
+    AddStorageCapacityCloudExadataInfrastructureResponse
+            addStorageCapacityCloudExadataInfrastructure(
+                    AddStorageCapacityCloudExadataInfrastructureRequest request);
+
+    /**
      * Makes the storage capacity from additional storage servers available for VM Cluster consumption. Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
@@ -80,6 +95,20 @@ public interface Database extends AutoCloseable {
      */
     AddStorageCapacityExadataInfrastructureResponse addStorageCapacityExadataInfrastructure(
             AddStorageCapacityExadataInfrastructureRequest request);
+
+    /**
+     * Add Virtual Machines to the Cloud VM cluster. Applies to Exadata Cloud instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddVirtualMachineToCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVirtualMachineToCloudVmCluster API.
+     */
+    AddVirtualMachineToCloudVmClusterResponse addVirtualMachineToCloudVmCluster(
+            AddVirtualMachineToCloudVmClusterRequest request);
 
     /**
      * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
@@ -2354,6 +2383,20 @@ public interface Database extends AutoCloseable {
             ListAutonomousDatabaseDataguardAssociationsRequest request);
 
     /**
+     * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseRefreshableClonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseRefreshableClones API.
+     */
+    ListAutonomousDatabaseRefreshableClonesResponse listAutonomousDatabaseRefreshableClones(
+            ListAutonomousDatabaseRefreshableClonesRequest request);
+
+    /**
      * Gets a list of Autonomous Databases based on the query parameters specified.
      *
      * @param request The request object containing the details to send
@@ -3144,6 +3187,20 @@ public interface Database extends AutoCloseable {
      */
     RemoteClonePluggableDatabaseResponse remoteClonePluggableDatabase(
             RemoteClonePluggableDatabaseRequest request);
+
+    /**
+     * Remove Virtual Machines from the Cloud VM cluster. Applies to Exadata Cloud instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromCloudVmCluster API.
+     */
+    RemoveVirtualMachineFromCloudVmClusterResponse removeVirtualMachineFromCloudVmCluster(
+            RemoveVirtualMachineFromCloudVmClusterRequest request);
 
     /**
      * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.

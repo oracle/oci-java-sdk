@@ -680,6 +680,134 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAutonomousDatabaseRefreshableClones operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutonomousDatabaseRefreshableClonesResponse>
+            listAutonomousDatabaseRefreshableClonesResponseIterator(
+                    final ListAutonomousDatabaseRefreshableClonesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDatabaseRefreshableClonesRequest.Builder,
+                ListAutonomousDatabaseRefreshableClonesRequest,
+                ListAutonomousDatabaseRefreshableClonesResponse>(
+                new java.util.function.Supplier<
+                        ListAutonomousDatabaseRefreshableClonesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseRefreshableClonesRequest.Builder get() {
+                        return ListAutonomousDatabaseRefreshableClonesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseRefreshableClonesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabaseRefreshableClonesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseRefreshableClonesRequest.Builder>,
+                        ListAutonomousDatabaseRefreshableClonesRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseRefreshableClonesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseRefreshableClonesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseRefreshableClonesRequest,
+                        ListAutonomousDatabaseRefreshableClonesResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseRefreshableClonesResponse apply(
+                            ListAutonomousDatabaseRefreshableClonesRequest request) {
+                        return client.listAutonomousDatabaseRefreshableClones(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.RefreshableCloneSummary} objects
+     * contained in responses from the listAutonomousDatabaseRefreshableClones operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.RefreshableCloneSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.RefreshableCloneSummary>
+            listAutonomousDatabaseRefreshableClonesRecordIterator(
+                    final ListAutonomousDatabaseRefreshableClonesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDatabaseRefreshableClonesRequest.Builder,
+                ListAutonomousDatabaseRefreshableClonesRequest,
+                ListAutonomousDatabaseRefreshableClonesResponse,
+                com.oracle.bmc.database.model.RefreshableCloneSummary>(
+                new java.util.function.Supplier<
+                        ListAutonomousDatabaseRefreshableClonesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseRefreshableClonesRequest.Builder get() {
+                        return ListAutonomousDatabaseRefreshableClonesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseRefreshableClonesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabaseRefreshableClonesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseRefreshableClonesRequest.Builder>,
+                        ListAutonomousDatabaseRefreshableClonesRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseRefreshableClonesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseRefreshableClonesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseRefreshableClonesRequest,
+                        ListAutonomousDatabaseRefreshableClonesResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseRefreshableClonesResponse apply(
+                            ListAutonomousDatabaseRefreshableClonesRequest request) {
+                        return client.listAutonomousDatabaseRefreshableClones(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseRefreshableClonesResponse,
+                        java.util.List<com.oracle.bmc.database.model.RefreshableCloneSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.RefreshableCloneSummary>
+                            apply(ListAutonomousDatabaseRefreshableClonesResponse response) {
+                        return response.getRefreshableCloneCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAutonomousDatabases operation. This iterable
      * will fetch more data from the server as needed.
      *

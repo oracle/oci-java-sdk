@@ -34,6 +34,16 @@ public final class CloudExadataInfrastructureSummary
         "storageCount",
         "totalStorageSizeInGBs",
         "availableStorageSizeInGBs",
+        "cpuCount",
+        "maxCpuCount",
+        "memorySizeInGBs",
+        "maxMemoryInGBs",
+        "dbNodeStorageSizeInGBs",
+        "maxDbNodeStorageInGBs",
+        "dataStorageSizeInTBs",
+        "maxDataStorageInTBs",
+        "additionalStorageCount",
+        "activatedStorageCount",
         "timeCreated",
         "lifecycleDetails",
         "maintenanceWindow",
@@ -54,6 +64,16 @@ public final class CloudExadataInfrastructureSummary
             Integer storageCount,
             Integer totalStorageSizeInGBs,
             Integer availableStorageSizeInGBs,
+            Integer cpuCount,
+            Integer maxCpuCount,
+            Integer memorySizeInGBs,
+            Integer maxMemoryInGBs,
+            Integer dbNodeStorageSizeInGBs,
+            Integer maxDbNodeStorageInGBs,
+            Double dataStorageSizeInTBs,
+            Double maxDataStorageInTBs,
+            Integer additionalStorageCount,
+            Integer activatedStorageCount,
             java.util.Date timeCreated,
             String lifecycleDetails,
             MaintenanceWindow maintenanceWindow,
@@ -73,6 +93,16 @@ public final class CloudExadataInfrastructureSummary
         this.storageCount = storageCount;
         this.totalStorageSizeInGBs = totalStorageSizeInGBs;
         this.availableStorageSizeInGBs = availableStorageSizeInGBs;
+        this.cpuCount = cpuCount;
+        this.maxCpuCount = maxCpuCount;
+        this.memorySizeInGBs = memorySizeInGBs;
+        this.maxMemoryInGBs = maxMemoryInGBs;
+        this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
+        this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+        this.maxDataStorageInTBs = maxDataStorageInTBs;
+        this.additionalStorageCount = additionalStorageCount;
+        this.activatedStorageCount = activatedStorageCount;
         this.timeCreated = timeCreated;
         this.lifecycleDetails = lifecycleDetails;
         this.maintenanceWindow = maintenanceWindow;
@@ -248,6 +278,168 @@ public final class CloudExadataInfrastructureSummary
             return this;
         }
         /**
+         * The total number of CPU cores allocated.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
+        private Integer cpuCount;
+
+        /**
+         * The total number of CPU cores allocated.
+         * @param cpuCount the value to set
+         * @return this builder
+         **/
+        public Builder cpuCount(Integer cpuCount) {
+            this.cpuCount = cpuCount;
+            this.__explicitlySet__.add("cpuCount");
+            return this;
+        }
+        /**
+         * The total number of CPU cores available.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
+        private Integer maxCpuCount;
+
+        /**
+         * The total number of CPU cores available.
+         * @param maxCpuCount the value to set
+         * @return this builder
+         **/
+        public Builder maxCpuCount(Integer maxCpuCount) {
+            this.maxCpuCount = maxCpuCount;
+            this.__explicitlySet__.add("maxCpuCount");
+            return this;
+        }
+        /**
+         * The memory allocated in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        /**
+         * The memory allocated in GBs.
+         * @param memorySizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+        /**
+         * The total memory available in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
+        private Integer maxMemoryInGBs;
+
+        /**
+         * The total memory available in GBs.
+         * @param maxMemoryInGBs the value to set
+         * @return this builder
+         **/
+        public Builder maxMemoryInGBs(Integer maxMemoryInGBs) {
+            this.maxMemoryInGBs = maxMemoryInGBs;
+            this.__explicitlySet__.add("maxMemoryInGBs");
+            return this;
+        }
+        /**
+         * The local node storage allocated in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        /**
+         * The local node storage allocated in GBs.
+         * @param dbNodeStorageSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+        /**
+         * The total local node storage available in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
+        private Integer maxDbNodeStorageInGBs;
+
+        /**
+         * The total local node storage available in GBs.
+         * @param maxDbNodeStorageInGBs the value to set
+         * @return this builder
+         **/
+        public Builder maxDbNodeStorageInGBs(Integer maxDbNodeStorageInGBs) {
+            this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
+            this.__explicitlySet__.add("maxDbNodeStorageInGBs");
+            return this;
+        }
+        /**
+         * Size, in terabytes, of the DATA disk group.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+        private Double dataStorageSizeInTBs;
+
+        /**
+         * Size, in terabytes, of the DATA disk group.
+         *
+         * @param dataStorageSizeInTBs the value to set
+         * @return this builder
+         **/
+        public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
+            this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+            this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+        /**
+         * The total available DATA disk group size.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDataStorageInTBs")
+        private Double maxDataStorageInTBs;
+
+        /**
+         * The total available DATA disk group size.
+         * @param maxDataStorageInTBs the value to set
+         * @return this builder
+         **/
+        public Builder maxDataStorageInTBs(Double maxDataStorageInTBs) {
+            this.maxDataStorageInTBs = maxDataStorageInTBs;
+            this.__explicitlySet__.add("maxDataStorageInTBs");
+            return this;
+        }
+        /**
+         * The requested number of additional storage servers for the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalStorageCount")
+        private Integer additionalStorageCount;
+
+        /**
+         * The requested number of additional storage servers for the Exadata infrastructure.
+         * @param additionalStorageCount the value to set
+         * @return this builder
+         **/
+        public Builder additionalStorageCount(Integer additionalStorageCount) {
+            this.additionalStorageCount = additionalStorageCount;
+            this.__explicitlySet__.add("additionalStorageCount");
+            return this;
+        }
+        /**
+         * The requested number of additional storage servers activated for the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("activatedStorageCount")
+        private Integer activatedStorageCount;
+
+        /**
+         * The requested number of additional storage servers activated for the Exadata infrastructure.
+         * @param activatedStorageCount the value to set
+         * @return this builder
+         **/
+        public Builder activatedStorageCount(Integer activatedStorageCount) {
+            this.activatedStorageCount = activatedStorageCount;
+            this.__explicitlySet__.add("activatedStorageCount");
+            return this;
+        }
+        /**
          * The date and time the cloud Exadata infrastructure resource was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -404,6 +596,16 @@ public final class CloudExadataInfrastructureSummary
                             this.storageCount,
                             this.totalStorageSizeInGBs,
                             this.availableStorageSizeInGBs,
+                            this.cpuCount,
+                            this.maxCpuCount,
+                            this.memorySizeInGBs,
+                            this.maxMemoryInGBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.maxDbNodeStorageInGBs,
+                            this.dataStorageSizeInTBs,
+                            this.maxDataStorageInTBs,
+                            this.additionalStorageCount,
+                            this.activatedStorageCount,
                             this.timeCreated,
                             this.lifecycleDetails,
                             this.maintenanceWindow,
@@ -449,6 +651,36 @@ public final class CloudExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("availableStorageSizeInGBs")) {
                 this.availableStorageSizeInGBs(model.getAvailableStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCount")) {
+                this.cpuCount(model.getCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxCpuCount")) {
+                this.maxCpuCount(model.getMaxCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxMemoryInGBs")) {
+                this.maxMemoryInGBs(model.getMaxMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxDbNodeStorageInGBs")) {
+                this.maxDbNodeStorageInGBs(model.getMaxDbNodeStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxDataStorageInTBs")) {
+                this.maxDataStorageInTBs(model.getMaxDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("additionalStorageCount")) {
+                this.additionalStorageCount(model.getAdditionalStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("activatedStorageCount")) {
+                this.activatedStorageCount(model.getActivatedStorageCount());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -685,6 +917,148 @@ public final class CloudExadataInfrastructureSummary
     }
 
     /**
+     * The total number of CPU cores allocated.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
+    private final Integer cpuCount;
+
+    /**
+     * The total number of CPU cores allocated.
+     * @return the value
+     **/
+    public Integer getCpuCount() {
+        return cpuCount;
+    }
+
+    /**
+     * The total number of CPU cores available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
+    private final Integer maxCpuCount;
+
+    /**
+     * The total number of CPU cores available.
+     * @return the value
+     **/
+    public Integer getMaxCpuCount() {
+        return maxCpuCount;
+    }
+
+    /**
+     * The memory allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    private final Integer memorySizeInGBs;
+
+    /**
+     * The memory allocated in GBs.
+     * @return the value
+     **/
+    public Integer getMemorySizeInGBs() {
+        return memorySizeInGBs;
+    }
+
+    /**
+     * The total memory available in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
+    private final Integer maxMemoryInGBs;
+
+    /**
+     * The total memory available in GBs.
+     * @return the value
+     **/
+    public Integer getMaxMemoryInGBs() {
+        return maxMemoryInGBs;
+    }
+
+    /**
+     * The local node storage allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    private final Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The local node storage allocated in GBs.
+     * @return the value
+     **/
+    public Integer getDbNodeStorageSizeInGBs() {
+        return dbNodeStorageSizeInGBs;
+    }
+
+    /**
+     * The total local node storage available in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
+    private final Integer maxDbNodeStorageInGBs;
+
+    /**
+     * The total local node storage available in GBs.
+     * @return the value
+     **/
+    public Integer getMaxDbNodeStorageInGBs() {
+        return maxDbNodeStorageInGBs;
+    }
+
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+    private final Double dataStorageSizeInTBs;
+
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     *
+     * @return the value
+     **/
+    public Double getDataStorageSizeInTBs() {
+        return dataStorageSizeInTBs;
+    }
+
+    /**
+     * The total available DATA disk group size.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDataStorageInTBs")
+    private final Double maxDataStorageInTBs;
+
+    /**
+     * The total available DATA disk group size.
+     * @return the value
+     **/
+    public Double getMaxDataStorageInTBs() {
+        return maxDataStorageInTBs;
+    }
+
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalStorageCount")
+    private final Integer additionalStorageCount;
+
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     * @return the value
+     **/
+    public Integer getAdditionalStorageCount() {
+        return additionalStorageCount;
+    }
+
+    /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("activatedStorageCount")
+    private final Integer activatedStorageCount;
+
+    /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     * @return the value
+     **/
+    public Integer getActivatedStorageCount() {
+        return activatedStorageCount;
+    }
+
+    /**
      * The date and time the cloud Exadata infrastructure resource was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -832,6 +1206,16 @@ public final class CloudExadataInfrastructureSummary
         sb.append(", totalStorageSizeInGBs=").append(String.valueOf(this.totalStorageSizeInGBs));
         sb.append(", availableStorageSizeInGBs=")
                 .append(String.valueOf(this.availableStorageSizeInGBs));
+        sb.append(", cpuCount=").append(String.valueOf(this.cpuCount));
+        sb.append(", maxCpuCount=").append(String.valueOf(this.maxCpuCount));
+        sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", maxMemoryInGBs=").append(String.valueOf(this.maxMemoryInGBs));
+        sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", maxDbNodeStorageInGBs=").append(String.valueOf(this.maxDbNodeStorageInGBs));
+        sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
+        sb.append(", maxDataStorageInTBs=").append(String.valueOf(this.maxDataStorageInTBs));
+        sb.append(", additionalStorageCount=").append(String.valueOf(this.additionalStorageCount));
+        sb.append(", activatedStorageCount=").append(String.valueOf(this.activatedStorageCount));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
@@ -865,6 +1249,18 @@ public final class CloudExadataInfrastructureSummary
                 && java.util.Objects.equals(this.totalStorageSizeInGBs, other.totalStorageSizeInGBs)
                 && java.util.Objects.equals(
                         this.availableStorageSizeInGBs, other.availableStorageSizeInGBs)
+                && java.util.Objects.equals(this.cpuCount, other.cpuCount)
+                && java.util.Objects.equals(this.maxCpuCount, other.maxCpuCount)
+                && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(this.maxMemoryInGBs, other.maxMemoryInGBs)
+                && java.util.Objects.equals(
+                        this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.maxDbNodeStorageInGBs, other.maxDbNodeStorageInGBs)
+                && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
+                && java.util.Objects.equals(this.maxDataStorageInTBs, other.maxDataStorageInTBs)
+                && java.util.Objects.equals(
+                        this.additionalStorageCount, other.additionalStorageCount)
+                && java.util.Objects.equals(this.activatedStorageCount, other.activatedStorageCount)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
@@ -906,6 +1302,44 @@ public final class CloudExadataInfrastructureSummary
                         + (this.availableStorageSizeInGBs == null
                                 ? 43
                                 : this.availableStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.cpuCount == null ? 43 : this.cpuCount.hashCode());
+        result = (result * PRIME) + (this.maxCpuCount == null ? 43 : this.maxCpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxMemoryInGBs == null ? 43 : this.maxMemoryInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbNodeStorageSizeInGBs == null
+                                ? 43
+                                : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxDbNodeStorageInGBs == null
+                                ? 43
+                                : this.maxDbNodeStorageInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataStorageSizeInTBs == null
+                                ? 43
+                                : this.dataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxDataStorageInTBs == null
+                                ? 43
+                                : this.maxDataStorageInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalStorageCount == null
+                                ? 43
+                                : this.additionalStorageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.activatedStorageCount == null
+                                ? 43
+                                : this.activatedStorageCount.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

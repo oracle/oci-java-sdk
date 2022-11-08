@@ -628,7 +628,7 @@ public final class UpdateDatabaseRegistrationDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", wallet=").append(String.valueOf(this.wallet));

@@ -769,7 +769,7 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         sb.append(", bootstrapServers=").append(String.valueOf(this.bootstrapServers));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", trustStore=").append(String.valueOf(this.trustStore));
         sb.append(", trustStorePassword=").append(String.valueOf(this.trustStorePassword));
         sb.append(", keyStore=").append(String.valueOf(this.keyStore));

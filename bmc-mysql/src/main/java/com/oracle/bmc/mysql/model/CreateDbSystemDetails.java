@@ -1123,7 +1123,7 @@ public final class CreateDbSystemDetails
         sb.append(", mysqlVersion=").append(String.valueOf(this.mysqlVersion));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
-        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", adminPassword=").append("<redacted>");
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));

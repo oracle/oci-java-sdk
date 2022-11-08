@@ -448,7 +448,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 AnalyzeAssetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "AnalyzeAssets", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "AnalyzeAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetAggregation/AnalyzeAssets");
         final java.util.function.Function<javax.ws.rs.core.Response, AnalyzeAssetsResponse>
                 transformer =
                         AnalyzeAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -491,7 +494,10 @@ public class InventoryAsyncClient implements InventoryAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ChangeAssetCompartment", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ChangeAssetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetCompartment");
         final java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetCompartmentResponse>
                 transformer =
                         ChangeAssetCompartmentConverter.fromResponse(
@@ -541,7 +547,10 @@ public class InventoryAsyncClient implements InventoryAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ChangeAssetTags", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ChangeAssetTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetTags");
         final java.util.function.Function<javax.ws.rs.core.Response, ChangeAssetTagsResponse>
                 transformer =
                         ChangeAssetTagsConverter.fromResponse(
@@ -589,7 +598,10 @@ public class InventoryAsyncClient implements InventoryAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "CreateAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "CreateAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/CreateAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateAssetResponse>
                 transformer =
                         CreateAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -637,7 +649,10 @@ public class InventoryAsyncClient implements InventoryAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "CreateInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "CreateInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/CreateInventory");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateInventoryResponse>
                 transformer =
                         CreateInventoryConverter.fromResponse(
@@ -684,7 +699,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 DeleteAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "DeleteAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "DeleteAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/DeleteAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteAssetResponse>
                 transformer =
                         DeleteAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -726,7 +744,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 DeleteInventoryConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "DeleteInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "DeleteInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/DeleteInventory");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteInventoryResponse>
                 transformer =
                         DeleteInventoryConverter.fromResponse(
@@ -767,7 +788,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 GetAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "GetAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "GetAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/GetAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, GetAssetResponse> transformer =
                 GetAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetAssetRequest, GetAssetResponse> handlerToUse =
@@ -806,7 +830,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 GetInventoryConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "GetInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "GetInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/GetInventory");
         final java.util.function.Function<javax.ws.rs.core.Response, GetInventoryResponse>
                 transformer =
                         GetInventoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -849,7 +876,10 @@ public class InventoryAsyncClient implements InventoryAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ImportInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ImportInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ImportInventory");
         final java.util.function.Function<javax.ws.rs.core.Response, ImportInventoryResponse>
                 transformer =
                         ImportInventoryConverter.fromResponse(
@@ -895,7 +925,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 ListAssetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListAssets", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ListAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetCollection/ListAssets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAssetsResponse>
                 transformer =
                         ListAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -937,7 +970,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 ListHistoricalMetricsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListHistoricalMetrics", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ListHistoricalMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/ListHistoricalMetrics");
         final java.util.function.Function<javax.ws.rs.core.Response, ListHistoricalMetricsResponse>
                 transformer =
                         ListHistoricalMetricsConverter.fromResponse(
@@ -981,7 +1017,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 ListInventoriesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "ListInventories", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "ListInventories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ListInventories");
         final java.util.function.Function<javax.ws.rs.core.Response, ListInventoriesResponse>
                 transformer =
                         ListInventoriesConverter.fromResponse(
@@ -1024,7 +1063,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 SubmitHistoricalMetricsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "SubmitHistoricalMetrics", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "SubmitHistoricalMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/SubmitHistoricalMetrics");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SubmitHistoricalMetricsResponse>
                 transformer =
@@ -1073,7 +1115,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 UpdateAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "UpdateAsset", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "UpdateAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/UpdateAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateAssetResponse>
                 transformer =
                         UpdateAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1120,7 +1165,10 @@ public class InventoryAsyncClient implements InventoryAsync {
                 UpdateInventoryConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Inventory", "UpdateInventory", ib.getRequestUri().toString(), "");
+                        "Inventory",
+                        "UpdateInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/UpdateInventory");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateInventoryResponse>
                 transformer =
                         UpdateInventoryConverter.fromResponse(

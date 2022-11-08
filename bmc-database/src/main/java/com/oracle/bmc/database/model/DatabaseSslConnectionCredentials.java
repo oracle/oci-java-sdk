@@ -341,7 +341,7 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", credentialName=").append(String.valueOf(this.credentialName));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(", sslSecretId=").append(String.valueOf(this.sslSecretId));
         sb.append(")");

@@ -388,7 +388,7 @@ public final class CreateApplicationChannelResult extends CreateChannelResult {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateApplicationChannelResult(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
+        sb.append(", secretKey=").append("<redacted>");
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", isAuthenticatedUserId=").append(String.valueOf(this.isAuthenticatedUserId));
         sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));

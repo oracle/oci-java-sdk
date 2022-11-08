@@ -545,7 +545,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "AssociateDrProtectionGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/AssociateDrProtectionGroup");
         java.util.function.Function<javax.ws.rs.core.Response, AssociateDrProtectionGroupResponse>
                 transformer =
                         AssociateDrProtectionGroupConverter.fromResponse(
@@ -589,7 +589,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "CancelDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CancelDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, CancelDrPlanExecutionResponse>
                 transformer =
                         CancelDrPlanExecutionConverter.fromResponse(
@@ -627,7 +627,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -667,7 +670,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "ChangeDrProtectionGroupCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ChangeDrProtectionGroupCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDrProtectionGroupCompartmentResponse>
                 transformer =
@@ -708,7 +711,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "CreateDrPlan", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "CreateDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/CreateDrPlan");
         java.util.function.Function<javax.ws.rs.core.Response, CreateDrPlanResponse> transformer =
                 CreateDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -749,7 +755,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "CreateDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CreateDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, CreateDrPlanExecutionResponse>
                 transformer =
                         CreateDrPlanExecutionConverter.fromResponse(
@@ -792,7 +798,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "CreateDrProtectionGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/CreateDrProtectionGroup");
         java.util.function.Function<javax.ws.rs.core.Response, CreateDrProtectionGroupResponse>
                 transformer =
                         CreateDrProtectionGroupConverter.fromResponse(
@@ -830,7 +836,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "DeleteDrPlan", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "DeleteDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/DeleteDrPlan");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDrPlanResponse> transformer =
                 DeleteDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -867,7 +876,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "DeleteDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/DeleteDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDrPlanExecutionResponse>
                 transformer =
                         DeleteDrPlanExecutionConverter.fromResponse(
@@ -906,7 +915,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "DeleteDrProtectionGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DeleteDrProtectionGroup");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDrProtectionGroupResponse>
                 transformer =
                         DeleteDrProtectionGroupConverter.fromResponse(
@@ -946,7 +955,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "DisassociateDrProtectionGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DisassociateDrProtectionGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DisassociateDrProtectionGroupResponse>
                 transformer =
@@ -985,7 +994,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "GetDrPlan", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "GetDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/GetDrPlan");
         java.util.function.Function<javax.ws.rs.core.Response, GetDrPlanResponse> transformer =
                 GetDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1020,7 +1032,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "GetDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/GetDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, GetDrPlanExecutionResponse>
                 transformer =
                         GetDrPlanExecutionConverter.fromResponse(
@@ -1057,7 +1069,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "GetDrProtectionGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/GetDrProtectionGroup");
         java.util.function.Function<javax.ws.rs.core.Response, GetDrProtectionGroupResponse>
                 transformer =
                         GetDrProtectionGroupConverter.fromResponse(
@@ -1091,7 +1103,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1128,7 +1143,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "IgnoreDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/IgnoreDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, IgnoreDrPlanExecutionResponse>
                 transformer =
                         IgnoreDrPlanExecutionConverter.fromResponse(
@@ -1169,7 +1184,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "ListDrPlanExecutions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ListDrPlanExecutions");
         java.util.function.Function<javax.ws.rs.core.Response, ListDrPlanExecutionsResponse>
                 transformer =
                         ListDrPlanExecutionsConverter.fromResponse(
@@ -1203,7 +1218,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "ListDrPlans", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "ListDrPlans",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/ListDrPlans");
         java.util.function.Function<javax.ws.rs.core.Response, ListDrPlansResponse> transformer =
                 ListDrPlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1239,7 +1257,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "ListDrProtectionGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ListDrProtectionGroups");
         java.util.function.Function<javax.ws.rs.core.Response, ListDrProtectionGroupsResponse>
                 transformer =
                         ListDrProtectionGroupsConverter.fromResponse(
@@ -1277,7 +1295,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1314,7 +1332,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1348,7 +1366,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1386,7 +1407,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "PauseDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/PauseDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, PauseDrPlanExecutionResponse>
                 transformer =
                         PauseDrPlanExecutionConverter.fromResponse(
@@ -1429,7 +1450,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "ResumeDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ResumeDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, ResumeDrPlanExecutionResponse>
                 transformer =
                         ResumeDrPlanExecutionConverter.fromResponse(
@@ -1471,7 +1492,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "RetryDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/RetryDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, RetryDrPlanExecutionResponse>
                 transformer =
                         RetryDrPlanExecutionConverter.fromResponse(
@@ -1509,7 +1530,10 @@ public class DisasterRecoveryClient implements DisasterRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DisasterRecovery", "UpdateDrPlan", ib.getRequestUri().toString(), "");
+                        "DisasterRecovery",
+                        "UpdateDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/UpdateDrPlan");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDrPlanResponse> transformer =
                 UpdateDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1549,7 +1573,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "UpdateDrPlanExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/UpdateDrPlanExecution");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDrPlanExecutionResponse>
                 transformer =
                         UpdateDrPlanExecutionConverter.fromResponse(
@@ -1591,7 +1615,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "UpdateDrProtectionGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroup");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDrProtectionGroupResponse>
                 transformer =
                         UpdateDrProtectionGroupConverter.fromResponse(
@@ -1634,7 +1658,7 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                         "DisasterRecovery",
                         "UpdateDrProtectionGroupRole",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroupRole");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDrProtectionGroupRoleResponse>
                 transformer =
                         UpdateDrProtectionGroupRoleConverter.fromResponse(
