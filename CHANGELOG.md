@@ -3,6 +3,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.0.0 - 2022-11-08
+### Added
+- Support for listing local and cross-region refreshable clones in the Database service
+- Support for adding multiple cloud VM clusters in the Database service
+- Support for creating rollback jobs in the Resource Manager service
+- Support for edge nodes in the Big Data service
+- Support for Single Client Access Name (SCAN) in the Data Flow service
+- Support for additional filters when listing application dependencies in the Application Dependency Management service
+- Support for additional properties when reading Vulnerability Audit resources in the Application Dependency Management service
+- Support for optionally passing compartment IDs when creating Vulnerability Audit resources in the Application Dependency Management service
+
+## 3.0.0-beta2 - 2022-11-01
+### Added
+- Support for cloning from a backup from the last available timestamp in the Database service
+- Support for third-party scanning using Qualys in the Vulnerability Scanning service
+- Support for customer-provided encryption keys in the Logging Analytics service
+- Support for connections for database resources in the GoldenGate service
+
+### Breaking Changes
+- Class `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration$Vendor` has been removed in the Vulnerability Scanning service
+
+### Breaking Changes
+- Includes the breaking changes from [3.0.0-beta2](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta2---2022-11-01)
+- Includes the breaking changes from [3.0.0-beta1](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta1---2022-10-25)
+- Field `certificateId` has been made mandatory in `com.oracle.bmc.resourcemanager.model.PrivateServerConfigDetails`
+
 ## 3.0.0-beta1 - 2022-10-25
 ### Breaking Changes
 - HTTP client library is pluggable, choices offered are Jakarta EE 8/Jersey 2, or Jakarta EE 9/Jersey 3
@@ -30,32 +56,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for the Disaster Recovery service
 - Support for running code interactively with session applications using statements in the Data Flow service
 - Support for language custom models and language translation in the AI Language service
-
-## 3.0.0-beta2 - 2022-11-01
-### Added
-- Support for cloning from a backup from the last available timestamp in the Database service
-- Support for third-party scanning using Qualys in the Vulnerability Scanning service
-- Support for customer-provided encryption keys in the Logging Analytics service
-- Support for connections for database resources in the GoldenGate service
-
-### Breaking Changes
-- Class `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration$Vendor` has been removed in the Vulnerability Scanning service
-
-## 3.0.0 - 2022-11-08
-### Added
-- Support for listing local and cross-region refreshable clones in the Database service
-- Support for adding multiple cloud VM clusters in the Database service
-- Support for creating rollback jobs in the Resource Manager service
-- Support for edge nodes in the Big Data service
-- Support for Single Client Access Name (SCAN) in the Data Flow service
-- Support for additional filters when listing application dependencies in the Application Dependency Management service
-- Support for additional properties when reading Vulnerability Audit resources in the Application Dependency Management service
-- Support for optionally passing compartment IDs when creating Vulnerability Audit resources in the Application Dependency Management service
-
-### Breaking Changes
-- Includes the breaking changes from [3.0.0-beta2](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta2---2022-11-01)
-- Includes the breaking changes from [3.0.0-beta1](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta1---2022-10-25)
-- Field `certificateId` has been made mandatory in `com.oracle.bmc.resourcemanager.model.PrivateServerConfigDetails`
 
 ## 2.46.0 - 2022-10-04
 ### Added
