@@ -14,6 +14,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for additional properties when reading Vulnerability Audit resources in the Application Dependency Management service
 - Support for optionally passing compartment IDs when creating Vulnerability Audit resources in the Application Dependency Management service
 
+### Breaking Changes
+- Includes the breaking changes from [3.0.0-beta2](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta2---2022-11-01)
+- Includes the breaking changes from [3.0.0-beta1](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta1---2022-10-25)
+- Field `certificateId` has been made mandatory in `com.oracle.bmc.resourcemanager.model.PrivateServerConfigDetails`
+
 ## 3.0.0-beta2 - 2022-11-01
 ### Added
 - Support for cloning from a backup from the last available timestamp in the Database service
@@ -23,11 +28,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Breaking Changes
 - Class `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration$Vendor` has been removed in the Vulnerability Scanning service
-
-### Breaking Changes
-- Includes the breaking changes from [3.0.0-beta2](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta2---2022-11-01)
-- Includes the breaking changes from [3.0.0-beta1](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta1---2022-10-25)
-- Field `certificateId` has been made mandatory in `com.oracle.bmc.resourcemanager.model.PrivateServerConfigDetails`
 
 ## 3.0.0-beta1 - 2022-10-25
 ### Breaking Changes
