@@ -4681,6 +4681,49 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+            getCloudExadataInfrastructureUnallocatedResources(
+                    GetCloudExadataInfrastructureUnallocatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataInfrastructureUnallocatedResourcesRequest,
+                                    GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getCloudExadataInfrastructureId(),
+                "cloudExadataInfrastructureId must not be blank");
+
+        return clientCall(
+                        request, GetCloudExadataInfrastructureUnallocatedResourcesResponse::builder)
+                .logger(LOG, "getCloudExadataInfrastructureUnallocatedResources")
+                .serviceDetails(
+                        "Database",
+                        "GetCloudExadataInfrastructureUnallocatedResources",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructureUnallocatedResources/GetCloudExadataInfrastructureUnallocatedResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCloudExadataInfrastructureUnallocatedResourcesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudExadataInfrastructures")
+                .appendPathParam(request.getCloudExadataInfrastructureId())
+                .appendPathParam("unAllocatedResources")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.CloudExadataInfrastructureUnallocatedResources
+                                .class,
+                        GetCloudExadataInfrastructureUnallocatedResourcesResponse.Builder
+                                ::cloudExadataInfrastructureUnallocatedResources)
+                .handleResponseHeaderString(
+                        "etag",
+                        GetCloudExadataInfrastructureUnallocatedResourcesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCloudExadataInfrastructureUnallocatedResourcesResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCloudVmClusterResponse> getCloudVmCluster(
             GetCloudVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -1098,6 +1098,74 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListJobAssociatedResourcesResponse listJobAssociatedResources(
+            ListJobAssociatedResourcesRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, ListJobAssociatedResourcesResponse::builder)
+                .logger(LOG, "listJobAssociatedResources")
+                .serviceDetails(
+                        "ResourceManager",
+                        "ListJobAssociatedResources",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/AssociatedResourceSummary/ListJobAssociatedResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobAssociatedResourcesRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("associatedResources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("terraformResourceType", request.getTerraformResourceType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.AssociatedResourcesCollection.class,
+                        ListJobAssociatedResourcesResponse.Builder::associatedResourcesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobAssociatedResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobAssociatedResourcesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListJobOutputsResponse listJobOutputs(ListJobOutputsRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, ListJobOutputsResponse::builder)
+                .logger(LOG, "listJobOutputs")
+                .serviceDetails(
+                        "ResourceManager",
+                        "ListJobOutputs",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobOutputSummary/ListJobOutputs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobOutputsRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("outputs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.JobOutputsCollection.class,
+                        ListJobOutputsResponse.Builder::jobOutputsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobOutputsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobOutputsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListJobsResponse listJobs(ListJobsRequest request) {
 
         return clientCall(request, ListJobsResponse::builder)
@@ -1190,6 +1258,42 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListResourceDiscoveryServicesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListStackAssociatedResourcesResponse listStackAssociatedResources(
+            ListStackAssociatedResourcesRequest request) {
+
+        Validate.notBlank(request.getStackId(), "stackId must not be blank");
+
+        return clientCall(request, ListStackAssociatedResourcesResponse::builder)
+                .logger(LOG, "listStackAssociatedResources")
+                .serviceDetails(
+                        "ResourceManager",
+                        "ListStackAssociatedResources",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/AssociatedResourceSummary/ListStackAssociatedResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStackAssociatedResourcesRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("stacks")
+                .appendPathParam(request.getStackId())
+                .appendPathParam("associatedResources")
+                .appendQueryParam("terraformResourceType", request.getTerraformResourceType())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.AssociatedResourcesCollection.class,
+                        ListStackAssociatedResourcesResponse.Builder::associatedResourcesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListStackAssociatedResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStackAssociatedResourcesResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

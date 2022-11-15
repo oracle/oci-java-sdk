@@ -170,8 +170,12 @@ abstract class BaseClient implements AutoCloseable {
         }
         this.httpClient = builder.build();
 
+        OciCircuitBreaker userDefinedCircuitBreaker = clientConfigurationToUse.getCircuitBreaker();
         circuitBreaker =
-                CircuitBreakerHelper.makeCircuitBreaker(httpClient, circuitBreakerConfiguration);
+                userDefinedCircuitBreaker != null
+                        ? userDefinedCircuitBreaker
+                        : CircuitBreakerHelper.makeCircuitBreaker(
+                                httpClient, circuitBreakerConfiguration);
     }
 
     public final String getEndpoint() {

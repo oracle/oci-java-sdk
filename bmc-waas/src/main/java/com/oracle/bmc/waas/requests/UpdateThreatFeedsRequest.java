@@ -16,14 +16,12 @@ public class UpdateThreatFeedsRequest
                 java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction>> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * WAAS policy.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
     private String waasPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * WAAS policy.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
     public String getWaasPolicyId() {
         return waasPolicyId;
@@ -85,14 +83,14 @@ public class UpdateThreatFeedsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * WAAS policy.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS
+         * policy.
          */
         private String waasPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * WAAS policy.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS
+         * policy.
          *
          * @param waasPolicyId the value to set
          * @return this builder instance

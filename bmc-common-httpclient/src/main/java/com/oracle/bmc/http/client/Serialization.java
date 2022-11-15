@@ -13,6 +13,7 @@ import com.oracle.bmc.http.client.internal.ExplicitlySetFilter;
 import com.oracle.bmc.http.client.internal.RFC3339DateFormat;
 
 /** Serialization gives access to the serializer/deserializer used by the OCI Java SDK. */
+@InternalSdk
 public enum Serialization {
 // no-member enum to prevent instantiation
 ;
@@ -43,6 +44,7 @@ public enum Serialization {
      *
      * @return The ObjectMapper used.
      */
+    @InternalSdk
     public static ObjectMapper getObjectMapper() {
         return DEFAULT_MAPPER;
     }
