@@ -288,6 +288,245 @@ public class ResourceManagerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listJobAssociatedResources operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListJobAssociatedResourcesResponse> listJobAssociatedResourcesResponseIterator(
+            final ListJobAssociatedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJobAssociatedResourcesRequest.Builder,
+                ListJobAssociatedResourcesRequest,
+                ListJobAssociatedResourcesResponse>(
+                new java.util.function.Supplier<ListJobAssociatedResourcesRequest.Builder>() {
+                    @Override
+                    public ListJobAssociatedResourcesRequest.Builder get() {
+                        return ListJobAssociatedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJobAssociatedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListJobAssociatedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobAssociatedResourcesRequest.Builder>,
+                        ListJobAssociatedResourcesRequest>() {
+                    @Override
+                    public ListJobAssociatedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobAssociatedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListJobAssociatedResourcesRequest, ListJobAssociatedResourcesResponse>() {
+                    @Override
+                    public ListJobAssociatedResourcesResponse apply(
+                            ListJobAssociatedResourcesRequest request) {
+                        return client.listJobAssociatedResources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary} objects contained in
+     * responses from the listJobAssociatedResources operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>
+            listJobAssociatedResourcesRecordIterator(
+                    final ListJobAssociatedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJobAssociatedResourcesRequest.Builder,
+                ListJobAssociatedResourcesRequest,
+                ListJobAssociatedResourcesResponse,
+                com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>(
+                new java.util.function.Supplier<ListJobAssociatedResourcesRequest.Builder>() {
+                    @Override
+                    public ListJobAssociatedResourcesRequest.Builder get() {
+                        return ListJobAssociatedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJobAssociatedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListJobAssociatedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobAssociatedResourcesRequest.Builder>,
+                        ListJobAssociatedResourcesRequest>() {
+                    @Override
+                    public ListJobAssociatedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobAssociatedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListJobAssociatedResourcesRequest, ListJobAssociatedResourcesResponse>() {
+                    @Override
+                    public ListJobAssociatedResourcesResponse apply(
+                            ListJobAssociatedResourcesRequest request) {
+                        return client.listJobAssociatedResources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListJobAssociatedResourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>
+                            apply(ListJobAssociatedResourcesResponse response) {
+                        return response.getAssociatedResourcesCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listJobOutputs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListJobOutputsResponse> listJobOutputsResponseIterator(
+            final ListJobOutputsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJobOutputsRequest.Builder, ListJobOutputsRequest, ListJobOutputsResponse>(
+                new java.util.function.Supplier<ListJobOutputsRequest.Builder>() {
+                    @Override
+                    public ListJobOutputsRequest.Builder get() {
+                        return ListJobOutputsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJobOutputsResponse, String>() {
+                    @Override
+                    public String apply(ListJobOutputsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobOutputsRequest.Builder>,
+                        ListJobOutputsRequest>() {
+                    @Override
+                    public ListJobOutputsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobOutputsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListJobOutputsRequest, ListJobOutputsResponse>() {
+                    @Override
+                    public ListJobOutputsResponse apply(ListJobOutputsRequest request) {
+                        return client.listJobOutputs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.resourcemanager.model.JobOutputSummary} objects contained in responses from
+     * the listJobOutputs operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.resourcemanager.model.JobOutputSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.JobOutputSummary>
+            listJobOutputsRecordIterator(final ListJobOutputsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJobOutputsRequest.Builder,
+                ListJobOutputsRequest,
+                ListJobOutputsResponse,
+                com.oracle.bmc.resourcemanager.model.JobOutputSummary>(
+                new java.util.function.Supplier<ListJobOutputsRequest.Builder>() {
+                    @Override
+                    public ListJobOutputsRequest.Builder get() {
+                        return ListJobOutputsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJobOutputsResponse, String>() {
+                    @Override
+                    public String apply(ListJobOutputsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJobOutputsRequest.Builder>,
+                        ListJobOutputsRequest>() {
+                    @Override
+                    public ListJobOutputsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJobOutputsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListJobOutputsRequest, ListJobOutputsResponse>() {
+                    @Override
+                    public ListJobOutputsResponse apply(ListJobOutputsRequest request) {
+                        return client.listJobOutputs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListJobOutputsResponse,
+                        java.util.List<com.oracle.bmc.resourcemanager.model.JobOutputSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.resourcemanager.model.JobOutputSummary>
+                            apply(ListJobOutputsResponse response) {
+                        return response.getJobOutputsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listJobs
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -517,6 +756,134 @@ public class ResourceManagerPaginators {
                                     com.oracle.bmc.resourcemanager.model.PrivateEndpointSummary>
                             apply(ListPrivateEndpointsResponse response) {
                         return response.getPrivateEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listStackAssociatedResources operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListStackAssociatedResourcesResponse>
+            listStackAssociatedResourcesResponseIterator(
+                    final ListStackAssociatedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStackAssociatedResourcesRequest.Builder,
+                ListStackAssociatedResourcesRequest,
+                ListStackAssociatedResourcesResponse>(
+                new java.util.function.Supplier<ListStackAssociatedResourcesRequest.Builder>() {
+                    @Override
+                    public ListStackAssociatedResourcesRequest.Builder get() {
+                        return ListStackAssociatedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStackAssociatedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListStackAssociatedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStackAssociatedResourcesRequest.Builder>,
+                        ListStackAssociatedResourcesRequest>() {
+                    @Override
+                    public ListStackAssociatedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStackAssociatedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListStackAssociatedResourcesRequest,
+                        ListStackAssociatedResourcesResponse>() {
+                    @Override
+                    public ListStackAssociatedResourcesResponse apply(
+                            ListStackAssociatedResourcesRequest request) {
+                        return client.listStackAssociatedResources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary} objects contained in
+     * responses from the listStackAssociatedResources operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>
+            listStackAssociatedResourcesRecordIterator(
+                    final ListStackAssociatedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStackAssociatedResourcesRequest.Builder,
+                ListStackAssociatedResourcesRequest,
+                ListStackAssociatedResourcesResponse,
+                com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>(
+                new java.util.function.Supplier<ListStackAssociatedResourcesRequest.Builder>() {
+                    @Override
+                    public ListStackAssociatedResourcesRequest.Builder get() {
+                        return ListStackAssociatedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStackAssociatedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListStackAssociatedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStackAssociatedResourcesRequest.Builder>,
+                        ListStackAssociatedResourcesRequest>() {
+                    @Override
+                    public ListStackAssociatedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStackAssociatedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListStackAssociatedResourcesRequest,
+                        ListStackAssociatedResourcesResponse>() {
+                    @Override
+                    public ListStackAssociatedResourcesResponse apply(
+                            ListStackAssociatedResourcesRequest request) {
+                        return client.listStackAssociatedResources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStackAssociatedResourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.resourcemanager.model.AssociatedResourceSummary>
+                            apply(ListStackAssociatedResourcesResponse response) {
+                        return response.getAssociatedResourcesCollection().getItems();
                     }
                 });
     }

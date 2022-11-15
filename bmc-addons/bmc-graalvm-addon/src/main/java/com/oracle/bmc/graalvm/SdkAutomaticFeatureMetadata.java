@@ -63,7 +63,6 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.desktops.SdkClientsMetadata",
     "com.oracle.bmc.devops.SdkClientsMetadata",
     "com.oracle.bmc.disasterrecovery.SdkClientsMetadata",
-    "com.oracle.bmc.disasterrecovery.SdkClientsMetadata",
     "com.oracle.bmc.dns.SdkClientsMetadata",
     "com.oracle.bmc.documentservice.SdkClientsMetadata",
     "com.oracle.bmc.dts.SdkClientsMetadata",

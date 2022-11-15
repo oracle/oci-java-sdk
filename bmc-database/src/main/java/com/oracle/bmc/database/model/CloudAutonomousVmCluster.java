@@ -45,10 +45,12 @@ public final class CloudAutonomousVmCluster
         "dataStorageSizeInGBs",
         "cpuCoreCount",
         "ocpuCount",
+        "cpuCoreCountPerNode",
         "memorySizeInGBs",
         "licenseModel",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
+        "maintenanceWindow",
         "freeformTags",
         "definedTags",
         "availableCpus",
@@ -83,10 +85,12 @@ public final class CloudAutonomousVmCluster
             Double dataStorageSizeInGBs,
             Integer cpuCoreCount,
             Float ocpuCount,
+            Integer cpuCoreCountPerNode,
             Integer memorySizeInGBs,
             LicenseModel licenseModel,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
+            MaintenanceWindow maintenanceWindow,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Float availableCpus,
@@ -120,10 +124,12 @@ public final class CloudAutonomousVmCluster
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
+        this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.memorySizeInGBs = memorySizeInGBs;
         this.licenseModel = licenseModel;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
+        this.maintenanceWindow = maintenanceWindow;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.availableCpus = availableCpus;
@@ -526,6 +532,21 @@ public final class CloudAutonomousVmCluster
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
+        /** The number of OCPU cores enabled per VM cluster node. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        /**
+         * The number of OCPU cores enabled per VM cluster node.
+         *
+         * @param cpuCoreCountPerNode the value to set
+         * @return this builder
+         */
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
         /** The memory allocated in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
@@ -614,6 +635,15 @@ public final class CloudAutonomousVmCluster
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = nextMaintenanceRunId;
             this.__explicitlySet__.add("nextMaintenanceRunId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
         /**
@@ -829,10 +859,12 @@ public final class CloudAutonomousVmCluster
                             this.dataStorageSizeInGBs,
                             this.cpuCoreCount,
                             this.ocpuCount,
+                            this.cpuCoreCountPerNode,
                             this.memorySizeInGBs,
                             this.licenseModel,
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
+                            this.maintenanceWindow,
                             this.freeformTags,
                             this.definedTags,
                             this.availableCpus,
@@ -917,6 +949,9 @@ public final class CloudAutonomousVmCluster
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
             }
+            if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
+                this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
+            }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
             }
@@ -928,6 +963,9 @@ public final class CloudAutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
                 this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1364,6 +1402,19 @@ public final class CloudAutonomousVmCluster
         return ocpuCount;
     }
 
+    /** The number of OCPU cores enabled per VM cluster node. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    private final Integer cpuCoreCountPerNode;
+
+    /**
+     * The number of OCPU cores enabled per VM cluster node.
+     *
+     * @return the value
+     */
+    public Integer getCpuCoreCountPerNode() {
+        return cpuCoreCountPerNode;
+    }
+
     /** The memory allocated in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
@@ -1499,6 +1550,13 @@ public final class CloudAutonomousVmCluster
      */
     public String getNextMaintenanceRunId() {
         return nextMaintenanceRunId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    private final MaintenanceWindow maintenanceWindow;
+
+    public MaintenanceWindow getMaintenanceWindow() {
+        return maintenanceWindow;
     }
 
     /**
@@ -1702,10 +1760,12 @@ public final class CloudAutonomousVmCluster
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", availableCpus=").append(String.valueOf(this.availableCpus));
@@ -1759,10 +1819,12 @@ public final class CloudAutonomousVmCluster
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.availableCpus, other.availableCpus)
@@ -1839,6 +1901,11 @@ public final class CloudAutonomousVmCluster
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =
                 (result * PRIME)
+                        + (this.cpuCoreCountPerNode == null
+                                ? 43
+                                : this.cpuCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =
@@ -1851,6 +1918,9 @@ public final class CloudAutonomousVmCluster
                         + (this.nextMaintenanceRunId == null
                                 ? 43
                                 : this.nextMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

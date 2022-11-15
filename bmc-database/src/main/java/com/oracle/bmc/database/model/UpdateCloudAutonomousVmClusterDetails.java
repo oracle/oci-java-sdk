@@ -25,6 +25,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
     @java.beans.ConstructorProperties({
         "description",
         "displayName",
+        "maintenanceWindowDetails",
         "licenseModel",
         "nsgIds",
         "freeformTags",
@@ -33,6 +34,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
     public UpdateCloudAutonomousVmClusterDetails(
             String description,
             String displayName,
+            MaintenanceWindow maintenanceWindowDetails,
             LicenseModel licenseModel,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
@@ -40,6 +42,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
         super();
         this.description = description;
         this.displayName = displayName;
+        this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.licenseModel = licenseModel;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
@@ -80,6 +83,15 @@ public final class UpdateCloudAutonomousVmClusterDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+        private MaintenanceWindow maintenanceWindowDetails;
+
+        public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
+            this.__explicitlySet__.add("maintenanceWindowDetails");
             return this;
         }
         /**
@@ -204,6 +216,7 @@ public final class UpdateCloudAutonomousVmClusterDetails
                     new UpdateCloudAutonomousVmClusterDetails(
                             this.description,
                             this.displayName,
+                            this.maintenanceWindowDetails,
                             this.licenseModel,
                             this.nsgIds,
                             this.freeformTags,
@@ -221,6 +234,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
+                this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -275,6 +291,13 @@ public final class UpdateCloudAutonomousVmClusterDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+    private final MaintenanceWindow maintenanceWindowDetails;
+
+    public MaintenanceWindow getMaintenanceWindowDetails() {
+        return maintenanceWindowDetails;
     }
 
     /**
@@ -438,6 +461,8 @@ public final class UpdateCloudAutonomousVmClusterDetails
         sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", maintenanceWindowDetails=")
+                .append(String.valueOf(this.maintenanceWindowDetails));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -458,6 +483,8 @@ public final class UpdateCloudAutonomousVmClusterDetails
         UpdateCloudAutonomousVmClusterDetails other = (UpdateCloudAutonomousVmClusterDetails) o;
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowDetails, other.maintenanceWindowDetails)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -471,6 +498,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
         int result = 1;
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowDetails == null
+                                ? 43
+                                : this.maintenanceWindowDetails.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

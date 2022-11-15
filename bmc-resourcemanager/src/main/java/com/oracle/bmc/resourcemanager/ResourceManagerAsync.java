@@ -602,6 +602,37 @@ public interface ResourceManagerAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the list of resources associated with the specified job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJobAssociatedResourcesResponse> listJobAssociatedResources(
+            ListJobAssociatedResourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListJobAssociatedResourcesRequest, ListJobAssociatedResourcesResponse>
+                    handler);
+
+    /**
+     * Gets the list of outputs associated with the specified job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJobOutputsResponse> listJobOutputs(
+            ListJobOutputsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListJobOutputsRequest, ListJobOutputsResponse>
+                    handler);
+
+    /**
      * Lists jobs according to the specified filter. By default, the list is ordered by time
      * created.
      *
@@ -662,6 +693,23 @@ public interface ResourceManagerAsync extends AutoCloseable {
                                     ListResourceDiscoveryServicesRequest,
                                     ListResourceDiscoveryServicesResponse>
                             handler);
+
+    /**
+     * Gets the list of resources associated with the specified stack.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStackAssociatedResourcesResponse> listStackAssociatedResources(
+            ListStackAssociatedResourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListStackAssociatedResourcesRequest,
+                            ListStackAssociatedResourcesResponse>
+                    handler);
 
     /**
      * Lists drift status details for each resource defined in the specified stack. The drift status

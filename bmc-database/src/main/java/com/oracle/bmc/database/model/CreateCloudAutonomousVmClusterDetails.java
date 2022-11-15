@@ -28,7 +28,13 @@ public final class CreateCloudAutonomousVmClusterDetails
         "subnetId",
         "displayName",
         "cloudExadataInfrastructureId",
+        "totalContainerDatabases",
+        "cpuCoreCountPerNode",
+        "memoryPerOracleComputeUnitInGBs",
+        "autonomousDataStorageSizeInTBs",
         "clusterTimeZone",
+        "dbServers",
+        "maintenanceWindowDetails",
         "licenseModel",
         "nsgIds",
         "freeformTags",
@@ -40,7 +46,13 @@ public final class CreateCloudAutonomousVmClusterDetails
             String subnetId,
             String displayName,
             String cloudExadataInfrastructureId,
+            Integer totalContainerDatabases,
+            Integer cpuCoreCountPerNode,
+            Integer memoryPerOracleComputeUnitInGBs,
+            Double autonomousDataStorageSizeInTBs,
             String clusterTimeZone,
+            java.util.List<String> dbServers,
+            MaintenanceWindow maintenanceWindowDetails,
             LicenseModel licenseModel,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
@@ -51,7 +63,13 @@ public final class CreateCloudAutonomousVmClusterDetails
         this.subnetId = subnetId;
         this.displayName = displayName;
         this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+        this.totalContainerDatabases = totalContainerDatabases;
+        this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+        this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.clusterTimeZone = clusterTimeZone;
+        this.dbServers = dbServers;
+        this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.licenseModel = licenseModel;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
@@ -151,6 +169,66 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("cloudExadataInfrastructureId");
             return this;
         }
+        /** The total number of Autonomous Container Databases that can be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        /**
+         * The total number of Autonomous Container Databases that can be created.
+         *
+         * @param totalContainerDatabases the value to set
+         * @return this builder
+         */
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
+        /** The number of OCPU cores to enable per VM cluster node. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        /**
+         * The number of OCPU cores to enable per VM cluster node.
+         *
+         * @param cpuCoreCountPerNode the value to set
+         * @return this builder
+         */
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
+        /** The amount of memory (in GBs) to be enabled per each OCPU core. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        /**
+         * The amount of memory (in GBs) to be enabled per each OCPU core.
+         *
+         * @param memoryPerOracleComputeUnitInGBs the value to set
+         * @return this builder
+         */
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /** The data disk group size to be allocated for Autonomous Databases, in TBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        /**
+         * The data disk group size to be allocated for Autonomous Databases, in TBs.
+         *
+         * @param autonomousDataStorageSizeInTBs the value to set
+         * @return this builder
+         */
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
         /**
          * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System
          * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
@@ -168,6 +246,30 @@ public final class CreateCloudAutonomousVmClusterDetails
         public Builder clusterTimeZone(String clusterTimeZone) {
             this.clusterTimeZone = clusterTimeZone;
             this.__explicitlySet__.add("clusterTimeZone");
+            return this;
+        }
+        /** The list of Db server. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        /**
+         * The list of Db server.
+         *
+         * @param dbServers the value to set
+         * @return this builder
+         */
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+        private MaintenanceWindow maintenanceWindowDetails;
+
+        public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
+            this.__explicitlySet__.add("maintenanceWindowDetails");
             return this;
         }
         /**
@@ -295,7 +397,13 @@ public final class CreateCloudAutonomousVmClusterDetails
                             this.subnetId,
                             this.displayName,
                             this.cloudExadataInfrastructureId,
+                            this.totalContainerDatabases,
+                            this.cpuCoreCountPerNode,
+                            this.memoryPerOracleComputeUnitInGBs,
+                            this.autonomousDataStorageSizeInTBs,
                             this.clusterTimeZone,
+                            this.dbServers,
+                            this.maintenanceWindowDetails,
                             this.licenseModel,
                             this.nsgIds,
                             this.freeformTags,
@@ -323,8 +431,26 @@ public final class CreateCloudAutonomousVmClusterDetails
             if (model.wasPropertyExplicitlySet("cloudExadataInfrastructureId")) {
                 this.cloudExadataInfrastructureId(model.getCloudExadataInfrastructureId());
             }
+            if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
+                this.totalContainerDatabases(model.getTotalContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
+                this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
+                this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStorageSizeInTBs")) {
+                this.autonomousDataStorageSizeInTBs(model.getAutonomousDataStorageSizeInTBs());
+            }
             if (model.wasPropertyExplicitlySet("clusterTimeZone")) {
                 this.clusterTimeZone(model.getClusterTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
+                this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -432,6 +558,58 @@ public final class CreateCloudAutonomousVmClusterDetails
         return cloudExadataInfrastructureId;
     }
 
+    /** The total number of Autonomous Container Databases that can be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    private final Integer totalContainerDatabases;
+
+    /**
+     * The total number of Autonomous Container Databases that can be created.
+     *
+     * @return the value
+     */
+    public Integer getTotalContainerDatabases() {
+        return totalContainerDatabases;
+    }
+
+    /** The number of OCPU cores to enable per VM cluster node. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    private final Integer cpuCoreCountPerNode;
+
+    /**
+     * The number of OCPU cores to enable per VM cluster node.
+     *
+     * @return the value
+     */
+    public Integer getCpuCoreCountPerNode() {
+        return cpuCoreCountPerNode;
+    }
+
+    /** The amount of memory (in GBs) to be enabled per each OCPU core. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    private final Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     *
+     * @return the value
+     */
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /** The data disk group size to be allocated for Autonomous Databases, in TBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    private final Double autonomousDataStorageSizeInTBs;
+
+    /**
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     *
+     * @return the value
+     */
+    public Double getAutonomousDataStorageSizeInTBs() {
+        return autonomousDataStorageSizeInTBs;
+    }
+
     /**
      * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time
      * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
@@ -447,6 +625,26 @@ public final class CreateCloudAutonomousVmClusterDetails
      */
     public String getClusterTimeZone() {
         return clusterTimeZone;
+    }
+
+    /** The list of Db server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    private final java.util.List<String> dbServers;
+
+    /**
+     * The list of Db server.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDbServers() {
+        return dbServers;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+    private final MaintenanceWindow maintenanceWindowDetails;
+
+    public MaintenanceWindow getMaintenanceWindowDetails() {
+        return maintenanceWindowDetails;
     }
 
     /**
@@ -614,7 +812,17 @@ public final class CreateCloudAutonomousVmClusterDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", cloudExadataInfrastructureId=")
                 .append(String.valueOf(this.cloudExadataInfrastructureId));
+        sb.append(", totalContainerDatabases=")
+                .append(String.valueOf(this.totalContainerDatabases));
+        sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
+        sb.append(", memoryPerOracleComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", autonomousDataStorageSizeInTBs=")
+                .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
         sb.append(", clusterTimeZone=").append(String.valueOf(this.clusterTimeZone));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
+        sb.append(", maintenanceWindowDetails=")
+                .append(String.valueOf(this.maintenanceWindowDetails));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -639,7 +847,17 @@ public final class CreateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.cloudExadataInfrastructureId, other.cloudExadataInfrastructureId)
+                && java.util.Objects.equals(
+                        this.totalContainerDatabases, other.totalContainerDatabases)
+                && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
+                && java.util.Objects.equals(
+                        this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(
+                        this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.clusterTimeZone, other.clusterTimeZone)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowDetails, other.maintenanceWindowDetails)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -664,7 +882,33 @@ public final class CreateCloudAutonomousVmClusterDetails
                                 : this.cloudExadataInfrastructureId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.totalContainerDatabases == null
+                                ? 43
+                                : this.totalContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuCoreCountPerNode == null
+                                ? 43
+                                : this.cpuCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerOracleComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStorageSizeInTBs == null
+                                ? 43
+                                : this.autonomousDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
                         + (this.clusterTimeZone == null ? 43 : this.clusterTimeZone.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowDetails == null
+                                ? 43
+                                : this.maintenanceWindowDetails.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

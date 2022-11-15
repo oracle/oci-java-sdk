@@ -1159,6 +1159,81 @@ public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListJobAssociatedResourcesResponse>
+            listJobAssociatedResources(
+                    ListJobAssociatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListJobAssociatedResourcesRequest,
+                                    ListJobAssociatedResourcesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, ListJobAssociatedResourcesResponse::builder)
+                .logger(LOG, "listJobAssociatedResources")
+                .serviceDetails(
+                        "ResourceManager",
+                        "ListJobAssociatedResources",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/AssociatedResourceSummary/ListJobAssociatedResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobAssociatedResourcesRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("associatedResources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("terraformResourceType", request.getTerraformResourceType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.AssociatedResourcesCollection.class,
+                        ListJobAssociatedResourcesResponse.Builder::associatedResourcesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobAssociatedResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobAssociatedResourcesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobOutputsResponse> listJobOutputs(
+            ListJobOutputsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJobOutputsRequest, ListJobOutputsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, ListJobOutputsResponse::builder)
+                .logger(LOG, "listJobOutputs")
+                .serviceDetails(
+                        "ResourceManager",
+                        "ListJobOutputs",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobOutputSummary/ListJobOutputs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobOutputsRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("outputs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.JobOutputsCollection.class,
+                        ListJobOutputsResponse.Builder::jobOutputsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobOutputsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobOutputsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobsResponse> listJobs(
             ListJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>
@@ -1261,6 +1336,46 @@ public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListResourceDiscoveryServicesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackAssociatedResourcesResponse>
+            listStackAssociatedResources(
+                    ListStackAssociatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListStackAssociatedResourcesRequest,
+                                    ListStackAssociatedResourcesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getStackId(), "stackId must not be blank");
+
+        return clientCall(request, ListStackAssociatedResourcesResponse::builder)
+                .logger(LOG, "listStackAssociatedResources")
+                .serviceDetails(
+                        "ResourceManager",
+                        "ListStackAssociatedResources",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/AssociatedResourceSummary/ListStackAssociatedResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStackAssociatedResourcesRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("stacks")
+                .appendPathParam(request.getStackId())
+                .appendPathParam("associatedResources")
+                .appendQueryParam("terraformResourceType", request.getTerraformResourceType())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.AssociatedResourcesCollection.class,
+                        ListStackAssociatedResourcesResponse.Builder::associatedResourcesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListStackAssociatedResourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStackAssociatedResourcesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

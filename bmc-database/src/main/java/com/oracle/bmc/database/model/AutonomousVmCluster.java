@@ -53,7 +53,10 @@ public final class AutonomousVmCluster
         "definedTags",
         "reclaimableCpus",
         "availableContainerDatabases",
-        "availableAutonomousDataStorageSizeInTBs"
+        "availableAutonomousDataStorageSizeInTBs",
+        "scanListenerPortTls",
+        "scanListenerPortNonTls",
+        "isMtlsEnabled"
     })
     public AutonomousVmCluster(
             String id,
@@ -86,7 +89,10 @@ public final class AutonomousVmCluster
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Integer reclaimableCpus,
             Integer availableContainerDatabases,
-            Double availableAutonomousDataStorageSizeInTBs) {
+            Double availableAutonomousDataStorageSizeInTBs,
+            Integer scanListenerPortTls,
+            Integer scanListenerPortNonTls,
+            Boolean isMtlsEnabled) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -119,6 +125,9 @@ public final class AutonomousVmCluster
         this.reclaimableCpus = reclaimableCpus;
         this.availableContainerDatabases = availableContainerDatabases;
         this.availableAutonomousDataStorageSizeInTBs = availableAutonomousDataStorageSizeInTBs;
+        this.scanListenerPortTls = scanListenerPortTls;
+        this.scanListenerPortNonTls = scanListenerPortNonTls;
+        this.isMtlsEnabled = isMtlsEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -658,6 +667,55 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("availableAutonomousDataStorageSizeInTBs");
             return this;
         }
+        /** The SCAN Listener TLS port number. Default value is 2484. */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+        private Integer scanListenerPortTls;
+
+        /**
+         * The SCAN Listener TLS port number. Default value is 2484.
+         *
+         * @param scanListenerPortTls the value to set
+         * @return this builder
+         */
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            this.scanListenerPortTls = scanListenerPortTls;
+            this.__explicitlySet__.add("scanListenerPortTls");
+            return this;
+        }
+        /** The SCAN Listener Non TLS port number. Default value is 1521. */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+        private Integer scanListenerPortNonTls;
+
+        /**
+         * The SCAN Listener Non TLS port number. Default value is 1521.
+         *
+         * @param scanListenerPortNonTls the value to set
+         * @return this builder
+         */
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = scanListenerPortNonTls;
+            this.__explicitlySet__.add("scanListenerPortNonTls");
+            return this;
+        }
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+         * Default is TLS.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabled")
+        private Boolean isMtlsEnabled;
+
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+         * Default is TLS.
+         *
+         * @param isMtlsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isMtlsEnabled(Boolean isMtlsEnabled) {
+            this.isMtlsEnabled = isMtlsEnabled;
+            this.__explicitlySet__.add("isMtlsEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -695,7 +753,10 @@ public final class AutonomousVmCluster
                             this.definedTags,
                             this.reclaimableCpus,
                             this.availableContainerDatabases,
-                            this.availableAutonomousDataStorageSizeInTBs);
+                            this.availableAutonomousDataStorageSizeInTBs,
+                            this.scanListenerPortTls,
+                            this.scanListenerPortNonTls,
+                            this.isMtlsEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -797,6 +858,15 @@ public final class AutonomousVmCluster
             if (model.wasPropertyExplicitlySet("availableAutonomousDataStorageSizeInTBs")) {
                 this.availableAutonomousDataStorageSizeInTBs(
                         model.getAvailableAutonomousDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTls")) {
+                this.scanListenerPortTls(model.getScanListenerPortTls());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortNonTls")) {
+                this.scanListenerPortNonTls(model.getScanListenerPortNonTls());
+            }
+            if (model.wasPropertyExplicitlySet("isMtlsEnabled")) {
+                this.isMtlsEnabled(model.getIsMtlsEnabled());
             }
             return this;
         }
@@ -1380,6 +1450,49 @@ public final class AutonomousVmCluster
         return availableAutonomousDataStorageSizeInTBs;
     }
 
+    /** The SCAN Listener TLS port number. Default value is 2484. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+    private final Integer scanListenerPortTls;
+
+    /**
+     * The SCAN Listener TLS port number. Default value is 2484.
+     *
+     * @return the value
+     */
+    public Integer getScanListenerPortTls() {
+        return scanListenerPortTls;
+    }
+
+    /** The SCAN Listener Non TLS port number. Default value is 1521. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+    private final Integer scanListenerPortNonTls;
+
+    /**
+     * The SCAN Listener Non TLS port number. Default value is 1521.
+     *
+     * @return the value
+     */
+    public Integer getScanListenerPortNonTls() {
+        return scanListenerPortNonTls;
+    }
+
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+     * Default is TLS.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabled")
+    private final Boolean isMtlsEnabled;
+
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+     * Default is TLS.
+     *
+     * @return the value
+     */
+    public Boolean getIsMtlsEnabled() {
+        return isMtlsEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1433,6 +1546,9 @@ public final class AutonomousVmCluster
                 .append(String.valueOf(this.availableContainerDatabases));
         sb.append(", availableAutonomousDataStorageSizeInTBs=")
                 .append(String.valueOf(this.availableAutonomousDataStorageSizeInTBs));
+        sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
+        sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
+        sb.append(", isMtlsEnabled=").append(String.valueOf(this.isMtlsEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -1487,6 +1603,10 @@ public final class AutonomousVmCluster
                 && java.util.Objects.equals(
                         this.availableAutonomousDataStorageSizeInTBs,
                         other.availableAutonomousDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.scanListenerPortTls, other.scanListenerPortTls)
+                && java.util.Objects.equals(
+                        this.scanListenerPortNonTls, other.scanListenerPortNonTls)
+                && java.util.Objects.equals(this.isMtlsEnabled, other.isMtlsEnabled)
                 && super.equals(other);
     }
 
@@ -1599,6 +1719,19 @@ public final class AutonomousVmCluster
                         + (this.availableAutonomousDataStorageSizeInTBs == null
                                 ? 43
                                 : this.availableAutonomousDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTls == null
+                                ? 43
+                                : this.scanListenerPortTls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortNonTls == null
+                                ? 43
+                                : this.scanListenerPortNonTls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMtlsEnabled == null ? 43 : this.isMtlsEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

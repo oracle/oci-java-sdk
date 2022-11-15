@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.0.1 - 2022-11-15
+### Added
+- Support for mTLS authentication with listeners during Autonomous VM Cluster creation on Exadata Cloud at Customer in the Database service
+- Support for providing custom values for TLS and non-TLS ports during Autonomous VM Cluster creation on Exadata Cloud at Customer in the Database service
+- Support for creating multiple Autonomous VM Clusters in the same Exadata infrastructure in the Database service
+- Support for listing resources associated with a job in the Resource Manager service
+- Support for listing resources associated with a stack in the Resource Manager service
+- Support for listing outputs associated with a job in the Resource Manager service
+- Support for the Oracle distribution of Apache Hadoop 2.0 in the Big Data service
+
 ## 3.0.0 - 2022-11-08
 ### Added
 - Support for listing local and cross-region refreshable clones in the Database service
