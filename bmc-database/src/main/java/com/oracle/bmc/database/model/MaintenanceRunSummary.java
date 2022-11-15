@@ -907,6 +907,7 @@ public final class MaintenanceRunSummary
         ExaccInfrastructure("EXACC_INFRASTRUCTURE"),
         AutonomousVmCluster("AUTONOMOUS_VM_CLUSTER"),
         AutonomousDatabase("AUTONOMOUS_DATABASE"),
+        CloudAutonomousVmCluster("CLOUD_AUTONOMOUS_VM_CLUSTER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

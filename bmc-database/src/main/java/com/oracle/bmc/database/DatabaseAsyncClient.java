@@ -6859,6 +6859,63 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+            getCloudExadataInfrastructureUnallocatedResources(
+                    GetCloudExadataInfrastructureUnallocatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataInfrastructureUnallocatedResourcesRequest,
+                                    GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+                            handler) {
+        LOG.trace("Called async getCloudExadataInfrastructureUnallocatedResources");
+        final GetCloudExadataInfrastructureUnallocatedResourcesRequest interceptedRequest =
+                GetCloudExadataInfrastructureUnallocatedResourcesConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudExadataInfrastructureUnallocatedResourcesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudExadataInfrastructureUnallocatedResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructureUnallocatedResources/GetCloudExadataInfrastructureUnallocatedResources");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+                transformer =
+                        GetCloudExadataInfrastructureUnallocatedResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudExadataInfrastructureUnallocatedResourcesRequest,
+                        GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudExadataInfrastructureUnallocatedResourcesRequest,
+                                GetCloudExadataInfrastructureUnallocatedResourcesResponse>,
+                        java.util.concurrent.Future<
+                                GetCloudExadataInfrastructureUnallocatedResourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudExadataInfrastructureUnallocatedResourcesRequest,
+                    GetCloudExadataInfrastructureUnallocatedResourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCloudVmClusterResponse> getCloudVmCluster(
             GetCloudVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
