@@ -512,6 +512,31 @@ public interface ResourceManager extends AutoCloseable {
             ListConfigurationSourceProvidersRequest request);
 
     /**
+     * Gets the list of resources associated with the specified job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobAssociatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobAssociatedResources API.
+     */
+    ListJobAssociatedResourcesResponse listJobAssociatedResources(
+            ListJobAssociatedResourcesRequest request);
+
+    /**
+     * Gets the list of outputs associated with the specified job.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobOutputsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobOutputs API.
+     */
+    ListJobOutputsResponse listJobOutputs(ListJobOutputsRequest request);
+
+    /**
      * Lists jobs according to the specified filter. By default, the list is ordered by time created.
      * <p>
      * - To list all jobs in a stack, provide the stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -557,6 +582,19 @@ public interface ResourceManager extends AutoCloseable {
      */
     ListResourceDiscoveryServicesResponse listResourceDiscoveryServices(
             ListResourceDiscoveryServicesRequest request);
+
+    /**
+     * Gets the list of resources associated with the specified stack.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackAssociatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStackAssociatedResources API.
+     */
+    ListStackAssociatedResourcesResponse listStackAssociatedResources(
+            ListStackAssociatedResourcesRequest request);
 
     /**
      * Lists drift status details for each resource defined in the specified stack.
