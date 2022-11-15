@@ -2103,6 +2103,102 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListJobAssociatedResourcesResponse>
+            listJobAssociatedResources(
+                    ListJobAssociatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListJobAssociatedResourcesRequest,
+                                    ListJobAssociatedResourcesResponse>
+                            handler) {
+        LOG.trace("Called async listJobAssociatedResources");
+        final ListJobAssociatedResourcesRequest interceptedRequest =
+                ListJobAssociatedResourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJobAssociatedResourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListJobAssociatedResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/AssociatedResourceSummary/ListJobAssociatedResources");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListJobAssociatedResourcesResponse>
+                transformer =
+                        ListJobAssociatedResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListJobAssociatedResourcesRequest, ListJobAssociatedResourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJobAssociatedResourcesRequest,
+                                ListJobAssociatedResourcesResponse>,
+                        java.util.concurrent.Future<ListJobAssociatedResourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJobAssociatedResourcesRequest, ListJobAssociatedResourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobOutputsResponse> listJobOutputs(
+            ListJobOutputsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJobOutputsRequest, ListJobOutputsResponse>
+                    handler) {
+        LOG.trace("Called async listJobOutputs");
+        final ListJobOutputsRequest interceptedRequest =
+                ListJobOutputsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJobOutputsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListJobOutputs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobOutputSummary/ListJobOutputs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobOutputsResponse>
+                transformer =
+                        ListJobOutputsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListJobOutputsRequest, ListJobOutputsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJobOutputsRequest, ListJobOutputsResponse>,
+                        java.util.concurrent.Future<ListJobOutputsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJobOutputsRequest, ListJobOutputsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobsResponse> listJobs(
             ListJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>
@@ -2229,6 +2325,57 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListResourceDiscoveryServicesRequest, ListResourceDiscoveryServicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackAssociatedResourcesResponse>
+            listStackAssociatedResources(
+                    ListStackAssociatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListStackAssociatedResourcesRequest,
+                                    ListStackAssociatedResourcesResponse>
+                            handler) {
+        LOG.trace("Called async listStackAssociatedResources");
+        final ListStackAssociatedResourcesRequest interceptedRequest =
+                ListStackAssociatedResourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStackAssociatedResourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "ListStackAssociatedResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/AssociatedResourceSummary/ListStackAssociatedResources");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListStackAssociatedResourcesResponse>
+                transformer =
+                        ListStackAssociatedResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListStackAssociatedResourcesRequest, ListStackAssociatedResourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStackAssociatedResourcesRequest,
+                                ListStackAssociatedResourcesResponse>,
+                        java.util.concurrent.Future<ListStackAssociatedResourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStackAssociatedResourcesRequest, ListStackAssociatedResourcesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

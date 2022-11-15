@@ -5511,6 +5511,49 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetCloudExadataInfrastructureUnallocatedResourcesResponse
+            getCloudExadataInfrastructureUnallocatedResources(
+                    GetCloudExadataInfrastructureUnallocatedResourcesRequest request) {
+        LOG.trace("Called getCloudExadataInfrastructureUnallocatedResources");
+        final GetCloudExadataInfrastructureUnallocatedResourcesRequest interceptedRequest =
+                GetCloudExadataInfrastructureUnallocatedResourcesConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudExadataInfrastructureUnallocatedResourcesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetCloudExadataInfrastructureUnallocatedResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructureUnallocatedResources/GetCloudExadataInfrastructureUnallocatedResources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetCloudExadataInfrastructureUnallocatedResourcesResponse>
+                transformer =
+                        GetCloudExadataInfrastructureUnallocatedResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetCloudVmClusterResponse getCloudVmCluster(GetCloudVmClusterRequest request) {
         LOG.trace("Called getCloudVmCluster");
         final GetCloudVmClusterRequest interceptedRequest =
