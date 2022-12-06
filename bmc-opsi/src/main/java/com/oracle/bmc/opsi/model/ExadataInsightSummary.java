@@ -23,7 +23,10 @@ package com.oracle.bmc.opsi.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EmManagedExternalExadataInsightSummary.class,
-            name = "EM_MANAGED_EXTERNAL_EXADATA")
+            name = "EM_MANAGED_EXTERNAL_EXADATA"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PeComanagedExadataInsightSummary.class,
+            name = "PE_COMANAGED_EXADATA")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)

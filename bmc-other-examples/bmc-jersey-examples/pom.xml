@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk-jersey-examples</artifactId>
-  <version>3.0.1</version>
+  <version>3.1.0</version>
   <name>Oracle Cloud Infrastructure SDK - Examples using Jersey 2 HTTP client</name>
   <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure with the Jersey 2 HTTP client</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
@@ -21,6 +21,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -37,6 +38,7 @@
         <version>1.6.0</version>
         <configuration>
           <skip>false</skip>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
         </configuration>
       </plugin>
       <plugin>
@@ -47,7 +49,7 @@
           <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-enforcer-rules</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
             <optional>false</optional>
           </dependency>
         </dependencies>
@@ -73,14 +75,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

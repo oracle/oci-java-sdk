@@ -194,9 +194,14 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
         }
 
         String historyAsString = getHistoryAsString();
+        int numberOfCurrentRecordsinHistory =
+                Math.min(numberOfRecordedHistoryResponses, historyQueue.size());
         if (historyAsString != null && !historyAsString.trim().isEmpty()) {
             messageBuilder
-                    .append("Errors which opened the CircuitBreaker:\n")
+                    .append(
+                            "The CircuitBreaker was opened because requests failed too frequently. Here are the last ")
+                    .append(numberOfCurrentRecordsinHistory)
+                    .append(" failed requests:\n")
                     .append(historyAsString);
         }
 

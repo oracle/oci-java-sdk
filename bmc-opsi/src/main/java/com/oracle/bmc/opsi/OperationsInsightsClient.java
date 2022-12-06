@@ -2104,6 +2104,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2390,6 +2394,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -3727,6 +3735,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -3820,6 +3832,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -3912,6 +3928,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -3995,6 +4015,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4079,6 +4103,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4165,6 +4193,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4958,6 +4990,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5040,6 +5076,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5118,6 +5158,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5194,6 +5238,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5268,6 +5316,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5345,6 +5397,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getHostType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5739,6 +5795,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5813,6 +5873,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

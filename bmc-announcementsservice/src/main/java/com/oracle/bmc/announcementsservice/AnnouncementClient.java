@@ -20,8 +20,7 @@ public class AnnouncementClient extends com.oracle.bmc.http.internal.BaseSyncCli
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ANNOUNCEMENT")
                     .serviceEndpointPrefix("announcements")
-                    .serviceEndpointTemplate(
-                            "https://announcements.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =

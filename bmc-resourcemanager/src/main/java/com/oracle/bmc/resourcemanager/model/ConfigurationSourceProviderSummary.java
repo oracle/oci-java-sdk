@@ -25,6 +25,12 @@ package com.oracle.bmc.resourcemanager.model;
             value = GitlabAccessTokenConfigurationSourceProviderSummary.class,
             name = "GITLAB_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.class,
+            name = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = BitbucketServerAccessTokenConfigurationSourceProviderSummary.class,
+            name = "BITBUCKET_SERVER_ACCESS_TOKEN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GithubAccessTokenConfigurationSourceProviderSummary.class,
             name = "GITHUB_ACCESS_TOKEN")
 })

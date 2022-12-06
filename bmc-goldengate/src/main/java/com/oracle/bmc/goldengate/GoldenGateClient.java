@@ -302,6 +302,42 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public CollectDeploymentDiagnosticResponse collectDeploymentDiagnostic(
+            CollectDeploymentDiagnosticRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getCollectDeploymentDiagnosticDetails(),
+                "collectDeploymentDiagnosticDetails is required");
+
+        return clientCall(request, CollectDeploymentDiagnosticResponse::builder)
+                .logger(LOG, "collectDeploymentDiagnostic")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CollectDeploymentDiagnostic",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CollectDeploymentDiagnostic")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CollectDeploymentDiagnosticRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("collectDiagnostics")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CollectDeploymentDiagnosticResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CollectDeploymentDiagnosticResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
         Objects.requireNonNull(
                 request.getCreateConnectionDetails(), "createConnectionDetails is required");

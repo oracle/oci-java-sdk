@@ -236,6 +236,15 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataDetails")
+        private ExadataDetails exadataDetails;
+
+        public Builder exadataDetails(ExadataDetails exadataDetails) {
+            this.exadataDetails = exadataDetails;
+            this.__explicitlySet__.add("exadataDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -262,7 +271,8 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
                             this.definedTags,
                             this.freeformTags,
                             this.opsiPrivateEndpointId,
-                            this.parentId);
+                            this.parentId,
+                            this.exadataDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -334,6 +344,9 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
             if (model.wasPropertyExplicitlySet("parentId")) {
                 this.parentId(model.getParentId());
             }
+            if (model.wasPropertyExplicitlySet("exadataDetails")) {
+                this.exadataDetails(model.getExadataDetails());
+            }
             return this;
         }
     }
@@ -369,7 +382,8 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             String opsiPrivateEndpointId,
-            String parentId) {
+            String parentId,
+            ExadataDetails exadataDetails) {
         super(
                 hostInsightId,
                 compartmentId,
@@ -392,6 +406,7 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
                 freeformTags);
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
         this.parentId = parentId;
+        this.exadataDetails = exadataDetails;
     }
 
     /**
@@ -428,6 +443,13 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
         return parentId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataDetails")
+    private final ExadataDetails exadataDetails;
+
+    public ExadataDetails getExadataDetails() {
+        return exadataDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -445,6 +467,7 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", exadataDetails=").append(String.valueOf(this.exadataDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -461,6 +484,7 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
         PeComanagedHostConfigurationSummary other = (PeComanagedHostConfigurationSummary) o;
         return java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.exadataDetails, other.exadataDetails)
                 && super.equals(other);
     }
 
@@ -474,6 +498,9 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataDetails == null ? 43 : this.exadataDetails.hashCode());
         return result;
     }
 }

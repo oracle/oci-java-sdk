@@ -34,6 +34,8 @@ public final class ReportDefinitionSummary
         "compartmentId",
         "dataSource",
         "lifecycleState",
+        "schedule",
+        "complianceStandards",
         "freeformTags",
         "definedTags"
     })
@@ -49,6 +51,8 @@ public final class ReportDefinitionSummary
             String compartmentId,
             ReportDefinitionDataSource dataSource,
             ReportDefinitionLifecycleState lifecycleState,
+            String schedule,
+            java.util.List<String> complianceStandards,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -63,6 +67,8 @@ public final class ReportDefinitionSummary
         this.compartmentId = compartmentId;
         this.dataSource = dataSource;
         this.lifecycleState = lifecycleState;
+        this.schedule = schedule;
+        this.complianceStandards = complianceStandards;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -243,6 +249,66 @@ public final class ReportDefinitionSummary
             return this;
         }
         /**
+         * Schedule to generate the report periodically in the specified format:
+         * <version-string>;<version-specific-schedule>
+         *
+         * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
+         * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints.
+         * A workrequest is created only when clock time satisfies all the constraints. Constraints
+         * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes =
+         * <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range
+         * for <hh> is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number
+         * between 1(Monday) and 7(Sunday)) No constraint introduced when it is '*'. When not, day
+         * of week must equal the given value 5. <day-of-month> can be either '*' (without quotes or
+         * a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
+         * month must equal the given value
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("schedule")
+        private String schedule;
+
+        /**
+         * Schedule to generate the report periodically in the specified format:
+         * <version-string>;<version-specific-schedule>
+         *
+         * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
+         * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints.
+         * A workrequest is created only when clock time satisfies all the constraints. Constraints
+         * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes =
+         * <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range
+         * for <hh> is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number
+         * between 1(Monday) and 7(Sunday)) No constraint introduced when it is '*'. When not, day
+         * of week must equal the given value 5. <day-of-month> can be either '*' (without quotes or
+         * a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
+         * month must equal the given value
+         *
+         * @param schedule the value to set
+         * @return this builder
+         */
+        public Builder schedule(String schedule) {
+            this.schedule = schedule;
+            this.__explicitlySet__.add("schedule");
+            return this;
+        }
+        /**
+         * The list of data protection regulations/standards used in the report that will help
+         * demonstrate compliance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
+        private java.util.List<String> complianceStandards;
+
+        /**
+         * The list of data protection regulations/standards used in the report that will help
+         * demonstrate compliance.
+         *
+         * @param complianceStandards the value to set
+         * @return this builder
+         */
+        public Builder complianceStandards(java.util.List<String> complianceStandards) {
+            this.complianceStandards = complianceStandards;
+            this.__explicitlySet__.add("complianceStandards");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -311,6 +377,8 @@ public final class ReportDefinitionSummary
                             this.compartmentId,
                             this.dataSource,
                             this.lifecycleState,
+                            this.schedule,
+                            this.complianceStandards,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -353,6 +421,12 @@ public final class ReportDefinitionSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("schedule")) {
+                this.schedule(model.getSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("complianceStandards")) {
+                this.complianceStandards(model.getComplianceStandards());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -572,6 +646,60 @@ public final class ReportDefinitionSummary
     }
 
     /**
+     * Schedule to generate the report periodically in the specified format:
+     * <version-string>;<version-specific-schedule>
+     *
+     * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
+     * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A
+     * workrequest is created only when clock time satisfies all the constraints. Constraints
+     * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm>
+     * (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh>
+     * is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday)
+     * and 7(Sunday)) No constraint introduced when it is '*'. When not, day of week must equal the
+     * given value 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     * No constraint introduced when it is '*'. When not, day of month must equal the given value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("schedule")
+    private final String schedule;
+
+    /**
+     * Schedule to generate the report periodically in the specified format:
+     * <version-string>;<version-specific-schedule>
+     *
+     * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
+     * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A
+     * workrequest is created only when clock time satisfies all the constraints. Constraints
+     * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm>
+     * (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh>
+     * is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday)
+     * and 7(Sunday)) No constraint introduced when it is '*'. When not, day of week must equal the
+     * given value 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     * No constraint introduced when it is '*'. When not, day of month must equal the given value
+     *
+     * @return the value
+     */
+    public String getSchedule() {
+        return schedule;
+    }
+
+    /**
+     * The list of data protection regulations/standards used in the report that will help
+     * demonstrate compliance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
+    private final java.util.List<String> complianceStandards;
+
+    /**
+     * The list of data protection regulations/standards used in the report that will help
+     * demonstrate compliance.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getComplianceStandards() {
+        return complianceStandards;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
@@ -643,6 +771,8 @@ public final class ReportDefinitionSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataSource=").append(String.valueOf(this.dataSource));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", schedule=").append(String.valueOf(this.schedule));
+        sb.append(", complianceStandards=").append(String.valueOf(this.complianceStandards));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -670,6 +800,8 @@ public final class ReportDefinitionSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dataSource, other.dataSource)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.schedule, other.schedule)
+                && java.util.Objects.equals(this.complianceStandards, other.complianceStandards)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -694,6 +826,12 @@ public final class ReportDefinitionSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.complianceStandards == null
+                                ? 43
+                                : this.complianceStandards.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

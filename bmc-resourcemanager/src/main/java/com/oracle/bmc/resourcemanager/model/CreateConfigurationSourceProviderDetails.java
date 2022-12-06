@@ -25,8 +25,14 @@ package com.oracle.bmc.resourcemanager.model;
             value = CreateGitlabAccessTokenConfigurationSourceProviderDetails.class,
             name = "GITLAB_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails.class,
+            name = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateGithubAccessTokenConfigurationSourceProviderDetails.class,
-            name = "GITHUB_ACCESS_TOKEN")
+            name = "GITHUB_ACCESS_TOKEN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails.class,
+            name = "BITBUCKET_SERVER_ACCESS_TOKEN")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)

@@ -5,8 +5,9 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information around the set of string values for selector of a dynamic authentication/ routing
- * branch. Selector should match any one of the values present in set of string values. <br>
+ * When dynamically routing and dynamically authenticating requests, the route or authentication
+ * server associated with a set of selection keys is used if the context variable in an incoming
+ * request exactly matches one of the keys in the set. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -45,15 +46,17 @@ public final class AnyOfSelectionKey extends DynamicSelectionKey {
             return this;
         }
         /**
-         * Information regarding the set of values of selector for which this branch should be
-         * selected.
+         * The set of selection keys to match with the context variable in an incoming request. If
+         * the context variable exactly matches one of the keys in the set, the request is sent to
+         * the route or authentication server associated with the set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * Information regarding the set of values of selector for which this branch should be
-         * selected.
+         * The set of selection keys to match with the context variable in an incoming request. If
+         * the context variable exactly matches one of the keys in the set, the request is sent to
+         * the route or authentication server associated with the set.
          *
          * @param values the value to set
          * @return this builder
@@ -106,13 +109,17 @@ public final class AnyOfSelectionKey extends DynamicSelectionKey {
     }
 
     /**
-     * Information regarding the set of values of selector for which this branch should be selected.
+     * The set of selection keys to match with the context variable in an incoming request. If the
+     * context variable exactly matches one of the keys in the set, the request is sent to the route
+     * or authentication server associated with the set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * Information regarding the set of values of selector for which this branch should be selected.
+     * The set of selection keys to match with the context variable in an incoming request. If the
+     * context variable exactly matches one of the keys in the set, the request is sent to the route
+     * or authentication server associated with the set.
      *
      * @return the value
      */

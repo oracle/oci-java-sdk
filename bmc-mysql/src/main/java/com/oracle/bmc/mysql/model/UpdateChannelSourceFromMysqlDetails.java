@@ -124,6 +124,16 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("anonymousTransactionsHandling")
+        private AnonymousTransactionsHandling anonymousTransactionsHandling;
+
+        public Builder anonymousTransactionsHandling(
+                AnonymousTransactionsHandling anonymousTransactionsHandling) {
+            this.anonymousTransactionsHandling = anonymousTransactionsHandling;
+            this.__explicitlySet__.add("anonymousTransactionsHandling");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -135,7 +145,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
                             this.username,
                             this.password,
                             this.sslMode,
-                            this.sslCaCertificate);
+                            this.sslCaCertificate,
+                            this.anonymousTransactionsHandling);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -162,6 +173,9 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             if (model.wasPropertyExplicitlySet("sslCaCertificate")) {
                 this.sslCaCertificate(model.getSslCaCertificate());
             }
+            if (model.wasPropertyExplicitlySet("anonymousTransactionsHandling")) {
+                this.anonymousTransactionsHandling(model.getAnonymousTransactionsHandling());
+            }
             return this;
         }
     }
@@ -182,7 +196,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             String username,
             String password,
             ChannelSourceMysql.SslMode sslMode,
-            CaCertificate sslCaCertificate) {
+            CaCertificate sslCaCertificate,
+            AnonymousTransactionsHandling anonymousTransactionsHandling) {
         super();
         this.hostname = hostname;
         this.port = port;
@@ -190,6 +205,7 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         this.password = password;
         this.sslMode = sslMode;
         this.sslCaCertificate = sslCaCertificate;
+        this.anonymousTransactionsHandling = anonymousTransactionsHandling;
     }
 
     /** The network address of the MySQL instance. */
@@ -276,6 +292,13 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         return sslCaCertificate;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("anonymousTransactionsHandling")
+    private final AnonymousTransactionsHandling anonymousTransactionsHandling;
+
+    public AnonymousTransactionsHandling getAnonymousTransactionsHandling() {
+        return anonymousTransactionsHandling;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -297,6 +320,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         sb.append(", password=").append("<redacted>");
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
         sb.append(", sslCaCertificate=").append(String.valueOf(this.sslCaCertificate));
+        sb.append(", anonymousTransactionsHandling=")
+                .append(String.valueOf(this.anonymousTransactionsHandling));
         sb.append(")");
         return sb.toString();
     }
@@ -317,6 +342,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.sslMode, other.sslMode)
                 && java.util.Objects.equals(this.sslCaCertificate, other.sslCaCertificate)
+                && java.util.Objects.equals(
+                        this.anonymousTransactionsHandling, other.anonymousTransactionsHandling)
                 && super.equals(other);
     }
 
@@ -332,6 +359,11 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         result =
                 (result * PRIME)
                         + (this.sslCaCertificate == null ? 43 : this.sslCaCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.anonymousTransactionsHandling == null
+                                ? 43
+                                : this.anonymousTransactionsHandling.hashCode());
         return result;
     }
 }

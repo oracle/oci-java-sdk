@@ -185,8 +185,20 @@ public class RequestSignerImpl implements RequestSigner {
             allHeaders.putAll(existingHeaders);
             for (Map.Entry<String, String> e : missingHeaders.entrySet()) {
                 if (e.getValue() == null) {
-                    throw new NullPointerException(
-                            "Expecting exactly one value for header " + e.getKey());
+                    if (e.getKey().equals("host")
+                            && !uri.toString().toLowerCase().startsWith("http://")
+                            && !uri.toString().toLowerCase().startsWith("https://")) {
+                        throw new NullPointerException(
+                                "Exception while communicating to "
+                                        + uri
+                                        + ". Make sure the endpoint starts with the scheme (http or https)");
+                    } else {
+                        throw new NullPointerException(
+                                "Exception while communicating to "
+                                        + uri
+                                        + ". Expecting exactly one value for header "
+                                        + e.getKey());
+                    }
                 }
                 LOG.trace("Adding missing header '{}' = '{}'", e.getKey(), e.getValue());
                 allHeaders.put(

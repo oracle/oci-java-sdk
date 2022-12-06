@@ -46,6 +46,77 @@ public class PatchAlertsRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /**
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all
+     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
+     * setting.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
+     */
+    private AccessLevel accessLevel;
+
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
+     */
+    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+        Restricted("RESTRICTED"),
+        Accessible("ACCESSIBLE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AccessLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccessLevel v : AccessLevel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AccessLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccessLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AccessLevel: " + key);
+        }
+    };
+
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
+     * returns only those compartments for which the user has INSPECT permissions directly or
+     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
+     * permissions are checked and no partial results are displayed.
+     */
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -116,6 +187,48 @@ public class PatchAlertsRequest
         }
 
         /**
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Default is false. When set to true, the hierarchy of compartments is traversed and all
+         * compartments and subcompartments in the tenancy are returned. Depends on the
+         * 'accessLevel' setting.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
+         */
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
+         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
+         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
+         * to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         * @param accessLevel the value to set
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -148,6 +261,8 @@ public class PatchAlertsRequest
             patchAlertsDetails(o.getPatchAlertsDetails());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
+            accessLevel(o.getAccessLevel());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -197,8 +312,11 @@ public class PatchAlertsRequest
             request.patchAlertsDetails = patchAlertsDetails;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
             return request;
-            // new PatchAlertsRequest(patchAlertsDetails, opcRequestId, ifMatch);
+            // new PatchAlertsRequest(patchAlertsDetails, opcRequestId, ifMatch,
+            // compartmentIdInSubtree, accessLevel);
         }
     }
 
@@ -211,7 +329,9 @@ public class PatchAlertsRequest
         return new Builder()
                 .patchAlertsDetails(patchAlertsDetails)
                 .opcRequestId(opcRequestId)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel);
     }
 
     /**
@@ -231,6 +351,8 @@ public class PatchAlertsRequest
         sb.append(",patchAlertsDetails=").append(String.valueOf(this.patchAlertsDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(")");
         return sb.toString();
     }
@@ -248,7 +370,10 @@ public class PatchAlertsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.patchAlertsDetails, other.patchAlertsDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel);
     }
 
     @Override
@@ -262,6 +387,12 @@ public class PatchAlertsRequest
                                 : this.patchAlertsDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         return result;
     }
 }

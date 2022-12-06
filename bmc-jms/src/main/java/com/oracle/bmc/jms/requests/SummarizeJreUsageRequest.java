@@ -26,6 +26,13 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
     public String getFleetId() {
         return fleetId;
     }
+    /** The Fleet-unique identifier of the related Java Runtime. */
+    private String jreId;
+
+    /** The Fleet-unique identifier of the related Java Runtime. */
+    public String getJreId() {
+        return jreId;
+    }
     /** The vendor of the Java Runtime. */
     private String jreVendor;
 
@@ -195,6 +202,20 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
+            return this;
+        }
+
+        /** The Fleet-unique identifier of the related Java Runtime. */
+        private String jreId = null;
+
+        /**
+         * The Fleet-unique identifier of the related Java Runtime.
+         *
+         * @param jreId the value to set
+         * @return this builder instance
+         */
+        public Builder jreId(String jreId) {
+            this.jreId = jreId;
             return this;
         }
 
@@ -496,6 +517,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(SummarizeJreUsageRequest o) {
             fleetId(o.getFleetId());
+            jreId(o.getJreId());
             jreVendor(o.getJreVendor());
             jreDistribution(o.getJreDistribution());
             jreVersion(o.getJreVersion());
@@ -546,6 +568,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
         public SummarizeJreUsageRequest buildWithoutInvocationCallback() {
             SummarizeJreUsageRequest request = new SummarizeJreUsageRequest();
             request.fleetId = fleetId;
+            request.jreId = jreId;
             request.jreVendor = jreVendor;
             request.jreDistribution = jreDistribution;
             request.jreVersion = jreVersion;
@@ -562,7 +585,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             request.osFamily = osFamily;
             request.jreSecurityStatus = jreSecurityStatus;
             return request;
-            // new SummarizeJreUsageRequest(fleetId, jreVendor, jreDistribution, jreVersion,
+            // new SummarizeJreUsageRequest(fleetId, jreId, jreVendor, jreDistribution, jreVersion,
             // applicationId, managedInstanceId, fields, timeStart, timeEnd, limit, page, sortOrder,
             // sortBy, opcRequestId, osFamily, jreSecurityStatus);
         }
@@ -576,6 +599,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
     public Builder toBuilder() {
         return new Builder()
                 .fleetId(fleetId)
+                .jreId(jreId)
                 .jreVendor(jreVendor)
                 .jreDistribution(jreDistribution)
                 .jreVersion(jreVersion)
@@ -608,6 +632,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
+        sb.append(",jreId=").append(String.valueOf(this.jreId));
         sb.append(",jreVendor=").append(String.valueOf(this.jreVendor));
         sb.append(",jreDistribution=").append(String.valueOf(this.jreDistribution));
         sb.append(",jreVersion=").append(String.valueOf(this.jreVersion));
@@ -639,6 +664,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
         SummarizeJreUsageRequest other = (SummarizeJreUsageRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
+                && java.util.Objects.equals(this.jreId, other.jreId)
                 && java.util.Objects.equals(this.jreVendor, other.jreVendor)
                 && java.util.Objects.equals(this.jreDistribution, other.jreDistribution)
                 && java.util.Objects.equals(this.jreVersion, other.jreVersion)
@@ -661,6 +687,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
+        result = (result * PRIME) + (this.jreId == null ? 43 : this.jreId.hashCode());
         result = (result * PRIME) + (this.jreVendor == null ? 43 : this.jreVendor.hashCode());
         result =
                 (result * PRIME)

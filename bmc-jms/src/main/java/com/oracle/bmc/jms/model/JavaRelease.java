@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Complete information of a specific release of Java. Includes the artifact details. <br>
+ * Metadata associated with a specific release of Java. Includes the artifact details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,7 +31,8 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
         "familyDetails",
         "licenseDetails",
         "releaseDate",
-        "releaseNotesUrl"
+        "releaseNotesUrl",
+        "artifactContentTypes"
     })
     public JavaRelease(
             java.util.List<JavaArtifact> artifacts,
@@ -44,7 +45,8 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
             JavaFamily familyDetails,
             JavaLicense licenseDetails,
             java.util.Date releaseDate,
-            String releaseNotesUrl) {
+            String releaseNotesUrl,
+            java.util.List<ArtifactContentType> artifactContentTypes) {
         super();
         this.artifacts = artifacts;
         this.releaseVersion = releaseVersion;
@@ -57,6 +59,7 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
         this.licenseDetails = licenseDetails;
         this.releaseDate = releaseDate;
         this.releaseNotesUrl = releaseNotesUrl;
+        this.artifactContentTypes = artifactContentTypes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -218,6 +221,22 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("releaseNotesUrl");
             return this;
         }
+        /** Artifact content types for the Java version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("artifactContentTypes")
+        private java.util.List<ArtifactContentType> artifactContentTypes;
+
+        /**
+         * Artifact content types for the Java version.
+         *
+         * @param artifactContentTypes the value to set
+         * @return this builder
+         */
+        public Builder artifactContentTypes(
+                java.util.List<ArtifactContentType> artifactContentTypes) {
+            this.artifactContentTypes = artifactContentTypes;
+            this.__explicitlySet__.add("artifactContentTypes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -235,7 +254,8 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
                             this.familyDetails,
                             this.licenseDetails,
                             this.releaseDate,
-                            this.releaseNotesUrl);
+                            this.releaseNotesUrl,
+                            this.artifactContentTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -276,6 +296,9 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("releaseNotesUrl")) {
                 this.releaseNotesUrl(model.getReleaseNotesUrl());
+            }
+            if (model.wasPropertyExplicitlySet("artifactContentTypes")) {
+                this.artifactContentTypes(model.getArtifactContentTypes());
             }
             return this;
         }
@@ -425,6 +448,19 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
         return releaseNotesUrl;
     }
 
+    /** Artifact content types for the Java version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("artifactContentTypes")
+    private final java.util.List<ArtifactContentType> artifactContentTypes;
+
+    /**
+     * Artifact content types for the Java version.
+     *
+     * @return the value
+     */
+    public java.util.List<ArtifactContentType> getArtifactContentTypes() {
+        return artifactContentTypes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -451,6 +487,7 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", licenseDetails=").append(String.valueOf(this.licenseDetails));
         sb.append(", releaseDate=").append(String.valueOf(this.releaseDate));
         sb.append(", releaseNotesUrl=").append(String.valueOf(this.releaseNotesUrl));
+        sb.append(", artifactContentTypes=").append(String.valueOf(this.artifactContentTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -476,6 +513,7 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.licenseDetails, other.licenseDetails)
                 && java.util.Objects.equals(this.releaseDate, other.releaseDate)
                 && java.util.Objects.equals(this.releaseNotesUrl, other.releaseNotesUrl)
+                && java.util.Objects.equals(this.artifactContentTypes, other.artifactContentTypes)
                 && super.equals(other);
     }
 
@@ -510,6 +548,11 @@ public final class JavaRelease extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.releaseNotesUrl == null ? 43 : this.releaseNotesUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.artifactContentTypes == null
+                                ? 43
+                                : this.artifactContentTypes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The Maintenance Policy for the DB System. <br>
+ * The Maintenance Policy for the DB System or Read Replica that this model is included in. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,6 +39,9 @@ public final class MaintenanceDetails
          *
          * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
          * sub-second time data will be truncated to zero.
+         *
+         * <p>If you set the read replica maintenance window to "" or if not specified, the read
+         * replica is set same as the DB system maintenance window.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
         private String windowStartTime;
@@ -52,6 +55,9 @@ public final class MaintenanceDetails
          *
          * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
          * sub-second time data will be truncated to zero.
+         *
+         * <p>If you set the read replica maintenance window to "" or if not specified, the read
+         * replica is set same as the DB system maintenance window.
          *
          * @param windowStartTime the value to set
          * @return this builder
@@ -100,6 +106,9 @@ public final class MaintenanceDetails
      *
      * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
      * sub-second time data will be truncated to zero.
+     *
+     * <p>If you set the read replica maintenance window to "" or if not specified, the read replica
+     * is set same as the DB system maintenance window.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
     private final String windowStartTime;
@@ -113,6 +122,9 @@ public final class MaintenanceDetails
      *
      * <p>"{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or
      * sub-second time data will be truncated to zero.
+     *
+     * <p>If you set the read replica maintenance window to "" or if not specified, the read replica
+     * is set same as the DB system maintenance window.
      *
      * @return the value
      */

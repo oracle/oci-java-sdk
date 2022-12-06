@@ -81,6 +81,15 @@ public final class AnnouncementsPreferences extends BaseAnnouncementsPreferences
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
+        private String preferredTimeZone;
+
+        public Builder preferredTimeZone(String preferredTimeZone) {
+            this.preferredTimeZone = preferredTimeZone;
+            this.__explicitlySet__.add("preferredTimeZone");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +101,8 @@ public final class AnnouncementsPreferences extends BaseAnnouncementsPreferences
                             this.isUnsubscribed,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.preferenceType);
+                            this.preferenceType,
+                            this.preferredTimeZone);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -119,6 +129,9 @@ public final class AnnouncementsPreferences extends BaseAnnouncementsPreferences
             if (model.wasPropertyExplicitlySet("preferenceType")) {
                 this.preferenceType(model.getPreferenceType());
             }
+            if (model.wasPropertyExplicitlySet("preferredTimeZone")) {
+                this.preferredTimeZone(model.getPreferredTimeZone());
+            }
             return this;
         }
     }
@@ -139,8 +152,16 @@ public final class AnnouncementsPreferences extends BaseAnnouncementsPreferences
             Boolean isUnsubscribed,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType) {
-        super(compartmentId, id, isUnsubscribed, timeCreated, timeUpdated, preferenceType);
+            BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType,
+            String preferredTimeZone) {
+        super(
+                compartmentId,
+                id,
+                isUnsubscribed,
+                timeCreated,
+                timeUpdated,
+                preferenceType,
+                preferredTimeZone);
     }
 
     @Override

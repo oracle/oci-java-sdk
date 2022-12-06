@@ -14,6 +14,7 @@ public enum OnPremConnectorLifecycleState implements com.oracle.bmc.http.interna
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),
+    NeedsAttention("NEEDS_ATTENTION"),
     ;
 
     private final String value;

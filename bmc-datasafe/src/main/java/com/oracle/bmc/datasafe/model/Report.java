@@ -29,6 +29,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         "mimeType",
         "timeGenerated",
         "lifecycleState",
+        "type",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -42,6 +43,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
             MimeType mimeType,
             java.util.Date timeGenerated,
             ReportLifecycleState lifecycleState,
+            ReportType type,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -54,6 +56,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         this.mimeType = mimeType;
         this.timeGenerated = timeGenerated;
         this.lifecycleState = lifecycleState;
+        this.type = type;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -181,6 +184,21 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The type of the report. */
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private ReportType type;
+
+        /**
+         * The type of the report.
+         *
+         * @param type the value to set
+         * @return this builder
+         */
+        public Builder type(ReportType type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -268,6 +286,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
                             this.mimeType,
                             this.timeGenerated,
                             this.lifecycleState,
+                            this.type,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -302,6 +321,9 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -475,6 +497,19 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         return lifecycleState;
     }
 
+    /** The type of the report. */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final ReportType type;
+
+    /**
+     * The type of the report.
+     *
+     * @return the value
+     */
+    public ReportType getType() {
+        return type;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -563,6 +598,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
         sb.append(", timeGenerated=").append(String.valueOf(this.timeGenerated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -588,6 +624,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -616,6 +653,7 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -8,6 +8,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum ExadataEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     EmManagedExternalExadata("EM_MANAGED_EXTERNAL_EXADATA"),
+    PeComanagedExadata("PE_COMANAGED_EXADATA"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

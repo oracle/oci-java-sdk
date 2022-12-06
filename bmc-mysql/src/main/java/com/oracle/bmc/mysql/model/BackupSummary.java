@@ -34,6 +34,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         "backupType",
         "creationType",
         "dbSystemId",
+        "compartmentId",
         "dataStorageSizeInGBs",
         "backupSizeInGBs",
         "retentionInDays",
@@ -51,6 +52,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             Backup.BackupType backupType,
             Backup.CreationType creationType,
             String dbSystemId,
+            String compartmentId,
             Integer dataStorageSizeInGBs,
             Integer backupSizeInGBs,
             Integer retentionInDays,
@@ -67,6 +69,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         this.backupType = backupType;
         this.creationType = creationType;
         this.dbSystemId = dbSystemId;
+        this.compartmentId = compartmentId;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
         this.backupSizeInGBs = backupSizeInGBs;
         this.retentionInDays = retentionInDays;
@@ -198,6 +201,21 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
+        /** The OCID of the compartment the backup exists in. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The OCID of the compartment the backup exists in.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /** Size of the data volume in GiBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
@@ -327,6 +345,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.backupType,
                             this.creationType,
                             this.dbSystemId,
+                            this.compartmentId,
                             this.dataStorageSizeInGBs,
                             this.backupSizeInGBs,
                             this.retentionInDays,
@@ -365,6 +384,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("dbSystemId")) {
                 this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
@@ -504,6 +526,19 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return dbSystemId;
     }
 
+    /** The OCID of the compartment the backup exists in. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The OCID of the compartment the backup exists in.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     /** Size of the data volume in GiBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
@@ -626,6 +661,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", backupType=").append(String.valueOf(this.backupType));
         sb.append(", creationType=").append(String.valueOf(this.creationType));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", backupSizeInGBs=").append(String.valueOf(this.backupSizeInGBs));
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
@@ -655,6 +691,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.backupType, other.backupType)
                 && java.util.Objects.equals(this.creationType, other.creationType)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
                 && java.util.Objects.equals(this.backupSizeInGBs, other.backupSizeInGBs)
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
@@ -679,6 +716,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.backupType == null ? 43 : this.backupType.hashCode());
         result = (result * PRIME) + (this.creationType == null ? 43 : this.creationType.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataStorageSizeInGBs == null

@@ -22,8 +22,17 @@ package com.oracle.bmc.resourcemanager.model;
         defaultImpl = CreateConfigSourceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDevOpsConfigSourceDetails.class,
+            name = "DEVOPS_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateBitbucketCloudConfigSourceDetails.class,
+            name = "BITBUCKET_CLOUD_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateZipUploadConfigSourceDetails.class,
             name = "ZIP_UPLOAD"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateBitbucketServerConfigSourceDetails.class,
+            name = "BITBUCKET_SERVER_CONFIG_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateGitConfigSourceDetails.class,
             name = "GIT_CONFIG_SOURCE"),

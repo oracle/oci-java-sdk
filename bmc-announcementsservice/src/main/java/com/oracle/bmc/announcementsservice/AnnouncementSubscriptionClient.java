@@ -20,8 +20,7 @@ public class AnnouncementSubscriptionClient extends com.oracle.bmc.http.internal
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ANNOUNCEMENTSUBSCRIPTION")
                     .serviceEndpointPrefix("announcements")
-                    .serviceEndpointTemplate(
-                            "https://announcements.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =

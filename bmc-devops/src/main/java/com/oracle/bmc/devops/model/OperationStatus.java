@@ -13,6 +13,8 @@ public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Succeeded("SUCCEEDED"),
     Canceling("CANCELING"),
     Canceled("CANCELED"),
+    Waiting("WAITING"),
+    NeedsAttention("NEEDS_ATTENTION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
