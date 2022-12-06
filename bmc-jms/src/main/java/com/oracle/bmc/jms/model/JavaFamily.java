@@ -5,7 +5,8 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Complete information of a specific Java release family. <br>
+ * Metadata associated with a specific Java release family. A Java release family is typically a
+ * major version in the Java version identifier. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

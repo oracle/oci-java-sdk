@@ -29,7 +29,9 @@ public final class DbSystemEndpoint
         "portX",
         "modes",
         "status",
-        "statusDetails"
+        "statusDetails",
+        "resourceType",
+        "resourceId"
     })
     public DbSystemEndpoint(
             String hostname,
@@ -38,7 +40,9 @@ public final class DbSystemEndpoint
             Integer portX,
             java.util.List<Modes> modes,
             Status status,
-            String statusDetails) {
+            String statusDetails,
+            ResourceType resourceType,
+            String resourceId) {
         super();
         this.hostname = hostname;
         this.ipAddress = ipAddress;
@@ -47,6 +51,8 @@ public final class DbSystemEndpoint
         this.modes = modes;
         this.status = status;
         this.statusDetails = statusDetails;
+        this.resourceType = resourceType;
+        this.resourceId = resourceId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -160,6 +166,36 @@ public final class DbSystemEndpoint
             this.__explicitlySet__.add("statusDetails");
             return this;
         }
+        /** The type of endpoint that clients and connectors can connect to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceType resourceType;
+
+        /**
+         * The type of endpoint that clients and connectors can connect to.
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         */
+        public Builder resourceType(ResourceType resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** The OCID of the resource that this endpoint is attached to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+        private String resourceId;
+
+        /**
+         * The OCID of the resource that this endpoint is attached to.
+         *
+         * @param resourceId the value to set
+         * @return this builder
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            this.__explicitlySet__.add("resourceId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -173,7 +209,9 @@ public final class DbSystemEndpoint
                             this.portX,
                             this.modes,
                             this.status,
-                            this.statusDetails);
+                            this.statusDetails,
+                            this.resourceType,
+                            this.resourceId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -202,6 +240,12 @@ public final class DbSystemEndpoint
             }
             if (model.wasPropertyExplicitlySet("statusDetails")) {
                 this.statusDetails(model.getStatusDetails());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
             }
             return this;
         }
@@ -405,6 +449,79 @@ public final class DbSystemEndpoint
         return statusDetails;
     }
 
+    /** The type of endpoint that clients and connectors can connect to. */
+    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+        Dbsystem("DBSYSTEM"),
+        ReadReplica("READ_REPLICA"),
+        LoadBalancer("LOAD_BALANCER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceType.class);
+
+        private final String value;
+        private static java.util.Map<String, ResourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ResourceType v : ResourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ResourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ResourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ResourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The type of endpoint that clients and connectors can connect to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final ResourceType resourceType;
+
+    /**
+     * The type of endpoint that clients and connectors can connect to.
+     *
+     * @return the value
+     */
+    public ResourceType getResourceType() {
+        return resourceType;
+    }
+
+    /** The OCID of the resource that this endpoint is attached to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+    private final String resourceId;
+
+    /**
+     * The OCID of the resource that this endpoint is attached to.
+     *
+     * @return the value
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -427,6 +544,8 @@ public final class DbSystemEndpoint
         sb.append(", modes=").append(String.valueOf(this.modes));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -448,6 +567,8 @@ public final class DbSystemEndpoint
                 && java.util.Objects.equals(this.modes, other.modes)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusDetails, other.statusDetails)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && super.equals(other);
     }
 
@@ -464,6 +585,8 @@ public final class DbSystemEndpoint
         result =
                 (result * PRIME)
                         + (this.statusDetails == null ? 43 : this.statusDetails.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

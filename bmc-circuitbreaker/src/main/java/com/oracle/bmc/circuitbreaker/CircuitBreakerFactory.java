@@ -13,9 +13,21 @@ import java.util.function.Predicate;
 public class CircuitBreakerFactory {
 
     /**
-     * Creates JaxRsCircuitBreaker a specialized {@link CircuitBreaker} for JaxRs clients
+     * Creates OciCircuitBreaker a specialized {@link CircuitBreaker} for OCI clients
      *
-     * @param cbConfig custom JaxRs CircuitBreaker configuration
+     * @param cbConfig Custom Oci CircuitBreaker configuration
+     */
+    public static OciCircuitBreaker build(CircuitBreakerConfiguration cbConfig) {
+        /* The default exception predicate counts all exceptions as failures */
+        return build(cbConfig, throwable -> true);
+    }
+
+    /**
+     * Creates OciCircuitBreaker a specialized {@link CircuitBreaker} for OCI clients
+     *
+     * @param cbConfig Custom Oci CircuitBreaker configuration
+     * @param recordExceptionPredicate Predicate which evaluates if an exception should be recorded
+     *     as a failure
      */
     public static OciCircuitBreaker build(
             CircuitBreakerConfiguration cbConfig, Predicate<Throwable> recordExceptionPredicate) {

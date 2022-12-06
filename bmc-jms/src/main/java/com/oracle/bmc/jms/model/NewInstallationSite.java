@@ -22,11 +22,19 @@ package com.oracle.bmc.jms.model;
 public final class NewInstallationSite
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"managedInstanceId", "releaseVersion"})
-    public NewInstallationSite(String managedInstanceId, String releaseVersion) {
+    @java.beans.ConstructorProperties({
+        "managedInstanceId",
+        "releaseVersion",
+        "artifactContentType"
+    })
+    public NewInstallationSite(
+            String managedInstanceId,
+            String releaseVersion,
+            ArtifactContentType artifactContentType) {
         super();
         this.managedInstanceId = managedInstanceId;
         this.releaseVersion = releaseVersion;
+        this.artifactContentType = artifactContentType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -65,13 +73,29 @@ public final class NewInstallationSite
             this.__explicitlySet__.add("releaseVersion");
             return this;
         }
+        /** Artifact content type for the Java version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
+        private ArtifactContentType artifactContentType;
+
+        /**
+         * Artifact content type for the Java version.
+         *
+         * @param artifactContentType the value to set
+         * @return this builder
+         */
+        public Builder artifactContentType(ArtifactContentType artifactContentType) {
+            this.artifactContentType = artifactContentType;
+            this.__explicitlySet__.add("artifactContentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NewInstallationSite build() {
             NewInstallationSite model =
-                    new NewInstallationSite(this.managedInstanceId, this.releaseVersion);
+                    new NewInstallationSite(
+                            this.managedInstanceId, this.releaseVersion, this.artifactContentType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +109,9 @@ public final class NewInstallationSite
             }
             if (model.wasPropertyExplicitlySet("releaseVersion")) {
                 this.releaseVersion(model.getReleaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("artifactContentType")) {
+                this.artifactContentType(model.getArtifactContentType());
             }
             return this;
         }
@@ -129,6 +156,19 @@ public final class NewInstallationSite
         return releaseVersion;
     }
 
+    /** Artifact content type for the Java version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
+    private final ArtifactContentType artifactContentType;
+
+    /**
+     * Artifact content type for the Java version.
+     *
+     * @return the value
+     */
+    public ArtifactContentType getArtifactContentType() {
+        return artifactContentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -146,6 +186,7 @@ public final class NewInstallationSite
         sb.append("super=").append(super.toString());
         sb.append("managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(", releaseVersion=").append(String.valueOf(this.releaseVersion));
+        sb.append(", artifactContentType=").append(String.valueOf(this.artifactContentType));
         sb.append(")");
         return sb.toString();
     }
@@ -162,6 +203,7 @@ public final class NewInstallationSite
         NewInstallationSite other = (NewInstallationSite) o;
         return java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
                 && java.util.Objects.equals(this.releaseVersion, other.releaseVersion)
+                && java.util.Objects.equals(this.artifactContentType, other.artifactContentType)
                 && super.equals(other);
     }
 
@@ -175,6 +217,11 @@ public final class NewInstallationSite
         result =
                 (result * PRIME)
                         + (this.releaseVersion == null ? 43 : this.releaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.artifactContentType == null
+                                ? 43
+                                : this.artifactContentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

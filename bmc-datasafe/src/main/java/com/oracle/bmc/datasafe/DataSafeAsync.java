@@ -85,6 +85,21 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update alerts within a given compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AlertsUpdateResponse> alertsUpdate(
+            AlertsUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AlertsUpdateRequest, AlertsUpdateResponse>
+                    handler);
+
+    /**
      * Applies the results of a discovery job to the specified sensitive data model. Note that the
      * plannedAction attribute of discovery results is used for processing them. You should first
      * use PatchDiscoveryJobResults to set the plannedAction attribute of the discovery results you
@@ -2311,7 +2326,9 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets consolidated discovery analytics data based on the specified query parameters.
+     * Gets consolidated discovery analytics data based on the specified query parameters. If
+     * CompartmentIdInSubtreeQueryParam is specified as true, the behaviour is equivalent to
+     * accessLevel \"ACCESSIBLE\" by default.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2425,7 +2442,9 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets consolidated masking analytics data based on the specified query parameters.
+     * Gets consolidated masking analytics data based on the specified query parameters. If
+     * CompartmentIdInSubtreeQueryParam is specified as true, the behaviour is equivalent to
+     * accessLevel \"ACCESSIBLE\" by default.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2924,6 +2943,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates new target-alert policy associations that will be applied on target.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchTargetAlertPolicyAssociationResponse>
+            patchTargetAlertPolicyAssociation(
+                    PatchTargetAlertPolicyAssociationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PatchTargetAlertPolicyAssociationRequest,
+                                    PatchTargetAlertPolicyAssociationResponse>
+                            handler);
+
+    /**
      * Provision audit policy.
      *
      * @param request The request object containing the details to send
@@ -2978,6 +3015,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes schedule of a PDF or XLS report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveScheduleReportResponse> removeScheduleReport(
+            RemoveScheduleReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveScheduleReportRequest, RemoveScheduleReportResponse>
+                    handler);
+
+    /**
      * Resumes the specified audit trail once it got stopped.
      *
      * @param request The request object containing the details to send
@@ -3023,6 +3076,21 @@ public interface DataSafeAsync extends AutoCloseable {
             RetrieveAuditPoliciesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RetrieveAuditPoliciesRequest, RetrieveAuditPoliciesResponse>
+                    handler);
+
+    /**
+     * Schedules a PDF or XLS report based on parameters and report definition.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ScheduleReportResponse> scheduleReport(
+            ScheduleReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ScheduleReportRequest, ScheduleReportResponse>
                     handler);
 
     /**

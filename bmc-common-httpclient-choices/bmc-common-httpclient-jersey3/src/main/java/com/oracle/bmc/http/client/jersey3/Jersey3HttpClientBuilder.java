@@ -12,6 +12,7 @@ import com.oracle.bmc.http.client.KeyStoreWithPassword;
 import com.oracle.bmc.http.client.ProxyConfiguration;
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.StandardClientProperties;
+import com.oracle.bmc.http.client.jersey3.internal.DaemonClientAsyncExecutorProvider;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import org.apache.http.ConnectionReuseStrategy;
@@ -32,6 +33,7 @@ import org.glassfish.jersey.client.RequestEntityProcessing;
 import org.glassfish.jersey.internal.InternalProperties;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJsonProvider;
+import org.glassfish.jersey.spi.ExecutorServiceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,6 +72,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private HostnameVerifier hostnameVerifier;
     private SSLContext sslContext;
     private boolean useApacheConnector = true;
+    private ExecutorServiceProvider executorServiceProvider = null;
+    private boolean useJerseyDefaultExecutorServiceProvider = false;
 
     Jersey3HttpClientBuilder() {
         // buffer by default, for signing and better error messages.
@@ -173,6 +177,10 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             }
         } else if (key == Jersey3ClientProperties.USE_APACHE_CONNECTOR) {
             useApacheConnector = (Boolean) value;
+        } else if (key == Jersey3ClientProperties.USE_JERSEY_DEFAULT_EXECUTOR_SERVICE_PROVIDER) {
+            useJerseyDefaultExecutorServiceProvider = (((Boolean) value) == Boolean.TRUE);
+        } else if (key == Jersey3ClientProperties.EXECUTOR_SERVICE_PROVIDER) {
+            executorServiceProvider = (ExecutorServiceProvider) value;
         } else if (key instanceof Jersey3ClientProperty) {
             properties.put(((Jersey3ClientProperty<T>) key).jerseyProperty, value);
         } else {
@@ -239,6 +247,16 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
         }
 
         Client client = clientBuilder.build();
+
+        if (executorServiceProvider != null) {
+            client.register(executorServiceProvider);
+        } else {
+            // no specific ExecutorServiceProvider set
+            if (!useJerseyDefaultExecutorServiceProvider) {
+                // not told to use Jersey's default
+                client.register(DaemonClientAsyncExecutorProvider.class);
+            }
+        }
 
         if (LOG.isTraceEnabled()) {
             String collectedProperties = null;

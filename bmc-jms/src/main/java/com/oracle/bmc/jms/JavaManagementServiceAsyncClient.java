@@ -295,6 +295,44 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCryptoAnalysisResultResponse>
+            deleteCryptoAnalysisResult(
+                    DeleteCryptoAnalysisResultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCryptoAnalysisResultRequest,
+                                    DeleteCryptoAnalysisResultResponse>
+                            handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(
+                request.getCryptoAnalysisResultId(), "cryptoAnalysisResultId must not be blank");
+
+        return clientCall(request, DeleteCryptoAnalysisResultResponse::builder)
+                .logger(LOG, "deleteCryptoAnalysisResult")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteCryptoAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/DeleteCryptoAnalysisResult")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCryptoAnalysisResultRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("cryptoAnalysisResults")
+                .appendPathParam(request.getCryptoAnalysisResultId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteCryptoAnalysisResultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCryptoAnalysisResultResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFleetResponse> deleteFleet(
             DeleteFleetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteFleetRequest, DeleteFleetResponse>
@@ -364,6 +402,42 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<GetCryptoAnalysisResultResponse> getCryptoAnalysisResult(
+            GetCryptoAnalysisResultRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCryptoAnalysisResultRequest, GetCryptoAnalysisResultResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        Validate.notBlank(
+                request.getCryptoAnalysisResultId(), "cryptoAnalysisResultId must not be blank");
+
+        return clientCall(request, GetCryptoAnalysisResultResponse::builder)
+                .logger(LOG, "getCryptoAnalysisResult")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetCryptoAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/GetCryptoAnalysisResult")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCryptoAnalysisResultRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("cryptoAnalysisResults")
+                .appendPathParam(request.getCryptoAnalysisResultId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.CryptoAnalysisResult.class,
+                        GetCryptoAnalysisResultResponse.Builder::cryptoAnalysisResult)
+                .handleResponseHeaderString("etag", GetCryptoAnalysisResultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCryptoAnalysisResultResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFleetResponse> getFleet(
             GetFleetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse>
@@ -388,6 +462,44 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .handleResponseHeaderString("etag", GetFleetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFleetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFleetAdvancedFeatureConfigurationResponse>
+            getFleetAdvancedFeatureConfiguration(
+                    GetFleetAdvancedFeatureConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetFleetAdvancedFeatureConfigurationRequest,
+                                    GetFleetAdvancedFeatureConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, GetFleetAdvancedFeatureConfigurationResponse::builder)
+                .logger(LOG, "getFleetAdvancedFeatureConfiguration")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetFleetAdvancedFeatureConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/GetFleetAdvancedFeatureConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFleetAdvancedFeatureConfigurationRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("advancedFeatureConfiguration")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.FleetAdvancedFeatureConfiguration.class,
+                        GetFleetAdvancedFeatureConfigurationResponse.Builder
+                                ::fleetAdvancedFeatureConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetFleetAdvancedFeatureConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetFleetAdvancedFeatureConfigurationResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -558,6 +670,47 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<ListCryptoAnalysisResultsResponse> listCryptoAnalysisResults(
+            ListCryptoAnalysisResultsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAnalysisResultsRequest, ListCryptoAnalysisResultsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, ListCryptoAnalysisResultsResponse::builder)
+                .logger(LOG, "listCryptoAnalysisResults")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListCryptoAnalysisResults",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/ListCryptoAnalysisResults")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAnalysisResultsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("cryptoAnalysisResults")
+                .appendEnumQueryParam("aggregationMode", request.getAggregationMode())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.CryptoAnalysisResultCollection.class,
+                        ListCryptoAnalysisResultsResponse.Builder::cryptoAnalysisResultCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCryptoAnalysisResultsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCryptoAnalysisResultsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFleetsResponse> listFleets(
             ListFleetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse>
@@ -657,7 +810,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .serviceDetails(
                         "JavaManagementService",
                         "ListJavaFamilies",
-                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamilyCollection/ListJavaFamilies")
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/ListJavaFamilies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaFamiliesRequest::builder)
                 .basePath("/20210610")
@@ -936,6 +1089,151 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<RequestCryptoAnalysesResponse> requestCryptoAnalyses(
+            RequestCryptoAnalysesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestCryptoAnalysesRequest, RequestCryptoAnalysesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getRequestCryptoAnalysesDetails(),
+                "requestCryptoAnalysesDetails is required");
+
+        return clientCall(request, RequestCryptoAnalysesResponse::builder)
+                .logger(LOG, "requestCryptoAnalyses")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestCryptoAnalyses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestCryptoAnalyses")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestCryptoAnalysesRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("requestCryptoAnalyses")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RequestCryptoAnalysesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestCryptoAnalysesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestJfrRecordingsResponse> requestJfrRecordings(
+            RequestJfrRecordingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestJfrRecordingsRequest, RequestJfrRecordingsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getRequestJfrRecordingsDetails(),
+                "requestJfrRecordingsDetails is required");
+
+        return clientCall(request, RequestJfrRecordingsResponse::builder)
+                .logger(LOG, "requestJfrRecordings")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestJfrRecordings",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJfrRecordings")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestJfrRecordingsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("requestJfrRecordings")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RequestJfrRecordingsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestJfrRecordingsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScanJavaServerUsageResponse> scanJavaServerUsage(
+            ScanJavaServerUsageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ScanJavaServerUsageRequest, ScanJavaServerUsageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getScanJavaServerUsageDetails(), "scanJavaServerUsageDetails is required");
+
+        return clientCall(request, ScanJavaServerUsageResponse::builder)
+                .logger(LOG, "scanJavaServerUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ScanJavaServerUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/ScanJavaServerUsage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScanJavaServerUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("scanJavaServerUsage")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ScanJavaServerUsageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ScanJavaServerUsageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScanLibraryUsageResponse> scanLibraryUsage(
+            ScanLibraryUsageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ScanLibraryUsageRequest, ScanLibraryUsageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getScanLibraryUsageDetails(), "scanLibraryUsageDetails is required");
+
+        return clientCall(request, ScanLibraryUsageResponse::builder)
+                .logger(LOG, "scanLibraryUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ScanLibraryUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/ScanLibraryUsage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScanLibraryUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("scanLibraryUsage")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ScanLibraryUsageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ScanLibraryUsageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeApplicationUsageResponse> summarizeApplicationUsage(
             SummarizeApplicationUsageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -980,6 +1278,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                         request.getOsFamily(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("libraryKey", request.getLibraryKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -989,6 +1288,58 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                         "opc-request-id", SummarizeApplicationUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeApplicationUsageResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeDeployedApplicationUsageResponse>
+            summarizeDeployedApplicationUsage(
+                    SummarizeDeployedApplicationUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeDeployedApplicationUsageRequest,
+                                    SummarizeDeployedApplicationUsageResponse>
+                            handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, SummarizeDeployedApplicationUsageResponse::builder)
+                .logger(LOG, "summarizeDeployedApplicationUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeDeployedApplicationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationUsage/SummarizeDeployedApplicationUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeDeployedApplicationUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("summarizeDeployedApplicationUsage")
+                .appendQueryParam("serverKey", request.getServerKey())
+                .appendQueryParam("serverInstanceKey", request.getServerInstanceKey())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("libraryKey", request.getLibraryKey())
+                .appendQueryParam("applicationKey", request.getApplicationKey())
+                .appendQueryParam("applicationNameContains", request.getApplicationNameContains())
+                .appendQueryParam("applicationName", request.getApplicationName())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.DeployedApplicationUsageCollection.class,
+                        SummarizeDeployedApplicationUsageResponse.Builder
+                                ::deployedApplicationUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeDeployedApplicationUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeDeployedApplicationUsageResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1050,6 +1401,103 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeJavaServerInstanceUsageResponse>
+            summarizeJavaServerInstanceUsage(
+                    SummarizeJavaServerInstanceUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeJavaServerInstanceUsageRequest,
+                                    SummarizeJavaServerInstanceUsageResponse>
+                            handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, SummarizeJavaServerInstanceUsageResponse::builder)
+                .logger(LOG, "summarizeJavaServerInstanceUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeJavaServerInstanceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerInstanceUsage/SummarizeJavaServerInstanceUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeJavaServerInstanceUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("summarizeJavaServerInstanceUsage")
+                .appendQueryParam("serverKey", request.getServerKey())
+                .appendQueryParam("serverInstanceKey", request.getServerInstanceKey())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("applicationKey", request.getApplicationKey())
+                .appendQueryParam("libraryKey", request.getLibraryKey())
+                .appendQueryParam(
+                        "serverInstanceNameContains", request.getServerInstanceNameContains())
+                .appendQueryParam("serverInstanceName", request.getServerInstanceName())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.JavaServerInstanceUsageCollection.class,
+                        SummarizeJavaServerInstanceUsageResponse.Builder
+                                ::javaServerInstanceUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeJavaServerInstanceUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeJavaServerInstanceUsageResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeJavaServerUsageResponse> summarizeJavaServerUsage(
+            SummarizeJavaServerUsageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeJavaServerUsageRequest, SummarizeJavaServerUsageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, SummarizeJavaServerUsageResponse::builder)
+                .logger(LOG, "summarizeJavaServerUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeJavaServerUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/SummarizeJavaServerUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeJavaServerUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("summarizeJavaServerUsage")
+                .appendQueryParam("serverKey", request.getServerKey())
+                .appendQueryParam("serverNameContains", request.getServerNameContains())
+                .appendQueryParam("serverName", request.getServerName())
+                .appendQueryParam("serverVersion", request.getServerVersion())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.JavaServerUsageCollection.class,
+                        SummarizeJavaServerUsageResponse.Builder::javaServerUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeJavaServerUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeJavaServerUsageResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeJreUsageResponse> summarizeJreUsage(
             SummarizeJreUsageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1071,6 +1519,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .appendPathParam(request.getFleetId())
                 .appendPathParam("actions")
                 .appendPathParam("summarizeJreUsage")
+                .appendQueryParam("jreId", request.getJreId())
                 .appendQueryParam("jreVendor", request.getJreVendor())
                 .appendQueryParam("jreDistribution", request.getJreDistribution())
                 .appendQueryParam("jreVersion", request.getJreVersion())
@@ -1100,6 +1549,52 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                         "opc-request-id", SummarizeJreUsageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeJreUsageResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeLibraryUsageResponse> summarizeLibraryUsage(
+            SummarizeLibraryUsageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeLibraryUsageRequest, SummarizeLibraryUsageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+
+        return clientCall(request, SummarizeLibraryUsageResponse::builder)
+                .logger(LOG, "summarizeLibraryUsage")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeLibraryUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/SummarizeLibraryUsage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeLibraryUsageRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("actions")
+                .appendPathParam("summarizeLibraryUsage")
+                .appendQueryParam("serverInstanceKey", request.getServerInstanceKey())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam("applicationKey", request.getApplicationKey())
+                .appendQueryParam("libraryKey", request.getLibraryKey())
+                .appendQueryParam("libraryNameContains", request.getLibraryNameContains())
+                .appendQueryParam("libraryName", request.getLibraryName())
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.LibraryUsageCollection.class,
+                        SummarizeLibraryUsageResponse.Builder::libraryUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeLibraryUsageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeLibraryUsageResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1149,6 +1644,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                         request.getOsFamily(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostnameContains", request.getHostnameContains())
+                .appendQueryParam("libraryKey", request.getLibraryKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -1223,6 +1719,49 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                         "opc-work-request-id", UpdateFleetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFleetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFleetAdvancedFeatureConfigurationResponse>
+            updateFleetAdvancedFeatureConfiguration(
+                    UpdateFleetAdvancedFeatureConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateFleetAdvancedFeatureConfigurationRequest,
+                                    UpdateFleetAdvancedFeatureConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateFleetAdvancedFeatureConfigurationDetails(),
+                "updateFleetAdvancedFeatureConfigurationDetails is required");
+
+        return clientCall(request, UpdateFleetAdvancedFeatureConfigurationResponse::builder)
+                .logger(LOG, "updateFleetAdvancedFeatureConfiguration")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateFleetAdvancedFeatureConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/UpdateFleetAdvancedFeatureConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateFleetAdvancedFeatureConfigurationRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleets")
+                .appendPathParam(request.getFleetId())
+                .appendPathParam("advancedFeatureConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.jms.model.FleetAdvancedFeatureConfiguration.class,
+                        UpdateFleetAdvancedFeatureConfigurationResponse.Builder
+                                ::fleetAdvancedFeatureConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateFleetAdvancedFeatureConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateFleetAdvancedFeatureConfigurationResponse.Builder::etag)
                 .callAsync(handler);
     }
 

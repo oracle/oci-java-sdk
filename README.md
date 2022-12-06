@@ -30,19 +30,156 @@ export OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=FALSE
 ```
 
 ## Changes Introduced In OCI Java SDK `3.x.y`
-### Removed dependencies on the following third-party libraries:
-1. Guava: Guava types have been replaced with JDK types:
-- `com.google.common.base.Optional` has been replaced with `java.util.Optional`
-- `com.google.common.base.Function` has been replaced with `java.util.function.Function`
-- `com.google.common.base.Predicate` has been replaced with `java.util.function.Predicate`
-- `com.google.common.base.Supplier` has been replaced with `java.util.function.Supplier`
+
+For full details, look at the changelog for version [`3.0.0-beta1`](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta1---2022-10-25).
 
 ### HTTP client library is pluggable
 There is no HTTP client library configured by default. The OCI Java SDK offers the following two choices for HTTP client libraries to choose from.
 - Jakarta EE 8/Jersey 2 - [bmc-common-httpclient-jersey](https://github.com/oracle/oci-java-sdk/tree/master/bmc-common-httpclient-choices/bmc-common-httpclient-jersey)
 - Jakarta EE 9/Jersey 3 - [bmc-common-httpclient-jersey3](https://github.com/oracle/oci-java-sdk/tree/master/bmc-common-httpclient-choices/bmc-common-httpclient-jersey3)
 
+- The OCI Java SDK does not choose an HTTP client library for you, and there is no default. You have to explicitly choose one, by declaring a dependency on `oci-java-sdk-common-httpclient-jersey` or `oci-java-sdk-common-httpclient-jersey3`
+- Example:
+
+        <dependency>
+          <!-- Since this is the "application" pom.xml, we do want to
+               choose the httpclient to use. -->
+          <groupId>com.oracle.oci.sdk</groupId>
+          <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
+        </dependency>
+
+
+### Invocation callbacks
+Instead of using `com.oracle.bmc.util.internal.Consumer<Invocation.Builder>` to register invocation callbacks, use `com.oracle.bmc.http.client.RequestInterceptor` instead, to decouple the implementation from the choice of the HTTP client.
+
+### Client configuration has been simplified
+`com.oracle.bmc.http.ClientConfigurator` has a single `customizeClient(HttpClientBuilder builder)` method, instead of `customizeBuilder`, `customizeClient`, and `customizeRequest` methods. Example:
+
+        IdentityClient.builder()
+                      .clientConfigurator(
+                              builder -> {
+                          builder.property(
+                                  StandardClientProperties.BUFFER_REQUEST, false);
+                      })
+                      // ...
+                      .build(authenticationDetailsProvider);
+
+- For a comprehensive list of pre-defined settable properties, see
+    - [StandardClientProperties.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-common-httpclient/src/main/java/com/oracle/bmc/http/client/StandardClientProperties.java)
+    - [ApacheClientProperties.java](https://github.com/oracle/oci-java-sdk/blob/d4b2f51c9c69bf64deb124ca921deeac333c3d03/bmc-common-httpclient-choices/bmc-common-httpclient-jersey/src/main/java/com/oracle/bmc/http/client/jersey/ApacheClientProperties.java) or [ApacheClientProperties.java](https://github.com/oracle/oci-java-sdk/blob/d4b2f51c9c69bf64deb124ca921deeac333c3d03/bmc-common-httpclient-choices/bmc-common-httpclient-jersey3/src/main/java/com/oracle/bmc/http/client/jersey3/ApacheClientProperties.java) (Jersey 3)
+- You can also define your own properties.
+- The actual properties that can be set depends on the HTTP client you are using.
+
+#### Specific client configuration examples
+
+##### Setting whether to buffer a request
+
+            builder.property(
+                    StandardClientProperties.BUFFER_REQUEST, shouldBuffer);
+
+##### Setting an Apache connection manager
+
+            builder.property(
+                    ApacheClientProperties.CONNECTION_MANAGER,
+                    connectionManager);
+
+##### Setting a trust store
+
+            // Server CA goes into the trust store
+            KeyStore trustStore =
+                    keystoreGenerator.createTrustStoreWithServerCa(tlsConfig.getCaBundle());
+            builder.property(StandardClientProperties.TRUST_STORE, trustStore);
+
+##### Setting a key store
+
+            builder.property(
+                    StandardClientProperties.KEY_STORE,
+                    new KeyStoreWithPassword(keyStore, keystorePassword));
+
+##### Setting the SSL context
+
+            builder.property(
+                    StandardClientProperties.SSL_CONTEXT, sslContext);
+
+##### Setting a proxy
+
+            builder.property(
+                    StandardClientProperties.PROXY, proxyConfig);
+
+##### Setting a hostname verifier
+
+            builder.property(
+                    StandardClientProperties.HOSTNAME_VERIFIER,
+                    NoopHostnameVerifier.INSTANCE);
+
+#### More client configuration examples
+- [ApacheConnectorPropertiesExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java)
+- [HttpProxyExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-examples/src/main/java/HttpProxyExample.java)
+- [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) and [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) (Jersey 3)
+
+### Apache Connector changes
+
+There were numerous changes to decouple the implementation from the choice of the HTTP client.
+  - `com.oracle.bmc.http.ApacheConfigurator`, has been replaced by `com.oracle.bmc.http.client.jersey.ApacheClientProperties` or `com.oracle.bmc.http.client.jersey3.ApacheClientProperties` (for Jersey 3).
+    - For clients that should not buffer requests into memory:
+
+          ObjectStorageClient nonBufferingObjectStorageClient = ObjectStorageClient
+              .builder()
+              .clientConfigurator(builder -> {
+                  builder.property(StandardClientProperties.BUFFER_REQUEST, false);
+                  builder.property(ApacheClientProperties.RETRY_HANDLER, null);
+                  builder.property(ApacheClientProperties.REUSE_STRATEGY, null);
+              })
+              .region(Region.US_PHOENIX_1)
+              .build(provider);
+
+    - For clients that should buffer requests into memory:
+
+          IdentityClient bufferingIdentityClient = IdentityClient
+              .builder()
+              .clientConfigurator(builder -> {
+                  builder.property(StandardClientProperties.BUFFER_REQUEST, true);
+                  builder.property(ApacheClientProperties.RETRY_HANDLER, null);
+                  builder.property(ApacheClientProperties.REUSE_STRATEGY, null);
+              })
+              .region(Region.US_PHOENIX_1)
+              .build(provider);
+
+      - See [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) and [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) (Jersey 3)
+
+      - Also consider using `com.oracle.bmc.http.client.jersey.apacheconfigurator.ApacheConfigurator from the `oci-java-sdk-addons-apache-configurator-jersey` add-on module; or `com.oracle.bmc.http.client.jersey3.apacheconfigurator.ApacheConfigurator` from the `oci-java-sdk-addons-apache-configurator-jersey3` add-on module.
+        - See [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) and [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) (Jersey 3)
+
+### Circuit breaker changes
+  - The circuit breaker interface has been renamed from `com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker` to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
+  - Instead of using the constructor of `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration`, use the builder. The constructor is not public anymore.
+  - The `com.oracle.bmc.util.CircuitBreakerUtils` class does not deal with actual circuit breakers anymore, just with `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration`. As such, the `DEFAULT_CIRCUIT_BREAKER` field and the `getUserDefinedCircuitBreaker` method were removed. Construct a new circuit breaker from the default configuration if necessary using the build methods in `com.oracle.bmc.circuitbreaker.CircuitBreakerFactory`.
+
+### Moved classes
+  - Class `com.oracle.bmc.Options` was moved to `com.oracle.bmc.http.client.Options`
+  - Class `com.oracle.bmc.http.Serialization` was moved to `com.oracle.bmc.http.client.Serialization`
+  - Class `com.oracle.bmc.io.DuplicatableInputStream` was moved to `com.oracle.bmc.http.client.io.DuplicatableInputStream`
+
+### Long deprecated code was removed
+  - The signing strategy `OBJECT_STORAGE` was removed from `com.oracle.bmc.http.signing.SigningStrategy`; it had been deprecated for years and had been replaced by `EXCLUDE_BODY`.
+  - The `getPublicKey()` and `getPrivateKey()` methods were removed from `com.oracle.bmc.auth.SessionKeySupplier` and implementing classes; they had been deprecated for years and had been replaced by the `getKeyPair()` method.
+
+
+### Removed code
+  - The `setInstanceMetadataServiceClientConfig` method in `com.oracle.bmc.Region` was removed; it never had any effect.
+  - `AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry` method has been removed without replacement, since it is not needed in the OCI Java SDK 3.0.0 and higher.
+    - You can copy and paste the [previous implementation](https://github.com/oracle/oci-java-sdk/blob/v2.47.0/bmc-common/src/main/java/com/oracle/bmc/auth/AbstractFederationClientAuthenticationDetailsProviderBuilder.java#L494-L528) if you need it.
+
+### Removed dependencies on the following third-party libraries
+- Guava: Guava types have been replaced with JDK types:
+  - `com.google.common.base.Optional` has been replaced with `java.util.Optional`
+  - `com.google.common.base.Function` has been replaced with `java.util.function.Function`
+  - `com.google.common.base.Predicate` has been replaced with `java.util.function.Predicate`
+  - `com.google.common.base.Supplier` has been replaced with `java.util.function.Supplier`
+
 ## Examples
+
+Examples for OCI Java SDK 3.x.y can be found [bmc-examples/src/main/java](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java).
 
 ### Example for Jersey 2 as HTTP client library (OCI Java SDK `3.x.y`)
 In order to use Jersey 2 as HTTP client library, a dependency on `oci-java-sdk-common-httpclient-jersey` needs to be explicitly declared in application's `pom.xml`. Please refer [bmc-jersey-examples/pom.xml](https://github.com/oracle/oci-java-sdk/blob/master/bmc-other-examples/bmc-jersey-examples/pom.xml)

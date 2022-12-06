@@ -5,7 +5,8 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information around the values for selector of an authentication/ routing branch. <br>
+ * Base policy for defining how to match the context variable in an incoming request with selection
+ * keys when dynamically routing and dynamically authenticating requests. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,12 +40,20 @@ public class DynamicSelectionKey extends com.oracle.bmc.http.client.internal.Exp
         this.name = name;
     }
 
-    /** Information regarding whether this is the default branch. */
+    /**
+     * Specifies whether to use the route or authentication server associated with this selection
+     * key as the default. The default is used if the value of a context variable in an incoming
+     * request does not match any of the other selection key values when dynamically routing and
+     * dynamically authenticating requests.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * Information regarding whether this is the default branch.
+     * Specifies whether to use the route or authentication server associated with this selection
+     * key as the default. The default is used if the value of a context variable in an incoming
+     * request does not match any of the other selection key values when dynamically routing and
+     * dynamically authenticating requests.
      *
      * @return the value
      */
@@ -111,7 +120,7 @@ public class DynamicSelectionKey extends com.oracle.bmc.http.client.internal.Exp
         return result;
     }
 
-    /** Information regarding type of the selection key. */
+    /** Type of the selection key. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         AnyOf("ANY_OF"),
         Wildcard("WILDCARD"),

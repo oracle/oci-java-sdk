@@ -14,6 +14,10 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateFleetAgentConfiguration("UPDATE_FLEET_AGENT_CONFIGURATION"),
     DeleteJavaInstallation("DELETE_JAVA_INSTALLATION"),
     CreateJavaInstallation("CREATE_JAVA_INSTALLATION"),
+    CollectJfr("COLLECT_JFR"),
+    RequestCryptoEventAnalysis("REQUEST_CRYPTO_EVENT_ANALYSIS"),
+    ScanJavaServerUsage("SCAN_JAVA_SERVER_USAGE"),
+    ScanLibraryUsage("SCAN_LIBRARY_USAGE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

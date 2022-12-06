@@ -32,7 +32,8 @@ public final class JavaReleaseSummary
         "familyDetails",
         "licenseDetails",
         "releaseDate",
-        "releaseNotesUrl"
+        "releaseNotesUrl",
+        "artifactContentTypes"
     })
     public JavaReleaseSummary(
             String releaseVersion,
@@ -44,7 +45,8 @@ public final class JavaReleaseSummary
             JavaFamily familyDetails,
             JavaLicense licenseDetails,
             java.util.Date releaseDate,
-            String releaseNotesUrl) {
+            String releaseNotesUrl,
+            java.util.List<ArtifactContentType> artifactContentTypes) {
         super();
         this.releaseVersion = releaseVersion;
         this.familyVersion = familyVersion;
@@ -56,6 +58,7 @@ public final class JavaReleaseSummary
         this.licenseDetails = licenseDetails;
         this.releaseDate = releaseDate;
         this.releaseNotesUrl = releaseNotesUrl;
+        this.artifactContentTypes = artifactContentTypes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -202,6 +205,22 @@ public final class JavaReleaseSummary
             this.__explicitlySet__.add("releaseNotesUrl");
             return this;
         }
+        /** Artifact content types for the Java version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("artifactContentTypes")
+        private java.util.List<ArtifactContentType> artifactContentTypes;
+
+        /**
+         * Artifact content types for the Java version.
+         *
+         * @param artifactContentTypes the value to set
+         * @return this builder
+         */
+        public Builder artifactContentTypes(
+                java.util.List<ArtifactContentType> artifactContentTypes) {
+            this.artifactContentTypes = artifactContentTypes;
+            this.__explicitlySet__.add("artifactContentTypes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -218,7 +237,8 @@ public final class JavaReleaseSummary
                             this.familyDetails,
                             this.licenseDetails,
                             this.releaseDate,
-                            this.releaseNotesUrl);
+                            this.releaseNotesUrl,
+                            this.artifactContentTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -256,6 +276,9 @@ public final class JavaReleaseSummary
             }
             if (model.wasPropertyExplicitlySet("releaseNotesUrl")) {
                 this.releaseNotesUrl(model.getReleaseNotesUrl());
+            }
+            if (model.wasPropertyExplicitlySet("artifactContentTypes")) {
+                this.artifactContentTypes(model.getArtifactContentTypes());
             }
             return this;
         }
@@ -392,6 +415,19 @@ public final class JavaReleaseSummary
         return releaseNotesUrl;
     }
 
+    /** Artifact content types for the Java version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("artifactContentTypes")
+    private final java.util.List<ArtifactContentType> artifactContentTypes;
+
+    /**
+     * Artifact content types for the Java version.
+     *
+     * @return the value
+     */
+    public java.util.List<ArtifactContentType> getArtifactContentTypes() {
+        return artifactContentTypes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -417,6 +453,7 @@ public final class JavaReleaseSummary
         sb.append(", licenseDetails=").append(String.valueOf(this.licenseDetails));
         sb.append(", releaseDate=").append(String.valueOf(this.releaseDate));
         sb.append(", releaseNotesUrl=").append(String.valueOf(this.releaseNotesUrl));
+        sb.append(", artifactContentTypes=").append(String.valueOf(this.artifactContentTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -441,6 +478,7 @@ public final class JavaReleaseSummary
                 && java.util.Objects.equals(this.licenseDetails, other.licenseDetails)
                 && java.util.Objects.equals(this.releaseDate, other.releaseDate)
                 && java.util.Objects.equals(this.releaseNotesUrl, other.releaseNotesUrl)
+                && java.util.Objects.equals(this.artifactContentTypes, other.artifactContentTypes)
                 && super.equals(other);
     }
 
@@ -474,6 +512,11 @@ public final class JavaReleaseSummary
         result =
                 (result * PRIME)
                         + (this.releaseNotesUrl == null ? 43 : this.releaseNotesUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.artifactContentTypes == null
+                                ? 43
+                                : this.artifactContentTypes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

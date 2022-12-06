@@ -27,6 +27,14 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     StopHeatwaveCluster("STOP_HEATWAVE_CLUSTER"),
     RestartHeatwaveCluster("RESTART_HEATWAVE_CLUSTER"),
     GenerateHeatwaveClusterMemoryEstimate("GENERATE_HEATWAVE_CLUSTER_MEMORY_ESTIMATE"),
+    CreateReplica("CREATE_REPLICA"),
+    UpdateReplica("UPDATE_REPLICA"),
+    DeleteReplica("DELETE_REPLICA"),
+    CreateChannel("CREATE_CHANNEL"),
+    UpdateChannel("UPDATE_CHANNEL"),
+    ResumeChannel("RESUME_CHANNEL"),
+    ResetChannel("RESET_CHANNEL"),
+    DeleteChannel("DELETE_CHANNEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

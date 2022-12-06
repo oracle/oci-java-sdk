@@ -16,11 +16,11 @@ Those will have to be installed in your Maven repository first:
 
 Download the latest release of the Java SDK from Github: https://github.com/oracle/oci-java-sdk/releases
 
-Extract the `shaded/lib/oci-java-sdk-full-shaded-*.jar` file from the downloaded zip file.
+Extract the `shaded/lib/oci-java-sdk-shaded-full-*.jar` file from the downloaded zip file.
 
 Now you can install that zip file in your Maven repository:
 
-    mvn install:install-file -Dfile=/path/to/oci-java-sdk-full-shaded-<version>.jar -Dpackaging=jar -DpomFile=bmc-shaded/bmc-shaded-full/pom.xml
+    mvn install:install-file -Dfile=/path/to/oci-java-sdk-shaded-full-<version>.jar -Dpackaging=jar -DpomFile=bmc-shaded/bmc-shaded-full/pom.xml
 
 You can now depend on the `com.oracle.oci.sdk:oci-java-sdk-shaded-full` artifact by including the following dependency in your own Maven `pom.xml` files:
 

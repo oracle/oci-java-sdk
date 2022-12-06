@@ -87,12 +87,16 @@ public final class UpdateMaskingColumnDetails
             this.__explicitlySet__.add("maskingColumnGroup");
             return this;
         }
-        /** The OCID of the sensitive type to be associated with the masking column. */
+        /**
+         * The OCID of the sensitive type to be associated with the masking column. Note that there
+         * will be no change in assigned masking format when sensitive type is changed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
         private String sensitiveTypeId;
 
         /**
-         * The OCID of the sensitive type to be associated with the masking column.
+         * The OCID of the sensitive type to be associated with the masking column. Note that there
+         * will be no change in assigned masking format when sensitive type is changed.
          *
          * @param sensitiveTypeId the value to set
          * @return this builder
@@ -238,12 +242,16 @@ public final class UpdateMaskingColumnDetails
         return maskingColumnGroup;
     }
 
-    /** The OCID of the sensitive type to be associated with the masking column. */
+    /**
+     * The OCID of the sensitive type to be associated with the masking column. Note that there will
+     * be no change in assigned masking format when sensitive type is changed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
     private final String sensitiveTypeId;
 
     /**
-     * The OCID of the sensitive type to be associated with the masking column.
+     * The OCID of the sensitive type to be associated with the masking column. Note that there will
+     * be no change in assigned masking format when sensitive type is changed.
      *
      * @return the value
      */

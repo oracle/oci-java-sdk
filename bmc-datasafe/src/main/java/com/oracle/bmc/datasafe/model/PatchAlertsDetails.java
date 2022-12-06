@@ -22,10 +22,11 @@ package com.oracle.bmc.datasafe.model;
 public final class PatchAlertsDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"items"})
-    public PatchAlertsDetails(java.util.List<PatchInstruction> items) {
+    @java.beans.ConstructorProperties({"items", "compartmentId"})
+    public PatchAlertsDetails(java.util.List<PatchInstruction> items, String compartmentId) {
         super();
         this.items = items;
+        this.compartmentId = compartmentId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -45,12 +46,27 @@ public final class PatchAlertsDetails
             this.__explicitlySet__.add("items");
             return this;
         }
+        /** The OCID of the compartment that contains the alerts. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The OCID of the compartment that contains the alerts.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchAlertsDetails build() {
-            PatchAlertsDetails model = new PatchAlertsDetails(this.items);
+            PatchAlertsDetails model = new PatchAlertsDetails(this.items, this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +77,9 @@ public final class PatchAlertsDetails
         public Builder copy(PatchAlertsDetails model) {
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             return this;
         }
@@ -88,6 +107,19 @@ public final class PatchAlertsDetails
         return items;
     }
 
+    /** The OCID of the compartment that contains the alerts. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The OCID of the compartment that contains the alerts.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -104,6 +136,7 @@ public final class PatchAlertsDetails
         sb.append("PatchAlertsDetails(");
         sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -118,7 +151,9 @@ public final class PatchAlertsDetails
         }
 
         PatchAlertsDetails other = (PatchAlertsDetails) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && super.equals(other);
     }
 
     @Override
@@ -126,6 +161,9 @@ public final class PatchAlertsDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -188,11 +188,14 @@ public final class DiscoveryDetails
     public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
         WeblogicDomain("WEBLOGIC_DOMAIN"),
         EbsInstance("EBS_INSTANCE"),
+        SqlServer("SQL_SERVER"),
+        ApacheTomcat("APACHE_TOMCAT"),
         OracleDatabase("ORACLE_DATABASE"),
         OciOracleDb("OCI_ORACLE_DB"),
         OciOracleCdb("OCI_ORACLE_CDB"),
         OciOraclePdb("OCI_ORACLE_PDB"),
         Host("HOST"),
+        OraclePsft("ORACLE_PSFT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

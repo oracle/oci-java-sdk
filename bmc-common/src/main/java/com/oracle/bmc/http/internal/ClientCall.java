@@ -1007,6 +1007,7 @@ public final class ClientCall<
     private void addToHistory(Throwable throwable) {
         Map<String, String> messages = new LinkedHashMap<>();
         Integer status = null;
+        messages.put("serviceName", serviceDetailsServiceName);
         if (throwable instanceof BmcException) {
             BmcException bmcException = (BmcException) throwable;
             messages.put("message", bmcException.getUnmodifiedMessage());

@@ -249,6 +249,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
     public enum TimeTwoType implements com.oracle.bmc.http.internal.BmcEnum {
         EndTime("END_TIME"),
         NewEndTime("NEW_END_TIME"),
+        EstimatedEndTime("ESTIMATED_END_TIME"),
         ;
 
         private final String value;

@@ -29,6 +29,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         "timeGenerated",
         "compartmentId",
         "lifecycleState",
+        "type",
         "freeformTags",
         "definedTags"
     })
@@ -41,6 +42,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             java.util.Date timeGenerated,
             String compartmentId,
             ReportLifecycleState lifecycleState,
+            ReportType type,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -52,6 +54,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         this.timeGenerated = timeGenerated;
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
+        this.type = type;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -178,6 +181,21 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The type of the report. */
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private ReportType type;
+
+        /**
+         * The type of the report.
+         *
+         * @param type the value to set
+         * @return this builder
+         */
+        public Builder type(ReportType type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -244,6 +262,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.timeGenerated,
                             this.compartmentId,
                             this.lifecycleState,
+                            this.type,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -277,6 +296,9 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -447,6 +469,19 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         return lifecycleState;
     }
 
+    /** The type of the report. */
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final ReportType type;
+
+    /**
+     * The type of the report.
+     *
+     * @return the value
+     */
+    public ReportType getType() {
+        return type;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -516,6 +551,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", timeGenerated=").append(String.valueOf(this.timeGenerated));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -540,6 +576,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.timeGenerated, other.timeGenerated)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -567,6 +604,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

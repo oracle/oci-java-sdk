@@ -22,6 +22,12 @@ package com.oracle.bmc.resourcemanager.model;
         defaultImpl = UpdateConfigSourceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateBitbucketCloudConfigSourceDetails.class,
+            name = "BITBUCKET_CLOUD_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateBitbucketServerConfigSourceDetails.class,
+            name = "BITBUCKET_SERVER_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGitConfigSourceDetails.class,
             name = "GIT_CONFIG_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -29,7 +35,10 @@ package com.oracle.bmc.resourcemanager.model;
             name = "OBJECT_STORAGE_CONFIG_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateZipUploadConfigSourceDetails.class,
-            name = "ZIP_UPLOAD")
+            name = "ZIP_UPLOAD"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDevOpsConfigSourceDetails.class,
+            name = "DEVOPS_CONFIG_SOURCE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)

@@ -188,6 +188,37 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public AlertsUpdateResponse alertsUpdate(AlertsUpdateRequest request) {
+        Objects.requireNonNull(request.getAlertsUpdateDetails(), "alertsUpdateDetails is required");
+
+        return clientCall(request, AlertsUpdateResponse::builder)
+                .logger(LOG, "alertsUpdate")
+                .serviceDetails(
+                        "DataSafe",
+                        "AlertsUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/AlertsUpdate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AlertsUpdateRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alerts")
+                .appendPathParam("actions")
+                .appendPathParam("updateAll")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AlertsUpdateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AlertsUpdateResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ApplyDiscoveryJobResultsResponse applyDiscoveryJobResults(
             ApplyDiscoveryJobResultsRequest request) {
 
@@ -4954,6 +4985,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("reportDefinitionId", request.getReportDefinitionId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("type", request.getType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5755,6 +5787,8 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .requestBuilder(PatchAlertsRequest::builder)
                 .basePath("/20181201")
                 .appendPathParam("alerts")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -5869,6 +5903,37 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public PatchTargetAlertPolicyAssociationResponse patchTargetAlertPolicyAssociation(
+            PatchTargetAlertPolicyAssociationRequest request) {
+        Objects.requireNonNull(
+                request.getPatchTargetAlertPolicyAssociationDetails(),
+                "patchTargetAlertPolicyAssociationDetails is required");
+
+        return clientCall(request, PatchTargetAlertPolicyAssociationResponse::builder)
+                .logger(LOG, "patchTargetAlertPolicyAssociation")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchTargetAlertPolicyAssociation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/PatchTargetAlertPolicyAssociation")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchTargetAlertPolicyAssociationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetAlertPolicyAssociations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchTargetAlertPolicyAssociationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchTargetAlertPolicyAssociationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ProvisionAuditPolicyResponse provisionAuditPolicy(ProvisionAuditPolicyRequest request) {
         Objects.requireNonNull(
                 request.getProvisionAuditPolicyDetails(),
@@ -5976,6 +6041,37 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public RemoveScheduleReportResponse removeScheduleReport(RemoveScheduleReportRequest request) {
+
+        Validate.notBlank(request.getReportDefinitionId(), "reportDefinitionId must not be blank");
+
+        return clientCall(request, RemoveScheduleReportResponse::builder)
+                .logger(LOG, "removeScheduleReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "RemoveScheduleReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/RemoveScheduleReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveScheduleReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("reportDefinitions")
+                .appendPathParam(request.getReportDefinitionId())
+                .appendPathParam("actions")
+                .appendPathParam("removeScheduleReport")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveScheduleReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveScheduleReportResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ResumeAuditTrailResponse resumeAuditTrail(ResumeAuditTrailRequest request) {
 
         Validate.notBlank(request.getAuditTrailId(), "auditTrailId must not be blank");
@@ -6062,6 +6158,39 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         RetrieveAuditPoliciesResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveAuditPoliciesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ScheduleReportResponse scheduleReport(ScheduleReportRequest request) {
+
+        Validate.notBlank(request.getReportDefinitionId(), "reportDefinitionId must not be blank");
+        Objects.requireNonNull(
+                request.getScheduleReportDetails(), "scheduleReportDetails is required");
+
+        return clientCall(request, ScheduleReportResponse::builder)
+                .logger(LOG, "scheduleReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "ScheduleReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ScheduleReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("reportDefinitions")
+                .appendPathParam(request.getReportDefinitionId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleReport")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ScheduleReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ScheduleReportResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

@@ -25,18 +25,24 @@ public final class UpdateFleetAgentConfigurationDetails
     @java.beans.ConstructorProperties({
         "jreScanFrequencyInMinutes",
         "javaUsageTrackerProcessingFrequencyInMinutes",
+        "workRequestValidityPeriodInDays",
+        "agentPollingIntervalInMinutes",
         "linuxConfiguration",
         "windowsConfiguration"
     })
     public UpdateFleetAgentConfigurationDetails(
             Integer jreScanFrequencyInMinutes,
             Integer javaUsageTrackerProcessingFrequencyInMinutes,
+            Integer workRequestValidityPeriodInDays,
+            Integer agentPollingIntervalInMinutes,
             FleetAgentOsConfiguration linuxConfiguration,
             FleetAgentOsConfiguration windowsConfiguration) {
         super();
         this.jreScanFrequencyInMinutes = jreScanFrequencyInMinutes;
         this.javaUsageTrackerProcessingFrequencyInMinutes =
                 javaUsageTrackerProcessingFrequencyInMinutes;
+        this.workRequestValidityPeriodInDays = workRequestValidityPeriodInDays;
+        this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
         this.linuxConfiguration = linuxConfiguration;
         this.windowsConfiguration = windowsConfiguration;
     }
@@ -84,6 +90,36 @@ public final class UpdateFleetAgentConfigurationDetails
             this.__explicitlySet__.add("javaUsageTrackerProcessingFrequencyInMinutes");
             return this;
         }
+        /** The validity period in days for work requests. */
+        @com.fasterxml.jackson.annotation.JsonProperty("workRequestValidityPeriodInDays")
+        private Integer workRequestValidityPeriodInDays;
+
+        /**
+         * The validity period in days for work requests.
+         *
+         * @param workRequestValidityPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder workRequestValidityPeriodInDays(Integer workRequestValidityPeriodInDays) {
+            this.workRequestValidityPeriodInDays = workRequestValidityPeriodInDays;
+            this.__explicitlySet__.add("workRequestValidityPeriodInDays");
+            return this;
+        }
+        /** Agent polling interval in minutes */
+        @com.fasterxml.jackson.annotation.JsonProperty("agentPollingIntervalInMinutes")
+        private Integer agentPollingIntervalInMinutes;
+
+        /**
+         * Agent polling interval in minutes
+         *
+         * @param agentPollingIntervalInMinutes the value to set
+         * @return this builder
+         */
+        public Builder agentPollingIntervalInMinutes(Integer agentPollingIntervalInMinutes) {
+            this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
+            this.__explicitlySet__.add("agentPollingIntervalInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
         private FleetAgentOsConfiguration linuxConfiguration;
@@ -111,6 +147,8 @@ public final class UpdateFleetAgentConfigurationDetails
                     new UpdateFleetAgentConfigurationDetails(
                             this.jreScanFrequencyInMinutes,
                             this.javaUsageTrackerProcessingFrequencyInMinutes,
+                            this.workRequestValidityPeriodInDays,
+                            this.agentPollingIntervalInMinutes,
                             this.linuxConfiguration,
                             this.windowsConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -127,6 +165,12 @@ public final class UpdateFleetAgentConfigurationDetails
             if (model.wasPropertyExplicitlySet("javaUsageTrackerProcessingFrequencyInMinutes")) {
                 this.javaUsageTrackerProcessingFrequencyInMinutes(
                         model.getJavaUsageTrackerProcessingFrequencyInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestValidityPeriodInDays")) {
+                this.workRequestValidityPeriodInDays(model.getWorkRequestValidityPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("agentPollingIntervalInMinutes")) {
+                this.agentPollingIntervalInMinutes(model.getAgentPollingIntervalInMinutes());
             }
             if (model.wasPropertyExplicitlySet("linuxConfiguration")) {
                 this.linuxConfiguration(model.getLinuxConfiguration());
@@ -181,6 +225,32 @@ public final class UpdateFleetAgentConfigurationDetails
         return javaUsageTrackerProcessingFrequencyInMinutes;
     }
 
+    /** The validity period in days for work requests. */
+    @com.fasterxml.jackson.annotation.JsonProperty("workRequestValidityPeriodInDays")
+    private final Integer workRequestValidityPeriodInDays;
+
+    /**
+     * The validity period in days for work requests.
+     *
+     * @return the value
+     */
+    public Integer getWorkRequestValidityPeriodInDays() {
+        return workRequestValidityPeriodInDays;
+    }
+
+    /** Agent polling interval in minutes */
+    @com.fasterxml.jackson.annotation.JsonProperty("agentPollingIntervalInMinutes")
+    private final Integer agentPollingIntervalInMinutes;
+
+    /**
+     * Agent polling interval in minutes
+     *
+     * @return the value
+     */
+    public Integer getAgentPollingIntervalInMinutes() {
+        return agentPollingIntervalInMinutes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
     private final FleetAgentOsConfiguration linuxConfiguration;
 
@@ -214,6 +284,10 @@ public final class UpdateFleetAgentConfigurationDetails
                 .append(String.valueOf(this.jreScanFrequencyInMinutes));
         sb.append(", javaUsageTrackerProcessingFrequencyInMinutes=")
                 .append(String.valueOf(this.javaUsageTrackerProcessingFrequencyInMinutes));
+        sb.append(", workRequestValidityPeriodInDays=")
+                .append(String.valueOf(this.workRequestValidityPeriodInDays));
+        sb.append(", agentPollingIntervalInMinutes=")
+                .append(String.valueOf(this.agentPollingIntervalInMinutes));
         sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
         sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
         sb.append(")");
@@ -235,6 +309,10 @@ public final class UpdateFleetAgentConfigurationDetails
                 && java.util.Objects.equals(
                         this.javaUsageTrackerProcessingFrequencyInMinutes,
                         other.javaUsageTrackerProcessingFrequencyInMinutes)
+                && java.util.Objects.equals(
+                        this.workRequestValidityPeriodInDays, other.workRequestValidityPeriodInDays)
+                && java.util.Objects.equals(
+                        this.agentPollingIntervalInMinutes, other.agentPollingIntervalInMinutes)
                 && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
                 && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
                 && super.equals(other);
@@ -254,6 +332,16 @@ public final class UpdateFleetAgentConfigurationDetails
                         + (this.javaUsageTrackerProcessingFrequencyInMinutes == null
                                 ? 43
                                 : this.javaUsageTrackerProcessingFrequencyInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestValidityPeriodInDays == null
+                                ? 43
+                                : this.workRequestValidityPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.agentPollingIntervalInMinutes == null
+                                ? 43
+                                : this.agentPollingIntervalInMinutes.hashCode());
         result =
                 (result * PRIME)
                         + (this.linuxConfiguration == null

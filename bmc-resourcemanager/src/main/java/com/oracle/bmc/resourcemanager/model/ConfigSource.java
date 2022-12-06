@@ -25,8 +25,17 @@ package com.oracle.bmc.resourcemanager.model;
             value = GitConfigSource.class,
             name = "GIT_CONFIG_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DevOpsConfigSource.class,
+            name = "DEVOPS_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ObjectStorageConfigSource.class,
             name = "OBJECT_STORAGE_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = BitbucketServerConfigSource.class,
+            name = "BITBUCKET_SERVER_CONFIG_SOURCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = BitbucketCloudConfigSource.class,
+            name = "BITBUCKET_CLOUD_CONFIG_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CompartmentConfigSource.class,
             name = "COMPARTMENT_CONFIG_SOURCE"),
@@ -116,7 +125,10 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
 
     /** The type of configuration source to use for the Terraform configuration. */
     public enum ConfigSourceType implements com.oracle.bmc.http.internal.BmcEnum {
+        BitbucketCloudConfigSource("BITBUCKET_CLOUD_CONFIG_SOURCE"),
+        BitbucketServerConfigSource("BITBUCKET_SERVER_CONFIG_SOURCE"),
         CompartmentConfigSource("COMPARTMENT_CONFIG_SOURCE"),
+        DevopsConfigSource("DEVOPS_CONFIG_SOURCE"),
         GitConfigSource("GIT_CONFIG_SOURCE"),
         ObjectStorageConfigSource("OBJECT_STORAGE_CONFIG_SOURCE"),
         ZipUpload("ZIP_UPLOAD"),

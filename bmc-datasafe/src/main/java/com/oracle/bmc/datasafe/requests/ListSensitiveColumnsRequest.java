@@ -406,6 +406,7 @@ public class ListSensitiveColumnsRequest
         SchemaName("schemaName"),
         ObjectName("objectName"),
         ColumnName("columnName"),
+        DataType("dataType"),
         ;
 
         private final String value;
