@@ -723,6 +723,63 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CollectDeploymentDiagnosticResponse>
+            collectDeploymentDiagnostic(
+                    CollectDeploymentDiagnosticRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CollectDeploymentDiagnosticRequest,
+                                    CollectDeploymentDiagnosticResponse>
+                            handler) {
+        LOG.trace("Called async collectDeploymentDiagnostic");
+        final CollectDeploymentDiagnosticRequest interceptedRequest =
+                CollectDeploymentDiagnosticConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CollectDeploymentDiagnosticConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "CollectDeploymentDiagnostic",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CollectDeploymentDiagnostic");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CollectDeploymentDiagnosticResponse>
+                transformer =
+                        CollectDeploymentDiagnosticConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CollectDeploymentDiagnosticRequest, CollectDeploymentDiagnosticResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CollectDeploymentDiagnosticRequest,
+                                CollectDeploymentDiagnosticResponse>,
+                        java.util.concurrent.Future<CollectDeploymentDiagnosticResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCollectDeploymentDiagnosticDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CollectDeploymentDiagnosticRequest, CollectDeploymentDiagnosticResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

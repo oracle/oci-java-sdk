@@ -30,8 +30,7 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ANNOUNCEMENTSPREFERENCES")
                     .serviceEndpointPrefix("announcements")
-                    .serviceEndpointTemplate(
-                            "https://announcements.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =

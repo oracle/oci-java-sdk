@@ -32,6 +32,14 @@ package com.oracle.bmc.resourcemanager.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabAccessTokenConfigurationSourceProvider.class,
         name = "GITLAB_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerAccessTokenConfigurationSourceProvider.class,
+        name = "BITBUCKET_SERVER_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudUsernameAppPasswordConfigurationSourceProvider.class,
+        name = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -46,6 +54,8 @@ public class ConfigurationSourceProvider
         "timeCreated",
         "lifecycleState",
         "privateServerConfigDetails",
+        "username",
+        "secretId",
         "freeformTags",
         "definedTags"
     })
@@ -57,6 +67,8 @@ public class ConfigurationSourceProvider
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
+            String username,
+            String secretId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -67,6 +79,8 @@ public class ConfigurationSourceProvider
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.privateServerConfigDetails = privateServerConfigDetails;
+        this.username = username;
+        this.secretId = secretId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -225,6 +239,34 @@ public class ConfigurationSourceProvider
     }
 
     /**
+     * Username which is used to authorize the user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("username")
+    private final String username;
+
+    /**
+     * Username which is used to authorize the user.
+     * @return the value
+     **/
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Secret ocid which is used to authorize the user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * Secret ocid which is used to authorize the user.
+     * @return the value
+     **/
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
@@ -286,6 +328,8 @@ public class ConfigurationSourceProvider
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", privateServerConfigDetails=")
                 .append(String.valueOf(this.privateServerConfigDetails));
+        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -310,6 +354,8 @@ public class ConfigurationSourceProvider
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
                         this.privateServerConfigDetails, other.privateServerConfigDetails)
+                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -334,6 +380,8 @@ public class ConfigurationSourceProvider
                         + (this.privateServerConfigDetails == null
                                 ? 43
                                 : this.privateServerConfigDetails.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
@@ -342,11 +390,15 @@ public class ConfigurationSourceProvider
 
     /**
      * The type of configuration source provider.
+     * The {@code BITBUCKET_CLOUD_USERNAME_APPPASSWORD} type corresponds to Bitbucket Cloud.
+     * The {@code BITBUCKET_SERVER_ACCESS_TOKEN} type corresponds to Bitbucket Server.
      * The {@code GITLAB_ACCESS_TOKEN} type corresponds to GitLab.
      * The {@code GITHUB_ACCESS_TOKEN} type corresponds to GitHub.
      *
      **/
     public enum ConfigSourceProviderType {
+        BitbucketCloudUsernameApppassword("BITBUCKET_CLOUD_USERNAME_APPPASSWORD"),
+        BitbucketServerAccessToken("BITBUCKET_SERVER_ACCESS_TOKEN"),
         GitlabAccessToken("GITLAB_ACCESS_TOKEN"),
         GithubAccessToken("GITHUB_ACCESS_TOKEN"),
 

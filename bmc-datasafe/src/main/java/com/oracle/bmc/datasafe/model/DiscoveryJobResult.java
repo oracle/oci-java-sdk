@@ -44,6 +44,7 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
         "dbDefinedChildColumnKeys",
         "plannedAction",
         "isResultApplied",
+        "discoveryJobId",
         "modifiedAttributes"
     })
     public DiscoveryJobResult(
@@ -65,6 +66,7 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
             java.util.List<String> dbDefinedChildColumnKeys,
             PlannedAction plannedAction,
             Boolean isResultApplied,
+            String discoveryJobId,
             ModifiedAttributes modifiedAttributes) {
         super();
         this.key = key;
@@ -85,6 +87,7 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
         this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
         this.plannedAction = plannedAction;
         this.isResultApplied = isResultApplied;
+        this.discoveryJobId = discoveryJobId;
         this.modifiedAttributes = modifiedAttributes;
     }
 
@@ -414,6 +417,22 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("isResultApplied");
             return this;
         }
+        /**
+         * The OCID of the discovery job.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
+        private String discoveryJobId;
+
+        /**
+         * The OCID of the discovery job.
+         * @param discoveryJobId the value to set
+         * @return this builder
+         **/
+        public Builder discoveryJobId(String discoveryJobId) {
+            this.discoveryJobId = discoveryJobId;
+            this.__explicitlySet__.add("discoveryJobId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("modifiedAttributes")
         private ModifiedAttributes modifiedAttributes;
@@ -448,6 +467,7 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
                             this.dbDefinedChildColumnKeys,
                             this.plannedAction,
                             this.isResultApplied,
+                            this.discoveryJobId,
                             this.modifiedAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -510,6 +530,9 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("isResultApplied")) {
                 this.isResultApplied(model.getIsResultApplied());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryJobId")) {
+                this.discoveryJobId(model.getDiscoveryJobId());
             }
             if (model.wasPropertyExplicitlySet("modifiedAttributes")) {
                 this.modifiedAttributes(model.getModifiedAttributes());
@@ -1025,6 +1048,20 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
         return isResultApplied;
     }
 
+    /**
+     * The OCID of the discovery job.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
+    private final String discoveryJobId;
+
+    /**
+     * The OCID of the discovery job.
+     * @return the value
+     **/
+    public String getDiscoveryJobId() {
+        return discoveryJobId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedAttributes")
     private final ModifiedAttributes modifiedAttributes;
 
@@ -1067,6 +1104,7 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
                 .append(String.valueOf(this.dbDefinedChildColumnKeys));
         sb.append(", plannedAction=").append(String.valueOf(this.plannedAction));
         sb.append(", isResultApplied=").append(String.valueOf(this.isResultApplied));
+        sb.append(", discoveryJobId=").append(String.valueOf(this.discoveryJobId));
         sb.append(", modifiedAttributes=").append(String.valueOf(this.modifiedAttributes));
         sb.append(")");
         return sb.toString();
@@ -1103,6 +1141,7 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
                         this.dbDefinedChildColumnKeys, other.dbDefinedChildColumnKeys)
                 && java.util.Objects.equals(this.plannedAction, other.plannedAction)
                 && java.util.Objects.equals(this.isResultApplied, other.isResultApplied)
+                && java.util.Objects.equals(this.discoveryJobId, other.discoveryJobId)
                 && java.util.Objects.equals(this.modifiedAttributes, other.modifiedAttributes)
                 && super.equals(other);
     }
@@ -1157,6 +1196,9 @@ public final class DiscoveryJobResult extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.isResultApplied == null ? 43 : this.isResultApplied.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryJobId == null ? 43 : this.discoveryJobId.hashCode());
         result =
                 (result * PRIME)
                         + (this.modifiedAttributes == null

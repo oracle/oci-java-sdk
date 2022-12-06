@@ -153,6 +153,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes only the metadata of the Crypto Event Analysis result, but the file remains in the object storage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCryptoAnalysisResultResponse> deleteCryptoAnalysisResult(
+            DeleteCryptoAnalysisResultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCryptoAnalysisResultRequest, DeleteCryptoAnalysisResultResponse>
+                    handler);
+
+    /**
      * Deletes the Fleet specified by an identifier.
      *
      * @param request The request object containing the details to send
@@ -184,6 +200,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieve metadata of the Crypto Event Analysis result.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCryptoAnalysisResultResponse> getCryptoAnalysisResult(
+            GetCryptoAnalysisResultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCryptoAnalysisResultRequest, GetCryptoAnalysisResultResponse>
+                    handler);
+
+    /**
      * Retrieve a Fleet with the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -196,6 +228,25 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<GetFleetResponse> getFleet(
             GetFleetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse> handler);
+
+    /**
+     * Returns fleet level advanced feature configuration
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFleetAdvancedFeatureConfigurationResponse>
+            getFleetAdvancedFeatureConfiguration(
+                    GetFleetAdvancedFeatureConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetFleetAdvancedFeatureConfigurationRequest,
+                                    GetFleetAdvancedFeatureConfigurationResponse>
+                            handler);
 
     /**
      * Retrieve a Fleet Agent Configuration for the specified Fleet.
@@ -214,7 +265,7 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns details of a Java release family based on specified version.
+     * Returns metadata associated with a specific Java release family.
      *
      *
      * @param request The request object containing the details to send
@@ -273,6 +324,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBlocklistsResponse> listBlocklists(
             ListBlocklistsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBlocklistsRequest, ListBlocklistsResponse>
+                    handler);
+
+    /**
+     * List Crypto Event Analysis results.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAnalysisResultsResponse> listCryptoAnalysisResults(
+            ListCryptoAnalysisResultsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAnalysisResultsRequest, ListCryptoAnalysisResultsResponse>
                     handler);
 
     /**
@@ -439,6 +506,73 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Request to perform crypto analyses. The result of crypto analysis will be uploaded to the
+     * object storage bucket desiginated when enable Crypto Event Analysis feature.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestCryptoAnalysesResponse> requestCryptoAnalyses(
+            RequestCryptoAnalysesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RequestCryptoAnalysesRequest, RequestCryptoAnalysesResponse>
+                    handler);
+
+    /**
+     * Request to collect the JFR recordings on the selected target. The JFR files are uploaded
+     * to the object storage bucket that you designated when you enabled the recording feature.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestJfrRecordingsResponse> requestJfrRecordings(
+            RequestJfrRecordingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RequestJfrRecordingsRequest, RequestJfrRecordingsResponse>
+                    handler);
+
+    /**
+     * Scan Java server usage in a fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ScanJavaServerUsageResponse> scanJavaServerUsage(
+            ScanJavaServerUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ScanJavaServerUsageRequest, ScanJavaServerUsageResponse>
+                    handler);
+
+    /**
+     * Scan library usage in a fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ScanLibraryUsageResponse> scanLibraryUsage(
+            ScanLibraryUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ScanLibraryUsageRequest, ScanLibraryUsageResponse>
+                    handler);
+
+    /**
      * List application usage in a Fleet filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -453,6 +587,25 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeApplicationUsageRequest, SummarizeApplicationUsageResponse>
                     handler);
+
+    /**
+     * List deployed applications in a fleet filtered by query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeDeployedApplicationUsageResponse>
+            summarizeDeployedApplicationUsage(
+                    SummarizeDeployedApplicationUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeDeployedApplicationUsageRequest,
+                                    SummarizeDeployedApplicationUsageResponse>
+                            handler);
 
     /**
      * List Java installation usage in a Fleet filtered by query parameters.
@@ -471,6 +624,42 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List Java server instances in a fleet filtered by query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeJavaServerInstanceUsageResponse>
+            summarizeJavaServerInstanceUsage(
+                    SummarizeJavaServerInstanceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeJavaServerInstanceUsageRequest,
+                                    SummarizeJavaServerInstanceUsageResponse>
+                            handler);
+
+    /**
+     * List Java servers in a fleet filtered by query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeJavaServerUsageResponse> summarizeJavaServerUsage(
+            SummarizeJavaServerUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeJavaServerUsageRequest, SummarizeJavaServerUsageResponse>
+                    handler);
+
+    /**
      * List Java Runtime usage in a specified Fleet filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -484,6 +673,23 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             SummarizeJreUsageRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeJreUsageRequest, SummarizeJreUsageResponse>
+                    handler);
+
+    /**
+     * List libraries in a fleet filtered by query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeLibraryUsageResponse> summarizeLibraryUsage(
+            SummarizeLibraryUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeLibraryUsageRequest, SummarizeLibraryUsageResponse>
                     handler);
 
     /**
@@ -534,6 +740,26 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateFleetResponse> updateFleet(
             UpdateFleetRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateFleetRequest, UpdateFleetResponse> handler);
+
+    /**
+     * Update advanced feature configurations for the fleet
+     * Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateFleetAdvancedFeatureConfigurationResponse>
+            updateFleetAdvancedFeatureConfiguration(
+                    UpdateFleetAdvancedFeatureConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateFleetAdvancedFeatureConfigurationRequest,
+                                    UpdateFleetAdvancedFeatureConfigurationResponse>
+                            handler);
 
     /**
      * Update the Fleet Agent Configuration for the specified Fleet.

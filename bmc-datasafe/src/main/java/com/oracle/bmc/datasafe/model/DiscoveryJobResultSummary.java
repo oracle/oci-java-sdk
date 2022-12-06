@@ -37,7 +37,8 @@ public final class DiscoveryJobResultSummary
         "estimatedDataValueCount",
         "sampleDataValues",
         "plannedAction",
-        "isResultApplied"
+        "isResultApplied",
+        "discoveryJobId"
     })
     public DiscoveryJobResultSummary(
             String key,
@@ -54,7 +55,8 @@ public final class DiscoveryJobResultSummary
             Long estimatedDataValueCount,
             java.util.List<String> sampleDataValues,
             DiscoveryJobResult.PlannedAction plannedAction,
-            Boolean isResultApplied) {
+            Boolean isResultApplied,
+            String discoveryJobId) {
         super();
         this.key = key;
         this.discoveryType = discoveryType;
@@ -71,6 +73,7 @@ public final class DiscoveryJobResultSummary
         this.sampleDataValues = sampleDataValues;
         this.plannedAction = plannedAction;
         this.isResultApplied = isResultApplied;
+        this.discoveryJobId = discoveryJobId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -351,6 +354,22 @@ public final class DiscoveryJobResultSummary
             this.__explicitlySet__.add("isResultApplied");
             return this;
         }
+        /**
+         * The OCID of the discovery job.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
+        private String discoveryJobId;
+
+        /**
+         * The OCID of the discovery job.
+         * @param discoveryJobId the value to set
+         * @return this builder
+         **/
+        public Builder discoveryJobId(String discoveryJobId) {
+            this.discoveryJobId = discoveryJobId;
+            this.__explicitlySet__.add("discoveryJobId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -372,7 +391,8 @@ public final class DiscoveryJobResultSummary
                             this.estimatedDataValueCount,
                             this.sampleDataValues,
                             this.plannedAction,
-                            this.isResultApplied);
+                            this.isResultApplied,
+                            this.discoveryJobId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -425,6 +445,9 @@ public final class DiscoveryJobResultSummary
             }
             if (model.wasPropertyExplicitlySet("isResultApplied")) {
                 this.isResultApplied(model.getIsResultApplied());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryJobId")) {
+                this.discoveryJobId(model.getDiscoveryJobId());
             }
             return this;
         }
@@ -787,6 +810,20 @@ public final class DiscoveryJobResultSummary
         return isResultApplied;
     }
 
+    /**
+     * The OCID of the discovery job.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
+    private final String discoveryJobId;
+
+    /**
+     * The OCID of the discovery job.
+     * @return the value
+     **/
+    public String getDiscoveryJobId() {
+        return discoveryJobId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -817,6 +854,7 @@ public final class DiscoveryJobResultSummary
         sb.append(", sampleDataValues=").append(String.valueOf(this.sampleDataValues));
         sb.append(", plannedAction=").append(String.valueOf(this.plannedAction));
         sb.append(", isResultApplied=").append(String.valueOf(this.isResultApplied));
+        sb.append(", discoveryJobId=").append(String.valueOf(this.discoveryJobId));
         sb.append(")");
         return sb.toString();
     }
@@ -847,6 +885,7 @@ public final class DiscoveryJobResultSummary
                 && java.util.Objects.equals(this.sampleDataValues, other.sampleDataValues)
                 && java.util.Objects.equals(this.plannedAction, other.plannedAction)
                 && java.util.Objects.equals(this.isResultApplied, other.isResultApplied)
+                && java.util.Objects.equals(this.discoveryJobId, other.discoveryJobId)
                 && super.equals(other);
     }
 
@@ -889,6 +928,9 @@ public final class DiscoveryJobResultSummary
         result =
                 (result * PRIME)
                         + (this.isResultApplied == null ? 43 : this.isResultApplied.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryJobId == null ? 43 : this.discoveryJobId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

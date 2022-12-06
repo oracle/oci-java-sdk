@@ -77,18 +77,6 @@ public class CircuitBreakerConfiguration {
      */
     private final List<Class<? extends RuntimeException>> recordExceptions;
 
-    @java.beans.ConstructorProperties({
-        "failureRateThreshold",
-        "slowCallRateThreshold",
-        "waitDurationInOpenState",
-        "permittedNumberOfCallsInHalfOpenState",
-        "minimumNumberOfCalls",
-        "slidingWindowSize",
-        "slowCallDurationThreshold",
-        "writableStackTraceEnabled",
-        "recordHttpStatuses",
-        "recordExceptions"
-    })
     public CircuitBreakerConfiguration(
             int failureRateThreshold,
             int slowCallRateThreshold,
@@ -100,17 +88,18 @@ public class CircuitBreakerConfiguration {
             boolean writableStackTraceEnabled,
             Set<Integer> recordHttpStatuses,
             List<Class<? extends RuntimeException>> recordExceptions) {
-        this.failureRateThreshold = failureRateThreshold;
-        this.slowCallRateThreshold = slowCallRateThreshold;
-        this.waitDurationInOpenState = waitDurationInOpenState;
-        this.permittedNumberOfCallsInHalfOpenState = permittedNumberOfCallsInHalfOpenState;
-        this.minimumNumberOfCalls = minimumNumberOfCalls;
-        this.slidingWindowSize = slidingWindowSize;
-        this.slowCallDurationThreshold = slowCallDurationThreshold;
-        this.writableStackTraceEnabled = writableStackTraceEnabled;
-        this.recordHttpStatuses = recordHttpStatuses;
-        this.recordExceptions = recordExceptions;
-        this.numberOfRecordedHistoryResponses = NUMBER_OF_RECORDED_HISTORY_REPSONSE;
+        this(
+                failureRateThreshold,
+                slowCallRateThreshold,
+                waitDurationInOpenState,
+                permittedNumberOfCallsInHalfOpenState,
+                minimumNumberOfCalls,
+                slidingWindowSize,
+                slowCallDurationThreshold,
+                writableStackTraceEnabled,
+                recordHttpStatuses,
+                recordExceptions,
+                NUMBER_OF_RECORDED_HISTORY_REPSONSE);
     }
 
     @java.beans.ConstructorProperties({

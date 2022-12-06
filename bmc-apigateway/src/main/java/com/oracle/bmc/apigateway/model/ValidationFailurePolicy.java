@@ -25,6 +25,10 @@ package com.oracle.bmc.apigateway.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ModifyResponseValidationFailurePolicy.class,
         name = "MODIFY_RESPONSE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OAuth2ResponseValidationFailurePolicy.class,
+        name = "OAUTH2"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -79,6 +83,7 @@ public class ValidationFailurePolicy extends com.oracle.bmc.http.internal.Explic
      **/
     public enum Type {
         ModifyResponse("MODIFY_RESPONSE"),
+        Oauth2("OAUTH2"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -251,6 +251,38 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+        private String parentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         * @param parentId the value to set
+         * @return this builder
+         **/
+        public Builder parentId(String parentId) {
+            this.parentId = parentId;
+            this.__explicitlySet__.add("parentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("rootId")
+        private String rootId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+         * @param rootId the value to set
+         * @return this builder
+         **/
+        public Builder rootId(String rootId) {
+            this.rootId = rootId;
+            this.__explicitlySet__.add("rootId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -278,7 +310,9 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
                             this.databaseId,
                             this.databaseName,
                             this.databaseDisplayName,
-                            this.databaseResourceType);
+                            this.databaseResourceType,
+                            this.parentId,
+                            this.rootId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -350,6 +384,12 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
             if (model.wasPropertyExplicitlySet("databaseResourceType")) {
                 this.databaseResourceType(model.getDatabaseResourceType());
             }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("rootId")) {
+                this.rootId(model.getRootId());
+            }
             return this;
         }
     }
@@ -387,7 +427,9 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
             String databaseId,
             String databaseName,
             String databaseDisplayName,
-            String databaseResourceType) {
+            String databaseResourceType,
+            String parentId,
+            String rootId) {
         super(
                 id,
                 compartmentId,
@@ -410,6 +452,8 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
         this.databaseName = databaseName;
         this.databaseDisplayName = databaseDisplayName;
         this.databaseResourceType = databaseResourceType;
+        this.parentId = parentId;
+        this.rootId = rootId;
     }
 
     /**
@@ -496,6 +540,34 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
         return databaseResourceType;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+    private final String parentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * @return the value
+     **/
+    public String getParentId() {
+        return parentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rootId")
+    private final String rootId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * @return the value
+     **/
+    public String getRootId() {
+        return rootId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -517,6 +589,8 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseDisplayName=").append(String.valueOf(this.databaseDisplayName));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", rootId=").append(String.valueOf(this.rootId));
         sb.append(")");
         return sb.toString();
     }
@@ -538,6 +612,8 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
                 && java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.databaseDisplayName, other.databaseDisplayName)
                 && java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.rootId, other.rootId)
                 && super.equals(other);
     }
 
@@ -568,6 +644,8 @@ public final class PeComanagedDatabaseInsight extends DatabaseInsight {
                         + (this.databaseResourceType == null
                                 ? 43
                                 : this.databaseResourceType.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result = (result * PRIME) + (this.rootId == null ? 43 : this.rootId.hashCode());
         return result;
     }
 }

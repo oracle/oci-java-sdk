@@ -368,6 +368,10 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         UpdateLibraryMaskingFormat("UPDATE_LIBRARY_MASKING_FORMAT"),
         AddColumnsFromSdm("ADD_COLUMNS_FROM_SDM"),
         MaskingJob("MASKING_JOB"),
+        CreateSchedule("CREATE_SCHEDULE"),
+        RemoveScheduleReport("REMOVE_SCHEDULE_REPORT"),
+        UpdateAllAlert("UPDATE_ALL_ALERT"),
+        PatchTargetAlertPolicyAssociation("PATCH_TARGET_ALERT_POLICY_ASSOCIATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
