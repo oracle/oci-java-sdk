@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Send the request to a Dynamic Routing backend.
+ * Send the request to the backend dynamically selected based on the incoming request's context.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

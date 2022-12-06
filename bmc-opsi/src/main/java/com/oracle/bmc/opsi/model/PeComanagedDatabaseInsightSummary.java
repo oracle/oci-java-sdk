@@ -221,6 +221,38 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
             this.__explicitlySet__.add("opsiPrivateEndpointId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+        private String parentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+         * @param parentId the value to set
+         * @return this builder
+         **/
+        public Builder parentId(String parentId) {
+            this.parentId = parentId;
+            this.__explicitlySet__.add("parentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("rootId")
+        private String rootId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
+         * @param rootId the value to set
+         * @return this builder
+         **/
+        public Builder rootId(String rootId) {
+            this.rootId = rootId;
+            this.__explicitlySet__.add("rootId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -247,7 +279,9 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
                             this.lifecycleDetails,
                             this.databaseConnectionStatusDetails,
                             this.databaseResourceType,
-                            this.opsiPrivateEndpointId);
+                            this.opsiPrivateEndpointId,
+                            this.parentId,
+                            this.rootId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -316,6 +350,12 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
             if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
                 this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
             }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("rootId")) {
+                this.rootId(model.getRootId());
+            }
             return this;
         }
     }
@@ -352,7 +392,9 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
             String lifecycleDetails,
             String databaseConnectionStatusDetails,
             String databaseResourceType,
-            String opsiPrivateEndpointId) {
+            String opsiPrivateEndpointId,
+            String parentId,
+            String rootId) {
         super(
                 id,
                 databaseId,
@@ -374,6 +416,8 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
                 databaseConnectionStatusDetails);
         this.databaseResourceType = databaseResourceType;
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+        this.parentId = parentId;
+        this.rootId = rootId;
     }
 
     /**
@@ -404,6 +448,34 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         return opsiPrivateEndpointId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentId")
+    private final String parentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * @return the value
+     **/
+    public String getParentId() {
+        return parentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rootId")
+    private final String rootId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
+     * @return the value
+     **/
+    public String getRootId() {
+        return rootId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -420,6 +492,8 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(", parentId=").append(String.valueOf(this.parentId));
+        sb.append(", rootId=").append(String.valueOf(this.rootId));
         sb.append(")");
         return sb.toString();
     }
@@ -436,6 +510,8 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         PeComanagedDatabaseInsightSummary other = (PeComanagedDatabaseInsightSummary) o;
         return java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(this.parentId, other.parentId)
+                && java.util.Objects.equals(this.rootId, other.rootId)
                 && super.equals(other);
     }
 
@@ -453,6 +529,8 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
                         + (this.opsiPrivateEndpointId == null
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
+        result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
+        result = (result * PRIME) + (this.rootId == null ? 43 : this.rootId.hashCode());
         return result;
     }
 }

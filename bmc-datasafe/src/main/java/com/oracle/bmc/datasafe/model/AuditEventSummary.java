@@ -460,13 +460,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The OCID of the audit trail that generated this audit event.
+         * The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
         private String auditTrailId;
 
         /**
-         * The OCID of the audit trail that generated this audit event.
+         * The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
          * @param auditTrailId the value to set
          * @return this builder
          **/
@@ -1299,13 +1299,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The OCID of the audit trail that generated this audit event.
+     * The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditTrailId")
     private final String auditTrailId;
 
     /**
-     * The OCID of the audit trail that generated this audit event.
+     * The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
      * @return the value
      **/
     public String getAuditTrailId() {

@@ -120,14 +120,16 @@ public final class CreateFleetDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * Whether or not advanced features are enabled in this fleet.
+         * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
         private Boolean isAdvancedFeaturesEnabled;
 
         /**
-         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * Whether or not advanced features are enabled in this fleet.
+         * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
          *
          * @param isAdvancedFeaturesEnabled the value to set
          * @return this builder
@@ -297,14 +299,16 @@ public final class CreateFleetDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * Whether or not advanced features are enabled in this fleet.
+     * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
     private final Boolean isAdvancedFeaturesEnabled;
 
     /**
-     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * Whether or not advanced features are enabled in this fleet.
+     * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
      *
      * @return the value
      **/

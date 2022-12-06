@@ -29,6 +29,7 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "approximateInstallationCount",
         "approximateApplicationCount",
         "approximateManagedInstanceCount",
+        "approximateJavaServerCount",
         "inventoryLog",
         "operationLog",
         "isAdvancedFeaturesEnabled",
@@ -47,6 +48,7 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             Integer approximateInstallationCount,
             Integer approximateApplicationCount,
             Integer approximateManagedInstanceCount,
+            Integer approximateJavaServerCount,
             CustomLog inventoryLog,
             CustomLog operationLog,
             Boolean isAdvancedFeaturesEnabled,
@@ -64,6 +66,7 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateApplicationCount = approximateApplicationCount;
         this.approximateManagedInstanceCount = approximateManagedInstanceCount;
+        this.approximateJavaServerCount = approximateJavaServerCount;
         this.inventoryLog = inventoryLog;
         this.operationLog = operationLog;
         this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
@@ -222,6 +225,26 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("approximateManagedInstanceCount");
             return this;
         }
+        /**
+         * The approximate count of all unique Java servers in the Fleet in the past seven days.
+         * This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerCount")
+        private Integer approximateJavaServerCount;
+
+        /**
+         * The approximate count of all unique Java servers in the Fleet in the past seven days.
+         * This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         *
+         * @param approximateJavaServerCount the value to set
+         * @return this builder
+         **/
+        public Builder approximateJavaServerCount(Integer approximateJavaServerCount) {
+            this.approximateJavaServerCount = approximateJavaServerCount;
+            this.__explicitlySet__.add("approximateJavaServerCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
         private CustomLog inventoryLog;
@@ -241,14 +264,16 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * Whether or not advanced features are enabled in this fleet.
+         * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
         private Boolean isAdvancedFeaturesEnabled;
 
         /**
-         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * Whether or not advanced features are enabled in this fleet.
+         * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
          *
          * @param isAdvancedFeaturesEnabled the value to set
          * @return this builder
@@ -374,6 +399,7 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.approximateInstallationCount,
                             this.approximateApplicationCount,
                             this.approximateManagedInstanceCount,
+                            this.approximateJavaServerCount,
                             this.inventoryLog,
                             this.operationLog,
                             this.isAdvancedFeaturesEnabled,
@@ -413,6 +439,9 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
                 this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateJavaServerCount")) {
+                this.approximateJavaServerCount(model.getApproximateJavaServerCount());
             }
             if (model.wasPropertyExplicitlySet("inventoryLog")) {
                 this.inventoryLog(model.getInventoryLog());
@@ -583,6 +612,24 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return approximateManagedInstanceCount;
     }
 
+    /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerCount")
+    private final Integer approximateJavaServerCount;
+
+    /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     *
+     * @return the value
+     **/
+    public Integer getApproximateJavaServerCount() {
+        return approximateJavaServerCount;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
     private final CustomLog inventoryLog;
 
@@ -598,14 +645,16 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * Whether or not advanced features are enabled in this fleet.
+     * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
     private final Boolean isAdvancedFeaturesEnabled;
 
     /**
-     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * Whether or not advanced features are enabled in this fleet.
+     * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
      *
      * @return the value
      **/
@@ -728,6 +777,8 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 .append(String.valueOf(this.approximateApplicationCount));
         sb.append(", approximateManagedInstanceCount=")
                 .append(String.valueOf(this.approximateManagedInstanceCount));
+        sb.append(", approximateJavaServerCount=")
+                .append(String.valueOf(this.approximateJavaServerCount));
         sb.append(", inventoryLog=").append(String.valueOf(this.inventoryLog));
         sb.append(", operationLog=").append(String.valueOf(this.operationLog));
         sb.append(", isAdvancedFeaturesEnabled=")
@@ -762,6 +813,8 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                         this.approximateApplicationCount, other.approximateApplicationCount)
                 && java.util.Objects.equals(
                         this.approximateManagedInstanceCount, other.approximateManagedInstanceCount)
+                && java.util.Objects.equals(
+                        this.approximateJavaServerCount, other.approximateJavaServerCount)
                 && java.util.Objects.equals(this.inventoryLog, other.inventoryLog)
                 && java.util.Objects.equals(this.operationLog, other.operationLog)
                 && java.util.Objects.equals(
@@ -804,6 +857,11 @@ public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                         + (this.approximateManagedInstanceCount == null
                                 ? 43
                                 : this.approximateManagedInstanceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateJavaServerCount == null
+                                ? 43
+                                : this.approximateJavaServerCount.hashCode());
         result = (result * PRIME) + (this.inventoryLog == null ? 43 : this.inventoryLog.hashCode());
         result = (result * PRIME) + (this.operationLog == null ? 43 : this.operationLog.hashCode());
         result =

@@ -23,6 +23,10 @@ package com.oracle.bmc.apigateway.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TokenAuthenticationPolicy.class,
+        name = "TOKEN_AUTHENTICATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = JwtAuthenticationPolicy.class,
         name = "JWT_AUTHENTICATION"
     ),
@@ -112,6 +116,7 @@ public class AuthenticationPolicy extends com.oracle.bmc.http.internal.Explicitl
     public enum Type {
         CustomAuthentication("CUSTOM_AUTHENTICATION"),
         JwtAuthentication("JWT_AUTHENTICATION"),
+        TokenAuthentication("TOKEN_AUTHENTICATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

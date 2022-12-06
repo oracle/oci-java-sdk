@@ -17,6 +17,9 @@ public enum AuditTrailStatus {
     Stopped("STOPPED"),
     Resuming("RESUMING"),
     Retrying("RETRYING"),
+    NotStarted("NOT_STARTED"),
+    StoppedNeedsAttn("STOPPED_NEEDS_ATTN"),
+    StoppedFailed("STOPPED_FAILED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

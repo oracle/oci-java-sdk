@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information around the values for selector of an authentication/ routing branch.
+ * Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,13 +42,13 @@ public class DynamicSelectionKey extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Information regarding whether this is the default branch.
+     * Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * Information regarding whether this is the default branch.
+     * Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
      * @return the value
      **/
     public Boolean getIsDefault() {
@@ -115,7 +115,7 @@ public class DynamicSelectionKey extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Information regarding type of the selection key.
+     * Type of the selection key.
      **/
     public enum Type {
         AnyOf("ANY_OF"),

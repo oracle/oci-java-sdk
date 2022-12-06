@@ -81,6 +81,24 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
             this.__explicitlySet__.add("applierUsername");
             return this;
         }
+        /**
+         * Replication filter rules to be applied at the DB System Channel target.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("filters")
+        private java.util.List<ChannelFilter> filters;
+
+        /**
+         * Replication filter rules to be applied at the DB System Channel target.
+         *
+         * @param filters the value to set
+         * @return this builder
+         **/
+        public Builder filters(java.util.List<ChannelFilter> filters) {
+            this.filters = filters;
+            this.__explicitlySet__.add("filters");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -88,7 +106,7 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         public CreateChannelTargetFromDbSystemDetails build() {
             CreateChannelTargetFromDbSystemDetails model =
                     new CreateChannelTargetFromDbSystemDetails(
-                            this.dbSystemId, this.channelName, this.applierUsername);
+                            this.dbSystemId, this.channelName, this.applierUsername, this.filters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +123,9 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
             }
             if (model.wasPropertyExplicitlySet("applierUsername")) {
                 this.applierUsername(model.getApplierUsername());
+            }
+            if (model.wasPropertyExplicitlySet("filters")) {
+                this.filters(model.getFilters());
             }
             return this;
         }
@@ -123,11 +144,15 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
 
     @Deprecated
     public CreateChannelTargetFromDbSystemDetails(
-            String dbSystemId, String channelName, String applierUsername) {
+            String dbSystemId,
+            String channelName,
+            String applierUsername,
+            java.util.List<ChannelFilter> filters) {
         super();
         this.dbSystemId = dbSystemId;
         this.channelName = channelName;
         this.applierUsername = applierUsername;
+        this.filters = filters;
     }
 
     /**
@@ -178,6 +203,22 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         return applierUsername;
     }
 
+    /**
+     * Replication filter rules to be applied at the DB System Channel target.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filters")
+    private final java.util.List<ChannelFilter> filters;
+
+    /**
+     * Replication filter rules to be applied at the DB System Channel target.
+     *
+     * @return the value
+     **/
+    public java.util.List<ChannelFilter> getFilters() {
+        return filters;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -195,6 +236,7 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", channelName=").append(String.valueOf(this.channelName));
         sb.append(", applierUsername=").append(String.valueOf(this.applierUsername));
+        sb.append(", filters=").append(String.valueOf(this.filters));
         sb.append(")");
         return sb.toString();
     }
@@ -212,6 +254,7 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.channelName, other.channelName)
                 && java.util.Objects.equals(this.applierUsername, other.applierUsername)
+                && java.util.Objects.equals(this.filters, other.filters)
                 && super.equals(other);
     }
 
@@ -224,6 +267,7 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         result =
                 (result * PRIME)
                         + (this.applierUsername == null ? 43 : this.applierUsername.hashCode());
+        result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
         return result;
     }
 }

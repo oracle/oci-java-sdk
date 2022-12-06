@@ -144,6 +144,123 @@ public class JavaManagementServicePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCryptoAnalysisResults operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCryptoAnalysisResultsResponse> listCryptoAnalysisResultsResponseIterator(
+            final ListCryptoAnalysisResultsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAnalysisResultsRequest.Builder, ListCryptoAnalysisResultsRequest,
+                ListCryptoAnalysisResultsResponse>(
+                new java.util.function.Supplier<ListCryptoAnalysisResultsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAnalysisResultsRequest.Builder get() {
+                        return ListCryptoAnalysisResultsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAnalysisResultsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAnalysisResultsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAnalysisResultsRequest.Builder>,
+                        ListCryptoAnalysisResultsRequest>() {
+                    @Override
+                    public ListCryptoAnalysisResultsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAnalysisResultsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAnalysisResultsRequest, ListCryptoAnalysisResultsResponse>() {
+                    @Override
+                    public ListCryptoAnalysisResultsResponse apply(
+                            ListCryptoAnalysisResultsRequest request) {
+                        return client.listCryptoAnalysisResults(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.jms.model.CryptoAnalysisResultSummary} objects
+     * contained in responses from the listCryptoAnalysisResults operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.jms.model.CryptoAnalysisResultSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.jms.model.CryptoAnalysisResultSummary>
+            listCryptoAnalysisResultsRecordIterator(
+                    final ListCryptoAnalysisResultsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAnalysisResultsRequest.Builder, ListCryptoAnalysisResultsRequest,
+                ListCryptoAnalysisResultsResponse,
+                com.oracle.bmc.jms.model.CryptoAnalysisResultSummary>(
+                new java.util.function.Supplier<ListCryptoAnalysisResultsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAnalysisResultsRequest.Builder get() {
+                        return ListCryptoAnalysisResultsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAnalysisResultsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAnalysisResultsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAnalysisResultsRequest.Builder>,
+                        ListCryptoAnalysisResultsRequest>() {
+                    @Override
+                    public ListCryptoAnalysisResultsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAnalysisResultsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAnalysisResultsRequest, ListCryptoAnalysisResultsResponse>() {
+                    @Override
+                    public ListCryptoAnalysisResultsResponse apply(
+                            ListCryptoAnalysisResultsRequest request) {
+                        return client.listCryptoAnalysisResults(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAnalysisResultsResponse,
+                        java.util.List<com.oracle.bmc.jms.model.CryptoAnalysisResultSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.jms.model.CryptoAnalysisResultSummary>
+                            apply(ListCryptoAnalysisResultsResponse response) {
+                        return response.getCryptoAnalysisResultCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listFleets operation. This iterable
      * will fetch more data from the server as needed.
      *

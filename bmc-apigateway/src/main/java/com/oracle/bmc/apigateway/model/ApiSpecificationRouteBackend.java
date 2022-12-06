@@ -24,6 +24,10 @@ package com.oracle.bmc.apigateway.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OAuth2LogoutBackend.class,
+        name = "OAUTH2_LOGOUT_BACKEND"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = HTTPBackend.class,
         name = "HTTP_BACKEND"
     ),
@@ -96,6 +100,7 @@ public class ApiSpecificationRouteBackend
         HttpBackend("HTTP_BACKEND"),
         StockResponseBackend("STOCK_RESPONSE_BACKEND"),
         DynamicRoutingBackend("DYNAMIC_ROUTING_BACKEND"),
+        Oauth2LogoutBackend("OAUTH2_LOGOUT_BACKEND"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

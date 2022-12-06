@@ -22,10 +22,11 @@ package com.oracle.bmc.datasafe.model;
 public final class DownloadMaskingLogDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targetId"})
-    public DownloadMaskingLogDetails(String targetId) {
+    @java.beans.ConstructorProperties({"targetId", "maskingWorkRequestId"})
+    public DownloadMaskingLogDetails(String targetId, String maskingWorkRequestId) {
         super();
         this.targetId = targetId;
+        this.maskingWorkRequestId = maskingWorkRequestId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,12 +47,29 @@ public final class DownloadMaskingLogDetails
             this.__explicitlySet__.add("targetId");
             return this;
         }
+        /**
+         * The OCID of the masking work request that resulted in this masking log.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
+        private String maskingWorkRequestId;
+
+        /**
+         * The OCID of the masking work request that resulted in this masking log.
+         * @param maskingWorkRequestId the value to set
+         * @return this builder
+         **/
+        public Builder maskingWorkRequestId(String maskingWorkRequestId) {
+            this.maskingWorkRequestId = maskingWorkRequestId;
+            this.__explicitlySet__.add("maskingWorkRequestId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DownloadMaskingLogDetails build() {
-            DownloadMaskingLogDetails model = new DownloadMaskingLogDetails(this.targetId);
+            DownloadMaskingLogDetails model =
+                    new DownloadMaskingLogDetails(this.targetId, this.maskingWorkRequestId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +80,9 @@ public final class DownloadMaskingLogDetails
         public Builder copy(DownloadMaskingLogDetails model) {
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("maskingWorkRequestId")) {
+                this.maskingWorkRequestId(model.getMaskingWorkRequestId());
             }
             return this;
         }
@@ -92,6 +113,20 @@ public final class DownloadMaskingLogDetails
         return targetId;
     }
 
+    /**
+     * The OCID of the masking work request that resulted in this masking log.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
+    private final String maskingWorkRequestId;
+
+    /**
+     * The OCID of the masking work request that resulted in this masking log.
+     * @return the value
+     **/
+    public String getMaskingWorkRequestId() {
+        return maskingWorkRequestId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -107,6 +142,7 @@ public final class DownloadMaskingLogDetails
         sb.append("DownloadMaskingLogDetails(");
         sb.append("super=").append(super.toString());
         sb.append("targetId=").append(String.valueOf(this.targetId));
+        sb.append(", maskingWorkRequestId=").append(String.valueOf(this.maskingWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +157,9 @@ public final class DownloadMaskingLogDetails
         }
 
         DownloadMaskingLogDetails other = (DownloadMaskingLogDetails) o;
-        return java.util.Objects.equals(this.targetId, other.targetId) && super.equals(other);
+        return java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.maskingWorkRequestId, other.maskingWorkRequestId)
+                && super.equals(other);
     }
 
     @Override
@@ -129,6 +167,11 @@ public final class DownloadMaskingLogDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingWorkRequestId == null
+                                ? 43
+                                : this.maskingWorkRequestId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

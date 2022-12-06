@@ -543,6 +543,19 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     public String getHostId() {
         return hostId;
     }
+    /**
+     * Optional list of Exadata Insight VM cluster name.
+     *
+     */
+    private java.util.List<String> vmclusterName;
+
+    /**
+     * Optional list of Exadata Insight VM cluster name.
+     *
+     */
+    public java.util.List<String> getVmclusterName() {
+        return vmclusterName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -1105,6 +1118,33 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         }
 
         /**
+         * Optional list of Exadata Insight VM cluster name.
+         *
+         */
+        private java.util.List<String> vmclusterName = null;
+
+        /**
+         * Optional list of Exadata Insight VM cluster name.
+         *
+         * @param vmclusterName the value to set
+         * @return this builder instance
+         */
+        public Builder vmclusterName(java.util.List<String> vmclusterName) {
+            this.vmclusterName = vmclusterName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of Exadata Insight VM cluster name.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder vmclusterName(String singularValue) {
+            return this.vmclusterName(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -1154,6 +1194,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             hostType(o.getHostType());
             hostId(o.getHostId());
+            vmclusterName(o.getVmclusterName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1210,8 +1251,9 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.hostType = hostType;
             request.hostId = hostId;
+            request.vmclusterName = vmclusterName;
             return request;
-            // new SummarizeHostInsightResourceForecastTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, statistic, forecastDays, forecastModel, utilizationLevel, confidence, page, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId);
+            // new SummarizeHostInsightResourceForecastTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, statistic, forecastDays, forecastModel, utilizationLevel, confidence, page, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId, vmclusterName);
         }
     }
 
@@ -1242,7 +1284,8 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                 .freeformTagExists(freeformTagExists)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .hostType(hostType)
-                .hostId(hostId);
+                .hostId(hostId)
+                .vmclusterName(vmclusterName);
     }
 
     /**
@@ -1280,6 +1323,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
+        sb.append(",vmclusterName=").append(String.valueOf(this.vmclusterName));
         sb.append(")");
         return sb.toString();
     }
@@ -1318,7 +1362,8 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.hostType, other.hostType)
-                && java.util.Objects.equals(this.hostId, other.hostId);
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName);
     }
 
     @Override
@@ -1377,6 +1422,9 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.hostType == null ? 43 : this.hostType.hashCode());
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmclusterName == null ? 43 : this.vmclusterName.hashCode());
         return result;
     }
 }

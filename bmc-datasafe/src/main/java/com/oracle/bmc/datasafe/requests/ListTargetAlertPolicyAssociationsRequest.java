@@ -137,22 +137,19 @@ public class ListTargetAlertPolicyAssociationsRequest
         return sortOrder;
     }
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
-     * The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by. Only one sort order may be provided.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
-     * The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by. Only one sort order may be provided.
      *
      **/
     public enum SortBy {
-        Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
+        Timecreated("TIMECREATED"),
+        Timeupdated("TIMEUPDATED"),
         ;
 
         private final String value;
@@ -184,9 +181,7 @@ public class ListTargetAlertPolicyAssociationsRequest
     };
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
-     * The DISPLAYNAME sort order is case sensitive.
+     * The field to sort by. Only one sort order may be provided.
      *
      */
     public SortBy getSortBy() {
@@ -451,17 +446,13 @@ public class ListTargetAlertPolicyAssociationsRequest
         }
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
-         * The DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. Only one sort order may be provided.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-         * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
-         * The DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. Only one sort order may be provided.
          *
          * @param sortBy the value to set
          * @return this builder instance

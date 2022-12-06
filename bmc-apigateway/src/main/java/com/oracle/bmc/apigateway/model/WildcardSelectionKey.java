@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information around the Wildcard expression matching the value for selector of a dynamic authentication/ routing branch.
+ * When dynamically routing and dynamically authenticating requests, the route or authentication server associated with a selection key containing a wildcard is used if the context variable in an incoming request matches that key.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,13 +45,13 @@ public final class WildcardSelectionKey extends DynamicSelectionKey {
             return this;
         }
         /**
-         * String describing the expression with wildcards.
+         * A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are '*' (zero or more characters) and '+' (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
         /**
-         * String describing the expression with wildcards.
+         * A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are '*' (zero or more characters) and '+' (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
          * @param expression the value to set
          * @return this builder
          **/
@@ -106,13 +106,13 @@ public final class WildcardSelectionKey extends DynamicSelectionKey {
     }
 
     /**
-     * String describing the expression with wildcards.
+     * A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are '*' (zero or more characters) and '+' (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
     /**
-     * String describing the expression with wildcards.
+     * A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are '*' (zero or more characters) and '+' (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
      * @return the value
      **/
     public String getExpression() {

@@ -22,10 +22,13 @@ package com.oracle.bmc.jms.model;
 public final class AddFleetInstallationSitesDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"installationSites"})
-    public AddFleetInstallationSitesDetails(java.util.List<NewInstallationSite> installationSites) {
+    @java.beans.ConstructorProperties({"installationSites", "postInstallationActions"})
+    public AddFleetInstallationSitesDetails(
+            java.util.List<NewInstallationSite> installationSites,
+            java.util.List<PostInstallationActions> postInstallationActions) {
         super();
         this.installationSites = installationSites;
+        this.postInstallationActions = postInstallationActions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,13 +49,31 @@ public final class AddFleetInstallationSitesDetails
             this.__explicitlySet__.add("installationSites");
             return this;
         }
+        /**
+         * Optional list of post java installation actions
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("postInstallationActions")
+        private java.util.List<PostInstallationActions> postInstallationActions;
+
+        /**
+         * Optional list of post java installation actions
+         * @param postInstallationActions the value to set
+         * @return this builder
+         **/
+        public Builder postInstallationActions(
+                java.util.List<PostInstallationActions> postInstallationActions) {
+            this.postInstallationActions = postInstallationActions;
+            this.__explicitlySet__.add("postInstallationActions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddFleetInstallationSitesDetails build() {
             AddFleetInstallationSitesDetails model =
-                    new AddFleetInstallationSitesDetails(this.installationSites);
+                    new AddFleetInstallationSitesDetails(
+                            this.installationSites, this.postInstallationActions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +84,9 @@ public final class AddFleetInstallationSitesDetails
         public Builder copy(AddFleetInstallationSitesDetails model) {
             if (model.wasPropertyExplicitlySet("installationSites")) {
                 this.installationSites(model.getInstallationSites());
+            }
+            if (model.wasPropertyExplicitlySet("postInstallationActions")) {
+                this.postInstallationActions(model.getPostInstallationActions());
             }
             return this;
         }
@@ -93,6 +117,20 @@ public final class AddFleetInstallationSitesDetails
         return installationSites;
     }
 
+    /**
+     * Optional list of post java installation actions
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("postInstallationActions")
+    private final java.util.List<PostInstallationActions> postInstallationActions;
+
+    /**
+     * Optional list of post java installation actions
+     * @return the value
+     **/
+    public java.util.List<PostInstallationActions> getPostInstallationActions() {
+        return postInstallationActions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -108,6 +146,8 @@ public final class AddFleetInstallationSitesDetails
         sb.append("AddFleetInstallationSitesDetails(");
         sb.append("super=").append(super.toString());
         sb.append("installationSites=").append(String.valueOf(this.installationSites));
+        sb.append(", postInstallationActions=")
+                .append(String.valueOf(this.postInstallationActions));
         sb.append(")");
         return sb.toString();
     }
@@ -123,6 +163,8 @@ public final class AddFleetInstallationSitesDetails
 
         AddFleetInstallationSitesDetails other = (AddFleetInstallationSitesDetails) o;
         return java.util.Objects.equals(this.installationSites, other.installationSites)
+                && java.util.Objects.equals(
+                        this.postInstallationActions, other.postInstallationActions)
                 && super.equals(other);
     }
 
@@ -133,6 +175,11 @@ public final class AddFleetInstallationSitesDetails
         result =
                 (result * PRIME)
                         + (this.installationSites == null ? 43 : this.installationSites.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.postInstallationActions == null
+                                ? 43
+                                : this.postInstallationActions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

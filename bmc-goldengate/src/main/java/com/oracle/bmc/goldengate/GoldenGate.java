@@ -135,6 +135,20 @@ public interface GoldenGate extends AutoCloseable {
             ChangeDeploymentCompartmentRequest request);
 
     /**
+     * Collects the diagnostic of a Deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CollectDeploymentDiagnosticExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CollectDeploymentDiagnostic API.
+     */
+    CollectDeploymentDiagnosticResponse collectDeploymentDiagnostic(
+            CollectDeploymentDiagnosticRequest request);
+
+    /**
      * Creates a new Connection.
      *
      * @param request The request object containing the details to send

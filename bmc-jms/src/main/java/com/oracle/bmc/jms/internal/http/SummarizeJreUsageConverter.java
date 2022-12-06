@@ -41,6 +41,14 @@ public class SummarizeJreUsageConverter {
                         .path("actions")
                         .path("summarizeJreUsage");
 
+        if (request.getJreId() != null) {
+            target =
+                    target.queryParam(
+                            "jreId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getJreId()));
+        }
+
         if (request.getJreVendor() != null) {
             target =
                     target.queryParam(

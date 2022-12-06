@@ -52,6 +52,7 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         "timeUpdated",
         "lifecycleState",
         "deploymentArguments",
+        "deployStageOverrideArguments",
         "deployArtifactOverrideArguments",
         "lifecycleDetails",
         "freeformTags",
@@ -68,6 +69,7 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Date timeUpdated,
             Deployment.LifecycleState lifecycleState,
             DeploymentArgumentCollection deploymentArguments,
+            DeployStageOverrideArgumentCollection deployStageOverrideArguments,
             DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -83,6 +85,7 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.deploymentArguments = deploymentArguments;
+        this.deployStageOverrideArguments = deployStageOverrideArguments;
         this.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -209,6 +212,13 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         return deploymentArguments;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deployStageOverrideArguments")
+    private final DeployStageOverrideArgumentCollection deployStageOverrideArguments;
+
+    public DeployStageOverrideArgumentCollection getDeployStageOverrideArguments() {
+        return deployStageOverrideArguments;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactOverrideArguments")
     private final DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments;
 
@@ -295,6 +305,8 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", deploymentArguments=").append(String.valueOf(this.deploymentArguments));
+        sb.append(", deployStageOverrideArguments=")
+                .append(String.valueOf(this.deployStageOverrideArguments));
         sb.append(", deployArtifactOverrideArguments=")
                 .append(String.valueOf(this.deployArtifactOverrideArguments));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -324,6 +336,8 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.deploymentArguments, other.deploymentArguments)
+                && java.util.Objects.equals(
+                        this.deployStageOverrideArguments, other.deployStageOverrideArguments)
                 && java.util.Objects.equals(
                         this.deployArtifactOverrideArguments, other.deployArtifactOverrideArguments)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -356,6 +370,11 @@ public class DeploymentSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.deploymentArguments == null
                                 ? 43
                                 : this.deploymentArguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployStageOverrideArguments == null
+                                ? 43
+                                : this.deployStageOverrideArguments.hashCode());
         result =
                 (result * PRIME)
                         + (this.deployArtifactOverrideArguments == null

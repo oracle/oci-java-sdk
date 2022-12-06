@@ -39,6 +39,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         "auditCollectionStartTime",
         "workRequestId",
         "compartmentId",
+        "timeLastCollected",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -59,6 +60,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
             java.util.Date auditCollectionStartTime,
             String workRequestId,
             String compartmentId,
+            java.util.Date timeLastCollected,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -78,6 +80,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         this.auditCollectionStartTime = auditCollectionStartTime;
         this.workRequestId = workRequestId;
         this.compartmentId = compartmentId;
+        this.timeLastCollected = timeLastCollected;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -338,6 +341,26 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
+         * The date and time until which the audit events are collected from target database by Data Safe audit trail
+         * collection process, in the format defined by RFC3339.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastCollected")
+        private java.util.Date timeLastCollected;
+
+        /**
+         * The date and time until which the audit events are collected from target database by Data Safe audit trail
+         * collection process, in the format defined by RFC3339.
+         *
+         * @param timeLastCollected the value to set
+         * @return this builder
+         **/
+        public Builder timeLastCollected(java.util.Date timeLastCollected) {
+            this.timeLastCollected = timeLastCollected;
+            this.__explicitlySet__.add("timeLastCollected");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -424,6 +447,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.auditCollectionStartTime,
                             this.workRequestId,
                             this.compartmentId,
+                            this.timeLastCollected,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -479,6 +503,9 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastCollected")) {
+                this.timeLastCollected(model.getTimeLastCollected());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -727,6 +754,24 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail
+     * collection process, in the format defined by RFC3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastCollected")
+    private final java.util.Date timeLastCollected;
+
+    /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail
+     * collection process, in the format defined by RFC3339.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeLastCollected() {
+        return timeLastCollected;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -814,6 +859,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
                 .append(String.valueOf(this.auditCollectionStartTime));
         sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", timeLastCollected=").append(String.valueOf(this.timeLastCollected));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -847,6 +893,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
                         this.auditCollectionStartTime, other.auditCollectionStartTime)
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.timeLastCollected, other.timeLastCollected)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -892,6 +939,9 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastCollected == null ? 43 : this.timeLastCollected.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information on how to authenticate requests when multiple authentication options are configured for a deployment.
+ * Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

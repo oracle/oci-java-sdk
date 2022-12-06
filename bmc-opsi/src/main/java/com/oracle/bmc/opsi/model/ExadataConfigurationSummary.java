@@ -25,6 +25,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ExadataDatabaseMachineConfigurationSummary.class,
         name = "EM_MANAGED_EXTERNAL_EXADATA"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExadataExacsConfigurationSummary.class,
+        name = "PE_COMANAGED_EXADATA"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -39,7 +43,8 @@ public class ExadataConfigurationSummary
         "exadataType",
         "exadataRackType",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "vmclusterDetails"
     })
     protected ExadataConfigurationSummary(
             String exadataInsightId,
@@ -49,7 +54,8 @@ public class ExadataConfigurationSummary
             ExadataType exadataType,
             ExadataRackType exadataRackType,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            java.util.List<VmClusterSummary> vmclusterDetails) {
         super();
         this.exadataInsightId = exadataInsightId;
         this.compartmentId = compartmentId;
@@ -59,6 +65,7 @@ public class ExadataConfigurationSummary
         this.exadataRackType = exadataRackType;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.vmclusterDetails = vmclusterDetails;
     }
 
     /**
@@ -181,6 +188,20 @@ public class ExadataConfigurationSummary
         return freeformTags;
     }
 
+    /**
+     * Array of objects containing VM cluster information.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmclusterDetails")
+    private final java.util.List<VmClusterSummary> vmclusterDetails;
+
+    /**
+     * Array of objects containing VM cluster information.
+     * @return the value
+     **/
+    public java.util.List<VmClusterSummary> getVmclusterDetails() {
+        return vmclusterDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -203,6 +224,7 @@ public class ExadataConfigurationSummary
         sb.append(", exadataRackType=").append(String.valueOf(this.exadataRackType));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", vmclusterDetails=").append(String.valueOf(this.vmclusterDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -225,6 +247,7 @@ public class ExadataConfigurationSummary
                 && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.vmclusterDetails, other.vmclusterDetails)
                 && super.equals(other);
     }
 
@@ -250,6 +273,9 @@ public class ExadataConfigurationSummary
                         + (this.exadataRackType == null ? 43 : this.exadataRackType.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmclusterDetails == null ? 43 : this.vmclusterDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

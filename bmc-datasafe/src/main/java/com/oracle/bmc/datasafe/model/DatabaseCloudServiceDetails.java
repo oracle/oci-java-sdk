@@ -68,6 +68,22 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
             return this;
         }
         /**
+         * The port number of the database listener.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
+        private Integer listenerPort;
+
+        /**
+         * The port number of the database listener.
+         * @param listenerPort the value to set
+         * @return this builder
+         **/
+        public Builder listenerPort(Integer listenerPort) {
+            this.listenerPort = listenerPort;
+            this.__explicitlySet__.add("listenerPort");
+            return this;
+        }
+        /**
          * The database service name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
@@ -93,6 +109,7 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
                             this.infrastructureType,
                             this.vmClusterId,
                             this.dbSystemId,
+                            this.listenerPort,
                             this.serviceName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -110,6 +127,9 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
             }
             if (model.wasPropertyExplicitlySet("dbSystemId")) {
                 this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("listenerPort")) {
+                this.listenerPort(model.getListenerPort());
             }
             if (model.wasPropertyExplicitlySet("serviceName")) {
                 this.serviceName(model.getServiceName());
@@ -134,10 +154,12 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
             InfrastructureType infrastructureType,
             String vmClusterId,
             String dbSystemId,
+            Integer listenerPort,
             String serviceName) {
         super(infrastructureType);
         this.vmClusterId = vmClusterId;
         this.dbSystemId = dbSystemId;
+        this.listenerPort = listenerPort;
         this.serviceName = serviceName;
     }
 
@@ -170,6 +192,20 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
     }
 
     /**
+     * The port number of the database listener.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
+    private final Integer listenerPort;
+
+    /**
+     * The port number of the database listener.
+     * @return the value
+     **/
+    public Integer getListenerPort() {
+        return listenerPort;
+    }
+
+    /**
      * The database service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
@@ -199,6 +235,7 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(")");
         return sb.toString();
@@ -216,6 +253,7 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         DatabaseCloudServiceDetails other = (DatabaseCloudServiceDetails) o;
         return java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.listenerPort, other.listenerPort)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && super.equals(other);
     }
@@ -226,6 +264,7 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         return result;
     }

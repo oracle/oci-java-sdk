@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Partial information about the exadata which includes id and name.
+ * Partial information about the exadata which includes id, name and vmclusterNames.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -19,11 +19,12 @@ package com.oracle.bmc.opsi.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExadataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "name"})
-    public ExadataDetails(String id, String name) {
+    @java.beans.ConstructorProperties({"id", "name", "vmclusterNames"})
+    public ExadataDetails(String id, String name, java.util.List<String> vmclusterNames) {
         super();
         this.id = id;
         this.name = name;
+        this.vmclusterNames = vmclusterNames;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,28 @@ public final class ExadataDetails extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("name");
             return this;
         }
+        /**
+         * Array of vm cluster names. Applicable for ExaCC and ExaCS.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmclusterNames")
+        private java.util.List<String> vmclusterNames;
+
+        /**
+         * Array of vm cluster names. Applicable for ExaCC and ExaCS.
+         * @param vmclusterNames the value to set
+         * @return this builder
+         **/
+        public Builder vmclusterNames(java.util.List<String> vmclusterNames) {
+            this.vmclusterNames = vmclusterNames;
+            this.__explicitlySet__.add("vmclusterNames");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataDetails build() {
-            ExadataDetails model = new ExadataDetails(this.id, this.name);
+            ExadataDetails model = new ExadataDetails(this.id, this.name, this.vmclusterNames);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +96,9 @@ public final class ExadataDetails extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("vmclusterNames")) {
+                this.vmclusterNames(model.getVmclusterNames());
             }
             return this;
         }
@@ -123,6 +143,20 @@ public final class ExadataDetails extends com.oracle.bmc.http.internal.Explicitl
         return name;
     }
 
+    /**
+     * Array of vm cluster names. Applicable for ExaCC and ExaCS.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmclusterNames")
+    private final java.util.List<String> vmclusterNames;
+
+    /**
+     * Array of vm cluster names. Applicable for ExaCC and ExaCS.
+     * @return the value
+     **/
+    public java.util.List<String> getVmclusterNames() {
+        return vmclusterNames;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +173,7 @@ public final class ExadataDetails extends com.oracle.bmc.http.internal.Explicitl
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", vmclusterNames=").append(String.valueOf(this.vmclusterNames));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +190,7 @@ public final class ExadataDetails extends com.oracle.bmc.http.internal.Explicitl
         ExadataDetails other = (ExadataDetails) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.vmclusterNames, other.vmclusterNames)
                 && super.equals(other);
     }
 
@@ -164,6 +200,9 @@ public final class ExadataDetails extends com.oracle.bmc.http.internal.Explicitl
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmclusterNames == null ? 43 : this.vmclusterNames.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -26,6 +26,8 @@ public final class UpdateAnnouncementSubscriptionDetails
         "displayName",
         "description",
         "onsTopicId",
+        "preferredLanguage",
+        "preferredTimeZone",
         "freeformTags",
         "definedTags"
     })
@@ -33,12 +35,16 @@ public final class UpdateAnnouncementSubscriptionDetails
             String displayName,
             String description,
             String onsTopicId,
+            String preferredLanguage,
+            String preferredTimeZone,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.onsTopicId = onsTopicId;
+        this.preferredLanguage = preferredLanguage;
+        this.preferredTimeZone = preferredTimeZone;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -96,6 +102,38 @@ public final class UpdateAnnouncementSubscriptionDetails
             return this;
         }
         /**
+         * (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
+        private String preferredLanguage;
+
+        /**
+         * (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+         * @param preferredLanguage the value to set
+         * @return this builder
+         **/
+        public Builder preferredLanguage(String preferredLanguage) {
+            this.preferredLanguage = preferredLanguage;
+            this.__explicitlySet__.add("preferredLanguage");
+            return this;
+        }
+        /**
+         * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
+        private String preferredTimeZone;
+
+        /**
+         * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+         * @param preferredTimeZone the value to set
+         * @return this builder
+         **/
+        public Builder preferredTimeZone(String preferredTimeZone) {
+            this.preferredTimeZone = preferredTimeZone;
+            this.__explicitlySet__.add("preferredTimeZone");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -146,6 +184,8 @@ public final class UpdateAnnouncementSubscriptionDetails
                             this.displayName,
                             this.description,
                             this.onsTopicId,
+                            this.preferredLanguage,
+                            this.preferredTimeZone,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -164,6 +204,12 @@ public final class UpdateAnnouncementSubscriptionDetails
             }
             if (model.wasPropertyExplicitlySet("onsTopicId")) {
                 this.onsTopicId(model.getOnsTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("preferredLanguage")) {
+                this.preferredLanguage(model.getPreferredLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("preferredTimeZone")) {
+                this.preferredTimeZone(model.getPreferredTimeZone());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -231,6 +277,34 @@ public final class UpdateAnnouncementSubscriptionDetails
     }
 
     /**
+     * (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
+    private final String preferredLanguage;
+
+    /**
+     * (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * @return the value
+     **/
+    public String getPreferredLanguage() {
+        return preferredLanguage;
+    }
+
+    /**
+     * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
+    private final String preferredTimeZone;
+
+    /**
+     * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * @return the value
+     **/
+    public String getPreferredTimeZone() {
+        return preferredTimeZone;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -283,6 +357,8 @@ public final class UpdateAnnouncementSubscriptionDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", onsTopicId=").append(String.valueOf(this.onsTopicId));
+        sb.append(", preferredLanguage=").append(String.valueOf(this.preferredLanguage));
+        sb.append(", preferredTimeZone=").append(String.valueOf(this.preferredTimeZone));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -302,6 +378,8 @@ public final class UpdateAnnouncementSubscriptionDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.onsTopicId, other.onsTopicId)
+                && java.util.Objects.equals(this.preferredLanguage, other.preferredLanguage)
+                && java.util.Objects.equals(this.preferredTimeZone, other.preferredTimeZone)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -314,6 +392,12 @@ public final class UpdateAnnouncementSubscriptionDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.onsTopicId == null ? 43 : this.onsTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preferredLanguage == null ? 43 : this.preferredLanguage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preferredTimeZone == null ? 43 : this.preferredTimeZone.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

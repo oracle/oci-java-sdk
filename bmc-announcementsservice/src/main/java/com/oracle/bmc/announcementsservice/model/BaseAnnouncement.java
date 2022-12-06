@@ -261,6 +261,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.internal.ExplicitlySet
     public enum TimeTwoType {
         EndTime("END_TIME"),
         NewEndTime("NEW_END_TIME"),
+        EstimatedEndTime("ESTIMATED_END_TIME"),
         ;
 
         private final String value;
