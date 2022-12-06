@@ -89,6 +89,16 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deployStageOverrideArguments")
+        private DeployStageOverrideArgumentCollection deployStageOverrideArguments;
+
+        public Builder deployStageOverrideArguments(
+                DeployStageOverrideArgumentCollection deployStageOverrideArguments) {
+            this.deployStageOverrideArguments = deployStageOverrideArguments;
+            this.__explicitlySet__.add("deployStageOverrideArguments");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactOverrideArguments")
         private DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments;
 
@@ -111,6 +121,7 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
                             this.definedTags,
                             this.deployStageId,
                             this.deploymentArguments,
+                            this.deployStageOverrideArguments,
                             this.deployArtifactOverrideArguments);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -138,6 +149,9 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
             if (model.wasPropertyExplicitlySet("deploymentArguments")) {
                 this.deploymentArguments(model.getDeploymentArguments());
             }
+            if (model.wasPropertyExplicitlySet("deployStageOverrideArguments")) {
+                this.deployStageOverrideArguments(model.getDeployStageOverrideArguments());
+            }
             if (model.wasPropertyExplicitlySet("deployArtifactOverrideArguments")) {
                 this.deployArtifactOverrideArguments(model.getDeployArtifactOverrideArguments());
             }
@@ -164,10 +178,12 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String deployStageId,
             DeploymentArgumentCollection deploymentArguments,
+            DeployStageOverrideArgumentCollection deployStageOverrideArguments,
             DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments) {
         super(deployPipelineId, displayName, freeformTags, definedTags);
         this.deployStageId = deployStageId;
         this.deploymentArguments = deploymentArguments;
+        this.deployStageOverrideArguments = deployStageOverrideArguments;
         this.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
     }
 
@@ -190,6 +206,13 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
 
     public DeploymentArgumentCollection getDeploymentArguments() {
         return deploymentArguments;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deployStageOverrideArguments")
+    private final DeployStageOverrideArgumentCollection deployStageOverrideArguments;
+
+    public DeployStageOverrideArgumentCollection getDeployStageOverrideArguments() {
+        return deployStageOverrideArguments;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactOverrideArguments")
@@ -215,6 +238,8 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", deployStageId=").append(String.valueOf(this.deployStageId));
         sb.append(", deploymentArguments=").append(String.valueOf(this.deploymentArguments));
+        sb.append(", deployStageOverrideArguments=")
+                .append(String.valueOf(this.deployStageOverrideArguments));
         sb.append(", deployArtifactOverrideArguments=")
                 .append(String.valueOf(this.deployArtifactOverrideArguments));
         sb.append(")");
@@ -235,6 +260,8 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
         return java.util.Objects.equals(this.deployStageId, other.deployStageId)
                 && java.util.Objects.equals(this.deploymentArguments, other.deploymentArguments)
                 && java.util.Objects.equals(
+                        this.deployStageOverrideArguments, other.deployStageOverrideArguments)
+                && java.util.Objects.equals(
                         this.deployArtifactOverrideArguments, other.deployArtifactOverrideArguments)
                 && super.equals(other);
     }
@@ -251,6 +278,11 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
                         + (this.deploymentArguments == null
                                 ? 43
                                 : this.deploymentArguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deployStageOverrideArguments == null
+                                ? 43
+                                : this.deployStageOverrideArguments.hashCode());
         result =
                 (result * PRIME)
                         + (this.deployArtifactOverrideArguments == null

@@ -5,7 +5,7 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The Maintenance Policy for the DB System.
+ * The Maintenance Policy for the DB System or Read Replica that this model is included in.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -38,6 +38,8 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
          * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
          * <p>
          * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * <p>
+         * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
@@ -51,6 +53,8 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
          * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
          * <p>
          * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * <p>
+         * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
          *
          * @param windowStartTime the value to set
          * @return this builder
@@ -100,6 +104,8 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
      * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
      * <p>
      * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * <p>
+     * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
@@ -113,6 +119,8 @@ public final class MaintenanceDetails extends com.oracle.bmc.http.internal.Expli
      * "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
      * <p>
      * "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * <p>
+     * If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
      *
      * @return the value
      **/

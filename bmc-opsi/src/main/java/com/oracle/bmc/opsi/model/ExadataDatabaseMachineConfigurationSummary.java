@@ -99,6 +99,15 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vmclusterDetails")
+        private java.util.List<VmClusterSummary> vmclusterDetails;
+
+        public Builder vmclusterDetails(java.util.List<VmClusterSummary> vmclusterDetails) {
+            this.vmclusterDetails = vmclusterDetails;
+            this.__explicitlySet__.add("vmclusterDetails");
+            return this;
+        }
         /**
          * Enterprise Manager Unique Identifier
          **/
@@ -146,6 +155,7 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                             this.exadataRackType,
                             this.definedTags,
                             this.freeformTags,
+                            this.vmclusterDetails,
                             this.enterpriseManagerIdentifier,
                             this.enterpriseManagerBridgeId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -180,6 +190,9 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("vmclusterDetails")) {
+                this.vmclusterDetails(model.getVmclusterDetails());
+            }
             if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
                 this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
             }
@@ -211,6 +224,7 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
             ExadataRackType exadataRackType,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.List<VmClusterSummary> vmclusterDetails,
             String enterpriseManagerIdentifier,
             String enterpriseManagerBridgeId) {
         super(
@@ -221,7 +235,8 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                 exadataType,
                 exadataRackType,
                 definedTags,
-                freeformTags);
+                freeformTags,
+                vmclusterDetails);
         this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
     }

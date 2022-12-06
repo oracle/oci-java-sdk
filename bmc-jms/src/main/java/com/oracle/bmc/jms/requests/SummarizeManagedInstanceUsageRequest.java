@@ -229,6 +229,19 @@ public class SummarizeManagedInstanceUsageRequest
     public String getHostnameContains() {
         return hostnameContains;
     }
+    /**
+     * The library key.
+     *
+     */
+    private String libraryKey;
+
+    /**
+     * The library key.
+     *
+     */
+    public String getLibraryKey() {
+        return libraryKey;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -551,6 +564,23 @@ public class SummarizeManagedInstanceUsageRequest
         }
 
         /**
+         * The library key.
+         *
+         */
+        private String libraryKey = null;
+
+        /**
+         * The library key.
+         *
+         * @param libraryKey the value to set
+         * @return this builder instance
+         */
+        public Builder libraryKey(String libraryKey) {
+            this.libraryKey = libraryKey;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -596,6 +626,7 @@ public class SummarizeManagedInstanceUsageRequest
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
             hostnameContains(o.getHostnameContains());
+            libraryKey(o.getLibraryKey());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -647,8 +678,9 @@ public class SummarizeManagedInstanceUsageRequest
             request.opcRequestId = opcRequestId;
             request.osFamily = osFamily;
             request.hostnameContains = hostnameContains;
+            request.libraryKey = libraryKey;
             return request;
-            // new SummarizeManagedInstanceUsageRequest(fleetId, managedInstanceId, managedInstanceType, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, fields, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily, hostnameContains);
+            // new SummarizeManagedInstanceUsageRequest(fleetId, managedInstanceId, managedInstanceType, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, fields, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily, hostnameContains, libraryKey);
         }
     }
 
@@ -675,7 +707,8 @@ public class SummarizeManagedInstanceUsageRequest
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .osFamily(osFamily)
-                .hostnameContains(hostnameContains);
+                .hostnameContains(hostnameContains)
+                .libraryKey(libraryKey);
     }
 
     /**
@@ -709,6 +742,7 @@ public class SummarizeManagedInstanceUsageRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
         sb.append(",hostnameContains=").append(String.valueOf(this.hostnameContains));
+        sb.append(",libraryKey=").append(String.valueOf(this.libraryKey));
         sb.append(")");
         return sb.toString();
     }
@@ -741,7 +775,8 @@ public class SummarizeManagedInstanceUsageRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
-                && java.util.Objects.equals(this.hostnameContains, other.hostnameContains);
+                && java.util.Objects.equals(this.hostnameContains, other.hostnameContains)
+                && java.util.Objects.equals(this.libraryKey, other.libraryKey);
     }
 
     @Override
@@ -780,6 +815,7 @@ public class SummarizeManagedInstanceUsageRequest
         result =
                 (result * PRIME)
                         + (this.hostnameContains == null ? 43 : this.hostnameContains.hashCode());
+        result = (result * PRIME) + (this.libraryKey == null ? 43 : this.libraryKey.hashCode());
         return result;
     }
 }

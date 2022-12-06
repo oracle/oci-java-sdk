@@ -83,6 +83,18 @@ public interface DataSafe extends AutoCloseable {
             AddMaskingColumnsFromSdmRequest request);
 
     /**
+     * Update alerts within a given compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/AlertsUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AlertsUpdate API.
+     */
+    AlertsUpdateResponse alertsUpdate(AlertsUpdateRequest request);
+
+    /**
      * Applies the results of a discovery job to the specified sensitive data model. Note that the plannedAction attribute
      * of discovery results is used for processing them. You should first use PatchDiscoveryJobResults to set the plannedAction
      * attribute of the discovery results you want to process. ApplyDiscoveryJobResults automatically reads the plannedAction
@@ -1849,6 +1861,9 @@ public interface DataSafe extends AutoCloseable {
 
     /**
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel \"ACCESSIBLE\" by default.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1941,6 +1956,9 @@ public interface DataSafe extends AutoCloseable {
 
     /**
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel \"ACCESSIBLE\" by default.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -2352,6 +2370,20 @@ public interface DataSafe extends AutoCloseable {
     PatchSensitiveColumnsResponse patchSensitiveColumns(PatchSensitiveColumnsRequest request);
 
     /**
+     * Creates new target-alert policy associations that will be applied on target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/PatchTargetAlertPolicyAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchTargetAlertPolicyAssociation API.
+     */
+    PatchTargetAlertPolicyAssociationResponse patchTargetAlertPolicyAssociation(
+            PatchTargetAlertPolicyAssociationRequest request);
+
+    /**
      * Provision audit policy.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2394,6 +2426,18 @@ public interface DataSafe extends AutoCloseable {
     RefreshUserAssessmentResponse refreshUserAssessment(RefreshUserAssessmentRequest request);
 
     /**
+     * Deletes schedule of a PDF or XLS report.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RemoveScheduleReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveScheduleReport API.
+     */
+    RemoveScheduleReportResponse removeScheduleReport(RemoveScheduleReportRequest request);
+
+    /**
      * Resumes the specified audit trail once it got stopped.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2429,6 +2473,18 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RetrieveAuditPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveAuditPolicies API.
      */
     RetrieveAuditPoliciesResponse retrieveAuditPolicies(RetrieveAuditPoliciesRequest request);
+
+    /**
+     * Schedules a PDF or XLS report based on parameters and report definition.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ScheduleReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleReport API.
+     */
+    ScheduleReportResponse scheduleReport(ScheduleReportRequest request);
 
     /**
      * Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type 'SAVED'.

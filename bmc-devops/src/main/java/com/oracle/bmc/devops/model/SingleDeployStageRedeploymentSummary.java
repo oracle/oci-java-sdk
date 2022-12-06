@@ -108,6 +108,16 @@ public final class SingleDeployStageRedeploymentSummary extends DeploymentSummar
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deployStageOverrideArguments")
+        private DeployStageOverrideArgumentCollection deployStageOverrideArguments;
+
+        public Builder deployStageOverrideArguments(
+                DeployStageOverrideArgumentCollection deployStageOverrideArguments) {
+            this.deployStageOverrideArguments = deployStageOverrideArguments;
+            this.__explicitlySet__.add("deployStageOverrideArguments");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactOverrideArguments")
         private DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments;
 
@@ -202,6 +212,7 @@ public final class SingleDeployStageRedeploymentSummary extends DeploymentSummar
                             this.timeUpdated,
                             this.lifecycleState,
                             this.deploymentArguments,
+                            this.deployStageOverrideArguments,
                             this.deployArtifactOverrideArguments,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -243,6 +254,9 @@ public final class SingleDeployStageRedeploymentSummary extends DeploymentSummar
             }
             if (model.wasPropertyExplicitlySet("deploymentArguments")) {
                 this.deploymentArguments(model.getDeploymentArguments());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageOverrideArguments")) {
+                this.deployStageOverrideArguments(model.getDeployStageOverrideArguments());
             }
             if (model.wasPropertyExplicitlySet("deployArtifactOverrideArguments")) {
                 this.deployArtifactOverrideArguments(model.getDeployArtifactOverrideArguments());
@@ -291,6 +305,7 @@ public final class SingleDeployStageRedeploymentSummary extends DeploymentSummar
             java.util.Date timeUpdated,
             Deployment.LifecycleState lifecycleState,
             DeploymentArgumentCollection deploymentArguments,
+            DeployStageOverrideArgumentCollection deployStageOverrideArguments,
             DeployArtifactOverrideArgumentCollection deployArtifactOverrideArguments,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -308,6 +323,7 @@ public final class SingleDeployStageRedeploymentSummary extends DeploymentSummar
                 timeUpdated,
                 lifecycleState,
                 deploymentArguments,
+                deployStageOverrideArguments,
                 deployArtifactOverrideArguments,
                 lifecycleDetails,
                 freeformTags,

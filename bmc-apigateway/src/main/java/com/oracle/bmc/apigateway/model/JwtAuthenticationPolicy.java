@@ -90,6 +90,26 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
             return this;
         }
         /**
+         * The maximum expected time difference between the system clocks
+         * of the token issuer and the API Gateway.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
+        private Float maxClockSkewInSeconds;
+
+        /**
+         * The maximum expected time difference between the system clocks
+         * of the token issuer and the API Gateway.
+         *
+         * @param maxClockSkewInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder maxClockSkewInSeconds(Float maxClockSkewInSeconds) {
+            this.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            this.__explicitlySet__.add("maxClockSkewInSeconds");
+            return this;
+        }
+        /**
          * A list of parties that could have issued the token.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuers")
@@ -137,26 +157,6 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
             this.__explicitlySet__.add("verifyClaims");
             return this;
         }
-        /**
-         * The maximum expected time difference between the system clocks
-         * of the token issuer and the API Gateway.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
-        private Float maxClockSkewInSeconds;
-
-        /**
-         * The maximum expected time difference between the system clocks
-         * of the token issuer and the API Gateway.
-         *
-         * @param maxClockSkewInSeconds the value to set
-         * @return this builder
-         **/
-        public Builder maxClockSkewInSeconds(Float maxClockSkewInSeconds) {
-            this.maxClockSkewInSeconds = maxClockSkewInSeconds;
-            this.__explicitlySet__.add("maxClockSkewInSeconds");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("publicKeys")
         private PublicKeySet publicKeys;
@@ -177,10 +177,10 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
                             this.tokenHeader,
                             this.tokenQueryParam,
                             this.tokenAuthScheme,
+                            this.maxClockSkewInSeconds,
                             this.issuers,
                             this.audiences,
                             this.verifyClaims,
-                            this.maxClockSkewInSeconds,
                             this.publicKeys);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -202,6 +202,9 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
             if (model.wasPropertyExplicitlySet("tokenAuthScheme")) {
                 this.tokenAuthScheme(model.getTokenAuthScheme());
             }
+            if (model.wasPropertyExplicitlySet("maxClockSkewInSeconds")) {
+                this.maxClockSkewInSeconds(model.getMaxClockSkewInSeconds());
+            }
             if (model.wasPropertyExplicitlySet("issuers")) {
                 this.issuers(model.getIssuers());
             }
@@ -210,9 +213,6 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
             }
             if (model.wasPropertyExplicitlySet("verifyClaims")) {
                 this.verifyClaims(model.getVerifyClaims());
-            }
-            if (model.wasPropertyExplicitlySet("maxClockSkewInSeconds")) {
-                this.maxClockSkewInSeconds(model.getMaxClockSkewInSeconds());
             }
             if (model.wasPropertyExplicitlySet("publicKeys")) {
                 this.publicKeys(model.getPublicKeys());
@@ -238,19 +238,19 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
             String tokenHeader,
             String tokenQueryParam,
             String tokenAuthScheme,
+            Float maxClockSkewInSeconds,
             java.util.List<String> issuers,
             java.util.List<String> audiences,
             java.util.List<JsonWebTokenClaim> verifyClaims,
-            Float maxClockSkewInSeconds,
             PublicKeySet publicKeys) {
         super(isAnonymousAccessAllowed);
         this.tokenHeader = tokenHeader;
         this.tokenQueryParam = tokenQueryParam;
         this.tokenAuthScheme = tokenAuthScheme;
+        this.maxClockSkewInSeconds = maxClockSkewInSeconds;
         this.issuers = issuers;
         this.audiences = audiences;
         this.verifyClaims = verifyClaims;
-        this.maxClockSkewInSeconds = maxClockSkewInSeconds;
         this.publicKeys = publicKeys;
     }
 
@@ -301,6 +301,24 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
     }
 
     /**
+     * The maximum expected time difference between the system clocks
+     * of the token issuer and the API Gateway.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
+    private final Float maxClockSkewInSeconds;
+
+    /**
+     * The maximum expected time difference between the system clocks
+     * of the token issuer and the API Gateway.
+     *
+     * @return the value
+     **/
+    public Float getMaxClockSkewInSeconds() {
+        return maxClockSkewInSeconds;
+    }
+
+    /**
      * A list of parties that could have issued the token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issuers")
@@ -342,24 +360,6 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         return verifyClaims;
     }
 
-    /**
-     * The maximum expected time difference between the system clocks
-     * of the token issuer and the API Gateway.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maxClockSkewInSeconds")
-    private final Float maxClockSkewInSeconds;
-
-    /**
-     * The maximum expected time difference between the system clocks
-     * of the token issuer and the API Gateway.
-     *
-     * @return the value
-     **/
-    public Float getMaxClockSkewInSeconds() {
-        return maxClockSkewInSeconds;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("publicKeys")
     private final PublicKeySet publicKeys;
 
@@ -384,10 +384,10 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         sb.append(", tokenHeader=").append(String.valueOf(this.tokenHeader));
         sb.append(", tokenQueryParam=").append(String.valueOf(this.tokenQueryParam));
         sb.append(", tokenAuthScheme=").append(String.valueOf(this.tokenAuthScheme));
+        sb.append(", maxClockSkewInSeconds=").append(String.valueOf(this.maxClockSkewInSeconds));
         sb.append(", issuers=").append(String.valueOf(this.issuers));
         sb.append(", audiences=").append(String.valueOf(this.audiences));
         sb.append(", verifyClaims=").append(String.valueOf(this.verifyClaims));
-        sb.append(", maxClockSkewInSeconds=").append(String.valueOf(this.maxClockSkewInSeconds));
         sb.append(", publicKeys=").append(String.valueOf(this.publicKeys));
         sb.append(")");
         return sb.toString();
@@ -406,10 +406,10 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         return java.util.Objects.equals(this.tokenHeader, other.tokenHeader)
                 && java.util.Objects.equals(this.tokenQueryParam, other.tokenQueryParam)
                 && java.util.Objects.equals(this.tokenAuthScheme, other.tokenAuthScheme)
+                && java.util.Objects.equals(this.maxClockSkewInSeconds, other.maxClockSkewInSeconds)
                 && java.util.Objects.equals(this.issuers, other.issuers)
                 && java.util.Objects.equals(this.audiences, other.audiences)
                 && java.util.Objects.equals(this.verifyClaims, other.verifyClaims)
-                && java.util.Objects.equals(this.maxClockSkewInSeconds, other.maxClockSkewInSeconds)
                 && java.util.Objects.equals(this.publicKeys, other.publicKeys)
                 && super.equals(other);
     }
@@ -425,14 +425,14 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         result =
                 (result * PRIME)
                         + (this.tokenAuthScheme == null ? 43 : this.tokenAuthScheme.hashCode());
-        result = (result * PRIME) + (this.issuers == null ? 43 : this.issuers.hashCode());
-        result = (result * PRIME) + (this.audiences == null ? 43 : this.audiences.hashCode());
-        result = (result * PRIME) + (this.verifyClaims == null ? 43 : this.verifyClaims.hashCode());
         result =
                 (result * PRIME)
                         + (this.maxClockSkewInSeconds == null
                                 ? 43
                                 : this.maxClockSkewInSeconds.hashCode());
+        result = (result * PRIME) + (this.issuers == null ? 43 : this.issuers.hashCode());
+        result = (result * PRIME) + (this.audiences == null ? 43 : this.audiences.hashCode());
+        result = (result * PRIME) + (this.verifyClaims == null ? 43 : this.verifyClaims.hashCode());
         result = (result * PRIME) + (this.publicKeys == null ? 43 : this.publicKeys.hashCode());
         return result;
     }

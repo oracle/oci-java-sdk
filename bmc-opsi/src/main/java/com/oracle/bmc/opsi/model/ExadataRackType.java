@@ -13,6 +13,7 @@ public enum ExadataRackType {
     Half("HALF"),
     Quarter("QUARTER"),
     Eighth("EIGHTH"),
+    Flex("FLEX"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

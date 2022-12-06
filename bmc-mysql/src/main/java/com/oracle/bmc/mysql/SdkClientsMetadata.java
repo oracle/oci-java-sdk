@@ -16,6 +16,8 @@ import com.oracle.bmc.SdkClients;
     DbSystemClient.class,
     MysqlaasAsyncClient.class,
     MysqlaasClient.class,
+    ReplicasAsyncClient.class,
+    ReplicasClient.class,
     WorkRequestsAsyncClient.class,
     WorkRequestsClient.class
 })

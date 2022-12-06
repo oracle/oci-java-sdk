@@ -608,6 +608,46 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public AlertsUpdateResponse alertsUpdate(AlertsUpdateRequest request) {
+        LOG.trace("Called alertsUpdate");
+        final AlertsUpdateRequest interceptedRequest =
+                AlertsUpdateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AlertsUpdateConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "AlertsUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/AlertsUpdate");
+        java.util.function.Function<javax.ws.rs.core.Response, AlertsUpdateResponse> transformer =
+                AlertsUpdateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAlertsUpdateDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ApplyDiscoveryJobResultsResponse applyDiscoveryJobResults(
             ApplyDiscoveryJobResultsRequest request) {
         LOG.trace("Called applyDiscoveryJobResults");
@@ -6903,6 +6943,50 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public PatchTargetAlertPolicyAssociationResponse patchTargetAlertPolicyAssociation(
+            PatchTargetAlertPolicyAssociationRequest request) {
+        LOG.trace("Called patchTargetAlertPolicyAssociation");
+        final PatchTargetAlertPolicyAssociationRequest interceptedRequest =
+                PatchTargetAlertPolicyAssociationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchTargetAlertPolicyAssociationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "PatchTargetAlertPolicyAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/PatchTargetAlertPolicyAssociation");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchTargetAlertPolicyAssociationResponse>
+                transformer =
+                        PatchTargetAlertPolicyAssociationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib,
+                                                retriedRequest
+                                                        .getPatchTargetAlertPolicyAssociationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ProvisionAuditPolicyResponse provisionAuditPolicy(ProvisionAuditPolicyRequest request) {
         LOG.trace("Called provisionAuditPolicy");
         final ProvisionAuditPolicyRequest interceptedRequest =
@@ -7031,6 +7115,45 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public RemoveScheduleReportResponse removeScheduleReport(RemoveScheduleReportRequest request) {
+        LOG.trace("Called removeScheduleReport");
+        final RemoveScheduleReportRequest interceptedRequest =
+                RemoveScheduleReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveScheduleReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RemoveScheduleReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/RemoveScheduleReport");
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveScheduleReportResponse>
+                transformer =
+                        RemoveScheduleReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ResumeAuditTrailResponse resumeAuditTrail(ResumeAuditTrailRequest request) {
         LOG.trace("Called resumeAuditTrail");
         final ResumeAuditTrailRequest interceptedRequest =
@@ -7142,6 +7265,46 @@ public class DataSafeClient implements DataSafe {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ScheduleReportResponse scheduleReport(ScheduleReportRequest request) {
+        LOG.trace("Called scheduleReport");
+        final ScheduleReportRequest interceptedRequest =
+                ScheduleReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ScheduleReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ScheduleReport");
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleReportResponse> transformer =
+                ScheduleReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getScheduleReportDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

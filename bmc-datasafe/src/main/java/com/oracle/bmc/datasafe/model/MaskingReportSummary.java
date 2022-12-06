@@ -33,7 +33,9 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
         "totalMaskedColumns",
         "totalMaskedValues",
         "timeMaskingStarted",
-        "timeMaskingFinished"
+        "timeMaskingFinished",
+        "lifecycleState",
+        "timeCreated"
     })
     public MaskingReportSummary(
             String id,
@@ -47,7 +49,9 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
             Long totalMaskedColumns,
             Long totalMaskedValues,
             java.util.Date timeMaskingStarted,
-            java.util.Date timeMaskingFinished) {
+            java.util.Date timeMaskingFinished,
+            MaskingLifecycleState lifecycleState,
+            java.util.Date timeCreated) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -61,6 +65,8 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
         this.totalMaskedValues = totalMaskedValues;
         this.timeMaskingStarted = timeMaskingStarted;
         this.timeMaskingFinished = timeMaskingFinished;
+        this.lifecycleState = lifecycleState;
+        this.timeCreated = timeCreated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -257,6 +263,40 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("timeMaskingFinished");
             return this;
         }
+        /**
+         * The current state of the masking report.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private MaskingLifecycleState lifecycleState;
+
+        /**
+         * The current state of the masking report.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(MaskingLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        /**
+         * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -275,7 +315,9 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
                             this.totalMaskedColumns,
                             this.totalMaskedValues,
                             this.timeMaskingStarted,
-                            this.timeMaskingFinished);
+                            this.timeMaskingFinished,
+                            this.lifecycleState,
+                            this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -319,6 +361,12 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeMaskingFinished")) {
                 this.timeMaskingFinished(model.getTimeMaskingFinished());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
             }
             return this;
         }
@@ -503,6 +551,36 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
         return timeMaskingFinished;
     }
 
+    /**
+     * The current state of the masking report.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final MaskingLifecycleState lifecycleState;
+
+    /**
+     * The current state of the masking report.
+     * @return the value
+     **/
+    public MaskingLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -530,6 +608,8 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", totalMaskedValues=").append(String.valueOf(this.totalMaskedValues));
         sb.append(", timeMaskingStarted=").append(String.valueOf(this.timeMaskingStarted));
         sb.append(", timeMaskingFinished=").append(String.valueOf(this.timeMaskingFinished));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
         return sb.toString();
     }
@@ -557,6 +637,8 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.totalMaskedValues, other.totalMaskedValues)
                 && java.util.Objects.equals(this.timeMaskingStarted, other.timeMaskingStarted)
                 && java.util.Objects.equals(this.timeMaskingFinished, other.timeMaskingFinished)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
     }
 
@@ -610,6 +692,10 @@ public final class MaskingReportSummary extends com.oracle.bmc.http.internal.Exp
                         + (this.timeMaskingFinished == null
                                 ? 43
                                 : this.timeMaskingFinished.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

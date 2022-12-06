@@ -28,8 +28,20 @@ package com.oracle.bmc.resourcemanager.model;
         name = "GIT_CONFIG_SOURCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DevOpsConfigSource.class,
+        name = "DEVOPS_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ObjectStorageConfigSource.class,
         name = "OBJECT_STORAGE_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerConfigSource.class,
+        name = "BITBUCKET_SERVER_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketCloudConfigSource.class,
+        name = "BITBUCKET_CLOUD_CONFIG_SOURCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CompartmentConfigSource.class,
@@ -124,7 +136,10 @@ public class ConfigSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      *
      **/
     public enum ConfigSourceType {
+        BitbucketCloudConfigSource("BITBUCKET_CLOUD_CONFIG_SOURCE"),
+        BitbucketServerConfigSource("BITBUCKET_SERVER_CONFIG_SOURCE"),
         CompartmentConfigSource("COMPARTMENT_CONFIG_SOURCE"),
+        DevopsConfigSource("DEVOPS_CONFIG_SOURCE"),
         GitConfigSource("GIT_CONFIG_SOURCE"),
         ObjectStorageConfigSource("OBJECT_STORAGE_CONFIG_SOURCE"),
         ZipUpload("ZIP_UPLOAD"),

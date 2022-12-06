@@ -69,6 +69,10 @@ If you are using Maven to manage your dependencies:
 
 The SDK for Java also provides an environment variable to switch back to the old Jersey Default Connector at the global level. To achieve the same, please set the value of the environment variable - `OCI_JAVASDK_JERSEY_CLIENT_DEFAULT_CONNECTOR_ENABLED` to true. By default, this value is set as false.
 
+## Maximum size of stream with BufferedInputStream
+
+When using the `BufferedInputStream` with API operations to upload streams to the service, e.g. to upload objects to the Object Storage service using `putObject`, the stream is buffered into the memory. The maximum buffer size in this case is `Integer.MAX_VALUE - 8` as defined in the [source code](https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/java/io/InputStream.java#L297). Hence, don't use or wrap the object into `BufferedInputStream` when the size of the object to upload is greater than `2.14 GB`. This would lead to `Connection pool shutdown`/`Out of memory` errors.
+
 ### Switching off auto-close of streams 
 
 For API calls that return binary/stream response, the SDK will auto-close the stream once the stream has been completely read by the customer. If reading the stream completely, the SDK will automatically try to close the stream to release the connection from the connection pool, to disable this feature of auto-closing streams on full read, please call `Options.shouldAutoCloseResponseInputStream(false)`. This is because the SDK for Java supports the Apache Connector for sending requests and managing connections to the service. By default, the Apache Connector supports connection pooling and in the cases where the stream from the response is not closed, the connections don't get released from the connection pool and in turn results in an indefinite wait time.

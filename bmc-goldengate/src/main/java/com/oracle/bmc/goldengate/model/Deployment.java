@@ -50,7 +50,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "storageUtilizationInBytes",
         "isStorageUtilizationLimitExceeded",
         "deploymentType",
-        "oggData"
+        "oggData",
+        "deploymentDiagnosticData"
     })
     public Deployment(
             String id,
@@ -82,7 +83,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             Long storageUtilizationInBytes,
             Boolean isStorageUtilizationLimitExceeded,
             DeploymentType deploymentType,
-            OggDeployment oggData) {
+            OggDeployment oggData,
+            DeploymentDiagnosticData deploymentDiagnosticData) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -114,6 +116,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
         this.deploymentType = deploymentType;
         this.oggData = oggData;
+        this.deploymentDiagnosticData = deploymentDiagnosticData;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -688,6 +691,15 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentDiagnosticData")
+        private DeploymentDiagnosticData deploymentDiagnosticData;
+
+        public Builder deploymentDiagnosticData(DeploymentDiagnosticData deploymentDiagnosticData) {
+            this.deploymentDiagnosticData = deploymentDiagnosticData;
+            this.__explicitlySet__.add("deploymentDiagnosticData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -723,7 +735,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.storageUtilizationInBytes,
                             this.isStorageUtilizationLimitExceeded,
                             this.deploymentType,
-                            this.oggData);
+                            this.oggData,
+                            this.deploymentDiagnosticData);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -822,6 +835,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentDiagnosticData")) {
+                this.deploymentDiagnosticData(model.getDeploymentDiagnosticData());
             }
             return this;
         }
@@ -1345,6 +1361,13 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         return oggData;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentDiagnosticData")
+    private final DeploymentDiagnosticData deploymentDiagnosticData;
+
+    public DeploymentDiagnosticData getDeploymentDiagnosticData() {
+        return deploymentDiagnosticData;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1391,6 +1414,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
+        sb.append(", deploymentDiagnosticData=")
+                .append(String.valueOf(this.deploymentDiagnosticData));
         sb.append(")");
         return sb.toString();
     }
@@ -1438,6 +1463,8 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         other.isStorageUtilizationLimitExceeded)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.oggData, other.oggData)
+                && java.util.Objects.equals(
+                        this.deploymentDiagnosticData, other.deploymentDiagnosticData)
                 && super.equals(other);
     }
 
@@ -1513,6 +1540,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentDiagnosticData == null
+                                ? 43
+                                : this.deploymentDiagnosticData.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

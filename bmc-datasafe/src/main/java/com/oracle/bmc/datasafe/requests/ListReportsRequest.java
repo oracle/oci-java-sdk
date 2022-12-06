@@ -259,6 +259,17 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public com.oracle.bmc.datasafe.model.ReportLifecycleState getLifecycleState() {
         return lifecycleState;
     }
+    /**
+     * An optional filter to return only resources that match the specified type.
+     */
+    private com.oracle.bmc.datasafe.model.ReportType type;
+
+    /**
+     * An optional filter to return only resources that match the specified type.
+     */
+    public com.oracle.bmc.datasafe.model.ReportType getType() {
+        return type;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -448,6 +459,21 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * An optional filter to return only resources that match the specified type.
+         */
+        private com.oracle.bmc.datasafe.model.ReportType type = null;
+
+        /**
+         * An optional filter to return only resources that match the specified type.
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(com.oracle.bmc.datasafe.model.ReportType type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -486,6 +512,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             reportDefinitionId(o.getReportDefinitionId());
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
+            type(o.getType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -529,8 +556,9 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.reportDefinitionId = reportDefinitionId;
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
+            request.type = type;
             return request;
-            // new ListReportsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, sortOrder, sortBy, reportDefinitionId, opcRequestId, lifecycleState);
+            // new ListReportsRequest(compartmentId, compartmentIdInSubtree, accessLevel, displayName, limit, page, sortOrder, sortBy, reportDefinitionId, opcRequestId, lifecycleState, type);
         }
     }
 
@@ -550,7 +578,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .sortBy(sortBy)
                 .reportDefinitionId(reportDefinitionId)
                 .opcRequestId(opcRequestId)
-                .lifecycleState(lifecycleState);
+                .lifecycleState(lifecycleState)
+                .type(type);
     }
 
     /**
@@ -577,6 +606,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",reportDefinitionId=").append(String.valueOf(this.reportDefinitionId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(")");
         return sb.toString();
     }
@@ -603,7 +633,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.reportDefinitionId, other.reportDefinitionId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.type, other.type);
     }
 
     @Override
@@ -633,6 +664,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         return result;
     }
 }

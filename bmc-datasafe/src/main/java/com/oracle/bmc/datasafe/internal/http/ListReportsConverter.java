@@ -112,6 +112,14 @@ public class ListReportsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getType() != null) {
+            target =
+                    target.queryParam(
+                            "type",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getType().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

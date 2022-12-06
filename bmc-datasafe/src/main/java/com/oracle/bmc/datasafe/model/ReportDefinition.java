@@ -37,6 +37,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         "summary",
         "compartmentId",
         "lifecycleState",
+        "schedule",
+        "scheduledReportMimeType",
+        "scheduledReportRowLimit",
+        "scheduledReportName",
+        "scheduledReportCompartmentId",
+        "recordTimeSpan",
+        "complianceStandards",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -59,6 +66,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             java.util.List<Summary> summary,
             String compartmentId,
             ReportDefinitionLifecycleState lifecycleState,
+            String schedule,
+            ScheduledReportMimeType scheduledReportMimeType,
+            Integer scheduledReportRowLimit,
+            String scheduledReportName,
+            String scheduledReportCompartmentId,
+            String recordTimeSpan,
+            java.util.List<String> complianceStandards,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -80,6 +94,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         this.summary = summary;
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
+        this.schedule = schedule;
+        this.scheduledReportMimeType = scheduledReportMimeType;
+        this.scheduledReportRowLimit = scheduledReportRowLimit;
+        this.scheduledReportName = scheduledReportName;
+        this.scheduledReportCompartmentId = scheduledReportCompartmentId;
+        this.recordTimeSpan = recordTimeSpan;
+        this.complianceStandards = complianceStandards;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -360,6 +381,168 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * Schedule to generate the report periodically in the specified format:
+         * <version-string>;<version-specific-schedule>
+         * <p>
+         * Allowed version strings - "v1"
+         * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+         * Each of the above fields potentially introduce constraints. A workrequest is created only
+         * when clock time satisfies all the constraints. Constraints introduced:
+         * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+         * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+         * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+         * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+         * No constraint introduced when it is '*'. When not, day of week must equal the given value
+         * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+         * No constraint introduced when it is '*'. When not, day of month must equal the given value
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("schedule")
+        private String schedule;
+
+        /**
+         * Schedule to generate the report periodically in the specified format:
+         * <version-string>;<version-specific-schedule>
+         * <p>
+         * Allowed version strings - "v1"
+         * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+         * Each of the above fields potentially introduce constraints. A workrequest is created only
+         * when clock time satisfies all the constraints. Constraints introduced:
+         * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+         * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+         * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+         * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+         * No constraint introduced when it is '*'. When not, day of week must equal the given value
+         * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+         * No constraint introduced when it is '*'. When not, day of month must equal the given value
+         *
+         * @param schedule the value to set
+         * @return this builder
+         **/
+        public Builder schedule(String schedule) {
+            this.schedule = schedule;
+            this.__explicitlySet__.add("schedule");
+            return this;
+        }
+        /**
+         * Specifies the format of report to be excel or pdf
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
+        private ScheduledReportMimeType scheduledReportMimeType;
+
+        /**
+         * Specifies the format of report to be excel or pdf
+         * @param scheduledReportMimeType the value to set
+         * @return this builder
+         **/
+        public Builder scheduledReportMimeType(ScheduledReportMimeType scheduledReportMimeType) {
+            this.scheduledReportMimeType = scheduledReportMimeType;
+            this.__explicitlySet__.add("scheduledReportMimeType");
+            return this;
+        }
+        /**
+         * Specifies the limit on number of rows in report.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportRowLimit")
+        private Integer scheduledReportRowLimit;
+
+        /**
+         * Specifies the limit on number of rows in report.
+         * @param scheduledReportRowLimit the value to set
+         * @return this builder
+         **/
+        public Builder scheduledReportRowLimit(Integer scheduledReportRowLimit) {
+            this.scheduledReportRowLimit = scheduledReportRowLimit;
+            this.__explicitlySet__.add("scheduledReportRowLimit");
+            return this;
+        }
+        /**
+         * The name of the report to be scheduled.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportName")
+        private String scheduledReportName;
+
+        /**
+         * The name of the report to be scheduled.
+         * @param scheduledReportName the value to set
+         * @return this builder
+         **/
+        public Builder scheduledReportName(String scheduledReportName) {
+            this.scheduledReportName = scheduledReportName;
+            this.__explicitlySet__.add("scheduledReportName");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+         * in which the scheduled resource should be created.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
+        private String scheduledReportCompartmentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+         * in which the scheduled resource should be created.
+         *
+         * @param scheduledReportCompartmentId the value to set
+         * @return this builder
+         **/
+        public Builder scheduledReportCompartmentId(String scheduledReportCompartmentId) {
+            this.scheduledReportCompartmentId = scheduledReportCompartmentId;
+            this.__explicitlySet__.add("scheduledReportCompartmentId");
+            return this;
+        }
+        /**
+         * The time span of records in report to be scheduled.
+         * <period-value><period>
+         * Allowed period strings - "H","D","M","Y"
+         * Each of the above fields potentially introduce constraints. A workRequest is created only
+         * when period-value satisfies all the constraints. Constraints introduced:
+         * 1. period = H (The allowed range for period-value is [1, 23])
+         * 2. period = D (The allowed range for period-value is [1, 30])
+         * 3. period = M (The allowed range for period-value is [1, 11])
+         * 4. period = Y (The minimum period-value is 1)
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("recordTimeSpan")
+        private String recordTimeSpan;
+
+        /**
+         * The time span of records in report to be scheduled.
+         * <period-value><period>
+         * Allowed period strings - "H","D","M","Y"
+         * Each of the above fields potentially introduce constraints. A workRequest is created only
+         * when period-value satisfies all the constraints. Constraints introduced:
+         * 1. period = H (The allowed range for period-value is [1, 23])
+         * 2. period = D (The allowed range for period-value is [1, 30])
+         * 3. period = M (The allowed range for period-value is [1, 11])
+         * 4. period = Y (The minimum period-value is 1)
+         *
+         * @param recordTimeSpan the value to set
+         * @return this builder
+         **/
+        public Builder recordTimeSpan(String recordTimeSpan) {
+            this.recordTimeSpan = recordTimeSpan;
+            this.__explicitlySet__.add("recordTimeSpan");
+            return this;
+        }
+        /**
+         * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
+        private java.util.List<String> complianceStandards;
+
+        /**
+         * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * @param complianceStandards the value to set
+         * @return this builder
+         **/
+        public Builder complianceStandards(java.util.List<String> complianceStandards) {
+            this.complianceStandards = complianceStandards;
+            this.__explicitlySet__.add("complianceStandards");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -448,6 +631,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                             this.summary,
                             this.compartmentId,
                             this.lifecycleState,
+                            this.schedule,
+                            this.scheduledReportMimeType,
+                            this.scheduledReportRowLimit,
+                            this.scheduledReportName,
+                            this.scheduledReportCompartmentId,
+                            this.recordTimeSpan,
+                            this.complianceStandards,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -509,6 +699,27 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("schedule")) {
+                this.schedule(model.getSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledReportMimeType")) {
+                this.scheduledReportMimeType(model.getScheduledReportMimeType());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledReportRowLimit")) {
+                this.scheduledReportRowLimit(model.getScheduledReportRowLimit());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledReportName")) {
+                this.scheduledReportName(model.getScheduledReportName());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledReportCompartmentId")) {
+                this.scheduledReportCompartmentId(model.getScheduledReportCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("recordTimeSpan")) {
+                this.recordTimeSpan(model.getRecordTimeSpan());
+            }
+            if (model.wasPropertyExplicitlySet("complianceStandards")) {
+                this.complianceStandards(model.getComplianceStandards());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -822,6 +1033,202 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * Schedule to generate the report periodically in the specified format:
+     * <version-string>;<version-specific-schedule>
+     * <p>
+     * Allowed version strings - "v1"
+     * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+     * Each of the above fields potentially introduce constraints. A workrequest is created only
+     * when clock time satisfies all the constraints. Constraints introduced:
+     * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+     * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+     * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+     * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+     * No constraint introduced when it is '*'. When not, day of week must equal the given value
+     * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     * No constraint introduced when it is '*'. When not, day of month must equal the given value
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("schedule")
+    private final String schedule;
+
+    /**
+     * Schedule to generate the report periodically in the specified format:
+     * <version-string>;<version-specific-schedule>
+     * <p>
+     * Allowed version strings - "v1"
+     * v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+     * Each of the above fields potentially introduce constraints. A workrequest is created only
+     * when clock time satisfies all the constraints. Constraints introduced:
+     * 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+     * 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+     * 3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+     * 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+     * No constraint introduced when it is '*'. When not, day of week must equal the given value
+     * 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+     * No constraint introduced when it is '*'. When not, day of month must equal the given value
+     *
+     * @return the value
+     **/
+    public String getSchedule() {
+        return schedule;
+    }
+
+    /**
+     * Specifies the format of report to be excel or pdf
+     **/
+    public enum ScheduledReportMimeType {
+        Pdf("PDF"),
+        Xls("XLS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ScheduledReportMimeType.class);
+
+        private final String value;
+        private static java.util.Map<String, ScheduledReportMimeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ScheduledReportMimeType v : ScheduledReportMimeType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ScheduledReportMimeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ScheduledReportMimeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ScheduledReportMimeType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies the format of report to be excel or pdf
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
+    private final ScheduledReportMimeType scheduledReportMimeType;
+
+    /**
+     * Specifies the format of report to be excel or pdf
+     * @return the value
+     **/
+    public ScheduledReportMimeType getScheduledReportMimeType() {
+        return scheduledReportMimeType;
+    }
+
+    /**
+     * Specifies the limit on number of rows in report.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportRowLimit")
+    private final Integer scheduledReportRowLimit;
+
+    /**
+     * Specifies the limit on number of rows in report.
+     * @return the value
+     **/
+    public Integer getScheduledReportRowLimit() {
+        return scheduledReportRowLimit;
+    }
+
+    /**
+     * The name of the report to be scheduled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportName")
+    private final String scheduledReportName;
+
+    /**
+     * The name of the report to be scheduled.
+     * @return the value
+     **/
+    public String getScheduledReportName() {
+        return scheduledReportName;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * in which the scheduled resource should be created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
+    private final String scheduledReportCompartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * in which the scheduled resource should be created.
+     *
+     * @return the value
+     **/
+    public String getScheduledReportCompartmentId() {
+        return scheduledReportCompartmentId;
+    }
+
+    /**
+     * The time span of records in report to be scheduled.
+     * <period-value><period>
+     * Allowed period strings - "H","D","M","Y"
+     * Each of the above fields potentially introduce constraints. A workRequest is created only
+     * when period-value satisfies all the constraints. Constraints introduced:
+     * 1. period = H (The allowed range for period-value is [1, 23])
+     * 2. period = D (The allowed range for period-value is [1, 30])
+     * 3. period = M (The allowed range for period-value is [1, 11])
+     * 4. period = Y (The minimum period-value is 1)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recordTimeSpan")
+    private final String recordTimeSpan;
+
+    /**
+     * The time span of records in report to be scheduled.
+     * <period-value><period>
+     * Allowed period strings - "H","D","M","Y"
+     * Each of the above fields potentially introduce constraints. A workRequest is created only
+     * when period-value satisfies all the constraints. Constraints introduced:
+     * 1. period = H (The allowed range for period-value is [1, 23])
+     * 2. period = D (The allowed range for period-value is [1, 30])
+     * 3. period = M (The allowed range for period-value is [1, 11])
+     * 4. period = Y (The minimum period-value is 1)
+     *
+     * @return the value
+     **/
+    public String getRecordTimeSpan() {
+        return recordTimeSpan;
+    }
+
+    /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
+    private final java.util.List<String> complianceStandards;
+
+    /**
+     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * @return the value
+     **/
+    public java.util.List<String> getComplianceStandards() {
+        return complianceStandards;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -910,6 +1317,16 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         sb.append(", summary=").append(String.valueOf(this.summary));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", schedule=").append(String.valueOf(this.schedule));
+        sb.append(", scheduledReportMimeType=")
+                .append(String.valueOf(this.scheduledReportMimeType));
+        sb.append(", scheduledReportRowLimit=")
+                .append(String.valueOf(this.scheduledReportRowLimit));
+        sb.append(", scheduledReportName=").append(String.valueOf(this.scheduledReportName));
+        sb.append(", scheduledReportCompartmentId=")
+                .append(String.valueOf(this.scheduledReportCompartmentId));
+        sb.append(", recordTimeSpan=").append(String.valueOf(this.recordTimeSpan));
+        sb.append(", complianceStandards=").append(String.valueOf(this.complianceStandards));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -944,6 +1361,16 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.summary, other.summary)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.schedule, other.schedule)
+                && java.util.Objects.equals(
+                        this.scheduledReportMimeType, other.scheduledReportMimeType)
+                && java.util.Objects.equals(
+                        this.scheduledReportRowLimit, other.scheduledReportRowLimit)
+                && java.util.Objects.equals(this.scheduledReportName, other.scheduledReportName)
+                && java.util.Objects.equals(
+                        this.scheduledReportCompartmentId, other.scheduledReportCompartmentId)
+                && java.util.Objects.equals(this.recordTimeSpan, other.recordTimeSpan)
+                && java.util.Objects.equals(this.complianceStandards, other.complianceStandards)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -979,6 +1406,35 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledReportMimeType == null
+                                ? 43
+                                : this.scheduledReportMimeType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledReportRowLimit == null
+                                ? 43
+                                : this.scheduledReportRowLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledReportName == null
+                                ? 43
+                                : this.scheduledReportName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledReportCompartmentId == null
+                                ? 43
+                                : this.scheduledReportCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recordTimeSpan == null ? 43 : this.recordTimeSpan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.complianceStandards == null
+                                ? 43
+                                : this.complianceStandards.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

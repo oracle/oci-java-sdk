@@ -16,6 +16,7 @@ public enum OnPremConnectorLifecycleState {
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),
+    NeedsAttention("NEEDS_ATTENTION"),
     ;
 
     private final String value;

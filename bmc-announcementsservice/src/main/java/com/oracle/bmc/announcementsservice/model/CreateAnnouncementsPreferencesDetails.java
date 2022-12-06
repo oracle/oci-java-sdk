@@ -55,13 +55,25 @@ public final class CreateAnnouncementsPreferencesDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
+        private String preferredTimeZone;
+
+        public Builder preferredTimeZone(String preferredTimeZone) {
+            this.preferredTimeZone = preferredTimeZone;
+            this.__explicitlySet__.add("preferredTimeZone");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAnnouncementsPreferencesDetails build() {
             CreateAnnouncementsPreferencesDetails model =
                     new CreateAnnouncementsPreferencesDetails(
-                            this.isUnsubscribed, this.compartmentId, this.preferenceType);
+                            this.isUnsubscribed,
+                            this.compartmentId,
+                            this.preferenceType,
+                            this.preferredTimeZone);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +90,9 @@ public final class CreateAnnouncementsPreferencesDetails
             }
             if (model.wasPropertyExplicitlySet("preferenceType")) {
                 this.preferenceType(model.getPreferenceType());
+            }
+            if (model.wasPropertyExplicitlySet("preferredTimeZone")) {
+                this.preferredTimeZone(model.getPreferredTimeZone());
             }
             return this;
         }
@@ -96,8 +111,11 @@ public final class CreateAnnouncementsPreferencesDetails
 
     @Deprecated
     public CreateAnnouncementsPreferencesDetails(
-            Boolean isUnsubscribed, String compartmentId, PreferenceType preferenceType) {
-        super(isUnsubscribed, compartmentId, preferenceType);
+            Boolean isUnsubscribed,
+            String compartmentId,
+            PreferenceType preferenceType,
+            String preferredTimeZone) {
+        super(isUnsubscribed, compartmentId, preferenceType, preferredTimeZone);
     }
 
     @Override

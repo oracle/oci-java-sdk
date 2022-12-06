@@ -41,7 +41,8 @@ public class BaseAnnouncementsPreferences
         "isUnsubscribed",
         "timeCreated",
         "timeUpdated",
-        "preferenceType"
+        "preferenceType",
+        "preferredTimeZone"
     })
     protected BaseAnnouncementsPreferences(
             String compartmentId,
@@ -49,7 +50,8 @@ public class BaseAnnouncementsPreferences
             Boolean isUnsubscribed,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType) {
+            BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType,
+            String preferredTimeZone) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -57,6 +59,7 @@ public class BaseAnnouncementsPreferences
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.preferenceType = preferenceType;
+        this.preferredTimeZone = preferredTimeZone;
     }
 
     /**
@@ -151,6 +154,20 @@ public class BaseAnnouncementsPreferences
         return preferenceType;
     }
 
+    /**
+     * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
+    private final String preferredTimeZone;
+
+    /**
+     * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * @return the value
+     **/
+    public String getPreferredTimeZone() {
+        return preferredTimeZone;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -171,6 +188,7 @@ public class BaseAnnouncementsPreferences
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", preferenceType=").append(String.valueOf(this.preferenceType));
+        sb.append(", preferredTimeZone=").append(String.valueOf(this.preferredTimeZone));
         sb.append(")");
         return sb.toString();
     }
@@ -191,6 +209,7 @@ public class BaseAnnouncementsPreferences
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.preferenceType, other.preferenceType)
+                && java.util.Objects.equals(this.preferredTimeZone, other.preferredTimeZone)
                 && super.equals(other);
     }
 
@@ -210,6 +229,9 @@ public class BaseAnnouncementsPreferences
         result =
                 (result * PRIME)
                         + (this.preferenceType == null ? 43 : this.preferenceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preferredTimeZone == null ? 43 : this.preferredTimeZone.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

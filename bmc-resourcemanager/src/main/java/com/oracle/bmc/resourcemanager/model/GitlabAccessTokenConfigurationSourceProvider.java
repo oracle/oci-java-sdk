@@ -94,6 +94,24 @@ public final class GitlabAccessTokenConfigurationSourceProvider
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("username")
+        private String username;
+
+        public Builder username(String username) {
+            this.username = username;
+            this.__explicitlySet__.add("username");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -146,6 +164,8 @@ public final class GitlabAccessTokenConfigurationSourceProvider
                             this.timeCreated,
                             this.lifecycleState,
                             this.privateServerConfigDetails,
+                            this.username,
+                            this.secretId,
                             this.freeformTags,
                             this.definedTags,
                             this.apiEndpoint);
@@ -177,6 +197,12 @@ public final class GitlabAccessTokenConfigurationSourceProvider
             }
             if (model.wasPropertyExplicitlySet("privateServerConfigDetails")) {
                 this.privateServerConfigDetails(model.getPrivateServerConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -211,6 +237,8 @@ public final class GitlabAccessTokenConfigurationSourceProvider
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
+            String username,
+            String secretId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String apiEndpoint) {
@@ -222,6 +250,8 @@ public final class GitlabAccessTokenConfigurationSourceProvider
                 timeCreated,
                 lifecycleState,
                 privateServerConfigDetails,
+                username,
+                secretId,
                 freeformTags,
                 definedTags);
         this.apiEndpoint = apiEndpoint;
