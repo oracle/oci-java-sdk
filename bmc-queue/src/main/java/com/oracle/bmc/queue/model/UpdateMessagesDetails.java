@@ -2,11 +2,10 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.databasemigration.model;
+package com.oracle.bmc.queue.model;
 
 /**
- * ODMS Agent token details.
- *
+ * The details of a UpdateMessages request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -15,43 +14,44 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GenerateToken.Builder.class)
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateMessagesDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GenerateToken extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+public final class UpdateMessagesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"rptBlob"})
-    public GenerateToken(String rptBlob) {
+    @java.beans.ConstructorProperties({"entries"})
+    public UpdateMessagesDetails(java.util.List<UpdateMessagesDetailsEntry> entries) {
         super();
-        this.rptBlob = rptBlob;
+        this.entries = entries;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Resource Principals Token in serialized form.
-         *
+         * The array of messages to update in a queue.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("rptBlob")
-        private String rptBlob;
+        @com.fasterxml.jackson.annotation.JsonProperty("entries")
+        private java.util.List<UpdateMessagesDetailsEntry> entries;
 
         /**
-         * Resource Principals Token in serialized form.
-         *
-         * @param rptBlob the value to set
+         * The array of messages to update in a queue.
+         * @param entries the value to set
          * @return this builder
          **/
-        public Builder rptBlob(String rptBlob) {
-            this.rptBlob = rptBlob;
-            this.__explicitlySet__.add("rptBlob");
+        public Builder entries(java.util.List<UpdateMessagesDetailsEntry> entries) {
+            this.entries = entries;
+            this.__explicitlySet__.add("entries");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public GenerateToken build() {
-            GenerateToken model = new GenerateToken(this.rptBlob);
+        public UpdateMessagesDetails build() {
+            UpdateMessagesDetails model = new UpdateMessagesDetails(this.entries);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,9 +59,9 @@ public final class GenerateToken extends com.oracle.bmc.http.internal.Explicitly
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenerateToken model) {
-            if (model.wasPropertyExplicitlySet("rptBlob")) {
-                this.rptBlob(model.getRptBlob());
+        public Builder copy(UpdateMessagesDetails model) {
+            if (model.wasPropertyExplicitlySet("entries")) {
+                this.entries(model.getEntries());
             }
             return this;
         }
@@ -79,19 +79,17 @@ public final class GenerateToken extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Resource Principals Token in serialized form.
-     *
+     * The array of messages to update in a queue.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("rptBlob")
-    private final String rptBlob;
+    @com.fasterxml.jackson.annotation.JsonProperty("entries")
+    private final java.util.List<UpdateMessagesDetailsEntry> entries;
 
     /**
-     * Resource Principals Token in serialized form.
-     *
+     * The array of messages to update in a queue.
      * @return the value
      **/
-    public String getRptBlob() {
-        return rptBlob;
+    public java.util.List<UpdateMessagesDetailsEntry> getEntries() {
+        return entries;
     }
 
     @Override
@@ -106,9 +104,9 @@ public final class GenerateToken extends com.oracle.bmc.http.internal.Explicitly
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("GenerateToken(");
+        sb.append("UpdateMessagesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("rptBlob=").append(String.valueOf(this.rptBlob));
+        sb.append("entries=").append(String.valueOf(this.entries));
         sb.append(")");
         return sb.toString();
     }
@@ -118,19 +116,19 @@ public final class GenerateToken extends com.oracle.bmc.http.internal.Explicitly
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GenerateToken)) {
+        if (!(o instanceof UpdateMessagesDetails)) {
             return false;
         }
 
-        GenerateToken other = (GenerateToken) o;
-        return java.util.Objects.equals(this.rptBlob, other.rptBlob) && super.equals(other);
+        UpdateMessagesDetails other = (UpdateMessagesDetails) o;
+        return java.util.Objects.equals(this.entries, other.entries) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.rptBlob == null ? 43 : this.rptBlob.hashCode());
+        result = (result * PRIME) + (this.entries == null ? 43 : this.entries.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

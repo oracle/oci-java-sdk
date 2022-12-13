@@ -8,7 +8,7 @@ import com.oracle.bmc.servicemesh.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetMeshExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMeshRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class GetMeshRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

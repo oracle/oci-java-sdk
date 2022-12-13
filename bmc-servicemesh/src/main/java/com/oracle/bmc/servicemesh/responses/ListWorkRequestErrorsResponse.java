@@ -6,7 +6,7 @@ package com.oracle.bmc.servicemesh.responses;
 
 import com.oracle.bmc.servicemesh.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,

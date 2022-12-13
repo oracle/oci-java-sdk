@@ -96,6 +96,22 @@ public class ListMonitorsConverter {
                                     request.getPage()));
         }
 
+        if (request.getIsMaintenanceWindowActive() != null) {
+            target =
+                    target.queryParam(
+                            "isMaintenanceWindowActive",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsMaintenanceWindowActive()));
+        }
+
+        if (request.getIsMaintenanceWindowSet() != null) {
+            target =
+                    target.queryParam(
+                            "isMaintenanceWindowSet",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsMaintenanceWindowSet()));
+        }
+
         if (request.getSortOrder() != null) {
             target =
                     target.queryParam(

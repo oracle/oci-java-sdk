@@ -7,7 +7,7 @@ package com.oracle.bmc.servicemesh.model;
 /**
  * Sort orders.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),

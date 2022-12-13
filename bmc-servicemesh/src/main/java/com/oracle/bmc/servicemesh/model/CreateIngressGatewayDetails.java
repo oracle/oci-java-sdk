@@ -14,7 +14,7 @@ package com.oracle.bmc.servicemesh.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateIngressGatewayDetails.Builder.class
 )
@@ -39,7 +39,7 @@ public final class CreateIngressGatewayDetails
             String meshId,
             java.util.List<IngressGatewayHost> hosts,
             AccessLoggingConfiguration accessLogging,
-            CreateIngressGatewayMutualTransportLayerSecurityDetails mtls,
+            IngressGatewayMutualTransportLayerSecurityDetails mtls,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -148,9 +148,9 @@ public final class CreateIngressGatewayDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("mtls")
-        private CreateIngressGatewayMutualTransportLayerSecurityDetails mtls;
+        private IngressGatewayMutualTransportLayerSecurityDetails mtls;
 
-        public Builder mtls(CreateIngressGatewayMutualTransportLayerSecurityDetails mtls) {
+        public Builder mtls(IngressGatewayMutualTransportLayerSecurityDetails mtls) {
             this.mtls = mtls;
             this.__explicitlySet__.add("mtls");
             return this;
@@ -360,9 +360,9 @@ public final class CreateIngressGatewayDetails
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mtls")
-    private final CreateIngressGatewayMutualTransportLayerSecurityDetails mtls;
+    private final IngressGatewayMutualTransportLayerSecurityDetails mtls;
 
-    public CreateIngressGatewayMutualTransportLayerSecurityDetails getMtls() {
+    public IngressGatewayMutualTransportLayerSecurityDetails getMtls() {
         return mtls;
     }
 

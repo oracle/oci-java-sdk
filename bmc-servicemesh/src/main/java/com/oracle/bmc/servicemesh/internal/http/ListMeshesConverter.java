@@ -10,7 +10,7 @@ import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListMeshesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -32,7 +32,7 @@ public class ListMeshesConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210930").path("meshes");
+                client.getBaseTarget().path("/20220615").path("meshes");
 
         target =
                 target.queryParam(
@@ -85,7 +85,7 @@ public class ListMeshesConverter {
                     target.queryParam(
                             "lifecycleState",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState()));
+                                    request.getLifecycleState().getValue()));
         }
 
         if (request.getId() != null) {

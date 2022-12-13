@@ -10,7 +10,7 @@ import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListVirtualDeploymentsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -33,7 +33,7 @@ public class ListVirtualDeploymentsConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210930").path("virtualDeployments");
+                client.getBaseTarget().path("/20220615").path("virtualDeployments");
 
         target =
                 target.queryParam(
@@ -102,7 +102,7 @@ public class ListVirtualDeploymentsConverter {
                     target.queryParam(
                             "lifecycleState",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState()));
+                                    request.getLifecycleState().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

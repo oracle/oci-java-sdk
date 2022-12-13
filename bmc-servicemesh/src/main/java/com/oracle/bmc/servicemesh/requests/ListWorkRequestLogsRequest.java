@@ -8,7 +8,7 @@ import com.oracle.bmc.servicemesh.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -54,6 +54,66 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     public Integer getLimit() {
         return limit;
+    }
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
+    private com.oracle.bmc.servicemesh.model.SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
+    public com.oracle.bmc.servicemesh.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+     *
+     **/
+    public enum SortBy {
+        Timestamp("timestamp"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+     *
+     */
+    public SortBy getSortBy() {
+        return sortBy;
     }
 
     public static class Builder
@@ -124,6 +184,38 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
+        private com.oracle.bmc.servicemesh.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         * @param sortOrder the value to set
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.servicemesh.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+         *
+         */
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+         *
+         * @param sortBy the value to set
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -155,6 +247,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            sortOrder(o.getSortOrder());
+            sortBy(o.getSortBy());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -191,8 +285,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.sortOrder = sortOrder;
+            request.sortBy = sortBy;
             return request;
-            // new ListWorkRequestLogsRequest(workRequestId, opcRequestId, page, limit);
+            // new ListWorkRequestLogsRequest(workRequestId, opcRequestId, page, limit, sortOrder, sortBy);
         }
     }
 
@@ -205,7 +301,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 .workRequestId(workRequestId)
                 .opcRequestId(opcRequestId)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .sortOrder(sortOrder)
+                .sortBy(sortBy);
     }
 
     /**
@@ -225,6 +323,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(")");
         return sb.toString();
     }
@@ -243,7 +343,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.sortBy, other.sortBy);
     }
 
     @Override
@@ -256,6 +358,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         return result;
     }
 }

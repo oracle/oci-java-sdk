@@ -89,6 +89,19 @@ public interface Devops extends AutoCloseable {
     CancelDeploymentResponse cancelDeployment(CancelDeploymentRequest request);
 
     /**
+     * Cascading operation that restores Project and child resources from a DELETING state to an active state
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelScheduledCascadingProjectDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelScheduledCascadingProjectDeletion API.
+     */
+    CancelScheduledCascadingProjectDeletionResponse cancelScheduledCascadingProjectDeletion(
+            CancelScheduledCascadingProjectDeletionRequest request);
+
+    /**
      * Moves a project resource from one compartment OCID to another.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -973,6 +986,19 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/PutRepositoryRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutRepositoryRef API.
      */
     PutRepositoryRefResponse putRepositoryRef(PutRepositoryRefRequest request);
+
+    /**
+     * Cascading operation that marks Project and child DevOps resources in a DELETING state for a retention period
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ScheduleCascadingProjectDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCascadingProjectDeletion API.
+     */
+    ScheduleCascadingProjectDeletionResponse scheduleCascadingProjectDeletion(
+            ScheduleCascadingProjectDeletionRequest request);
 
     /**
      * Updates the build pipeline.

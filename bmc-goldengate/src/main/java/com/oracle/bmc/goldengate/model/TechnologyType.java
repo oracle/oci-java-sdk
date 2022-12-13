@@ -10,6 +10,7 @@ package com.oracle.bmc.goldengate.model;
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum TechnologyType {
+    Goldengate("GOLDENGATE"),
     OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
     OciMysql("OCI_MYSQL"),
     OciObjectStorage("OCI_OBJECT_STORAGE"),
@@ -18,14 +19,23 @@ public enum TechnologyType {
     OracleExadata("ORACLE_EXADATA"),
     AmazonRdsOracle("AMAZON_RDS_ORACLE"),
     AmazonAuroraMysql("AMAZON_AURORA_MYSQL"),
+    AmazonAuroraPostgresql("AMAZON_AURORA_POSTGRESQL"),
     AmazonRdsMariadb("AMAZON_RDS_MARIADB"),
     AmazonRdsMysql("AMAZON_RDS_MYSQL"),
+    AmazonRdsPostgresql("AMAZON_RDS_POSTGRESQL"),
     ApacheKafka("APACHE_KAFKA"),
+    AzureDataLakeStorage("AZURE_DATA_LAKE_STORAGE"),
+    AzureEventHubs("AZURE_EVENT_HUBS"),
     AzureMysql("AZURE_MYSQL"),
-    Goldengate("GOLDENGATE"),
+    AzurePostgresql("AZURE_POSTGRESQL"),
+    AzureSynapseAnalytics("AZURE_SYNAPSE_ANALYTICS"),
+    ConfluentKafka("CONFLUENT_KAFKA"),
+    ConfluentSchemaRegistry("CONFLUENT_SCHEMA_REGISTRY"),
     GoogleCloudSqlMysql("GOOGLE_CLOUD_SQL_MYSQL"),
+    GoogleCloudSqlPostgresql("GOOGLE_CLOUD_SQL_POSTGRESQL"),
     Mariadb("MARIADB"),
     MysqlServer("MYSQL_SERVER"),
+    PostgresqlServer("POSTGRESQL_SERVER"),
     ;
 
     private final String value;

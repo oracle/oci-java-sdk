@@ -845,6 +845,7 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
+        Deleting("DELETING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

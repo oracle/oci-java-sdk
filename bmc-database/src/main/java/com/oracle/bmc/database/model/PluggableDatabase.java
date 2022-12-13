@@ -37,7 +37,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         "isRestricted",
         "compartmentId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "pluggableDatabaseManagementConfig"
     })
     public PluggableDatabase(
             String id,
@@ -51,7 +52,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             Boolean isRestricted,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig) {
         super();
         this.id = id;
         this.containerDatabaseId = containerDatabaseId;
@@ -65,6 +67,7 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -274,6 +277,16 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseManagementConfig")
+        private PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig;
+
+        public Builder pluggableDatabaseManagementConfig(
+                PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig) {
+            this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
+            this.__explicitlySet__.add("pluggableDatabaseManagementConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -291,7 +304,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                             this.isRestricted,
                             this.compartmentId,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.pluggableDatabaseManagementConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -335,6 +349,10 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("pluggableDatabaseManagementConfig")) {
+                this.pluggableDatabaseManagementConfig(
+                        model.getPluggableDatabaseManagementConfig());
             }
             return this;
         }
@@ -633,6 +651,13 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseManagementConfig")
+    private final PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig;
+
+    public PluggableDatabaseManagementConfig getPluggableDatabaseManagementConfig() {
+        return pluggableDatabaseManagementConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -659,6 +684,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", pluggableDatabaseManagementConfig=")
+                .append(String.valueOf(this.pluggableDatabaseManagementConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -685,6 +712,9 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.pluggableDatabaseManagementConfig,
+                        other.pluggableDatabaseManagementConfig)
                 && super.equals(other);
     }
 
@@ -716,6 +746,11 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pluggableDatabaseManagementConfig == null
+                                ? 43
+                                : this.pluggableDatabaseManagementConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

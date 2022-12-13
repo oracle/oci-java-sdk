@@ -45,6 +45,8 @@ public enum OperationType {
     UpdateRepository("UPDATE_REPOSITORY"),
     DeleteRepository("DELETE_REPOSITORY"),
     MirrorRepository("MIRROR_REPOSITORY"),
+    ScheduleCascadingProjectDeletion("SCHEDULE_CASCADING_PROJECT_DELETION"),
+    CancelScheduledCascadingProjectDeletion("CANCEL_SCHEDULED_CASCADING_PROJECT_DELETION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

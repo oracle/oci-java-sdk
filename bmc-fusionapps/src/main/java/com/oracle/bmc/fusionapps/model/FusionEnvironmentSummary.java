@@ -36,6 +36,8 @@ public final class FusionEnvironmentSummary
         "publicUrl",
         "dnsPrefix",
         "additionalLanguagePacks",
+        "lockboxId",
+        "isBreakGlassEnabled",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -57,6 +59,8 @@ public final class FusionEnvironmentSummary
             String publicUrl,
             String dnsPrefix,
             java.util.List<String> additionalLanguagePacks,
+            String lockboxId,
+            Boolean isBreakGlassEnabled,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             FusionEnvironment.LifecycleState lifecycleState,
@@ -77,6 +81,8 @@ public final class FusionEnvironmentSummary
         this.publicUrl = publicUrl;
         this.dnsPrefix = dnsPrefix;
         this.additionalLanguagePacks = additionalLanguagePacks;
+        this.lockboxId = lockboxId;
+        this.isBreakGlassEnabled = isBreakGlassEnabled;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -290,6 +296,38 @@ public final class FusionEnvironmentSummary
             return this;
         }
         /**
+         * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
+        private String lockboxId;
+
+        /**
+         * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+         * @param lockboxId the value to set
+         * @return this builder
+         **/
+        public Builder lockboxId(String lockboxId) {
+            this.lockboxId = lockboxId;
+            this.__explicitlySet__.add("lockboxId");
+            return this;
+        }
+        /**
+         * If it's true, then the Break Glass feature is enabled
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBreakGlassEnabled")
+        private Boolean isBreakGlassEnabled;
+
+        /**
+         * If it's true, then the Break Glass feature is enabled
+         * @param isBreakGlassEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
+            this.isBreakGlassEnabled = isBreakGlassEnabled;
+            this.__explicitlySet__.add("isBreakGlassEnabled");
+            return this;
+        }
+        /**
          * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -414,6 +452,8 @@ public final class FusionEnvironmentSummary
                             this.publicUrl,
                             this.dnsPrefix,
                             this.additionalLanguagePacks,
+                            this.lockboxId,
+                            this.isBreakGlassEnabled,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -466,6 +506,12 @@ public final class FusionEnvironmentSummary
             }
             if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
                 this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("lockboxId")) {
+                this.lockboxId(model.getLockboxId());
+            }
+            if (model.wasPropertyExplicitlySet("isBreakGlassEnabled")) {
+                this.isBreakGlassEnabled(model.getIsBreakGlassEnabled());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -676,6 +722,34 @@ public final class FusionEnvironmentSummary
     }
 
     /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
+    private final String lockboxId;
+
+    /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     * @return the value
+     **/
+    public String getLockboxId() {
+        return lockboxId;
+    }
+
+    /**
+     * If it's true, then the Break Glass feature is enabled
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBreakGlassEnabled")
+    private final Boolean isBreakGlassEnabled;
+
+    /**
+     * If it's true, then the Break Glass feature is enabled
+     * @return the value
+     **/
+    public Boolean getIsBreakGlassEnabled() {
+        return isBreakGlassEnabled;
+    }
+
+    /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -797,6 +871,8 @@ public final class FusionEnvironmentSummary
         sb.append(", dnsPrefix=").append(String.valueOf(this.dnsPrefix));
         sb.append(", additionalLanguagePacks=")
                 .append(String.valueOf(this.additionalLanguagePacks));
+        sb.append(", lockboxId=").append(String.valueOf(this.lockboxId));
+        sb.append(", isBreakGlassEnabled=").append(String.valueOf(this.isBreakGlassEnabled));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -833,6 +909,8 @@ public final class FusionEnvironmentSummary
                 && java.util.Objects.equals(this.dnsPrefix, other.dnsPrefix)
                 && java.util.Objects.equals(
                         this.additionalLanguagePacks, other.additionalLanguagePacks)
+                && java.util.Objects.equals(this.lockboxId, other.lockboxId)
+                && java.util.Objects.equals(this.isBreakGlassEnabled, other.isBreakGlassEnabled)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -885,6 +963,12 @@ public final class FusionEnvironmentSummary
                         + (this.additionalLanguagePacks == null
                                 ? 43
                                 : this.additionalLanguagePacks.hashCode());
+        result = (result * PRIME) + (this.lockboxId == null ? 43 : this.lockboxId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBreakGlassEnabled == null
+                                ? 43
+                                : this.isBreakGlassEnabled.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

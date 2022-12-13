@@ -98,6 +98,24 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cascading operation that restores Project and child resources from a DELETING state to an active state
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelScheduledCascadingProjectDeletionResponse>
+            cancelScheduledCascadingProjectDeletion(
+                    CancelScheduledCascadingProjectDeletionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CancelScheduledCascadingProjectDeletionRequest,
+                                    CancelScheduledCascadingProjectDeletionResponse>
+                            handler);
+
+    /**
      * Moves a project resource from one compartment OCID to another.
      *
      * @param request The request object containing the details to send
@@ -1206,6 +1224,24 @@ public interface DevopsAsync extends AutoCloseable {
             PutRepositoryRefRequest request,
             com.oracle.bmc.responses.AsyncHandler<PutRepositoryRefRequest, PutRepositoryRefResponse>
                     handler);
+
+    /**
+     * Cascading operation that marks Project and child DevOps resources in a DELETING state for a retention period
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ScheduleCascadingProjectDeletionResponse>
+            scheduleCascadingProjectDeletion(
+                    ScheduleCascadingProjectDeletionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCascadingProjectDeletionRequest,
+                                    ScheduleCascadingProjectDeletionResponse>
+                            handler);
 
     /**
      * Updates the build pipeline.
