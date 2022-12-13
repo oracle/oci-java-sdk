@@ -17,16 +17,16 @@ public class UpdateCustomProtectionRuleRequest
                 com.oracle.bmc.waas.model.UpdateCustomProtectionRuleDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * custom protection rule. This number is generated when the custom protection rule is added to
-     * the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom
+     * protection rule. This number is generated when the custom protection rule is added to the
+     * compartment.
      */
     private String customProtectionRuleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * custom protection rule. This number is generated when the custom protection rule is added to
-     * the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom
+     * protection rule. This number is generated when the custom protection rule is added to the
+     * compartment.
      */
     public String getCustomProtectionRuleId() {
         return customProtectionRuleId;
@@ -109,16 +109,16 @@ public class UpdateCustomProtectionRuleRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * custom protection rule. This number is generated when the custom protection rule is added
-         * to the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom
+         * protection rule. This number is generated when the custom protection rule is added to the
+         * compartment.
          */
         private String customProtectionRuleId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * custom protection rule. This number is generated when the custom protection rule is added
-         * to the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom
+         * protection rule. This number is generated when the custom protection rule is added to the
+         * compartment.
          *
          * @param customProtectionRuleId the value to set
          * @return this builder instance

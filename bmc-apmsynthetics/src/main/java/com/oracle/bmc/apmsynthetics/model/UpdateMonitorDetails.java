@@ -33,6 +33,8 @@ public final class UpdateMonitorDetails
         "target",
         "scriptParameters",
         "configuration",
+        "availabilityConfiguration",
+        "maintenanceWindowSchedule",
         "freeformTags",
         "definedTags",
         "isRunNow",
@@ -50,6 +52,8 @@ public final class UpdateMonitorDetails
             String target,
             java.util.List<MonitorScriptParameter> scriptParameters,
             MonitorConfiguration configuration,
+            AvailabilityConfiguration availabilityConfiguration,
+            MaintenanceWindowSchedule maintenanceWindowSchedule,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isRunNow,
@@ -66,6 +70,8 @@ public final class UpdateMonitorDetails
         this.target = target;
         this.scriptParameters = scriptParameters;
         this.configuration = configuration;
+        this.availabilityConfiguration = availabilityConfiguration;
+        this.maintenanceWindowSchedule = maintenanceWindowSchedule;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isRunNow = isRunNow;
@@ -186,19 +192,23 @@ public final class UpdateMonitorDetails
             return this;
         }
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-         * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-         * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds
-         * time. It would be terminated after that.
+         * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+         * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout
+         * cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also,
+         * timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and
+         * Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would
+         * be terminated after that.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-         * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-         * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds
-         * time. It would be terminated after that.
+         * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+         * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout
+         * cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also,
+         * timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and
+         * Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would
+         * be terminated after that.
          *
          * @param timeoutInSeconds the value to set
          * @return this builder
@@ -261,6 +271,26 @@ public final class UpdateMonitorDetails
         public Builder configuration(MonitorConfiguration configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfiguration")
+        private AvailabilityConfiguration availabilityConfiguration;
+
+        public Builder availabilityConfiguration(
+                AvailabilityConfiguration availabilityConfiguration) {
+            this.availabilityConfiguration = availabilityConfiguration;
+            this.__explicitlySet__.add("availabilityConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
+        private MaintenanceWindowSchedule maintenanceWindowSchedule;
+
+        public Builder maintenanceWindowSchedule(
+                MaintenanceWindowSchedule maintenanceWindowSchedule) {
+            this.maintenanceWindowSchedule = maintenanceWindowSchedule;
+            this.__explicitlySet__.add("maintenanceWindowSchedule");
             return this;
         }
         /**
@@ -368,6 +398,8 @@ public final class UpdateMonitorDetails
                             this.target,
                             this.scriptParameters,
                             this.configuration,
+                            this.availabilityConfiguration,
+                            this.maintenanceWindowSchedule,
                             this.freeformTags,
                             this.definedTags,
                             this.isRunNow,
@@ -410,6 +442,12 @@ public final class UpdateMonitorDetails
             }
             if (model.wasPropertyExplicitlySet("configuration")) {
                 this.configuration(model.getConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityConfiguration")) {
+                this.availabilityConfiguration(model.getAvailabilityConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowSchedule")) {
+                this.maintenanceWindowSchedule(model.getMaintenanceWindowSchedule());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -536,19 +574,21 @@ public final class UpdateMonitorDetails
     }
 
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-     * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-     * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time.
-     * It would be terminated after that.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+     * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot
+     * be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should
+     * be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be
+     * allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-     * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-     * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time.
-     * It would be terminated after that.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+     * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot
+     * be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should
+     * be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be
+     * allowed to run only for timeoutInSeconds time. It would be terminated after that.
      *
      * @return the value
      */
@@ -603,6 +643,20 @@ public final class UpdateMonitorDetails
 
     public MonitorConfiguration getConfiguration() {
         return configuration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfiguration")
+    private final AvailabilityConfiguration availabilityConfiguration;
+
+    public AvailabilityConfiguration getAvailabilityConfiguration() {
+        return availabilityConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
+    private final MaintenanceWindowSchedule maintenanceWindowSchedule;
+
+    public MaintenanceWindowSchedule getMaintenanceWindowSchedule() {
+        return maintenanceWindowSchedule;
     }
 
     /**
@@ -708,6 +762,10 @@ public final class UpdateMonitorDetails
         sb.append(", target=").append(String.valueOf(this.target));
         sb.append(", scriptParameters=").append(String.valueOf(this.scriptParameters));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
+        sb.append(", availabilityConfiguration=")
+                .append(String.valueOf(this.availabilityConfiguration));
+        sb.append(", maintenanceWindowSchedule=")
+                .append(String.valueOf(this.maintenanceWindowSchedule));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isRunNow=").append(String.valueOf(this.isRunNow));
@@ -738,6 +796,10 @@ public final class UpdateMonitorDetails
                 && java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.scriptParameters, other.scriptParameters)
                 && java.util.Objects.equals(this.configuration, other.configuration)
+                && java.util.Objects.equals(
+                        this.availabilityConfiguration, other.availabilityConfiguration)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowSchedule, other.maintenanceWindowSchedule)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isRunNow, other.isRunNow)
@@ -773,6 +835,16 @@ public final class UpdateMonitorDetails
         result =
                 (result * PRIME)
                         + (this.configuration == null ? 43 : this.configuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityConfiguration == null
+                                ? 43
+                                : this.availabilityConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowSchedule == null
+                                ? 43
+                                : this.maintenanceWindowSchedule.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.isRunNow == null ? 43 : this.isRunNow.hashCode());

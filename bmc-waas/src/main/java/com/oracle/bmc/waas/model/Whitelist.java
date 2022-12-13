@@ -63,15 +63,15 @@ public final class Whitelist extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of IP address lists to include in the whitelist.
+         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP
+         * address lists to include in the whitelist.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
         private java.util.List<String> addressLists;
 
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of IP address lists to include in the whitelist.
+         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP
+         * address lists to include in the whitelist.
          *
          * @param addressLists the value to set
          * @return this builder
@@ -144,15 +144,15 @@ public final class Whitelist extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * IP address lists to include in the whitelist.
+     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address
+     * lists to include in the whitelist.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
     private final java.util.List<String> addressLists;
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * IP address lists to include in the whitelist.
+     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address
+     * lists to include in the whitelist.
      *
      * @return the value
      */

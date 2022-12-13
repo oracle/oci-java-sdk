@@ -14,7 +14,7 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -23,7 +23,10 @@ package com.oracle.bmc.servicemesh.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DnsServiceDiscoveryConfiguration.class,
-            name = "DNS")
+            name = "DNS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DisabledServiceDiscoveryConfiguration.class,
+            name = "DISABLED")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
@@ -78,6 +81,7 @@ public class ServiceDiscoveryConfiguration
     /** Type of service discovery. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Dns("DNS"),
+        Disabled("DISABLED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

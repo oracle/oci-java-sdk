@@ -22,6 +22,18 @@ package com.oracle.bmc.goldengate.model;
         defaultImpl = CreateConnectionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreatePostgresqlConnectionDetails.class,
+            name = "POSTGRESQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateKafkaSchemaRegistryConnectionDetails.class,
+            name = "KAFKA_SCHEMA_REGISTRY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAzureSynapseConnectionDetails.class,
+            name = "AZURE_SYNAPSE_ANALYTICS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAzureDataLakeStorageConnectionDetails.class,
+            name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateMysqlConnectionDetails.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

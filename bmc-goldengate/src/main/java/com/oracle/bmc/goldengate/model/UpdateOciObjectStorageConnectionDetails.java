@@ -165,6 +165,21 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
             this.__explicitlySet__.add("privateKeyFile");
             return this;
         }
+        /** The passphrase of the private key. */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+        private String privateKeyPassphrase;
+
+        /**
+         * The passphrase of the private key.
+         *
+         * @param privateKeyPassphrase the value to set
+         * @return this builder
+         */
+        public Builder privateKeyPassphrase(String privateKeyPassphrase) {
+            this.privateKeyPassphrase = privateKeyPassphrase;
+            this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
         /**
          * The fingerprint of the API Key of the user specified by the userId. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -202,6 +217,7 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
                             this.region,
                             this.userId,
                             this.privateKeyFile,
+                            this.privateKeyPassphrase,
                             this.publicKeyFingerprint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -244,6 +260,9 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
             if (model.wasPropertyExplicitlySet("privateKeyFile")) {
                 this.privateKeyFile(model.getPrivateKeyFile());
             }
+            if (model.wasPropertyExplicitlySet("privateKeyPassphrase")) {
+                this.privateKeyPassphrase(model.getPrivateKeyPassphrase());
+            }
             if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
                 this.publicKeyFingerprint(model.getPublicKeyFingerprint());
             }
@@ -273,12 +292,14 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
             String region,
             String userId,
             String privateKeyFile,
+            String privateKeyPassphrase,
             String publicKeyFingerprint) {
         super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
         this.tenancyId = tenancyId;
         this.region = region;
         this.userId = userId;
         this.privateKeyFile = privateKeyFile;
+        this.privateKeyPassphrase = privateKeyPassphrase;
         this.publicKeyFingerprint = publicKeyFingerprint;
     }
 
@@ -350,6 +371,19 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
         return privateKeyFile;
     }
 
+    /** The passphrase of the private key. */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
+    private final String privateKeyPassphrase;
+
+    /**
+     * The passphrase of the private key.
+     *
+     * @return the value
+     */
+    public String getPrivateKeyPassphrase() {
+        return privateKeyPassphrase;
+    }
+
     /**
      * The fingerprint of the API Key of the user specified by the userId. See documentation:
      * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -386,6 +420,7 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", privateKeyFile=").append(String.valueOf(this.privateKeyFile));
+        sb.append(", privateKeyPassphrase=").append("<redacted>");
         sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
         sb.append(")");
         return sb.toString();
@@ -405,6 +440,7 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.userId, other.userId)
                 && java.util.Objects.equals(this.privateKeyFile, other.privateKeyFile)
+                && java.util.Objects.equals(this.privateKeyPassphrase, other.privateKeyPassphrase)
                 && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
                 && super.equals(other);
     }
@@ -419,6 +455,11 @@ public final class UpdateOciObjectStorageConnectionDetails extends UpdateConnect
         result =
                 (result * PRIME)
                         + (this.privateKeyFile == null ? 43 : this.privateKeyFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyPassphrase == null
+                                ? 43
+                                : this.privateKeyPassphrase.hashCode());
         result =
                 (result * PRIME)
                         + (this.publicKeyFingerprint == null

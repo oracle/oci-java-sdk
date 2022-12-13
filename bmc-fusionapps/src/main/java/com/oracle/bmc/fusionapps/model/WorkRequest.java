@@ -298,6 +298,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         ChangeFusionEnvironmentFamilyCompartment("CHANGE_FUSION_ENVIRONMENT_FAMILY_COMPARTMENT"),
         RefreshFusionEnvironment("REFRESH_FUSION_ENVIRONMENT"),
         ExecuteColdPatch("EXECUTE_COLD_PATCH"),
+        DataMaskFusionEnvironment("DATA_MASK_FUSION_ENVIRONMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

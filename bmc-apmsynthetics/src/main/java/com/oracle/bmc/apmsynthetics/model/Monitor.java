@@ -35,6 +35,8 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         "target",
         "scriptParameters",
         "configuration",
+        "availabilityConfiguration",
+        "maintenanceWindowSchedule",
         "timeCreated",
         "timeUpdated",
         "freeformTags",
@@ -58,6 +60,8 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             String target,
             java.util.List<MonitorScriptParameterInfo> scriptParameters,
             MonitorConfiguration configuration,
+            AvailabilityConfiguration availabilityConfiguration,
+            MaintenanceWindowSchedule maintenanceWindowSchedule,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
@@ -80,6 +84,8 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         this.target = target;
         this.scriptParameters = scriptParameters;
         this.configuration = configuration;
+        this.availabilityConfiguration = availabilityConfiguration;
+        this.maintenanceWindowSchedule = maintenanceWindowSchedule;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
@@ -260,19 +266,23 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-         * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-         * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds
-         * time. It would be terminated after that.
+         * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+         * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout
+         * cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also,
+         * timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and
+         * Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would
+         * be terminated after that.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-         * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-         * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds
-         * time. It would be terminated after that.
+         * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+         * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout
+         * cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also,
+         * timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and
+         * Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would
+         * be terminated after that.
          *
          * @param timeoutInSeconds the value to set
          * @return this builder
@@ -334,6 +344,26 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         public Builder configuration(MonitorConfiguration configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfiguration")
+        private AvailabilityConfiguration availabilityConfiguration;
+
+        public Builder availabilityConfiguration(
+                AvailabilityConfiguration availabilityConfiguration) {
+            this.availabilityConfiguration = availabilityConfiguration;
+            this.__explicitlySet__.add("availabilityConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
+        private MaintenanceWindowSchedule maintenanceWindowSchedule;
+
+        public Builder maintenanceWindowSchedule(
+                MaintenanceWindowSchedule maintenanceWindowSchedule) {
+            this.maintenanceWindowSchedule = maintenanceWindowSchedule;
+            this.__explicitlySet__.add("maintenanceWindowSchedule");
             return this;
         }
         /**
@@ -487,6 +517,8 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
                             this.target,
                             this.scriptParameters,
                             this.configuration,
+                            this.availabilityConfiguration,
+                            this.maintenanceWindowSchedule,
                             this.timeCreated,
                             this.timeUpdated,
                             this.freeformTags,
@@ -543,6 +575,12 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("configuration")) {
                 this.configuration(model.getConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityConfiguration")) {
+                this.availabilityConfiguration(model.getAvailabilityConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowSchedule")) {
+                this.maintenanceWindowSchedule(model.getMaintenanceWindowSchedule());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -725,19 +763,21 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-     * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-     * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time.
-     * It would be terminated after that.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+     * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot
+     * be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should
+     * be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be
+     * allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for
-     * monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted
-     * Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time.
-     * It would be terminated after that.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of
+     * repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot
+     * be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should
+     * be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be
+     * allowed to run only for timeoutInSeconds time. It would be terminated after that.
      *
      * @return the value
      */
@@ -790,6 +830,20 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
 
     public MonitorConfiguration getConfiguration() {
         return configuration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfiguration")
+    private final AvailabilityConfiguration availabilityConfiguration;
+
+    public AvailabilityConfiguration getAvailabilityConfiguration() {
+        return availabilityConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
+    private final MaintenanceWindowSchedule maintenanceWindowSchedule;
+
+    public MaintenanceWindowSchedule getMaintenanceWindowSchedule() {
+        return maintenanceWindowSchedule;
     }
 
     /**
@@ -937,6 +991,10 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", target=").append(String.valueOf(this.target));
         sb.append(", scriptParameters=").append(String.valueOf(this.scriptParameters));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
+        sb.append(", availabilityConfiguration=")
+                .append(String.valueOf(this.availabilityConfiguration));
+        sb.append(", maintenanceWindowSchedule=")
+                .append(String.valueOf(this.maintenanceWindowSchedule));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -973,6 +1031,10 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.scriptParameters, other.scriptParameters)
                 && java.util.Objects.equals(this.configuration, other.configuration)
+                && java.util.Objects.equals(
+                        this.availabilityConfiguration, other.availabilityConfiguration)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowSchedule, other.maintenanceWindowSchedule)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1016,6 +1078,16 @@ public final class Monitor extends com.oracle.bmc.http.client.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.configuration == null ? 43 : this.configuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityConfiguration == null
+                                ? 43
+                                : this.availabilityConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowSchedule == null
+                                ? 43
+                                : this.maintenanceWindowSchedule.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

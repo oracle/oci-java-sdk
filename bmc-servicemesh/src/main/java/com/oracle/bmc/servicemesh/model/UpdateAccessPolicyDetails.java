@@ -14,7 +14,7 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateAccessPolicyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -25,7 +25,7 @@ public final class UpdateAccessPolicyDetails
     @java.beans.ConstructorProperties({"description", "rules", "freeformTags", "definedTags"})
     public UpdateAccessPolicyDetails(
             String description,
-            java.util.List<AccessPolicyRule> rules,
+            java.util.List<AccessPolicyRuleDetails> rules,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -62,7 +62,7 @@ public final class UpdateAccessPolicyDetails
         }
         /** List of applicable rules. */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
-        private java.util.List<AccessPolicyRule> rules;
+        private java.util.List<AccessPolicyRuleDetails> rules;
 
         /**
          * List of applicable rules.
@@ -70,7 +70,7 @@ public final class UpdateAccessPolicyDetails
          * @param rules the value to set
          * @return this builder
          */
-        public Builder rules(java.util.List<AccessPolicyRule> rules) {
+        public Builder rules(java.util.List<AccessPolicyRuleDetails> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
             return this;
@@ -178,14 +178,14 @@ public final class UpdateAccessPolicyDetails
 
     /** List of applicable rules. */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
-    private final java.util.List<AccessPolicyRule> rules;
+    private final java.util.List<AccessPolicyRuleDetails> rules;
 
     /**
      * List of applicable rules.
      *
      * @return the value
      */
-    public java.util.List<AccessPolicyRule> getRules() {
+    public java.util.List<AccessPolicyRuleDetails> getRules() {
         return rules;
     }
 

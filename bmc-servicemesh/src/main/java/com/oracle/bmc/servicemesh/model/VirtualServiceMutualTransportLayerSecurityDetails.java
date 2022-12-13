@@ -15,16 +15,16 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMutualTransportLayerSecurityDetails.Builder.class)
+        builder = VirtualServiceMutualTransportLayerSecurityDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
-public final class CreateMutualTransportLayerSecurityDetails
+public final class VirtualServiceMutualTransportLayerSecurityDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maximumValidity", "mode"})
-    public CreateMutualTransportLayerSecurityDetails(
+    public VirtualServiceMutualTransportLayerSecurityDetails(
             Integer maximumValidity, MutualTransportLayerSecurity.Mode mode) {
         super();
         this.maximumValidity = maximumValidity;
@@ -83,9 +83,10 @@ public final class CreateMutualTransportLayerSecurityDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateMutualTransportLayerSecurityDetails build() {
-            CreateMutualTransportLayerSecurityDetails model =
-                    new CreateMutualTransportLayerSecurityDetails(this.maximumValidity, this.mode);
+        public VirtualServiceMutualTransportLayerSecurityDetails build() {
+            VirtualServiceMutualTransportLayerSecurityDetails model =
+                    new VirtualServiceMutualTransportLayerSecurityDetails(
+                            this.maximumValidity, this.mode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,7 +94,7 @@ public final class CreateMutualTransportLayerSecurityDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMutualTransportLayerSecurityDetails model) {
+        public Builder copy(VirtualServiceMutualTransportLayerSecurityDetails model) {
             if (model.wasPropertyExplicitlySet("maximumValidity")) {
                 this.maximumValidity(model.getMaximumValidity());
             }
@@ -166,7 +167,7 @@ public final class CreateMutualTransportLayerSecurityDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("CreateMutualTransportLayerSecurityDetails(");
+        sb.append("VirtualServiceMutualTransportLayerSecurityDetails(");
         sb.append("super=").append(super.toString());
         sb.append("maximumValidity=").append(String.valueOf(this.maximumValidity));
         sb.append(", mode=").append(String.valueOf(this.mode));
@@ -179,12 +180,12 @@ public final class CreateMutualTransportLayerSecurityDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CreateMutualTransportLayerSecurityDetails)) {
+        if (!(o instanceof VirtualServiceMutualTransportLayerSecurityDetails)) {
             return false;
         }
 
-        CreateMutualTransportLayerSecurityDetails other =
-                (CreateMutualTransportLayerSecurityDetails) o;
+        VirtualServiceMutualTransportLayerSecurityDetails other =
+                (VirtualServiceMutualTransportLayerSecurityDetails) o;
         return java.util.Objects.equals(this.maximumValidity, other.maximumValidity)
                 && java.util.Objects.equals(this.mode, other.mode)
                 && super.equals(other);

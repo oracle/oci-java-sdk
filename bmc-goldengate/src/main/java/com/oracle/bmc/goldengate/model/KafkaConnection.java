@@ -424,6 +424,8 @@ public final class KafkaConnection extends Connection {
     /** The Kafka technology type. */
     public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
         ApacheKafka("APACHE_KAFKA"),
+        AzureEventHubs("AZURE_EVENT_HUBS"),
+        ConfluentKafka("CONFLUENT_KAFKA"),
         OciStreaming("OCI_STREAMING"),
 
         /**

@@ -1624,6 +1624,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disables the Database Management service for the pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisablePluggableDatabaseManagementResponse>
+            disablePluggableDatabaseManagement(
+                    DisablePluggableDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisablePluggableDatabaseManagementRequest,
+                                    DisablePluggableDatabaseManagementResponse>
+                            handler);
+
+    /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
@@ -1879,6 +1897,27 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     EnableExternalPluggableDatabaseStackMonitoringRequest,
                                     EnableExternalPluggableDatabaseStackMonitoringResponse>
+                            handler);
+
+    /**
+     * Enables the Database Management service for an Oracle Pluggable Database located in Oracle
+     * Cloud Infrastructure. This service allows the pluggable database to access tools including
+     * Metrics and Performance hub. Database Management is enabled at the pluggable database (PDB)
+     * level.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnablePluggableDatabaseManagementResponse>
+            enablePluggableDatabaseManagement(
+                    EnablePluggableDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnablePluggableDatabaseManagementRequest,
+                                    EnablePluggableDatabaseManagementResponse>
                             handler);
 
     /**
@@ -4049,6 +4088,24 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>
                     handler);
+
+    /**
+     * Updates one or more attributes of the Database Management service for the pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ModifyPluggableDatabaseManagementResponse>
+            modifyPluggableDatabaseManagement(
+                    ModifyPluggableDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyPluggableDatabaseManagementRequest,
+                                    ModifyPluggableDatabaseManagementResponse>
+                            handler);
 
     /**
      * Asynchronously registers this Autonomous Database with Data Safe.

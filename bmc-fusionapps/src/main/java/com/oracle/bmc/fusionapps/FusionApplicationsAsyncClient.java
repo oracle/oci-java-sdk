@@ -467,6 +467,42 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRefreshActivityResponse> deleteRefreshActivity(
+            DeleteRefreshActivityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getRefreshActivityId(), "refreshActivityId must not be blank");
+
+        return clientCall(request, DeleteRefreshActivityResponse::builder)
+                .logger(LOG, "deleteRefreshActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteRefreshActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/RefreshActivity/DeleteRefreshActivity")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRefreshActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("refreshActivities")
+                .appendPathParam(request.getRefreshActivityId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRefreshActivityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRefreshActivityResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataMaskingActivityResponse> getDataMaskingActivity(
             GetDataMaskingActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1386,6 +1422,47 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateFusionEnvironmentFamilyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRefreshActivityResponse> updateRefreshActivity(
+            UpdateRefreshActivityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getRefreshActivityId(), "refreshActivityId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRefreshActivityDetails(),
+                "updateRefreshActivityDetails is required");
+
+        return clientCall(request, UpdateRefreshActivityResponse::builder)
+                .logger(LOG, "updateRefreshActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateRefreshActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/UpdateRefreshActivityDetails/UpdateRefreshActivity")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRefreshActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("refreshActivities")
+                .appendPathParam(request.getRefreshActivityId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.RefreshActivity.class,
+                        UpdateRefreshActivityResponse.Builder::refreshActivity)
+                .handleResponseHeaderString("etag", UpdateRefreshActivityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRefreshActivityResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

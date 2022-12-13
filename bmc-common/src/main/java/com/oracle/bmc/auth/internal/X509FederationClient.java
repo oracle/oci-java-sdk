@@ -16,6 +16,7 @@ import com.oracle.bmc.http.Priorities;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.internal.AuthnClientFilter;
 import com.oracle.bmc.http.internal.CircuitBreakerHelper;
 import com.oracle.bmc.http.internal.ClientCall;
@@ -187,6 +188,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 HttpProvider.getDefault()
                         .newBuilder()
                         .baseUri(URI.create(federationEndpoint))
+                        .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
                         .registerRequestInterceptor(
                                 Priorities.AUTHENTICATION,
                                 new AuthnClientFilter(

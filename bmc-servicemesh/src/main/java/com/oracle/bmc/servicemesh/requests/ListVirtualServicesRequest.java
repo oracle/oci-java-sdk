@@ -10,7 +10,7 @@ import com.oracle.bmc.servicemesh.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualServicesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVirtualServicesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */
@@ -127,10 +127,10 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
         return id;
     }
     /** A filter to return only resources that match the life cycle state given. */
-    private String lifecycleState;
+    private com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState lifecycleState;
 
     /** A filter to return only resources that match the life cycle state given. */
-    public String getLifecycleState() {
+    public com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
@@ -275,7 +275,8 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /** A filter to return only resources that match the life cycle state given. */
-        private String lifecycleState = null;
+        private com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState lifecycleState =
+                null;
 
         /**
          * A filter to return only resources that match the life cycle state given.
@@ -283,7 +284,8 @@ public class ListVirtualServicesRequest extends com.oracle.bmc.requests.BmcReque
          * @param lifecycleState the value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(String lifecycleState) {
+        public Builder lifecycleState(
+                com.oracle.bmc.servicemesh.model.VirtualService.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

@@ -1607,6 +1607,23 @@ public interface Database extends AutoCloseable {
                     DisableExternalPluggableDatabaseStackMonitoringRequest request);
 
     /**
+     * Disables the Database Management service for the pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisablePluggableDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisablePluggableDatabaseManagement API.
+     */
+    DisablePluggableDatabaseManagementResponse disablePluggableDatabaseManagement(
+            DisablePluggableDatabaseManagementRequest request);
+
+    /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
@@ -1861,6 +1878,26 @@ public interface Database extends AutoCloseable {
     EnableExternalPluggableDatabaseStackMonitoringResponse
             enableExternalPluggableDatabaseStackMonitoring(
                     EnableExternalPluggableDatabaseStackMonitoringRequest request);
+
+    /**
+     * Enables the Database Management service for an Oracle Pluggable Database located in Oracle
+     * Cloud Infrastructure. This service allows the pluggable database to access tools including
+     * Metrics and Performance hub. Database Management is enabled at the pluggable database (PDB)
+     * level.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnablePluggableDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnablePluggableDatabaseManagement API.
+     */
+    EnablePluggableDatabaseManagementResponse enablePluggableDatabaseManagement(
+            EnablePluggableDatabaseManagementRequest request);
 
     /**
      * Initiates a failover the specified Autonomous Database to a standby. To perform a failover to
@@ -4014,6 +4051,23 @@ public interface Database extends AutoCloseable {
      */
     ModifyDatabaseManagementResponse modifyDatabaseManagement(
             ModifyDatabaseManagementRequest request);
+
+    /**
+     * Updates one or more attributes of the Database Management service for the pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ModifyPluggableDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ModifyPluggableDatabaseManagement API.
+     */
+    ModifyPluggableDatabaseManagementResponse modifyPluggableDatabaseManagement(
+            ModifyPluggableDatabaseManagementRequest request);
 
     /**
      * Asynchronously registers this Autonomous Database with Data Safe.

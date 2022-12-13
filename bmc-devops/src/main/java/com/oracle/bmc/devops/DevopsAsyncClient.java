@@ -207,6 +207,43 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     }
 
     @Override
+    public java.util.concurrent.Future<CancelScheduledCascadingProjectDeletionResponse>
+            cancelScheduledCascadingProjectDeletion(
+                    CancelScheduledCascadingProjectDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelScheduledCascadingProjectDeletionRequest,
+                                    CancelScheduledCascadingProjectDeletionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        return clientCall(request, CancelScheduledCascadingProjectDeletionResponse::builder)
+                .logger(LOG, "cancelScheduledCascadingProjectDeletion")
+                .serviceDetails(
+                        "Devops",
+                        "CancelScheduledCascadingProjectDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CancelScheduledCascadingProjectDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelScheduledCascadingProjectDeletionRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelScheduledCascadingProjectDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelScheduledCascadingProjectDeletionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelScheduledCascadingProjectDeletionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeProjectCompartmentResponse> changeProjectCompartment(
             ChangeProjectCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2623,6 +2660,10 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "operationTypeMultiValueQuery",
+                        request.getOperationTypeMultiValueQuery(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2707,6 +2748,43 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                         "opc-work-request-id", PutRepositoryRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PutRepositoryRefResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleCascadingProjectDeletionResponse>
+            scheduleCascadingProjectDeletion(
+                    ScheduleCascadingProjectDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCascadingProjectDeletionRequest,
+                                    ScheduleCascadingProjectDeletionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        return clientCall(request, ScheduleCascadingProjectDeletionResponse::builder)
+                .logger(LOG, "scheduleCascadingProjectDeletion")
+                .serviceDetails(
+                        "Devops",
+                        "ScheduleCascadingProjectDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ScheduleCascadingProjectDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleCascadingProjectDeletionRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleCascadingProjectDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ScheduleCascadingProjectDeletionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ScheduleCascadingProjectDeletionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

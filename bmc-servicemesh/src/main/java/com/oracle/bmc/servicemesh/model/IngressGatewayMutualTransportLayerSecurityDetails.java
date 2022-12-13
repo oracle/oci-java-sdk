@@ -14,16 +14,16 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateIngressGatewayMutualTransportLayerSecurityDetails.Builder.class)
+        builder = IngressGatewayMutualTransportLayerSecurityDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
-public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
+public final class IngressGatewayMutualTransportLayerSecurityDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maximumValidity"})
-    public CreateIngressGatewayMutualTransportLayerSecurityDetails(Integer maximumValidity) {
+    public IngressGatewayMutualTransportLayerSecurityDetails(Integer maximumValidity) {
         super();
         this.maximumValidity = maximumValidity;
     }
@@ -59,10 +59,9 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateIngressGatewayMutualTransportLayerSecurityDetails build() {
-            CreateIngressGatewayMutualTransportLayerSecurityDetails model =
-                    new CreateIngressGatewayMutualTransportLayerSecurityDetails(
-                            this.maximumValidity);
+        public IngressGatewayMutualTransportLayerSecurityDetails build() {
+            IngressGatewayMutualTransportLayerSecurityDetails model =
+                    new IngressGatewayMutualTransportLayerSecurityDetails(this.maximumValidity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -70,7 +69,7 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateIngressGatewayMutualTransportLayerSecurityDetails model) {
+        public Builder copy(IngressGatewayMutualTransportLayerSecurityDetails model) {
             if (model.wasPropertyExplicitlySet("maximumValidity")) {
                 this.maximumValidity(model.getMaximumValidity());
             }
@@ -121,7 +120,7 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("CreateIngressGatewayMutualTransportLayerSecurityDetails(");
+        sb.append("IngressGatewayMutualTransportLayerSecurityDetails(");
         sb.append("super=").append(super.toString());
         sb.append("maximumValidity=").append(String.valueOf(this.maximumValidity));
         sb.append(")");
@@ -133,12 +132,12 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CreateIngressGatewayMutualTransportLayerSecurityDetails)) {
+        if (!(o instanceof IngressGatewayMutualTransportLayerSecurityDetails)) {
             return false;
         }
 
-        CreateIngressGatewayMutualTransportLayerSecurityDetails other =
-                (CreateIngressGatewayMutualTransportLayerSecurityDetails) o;
+        IngressGatewayMutualTransportLayerSecurityDetails other =
+                (IngressGatewayMutualTransportLayerSecurityDetails) o;
         return java.util.Objects.equals(this.maximumValidity, other.maximumValidity)
                 && super.equals(other);
     }

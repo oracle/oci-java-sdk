@@ -40,7 +40,8 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
         "bootstrapScriptUrl",
         "freeformTags",
         "definedTags",
-        "kmsKeyId"
+        "kmsKeyId",
+        "clusterProfile"
     })
     public BdsInstance(
             String id,
@@ -62,7 +63,8 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
             String bootstrapScriptUrl,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String kmsKeyId) {
+            String kmsKeyId,
+            ClusterProfile clusterProfile) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -84,6 +86,7 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
+        this.clusterProfile = clusterProfile;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -383,6 +386,21 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
+        /** Profile of the Big Data Service cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
+        private ClusterProfile clusterProfile;
+
+        /**
+         * Profile of the Big Data Service cluster.
+         *
+         * @param clusterProfile the value to set
+         * @return this builder
+         */
+        public Builder clusterProfile(ClusterProfile clusterProfile) {
+            this.clusterProfile = clusterProfile;
+            this.__explicitlySet__.add("clusterProfile");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -409,7 +427,8 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
                             this.bootstrapScriptUrl,
                             this.freeformTags,
                             this.definedTags,
-                            this.kmsKeyId);
+                            this.kmsKeyId,
+                            this.clusterProfile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -477,6 +496,9 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterProfile")) {
+                this.clusterProfile(model.getClusterProfile());
             }
             return this;
         }
@@ -848,6 +870,69 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
         return kmsKeyId;
     }
 
+    /** Profile of the Big Data Service cluster. */
+    public enum ClusterProfile implements com.oracle.bmc.http.internal.BmcEnum {
+        HadoopExtended("HADOOP_EXTENDED"),
+        Hadoop("HADOOP"),
+        Hive("HIVE"),
+        Spark("SPARK"),
+        Hbase("HBASE"),
+        Trino("TRINO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ClusterProfile.class);
+
+        private final String value;
+        private static java.util.Map<String, ClusterProfile> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ClusterProfile v : ClusterProfile.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ClusterProfile(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ClusterProfile create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ClusterProfile', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Profile of the Big Data Service cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
+    private final ClusterProfile clusterProfile;
+
+    /**
+     * Profile of the Big Data Service cluster.
+     *
+     * @return the value
+     */
+    public ClusterProfile getClusterProfile() {
+        return clusterProfile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -883,6 +968,7 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
         sb.append(")");
         return sb.toString();
     }
@@ -917,6 +1003,7 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
                 && super.equals(other);
     }
 
@@ -970,6 +1057,9 @@ public final class BdsInstance extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterProfile == null ? 43 : this.clusterProfile.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

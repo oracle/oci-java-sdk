@@ -34,7 +34,8 @@ public final class RefreshActivitySummary
         "serviceAvailability",
         "timeAccepted",
         "timeUpdated",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "refreshIssueDetailsList"
     })
     public RefreshActivitySummary(
             String id,
@@ -48,7 +49,8 @@ public final class RefreshActivitySummary
             RefreshActivity.ServiceAvailability serviceAvailability,
             java.util.Date timeAccepted,
             java.util.Date timeUpdated,
-            RefreshActivity.LifecycleDetails lifecycleDetails) {
+            RefreshActivity.LifecycleDetails lifecycleDetails,
+            java.util.List<RefreshIssueDetails> refreshIssueDetailsList) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -62,6 +64,7 @@ public final class RefreshActivitySummary
         this.timeAccepted = timeAccepted;
         this.timeUpdated = timeUpdated;
         this.lifecycleDetails = lifecycleDetails;
+        this.refreshIssueDetailsList = refreshIssueDetailsList;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -275,6 +278,22 @@ public final class RefreshActivitySummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** Details of refresh investigation information, each item represents a different issue. */
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
+        private java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
+
+        /**
+         * Details of refresh investigation information, each item represents a different issue.
+         *
+         * @param refreshIssueDetailsList the value to set
+         * @return this builder
+         */
+        public Builder refreshIssueDetailsList(
+                java.util.List<RefreshIssueDetails> refreshIssueDetailsList) {
+            this.refreshIssueDetailsList = refreshIssueDetailsList;
+            this.__explicitlySet__.add("refreshIssueDetailsList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -293,7 +312,8 @@ public final class RefreshActivitySummary
                             this.serviceAvailability,
                             this.timeAccepted,
                             this.timeUpdated,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.refreshIssueDetailsList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -337,6 +357,9 @@ public final class RefreshActivitySummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("refreshIssueDetailsList")) {
+                this.refreshIssueDetailsList(model.getRefreshIssueDetailsList());
             }
             return this;
         }
@@ -525,6 +548,19 @@ public final class RefreshActivitySummary
         return lifecycleDetails;
     }
 
+    /** Details of refresh investigation information, each item represents a different issue. */
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
+    private final java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
+
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     *
+     * @return the value
+     */
+    public java.util.List<RefreshIssueDetails> getRefreshIssueDetailsList() {
+        return refreshIssueDetailsList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -553,6 +589,8 @@ public final class RefreshActivitySummary
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", refreshIssueDetailsList=")
+                .append(String.valueOf(this.refreshIssueDetailsList));
         sb.append(")");
         return sb.toString();
     }
@@ -581,6 +619,8 @@ public final class RefreshActivitySummary
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.refreshIssueDetailsList, other.refreshIssueDetailsList)
                 && super.equals(other);
     }
 
@@ -624,6 +664,11 @@ public final class RefreshActivitySummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshIssueDetailsList == null
+                                ? 43
+                                : this.refreshIssueDetailsList.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

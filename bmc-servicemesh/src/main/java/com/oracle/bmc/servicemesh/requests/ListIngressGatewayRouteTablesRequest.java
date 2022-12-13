@@ -11,7 +11,7 @@ import com.oracle.bmc.servicemesh.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListIngressGatewayRouteTablesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListIngressGatewayRouteTablesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -129,10 +129,11 @@ public class ListIngressGatewayRouteTablesRequest
         return id;
     }
     /** A filter to return only resources that match the life cycle state given. */
-    private String lifecycleState;
+    private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.LifecycleState lifecycleState;
 
     /** A filter to return only resources that match the life cycle state given. */
-    public String getLifecycleState() {
+    public com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.LifecycleState
+            getLifecycleState() {
         return lifecycleState;
     }
 
@@ -277,7 +278,8 @@ public class ListIngressGatewayRouteTablesRequest
         }
 
         /** A filter to return only resources that match the life cycle state given. */
-        private String lifecycleState = null;
+        private com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.LifecycleState
+                lifecycleState = null;
 
         /**
          * A filter to return only resources that match the life cycle state given.
@@ -285,7 +287,9 @@ public class ListIngressGatewayRouteTablesRequest
          * @param lifecycleState the value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(String lifecycleState) {
+        public Builder lifecycleState(
+                com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.LifecycleState
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

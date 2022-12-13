@@ -25,6 +25,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         "status",
         "durationInMs",
         "isAdvisorReportAvailable",
+        "issue",
+        "action",
         "extract",
         "logLocation",
         "progress"
@@ -34,6 +36,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             JobPhaseStatus status,
             Integer durationInMs,
             Boolean isAdvisorReportAvailable,
+            String issue,
+            String action,
             java.util.List<PhaseExtractEntry> extract,
             LogLocationBucketDetails logLocation,
             Integer progress) {
@@ -42,6 +46,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         this.status = status;
         this.durationInMs = durationInMs;
         this.isAdvisorReportAvailable = isAdvisorReportAvailable;
+        this.issue = issue;
+        this.action = action;
         this.extract = extract;
         this.logLocation = logLocation;
         this.progress = progress;
@@ -113,6 +119,36 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("isAdvisorReportAvailable");
             return this;
         }
+        /** The text describing the root cause of the reported issue */
+        @com.fasterxml.jackson.annotation.JsonProperty("issue")
+        private String issue;
+
+        /**
+         * The text describing the root cause of the reported issue
+         *
+         * @param issue the value to set
+         * @return this builder
+         */
+        public Builder issue(String issue) {
+            this.issue = issue;
+            this.__explicitlySet__.add("issue");
+            return this;
+        }
+        /** The text describing the action required to fix the issue */
+        @com.fasterxml.jackson.annotation.JsonProperty("action")
+        private String action;
+
+        /**
+         * The text describing the action required to fix the issue
+         *
+         * @param action the value to set
+         * @return this builder
+         */
+        public Builder action(String action) {
+            this.action = action;
+            this.__explicitlySet__.add("action");
+            return this;
+        }
         /** Summary of phase status results. */
         @com.fasterxml.jackson.annotation.JsonProperty("extract")
         private java.util.List<PhaseExtractEntry> extract;
@@ -163,6 +199,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
                             this.status,
                             this.durationInMs,
                             this.isAdvisorReportAvailable,
+                            this.issue,
+                            this.action,
                             this.extract,
                             this.logLocation,
                             this.progress);
@@ -185,6 +223,12 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("isAdvisorReportAvailable")) {
                 this.isAdvisorReportAvailable(model.getIsAdvisorReportAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("issue")) {
+                this.issue(model.getIssue());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
             }
             if (model.wasPropertyExplicitlySet("extract")) {
                 this.extract(model.getExtract());
@@ -264,6 +308,32 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         return isAdvisorReportAvailable;
     }
 
+    /** The text describing the root cause of the reported issue */
+    @com.fasterxml.jackson.annotation.JsonProperty("issue")
+    private final String issue;
+
+    /**
+     * The text describing the root cause of the reported issue
+     *
+     * @return the value
+     */
+    public String getIssue() {
+        return issue;
+    }
+
+    /** The text describing the action required to fix the issue */
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
+    private final String action;
+
+    /**
+     * The text describing the action required to fix the issue
+     *
+     * @return the value
+     */
+    public String getAction() {
+        return action;
+    }
+
     /** Summary of phase status results. */
     @com.fasterxml.jackson.annotation.JsonProperty("extract")
     private final java.util.List<PhaseExtractEntry> extract;
@@ -317,6 +387,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", durationInMs=").append(String.valueOf(this.durationInMs));
         sb.append(", isAdvisorReportAvailable=")
                 .append(String.valueOf(this.isAdvisorReportAvailable));
+        sb.append(", issue=").append(String.valueOf(this.issue));
+        sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", extract=").append(String.valueOf(this.extract));
         sb.append(", logLocation=").append(String.valueOf(this.logLocation));
         sb.append(", progress=").append(String.valueOf(this.progress));
@@ -339,6 +411,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.durationInMs, other.durationInMs)
                 && java.util.Objects.equals(
                         this.isAdvisorReportAvailable, other.isAdvisorReportAvailable)
+                && java.util.Objects.equals(this.issue, other.issue)
+                && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.extract, other.extract)
                 && java.util.Objects.equals(this.logLocation, other.logLocation)
                 && java.util.Objects.equals(this.progress, other.progress)
@@ -357,6 +431,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
                         + (this.isAdvisorReportAvailable == null
                                 ? 43
                                 : this.isAdvisorReportAvailable.hashCode());
+        result = (result * PRIME) + (this.issue == null ? 43 : this.issue.hashCode());
+        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.extract == null ? 43 : this.extract.hashCode());
         result = (result * PRIME) + (this.logLocation == null ? 43 : this.logLocation.hashCode());
         result = (result * PRIME) + (this.progress == null ? 43 : this.progress.hashCode());
