@@ -99,12 +99,12 @@ public final class CreateRepositoryDetails
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
-        /** Type of repository. */
+        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private Repository.RepositoryType repositoryType;
 
         /**
-         * Type of repository.
+         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -282,12 +282,12 @@ public final class CreateRepositoryDetails
         return defaultBranch;
     }
 
-    /** Type of repository. */
+    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final Repository.RepositoryType repositoryType;
 
     /**
-     * Type of repository.
+     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
      *
      * @return the value
      */

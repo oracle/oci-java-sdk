@@ -134,7 +134,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ChangeContainerInstanceCompartmentResponse::builder)
                 .logger(LOG, "changeContainerInstanceCompartment")
-                .serviceDetails("ContainerInstance", "ChangeContainerInstanceCompartment", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ChangeContainerInstanceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/ChangeContainerInstanceCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeContainerInstanceCompartmentRequest::builder)
                 .basePath("/20210415")
@@ -165,7 +168,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, CreateContainerInstanceResponse::builder)
                 .logger(LOG, "createContainerInstance")
-                .serviceDetails("ContainerInstance", "CreateContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "CreateContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/CreateContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateContainerInstanceRequest::builder)
                 .basePath("/20210415")
@@ -196,7 +202,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, DeleteContainerInstanceResponse::builder)
                 .logger(LOG, "deleteContainerInstance")
-                .serviceDetails("ContainerInstance", "DeleteContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "DeleteContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/DeleteContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteContainerInstanceRequest::builder)
                 .basePath("/20210415")
@@ -221,7 +230,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetContainerResponse::builder)
                 .logger(LOG, "getContainer")
-                .serviceDetails("ContainerInstance", "GetContainer", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "GetContainer",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/GetContainer")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetContainerRequest::builder)
                 .basePath("/20210415")
@@ -247,7 +259,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetContainerInstanceResponse::builder)
                 .logger(LOG, "getContainerInstance")
-                .serviceDetails("ContainerInstance", "GetContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "GetContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/GetContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetContainerInstanceRequest::builder)
                 .basePath("/20210415")
@@ -272,7 +287,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("ContainerInstance", "GetWorkRequest", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210415")
@@ -298,7 +316,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListContainerInstanceShapesResponse::builder)
                 .logger(LOG, "listContainerInstanceShapes")
-                .serviceDetails("ContainerInstance", "ListContainerInstanceShapes", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ListContainerInstanceShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceShapeCollection/ListContainerInstanceShapes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListContainerInstanceShapesRequest::builder)
                 .basePath("/20210415")
@@ -329,7 +350,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListContainerInstancesResponse::builder)
                 .logger(LOG, "listContainerInstances")
-                .serviceDetails("ContainerInstance", "ListContainerInstances", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ListContainerInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceCollection/ListContainerInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListContainerInstancesRequest::builder)
                 .basePath("/20210415")
@@ -361,7 +385,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListContainersResponse::builder)
                 .logger(LOG, "listContainers")
-                .serviceDetails("ContainerInstance", "ListContainers", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ListContainers",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerCollection/ListContainers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListContainersRequest::builder)
                 .basePath("/20210415")
@@ -396,7 +423,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("ContainerInstance", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestErrorCollection/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210415")
@@ -425,7 +455,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("ContainerInstance", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestLogEntryCollection/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210415")
@@ -453,7 +486,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("ContainerInstance", "ListWorkRequests", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestSummaryCollection/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210415")
@@ -484,7 +520,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, RestartContainerInstanceResponse::builder)
                 .logger(LOG, "restartContainerInstance")
-                .serviceDetails("ContainerInstance", "RestartContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "RestartContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/RestartContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestartContainerInstanceRequest::builder)
                 .basePath("/20210415")
@@ -511,7 +550,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, RetrieveLogsResponse::builder)
                 .logger(LOG, "retrieveLogs")
-                .serviceDetails("ContainerInstance", "RetrieveLogs", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "RetrieveLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/RetrieveLogs")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RetrieveLogsRequest::builder)
                 .basePath("/20210415")
@@ -537,7 +579,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, StartContainerInstanceResponse::builder)
                 .logger(LOG, "startContainerInstance")
-                .serviceDetails("ContainerInstance", "StartContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "StartContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StartContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartContainerInstanceRequest::builder)
                 .basePath("/20210415")
@@ -566,7 +611,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, StopContainerInstanceResponse::builder)
                 .logger(LOG, "stopContainerInstance")
-                .serviceDetails("ContainerInstance", "StopContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "StopContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StopContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopContainerInstanceRequest::builder)
                 .basePath("/20210415")
@@ -595,7 +643,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, UpdateContainerResponse::builder)
                 .logger(LOG, "updateContainer")
-                .serviceDetails("ContainerInstance", "UpdateContainer", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "UpdateContainer",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/UpdateContainer")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateContainerRequest::builder)
                 .basePath("/20210415")
@@ -625,7 +676,10 @@ public class ContainerInstanceClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, UpdateContainerInstanceResponse::builder)
                 .logger(LOG, "updateContainerInstance")
-                .serviceDetails("ContainerInstance", "UpdateContainerInstance", "")
+                .serviceDetails(
+                        "ContainerInstance",
+                        "UpdateContainerInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/UpdateContainerInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateContainerInstanceRequest::builder)
                 .basePath("/20210415")

@@ -22,10 +22,12 @@ package com.oracle.bmc.fusionapps.model;
 public final class CreateRefreshActivityDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sourceFusionEnvironmentId"})
-    public CreateRefreshActivityDetails(String sourceFusionEnvironmentId) {
+    @java.beans.ConstructorProperties({"sourceFusionEnvironmentId", "timeScheduledStart"})
+    public CreateRefreshActivityDetails(
+            String sourceFusionEnvironmentId, java.util.Date timeScheduledStart) {
         super();
         this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
+        this.timeScheduledStart = timeScheduledStart;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -49,13 +51,33 @@ public final class CreateRefreshActivityDetails
             this.__explicitlySet__.add("sourceFusionEnvironmentId");
             return this;
         }
+        /**
+         * Current time the refresh activity is scheduled to start. An RFC3339 formatted datetime
+         * string.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledStart")
+        private java.util.Date timeScheduledStart;
+
+        /**
+         * Current time the refresh activity is scheduled to start. An RFC3339 formatted datetime
+         * string.
+         *
+         * @param timeScheduledStart the value to set
+         * @return this builder
+         */
+        public Builder timeScheduledStart(java.util.Date timeScheduledStart) {
+            this.timeScheduledStart = timeScheduledStart;
+            this.__explicitlySet__.add("timeScheduledStart");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateRefreshActivityDetails build() {
             CreateRefreshActivityDetails model =
-                    new CreateRefreshActivityDetails(this.sourceFusionEnvironmentId);
+                    new CreateRefreshActivityDetails(
+                            this.sourceFusionEnvironmentId, this.timeScheduledStart);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -66,6 +88,9 @@ public final class CreateRefreshActivityDetails
         public Builder copy(CreateRefreshActivityDetails model) {
             if (model.wasPropertyExplicitlySet("sourceFusionEnvironmentId")) {
                 this.sourceFusionEnvironmentId(model.getSourceFusionEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledStart")) {
+                this.timeScheduledStart(model.getTimeScheduledStart());
             }
             return this;
         }
@@ -97,6 +122,23 @@ public final class CreateRefreshActivityDetails
         return sourceFusionEnvironmentId;
     }
 
+    /**
+     * Current time the refresh activity is scheduled to start. An RFC3339 formatted datetime
+     * string.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledStart")
+    private final java.util.Date timeScheduledStart;
+
+    /**
+     * Current time the refresh activity is scheduled to start. An RFC3339 formatted datetime
+     * string.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeScheduledStart() {
+        return timeScheduledStart;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -114,6 +156,7 @@ public final class CreateRefreshActivityDetails
         sb.append("super=").append(super.toString());
         sb.append("sourceFusionEnvironmentId=")
                 .append(String.valueOf(this.sourceFusionEnvironmentId));
+        sb.append(", timeScheduledStart=").append(String.valueOf(this.timeScheduledStart));
         sb.append(")");
         return sb.toString();
     }
@@ -130,6 +173,7 @@ public final class CreateRefreshActivityDetails
         CreateRefreshActivityDetails other = (CreateRefreshActivityDetails) o;
         return java.util.Objects.equals(
                         this.sourceFusionEnvironmentId, other.sourceFusionEnvironmentId)
+                && java.util.Objects.equals(this.timeScheduledStart, other.timeScheduledStart)
                 && super.equals(other);
     }
 
@@ -142,6 +186,11 @@ public final class CreateRefreshActivityDetails
                         + (this.sourceFusionEnvironmentId == null
                                 ? 43
                                 : this.sourceFusionEnvironmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledStart == null
+                                ? 43
+                                : this.timeScheduledStart.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

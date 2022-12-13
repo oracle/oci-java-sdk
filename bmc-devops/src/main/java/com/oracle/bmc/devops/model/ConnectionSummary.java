@@ -52,6 +52,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         "projectId",
         "timeCreated",
         "timeUpdated",
+        "lifecycleDetails",
         "lifecycleState",
         "freeformTags",
         "definedTags",
@@ -65,6 +66,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
             String projectId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String lifecycleDetails,
             Connection.LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -77,6 +79,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         this.projectId = projectId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -186,6 +189,23 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         return timeUpdated;
     }
 
+    /**
+     * A detailed message describing the current state. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A detailed message describing the current state. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /** The current state of the connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Connection.LifecycleState lifecycleState;
@@ -280,6 +300,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -305,6 +326,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -325,6 +347,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

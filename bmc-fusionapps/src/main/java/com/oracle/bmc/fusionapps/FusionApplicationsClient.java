@@ -155,6 +155,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeFusionEnvironmentCompartmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -194,6 +195,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeFusionEnvironmentFamilyCompartmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -228,6 +230,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateDataMaskingActivityResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDataMaskingActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,6 +260,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateFusionEnvironmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateFusionEnvironmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -292,6 +296,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateFusionEnvironmentAdminUserResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -322,6 +327,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateFusionEnvironmentFamilyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -356,6 +362,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         CreateRefreshActivityResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRefreshActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -385,6 +392,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         DeleteFusionEnvironmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFusionEnvironmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -419,6 +427,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteFusionEnvironmentAdminUserResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -450,6 +459,41 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteFusionEnvironmentFamilyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteRefreshActivityResponse deleteRefreshActivity(
+            DeleteRefreshActivityRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getRefreshActivityId(), "refreshActivityId must not be blank");
+
+        return clientCall(request, DeleteRefreshActivityResponse::builder)
+                .logger(LOG, "deleteRefreshActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteRefreshActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/RefreshActivity/DeleteRefreshActivity")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRefreshActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("refreshActivities")
+                .appendPathParam(request.getRefreshActivityId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRefreshActivityResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRefreshActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -484,6 +528,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetDataMaskingActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDataMaskingActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -512,6 +557,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetFusionEnvironmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFusionEnvironmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -543,6 +589,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "etag", GetFusionEnvironmentFamilyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFusionEnvironmentFamilyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -578,6 +625,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetFusionEnvironmentFamilyLimitsAndUsageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -613,6 +661,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetFusionEnvironmentFamilySubscriptionDetailResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -642,6 +691,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         GetFusionEnvironmentStatusResponse.Builder::fusionEnvironmentStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFusionEnvironmentStatusResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -674,6 +724,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetRefreshActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetRefreshActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -707,6 +758,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetScheduledActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetScheduledActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -740,6 +792,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", GetServiceAttachmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetServiceAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -768,6 +821,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -798,6 +852,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListAdminUsersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAdminUsersResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -834,6 +889,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListDataMaskingActivitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataMaskingActivitiesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -872,6 +928,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         ListFusionEnvironmentFamiliesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFusionEnvironmentFamiliesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -908,6 +965,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListFusionEnvironmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFusionEnvironmentsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -951,6 +1009,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListRefreshActivitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRefreshActivitiesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -995,6 +1054,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListScheduledActivitiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListScheduledActivitiesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1033,6 +1093,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListServiceAttachmentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListServiceAttachmentsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1070,6 +1131,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         ListTimeAvailableForRefreshesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTimeAvailableForRefreshesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1104,6 +1166,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1137,6 +1200,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1170,6 +1234,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1211,6 +1276,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ResetFusionEnvironmentPasswordResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1244,6 +1310,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         UpdateFusionEnvironmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFusionEnvironmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1279,6 +1346,46 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateFusionEnvironmentFamilyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateRefreshActivityResponse updateRefreshActivity(
+            UpdateRefreshActivityRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(request.getRefreshActivityId(), "refreshActivityId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRefreshActivityDetails(),
+                "updateRefreshActivityDetails is required");
+
+        return clientCall(request, UpdateRefreshActivityResponse::builder)
+                .logger(LOG, "updateRefreshActivity")
+                .serviceDetails(
+                        "FusionApplications",
+                        "UpdateRefreshActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/UpdateRefreshActivityDetails/UpdateRefreshActivity")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRefreshActivityRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("refreshActivities")
+                .appendPathParam(request.getRefreshActivityId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.RefreshActivity.class,
+                        UpdateRefreshActivityResponse.Builder::refreshActivity)
+                .handleResponseHeaderString("etag", UpdateRefreshActivityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRefreshActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

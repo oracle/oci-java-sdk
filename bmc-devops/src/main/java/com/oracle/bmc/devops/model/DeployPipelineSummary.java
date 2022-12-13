@@ -30,6 +30,7 @@ public final class DeployPipelineSummary
         "compartmentId",
         "timeCreated",
         "timeUpdated",
+        "lifecycleDetails",
         "lifecycleState",
         "deployPipelineParameters",
         "freeformTags",
@@ -44,6 +45,7 @@ public final class DeployPipelineSummary
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String lifecycleDetails,
             DeployPipeline.LifecycleState lifecycleState,
             DeployPipelineParameterCollection deployPipelineParameters,
             java.util.Map<String, String> freeformTags,
@@ -57,6 +59,7 @@ public final class DeployPipelineSummary
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.deployPipelineParameters = deployPipelineParameters;
         this.freeformTags = freeformTags;
@@ -183,6 +186,25 @@ public final class DeployPipelineSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /**
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
         /** The current state of the deployment pipeline. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DeployPipeline.LifecycleState lifecycleState;
@@ -288,6 +310,7 @@ public final class DeployPipelineSummary
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.lifecycleDetails,
                             this.lifecycleState,
                             this.deployPipelineParameters,
                             this.freeformTags,
@@ -321,6 +344,9 @@ public final class DeployPipelineSummary
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -453,6 +479,23 @@ public final class DeployPipelineSummary
         return timeUpdated;
     }
 
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /** The current state of the deployment pipeline. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DeployPipeline.LifecycleState lifecycleState;
@@ -554,6 +597,7 @@ public final class DeployPipelineSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", deployPipelineParameters=")
                 .append(String.valueOf(this.deployPipelineParameters));
@@ -581,6 +625,7 @@ public final class DeployPipelineSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
                         this.deployPipelineParameters, other.deployPipelineParameters)
@@ -603,6 +648,9 @@ public final class DeployPipelineSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

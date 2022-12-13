@@ -537,6 +537,9 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam(
+                        "isMaintenanceWindowActive", request.getIsMaintenanceWindowActive())
+                .appendQueryParam("isMaintenanceWindowSet", request.getIsMaintenanceWindowSet())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")

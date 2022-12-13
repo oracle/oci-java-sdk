@@ -14,7 +14,7 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateVirtualServiceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -34,7 +34,7 @@ public final class UpdateVirtualServiceDetails
             String description,
             DefaultVirtualServiceRoutingPolicy defaultRoutingPolicy,
             java.util.List<String> hosts,
-            CreateMutualTransportLayerSecurityDetails mtls,
+            VirtualServiceMutualTransportLayerSecurityDetails mtls,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -106,9 +106,9 @@ public final class UpdateVirtualServiceDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("mtls")
-        private CreateMutualTransportLayerSecurityDetails mtls;
+        private VirtualServiceMutualTransportLayerSecurityDetails mtls;
 
-        public Builder mtls(CreateMutualTransportLayerSecurityDetails mtls) {
+        public Builder mtls(VirtualServiceMutualTransportLayerSecurityDetails mtls) {
             this.mtls = mtls;
             this.__explicitlySet__.add("mtls");
             return this;
@@ -254,9 +254,9 @@ public final class UpdateVirtualServiceDetails
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("mtls")
-    private final CreateMutualTransportLayerSecurityDetails mtls;
+    private final VirtualServiceMutualTransportLayerSecurityDetails mtls;
 
-    public CreateMutualTransportLayerSecurityDetails getMtls() {
+    public VirtualServiceMutualTransportLayerSecurityDetails getMtls() {
         return mtls;
     }
 

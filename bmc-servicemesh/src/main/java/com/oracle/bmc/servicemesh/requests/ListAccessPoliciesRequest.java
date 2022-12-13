@@ -10,7 +10,7 @@ import com.oracle.bmc.servicemesh.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListAccessPoliciesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAccessPoliciesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListAccessPoliciesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */
@@ -127,10 +127,10 @@ public class ListAccessPoliciesRequest extends com.oracle.bmc.requests.BmcReques
         return id;
     }
     /** A filter to return only resources that match the life cycle state given. */
-    private String lifecycleState;
+    private com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState lifecycleState;
 
     /** A filter to return only resources that match the life cycle state given. */
-    public String getLifecycleState() {
+    public com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
@@ -275,7 +275,7 @@ public class ListAccessPoliciesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /** A filter to return only resources that match the life cycle state given. */
-        private String lifecycleState = null;
+        private com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the life cycle state given.
@@ -283,7 +283,8 @@ public class ListAccessPoliciesRequest extends com.oracle.bmc.requests.BmcReques
          * @param lifecycleState the value to set
          * @return this builder instance
          */
-        public Builder lifecycleState(String lifecycleState) {
+        public Builder lifecycleState(
+                com.oracle.bmc.servicemesh.model.AccessPolicy.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

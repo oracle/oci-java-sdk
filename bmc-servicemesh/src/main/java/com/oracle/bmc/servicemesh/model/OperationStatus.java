@@ -5,13 +5,14 @@
 package com.oracle.bmc.servicemesh.model;
 
 /** Possible operation status. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
     Waiting("WAITING"),
+    NeedsAttention("NEEDS_ATTENTION"),
     Canceling("CANCELING"),
     Canceled("CANCELED"),
 

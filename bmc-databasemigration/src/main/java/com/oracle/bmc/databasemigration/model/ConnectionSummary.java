@@ -36,7 +36,8 @@ public final class ConnectionSummary
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "nsgIds"
     })
     public ConnectionSummary(
             String id,
@@ -52,7 +53,8 @@ public final class ConnectionSummary
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<String> nsgIds) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -68,6 +70,7 @@ public final class ConnectionSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.nsgIds = nsgIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -312,6 +315,23 @@ public final class ConnectionSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * An array of Network Security Group OCIDs used to define network access for Connections.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * An array of Network Security Group OCIDs used to define network access for Connections.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -332,7 +352,8 @@ public final class ConnectionSummary
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.nsgIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -382,6 +403,9 @@ public final class ConnectionSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             return this;
         }
@@ -602,6 +626,19 @@ public final class ConnectionSummary
         return systemTags;
     }
 
+    /** An array of Network Security Group OCIDs used to define network access for Connections. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * An array of Network Security Group OCIDs used to define network access for Connections.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -631,6 +668,7 @@ public final class ConnectionSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(")");
         return sb.toString();
     }
@@ -659,6 +697,7 @@ public final class ConnectionSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && super.equals(other);
     }
 
@@ -690,6 +729,7 @@ public final class ConnectionSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

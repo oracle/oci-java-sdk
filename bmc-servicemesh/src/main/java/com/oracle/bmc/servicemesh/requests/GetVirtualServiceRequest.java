@@ -10,7 +10,7 @@ import com.oracle.bmc.servicemesh.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVirtualServiceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class GetVirtualServiceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique VirtualService identifier. */

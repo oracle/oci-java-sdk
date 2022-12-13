@@ -128,6 +128,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.osubusage.SdkClientsMetadata",
     "com.oracle.bmc.productcatalog.SdkClientsMetadata",
     "com.oracle.bmc.queue.SdkClientsMetadata",
+    "com.oracle.bmc.queue.SdkClientsMetadata",
     "com.oracle.bmc.resourcemanager.SdkClientsMetadata",
     "com.oracle.bmc.resourcesearch.SdkClientsMetadata",
     "com.oracle.bmc.rover.SdkClientsMetadata",

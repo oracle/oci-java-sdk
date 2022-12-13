@@ -53,6 +53,7 @@ import java.util.stream.Collectors;
 
 final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(Jersey3HttpClientBuilder.class);
+    private static final int DEFAULT_MAX_ASYNC_THREADS = 50;
 
     public static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY =
             new NoConnectionReuseStrategy();
@@ -224,6 +225,19 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
         }
         clientBuilder.withConfig(clientConfig);
         clientBuilder.register(JACKSON_JSON_PROVIDER);
+
+        if (executorServiceProvider == null && !useJerseyDefaultExecutorServiceProvider) {
+            // not told to use Jersey's default
+            if (!properties.containsKey(ClientProperties.ASYNC_THREADPOOL_SIZE)) {
+                // register default async thread pool size
+                LOG.info(
+                        "Using {} with default async thread pool size {}, since no other executorServiceProvider was given and the async thread pool size had not been set specifically",
+                        DaemonClientAsyncExecutorProvider.class.getName(),
+                        DEFAULT_MAX_ASYNC_THREADS);
+                properties.put(ClientProperties.ASYNC_THREADPOOL_SIZE, DEFAULT_MAX_ASYNC_THREADS);
+            }
+        }
+
         for (Map.Entry<String, Object> prop : properties.entrySet()) {
             clientBuilder.property(prop.getKey(), prop.getValue());
         }

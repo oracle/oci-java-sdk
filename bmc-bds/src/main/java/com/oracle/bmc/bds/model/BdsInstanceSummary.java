@@ -32,6 +32,7 @@ public final class BdsInstanceSummary
         "isHighAvailability",
         "isSecure",
         "isCloudSqlConfigured",
+        "clusterProfile",
         "timeCreated",
         "freeformTags",
         "definedTags"
@@ -46,6 +47,7 @@ public final class BdsInstanceSummary
             Boolean isHighAvailability,
             Boolean isSecure,
             Boolean isCloudSqlConfigured,
+            BdsInstance.ClusterProfile clusterProfile,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -59,6 +61,7 @@ public final class BdsInstanceSummary
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
         this.isCloudSqlConfigured = isCloudSqlConfigured;
+        this.clusterProfile = clusterProfile;
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -201,6 +204,21 @@ public final class BdsInstanceSummary
             this.__explicitlySet__.add("isCloudSqlConfigured");
             return this;
         }
+        /** Profile of the Big Data Service cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
+        private BdsInstance.ClusterProfile clusterProfile;
+
+        /**
+         * Profile of the Big Data Service cluster.
+         *
+         * @param clusterProfile the value to set
+         * @return this builder
+         */
+        public Builder clusterProfile(BdsInstance.ClusterProfile clusterProfile) {
+            this.clusterProfile = clusterProfile;
+            this.__explicitlySet__.add("clusterProfile");
+            return this;
+        }
         /** The time the cluster was created, shown as an RFC 3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -271,6 +289,7 @@ public final class BdsInstanceSummary
                             this.isHighAvailability,
                             this.isSecure,
                             this.isCloudSqlConfigured,
+                            this.clusterProfile,
                             this.timeCreated,
                             this.freeformTags,
                             this.definedTags);
@@ -308,6 +327,9 @@ public final class BdsInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("isCloudSqlConfigured")) {
                 this.isCloudSqlConfigured(model.getIsCloudSqlConfigured());
+            }
+            if (model.wasPropertyExplicitlySet("clusterProfile")) {
+                this.clusterProfile(model.getClusterProfile());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -448,6 +470,19 @@ public final class BdsInstanceSummary
         return isCloudSqlConfigured;
     }
 
+    /** Profile of the Big Data Service cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
+    private final BdsInstance.ClusterProfile clusterProfile;
+
+    /**
+     * Profile of the Big Data Service cluster.
+     *
+     * @return the value
+     */
+    public BdsInstance.ClusterProfile getClusterProfile() {
+        return clusterProfile;
+    }
+
     /** The time the cluster was created, shown as an RFC 3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -519,6 +554,7 @@ public final class BdsInstanceSummary
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", isCloudSqlConfigured=").append(String.valueOf(this.isCloudSqlConfigured));
+        sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -545,6 +581,7 @@ public final class BdsInstanceSummary
                 && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
                 && java.util.Objects.equals(this.isCloudSqlConfigured, other.isCloudSqlConfigured)
+                && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -580,6 +617,9 @@ public final class BdsInstanceSummary
                         + (this.isCloudSqlConfigured == null
                                 ? 43
                                 : this.isCloudSqlConfigured.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterProfile == null ? 43 : this.clusterProfile.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

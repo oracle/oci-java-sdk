@@ -2,10 +2,10 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.databasemigration.model;
+package com.oracle.bmc.queue.model;
 
 /**
- * Pre-Authenticated Request Link for ODMS Agent log use. <br>
+ * A list of messages from a queue. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -14,41 +14,41 @@ package com.oracle.bmc.databasemigration.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParLink.Builder.class)
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GetMessages.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
-public final class ParLink extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+public final class GetMessages extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"parLink"})
-    public ParLink(String parLink) {
+    @java.beans.ConstructorProperties({"messages"})
+    public GetMessages(java.util.List<GetMessage> messages) {
         super();
-        this.parLink = parLink;
+        this.messages = messages;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Pre-Authenticated Request URI. */
-        @com.fasterxml.jackson.annotation.JsonProperty("parLink")
-        private String parLink;
+        /** List of messages from a queue. */
+        @com.fasterxml.jackson.annotation.JsonProperty("messages")
+        private java.util.List<GetMessage> messages;
 
         /**
-         * Pre-Authenticated Request URI.
+         * List of messages from a queue.
          *
-         * @param parLink the value to set
+         * @param messages the value to set
          * @return this builder
          */
-        public Builder parLink(String parLink) {
-            this.parLink = parLink;
-            this.__explicitlySet__.add("parLink");
+        public Builder messages(java.util.List<GetMessage> messages) {
+            this.messages = messages;
+            this.__explicitlySet__.add("messages");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public ParLink build() {
-            ParLink model = new ParLink(this.parLink);
+        public GetMessages build() {
+            GetMessages model = new GetMessages(this.messages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -56,9 +56,9 @@ public final class ParLink extends com.oracle.bmc.http.client.internal.Explicitl
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ParLink model) {
-            if (model.wasPropertyExplicitlySet("parLink")) {
-                this.parLink(model.getParLink());
+        public Builder copy(GetMessages model) {
+            if (model.wasPropertyExplicitlySet("messages")) {
+                this.messages(model.getMessages());
             }
             return this;
         }
@@ -73,17 +73,17 @@ public final class ParLink extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** Pre-Authenticated Request URI. */
-    @com.fasterxml.jackson.annotation.JsonProperty("parLink")
-    private final String parLink;
+    /** List of messages from a queue. */
+    @com.fasterxml.jackson.annotation.JsonProperty("messages")
+    private final java.util.List<GetMessage> messages;
 
     /**
-     * Pre-Authenticated Request URI.
+     * List of messages from a queue.
      *
      * @return the value
      */
-    public String getParLink() {
-        return parLink;
+    public java.util.List<GetMessage> getMessages() {
+        return messages;
     }
 
     @Override
@@ -99,9 +99,9 @@ public final class ParLink extends com.oracle.bmc.http.client.internal.Explicitl
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("ParLink(");
+        sb.append("GetMessages(");
         sb.append("super=").append(super.toString());
-        sb.append("parLink=").append(String.valueOf(this.parLink));
+        sb.append("messages=").append(String.valueOf(this.messages));
         sb.append(")");
         return sb.toString();
     }
@@ -111,19 +111,19 @@ public final class ParLink extends com.oracle.bmc.http.client.internal.Explicitl
         if (this == o) {
             return true;
         }
-        if (!(o instanceof ParLink)) {
+        if (!(o instanceof GetMessages)) {
             return false;
         }
 
-        ParLink other = (ParLink) o;
-        return java.util.Objects.equals(this.parLink, other.parLink) && super.equals(other);
+        GetMessages other = (GetMessages) o;
+        return java.util.Objects.equals(this.messages, other.messages) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.parLink == null ? 43 : this.parLink.hashCode());
+        result = (result * PRIME) + (this.messages == null ? 43 : this.messages.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

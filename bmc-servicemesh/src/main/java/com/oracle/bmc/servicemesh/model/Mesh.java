@@ -16,7 +16,7 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Mesh.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
@@ -133,7 +133,7 @@ public final class Mesh extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * A list of certificate authority resources to use for creating leaf certificates for mTLS
          * authentication. Currently we only support one certificate authority, but this may expand
-         * in future releases.
+         * in future releases. Request with more than one certificate authority will be rejected.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorities")
         private java.util.List<CertificateAuthority> certificateAuthorities;
@@ -141,7 +141,7 @@ public final class Mesh extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * A list of certificate authority resources to use for creating leaf certificates for mTLS
          * authentication. Currently we only support one certificate authority, but this may expand
-         * in future releases.
+         * in future releases. Request with more than one certificate authority will be rejected.
          *
          * @param certificateAuthorities the value to set
          * @return this builder
@@ -440,7 +440,7 @@ public final class Mesh extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * A list of certificate authority resources to use for creating leaf certificates for mTLS
      * authentication. Currently we only support one certificate authority, but this may expand in
-     * future releases.
+     * future releases. Request with more than one certificate authority will be rejected.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorities")
     private final java.util.List<CertificateAuthority> certificateAuthorities;
@@ -448,7 +448,7 @@ public final class Mesh extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * A list of certificate authority resources to use for creating leaf certificates for mTLS
      * authentication. Currently we only support one certificate authority, but this may expand in
-     * future releases.
+     * future releases. Request with more than one certificate authority will be rejected.
      *
      * @return the value
      */

@@ -11,7 +11,7 @@ import com.oracle.bmc.fusionapps.responses.*;
  * Use the Fusion Applications Environment Management API to manage the environments where your
  * Fusion Applications run. For more information, see the [Fusion Applications Environment
  * Management
- * documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/fusion-applications/home.htm).
+ * documentation](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public interface FusionApplicationsAsync extends AutoCloseable {
@@ -227,6 +227,22 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                                     DeleteFusionEnvironmentFamilyRequest,
                                     DeleteFusionEnvironmentFamilyResponse>
                             handler);
+
+    /**
+     * Deletes a scheduled RefreshActivity resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRefreshActivityResponse> deleteRefreshActivity(
+            DeleteRefreshActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>
+                    handler);
 
     /**
      * Gets a DataMaskingActivity by identifier
@@ -621,4 +637,20 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                                     UpdateFusionEnvironmentFamilyRequest,
                                     UpdateFusionEnvironmentFamilyResponse>
                             handler);
+
+    /**
+     * Updates a scheduled RefreshActivity.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRefreshActivityResponse> updateRefreshActivity(
+            UpdateRefreshActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>
+                    handler);
 }

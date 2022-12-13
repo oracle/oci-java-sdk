@@ -149,6 +149,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", AbortJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", AbortJobResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -178,6 +179,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", AddMigrationObjectsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,6 +212,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeAgentCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -242,6 +245,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeConnectionCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -274,6 +278,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeMigrationCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -310,6 +315,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", CloneMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CloneMigrationResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -337,6 +343,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", CreateConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateConnectionResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -364,6 +371,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", CreateMigrationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateMigrationResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -390,6 +398,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", DeleteAgentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteAgentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -416,6 +425,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", DeleteConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteConnectionResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -440,6 +450,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -466,6 +477,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", DeleteMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteMigrationResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -499,6 +511,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", EvaluateMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", EvaluateMigrationResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -527,6 +540,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", GetAdvisorReportResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetAdvisorReportResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -554,6 +568,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", GetAgentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetAgentResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -581,6 +596,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetConnectionResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -607,6 +623,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         GetJobResponse.Builder::job)
                 .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -634,6 +651,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         java.io.InputStream.class, GetJobOutputContentResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", GetJobOutputContentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -662,6 +680,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", GetMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetMigrationResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -688,6 +707,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         GetWorkRequestResponse.Builder::workRequest)
                 .handleResponseHeaderString(
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -716,6 +736,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListAgentImagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAgentImagesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -749,6 +770,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListAgentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAgentsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -782,6 +804,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -823,6 +846,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListExcludedObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListExcludedObjectsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -854,6 +878,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListJobOutputsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListJobOutputsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -886,6 +911,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", ListJobsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -918,6 +944,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMigrationObjectTypesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationObjectTypesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -950,6 +977,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMigrationObjectsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationObjectsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -984,6 +1012,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMigrationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMigrationsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1018,6 +1047,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1051,6 +1081,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1084,6 +1115,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1115,6 +1147,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", RemoveMigrationObjectsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1147,6 +1180,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ResumeJobResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1176,6 +1210,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         RetrieveSupportedPhasesResponse.Builder::migrationPhaseCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveSupportedPhasesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1210,6 +1245,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", StartMigrationResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1241,6 +1277,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAgentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateAgentResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1270,6 +1307,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateConnectionResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1300,6 +1338,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1329,6 +1368,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", UpdateMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateMigrationResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

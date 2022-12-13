@@ -40,6 +40,8 @@ public final class FusionEnvironment
         "publicUrl",
         "dnsPrefix",
         "additionalLanguagePacks",
+        "lockboxId",
+        "isBreakGlassEnabled",
         "refresh",
         "rules",
         "timeCreated",
@@ -68,6 +70,8 @@ public final class FusionEnvironment
             String publicUrl,
             String dnsPrefix,
             java.util.List<String> additionalLanguagePacks,
+            String lockboxId,
+            Boolean isBreakGlassEnabled,
             RefreshDetails refresh,
             java.util.List<Rule> rules,
             java.util.Date timeCreated,
@@ -95,6 +99,8 @@ public final class FusionEnvironment
         this.publicUrl = publicUrl;
         this.dnsPrefix = dnsPrefix;
         this.additionalLanguagePacks = additionalLanguagePacks;
+        this.lockboxId = lockboxId;
+        this.isBreakGlassEnabled = isBreakGlassEnabled;
         this.refresh = refresh;
         this.rules = rules;
         this.timeCreated = timeCreated;
@@ -357,6 +363,40 @@ public final class FusionEnvironment
             this.__explicitlySet__.add("additionalLanguagePacks");
             return this;
         }
+        /**
+         * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be
+         * null
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
+        private String lockboxId;
+
+        /**
+         * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be
+         * null
+         *
+         * @param lockboxId the value to set
+         * @return this builder
+         */
+        public Builder lockboxId(String lockboxId) {
+            this.lockboxId = lockboxId;
+            this.__explicitlySet__.add("lockboxId");
+            return this;
+        }
+        /** If it's true, then the Break Glass feature is enabled */
+        @com.fasterxml.jackson.annotation.JsonProperty("isBreakGlassEnabled")
+        private Boolean isBreakGlassEnabled;
+
+        /**
+         * If it's true, then the Break Glass feature is enabled
+         *
+         * @param isBreakGlassEnabled the value to set
+         * @return this builder
+         */
+        public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
+            this.isBreakGlassEnabled = isBreakGlassEnabled;
+            this.__explicitlySet__.add("isBreakGlassEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("refresh")
         private RefreshDetails refresh;
@@ -523,6 +563,8 @@ public final class FusionEnvironment
                             this.publicUrl,
                             this.dnsPrefix,
                             this.additionalLanguagePacks,
+                            this.lockboxId,
+                            this.isBreakGlassEnabled,
                             this.refresh,
                             this.rules,
                             this.timeCreated,
@@ -590,6 +632,12 @@ public final class FusionEnvironment
             }
             if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
                 this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("lockboxId")) {
+                this.lockboxId(model.getLockboxId());
+            }
+            if (model.wasPropertyExplicitlySet("isBreakGlassEnabled")) {
+                this.isBreakGlassEnabled(model.getIsBreakGlassEnabled());
             }
             if (model.wasPropertyExplicitlySet("refresh")) {
                 this.refresh(model.getRefresh());
@@ -893,6 +941,34 @@ public final class FusionEnvironment
         return additionalLanguagePacks;
     }
 
+    /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
+    private final String lockboxId;
+
+    /**
+     * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+     *
+     * @return the value
+     */
+    public String getLockboxId() {
+        return lockboxId;
+    }
+
+    /** If it's true, then the Break Glass feature is enabled */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBreakGlassEnabled")
+    private final Boolean isBreakGlassEnabled;
+
+    /**
+     * If it's true, then the Break Glass feature is enabled
+     *
+     * @return the value
+     */
+    public Boolean getIsBreakGlassEnabled() {
+        return isBreakGlassEnabled;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("refresh")
     private final RefreshDetails refresh;
 
@@ -1102,6 +1178,8 @@ public final class FusionEnvironment
         sb.append(", dnsPrefix=").append(String.valueOf(this.dnsPrefix));
         sb.append(", additionalLanguagePacks=")
                 .append(String.valueOf(this.additionalLanguagePacks));
+        sb.append(", lockboxId=").append(String.valueOf(this.lockboxId));
+        sb.append(", isBreakGlassEnabled=").append(String.valueOf(this.isBreakGlassEnabled));
         sb.append(", refresh=").append(String.valueOf(this.refresh));
         sb.append(", rules=").append(String.valueOf(this.rules));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1145,6 +1223,8 @@ public final class FusionEnvironment
                 && java.util.Objects.equals(this.dnsPrefix, other.dnsPrefix)
                 && java.util.Objects.equals(
                         this.additionalLanguagePacks, other.additionalLanguagePacks)
+                && java.util.Objects.equals(this.lockboxId, other.lockboxId)
+                && java.util.Objects.equals(this.isBreakGlassEnabled, other.isBreakGlassEnabled)
                 && java.util.Objects.equals(this.refresh, other.refresh)
                 && java.util.Objects.equals(this.rules, other.rules)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1206,6 +1286,12 @@ public final class FusionEnvironment
                         + (this.additionalLanguagePacks == null
                                 ? 43
                                 : this.additionalLanguagePacks.hashCode());
+        result = (result * PRIME) + (this.lockboxId == null ? 43 : this.lockboxId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBreakGlassEnabled == null
+                                ? 43
+                                : this.isBreakGlassEnabled.hashCode());
         result = (result * PRIME) + (this.refresh == null ? 43 : this.refresh.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

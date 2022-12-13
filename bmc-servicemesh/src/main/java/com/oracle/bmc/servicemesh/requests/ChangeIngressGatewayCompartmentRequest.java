@@ -11,7 +11,7 @@ import com.oracle.bmc.servicemesh.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeIngressGatewayCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ChangeIngressGatewayCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.servicemesh.model.ChangeIngressGatewayCompartmentDetails> {

@@ -25,6 +25,12 @@ package com.oracle.bmc.goldengate.model;
             value = GoldenGateConnectionSummary.class,
             name = "GOLDENGATE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = KafkaSchemaRegistryConnectionSummary.class,
+            name = "KAFKA_SCHEMA_REGISTRY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PostgresqlConnectionSummary.class,
+            name = "POSTGRESQL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OracleConnectionSummary.class,
             name = "ORACLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -35,7 +41,13 @@ package com.oracle.bmc.goldengate.model;
             name = "KAFKA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OciObjectStorageConnectionSummary.class,
-            name = "OCI_OBJECT_STORAGE")
+            name = "OCI_OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AzureDataLakeStorageConnectionSummary.class,
+            name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AzureSynapseConnectionSummary.class,
+            name = "AZURE_SYNAPSE_ANALYTICS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)

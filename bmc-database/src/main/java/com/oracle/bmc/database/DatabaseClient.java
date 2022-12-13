@@ -2991,6 +2991,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DisablePluggableDatabaseManagementResponse disablePluggableDatabaseManagement(
+            DisablePluggableDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+
+        return clientCall(request, DisablePluggableDatabaseManagementResponse::builder)
+                .logger(LOG, "disablePluggableDatabaseManagement")
+                .serviceDetails(
+                        "Database",
+                        "DisablePluggableDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DisablePluggableDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisablePluggableDatabaseManagementRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disablePluggableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        DisablePluggableDatabaseManagementResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString(
+                        "etag", DisablePluggableDatabaseManagementResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisablePluggableDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisablePluggableDatabaseManagementResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request) {
 
@@ -3567,6 +3605,48 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id",
                         EnableExternalPluggableDatabaseStackMonitoringResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnablePluggableDatabaseManagementResponse enablePluggableDatabaseManagement(
+            EnablePluggableDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnablePluggableDatabaseManagementDetails(),
+                "enablePluggableDatabaseManagementDetails is required");
+
+        return clientCall(request, EnablePluggableDatabaseManagementResponse::builder)
+                .logger(LOG, "enablePluggableDatabaseManagement")
+                .serviceDetails(
+                        "Database",
+                        "EnablePluggableDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/EnablePluggableDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnablePluggableDatabaseManagementRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enablePluggableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        EnablePluggableDatabaseManagementResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString(
+                        "etag", EnablePluggableDatabaseManagementResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnablePluggableDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnablePluggableDatabaseManagementResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7592,6 +7672,48 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         ModifyDatabaseManagementResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ModifyDatabaseManagementResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ModifyPluggableDatabaseManagementResponse modifyPluggableDatabaseManagement(
+            ModifyPluggableDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyPluggableDatabaseManagementDetails(),
+                "modifyPluggableDatabaseManagementDetails is required");
+
+        return clientCall(request, ModifyPluggableDatabaseManagementResponse::builder)
+                .logger(LOG, "modifyPluggableDatabaseManagement")
+                .serviceDetails(
+                        "Database",
+                        "ModifyPluggableDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ModifyPluggableDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyPluggableDatabaseManagementRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyPluggableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        ModifyPluggableDatabaseManagementResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString(
+                        "etag", ModifyPluggableDatabaseManagementResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyPluggableDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyPluggableDatabaseManagementResponse.Builder::opcRequestId)
                 .callSync();
     }
 

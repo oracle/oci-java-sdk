@@ -15,6 +15,7 @@ import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.internal.AuthnClientFilter;
 import com.oracle.bmc.http.internal.CircuitBreakerHelper;
 import com.oracle.bmc.http.internal.ClientCall;
@@ -93,6 +94,7 @@ public abstract class AbstractFederationClient
         HttpClientBuilder rptBuilder =
                 HttpProvider.getDefault()
                         .newBuilder()
+                        .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
                         .baseUri(URI.create(endpoint))
                         .registerRequestInterceptor(
                                 Priorities.AUTHENTICATION,

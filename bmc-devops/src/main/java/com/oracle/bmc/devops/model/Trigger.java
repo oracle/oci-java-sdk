@@ -192,6 +192,7 @@ public class Trigger extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
     /** The current state of the trigger. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
+        Deleting("DELETING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

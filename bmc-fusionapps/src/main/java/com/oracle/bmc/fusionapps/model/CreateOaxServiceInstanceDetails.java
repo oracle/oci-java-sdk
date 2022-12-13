@@ -73,16 +73,10 @@ public final class CreateOaxServiceInstanceDetails extends CreateServiceInstance
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Admin information to provision Analytics Warehouse Servcie */
+
         @com.fasterxml.jackson.annotation.JsonProperty("FawAdminInfo")
         private FawAdminInfoDetails fawAdminInfo;
 
-        /**
-         * Admin information to provision Analytics Warehouse Servcie
-         *
-         * @param fawAdminInfo the value to set
-         * @return this builder
-         */
         public Builder fawAdminInfo(FawAdminInfoDetails fawAdminInfo) {
             this.fawAdminInfo = fawAdminInfo;
             this.__explicitlySet__.add("fawAdminInfo");
@@ -175,15 +169,9 @@ public final class CreateOaxServiceInstanceDetails extends CreateServiceInstance
         return description;
     }
 
-    /** Admin information to provision Analytics Warehouse Servcie */
     @com.fasterxml.jackson.annotation.JsonProperty("FawAdminInfo")
     private final FawAdminInfoDetails fawAdminInfo;
 
-    /**
-     * Admin information to provision Analytics Warehouse Servcie
-     *
-     * @return the value
-     */
     public FawAdminInfoDetails getFawAdminInfo() {
         return fawAdminInfo;
     }

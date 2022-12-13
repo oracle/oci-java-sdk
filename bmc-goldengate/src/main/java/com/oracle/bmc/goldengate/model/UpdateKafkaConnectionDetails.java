@@ -249,14 +249,14 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
-         * The password for the cert inside of of the KeyStore. In case it differs from the KeyStore
+         * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
          * password, it should be provided.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
         private String sslKeyPassword;
 
         /**
-         * The password for the cert inside of of the KeyStore. In case it differs from the KeyStore
+         * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
          * password, it should be provided.
          *
          * @param sslKeyPassword the value to set
@@ -579,14 +579,14 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
-     * The password for the cert inside of of the KeyStore. In case it differs from the KeyStore
+     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
      * password, it should be provided.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
     private final String sslKeyPassword;
 
     /**
-     * The password for the cert inside of of the KeyStore. In case it differs from the KeyStore
+     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
      * password, it should be provided.
      *
      * @return the value
@@ -642,10 +642,10 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", trustStore=").append(String.valueOf(this.trustStore));
-        sb.append(", trustStorePassword=").append(String.valueOf(this.trustStorePassword));
+        sb.append(", trustStorePassword=").append("<redacted>");
         sb.append(", keyStore=").append(String.valueOf(this.keyStore));
-        sb.append(", keyStorePassword=").append(String.valueOf(this.keyStorePassword));
-        sb.append(", sslKeyPassword=").append(String.valueOf(this.sslKeyPassword));
+        sb.append(", keyStorePassword=").append("<redacted>");
+        sb.append(", sslKeyPassword=").append("<redacted>");
         sb.append(", consumerProperties=").append(String.valueOf(this.consumerProperties));
         sb.append(", producerProperties=").append(String.valueOf(this.producerProperties));
         sb.append(")");

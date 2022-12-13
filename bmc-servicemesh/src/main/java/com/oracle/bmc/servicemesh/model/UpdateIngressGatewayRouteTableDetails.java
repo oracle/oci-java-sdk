@@ -14,7 +14,7 @@ package com.oracle.bmc.servicemesh.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateIngressGatewayRouteTableDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -32,7 +32,7 @@ public final class UpdateIngressGatewayRouteTableDetails
     public UpdateIngressGatewayRouteTableDetails(
             String description,
             Integer priority,
-            java.util.List<IngressGatewayTrafficRouteRule> routeRules,
+            java.util.List<IngressGatewayTrafficRouteRuleDetails> routeRules,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -89,7 +89,7 @@ public final class UpdateIngressGatewayRouteTableDetails
         }
         /** The route rules for the ingress gateway. */
         @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
-        private java.util.List<IngressGatewayTrafficRouteRule> routeRules;
+        private java.util.List<IngressGatewayTrafficRouteRuleDetails> routeRules;
 
         /**
          * The route rules for the ingress gateway.
@@ -97,7 +97,8 @@ public final class UpdateIngressGatewayRouteTableDetails
          * @param routeRules the value to set
          * @return this builder
          */
-        public Builder routeRules(java.util.List<IngressGatewayTrafficRouteRule> routeRules) {
+        public Builder routeRules(
+                java.util.List<IngressGatewayTrafficRouteRuleDetails> routeRules) {
             this.routeRules = routeRules;
             this.__explicitlySet__.add("routeRules");
             return this;
@@ -229,14 +230,14 @@ public final class UpdateIngressGatewayRouteTableDetails
 
     /** The route rules for the ingress gateway. */
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
-    private final java.util.List<IngressGatewayTrafficRouteRule> routeRules;
+    private final java.util.List<IngressGatewayTrafficRouteRuleDetails> routeRules;
 
     /**
      * The route rules for the ingress gateway.
      *
      * @return the value
      */
-    public java.util.List<IngressGatewayTrafficRouteRule> getRouteRules() {
+    public java.util.List<IngressGatewayTrafficRouteRuleDetails> getRouteRules() {
         return routeRules;
     }
 
