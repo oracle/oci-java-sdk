@@ -989,6 +989,53 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRefreshActivityResponse> deleteRefreshActivity(
+            DeleteRefreshActivityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>
+                    handler) {
+        LOG.trace("Called async deleteRefreshActivity");
+        final DeleteRefreshActivityRequest interceptedRequest =
+                DeleteRefreshActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRefreshActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteRefreshActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/RefreshActivity/DeleteRefreshActivity");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRefreshActivityResponse>
+                transformer =
+                        DeleteRefreshActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>,
+                        java.util.concurrent.Future<DeleteRefreshActivityResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataMaskingActivityResponse> getDataMaskingActivity(
             GetDataMaskingActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2160,6 +2207,58 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateFusionEnvironmentFamilyRequest, UpdateFusionEnvironmentFamilyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRefreshActivityResponse> updateRefreshActivity(
+            UpdateRefreshActivityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>
+                    handler) {
+        LOG.trace("Called async updateRefreshActivity");
+        final UpdateRefreshActivityRequest interceptedRequest =
+                UpdateRefreshActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRefreshActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "UpdateRefreshActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/UpdateRefreshActivityDetails/UpdateRefreshActivity");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRefreshActivityResponse>
+                transformer =
+                        UpdateRefreshActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>,
+                        java.util.concurrent.Future<UpdateRefreshActivityResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRefreshActivityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

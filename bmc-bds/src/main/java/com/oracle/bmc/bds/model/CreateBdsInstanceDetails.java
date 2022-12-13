@@ -36,7 +36,8 @@ public final class CreateBdsInstanceDetails
         "kerberosRealmName",
         "freeformTags",
         "definedTags",
-        "kmsKeyId"
+        "kmsKeyId",
+        "clusterProfile"
     })
     public CreateBdsInstanceDetails(
             String compartmentId,
@@ -52,7 +53,8 @@ public final class CreateBdsInstanceDetails
             String kerberosRealmName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String kmsKeyId) {
+            String kmsKeyId,
+            BdsInstance.ClusterProfile clusterProfile) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -68,6 +70,7 @@ public final class CreateBdsInstanceDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
+        this.clusterProfile = clusterProfile;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -298,6 +301,22 @@ public final class CreateBdsInstanceDetails
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
+        /**
+         * Profile of the Big Data Service cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
+        private BdsInstance.ClusterProfile clusterProfile;
+
+        /**
+         * Profile of the Big Data Service cluster.
+         * @param clusterProfile the value to set
+         * @return this builder
+         **/
+        public Builder clusterProfile(BdsInstance.ClusterProfile clusterProfile) {
+            this.clusterProfile = clusterProfile;
+            this.__explicitlySet__.add("clusterProfile");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -318,7 +337,8 @@ public final class CreateBdsInstanceDetails
                             this.kerberosRealmName,
                             this.freeformTags,
                             this.definedTags,
-                            this.kmsKeyId);
+                            this.kmsKeyId,
+                            this.clusterProfile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -368,6 +388,9 @@ public final class CreateBdsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterProfile")) {
+                this.clusterProfile(model.getClusterProfile());
             }
             return this;
         }
@@ -581,6 +604,20 @@ public final class CreateBdsInstanceDetails
         return kmsKeyId;
     }
 
+    /**
+     * Profile of the Big Data Service cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
+    private final BdsInstance.ClusterProfile clusterProfile;
+
+    /**
+     * Profile of the Big Data Service cluster.
+     * @return the value
+     **/
+    public BdsInstance.ClusterProfile getClusterProfile() {
+        return clusterProfile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -609,6 +646,7 @@ public final class CreateBdsInstanceDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
         sb.append(")");
         return sb.toString();
     }
@@ -637,6 +675,7 @@ public final class CreateBdsInstanceDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
                 && super.equals(other);
     }
 
@@ -680,6 +719,9 @@ public final class CreateBdsInstanceDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterProfile == null ? 43 : this.clusterProfile.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

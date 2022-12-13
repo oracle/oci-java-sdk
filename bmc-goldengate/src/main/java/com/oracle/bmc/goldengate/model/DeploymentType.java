@@ -14,6 +14,7 @@ public enum DeploymentType {
     DatabaseOracle("DATABASE_ORACLE"),
     Bigdata("BIGDATA"),
     DatabaseMysql("DATABASE_MYSQL"),
+    DatabasePostgresql("DATABASE_POSTGRESQL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

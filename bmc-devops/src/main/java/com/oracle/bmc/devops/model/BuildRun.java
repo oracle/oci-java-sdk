@@ -539,6 +539,7 @@ public final class BuildRun extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Succeeded("SUCCEEDED"),
         Canceling("CANCELING"),
         Canceled("CANCELED"),
+        Deleting("DELETING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

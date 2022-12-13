@@ -118,6 +118,28 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return page;
     }
     /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     */
+    private Boolean isMaintenanceWindowActive;
+
+    /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     */
+    public Boolean getIsMaintenanceWindowActive() {
+        return isMaintenanceWindowActive;
+    }
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     */
+    private Boolean isMaintenanceWindowSet;
+
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     */
+    public Boolean getIsMaintenanceWindowSet() {
+        return isMaintenanceWindowSet;
+    }
+    /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
      *
      */
@@ -152,6 +174,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         TimeUpdated("timeUpdated"),
         Status("status"),
         MonitorType("monitorType"),
+        MaintenanceWindowTimeStarted("maintenanceWindowTimeStarted"),
         ;
 
         private final String value;
@@ -354,6 +377,36 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * A filter to return the monitors whose maintenance window is currently active.
+         */
+        private Boolean isMaintenanceWindowActive = null;
+
+        /**
+         * A filter to return the monitors whose maintenance window is currently active.
+         * @param isMaintenanceWindowActive the value to set
+         * @return this builder instance
+         */
+        public Builder isMaintenanceWindowActive(Boolean isMaintenanceWindowActive) {
+            this.isMaintenanceWindowActive = isMaintenanceWindowActive;
+            return this;
+        }
+
+        /**
+         * A filter to return the monitors whose maintenance window is set.
+         */
+        private Boolean isMaintenanceWindowSet = null;
+
+        /**
+         * A filter to return the monitors whose maintenance window is set.
+         * @param isMaintenanceWindowSet the value to set
+         * @return this builder instance
+         */
+        public Builder isMaintenanceWindowSet(Boolean isMaintenanceWindowSet) {
+            this.isMaintenanceWindowSet = isMaintenanceWindowSet;
+            return this;
+        }
+
+        /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). Default sort order is ascending.
          *
          */
@@ -448,6 +501,8 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             status(o.getStatus());
             limit(o.getLimit());
             page(o.getPage());
+            isMaintenanceWindowActive(o.getIsMaintenanceWindowActive());
+            isMaintenanceWindowSet(o.getIsMaintenanceWindowSet());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
@@ -491,11 +546,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.status = status;
             request.limit = limit;
             request.page = page;
+            request.isMaintenanceWindowActive = isMaintenanceWindowActive;
+            request.isMaintenanceWindowSet = isMaintenanceWindowSet;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMonitorsRequest(apmDomainId, displayName, scriptId, vantagePoint, monitorType, status, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListMonitorsRequest(apmDomainId, displayName, scriptId, vantagePoint, monitorType, status, limit, page, isMaintenanceWindowActive, isMaintenanceWindowSet, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -513,6 +570,8 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .status(status)
                 .limit(limit)
                 .page(page)
+                .isMaintenanceWindowActive(isMaintenanceWindowActive)
+                .isMaintenanceWindowSet(isMaintenanceWindowSet)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId);
@@ -539,6 +598,9 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",isMaintenanceWindowActive=")
+                .append(String.valueOf(this.isMaintenanceWindowActive));
+        sb.append(",isMaintenanceWindowSet=").append(String.valueOf(this.isMaintenanceWindowSet));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -565,6 +627,10 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(
+                        this.isMaintenanceWindowActive, other.isMaintenanceWindowActive)
+                && java.util.Objects.equals(
+                        this.isMaintenanceWindowSet, other.isMaintenanceWindowSet)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -582,6 +648,16 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaintenanceWindowActive == null
+                                ? 43
+                                : this.isMaintenanceWindowActive.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaintenanceWindowSet == null
+                                ? 43
+                                : this.isMaintenanceWindowSet.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

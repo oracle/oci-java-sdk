@@ -10,7 +10,7 @@ import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class UpdateIngressGatewayConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -36,7 +36,7 @@ public class UpdateIngressGatewayConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20210930")
+                        .path("/20220615")
                         .path("ingressGateways")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

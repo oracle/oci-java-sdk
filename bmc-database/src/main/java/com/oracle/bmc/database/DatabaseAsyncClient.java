@@ -4997,6 +4997,60 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisablePluggableDatabaseManagementResponse>
+            disablePluggableDatabaseManagement(
+                    DisablePluggableDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisablePluggableDatabaseManagementRequest,
+                                    DisablePluggableDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async disablePluggableDatabaseManagement");
+        final DisablePluggableDatabaseManagementRequest interceptedRequest =
+                DisablePluggableDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisablePluggableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DisablePluggableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DisablePluggableDatabaseManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisablePluggableDatabaseManagementResponse>
+                transformer =
+                        DisablePluggableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisablePluggableDatabaseManagementRequest,
+                        DisablePluggableDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisablePluggableDatabaseManagementRequest,
+                                DisablePluggableDatabaseManagementResponse>,
+                        java.util.concurrent.Future<DisablePluggableDatabaseManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisablePluggableDatabaseManagementRequest,
+                    DisablePluggableDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadExadataInfrastructureConfigFileResponse>
             downloadExadataInfrastructureConfigFile(
                     DownloadExadataInfrastructureConfigFileRequest request,
@@ -5846,6 +5900,65 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableExternalPluggableDatabaseStackMonitoringRequest,
                     EnableExternalPluggableDatabaseStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnablePluggableDatabaseManagementResponse>
+            enablePluggableDatabaseManagement(
+                    EnablePluggableDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnablePluggableDatabaseManagementRequest,
+                                    EnablePluggableDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async enablePluggableDatabaseManagement");
+        final EnablePluggableDatabaseManagementRequest interceptedRequest =
+                EnablePluggableDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnablePluggableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EnablePluggableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/EnablePluggableDatabaseManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnablePluggableDatabaseManagementResponse>
+                transformer =
+                        EnablePluggableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnablePluggableDatabaseManagementRequest,
+                        EnablePluggableDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnablePluggableDatabaseManagementRequest,
+                                EnablePluggableDatabaseManagementResponse>,
+                        java.util.concurrent.Future<EnablePluggableDatabaseManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnablePluggableDatabaseManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnablePluggableDatabaseManagementRequest,
+                    EnablePluggableDatabaseManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -11892,6 +12005,65 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ModifyDatabaseManagementRequest, ModifyDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyPluggableDatabaseManagementResponse>
+            modifyPluggableDatabaseManagement(
+                    ModifyPluggableDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyPluggableDatabaseManagementRequest,
+                                    ModifyPluggableDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async modifyPluggableDatabaseManagement");
+        final ModifyPluggableDatabaseManagementRequest interceptedRequest =
+                ModifyPluggableDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyPluggableDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ModifyPluggableDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ModifyPluggableDatabaseManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ModifyPluggableDatabaseManagementResponse>
+                transformer =
+                        ModifyPluggableDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ModifyPluggableDatabaseManagementRequest,
+                        ModifyPluggableDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ModifyPluggableDatabaseManagementRequest,
+                                ModifyPluggableDatabaseManagementResponse>,
+                        java.util.concurrent.Future<ModifyPluggableDatabaseManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getModifyPluggableDatabaseManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ModifyPluggableDatabaseManagementRequest,
+                    ModifyPluggableDatabaseManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

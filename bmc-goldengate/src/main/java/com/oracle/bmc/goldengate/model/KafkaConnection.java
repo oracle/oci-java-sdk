@@ -437,6 +437,8 @@ public final class KafkaConnection extends Connection {
      **/
     public enum TechnologyType {
         ApacheKafka("APACHE_KAFKA"),
+        AzureEventHubs("AZURE_EVENT_HUBS"),
+        ConfluentKafka("CONFLUENT_KAFKA"),
         OciStreaming("OCI_STREAMING"),
 
         /**
