@@ -38,7 +38,8 @@ public final class CreateConnectionDetails
         "privateEndpoint",
         "vaultDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "nsgIds"
     })
     public CreateConnectionDetails(
             String compartmentId,
@@ -55,7 +56,8 @@ public final class CreateConnectionDetails
             CreatePrivateEndpoint privateEndpoint,
             CreateVaultDetails vaultDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> nsgIds) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -72,6 +74,7 @@ public final class CreateConnectionDetails
         this.vaultDetails = vaultDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.nsgIds = nsgIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -309,6 +312,24 @@ public final class CreateConnectionDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * An array of Network Security Group OCIDs used to define network access for Connections.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * An array of Network Security Group OCIDs used to define network access for Connections.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -330,7 +351,8 @@ public final class CreateConnectionDetails
                             this.privateEndpoint,
                             this.vaultDetails,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.nsgIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -383,6 +405,9 @@ public final class CreateConnectionDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             return this;
         }
@@ -600,6 +625,22 @@ public final class CreateConnectionDetails
         return definedTags;
     }
 
+    /**
+     * An array of Network Security Group OCIDs used to define network access for Connections.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * An array of Network Security Group OCIDs used to define network access for Connections.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -629,6 +670,7 @@ public final class CreateConnectionDetails
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(")");
         return sb.toString();
     }
@@ -658,6 +700,7 @@ public final class CreateConnectionDetails
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && super.equals(other);
     }
 
@@ -694,6 +737,7 @@ public final class CreateConnectionDetails
         result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

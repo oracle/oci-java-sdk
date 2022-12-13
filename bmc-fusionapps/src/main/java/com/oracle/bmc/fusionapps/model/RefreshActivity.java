@@ -31,6 +31,7 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
         "timeFinished",
         "timeAccepted",
         "timeUpdated",
+        "refreshIssueDetailsList",
         "lifecycleDetails"
     })
     public RefreshActivity(
@@ -45,6 +46,7 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
             java.util.Date timeFinished,
             java.util.Date timeAccepted,
             java.util.Date timeUpdated,
+            java.util.List<RefreshIssueDetails> refreshIssueDetailsList,
             LifecycleDetails lifecycleDetails) {
         super();
         this.id = id;
@@ -58,6 +60,7 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
         this.timeFinished = timeFinished;
         this.timeAccepted = timeAccepted;
         this.timeUpdated = timeUpdated;
+        this.refreshIssueDetailsList = refreshIssueDetailsList;
         this.lifecycleDetails = lifecycleDetails;
     }
 
@@ -240,6 +243,23 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * Details of refresh investigation information, each item represents a different issue.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
+        private java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
+
+        /**
+         * Details of refresh investigation information, each item represents a different issue.
+         * @param refreshIssueDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder refreshIssueDetailsList(
+                java.util.List<RefreshIssueDetails> refreshIssueDetailsList) {
+            this.refreshIssueDetailsList = refreshIssueDetailsList;
+            this.__explicitlySet__.add("refreshIssueDetailsList");
+            return this;
+        }
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
@@ -273,6 +293,7 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
                             this.timeFinished,
                             this.timeAccepted,
                             this.timeUpdated,
+                            this.refreshIssueDetailsList,
                             this.lifecycleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -314,6 +335,9 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("refreshIssueDetailsList")) {
+                this.refreshIssueDetailsList(model.getRefreshIssueDetailsList());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -395,6 +419,7 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
     public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
+        NeedsAttention("NEEDS_ATTENTION"),
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
         Canceled("CANCELED"),
@@ -587,6 +612,20 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * Details of refresh investigation information, each item represents a different issue.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
+    private final java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
+
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     * @return the value
+     **/
+    public java.util.List<RefreshIssueDetails> getRefreshIssueDetailsList() {
+        return refreshIssueDetailsList;
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     public enum LifecycleDetails {
@@ -677,6 +716,8 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", refreshIssueDetailsList=")
+                .append(String.valueOf(this.refreshIssueDetailsList));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(")");
         return sb.toString();
@@ -705,6 +746,8 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(
+                        this.refreshIssueDetailsList, other.refreshIssueDetailsList)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && super.equals(other);
     }
@@ -746,6 +789,11 @@ public final class RefreshActivity extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshIssueDetailsList == null
+                                ? 43
+                                : this.refreshIssueDetailsList.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

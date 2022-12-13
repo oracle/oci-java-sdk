@@ -32,6 +32,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         "isRunOnce",
         "timeoutInSeconds",
         "target",
+        "maintenanceWindowSchedule",
         "timeCreated",
         "timeUpdated",
         "freeformTags",
@@ -53,6 +54,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             Boolean isRunOnce,
             Integer timeoutInSeconds,
             String target,
+            MaintenanceWindowSchedule maintenanceWindowSchedule,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
@@ -73,6 +75,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         this.isRunOnce = isRunOnce;
         this.timeoutInSeconds = timeoutInSeconds;
         this.target = target;
+        this.maintenanceWindowSchedule = maintenanceWindowSchedule;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
@@ -253,7 +256,8 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+         * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+         * If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
          * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
          * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
          *
@@ -262,7 +266,8 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         private Integer timeoutInSeconds;
 
         /**
-         * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+         * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+         * If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
          * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
          * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
          *
@@ -296,6 +301,16 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
+        private MaintenanceWindowSchedule maintenanceWindowSchedule;
+
+        public Builder maintenanceWindowSchedule(
+                MaintenanceWindowSchedule maintenanceWindowSchedule) {
+            this.maintenanceWindowSchedule = maintenanceWindowSchedule;
+            this.__explicitlySet__.add("maintenanceWindowSchedule");
             return this;
         }
         /**
@@ -450,6 +465,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.isRunOnce,
                             this.timeoutInSeconds,
                             this.target,
+                            this.maintenanceWindowSchedule,
                             this.timeCreated,
                             this.timeUpdated,
                             this.freeformTags,
@@ -500,6 +516,9 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("target")) {
                 this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowSchedule")) {
+                this.maintenanceWindowSchedule(model.getMaintenanceWindowSchedule());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -686,7 +705,8 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+     * If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
      * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
      * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      *
@@ -695,7 +715,8 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
     private final Integer timeoutInSeconds;
 
     /**
-     * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+     * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+     * If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
      * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
      * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      *
@@ -725,6 +746,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
      **/
     public String getTarget() {
         return target;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
+    private final MaintenanceWindowSchedule maintenanceWindowSchedule;
+
+    public MaintenanceWindowSchedule getMaintenanceWindowSchedule() {
+        return maintenanceWindowSchedule;
     }
 
     /**
@@ -872,6 +900,8 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", isRunOnce=").append(String.valueOf(this.isRunOnce));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", maintenanceWindowSchedule=")
+                .append(String.valueOf(this.maintenanceWindowSchedule));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -906,6 +936,8 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.isRunOnce, other.isRunOnce)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(
+                        this.maintenanceWindowSchedule, other.maintenanceWindowSchedule)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -943,6 +975,11 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
                 (result * PRIME)
                         + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindowSchedule == null
+                                ? 43
+                                : this.maintenanceWindowSchedule.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

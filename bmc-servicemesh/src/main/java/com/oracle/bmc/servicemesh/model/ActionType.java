@@ -7,7 +7,7 @@ package com.oracle.bmc.servicemesh.model;
 /**
  * Possible types of actions.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),

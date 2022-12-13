@@ -592,6 +592,62 @@ public class DevopsAsyncClient implements DevopsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelScheduledCascadingProjectDeletionResponse>
+            cancelScheduledCascadingProjectDeletion(
+                    CancelScheduledCascadingProjectDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelScheduledCascadingProjectDeletionRequest,
+                                    CancelScheduledCascadingProjectDeletionResponse>
+                            handler) {
+        LOG.trace("Called async cancelScheduledCascadingProjectDeletion");
+        final CancelScheduledCascadingProjectDeletionRequest interceptedRequest =
+                CancelScheduledCascadingProjectDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelScheduledCascadingProjectDeletionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "CancelScheduledCascadingProjectDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CancelScheduledCascadingProjectDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelScheduledCascadingProjectDeletionResponse>
+                transformer =
+                        CancelScheduledCascadingProjectDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelScheduledCascadingProjectDeletionRequest,
+                        CancelScheduledCascadingProjectDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelScheduledCascadingProjectDeletionRequest,
+                                CancelScheduledCascadingProjectDeletionResponse>,
+                        java.util.concurrent.Future<
+                                CancelScheduledCascadingProjectDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelScheduledCascadingProjectDeletionRequest,
+                    CancelScheduledCascadingProjectDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeProjectCompartmentResponse> changeProjectCompartment(
             ChangeProjectCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3914,6 +3970,60 @@ public class DevopsAsyncClient implements DevopsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     PutRepositoryRefRequest, PutRepositoryRefResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleCascadingProjectDeletionResponse>
+            scheduleCascadingProjectDeletion(
+                    ScheduleCascadingProjectDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCascadingProjectDeletionRequest,
+                                    ScheduleCascadingProjectDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleCascadingProjectDeletion");
+        final ScheduleCascadingProjectDeletionRequest interceptedRequest =
+                ScheduleCascadingProjectDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCascadingProjectDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ScheduleCascadingProjectDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ScheduleCascadingProjectDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCascadingProjectDeletionResponse>
+                transformer =
+                        ScheduleCascadingProjectDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleCascadingProjectDeletionRequest,
+                        ScheduleCascadingProjectDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleCascadingProjectDeletionRequest,
+                                ScheduleCascadingProjectDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleCascadingProjectDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleCascadingProjectDeletionRequest,
+                    ScheduleCascadingProjectDeletionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

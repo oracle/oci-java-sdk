@@ -145,6 +145,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortBy getSortBy() {
         return sortBy;
     }
+    /**
+     * A filter to return only resources where their Operation Types matches the parameter operation types
+     */
+    private java.util.List<String> operationTypeMultiValueQuery;
+
+    /**
+     * A filter to return only resources where their Operation Types matches the parameter operation types
+     */
+    public java.util.List<String> getOperationTypeMultiValueQuery() {
+        return operationTypeMultiValueQuery;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -289,6 +300,31 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * A filter to return only resources where their Operation Types matches the parameter operation types
+         */
+        private java.util.List<String> operationTypeMultiValueQuery = null;
+
+        /**
+         * A filter to return only resources where their Operation Types matches the parameter operation types
+         * @param operationTypeMultiValueQuery the value to set
+         * @return this builder instance
+         */
+        public Builder operationTypeMultiValueQuery(
+                java.util.List<String> operationTypeMultiValueQuery) {
+            this.operationTypeMultiValueQuery = operationTypeMultiValueQuery;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources where their Operation Types matches the parameter operation types
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder operationTypeMultiValueQuery(String singularValue) {
+            return this.operationTypeMultiValueQuery(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -325,6 +361,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             limit(o.getLimit());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            operationTypeMultiValueQuery(o.getOperationTypeMultiValueQuery());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -366,8 +403,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.limit = limit;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.operationTypeMultiValueQuery = operationTypeMultiValueQuery;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, workRequestId, status, resourceId, opcRequestId, page, limit, sortOrder, sortBy);
+            // new ListWorkRequestsRequest(compartmentId, workRequestId, status, resourceId, opcRequestId, page, limit, sortOrder, sortBy, operationTypeMultiValueQuery);
         }
     }
 
@@ -385,7 +423,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .page(page)
                 .limit(limit)
                 .sortOrder(sortOrder)
-                .sortBy(sortBy);
+                .sortBy(sortBy)
+                .operationTypeMultiValueQuery(operationTypeMultiValueQuery);
     }
 
     /**
@@ -410,6 +449,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",operationTypeMultiValueQuery=")
+                .append(String.valueOf(this.operationTypeMultiValueQuery));
         sb.append(")");
         return sb.toString();
     }
@@ -433,7 +474,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.sortBy, other.sortBy);
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(
+                        this.operationTypeMultiValueQuery, other.operationTypeMultiValueQuery);
     }
 
     @Override
@@ -453,6 +496,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationTypeMultiValueQuery == null
+                                ? 43
+                                : this.operationTypeMultiValueQuery.hashCode());
         return result;
     }
 }

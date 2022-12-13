@@ -3,6 +3,46 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.51.0 - 2022-12-13
+### Added
+- Support for the Queue service
+- Support for Intel X9 shapes when launching VM database systems in the Database service
+- Support for enabling, disabling, and editing Database Management service connections on pluggable databases in the Database service
+- Support for availability configurations and maintenance window schedules on synthetic monitors in the Application Performance Monitoring service
+- Support for scheduling cascading deletes on a project in the DevOps service
+- Support for cancelling a scheduled cascading delete on a project in the DevOps service
+- Support for issue and action fields on job phases of validation and migration processes in the Database Migration service
+- Support for cluster profiles in the Big Data service
+- Support for egress-only services in the Service Mesh service
+- Support for optional listeners and service discovery metadata on virtual deployments in the Service Mesh service
+- Support for canceling work requests in the accepted state in the Service Mesh service
+- Support for filtering work requests on associated resource id and operation status in the Service Mesh service
+- Support for sorting while listing work requests, listing work request logs, and listing work request errors in the Service Mesh service
+- Support for Oracle Managed Access integration in the Fusion Apps as a Service service
+- Support for refresh scheduling in the Fusion Apps as a Service service
+- Support for additional connections types on database resources in the GoldenGate service
+ 
+### Breaking Changes
+- Support for retries by default on operations of the Fusion Apps as a Service service
+- Support for retries by default on operations of the Database Migration service
+- Support for retries by default on operations of the Service Mesh service
+- Model `com.oracle.bmc.databasemigration.model.CreateAgentDetails` has been removed in the Database Migration service
+- Model `com.oracle.bmc.databasemigration.model.GenerateToken` has been removed in the Database Migration service
+- Model `com.oracle.bmc.databasemigration.model.ParLink` has been removed in the Database Migration service
+- Return type of method `public com.oracle.bmc.servicemesh.model.CreateIngressGatewayMutualTransportLayerSecurityDetails getMtls()` has been changed to `com.oracle.bmc.servicemesh.model.IngressGatewayMutualTransportLayerSecurityDetails` in `com.oracle.bmc.servicemesh.model.CreateIngressGatewayDetails` in the Service Mesh service
+- Model `com.oracle.bmc.servicemesh.model.CreateIngressGatewayMutualTransportLayerSecurityDetails` has been removed in the Service Mesh service
+- Model `com.oracle.bmc.servicemesh.model.CreateMutualTransportLayerSecurityDetails` has been removed in in the Service Mesh service
+- Return type of method `public com.oracle.bmc.servicemesh.model.CreateMutualTransportLayerSecurityDetails getMtls()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualServiceMutualTransportLayerSecurityDetails` in `com.oracle.bmc.servicemesh.model.CreateVirtualServiceDetails` in the Service Mesh service
+- Return type of method `public com.oracle.bmc.servicemesh.model.CreateIngressGatewayMutualTransportLayerSecurityDetails getMtls()` has been changed to `com.oracle.bmc.servicemesh.model.IngressGatewayMutualTransportLayerSecurityDetails` in `com.oracle.bmc.servicemesh.model.UpdateIngressGatewayDetails` in the Service Mesh service
+- Return type of method `public com.oracle.bmc.servicemesh.model.CreateMutualTransportLayerSecurityDetails getMtls()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualServiceMutualTransportLayerSecurityDetails` in `com.oracle.bmc.servicemesh.model.UpdateVirtualServiceDetails` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.AccessPolicy$LifecycleState` in  `com.oracle.bmc.servicemesh.requests.ListAccessPoliciesRequest` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable$LifecycleState` in  `com.oracle.bmc.servicemesh.requests.ListIngressGatewayRouteTablesRequest` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.IngressGateway$LifecycleState` in `com.oracle.bmc.servicemesh.requests.ListIngressGatewaysRequest` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.Mesh$LifecycleState` in  `com.oracle.bmc.servicemesh.requests.ListMeshesRequest` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualDeployment$LifecycleState` in `com.oracle.bmc.servicemesh.requests.ListVirtualDeploymentsRequest` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable$LifecycleState` in `com.oracle.bmc.servicemesh.requests.ListVirtualServiceRouteTablesRequest` in the Service Mesh service
+- Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualService$LifecycleState` in  `com.oracle.bmc.servicemesh.requests.ListVirtualServicesRequest` in the Service Mesh service
+
 ## 2.50.0 - 2022-12-06
 ### Added
 - Support for the Container Instances service

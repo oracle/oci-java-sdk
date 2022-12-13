@@ -93,6 +93,15 @@ public final class GitlabServerAccessTokenConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -184,6 +193,7 @@ public final class GitlabServerAccessTokenConnection extends Connection {
                             this.projectId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.lifecycleDetails,
                             this.lifecycleState,
                             this.freeformTags,
                             this.definedTags,
@@ -219,6 +229,9 @@ public final class GitlabServerAccessTokenConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -265,6 +278,7 @@ public final class GitlabServerAccessTokenConnection extends Connection {
             String projectId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -280,6 +294,7 @@ public final class GitlabServerAccessTokenConnection extends Connection {
                 projectId,
                 timeCreated,
                 timeUpdated,
+                lifecycleDetails,
                 lifecycleState,
                 freeformTags,
                 definedTags,
