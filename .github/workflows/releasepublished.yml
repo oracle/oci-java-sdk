@@ -85,6 +85,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
+          sleep 300
           if [ "$RELEASE" = "latest" ]; then
             echo "Using latest release"
             set +e
