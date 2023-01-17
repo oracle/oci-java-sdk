@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.2.1 - 2023-01-17
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the us-chicago-1 region
+- Support for cross-region replication in the File Storage service
+- Support for setting up private DNS on ExaCS systems during provisioning in the Database service
+- Support for elastic storage expansion on infrastructure resources for Exadata Cloud at Customer in the Database service
+- Support for target versions during infrastructure patching on Cloud Exadata infrastructure in the Database service
+- Support for creating model version sets in the model catalog in the Data Science service
+- Support for associating a model with a model version set in the Data Science service
+- Support for custom key/value annotations on documents using the Document Understanding service's optical character recognition in the Data Labeling service
+- Support for configurable timeouts in the Service Mesh service
+
 ## 3.2.0 - 2022-12-13
 ### Added
 - Support for the Queue service

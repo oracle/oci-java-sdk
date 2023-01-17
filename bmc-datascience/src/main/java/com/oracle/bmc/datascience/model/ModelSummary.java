@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -28,6 +28,10 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         "createdBy",
         "timeCreated",
         "lifecycleState",
+        "modelVersionSetId",
+        "modelVersionSetName",
+        "versionId",
+        "versionLabel",
         "freeformTags",
         "definedTags"
     })
@@ -39,6 +43,10 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             String createdBy,
             java.util.Date timeCreated,
             ModelLifecycleState lifecycleState,
+            String modelVersionSetId,
+            String modelVersionSetName,
+            Long versionId,
+            String versionLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +57,10 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         this.createdBy = createdBy;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.modelVersionSetId = modelVersionSetId;
+        this.modelVersionSetName = modelVersionSetName;
+        this.versionId = versionId;
+        this.versionLabel = versionLabel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -184,6 +196,70 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The OCID of the model version set that the model is associated to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
+        private String modelVersionSetId;
+
+        /**
+         * The OCID of the model version set that the model is associated to.
+         *
+         * @param modelVersionSetId the value to set
+         * @return this builder
+         */
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            this.modelVersionSetId = modelVersionSetId;
+            this.__explicitlySet__.add("modelVersionSetId");
+            return this;
+        }
+        /** The name of the model version set that the model is associated to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetName")
+        private String modelVersionSetName;
+
+        /**
+         * The name of the model version set that the model is associated to.
+         *
+         * @param modelVersionSetName the value to set
+         * @return this builder
+         */
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            this.modelVersionSetName = modelVersionSetName;
+            this.__explicitlySet__.add("modelVersionSetName");
+            return this;
+        }
+        /** Unique identifier assigned to each version of the model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("versionId")
+        private Long versionId;
+
+        /**
+         * Unique identifier assigned to each version of the model.
+         *
+         * @param versionId the value to set
+         * @return this builder
+         */
+        public Builder versionId(Long versionId) {
+            this.versionId = versionId;
+            this.__explicitlySet__.add("versionId");
+            return this;
+        }
+        /**
+         * The version label can add an additional description of the lifecycle state of the model
+         * or the application using and training the model.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
+        private String versionLabel;
+
+        /**
+         * The version label can add an additional description of the lifecycle state of the model
+         * or the application using and training the model.
+         *
+         * @param versionLabel the value to set
+         * @return this builder
+         */
+        public Builder versionLabel(String versionLabel) {
+            this.versionLabel = versionLabel;
+            this.__explicitlySet__.add("versionLabel");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. See [Resource
@@ -243,6 +319,10 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.createdBy,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.modelVersionSetId,
+                            this.modelVersionSetName,
+                            this.versionId,
+                            this.versionLabel,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -273,6 +353,18 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersionSetId")) {
+                this.modelVersionSetId(model.getModelVersionSetId());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersionSetName")) {
+                this.modelVersionSetName(model.getModelVersionSetName());
+            }
+            if (model.wasPropertyExplicitlySet("versionId")) {
+                this.versionId(model.getVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("versionLabel")) {
+                this.versionLabel(model.getVersionLabel());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -408,6 +500,62 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         return lifecycleState;
     }
 
+    /** The OCID of the model version set that the model is associated to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
+    private final String modelVersionSetId;
+
+    /**
+     * The OCID of the model version set that the model is associated to.
+     *
+     * @return the value
+     */
+    public String getModelVersionSetId() {
+        return modelVersionSetId;
+    }
+
+    /** The name of the model version set that the model is associated to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetName")
+    private final String modelVersionSetName;
+
+    /**
+     * The name of the model version set that the model is associated to.
+     *
+     * @return the value
+     */
+    public String getModelVersionSetName() {
+        return modelVersionSetName;
+    }
+
+    /** Unique identifier assigned to each version of the model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("versionId")
+    private final Long versionId;
+
+    /**
+     * Unique identifier assigned to each version of the model.
+     *
+     * @return the value
+     */
+    public Long getVersionId() {
+        return versionId;
+    }
+
+    /**
+     * The version label can add an additional description of the lifecycle state of the model or
+     * the application using and training the model.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
+    private final String versionLabel;
+
+    /**
+     * The version label can add an additional description of the lifecycle state of the model or
+     * the application using and training the model.
+     *
+     * @return the value
+     */
+    public String getVersionLabel() {
+        return versionLabel;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. See [Resource
@@ -470,6 +618,10 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", modelVersionSetId=").append(String.valueOf(this.modelVersionSetId));
+        sb.append(", modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
+        sb.append(", versionId=").append(String.valueOf(this.versionId));
+        sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -493,6 +645,10 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.modelVersionSetId, other.modelVersionSetId)
+                && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
+                && java.util.Objects.equals(this.versionId, other.versionId)
+                && java.util.Objects.equals(this.versionLabel, other.versionLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -513,6 +669,16 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelVersionSetId == null ? 43 : this.modelVersionSetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelVersionSetName == null
+                                ? 43
+                                : this.modelVersionSetName.hashCode());
+        result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
+        result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

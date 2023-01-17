@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.transfer.internal.download;
@@ -167,26 +167,24 @@ public class RetryingStream extends InputStream {
         requestBuilder.copy(this.request);
 
         // Compute the new range
-        final Range currentRange = this.request.getRange();
-        final Range newRange;
-        if (null == currentRange
-                || (currentRange.getStartByte() == null && currentRange.getEndByte() == null)) {
-            // No current range
+        Range newRange = null;
+        Range currentRequestRange = this.request.getRange();
+        Range currentResponseRange = this.response.getContentRange();
+
+        // Range requests should always return correct start and end byte in the response
+        // content-range
+        if (currentRequestRange == null) {
             newRange = new Range(this.bytesReadFromResponse, null);
-        } else if (currentRange.getStartByte() == null) {
-            // start byte is not set, but end byte is: this is an end-only range, e.g. "-99" for the
-            // last 99 bytes
-            // keep the start byte as null, but decrease end byte (e.g. if we have read 10 bytes,
-            // "-89").
-            newRange = new Range(null, currentRange.getEndByte() - this.bytesReadFromResponse);
-        } else {
-            // both start byte and end byte are set
+        } else if (currentResponseRange != null) {
             newRange =
                     new Range(
-                            currentRange.getStartByte() + this.bytesReadFromResponse,
-                            currentRange.getEndByte());
+                            currentResponseRange.getStartByte() + this.bytesReadFromResponse,
+                            currentResponseRange.getEndByte());
         }
-        LOG.info("Current range was {}. New range is = {}", currentRange, newRange);
+        LOG.info(
+                "Current range was {}. New byte corrected range  is = {}",
+                currentRequestRange,
+                newRange);
         requestBuilder.range(newRange);
 
         this.request = requestBuilder.build();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -658,6 +658,11 @@ public final class ClientCall<
         }
         if (responseBodyUnwrappedType == null || notModified) {
             // e.g. DELETE
+            if (!isContentLengthSet(rawResponse)) {
+                // close the response explicitly, otherwise Jersey 2 and Jersey 3 have problems with
+                // connections not being closed if there is no content-length header
+                rawResponse.close();
+            }
             return CompletableFuture.completedFuture(finalizeResponse(builder));
         }
 
@@ -699,6 +704,15 @@ public final class ClientCall<
                     responseBodyHandler.accept(builder, deserialized);
                     return finalizeResponse(builder);
                 });
+    }
+
+    private static boolean isContentLengthSet(HttpResponse rawResponse) {
+        for (Map.Entry<String, List<String>> header : rawResponse.headers().entrySet()) {
+            if (header.getKey().equalsIgnoreCase("Content-Length")) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private RESP finalizeResponse(RESP_BUILDER builder) {
@@ -965,7 +979,7 @@ public final class ClientCall<
                         e);
                 return failedFuture(e);
             }
-            // this is a bit unweildy, but it's necessary to pass the HttpResponse (not the RESP
+            // this is a bit unwieldy, but it's necessary to pass the HttpResponse (not the RESP
             // type) to the circuit breaker
             return thenCompose(
                     upstream,

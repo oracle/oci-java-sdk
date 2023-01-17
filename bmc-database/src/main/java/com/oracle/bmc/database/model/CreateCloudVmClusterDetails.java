@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -46,6 +46,7 @@ public final class CreateCloudVmClusterDetails
         "timeZone",
         "scanListenerPortTcp",
         "scanListenerPortTcpSsl",
+        "privateZoneId",
         "nsgIds",
         "backupNetworkNsgIds",
         "giVersion",
@@ -76,6 +77,7 @@ public final class CreateCloudVmClusterDetails
             String timeZone,
             Integer scanListenerPortTcp,
             Integer scanListenerPortTcpSsl,
+            String privateZoneId,
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
             String giVersion,
@@ -105,6 +107,7 @@ public final class CreateCloudVmClusterDetails
         this.timeZone = timeZone;
         this.scanListenerPortTcp = scanListenerPortTcp;
         this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+        this.privateZoneId = privateZoneId;
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.giVersion = giVersion;
@@ -269,12 +272,12 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-        /** The list of Db servers. */
+        /** The list of DB servers. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<String> dbServers;
 
         /**
-         * The list of Db servers.
+         * The list of DB servers.
          *
          * @param dbServers the value to set
          * @return this builder
@@ -551,6 +554,21 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("scanListenerPortTcpSsl");
             return this;
         }
+        /** The private zone id in which DNS records need to be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateZoneId")
+        private String privateZoneId;
+
+        /**
+         * The private zone id in which DNS records need to be created.
+         *
+         * @param privateZoneId the value to set
+         * @return this builder
+         */
+        public Builder privateZoneId(String privateZoneId) {
+            this.privateZoneId = privateZoneId;
+            this.__explicitlySet__.add("privateZoneId");
+            return this;
+        }
         /**
          * The list of
          * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
@@ -709,6 +727,7 @@ public final class CreateCloudVmClusterDetails
                             this.timeZone,
                             this.scanListenerPortTcp,
                             this.scanListenerPortTcpSsl,
+                            this.privateZoneId,
                             this.nsgIds,
                             this.backupNetworkNsgIds,
                             this.giVersion,
@@ -788,6 +807,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("scanListenerPortTcpSsl")) {
                 this.scanListenerPortTcpSsl(model.getScanListenerPortTcpSsl());
+            }
+            if (model.wasPropertyExplicitlySet("privateZoneId")) {
+                this.privateZoneId(model.getPrivateZoneId());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
@@ -956,12 +978,12 @@ public final class CreateCloudVmClusterDetails
         return dataStorageSizeInTBs;
     }
 
-    /** The list of Db servers. */
+    /** The list of DB servers. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
 
     /**
-     * The list of Db servers.
+     * The list of DB servers.
      *
      * @return the value
      */
@@ -1242,6 +1264,19 @@ public final class CreateCloudVmClusterDetails
         return scanListenerPortTcpSsl;
     }
 
+    /** The private zone id in which DNS records need to be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateZoneId")
+    private final String privateZoneId;
+
+    /**
+     * The private zone id in which DNS records need to be created.
+     *
+     * @return the value
+     */
+    public String getPrivateZoneId() {
+        return privateZoneId;
+    }
+
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
@@ -1393,6 +1428,7 @@ public final class CreateCloudVmClusterDetails
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
+        sb.append(", privateZoneId=").append(String.valueOf(this.privateZoneId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
@@ -1439,6 +1475,7 @@ public final class CreateCloudVmClusterDetails
                 && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
+                && java.util.Objects.equals(this.privateZoneId, other.privateZoneId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
@@ -1514,6 +1551,9 @@ public final class CreateCloudVmClusterDetails
                         + (this.scanListenerPortTcpSsl == null
                                 ? 43
                                 : this.scanListenerPortTcpSsl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateZoneId == null ? 43 : this.privateZoneId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
                 (result * PRIME)

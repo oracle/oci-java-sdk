@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue;
@@ -131,7 +131,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ChangeQueueCompartmentResponse::builder)
                 .logger(LOG, "changeQueueCompartment")
-                .serviceDetails("QueueAdmin", "ChangeQueueCompartment", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "ChangeQueueCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/ChangeQueueCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeQueueCompartmentRequest::builder)
                 .basePath("/20210201")
@@ -158,7 +161,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, CreateQueueResponse::builder)
                 .logger(LOG, "createQueue")
-                .serviceDetails("QueueAdmin", "CreateQueue", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "CreateQueue",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/CreateQueue")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateQueueRequest::builder)
                 .basePath("/20210201")
@@ -182,7 +188,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, DeleteQueueResponse::builder)
                 .logger(LOG, "deleteQueue")
-                .serviceDetails("QueueAdmin", "DeleteQueue", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "DeleteQueue",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/DeleteQueue")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteQueueRequest::builder)
                 .basePath("/20210201")
@@ -206,7 +215,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetQueueResponse::builder)
                 .logger(LOG, "getQueue")
-                .serviceDetails("QueueAdmin", "GetQueue", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "GetQueue",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/GetQueue")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetQueueRequest::builder)
                 .basePath("/20210201")
@@ -229,7 +241,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("QueueAdmin", "GetWorkRequest", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210201")
@@ -253,7 +268,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListQueuesResponse::builder)
                 .logger(LOG, "listQueues")
-                .serviceDetails("QueueAdmin", "ListQueues", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "ListQueues",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueCollection/ListQueues")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListQueuesRequest::builder)
                 .basePath("/20210201")
@@ -287,7 +305,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("QueueAdmin", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestErrorCollection/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210201")
@@ -316,7 +337,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("QueueAdmin", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestLogEntryCollection/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210201")
@@ -343,7 +367,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("QueueAdmin", "ListWorkRequests", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestSummaryCollection/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210201")
@@ -373,7 +400,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, PurgeQueueResponse::builder)
                 .logger(LOG, "purgeQueue")
-                .serviceDetails("QueueAdmin", "PurgeQueue", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "PurgeQueue",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/PurgeQueue")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PurgeQueueRequest::builder)
                 .basePath("/20210201")
@@ -401,7 +431,10 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, UpdateQueueResponse::builder)
                 .logger(LOG, "updateQueue")
-                .serviceDetails("QueueAdmin", "UpdateQueue", "")
+                .serviceDetails(
+                        "QueueAdmin",
+                        "UpdateQueue",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/UpdateQueue")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateQueueRequest::builder)
                 .basePath("/20210201")

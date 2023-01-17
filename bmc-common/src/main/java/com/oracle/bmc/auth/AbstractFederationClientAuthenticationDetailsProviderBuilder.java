@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth;
@@ -18,6 +18,8 @@ import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.internal.SyncFutureWaiter;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
+import com.oracle.bmc.waiter.WaiterConfiguration;
 import org.slf4j.Logger;
 
 import java.net.MalformedURLException;
@@ -312,7 +314,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         .baseUri(URI.create(getMetadataBaseUrl() + "instance/"))
                         .build()) {
 
-            for (int retry = 0; retry < 3; retry++) {
+            ExponentialBackoffDelayStrategyWithJitter strategy =
+                    new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(100));
+            WaiterConfiguration.WaitContext context =
+                    new WaiterConfiguration.WaitContext(System.currentTimeMillis());
+
+            for (int retry = 0; retry < 8; retry++) {
                 try {
                     SyncFutureWaiter waiter = new SyncFutureWaiter();
 
@@ -335,7 +342,13 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                             e);
                     lastException = e;
                     try {
-                        Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+                        long waitTime = strategy.nextDelay(context);
+                        Thread.sleep(waitTime);
+                        context.incrementAttempts();
+                        LOG.info(
+                                "Exiting retry {} with wait time: {} millis",
+                                (retry + 1),
+                                waitTime);
                     } catch (InterruptedException interruptedException) {
                         LOG.debug(
                                 "Thread interrupted while waiting to make next call to get region from instance metadata service",

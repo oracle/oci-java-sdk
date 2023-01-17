@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.client.jersey3;
@@ -55,6 +55,10 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(Jersey3HttpClientBuilder.class);
     private static final int DEFAULT_MAX_ASYNC_THREADS = 50;
 
+    /** The default {@link ClientBuilderDecorator} simply calls {@link ClientBuilder#build()}. */
+    private static final ClientBuilderDecorator SIMPLE_DECORATOR =
+            clientBuilder -> clientBuilder.build();
+
     public static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY =
             new NoConnectionReuseStrategy();
     public static HttpRequestRetryHandler DEFAULT_REQUEST_RETRY_HANDLER =
@@ -75,6 +79,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private boolean useApacheConnector = true;
     private ExecutorServiceProvider executorServiceProvider = null;
     private boolean useJerseyDefaultExecutorServiceProvider = false;
+    private ClientBuilderDecorator decorator = SIMPLE_DECORATOR;
 
     Jersey3HttpClientBuilder() {
         // buffer by default, for signing and better error messages.
@@ -182,6 +187,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             useJerseyDefaultExecutorServiceProvider = (((Boolean) value) == Boolean.TRUE);
         } else if (key == Jersey3ClientProperties.EXECUTOR_SERVICE_PROVIDER) {
             executorServiceProvider = (ExecutorServiceProvider) value;
+        } else if (key == ClientBuilderDecorator.PROPERTY) {
+            decorator = (ClientBuilderDecorator) value;
         } else if (key instanceof Jersey3ClientProperty) {
             properties.put(((Jersey3ClientProperty<T>) key).jerseyProperty, value);
         } else {
@@ -260,7 +267,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             clientBuilder.sslContext(sslContext);
         }
 
-        Client client = clientBuilder.build();
+        // build the client, using the decorator
+        Client client = decorator.finish(clientBuilder);
 
         if (executorServiceProvider != null) {
             client.register(executorServiceProvider);
