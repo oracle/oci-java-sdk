@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datalabelingservicedataplane.model;
@@ -29,6 +29,7 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "sourceDetails",
         "isLabeled",
         "lifecycleState",
+        "lifetimeLogicalClock",
         "recordMetadata",
         "freeformTags",
         "definedTags"
@@ -43,6 +44,7 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             SourceDetails sourceDetails,
             Boolean isLabeled,
             LifecycleState lifecycleState,
+            Integer lifetimeLogicalClock,
             RecordMetadata recordMetadata,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -56,6 +58,7 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.sourceDetails = sourceDetails;
         this.isLabeled = isLabeled;
         this.lifecycleState = lifecycleState;
+        this.lifetimeLogicalClock = lifetimeLogicalClock;
         this.recordMetadata = recordMetadata;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -208,6 +211,22 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * An integer value used in achieving concurrency control, this field will be used to generate eTags.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifetimeLogicalClock")
+        private Integer lifetimeLogicalClock;
+
+        /**
+         * An integer value used in achieving concurrency control, this field will be used to generate eTags.
+         * @param lifetimeLogicalClock the value to set
+         * @return this builder
+         **/
+        public Builder lifetimeLogicalClock(Integer lifetimeLogicalClock) {
+            this.lifetimeLogicalClock = lifetimeLogicalClock;
+            this.__explicitlySet__.add("lifetimeLogicalClock");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
         private RecordMetadata recordMetadata;
@@ -274,6 +293,7 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.sourceDetails,
                             this.isLabeled,
                             this.lifecycleState,
+                            this.lifetimeLogicalClock,
                             this.recordMetadata,
                             this.freeformTags,
                             this.definedTags);
@@ -311,6 +331,9 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifetimeLogicalClock")) {
+                this.lifetimeLogicalClock(model.getLifetimeLogicalClock());
             }
             if (model.wasPropertyExplicitlySet("recordMetadata")) {
                 this.recordMetadata(model.getRecordMetadata());
@@ -516,6 +539,20 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return lifecycleState;
     }
 
+    /**
+     * An integer value used in achieving concurrency control, this field will be used to generate eTags.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifetimeLogicalClock")
+    private final Integer lifetimeLogicalClock;
+
+    /**
+     * An integer value used in achieving concurrency control, this field will be used to generate eTags.
+     * @return the value
+     **/
+    public Integer getLifetimeLogicalClock() {
+        return lifetimeLogicalClock;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
     private final RecordMetadata recordMetadata;
 
@@ -582,6 +619,7 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isLabeled=").append(String.valueOf(this.isLabeled));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifetimeLogicalClock=").append(String.valueOf(this.lifetimeLogicalClock));
         sb.append(", recordMetadata=").append(String.valueOf(this.recordMetadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -608,6 +646,7 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isLabeled, other.isLabeled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifetimeLogicalClock, other.lifetimeLogicalClock)
                 && java.util.Objects.equals(this.recordMetadata, other.recordMetadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -633,6 +672,11 @@ public final class Record extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifetimeLogicalClock == null
+                                ? 43
+                                : this.lifetimeLogicalClock.hashCode());
         result =
                 (result * PRIME)
                         + (this.recordMetadata == null ? 43 : this.recordMetadata.hashCode());

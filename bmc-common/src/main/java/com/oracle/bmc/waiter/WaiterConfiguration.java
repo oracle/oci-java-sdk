@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waiter;
@@ -30,7 +30,7 @@ public class WaiterConfiguration {
         private long currentTime;
 
         // currentTime = startTime as well
-        WaitContext(long startTime) {
+        public WaitContext(long startTime) {
             this.startTime = startTime;
             this.attemptsMade = 0;
             this.currentTime = startTime;
@@ -44,7 +44,7 @@ public class WaiterConfiguration {
         /**
          * Increments the number of attempts made.
          */
-        void incrementAttempts() {
+        public void incrementAttempts() {
             this.attemptsMade++;
         }
 

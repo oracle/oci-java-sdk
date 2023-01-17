@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -31,7 +31,9 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         "customMetadataList",
         "definedMetadataList",
         "inputSchema",
-        "outputSchema"
+        "outputSchema",
+        "modelVersionSetId",
+        "versionLabel"
     })
     public CreateModelDetails(
             String compartmentId,
@@ -43,7 +45,9 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             java.util.List<Metadata> customMetadataList,
             java.util.List<Metadata> definedMetadataList,
             String inputSchema,
-            String outputSchema) {
+            String outputSchema,
+            String modelVersionSetId,
+            String versionLabel) {
         super();
         this.compartmentId = compartmentId;
         this.projectId = projectId;
@@ -55,6 +59,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         this.definedMetadataList = definedMetadataList;
         this.inputSchema = inputSchema;
         this.outputSchema = outputSchema;
+        this.modelVersionSetId = modelVersionSetId;
+        this.versionLabel = versionLabel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -232,6 +238,38 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("outputSchema");
             return this;
         }
+        /**
+         * The OCID of the model version set that the model is associated to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
+        private String modelVersionSetId;
+
+        /**
+         * The OCID of the model version set that the model is associated to.
+         * @param modelVersionSetId the value to set
+         * @return this builder
+         **/
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            this.modelVersionSetId = modelVersionSetId;
+            this.__explicitlySet__.add("modelVersionSetId");
+            return this;
+        }
+        /**
+         * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
+        private String versionLabel;
+
+        /**
+         * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         * @param versionLabel the value to set
+         * @return this builder
+         **/
+        public Builder versionLabel(String versionLabel) {
+            this.versionLabel = versionLabel;
+            this.__explicitlySet__.add("versionLabel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -248,7 +286,9 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                             this.customMetadataList,
                             this.definedMetadataList,
                             this.inputSchema,
-                            this.outputSchema);
+                            this.outputSchema,
+                            this.modelVersionSetId,
+                            this.versionLabel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -286,6 +326,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("outputSchema")) {
                 this.outputSchema(model.getOutputSchema());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersionSetId")) {
+                this.modelVersionSetId(model.getModelVersionSetId());
+            }
+            if (model.wasPropertyExplicitlySet("versionLabel")) {
+                this.versionLabel(model.getVersionLabel());
             }
             return this;
         }
@@ -454,6 +500,34 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         return outputSchema;
     }
 
+    /**
+     * The OCID of the model version set that the model is associated to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
+    private final String modelVersionSetId;
+
+    /**
+     * The OCID of the model version set that the model is associated to.
+     * @return the value
+     **/
+    public String getModelVersionSetId() {
+        return modelVersionSetId;
+    }
+
+    /**
+     * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
+    private final String versionLabel;
+
+    /**
+     * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     * @return the value
+     **/
+    public String getVersionLabel() {
+        return versionLabel;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -478,6 +552,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", definedMetadataList=").append(String.valueOf(this.definedMetadataList));
         sb.append(", inputSchema=").append(String.valueOf(this.inputSchema));
         sb.append(", outputSchema=").append(String.valueOf(this.outputSchema));
+        sb.append(", modelVersionSetId=").append(String.valueOf(this.modelVersionSetId));
+        sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
         sb.append(")");
         return sb.toString();
     }
@@ -502,6 +578,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.definedMetadataList, other.definedMetadataList)
                 && java.util.Objects.equals(this.inputSchema, other.inputSchema)
                 && java.util.Objects.equals(this.outputSchema, other.outputSchema)
+                && java.util.Objects.equals(this.modelVersionSetId, other.modelVersionSetId)
+                && java.util.Objects.equals(this.versionLabel, other.versionLabel)
                 && super.equals(other);
     }
 
@@ -529,6 +607,10 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                                 : this.definedMetadataList.hashCode());
         result = (result * PRIME) + (this.inputSchema == null ? 43 : this.inputSchema.hashCode());
         result = (result * PRIME) + (this.outputSchema == null ? 43 : this.outputSchema.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelVersionSetId == null ? 43 : this.modelVersionSetId.hashCode());
+        result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

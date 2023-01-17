@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -35,6 +35,52 @@ public class GetExadataInfrastructureRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * If provided, the specified fields will be excluded in the response.
+     */
+    private java.util.List<ExcludedFields> excludedFields;
+
+    /**
+     * If provided, the specified fields will be excluded in the response.
+     **/
+    public enum ExcludedFields {
+        MultiRackConfigurationFile("multiRackConfigurationFile"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ExcludedFields> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ExcludedFields v : ExcludedFields.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ExcludedFields(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ExcludedFields create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ExcludedFields: " + key);
+        }
+    };
+
+    /**
+     * If provided, the specified fields will be excluded in the response.
+     */
+    public java.util.List<ExcludedFields> getExcludedFields() {
+        return excludedFields;
     }
 
     public static class Builder
@@ -77,6 +123,30 @@ public class GetExadataInfrastructureRequest
         }
 
         /**
+         * If provided, the specified fields will be excluded in the response.
+         */
+        private java.util.List<ExcludedFields> excludedFields = null;
+
+        /**
+         * If provided, the specified fields will be excluded in the response.
+         * @param excludedFields the value to set
+         * @return this builder instance
+         */
+        public Builder excludedFields(java.util.List<ExcludedFields> excludedFields) {
+            this.excludedFields = excludedFields;
+            return this;
+        }
+
+        /**
+         * Singular setter. If provided, the specified fields will be excluded in the response.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder excludedFields(ExcludedFields singularValue) {
+            return this.excludedFields(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -106,6 +176,7 @@ public class GetExadataInfrastructureRequest
         public Builder copy(GetExadataInfrastructureRequest o) {
             exadataInfrastructureId(o.getExadataInfrastructureId());
             opcRequestId(o.getOpcRequestId());
+            excludedFields(o.getExcludedFields());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -140,8 +211,9 @@ public class GetExadataInfrastructureRequest
             GetExadataInfrastructureRequest request = new GetExadataInfrastructureRequest();
             request.exadataInfrastructureId = exadataInfrastructureId;
             request.opcRequestId = opcRequestId;
+            request.excludedFields = excludedFields;
             return request;
-            // new GetExadataInfrastructureRequest(exadataInfrastructureId, opcRequestId);
+            // new GetExadataInfrastructureRequest(exadataInfrastructureId, opcRequestId, excludedFields);
         }
     }
 
@@ -152,7 +224,8 @@ public class GetExadataInfrastructureRequest
     public Builder toBuilder() {
         return new Builder()
                 .exadataInfrastructureId(exadataInfrastructureId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .excludedFields(excludedFields);
     }
 
     /**
@@ -170,6 +243,7 @@ public class GetExadataInfrastructureRequest
         sb.append("super=").append(super.toString());
         sb.append(",exadataInfrastructureId=").append(String.valueOf(this.exadataInfrastructureId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",excludedFields=").append(String.valueOf(this.excludedFields));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +261,8 @@ public class GetExadataInfrastructureRequest
         return super.equals(o)
                 && java.util.Objects.equals(
                         this.exadataInfrastructureId, other.exadataInfrastructureId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.excludedFields, other.excludedFields);
     }
 
     @Override
@@ -200,6 +275,9 @@ public class GetExadataInfrastructureRequest
                                 ? 43
                                 : this.exadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludedFields == null ? 43 : this.excludedFields.hashCode());
         return result;
     }
 }
