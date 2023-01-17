@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -884,6 +884,65 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeModelVersionSetCompartmentResponse>
+            changeModelVersionSetCompartment(
+                    ChangeModelVersionSetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelVersionSetCompartmentRequest,
+                                    ChangeModelVersionSetCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeModelVersionSetCompartment");
+        final ChangeModelVersionSetCompartmentRequest interceptedRequest =
+                ChangeModelVersionSetCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeModelVersionSetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeModelVersionSetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/ChangeModelVersionSetCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeModelVersionSetCompartmentResponse>
+                transformer =
+                        ChangeModelVersionSetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeModelVersionSetCompartmentRequest,
+                        ChangeModelVersionSetCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeModelVersionSetCompartmentRequest,
+                                ChangeModelVersionSetCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeModelVersionSetCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeModelVersionSetCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeModelVersionSetCompartmentRequest,
+                    ChangeModelVersionSetCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeNotebookSessionCompartmentResponse>
             changeNotebookSessionCompartment(
                     ChangeNotebookSessionCompartmentRequest request,
@@ -1388,6 +1447,59 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateModelVersionSetResponse> createModelVersionSet(
+            CreateModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelVersionSetRequest, CreateModelVersionSetResponse>
+                    handler) {
+        LOG.trace("Called async createModelVersionSet");
+        final CreateModelVersionSetRequest interceptedRequest =
+                CreateModelVersionSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateModelVersionSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateModelVersionSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/CreateModelVersionSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelVersionSetResponse>
+                transformer =
+                        CreateModelVersionSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateModelVersionSetRequest, CreateModelVersionSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateModelVersionSetRequest, CreateModelVersionSetResponse>,
+                        java.util.concurrent.Future<CreateModelVersionSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateModelVersionSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateModelVersionSetRequest, CreateModelVersionSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNotebookSessionResponse> createNotebookSession(
             CreateNotebookSessionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1799,6 +1911,53 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelVersionSetResponse> deleteModelVersionSet(
+            DeleteModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelVersionSetRequest, DeleteModelVersionSetResponse>
+                    handler) {
+        LOG.trace("Called async deleteModelVersionSet");
+        final DeleteModelVersionSetRequest interceptedRequest =
+                DeleteModelVersionSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelVersionSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelVersionSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/DeleteModelVersionSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteModelVersionSetResponse>
+                transformer =
+                        DeleteModelVersionSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteModelVersionSetRequest, DeleteModelVersionSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteModelVersionSetRequest, DeleteModelVersionSetResponse>,
+                        java.util.concurrent.Future<DeleteModelVersionSetResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteModelVersionSetRequest, DeleteModelVersionSetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2272,6 +2431,52 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetModelProvenanceRequest, GetModelProvenanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelVersionSetResponse> getModelVersionSet(
+            GetModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetModelVersionSetRequest, GetModelVersionSetResponse>
+                    handler) {
+        LOG.trace("Called async getModelVersionSet");
+        final GetModelVersionSetRequest interceptedRequest =
+                GetModelVersionSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelVersionSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelVersionSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/GetModelVersionSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetModelVersionSetResponse>
+                transformer =
+                        GetModelVersionSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetModelVersionSetRequest, GetModelVersionSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelVersionSetRequest, GetModelVersionSetResponse>,
+                        java.util.concurrent.Future<GetModelVersionSetResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelVersionSetRequest, GetModelVersionSetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2823,6 +3028,53 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListModelDeploymentsRequest, ListModelDeploymentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelVersionSetsResponse> listModelVersionSets(
+            ListModelVersionSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelVersionSetsRequest, ListModelVersionSetsResponse>
+                    handler) {
+        LOG.trace("Called async listModelVersionSets");
+        final ListModelVersionSetsRequest interceptedRequest =
+                ListModelVersionSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelVersionSetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListModelVersionSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSetSummary/ListModelVersionSets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListModelVersionSetsResponse>
+                transformer =
+                        ListModelVersionSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListModelVersionSetsRequest, ListModelVersionSetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelVersionSetsRequest, ListModelVersionSetsResponse>,
+                        java.util.concurrent.Future<ListModelVersionSetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelVersionSetsRequest, ListModelVersionSetsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3395,6 +3647,58 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelVersionSetResponse> updateModelVersionSet(
+            UpdateModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelVersionSetRequest, UpdateModelVersionSetResponse>
+                    handler) {
+        LOG.trace("Called async updateModelVersionSet");
+        final UpdateModelVersionSetRequest interceptedRequest =
+                UpdateModelVersionSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateModelVersionSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateModelVersionSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/UpdateModelVersionSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateModelVersionSetResponse>
+                transformer =
+                        UpdateModelVersionSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateModelVersionSetRequest, UpdateModelVersionSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateModelVersionSetRequest, UpdateModelVersionSetResponse>,
+                        java.util.concurrent.Future<UpdateModelVersionSetResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateModelVersionSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateModelVersionSetRequest, UpdateModelVersionSetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

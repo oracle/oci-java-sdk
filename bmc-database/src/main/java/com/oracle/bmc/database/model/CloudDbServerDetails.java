@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the ExaCs Db server. Applies to Exadata Cloud instances only.
+ * Details of the ExaDB-D DB server. Applies to Exadata Cloud instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -31,13 +31,13 @@ public final class CloudDbServerDetails extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaCS Db server.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaDB-D DB server.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
         private String dbServerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaCS Db server.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaDB-D DB server.
          * @param dbServerId the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class CloudDbServerDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaCS Db server.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaDB-D DB server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
     private final String dbServerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaCS Db server.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaDB-D DB server.
      * @return the value
      **/
     public String getDbServerId() {

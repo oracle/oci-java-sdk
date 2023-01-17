@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -21,6 +21,28 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /**
+     * <b>Filter</b> results by the name of the model version set.
+     */
+    private String modelVersionSetName;
+
+    /**
+     * <b>Filter</b> results by the name of the model version set.
+     */
+    public String getModelVersionSetName() {
+        return modelVersionSetName;
+    }
+    /**
+     * <b>Filter</b> results by version label.
+     */
+    private String versionLabel;
+
+    /**
+     * <b>Filter</b> results by version label.
+     */
+    public String getVersionLabel() {
+        return versionLabel;
     }
     /**
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -269,6 +291,36 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
+         * <b>Filter</b> results by the name of the model version set.
+         */
+        private String modelVersionSetName = null;
+
+        /**
+         * <b>Filter</b> results by the name of the model version set.
+         * @param modelVersionSetName the value to set
+         * @return this builder instance
+         */
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            this.modelVersionSetName = modelVersionSetName;
+            return this;
+        }
+
+        /**
+         * <b>Filter</b> results by version label.
+         */
+        private String versionLabel = null;
+
+        /**
+         * <b>Filter</b> results by version label.
+         * @param versionLabel the value to set
+         * @return this builder instance
+         */
+        public Builder versionLabel(String versionLabel) {
+            this.versionLabel = versionLabel;
+            return this;
+        }
+
+        /**
          * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
          *
          */
@@ -484,6 +536,8 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          */
         public Builder copy(ListModelsRequest o) {
             compartmentId(o.getCompartmentId());
+            modelVersionSetName(o.getModelVersionSetName());
+            versionLabel(o.getVersionLabel());
             id(o.getId());
             projectId(o.getProjectId());
             displayName(o.getDisplayName());
@@ -527,6 +581,8 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public ListModelsRequest buildWithoutInvocationCallback() {
             ListModelsRequest request = new ListModelsRequest();
             request.compartmentId = compartmentId;
+            request.modelVersionSetName = modelVersionSetName;
+            request.versionLabel = versionLabel;
             request.id = id;
             request.projectId = projectId;
             request.displayName = displayName;
@@ -538,7 +594,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListModelsRequest(compartmentId, id, projectId, displayName, lifecycleState, createdBy, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListModelsRequest(compartmentId, modelVersionSetName, versionLabel, id, projectId, displayName, lifecycleState, createdBy, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -549,6 +605,8 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .modelVersionSetName(modelVersionSetName)
+                .versionLabel(versionLabel)
                 .id(id)
                 .projectId(projectId)
                 .displayName(displayName)
@@ -575,6 +633,8 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
+        sb.append(",versionLabel=").append(String.valueOf(this.versionLabel));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",projectId=").append(String.valueOf(this.projectId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
@@ -601,6 +661,8 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         ListModelsRequest other = (ListModelsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
+                && java.util.Objects.equals(this.versionLabel, other.versionLabel)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -620,6 +682,12 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelVersionSetName == null
+                                ? 43
+                                : this.modelVersionSetName.hashCode());
+        result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
