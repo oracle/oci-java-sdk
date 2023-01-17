@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -616,12 +616,12 @@ public final class CloudVmCluster
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-        /** The list of Db servers. */
+        /** The list of DB servers. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<String> dbServers;
 
         /**
-         * The list of Db servers.
+         * The list of DB servers.
          *
          * @param dbServers the value to set
          * @return this builder
@@ -1680,12 +1680,12 @@ public final class CloudVmCluster
         return dataStorageSizeInTBs;
     }
 
-    /** The list of Db servers. */
+    /** The list of DB servers. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
 
     /**
-     * The list of Db servers.
+     * The list of DB servers.
      *
      * @return the value
      */

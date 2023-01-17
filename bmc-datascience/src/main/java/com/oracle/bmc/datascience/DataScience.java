@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -199,6 +199,23 @@ public interface DataScience extends AutoCloseable {
      */
     ChangeModelDeploymentCompartmentResponse changeModelDeploymentCompartment(
             ChangeModelDeploymentCompartmentRequest request);
+
+    /**
+     * Moves a modelVersionSet resource into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelVersionSetCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeModelVersionSetCompartment API.
+     */
+    ChangeModelVersionSetCompartmentResponse changeModelVersionSetCompartment(
+            ChangeModelVersionSetCompartmentRequest request);
 
     /**
      * Moves a notebook session resource into a different compartment.
@@ -404,6 +421,22 @@ public interface DataScience extends AutoCloseable {
     CreateModelProvenanceResponse createModelProvenance(CreateModelProvenanceRequest request);
 
     /**
+     * Creates a new modelVersionSet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateModelVersionSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateModelVersionSet API.
+     */
+    CreateModelVersionSetResponse createModelVersionSet(CreateModelVersionSetRequest request);
+
+    /**
      * Creates a new notebook session.
      *
      * @param request The request object containing the details to send
@@ -544,6 +577,22 @@ public interface DataScience extends AutoCloseable {
      *     DeleteModelDeployment API.
      */
     DeleteModelDeploymentResponse deleteModelDeployment(DeleteModelDeploymentRequest request);
+
+    /**
+     * Deletes the specified modelVersionSet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteModelVersionSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteModelVersionSet API.
+     */
+    DeleteModelVersionSetResponse deleteModelVersionSet(DeleteModelVersionSetRequest request);
 
     /**
      * Deletes the specified notebook session. Any unsaved work in this notebook session are lost.
@@ -702,6 +751,22 @@ public interface DataScience extends AutoCloseable {
      *     API.
      */
     GetModelProvenanceResponse getModelProvenance(GetModelProvenanceRequest request);
+
+    /**
+     * Gets the specified model version set information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelVersionSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModelVersionSet
+     *     API.
+     */
+    GetModelVersionSetResponse getModelVersionSet(GetModelVersionSetRequest request);
 
     /**
      * Gets the specified notebook session's information.
@@ -894,6 +959,22 @@ public interface DataScience extends AutoCloseable {
      *     ListModelDeployments API.
      */
     ListModelDeploymentsResponse listModelDeployments(ListModelDeploymentsRequest request);
+
+    /**
+     * Lists model version sets in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelVersionSetsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListModelVersionSets API.
+     */
+    ListModelVersionSetsResponse listModelVersionSets(ListModelVersionSetsRequest request);
 
     /**
      * Lists models in the specified compartment.
@@ -1089,6 +1170,22 @@ public interface DataScience extends AutoCloseable {
      *     UpdateModelProvenance API.
      */
     UpdateModelProvenanceResponse updateModelProvenance(UpdateModelProvenanceRequest request);
+
+    /**
+     * Updates the properties of a model version set. User can update the `description` property.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelVersionSetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateModelVersionSet API.
+     */
+    UpdateModelVersionSetResponse updateModelVersionSet(UpdateModelVersionSetRequest request);
 
     /**
      * Updates the properties of a notebook session. You can update the `displayName`,

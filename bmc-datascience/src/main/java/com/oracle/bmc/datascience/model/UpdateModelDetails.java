@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -28,7 +28,9 @@ public final class UpdateModelDetails
         "freeformTags",
         "definedTags",
         "customMetadataList",
-        "definedMetadataList"
+        "definedMetadataList",
+        "modelVersionSetId",
+        "versionLabel"
     })
     public UpdateModelDetails(
             String displayName,
@@ -36,7 +38,9 @@ public final class UpdateModelDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Metadata> customMetadataList,
-            java.util.List<Metadata> definedMetadataList) {
+            java.util.List<Metadata> definedMetadataList,
+            String modelVersionSetId,
+            String versionLabel) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -44,6 +48,8 @@ public final class UpdateModelDetails
         this.definedTags = definedTags;
         this.customMetadataList = customMetadataList;
         this.definedMetadataList = definedMetadataList;
+        this.modelVersionSetId = modelVersionSetId;
+        this.versionLabel = versionLabel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +163,40 @@ public final class UpdateModelDetails
             this.__explicitlySet__.add("definedMetadataList");
             return this;
         }
+        /** The OCID of the model version set that the model is associated to. */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
+        private String modelVersionSetId;
+
+        /**
+         * The OCID of the model version set that the model is associated to.
+         *
+         * @param modelVersionSetId the value to set
+         * @return this builder
+         */
+        public Builder modelVersionSetId(String modelVersionSetId) {
+            this.modelVersionSetId = modelVersionSetId;
+            this.__explicitlySet__.add("modelVersionSetId");
+            return this;
+        }
+        /**
+         * The version label can add an additional description of the lifecycle state of the model
+         * or the application using/training the model.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
+        private String versionLabel;
+
+        /**
+         * The version label can add an additional description of the lifecycle state of the model
+         * or the application using/training the model.
+         *
+         * @param versionLabel the value to set
+         * @return this builder
+         */
+        public Builder versionLabel(String versionLabel) {
+            this.versionLabel = versionLabel;
+            this.__explicitlySet__.add("versionLabel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -169,7 +209,9 @@ public final class UpdateModelDetails
                             this.freeformTags,
                             this.definedTags,
                             this.customMetadataList,
-                            this.definedMetadataList);
+                            this.definedMetadataList,
+                            this.modelVersionSetId,
+                            this.versionLabel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -195,6 +237,12 @@ public final class UpdateModelDetails
             }
             if (model.wasPropertyExplicitlySet("definedMetadataList")) {
                 this.definedMetadataList(model.getDefinedMetadataList());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersionSetId")) {
+                this.modelVersionSetId(model.getModelVersionSetId());
+            }
+            if (model.wasPropertyExplicitlySet("versionLabel")) {
+                this.versionLabel(model.getVersionLabel());
             }
             return this;
         }
@@ -305,6 +353,36 @@ public final class UpdateModelDetails
         return definedMetadataList;
     }
 
+    /** The OCID of the model version set that the model is associated to. */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
+    private final String modelVersionSetId;
+
+    /**
+     * The OCID of the model version set that the model is associated to.
+     *
+     * @return the value
+     */
+    public String getModelVersionSetId() {
+        return modelVersionSetId;
+    }
+
+    /**
+     * The version label can add an additional description of the lifecycle state of the model or
+     * the application using/training the model.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
+    private final String versionLabel;
+
+    /**
+     * The version label can add an additional description of the lifecycle state of the model or
+     * the application using/training the model.
+     *
+     * @return the value
+     */
+    public String getVersionLabel() {
+        return versionLabel;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -326,6 +404,8 @@ public final class UpdateModelDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", customMetadataList=").append(String.valueOf(this.customMetadataList));
         sb.append(", definedMetadataList=").append(String.valueOf(this.definedMetadataList));
+        sb.append(", modelVersionSetId=").append(String.valueOf(this.modelVersionSetId));
+        sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
         sb.append(")");
         return sb.toString();
     }
@@ -346,6 +426,8 @@ public final class UpdateModelDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.customMetadataList, other.customMetadataList)
                 && java.util.Objects.equals(this.definedMetadataList, other.definedMetadataList)
+                && java.util.Objects.equals(this.modelVersionSetId, other.modelVersionSetId)
+                && java.util.Objects.equals(this.versionLabel, other.versionLabel)
                 && super.equals(other);
     }
 
@@ -367,6 +449,10 @@ public final class UpdateModelDetails
                         + (this.definedMetadataList == null
                                 ? 43
                                 : this.definedMetadataList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelVersionSetId == null ? 43 : this.modelVersionSetId.hashCode());
+        result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument;
@@ -105,7 +105,10 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, CancelProcessorJobResponse::builder)
                 .logger(LOG, "cancelProcessorJob")
-                .serviceDetails("AIServiceDocument", "CancelProcessorJob", "")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "CancelProcessorJob",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CancelProcessorJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CancelProcessorJobRequest::builder)
                 .basePath("/20221109")
@@ -132,7 +135,10 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, CreateProcessorJobResponse::builder)
                 .logger(LOG, "createProcessorJob")
-                .serviceDetails("AIServiceDocument", "CreateProcessorJob", "")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "CreateProcessorJob",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CreateProcessorJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateProcessorJobRequest::builder)
                 .basePath("/20221109")
@@ -161,7 +167,10 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetProcessorJobResponse::builder)
                 .logger(LOG, "getProcessorJob")
-                .serviceDetails("AIServiceDocument", "GetProcessorJob", "")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "GetProcessorJob",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/GetProcessorJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProcessorJobRequest::builder)
                 .basePath("/20221109")

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Unallocated resources details of the Cloud Exadata infrastructure. Applies to Cloud Exadata
+ * Details of unallocated resources of the Cloud Exadata infrastructure. Applies to Cloud Exadata
  * infrastructure instances only. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -92,14 +92,14 @@ public final class CloudExadataInfrastructureUnallocatedResources
             return this;
         }
         /**
-         * The minimum amount of un allocated storage that is available across all nodes in the
+         * The minimum amount of unallocated storage available across all nodes in the
          * infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("localStorageInGbs")
         private Integer localStorageInGbs;
 
         /**
-         * The minimum amount of un allocated storage that is available across all nodes in the
+         * The minimum amount of unallocated storage available across all nodes in the
          * infrastructure.
          *
          * @param localStorageInGbs the value to set
@@ -111,15 +111,13 @@ public final class CloudExadataInfrastructureUnallocatedResources
             return this;
         }
         /**
-         * The minimum amount of un allocated ocpus that is available across all nodes in the
-         * infrastructure.
+         * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Integer ocpus;
 
         /**
-         * The minimum amount of un allocated ocpus that is available across all nodes in the
-         * infrastructure.
+         * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
          *
          * @param ocpus the value to set
          * @return this builder
@@ -130,14 +128,14 @@ public final class CloudExadataInfrastructureUnallocatedResources
             return this;
         }
         /**
-         * The minimum amount of un allocated memory that is available across all nodes in the
+         * The minimum amount of unallocated memory available across all nodes in the
          * infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
         /**
-         * The minimum amount of un allocated memory that is available across all nodes in the
+         * The minimum amount of unallocated memory available across all nodes in the
          * infrastructure.
          *
          * @param memoryInGBs the value to set
@@ -164,15 +162,15 @@ public final class CloudExadataInfrastructureUnallocatedResources
             return this;
         }
         /**
-         * The list of Cloud Autonomous VM Clusters on the Infra and their associated unallocated
-         * resources details
+         * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
+         * unallocated resources details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusters")
         private java.util.List<CloudAutonomousVmClusterResourceDetails> cloudAutonomousVmClusters;
 
         /**
-         * The list of Cloud Autonomous VM Clusters on the Infra and their associated unallocated
-         * resources details
+         * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
+         * unallocated resources details.
          *
          * @param cloudAutonomousVmClusters the value to set
          * @return this builder
@@ -275,15 +273,13 @@ public final class CloudExadataInfrastructureUnallocatedResources
     }
 
     /**
-     * The minimum amount of un allocated storage that is available across all nodes in the
-     * infrastructure.
+     * The minimum amount of unallocated storage available across all nodes in the infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("localStorageInGbs")
     private final Integer localStorageInGbs;
 
     /**
-     * The minimum amount of un allocated storage that is available across all nodes in the
-     * infrastructure.
+     * The minimum amount of unallocated storage available across all nodes in the infrastructure.
      *
      * @return the value
      */
@@ -291,16 +287,12 @@ public final class CloudExadataInfrastructureUnallocatedResources
         return localStorageInGbs;
     }
 
-    /**
-     * The minimum amount of un allocated ocpus that is available across all nodes in the
-     * infrastructure.
-     */
+    /** The minimum amount of unallocated ocpus available across all nodes in the infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Integer ocpus;
 
     /**
-     * The minimum amount of un allocated ocpus that is available across all nodes in the
-     * infrastructure.
+     * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
      *
      * @return the value
      */
@@ -309,15 +301,13 @@ public final class CloudExadataInfrastructureUnallocatedResources
     }
 
     /**
-     * The minimum amount of un allocated memory that is available across all nodes in the
-     * infrastructure.
+     * The minimum amount of unallocated memory available across all nodes in the infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
     /**
-     * The minimum amount of un allocated memory that is available across all nodes in the
-     * infrastructure.
+     * The minimum amount of unallocated memory available across all nodes in the infrastructure.
      *
      * @return the value
      */
@@ -339,15 +329,15 @@ public final class CloudExadataInfrastructureUnallocatedResources
     }
 
     /**
-     * The list of Cloud Autonomous VM Clusters on the Infra and their associated unallocated
-     * resources details
+     * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
+     * unallocated resources details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusters")
     private final java.util.List<CloudAutonomousVmClusterResourceDetails> cloudAutonomousVmClusters;
 
     /**
-     * The list of Cloud Autonomous VM Clusters on the Infra and their associated unallocated
-     * resources details
+     * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
+     * unallocated resources details.
      *
      * @return the value
      */

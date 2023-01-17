@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue;
@@ -90,7 +90,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, DeleteMessageResponse::builder)
                 .logger(LOG, "deleteMessage")
-                .serviceDetails("Queue", "DeleteMessage", "")
+                .serviceDetails(
+                        "Queue",
+                        "DeleteMessage",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessage")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMessageRequest::builder)
                 .basePath("/20210201")
@@ -115,7 +118,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, DeleteMessagesResponse::builder)
                 .logger(LOG, "deleteMessages")
-                .serviceDetails("Queue", "DeleteMessages", "")
+                .serviceDetails(
+                        "Queue",
+                        "DeleteMessages",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessages")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DeleteMessagesRequest::builder)
                 .basePath("/20210201")
@@ -143,7 +149,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, GetMessagesResponse::builder)
                 .logger(LOG, "getMessages")
-                .serviceDetails("Queue", "GetMessages", "")
+                .serviceDetails(
+                        "Queue",
+                        "GetMessages",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/GetMessages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMessagesRequest::builder)
                 .basePath("/20210201")
@@ -170,7 +179,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, GetStatsResponse::builder)
                 .logger(LOG, "getStats")
-                .serviceDetails("Queue", "GetStats", "")
+                .serviceDetails(
+                        "Queue",
+                        "GetStats",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueStats/GetStats")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetStatsRequest::builder)
                 .basePath("/20210201")
@@ -196,7 +208,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, PutMessagesResponse::builder)
                 .logger(LOG, "putMessages")
-                .serviceDetails("Queue", "PutMessages", "")
+                .serviceDetails(
+                        "Queue",
+                        "PutMessages",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/PutMessage/PutMessages")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PutMessagesRequest::builder)
                 .basePath("/20210201")
@@ -225,7 +240,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, UpdateMessageResponse::builder)
                 .logger(LOG, "updateMessage")
-                .serviceDetails("Queue", "UpdateMessage", "")
+                .serviceDetails(
+                        "Queue",
+                        "UpdateMessage",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/UpdatedMessage/UpdateMessage")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMessageRequest::builder)
                 .basePath("/20210201")
@@ -254,7 +272,10 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
         return clientCall(request, UpdateMessagesResponse::builder)
                 .logger(LOG, "updateMessages")
-                .serviceDetails("Queue", "UpdateMessages", "")
+                .serviceDetails(
+                        "Queue",
+                        "UpdateMessages",
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/UpdateMessages")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateMessagesRequest::builder)
                 .basePath("/20210201")
