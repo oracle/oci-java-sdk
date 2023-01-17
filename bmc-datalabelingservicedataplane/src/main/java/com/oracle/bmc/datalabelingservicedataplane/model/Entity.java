@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datalabelingservicedataplane.model;
@@ -31,6 +31,9 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GenericEntity.class,
             name = "GENERIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = KeyValueSelectionEntity.class,
+            name = "KEYVALUESELECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = TextSelectionEntity.class,
             name = "TEXTSELECTION")
@@ -89,12 +92,14 @@ public class Entity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
      * base entity type for some annotation formats. IMAGEOBJECTSELECTION- - This allows the labeler
      * to use specify a bounding polygon on the image to represent an object and apply labels to it.
      * TEXTSELECTION - This allows the labeler to highlight text, by specifying an offset and a
-     * length, and apply labels to it.
+     * length, and apply labels to it. KEYVALUESELECTION - This allows the labeler to apply label
+     * the highlighted text from OCR.
      */
     public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
         Generic("GENERIC"),
         Imageobjectselection("IMAGEOBJECTSELECTION"),
         Textselection("TEXTSELECTION"),
+        Keyvalueselection("KEYVALUESELECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -165,6 +165,46 @@ public class ListExadataInfrastructuresRequest
     public String getDisplayName() {
         return displayName;
     }
+    /** If provided, the specified fields will be excluded in the response. */
+    private java.util.List<ExcludedFields> excludedFields;
+
+    /** If provided, the specified fields will be excluded in the response. */
+    public enum ExcludedFields implements com.oracle.bmc.http.internal.BmcEnum {
+        MultiRackConfigurationFile("multiRackConfigurationFile"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ExcludedFields> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ExcludedFields v : ExcludedFields.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ExcludedFields(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ExcludedFields create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ExcludedFields: " + key);
+        }
+    };
+
+    /** If provided, the specified fields will be excluded in the response. */
+    public java.util.List<ExcludedFields> getExcludedFields() {
+        return excludedFields;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -301,6 +341,30 @@ public class ListExadataInfrastructuresRequest
             return this;
         }
 
+        /** If provided, the specified fields will be excluded in the response. */
+        private java.util.List<ExcludedFields> excludedFields = null;
+
+        /**
+         * If provided, the specified fields will be excluded in the response.
+         *
+         * @param excludedFields the value to set
+         * @return this builder instance
+         */
+        public Builder excludedFields(java.util.List<ExcludedFields> excludedFields) {
+            this.excludedFields = excludedFields;
+            return this;
+        }
+
+        /**
+         * Singular setter. If provided, the specified fields will be excluded in the response.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder excludedFields(ExcludedFields singularValue) {
+            return this.excludedFields(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -339,6 +403,7 @@ public class ListExadataInfrastructuresRequest
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            excludedFields(o.getExcludedFields());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -381,9 +446,10 @@ public class ListExadataInfrastructuresRequest
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.excludedFields = excludedFields;
             return request;
             // new ListExadataInfrastructuresRequest(compartmentId, limit, page, opcRequestId,
-            // sortBy, sortOrder, lifecycleState, displayName);
+            // sortBy, sortOrder, lifecycleState, displayName, excludedFields);
         }
     }
 
@@ -401,7 +467,8 @@ public class ListExadataInfrastructuresRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
-                .displayName(displayName);
+                .displayName(displayName)
+                .excludedFields(excludedFields);
     }
 
     /**
@@ -426,6 +493,7 @@ public class ListExadataInfrastructuresRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",excludedFields=").append(String.valueOf(this.excludedFields));
         sb.append(")");
         return sb.toString();
     }
@@ -448,7 +516,8 @@ public class ListExadataInfrastructuresRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.displayName, other.displayName);
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.excludedFields, other.excludedFields);
     }
 
     @Override
@@ -467,6 +536,9 @@ public class ListExadataInfrastructuresRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludedFields == null ? 43 : this.excludedFields.hashCode());
         return result;
     }
 }

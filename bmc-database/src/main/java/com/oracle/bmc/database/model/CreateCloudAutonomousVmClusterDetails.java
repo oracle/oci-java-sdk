@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -184,12 +184,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The number of OCPU cores to enable per VM cluster node. */
+        /** The number of OCPU cores to be enabled per VM cluster node. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The number of OCPU cores to enable per VM cluster node.
+         * The number of OCPU cores to be enabled per VM cluster node.
          *
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
@@ -248,12 +248,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("clusterTimeZone");
             return this;
         }
-        /** The list of Db server. */
+        /** The list of database servers. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<String> dbServers;
 
         /**
-         * The list of Db server.
+         * The list of database servers.
          *
          * @param dbServers the value to set
          * @return this builder
@@ -571,12 +571,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return totalContainerDatabases;
     }
 
-    /** The number of OCPU cores to enable per VM cluster node. */
+    /** The number of OCPU cores to be enabled per VM cluster node. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The number of OCPU cores to enable per VM cluster node.
+     * The number of OCPU cores to be enabled per VM cluster node.
      *
      * @return the value
      */
@@ -627,12 +627,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return clusterTimeZone;
     }
 
-    /** The list of Db server. */
+    /** The list of database servers. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
 
     /**
-     * The list of Db server.
+     * The list of database servers.
      *
      * @return the value
      */

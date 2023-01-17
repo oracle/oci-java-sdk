@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -70,7 +70,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey3</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -79,7 +79,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.2.0</version>
+      <version>3.2.1</version>
     </dependency>
     <dependency>
       <groupId>jakarta.ws.rs</groupId>

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicemesh.model;
@@ -130,6 +130,31 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
             this.__explicitlySet__.add("isPathRewriteEnabled");
             return this;
         }
+        /**
+         * The maximum duration in milliseconds for the upstream service to respond to a request. If
+         * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP
+         * based route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero)
+         * indicates that the timeout is disabled. For streaming responses from the upstream
+         * service, consider either keeping the timeout disabled or set a sufficiently high value.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("requestTimeoutInMs")
+        private Long requestTimeoutInMs;
+
+        /**
+         * The maximum duration in milliseconds for the upstream service to respond to a request. If
+         * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP
+         * based route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero)
+         * indicates that the timeout is disabled. For streaming responses from the upstream
+         * service, consider either keeping the timeout disabled or set a sufficiently high value.
+         *
+         * @param requestTimeoutInMs the value to set
+         * @return this builder
+         */
+        public Builder requestTimeoutInMs(Long requestTimeoutInMs) {
+            this.requestTimeoutInMs = requestTimeoutInMs;
+            this.__explicitlySet__.add("requestTimeoutInMs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -143,7 +168,8 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
                             this.pathType,
                             this.isGrpc,
                             this.isHostRewriteEnabled,
-                            this.isPathRewriteEnabled);
+                            this.isPathRewriteEnabled,
+                            this.requestTimeoutInMs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -173,6 +199,9 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
             if (model.wasPropertyExplicitlySet("isPathRewriteEnabled")) {
                 this.isPathRewriteEnabled(model.getIsPathRewriteEnabled());
             }
+            if (model.wasPropertyExplicitlySet("requestTimeoutInMs")) {
+                this.requestTimeoutInMs(model.getRequestTimeoutInMs());
+            }
             return this;
         }
     }
@@ -194,13 +223,15 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
             PathType pathType,
             Boolean isGrpc,
             Boolean isHostRewriteEnabled,
-            Boolean isPathRewriteEnabled) {
+            Boolean isPathRewriteEnabled,
+            Long requestTimeoutInMs) {
         super(ingressGatewayHost, destinations);
         this.path = path;
         this.pathType = pathType;
         this.isGrpc = isGrpc;
         this.isHostRewriteEnabled = isHostRewriteEnabled;
         this.isPathRewriteEnabled = isPathRewriteEnabled;
+        this.requestTimeoutInMs = requestTimeoutInMs;
     }
 
     /** Route to match */
@@ -308,6 +339,29 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
         return isPathRewriteEnabled;
     }
 
+    /**
+     * The maximum duration in milliseconds for the upstream service to respond to a request. If
+     * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based
+     * route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero) indicates
+     * that the timeout is disabled. For streaming responses from the upstream service, consider
+     * either keeping the timeout disabled or set a sufficiently high value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("requestTimeoutInMs")
+    private final Long requestTimeoutInMs;
+
+    /**
+     * The maximum duration in milliseconds for the upstream service to respond to a request. If
+     * provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based
+     * route rules, and disabled (no timeout) when 'isGrpc' is true. The value 0 (zero) indicates
+     * that the timeout is disabled. For streaming responses from the upstream service, consider
+     * either keeping the timeout disabled or set a sufficiently high value.
+     *
+     * @return the value
+     */
+    public Long getRequestTimeoutInMs() {
+        return requestTimeoutInMs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -328,6 +382,7 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
         sb.append(", isGrpc=").append(String.valueOf(this.isGrpc));
         sb.append(", isHostRewriteEnabled=").append(String.valueOf(this.isHostRewriteEnabled));
         sb.append(", isPathRewriteEnabled=").append(String.valueOf(this.isPathRewriteEnabled));
+        sb.append(", requestTimeoutInMs=").append(String.valueOf(this.requestTimeoutInMs));
         sb.append(")");
         return sb.toString();
     }
@@ -348,6 +403,7 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
                 && java.util.Objects.equals(this.isGrpc, other.isGrpc)
                 && java.util.Objects.equals(this.isHostRewriteEnabled, other.isHostRewriteEnabled)
                 && java.util.Objects.equals(this.isPathRewriteEnabled, other.isPathRewriteEnabled)
+                && java.util.Objects.equals(this.requestTimeoutInMs, other.requestTimeoutInMs)
                 && super.equals(other);
     }
 
@@ -368,6 +424,11 @@ public final class HttpIngressGatewayTrafficRouteRuleDetails
                         + (this.isPathRewriteEnabled == null
                                 ? 43
                                 : this.isPathRewriteEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestTimeoutInMs == null
+                                ? 43
+                                : this.requestTimeoutInMs.hashCode());
         return result;
     }
 }

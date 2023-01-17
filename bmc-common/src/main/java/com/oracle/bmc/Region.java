@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -17,6 +17,8 @@ import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
 import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
+import com.oracle.bmc.waiter.WaiterConfiguration;
 import org.slf4j.Logger;
 
 import javax.annotation.Nonnull;
@@ -81,43 +83,39 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC1
     public static final Region AP_CHUNCHEON_1 = register("ap-chuncheon-1", Realm.OC1, "yny");
-    public static final Region AP_HYDERABAD_1 = register("ap-hyderabad-1", Realm.OC1, "hyd");
     public static final Region AP_MELBOURNE_1 = register("ap-melbourne-1", Realm.OC1, "mel");
+    public static final Region AP_HYDERABAD_1 = register("ap-hyderabad-1", Realm.OC1, "hyd");
     public static final Region AP_MUMBAI_1 = register("ap-mumbai-1", Realm.OC1, "bom");
     public static final Region AP_OSAKA_1 = register("ap-osaka-1", Realm.OC1, "kix");
     public static final Region AP_SEOUL_1 = register("ap-seoul-1", Realm.OC1, "icn");
     public static final Region AP_SYDNEY_1 = register("ap-sydney-1", Realm.OC1, "syd");
     public static final Region AP_TOKYO_1 = register("ap-tokyo-1", Realm.OC1, "nrt");
-    public static final Region AP_SINGAPORE_1 = register("ap-singapore-1", Realm.OC1, "sin");
     public static final Region CA_MONTREAL_1 = register("ca-montreal-1", Realm.OC1, "yul");
     public static final Region CA_TORONTO_1 = register("ca-toronto-1", Realm.OC1, "yyz");
     public static final Region EU_AMSTERDAM_1 = register("eu-amsterdam-1", Realm.OC1, "ams");
     public static final Region EU_FRANKFURT_1 = register("eu-frankfurt-1", Realm.OC1, "fra");
-    public static final Region EU_MARSEILLE_1 = register("eu-marseille-1", Realm.OC1, "mrs");
     public static final Region EU_ZURICH_1 = register("eu-zurich-1", Realm.OC1, "zrh");
-    public static final Region ME_ABUDHABI_1 = register("me-abudhabi-1", Realm.OC1, "auh");
     public static final Region ME_JEDDAH_1 = register("me-jeddah-1", Realm.OC1, "jed");
     public static final Region ME_DUBAI_1 = register("me-dubai-1", Realm.OC1, "dxb");
-    public static final Region SA_SANTIAGO_1 = register("sa-santiago-1", Realm.OC1, "scl");
     public static final Region SA_SAOPAULO_1 = register("sa-saopaulo-1", Realm.OC1, "gru");
-    public static final Region SA_VINHEDO_1 = register("sa-vinhedo-1", Realm.OC1, "vcp");
-    public static final Region UK_CARDIFF_1 = register("uk-cardiff-1", Realm.OC1, "cwl");
     public static final Region UK_LONDON_1 = register("uk-london-1", Realm.OC1, "lhr");
     public static final Region US_ASHBURN_1 = register("us-ashburn-1", Realm.OC1, "iad");
     public static final Region US_PHOENIX_1 = register("us-phoenix-1", Realm.OC1, "phx");
     public static final Region US_SANJOSE_1 = register("us-sanjose-1", Realm.OC1, "sjc");
+    public static final Region UK_CARDIFF_1 = register("uk-cardiff-1", Realm.OC1, "cwl");
+    public static final Region SA_SANTIAGO_1 = register("sa-santiago-1", Realm.OC1, "scl");
+    public static final Region SA_VINHEDO_1 = register("sa-vinhedo-1", Realm.OC1, "vcp");
     public static final Region IL_JERUSALEM_1 = register("il-jerusalem-1", Realm.OC1, "mtz");
-    public static final Region EU_STOCKHOLM_1 = register("eu-stockholm-1", Realm.OC1, "arn");
+    public static final Region EU_MARSEILLE_1 = register("eu-marseille-1", Realm.OC1, "mrs");
+    public static final Region AP_SINGAPORE_1 = register("ap-singapore-1", Realm.OC1, "sin");
+    public static final Region ME_ABUDHABI_1 = register("me-abudhabi-1", Realm.OC1, "auh");
     public static final Region EU_MILAN_1 = register("eu-milan-1", Realm.OC1, "lin");
+    public static final Region EU_STOCKHOLM_1 = register("eu-stockholm-1", Realm.OC1, "arn");
     public static final Region AF_JOHANNESBURG_1 = register("af-johannesburg-1", Realm.OC1, "jnb");
     public static final Region EU_PARIS_1 = register("eu-paris-1", Realm.OC1, "cdg");
     public static final Region MX_QUERETARO_1 = register("mx-queretaro-1", Realm.OC1, "qro");
     public static final Region EU_MADRID_1 = register("eu-madrid-1", Realm.OC1, "mad");
     public static final Region US_CHICAGO_1 = register("us-chicago-1", Realm.OC1, "ord");
-    public static final Region ME_NEOM_1 = register("me-neom-1", Realm.OC1, "num");
-    public static final Region EU_KRAGUJEVAC_1 = register("eu-kragujevac-1", Realm.OC1, "kvo");
-    public static final Region MX_MONTERREY_1 = register("mx-monterrey-1", Realm.OC1, "mty");
-    public static final Region SA_VALPARAISO_1 = register("sa-valparaiso-1", Realm.OC1, "vap");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -144,27 +142,6 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC14
     public static final Region EU_DCC_MILAN_1 = register("eu-dcc-milan-1", Realm.OC14, "bgy");
-    public static final Region EU_DCC_DUBLIN_1 = register("eu-dcc-dublin-1", Realm.OC14, "ork");
-    public static final Region EU_DCC_DUBLIN_2 = register("eu-dcc-dublin-2", Realm.OC14, "snn");
-    public static final Region EU_DCC_RATING_2 = register("eu-dcc-rating-2", Realm.OC14, "dtm");
-    public static final Region EU_DCC_MILAN_2 = register("eu-dcc-milan-2", Realm.OC14, "mxp");
-    public static final Region EU_DCC_RATING_1 = register("eu-dcc-rating-1", Realm.OC14, "dus");
-
-    // OC15
-    public static final Region AP_DCC_GAZIPUR_1 = register("ap-dcc-gazipur-1", Realm.OC15, "dac");
-
-    // OC16
-    public static final Region US_WESTJORDAN_1 = register("us-westjordan-1", Realm.OC16, "sgu");
-
-    // OC17
-    public static final Region US_DCC_PHOENIX_1 = register("us-dcc-phoenix-1", Realm.OC17, "ifp");
-    public static final Region US_DCC_PHOENIX_2 = register("us-dcc-phoenix-2", Realm.OC17, "gcn");
-
-    // OC18
-    public static final Region US_DCC_PHOENIX_3 = register("us-dcc-phoenix-3", Realm.OC18, "prc");
-
-    // OC20
-    public static final Region EU_JOVANOVAC_1 = register("eu-jovanovac-1", Realm.OC20, "beg");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
@@ -705,7 +682,12 @@ public final class Region implements Serializable, Comparable<Region> {
                         .baseUri(URI.create(metadataServiceBaseUrl + "instance/"))
                         .build()) {
 
-            for (int retry = 0; retry < 3; retry++) {
+            ExponentialBackoffDelayStrategyWithJitter strategy =
+                    new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(100));
+            WaiterConfiguration.WaitContext context =
+                    new WaiterConfiguration.WaitContext(System.currentTimeMillis());
+
+            for (int retry = 0; retry < 8; retry++) {
                 try {
                     SyncFutureWaiter waiter = new SyncFutureWaiter();
 
@@ -732,7 +714,13 @@ public final class Region implements Serializable, Comparable<Region> {
                             e);
                     lastException = e;
                     try {
-                        Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+                        long waitTime = strategy.nextDelay(context);
+                        Thread.sleep(waitTime);
+                        context.incrementAttempts();
+                        LOG.info(
+                                "Exiting retry {} with wait time: {} millis",
+                                (retry + 1),
+                                waitTime);
                     } catch (InterruptedException interruptedException) {
                         LOG.debug(
                                 "Thread interrupted while waiting to make next call to get region info from instance metadata service",

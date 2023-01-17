@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -51,7 +51,11 @@ public final class CloudExadataInfrastructureSummary
         "nextMaintenanceRunId",
         "freeformTags",
         "definedTags",
-        "customerContacts"
+        "customerContacts",
+        "storageServerVersion",
+        "dbServerVersion",
+        "monthlyStorageServerVersion",
+        "monthlyDbServerVersion"
     })
     public CloudExadataInfrastructureSummary(
             String id,
@@ -81,7 +85,11 @@ public final class CloudExadataInfrastructureSummary
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<CustomerContact> customerContacts) {
+            java.util.List<CustomerContact> customerContacts,
+            String storageServerVersion,
+            String dbServerVersion,
+            String monthlyStorageServerVersion,
+            String monthlyDbServerVersion) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -111,6 +119,10 @@ public final class CloudExadataInfrastructureSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.customerContacts = customerContacts;
+        this.storageServerVersion = storageServerVersion;
+        this.dbServerVersion = dbServerVersion;
+        this.monthlyStorageServerVersion = monthlyStorageServerVersion;
+        this.monthlyDbServerVersion = monthlyDbServerVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -592,6 +604,82 @@ public final class CloudExadataInfrastructureSummary
             this.__explicitlySet__.add("customerContacts");
             return this;
         }
+        /**
+         * The software version of the storage servers (cells) in the cloud Exadata infrastructure.
+         * Example: 20.1.15
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageServerVersion")
+        private String storageServerVersion;
+
+        /**
+         * The software version of the storage servers (cells) in the cloud Exadata infrastructure.
+         * Example: 20.1.15
+         *
+         * @param storageServerVersion the value to set
+         * @return this builder
+         */
+        public Builder storageServerVersion(String storageServerVersion) {
+            this.storageServerVersion = storageServerVersion;
+            this.__explicitlySet__.add("storageServerVersion");
+            return this;
+        }
+        /**
+         * The software version of the database servers (dom0) in the cloud Exadata infrastructure.
+         * Example: 20.1.15
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServerVersion")
+        private String dbServerVersion;
+
+        /**
+         * The software version of the database servers (dom0) in the cloud Exadata infrastructure.
+         * Example: 20.1.15
+         *
+         * @param dbServerVersion the value to set
+         * @return this builder
+         */
+        public Builder dbServerVersion(String dbServerVersion) {
+            this.dbServerVersion = dbServerVersion;
+            this.__explicitlySet__.add("dbServerVersion");
+            return this;
+        }
+        /**
+         * The monthly software version of the storage servers (cells) in the cloud Exadata
+         * infrastructure. Example: 20.1.15
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("monthlyStorageServerVersion")
+        private String monthlyStorageServerVersion;
+
+        /**
+         * The monthly software version of the storage servers (cells) in the cloud Exadata
+         * infrastructure. Example: 20.1.15
+         *
+         * @param monthlyStorageServerVersion the value to set
+         * @return this builder
+         */
+        public Builder monthlyStorageServerVersion(String monthlyStorageServerVersion) {
+            this.monthlyStorageServerVersion = monthlyStorageServerVersion;
+            this.__explicitlySet__.add("monthlyStorageServerVersion");
+            return this;
+        }
+        /**
+         * The monthly software version of the database servers (dom0) in the cloud Exadata
+         * infrastructure. Example: 20.1.15
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("monthlyDbServerVersion")
+        private String monthlyDbServerVersion;
+
+        /**
+         * The monthly software version of the database servers (dom0) in the cloud Exadata
+         * infrastructure. Example: 20.1.15
+         *
+         * @param monthlyDbServerVersion the value to set
+         * @return this builder
+         */
+        public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
+            this.monthlyDbServerVersion = monthlyDbServerVersion;
+            this.__explicitlySet__.add("monthlyDbServerVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -626,7 +714,11 @@ public final class CloudExadataInfrastructureSummary
                             this.nextMaintenanceRunId,
                             this.freeformTags,
                             this.definedTags,
-                            this.customerContacts);
+                            this.customerContacts,
+                            this.storageServerVersion,
+                            this.dbServerVersion,
+                            this.monthlyStorageServerVersion,
+                            this.monthlyDbServerVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -718,6 +810,18 @@ public final class CloudExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerVersion")) {
+                this.storageServerVersion(model.getStorageServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dbServerVersion")) {
+                this.dbServerVersion(model.getDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("monthlyStorageServerVersion")) {
+                this.monthlyStorageServerVersion(model.getMonthlyStorageServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("monthlyDbServerVersion")) {
+                this.monthlyDbServerVersion(model.getMonthlyDbServerVersion());
             }
             return this;
         }
@@ -1199,6 +1303,74 @@ public final class CloudExadataInfrastructureSummary
         return customerContacts;
     }
 
+    /**
+     * The software version of the storage servers (cells) in the cloud Exadata infrastructure.
+     * Example: 20.1.15
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageServerVersion")
+    private final String storageServerVersion;
+
+    /**
+     * The software version of the storage servers (cells) in the cloud Exadata infrastructure.
+     * Example: 20.1.15
+     *
+     * @return the value
+     */
+    public String getStorageServerVersion() {
+        return storageServerVersion;
+    }
+
+    /**
+     * The software version of the database servers (dom0) in the cloud Exadata infrastructure.
+     * Example: 20.1.15
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServerVersion")
+    private final String dbServerVersion;
+
+    /**
+     * The software version of the database servers (dom0) in the cloud Exadata infrastructure.
+     * Example: 20.1.15
+     *
+     * @return the value
+     */
+    public String getDbServerVersion() {
+        return dbServerVersion;
+    }
+
+    /**
+     * The monthly software version of the storage servers (cells) in the cloud Exadata
+     * infrastructure. Example: 20.1.15
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("monthlyStorageServerVersion")
+    private final String monthlyStorageServerVersion;
+
+    /**
+     * The monthly software version of the storage servers (cells) in the cloud Exadata
+     * infrastructure. Example: 20.1.15
+     *
+     * @return the value
+     */
+    public String getMonthlyStorageServerVersion() {
+        return monthlyStorageServerVersion;
+    }
+
+    /**
+     * The monthly software version of the database servers (dom0) in the cloud Exadata
+     * infrastructure. Example: 20.1.15
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("monthlyDbServerVersion")
+    private final String monthlyDbServerVersion;
+
+    /**
+     * The monthly software version of the database servers (dom0) in the cloud Exadata
+     * infrastructure. Example: 20.1.15
+     *
+     * @return the value
+     */
+    public String getMonthlyDbServerVersion() {
+        return monthlyDbServerVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1243,6 +1415,11 @@ public final class CloudExadataInfrastructureSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", storageServerVersion=").append(String.valueOf(this.storageServerVersion));
+        sb.append(", dbServerVersion=").append(String.valueOf(this.dbServerVersion));
+        sb.append(", monthlyStorageServerVersion=")
+                .append(String.valueOf(this.monthlyStorageServerVersion));
+        sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -1288,6 +1465,12 @@ public final class CloudExadataInfrastructureSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.storageServerVersion, other.storageServerVersion)
+                && java.util.Objects.equals(this.dbServerVersion, other.dbServerVersion)
+                && java.util.Objects.equals(
+                        this.monthlyStorageServerVersion, other.monthlyStorageServerVersion)
+                && java.util.Objects.equals(
+                        this.monthlyDbServerVersion, other.monthlyDbServerVersion)
                 && super.equals(other);
     }
 
@@ -1381,6 +1564,24 @@ public final class CloudExadataInfrastructureSummary
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageServerVersion == null
+                                ? 43
+                                : this.storageServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbServerVersion == null ? 43 : this.dbServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.monthlyStorageServerVersion == null
+                                ? 43
+                                : this.monthlyStorageServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.monthlyDbServerVersion == null
+                                ? 43
+                                : this.monthlyDbServerVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

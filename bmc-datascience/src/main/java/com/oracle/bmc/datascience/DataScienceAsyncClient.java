@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -390,6 +390,47 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeModelVersionSetCompartmentResponse>
+            changeModelVersionSetCompartment(
+                    ChangeModelVersionSetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelVersionSetCompartmentRequest,
+                                    ChangeModelVersionSetCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelVersionSetId(), "modelVersionSetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeModelVersionSetCompartmentDetails(),
+                "changeModelVersionSetCompartmentDetails is required");
+
+        return clientCall(request, ChangeModelVersionSetCompartmentResponse::builder)
+                .logger(LOG, "changeModelVersionSetCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeModelVersionSetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/ChangeModelVersionSetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelVersionSetCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelVersionSets")
+                .appendPathParam(request.getModelVersionSetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeModelVersionSetCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeModelVersionSetCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeNotebookSessionCompartmentResponse>
             changeNotebookSessionCompartment(
                     ChangeNotebookSessionCompartmentRequest request,
@@ -700,6 +741,39 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<CreateModelVersionSetResponse> createModelVersionSet(
+            CreateModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelVersionSetRequest, CreateModelVersionSetResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateModelVersionSetDetails(),
+                "createModelVersionSetDetails is required");
+
+        return clientCall(request, CreateModelVersionSetResponse::builder)
+                .logger(LOG, "createModelVersionSet")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelVersionSet",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/CreateModelVersionSet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelVersionSetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelVersionSets")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelVersionSet.class,
+                        CreateModelVersionSetResponse.Builder::modelVersionSet)
+                .handleResponseHeaderString("etag", CreateModelVersionSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelVersionSetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNotebookSessionResponse> createNotebookSession(
             CreateNotebookSessionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -980,6 +1054,38 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         DeleteModelDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelVersionSetResponse> deleteModelVersionSet(
+            DeleteModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelVersionSetRequest, DeleteModelVersionSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelVersionSetId(), "modelVersionSetId must not be blank");
+
+        return clientCall(request, DeleteModelVersionSetResponse::builder)
+                .logger(LOG, "deleteModelVersionSet")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelVersionSet",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/DeleteModelVersionSet")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelVersionSetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelVersionSets")
+                .appendPathParam(request.getModelVersionSetId())
+                .appendQueryParam("isDeleteRelatedModels", request.getIsDeleteRelatedModels())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteModelVersionSetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteModelVersionSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1312,6 +1418,37 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", GetModelProvenanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelProvenanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelVersionSetResponse> getModelVersionSet(
+            GetModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetModelVersionSetRequest, GetModelVersionSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelVersionSetId(), "modelVersionSetId must not be blank");
+
+        return clientCall(request, GetModelVersionSetResponse::builder)
+                .logger(LOG, "getModelVersionSet")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelVersionSet",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/GetModelVersionSet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelVersionSetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelVersionSets")
+                .appendPathParam(request.getModelVersionSetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelVersionSet.class,
+                        GetModelVersionSetResponse.Builder::modelVersionSet)
+                .handleResponseHeaderString("etag", GetModelVersionSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelVersionSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1749,6 +1886,48 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelVersionSetsResponse> listModelVersionSets(
+            ListModelVersionSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelVersionSetsRequest, ListModelVersionSetsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelVersionSetsResponse::builder)
+                .logger(LOG, "listModelVersionSets")
+                .serviceDetails(
+                        "DataScience",
+                        "ListModelVersionSets",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSetSummary/ListModelVersionSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelVersionSetsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelVersionSets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelVersionSetSummary.class,
+                        ListModelVersionSetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelVersionSetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelVersionSetsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelVersionSetsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResponse> listModels(
             ListModelsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse>
@@ -1766,6 +1945,8 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190101")
                 .appendPathParam("models")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("modelVersionSetName", request.getModelVersionSetName())
+                .appendQueryParam("versionLabel", request.getVersionLabel())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("projectId", request.getProjectId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -2175,6 +2356,42 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelProvenanceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateModelProvenanceResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelVersionSetResponse> updateModelVersionSet(
+            UpdateModelVersionSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelVersionSetRequest, UpdateModelVersionSetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelVersionSetId(), "modelVersionSetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateModelVersionSetDetails(),
+                "updateModelVersionSetDetails is required");
+
+        return clientCall(request, UpdateModelVersionSetResponse::builder)
+                .logger(LOG, "updateModelVersionSet")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelVersionSet",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelVersionSet/UpdateModelVersionSet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelVersionSetRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelVersionSets")
+                .appendPathParam(request.getModelVersionSetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelVersionSet.class,
+                        UpdateModelVersionSetResponse.Builder::modelVersionSet)
+                .handleResponseHeaderString("etag", UpdateModelVersionSetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateModelVersionSetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

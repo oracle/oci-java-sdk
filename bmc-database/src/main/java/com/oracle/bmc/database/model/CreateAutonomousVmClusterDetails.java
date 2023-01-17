@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -363,15 +363,15 @@ public final class CreateAutonomousVmClusterDetails
             return this;
         }
         /**
-         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a
-         * VMCluster.Default is TLS.
+         * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster.
+         * Default is TLS.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabled")
         private Boolean isMtlsEnabled;
 
         /**
-         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a
-         * VMCluster.Default is TLS.
+         * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster.
+         * Default is TLS.
          *
          * @param isMtlsEnabled the value to set
          * @return this builder
@@ -760,15 +760,15 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a
-     * VMCluster.Default is TLS.
+     * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default
+     * is TLS.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabled")
     private final Boolean isMtlsEnabled;
 
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a
-     * VMCluster.Default is TLS.
+     * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default
+     * is TLS.
      *
      * @return the value
      */
