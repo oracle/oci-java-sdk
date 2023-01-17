@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -197,6 +197,24 @@ public interface DataScienceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a modelVersionSet resource into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeModelVersionSetCompartmentResponse>
+            changeModelVersionSetCompartment(
+                    ChangeModelVersionSetCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelVersionSetCompartmentRequest,
+                                    ChangeModelVersionSetCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a notebook session resource into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -338,6 +356,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new modelVersionSet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateModelVersionSetResponse> createModelVersionSet(
+            CreateModelVersionSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelVersionSetRequest, CreateModelVersionSetResponse>
+                    handler);
+
+    /**
      * Creates a new notebook session.
      *
      * @param request The request object containing the details to send
@@ -472,6 +506,22 @@ public interface DataScienceAsync extends AutoCloseable {
             DeleteModelDeploymentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
+                    handler);
+
+    /**
+     * Deletes the specified modelVersionSet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteModelVersionSetResponse> deleteModelVersionSet(
+            DeleteModelVersionSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelVersionSetRequest, DeleteModelVersionSetResponse>
                     handler);
 
     /**
@@ -625,6 +675,22 @@ public interface DataScienceAsync extends AutoCloseable {
             GetModelProvenanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetModelProvenanceRequest, GetModelProvenanceResponse>
+                    handler);
+
+    /**
+     * Gets the specified model version set information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetModelVersionSetResponse> getModelVersionSet(
+            GetModelVersionSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetModelVersionSetRequest, GetModelVersionSetResponse>
                     handler);
 
     /**
@@ -812,6 +878,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists model version sets in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListModelVersionSetsResponse> listModelVersionSets(
+            ListModelVersionSetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListModelVersionSetsRequest, ListModelVersionSetsResponse>
+                    handler);
+
+    /**
      * Lists models in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -996,6 +1078,22 @@ public interface DataScienceAsync extends AutoCloseable {
             UpdateModelProvenanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>
+                    handler);
+
+    /**
+     * Updates the properties of a model version set. User can update the `description` property.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateModelVersionSetResponse> updateModelVersionSet(
+            UpdateModelVersionSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelVersionSetRequest, UpdateModelVersionSetResponse>
                     handler);
 
     /**

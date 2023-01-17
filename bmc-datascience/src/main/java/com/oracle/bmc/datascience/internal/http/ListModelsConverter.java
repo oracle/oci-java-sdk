@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.internal.http;
@@ -39,6 +39,22 @@ public class ListModelsConverter {
                         "compartmentId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
+
+        if (request.getModelVersionSetName() != null) {
+            target =
+                    target.queryParam(
+                            "modelVersionSetName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getModelVersionSetName()));
+        }
+
+        if (request.getVersionLabel() != null) {
+            target =
+                    target.queryParam(
+                            "versionLabel",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVersionLabel()));
+        }
 
         if (request.getId() != null) {
             target =

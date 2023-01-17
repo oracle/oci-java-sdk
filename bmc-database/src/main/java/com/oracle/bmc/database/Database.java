@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -1769,7 +1769,7 @@ public interface Database extends AutoCloseable {
             GetCloudExadataInfrastructureRequest request);
 
     /**
-     * Gets un allocated resources information for the specified Cloud Exadata infrastructure.
+     * Gets unallocated resources information for the specified Cloud Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

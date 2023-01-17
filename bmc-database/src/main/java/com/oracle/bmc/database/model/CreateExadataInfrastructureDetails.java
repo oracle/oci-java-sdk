@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -40,6 +40,8 @@ public final class CreateExadataInfrastructureDetails
         "maintenanceWindow",
         "storageCount",
         "computeCount",
+        "isMultiRackDeployment",
+        "multiRackConfigurationFile",
         "dnsServer",
         "ntpServer",
         "isCpsOfflineReportEnabled",
@@ -62,6 +64,8 @@ public final class CreateExadataInfrastructureDetails
             MaintenanceWindow maintenanceWindow,
             Integer storageCount,
             Integer computeCount,
+            Boolean isMultiRackDeployment,
+            byte[] multiRackConfigurationFile,
             java.util.List<String> dnsServer,
             java.util.List<String> ntpServer,
             Boolean isCpsOfflineReportEnabled,
@@ -83,6 +87,8 @@ public final class CreateExadataInfrastructureDetails
         this.maintenanceWindow = maintenanceWindow;
         this.storageCount = storageCount;
         this.computeCount = computeCount;
+        this.isMultiRackDeployment = isMultiRackDeployment;
+        this.multiRackConfigurationFile = multiRackConfigurationFile;
         this.dnsServer = dnsServer;
         this.ntpServer = ntpServer;
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
@@ -338,6 +344,38 @@ public final class CreateExadataInfrastructureDetails
             return this;
         }
         /**
+         * Indicates if deployment is Multi-Rack or not.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultiRackDeployment")
+        private Boolean isMultiRackDeployment;
+
+        /**
+         * Indicates if deployment is Multi-Rack or not.
+         * @param isMultiRackDeployment the value to set
+         * @return this builder
+         **/
+        public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
+            this.isMultiRackDeployment = isMultiRackDeployment;
+            this.__explicitlySet__.add("isMultiRackDeployment");
+            return this;
+        }
+        /**
+         * The base64 encoded Multi-Rack configuration json file.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("multiRackConfigurationFile")
+        private byte[] multiRackConfigurationFile;
+
+        /**
+         * The base64 encoded Multi-Rack configuration json file.
+         * @param multiRackConfigurationFile the value to set
+         * @return this builder
+         **/
+        public Builder multiRackConfigurationFile(byte[] multiRackConfigurationFile) {
+            this.multiRackConfigurationFile = multiRackConfigurationFile;
+            this.__explicitlySet__.add("multiRackConfigurationFile");
+            return this;
+        }
+        /**
          * The list of DNS server IP addresses. Maximum of 3 allowed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
@@ -458,6 +496,8 @@ public final class CreateExadataInfrastructureDetails
                             this.maintenanceWindow,
                             this.storageCount,
                             this.computeCount,
+                            this.isMultiRackDeployment,
+                            this.multiRackConfigurationFile,
                             this.dnsServer,
                             this.ntpServer,
                             this.isCpsOfflineReportEnabled,
@@ -515,6 +555,12 @@ public final class CreateExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiRackDeployment")) {
+                this.isMultiRackDeployment(model.getIsMultiRackDeployment());
+            }
+            if (model.wasPropertyExplicitlySet("multiRackConfigurationFile")) {
+                this.multiRackConfigurationFile(model.getMultiRackConfigurationFile());
             }
             if (model.wasPropertyExplicitlySet("dnsServer")) {
                 this.dnsServer(model.getDnsServer());
@@ -762,6 +808,34 @@ public final class CreateExadataInfrastructureDetails
     }
 
     /**
+     * Indicates if deployment is Multi-Rack or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultiRackDeployment")
+    private final Boolean isMultiRackDeployment;
+
+    /**
+     * Indicates if deployment is Multi-Rack or not.
+     * @return the value
+     **/
+    public Boolean getIsMultiRackDeployment() {
+        return isMultiRackDeployment;
+    }
+
+    /**
+     * The base64 encoded Multi-Rack configuration json file.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("multiRackConfigurationFile")
+    private final byte[] multiRackConfigurationFile;
+
+    /**
+     * The base64 encoded Multi-Rack configuration json file.
+     * @return the value
+     **/
+    public byte[] getMultiRackConfigurationFile() {
+        return multiRackConfigurationFile;
+    }
+
+    /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
@@ -880,6 +954,17 @@ public final class CreateExadataInfrastructureDetails
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", storageCount=").append(String.valueOf(this.storageCount));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", isMultiRackDeployment=").append(String.valueOf(this.isMultiRackDeployment));
+        sb.append(", multiRackConfigurationFile=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.multiRackConfigurationFile)
+                                : (String.valueOf(this.multiRackConfigurationFile)
+                                        + (this.multiRackConfigurationFile != null
+                                                ? " (byte["
+                                                        + this.multiRackConfigurationFile.length
+                                                        + "])"
+                                                : ""))));
         sb.append(", dnsServer=").append(String.valueOf(this.dnsServer));
         sb.append(", ntpServer=").append(String.valueOf(this.ntpServer));
         sb.append(", isCpsOfflineReportEnabled=")
@@ -917,6 +1002,9 @@ public final class CreateExadataInfrastructureDetails
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.storageCount, other.storageCount)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(this.isMultiRackDeployment, other.isMultiRackDeployment)
+                && java.util.Arrays.equals(
+                        this.multiRackConfigurationFile, other.multiRackConfigurationFile)
                 && java.util.Objects.equals(this.dnsServer, other.dnsServer)
                 && java.util.Objects.equals(this.ntpServer, other.ntpServer)
                 && java.util.Objects.equals(
@@ -965,6 +1053,12 @@ public final class CreateExadataInfrastructureDetails
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
         result = (result * PRIME) + (this.storageCount == null ? 43 : this.storageCount.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiRackDeployment == null
+                                ? 43
+                                : this.isMultiRackDeployment.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.multiRackConfigurationFile);
         result = (result * PRIME) + (this.dnsServer == null ? 43 : this.dnsServer.hashCode());
         result = (result * PRIME) + (this.ntpServer == null ? 43 : this.ntpServer.hashCode());
         result =

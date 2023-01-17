@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -604,6 +604,33 @@ public class RegionTest {
             Assert.assertFalse(set.isEmpty());
             Assert.assertEquals(1, set.size());
             Assert.assertEquals(true, set.iterator().next());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testImdsRetriesWithDealyAndJitter() {
+        try {
+            Region.hasUsedInstanceMetadataService = false;
+            final ConcurrentMap<String, Boolean> resultMap = new ConcurrentHashMap<>();
+            Thread thread =
+                    new Thread(
+                            () -> {
+                                boolean flag = Region.registerFromInstanceMetadataService();
+                                resultMap.put("t1", flag);
+                                System.out.println(
+                                        "Flag: "
+                                                + flag
+                                                + "\nThread1: "
+                                                + Arrays.toString(Region.values()));
+                            });
+            thread.setName("retry-thread");
+            thread.start();
+            thread.join();
+            Set<Boolean> set = new HashSet<>(resultMap.values());
+            Assert.assertFalse(set.isEmpty());
+            Assert.assertEquals(1, set.size());
         } catch (Exception e) {
             e.printStackTrace();
         }

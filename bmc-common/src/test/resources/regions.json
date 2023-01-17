@@ -268,5 +268,11 @@
         "realmDomainComponent": "oraclecloud14.com", 
         "regionIdentifier": "eu-dcc-milan-1", 
         "realmKey": "oc14"
+    },
+    {
+        "regionKey": "ord",
+        "realmKey": "oc1",
+        "regionIdentifier": "us-chicago-1",
+        "realmDomainComponent": "oraclecloud.com"
     }
 ]

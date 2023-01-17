@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -44,6 +44,8 @@ public final class ExadataInfrastructureSummary
         "additionalStorageCount",
         "activatedStorageCount",
         "computeCount",
+        "isMultiRackDeployment",
+        "multiRackConfigurationFile",
         "additionalComputeCount",
         "additionalComputeSystemModel",
         "cloudControlPlaneServer1",
@@ -90,6 +92,8 @@ public final class ExadataInfrastructureSummary
             Integer additionalStorageCount,
             Integer activatedStorageCount,
             Integer computeCount,
+            Boolean isMultiRackDeployment,
+            byte[] multiRackConfigurationFile,
             Integer additionalComputeCount,
             AdditionalComputeSystemModel additionalComputeSystemModel,
             String cloudControlPlaneServer1,
@@ -135,6 +139,8 @@ public final class ExadataInfrastructureSummary
         this.additionalStorageCount = additionalStorageCount;
         this.activatedStorageCount = activatedStorageCount;
         this.computeCount = computeCount;
+        this.isMultiRackDeployment = isMultiRackDeployment;
+        this.multiRackConfigurationFile = multiRackConfigurationFile;
         this.additionalComputeCount = additionalComputeCount;
         this.additionalComputeSystemModel = additionalComputeSystemModel;
         this.cloudControlPlaneServer1 = cloudControlPlaneServer1;
@@ -470,6 +476,38 @@ public final class ExadataInfrastructureSummary
         public Builder computeCount(Integer computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
+         * Indicates if deployment is Multi-Rack or not.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultiRackDeployment")
+        private Boolean isMultiRackDeployment;
+
+        /**
+         * Indicates if deployment is Multi-Rack or not.
+         * @param isMultiRackDeployment the value to set
+         * @return this builder
+         **/
+        public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
+            this.isMultiRackDeployment = isMultiRackDeployment;
+            this.__explicitlySet__.add("isMultiRackDeployment");
+            return this;
+        }
+        /**
+         * The base64 encoded Multi-Rack configuration json file.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("multiRackConfigurationFile")
+        private byte[] multiRackConfigurationFile;
+
+        /**
+         * The base64 encoded Multi-Rack configuration json file.
+         * @param multiRackConfigurationFile the value to set
+         * @return this builder
+         **/
+        public Builder multiRackConfigurationFile(byte[] multiRackConfigurationFile) {
+            this.multiRackConfigurationFile = multiRackConfigurationFile;
+            this.__explicitlySet__.add("multiRackConfigurationFile");
             return this;
         }
         /**
@@ -917,6 +955,8 @@ public final class ExadataInfrastructureSummary
                             this.additionalStorageCount,
                             this.activatedStorageCount,
                             this.computeCount,
+                            this.isMultiRackDeployment,
+                            this.multiRackConfigurationFile,
                             this.additionalComputeCount,
                             this.additionalComputeSystemModel,
                             this.cloudControlPlaneServer1,
@@ -1006,6 +1046,12 @@ public final class ExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiRackDeployment")) {
+                this.isMultiRackDeployment(model.getIsMultiRackDeployment());
+            }
+            if (model.wasPropertyExplicitlySet("multiRackConfigurationFile")) {
+                this.multiRackConfigurationFile(model.getMultiRackConfigurationFile());
             }
             if (model.wasPropertyExplicitlySet("additionalComputeCount")) {
                 this.additionalComputeCount(model.getAdditionalComputeCount());
@@ -1422,6 +1468,34 @@ public final class ExadataInfrastructureSummary
      **/
     public Integer getComputeCount() {
         return computeCount;
+    }
+
+    /**
+     * Indicates if deployment is Multi-Rack or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultiRackDeployment")
+    private final Boolean isMultiRackDeployment;
+
+    /**
+     * Indicates if deployment is Multi-Rack or not.
+     * @return the value
+     **/
+    public Boolean getIsMultiRackDeployment() {
+        return isMultiRackDeployment;
+    }
+
+    /**
+     * The base64 encoded Multi-Rack configuration json file.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("multiRackConfigurationFile")
+    private final byte[] multiRackConfigurationFile;
+
+    /**
+     * The base64 encoded Multi-Rack configuration json file.
+     * @return the value
+     **/
+    public byte[] getMultiRackConfigurationFile() {
+        return multiRackConfigurationFile;
     }
 
     /**
@@ -1925,6 +1999,17 @@ public final class ExadataInfrastructureSummary
         sb.append(", additionalStorageCount=").append(String.valueOf(this.additionalStorageCount));
         sb.append(", activatedStorageCount=").append(String.valueOf(this.activatedStorageCount));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", isMultiRackDeployment=").append(String.valueOf(this.isMultiRackDeployment));
+        sb.append(", multiRackConfigurationFile=")
+                .append(
+                        (includeByteArrayContents
+                                ? java.util.Arrays.toString(this.multiRackConfigurationFile)
+                                : (String.valueOf(this.multiRackConfigurationFile)
+                                        + (this.multiRackConfigurationFile != null
+                                                ? " (byte["
+                                                        + this.multiRackConfigurationFile.length
+                                                        + "])"
+                                                : ""))));
         sb.append(", additionalComputeCount=").append(String.valueOf(this.additionalComputeCount));
         sb.append(", additionalComputeSystemModel=")
                 .append(String.valueOf(this.additionalComputeSystemModel));
@@ -1989,6 +2074,9 @@ public final class ExadataInfrastructureSummary
                         this.additionalStorageCount, other.additionalStorageCount)
                 && java.util.Objects.equals(this.activatedStorageCount, other.activatedStorageCount)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(this.isMultiRackDeployment, other.isMultiRackDeployment)
+                && java.util.Arrays.equals(
+                        this.multiRackConfigurationFile, other.multiRackConfigurationFile)
                 && java.util.Objects.equals(
                         this.additionalComputeCount, other.additionalComputeCount)
                 && java.util.Objects.equals(
@@ -2080,6 +2168,12 @@ public final class ExadataInfrastructureSummary
                                 ? 43
                                 : this.activatedStorageCount.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMultiRackDeployment == null
+                                ? 43
+                                : this.isMultiRackDeployment.hashCode());
+        result = (result * PRIME) + java.util.Arrays.hashCode(this.multiRackConfigurationFile);
         result =
                 (result * PRIME)
                         + (this.additionalComputeCount == null
