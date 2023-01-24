@@ -49,15 +49,15 @@ public class GetCertificateRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * SSL certificate used in the WAAS policy. This number is generated when the certificate is
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SSL
+         * certificate used in the WAAS policy. This number is generated when the certificate is
          * added to the policy.
          */
         private String certificateId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * SSL certificate used in the WAAS policy. This number is generated when the certificate is
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SSL
+         * certificate used in the WAAS policy. This number is generated when the certificate is
          * added to the policy.
          *
          * @param certificateId the value to set
