@@ -221,6 +221,37 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<CancelPipelineRunResponse> cancelPipelineRun(
+            CancelPipelineRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelPipelineRunRequest, CancelPipelineRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineRunId(), "pipelineRunId must not be blank");
+
+        return clientCall(request, CancelPipelineRunResponse::builder)
+                .logger(LOG, "cancelPipelineRun")
+                .serviceDetails(
+                        "DataScience",
+                        "CancelPipelineRun",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/CancelPipelineRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelPipelineRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .appendPathParam(request.getPipelineRunId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelPipelineRun")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelPipelineRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -465,6 +496,77 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeNotebookSessionCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePipelineCompartmentResponse> changePipelineCompartment(
+            ChangePipelineCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePipelineCompartmentRequest, ChangePipelineCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePipelineCompartmentDetails(),
+                "changePipelineCompartmentDetails is required");
+
+        return clientCall(request, ChangePipelineCompartmentResponse::builder)
+                .logger(LOG, "changePipelineCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangePipelineCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/ChangePipelineCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePipelineCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePipelineCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePipelineRunCompartmentResponse>
+            changePipelineRunCompartment(
+                    ChangePipelineRunCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePipelineRunCompartmentRequest,
+                                    ChangePipelineRunCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getPipelineRunId(), "pipelineRunId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePipelineRunCompartmentDetails(),
+                "changePipelineRunCompartmentDetails is required");
+
+        return clientCall(request, ChangePipelineRunCompartmentResponse::builder)
+                .logger(LOG, "changePipelineRunCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangePipelineRunCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/ChangePipelineRunCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePipelineRunCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .appendPathParam(request.getPipelineRunId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangePipelineRunCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -812,6 +914,71 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePipelineResponse> createPipeline(
+            CreatePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePipelineRequest, CreatePipelineResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreatePipelineDetails(), "createPipelineDetails is required");
+
+        return clientCall(request, CreatePipelineResponse::builder)
+                .logger(LOG, "createPipeline")
+                .serviceDetails(
+                        "DataScience",
+                        "CreatePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/CreatePipeline")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePipelineRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Pipeline.class,
+                        CreatePipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", CreatePipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePipelineRunResponse> createPipelineRun(
+            CreatePipelineRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePipelineRunRequest, CreatePipelineRunResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreatePipelineRunDetails(), "createPipelineRunDetails is required");
+
+        return clientCall(request, CreatePipelineRunResponse::builder)
+                .logger(LOG, "createPipelineRun")
+                .serviceDetails(
+                        "DataScience",
+                        "CreatePipelineRun",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/CreatePipelineRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePipelineRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.PipelineRun.class,
+                        CreatePipelineRunResponse.Builder::pipelineRun)
+                .handleResponseHeaderString("etag", CreatePipelineRunResponse.Builder::etag)
+                .handleResponseHeaderString("location", CreatePipelineRunResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePipelineRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProjectResponse> createProject(
             CreateProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
@@ -839,6 +1006,45 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStepArtifactResponse> createStepArtifact(
+            CreateStepArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateStepArtifactRequest, CreateStepArtifactResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        Validate.notBlank(request.getStepName(), "stepName must not be blank");
+        Objects.requireNonNull(request.getStepArtifact(), "stepArtifact is required");
+
+        return clientCall(request, CreateStepArtifactResponse::builder)
+                .logger(LOG, "createStepArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateStepArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/CreateStepArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStepArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("steps")
+                .appendPathParam(request.getStepName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStepArtifactResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1117,6 +1323,68 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         DeleteNotebookSessionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePipelineResponse> deletePipeline(
+            DeletePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePipelineRequest, DeletePipelineResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, DeletePipelineResponse::builder)
+                .logger(LOG, "deletePipeline")
+                .serviceDetails(
+                        "DataScience",
+                        "DeletePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/DeletePipeline")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePipelineRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendQueryParam(
+                        "deleteRelatedPipelineRuns", request.getDeleteRelatedPipelineRuns())
+                .appendQueryParam("deleteRelatedJobRuns", request.getDeleteRelatedJobRuns())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeletePipelineResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePipelineRunResponse> deletePipelineRun(
+            DeletePipelineRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePipelineRunRequest, DeletePipelineRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineRunId(), "pipelineRunId must not be blank");
+
+        return clientCall(request, DeletePipelineRunResponse::builder)
+                .logger(LOG, "deletePipelineRun")
+                .serviceDetails(
+                        "DataScience",
+                        "DeletePipelineRun",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/DeletePipelineRun")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePipelineRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .appendPathParam(request.getPipelineRunId())
+                .appendQueryParam("deleteRelatedJobRuns", request.getDeleteRelatedJobRuns())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePipelineRunResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1484,6 +1752,67 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<GetPipelineResponse> getPipeline(
+            GetPipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        return clientCall(request, GetPipelineResponse::builder)
+                .logger(LOG, "getPipeline")
+                .serviceDetails(
+                        "DataScience",
+                        "GetPipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/GetPipeline")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPipelineRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Pipeline.class,
+                        GetPipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", GetPipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPipelineRunResponse> getPipelineRun(
+            GetPipelineRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPipelineRunRequest, GetPipelineRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineRunId(), "pipelineRunId must not be blank");
+
+        return clientCall(request, GetPipelineRunResponse::builder)
+                .logger(LOG, "getPipelineRun")
+                .serviceDetails(
+                        "DataScience",
+                        "GetPipelineRun",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/GetPipelineRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPipelineRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .appendPathParam(request.getPipelineRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.PipelineRun.class,
+                        GetPipelineRunResponse.Builder::pipelineRun)
+                .handleResponseHeaderString("etag", GetPipelineRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPipelineRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProjectResponse> getProject(
             GetProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse>
@@ -1510,6 +1839,54 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStepArtifactContentResponse> getStepArtifactContent(
+            GetStepArtifactContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStepArtifactContentRequest, GetStepArtifactContentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        Validate.notBlank(request.getStepName(), "stepName must not be blank");
+
+        return clientCall(request, GetStepArtifactContentResponse::builder)
+                .logger(LOG, "getStepArtifactContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetStepArtifactContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/GetStepArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStepArtifactContentRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("steps")
+                .appendPathParam(request.getStepName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetStepArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", GetStepArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStepArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", GetStepArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-md5", GetStepArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", GetStepArtifactContentResponse.Builder::lastModified)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetStepArtifactContentResponse.Builder::contentDisposition)
                 .callAsync(handler);
     }
 
@@ -1620,6 +1997,48 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "content-md5", HeadModelArtifactResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", HeadModelArtifactResponse.Builder::lastModified)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadStepArtifactResponse> headStepArtifact(
+            HeadStepArtifactRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            HeadStepArtifactRequest, HeadStepArtifactResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+
+        Validate.notBlank(request.getStepName(), "stepName must not be blank");
+
+        return clientCall(request, HeadStepArtifactResponse::builder)
+                .logger(LOG, "headStepArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "HeadStepArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/HeadStepArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadStepArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .appendPathParam("steps")
+                .appendPathParam(request.getStepName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString("etag", HeadStepArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadStepArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", HeadStepArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-md5", HeadStepArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "content-disposition", HeadStepArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadStepArtifactResponse.Builder::lastModified)
                 .callAsync(handler);
     }
 
@@ -2048,6 +2467,89 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ListPipelineRunsResponse> listPipelineRuns(
+            ListPipelineRunsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPipelineRunsRequest, ListPipelineRunsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPipelineRunsResponse::builder)
+                .logger(LOG, "listPipelineRuns")
+                .serviceDetails(
+                        "DataScience",
+                        "ListPipelineRuns",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/ListPipelineRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelineRunsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("pipelineId", request.getPipelineId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.PipelineRunSummary.class,
+                        ListPipelineRunsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelineRunsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelineRunsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPipelineRunsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPipelinesResponse> listPipelines(
+            ListPipelinesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPipelinesResponse::builder)
+                .logger(LOG, "listPipelines")
+                .serviceDetails(
+                        "DataScience",
+                        "ListPipelines",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/ListPipelines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPipelinesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.PipelineSummary.class,
+                        ListPipelinesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPipelinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPipelinesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListPipelinesResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProjectsResponse> listProjects(
             ListProjectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
@@ -2428,6 +2930,76 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", UpdateNotebookSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePipelineResponse> updatePipeline(
+            UpdatePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePipelineRequest, UpdatePipelineResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePipelineDetails(), "updatePipelineDetails is required");
+
+        return clientCall(request, UpdatePipelineResponse::builder)
+                .logger(LOG, "updatePipeline")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdatePipeline",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Pipeline/UpdatePipeline")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePipelineRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelines")
+                .appendPathParam(request.getPipelineId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Pipeline.class,
+                        UpdatePipelineResponse.Builder::pipeline)
+                .handleResponseHeaderString("etag", UpdatePipelineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePipelineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePipelineRunResponse> updatePipelineRun(
+            UpdatePipelineRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePipelineRunRequest, UpdatePipelineRunResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPipelineRunId(), "pipelineRunId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePipelineRunDetails(), "updatePipelineRunDetails is required");
+
+        return clientCall(request, UpdatePipelineRunResponse::builder)
+                .logger(LOG, "updatePipelineRun")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdatePipelineRun",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/PipelineRun/UpdatePipelineRun")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePipelineRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("pipelineRuns")
+                .appendPathParam(request.getPipelineRunId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.PipelineRun.class,
+                        UpdatePipelineRunResponse.Builder::pipelineRun)
+                .handleResponseHeaderString("etag", UpdatePipelineRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePipelineRunResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

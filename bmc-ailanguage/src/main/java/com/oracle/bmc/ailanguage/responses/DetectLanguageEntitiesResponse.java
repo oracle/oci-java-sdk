@@ -24,11 +24,11 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT */
+    /** This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT */
     private String sunset;
 
     /**
-     * This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT
+     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
      *
      * @return the value
      */
@@ -107,11 +107,11 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT */
+        /** This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT */
         private String sunset;
 
         /**
-         * This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT
+         * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
          *
          * @param sunset the value to set
          * @return this builder

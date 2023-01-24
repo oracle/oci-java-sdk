@@ -214,6 +214,37 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public BatchDetectLanguagePiiEntitiesResponse batchDetectLanguagePiiEntities(
+            BatchDetectLanguagePiiEntitiesRequest request) {
+        Objects.requireNonNull(
+                request.getBatchDetectLanguagePiiEntitiesDetails(),
+                "batchDetectLanguagePiiEntitiesDetails is required");
+
+        return clientCall(request, BatchDetectLanguagePiiEntitiesResponse::builder)
+                .logger(LOG, "batchDetectLanguagePiiEntities")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguagePiiEntities",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguagePiiEntities/BatchDetectLanguagePiiEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectLanguagePiiEntitiesRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectLanguagePiiEntities")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectLanguagePiiEntitiesResult.class,
+                        BatchDetectLanguagePiiEntitiesResponse.Builder
+                                ::batchDetectLanguagePiiEntitiesResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BatchDetectLanguagePiiEntitiesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public BatchDetectLanguageSentimentsResponse batchDetectLanguageSentiments(
             BatchDetectLanguageSentimentsRequest request) {
         Objects.requireNonNull(

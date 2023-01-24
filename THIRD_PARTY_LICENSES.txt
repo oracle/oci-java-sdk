@@ -41,12 +41,6 @@ commons-lang3
 * Source code: https://github.com/apache/commons-lang
 * Project home: https://commons.apache.org/proper/commons-lang
 
-guava
-* Copyright © 2021 Guava
-* License: Apache License 2.0
-* Source code: https://github.com/google/guava
-* Project home: https://guava.dev
-
 jackson-annotations
 * Copyright © 2009-2011 FasterXML, LLC
 * License: Apache License 2.0
@@ -149,22 +143,10 @@ com.fasterxml.jackson.module:jackson-module-jaxb-annotations
 * Copyright © 2009-2011 FasterXML, LLC
 * License: Apache License 2.0
 
-com.google.errorprone:error_prone_annotations
-* Copyright © 2015 The Error Prone Authors
+com.github.stephenc.jcip:jcip-annotations
+* Copyright © 2013 Stephen Connolly
 * License: Apache License 2.0
-
-com.google.guava:failureaccess
-* Copyright © 2013 The Guava Authors
-* License: Apache License 2.0
-* Source code: https://github.com/google/guava/
-
-com.google.guava:listenablefuture
-* License: Apache License 2.0
-
-com.google.j2objc:j2objc-annotations
-* Copyright © 2012 Google Inc
-* License: Apache License 2.0
-* Source code: https://github.com/google/j2objc/
+* Source code: https://github.com/stephenc/jcip-annotations
 
 com.nimbusds:nimbus-jose-jwt
 * Copyright © 2012 - 2020, Connect2id Ltd
@@ -224,10 +206,6 @@ org.bouncycastle:bcpkix-jdk15on
 
 org.bouncycastle:bcprov-jdk15on
 * Copyright © 2000-2021 The Legion of the Bouncy Castle Inc
-* License: MIT License
-
-org.checkerframework:checker-qual
-* Copyright © 2004-present by the Checker Framework developers
 * License: MIT License
 
 org.glassfish.hk2:hk2-api
@@ -2215,10 +2193,6 @@ Bootstrap v3.3.7
 * License: MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * Project: http://getbootstrap.com
 * Copyright: 2011-2016 Twitter, Inc
-
-Google Guava Version 18.0
-* License: Apache License, 2.0
-* Copyright (C) 2009 The Guava Authors
 
 javax.inject Version: 1
 * License: Apache License, 2.0

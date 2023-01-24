@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.2.2 - 2023-01-24
+### Added
+- Support for the Cloud Migrations service
+- Support for setting up custom private IPs while creating private endpoints in the Database service
+- Support for machine learning pipelines in the Data Science service
+- Support for personally identifiable information detection in the AI Language service
+
 ## 3.2.1 - 2023-01-17
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the us-chicago-1 region
@@ -16,6 +23,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for configurable timeouts in the Service Mesh service
 
 ## 3.2.0 - 2022-12-13
+### Fixed
+- Fixed regression in Instance Principals authentication in version 3.1.0 (see [#468](https://github.com/oracle/oci-java-sdk/issues/468))
 ### Added
 - Support for the Queue service
 - Support for Intel X9 shapes when launching VM database systems in the Database service

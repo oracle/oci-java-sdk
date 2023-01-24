@@ -85,6 +85,7 @@ public class CreateAutonomousDatabaseBase
         "privateEndpointLabel",
         "freeformTags",
         "definedTags",
+        "privateEndpointIp",
         "dbVersion",
         "customerContacts",
         "isMtlsConnectionRequired",
@@ -125,6 +126,7 @@ public class CreateAutonomousDatabaseBase
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
@@ -164,6 +166,7 @@ public class CreateAutonomousDatabaseBase
         this.privateEndpointLabel = privateEndpointLabel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.privateEndpointIp = privateEndpointIp;
         this.dbVersion = dbVersion;
         this.customerContacts = customerContacts;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
@@ -1027,6 +1030,19 @@ public class CreateAutonomousDatabaseBase
         return definedTags;
     }
 
+    /** The private endpoint Ip address for the resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
+    private final String privateEndpointIp;
+
+    /**
+     * The private endpoint Ip address for the resource.
+     *
+     * @return the value
+     */
+    public String getPrivateEndpointIp() {
+        return privateEndpointIp;
+    }
+
     /** A valid Oracle Database version for Autonomous Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
@@ -1234,6 +1250,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", isMtlsConnectionRequired=")
@@ -1295,6 +1312,7 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(
@@ -1396,6 +1414,9 @@ public class CreateAutonomousDatabaseBase
                                 : this.privateEndpointLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result =
                 (result * PRIME)
