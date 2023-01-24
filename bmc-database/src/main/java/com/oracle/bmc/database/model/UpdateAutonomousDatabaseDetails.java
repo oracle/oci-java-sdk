@@ -57,6 +57,7 @@ public final class UpdateAutonomousDatabaseDetails
         "permissionLevel",
         "subnetId",
         "privateEndpointLabel",
+        "privateEndpointIp",
         "nsgIds",
         "customerContacts",
         "isMtlsConnectionRequired",
@@ -93,6 +94,7 @@ public final class UpdateAutonomousDatabaseDetails
             PermissionLevel permissionLevel,
             String subnetId,
             String privateEndpointLabel,
+            String privateEndpointIp,
             java.util.List<String> nsgIds,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
@@ -128,6 +130,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.permissionLevel = permissionLevel;
         this.subnetId = subnetId;
         this.privateEndpointLabel = privateEndpointLabel;
+        this.privateEndpointIp = privateEndpointIp;
         this.nsgIds = nsgIds;
         this.customerContacts = customerContacts;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
@@ -927,6 +930,21 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("privateEndpointLabel");
             return this;
         }
+        /** The private endpoint Ip address for the resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
+        private String privateEndpointIp;
+
+        /**
+         * The private endpoint Ip address for the resource.
+         *
+         * @param privateEndpointIp the value to set
+         * @return this builder
+         */
+        public Builder privateEndpointIp(String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
+            this.__explicitlySet__.add("privateEndpointIp");
+            return this;
+        }
         /**
          * The list of
          * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
@@ -1093,6 +1111,7 @@ public final class UpdateAutonomousDatabaseDetails
                             this.permissionLevel,
                             this.subnetId,
                             this.privateEndpointLabel,
+                            this.privateEndpointIp,
                             this.nsgIds,
                             this.customerContacts,
                             this.isMtlsConnectionRequired,
@@ -1188,6 +1207,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("privateEndpointLabel")) {
                 this.privateEndpointLabel(model.getPrivateEndpointLabel());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
+                this.privateEndpointIp(model.getPrivateEndpointIp());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
@@ -2122,6 +2144,19 @@ public final class UpdateAutonomousDatabaseDetails
         return privateEndpointLabel;
     }
 
+    /** The private endpoint Ip address for the resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
+    private final String privateEndpointIp;
+
+    /**
+     * The private endpoint Ip address for the resource.
+     *
+     * @return the value
+     */
+    public String getPrivateEndpointIp() {
+        return privateEndpointIp;
+    }
+
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
@@ -2281,6 +2316,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", permissionLevel=").append(String.valueOf(this.permissionLevel));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
+        sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", isMtlsConnectionRequired=")
@@ -2334,6 +2370,7 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.permissionLevel, other.permissionLevel)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
+                && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(
@@ -2425,6 +2462,9 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.privateEndpointLabel == null
                                 ? 43
                                 : this.privateEndpointLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
                 (result * PRIME)

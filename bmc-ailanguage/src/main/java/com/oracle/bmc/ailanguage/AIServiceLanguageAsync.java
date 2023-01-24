@@ -124,6 +124,28 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                             handler);
 
     /**
+     * The API extracts pii entities in text records. For each entity, its type and confidence score
+     * (between 0 and 1) is returned. It supports passing a batch of records.
+     *
+     * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
+     * long. - The total of characters to process in a request can be up to 20,000 characters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BatchDetectLanguagePiiEntitiesResponse>
+            batchDetectLanguagePiiEntities(
+                    BatchDetectLanguagePiiEntitiesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguagePiiEntitiesRequest,
+                                    BatchDetectLanguagePiiEntitiesResponse>
+                            handler);
+
+    /**
      * The API extracts aspect-based and sentence level sentiment in text records.
      *
      * <p>For aspect-based sentiment analysis, a set of aspects and their respective sentiment is
@@ -346,10 +368,15 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The API returns the detected language and a related confidence score (between 0 and 1).
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectDominantLanguage](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage).
+     *
+     * <p>The DetectDominantLanguage API returns the detected language and a related confidence
+     * score (between 0 and 1).
      *
      * <p>[List of supported
-     * languages.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
+     * languages](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
      *
      * <p>Limitations: - A record may be up to 1000 characters long.
      *
@@ -367,8 +394,12 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The API extracts entities in text records. For each entity, its type and confidence score
-     * (between 0 and 1) is returned.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageEntities](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities).
+     *
+     * <p>The DetectLanguageEntities API extracts entities in text records. For each entity, its
+     * type and confidence score (between 0 and 1) is returned.
      *
      * <p>Limitations: - A text may be up to 1000 characters long.
      *
@@ -386,8 +417,13 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The API extracts key-phrases in text records. For each key-phrase, a score (between 0 and 1)
-     * is returned that highlights the importance of the key-phrase in the context of the text.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageKeyPhrases](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases).
+     *
+     * <p>The DetectLanguageKeyPhrases API extracts key-phrases in text records. For each
+     * key-phrase, a score (between 0 and 1) is returned that highlights the importance of the
+     * key-phrase in the context of the text.
      *
      * <p>Limitations: - A record may be up to 1000 characters long.
      *
@@ -405,7 +441,11 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The API extracts aspect-based in text records.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageSentiments](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments).
+     *
+     * <p>The DetectLanguageSentiments API extracts aspect-based in text records.
      *
      * <p>For aspect-based sentiment analysis, a set of aspects and their respective sentiment is
      * returned.
@@ -432,8 +472,13 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The API automatically classifies text into a set of pre-determined classes and sub-classes. A
-     * single class/subclass is returned for each record classified.
+     * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT. We recommend you
+     * replace this API with the batch API,
+     * [BatchDetectLanguageTextClassification](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification).
+     *
+     * <p>The DetectLanguageTextClassification API automatically classifies text into a set of
+     * pre-determined classes and sub-classes. A single class/subclass is returned for each record
+     * classified.
      *
      * <p>Learn more about text classification
      * [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
