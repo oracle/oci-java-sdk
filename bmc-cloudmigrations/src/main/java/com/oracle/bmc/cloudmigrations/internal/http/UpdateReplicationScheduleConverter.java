@@ -49,6 +49,10 @@ public class UpdateReplicationScheduleConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
         }

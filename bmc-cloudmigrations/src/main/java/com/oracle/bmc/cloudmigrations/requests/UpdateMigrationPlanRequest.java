@@ -38,6 +38,27 @@ public class UpdateMigrationPlanRequest
         return updateMigrationPlanDetails;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before that due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before that due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
@@ -122,6 +143,31 @@ public class UpdateMigrationPlanRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before that due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * For optimistic concurrency control. In the PUT or DELETE call
          * for a resource, set the {@code if-match} parameter to the value of the
          * etag from a previous GET or POST response for that resource.
@@ -191,6 +237,7 @@ public class UpdateMigrationPlanRequest
         public Builder copy(UpdateMigrationPlanRequest o) {
             migrationPlanId(o.getMigrationPlanId());
             updateMigrationPlanDetails(o.getUpdateMigrationPlanDetails());
+            opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -238,10 +285,11 @@ public class UpdateMigrationPlanRequest
             UpdateMigrationPlanRequest request = new UpdateMigrationPlanRequest();
             request.migrationPlanId = migrationPlanId;
             request.updateMigrationPlanDetails = updateMigrationPlanDetails;
+            request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMigrationPlanRequest(migrationPlanId, updateMigrationPlanDetails, ifMatch, opcRequestId);
+            // new UpdateMigrationPlanRequest(migrationPlanId, updateMigrationPlanDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -253,6 +301,7 @@ public class UpdateMigrationPlanRequest
         return new Builder()
                 .migrationPlanId(migrationPlanId)
                 .updateMigrationPlanDetails(updateMigrationPlanDetails)
+                .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -273,6 +322,7 @@ public class UpdateMigrationPlanRequest
         sb.append(",migrationPlanId=").append(String.valueOf(this.migrationPlanId));
         sb.append(",updateMigrationPlanDetails=")
                 .append(String.valueOf(this.updateMigrationPlanDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -293,6 +343,7 @@ public class UpdateMigrationPlanRequest
                 && java.util.Objects.equals(this.migrationPlanId, other.migrationPlanId)
                 && java.util.Objects.equals(
                         this.updateMigrationPlanDetails, other.updateMigrationPlanDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -309,6 +360,9 @@ public class UpdateMigrationPlanRequest
                         + (this.updateMigrationPlanDetails == null
                                 ? 43
                                 : this.updateMigrationPlanDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

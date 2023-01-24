@@ -657,6 +657,50 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
     }
 
     @Override
+    public BatchDetectLanguagePiiEntitiesResponse batchDetectLanguagePiiEntities(
+            BatchDetectLanguagePiiEntitiesRequest request) {
+        LOG.trace("Called batchDetectLanguagePiiEntities");
+        final BatchDetectLanguagePiiEntitiesRequest interceptedRequest =
+                BatchDetectLanguagePiiEntitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectLanguagePiiEntitiesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguagePiiEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguagePiiEntities/BatchDetectLanguagePiiEntities");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguagePiiEntitiesResponse>
+                transformer =
+                        BatchDetectLanguagePiiEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getBatchDetectLanguagePiiEntitiesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public BatchDetectLanguageSentimentsResponse batchDetectLanguageSentiments(
             BatchDetectLanguageSentimentsRequest request) {
         LOG.trace("Called batchDetectLanguageSentiments");
