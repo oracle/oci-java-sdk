@@ -25,12 +25,14 @@ public class UpdateDeviceFingerprintChallengeResponse extends com.oracle.bmc.res
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
      *
      * @return the value
      */
@@ -92,14 +94,14 @@ public class UpdateDeviceFingerprintChallengeResponse extends com.oracle.bmc.res
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work
-         * request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work
-         * request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
