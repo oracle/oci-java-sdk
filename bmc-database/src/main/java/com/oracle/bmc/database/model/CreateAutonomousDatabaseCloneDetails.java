@@ -301,6 +301,15 @@ public final class CreateAutonomousDatabaseCloneDetails extends CreateAutonomous
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
+        private String privateEndpointIp;
+
+        public Builder privateEndpointIp(String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
+            this.__explicitlySet__.add("privateEndpointIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -443,6 +452,7 @@ public final class CreateAutonomousDatabaseCloneDetails extends CreateAutonomous
                             this.privateEndpointLabel,
                             this.freeformTags,
                             this.definedTags,
+                            this.privateEndpointIp,
                             this.dbVersion,
                             this.customerContacts,
                             this.isMtlsConnectionRequired,
@@ -552,6 +562,9 @@ public final class CreateAutonomousDatabaseCloneDetails extends CreateAutonomous
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
+                this.privateEndpointIp(model.getPrivateEndpointIp());
+            }
             if (model.wasPropertyExplicitlySet("dbVersion")) {
                 this.dbVersion(model.getDbVersion());
             }
@@ -630,6 +643,7 @@ public final class CreateAutonomousDatabaseCloneDetails extends CreateAutonomous
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
@@ -671,6 +685,7 @@ public final class CreateAutonomousDatabaseCloneDetails extends CreateAutonomous
                 privateEndpointLabel,
                 freeformTags,
                 definedTags,
+                privateEndpointIp,
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
