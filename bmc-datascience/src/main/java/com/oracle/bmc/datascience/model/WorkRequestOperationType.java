@@ -24,6 +24,11 @@ public enum WorkRequestOperationType {
     ProjectDelete("PROJECT_DELETE"),
     WorkrequestCancel("WORKREQUEST_CANCEL"),
     JobDelete("JOB_DELETE"),
+    PipelineCreate("PIPELINE_CREATE"),
+    PipelineDelete("PIPELINE_DELETE"),
+    PipelineRunCreate("PIPELINE_RUN_CREATE"),
+    PipelineRunCancel("PIPELINE_RUN_CANCEL"),
+    PipelineRunDelete("PIPELINE_RUN_DELETE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

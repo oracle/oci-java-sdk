@@ -496,6 +496,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                 ChangeMigrationCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeMigrationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Migration",
@@ -2421,6 +2422,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateMigrationPlanConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateMigrationPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Migration",
@@ -2473,6 +2475,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateReplicationScheduleConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateReplicationScheduleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Migration",
@@ -2527,6 +2530,7 @@ public class MigrationAsyncClient implements MigrationAsync {
                 UpdateTargetAssetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateTargetAssetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Migration",

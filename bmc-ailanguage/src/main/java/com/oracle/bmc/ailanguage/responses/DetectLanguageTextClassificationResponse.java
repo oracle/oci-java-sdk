@@ -26,13 +26,13 @@ public class DetectLanguageTextClassificationResponse extends com.oracle.bmc.res
     }
 
     /**
-     * This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT
+     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
      *
      */
     private String sunset;
 
     /**
-     * This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT
+     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
      *
      * @return the value
      */
@@ -110,13 +110,13 @@ public class DetectLanguageTextClassificationResponse extends com.oracle.bmc.res
         }
 
         /**
-         * This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT
+         * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
          *
          */
         private String sunset;
 
         /**
-         * This API will be retired on Monday, 10 Oct 2022 00:00:00 GMT
+         * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
          *
          * @param sunset the value to set
          * @return this builder

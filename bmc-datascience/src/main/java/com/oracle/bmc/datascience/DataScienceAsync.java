@@ -115,6 +115,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancel a PipelineRun.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelPipelineRunResponse> cancelPipelineRun(
+            CancelPipelineRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelPipelineRunRequest, CancelPipelineRunResponse>
+                    handler);
+
+    /**
      * Cancels a work request that has not started.
      *
      * @param request The request object containing the details to send
@@ -231,6 +247,39 @@ public interface DataScienceAsync extends AutoCloseable {
                                     ChangeNotebookSessionCompartmentRequest,
                                     ChangeNotebookSessionCompartmentResponse>
                             handler);
+
+    /**
+     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePipelineCompartmentResponse> changePipelineCompartment(
+            ChangePipelineCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePipelineCompartmentRequest, ChangePipelineCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePipelineRunCompartmentResponse> changePipelineRunCompartment(
+            ChangePipelineRunCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePipelineRunCompartmentRequest,
+                            ChangePipelineRunCompartmentResponse>
+                    handler);
 
     /**
      * Moves a project resource into a different compartment.
@@ -388,6 +437,39 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new Pipeline.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePipelineResponse> createPipeline(
+            CreatePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePipelineRequest, CreatePipelineResponse>
+                    handler);
+
+    /**
+     * Creates a new PipelineRun.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePipelineRunResponse> createPipelineRun(
+            CreatePipelineRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePipelineRunRequest, CreatePipelineRunResponse>
+                    handler);
+
+    /**
      * Creates a new project.
      *
      * @param request The request object containing the details to send
@@ -400,6 +482,22 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateProjectResponse> createProject(
             CreateProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
+                    handler);
+
+    /**
+     * Upload the artifact for a step in the pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateStepArtifactResponse> createStepArtifact(
+            CreateStepArtifactRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateStepArtifactRequest, CreateStepArtifactResponse>
                     handler);
 
     /**
@@ -538,6 +636,37 @@ public interface DataScienceAsync extends AutoCloseable {
             DeleteNotebookSessionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteNotebookSessionRequest, DeleteNotebookSessionResponse>
+                    handler);
+
+    /**
+     * Deletes a Pipeline resource by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePipelineResponse> deletePipeline(
+            DeletePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePipelineRequest, DeletePipelineResponse>
+                    handler);
+
+    /**
+     * Deletes a PipelineRun resource by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePipelineRunResponse> deletePipelineRun(
+            DeletePipelineRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePipelineRunRequest, DeletePipelineRunResponse>
                     handler);
 
     /**
@@ -710,6 +839,35 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a Pipeline by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPipelineResponse> getPipeline(
+            GetPipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse> handler);
+
+    /**
+     * Gets a PipelineRun by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPipelineRunResponse> getPipelineRun(
+            GetPipelineRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPipelineRunRequest, GetPipelineRunResponse>
+                    handler);
+
+    /**
      * Gets the specified project's information.
      *
      * @param request The request object containing the details to send
@@ -722,6 +880,22 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<GetProjectResponse> getProject(
             GetProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handler);
+
+    /**
+     * Download the artifact for a step in the pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStepArtifactContentResponse> getStepArtifactContent(
+            GetStepArtifactContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetStepArtifactContentRequest, GetStepArtifactContentResponse>
+                    handler);
 
     /**
      * Gets the specified work request's information.
@@ -767,6 +941,21 @@ public interface DataScienceAsync extends AutoCloseable {
             HeadModelArtifactRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             HeadModelArtifactRequest, HeadModelArtifactResponse>
+                    handler);
+
+    /**
+     * Get the artifact metadata for a step in the pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<HeadStepArtifactResponse> headStepArtifact(
+            HeadStepArtifactRequest request,
+            com.oracle.bmc.responses.AsyncHandler<HeadStepArtifactRequest, HeadStepArtifactResponse>
                     handler);
 
     /**
@@ -937,6 +1126,36 @@ public interface DataScienceAsync extends AutoCloseable {
             ListNotebookSessionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListNotebookSessionsRequest, ListNotebookSessionsResponse>
+                    handler);
+
+    /**
+     * Returns a list of PipelineRuns.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelineRunsResponse> listPipelineRuns(
+            ListPipelineRunsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPipelineRunsRequest, ListPipelineRunsResponse>
+                    handler);
+
+    /**
+     * Returns a list of Pipelines.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelinesResponse> listPipelines(
+            ListPipelinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
                     handler);
 
     /**
@@ -1113,6 +1332,37 @@ public interface DataScienceAsync extends AutoCloseable {
             UpdateNotebookSessionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>
+                    handler);
+
+    /**
+     * Updates the Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePipelineResponse> updatePipeline(
+            UpdatePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResponse>
+                    handler);
+
+    /**
+     * Updates the PipelineRun.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePipelineRunResponse> updatePipelineRun(
+            UpdatePipelineRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePipelineRunRequest, UpdatePipelineRunResponse>
                     handler);
 
     /**

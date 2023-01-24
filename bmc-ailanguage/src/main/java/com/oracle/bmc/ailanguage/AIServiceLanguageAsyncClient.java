@@ -607,6 +607,63 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDetectLanguagePiiEntitiesResponse>
+            batchDetectLanguagePiiEntities(
+                    BatchDetectLanguagePiiEntitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguagePiiEntitiesRequest,
+                                    BatchDetectLanguagePiiEntitiesResponse>
+                            handler) {
+        LOG.trace("Called async batchDetectLanguagePiiEntities");
+        final BatchDetectLanguagePiiEntitiesRequest interceptedRequest =
+                BatchDetectLanguagePiiEntitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectLanguagePiiEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectLanguagePiiEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguagePiiEntities/BatchDetectLanguagePiiEntities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguagePiiEntitiesResponse>
+                transformer =
+                        BatchDetectLanguagePiiEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectLanguagePiiEntitiesRequest,
+                        BatchDetectLanguagePiiEntitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectLanguagePiiEntitiesRequest,
+                                BatchDetectLanguagePiiEntitiesResponse>,
+                        java.util.concurrent.Future<BatchDetectLanguagePiiEntitiesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBatchDetectLanguagePiiEntitiesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectLanguagePiiEntitiesRequest, BatchDetectLanguagePiiEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDetectLanguageSentimentsResponse>
             batchDetectLanguageSentiments(
                     BatchDetectLanguageSentimentsRequest request,

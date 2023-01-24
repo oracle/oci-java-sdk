@@ -181,7 +181,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         return recordHttpStatuses;
     }
 
-    public void addToHistory(HttpStatusErrorException err) {
+    public synchronized void addToHistory(HttpStatusErrorException err) {
 
         if (historyQueue.size() >= numberOfRecordedHisotry) {
             historyQueue.removeFirst();
@@ -196,7 +196,8 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         historyQueue.add(historyBuilder.toString());
     }
 
-    public String getHistory() {
+    @Override
+    public synchronized String getHistory() {
         return historyQueue.stream().collect(Collectors.joining("\n"));
     }
 }
