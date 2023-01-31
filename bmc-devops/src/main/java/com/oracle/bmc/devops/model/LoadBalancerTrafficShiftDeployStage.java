@@ -173,13 +173,13 @@ public final class LoadBalancerTrafficShiftDeployStage extends DeployStage {
             return this;
         }
         /**
-         * Specifies the target or destination backend set.
+         * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to green Backend IPs as per rolloutPolicy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
         private TrafficShiftTarget trafficShiftTarget;
 
         /**
-         * Specifies the target or destination backend set.
+         * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to green Backend IPs as per rolloutPolicy.
          * @param trafficShiftTarget the value to set
          * @return this builder
          **/
@@ -385,7 +385,7 @@ public final class LoadBalancerTrafficShiftDeployStage extends DeployStage {
     }
 
     /**
-     * Specifies the target or destination backend set.
+     * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to green Backend IPs as per rolloutPolicy.
      **/
     public enum TrafficShiftTarget {
         AutoSelect("AUTO_SELECT"),
@@ -434,13 +434,13 @@ public final class LoadBalancerTrafficShiftDeployStage extends DeployStage {
         }
     };
     /**
-     * Specifies the target or destination backend set.
+     * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to green Backend IPs as per rolloutPolicy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
     private final TrafficShiftTarget trafficShiftTarget;
 
     /**
-     * Specifies the target or destination backend set.
+     * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to green Backend IPs as per rolloutPolicy.
      * @return the value
      **/
     public TrafficShiftTarget getTrafficShiftTarget() {

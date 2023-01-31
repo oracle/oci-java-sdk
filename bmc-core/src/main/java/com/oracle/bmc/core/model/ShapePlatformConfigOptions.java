@@ -29,6 +29,7 @@ public final class ShapePlatformConfigOptions
         "measuredBootOptions",
         "trustedPlatformModuleOptions",
         "numaNodesPerSocketPlatformOptions",
+        "memoryEncryptionOptions",
         "symmetricMultiThreadingOptions",
         "accessControlServiceOptions",
         "virtualInstructionsOptions",
@@ -41,6 +42,7 @@ public final class ShapePlatformConfigOptions
             ShapeMeasuredBootOptions measuredBootOptions,
             ShapeTrustedPlatformModuleOptions trustedPlatformModuleOptions,
             ShapeNumaNodesPerSocketPlatformOptions numaNodesPerSocketPlatformOptions,
+            ShapeMemoryEncryptionOptions memoryEncryptionOptions,
             ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions,
             ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions,
             ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions,
@@ -53,6 +55,7 @@ public final class ShapePlatformConfigOptions
         this.measuredBootOptions = measuredBootOptions;
         this.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
         this.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
+        this.memoryEncryptionOptions = memoryEncryptionOptions;
         this.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
         this.accessControlServiceOptions = accessControlServiceOptions;
         this.virtualInstructionsOptions = virtualInstructionsOptions;
@@ -119,6 +122,16 @@ public final class ShapePlatformConfigOptions
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryEncryptionOptions")
+        private ShapeMemoryEncryptionOptions memoryEncryptionOptions;
+
+        public Builder memoryEncryptionOptions(
+                ShapeMemoryEncryptionOptions memoryEncryptionOptions) {
+            this.memoryEncryptionOptions = memoryEncryptionOptions;
+            this.__explicitlySet__.add("memoryEncryptionOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("symmetricMultiThreadingOptions")
         private ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions;
 
@@ -182,6 +195,7 @@ public final class ShapePlatformConfigOptions
                             this.measuredBootOptions,
                             this.trustedPlatformModuleOptions,
                             this.numaNodesPerSocketPlatformOptions,
+                            this.memoryEncryptionOptions,
                             this.symmetricMultiThreadingOptions,
                             this.accessControlServiceOptions,
                             this.virtualInstructionsOptions,
@@ -210,6 +224,9 @@ public final class ShapePlatformConfigOptions
             if (model.wasPropertyExplicitlySet("numaNodesPerSocketPlatformOptions")) {
                 this.numaNodesPerSocketPlatformOptions(
                         model.getNumaNodesPerSocketPlatformOptions());
+            }
+            if (model.wasPropertyExplicitlySet("memoryEncryptionOptions")) {
+                this.memoryEncryptionOptions(model.getMemoryEncryptionOptions());
             }
             if (model.wasPropertyExplicitlySet("symmetricMultiThreadingOptions")) {
                 this.symmetricMultiThreadingOptions(model.getSymmetricMultiThreadingOptions());
@@ -338,6 +355,13 @@ public final class ShapePlatformConfigOptions
         return numaNodesPerSocketPlatformOptions;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryEncryptionOptions")
+    private final ShapeMemoryEncryptionOptions memoryEncryptionOptions;
+
+    public ShapeMemoryEncryptionOptions getMemoryEncryptionOptions() {
+        return memoryEncryptionOptions;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("symmetricMultiThreadingOptions")
     private final ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions;
 
@@ -396,6 +420,8 @@ public final class ShapePlatformConfigOptions
                 .append(String.valueOf(this.trustedPlatformModuleOptions));
         sb.append(", numaNodesPerSocketPlatformOptions=")
                 .append(String.valueOf(this.numaNodesPerSocketPlatformOptions));
+        sb.append(", memoryEncryptionOptions=")
+                .append(String.valueOf(this.memoryEncryptionOptions));
         sb.append(", symmetricMultiThreadingOptions=")
                 .append(String.valueOf(this.symmetricMultiThreadingOptions));
         sb.append(", accessControlServiceOptions=")
@@ -428,6 +454,8 @@ public final class ShapePlatformConfigOptions
                 && java.util.Objects.equals(
                         this.numaNodesPerSocketPlatformOptions,
                         other.numaNodesPerSocketPlatformOptions)
+                && java.util.Objects.equals(
+                        this.memoryEncryptionOptions, other.memoryEncryptionOptions)
                 && java.util.Objects.equals(
                         this.symmetricMultiThreadingOptions, other.symmetricMultiThreadingOptions)
                 && java.util.Objects.equals(
@@ -465,6 +493,11 @@ public final class ShapePlatformConfigOptions
                         + (this.numaNodesPerSocketPlatformOptions == null
                                 ? 43
                                 : this.numaNodesPerSocketPlatformOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryEncryptionOptions == null
+                                ? 43
+                                : this.memoryEncryptionOptions.hashCode());
         result =
                 (result * PRIME)
                         + (this.symmetricMultiThreadingOptions == null

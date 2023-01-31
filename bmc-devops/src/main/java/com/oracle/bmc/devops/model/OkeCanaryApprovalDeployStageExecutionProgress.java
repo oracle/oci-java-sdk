@@ -94,10 +94,17 @@ public final class OkeCanaryApprovalDeployStageExecutionProgress
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-
+        /**
+         * Specifies the Canary approval actions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approvalActions")
         private java.util.List<ApprovalAction> approvalActions;
 
+        /**
+         * Specifies the Canary approval actions.
+         * @param approvalActions the value to set
+         * @return this builder
+         **/
         public Builder approvalActions(java.util.List<ApprovalAction> approvalActions) {
             this.approvalActions = approvalActions;
             this.__explicitlySet__.add("approvalActions");
@@ -187,9 +194,16 @@ public final class OkeCanaryApprovalDeployStageExecutionProgress
         this.approvalActions = approvalActions;
     }
 
+    /**
+     * Specifies the Canary approval actions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approvalActions")
     private final java.util.List<ApprovalAction> approvalActions;
 
+    /**
+     * Specifies the Canary approval actions.
+     * @return the value
+     **/
     public java.util.List<ApprovalAction> getApprovalActions() {
         return approvalActions;
     }

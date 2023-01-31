@@ -28,13 +28,13 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Namespace A for deployment.
+         * Namespace A for deployment. Example: namespaceA - first Namespace name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceA")
         private String namespaceA;
 
         /**
-         * Namespace A for deployment.
+         * Namespace A for deployment. Example: namespaceA - first Namespace name.
          * @param namespaceA the value to set
          * @return this builder
          **/
@@ -44,13 +44,13 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
             return this;
         }
         /**
-         * Namespace B for deployment.
+         * Namespace B for deployment. Example: namespaceB - second Namespace name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceB")
         private String namespaceB;
 
         /**
-         * Namespace B for deployment.
+         * Namespace B for deployment. Example: namespaceB - second Namespace name.
          * @param namespaceB the value to set
          * @return this builder
          **/
@@ -123,13 +123,13 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     }
 
     /**
-     * Namespace A for deployment.
+     * Namespace A for deployment. Example: namespaceA - first Namespace name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceA")
     private final String namespaceA;
 
     /**
-     * Namespace A for deployment.
+     * Namespace A for deployment. Example: namespaceA - first Namespace name.
      * @return the value
      **/
     public String getNamespaceA() {
@@ -137,13 +137,13 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     }
 
     /**
-     * Namespace B for deployment.
+     * Namespace B for deployment. Example: namespaceB - second Namespace name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceB")
     private final String namespaceB;
 
     /**
-     * Namespace B for deployment.
+     * Namespace B for deployment. Example: namespaceB - second Namespace name.
      * @return the value
      **/
     public String getNamespaceB() {

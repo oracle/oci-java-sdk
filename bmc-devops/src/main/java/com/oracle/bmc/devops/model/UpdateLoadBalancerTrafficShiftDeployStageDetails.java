@@ -93,13 +93,13 @@ public final class UpdateLoadBalancerTrafficShiftDeployStageDetails
             return this;
         }
         /**
-         * Specifies the target or destination backend set.
+         * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs ser as per rolloutPolicy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
         private LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget trafficShiftTarget;
 
         /**
-         * Specifies the target or destination backend set.
+         * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs ser as per rolloutPolicy.
          * @param trafficShiftTarget the value to set
          * @return this builder
          **/
@@ -252,13 +252,13 @@ public final class UpdateLoadBalancerTrafficShiftDeployStageDetails
     }
 
     /**
-     * Specifies the target or destination backend set.
+     * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs ser as per rolloutPolicy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trafficShiftTarget")
     private final LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget trafficShiftTarget;
 
     /**
-     * Specifies the target or destination backend set.
+     * Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs ser as per rolloutPolicy.
      * @return the value
      **/
     public LoadBalancerTrafficShiftDeployStage.TrafficShiftTarget getTrafficShiftTarget() {

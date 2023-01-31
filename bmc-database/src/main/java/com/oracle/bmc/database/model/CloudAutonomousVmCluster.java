@@ -46,6 +46,7 @@ public final class CloudAutonomousVmCluster
         "dataStorageSizeInGBs",
         "cpuCoreCount",
         "ocpuCount",
+        "computeModel",
         "cpuCoreCountPerNode",
         "memorySizeInGBs",
         "licenseModel",
@@ -86,6 +87,7 @@ public final class CloudAutonomousVmCluster
             Double dataStorageSizeInGBs,
             Integer cpuCoreCount,
             Float ocpuCount,
+            ComputeModel computeModel,
             Integer cpuCoreCountPerNode,
             Integer memorySizeInGBs,
             LicenseModel licenseModel,
@@ -125,6 +127,7 @@ public final class CloudAutonomousVmCluster
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
+        this.computeModel = computeModel;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.memorySizeInGBs = memorySizeInGBs;
         this.licenseModel = licenseModel;
@@ -524,6 +527,22 @@ public final class CloudAutonomousVmCluster
             return this;
         }
         /**
+         * The compute model of the Cloud Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Cloud Autonomous VM Cluster.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
          * The number of OCPU cores enabled per VM cluster node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
@@ -823,6 +842,7 @@ public final class CloudAutonomousVmCluster
                             this.dataStorageSizeInGBs,
                             this.cpuCoreCount,
                             this.ocpuCount,
+                            this.computeModel,
                             this.cpuCoreCountPerNode,
                             this.memorySizeInGBs,
                             this.licenseModel,
@@ -912,6 +932,9 @@ public final class CloudAutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
                 this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
@@ -1365,6 +1388,68 @@ public final class CloudAutonomousVmCluster
     }
 
     /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
      * The number of OCPU cores enabled per VM cluster node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
@@ -1691,6 +1776,7 @@ public final class CloudAutonomousVmCluster
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
@@ -1750,6 +1836,7 @@ public final class CloudAutonomousVmCluster
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
@@ -1830,6 +1917,7 @@ public final class CloudAutonomousVmCluster
                                 : this.dataStorageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result =
                 (result * PRIME)
                         + (this.cpuCoreCountPerNode == null
