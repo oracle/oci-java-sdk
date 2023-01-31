@@ -74,6 +74,24 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Float computeCount;
+
+        public Builder computeCount(Float computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
@@ -384,6 +402,33 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+        private java.util.List<DatabaseTool> dbToolsDetails;
+
+        public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
+            this.dbToolsDetails = dbToolsDetails;
+            this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
+        private Integer secretVersionNumber;
+
+        public Builder secretVersionNumber(Integer secretVersionNumber) {
+            this.secretVersionNumber = secretVersionNumber;
+            this.__explicitlySet__.add("secretVersionNumber");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
          **/
@@ -428,6 +473,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                             this.ncharacterSet,
                             this.dbName,
                             this.cpuCoreCount,
+                            this.computeModel,
+                            this.computeCount,
                             this.ocpuCount,
                             this.dbWorkload,
                             this.dataStorageSizeInTBs,
@@ -462,6 +509,9 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                             this.isAutoScalingForStorageEnabled,
                             this.maxCpuCoreCount,
                             this.databaseEdition,
+                            this.dbToolsDetails,
+                            this.secretId,
+                            this.secretVersionNumber,
                             this.sourceId,
                             this.refreshableMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -486,6 +536,12 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
@@ -591,6 +647,15 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
+            if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
+                this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
+                this.secretVersionNumber(model.getSecretVersionNumber());
+            }
             if (model.wasPropertyExplicitlySet("sourceId")) {
                 this.sourceId(model.getSourceId());
             }
@@ -619,6 +684,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            ComputeModel computeModel,
+            Float computeCount,
             Float ocpuCount,
             DbWorkload dbWorkload,
             Integer dataStorageSizeInTBs,
@@ -653,6 +720,9 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             Boolean isAutoScalingForStorageEnabled,
             Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
+            java.util.List<DatabaseTool> dbToolsDetails,
+            String secretId,
+            Integer secretVersionNumber,
             String sourceId,
             RefreshableMode refreshableMode) {
         super(
@@ -661,6 +731,8 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 ncharacterSet,
                 dbName,
                 cpuCoreCount,
+                computeModel,
+                computeCount,
                 ocpuCount,
                 dbWorkload,
                 dataStorageSizeInTBs,
@@ -694,7 +766,10 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 maxCpuCoreCount,
-                databaseEdition);
+                databaseEdition,
+                dbToolsDetails,
+                secretId,
+                secretVersionNumber);
         this.sourceId = sourceId;
         this.refreshableMode = refreshableMode;
     }

@@ -476,6 +476,7 @@ public final class DeployArtifact extends com.oracle.bmc.http.internal.Explicitl
         GenericFile("GENERIC_FILE"),
         DockerImage("DOCKER_IMAGE"),
         HelmChart("HELM_CHART"),
+        CommandSpec("COMMAND_SPEC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

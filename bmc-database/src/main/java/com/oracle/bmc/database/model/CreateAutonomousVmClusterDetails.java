@@ -33,6 +33,7 @@ public final class CreateAutonomousVmClusterDetails
         "licenseModel",
         "totalContainerDatabases",
         "cpuCoreCountPerNode",
+        "computeModel",
         "memoryPerOracleComputeUnitInGBs",
         "autonomousDataStorageSizeInTBs",
         "maintenanceWindowDetails",
@@ -52,6 +53,7 @@ public final class CreateAutonomousVmClusterDetails
             LicenseModel licenseModel,
             Integer totalContainerDatabases,
             Integer cpuCoreCountPerNode,
+            ComputeModel computeModel,
             Integer memoryPerOracleComputeUnitInGBs,
             Double autonomousDataStorageSizeInTBs,
             MaintenanceWindow maintenanceWindowDetails,
@@ -70,6 +72,7 @@ public final class CreateAutonomousVmClusterDetails
         this.licenseModel = licenseModel;
         this.totalContainerDatabases = totalContainerDatabases;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+        this.computeModel = computeModel;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
@@ -231,6 +234,22 @@ public final class CreateAutonomousVmClusterDetails
             return this;
         }
         /**
+         * The compute model of the Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous VM Cluster.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
          * The amount of memory (in GBs) to be enabled per each OCPU core.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
@@ -380,6 +399,7 @@ public final class CreateAutonomousVmClusterDetails
                             this.licenseModel,
                             this.totalContainerDatabases,
                             this.cpuCoreCountPerNode,
+                            this.computeModel,
                             this.memoryPerOracleComputeUnitInGBs,
                             this.autonomousDataStorageSizeInTBs,
                             this.maintenanceWindowDetails,
@@ -422,6 +442,9 @@ public final class CreateAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
                 this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
                 this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
@@ -629,6 +652,55 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
+     * The compute model of the Autonomous VM Cluster.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model of the Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous VM Cluster.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
      * The amount of memory (in GBs) to be enabled per each OCPU core.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
@@ -770,6 +842,7 @@ public final class CreateAutonomousVmClusterDetails
         sb.append(", totalContainerDatabases=")
                 .append(String.valueOf(this.totalContainerDatabases));
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
         sb.append(", autonomousDataStorageSizeInTBs=")
@@ -806,6 +879,7 @@ public final class CreateAutonomousVmClusterDetails
                 && java.util.Objects.equals(
                         this.totalContainerDatabases, other.totalContainerDatabases)
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
                 && java.util.Objects.equals(
@@ -856,6 +930,7 @@ public final class CreateAutonomousVmClusterDetails
                         + (this.cpuCoreCountPerNode == null
                                 ? 43
                                 : this.cpuCoreCountPerNode.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result =
                 (result * PRIME)
                         + (this.memoryPerOracleComputeUnitInGBs == null

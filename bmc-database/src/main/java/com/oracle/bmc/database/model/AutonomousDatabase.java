@@ -41,6 +41,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         "backupConfig",
         "keyHistoryEntry",
         "cpuCoreCount",
+        "computeModel",
+        "computeCount",
         "ocpuCount",
         "provisionableCpus",
         "dataStorageSizeInTBs",
@@ -113,7 +115,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         "allocatedStorageSizeInTBs",
         "actualUsedDataStorageSizeInTBs",
         "maxCpuCoreCount",
-        "databaseEdition"
+        "databaseEdition",
+        "dbToolsDetails"
     })
     public AutonomousDatabase(
             String id,
@@ -134,6 +137,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             AutonomousDatabaseBackupConfig backupConfig,
             java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
             Integer cpuCoreCount,
+            ComputeModel computeModel,
+            Float computeCount,
             Float ocpuCount,
             java.util.List<Float> provisionableCpus,
             Integer dataStorageSizeInTBs,
@@ -206,7 +211,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             Double allocatedStorageSizeInTBs,
             Double actualUsedDataStorageSizeInTBs,
             Integer maxCpuCoreCount,
-            DatabaseEdition databaseEdition) {
+            DatabaseEdition databaseEdition,
+            java.util.List<DatabaseTool> dbToolsDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -226,6 +232,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         this.backupConfig = backupConfig;
         this.keyHistoryEntry = keyHistoryEntry;
         this.cpuCoreCount = cpuCoreCount;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
         this.provisionableCpus = provisionableCpus;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -299,6 +307,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         this.actualUsedDataStorageSizeInTBs = actualUsedDataStorageSizeInTBs;
         this.maxCpuCoreCount = maxCpuCoreCount;
         this.databaseEdition = databaseEdition;
+        this.dbToolsDetails = dbToolsDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -613,6 +622,38 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Float computeCount;
+
+        /**
+         * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+         * @param computeCount the value to set
+         * @return this builder
+         **/
+        public Builder computeCount(Float computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
             return this;
         }
         /**
@@ -1939,6 +1980,22 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
+        /**
+         * List of database tools details.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+        private java.util.List<DatabaseTool> dbToolsDetails;
+
+        /**
+         * List of database tools details.
+         * @param dbToolsDetails the value to set
+         * @return this builder
+         **/
+        public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
+            this.dbToolsDetails = dbToolsDetails;
+            this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1964,6 +2021,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                             this.backupConfig,
                             this.keyHistoryEntry,
                             this.cpuCoreCount,
+                            this.computeModel,
+                            this.computeCount,
                             this.ocpuCount,
                             this.provisionableCpus,
                             this.dataStorageSizeInTBs,
@@ -2036,7 +2095,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                             this.allocatedStorageSizeInTBs,
                             this.actualUsedDataStorageSizeInTBs,
                             this.maxCpuCoreCount,
-                            this.databaseEdition);
+                            this.databaseEdition,
+                            this.dbToolsDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2100,6 +2160,12 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
@@ -2320,6 +2386,9 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
+            }
+            if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
+                this.dbToolsDetails(model.getDbToolsDetails());
             }
             return this;
         }
@@ -2674,6 +2743,82 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
      **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Float computeCount;
+
+    /**
+     * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * @return the value
+     **/
+    public Float getComputeCount() {
+        return computeCount;
     }
 
     /**
@@ -4548,6 +4693,20 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         return databaseEdition;
     }
 
+    /**
+     * List of database tools details.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+    private final java.util.List<DatabaseTool> dbToolsDetails;
+
+    /**
+     * List of database tools details.
+     * @return the value
+     **/
+    public java.util.List<DatabaseTool> getDbToolsDetails() {
+        return dbToolsDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -4582,6 +4741,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
         sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -4675,6 +4836,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                 .append(String.valueOf(this.actualUsedDataStorageSizeInTBs));
         sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -4712,6 +4874,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
                 && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
@@ -4808,6 +4972,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                         this.actualUsedDataStorageSizeInTBs, other.actualUsedDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
                 && super.equals(other);
     }
 
@@ -4857,6 +5022,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                 (result * PRIME)
                         + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =
                 (result * PRIME)
@@ -5112,6 +5279,9 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

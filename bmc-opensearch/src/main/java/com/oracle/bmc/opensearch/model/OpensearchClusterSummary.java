@@ -35,7 +35,8 @@ public final class OpensearchClusterSummary
         "softwareVersion",
         "totalStorageGB",
         "lifecycleState",
-        "availabilityDomains"
+        "availabilityDomains",
+        "securityMode"
     })
     public OpensearchClusterSummary(
             String id,
@@ -50,7 +51,8 @@ public final class OpensearchClusterSummary
             String softwareVersion,
             Integer totalStorageGB,
             OpensearchCluster.LifecycleState lifecycleState,
-            java.util.List<String> availabilityDomains) {
+            java.util.List<String> availabilityDomains,
+            SecurityMode securityMode) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -65,6 +67,7 @@ public final class OpensearchClusterSummary
         this.totalStorageGB = totalStorageGB;
         this.lifecycleState = lifecycleState;
         this.availabilityDomains = availabilityDomains;
+        this.securityMode = securityMode;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -298,6 +301,22 @@ public final class OpensearchClusterSummary
             this.__explicitlySet__.add("availabilityDomains");
             return this;
         }
+        /**
+         * The security mode of the cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
+        private SecurityMode securityMode;
+
+        /**
+         * The security mode of the cluster.
+         * @param securityMode the value to set
+         * @return this builder
+         **/
+        public Builder securityMode(SecurityMode securityMode) {
+            this.securityMode = securityMode;
+            this.__explicitlySet__.add("securityMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -317,7 +336,8 @@ public final class OpensearchClusterSummary
                             this.softwareVersion,
                             this.totalStorageGB,
                             this.lifecycleState,
-                            this.availabilityDomains);
+                            this.availabilityDomains,
+                            this.securityMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -364,6 +384,9 @@ public final class OpensearchClusterSummary
             }
             if (model.wasPropertyExplicitlySet("availabilityDomains")) {
                 this.availabilityDomains(model.getAvailabilityDomains());
+            }
+            if (model.wasPropertyExplicitlySet("securityMode")) {
+                this.securityMode(model.getSecurityMode());
             }
             return this;
         }
@@ -582,6 +605,20 @@ public final class OpensearchClusterSummary
         return availabilityDomains;
     }
 
+    /**
+     * The security mode of the cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
+    private final SecurityMode securityMode;
+
+    /**
+     * The security mode of the cluster.
+     * @return the value
+     **/
+    public SecurityMode getSecurityMode() {
+        return securityMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -609,6 +646,7 @@ public final class OpensearchClusterSummary
         sb.append(", totalStorageGB=").append(String.valueOf(this.totalStorageGB));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", availabilityDomains=").append(String.valueOf(this.availabilityDomains));
+        sb.append(", securityMode=").append(String.valueOf(this.securityMode));
         sb.append(")");
         return sb.toString();
     }
@@ -636,6 +674,7 @@ public final class OpensearchClusterSummary
                 && java.util.Objects.equals(this.totalStorageGB, other.totalStorageGB)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.availabilityDomains, other.availabilityDomains)
+                && java.util.Objects.equals(this.securityMode, other.securityMode)
                 && super.equals(other);
     }
 
@@ -670,6 +709,7 @@ public final class OpensearchClusterSummary
                         + (this.availabilityDomains == null
                                 ? 43
                                 : this.availabilityDomains.hashCode());
+        result = (result * PRIME) + (this.securityMode == null ? 43 : this.securityMode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

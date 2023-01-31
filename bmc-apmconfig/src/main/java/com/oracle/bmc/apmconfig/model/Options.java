@@ -52,6 +52,33 @@ public final class Options extends Config {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+        private String createdBy;
+
+        public Builder createdBy(String createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
+        private String updatedBy;
+
+        public Builder updatedBy(String updatedBy) {
+            this.updatedBy = updatedBy;
+            this.__explicitlySet__.add("updatedBy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("etag")
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            this.__explicitlySet__.add("etag");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -146,6 +173,9 @@ public final class Options extends Config {
                             this.id,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.createdBy,
+                            this.updatedBy,
+                            this.etag,
                             this.freeformTags,
                             this.definedTags,
                             this.displayName,
@@ -168,6 +198,15 @@ public final class Options extends Config {
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("updatedBy")) {
+                this.updatedBy(model.getUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("etag")) {
+                this.etag(model.getEtag());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -207,13 +246,16 @@ public final class Options extends Config {
             String id,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String createdBy,
+            String updatedBy,
+            String etag,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             Object options,
             String group,
             String description) {
-        super(id, timeCreated, timeUpdated, freeformTags, definedTags);
+        super(id, timeCreated, timeUpdated, createdBy, updatedBy, etag, freeformTags, definedTags);
         this.displayName = displayName;
         this.options = options;
         this.group = group;

@@ -43,6 +43,10 @@ package com.oracle.bmc.devops.model;
         name = "OKE_CANARY_APPROVAL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateShellDeployStageDetails.class,
+        name = "SHELL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateOkeDeployStageDetails.class,
         name = "OKE_DEPLOYMENT"
     ),
