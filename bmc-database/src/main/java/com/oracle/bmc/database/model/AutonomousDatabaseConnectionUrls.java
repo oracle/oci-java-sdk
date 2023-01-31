@@ -29,18 +29,27 @@ public final class AutonomousDatabaseConnectionUrls
         "sqlDevWebUrl",
         "apexUrl",
         "machineLearningUserManagementUrl",
-        "graphStudioUrl"
+        "graphStudioUrl",
+        "mongoDbUrl",
+        "ordsUrl",
+        "databaseTransformsUrl"
     })
     public AutonomousDatabaseConnectionUrls(
             String sqlDevWebUrl,
             String apexUrl,
             String machineLearningUserManagementUrl,
-            String graphStudioUrl) {
+            String graphStudioUrl,
+            String mongoDbUrl,
+            String ordsUrl,
+            String databaseTransformsUrl) {
         super();
         this.sqlDevWebUrl = sqlDevWebUrl;
         this.apexUrl = apexUrl;
         this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
         this.graphStudioUrl = graphStudioUrl;
+        this.mongoDbUrl = mongoDbUrl;
+        this.ordsUrl = ordsUrl;
+        this.databaseTransformsUrl = databaseTransformsUrl;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -109,6 +118,54 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("graphStudioUrl");
             return this;
         }
+        /**
+         * The URL of the MongoDB API for the Autonomous Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mongoDbUrl")
+        private String mongoDbUrl;
+
+        /**
+         * The URL of the MongoDB API for the Autonomous Database.
+         * @param mongoDbUrl the value to set
+         * @return this builder
+         **/
+        public Builder mongoDbUrl(String mongoDbUrl) {
+            this.mongoDbUrl = mongoDbUrl;
+            this.__explicitlySet__.add("mongoDbUrl");
+            return this;
+        }
+        /**
+         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
+        private String ordsUrl;
+
+        /**
+         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         * @param ordsUrl the value to set
+         * @return this builder
+         **/
+        public Builder ordsUrl(String ordsUrl) {
+            this.ordsUrl = ordsUrl;
+            this.__explicitlySet__.add("ordsUrl");
+            return this;
+        }
+        /**
+         * The URL of the Database Transforms for the Autonomous Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
+        private String databaseTransformsUrl;
+
+        /**
+         * The URL of the Database Transforms for the Autonomous Database.
+         * @param databaseTransformsUrl the value to set
+         * @return this builder
+         **/
+        public Builder databaseTransformsUrl(String databaseTransformsUrl) {
+            this.databaseTransformsUrl = databaseTransformsUrl;
+            this.__explicitlySet__.add("databaseTransformsUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -119,7 +176,10 @@ public final class AutonomousDatabaseConnectionUrls
                             this.sqlDevWebUrl,
                             this.apexUrl,
                             this.machineLearningUserManagementUrl,
-                            this.graphStudioUrl);
+                            this.graphStudioUrl,
+                            this.mongoDbUrl,
+                            this.ordsUrl,
+                            this.databaseTransformsUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -139,6 +199,15 @@ public final class AutonomousDatabaseConnectionUrls
             }
             if (model.wasPropertyExplicitlySet("graphStudioUrl")) {
                 this.graphStudioUrl(model.getGraphStudioUrl());
+            }
+            if (model.wasPropertyExplicitlySet("mongoDbUrl")) {
+                this.mongoDbUrl(model.getMongoDbUrl());
+            }
+            if (model.wasPropertyExplicitlySet("ordsUrl")) {
+                this.ordsUrl(model.getOrdsUrl());
+            }
+            if (model.wasPropertyExplicitlySet("databaseTransformsUrl")) {
+                this.databaseTransformsUrl(model.getDatabaseTransformsUrl());
             }
             return this;
         }
@@ -211,6 +280,48 @@ public final class AutonomousDatabaseConnectionUrls
         return graphStudioUrl;
     }
 
+    /**
+     * The URL of the MongoDB API for the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mongoDbUrl")
+    private final String mongoDbUrl;
+
+    /**
+     * The URL of the MongoDB API for the Autonomous Database.
+     * @return the value
+     **/
+    public String getMongoDbUrl() {
+        return mongoDbUrl;
+    }
+
+    /**
+     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
+    private final String ordsUrl;
+
+    /**
+     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     * @return the value
+     **/
+    public String getOrdsUrl() {
+        return ordsUrl;
+    }
+
+    /**
+     * The URL of the Database Transforms for the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
+    private final String databaseTransformsUrl;
+
+    /**
+     * The URL of the Database Transforms for the Autonomous Database.
+     * @return the value
+     **/
+    public String getDatabaseTransformsUrl() {
+        return databaseTransformsUrl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -230,6 +341,9 @@ public final class AutonomousDatabaseConnectionUrls
         sb.append(", machineLearningUserManagementUrl=")
                 .append(String.valueOf(this.machineLearningUserManagementUrl));
         sb.append(", graphStudioUrl=").append(String.valueOf(this.graphStudioUrl));
+        sb.append(", mongoDbUrl=").append(String.valueOf(this.mongoDbUrl));
+        sb.append(", ordsUrl=").append(String.valueOf(this.ordsUrl));
+        sb.append(", databaseTransformsUrl=").append(String.valueOf(this.databaseTransformsUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -250,6 +364,9 @@ public final class AutonomousDatabaseConnectionUrls
                         this.machineLearningUserManagementUrl,
                         other.machineLearningUserManagementUrl)
                 && java.util.Objects.equals(this.graphStudioUrl, other.graphStudioUrl)
+                && java.util.Objects.equals(this.mongoDbUrl, other.mongoDbUrl)
+                && java.util.Objects.equals(this.ordsUrl, other.ordsUrl)
+                && java.util.Objects.equals(this.databaseTransformsUrl, other.databaseTransformsUrl)
                 && super.equals(other);
     }
 
@@ -267,6 +384,13 @@ public final class AutonomousDatabaseConnectionUrls
         result =
                 (result * PRIME)
                         + (this.graphStudioUrl == null ? 43 : this.graphStudioUrl.hashCode());
+        result = (result * PRIME) + (this.mongoDbUrl == null ? 43 : this.mongoDbUrl.hashCode());
+        result = (result * PRIME) + (this.ordsUrl == null ? 43 : this.ordsUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseTransformsUrl == null
+                                ? 43
+                                : this.databaseTransformsUrl.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

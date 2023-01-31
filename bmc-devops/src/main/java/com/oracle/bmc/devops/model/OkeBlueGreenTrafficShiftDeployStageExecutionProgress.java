@@ -95,13 +95,13 @@ public final class OkeBlueGreenTrafficShiftDeployStageExecutionProgress
             return this;
         }
         /**
-         * Namespace where traffic is going.
+         * Namespace where traffic is going. Example:  blue - Traffic is going to blue namespace. green - Traffic is going to green namespace.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * Namespace where traffic is going.
+         * Namespace where traffic is going. Example:  blue - Traffic is going to blue namespace. green - Traffic is going to green namespace.
          * @param namespace the value to set
          * @return this builder
          **/
@@ -195,13 +195,13 @@ public final class OkeBlueGreenTrafficShiftDeployStageExecutionProgress
     }
 
     /**
-     * Namespace where traffic is going.
+     * Namespace where traffic is going. Example:  blue - Traffic is going to blue namespace. green - Traffic is going to green namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * Namespace where traffic is going.
+     * Namespace where traffic is going. Example:  blue - Traffic is going to blue namespace. green - Traffic is going to green namespace.
      * @return the value
      **/
     public String getNamespace() {

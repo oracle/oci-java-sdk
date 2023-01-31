@@ -34,6 +34,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         "memoryPerOracleComputeUnitInGBs",
         "autonomousDataStorageSizeInTBs",
         "clusterTimeZone",
+        "computeModel",
         "dbServers",
         "maintenanceWindowDetails",
         "licenseModel",
@@ -52,6 +53,7 @@ public final class CreateCloudAutonomousVmClusterDetails
             Integer memoryPerOracleComputeUnitInGBs,
             Double autonomousDataStorageSizeInTBs,
             String clusterTimeZone,
+            ComputeModel computeModel,
             java.util.List<String> dbServers,
             MaintenanceWindow maintenanceWindowDetails,
             LicenseModel licenseModel,
@@ -69,6 +71,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.clusterTimeZone = clusterTimeZone;
+        this.computeModel = computeModel;
         this.dbServers = dbServers;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.licenseModel = licenseModel;
@@ -242,6 +245,22 @@ public final class CreateCloudAutonomousVmClusterDetails
             return this;
         }
         /**
+         * The compute model of the Cloud Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Cloud Autonomous VM Cluster.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
          * The list of database servers.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
@@ -374,6 +393,7 @@ public final class CreateCloudAutonomousVmClusterDetails
                             this.memoryPerOracleComputeUnitInGBs,
                             this.autonomousDataStorageSizeInTBs,
                             this.clusterTimeZone,
+                            this.computeModel,
                             this.dbServers,
                             this.maintenanceWindowDetails,
                             this.licenseModel,
@@ -417,6 +437,9 @@ public final class CreateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("clusterTimeZone")) {
                 this.clusterTimeZone(model.getClusterTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
@@ -594,6 +617,55 @@ public final class CreateCloudAutonomousVmClusterDetails
     }
 
     /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
      * The list of database servers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
@@ -763,6 +835,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         sb.append(", autonomousDataStorageSizeInTBs=")
                 .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
         sb.append(", clusterTimeZone=").append(String.valueOf(this.clusterTimeZone));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
@@ -798,6 +871,7 @@ public final class CreateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(
                         this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.clusterTimeZone, other.clusterTimeZone)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
@@ -846,6 +920,7 @@ public final class CreateCloudAutonomousVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.clusterTimeZone == null ? 43 : this.clusterTimeZone.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)

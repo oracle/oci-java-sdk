@@ -31,6 +31,10 @@ package com.oracle.bmc.devops.model;
         name = "LOAD_BALANCER_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ShellDeployStage.class,
+        name = "SHELL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InvokeFunctionDeployStage.class,
         name = "INVOKE_FUNCTION"
     ),
@@ -506,6 +510,7 @@ public class DeployStage extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         LoadBalancerTrafficShift("LOAD_BALANCER_TRAFFIC_SHIFT"),
         ManualApproval("MANUAL_APPROVAL"),
         OkeHelmChartDeployment("OKE_HELM_CHART_DEPLOYMENT"),
+        Shell("SHELL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

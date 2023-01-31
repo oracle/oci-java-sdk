@@ -39,6 +39,10 @@ package com.oracle.bmc.devops.model;
         name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ShellDeployStageExecutionProgress.class,
+        name = "SHELL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OkeCanaryDeployStageExecutionProgress.class,
         name = "OKE_CANARY_DEPLOYMENT"
     ),
