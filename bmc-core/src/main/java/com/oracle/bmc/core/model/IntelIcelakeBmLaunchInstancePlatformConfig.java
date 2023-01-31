@@ -53,6 +53,15 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
             this.__explicitlySet__.add("isMeasuredBootEnabled");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
+            return this;
+        }
         /** The number of NUMA nodes per socket (NPS). */
         @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
         private NumaNodesPerSocket numaNodesPerSocket;
@@ -157,6 +166,7 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
                             this.isSecureBootEnabled,
                             this.isTrustedPlatformModuleEnabled,
                             this.isMeasuredBootEnabled,
+                            this.isMemoryEncryptionEnabled,
                             this.numaNodesPerSocket,
                             this.isSymmetricMultiThreadingEnabled,
                             this.isInputOutputMemoryManagementUnitEnabled,
@@ -177,6 +187,9 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
             }
             if (model.wasPropertyExplicitlySet("isMeasuredBootEnabled")) {
                 this.isMeasuredBootEnabled(model.getIsMeasuredBootEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             if (model.wasPropertyExplicitlySet("numaNodesPerSocket")) {
                 this.numaNodesPerSocket(model.getNumaNodesPerSocket());
@@ -209,11 +222,16 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
             Boolean isSecureBootEnabled,
             Boolean isTrustedPlatformModuleEnabled,
             Boolean isMeasuredBootEnabled,
+            Boolean isMemoryEncryptionEnabled,
             NumaNodesPerSocket numaNodesPerSocket,
             Boolean isSymmetricMultiThreadingEnabled,
             Boolean isInputOutputMemoryManagementUnitEnabled,
             Integer percentageOfCoresEnabled) {
-        super(isSecureBootEnabled, isTrustedPlatformModuleEnabled, isMeasuredBootEnabled);
+        super(
+                isSecureBootEnabled,
+                isTrustedPlatformModuleEnabled,
+                isMeasuredBootEnabled,
+                isMemoryEncryptionEnabled);
         this.numaNodesPerSocket = numaNodesPerSocket;
         this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
         this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;

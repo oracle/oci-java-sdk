@@ -60,6 +60,8 @@ public class CreateAutonomousDatabaseBase
         "ncharacterSet",
         "dbName",
         "cpuCoreCount",
+        "computeModel",
+        "computeCount",
         "ocpuCount",
         "dbWorkload",
         "dataStorageSizeInTBs",
@@ -93,7 +95,10 @@ public class CreateAutonomousDatabaseBase
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "maxCpuCoreCount",
-        "databaseEdition"
+        "databaseEdition",
+        "dbToolsDetails",
+        "secretId",
+        "secretVersionNumber"
     })
     protected CreateAutonomousDatabaseBase(
             String compartmentId,
@@ -101,6 +106,8 @@ public class CreateAutonomousDatabaseBase
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            ComputeModel computeModel,
+            Float computeCount,
             Float ocpuCount,
             DbWorkload dbWorkload,
             Integer dataStorageSizeInTBs,
@@ -134,13 +141,18 @@ public class CreateAutonomousDatabaseBase
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             Integer maxCpuCoreCount,
-            AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
+            java.util.List<DatabaseTool> dbToolsDetails,
+            String secretId,
+            Integer secretVersionNumber) {
         super();
         this.compartmentId = compartmentId;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
         this.dbName = dbName;
         this.cpuCoreCount = cpuCoreCount;
+        this.computeModel = computeModel;
+        this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
         this.dbWorkload = dbWorkload;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -175,6 +187,9 @@ public class CreateAutonomousDatabaseBase
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.maxCpuCoreCount = maxCpuCoreCount;
         this.databaseEdition = databaseEdition;
+        this.dbToolsDetails = dbToolsDetails;
+        this.secretId = secretId;
+        this.secretVersionNumber = secretVersionNumber;
     }
 
     /**
@@ -316,6 +331,85 @@ public class CreateAutonomousDatabaseBase
      */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeModel: " + key);
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * The compute amount available to the database. Minimum and maximum values depend on the
+     * compute model and whether the database is on Shared or Dedicated infrastructure. For an
+     * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
+     * multiples of two. Required when using the {@code computeModel} parameter. When using {@code
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Float computeCount;
+
+    /**
+     * The compute amount available to the database. Minimum and maximum values depend on the
+     * compute model and whether the database is on Shared or Dedicated infrastructure. For an
+     * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
+     * multiples of two. Required when using the {@code computeModel} parameter. When using {@code
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     *
+     * @return the value
+     */
+    public Float getComputeCount() {
+        return computeCount;
     }
 
     /**
@@ -1201,6 +1295,47 @@ public class CreateAutonomousDatabaseBase
         return databaseEdition;
     }
 
+    /** List of database tools details. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+    private final java.util.List<DatabaseTool> dbToolsDetails;
+
+    /**
+     * List of database tools details.
+     *
+     * @return the value
+     */
+    public java.util.List<DatabaseTool> getDbToolsDetails() {
+        return dbToolsDetails;
+    }
+
+    /** The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
+     * The version of the vault secret. If no version is specified, the latest version will be used.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
+    private final Integer secretVersionNumber;
+
+    /**
+     * The version of the vault secret. If no version is specified, the latest version will be used.
+     *
+     * @return the value
+     */
+    public Integer getSecretVersionNumber() {
+        return secretVersionNumber;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1221,6 +1356,8 @@ public class CreateAutonomousDatabaseBase
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -1262,6 +1399,9 @@ public class CreateAutonomousDatabaseBase
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
         sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(")");
         return sb.toString();
     }
@@ -1281,6 +1421,8 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
@@ -1325,6 +1467,9 @@ public class CreateAutonomousDatabaseBase
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && super.equals(other);
     }
 
@@ -1341,6 +1486,8 @@ public class CreateAutonomousDatabaseBase
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
         result =
@@ -1447,6 +1594,15 @@ public class CreateAutonomousDatabaseBase
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretVersionNumber == null
+                                ? 43
+                                : this.secretVersionNumber.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

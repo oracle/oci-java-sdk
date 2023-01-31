@@ -66,16 +66,19 @@ public class LaunchInstancePlatformConfig
     @java.beans.ConstructorProperties({
         "isSecureBootEnabled",
         "isTrustedPlatformModuleEnabled",
-        "isMeasuredBootEnabled"
+        "isMeasuredBootEnabled",
+        "isMemoryEncryptionEnabled"
     })
     protected LaunchInstancePlatformConfig(
             Boolean isSecureBootEnabled,
             Boolean isTrustedPlatformModuleEnabled,
-            Boolean isMeasuredBootEnabled) {
+            Boolean isMeasuredBootEnabled,
+            Boolean isMemoryEncryptionEnabled) {
         super();
         this.isSecureBootEnabled = isSecureBootEnabled;
         this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
         this.isMeasuredBootEnabled = isMeasuredBootEnabled;
+        this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
     }
 
     /** Whether Secure Boot is enabled on the instance. */
@@ -117,6 +120,23 @@ public class LaunchInstancePlatformConfig
         return isMeasuredBootEnabled;
     }
 
+    /**
+     * Whether the instance is a confidential instance. If this value is {@code true}, the instance
+     * is a confidential instance. The default value is {@code false}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+    private final Boolean isMemoryEncryptionEnabled;
+
+    /**
+     * Whether the instance is a confidential instance. If this value is {@code true}, the instance
+     * is a confidential instance. The default value is {@code false}.
+     *
+     * @return the value
+     */
+    public Boolean getIsMemoryEncryptionEnabled() {
+        return isMemoryEncryptionEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -136,6 +156,8 @@ public class LaunchInstancePlatformConfig
         sb.append(", isTrustedPlatformModuleEnabled=")
                 .append(String.valueOf(this.isTrustedPlatformModuleEnabled));
         sb.append(", isMeasuredBootEnabled=").append(String.valueOf(this.isMeasuredBootEnabled));
+        sb.append(", isMemoryEncryptionEnabled=")
+                .append(String.valueOf(this.isMemoryEncryptionEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -154,6 +176,8 @@ public class LaunchInstancePlatformConfig
                 && java.util.Objects.equals(
                         this.isTrustedPlatformModuleEnabled, other.isTrustedPlatformModuleEnabled)
                 && java.util.Objects.equals(this.isMeasuredBootEnabled, other.isMeasuredBootEnabled)
+                && java.util.Objects.equals(
+                        this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
                 && super.equals(other);
     }
 
@@ -176,6 +200,11 @@ public class LaunchInstancePlatformConfig
                         + (this.isMeasuredBootEnabled == null
                                 ? 43
                                 : this.isMeasuredBootEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMemoryEncryptionEnabled == null
+                                ? 43
+                                : this.isMemoryEncryptionEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -92,12 +92,18 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-        /** Namespace either environment A or environment B where artifacts are deployed. */
+        /**
+         * Namespace either environment A or environment B where artifacts are deployed. Example:
+         * blue - Name of the namespace where blue artifacts were deployed. green - Name of the
+         * namespace where green artifacts were deployed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * Namespace either environment A or environment B where artifacts are deployed.
+         * Namespace either environment A or environment B where artifacts are deployed. Example:
+         * blue - Name of the namespace where blue artifacts were deployed. green - Name of the
+         * namespace where green artifacts were deployed.
          *
          * @param namespace the value to set
          * @return this builder
@@ -189,12 +195,18 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
         this.namespace = namespace;
     }
 
-    /** Namespace either environment A or environment B where artifacts are deployed. */
+    /**
+     * Namespace either environment A or environment B where artifacts are deployed. Example: blue -
+     * Name of the namespace where blue artifacts were deployed. green - Name of the namespace where
+     * green artifacts were deployed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * Namespace either environment A or environment B where artifacts are deployed.
+     * Namespace either environment A or environment B where artifacts are deployed. Example: blue -
+     * Name of the namespace where blue artifacts were deployed. green - Name of the namespace where
+     * green artifacts were deployed.
      *
      * @return the value
      */

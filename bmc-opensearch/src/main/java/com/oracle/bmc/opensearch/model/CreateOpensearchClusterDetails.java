@@ -44,6 +44,9 @@ public final class CreateOpensearchClusterDetails
         "subnetId",
         "vcnCompartmentId",
         "subnetCompartmentId",
+        "securityMode",
+        "securityMasterUserName",
+        "securityMasterUserPasswordHash",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -70,6 +73,9 @@ public final class CreateOpensearchClusterDetails
             String subnetId,
             String vcnCompartmentId,
             String subnetCompartmentId,
+            SecurityMode securityMode,
+            String securityMasterUserName,
+            String securityMasterUserPasswordHash,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -95,6 +101,9 @@ public final class CreateOpensearchClusterDetails
         this.subnetId = subnetId;
         this.vcnCompartmentId = vcnCompartmentId;
         this.subnetCompartmentId = subnetCompartmentId;
+        this.securityMode = securityMode;
+        this.securityMasterUserName = securityMasterUserName;
+        this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -419,6 +428,51 @@ public final class CreateOpensearchClusterDetails
             this.__explicitlySet__.add("subnetCompartmentId");
             return this;
         }
+        /** The security mode of the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
+        private SecurityMode securityMode;
+
+        /**
+         * The security mode of the cluster.
+         *
+         * @param securityMode the value to set
+         * @return this builder
+         */
+        public Builder securityMode(SecurityMode securityMode) {
+            this.securityMode = securityMode;
+            this.__explicitlySet__.add("securityMode");
+            return this;
+        }
+        /** The name of the master user that are used to manage security config */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserName")
+        private String securityMasterUserName;
+
+        /**
+         * The name of the master user that are used to manage security config
+         *
+         * @param securityMasterUserName the value to set
+         * @return this builder
+         */
+        public Builder securityMasterUserName(String securityMasterUserName) {
+            this.securityMasterUserName = securityMasterUserName;
+            this.__explicitlySet__.add("securityMasterUserName");
+            return this;
+        }
+        /** The password hash of the master user that are used to manage security config */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserPasswordHash")
+        private String securityMasterUserPasswordHash;
+
+        /**
+         * The password hash of the master user that are used to manage security config
+         *
+         * @param securityMasterUserPasswordHash the value to set
+         * @return this builder
+         */
+        public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
+            this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+            this.__explicitlySet__.add("securityMasterUserPasswordHash");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -505,6 +559,9 @@ public final class CreateOpensearchClusterDetails
                             this.subnetId,
                             this.vcnCompartmentId,
                             this.subnetCompartmentId,
+                            this.securityMode,
+                            this.securityMasterUserName,
+                            this.securityMasterUserPasswordHash,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -578,6 +635,15 @@ public final class CreateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("subnetCompartmentId")) {
                 this.subnetCompartmentId(model.getSubnetCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("securityMode")) {
+                this.securityMode(model.getSecurityMode());
+            }
+            if (model.wasPropertyExplicitlySet("securityMasterUserName")) {
+                this.securityMasterUserName(model.getSecurityMasterUserName());
+            }
+            if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
+                this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -874,6 +940,45 @@ public final class CreateOpensearchClusterDetails
         return subnetCompartmentId;
     }
 
+    /** The security mode of the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
+    private final SecurityMode securityMode;
+
+    /**
+     * The security mode of the cluster.
+     *
+     * @return the value
+     */
+    public SecurityMode getSecurityMode() {
+        return securityMode;
+    }
+
+    /** The name of the master user that are used to manage security config */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserName")
+    private final String securityMasterUserName;
+
+    /**
+     * The name of the master user that are used to manage security config
+     *
+     * @return the value
+     */
+    public String getSecurityMasterUserName() {
+        return securityMasterUserName;
+    }
+
+    /** The password hash of the master user that are used to manage security config */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserPasswordHash")
+    private final String securityMasterUserPasswordHash;
+
+    /**
+     * The password hash of the master user that are used to manage security config
+     *
+     * @return the value
+     */
+    public String getSecurityMasterUserPasswordHash() {
+        return securityMasterUserPasswordHash;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -966,6 +1071,10 @@ public final class CreateOpensearchClusterDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", vcnCompartmentId=").append(String.valueOf(this.vcnCompartmentId));
         sb.append(", subnetCompartmentId=").append(String.valueOf(this.subnetCompartmentId));
+        sb.append(", securityMode=").append(String.valueOf(this.securityMode));
+        sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
+        sb.append(", securityMasterUserPasswordHash=")
+                .append(String.valueOf(this.securityMasterUserPasswordHash));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1011,6 +1120,11 @@ public final class CreateOpensearchClusterDetails
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vcnCompartmentId, other.vcnCompartmentId)
                 && java.util.Objects.equals(this.subnetCompartmentId, other.subnetCompartmentId)
+                && java.util.Objects.equals(this.securityMode, other.securityMode)
+                && java.util.Objects.equals(
+                        this.securityMasterUserName, other.securityMasterUserName)
+                && java.util.Objects.equals(
+                        this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1100,6 +1214,17 @@ public final class CreateOpensearchClusterDetails
                         + (this.subnetCompartmentId == null
                                 ? 43
                                 : this.subnetCompartmentId.hashCode());
+        result = (result * PRIME) + (this.securityMode == null ? 43 : this.securityMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityMasterUserName == null
+                                ? 43
+                                : this.securityMasterUserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityMasterUserPasswordHash == null
+                                ? 43
+                                : this.securityMasterUserPasswordHash.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

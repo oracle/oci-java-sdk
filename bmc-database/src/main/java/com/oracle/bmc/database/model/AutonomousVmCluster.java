@@ -34,6 +34,7 @@ public final class AutonomousVmCluster
         "vmClusterNetworkId",
         "isLocalBackupEnabled",
         "cpusEnabled",
+        "computeModel",
         "ocpusEnabled",
         "availableCpus",
         "totalContainerDatabases",
@@ -70,6 +71,7 @@ public final class AutonomousVmCluster
             String vmClusterNetworkId,
             Boolean isLocalBackupEnabled,
             Integer cpusEnabled,
+            ComputeModel computeModel,
             Float ocpusEnabled,
             Integer availableCpus,
             Integer totalContainerDatabases,
@@ -105,6 +107,7 @@ public final class AutonomousVmCluster
         this.vmClusterNetworkId = vmClusterNetworkId;
         this.isLocalBackupEnabled = isLocalBackupEnabled;
         this.cpusEnabled = cpusEnabled;
+        this.computeModel = computeModel;
         this.ocpusEnabled = ocpusEnabled;
         this.availableCpus = availableCpus;
         this.totalContainerDatabases = totalContainerDatabases;
@@ -325,6 +328,21 @@ public final class AutonomousVmCluster
         public Builder cpusEnabled(Integer cpusEnabled) {
             this.cpusEnabled = cpusEnabled;
             this.__explicitlySet__.add("cpusEnabled");
+            return this;
+        }
+        /** The compute model of the Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous VM Cluster.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
             return this;
         }
         /** The number of enabled OCPU cores. */
@@ -734,6 +752,7 @@ public final class AutonomousVmCluster
                             this.vmClusterNetworkId,
                             this.isLocalBackupEnabled,
                             this.cpusEnabled,
+                            this.computeModel,
                             this.ocpusEnabled,
                             this.availableCpus,
                             this.totalContainerDatabases,
@@ -797,6 +816,9 @@ public final class AutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("cpusEnabled")) {
                 this.cpusEnabled(model.getCpusEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             if (model.wasPropertyExplicitlySet("ocpusEnabled")) {
                 this.ocpusEnabled(model.getOcpusEnabled());
@@ -1101,6 +1123,65 @@ public final class AutonomousVmCluster
      */
     public Integer getCpusEnabled() {
         return cpusEnabled;
+    }
+
+    /** The compute model of the Autonomous VM Cluster. */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The compute model of the Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
     }
 
     /** The number of enabled OCPU cores. */
@@ -1520,6 +1601,7 @@ public final class AutonomousVmCluster
         sb.append(", vmClusterNetworkId=").append(String.valueOf(this.vmClusterNetworkId));
         sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
         sb.append(", cpusEnabled=").append(String.valueOf(this.cpusEnabled));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", ocpusEnabled=").append(String.valueOf(this.ocpusEnabled));
         sb.append(", availableCpus=").append(String.valueOf(this.availableCpus));
         sb.append(", totalContainerDatabases=")
@@ -1575,6 +1657,7 @@ public final class AutonomousVmCluster
                 && java.util.Objects.equals(this.vmClusterNetworkId, other.vmClusterNetworkId)
                 && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
                 && java.util.Objects.equals(this.cpusEnabled, other.cpusEnabled)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.ocpusEnabled, other.ocpusEnabled)
                 && java.util.Objects.equals(this.availableCpus, other.availableCpus)
                 && java.util.Objects.equals(
@@ -1643,6 +1726,7 @@ public final class AutonomousVmCluster
                                 ? 43
                                 : this.isLocalBackupEnabled.hashCode());
         result = (result * PRIME) + (this.cpusEnabled == null ? 43 : this.cpusEnabled.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.ocpusEnabled == null ? 43 : this.ocpusEnabled.hashCode());
         result =
                 (result * PRIME)

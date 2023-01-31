@@ -26,12 +26,16 @@ package com.oracle.bmc.devops.model;
 public final class NginxCanaryStrategy extends OkeCanaryStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Canary namespace to be used for Kubernetes canary deployment. */
+        /**
+         * Canary namespace to be used for Kubernetes canary deployment. Example: canary - Name of
+         * the Canary namespace.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * Canary namespace to be used for Kubernetes canary deployment.
+         * Canary namespace to be used for Kubernetes canary deployment. Example: canary - Name of
+         * the Canary namespace.
          *
          * @param namespace the value to set
          * @return this builder
@@ -96,12 +100,16 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
         this.ingressName = ingressName;
     }
 
-    /** Canary namespace to be used for Kubernetes canary deployment. */
+    /**
+     * Canary namespace to be used for Kubernetes canary deployment. Example: canary - Name of the
+     * Canary namespace.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * Canary namespace to be used for Kubernetes canary deployment.
+     * Canary namespace to be used for Kubernetes canary deployment. Example: canary - Name of the
+     * Canary namespace.
      *
      * @return the value
      */
