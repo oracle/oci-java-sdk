@@ -53,6 +53,33 @@ public final class SpanFilterSummary extends ConfigSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+        private String createdBy;
+
+        public Builder createdBy(String createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
+        private String updatedBy;
+
+        public Builder updatedBy(String updatedBy) {
+            this.updatedBy = updatedBy;
+            this.__explicitlySet__.add("updatedBy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("etag")
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            this.__explicitlySet__.add("etag");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -101,6 +128,21 @@ public final class SpanFilterSummary extends ConfigSummary {
             this.__explicitlySet__.add("filterText");
             return this;
         }
+        /** The list of configuration items that reference the span filter. */
+        @com.fasterxml.jackson.annotation.JsonProperty("inUseBy")
+        private java.util.List<SpanFilterReference> inUseBy;
+
+        /**
+         * The list of configuration items that reference the span filter.
+         *
+         * @param inUseBy the value to set
+         * @return this builder
+         */
+        public Builder inUseBy(java.util.List<SpanFilterReference> inUseBy) {
+            this.inUseBy = inUseBy;
+            this.__explicitlySet__.add("inUseBy");
+            return this;
+        }
         /** An optional string that describes what the filter is intended or used for. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -126,10 +168,14 @@ public final class SpanFilterSummary extends ConfigSummary {
                             this.id,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.createdBy,
+                            this.updatedBy,
+                            this.etag,
                             this.freeformTags,
                             this.definedTags,
                             this.displayName,
                             this.filterText,
+                            this.inUseBy,
                             this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -148,6 +194,15 @@ public final class SpanFilterSummary extends ConfigSummary {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("updatedBy")) {
+                this.updatedBy(model.getUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("etag")) {
+                this.etag(model.getEtag());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -159,6 +214,9 @@ public final class SpanFilterSummary extends ConfigSummary {
             }
             if (model.wasPropertyExplicitlySet("filterText")) {
                 this.filterText(model.getFilterText());
+            }
+            if (model.wasPropertyExplicitlySet("inUseBy")) {
+                this.inUseBy(model.getInUseBy());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -181,14 +239,19 @@ public final class SpanFilterSummary extends ConfigSummary {
             String id,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String createdBy,
+            String updatedBy,
+            String etag,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             String filterText,
+            java.util.List<SpanFilterReference> inUseBy,
             String description) {
-        super(id, timeCreated, timeUpdated, freeformTags, definedTags);
+        super(id, timeCreated, timeUpdated, createdBy, updatedBy, etag, freeformTags, definedTags);
         this.displayName = displayName;
         this.filterText = filterText;
+        this.inUseBy = inUseBy;
         this.description = description;
     }
 
@@ -216,6 +279,19 @@ public final class SpanFilterSummary extends ConfigSummary {
      */
     public String getFilterText() {
         return filterText;
+    }
+
+    /** The list of configuration items that reference the span filter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("inUseBy")
+    private final java.util.List<SpanFilterReference> inUseBy;
+
+    /**
+     * The list of configuration items that reference the span filter.
+     *
+     * @return the value
+     */
+    public java.util.List<SpanFilterReference> getInUseBy() {
+        return inUseBy;
     }
 
     /** An optional string that describes what the filter is intended or used for. */
@@ -248,6 +324,7 @@ public final class SpanFilterSummary extends ConfigSummary {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", filterText=").append(String.valueOf(this.filterText));
+        sb.append(", inUseBy=").append(String.valueOf(this.inUseBy));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
@@ -265,6 +342,7 @@ public final class SpanFilterSummary extends ConfigSummary {
         SpanFilterSummary other = (SpanFilterSummary) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.filterText, other.filterText)
+                && java.util.Objects.equals(this.inUseBy, other.inUseBy)
                 && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
@@ -275,6 +353,7 @@ public final class SpanFilterSummary extends ConfigSummary {
         int result = super.hashCode();
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.filterText == null ? 43 : this.filterText.hashCode());
+        result = (result * PRIME) + (this.inUseBy == null ? 43 : this.inUseBy.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         return result;
     }

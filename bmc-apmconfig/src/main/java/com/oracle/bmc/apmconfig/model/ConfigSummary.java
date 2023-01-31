@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A description of a configuration item. It specifes all the properties that define the
+ * A description of a configuration item. It specifies all the properties that define the
  * configuration item. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -43,6 +43,9 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         "id",
         "timeCreated",
         "timeUpdated",
+        "createdBy",
+        "updatedBy",
+        "etag",
         "freeformTags",
         "definedTags"
     })
@@ -50,12 +53,18 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
             String id,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String createdBy,
+            String updatedBy,
+            String etag,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.createdBy = createdBy;
+        this.updatedBy = updatedBy;
+        this.etag = etag;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -116,6 +125,49 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+    private final String createdBy;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     *
+     * @return the value
+     */
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
+    private final String updatedBy;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     *
+     * @return the value
+     */
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    /** For optimistic concurrency control. See {@code if-match}. */
+    @com.fasterxml.jackson.annotation.JsonProperty("etag")
+    private final String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -167,6 +219,9 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
+        sb.append(", etag=").append(String.valueOf(this.etag));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -186,6 +241,9 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.updatedBy, other.updatedBy)
+                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -198,6 +256,9 @@ public class ConfigSummary extends com.oracle.bmc.http.client.internal.Explicitl
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

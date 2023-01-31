@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>3.2.2</version>
+    <version>3.2.3</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-addons-graalvm</artifactId>
@@ -145,37 +145,37 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.2.2</version>
+      <version>3.2.3</version>
        <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.2.2</version>
+      <version>3.2.3</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-core</artifactId>
-      <version>3.2.2</version>
+      <version>3.2.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-identity</artifactId>
-      <version>3.2.2</version>
+      <version>3.2.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
-      <version>3.2.2</version>
+      <version>3.2.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>3.2.2</version>
+      <version>3.2.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

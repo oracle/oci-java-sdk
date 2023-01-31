@@ -31,6 +31,7 @@ public final class UpdateAutonomousDatabaseDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpuCoreCount",
+        "computeCount",
         "ocpuCount",
         "dataStorageSizeInTBs",
         "dataStorageSizeInGBs",
@@ -64,10 +65,14 @@ public final class UpdateAutonomousDatabaseDetails
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "maxCpuCoreCount",
-        "databaseEdition"
+        "databaseEdition",
+        "dbToolsDetails",
+        "secretId",
+        "secretVersionNumber"
     })
     public UpdateAutonomousDatabaseDetails(
             Integer cpuCoreCount,
+            Float computeCount,
             Float ocpuCount,
             Integer dataStorageSizeInTBs,
             Integer dataStorageSizeInGBs,
@@ -101,9 +106,13 @@ public final class UpdateAutonomousDatabaseDetails
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             Integer maxCpuCoreCount,
-            AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
+            java.util.List<DatabaseTool> dbToolsDetails,
+            String secretId,
+            Integer secretVersionNumber) {
         super();
         this.cpuCoreCount = cpuCoreCount;
+        this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
@@ -138,22 +147,27 @@ public final class UpdateAutonomousDatabaseDetails
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.maxCpuCoreCount = maxCpuCoreCount;
         this.databaseEdition = databaseEdition;
+        this.dbToolsDetails = dbToolsDetails;
+        this.secretId = secretId;
+        this.secretVersionNumber = secretVersionNumber;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The number of OCPU cores to be made available to the Autonomous Database.
+         * The number of CPUs to be made available to the Autonomous Database.
          *
-         * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
+         * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code
+         * computeCount} parameter.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of OCPU cores to be made available to the Autonomous Database.
+         * The number of CPUs to be made available to the Autonomous Database.
          *
-         * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
+         * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code
+         * computeCount} parameter.
          *
          * @param cpuCoreCount the value to set
          * @return this builder
@@ -161,6 +175,33 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+        /**
+         * The compute amount available to the database. Minimum and maximum values depend on the
+         * compute model and whether the database is on Shared or Dedicated infrastructure. For an
+         * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
+         * multiples of two. Required when using the {@code computeModel} parameter. When using
+         * {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null
+         * value.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Float computeCount;
+
+        /**
+         * The compute amount available to the database. Minimum and maximum values depend on the
+         * compute model and whether the database is on Shared or Dedicated infrastructure. For an
+         * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
+         * multiples of two. Required when using the {@code computeModel} parameter. When using
+         * {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null
+         * value.
+         *
+         * @param computeCount the value to set
+         * @return this builder
+         */
+        public Builder computeCount(Float computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
             return this;
         }
         /**
@@ -1077,6 +1118,55 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
+        /** List of database tools details. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+        private java.util.List<DatabaseTool> dbToolsDetails;
+
+        /**
+         * List of database tools details.
+         *
+         * @param dbToolsDetails the value to set
+         * @return this builder
+         */
+        public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
+            this.dbToolsDetails = dbToolsDetails;
+            this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+        /** The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        /**
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+         *
+         * @param secretId the value to set
+         * @return this builder
+         */
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be
+         * used.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
+        private Integer secretVersionNumber;
+
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be
+         * used.
+         *
+         * @param secretVersionNumber the value to set
+         * @return this builder
+         */
+        public Builder secretVersionNumber(Integer secretVersionNumber) {
+            this.secretVersionNumber = secretVersionNumber;
+            this.__explicitlySet__.add("secretVersionNumber");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1085,6 +1175,7 @@ public final class UpdateAutonomousDatabaseDetails
             UpdateAutonomousDatabaseDetails model =
                     new UpdateAutonomousDatabaseDetails(
                             this.cpuCoreCount,
+                            this.computeCount,
                             this.ocpuCount,
                             this.dataStorageSizeInTBs,
                             this.dataStorageSizeInGBs,
@@ -1118,7 +1209,10 @@ public final class UpdateAutonomousDatabaseDetails
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.maxCpuCoreCount,
-                            this.databaseEdition);
+                            this.databaseEdition,
+                            this.dbToolsDetails,
+                            this.secretId,
+                            this.secretVersionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1129,6 +1223,9 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder copy(UpdateAutonomousDatabaseDetails model) {
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
@@ -1232,6 +1329,15 @@ public final class UpdateAutonomousDatabaseDetails
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
+            if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
+                this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
+                this.secretVersionNumber(model.getSecretVersionNumber());
+            }
             return this;
         }
     }
@@ -1246,22 +1352,47 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The number of OCPU cores to be made available to the Autonomous Database.
+     * The number of CPUs to be made available to the Autonomous Database.
      *
-     * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
+     * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code computeCount}
+     * parameter.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of OCPU cores to be made available to the Autonomous Database.
+     * The number of CPUs to be made available to the Autonomous Database.
      *
-     * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
+     * <p>*Note:** This parameter cannot be used with the {@code ocpuCount} or {@code computeCount}
+     * parameter.
      *
      * @return the value
      */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
+    }
+
+    /**
+     * The compute amount available to the database. Minimum and maximum values depend on the
+     * compute model and whether the database is on Shared or Dedicated infrastructure. For an
+     * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
+     * multiples of two. Required when using the {@code computeModel} parameter. When using {@code
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Float computeCount;
+
+    /**
+     * The compute amount available to the database. Minimum and maximum values depend on the
+     * compute model and whether the database is on Shared or Dedicated infrastructure. For an
+     * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
+     * multiples of two. Required when using the {@code computeModel} parameter. When using {@code
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     *
+     * @return the value
+     */
+    public Float getComputeCount() {
+        return computeCount;
     }
 
     /**
@@ -2272,6 +2403,47 @@ public final class UpdateAutonomousDatabaseDetails
         return databaseEdition;
     }
 
+    /** List of database tools details. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+    private final java.util.List<DatabaseTool> dbToolsDetails;
+
+    /**
+     * List of database tools details.
+     *
+     * @return the value
+     */
+    public java.util.List<DatabaseTool> getDbToolsDetails() {
+        return dbToolsDetails;
+    }
+
+    /** The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+    private final String secretId;
+
+    /**
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     *
+     * @return the value
+     */
+    public String getSecretId() {
+        return secretId;
+    }
+
+    /**
+     * The version of the vault secret. If no version is specified, the latest version will be used.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
+    private final Integer secretVersionNumber;
+
+    /**
+     * The version of the vault secret. If no version is specified, the latest version will be used.
+     *
+     * @return the value
+     */
+    public Integer getSecretVersionNumber() {
+        return secretVersionNumber;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2288,6 +2460,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append("UpdateAutonomousDatabaseDetails(");
         sb.append("super=").append(super.toString());
         sb.append("cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
@@ -2326,6 +2499,9 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
         sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
+        sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
+        sb.append(", secretId=").append(String.valueOf(this.secretId));
+        sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(")");
         return sb.toString();
     }
@@ -2341,6 +2517,7 @@ public final class UpdateAutonomousDatabaseDetails
 
         UpdateAutonomousDatabaseDetails other = (UpdateAutonomousDatabaseDetails) o;
         return java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
@@ -2380,6 +2557,9 @@ public final class UpdateAutonomousDatabaseDetails
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
+                && java.util.Objects.equals(this.secretId, other.secretId)
+                && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && super.equals(other);
     }
 
@@ -2388,6 +2568,7 @@ public final class UpdateAutonomousDatabaseDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =
                 (result * PRIME)
@@ -2490,6 +2671,15 @@ public final class UpdateAutonomousDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
+        result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretVersionNumber == null
+                                ? 43
+                                : this.secretVersionNumber.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

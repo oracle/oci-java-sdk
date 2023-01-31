@@ -53,6 +53,15 @@ public final class AmdVmPlatformConfig extends PlatformConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
+        private Boolean isMemoryEncryptionEnabled;
+
+        public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            this.__explicitlySet__.add("isMemoryEncryptionEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -61,7 +70,8 @@ public final class AmdVmPlatformConfig extends PlatformConfig {
                     new AmdVmPlatformConfig(
                             this.isSecureBootEnabled,
                             this.isTrustedPlatformModuleEnabled,
-                            this.isMeasuredBootEnabled);
+                            this.isMeasuredBootEnabled,
+                            this.isMemoryEncryptionEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +88,9 @@ public final class AmdVmPlatformConfig extends PlatformConfig {
             }
             if (model.wasPropertyExplicitlySet("isMeasuredBootEnabled")) {
                 this.isMeasuredBootEnabled(model.getIsMeasuredBootEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
+                this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
             }
             return this;
         }
@@ -96,8 +109,13 @@ public final class AmdVmPlatformConfig extends PlatformConfig {
     public AmdVmPlatformConfig(
             Boolean isSecureBootEnabled,
             Boolean isTrustedPlatformModuleEnabled,
-            Boolean isMeasuredBootEnabled) {
-        super(isSecureBootEnabled, isTrustedPlatformModuleEnabled, isMeasuredBootEnabled);
+            Boolean isMeasuredBootEnabled,
+            Boolean isMemoryEncryptionEnabled) {
+        super(
+                isSecureBootEnabled,
+                isTrustedPlatformModuleEnabled,
+                isMeasuredBootEnabled,
+                isMemoryEncryptionEnabled);
     }
 
     @Override

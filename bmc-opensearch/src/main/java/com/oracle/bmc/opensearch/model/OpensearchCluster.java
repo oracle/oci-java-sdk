@@ -63,7 +63,10 @@ public final class OpensearchCluster
         "vcnCompartmentId",
         "subnetCompartmentId",
         "fqdn",
-        "availabilityDomains"
+        "availabilityDomains",
+        "securityMode",
+        "securityMasterUserName",
+        "securityMasterUserPasswordHash"
     })
     public OpensearchCluster(
             String id,
@@ -102,7 +105,10 @@ public final class OpensearchCluster
             String vcnCompartmentId,
             String subnetCompartmentId,
             String fqdn,
-            java.util.List<String> availabilityDomains) {
+            java.util.List<String> availabilityDomains,
+            SecurityMode securityMode,
+            String securityMasterUserName,
+            String securityMasterUserPasswordHash) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -141,6 +147,9 @@ public final class OpensearchCluster
         this.subnetCompartmentId = subnetCompartmentId;
         this.fqdn = fqdn;
         this.availabilityDomains = availabilityDomains;
+        this.securityMode = securityMode;
+        this.securityMasterUserName = securityMasterUserName;
+        this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -717,6 +726,51 @@ public final class OpensearchCluster
             this.__explicitlySet__.add("availabilityDomains");
             return this;
         }
+        /** The security mode of the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
+        private SecurityMode securityMode;
+
+        /**
+         * The security mode of the cluster.
+         *
+         * @param securityMode the value to set
+         * @return this builder
+         */
+        public Builder securityMode(SecurityMode securityMode) {
+            this.securityMode = securityMode;
+            this.__explicitlySet__.add("securityMode");
+            return this;
+        }
+        /** The name of the master user that are used to manage security config */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserName")
+        private String securityMasterUserName;
+
+        /**
+         * The name of the master user that are used to manage security config
+         *
+         * @param securityMasterUserName the value to set
+         * @return this builder
+         */
+        public Builder securityMasterUserName(String securityMasterUserName) {
+            this.securityMasterUserName = securityMasterUserName;
+            this.__explicitlySet__.add("securityMasterUserName");
+            return this;
+        }
+        /** The password hash of the master user that are used to manage security config */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserPasswordHash")
+        private String securityMasterUserPasswordHash;
+
+        /**
+         * The password hash of the master user that are used to manage security config
+         *
+         * @param securityMasterUserPasswordHash the value to set
+         * @return this builder
+         */
+        public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
+            this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+            this.__explicitlySet__.add("securityMasterUserPasswordHash");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -760,7 +814,10 @@ public final class OpensearchCluster
                             this.vcnCompartmentId,
                             this.subnetCompartmentId,
                             this.fqdn,
-                            this.availabilityDomains);
+                            this.availabilityDomains,
+                            this.securityMode,
+                            this.securityMasterUserName,
+                            this.securityMasterUserPasswordHash);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -879,6 +936,15 @@ public final class OpensearchCluster
             }
             if (model.wasPropertyExplicitlySet("availabilityDomains")) {
                 this.availabilityDomains(model.getAvailabilityDomains());
+            }
+            if (model.wasPropertyExplicitlySet("securityMode")) {
+                this.securityMode(model.getSecurityMode());
+            }
+            if (model.wasPropertyExplicitlySet("securityMasterUserName")) {
+                this.securityMasterUserName(model.getSecurityMasterUserName());
+            }
+            if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
+                this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
             }
             return this;
         }
@@ -1438,6 +1504,45 @@ public final class OpensearchCluster
         return availabilityDomains;
     }
 
+    /** The security mode of the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
+    private final SecurityMode securityMode;
+
+    /**
+     * The security mode of the cluster.
+     *
+     * @return the value
+     */
+    public SecurityMode getSecurityMode() {
+        return securityMode;
+    }
+
+    /** The name of the master user that are used to manage security config */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserName")
+    private final String securityMasterUserName;
+
+    /**
+     * The name of the master user that are used to manage security config
+     *
+     * @return the value
+     */
+    public String getSecurityMasterUserName() {
+        return securityMasterUserName;
+    }
+
+    /** The password hash of the master user that are used to manage security config */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserPasswordHash")
+    private final String securityMasterUserPasswordHash;
+
+    /**
+     * The password hash of the master user that are used to manage security config
+     *
+     * @return the value
+     */
+    public String getSecurityMasterUserPasswordHash() {
+        return securityMasterUserPasswordHash;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1495,6 +1600,10 @@ public final class OpensearchCluster
         sb.append(", subnetCompartmentId=").append(String.valueOf(this.subnetCompartmentId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", availabilityDomains=").append(String.valueOf(this.availabilityDomains));
+        sb.append(", securityMode=").append(String.valueOf(this.securityMode));
+        sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
+        sb.append(", securityMasterUserPasswordHash=")
+                .append(String.valueOf(this.securityMasterUserPasswordHash));
         sb.append(")");
         return sb.toString();
     }
@@ -1554,6 +1663,11 @@ public final class OpensearchCluster
                 && java.util.Objects.equals(this.subnetCompartmentId, other.subnetCompartmentId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.availabilityDomains, other.availabilityDomains)
+                && java.util.Objects.equals(this.securityMode, other.securityMode)
+                && java.util.Objects.equals(
+                        this.securityMasterUserName, other.securityMasterUserName)
+                && java.util.Objects.equals(
+                        this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
                 && super.equals(other);
     }
 
@@ -1678,6 +1792,17 @@ public final class OpensearchCluster
                         + (this.availabilityDomains == null
                                 ? 43
                                 : this.availabilityDomains.hashCode());
+        result = (result * PRIME) + (this.securityMode == null ? 43 : this.securityMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityMasterUserName == null
+                                ? 43
+                                : this.securityMasterUserName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityMasterUserPasswordHash == null
+                                ? 43
+                                : this.securityMasterUserPasswordHash.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

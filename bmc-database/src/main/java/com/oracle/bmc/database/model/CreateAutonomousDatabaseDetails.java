@@ -71,6 +71,24 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Float computeCount;
+
+        public Builder computeCount(Float computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
@@ -382,6 +400,33 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
+        private java.util.List<DatabaseTool> dbToolsDetails;
+
+        public Builder dbToolsDetails(java.util.List<DatabaseTool> dbToolsDetails) {
+            this.dbToolsDetails = dbToolsDetails;
+            this.__explicitlySet__.add("dbToolsDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
+        private String secretId;
+
+        public Builder secretId(String secretId) {
+            this.secretId = secretId;
+            this.__explicitlySet__.add("secretId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
+        private Integer secretVersionNumber;
+
+        public Builder secretVersionNumber(Integer secretVersionNumber) {
+            this.secretVersionNumber = secretVersionNumber;
+            this.__explicitlySet__.add("secretVersionNumber");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -393,6 +438,8 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                             this.ncharacterSet,
                             this.dbName,
                             this.cpuCoreCount,
+                            this.computeModel,
+                            this.computeCount,
                             this.ocpuCount,
                             this.dbWorkload,
                             this.dataStorageSizeInTBs,
@@ -426,7 +473,10 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.maxCpuCoreCount,
-                            this.databaseEdition);
+                            this.databaseEdition,
+                            this.dbToolsDetails,
+                            this.secretId,
+                            this.secretVersionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -449,6 +499,12 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
@@ -554,6 +610,15 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
             }
+            if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
+                this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("secretVersionNumber")) {
+                this.secretVersionNumber(model.getSecretVersionNumber());
+            }
             return this;
         }
     }
@@ -574,6 +639,8 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            ComputeModel computeModel,
+            Float computeCount,
             Float ocpuCount,
             DbWorkload dbWorkload,
             Integer dataStorageSizeInTBs,
@@ -607,13 +674,18 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             Integer maxCpuCoreCount,
-            AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
+            java.util.List<DatabaseTool> dbToolsDetails,
+            String secretId,
+            Integer secretVersionNumber) {
         super(
                 compartmentId,
                 characterSet,
                 ncharacterSet,
                 dbName,
                 cpuCoreCount,
+                computeModel,
+                computeCount,
                 ocpuCount,
                 dbWorkload,
                 dataStorageSizeInTBs,
@@ -647,7 +719,10 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
                 maxCpuCoreCount,
-                databaseEdition);
+                databaseEdition,
+                dbToolsDetails,
+                secretId,
+                secretVersionNumber);
     }
 
     @Override

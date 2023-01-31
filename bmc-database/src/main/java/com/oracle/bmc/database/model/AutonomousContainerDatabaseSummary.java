@@ -60,7 +60,8 @@ public final class AutonomousContainerDatabaseSummary
         "availableCpus",
         "totalCpus",
         "reclaimableCpus",
-        "provisionableCpus"
+        "provisionableCpus",
+        "computeModel"
     })
     public AutonomousContainerDatabaseSummary(
             String id,
@@ -97,7 +98,8 @@ public final class AutonomousContainerDatabaseSummary
             Float availableCpus,
             Integer totalCpus,
             Float reclaimableCpus,
-            java.util.List<Float> provisionableCpus) {
+            java.util.List<Float> provisionableCpus,
+            ComputeModel computeModel) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -134,6 +136,7 @@ public final class AutonomousContainerDatabaseSummary
         this.totalCpus = totalCpus;
         this.reclaimableCpus = reclaimableCpus;
         this.provisionableCpus = provisionableCpus;
+        this.computeModel = computeModel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -651,12 +654,12 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("keyStoreWalletName");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster. */
+        /** The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+         * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -667,15 +670,15 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available
-         * in the Autonomous Container Database.
+         * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in
+         * the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available
-         * in the Autonomous Container Database.
+         * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in
+         * the Autonomous Container Database.
          *
          * @param availableCpus the value to set
          * @return this builder
@@ -685,12 +688,12 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("availableCpus");
             return this;
         }
-        /** The number of CPU cores allocated to the Autonomous VM cluster. */
+        /** The number of CPUs allocated to the Autonomous VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
         private Integer totalCpus;
 
         /**
-         * The number of CPU cores allocated to the Autonomous VM cluster.
+         * The number of CPUs allocated to the Autonomous VM cluster.
          *
          * @param totalCpus the value to set
          * @return this builder
@@ -701,19 +704,19 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
          * Container Database even after one of its Autonomous Database is terminated or scaled
-         * down. You can release them to the available OCPUs at its parent AVMC level by restarting
-         * the Autonomous Container Database.
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
          * Container Database even after one of its Autonomous Database is terminated or scaled
-         * down. You can release them to the available OCPUs at its parent AVMC level by restarting
-         * the Autonomous Container Database.
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -740,6 +743,21 @@ public final class AutonomousContainerDatabaseSummary
         public Builder provisionableCpus(java.util.List<Float> provisionableCpus) {
             this.provisionableCpus = provisionableCpus;
             this.__explicitlySet__.add("provisionableCpus");
+            return this;
+        }
+        /** The compute model of the Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous VM Cluster.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
             return this;
         }
 
@@ -783,7 +801,8 @@ public final class AutonomousContainerDatabaseSummary
                             this.availableCpus,
                             this.totalCpus,
                             this.reclaimableCpus,
-                            this.provisionableCpus);
+                            this.provisionableCpus,
+                            this.computeModel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -897,6 +916,9 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("provisionableCpus")) {
                 this.provisionableCpus(model.getProvisionableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             return this;
         }
@@ -1605,12 +1627,12 @@ public final class AutonomousContainerDatabaseSummary
         return keyStoreWalletName;
     }
 
-    /** The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster. */
+    /** The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -1619,15 +1641,15 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in
-     * the Autonomous Container Database.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the
+     * Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in
-     * the Autonomous Container Database.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the
+     * Autonomous Container Database.
      *
      * @return the value
      */
@@ -1635,12 +1657,12 @@ public final class AutonomousContainerDatabaseSummary
         return availableCpus;
     }
 
-    /** The number of CPU cores allocated to the Autonomous VM cluster. */
+    /** The number of CPUs allocated to the Autonomous VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
     private final Integer totalCpus;
 
     /**
-     * The number of CPU cores allocated to the Autonomous VM cluster.
+     * The number of CPUs allocated to the Autonomous VM cluster.
      *
      * @return the value
      */
@@ -1649,19 +1671,19 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
-     * You can release them to the available OCPUs at its parent AVMC level by restarting the
-     * Autonomous Container Database.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
-     * You can release them to the available OCPUs at its parent AVMC level by restarting the
-     * Autonomous Container Database.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      *
      * @return the value
      */
@@ -1684,6 +1706,65 @@ public final class AutonomousContainerDatabaseSummary
      */
     public java.util.List<Float> getProvisionableCpus() {
         return provisionableCpus;
+    }
+
+    /** The compute model of the Autonomous VM Cluster. */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The compute model of the Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
     }
 
     @Override
@@ -1741,6 +1822,7 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(")");
         return sb.toString();
     }
@@ -1796,6 +1878,7 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.totalCpus, other.totalCpus)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && super.equals(other);
     }
 
@@ -1900,6 +1983,7 @@ public final class AutonomousContainerDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.provisionableCpus == null ? 43 : this.provisionableCpus.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

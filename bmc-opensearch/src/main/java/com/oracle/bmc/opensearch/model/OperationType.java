@@ -16,6 +16,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateOpensearchClusterBackup("UPDATE_OPENSEARCH_CLUSTER_BACKUP"),
     MoveOpensearchClusterBackup("MOVE_OPENSEARCH_CLUSTER_BACKUP"),
     DeleteOpensearchClusterBackup("DELETE_OPENSEARCH_CLUSTER_BACKUP"),
+    UpdateOpensearchClusterSecurityConfig("UPDATE_OPENSEARCH_CLUSTER_SECURITY_CONFIG"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -46,6 +46,9 @@ package com.oracle.bmc.devops.model;
             value = OkeHelmChartDeployStageSummary.class,
             name = "OKE_HELM_CHART_DEPLOYMENT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ShellDeployStageSummary.class,
+            name = "SHELL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OkeCanaryTrafficShiftDeployStageSummary.class,
             name = "OKE_CANARY_TRAFFIC_SHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

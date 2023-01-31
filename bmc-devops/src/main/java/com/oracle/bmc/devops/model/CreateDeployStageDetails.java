@@ -37,6 +37,9 @@ package com.oracle.bmc.devops.model;
             value = CreateLoadBalancerTrafficShiftDeployStageDetails.class,
             name = "LOAD_BALANCER_TRAFFIC_SHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateShellDeployStageDetails.class,
+            name = "SHELL"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails.class,
             name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
