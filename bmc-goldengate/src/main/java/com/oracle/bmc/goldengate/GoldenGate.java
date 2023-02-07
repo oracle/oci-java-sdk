@@ -282,6 +282,32 @@ public interface GoldenGate extends AutoCloseable {
     DeleteDeploymentBackupResponse deleteDeploymentBackup(DeleteDeploymentBackupRequest request);
 
     /**
+     * Checks if a wallet is already present in the deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeploymentWalletExistsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeploymentWalletExists API.
+     */
+    DeploymentWalletExistsResponse deploymentWalletExists(DeploymentWalletExistsRequest request);
+
+    /**
+     * Export the OGG wallet from the deployment to OCI vault. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ExportDeploymentWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportDeploymentWallet API.
+     */
+    ExportDeploymentWalletResponse exportDeploymentWallet(ExportDeploymentWalletRequest request);
+
+    /**
      * Retrieves a Connection.
      *
      * @param request The request object containing the details to send
@@ -374,6 +400,19 @@ public interface GoldenGate extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Imports an OGG wallet from the OCI Vault to the Deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ImportDeploymentWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportDeploymentWallet API.
+     */
+    ImportDeploymentWalletResponse importDeploymentWallet(ImportDeploymentWalletRequest request);
+
+    /**
      * Lists the Connection Assignments in the compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -452,6 +491,20 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentUpgradesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentUpgrades API.
      */
     ListDeploymentUpgradesResponse listDeploymentUpgrades(ListDeploymentUpgradesRequest request);
+
+    /**
+     * Lists the wallets export/import operations to/from a deployment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentWalletsOperationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentWalletsOperations API.
+     */
+    ListDeploymentWalletsOperationsResponse listDeploymentWalletsOperations(
+            ListDeploymentWalletsOperationsRequest request);
 
     /**
      * Lists the Deployments in a compartment.

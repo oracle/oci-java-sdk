@@ -793,6 +793,65 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeOpsiConfigurationCompartmentResponse>
+            changeOpsiConfigurationCompartment(
+                    ChangeOpsiConfigurationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOpsiConfigurationCompartmentRequest,
+                                    ChangeOpsiConfigurationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeOpsiConfigurationCompartment");
+        final ChangeOpsiConfigurationCompartmentRequest interceptedRequest =
+                ChangeOpsiConfigurationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOpsiConfigurationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ChangeOpsiConfigurationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ChangeOpsiConfigurationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeOpsiConfigurationCompartmentResponse>
+                transformer =
+                        ChangeOpsiConfigurationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeOpsiConfigurationCompartmentRequest,
+                        ChangeOpsiConfigurationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeOpsiConfigurationCompartmentRequest,
+                                ChangeOpsiConfigurationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeOpsiConfigurationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeOpsiConfigurationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeOpsiConfigurationCompartmentRequest,
+                    ChangeOpsiConfigurationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangePeComanagedDatabaseInsightResponse>
             changePeComanagedDatabaseInsight(
                     ChangePeComanagedDatabaseInsightRequest request,
@@ -1299,6 +1358,60 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOpsiConfigurationResponse> createOpsiConfiguration(
+            CreateOpsiConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateOpsiConfigurationRequest, CreateOpsiConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async createOpsiConfiguration");
+        final CreateOpsiConfigurationRequest interceptedRequest =
+                CreateOpsiConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOpsiConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "CreateOpsiConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/CreateOpsiConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateOpsiConfigurationResponse>
+                transformer =
+                        CreateOpsiConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOpsiConfigurationRequest, CreateOpsiConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOpsiConfigurationRequest, CreateOpsiConfigurationResponse>,
+                        java.util.concurrent.Future<CreateOpsiConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOpsiConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOpsiConfigurationRequest, CreateOpsiConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAwrHubResponse> deleteAwrHub(
             DeleteAwrHubRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteAwrHubRequest, DeleteAwrHubResponse>
@@ -1683,6 +1796,54 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteOperationsInsightsWarehouseUserRequest,
                     DeleteOperationsInsightsWarehouseUserResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOpsiConfigurationResponse> deleteOpsiConfiguration(
+            DeleteOpsiConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOpsiConfigurationRequest, DeleteOpsiConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async deleteOpsiConfiguration");
+        final DeleteOpsiConfigurationRequest interceptedRequest =
+                DeleteOpsiConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOpsiConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "DeleteOpsiConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/DeleteOpsiConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteOpsiConfigurationResponse>
+                transformer =
+                        DeleteOpsiConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOpsiConfigurationRequest, DeleteOpsiConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOpsiConfigurationRequest, DeleteOpsiConfigurationResponse>,
+                        java.util.concurrent.Future<DeleteOpsiConfigurationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOpsiConfigurationRequest, DeleteOpsiConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2585,6 +2746,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetOperationsInsightsWarehouseUserRequest,
                     GetOperationsInsightsWarehouseUserResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOpsiConfigurationResponse> getOpsiConfiguration(
+            GetOpsiConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOpsiConfigurationRequest, GetOpsiConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async getOpsiConfiguration");
+        final GetOpsiConfigurationRequest interceptedRequest =
+                GetOpsiConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOpsiConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "GetOpsiConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/GetOpsiConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetOpsiConfigurationResponse>
+                transformer =
+                        GetOpsiConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOpsiConfigurationRequest, GetOpsiConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOpsiConfigurationRequest, GetOpsiConfigurationResponse>,
+                        java.util.concurrent.Future<GetOpsiConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOpsiConfigurationRequest, GetOpsiConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3943,6 +4151,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOpsiConfigurationsResponse> listOpsiConfigurations(
+            ListOpsiConfigurationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>
+                    handler) {
+        LOG.trace("Called async listOpsiConfigurations");
+        final ListOpsiConfigurationsRequest interceptedRequest =
+                ListOpsiConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOpsiConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListOpsiConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ListOpsiConfigurations");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListOpsiConfigurationsResponse>
+                transformer =
+                        ListOpsiConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>,
+                        java.util.concurrent.Future<ListOpsiConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOpsiDataObjectsResponse> listOpsiDataObjects(
             ListOpsiDataObjectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4881,6 +5136,57 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SummarizeAwrSourcesSummariesRequest, SummarizeAwrSourcesSummariesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeConfigurationItemsResponse>
+            summarizeConfigurationItems(
+                    SummarizeConfigurationItemsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeConfigurationItemsRequest,
+                                    SummarizeConfigurationItemsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeConfigurationItems");
+        final SummarizeConfigurationItemsRequest interceptedRequest =
+                SummarizeConfigurationItemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeConfigurationItemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeConfigurationItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/SummarizeConfigurationItems");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeConfigurationItemsResponse>
+                transformer =
+                        SummarizeConfigurationItemsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeConfigurationItemsRequest, SummarizeConfigurationItemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeConfigurationItemsRequest,
+                                SummarizeConfigurationItemsResponse>,
+                        java.util.concurrent.Future<SummarizeConfigurationItemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeConfigurationItemsRequest, SummarizeConfigurationItemsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7009,6 +7315,59 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOperationsInsightsWarehouseUserRequest,
                     UpdateOperationsInsightsWarehouseUserResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOpsiConfigurationResponse> updateOpsiConfiguration(
+            UpdateOpsiConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOpsiConfigurationRequest, UpdateOpsiConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async updateOpsiConfiguration");
+        final UpdateOpsiConfigurationRequest interceptedRequest =
+                UpdateOpsiConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOpsiConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "UpdateOpsiConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/UpdateOpsiConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateOpsiConfigurationResponse>
+                transformer =
+                        UpdateOpsiConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateOpsiConfigurationRequest, UpdateOpsiConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOpsiConfigurationRequest, UpdateOpsiConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateOpsiConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOpsiConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOpsiConfigurationRequest, UpdateOpsiConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

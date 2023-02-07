@@ -13,24 +13,30 @@ import java.util.Optional;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import org.slf4j.Logger;
 
-class SecurityTokenAdapter {
+public class SecurityTokenAdapter {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SecurityTokenAdapter.class);
     private final Optional<JwtClaimsSet> jwt;
+    private final Optional<RSAPublicKey> jwkAsJce;
     private final SessionKeySupplier sessionKeySupplier;
     private final String securityToken;
+    private static final String JWK = "jwk";
 
-    SecurityTokenAdapter(String securityToken, SessionKeySupplier sessionKeySupplier) {
+    public SecurityTokenAdapter(String securityToken, SessionKeySupplier sessionKeySupplier) {
         this.securityToken = securityToken;
         if (securityToken != null && !securityToken.isEmpty()) {
-            this.jwt = Optional.of(new JwtClaimsSet(securityToken));
+            JwtClaimsSet jwtClaims = new JwtClaimsSet(securityToken);
+            this.jwt = Optional.of(jwtClaims);
+            this.jwkAsJce = retrievePublicKey(jwtClaims);
         } else {
             this.jwt = Optional.empty();
+            this.jwkAsJce = Optional.empty();
         }
         this.sessionKeySupplier = sessionKeySupplier;
     }
 
     /**
      * Checks to see if the current token is still valid
+     *
      * @return true if valid
      */
     boolean isValid() {
@@ -39,6 +45,7 @@ class SecurityTokenAdapter {
 
     /**
      * Checks to see if the current token is still valid after reducing buffer time
+     *
      * @return true if valid
      */
     boolean isValid(java.util.Optional<Duration> time) {
@@ -55,40 +62,50 @@ class SecurityTokenAdapter {
                 if (exp.toInstant().minus(bufferTime).isAfter(Instant.now())) {
                     LOG.debug("Security token is not expired");
 
-                    // Next compare the public key inside the JWT is the same
+                    // Next compare the public key from the JWT is the same
                     // from the supplier.
                     // We check this in case secrets service deploys a new key
                     // and the JWT is still not expired.
                     // In such case, we would want to re-issue the token
-                    String jwk = jwt.get().getStringClaim("jwk");
-                    if (jwk != null) {
-                        Optional<RSAPublicKey> jwkRsa = AuthUtils.toPublicKeyFromJson(jwk);
-                        if (jwkRsa.isPresent()
-                                && isEqualPublicKey(
-                                        jwkRsa.get(),
-                                        (RSAPublicKey)
-                                                sessionKeySupplier.getKeyPair().getPublic())) {
+                    if (jwkAsJce.isPresent()
+                            && isEqualPublicKey(
+                                    jwkAsJce.get(),
+                                    (RSAPublicKey) sessionKeySupplier.getKeyPair().getPublic())) {
 
-                            LOG.debug(
-                                    "Security token is still valid. Public key matches with the JWK.");
-                            return true;
-                        }
+                        LOG.debug(
+                                "Security token is still valid. Public key matches with the JWK.");
+                        return true;
                     }
                 }
             }
         } catch (IllegalArgumentException e) {
             LOG.debug("JWT parsing failed");
             return false;
-        } catch (ParseException e) {
-            LOG.debug("JWT parsing failed");
-            return false;
         }
-
         return false;
     }
 
     /**
+     * Convert the JWK to JCE
+     *
+     * @param jwtClaimSet JWT claims
+     * @return JCE Public Key if JWK is present
+     */
+    private static Optional<RSAPublicKey> retrievePublicKey(JwtClaimsSet jwtClaimSet) {
+        try {
+            String jwk = jwtClaimSet.getStringClaim(JWK);
+            if (jwk != null) {
+                return AuthUtils.toPublicKeyFromJson(jwk);
+            }
+        } catch (ParseException pe) {
+            LOG.debug("JWT parsing failed");
+        }
+        return Optional.empty();
+    }
+
+    /**
      * Checks if two public keys are equal
+     *
      * @param a one public key
      * @param b the other one
      * @return true if the same
@@ -104,9 +121,7 @@ class SecurityTokenAdapter {
         return encodedKey1.equals(encodedKey2);
     }
 
-    /**
-     * Return a claim from the token
-     */
+    /** Return a claim from the token */
     public String getStringClaim(String key) {
         if (!jwt.isPresent()) {
             LOG.debug("Security token is not valid.");

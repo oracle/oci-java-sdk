@@ -1208,6 +1208,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeDataguardRoleResponse changeDataguardRole(ChangeDataguardRoleRequest request) {
+        LOG.trace("Called changeDataguardRole");
+        final ChangeDataguardRoleRequest interceptedRequest =
+                ChangeDataguardRoleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDataguardRoleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDataguardRole",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeDataguardRole");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeDataguardRoleResponse>
+                transformer =
+                        ChangeDataguardRoleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeDataguardRoleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request) {
         LOG.trace("Called changeDbSystemCompartment");
@@ -7169,6 +7211,46 @@ public class DatabaseClient implements Database {
                         ListAutonomousContainerDatabaseDataguardAssociationsResponse>
                 transformer =
                         ListAutonomousContainerDatabaseDataguardAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAutonomousContainerDatabaseVersionsResponse listAutonomousContainerDatabaseVersions(
+            ListAutonomousContainerDatabaseVersionsRequest request) {
+        LOG.trace("Called listAutonomousContainerDatabaseVersions");
+        final ListAutonomousContainerDatabaseVersionsRequest interceptedRequest =
+                ListAutonomousContainerDatabaseVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousContainerDatabaseVersionsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabaseVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseVersionSummary/ListAutonomousContainerDatabaseVersions");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAutonomousContainerDatabaseVersionsResponse>
+                transformer =
+                        ListAutonomousContainerDatabaseVersionsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
