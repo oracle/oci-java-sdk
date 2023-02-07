@@ -44,8 +44,7 @@ public class UpdateInstanceExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeClient compute = new ComputeClient(provider);
-        compute.setRegion(Region.US_PHOENIX_1);
+        ComputeClient compute = ComputeClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         GetInstanceRequest getInstanceRequest =
                 GetInstanceRequest.builder().instanceId(instanceId).build();

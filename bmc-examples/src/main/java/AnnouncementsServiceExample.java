@@ -43,7 +43,7 @@ public class AnnouncementsServiceExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        Announcement client = new AnnouncementClient(provider);
+        Announcement client = AnnouncementClient.builder().build(provider);
 
         GetAnnouncementRequest getReq =
                 GetAnnouncementRequest.builder().announcementId(ANNOUNCEMENT_ID).build();

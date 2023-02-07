@@ -142,13 +142,12 @@ public class ContainerEngineNodePoolExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final ContainerEngineClient containerEngineClient = new ContainerEngineClient(provider);
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        final IdentityClient identityClient = new IdentityClient(provider);
-
-        containerEngineClient.setRegion(Region.US_PHOENIX_1);
-        vcnClient.setRegion(Region.US_PHOENIX_1);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final ContainerEngineClient containerEngineClient =
+                ContainerEngineClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         Vcn vcn = null;
         List<Subnet> subnets = new ArrayList<Subnet>();

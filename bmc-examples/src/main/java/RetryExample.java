@@ -48,15 +48,17 @@ public class RetryExample {
         // Override the default retry strategy for the identity client and update retry attempts to
         // 4
         final Identity identityClient =
-                new IdentityClient(
-                        provider,
-                        ClientConfiguration.builder()
-                                .retryConfiguration(
-                                        RetryConfiguration.builder()
-                                                .terminationStrategy(
-                                                        new MaxAttemptsTerminationStrategy(4))
-                                                .build())
-                                .build());
+                IdentityClient.builder()
+                        .configuration(
+                                ClientConfiguration.builder()
+                                        .retryConfiguration(
+                                                RetryConfiguration.builder()
+                                                        .terminationStrategy(
+                                                                new MaxAttemptsTerminationStrategy(
+                                                                        4))
+                                                        .build())
+                                        .build())
+                        .build(provider);
 
         // Override the client's retry strategy for the list regions request and wait for 5ms
         // between retrying

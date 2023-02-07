@@ -83,7 +83,7 @@ public class QuotasExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        quotasClient = new QuotasClient(provider);
+        quotasClient = QuotasClient.builder().build(provider);
 
         // Create a quota
         CreateQuotaDetails createQuotaDetails =

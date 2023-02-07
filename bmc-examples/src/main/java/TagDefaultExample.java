@@ -75,7 +75,7 @@ public class TagDefaultExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        Identity identityClient = new IdentityClient(provider);
+        Identity identityClient = IdentityClient.builder().build(provider);
         String compartmentId = provider.getTenantId();
 
         // Get the tagnamespace of given name from tenancy

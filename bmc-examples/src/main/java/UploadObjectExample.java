@@ -53,8 +53,8 @@ public class UploadObjectExample {
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client = new ObjectStorageClient(provider);
-        client.setRegion(Region.US_PHOENIX_1);
+        ObjectStorage client =
+                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         // configure upload settings as desired
         UploadConfiguration uploadConfiguration =

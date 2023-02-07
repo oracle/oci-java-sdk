@@ -4,9 +4,9 @@
 
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
-    <artifactId>oci-java-sdk</artifactId>
-    <version>3.2.3</version>
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
+    <version>3.3.0</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
@@ -15,22 +15,21 @@
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
 
-
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.2.3</version>
+      <version>3.3.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.2.3</version>
+      <version>3.3.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>3.2.3</version>
+      <version>3.3.0</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

@@ -125,15 +125,14 @@ public class VolumeAttachmentExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final BlockstorageClient blockStorageClient = new BlockstorageClient(provider);
-        final ComputeClient computeClient = new ComputeClient(provider);
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        final IdentityClient identityClient = new IdentityClient(provider);
-
-        blockStorageClient.setRegion(Region.US_PHOENIX_1);
-        computeClient.setRegion(Region.US_PHOENIX_1);
-        vcnClient.setRegion(Region.US_PHOENIX_1);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final BlockstorageClient blockStorageClient =
+                BlockstorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final ComputeClient computeClient =
+                ComputeClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

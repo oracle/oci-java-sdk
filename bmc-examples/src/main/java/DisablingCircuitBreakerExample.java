@@ -49,8 +49,11 @@ public class DisablingCircuitBreakerExample {
                         .build();
 
         // Create client using above ClientConfiguration
-        ObjectStorage objectStorageClient = new ObjectStorageClient(provider, configuration);
-        objectStorageClient.setRegion(Region.US_PHOENIX_1);
+        ObjectStorage objectStorageClient =
+                ObjectStorageClient.builder()
+                        .region(Region.US_PHOENIX_1)
+                        .configuration(configuration)
+                        .build(provider);
 
         GetNamespaceResponse namespaceResponse =
                 objectStorageClient.getNamespace(GetNamespaceRequest.builder().build());

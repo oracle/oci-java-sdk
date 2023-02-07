@@ -34,6 +34,7 @@ public final class AutonomousDatabaseConnectionUrls
         "machineLearningUserManagementUrl",
         "graphStudioUrl",
         "mongoDbUrl",
+        "machineLearningNotebookUrl",
         "ordsUrl",
         "databaseTransformsUrl"
     })
@@ -43,6 +44,7 @@ public final class AutonomousDatabaseConnectionUrls
             String machineLearningUserManagementUrl,
             String graphStudioUrl,
             String mongoDbUrl,
+            String machineLearningNotebookUrl,
             String ordsUrl,
             String databaseTransformsUrl) {
         super();
@@ -51,6 +53,7 @@ public final class AutonomousDatabaseConnectionUrls
         this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
         this.graphStudioUrl = graphStudioUrl;
         this.mongoDbUrl = mongoDbUrl;
+        this.machineLearningNotebookUrl = machineLearningNotebookUrl;
         this.ordsUrl = ordsUrl;
         this.databaseTransformsUrl = databaseTransformsUrl;
     }
@@ -132,6 +135,21 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("mongoDbUrl");
             return this;
         }
+        /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
+        private String machineLearningNotebookUrl;
+
+        /**
+         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         *
+         * @param machineLearningNotebookUrl the value to set
+         * @return this builder
+         */
+        public Builder machineLearningNotebookUrl(String machineLearningNotebookUrl) {
+            this.machineLearningNotebookUrl = machineLearningNotebookUrl;
+            this.__explicitlySet__.add("machineLearningNotebookUrl");
+            return this;
+        }
         /**
          * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
          */
@@ -176,6 +194,7 @@ public final class AutonomousDatabaseConnectionUrls
                             this.machineLearningUserManagementUrl,
                             this.graphStudioUrl,
                             this.mongoDbUrl,
+                            this.machineLearningNotebookUrl,
                             this.ordsUrl,
                             this.databaseTransformsUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -200,6 +219,9 @@ public final class AutonomousDatabaseConnectionUrls
             }
             if (model.wasPropertyExplicitlySet("mongoDbUrl")) {
                 this.mongoDbUrl(model.getMongoDbUrl());
+            }
+            if (model.wasPropertyExplicitlySet("machineLearningNotebookUrl")) {
+                this.machineLearningNotebookUrl(model.getMachineLearningNotebookUrl());
             }
             if (model.wasPropertyExplicitlySet("ordsUrl")) {
                 this.ordsUrl(model.getOrdsUrl());
@@ -285,6 +307,19 @@ public final class AutonomousDatabaseConnectionUrls
         return mongoDbUrl;
     }
 
+    /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
+    private final String machineLearningNotebookUrl;
+
+    /**
+     * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     *
+     * @return the value
+     */
+    public String getMachineLearningNotebookUrl() {
+        return machineLearningNotebookUrl;
+    }
+
     /** The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("ordsUrl")
     private final String ordsUrl;
@@ -332,6 +367,8 @@ public final class AutonomousDatabaseConnectionUrls
                 .append(String.valueOf(this.machineLearningUserManagementUrl));
         sb.append(", graphStudioUrl=").append(String.valueOf(this.graphStudioUrl));
         sb.append(", mongoDbUrl=").append(String.valueOf(this.mongoDbUrl));
+        sb.append(", machineLearningNotebookUrl=")
+                .append(String.valueOf(this.machineLearningNotebookUrl));
         sb.append(", ordsUrl=").append(String.valueOf(this.ordsUrl));
         sb.append(", databaseTransformsUrl=").append(String.valueOf(this.databaseTransformsUrl));
         sb.append(")");
@@ -355,6 +392,8 @@ public final class AutonomousDatabaseConnectionUrls
                         other.machineLearningUserManagementUrl)
                 && java.util.Objects.equals(this.graphStudioUrl, other.graphStudioUrl)
                 && java.util.Objects.equals(this.mongoDbUrl, other.mongoDbUrl)
+                && java.util.Objects.equals(
+                        this.machineLearningNotebookUrl, other.machineLearningNotebookUrl)
                 && java.util.Objects.equals(this.ordsUrl, other.ordsUrl)
                 && java.util.Objects.equals(this.databaseTransformsUrl, other.databaseTransformsUrl)
                 && super.equals(other);
@@ -375,6 +414,11 @@ public final class AutonomousDatabaseConnectionUrls
                 (result * PRIME)
                         + (this.graphStudioUrl == null ? 43 : this.graphStudioUrl.hashCode());
         result = (result * PRIME) + (this.mongoDbUrl == null ? 43 : this.mongoDbUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.machineLearningNotebookUrl == null
+                                ? 43
+                                : this.machineLearningNotebookUrl.hashCode());
         result = (result * PRIME) + (this.ordsUrl == null ? 43 : this.ordsUrl.hashCode());
         result =
                 (result * PRIME)

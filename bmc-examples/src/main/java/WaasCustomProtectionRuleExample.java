@@ -57,8 +57,8 @@ public class WaasCustomProtectionRuleExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final WaasClient waasClient = new WaasClient(provider);
-        final IdentityClient identityClient = new IdentityClient(provider);
+        final WaasClient waasClient = WaasClient.builder().build(provider);
+        final IdentityClient identityClient = IdentityClient.builder().build(provider);
 
         String customProtectionRuleTemplate =
                 new String(

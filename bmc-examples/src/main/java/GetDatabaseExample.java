@@ -36,7 +36,7 @@ public class GetDatabaseExample {
 
         String databaseId = args[0];
 
-        DatabaseClient databaseClient = new DatabaseClient(provider);
+        DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
 
         GetDatabaseRequest getDatabaseRequest =
                 GetDatabaseRequest.builder().databaseId(databaseId).build();

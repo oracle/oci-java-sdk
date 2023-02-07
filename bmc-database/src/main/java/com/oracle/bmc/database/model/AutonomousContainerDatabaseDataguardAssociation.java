@@ -34,6 +34,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         "peerRole",
         "peerLifecycleState",
         "protectionMode",
+        "fastStartFailOverLagLimitInSeconds",
         "applyLag",
         "applyRate",
         "isAutomaticFailoverEnabled",
@@ -53,6 +54,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             PeerRole peerRole,
             PeerLifecycleState peerLifecycleState,
             ProtectionMode protectionMode,
+            Integer fastStartFailOverLagLimitInSeconds,
             String applyLag,
             String applyRate,
             Boolean isAutomaticFailoverEnabled,
@@ -72,6 +74,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         this.peerRole = peerRole;
         this.peerLifecycleState = peerLifecycleState;
         this.protectionMode = protectionMode;
+        this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
         this.applyLag = applyLag;
         this.applyRate = applyRate;
         this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
@@ -264,6 +267,22 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
+        /** The lag time for my preference based on data loss tolerance in seconds. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+        private Integer fastStartFailOverLagLimitInSeconds;
+
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         *
+         * @param fastStartFailOverLagLimitInSeconds the value to set
+         * @return this builder
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(
+                Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            this.__explicitlySet__.add("fastStartFailOverLagLimitInSeconds");
+            return this;
+        }
         /**
          * The lag time between updates to the primary Autonomous Container Database and application
          * of the redo data on the standby Autonomous Container Database, as computed by the
@@ -420,6 +439,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
                             this.peerRole,
                             this.peerLifecycleState,
                             this.protectionMode,
+                            this.fastStartFailOverLagLimitInSeconds,
                             this.applyLag,
                             this.applyRate,
                             this.isAutomaticFailoverEnabled,
@@ -467,6 +487,10 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("fastStartFailOverLagLimitInSeconds")) {
+                this.fastStartFailOverLagLimitInSeconds(
+                        model.getFastStartFailOverLagLimitInSeconds());
             }
             if (model.wasPropertyExplicitlySet("applyLag")) {
                 this.applyLag(model.getApplyLag());
@@ -542,6 +566,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -608,6 +633,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         Terminated("TERMINATED"),
         Failed("FAILED"),
         Unavailable("UNAVAILABLE"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -715,6 +741,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -783,6 +810,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         Terminated("TERMINATED"),
         Failed("FAILED"),
         Unavailable("UNAVAILABLE"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -908,6 +936,19 @@ public final class AutonomousContainerDatabaseDataguardAssociation
      */
     public ProtectionMode getProtectionMode() {
         return protectionMode;
+    }
+
+    /** The lag time for my preference based on data loss tolerance in seconds. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+    private final Integer fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     *
+     * @return the value
+     */
+    public Integer getFastStartFailOverLagLimitInSeconds() {
+        return fastStartFailOverLagLimitInSeconds;
     }
 
     /**
@@ -1061,6 +1102,8 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         sb.append(", peerRole=").append(String.valueOf(this.peerRole));
         sb.append(", peerLifecycleState=").append(String.valueOf(this.peerLifecycleState));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", fastStartFailOverLagLimitInSeconds=")
+                .append(String.valueOf(this.fastStartFailOverLagLimitInSeconds));
         sb.append(", applyLag=").append(String.valueOf(this.applyLag));
         sb.append(", applyRate=").append(String.valueOf(this.applyRate));
         sb.append(", isAutomaticFailoverEnabled=")
@@ -1099,6 +1142,9 @@ public final class AutonomousContainerDatabaseDataguardAssociation
                 && java.util.Objects.equals(this.peerRole, other.peerRole)
                 && java.util.Objects.equals(this.peerLifecycleState, other.peerLifecycleState)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.fastStartFailOverLagLimitInSeconds,
+                        other.fastStartFailOverLagLimitInSeconds)
                 && java.util.Objects.equals(this.applyLag, other.applyLag)
                 && java.util.Objects.equals(this.applyRate, other.applyRate)
                 && java.util.Objects.equals(
@@ -1147,6 +1193,11 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fastStartFailOverLagLimitInSeconds == null
+                                ? 43
+                                : this.fastStartFailOverLagLimitInSeconds.hashCode());
         result = (result * PRIME) + (this.applyLag == null ? 43 : this.applyLag.hashCode());
         result = (result * PRIME) + (this.applyRate == null ? 43 : this.applyRate.hashCode());
         result =

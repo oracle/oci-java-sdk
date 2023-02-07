@@ -67,7 +67,6 @@ import com.oracle.bmc.identity.IdentityClient;
  */
 public class DataLabelingDatasetExample {
 
-    private static final String ENDPOINT = "https://dlstest-cp.ap-mumbai-1.oci.oraclecloud.com";
     private static DataLabelingManagement client;
     private static ScheduledExecutorService executor;
     private static final ObjectMapper objectMapper;
@@ -116,9 +115,7 @@ public class DataLabelingDatasetExample {
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        client = new DataLabelingManagementClient(provider);
-        client.setEndpoint(ENDPOINT);
-        client.setRegion(Region.AP_MUMBAI_1);
+        client = DataLabelingManagementClient.builder().region(Region.AP_MUMBAI_1).build(provider);
         return client;
     }
 

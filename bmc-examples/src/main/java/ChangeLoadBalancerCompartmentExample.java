@@ -49,7 +49,7 @@ public class ChangeLoadBalancerCompartmentExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
+        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
 
         changeLoadBalancerCompartment(loadBalancerClient, loadBalancerId, compartmentId);
 

@@ -65,7 +65,7 @@ public class CopyObjectExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client = new ObjectStorageClient(provider);
+        ObjectStorage client = ObjectStorageClient.builder().build(provider);
         client.setRegion(Region.US_PHOENIX_1);
 
         System.out.println("Getting the namespace.");

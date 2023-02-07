@@ -121,11 +121,10 @@ public class LaunchDbSystemExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final DatabaseClient databaseClient = new DatabaseClient(provider);
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
-
-        databaseClient.setRegion(Region.US_PHOENIX_1);
-        virtualNetworkClient.setRegion(Region.US_PHOENIX_1);
+        final DatabaseClient databaseClient =
+                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

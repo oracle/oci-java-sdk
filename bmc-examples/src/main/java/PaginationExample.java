@@ -66,8 +66,8 @@ public class PaginationExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final IdentityClient identityClient = new IdentityClient(provider);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         try {
             doManualPagination(identityClient, tenancyId);

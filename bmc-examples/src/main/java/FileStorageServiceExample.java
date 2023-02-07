@@ -137,13 +137,12 @@ public class FileStorageServiceExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final FileStorageClient fsClient = new FileStorageClient(provider);
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        final IdentityClient identityClient = new IdentityClient(provider);
-
-        vcnClient.setRegion(Region.US_PHOENIX_1);
-        fsClient.setRegion(Region.US_PHOENIX_1);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final FileStorageClient fsClient =
+                FileStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

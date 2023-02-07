@@ -92,9 +92,10 @@ public class CreateIpv6Example {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
-        final IdentityClient identityClient = new IdentityClient(provider);
-        final ComputeClient computeClient = new ComputeClient(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(provider);
+        final IdentityClient identityClient = IdentityClient.builder().build(provider);
+        final ComputeClient computeClient = ComputeClient.builder().build(provider);
 
         final Vcn vcn =
                 ExampleVcnHelper.createVcn(

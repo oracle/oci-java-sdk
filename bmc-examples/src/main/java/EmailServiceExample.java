@@ -113,11 +113,10 @@ public class EmailServiceExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final EmailClient emailClient = new EmailClient(provider);
-        final IdentityClient identityClient = new IdentityClient(provider);
-
-        emailClient.setRegion(Region.US_PHOENIX_1);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final EmailClient emailClient =
+                EmailClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         Sender sender = null;
         Suppression suppression = null;

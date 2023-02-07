@@ -62,8 +62,8 @@ public class ObjectStorageBucketTaggingExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        ObjectStorageClient objectStorageClient = new ObjectStorageClient(provider);
-        objectStorageClient.setRegion(Region.US_PHOENIX_1);
+        ObjectStorageClient objectStorageClient =
+                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         String namespace =
                 objectStorageClient.getNamespace(GetNamespaceRequest.builder().build()).getValue();

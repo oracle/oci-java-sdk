@@ -56,7 +56,7 @@ public class CreateIpv6LoadBalancerExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
+        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
 
         CreateLoadBalancerDetails loadBalancerDetails =
                 CreateLoadBalancerDetails.builder()

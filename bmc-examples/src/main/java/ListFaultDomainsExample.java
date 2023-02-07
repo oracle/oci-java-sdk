@@ -35,7 +35,7 @@ public class ListFaultDomainsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        Identity identityClient = new IdentityClient(provider);
+        Identity identityClient = IdentityClient.builder().build(provider);
 
         List<AvailabilityDomain> availabilityDomains =
                 identityClient

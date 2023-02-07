@@ -56,11 +56,10 @@ public class GetInstancePublicIpExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeClient computeClient = new ComputeClient(provider);
-        VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-
-        computeClient.setRegion(Region.US_PHOENIX_1);
-        vcnClient.setRegion(Region.US_PHOENIX_1);
+        ComputeClient computeClient =
+                ComputeClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         // Account for multiple VNICs being attached to the instance
         Iterable<VnicAttachment> vnicAttachmentsIterable =

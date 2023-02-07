@@ -104,7 +104,8 @@ public class DataflowExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DataFlowClient dataFlowClient = new DataFlowClient(provider, null);
+        DataFlowClient dataFlowClient =
+                DataFlowClient.builder().configuration(null).build(provider);
         final DataflowExample dataflowExample = new DataflowExample();
 
         System.out.println(

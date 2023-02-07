@@ -240,8 +240,9 @@ public class InstanceConfigurationExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeManagementClient computeManagementClient = new ComputeManagementClient(provider);
-        ComputeClient computeClient = new ComputeClient(provider);
+        ComputeManagementClient computeManagementClient =
+                ComputeManagementClient.builder().build(provider);
+        ComputeClient computeClient = ComputeClient.builder().build(provider);
 
         ComputeWaiters waiters = computeClient.getWaiters();
 

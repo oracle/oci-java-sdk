@@ -99,8 +99,9 @@ public class LaunchExaDbSystemWithNsgExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = new DatabaseClient(provider);
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+        databaseClient = DatabaseClient.builder().build(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

@@ -78,7 +78,7 @@ public class ListWorkRequestsExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        WorkRequestClient client = new WorkRequestClient(provider);
+        WorkRequestClient client = WorkRequestClient.builder().build(provider);
         return client;
     }
 }

@@ -96,8 +96,8 @@ public class MonitoringMetricSummarizeExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final MonitoringClient monitoringClient = new MonitoringClient(provider);
-        monitoringClient.setRegion(Region.US_PHOENIX_1);
+        final MonitoringClient monitoringClient =
+                MonitoringClient.builder().region(Region.US_PHOENIX_1).build(provider);
         return monitoringClient;
     }
 }

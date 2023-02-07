@@ -61,8 +61,8 @@ public class CopySubnetResourcesFromVcnExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        try (VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider)) {
-            vcnClient.setRegion(region);
+        try (VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(region).build(provider)) {
 
             Subnet subnet = getSubnet(vcnClient, subnetId);
             Vcn vcn = getVcn(vcnClient, subnet.getVcnId());

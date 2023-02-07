@@ -43,6 +43,8 @@ public final class AutonomousDatabase
         "cpuCoreCount",
         "computeModel",
         "computeCount",
+        "backupRetentionPeriodInDays",
+        "totalBackupStorageSizeInGBs",
         "ocpuCount",
         "provisionableCpus",
         "dataStorageSizeInTBs",
@@ -139,6 +141,8 @@ public final class AutonomousDatabase
             Integer cpuCoreCount,
             ComputeModel computeModel,
             Float computeCount,
+            Integer backupRetentionPeriodInDays,
+            Double totalBackupStorageSizeInGBs,
             Float ocpuCount,
             java.util.List<Float> provisionableCpus,
             Integer dataStorageSizeInTBs,
@@ -234,6 +238,8 @@ public final class AutonomousDatabase
         this.cpuCoreCount = cpuCoreCount;
         this.computeModel = computeModel;
         this.computeCount = computeCount;
+        this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+        this.totalBackupStorageSizeInGBs = totalBackupStorageSizeInGBs;
         this.ocpuCount = ocpuCount;
         this.provisionableCpus = provisionableCpus;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -731,6 +737,36 @@ public final class AutonomousDatabase
         public Builder computeCount(Float computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /** Retention period, in days, for backups. */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+        private Integer backupRetentionPeriodInDays;
+
+        /**
+         * Retention period, in days, for backups.
+         *
+         * @param backupRetentionPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            this.__explicitlySet__.add("backupRetentionPeriodInDays");
+            return this;
+        }
+        /** The backup storage to the database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalBackupStorageSizeInGBs")
+        private Double totalBackupStorageSizeInGBs;
+
+        /**
+         * The backup storage to the database.
+         *
+         * @param totalBackupStorageSizeInGBs the value to set
+         * @return this builder
+         */
+        public Builder totalBackupStorageSizeInGBs(Double totalBackupStorageSizeInGBs) {
+            this.totalBackupStorageSizeInGBs = totalBackupStorageSizeInGBs;
+            this.__explicitlySet__.add("totalBackupStorageSizeInGBs");
             return this;
         }
         /**
@@ -2240,6 +2276,8 @@ public final class AutonomousDatabase
                             this.cpuCoreCount,
                             this.computeModel,
                             this.computeCount,
+                            this.backupRetentionPeriodInDays,
+                            this.totalBackupStorageSizeInGBs,
                             this.ocpuCount,
                             this.provisionableCpus,
                             this.dataStorageSizeInTBs,
@@ -2383,6 +2421,12 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("backupRetentionPeriodInDays")) {
+                this.backupRetentionPeriodInDays(model.getBackupRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("totalBackupStorageSizeInGBs")) {
+                this.totalBackupStorageSizeInGBs(model.getTotalBackupStorageSizeInGBs());
             }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
@@ -3105,6 +3149,32 @@ public final class AutonomousDatabase
      */
     public Float getComputeCount() {
         return computeCount;
+    }
+
+    /** Retention period, in days, for backups. */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+    private final Integer backupRetentionPeriodInDays;
+
+    /**
+     * Retention period, in days, for backups.
+     *
+     * @return the value
+     */
+    public Integer getBackupRetentionPeriodInDays() {
+        return backupRetentionPeriodInDays;
+    }
+
+    /** The backup storage to the database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalBackupStorageSizeInGBs")
+    private final Double totalBackupStorageSizeInGBs;
+
+    /**
+     * The backup storage to the database.
+     *
+     * @return the value
+     */
+    public Double getTotalBackupStorageSizeInGBs() {
+        return totalBackupStorageSizeInGBs;
     }
 
     /**
@@ -4561,6 +4631,7 @@ public final class AutonomousDatabase
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -5148,6 +5219,10 @@ public final class AutonomousDatabase
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", backupRetentionPeriodInDays=")
+                .append(String.valueOf(this.backupRetentionPeriodInDays));
+        sb.append(", totalBackupStorageSizeInGBs=")
+                .append(String.valueOf(this.totalBackupStorageSizeInGBs));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -5281,6 +5356,10 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(
+                        this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
+                && java.util.Objects.equals(
+                        this.totalBackupStorageSizeInGBs, other.totalBackupStorageSizeInGBs)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
@@ -5429,6 +5508,16 @@ public final class AutonomousDatabase
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupRetentionPeriodInDays == null
+                                ? 43
+                                : this.backupRetentionPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalBackupStorageSizeInGBs == null
+                                ? 43
+                                : this.totalBackupStorageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =
                 (result * PRIME)

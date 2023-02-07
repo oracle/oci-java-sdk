@@ -720,6 +720,45 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeDataguardRoleResponse changeDataguardRole(ChangeDataguardRoleRequest request) {
+        Objects.requireNonNull(
+                request.getChangeDataguardRoleDetails(), "changeDataguardRoleDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId must not be blank");
+
+        return clientCall(request, ChangeDataguardRoleResponse::builder)
+                .logger(LOG, "changeDataguardRole")
+                .serviceDetails(
+                        "Database",
+                        "ChangeDataguardRole",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeDataguardRole")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDataguardRoleRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabases")
+                .appendPathParam(request.getAutonomousContainerDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeDataguardRole")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
+                        ChangeDataguardRoleResponse.Builder::autonomousContainerDatabase)
+                .handleResponseHeaderString("etag", ChangeDataguardRoleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDataguardRoleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeDataguardRoleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request) {
         Objects.requireNonNull(
@@ -5592,6 +5631,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page",
                         ListAutonomousContainerDatabaseDataguardAssociationsResponse.Builder
                                 ::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAutonomousContainerDatabaseVersionsResponse listAutonomousContainerDatabaseVersions(
+            ListAutonomousContainerDatabaseVersionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getServiceComponent(), "serviceComponent is required");
+
+        return clientCall(request, ListAutonomousContainerDatabaseVersionsResponse::builder)
+                .logger(LOG, "listAutonomousContainerDatabaseVersions")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabaseVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseVersionSummary/ListAutonomousContainerDatabaseVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousContainerDatabaseVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabaseVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("serviceComponent", request.getServiceComponent())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabaseVersionSummary
+                                .class,
+                        ListAutonomousContainerDatabaseVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousContainerDatabaseVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousContainerDatabaseVersionsResponse.Builder::opcNextPage)
                 .callSync();
     }
 

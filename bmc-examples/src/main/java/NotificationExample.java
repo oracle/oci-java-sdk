@@ -507,7 +507,8 @@ public class NotificationExample {
             String topicId,
             NotificationControlPlaneClient controlPlaneClient,
             AuthenticationDetailsProvider provider) {
-        NotificationDataPlaneClient dataPlaneClient = new NotificationDataPlaneClient(provider);
+        NotificationDataPlaneClient dataPlaneClient =
+                NotificationDataPlaneClient.builder().build(provider);
         dataPlaneClient.setEndpoint(
                 getTopic(topicId, controlPlaneClient).getNotificationTopic().getApiEndpoint());
         return dataPlaneClient;

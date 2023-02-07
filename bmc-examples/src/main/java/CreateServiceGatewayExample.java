@@ -61,7 +61,8 @@ public class CreateServiceGatewayExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(provider);
 
         // NOTE: For the purpose of this example, services field is passed empty.
         // Pass service values to reach required Oracle Services.

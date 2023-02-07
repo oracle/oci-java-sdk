@@ -46,8 +46,7 @@ public class LimitsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        Limits client = new LimitsClient(provider);
-        client.setRegion(Region.US_PHOENIX_1);
+        Limits client = LimitsClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         // For a given compartmentId and service name it returns the name and description of the
         // limit

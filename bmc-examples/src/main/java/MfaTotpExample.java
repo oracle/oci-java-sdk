@@ -45,7 +45,7 @@ public class MfaTotpExample {
         final String tenantId = provider.getTenantId();
         final String userId = provider.getUserId();
 
-        Identity identityClient = new IdentityClient(provider);
+        Identity identityClient = IdentityClient.builder().build(provider);
         // create MFA totp device
         MfaTotpDevice device = createMfaTotpDevice(identityClient, userId);
         // get MFA totp device

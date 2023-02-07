@@ -284,6 +284,24 @@ public interface Compute extends AutoCloseable {
             CreateAppCatalogSubscriptionRequest request);
 
     /**
+     * Generates a new compute capacity availability report for the availability domain. A compute
+     * capacity report lets you review capacity availability for the provided shapes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateComputeCapacityReport API.
+     */
+    CreateComputeCapacityReportResponse createComputeCapacityReport(
+            CreateComputeCapacityReportRequest request);
+
+    /**
      * Creates a new compute capacity reservation in the specified compartment and availability
      * domain. Compute capacity reservations let you reserve instances in a compartment. When you
      * launch an instance using this reservation, you are assured that you have enough space for

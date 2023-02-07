@@ -42,12 +42,14 @@ public final class AutonomousContainerDatabaseSummary
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
+        "timeSnapshotStandbyRevert",
         "patchModel",
         "patchId",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
         "maintenanceWindow",
         "standbyMaintenanceBufferInDays",
+        "versionPreference",
         "freeformTags",
         "definedTags",
         "role",
@@ -80,12 +82,14 @@ public final class AutonomousContainerDatabaseSummary
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
+            java.util.Date timeSnapshotStandbyRevert,
             PatchModel patchModel,
             String patchId,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
             MaintenanceWindow maintenanceWindow,
             Integer standbyMaintenanceBufferInDays,
+            VersionPreference versionPreference,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Role role,
@@ -117,12 +121,14 @@ public final class AutonomousContainerDatabaseSummary
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
+        this.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
         this.patchModel = patchModel;
         this.patchId = patchId;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.maintenanceWindow = maintenanceWindow;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+        this.versionPreference = versionPreference;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.role = role;
@@ -413,6 +419,25 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * The date and time the Autonomous Container Database will be reverted to Standby from
+         * Snapshot Standby.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotStandbyRevert")
+        private java.util.Date timeSnapshotStandbyRevert;
+
+        /**
+         * The date and time the Autonomous Container Database will be reverted to Standby from
+         * Snapshot Standby.
+         *
+         * @param timeSnapshotStandbyRevert the value to set
+         * @return this builder
+         */
+        public Builder timeSnapshotStandbyRevert(java.util.Date timeSnapshotStandbyRevert) {
+            this.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
+            this.__explicitlySet__.add("timeSnapshotStandbyRevert");
+            return this;
+        }
         /** Database patch model preference. */
         @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
         private PatchModel patchModel;
@@ -513,6 +538,21 @@ public final class AutonomousContainerDatabaseSummary
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
             this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
+            return this;
+        }
+        /** The next maintenance version preference. */
+        @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+        private VersionPreference versionPreference;
+
+        /**
+         * The next maintenance version preference.
+         *
+         * @param versionPreference the value to set
+         * @return this builder
+         */
+        public Builder versionPreference(VersionPreference versionPreference) {
+            this.versionPreference = versionPreference;
+            this.__explicitlySet__.add("versionPreference");
             return this;
         }
         /**
@@ -783,12 +823,14 @@ public final class AutonomousContainerDatabaseSummary
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
+                            this.timeSnapshotStandbyRevert,
                             this.patchModel,
                             this.patchId,
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
                             this.maintenanceWindow,
                             this.standbyMaintenanceBufferInDays,
+                            this.versionPreference,
                             this.freeformTags,
                             this.definedTags,
                             this.role,
@@ -860,6 +902,9 @@ public final class AutonomousContainerDatabaseSummary
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("timeSnapshotStandbyRevert")) {
+                this.timeSnapshotStandbyRevert(model.getTimeSnapshotStandbyRevert());
+            }
             if (model.wasPropertyExplicitlySet("patchModel")) {
                 this.patchModel(model.getPatchModel());
             }
@@ -877,6 +922,9 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
                 this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
+            if (model.wasPropertyExplicitlySet("versionPreference")) {
+                this.versionPreference(model.getVersionPreference());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1321,6 +1369,23 @@ public final class AutonomousContainerDatabaseSummary
         return timeCreated;
     }
 
+    /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot
+     * Standby.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotStandbyRevert")
+    private final java.util.Date timeSnapshotStandbyRevert;
+
+    /**
+     * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot
+     * Standby.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeSnapshotStandbyRevert() {
+        return timeSnapshotStandbyRevert;
+    }
+
     /** Database patch model preference. */
     public enum PatchModel implements com.oracle.bmc.http.internal.BmcEnum {
         ReleaseUpdates("RELEASE_UPDATES"),
@@ -1457,6 +1522,65 @@ public final class AutonomousContainerDatabaseSummary
         return standbyMaintenanceBufferInDays;
     }
 
+    /** The next maintenance version preference. */
+    public enum VersionPreference implements com.oracle.bmc.http.internal.BmcEnum {
+        NextReleaseUpdate("NEXT_RELEASE_UPDATE"),
+        LatestReleaseUpdate("LATEST_RELEASE_UPDATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VersionPreference.class);
+
+        private final String value;
+        private static java.util.Map<String, VersionPreference> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VersionPreference v : VersionPreference.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VersionPreference(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VersionPreference create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VersionPreference', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The next maintenance version preference. */
+    @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+    private final VersionPreference versionPreference;
+
+    /**
+     * The next maintenance version preference.
+     *
+     * @return the value
+     */
+    public VersionPreference getVersionPreference() {
+        return versionPreference;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -1507,6 +1631,7 @@ public final class AutonomousContainerDatabaseSummary
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1801,6 +1926,8 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeSnapshotStandbyRevert=")
+                .append(String.valueOf(this.timeSnapshotStandbyRevert));
         sb.append(", patchModel=").append(String.valueOf(this.patchModel));
         sb.append(", patchId=").append(String.valueOf(this.patchId));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
@@ -1808,6 +1935,7 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
+        sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", role=").append(String.valueOf(this.role));
@@ -1857,6 +1985,8 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.timeSnapshotStandbyRevert, other.timeSnapshotStandbyRevert)
                 && java.util.Objects.equals(this.patchModel, other.patchModel)
                 && java.util.Objects.equals(this.patchId, other.patchId)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
@@ -1864,6 +1994,7 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
+                && java.util.Objects.equals(this.versionPreference, other.versionPreference)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.role, other.role)
@@ -1932,6 +2063,11 @@ public final class AutonomousContainerDatabaseSummary
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSnapshotStandbyRevert == null
+                                ? 43
+                                : this.timeSnapshotStandbyRevert.hashCode());
         result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
         result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
         result =
@@ -1952,6 +2088,9 @@ public final class AutonomousContainerDatabaseSummary
                         + (this.standbyMaintenanceBufferInDays == null
                                 ? 43
                                 : this.standbyMaintenanceBufferInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());

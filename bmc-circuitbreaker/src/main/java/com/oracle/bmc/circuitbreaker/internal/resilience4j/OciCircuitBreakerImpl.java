@@ -25,15 +25,40 @@ import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 
 public class OciCircuitBreakerImpl implements OciCircuitBreaker {
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(OciCircuitBreakerImpl.class);
     private final CircuitBreaker r4jCircuitBreaker;
     private final int numberOfRecordedHistoryResponses;
     private Deque<ErrorHistoryItem> historyQueue;
+    private volatile long openedTimestampMillis;
 
     public OciCircuitBreakerImpl(
             CircuitBreaker r4jCircuitBreaker, int numberOfRecordedHistoryResponses) {
         if (r4jCircuitBreaker == null) {
             throw new IllegalArgumentException("r4jCircuitBreaker must be non-null");
         }
+        if (r4jCircuitBreaker.getName() == null) {
+            String circuitBreakerName = "CircuitBreaker" + System.identityHashCode(this);
+            r4jCircuitBreaker =
+                    CircuitBreaker.of(
+                            circuitBreakerName, r4jCircuitBreaker.getCircuitBreakerConfig());
+        }
+        r4jCircuitBreaker
+                .getEventPublisher()
+                .onStateTransition(
+                        event -> {
+                            CircuitBreaker.StateTransition transition = event.getStateTransition();
+                            LOG.info(
+                                    "Circuit breaker {} transitioned from {} to {}",
+                                    getName(),
+                                    transition.getFromState(),
+                                    transition.getToState());
+                            if (transition.getFromState() == CircuitBreaker.State.CLOSED
+                                    && transition.getToState() == CircuitBreaker.State.OPEN) {
+                                openedTimestampMillis = System.currentTimeMillis();
+                            }
+                        });
+
         this.r4jCircuitBreaker = r4jCircuitBreaker;
         this.historyQueue = new ArrayDeque<>();
         this.numberOfRecordedHistoryResponses = numberOfRecordedHistoryResponses;
@@ -179,7 +204,9 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
     public String circuitBreakerCallNotPermittedErrorMessage(String requestUri) {
         StringBuilder messageBuilder = new StringBuilder();
         messageBuilder
-                .append("CircuitBreaker is OPEN and all the requests sent in a window of ")
+                .append("CircuitBreaker has been OPEN for ")
+                .append(getCircuitBreakerOpenTime() / 1000.0)
+                .append(" seconds and all the requests sent in a window of ")
                 .append(
                         r4jCircuitBreaker
                                 .getCircuitBreakerConfig()
@@ -206,6 +233,18 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
         }
 
         return messageBuilder.toString();
+    }
+
+    /**
+     * Returns the time in milliseconds since the last opening of the circuit breaker. If the
+     * circuit breaker has never been opened, then {@code System.currentTimeMillis()} is returned,
+     * which makes it seem like the circuit breaker has been opened since the beginning of epoch.
+     * Therefore, this should only be used if the circuit breaker is open.
+     *
+     * @return time since last opening in milliseconds
+     */
+    private long getCircuitBreakerOpenTime() {
+        return System.currentTimeMillis() - openedTimestampMillis;
     }
 
     @Override

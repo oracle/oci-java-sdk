@@ -53,7 +53,7 @@ public class DeleteCompartmentExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        final Identity identityClient = new IdentityClient(provider);
+        final Identity identityClient = IdentityClient.builder().build(provider);
         identityClient.setRegion(Region.US_ASHBURN_1);
 
         // Create a compartment.

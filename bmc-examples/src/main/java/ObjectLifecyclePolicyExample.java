@@ -70,8 +70,8 @@ public class ObjectLifecyclePolicyExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final ObjectStorage client = new ObjectStorageClient(provider);
-        client.setRegion(Region.US_PHOENIX_1);
+        final ObjectStorage client =
+                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         System.out.println("Fetching namespace");
         final GetNamespaceResponse namespaceResponse =

@@ -74,8 +74,8 @@ public class DataSafeRestAPIClientExample {
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage objStoreClient = new ObjectStorageClient(provider);
-        objStoreClient.setRegion(Region.EU_FRANKFURT_1);
+        ObjectStorage objStoreClient =
+                ObjectStorageClient.builder().region(Region.EU_FRANKFURT_1).build(provider);
         System.out.println("Getting the namespace\n\n");
         com.oracle.bmc.objectstorage.responses.GetNamespaceResponse namespaceResponse =
                 objStoreClient.getNamespace(GetNamespaceRequest.builder().build());
@@ -109,7 +109,7 @@ public class DataSafeRestAPIClientExample {
                         + result
                         + "\n\n");
 
-        DataSafeClient datasafeClient = new DataSafeClient(provider);
+        DataSafeClient datasafeClient = DataSafeClient.builder().build(provider);
 
         ListAuditEventsResponse eventList = null;
 
@@ -232,9 +232,9 @@ public class DataSafeRestAPIClientExample {
 
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        ObjectStorage client = new ObjectStorageClient(provider);
+        ObjectStorage client =
+                ObjectStorageClient.builder().region(Region.EU_FRANKFURT_1).build(provider);
 
-        client.setRegion(Region.EU_FRANKFURT_1);
         byte[] byteVal = value.getBytes(StandardCharsets.UTF_8);
 
         UploadConfiguration uploadConfiguration =

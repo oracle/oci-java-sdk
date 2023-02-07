@@ -56,8 +56,9 @@ public class ChangeInstanceCompartmentExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        try (ComputeClient computeClient = new ComputeClient(provider);
-                WorkRequestClient workRequestsClient = new WorkRequestClient(provider)) {
+        try (ComputeClient computeClient = ComputeClient.builder().build(provider);
+                WorkRequestClient workRequestsClient =
+                        WorkRequestClient.builder().build(provider)) {
 
             // First get the instance Id so we know what state it is in.
             // this will help us know when the move is complete.

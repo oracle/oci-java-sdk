@@ -61,7 +61,7 @@ public class CreateLoadBalancerBackendSetExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
+        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
 
         System.out.println("Creating new backend set " + backendSetName + "...");
 

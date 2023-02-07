@@ -44,7 +44,7 @@ public class UserEmailExample {
         final String tenantId = provider.getTenantId();
         System.out.println("tenantId: " + tenantId);
 
-        Identity identityClient = new IdentityClient(provider);
+        Identity identityClient = IdentityClient.builder().build(provider);
 
         // Create new user with email
         CreateUserDetails createUserDetails =

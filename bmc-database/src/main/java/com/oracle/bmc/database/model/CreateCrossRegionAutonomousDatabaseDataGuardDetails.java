@@ -15,13 +15,12 @@ package com.oracle.bmc.database.model;
  * Endpoints](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs) for
  * the list of Database Service API endpoints. - In the request to create the standby database, the
  * {@code sourceId} value should be the OCID of the primary database. The following parameters are
- * required for the cross-region standby database and must contain the same values as the source
- * Autonomous Database: - dbName - cpuCoreCount - dataStorageSizeInTB - dbVersion The following
- * parameters are optional for the cross-region standby database. If included in the request, these
- * parameters contain the same values as the source Autonomous Database: - customerContacts -
+ * optional for the cross-region standby database. If included in the request, these parameters
+ * contain the same values as the source Autonomous Database: - customerContacts -
  * scheduledOperations - isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel
- * - whitelistedIps - isMtlsConnectionRequired Example I - Creating a cross-region standby with
- * required parameters only, with OCPU: {@code { "compartmentId":
+ * - whitelistedIps - isMtlsConnectionRequired - dbName - adminPassword - cpuCoreCount -
+ * dataStorageSizeInTB - dbVersion Example I - Creating a cross-region standby with required
+ * parameters only, with OCPU: {@code { "compartmentId":
  * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
  * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
  * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :

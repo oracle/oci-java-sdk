@@ -38,8 +38,7 @@ public class ListAuditEventsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        Audit auditService = new AuditClient(provider);
-        auditService.setRegion(region);
+        Audit auditService = AuditClient.builder().region(region).build(provider);
 
         /*
          * Below we demonstrate getting audit events using three different strategies:

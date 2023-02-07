@@ -54,8 +54,8 @@ public class AutonomousDatawarehouseExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DatabaseClient dbClient = new DatabaseClient(provider);
-        dbClient.setRegion(Region.US_PHOENIX_1);
+        DatabaseClient dbClient =
+                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         // Create
         CreateAutonomousDatabaseDetails createRequest = createAdwRequest(compartmentId);
@@ -144,7 +144,6 @@ public class AutonomousDatawarehouseExample {
 
     public static AutonomousDatabase createADW(
             DatabaseClient dbClient, CreateAutonomousDatabaseDetails request) {
-
         CreateAutonomousDatabaseResponse response =
                 dbClient.createAutonomousDatabase(
                         CreateAutonomousDatabaseRequest.builder()
@@ -156,7 +155,6 @@ public class AutonomousDatawarehouseExample {
 
     private static AutonomousDatabase waitForInstanceToBecomeAvailable(
             DatabaseClient dbClient, String id) throws Exception {
-
         DatabaseWaiters waiter = dbClient.getWaiters();
         GetAutonomousDatabaseResponse response =
                 waiter.forAutonomousDatabase(

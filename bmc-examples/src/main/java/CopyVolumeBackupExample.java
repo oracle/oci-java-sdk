@@ -54,12 +54,10 @@ public class CopyVolumeBackupExample {
                 new ConfigFileAuthenticationDetailsProvider(
                         destRegionConfigurationFilePath, profile);
 
-        BlockstorageClient srcRegionBlockstorageClient = new BlockstorageClient(srcRegionProvider);
+        BlockstorageClient srcRegionBlockstorageClient =
+                BlockstorageClient.builder().region(Region.US_PHOENIX_1).build(srcRegionProvider);
         BlockstorageClient destRegionBlockstorageClient =
-                new BlockstorageClient(destRegionProvider);
-
-        srcRegionBlockstorageClient.setRegion(Region.US_PHOENIX_1);
-        destRegionBlockstorageClient.setRegion(Region.US_ASHBURN_1);
+                BlockstorageClient.builder().region(Region.US_PHOENIX_1).build(destRegionProvider);
 
         // TODO: For this example we're just using the first AD returned.
         // You'll probably want different logic around which AD to use

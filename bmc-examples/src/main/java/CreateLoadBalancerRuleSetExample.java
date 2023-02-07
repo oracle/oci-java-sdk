@@ -74,7 +74,7 @@ public class CreateLoadBalancerRuleSetExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
+        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
 
         System.out.println("Creating new rule set " + ruleSetName + "...");
 

@@ -81,11 +81,10 @@ public class TaggingExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final IdentityClient identityClient = new IdentityClient(provider);
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
-
-        identityClient.setRegion(Region.US_PHOENIX_1);
-        virtualNetworkClient.setRegion(Region.US_PHOENIX_1);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         SecureRandom rnd = SecureRandom.getInstance("SHA1PRNG");
         final String exampleNamespaceName = "examplens_" + rnd.nextInt(1000000);

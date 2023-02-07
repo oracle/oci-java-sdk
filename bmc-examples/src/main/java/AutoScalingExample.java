@@ -108,10 +108,9 @@ public class AutoScalingExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeManagementClient client = new ComputeManagementClient(provider);
-        AutoScalingClient autoScalingClient = new AutoScalingClient(provider);
-
-        IdentityClient identityClient = new IdentityClient(provider);
+        ComputeManagementClient client = ComputeManagementClient.builder().build(provider);
+        AutoScalingClient autoScalingClient = AutoScalingClient.builder().build(provider);
+        IdentityClient identityClient = IdentityClient.builder().build(provider);
 
         // This step will delete all tag defaults
         ListTagDefaultsResponse listTagDefaultsResponse =

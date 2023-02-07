@@ -54,7 +54,7 @@ public class UpdateLoadBalancerWithNsgExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
+        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
 
         loadBalancerClient.updateNetworkSecurityGroups(
                 UpdateNetworkSecurityGroupsRequest.builder()

@@ -132,8 +132,7 @@ public class MonitoringMetricPostExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final MonitoringClient monitoringClient = new MonitoringClient(provider);
-        monitoringClient.setEndpoint("https://telemetry-ingestion.us-phoenix-1.oraclecloud.com/");
+        final MonitoringClient monitoringClient = MonitoringClient.builder().build(provider);
         return monitoringClient;
     }
 }

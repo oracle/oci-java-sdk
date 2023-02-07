@@ -108,8 +108,8 @@ public class DRGRouteDistributionExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
-        phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
+        final VirtualNetworkClient phxVirtualNetworkClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
         final DRGRouteDistributionExample example =
                 new DRGRouteDistributionExample(phxVirtualNetworkClient, Region.US_PHOENIX_1);
 

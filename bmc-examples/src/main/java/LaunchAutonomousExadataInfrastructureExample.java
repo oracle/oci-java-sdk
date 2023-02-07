@@ -81,8 +81,9 @@ public class LaunchAutonomousExadataInfrastructureExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final DatabaseClient databaseClient = new DatabaseClient(provider);
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+        final DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

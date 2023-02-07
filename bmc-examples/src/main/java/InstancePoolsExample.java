@@ -166,7 +166,7 @@ public class InstancePoolsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeManagementClient client = new ComputeManagementClient(provider);
+        ComputeManagementClient client = ComputeManagementClient.builder().build(provider);
 
         InstanceConfiguration instanceConfiguration =
                 createInstanceConfiguration(client, imageId, compartmentId);

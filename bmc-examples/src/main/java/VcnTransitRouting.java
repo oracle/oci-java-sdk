@@ -128,12 +128,12 @@ public class VcnTransitRouting {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
-        phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
+        final VirtualNetworkClient phxVirtualNetworkClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
         final VcnTransitRouting example =
                 new VcnTransitRouting(phxVirtualNetworkClient, Region.US_PHOENIX_1);
-        final IdentityClient identityClient = new IdentityClient(authProvider);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final IdentityClient identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
 
         example.run(identityClient);
     }

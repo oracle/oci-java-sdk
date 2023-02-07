@@ -673,6 +673,84 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeploymentWalletExistsResponse> deploymentWalletExists(
+            DeploymentWalletExistsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeploymentWalletExistsRequest, DeploymentWalletExistsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getDeploymentWalletExistsDetails(),
+                "deploymentWalletExistsDetails is required");
+
+        return clientCall(request, DeploymentWalletExistsResponse::builder)
+                .logger(LOG, "deploymentWalletExists")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeploymentWalletExists",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeploymentWalletExists")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeploymentWalletExistsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("walletExists")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentWalletExistsResponseDetails.class,
+                        DeploymentWalletExistsResponse.Builder
+                                ::deploymentWalletExistsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeploymentWalletExistsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", DeploymentWalletExistsResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportDeploymentWalletResponse> exportDeploymentWallet(
+            ExportDeploymentWalletRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getExportDeploymentWalletDetails(),
+                "exportDeploymentWalletDetails is required");
+
+        return clientCall(request, ExportDeploymentWalletResponse::builder)
+                .logger(LOG, "exportDeploymentWallet")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ExportDeploymentWallet",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ExportDeploymentWallet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportDeploymentWalletRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("exportWallet")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExportDeploymentWalletResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportDeploymentWalletResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -890,6 +968,44 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDeploymentWalletResponse> importDeploymentWallet(
+            ImportDeploymentWalletRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getImportDeploymentWalletDetails(),
+                "importDeploymentWalletDetails is required");
+
+        return clientCall(request, ImportDeploymentWalletResponse::builder)
+                .logger(LOG, "importDeploymentWallet")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ImportDeploymentWallet",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ImportDeploymentWallet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportDeploymentWalletRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("importWallet")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportDeploymentWalletResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportDeploymentWalletResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1129,6 +1245,49 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListDeploymentUpgradesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentUpgradesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentWalletsOperationsResponse>
+            listDeploymentWalletsOperations(
+                    ListDeploymentWalletsOperationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDeploymentWalletsOperationsRequest,
+                                    ListDeploymentWalletsOperationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ListDeploymentWalletsOperationsResponse::builder)
+                .logger(LOG, "listDeploymentWalletsOperations")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentWalletsOperations",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentWalletsOperationSummary/ListDeploymentWalletsOperations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentWalletsOperationsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("deploymentWalletsOperations")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentWalletsOperationCollection.class,
+                        ListDeploymentWalletsOperationsResponse.Builder
+                                ::deploymentWalletsOperationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDeploymentWalletsOperationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDeploymentWalletsOperationsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

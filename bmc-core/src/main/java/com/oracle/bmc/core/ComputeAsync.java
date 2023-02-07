@@ -282,6 +282,23 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates a new compute capacity availability report for the availability domain. A compute
+     * capacity report lets you review capacity availability for the provided shapes.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeCapacityReportResponse> createComputeCapacityReport(
+            CreateComputeCapacityReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeCapacityReportRequest, CreateComputeCapacityReportResponse>
+                    handler);
+
+    /**
      * Creates a new compute capacity reservation in the specified compartment and availability
      * domain. Compute capacity reservations let you reserve instances in a compartment. When you
      * launch an instance using this reservation, you are assured that you have enough space for
