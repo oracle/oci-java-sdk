@@ -36,6 +36,8 @@ public class JavaRuntimeUtils {
         Java_9,
         /** Java 11 */
         Java_11,
+        /** Java 17 */
+        Java_17,
         /** Unknown version, may not be supported. */
         Unknown;
     }
@@ -84,6 +86,8 @@ public class JavaRuntimeUtils {
                     version = JreVersion.Java_9;
                 } else if (majorVersion == 11) {
                     version = JreVersion.Java_11;
+                } else if (majorVersion == 17) {
+                    version = JreVersion.Java_17;
                 }
             }
         }

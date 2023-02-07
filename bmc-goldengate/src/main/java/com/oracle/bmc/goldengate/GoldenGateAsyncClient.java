@@ -1292,6 +1292,112 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeploymentWalletExistsResponse> deploymentWalletExists(
+            DeploymentWalletExistsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeploymentWalletExistsRequest, DeploymentWalletExistsResponse>
+                    handler) {
+        LOG.trace("Called async deploymentWalletExists");
+        final DeploymentWalletExistsRequest interceptedRequest =
+                DeploymentWalletExistsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeploymentWalletExistsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "DeploymentWalletExists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeploymentWalletExists");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeploymentWalletExistsResponse>
+                transformer =
+                        DeploymentWalletExistsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeploymentWalletExistsRequest, DeploymentWalletExistsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeploymentWalletExistsRequest, DeploymentWalletExistsResponse>,
+                        java.util.concurrent.Future<DeploymentWalletExistsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeploymentWalletExistsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeploymentWalletExistsRequest, DeploymentWalletExistsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportDeploymentWalletResponse> exportDeploymentWallet(
+            ExportDeploymentWalletRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>
+                    handler) {
+        LOG.trace("Called async exportDeploymentWallet");
+        final ExportDeploymentWalletRequest interceptedRequest =
+                ExportDeploymentWalletConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportDeploymentWalletConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ExportDeploymentWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ExportDeploymentWallet");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportDeploymentWalletResponse>
+                transformer =
+                        ExportDeploymentWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>,
+                        java.util.concurrent.Future<ExportDeploymentWalletResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportDeploymentWalletDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -1615,6 +1721,59 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ImportDeploymentWalletResponse> importDeploymentWallet(
+            ImportDeploymentWalletRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>
+                    handler) {
+        LOG.trace("Called async importDeploymentWallet");
+        final ImportDeploymentWalletRequest interceptedRequest =
+                ImportDeploymentWalletConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportDeploymentWalletConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ImportDeploymentWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ImportDeploymentWallet");
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportDeploymentWalletResponse>
+                transformer =
+                        ImportDeploymentWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>,
+                        java.util.concurrent.Future<ImportDeploymentWalletResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportDeploymentWalletDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConnectionAssignmentsResponse> listConnectionAssignments(
             ListConnectionAssignmentsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1887,6 +2046,59 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentWalletsOperationsResponse>
+            listDeploymentWalletsOperations(
+                    ListDeploymentWalletsOperationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDeploymentWalletsOperationsRequest,
+                                    ListDeploymentWalletsOperationsResponse>
+                            handler) {
+        LOG.trace("Called async listDeploymentWalletsOperations");
+        final ListDeploymentWalletsOperationsRequest interceptedRequest =
+                ListDeploymentWalletsOperationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentWalletsOperationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeploymentWalletsOperations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentWalletsOperationSummary/ListDeploymentWalletsOperations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDeploymentWalletsOperationsResponse>
+                transformer =
+                        ListDeploymentWalletsOperationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDeploymentWalletsOperationsRequest,
+                        ListDeploymentWalletsOperationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDeploymentWalletsOperationsRequest,
+                                ListDeploymentWalletsOperationsResponse>,
+                        java.util.concurrent.Future<ListDeploymentWalletsOperationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDeploymentWalletsOperationsRequest,
+                    ListDeploymentWalletsOperationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

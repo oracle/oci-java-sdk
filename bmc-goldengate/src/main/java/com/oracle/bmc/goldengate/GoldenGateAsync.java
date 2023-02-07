@@ -336,6 +336,40 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Checks if a wallet is already present in the deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeploymentWalletExistsResponse> deploymentWalletExists(
+            DeploymentWalletExistsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeploymentWalletExistsRequest, DeploymentWalletExistsResponse>
+                    handler);
+
+    /**
+     * Export the OGG wallet from the deployment to OCI vault. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportDeploymentWalletResponse> exportDeploymentWallet(
+            ExportDeploymentWalletRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>
+                    handler);
+
+    /**
      * Retrieves a Connection.
      *
      *
@@ -453,6 +487,23 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Imports an OGG wallet from the OCI Vault to the Deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportDeploymentWalletResponse> importDeploymentWallet(
+            ImportDeploymentWalletRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>
+                    handler);
+
+    /**
      * Lists the Connection Assignments in the compartment.
      *
      * @param request The request object containing the details to send
@@ -552,6 +603,25 @@ public interface GoldenGateAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>
                     handler);
+
+    /**
+     * Lists the wallets export/import operations to/from a deployment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDeploymentWalletsOperationsResponse>
+            listDeploymentWalletsOperations(
+                    ListDeploymentWalletsOperationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDeploymentWalletsOperationsRequest,
+                                    ListDeploymentWalletsOperationsResponse>
+                            handler);
 
     /**
      * Lists the Deployments in a compartment.

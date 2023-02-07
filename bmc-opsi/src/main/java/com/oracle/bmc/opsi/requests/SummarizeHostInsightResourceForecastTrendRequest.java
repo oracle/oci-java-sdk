@@ -25,14 +25,12 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     }
     /**
      * Filter by host resource metric.
-     * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
      *
      */
     private String resourceMetric;
 
     /**
      * Filter by host resource metric.
-     * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
      *
      */
     public String getResourceMetric() {
@@ -581,14 +579,12 @@ public class SummarizeHostInsightResourceForecastTrendRequest
 
         /**
          * Filter by host resource metric.
-         * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
          *
          */
         private String resourceMetric = null;
 
         /**
          * Filter by host resource metric.
-         * Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
          *
          * @param resourceMetric the value to set
          * @return this builder instance

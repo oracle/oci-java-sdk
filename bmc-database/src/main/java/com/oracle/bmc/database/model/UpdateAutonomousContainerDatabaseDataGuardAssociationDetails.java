@@ -23,11 +23,19 @@ package com.oracle.bmc.database.model;
 public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"isAutomaticFailoverEnabled"})
+    @java.beans.ConstructorProperties({
+        "isAutomaticFailoverEnabled",
+        "protectionMode",
+        "fastStartFailOverLagLimitInSeconds"
+    })
     public UpdateAutonomousContainerDatabaseDataGuardAssociationDetails(
-            Boolean isAutomaticFailoverEnabled) {
+            Boolean isAutomaticFailoverEnabled,
+            ProtectionMode protectionMode,
+            Integer fastStartFailOverLagLimitInSeconds) {
         super();
         this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+        this.protectionMode = protectionMode;
+        this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -50,6 +58,45 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
             this.__explicitlySet__.add("isAutomaticFailoverEnabled");
             return this;
         }
+        /**
+         * The protection mode of this Autonomous Data Guard association. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private ProtectionMode protectionMode;
+
+        /**
+         * The protection mode of this Autonomous Data Guard association. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
+        public Builder protectionMode(ProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+        private Integer fastStartFailOverLagLimitInSeconds;
+
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         * @param fastStartFailOverLagLimitInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder fastStartFailOverLagLimitInSeconds(
+                Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            this.__explicitlySet__.add("fastStartFailOverLagLimitInSeconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -57,7 +104,9 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
         public UpdateAutonomousContainerDatabaseDataGuardAssociationDetails build() {
             UpdateAutonomousContainerDatabaseDataGuardAssociationDetails model =
                     new UpdateAutonomousContainerDatabaseDataGuardAssociationDetails(
-                            this.isAutomaticFailoverEnabled);
+                            this.isAutomaticFailoverEnabled,
+                            this.protectionMode,
+                            this.fastStartFailOverLagLimitInSeconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -68,6 +117,13 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
         public Builder copy(UpdateAutonomousContainerDatabaseDataGuardAssociationDetails model) {
             if (model.wasPropertyExplicitlySet("isAutomaticFailoverEnabled")) {
                 this.isAutomaticFailoverEnabled(model.getIsAutomaticFailoverEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("fastStartFailOverLagLimitInSeconds")) {
+                this.fastStartFailOverLagLimitInSeconds(
+                        model.getFastStartFailOverLagLimitInSeconds());
             }
             return this;
         }
@@ -100,6 +156,78 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
         return isAutomaticFailoverEnabled;
     }
 
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     **/
+    public enum ProtectionMode {
+        MaximumAvailability("MAXIMUM_AVAILABILITY"),
+        MaximumPerformance("MAXIMUM_PERFORMANCE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ProtectionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProtectionMode v : ProtectionMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ProtectionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProtectionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
+        }
+    };
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    private final ProtectionMode protectionMode;
+
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
+    /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+    private final Integer fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     * @return the value
+     **/
+    public Integer getFastStartFailOverLagLimitInSeconds() {
+        return fastStartFailOverLagLimitInSeconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -116,6 +244,9 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
         sb.append("super=").append(super.toString());
         sb.append("isAutomaticFailoverEnabled=")
                 .append(String.valueOf(this.isAutomaticFailoverEnabled));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", fastStartFailOverLagLimitInSeconds=")
+                .append(String.valueOf(this.fastStartFailOverLagLimitInSeconds));
         sb.append(")");
         return sb.toString();
     }
@@ -133,6 +264,10 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
                 (UpdateAutonomousContainerDatabaseDataGuardAssociationDetails) o;
         return java.util.Objects.equals(
                         this.isAutomaticFailoverEnabled, other.isAutomaticFailoverEnabled)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.fastStartFailOverLagLimitInSeconds,
+                        other.fastStartFailOverLagLimitInSeconds)
                 && super.equals(other);
     }
 
@@ -145,6 +280,14 @@ public final class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
                         + (this.isAutomaticFailoverEnabled == null
                                 ? 43
                                 : this.isAutomaticFailoverEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fastStartFailOverLagLimitInSeconds == null
+                                ? 43
+                                : this.fastStartFailOverLagLimitInSeconds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

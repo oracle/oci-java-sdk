@@ -277,6 +277,21 @@ public interface Database extends AutoCloseable {
             ChangeDatabaseSoftwareImageCompartmentRequest request);
 
     /**
+     * Switch the Autonomous Container Database role between Standby and Snapshot Standby.
+     * For more information about changing Autonomous Container Databases Dataguard Role, see
+     * [Change Database Role to Snapshot Standby](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#changeRole).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDataguardRoleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDataguardRole API.
+     */
+    ChangeDataguardRoleResponse changeDataguardRole(ChangeDataguardRoleRequest request);
+
+    /**
      * Moves the DB system and its dependent resources to the specified compartment.
      * For more information about moving DB systems, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -2354,6 +2369,19 @@ public interface Database extends AutoCloseable {
     ListAutonomousContainerDatabaseDataguardAssociationsResponse
             listAutonomousContainerDatabaseDataguardAssociations(
                     ListAutonomousContainerDatabaseDataguardAssociationsRequest request);
+
+    /**
+     * Gets a list of supported Autonomous Container Database versions.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabaseVersions API.
+     */
+    ListAutonomousContainerDatabaseVersionsResponse listAutonomousContainerDatabaseVersions(
+            ListAutonomousContainerDatabaseVersionsRequest request);
 
     /**
      * Gets a list of the Autonomous Container Databases in the specified compartment.
