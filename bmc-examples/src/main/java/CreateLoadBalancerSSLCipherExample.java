@@ -40,7 +40,7 @@ public class CreateLoadBalancerSSLCipherExample {
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
-        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
+        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
 
         System.out.println(
                 "Creating new ssl ciphers " + cipherName + " with ciphers" + ciphers + "...");

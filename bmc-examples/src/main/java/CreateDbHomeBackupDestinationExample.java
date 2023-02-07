@@ -195,7 +195,7 @@ public class CreateDbHomeBackupDestinationExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = new DatabaseClient(provider);
+        databaseClient = DatabaseClient.builder().build(provider);
 
         final BackupDestinationDetails backupDestinationDetails =
                 BackupDestinationHelper.backupDestinationDetailsCreater(

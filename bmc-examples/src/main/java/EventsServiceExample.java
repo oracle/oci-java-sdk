@@ -57,7 +57,7 @@ public class EventsServiceExample implements Closeable {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        this.eventsClient = new EventsClient(provider);
+        this.eventsClient = EventsClient.builder().build(provider);
     }
 
     /**

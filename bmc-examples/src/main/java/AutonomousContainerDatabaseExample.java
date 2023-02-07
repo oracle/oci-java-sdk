@@ -89,8 +89,9 @@ public class AutonomousContainerDatabaseExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final DatabaseClient dbClient = new DatabaseClient(provider);
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+        final DatabaseClient dbClient = DatabaseClient.builder().build(provider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(provider);
 
         // An AEI ID is required for createAutonomousContainerDatabse
         AutonomousExadataInfrastructure autonomousExadataInfrastructure =

@@ -55,8 +55,7 @@ public class CatalogImageListingResourceVersionsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeClient computeClient = new ComputeClient(provider);
-        computeClient.setRegion(region);
+        ComputeClient computeClient = ComputeClient.builder().region(region).build(provider);
 
         // Get the first alphabetically sorted listing
         ListAppCatalogListingsResponse listImagesResponse =

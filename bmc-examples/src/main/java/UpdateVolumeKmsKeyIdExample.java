@@ -70,8 +70,8 @@ public class UpdateVolumeKmsKeyIdExample {
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        BlockstorageClient client = new BlockstorageClient(provider);
-        IdentityClient identityClient = new IdentityClient(provider);
+        BlockstorageClient client = BlockstorageClient.builder().build(provider);
+        IdentityClient identityClient = IdentityClient.builder().build(provider);
 
         // Set up proper policy to execute
         setupPolicy(compartmentId, kmsKeyId, identityClient);
@@ -194,8 +194,8 @@ public class UpdateVolumeKmsKeyIdExample {
     private static List<AvailabilityDomain> getAvailabilityDomains(
             AuthenticationDetailsProvider provider, String compartmentId) throws Exception {
 
-        Identity identityClient = new IdentityClient(provider);
-        identityClient.setRegion(Region.US_ASHBURN_1);
+        Identity identityClient =
+                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         ListAvailabilityDomainsResponse listAvailabilityDomainsResponse =
                 identityClient.listAvailabilityDomains(

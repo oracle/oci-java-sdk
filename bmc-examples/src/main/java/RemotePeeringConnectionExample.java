@@ -112,12 +112,12 @@ public class RemotePeeringConnectionExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         // The local virtual network client (PHX)
-        final VirtualNetworkClient phxVirtualNetwork = new VirtualNetworkClient(authProvider);
-        phxVirtualNetwork.setRegion(Region.US_PHOENIX_1);
+        final VirtualNetworkClient phxVirtualNetwork =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
 
         // The peer virtual network client (IAD)
-        final VirtualNetworkClient iadVirtualNetwork = new VirtualNetworkClient(authProvider);
-        iadVirtualNetwork.setRegion(Region.US_ASHBURN_1);
+        final VirtualNetworkClient iadVirtualNetwork =
+                VirtualNetworkClient.builder().region(Region.US_ASHBURN_1).build(authProvider);
 
         final RemotePeeringConnectionExample example =
                 new RemotePeeringConnectionExample(

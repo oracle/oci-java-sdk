@@ -121,9 +121,11 @@ public class ApiGatewayExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        final GatewayClient gatewayClient = new GatewayClient(provider);
-        final DeploymentClient deploymentClient = new DeploymentClient(provider);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(region).build(provider);
+        final GatewayClient gatewayClient = GatewayClient.builder().region(region).build(provider);
+        final DeploymentClient deploymentClient =
+                DeploymentClient.builder().region(region).build(provider);
 
         vcnClient.setRegion(region);
         gatewayClient.setRegion(region);

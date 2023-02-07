@@ -36,7 +36,7 @@ public class SessionTokenExample {
                 new SessionTokenAuthenticationDetailsProvider();
 
         final String tenantId = provider.getTenantId();
-        Identity identityClient = new IdentityClient(provider);
+        Identity identityClient = IdentityClient.builder().build(provider);
 
         queryAuthenticationPolicy(tenantId, identityClient);
 

@@ -27,9 +27,11 @@ public final class CreateAutonomousContainerDatabaseDetails
         "dbUniqueName",
         "serviceLevelAgreementType",
         "autonomousExadataInfrastructureId",
+        "dbVersion",
         "peerAutonomousExadataInfrastructureId",
         "peerAutonomousContainerDatabaseDisplayName",
         "protectionMode",
+        "fastStartFailOverLagLimitInSeconds",
         "isAutomaticFailoverEnabled",
         "peerCloudAutonomousVmClusterId",
         "peerAutonomousVmClusterId",
@@ -42,6 +44,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         "patchModel",
         "maintenanceWindowDetails",
         "standbyMaintenanceBufferInDays",
+        "versionPreference",
         "freeformTags",
         "definedTags",
         "backupConfig",
@@ -55,9 +58,11 @@ public final class CreateAutonomousContainerDatabaseDetails
             String dbUniqueName,
             ServiceLevelAgreementType serviceLevelAgreementType,
             String autonomousExadataInfrastructureId,
+            String dbVersion,
             String peerAutonomousExadataInfrastructureId,
             String peerAutonomousContainerDatabaseDisplayName,
             ProtectionMode protectionMode,
+            Integer fastStartFailOverLagLimitInSeconds,
             Boolean isAutomaticFailoverEnabled,
             String peerCloudAutonomousVmClusterId,
             String peerAutonomousVmClusterId,
@@ -70,6 +75,7 @@ public final class CreateAutonomousContainerDatabaseDetails
             PatchModel patchModel,
             MaintenanceWindow maintenanceWindowDetails,
             Integer standbyMaintenanceBufferInDays,
+            VersionPreference versionPreference,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             AutonomousContainerDatabaseBackupConfig backupConfig,
@@ -82,10 +88,12 @@ public final class CreateAutonomousContainerDatabaseDetails
         this.dbUniqueName = dbUniqueName;
         this.serviceLevelAgreementType = serviceLevelAgreementType;
         this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+        this.dbVersion = dbVersion;
         this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
         this.peerAutonomousContainerDatabaseDisplayName =
                 peerAutonomousContainerDatabaseDisplayName;
         this.protectionMode = protectionMode;
+        this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
         this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
         this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
         this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
@@ -100,6 +108,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         this.patchModel = patchModel;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+        this.versionPreference = versionPreference;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.backupConfig = backupConfig;
@@ -192,6 +201,21 @@ public final class CreateAutonomousContainerDatabaseDetails
             this.__explicitlySet__.add("autonomousExadataInfrastructureId");
             return this;
         }
+        /** The base version for the Autonomous Container Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        /**
+         * The base version for the Autonomous Container Database.
+         *
+         * @param dbVersion the value to set
+         * @return this builder
+         */
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
         /**
          * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated
          * Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this
@@ -252,6 +276,22 @@ public final class CreateAutonomousContainerDatabaseDetails
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /** The lag time for my preference based on data loss tolerance in seconds. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+        private Integer fastStartFailOverLagLimitInSeconds;
+
+        /**
+         * The lag time for my preference based on data loss tolerance in seconds.
+         *
+         * @param fastStartFailOverLagLimitInSeconds the value to set
+         * @return this builder
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(
+                Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            this.__explicitlySet__.add("fastStartFailOverLagLimitInSeconds");
             return this;
         }
         /**
@@ -468,6 +508,21 @@ public final class CreateAutonomousContainerDatabaseDetails
             this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
             return this;
         }
+        /** The next maintenance version preference. */
+        @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+        private VersionPreference versionPreference;
+
+        /**
+         * The next maintenance version preference.
+         *
+         * @param versionPreference the value to set
+         * @return this builder
+         */
+        public Builder versionPreference(VersionPreference versionPreference) {
+            this.versionPreference = versionPreference;
+            this.__explicitlySet__.add("versionPreference");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -615,9 +670,11 @@ public final class CreateAutonomousContainerDatabaseDetails
                             this.dbUniqueName,
                             this.serviceLevelAgreementType,
                             this.autonomousExadataInfrastructureId,
+                            this.dbVersion,
                             this.peerAutonomousExadataInfrastructureId,
                             this.peerAutonomousContainerDatabaseDisplayName,
                             this.protectionMode,
+                            this.fastStartFailOverLagLimitInSeconds,
                             this.isAutomaticFailoverEnabled,
                             this.peerCloudAutonomousVmClusterId,
                             this.peerAutonomousVmClusterId,
@@ -630,6 +687,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                             this.patchModel,
                             this.maintenanceWindowDetails,
                             this.standbyMaintenanceBufferInDays,
+                            this.versionPreference,
                             this.freeformTags,
                             this.definedTags,
                             this.backupConfig,
@@ -658,6 +716,9 @@ public final class CreateAutonomousContainerDatabaseDetails
                 this.autonomousExadataInfrastructureId(
                         model.getAutonomousExadataInfrastructureId());
             }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
             if (model.wasPropertyExplicitlySet("peerAutonomousExadataInfrastructureId")) {
                 this.peerAutonomousExadataInfrastructureId(
                         model.getPeerAutonomousExadataInfrastructureId());
@@ -668,6 +729,10 @@ public final class CreateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("fastStartFailOverLagLimitInSeconds")) {
+                this.fastStartFailOverLagLimitInSeconds(
+                        model.getFastStartFailOverLagLimitInSeconds());
             }
             if (model.wasPropertyExplicitlySet("isAutomaticFailoverEnabled")) {
                 this.isAutomaticFailoverEnabled(model.getIsAutomaticFailoverEnabled());
@@ -706,6 +771,9 @@ public final class CreateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
                 this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
+            if (model.wasPropertyExplicitlySet("versionPreference")) {
+                this.versionPreference(model.getVersionPreference());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -848,6 +916,19 @@ public final class CreateAutonomousContainerDatabaseDetails
         return autonomousExadataInfrastructureId;
     }
 
+    /** The base version for the Autonomous Container Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    private final String dbVersion;
+
+    /**
+     * The base version for the Autonomous Container Database.
+     *
+     * @return the value
+     */
+    public String getDbVersion() {
+        return dbVersion;
+    }
+
     /**
      * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated
      * Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this
@@ -937,6 +1018,19 @@ public final class CreateAutonomousContainerDatabaseDetails
      */
     public ProtectionMode getProtectionMode() {
         return protectionMode;
+    }
+
+    /** The lag time for my preference based on data loss tolerance in seconds. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+    private final Integer fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * The lag time for my preference based on data loss tolerance in seconds.
+     *
+     * @return the value
+     */
+    public Integer getFastStartFailOverLagLimitInSeconds() {
+        return fastStartFailOverLagLimitInSeconds;
     }
 
     /**
@@ -1154,6 +1248,52 @@ public final class CreateAutonomousContainerDatabaseDetails
         return standbyMaintenanceBufferInDays;
     }
 
+    /** The next maintenance version preference. */
+    public enum VersionPreference implements com.oracle.bmc.http.internal.BmcEnum {
+        NextReleaseUpdate("NEXT_RELEASE_UPDATE"),
+        LatestReleaseUpdate("LATEST_RELEASE_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VersionPreference> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VersionPreference v : VersionPreference.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VersionPreference(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VersionPreference create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VersionPreference: " + key);
+        }
+    };
+    /** The next maintenance version preference. */
+    @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+    private final VersionPreference versionPreference;
+
+    /**
+     * The next maintenance version preference.
+     *
+     * @return the value
+     */
+    public VersionPreference getVersionPreference() {
+        return versionPreference;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -1296,11 +1436,14 @@ public final class CreateAutonomousContainerDatabaseDetails
                 .append(String.valueOf(this.serviceLevelAgreementType));
         sb.append(", autonomousExadataInfrastructureId=")
                 .append(String.valueOf(this.autonomousExadataInfrastructureId));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", peerAutonomousExadataInfrastructureId=")
                 .append(String.valueOf(this.peerAutonomousExadataInfrastructureId));
         sb.append(", peerAutonomousContainerDatabaseDisplayName=")
                 .append(String.valueOf(this.peerAutonomousContainerDatabaseDisplayName));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", fastStartFailOverLagLimitInSeconds=")
+                .append(String.valueOf(this.fastStartFailOverLagLimitInSeconds));
         sb.append(", isAutomaticFailoverEnabled=")
                 .append(String.valueOf(this.isAutomaticFailoverEnabled));
         sb.append(", peerCloudAutonomousVmClusterId=")
@@ -1321,6 +1464,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                 .append(String.valueOf(this.maintenanceWindowDetails));
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
+        sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
@@ -1350,6 +1494,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                 && java.util.Objects.equals(
                         this.autonomousExadataInfrastructureId,
                         other.autonomousExadataInfrastructureId)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(
                         this.peerAutonomousExadataInfrastructureId,
                         other.peerAutonomousExadataInfrastructureId)
@@ -1357,6 +1502,9 @@ public final class CreateAutonomousContainerDatabaseDetails
                         this.peerAutonomousContainerDatabaseDisplayName,
                         other.peerAutonomousContainerDatabaseDisplayName)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.fastStartFailOverLagLimitInSeconds,
+                        other.fastStartFailOverLagLimitInSeconds)
                 && java.util.Objects.equals(
                         this.isAutomaticFailoverEnabled, other.isAutomaticFailoverEnabled)
                 && java.util.Objects.equals(
@@ -1379,6 +1527,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
+                && java.util.Objects.equals(this.versionPreference, other.versionPreference)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
@@ -1405,6 +1554,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                         + (this.autonomousExadataInfrastructureId == null
                                 ? 43
                                 : this.autonomousExadataInfrastructureId.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerAutonomousExadataInfrastructureId == null
@@ -1418,6 +1568,11 @@ public final class CreateAutonomousContainerDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fastStartFailOverLagLimitInSeconds == null
+                                ? 43
+                                : this.fastStartFailOverLagLimitInSeconds.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAutomaticFailoverEnabled == null
@@ -1470,6 +1625,9 @@ public final class CreateAutonomousContainerDatabaseDetails
                         + (this.standbyMaintenanceBufferInDays == null
                                 ? 43
                                 : this.standbyMaintenanceBufferInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());

@@ -43,7 +43,7 @@ public class GetAndUpdateExadataIORMExample {
 
         String dbSystemID = args[0];
 
-        DatabaseClient databaseClient = new DatabaseClient(provider);
+        DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
 
         /*
           Exadata IORM get configuration Example...

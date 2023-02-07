@@ -203,15 +203,13 @@ public class InvokeFunctionExample {
             final String image)
             throws Exception {
 
-        final Identity identityClient = new IdentityClient(provider);
-        identityClient.setRegion(region);
+        final Identity identityClient = IdentityClient.builder().region(region).build(provider);
 
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        vcnClient.setRegion(region);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(region).build(provider);
 
         final FunctionsManagementClient fnManagementClient =
-                new FunctionsManagementClient(provider);
-        fnManagementClient.setRegion(region);
+                FunctionsManagementClient.builder().region(region).build(provider);
 
         try {
             // 1. A list of AvailabilityDomains are required to determine where to host each
@@ -300,10 +298,10 @@ public class InvokeFunctionExample {
             throws Exception {
 
         final FunctionsManagementClient fnManagementClient =
-                new FunctionsManagementClient(provider);
-        fnManagementClient.setRegion(region);
+                FunctionsManagementClient.builder().region(region).build(provider);
 
-        final FunctionsInvokeClient fnInvokeClient = new FunctionsInvokeClient(provider);
+        final FunctionsInvokeClient fnInvokeClient =
+                FunctionsInvokeClient.builder().build(provider);
 
         try {
             // Invoke the function!
@@ -340,15 +338,13 @@ public class InvokeFunctionExample {
             final String name)
             throws Exception {
 
-        final Identity identityClient = new IdentityClient(provider);
-        identityClient.setRegion(region);
+        final Identity identityClient = IdentityClient.builder().region(region).build(provider);
 
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        vcnClient.setRegion(region);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(region).build(provider);
 
         final FunctionsManagementClient fnManagementClient =
-                new FunctionsManagementClient(provider);
-        fnManagementClient.setRegion(region);
+                FunctionsManagementClient.builder().region(region).build(provider);
 
         try {
             System.out.println("Cleaning up");

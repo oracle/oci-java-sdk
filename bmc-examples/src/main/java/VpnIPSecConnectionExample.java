@@ -109,11 +109,12 @@ public class VpnIPSecConnectionExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
+        final VirtualNetworkClient phxVirtualNetworkClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
         phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
         final VpnIPSecConnectionExample example =
                 new VpnIPSecConnectionExample(phxVirtualNetworkClient, Region.US_PHOENIX_1);
-        final IdentityClient identityClient = new IdentityClient(authProvider);
+        final IdentityClient identityClient = IdentityClient.builder().build(authProvider);
 
         example.run(identityClient);
     }

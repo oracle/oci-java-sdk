@@ -33,7 +33,7 @@ public class FunctionsEphemeralResourcePrincipalAuthenticationDetailsProviderExa
         final ResourcePrincipalAuthenticationDetailsProvider provider =
                 ResourcePrincipalAuthenticationDetailsProvider.builder().build();
 
-        final IdentityClient identityClient = new IdentityClient(provider);
+        final IdentityClient identityClient = IdentityClient.builder().build(provider);
 
         // Load the compartment ID of the current function
         String compartmentId =

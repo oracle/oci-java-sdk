@@ -92,11 +92,8 @@ public class VmDataGuardExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = new DatabaseClient(provider);
-        virtualNetworkClient = new VirtualNetworkClient(provider);
-
-        databaseClient.setRegion(targetRegion);
-        virtualNetworkClient.setRegion(targetRegion);
+        databaseClient = DatabaseClient.builder().region(targetRegion).build(provider);
+        virtualNetworkClient = VirtualNetworkClient.builder().region(targetRegion).build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

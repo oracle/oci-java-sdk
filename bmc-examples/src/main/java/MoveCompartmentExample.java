@@ -47,7 +47,7 @@ public class MoveCompartmentExample {
 
         final String tenantId = provider.getTenantId();
         System.out.println("Tenant Id: " + tenantId);
-        final Identity identityClient = new IdentityClient(provider);
+        final Identity identityClient = IdentityClient.builder().build(provider);
 
         final Compartment cpSource =
                 ExampleCompartmentHelper.createCompartment(identityClient, tenantId, CP_SOURCE);

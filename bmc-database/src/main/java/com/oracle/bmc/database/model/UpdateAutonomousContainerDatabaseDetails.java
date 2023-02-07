@@ -27,6 +27,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         "patchModel",
         "maintenanceWindowDetails",
         "standbyMaintenanceBufferInDays",
+        "versionPreference",
         "freeformTags",
         "definedTags",
         "backupConfig"
@@ -36,6 +37,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
             PatchModel patchModel,
             MaintenanceWindow maintenanceWindowDetails,
             Integer standbyMaintenanceBufferInDays,
+            VersionPreference versionPreference,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             AutonomousContainerDatabaseBackupConfig backupConfig) {
@@ -44,6 +46,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         this.patchModel = patchModel;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+        this.versionPreference = versionPreference;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.backupConfig = backupConfig;
@@ -109,6 +112,21 @@ public final class UpdateAutonomousContainerDatabaseDetails
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
             this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
+            return this;
+        }
+        /** The next maintenance version preference. */
+        @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+        private VersionPreference versionPreference;
+
+        /**
+         * The next maintenance version preference.
+         *
+         * @param versionPreference the value to set
+         * @return this builder
+         */
+        public Builder versionPreference(VersionPreference versionPreference) {
+            this.versionPreference = versionPreference;
+            this.__explicitlySet__.add("versionPreference");
             return this;
         }
         /**
@@ -178,6 +196,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
                             this.patchModel,
                             this.maintenanceWindowDetails,
                             this.standbyMaintenanceBufferInDays,
+                            this.versionPreference,
                             this.freeformTags,
                             this.definedTags,
                             this.backupConfig);
@@ -200,6 +219,9 @@ public final class UpdateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
                 this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
+            if (model.wasPropertyExplicitlySet("versionPreference")) {
+                this.versionPreference(model.getVersionPreference());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -308,6 +330,52 @@ public final class UpdateAutonomousContainerDatabaseDetails
         return standbyMaintenanceBufferInDays;
     }
 
+    /** The next maintenance version preference. */
+    public enum VersionPreference implements com.oracle.bmc.http.internal.BmcEnum {
+        NextReleaseUpdate("NEXT_RELEASE_UPDATE"),
+        LatestReleaseUpdate("LATEST_RELEASE_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VersionPreference> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VersionPreference v : VersionPreference.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VersionPreference(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VersionPreference create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VersionPreference: " + key);
+        }
+    };
+    /** The next maintenance version preference. */
+    @com.fasterxml.jackson.annotation.JsonProperty("versionPreference")
+    private final VersionPreference versionPreference;
+
+    /**
+     * The next maintenance version preference.
+     *
+     * @return the value
+     */
+    public VersionPreference getVersionPreference() {
+        return versionPreference;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -378,6 +446,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
                 .append(String.valueOf(this.maintenanceWindowDetails));
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
+        sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
@@ -402,6 +471,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
+                && java.util.Objects.equals(this.versionPreference, other.versionPreference)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
@@ -424,6 +494,9 @@ public final class UpdateAutonomousContainerDatabaseDetails
                         + (this.standbyMaintenanceBufferInDays == null
                                 ? 43
                                 : this.standbyMaintenanceBufferInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());

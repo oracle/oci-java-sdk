@@ -124,8 +124,8 @@ public class BackupRetentionWindowExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = new DatabaseClient(provider);
-        virtualNetworkClient = new VirtualNetworkClient(provider);
+        databaseClient = DatabaseClient.builder().build(provider);
+        virtualNetworkClient = VirtualNetworkClient.builder().build(provider);
 
         Vcn vcn = null;
         Subnet subnet = null;

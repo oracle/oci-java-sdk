@@ -353,6 +353,44 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ChangeOpsiConfigurationCompartmentResponse changeOpsiConfigurationCompartment(
+            ChangeOpsiConfigurationCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getOpsiConfigurationId(), "opsiConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeOpsiConfigurationCompartmentDetails(),
+                "changeOpsiConfigurationCompartmentDetails is required");
+
+        return clientCall(request, ChangeOpsiConfigurationCompartmentResponse::builder)
+                .logger(LOG, "changeOpsiConfigurationCompartment")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeOpsiConfigurationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ChangeOpsiConfigurationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOpsiConfigurationCompartmentRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendPathParam(request.getOpsiConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeOpsiConfigurationCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOpsiConfigurationCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangePeComanagedDatabaseInsightResponse changePeComanagedDatabaseInsight(
             ChangePeComanagedDatabaseInsightRequest request) {
 
@@ -700,6 +738,56 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public CreateOpsiConfigurationResponse createOpsiConfiguration(
+            CreateOpsiConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOpsiConfigurationDetails(),
+                "createOpsiConfigurationDetails is required");
+
+        return clientCall(request, CreateOpsiConfigurationResponse::builder)
+                .logger(LOG, "createOpsiConfiguration")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "CreateOpsiConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/CreateOpsiConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOpsiConfigurationRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendListQueryParam(
+                        "opsiConfigField",
+                        request.getOpsiConfigField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemCustomStatus",
+                        request.getConfigItemCustomStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemsApplicableContext",
+                        request.getConfigItemsApplicableContext(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemField",
+                        request.getConfigItemField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.OpsiConfiguration.class,
+                        CreateOpsiConfigurationResponse.Builder::opsiConfiguration)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateOpsiConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOpsiConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateOpsiConfigurationResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DeleteAwrHubResponse deleteAwrHub(DeleteAwrHubRequest request) {
 
         Validate.notBlank(request.getAwrHubId(), "awrHubId must not be blank");
@@ -934,6 +1022,36 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteOperationsInsightsWarehouseUserResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteOpsiConfigurationResponse deleteOpsiConfiguration(
+            DeleteOpsiConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getOpsiConfigurationId(), "opsiConfigurationId must not be blank");
+
+        return clientCall(request, DeleteOpsiConfigurationResponse::builder)
+                .logger(LOG, "deleteOpsiConfiguration")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DeleteOpsiConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/DeleteOpsiConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOpsiConfigurationRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendPathParam(request.getOpsiConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteOpsiConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOpsiConfigurationResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1557,6 +1675,51 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetOperationsInsightsWarehouseUserResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetOpsiConfigurationResponse getOpsiConfiguration(GetOpsiConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getOpsiConfigurationId(), "opsiConfigurationId must not be blank");
+
+        return clientCall(request, GetOpsiConfigurationResponse::builder)
+                .logger(LOG, "getOpsiConfiguration")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "GetOpsiConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/GetOpsiConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOpsiConfigurationRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendPathParam(request.getOpsiConfigurationId())
+                .appendListQueryParam(
+                        "opsiConfigField",
+                        request.getOpsiConfigField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemCustomStatus",
+                        request.getConfigItemCustomStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemsApplicableContext",
+                        request.getConfigItemsApplicableContext(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemField",
+                        request.getConfigItemField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.OpsiConfiguration.class,
+                        GetOpsiConfigurationResponse.Builder::opsiConfiguration)
+                .handleResponseHeaderString("etag", GetOpsiConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOpsiConfigurationResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -2769,6 +2932,48 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ListOpsiConfigurationsResponse listOpsiConfigurations(
+            ListOpsiConfigurationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOpsiConfigurationsResponse::builder)
+                .logger(LOG, "listOpsiConfigurations")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListOpsiConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ListOpsiConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOpsiConfigurationsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "opsiConfigType",
+                        request.getOpsiConfigType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.OpsiConfigurationsCollection.class,
+                        ListOpsiConfigurationsResponse.Builder::opsiConfigurationsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOpsiConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOpsiConfigurationsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListOpsiDataObjectsResponse listOpsiDataObjects(ListOpsiDataObjectsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -3658,6 +3863,47 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         SummarizeAwrSourcesSummariesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", SummarizeAwrSourcesSummariesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeConfigurationItemsResponse summarizeConfigurationItems(
+            SummarizeConfigurationItemsRequest request) {
+
+        return clientCall(request, SummarizeConfigurationItemsResponse::builder)
+                .logger(LOG, "summarizeConfigurationItems")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeConfigurationItems",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/SummarizeConfigurationItems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeConfigurationItemsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendPathParam("configurationItems")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("opsiConfigType", request.getOpsiConfigType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "configItemsApplicableContext",
+                        request.getConfigItemsApplicableContext(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "configItemField",
+                        request.getConfigItemField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("name", request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.ConfigurationItemsCollection.class,
+                        SummarizeConfigurationItemsResponse.Builder::configurationItemsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeConfigurationItemsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeConfigurationItemsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -6201,6 +6447,40 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateOperationsInsightsWarehouseUserResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateOpsiConfigurationResponse updateOpsiConfiguration(
+            UpdateOpsiConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getOpsiConfigurationId(), "opsiConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOpsiConfigurationDetails(),
+                "updateOpsiConfigurationDetails is required");
+
+        return clientCall(request, UpdateOpsiConfigurationResponse::builder)
+                .logger(LOG, "updateOpsiConfiguration")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "UpdateOpsiConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/UpdateOpsiConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOpsiConfigurationRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("opsiConfigurations")
+                .appendPathParam(request.getOpsiConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateOpsiConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOpsiConfigurationResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

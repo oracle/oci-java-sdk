@@ -647,6 +647,80 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public DeploymentWalletExistsResponse deploymentWalletExists(
+            DeploymentWalletExistsRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getDeploymentWalletExistsDetails(),
+                "deploymentWalletExistsDetails is required");
+
+        return clientCall(request, DeploymentWalletExistsResponse::builder)
+                .logger(LOG, "deploymentWalletExists")
+                .serviceDetails(
+                        "GoldenGate",
+                        "DeploymentWalletExists",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeploymentWalletExists")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeploymentWalletExistsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("walletExists")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentWalletExistsResponseDetails.class,
+                        DeploymentWalletExistsResponse.Builder
+                                ::deploymentWalletExistsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeploymentWalletExistsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", DeploymentWalletExistsResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ExportDeploymentWalletResponse exportDeploymentWallet(
+            ExportDeploymentWalletRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getExportDeploymentWalletDetails(),
+                "exportDeploymentWalletDetails is required");
+
+        return clientCall(request, ExportDeploymentWalletResponse::builder)
+                .logger(LOG, "exportDeploymentWallet")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ExportDeploymentWallet",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ExportDeploymentWallet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportDeploymentWalletRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("exportWallet")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExportDeploymentWalletResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportDeploymentWalletResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetConnectionResponse getConnection(GetConnectionRequest request) {
 
         Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
@@ -846,6 +920,42 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ImportDeploymentWalletResponse importDeploymentWallet(
+            ImportDeploymentWalletRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getImportDeploymentWalletDetails(),
+                "importDeploymentWalletDetails is required");
+
+        return clientCall(request, ImportDeploymentWalletResponse::builder)
+                .logger(LOG, "importDeploymentWallet")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ImportDeploymentWallet",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ImportDeploymentWallet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportDeploymentWalletRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("importWallet")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportDeploymentWalletResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportDeploymentWalletResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1071,6 +1181,45 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentUpgradesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentUpgradesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListDeploymentWalletsOperationsResponse listDeploymentWalletsOperations(
+            ListDeploymentWalletsOperationsRequest request) {
+
+        Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
+
+        return clientCall(request, ListDeploymentWalletsOperationsResponse::builder)
+                .logger(LOG, "listDeploymentWalletsOperations")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentWalletsOperations",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentWalletsOperationSummary/ListDeploymentWalletsOperations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentWalletsOperationsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deployments")
+                .appendPathParam(request.getDeploymentId())
+                .appendPathParam("deploymentWalletsOperations")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentWalletsOperationCollection.class,
+                        ListDeploymentWalletsOperationsResponse.Builder
+                                ::deploymentWalletsOperationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDeploymentWalletsOperationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDeploymentWalletsOperationsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

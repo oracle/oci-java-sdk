@@ -166,6 +166,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an OpsiConfiguration resource from one compartment to another.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOpsiConfigurationCompartmentResponse>
+            changeOpsiConfigurationCompartment(
+                    ChangeOpsiConfigurationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOpsiConfigurationCompartmentRequest,
+                                    ChangeOpsiConfigurationCompartmentResponse>
+                            handler);
+
+    /**
      * Change the connection details of a co-managed database insight. When provided, If-Match is
      * checked against ETag values of the resource.
      *
@@ -330,6 +348,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create an OPSI configuration resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOpsiConfigurationResponse> createOpsiConfiguration(
+            CreateOpsiConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOpsiConfigurationRequest, CreateOpsiConfigurationResponse>
+                    handler);
+
+    /**
      * Deletes an AWR hub.
      *
      * @param request The request object containing the details to send
@@ -467,6 +501,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     DeleteOperationsInsightsWarehouseUserRequest,
                                     DeleteOperationsInsightsWarehouseUserResponse>
                             handler);
+
+    /**
+     * Deletes an OPSI configuration resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOpsiConfigurationResponse> deleteOpsiConfiguration(
+            DeleteOpsiConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOpsiConfigurationRequest, DeleteOpsiConfigurationResponse>
+                    handler);
 
     /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be
@@ -768,6 +818,26 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     GetOperationsInsightsWarehouseUserRequest,
                                     GetOperationsInsightsWarehouseUserResponse>
                             handler);
+
+    /**
+     * Gets details of an OPSI configuration resource. Values specified in configItemField and
+     * configItemCustomStatus query params will be considered, only if configItems field is
+     * requested as part of opsiConfigField query param. Values specified in configItemCustomStatus
+     * will determine whether only customized configuration items or only non-customized
+     * configuration items or both have to be returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOpsiConfigurationResponse> getOpsiConfiguration(
+            GetOpsiConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOpsiConfigurationRequest, GetOpsiConfigurationResponse>
+                    handler);
 
     /**
      * Gets details of an OPSI data object.
@@ -1243,6 +1313,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOpsiConfigurationsResponse> listOpsiConfigurations(
+            ListOpsiConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>
+                    handler);
+
+    /**
      * Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id
      * query parameter must be specified.
      *
@@ -1602,6 +1688,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrSourcesSummariesRequest,
                             SummarizeAwrSourcesSummariesResponse>
+                    handler);
+
+    /**
+     * Gets the applicable configuration items based on the query parameters specified.
+     * Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration
+     * items have to be returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeConfigurationItemsResponse> summarizeConfigurationItems(
+            SummarizeConfigurationItemsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeConfigurationItemsRequest, SummarizeConfigurationItemsResponse>
                     handler);
 
     /**
@@ -2388,4 +2493,20 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     UpdateOperationsInsightsWarehouseUserRequest,
                                     UpdateOperationsInsightsWarehouseUserResponse>
                             handler);
+
+    /**
+     * Updates an OPSI configuration resource with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOpsiConfigurationResponse> updateOpsiConfiguration(
+            UpdateOpsiConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOpsiConfigurationRequest, UpdateOpsiConfigurationResponse>
+                    handler);
 }

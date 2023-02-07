@@ -51,7 +51,7 @@ public class MaintenanceRunExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         // Get MaintenanceRun
-        DatabaseClient databaseClient = new DatabaseClient(provider);
+        DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
         GetMaintenanceRunRequest getMaintenanceRunRequest =
                 GetMaintenanceRunRequest.builder().maintenanceRunId(maintenanceRunId).build();
         GetMaintenanceRunResponse maintenanceRun =

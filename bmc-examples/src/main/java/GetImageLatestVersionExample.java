@@ -37,8 +37,7 @@ public class GetImageLatestVersionExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         // Find matching images
-        ComputeClient computeClient = new ComputeClient(provider);
-        computeClient.setRegion(region);
+        ComputeClient computeClient = ComputeClient.builder().region(region).build(provider);
 
         ListImagesResponse listImagesResponse =
                 computeClient.listImages(

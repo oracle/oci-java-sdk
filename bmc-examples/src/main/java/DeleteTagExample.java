@@ -50,7 +50,7 @@ public class DeleteTagExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        Identity identityClient = new IdentityClient(provider);
+        final Identity identityClient = IdentityClient.builder().build(provider);
 
         // Get the tagnamespace of given name from tenancy
         TagNamespaceSummary tagNamespace =

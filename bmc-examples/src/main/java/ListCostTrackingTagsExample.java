@@ -48,8 +48,8 @@ public class ListCostTrackingTagsExample {
 
         String compartmentId = provider.getTenantId();
         final String tenantId = provider.getTenantId();
-        final Identity identityClient = new IdentityClient(provider);
-        identityClient.setRegion(Region.US_ASHBURN_1);
+        final Identity identityClient =
+                IdentityClient.builder().region(Region.US_ASHBURN_1).build(provider);
 
         final TagNamespace tagNamespace1 =
                 createTagNamespace(

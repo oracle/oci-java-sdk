@@ -61,13 +61,24 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("helmVerificationKeySource")
+        private VerificationKeySource helmVerificationKeySource;
+
+        public Builder helmVerificationKeySource(VerificationKeySource helmVerificationKeySource) {
+            this.helmVerificationKeySource = helmVerificationKeySource;
+            this.__explicitlySet__.add("helmVerificationKeySource");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HelmRepositoryDeployArtifactSource build() {
             HelmRepositoryDeployArtifactSource model =
                     new HelmRepositoryDeployArtifactSource(
-                            this.chartUrl, this.deployArtifactVersion);
+                            this.chartUrl,
+                            this.deployArtifactVersion,
+                            this.helmVerificationKeySource);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +92,9 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
             }
             if (model.wasPropertyExplicitlySet("deployArtifactVersion")) {
                 this.deployArtifactVersion(model.getDeployArtifactVersion());
+            }
+            if (model.wasPropertyExplicitlySet("helmVerificationKeySource")) {
+                this.helmVerificationKeySource(model.getHelmVerificationKeySource());
             }
             return this;
         }
@@ -96,10 +110,14 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
     }
 
     @Deprecated
-    public HelmRepositoryDeployArtifactSource(String chartUrl, String deployArtifactVersion) {
+    public HelmRepositoryDeployArtifactSource(
+            String chartUrl,
+            String deployArtifactVersion,
+            VerificationKeySource helmVerificationKeySource) {
         super();
         this.chartUrl = chartUrl;
         this.deployArtifactVersion = deployArtifactVersion;
+        this.helmVerificationKeySource = helmVerificationKeySource;
     }
 
     /** The URL of an OCIR repository. */
@@ -132,6 +150,13 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
         return deployArtifactVersion;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("helmVerificationKeySource")
+    private final VerificationKeySource helmVerificationKeySource;
+
+    public VerificationKeySource getHelmVerificationKeySource() {
+        return helmVerificationKeySource;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -149,6 +174,8 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", chartUrl=").append(String.valueOf(this.chartUrl));
         sb.append(", deployArtifactVersion=").append(String.valueOf(this.deployArtifactVersion));
+        sb.append(", helmVerificationKeySource=")
+                .append(String.valueOf(this.helmVerificationKeySource));
         sb.append(")");
         return sb.toString();
     }
@@ -165,6 +192,8 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
         HelmRepositoryDeployArtifactSource other = (HelmRepositoryDeployArtifactSource) o;
         return java.util.Objects.equals(this.chartUrl, other.chartUrl)
                 && java.util.Objects.equals(this.deployArtifactVersion, other.deployArtifactVersion)
+                && java.util.Objects.equals(
+                        this.helmVerificationKeySource, other.helmVerificationKeySource)
                 && super.equals(other);
     }
 
@@ -178,6 +207,11 @@ public final class HelmRepositoryDeployArtifactSource extends DeployArtifactSour
                         + (this.deployArtifactVersion == null
                                 ? 43
                                 : this.deployArtifactVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.helmVerificationKeySource == null
+                                ? 43
+                                : this.helmVerificationKeySource.hashCode());
         return result;
     }
 }

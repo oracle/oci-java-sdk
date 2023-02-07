@@ -34,8 +34,8 @@ public class ListCompartmentsExample {
 
         String compartmentId = provider.getTenantId();
         final String tenantId = provider.getTenantId();
-        Identity identityClient = new IdentityClient(provider);
-        identityClient.setRegion(Region.US_ASHBURN_1);
+        Identity identityClient =
+                IdentityClient.builder().region(Region.US_ASHBURN_1).build(provider);
 
         /*
         *****************************************************************

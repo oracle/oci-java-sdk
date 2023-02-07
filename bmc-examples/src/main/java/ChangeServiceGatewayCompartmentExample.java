@@ -71,7 +71,8 @@ public class ChangeServiceGatewayCompartmentExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(authProvider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(authProvider);
 
         Vcn vcn = null;
         ServiceGateway serviceGateway = null;

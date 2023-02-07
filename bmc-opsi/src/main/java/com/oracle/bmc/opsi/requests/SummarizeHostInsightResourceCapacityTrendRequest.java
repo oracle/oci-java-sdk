@@ -28,10 +28,10 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY. */
+    /** Filter by host resource metric. */
     private String resourceMetric;
 
-    /** Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY. */
+    /** Filter by host resource metric. */
     public String getResourceMetric() {
         return resourceMetric;
     }
@@ -439,11 +439,11 @@ public class SummarizeHostInsightResourceCapacityTrendRequest
             return this;
         }
 
-        /** Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY. */
+        /** Filter by host resource metric. */
         private String resourceMetric = null;
 
         /**
-         * Filter by host resource metric. Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
+         * Filter by host resource metric.
          *
          * @param resourceMetric the value to set
          * @return this builder instance

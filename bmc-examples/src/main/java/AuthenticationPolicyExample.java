@@ -39,7 +39,7 @@ public class AuthenticationPolicyExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        Identity identityClient = new IdentityClient(provider);
+        Identity identityClient = IdentityClient.builder().build(provider);
 
         queryAuthenticationPolicy(tenantId, identityClient);
 

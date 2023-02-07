@@ -70,7 +70,7 @@ public class HealthChecksExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final HealthChecks client = new HealthChecksClient(provider);
+        final HealthChecks client = HealthChecksClient.builder().build(provider);
 
         // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
         // known)

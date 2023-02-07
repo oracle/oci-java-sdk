@@ -33,8 +33,9 @@ public class InstancePrincipalsAuthenticationDetailsProviderExample {
             throw e;
         }
 
-        final IdentityClient identityClient = new IdentityClient(provider);
-        final IdentityAsyncClient identityAsyncClient = new IdentityAsyncClient(provider);
+        final IdentityClient identityClient = IdentityClient.builder().build(provider);
+        final IdentityAsyncClient identityAsyncClient =
+                IdentityAsyncClient.builder().build(provider);
 
         // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
         // known)

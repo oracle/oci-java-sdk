@@ -146,7 +146,7 @@ public class BackupDestinationExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        databaseClient = new DatabaseClient(provider);
+        databaseClient = DatabaseClient.builder().build(provider);
 
         List<String> vpcusers = new ArrayList<>();
         vpcusers.add(vpcUser);

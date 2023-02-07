@@ -41,8 +41,8 @@ public class AutonomousDatabaseBackupExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DatabaseClient dbClient = new DatabaseClient(provider);
-        dbClient.setRegion(Region.US_PHOENIX_1);
+        DatabaseClient dbClient =
+                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         // Create
         CreateAutonomousDatabaseBackupDetails createAutonomousDatabaseBackupDetails =

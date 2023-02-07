@@ -38,7 +38,7 @@ public class ListDBVersionExample {
         String compartmentId = args[0];
         String dbSystemShape = args[1];
 
-        DatabaseClient databaseClient = new DatabaseClient(provider);
+        DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
         ListDbVersionsRequest dbVersionsRequest =
                 ListDbVersionsRequest.builder()
                         .dbSystemShape(dbSystemShape)

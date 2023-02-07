@@ -37,8 +37,8 @@ public class ObjectStorageSyncExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client = new ObjectStorageClient(provider);
-        client.setRegion(Region.US_PHOENIX_1);
+        ObjectStorage client =
+                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
 
         GetNamespaceResponse namespaceResponse =
                 client.getNamespace(GetNamespaceRequest.builder().build());

@@ -76,7 +76,7 @@ public class ContainerImageSigningExample {
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
         ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        ArtifactsClient artifactsClient = new ArtifactsClient(provider);
+        ArtifactsClient artifactsClient = ArtifactsClient.builder().build(provider);
 
         String kmsKeyId = args[0];
         String kmsKeyVersionId = args[1];

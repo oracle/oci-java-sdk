@@ -183,7 +183,7 @@ public final class UpdateAutonomousDatabaseDetails
          * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
          * multiples of two. Required when using the {@code computeModel} parameter. When using
          * {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null
-         * value.
+         * value.@endif
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Float computeCount;
@@ -194,7 +194,7 @@ public final class UpdateAutonomousDatabaseDetails
          * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
          * multiples of two. Required when using the {@code computeModel} parameter. When using
          * {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null
-         * value.
+         * value.@endif
          *
          * @param computeCount the value to set
          * @return this builder
@@ -1377,7 +1377,7 @@ public final class UpdateAutonomousDatabaseDetails
      * compute model and whether the database is on Shared or Dedicated infrastructure. For an
      * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
      * multiples of two. Required when using the {@code computeModel} parameter. When using {@code
-     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.@endif
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Float computeCount;
@@ -1387,7 +1387,7 @@ public final class UpdateAutonomousDatabaseDetails
      * compute model and whether the database is on Shared or Dedicated infrastructure. For an
      * Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in
      * multiples of two. Required when using the {@code computeModel} parameter. When using {@code
-     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.@endif
      *
      * @return the value
      */

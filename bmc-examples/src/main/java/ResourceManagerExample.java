@@ -105,7 +105,8 @@ public class ResourceManagerExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final ResourceManagerClient resourceManagerClient = new ResourceManagerClient(provider);
+        final ResourceManagerClient resourceManagerClient =
+                ResourceManagerClient.builder().build(provider);
 
         // Create Stack
         CreateZipUploadConfigSourceDetails createZipUploadConfigSourceDetails =

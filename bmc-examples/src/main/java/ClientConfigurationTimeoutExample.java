@@ -36,7 +36,9 @@ public class ClientConfigurationTimeoutExample {
                 "Connection timeout set to " + CONNECTION_TIMEOUT_IN_MILLISECONDS + "ms");
         System.out.println("Read timeout set to " + READ_TIMEOUT_IN_MILLISECONDS + "ms");
 
-        final IdentityClient identityClient = new IdentityClient(provider, clientConfiguration);
+        // final IdentityClient identityClient = new IdentityClient(provider, clientConfiguration);
+        final IdentityClient identityClient =
+                IdentityClient.builder().configuration(clientConfiguration).build(provider);
 
         // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
         // known)

@@ -33,8 +33,10 @@ public class SimpleAuthenticationDetailsProviderExample {
                         .passPhrase(passPhrase)
                         .build();
 
-        final IdentityClient identityClient = new IdentityClient(authenticationDetailsProvider);
-        identityClient.setRegion(Region.US_PHOENIX_1);
+        final IdentityClient identityClient =
+                IdentityClient.builder()
+                        .region(Region.US_PHOENIX_1)
+                        .build(authenticationDetailsProvider);
 
         System.out.println("Querying for list of regions via the Identity Client");
         final ListRegionsResponse response =

@@ -20,11 +20,14 @@ package com.oracle.bmc.database.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseTool extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "isEnabled"})
-    public DatabaseTool(Name name, Boolean isEnabled) {
+    @java.beans.ConstructorProperties({"name", "isEnabled", "computeCount", "maxIdleTimeInMinutes"})
+    public DatabaseTool(
+            Name name, Boolean isEnabled, Float computeCount, Integer maxIdleTimeInMinutes) {
         super();
         this.name = name;
         this.isEnabled = isEnabled;
+        this.computeCount = computeCount;
+        this.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -59,12 +62,51 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
+        /** Compute used by database tools. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+        private Float computeCount;
+
+        /**
+         * Compute used by database tools.
+         *
+         * @param computeCount the value to set
+         * @return this builder
+         */
+        public Builder computeCount(Float computeCount) {
+            this.computeCount = computeCount;
+            this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
+         * The max idle time, in minutes, after which the VM used by database tools will be
+         * terminated.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxIdleTimeInMinutes")
+        private Integer maxIdleTimeInMinutes;
+
+        /**
+         * The max idle time, in minutes, after which the VM used by database tools will be
+         * terminated.
+         *
+         * @param maxIdleTimeInMinutes the value to set
+         * @return this builder
+         */
+        public Builder maxIdleTimeInMinutes(Integer maxIdleTimeInMinutes) {
+            this.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
+            this.__explicitlySet__.add("maxIdleTimeInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseTool build() {
-            DatabaseTool model = new DatabaseTool(this.name, this.isEnabled);
+            DatabaseTool model =
+                    new DatabaseTool(
+                            this.name,
+                            this.isEnabled,
+                            this.computeCount,
+                            this.maxIdleTimeInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +120,12 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxIdleTimeInMinutes")) {
+                this.maxIdleTimeInMinutes(model.getMaxIdleTimeInMinutes());
             }
             return this;
         }
@@ -167,6 +215,34 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         return isEnabled;
     }
 
+    /** Compute used by database tools. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
+    private final Float computeCount;
+
+    /**
+     * Compute used by database tools.
+     *
+     * @return the value
+     */
+    public Float getComputeCount() {
+        return computeCount;
+    }
+
+    /**
+     * The max idle time, in minutes, after which the VM used by database tools will be terminated.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxIdleTimeInMinutes")
+    private final Integer maxIdleTimeInMinutes;
+
+    /**
+     * The max idle time, in minutes, after which the VM used by database tools will be terminated.
+     *
+     * @return the value
+     */
+    public Integer getMaxIdleTimeInMinutes() {
+        return maxIdleTimeInMinutes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -184,6 +260,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", maxIdleTimeInMinutes=").append(String.valueOf(this.maxIdleTimeInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -200,6 +278,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         DatabaseTool other = (DatabaseTool) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(this.maxIdleTimeInMinutes, other.maxIdleTimeInMinutes)
                 && super.equals(other);
     }
 
@@ -209,6 +289,12 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxIdleTimeInMinutes == null
+                                ? 43
+                                : this.maxIdleTimeInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

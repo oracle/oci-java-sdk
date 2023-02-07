@@ -91,7 +91,8 @@ public class ChangeNatGatewayCompartmentExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(authProvider);
+        final VirtualNetworkClient virtualNetworkClient =
+                VirtualNetworkClient.builder().build(authProvider);
         Vcn vcn = null;
         NatGateway natGateway = null;
         try {

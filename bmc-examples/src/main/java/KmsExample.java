@@ -88,13 +88,13 @@ public class KmsExample {
         //      * KmsVaultClient: The client for Vault management
         //      * KmsManagementClient: The client for Key management (ControlPlane)
         //      * KmsCryptoClient: The client for data encryption and decryption (DataPlane)
-        KmsVaultClient kmsVaultClient = new KmsVaultClient(provider);
+        KmsVaultClient kmsVaultClient = KmsVaultClient.builder().build(provider);
 
         // Using the us-ashburn-1 in this example, choose a different region if needed
         kmsVaultClient.setRegion(Region.US_ASHBURN_1);
 
-        KmsManagementClient kmsManagementClient = new KmsManagementClient(provider);
-        KmsCryptoClient kmsCryptoClient = new KmsCryptoClient(provider);
+        KmsManagementClient kmsManagementClient = KmsManagementClient.builder().build(provider);
+        KmsCryptoClient kmsCryptoClient = KmsCryptoClient.builder().build(provider);
 
         // Get the details of the given Vault
         Vault vault = getVaultTest(kmsVaultClient, vaultId);

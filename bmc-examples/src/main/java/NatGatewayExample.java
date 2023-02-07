@@ -106,8 +106,8 @@ public class NatGatewayExample {
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
-        vcnClient.setRegion(Region.US_PHOENIX_1);
+        final VirtualNetworkClient vcnClient =
+                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
         Vcn vcn = null;
         NatGateway natGateway = null;
         RouteTable routeTable = null;

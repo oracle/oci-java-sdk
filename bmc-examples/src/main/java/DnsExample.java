@@ -74,7 +74,7 @@ public class DnsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final Dns client = new DnsClient(provider);
+        final Dns client = DnsClient.builder().build(provider);
 
         if (args.length != 3) {
             System.err.println(
