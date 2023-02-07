@@ -1330,6 +1330,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDataguardRoleResponse> changeDataguardRole(
+            ChangeDataguardRoleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDataguardRoleRequest, ChangeDataguardRoleResponse>
+                    handler) {
+        LOG.trace("Called async changeDataguardRole");
+        final ChangeDataguardRoleRequest interceptedRequest =
+                ChangeDataguardRoleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDataguardRoleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDataguardRole",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeDataguardRole");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeDataguardRoleResponse>
+                transformer =
+                        ChangeDataguardRoleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDataguardRoleRequest, ChangeDataguardRoleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDataguardRoleRequest, ChangeDataguardRoleResponse>,
+                        java.util.concurrent.Future<ChangeDataguardRoleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDataguardRoleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDataguardRoleRequest, ChangeDataguardRoleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDbSystemCompartmentResponse> changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9014,6 +9067,61 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAutonomousContainerDatabaseDataguardAssociationsRequest,
                     ListAutonomousContainerDatabaseDataguardAssociationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutonomousContainerDatabaseVersionsResponse>
+            listAutonomousContainerDatabaseVersions(
+                    ListAutonomousContainerDatabaseVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousContainerDatabaseVersionsRequest,
+                                    ListAutonomousContainerDatabaseVersionsResponse>
+                            handler) {
+        LOG.trace("Called async listAutonomousContainerDatabaseVersions");
+        final ListAutonomousContainerDatabaseVersionsRequest interceptedRequest =
+                ListAutonomousContainerDatabaseVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousContainerDatabaseVersionsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousContainerDatabaseVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseVersionSummary/ListAutonomousContainerDatabaseVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAutonomousContainerDatabaseVersionsResponse>
+                transformer =
+                        ListAutonomousContainerDatabaseVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutonomousContainerDatabaseVersionsRequest,
+                        ListAutonomousContainerDatabaseVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAutonomousContainerDatabaseVersionsRequest,
+                                ListAutonomousContainerDatabaseVersionsResponse>,
+                        java.util.concurrent.Future<
+                                ListAutonomousContainerDatabaseVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAutonomousContainerDatabaseVersionsRequest,
+                    ListAutonomousContainerDatabaseVersionsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

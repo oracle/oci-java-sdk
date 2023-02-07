@@ -1934,6 +1934,121 @@ public class OperationsInsightsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOpsiConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOpsiConfigurationsResponse> listOpsiConfigurationsResponseIterator(
+            final ListOpsiConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOpsiConfigurationsRequest.Builder, ListOpsiConfigurationsRequest,
+                ListOpsiConfigurationsResponse>(
+                new java.util.function.Supplier<ListOpsiConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListOpsiConfigurationsRequest.Builder get() {
+                        return ListOpsiConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOpsiConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListOpsiConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOpsiConfigurationsRequest.Builder>,
+                        ListOpsiConfigurationsRequest>() {
+                    @Override
+                    public ListOpsiConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOpsiConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>() {
+                    @Override
+                    public ListOpsiConfigurationsResponse apply(
+                            ListOpsiConfigurationsRequest request) {
+                        return client.listOpsiConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.OpsiConfigurationSummary} objects
+     * contained in responses from the listOpsiConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.OpsiConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.OpsiConfigurationSummary>
+            listOpsiConfigurationsRecordIterator(final ListOpsiConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOpsiConfigurationsRequest.Builder, ListOpsiConfigurationsRequest,
+                ListOpsiConfigurationsResponse, com.oracle.bmc.opsi.model.OpsiConfigurationSummary>(
+                new java.util.function.Supplier<ListOpsiConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListOpsiConfigurationsRequest.Builder get() {
+                        return ListOpsiConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOpsiConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListOpsiConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOpsiConfigurationsRequest.Builder>,
+                        ListOpsiConfigurationsRequest>() {
+                    @Override
+                    public ListOpsiConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOpsiConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOpsiConfigurationsRequest, ListOpsiConfigurationsResponse>() {
+                    @Override
+                    public ListOpsiConfigurationsResponse apply(
+                            ListOpsiConfigurationsRequest request) {
+                        return client.listOpsiConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOpsiConfigurationsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.OpsiConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.OpsiConfigurationSummary> apply(
+                            ListOpsiConfigurationsResponse response) {
+                        return response.getOpsiConfigurationsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listOpsiDataObjects operation. This iterable
      * will fetch more data from the server as needed.
      *

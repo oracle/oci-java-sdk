@@ -51,6 +51,10 @@ public enum OperationType {
     MovePrivateEndpoint("MOVE_PRIVATE_ENDPOINT"),
     DeletePrivateEndpoint("DELETE_PRIVATE_ENDPOINT"),
     ChangePeComanagedDatabaseInsightDetails("CHANGE_PE_COMANAGED_DATABASE_INSIGHT_DETAILS"),
+    UpdateOpsiConfiguration("UPDATE_OPSI_CONFIGURATION"),
+    CreateOpsiConfiguration("CREATE_OPSI_CONFIGURATION"),
+    MoveOpsiConfiguration("MOVE_OPSI_CONFIGURATION"),
+    DeleteOpsiConfiguration("DELETE_OPSI_CONFIGURATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

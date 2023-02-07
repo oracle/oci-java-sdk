@@ -135,6 +135,19 @@ public interface OperationsInsights extends AutoCloseable {
                     ChangeOperationsInsightsPrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves an OpsiConfiguration resource from one compartment to another.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeOpsiConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOpsiConfigurationCompartment API.
+     */
+    ChangeOpsiConfigurationCompartmentResponse changeOpsiConfigurationCompartment(
+            ChangeOpsiConfigurationCompartmentRequest request);
+
+    /**
      * Change the connection details of a co-managed  database insight. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -261,6 +274,19 @@ public interface OperationsInsights extends AutoCloseable {
             CreateOperationsInsightsWarehouseUserRequest request);
 
     /**
+     * Create an OPSI configuration resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateOpsiConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOpsiConfiguration API.
+     */
+    CreateOpsiConfigurationResponse createOpsiConfiguration(CreateOpsiConfigurationRequest request);
+
+    /**
      * Deletes an AWR hub.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -363,6 +389,18 @@ public interface OperationsInsights extends AutoCloseable {
      */
     DeleteOperationsInsightsWarehouseUserResponse deleteOperationsInsightsWarehouseUser(
             DeleteOperationsInsightsWarehouseUserRequest request);
+
+    /**
+     * Deletes an OPSI configuration resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteOpsiConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOpsiConfiguration API.
+     */
+    DeleteOpsiConfigurationResponse deleteOpsiConfiguration(DeleteOpsiConfigurationRequest request);
 
     /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
@@ -590,6 +628,21 @@ public interface OperationsInsights extends AutoCloseable {
      */
     GetOperationsInsightsWarehouseUserResponse getOperationsInsightsWarehouseUser(
             GetOperationsInsightsWarehouseUserRequest request);
+
+    /**
+     * Gets details of an OPSI configuration resource.
+     * Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+     * Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOpsiConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOpsiConfiguration API.
+     */
+    GetOpsiConfigurationResponse getOpsiConfiguration(GetOpsiConfigurationRequest request);
 
     /**
      * Gets details of an OPSI data object.
@@ -970,6 +1023,19 @@ public interface OperationsInsights extends AutoCloseable {
             ListOperationsInsightsWarehousesRequest request);
 
     /**
+     * Gets a list of OPSI configuration resources based on the query parameters specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOpsiConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOpsiConfigurations API.
+     */
+    ListOpsiConfigurationsResponse listOpsiConfigurations(ListOpsiConfigurationsRequest request);
+
+    /**
      * Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id query parameter must be specified.
      *
      * @param request The request object containing the details to send
@@ -1246,6 +1312,21 @@ public interface OperationsInsights extends AutoCloseable {
      */
     SummarizeAwrSourcesSummariesResponse summarizeAwrSourcesSummaries(
             SummarizeAwrSourcesSummariesRequest request);
+
+    /**
+     * Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+     * Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeConfigurationItemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeConfigurationItems API.
+     */
+    SummarizeConfigurationItemsResponse summarizeConfigurationItems(
+            SummarizeConfigurationItemsRequest request);
 
     /**
      * Returns response with time series data (endTimestamp, capacity, baseCapacity) for the time period specified.
@@ -1857,6 +1938,18 @@ public interface OperationsInsights extends AutoCloseable {
      */
     UpdateOperationsInsightsWarehouseUserResponse updateOperationsInsightsWarehouseUser(
             UpdateOperationsInsightsWarehouseUserRequest request);
+
+    /**
+     * Updates an OPSI configuration resource with the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateOpsiConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOpsiConfiguration API.
+     */
+    UpdateOpsiConfigurationResponse updateOpsiConfiguration(UpdateOpsiConfigurationRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

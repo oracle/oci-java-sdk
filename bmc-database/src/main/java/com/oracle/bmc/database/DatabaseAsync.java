@@ -347,6 +347,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Switch the Autonomous Container Database role between Standby and Snapshot Standby.
+     * For more information about changing Autonomous Container Databases Dataguard Role, see
+     * [Change Database Role to Snapshot Standby](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#changeRole).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDataguardRoleResponse> changeDataguardRole(
+            ChangeDataguardRoleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDataguardRoleRequest, ChangeDataguardRoleResponse>
+                    handler);
+
+    /**
      * Moves the DB system and its dependent resources to the specified compartment.
      * For more information about moving DB systems, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -2991,6 +3010,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListAutonomousContainerDatabaseDataguardAssociationsRequest,
                                     ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+                            handler);
+
+    /**
+     * Gets a list of supported Autonomous Container Database versions.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousContainerDatabaseVersionsResponse>
+            listAutonomousContainerDatabaseVersions(
+                    ListAutonomousContainerDatabaseVersionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousContainerDatabaseVersionsRequest,
+                                    ListAutonomousContainerDatabaseVersionsResponse>
                             handler);
 
     /**

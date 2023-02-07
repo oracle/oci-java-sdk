@@ -1199,6 +1199,92 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public DeploymentWalletExistsResponse deploymentWalletExists(
+            DeploymentWalletExistsRequest request) {
+        LOG.trace("Called deploymentWalletExists");
+        final DeploymentWalletExistsRequest interceptedRequest =
+                DeploymentWalletExistsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeploymentWalletExistsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "DeploymentWalletExists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeploymentWalletExists");
+        java.util.function.Function<javax.ws.rs.core.Response, DeploymentWalletExistsResponse>
+                transformer =
+                        DeploymentWalletExistsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDeploymentWalletExistsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ExportDeploymentWalletResponse exportDeploymentWallet(
+            ExportDeploymentWalletRequest request) {
+        LOG.trace("Called exportDeploymentWallet");
+        final ExportDeploymentWalletRequest interceptedRequest =
+                ExportDeploymentWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportDeploymentWalletConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ExportDeploymentWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ExportDeploymentWallet");
+        java.util.function.Function<javax.ws.rs.core.Response, ExportDeploymentWalletResponse>
+                transformer =
+                        ExportDeploymentWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExportDeploymentWalletDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetConnectionResponse getConnection(GetConnectionRequest request) {
         LOG.trace("Called getConnection");
         final GetConnectionRequest interceptedRequest =
@@ -1454,6 +1540,49 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public ImportDeploymentWalletResponse importDeploymentWallet(
+            ImportDeploymentWalletRequest request) {
+        LOG.trace("Called importDeploymentWallet");
+        final ImportDeploymentWalletRequest interceptedRequest =
+                ImportDeploymentWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportDeploymentWalletConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ImportDeploymentWallet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ImportDeploymentWallet");
+        java.util.function.Function<javax.ws.rs.core.Response, ImportDeploymentWalletResponse>
+                transformer =
+                        ImportDeploymentWalletConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportDeploymentWalletDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListConnectionAssignmentsResponse listConnectionAssignments(
             ListConnectionAssignmentsRequest request) {
         LOG.trace("Called listConnectionAssignments");
@@ -1663,6 +1792,45 @@ public class GoldenGateClient implements GoldenGate {
         java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
                 transformer =
                         ListDeploymentUpgradesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDeploymentWalletsOperationsResponse listDeploymentWalletsOperations(
+            ListDeploymentWalletsOperationsRequest request) {
+        LOG.trace("Called listDeploymentWalletsOperations");
+        final ListDeploymentWalletsOperationsRequest interceptedRequest =
+                ListDeploymentWalletsOperationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentWalletsOperationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeploymentWalletsOperations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentWalletsOperationSummary/ListDeploymentWalletsOperations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDeploymentWalletsOperationsResponse>
+                transformer =
+                        ListDeploymentWalletsOperationsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

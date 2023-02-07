@@ -188,6 +188,184 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("setValues")
+        private HelmSetValueCollection setValues;
+
+        public Builder setValues(HelmSetValueCollection setValues) {
+            this.setValues = setValues;
+            this.__explicitlySet__.add("setValues");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("setString")
+        private HelmSetValueCollection setString;
+
+        public Builder setString(HelmSetValueCollection setString) {
+            this.setString = setString;
+            this.__explicitlySet__.add("setString");
+            return this;
+        }
+        /**
+         * Disable pre/post upgrade hooks. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("areHooksEnabled")
+        private Boolean areHooksEnabled;
+
+        /**
+         * Disable pre/post upgrade hooks. Set to false by default.
+         * @param areHooksEnabled the value to set
+         * @return this builder
+         **/
+        public Builder areHooksEnabled(Boolean areHooksEnabled) {
+            this.areHooksEnabled = areHooksEnabled;
+            this.__explicitlySet__.add("areHooksEnabled");
+            return this;
+        }
+        /**
+         * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldReuseValues")
+        private Boolean shouldReuseValues;
+
+        /**
+         * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+         * @param shouldReuseValues the value to set
+         * @return this builder
+         **/
+        public Builder shouldReuseValues(Boolean shouldReuseValues) {
+            this.shouldReuseValues = shouldReuseValues;
+            this.__explicitlySet__.add("shouldReuseValues");
+            return this;
+        }
+        /**
+         * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldResetValues")
+        private Boolean shouldResetValues;
+
+        /**
+         * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+         * @param shouldResetValues the value to set
+         * @return this builder
+         **/
+        public Builder shouldResetValues(Boolean shouldResetValues) {
+            this.shouldResetValues = shouldResetValues;
+            this.__explicitlySet__.add("shouldResetValues");
+            return this;
+        }
+        /**
+         * Force resource update through delete; or if required, recreate. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isForceEnabled")
+        private Boolean isForceEnabled;
+
+        /**
+         * Force resource update through delete; or if required, recreate. Set to false by default.
+         * @param isForceEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isForceEnabled(Boolean isForceEnabled) {
+            this.isForceEnabled = isForceEnabled;
+            this.__explicitlySet__.add("isForceEnabled");
+            return this;
+        }
+        /**
+         * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldCleanupOnFail")
+        private Boolean shouldCleanupOnFail;
+
+        /**
+         * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+         * @param shouldCleanupOnFail the value to set
+         * @return this builder
+         **/
+        public Builder shouldCleanupOnFail(Boolean shouldCleanupOnFail) {
+            this.shouldCleanupOnFail = shouldCleanupOnFail;
+            this.__explicitlySet__.add("shouldCleanupOnFail");
+            return this;
+        }
+        /**
+         * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxHistory")
+        private Integer maxHistory;
+
+        /**
+         * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+         * @param maxHistory the value to set
+         * @return this builder
+         **/
+        public Builder maxHistory(Integer maxHistory) {
+            this.maxHistory = maxHistory;
+            this.__explicitlySet__.add("maxHistory");
+            return this;
+        }
+        /**
+         * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipCrds")
+        private Boolean shouldSkipCrds;
+
+        /**
+         * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+         * @param shouldSkipCrds the value to set
+         * @return this builder
+         **/
+        public Builder shouldSkipCrds(Boolean shouldSkipCrds) {
+            this.shouldSkipCrds = shouldSkipCrds;
+            this.__explicitlySet__.add("shouldSkipCrds");
+            return this;
+        }
+        /**
+         * If set, renders subchart notes along with the parent. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipRenderSubchartNotes")
+        private Boolean shouldSkipRenderSubchartNotes;
+
+        /**
+         * If set, renders subchart notes along with the parent. Set to false by default.
+         * @param shouldSkipRenderSubchartNotes the value to set
+         * @return this builder
+         **/
+        public Builder shouldSkipRenderSubchartNotes(Boolean shouldSkipRenderSubchartNotes) {
+            this.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
+            this.__explicitlySet__.add("shouldSkipRenderSubchartNotes");
+            return this;
+        }
+        /**
+         * Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldNotWait")
+        private Boolean shouldNotWait;
+
+        /**
+         * Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+         * @param shouldNotWait the value to set
+         * @return this builder
+         **/
+        public Builder shouldNotWait(Boolean shouldNotWait) {
+            this.shouldNotWait = shouldNotWait;
+            this.__explicitlySet__.add("shouldNotWait");
+            return this;
+        }
+        /**
+         * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDebugEnabled")
+        private Boolean isDebugEnabled;
+
+        /**
+         * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+         * @param isDebugEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDebugEnabled(Boolean isDebugEnabled) {
+            this.isDebugEnabled = isDebugEnabled;
+            this.__explicitlySet__.add("isDebugEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -206,7 +384,19 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                             this.releaseName,
                             this.namespace,
                             this.timeoutInSeconds,
-                            this.rollbackPolicy);
+                            this.rollbackPolicy,
+                            this.setValues,
+                            this.setString,
+                            this.areHooksEnabled,
+                            this.shouldReuseValues,
+                            this.shouldResetValues,
+                            this.isForceEnabled,
+                            this.shouldCleanupOnFail,
+                            this.maxHistory,
+                            this.shouldSkipCrds,
+                            this.shouldSkipRenderSubchartNotes,
+                            this.shouldNotWait,
+                            this.isDebugEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -254,6 +444,42 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             if (model.wasPropertyExplicitlySet("rollbackPolicy")) {
                 this.rollbackPolicy(model.getRollbackPolicy());
             }
+            if (model.wasPropertyExplicitlySet("setValues")) {
+                this.setValues(model.getSetValues());
+            }
+            if (model.wasPropertyExplicitlySet("setString")) {
+                this.setString(model.getSetString());
+            }
+            if (model.wasPropertyExplicitlySet("areHooksEnabled")) {
+                this.areHooksEnabled(model.getAreHooksEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("shouldReuseValues")) {
+                this.shouldReuseValues(model.getShouldReuseValues());
+            }
+            if (model.wasPropertyExplicitlySet("shouldResetValues")) {
+                this.shouldResetValues(model.getShouldResetValues());
+            }
+            if (model.wasPropertyExplicitlySet("isForceEnabled")) {
+                this.isForceEnabled(model.getIsForceEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("shouldCleanupOnFail")) {
+                this.shouldCleanupOnFail(model.getShouldCleanupOnFail());
+            }
+            if (model.wasPropertyExplicitlySet("maxHistory")) {
+                this.maxHistory(model.getMaxHistory());
+            }
+            if (model.wasPropertyExplicitlySet("shouldSkipCrds")) {
+                this.shouldSkipCrds(model.getShouldSkipCrds());
+            }
+            if (model.wasPropertyExplicitlySet("shouldSkipRenderSubchartNotes")) {
+                this.shouldSkipRenderSubchartNotes(model.getShouldSkipRenderSubchartNotes());
+            }
+            if (model.wasPropertyExplicitlySet("shouldNotWait")) {
+                this.shouldNotWait(model.getShouldNotWait());
+            }
+            if (model.wasPropertyExplicitlySet("isDebugEnabled")) {
+                this.isDebugEnabled(model.getIsDebugEnabled());
+            }
             return this;
         }
     }
@@ -283,7 +509,19 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             String releaseName,
             String namespace,
             Integer timeoutInSeconds,
-            DeployStageRollbackPolicy rollbackPolicy) {
+            DeployStageRollbackPolicy rollbackPolicy,
+            HelmSetValueCollection setValues,
+            HelmSetValueCollection setString,
+            Boolean areHooksEnabled,
+            Boolean shouldReuseValues,
+            Boolean shouldResetValues,
+            Boolean isForceEnabled,
+            Boolean shouldCleanupOnFail,
+            Integer maxHistory,
+            Boolean shouldSkipCrds,
+            Boolean shouldSkipRenderSubchartNotes,
+            Boolean shouldNotWait,
+            Boolean isDebugEnabled) {
         super(
                 description,
                 displayName,
@@ -298,6 +536,18 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         this.namespace = namespace;
         this.timeoutInSeconds = timeoutInSeconds;
         this.rollbackPolicy = rollbackPolicy;
+        this.setValues = setValues;
+        this.setString = setString;
+        this.areHooksEnabled = areHooksEnabled;
+        this.shouldReuseValues = shouldReuseValues;
+        this.shouldResetValues = shouldResetValues;
+        this.isForceEnabled = isForceEnabled;
+        this.shouldCleanupOnFail = shouldCleanupOnFail;
+        this.maxHistory = maxHistory;
+        this.shouldSkipCrds = shouldSkipCrds;
+        this.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
+        this.shouldNotWait = shouldNotWait;
+        this.isDebugEnabled = isDebugEnabled;
     }
 
     /**
@@ -391,6 +641,160 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         return rollbackPolicy;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("setValues")
+    private final HelmSetValueCollection setValues;
+
+    public HelmSetValueCollection getSetValues() {
+        return setValues;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("setString")
+    private final HelmSetValueCollection setString;
+
+    public HelmSetValueCollection getSetString() {
+        return setString;
+    }
+
+    /**
+     * Disable pre/post upgrade hooks. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areHooksEnabled")
+    private final Boolean areHooksEnabled;
+
+    /**
+     * Disable pre/post upgrade hooks. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getAreHooksEnabled() {
+        return areHooksEnabled;
+    }
+
+    /**
+     * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldReuseValues")
+    private final Boolean shouldReuseValues;
+
+    /**
+     * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getShouldReuseValues() {
+        return shouldReuseValues;
+    }
+
+    /**
+     * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldResetValues")
+    private final Boolean shouldResetValues;
+
+    /**
+     * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getShouldResetValues() {
+        return shouldResetValues;
+    }
+
+    /**
+     * Force resource update through delete; or if required, recreate. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isForceEnabled")
+    private final Boolean isForceEnabled;
+
+    /**
+     * Force resource update through delete; or if required, recreate. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getIsForceEnabled() {
+        return isForceEnabled;
+    }
+
+    /**
+     * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldCleanupOnFail")
+    private final Boolean shouldCleanupOnFail;
+
+    /**
+     * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getShouldCleanupOnFail() {
+        return shouldCleanupOnFail;
+    }
+
+    /**
+     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxHistory")
+    private final Integer maxHistory;
+
+    /**
+     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     * @return the value
+     **/
+    public Integer getMaxHistory() {
+        return maxHistory;
+    }
+
+    /**
+     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipCrds")
+    private final Boolean shouldSkipCrds;
+
+    /**
+     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getShouldSkipCrds() {
+        return shouldSkipCrds;
+    }
+
+    /**
+     * If set, renders subchart notes along with the parent. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipRenderSubchartNotes")
+    private final Boolean shouldSkipRenderSubchartNotes;
+
+    /**
+     * If set, renders subchart notes along with the parent. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getShouldSkipRenderSubchartNotes() {
+        return shouldSkipRenderSubchartNotes;
+    }
+
+    /**
+     * Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldNotWait")
+    private final Boolean shouldNotWait;
+
+    /**
+     * Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getShouldNotWait() {
+        return shouldNotWait;
+    }
+
+    /**
+     * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDebugEnabled")
+    private final Boolean isDebugEnabled;
+
+    /**
+     * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     * @return the value
+     **/
+    public Boolean getIsDebugEnabled() {
+        return isDebugEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -414,6 +818,19 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
+        sb.append(", setValues=").append(String.valueOf(this.setValues));
+        sb.append(", setString=").append(String.valueOf(this.setString));
+        sb.append(", areHooksEnabled=").append(String.valueOf(this.areHooksEnabled));
+        sb.append(", shouldReuseValues=").append(String.valueOf(this.shouldReuseValues));
+        sb.append(", shouldResetValues=").append(String.valueOf(this.shouldResetValues));
+        sb.append(", isForceEnabled=").append(String.valueOf(this.isForceEnabled));
+        sb.append(", shouldCleanupOnFail=").append(String.valueOf(this.shouldCleanupOnFail));
+        sb.append(", maxHistory=").append(String.valueOf(this.maxHistory));
+        sb.append(", shouldSkipCrds=").append(String.valueOf(this.shouldSkipCrds));
+        sb.append(", shouldSkipRenderSubchartNotes=")
+                .append(String.valueOf(this.shouldSkipRenderSubchartNotes));
+        sb.append(", shouldNotWait=").append(String.valueOf(this.shouldNotWait));
+        sb.append(", isDebugEnabled=").append(String.valueOf(this.isDebugEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -437,6 +854,19 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
+                && java.util.Objects.equals(this.setValues, other.setValues)
+                && java.util.Objects.equals(this.setString, other.setString)
+                && java.util.Objects.equals(this.areHooksEnabled, other.areHooksEnabled)
+                && java.util.Objects.equals(this.shouldReuseValues, other.shouldReuseValues)
+                && java.util.Objects.equals(this.shouldResetValues, other.shouldResetValues)
+                && java.util.Objects.equals(this.isForceEnabled, other.isForceEnabled)
+                && java.util.Objects.equals(this.shouldCleanupOnFail, other.shouldCleanupOnFail)
+                && java.util.Objects.equals(this.maxHistory, other.maxHistory)
+                && java.util.Objects.equals(this.shouldSkipCrds, other.shouldSkipCrds)
+                && java.util.Objects.equals(
+                        this.shouldSkipRenderSubchartNotes, other.shouldSkipRenderSubchartNotes)
+                && java.util.Objects.equals(this.shouldNotWait, other.shouldNotWait)
+                && java.util.Objects.equals(this.isDebugEnabled, other.isDebugEnabled)
                 && super.equals(other);
     }
 
@@ -465,6 +895,40 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         result =
                 (result * PRIME)
                         + (this.rollbackPolicy == null ? 43 : this.rollbackPolicy.hashCode());
+        result = (result * PRIME) + (this.setValues == null ? 43 : this.setValues.hashCode());
+        result = (result * PRIME) + (this.setString == null ? 43 : this.setString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areHooksEnabled == null ? 43 : this.areHooksEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldReuseValues == null ? 43 : this.shouldReuseValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldResetValues == null ? 43 : this.shouldResetValues.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceEnabled == null ? 43 : this.isForceEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldCleanupOnFail == null
+                                ? 43
+                                : this.shouldCleanupOnFail.hashCode());
+        result = (result * PRIME) + (this.maxHistory == null ? 43 : this.maxHistory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldSkipCrds == null ? 43 : this.shouldSkipCrds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldSkipRenderSubchartNotes == null
+                                ? 43
+                                : this.shouldSkipRenderSubchartNotes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldNotWait == null ? 43 : this.shouldNotWait.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDebugEnabled == null ? 43 : this.isDebugEnabled.hashCode());
         return result;
     }
 }

@@ -158,6 +158,34 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
             this.__explicitlySet__.add("namespace");
             return this;
         }
+        /**
+         * Helm Diff output
+         * Example:
+         * Helm diff was successful
+         * data:
+         * - greeting: Version 1.0
+         * + greeting: Version 1.1
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("helmDiff")
+        private String helmDiff;
+
+        /**
+         * Helm Diff output
+         * Example:
+         * Helm diff was successful
+         * data:
+         * - greeting: Version 1.0
+         * + greeting: Version 1.1
+         *
+         * @param helmDiff the value to set
+         * @return this builder
+         **/
+        public Builder helmDiff(String helmDiff) {
+            this.helmDiff = helmDiff;
+            this.__explicitlySet__.add("helmDiff");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -175,7 +203,8 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
                             this.releaseName,
                             this.chartUrl,
                             this.version,
-                            this.namespace);
+                            this.namespace,
+                            this.helmDiff);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -218,6 +247,9 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
             if (model.wasPropertyExplicitlySet("namespace")) {
                 this.namespace(model.getNamespace());
             }
+            if (model.wasPropertyExplicitlySet("helmDiff")) {
+                this.helmDiff(model.getHelmDiff());
+            }
             return this;
         }
     }
@@ -245,7 +277,8 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
             String releaseName,
             String chartUrl,
             String version,
-            String namespace) {
+            String namespace,
+            String helmDiff) {
         super(
                 deployStageDisplayName,
                 deployStageId,
@@ -258,6 +291,7 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         this.chartUrl = chartUrl;
         this.version = version;
         this.namespace = namespace;
+        this.helmDiff = helmDiff;
     }
 
     /**
@@ -316,6 +350,32 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         return namespace;
     }
 
+    /**
+     * Helm Diff output
+     * Example:
+     * Helm diff was successful
+     * data:
+     * - greeting: Version 1.0
+     * + greeting: Version 1.1
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("helmDiff")
+    private final String helmDiff;
+
+    /**
+     * Helm Diff output
+     * Example:
+     * Helm diff was successful
+     * data:
+     * - greeting: Version 1.0
+     * + greeting: Version 1.1
+     *
+     * @return the value
+     **/
+    public String getHelmDiff() {
+        return helmDiff;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -334,6 +394,7 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         sb.append(", chartUrl=").append(String.valueOf(this.chartUrl));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", helmDiff=").append(String.valueOf(this.helmDiff));
         sb.append(")");
         return sb.toString();
     }
@@ -353,6 +414,7 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
                 && java.util.Objects.equals(this.chartUrl, other.chartUrl)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.helmDiff, other.helmDiff)
                 && super.equals(other);
     }
 
@@ -364,6 +426,7 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         result = (result * PRIME) + (this.chartUrl == null ? 43 : this.chartUrl.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.helmDiff == null ? 43 : this.helmDiff.hashCode());
         return result;
     }
 }
