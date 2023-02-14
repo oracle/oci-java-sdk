@@ -44,6 +44,28 @@ public class JwtClaimsSetTest {
         assertEquals("x509", jwt.getStringClaim("ttype"));
         assertNull(jwt.getStringClaim("foo"));
 
+        assertEquals("RS256", jwt.getHeader().get("alg"));
+        assertEquals(
+                "6C:33:C0:7A:01:17:3D:3A:D9:50:F3:3D:E1:7B:EC:A9:83:11:9C:57",
+                jwt.getPayload().get("fprint"));
+        assertEquals("instance", jwt.getPayload().get("ptype"));
+        assertEquals("oci", jwt.getPayload().get("aud"));
+        assertEquals(
+                "V1,ocid1.dynamicgroup.oc1..aaaaaaaa,3gmypvxxk2jx2znxh27r6wa5zhafblnvytbifljtj7d6nhsgd4ga,h5ew7eqj3qbgkiyy3mnthnxgto7hqbykwogo3bb4gufsgmkwuqfq",
+                jwt.getPayload().get("opc-tag"));
+        assertEquals("x509", jwt.getPayload().get("ttype"));
+        assertEquals(
+                "ocid1.instance.oc1.iad.anuwcljt46clddyc77t7pjsxqquqwhpndm7bruayfwe63fdrdeuo4ceok4pa",
+                jwt.getPayload().get("opc-instance"));
+        assertEquals(
+                "ocid1.tenancy.oc1..aaaaaaaak7qsj6ltfwek5cxl6xptznanr2kt7fxrbho7di3vchaf6m5apxeq",
+                jwt.getPayload().get("opc-tenant"));
+        assertEquals(new Date(1629970866L * 1000L), jwt.getPayload().get("exp"));
+        assertEquals(new Date(1629969666L * 1000L), jwt.getPayload().get("iat"));
+        // No key? assertEquals("1629969666", jwt.getPayload().get("key"));
+        assertEquals("authService.oracle.com", jwt.getPayload().get("iss"));
+        // No nbf? assertEquals(new Date(1629969666L*1000L), jwt.getPayload().get("nbf"));
+
         String jwk = jwt.getStringClaim("jwk");
         assertEquals(
                 "{\"kid\":\"6C:33:C0:7A:01:17:3D:3A:D9:50:F3:3D:E1:7B:EC:A9:83:11:9C:57\",\"n\":\"uck6w2NQDC0uytxSA2PVBFm8e1ECZmPIhDozp1UWcnR2TBSYA+CexWhTnK2++04comemU7AOU+wTjLVMFVKGyBYzUugPWEanluQTf7n5v7KznIGg6bBFSyGvS9IBT9eVUIPYthhPOy6g0XVQwDFrBjEtgB375TIhkSmQcdanYg92iUMoaX8dxs5KnRjTlLkTLZMHyfWnZWBsHKYsHd2wOMjP2yd2VGfo4bFMgEx+mNuqVLeAwuPftvnz1NIAjvqFzsnwfXmzj4q3Qi+GHanoBmHmrNWGnyLCLUojudVwrY6mkN5/lPaWi+m58nytg5W8Yaa24/rBlNGpdtHSxyD4Aw\",\"e\":\"AQAB\",\"kty\":\"RSA\",\"alg\":\"RS256\",\"use\":\"sig\"}",

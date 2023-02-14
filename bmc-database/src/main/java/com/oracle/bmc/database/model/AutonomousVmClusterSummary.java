@@ -49,9 +49,11 @@ public final class AutonomousVmClusterSummary
         "dataStorageSizeInTBs",
         "dataStorageSizeInGBs",
         "availableDataStorageSizeInTBs",
+        "nodeCount",
         "licenseModel",
         "freeformTags",
         "definedTags",
+        "dbServers",
         "reclaimableCpus",
         "availableContainerDatabases",
         "availableAutonomousDataStorageSizeInTBs",
@@ -86,9 +88,11 @@ public final class AutonomousVmClusterSummary
             Double dataStorageSizeInTBs,
             Double dataStorageSizeInGBs,
             Double availableDataStorageSizeInTBs,
+            Integer nodeCount,
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> dbServers,
             Integer reclaimableCpus,
             Integer availableContainerDatabases,
             Double availableAutonomousDataStorageSizeInTBs,
@@ -122,9 +126,11 @@ public final class AutonomousVmClusterSummary
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
         this.availableDataStorageSizeInTBs = availableDataStorageSizeInTBs;
+        this.nodeCount = nodeCount;
         this.licenseModel = licenseModel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.dbServers = dbServers;
         this.reclaimableCpus = reclaimableCpus;
         this.availableContainerDatabases = availableContainerDatabases;
         this.availableAutonomousDataStorageSizeInTBs = availableAutonomousDataStorageSizeInTBs;
@@ -561,6 +567,21 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("availableDataStorageSizeInTBs");
             return this;
         }
+        /** The number of nodes in the Autonomous VM Cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+        private Integer nodeCount;
+
+        /**
+         * The number of nodes in the Autonomous VM Cluster.
+         *
+         * @param nodeCount the value to set
+         * @return this builder
+         */
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = nodeCount;
+            this.__explicitlySet__.add("nodeCount");
+            return this;
+        }
         /**
          * The Oracle license model that applies to the Autonomous VM cluster. The default is
          * LICENSE_INCLUDED.
@@ -625,6 +646,27 @@ public final class AutonomousVmClusterSummary
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * servers.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * servers.
+         *
+         * @param dbServers the value to set
+         * @return this builder
+         */
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
             return this;
         }
         /**
@@ -767,9 +809,11 @@ public final class AutonomousVmClusterSummary
                             this.dataStorageSizeInTBs,
                             this.dataStorageSizeInGBs,
                             this.availableDataStorageSizeInTBs,
+                            this.nodeCount,
                             this.licenseModel,
                             this.freeformTags,
                             this.definedTags,
+                            this.dbServers,
                             this.reclaimableCpus,
                             this.availableContainerDatabases,
                             this.availableAutonomousDataStorageSizeInTBs,
@@ -862,6 +906,9 @@ public final class AutonomousVmClusterSummary
             if (model.wasPropertyExplicitlySet("availableDataStorageSizeInTBs")) {
                 this.availableDataStorageSizeInTBs(model.getAvailableDataStorageSizeInTBs());
             }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
@@ -870,6 +917,9 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
             }
             if (model.wasPropertyExplicitlySet("reclaimableCpus")) {
                 this.reclaimableCpus(model.getReclaimableCpus());
@@ -1372,6 +1422,19 @@ public final class AutonomousVmClusterSummary
         return availableDataStorageSizeInTBs;
     }
 
+    /** The number of nodes in the Autonomous VM Cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+    private final Integer nodeCount;
+
+    /**
+     * The number of nodes in the Autonomous VM Cluster.
+     *
+     * @return the value
+     */
+    public Integer getNodeCount() {
+        return nodeCount;
+    }
+
     /**
      * The Oracle license model that applies to the Autonomous VM cluster. The default is
      * LICENSE_INCLUDED.
@@ -1478,6 +1541,23 @@ public final class AutonomousVmClusterSummary
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the Db servers.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    private final java.util.List<String> dbServers;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the Db servers.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDbServers() {
+        return dbServers;
     }
 
     /**
@@ -1620,9 +1700,11 @@ public final class AutonomousVmClusterSummary
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", availableDataStorageSizeInTBs=")
                 .append(String.valueOf(this.availableDataStorageSizeInTBs));
+        sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", availableContainerDatabases=")
                 .append(String.valueOf(this.availableContainerDatabases));
@@ -1677,9 +1759,11 @@ public final class AutonomousVmClusterSummary
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
                 && java.util.Objects.equals(
                         this.availableDataStorageSizeInTBs, other.availableDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(
                         this.availableContainerDatabases, other.availableContainerDatabases)
@@ -1787,9 +1871,11 @@ public final class AutonomousVmClusterSummary
                         + (this.availableDataStorageSizeInTBs == null
                                 ? 43
                                 : this.availableDataStorageSizeInTBs.hashCode());
+        result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)
                         + (this.reclaimableCpus == null ? 43 : this.reclaimableCpus.hashCode());

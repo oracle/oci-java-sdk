@@ -26,10 +26,16 @@ package com.oracle.bmc.core.model;
 public final class ComputeInstanceDetails extends InstanceConfigurationInstanceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** Block volume parameters. */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumes")
         private java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes;
 
+        /**
+         * Block volume parameters.
+         *
+         * @param blockVolumes the value to set
+         * @return this builder
+         */
         public Builder blockVolumes(
                 java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes) {
             this.blockVolumes = blockVolumes;
@@ -45,10 +51,16 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
             this.__explicitlySet__.add("launchDetails");
             return this;
         }
-
+        /** Secondary VNIC parameters. */
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnics")
         private java.util.List<InstanceConfigurationAttachVnicDetails> secondaryVnics;
 
+        /**
+         * Secondary VNIC parameters.
+         *
+         * @param secondaryVnics the value to set
+         * @return this builder
+         */
         public Builder secondaryVnics(
                 java.util.List<InstanceConfigurationAttachVnicDetails> secondaryVnics) {
             this.secondaryVnics = secondaryVnics;
@@ -104,9 +116,15 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         this.secondaryVnics = secondaryVnics;
     }
 
+    /** Block volume parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumes")
     private final java.util.List<InstanceConfigurationBlockVolumeDetails> blockVolumes;
 
+    /**
+     * Block volume parameters.
+     *
+     * @return the value
+     */
     public java.util.List<InstanceConfigurationBlockVolumeDetails> getBlockVolumes() {
         return blockVolumes;
     }
@@ -118,9 +136,15 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         return launchDetails;
     }
 
+    /** Secondary VNIC parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnics")
     private final java.util.List<InstanceConfigurationAttachVnicDetails> secondaryVnics;
 
+    /**
+     * Secondary VNIC parameters.
+     *
+     * @return the value
+     */
     public java.util.List<InstanceConfigurationAttachVnicDetails> getSecondaryVnics() {
         return secondaryVnics;
     }

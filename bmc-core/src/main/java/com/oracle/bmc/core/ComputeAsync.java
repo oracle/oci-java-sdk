@@ -13,6 +13,9 @@ import com.oracle.bmc.core.responses.*;
  * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
  * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
  * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * The required permissions are documented in the [Details for the Core
+ * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * article.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ComputeAsync extends AutoCloseable {
@@ -279,23 +282,6 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateAppCatalogSubscriptionRequest,
                             CreateAppCatalogSubscriptionResponse>
-                    handler);
-
-    /**
-     * Generates a new compute capacity availability report for the availability domain. A compute
-     * capacity report lets you review capacity availability for the provided shapes.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<CreateComputeCapacityReportResponse> createComputeCapacityReport(
-            CreateComputeCapacityReportRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            CreateComputeCapacityReportRequest, CreateComputeCapacityReportResponse>
                     handler);
 
     /**
@@ -859,6 +845,11 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Gets information about the specified instance.
      *
+     * <p>*Note:** To retrieve public and private IP addresses for an instance, use the {@link
+     * #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments}
+     * operation to get the VNIC ID for the instance, and then call {@link #getVnic(GetVnicRequest,
+     * Consumer, Consumer) getVnic} with the VNIC ID.
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
@@ -888,7 +879,9 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the maximum possible date that a maintenance reboot can be extended.
+     * Gets the maximum possible date that a maintenance reboot can be extended. For more
+     * information, see [Infrastructure
+     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1011,7 +1004,8 @@ public interface ComputeAsync extends AutoCloseable {
      * Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
      *
      * <p>- **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers
-     * it back on.
+     * it back on. For more information, see [Infrastructure
+     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>For more information about managing instance lifecycle states, see [Stopping and Starting
      * an
@@ -1381,7 +1375,7 @@ public interface ComputeAsync extends AutoCloseable {
      * images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and [custom
      * images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * The list of platform images includes the three most recently published versions of each major
-     * distribution.
+     * distribution. The list does not support filtering based on image tags.
      *
      * <p>The list of images returned is ordered to first show the recent platform images, then all
      * of the custom images.
@@ -1444,6 +1438,11 @@ public interface ComputeAsync extends AutoCloseable {
      * Lists the instances in the specified compartment and the specified availability domain. You
      * can filter the results by specifying an instance name (the list will include all the
      * identically-named instances in the compartment).
+     *
+     * <p>*Note:** To retrieve public and private IP addresses for an instance, use the {@link
+     * #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments}
+     * operation to get the VNIC ID for the instance, and then call {@link #getVnic(GetVnicRequest,
+     * Consumer, Consumer) getVnic} with the VNIC ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1529,15 +1528,17 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Terminates the specified instance. Any attached VNICs and volumes are automatically detached
-     * when the instance terminates.
+     * Terminates (deletes) the specified instance. Any attached VNICs and volumes are automatically
+     * detached when the instance terminates.
      *
      * <p>To preserve the boot volume associated with the instance, specify `true` for
      * `PreserveBootVolumeQueryParam`. To delete the boot volume when the instance is deleted,
      * specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
      *
-     * <p>This is an asynchronous operation. The instance's `lifecycleState` will change to
-     * TERMINATING temporarily until the instance is completely removed.
+     * <p>This is an asynchronous operation. The instance's `lifecycleState` changes to TERMINATING
+     * temporarily until the instance is completely deleted. After the instance is deleted, the
+     * record remains visible in the list of instances with the state TERMINATED for at least 12
+     * hours, but no further action is needed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

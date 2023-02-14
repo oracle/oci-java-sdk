@@ -100,7 +100,7 @@ public class OciSaslClient implements SaslClient {
             // Get a new token for each new key exchange to prevent stale keys
             if (authProvider instanceof ConfigurableRefreshOnNotAuthenticatedProvider) {
                 ((ConfigurableRefreshOnNotAuthenticatedProvider<?>) authProvider)
-                        .refreshIfExpiringWithin(Duration.ofMinutes(5));
+                        .refreshIfExpiringWithin(Duration.ofMinutes(5), false);
             }
 
             if (currentPrivateKey != null) {

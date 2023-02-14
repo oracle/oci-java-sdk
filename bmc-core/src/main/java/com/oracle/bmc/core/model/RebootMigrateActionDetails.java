@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Parameters for the rebootMigrate {@link #instanceAction(InstanceActionRequest) instanceAction}.
- * <br>
+ * Parameters for the {@code rebootMigrate} {@link #instanceAction(InstanceActionRequest)
+ * instanceAction}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,21 +49,23 @@ public final class RebootMigrateActionDetails extends InstancePowerActionDetails
             return this;
         }
         /**
-         * If present, this parameter will set (or re-set) the scheduled time that the instance will
+         * If present, this parameter will set (or reset) the scheduled time that the instance will
          * be reboot migrated in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). This will also change the
-         * timeRebootMigrationDue field on the instance. If not present, the reboot migration will
-         * be triggered immediately.
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). This will also change the {@code
+         * timeMaintenanceRebootDue} field on the instance.
+         *
+         * <p>If not present, the reboot migration will be triggered immediately.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
-         * If present, this parameter will set (or re-set) the scheduled time that the instance will
+         * If present, this parameter will set (or reset) the scheduled time that the instance will
          * be reboot migrated in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). This will also change the
-         * timeRebootMigrationDue field on the instance. If not present, the reboot migration will
-         * be triggered immediately.
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). This will also change the {@code
+         * timeMaintenanceRebootDue} field on the instance.
+         *
+         * <p>If not present, the reboot migration will be triggered immediately.
          *
          * @param timeScheduled the value to set
          * @return this builder
@@ -134,19 +136,21 @@ public final class RebootMigrateActionDetails extends InstancePowerActionDetails
     }
 
     /**
-     * If present, this parameter will set (or re-set) the scheduled time that the instance will be
+     * If present, this parameter will set (or reset) the scheduled time that the instance will be
      * reboot migrated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This
-     * will also change the timeRebootMigrationDue field on the instance. If not present, the reboot
-     * migration will be triggered immediately.
+     * will also change the {@code timeMaintenanceRebootDue} field on the instance.
+     *
+     * <p>If not present, the reboot migration will be triggered immediately.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
-     * If present, this parameter will set (or re-set) the scheduled time that the instance will be
+     * If present, this parameter will set (or reset) the scheduled time that the instance will be
      * reboot migrated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This
-     * will also change the timeRebootMigrationDue field on the instance. If not present, the reboot
-     * migration will be triggered immediately.
+     * will also change the {@code timeMaintenanceRebootDue} field on the instance.
+     *
+     * <p>If not present, the reboot migration will be triggered immediately.
      *
      * @return the value
      */

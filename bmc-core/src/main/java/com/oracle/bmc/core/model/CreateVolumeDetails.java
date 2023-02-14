@@ -204,13 +204,13 @@ public final class CreateVolumeDetails
             return this;
         }
         /**
-         * The OCID of the Key Management key to assign as the master encryption key for the volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key to assign as the master encryption key for the volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the volume.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -591,12 +591,12 @@ public final class CreateVolumeDetails
         return freeformTags;
     }
 
-    /** The OCID of the Key Management key to assign as the master encryption key for the volume. */
+    /** The OCID of the Vault service key to assign as the master encryption key for the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key for the volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the volume.
      *
      * @return the value
      */

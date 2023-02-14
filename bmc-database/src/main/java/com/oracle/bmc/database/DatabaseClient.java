@@ -4197,6 +4197,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetAutonomousVirtualMachineResponse getAutonomousVirtualMachine(
+            GetAutonomousVirtualMachineRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousVirtualMachineId(),
+                "autonomousVirtualMachineId must not be blank");
+
+        return clientCall(request, GetAutonomousVirtualMachineResponse::builder)
+                .logger(LOG, "getAutonomousVirtualMachine")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousVirtualMachine",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVirtualMachine/GetAutonomousVirtualMachine")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousVirtualMachineRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVirtualMachines")
+                .appendPathParam(request.getAutonomousVirtualMachineId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousVirtualMachine.class,
+                        GetAutonomousVirtualMachineResponse.Builder::autonomousVirtualMachine)
+                .handleResponseHeaderString(
+                        "etag", GetAutonomousVirtualMachineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAutonomousVirtualMachineResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetAutonomousVmClusterResponse getAutonomousVmCluster(
             GetAutonomousVmClusterRequest request) {
 
@@ -6071,6 +6102,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAutonomousExadataInfrastructuresResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAutonomousVirtualMachinesResponse listAutonomousVirtualMachines(
+            ListAutonomousVirtualMachinesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId is required");
+
+        return clientCall(request, ListAutonomousVirtualMachinesResponse::builder)
+                .logger(LOG, "listAutonomousVirtualMachines")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousVirtualMachines",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVirtualMachine/ListAutonomousVirtualMachines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousVirtualMachinesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVirtualMachines")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("autonomousVmClusterId", request.getAutonomousVmClusterId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.AutonomousVirtualMachineSummary.class,
+                        ListAutonomousVirtualMachinesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousVirtualMachinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutonomousVirtualMachinesResponse.Builder::opcNextPage)
                 .callSync();
     }
 

@@ -1631,6 +1631,134 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAutonomousVirtualMachines operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAutonomousVirtualMachinesResponse>
+            listAutonomousVirtualMachinesResponseIterator(
+                    final ListAutonomousVirtualMachinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousVirtualMachinesRequest.Builder,
+                ListAutonomousVirtualMachinesRequest,
+                ListAutonomousVirtualMachinesResponse>(
+                new java.util.function.Supplier<ListAutonomousVirtualMachinesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousVirtualMachinesRequest.Builder get() {
+                        return ListAutonomousVirtualMachinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAutonomousVirtualMachinesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousVirtualMachinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousVirtualMachinesRequest.Builder>,
+                        ListAutonomousVirtualMachinesRequest>() {
+                    @Override
+                    public ListAutonomousVirtualMachinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousVirtualMachinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVirtualMachinesRequest,
+                        ListAutonomousVirtualMachinesResponse>() {
+                    @Override
+                    public ListAutonomousVirtualMachinesResponse apply(
+                            ListAutonomousVirtualMachinesRequest request) {
+                        return client.listAutonomousVirtualMachines(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.AutonomousVirtualMachineSummary} objects contained in responses
+     * from the listAutonomousVirtualMachines operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.AutonomousVirtualMachineSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousVirtualMachineSummary>
+            listAutonomousVirtualMachinesRecordIterator(
+                    final ListAutonomousVirtualMachinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousVirtualMachinesRequest.Builder,
+                ListAutonomousVirtualMachinesRequest,
+                ListAutonomousVirtualMachinesResponse,
+                com.oracle.bmc.database.model.AutonomousVirtualMachineSummary>(
+                new java.util.function.Supplier<ListAutonomousVirtualMachinesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousVirtualMachinesRequest.Builder get() {
+                        return ListAutonomousVirtualMachinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAutonomousVirtualMachinesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousVirtualMachinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousVirtualMachinesRequest.Builder>,
+                        ListAutonomousVirtualMachinesRequest>() {
+                    @Override
+                    public ListAutonomousVirtualMachinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousVirtualMachinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVirtualMachinesRequest,
+                        ListAutonomousVirtualMachinesResponse>() {
+                    @Override
+                    public ListAutonomousVirtualMachinesResponse apply(
+                            ListAutonomousVirtualMachinesRequest request) {
+                        return client.listAutonomousVirtualMachines(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousVirtualMachinesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.AutonomousVirtualMachineSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.AutonomousVirtualMachineSummary>
+                            apply(ListAutonomousVirtualMachinesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousVmClusters operation. This iterable will fetch more data from the server as
      * needed.
      *

@@ -221,7 +221,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             return securityTokenAdapter.getSecurityToken();
         }
 
-        return refreshAndGetSecurityTokenInner(true, Optional.empty());
+        return refreshAndGetSecurityTokenInner(true, Optional.empty(), true);
     }
 
     /**
@@ -232,17 +232,17 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
      */
     @Override
     public String getStringClaim(String key) {
-        refreshAndGetSecurityTokenInner(true, Optional.empty());
+        refreshAndGetSecurityTokenInner(true, Optional.empty(), true);
         return securityTokenAdapter.getStringClaim(key);
     }
 
     @Override
     public String refreshAndGetSecurityToken() {
-        return refreshAndGetSecurityTokenInner(false, Optional.empty());
+        return refreshAndGetSecurityTokenInner(false, Optional.empty(), true);
     }
 
     private String refreshAndGetSecurityTokenInner(
-            final boolean doFinalTokenValidityCheck, Optional<Duration> time) {
+            final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
         // Since this client will be used in a multi-threaded environment (from within a service
         // API),
         // this needs to be synchronized to make sure multiple calls are not updating the security
@@ -256,8 +256,11 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                     || (time.isPresent()
                             ? (!securityTokenAdapter.isValid(time))
                             : (!securityTokenAdapter.isValid()))) {
-                LOG.info("Refreshing session keys.");
-                sessionKeySupplier.refreshKeys();
+
+                if (refreshKeys) {
+                    LOG.info("Refreshing session keys.");
+                    sessionKeySupplier.refreshKeys();
+                }
 
                 if (leafCertificateSupplier instanceof Refreshable) {
                     try {
@@ -397,7 +400,12 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
 
     @Override
     public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
-        return refreshAndGetSecurityTokenInner(true, Optional.of(time));
+        return refreshAndGetSecurityTokenInner(true, Optional.of(time), true);
+    }
+
+    @Override
+    public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time, boolean refreshKeys) {
+        return refreshAndGetSecurityTokenInner(true, Optional.of(time), refreshKeys);
     }
 
     public X509CertificateSupplier getLeafCertificateSupplier() {

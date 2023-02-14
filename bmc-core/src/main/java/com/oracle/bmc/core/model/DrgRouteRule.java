@@ -88,8 +88,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The type of destination for the rule. the type is required if {@code direction} = {@code
-         * EGRESS}.
+         * The type of destination for the rule.
          *
          * <p>Allowed values:
          *
@@ -102,8 +101,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         private DestinationType destinationType;
 
         /**
-         * The type of destination for the rule. the type is required if {@code direction} = {@code
-         * EGRESS}.
+         * The type of destination for the rule.
          *
          * <p>Allowed values:
          *
@@ -349,8 +347,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The type of destination for the rule. the type is required if {@code direction} = {@code
-     * EGRESS}.
+     * The type of destination for the rule.
      *
      * <p>Allowed values:
      *
@@ -405,8 +402,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * The type of destination for the rule. the type is required if {@code direction} = {@code
-     * EGRESS}.
+     * The type of destination for the rule.
      *
      * <p>Allowed values:
      *
@@ -419,8 +415,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
     private final DestinationType destinationType;
 
     /**
-     * The type of destination for the rule. the type is required if {@code direction} = {@code
-     * EGRESS}.
+     * The type of destination for the rule.
      *
      * <p>Allowed values:
      *

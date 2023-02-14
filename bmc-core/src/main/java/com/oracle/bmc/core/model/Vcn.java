@@ -280,7 +280,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter. The value cannot be changed.
          *
          * <p>The absence of this parameter means the Internet and VCN Resolver will not work for
@@ -297,7 +297,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter. The value cannot be changed.
          *
          * <p>The absence of this parameter means the Internet and VCN Resolver will not work for
@@ -715,8 +715,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter. The value cannot be changed.
      *
      * <p>The absence of this parameter means the Internet and VCN Resolver will not work for this
      * VCN.
@@ -732,8 +732,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter. The value cannot be changed.
      *
      * <p>The absence of this parameter means the Internet and VCN Resolver will not work for this
      * VCN.

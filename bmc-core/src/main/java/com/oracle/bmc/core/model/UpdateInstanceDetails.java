@@ -372,11 +372,24 @@ public final class UpdateInstanceDetails
             return this;
         }
         /**
-         * The date and time the instance is expected to be stopped and restarted, in the format
-         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been
-         * rebooted after this date, Oracle reboots the instance within 24 hours of the time and
-         * date that maintenance is due. Regardless of how the instance is stopped, this flag is
-         * reset to empty as soon as the instance reaches Stopped state.
+         * For a VM instance, resets the scheduled time that the instance will be reboot migrated
+         * for infrastructure maintenance, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been rebooted
+         * after this date, Oracle reboots the instance within 24 hours of the time and date that
+         * maintenance is due.
+         *
+         * <p>To get the maximum possible date that a maintenance reboot can be extended, use {@link
+         * #getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootRequest)
+         * getInstanceMaintenanceReboot}.
+         *
+         * <p>Regardless of how the instance is stopped, this flag is reset to empty as soon as the
+         * instance reaches the Stopped state.
+         *
+         * <p>To reboot migrate a bare metal instance, use the {@link
+         * #instanceAction(InstanceActionRequest) instanceAction} operation.
+         *
+         * <p>For more information, see [Infrastructure
+         * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
          *
          * <p>Example: {@code 2018-05-25T21:10:29.600Z}
          */
@@ -384,11 +397,24 @@ public final class UpdateInstanceDetails
         private java.util.Date timeMaintenanceRebootDue;
 
         /**
-         * The date and time the instance is expected to be stopped and restarted, in the format
-         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been
-         * rebooted after this date, Oracle reboots the instance within 24 hours of the time and
-         * date that maintenance is due. Regardless of how the instance is stopped, this flag is
-         * reset to empty as soon as the instance reaches Stopped state.
+         * For a VM instance, resets the scheduled time that the instance will be reboot migrated
+         * for infrastructure maintenance, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been rebooted
+         * after this date, Oracle reboots the instance within 24 hours of the time and date that
+         * maintenance is due.
+         *
+         * <p>To get the maximum possible date that a maintenance reboot can be extended, use {@link
+         * #getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootRequest)
+         * getInstanceMaintenanceReboot}.
+         *
+         * <p>Regardless of how the instance is stopped, this flag is reset to empty as soon as the
+         * instance reaches the Stopped state.
+         *
+         * <p>To reboot migrate a bare metal instance, use the {@link
+         * #instanceAction(InstanceActionRequest) instanceAction} operation.
+         *
+         * <p>For more information, see [Infrastructure
+         * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
          *
          * <p>Example: {@code 2018-05-25T21:10:29.600Z}
          *
@@ -754,11 +780,24 @@ public final class UpdateInstanceDetails
     }
 
     /**
-     * The date and time the instance is expected to be stopped and restarted, in the format defined
-     * by [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been rebooted after
+     * For a VM instance, resets the scheduled time that the instance will be reboot migrated for
+     * infrastructure maintenance, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been rebooted after
      * this date, Oracle reboots the instance within 24 hours of the time and date that maintenance
-     * is due. Regardless of how the instance is stopped, this flag is reset to empty as soon as the
-     * instance reaches Stopped state.
+     * is due.
+     *
+     * <p>To get the maximum possible date that a maintenance reboot can be extended, use {@link
+     * #getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootRequest)
+     * getInstanceMaintenanceReboot}.
+     *
+     * <p>Regardless of how the instance is stopped, this flag is reset to empty as soon as the
+     * instance reaches the Stopped state.
+     *
+     * <p>To reboot migrate a bare metal instance, use the {@link
+     * #instanceAction(InstanceActionRequest) instanceAction} operation.
+     *
+     * <p>For more information, see [Infrastructure
+     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>Example: {@code 2018-05-25T21:10:29.600Z}
      */
@@ -766,11 +805,24 @@ public final class UpdateInstanceDetails
     private final java.util.Date timeMaintenanceRebootDue;
 
     /**
-     * The date and time the instance is expected to be stopped and restarted, in the format defined
-     * by [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been rebooted after
+     * For a VM instance, resets the scheduled time that the instance will be reboot migrated for
+     * infrastructure maintenance, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). If the instance hasn't been rebooted after
      * this date, Oracle reboots the instance within 24 hours of the time and date that maintenance
-     * is due. Regardless of how the instance is stopped, this flag is reset to empty as soon as the
-     * instance reaches Stopped state.
+     * is due.
+     *
+     * <p>To get the maximum possible date that a maintenance reboot can be extended, use {@link
+     * #getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootRequest)
+     * getInstanceMaintenanceReboot}.
+     *
+     * <p>Regardless of how the instance is stopped, this flag is reset to empty as soon as the
+     * instance reaches the Stopped state.
+     *
+     * <p>To reboot migrate a bare metal instance, use the {@link
+     * #instanceAction(InstanceActionRequest) instanceAction} operation.
+     *
+     * <p>For more information, see [Infrastructure
+     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>Example: {@code 2018-05-25T21:10:29.600Z}
      *

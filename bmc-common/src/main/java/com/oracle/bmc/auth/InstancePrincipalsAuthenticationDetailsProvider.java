@@ -64,9 +64,14 @@ public class InstancePrincipalsAuthenticationDetailsProvider
 
     @Override
     public String refreshIfExpiringWithin(Duration time) {
+        return refreshIfExpiringWithin(time, true);
+    }
+
+    @Override
+    public String refreshIfExpiringWithin(Duration time, boolean refreshKeys) {
         if (this.federationClient instanceof ProvidesConfigurableRefresh) {
             return ((ProvidesConfigurableRefresh) this.federationClient)
-                    .refreshAndGetSecurityTokenIfExpiringWithin(time);
+                    .refreshAndGetSecurityTokenIfExpiringWithin(time, refreshKeys);
         }
         return this.federationClient.refreshAndGetSecurityToken();
     }

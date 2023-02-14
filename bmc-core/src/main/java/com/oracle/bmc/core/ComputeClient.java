@@ -360,6 +360,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeComputeImageCapabilitySchemaCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -431,6 +432,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", ChangeImageCompartmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeImageCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -498,35 +500,6 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateAppCatalogSubscriptionResponse.Builder::opcRequestId)
-                .callSync();
-    }
-
-    @Override
-    public CreateComputeCapacityReportResponse createComputeCapacityReport(
-            CreateComputeCapacityReportRequest request) {
-        Objects.requireNonNull(
-                request.getCreateComputeCapacityReportDetails(),
-                "createComputeCapacityReportDetails is required");
-
-        return clientCall(request, CreateComputeCapacityReportResponse::builder)
-                .logger(LOG, "createComputeCapacityReport")
-                .serviceDetails(
-                        "Compute",
-                        "CreateComputeCapacityReport",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReport/CreateComputeCapacityReport")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateComputeCapacityReportRequest::builder)
-                .basePath("/20160918")
-                .appendPathParam("computeCapacityReports")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.core.model.ComputeCapacityReport.class,
-                        CreateComputeCapacityReportResponse.Builder::computeCapacityReport)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateComputeCapacityReportResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -595,6 +568,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -655,6 +629,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", CreateImageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateImageResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -968,6 +943,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id", ExportImageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ExportImageResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -994,6 +970,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", GetAppCatalogListingResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAppCatalogListingResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1029,6 +1006,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAppCatalogListingAgreementsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1063,6 +1041,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetAppCatalogListingResourceVersionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1154,6 +1133,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeGlobalImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1193,6 +1173,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1226,6 +1207,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeImageCapabilitySchemaResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1337,6 +1319,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString("etag", GetImageResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetImageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1370,6 +1353,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetImageShapeCompatibilityEntryResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1657,6 +1641,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListAppCatalogListingResourceVersionsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1688,6 +1673,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListAppCatalogListingsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAppCatalogListingsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1720,6 +1706,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListAppCatalogSubscriptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAppCatalogSubscriptionsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1909,6 +1896,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-request-id",
                         ListComputeGlobalImageCapabilitySchemaVersionsResponse.Builder
                                 ::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1942,6 +1930,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListComputeGlobalImageCapabilitySchemasResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1976,6 +1965,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListComputeImageCapabilitySchemasResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2188,6 +2178,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ListImageShapeCompatibilityEntriesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2222,6 +2213,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                         "opc-next-page", ListImagesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListImagesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

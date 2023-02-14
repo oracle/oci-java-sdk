@@ -213,10 +213,8 @@ public class CreateInstanceConfigurationBase
      * <p>The following values are supported:
      *
      * <p>{@code NONE}: Creates an instance configuration using the list of settings that you
-     * specify.
-     *
-     * <p>{@code INSTANCE}: Creates an instance configuration using an existing instance as a
-     * template.
+     * specify. * {@code INSTANCE}: Creates an instance configuration using an existing instance as
+     * a template.
      */
     public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),

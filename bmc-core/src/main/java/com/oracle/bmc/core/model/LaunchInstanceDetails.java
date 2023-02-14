@@ -174,12 +174,12 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("createVnicDetails");
             return this;
         }
-        /** The OCID of the dedicated VM host. */
+        /** The OCID of the dedicated virtual machine host to place the instance on. */
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
         private String dedicatedVmHostId;
 
         /**
-         * The OCID of the dedicated VM host.
+         * The OCID of the dedicated virtual machine host to place the instance on.
          *
          * @param dedicatedVmHostId the value to set
          * @return this builder
@@ -870,12 +870,12 @@ public final class LaunchInstanceDetails
         return createVnicDetails;
     }
 
-    /** The OCID of the dedicated VM host. */
+    /** The OCID of the dedicated virtual machine host to place the instance on. */
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
     private final String dedicatedVmHostId;
 
     /**
-     * The OCID of the dedicated VM host.
+     * The OCID of the dedicated virtual machine host to place the instance on.
      *
      * @return the value
      */
