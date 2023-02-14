@@ -213,8 +213,7 @@ public class CreateInstanceConfigurationBase
      * The following values are supported:
      * <p>
      * {@code NONE}: Creates an instance configuration using the list of settings that you specify.
-     * <p>
-     * {@code INSTANCE}: Creates an instance configuration using an existing instance as a template.
+     * * {@code INSTANCE}: Creates an instance configuration using an existing instance as a template.
      *
      **/
     public enum Source {

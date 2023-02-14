@@ -418,13 +418,13 @@ public final class BootVolume extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The OCID of the Key Management master encryption key assigned to the boot volume.
+         * The OCID of the Vault service master encryption key assigned to the boot volume.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management master encryption key assigned to the boot volume.
+         * The OCID of the Vault service master encryption key assigned to the boot volume.
          * @param kmsKeyId the value to set
          * @return this builder
          **/
@@ -956,13 +956,13 @@ public final class BootVolume extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The OCID of the Key Management master encryption key assigned to the boot volume.
+     * The OCID of the Vault service master encryption key assigned to the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management master encryption key assigned to the boot volume.
+     * The OCID of the Vault service master encryption key assigned to the boot volume.
      * @return the value
      **/
     public String getKmsKeyId() {

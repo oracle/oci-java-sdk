@@ -50,8 +50,8 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
-import java.util.List;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -81,7 +81,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
 
     /**
-     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, CircuitBreakerConfiguration, String)}
+     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, String)}
      * but with 'purpose' set to {@link #DEFAULT_PURPOSE}.
      */
     public X509FederationClient(
@@ -111,7 +111,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
      * @param tenancyId the tenancy id, to construct the key id
      * @param leafCertificateSupplier the leaf certificate, used to identify the caller
      * @param sessionKeySupplier the temporary public key, whose corresponding private key will be used to sign actual API calls
-     * @param intermediateCertificateSuppliers intermediate certificates, if there is any
+     * @param intermediateCertificateSuppliers intermediate certificates, if there are any (else null)
      * @param clientConfigurator client configurator used to configure the federation rest client, if any (else null)
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param purpose The purpose that will be configured for each request.
@@ -159,7 +159,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             return securityTokenAdapter.getSecurityToken();
         }
 
-        return refreshAndGetSecurityTokenInner(true, Optional.empty());
+        return refreshAndGetSecurityTokenInner(true, Optional.empty(), true);
     }
 
     /**
@@ -169,17 +169,17 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
      */
     @Override
     public String getStringClaim(String key) {
-        refreshAndGetSecurityTokenInner(true, Optional.empty());
+        refreshAndGetSecurityTokenInner(true, Optional.empty(), true);
         return securityTokenAdapter.getStringClaim(key);
     }
 
     @Override
     public String refreshAndGetSecurityToken() {
-        return refreshAndGetSecurityTokenInner(false, Optional.empty());
+        return refreshAndGetSecurityTokenInner(false, Optional.empty(), true);
     }
 
     private String refreshAndGetSecurityTokenInner(
-            final boolean doFinalTokenValidityCheck, Optional<Duration> time) {
+            final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
         // Since this client will be used in a multi-threaded environment (from within a service API),
         // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
         // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
@@ -190,9 +190,10 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                     || (time.isPresent()
                             ? (!securityTokenAdapter.isValid(time))
                             : (!securityTokenAdapter.isValid()))) {
-                LOG.info("Refreshing session keys.");
-                sessionKeySupplier.refreshKeys();
-
+                if (refreshKeys) {
+                    LOG.info("Refreshing session keys.");
+                    sessionKeySupplier.refreshKeys();
+                }
                 if (leafCertificateSupplier instanceof Refreshable) {
                     try {
                         ((Refreshable) leafCertificateSupplier).refresh();
@@ -229,7 +230,6 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                         }
                     }
                 }
-
                 securityTokenAdapter = getSecurityTokenFromServer();
                 return securityTokenAdapter.getSecurityToken();
             }
@@ -260,7 +260,6 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         if (certificateAndKeyPair == null) {
             throw new IllegalArgumentException("Certificate and key pair are not present");
         }
-
         X509Certificate leafCertificate = certificateAndKeyPair.getCertificate();
         if (leafCertificate == null) {
             throw new IllegalArgumentException("Leaf certificate is not present");
@@ -291,6 +290,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
             }
 
             // Create the request body to be sent to the auth service
+            // TODO: authorizedTenancyIds will eventually be added to the payload
             X509FederationRequest federationRequest =
                     new X509FederationRequest(
                             AuthUtils.base64EncodeNoChunking(publicKey),
@@ -343,7 +343,12 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
 
     @Override
     public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
-        return refreshAndGetSecurityTokenInner(false, Optional.of(time));
+        return refreshAndGetSecurityTokenIfExpiringWithin(time, true);
+    }
+
+    @Override
+    public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time, boolean refreshKeys) {
+        return refreshAndGetSecurityTokenInner(true, Optional.of(time), refreshKeys);
     }
 
     public X509CertificateSupplier getLeafCertificateSupplier() {

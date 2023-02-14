@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.53.0 - 2023-02-14
+### Added
+- Support for the Visual Builder Studio service
+- Support for the Autonomous Recovery service
+- Support for selecting specific database servers when creating autonomous VM clusters in the Database service
+- Support for creating autonomous VMs during the creation of autonomous VM clusters in the Database service
+
+### Breaking Changes
+- Support for retries by default on operations of the Compute service
+
 ## 2.52.0 - 2023-02-07
 ### Added
 - Support for changing Data Guard role of a database instance within the Database service

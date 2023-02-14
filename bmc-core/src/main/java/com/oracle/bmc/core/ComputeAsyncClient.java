@@ -1101,63 +1101,6 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<CreateComputeCapacityReportResponse>
-            createComputeCapacityReport(
-                    CreateComputeCapacityReportRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateComputeCapacityReportRequest,
-                                    CreateComputeCapacityReportResponse>
-                            handler) {
-        LOG.trace("Called async createComputeCapacityReport");
-        final CreateComputeCapacityReportRequest interceptedRequest =
-                CreateComputeCapacityReportConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateComputeCapacityReportConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Compute",
-                        "CreateComputeCapacityReport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReport/CreateComputeCapacityReport");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateComputeCapacityReportResponse>
-                transformer =
-                        CreateComputeCapacityReportConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateComputeCapacityReportRequest, CreateComputeCapacityReportResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateComputeCapacityReportRequest,
-                                CreateComputeCapacityReportResponse>,
-                        java.util.concurrent.Future<CreateComputeCapacityReportResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateComputeCapacityReportDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateComputeCapacityReportRequest, CreateComputeCapacityReportResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<CreateComputeCapacityReservationResponse>
             createComputeCapacityReservation(
                     CreateComputeCapacityReservationRequest request,

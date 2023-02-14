@@ -49,8 +49,8 @@ public abstract class AbstractFederationClient
     protected final String resourcePrincipalTokenEndpoint;
     protected final String federationEndpoint;
 
-    private ClientConfiguration clientConfiguration = null;
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
+    ClientConfiguration clientConfiguration = null;
     protected final RestClient restClient;
 
     /**
@@ -87,7 +87,6 @@ public abstract class AbstractFederationClient
                             .circuitBreakerConfiguration(circuitBreakerConfiguration)
                             .build();
         }
-
         RestClientFactory restClientFactory =
                 RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
         this.restClient =
@@ -109,7 +108,7 @@ public abstract class AbstractFederationClient
             return securityTokenAdapter.getSecurityToken();
         }
 
-        return refreshAndGetSecurityTokenInner(true, Optional.empty());
+        return refreshAndGetSecurityTokenInner(true, Optional.empty(), true);
     }
 
     /**
@@ -120,18 +119,33 @@ public abstract class AbstractFederationClient
      */
     @Override
     public String refreshAndGetSecurityToken() {
-        return refreshAndGetSecurityTokenInner(false, Optional.empty());
+        return refreshAndGetSecurityTokenInner(false, Optional.empty(), true);
     }
 
     /**
-     * Gets a security token from the federation endpoint. This will always retrieve
-     * a new token from the federation endpoint and does not use a cached token.
+     * Gets a security token from the federation endpoint if the security token expires within the provided duration
+     * and allows to enable/disable refresh of keys. This will always retrieve a new token from the federation endpoint
+     * and does not use a cached token.
      *
+     * @param time the duration to check
+     * @param refreshKeys boolean value to enable/disable refresh of keys
+     * @return A security token that can be used to authenticate requests.
+     */
+    @Override
+    public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time, boolean refreshKeys) {
+        return refreshAndGetSecurityTokenInner(true, Optional.of(time), refreshKeys);
+    }
+
+    /**
+     * Gets a security token from the federation endpoint if the security token expires within the provided duration.
+     * This will always retrieve a new token from the federation endpoint and does not use a cached token.
+     *
+     * @param time the duration to check
      * @return A security token that can be used to authenticate requests.
      */
     @Override
     public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
-        return refreshAndGetSecurityTokenInner(false, Optional.of(time));
+        return refreshAndGetSecurityTokenInner(true, Optional.of(time), true);
     }
 
     protected Response makeCall(
@@ -153,7 +167,7 @@ public abstract class AbstractFederationClient
     }
 
     private String refreshAndGetSecurityTokenInner(
-            final boolean doFinalTokenValidityCheck, Optional<Duration> time) {
+            final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
         // Since this client will be used in a multi-threaded environment (from within a service API),
         // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
         // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
@@ -164,8 +178,10 @@ public abstract class AbstractFederationClient
                     || (time.isPresent()
                             ? (!securityTokenAdapter.isValid(time))
                             : (!securityTokenAdapter.isValid()))) {
-                LOG.info("Refreshing session keys.");
-                sessionKeySupplier.refreshKeys();
+                if (refreshKeys) {
+                    LOG.info("Refreshing session keys.");
+                    sessionKeySupplier.refreshKeys();
+                }
 
                 securityTokenAdapter = getSecurityTokenFromServer();
                 return securityTokenAdapter.getSecurityToken();

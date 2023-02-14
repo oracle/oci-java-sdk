@@ -29,6 +29,8 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
         "vmClusterIds",
+        "autonomousVmClusterIds",
+        "autonomousVirtualMachineIds",
         "dbNodeIds",
         "shape",
         "lifecycleState",
@@ -50,6 +52,8 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
             java.util.List<String> vmClusterIds,
+            java.util.List<String> autonomousVmClusterIds,
+            java.util.List<String> autonomousVirtualMachineIds,
             java.util.List<String> dbNodeIds,
             String shape,
             LifecycleState lifecycleState,
@@ -70,6 +74,8 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.vmClusterIds = vmClusterIds;
+        this.autonomousVmClusterIds = autonomousVmClusterIds;
+        this.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
         this.dbNodeIds = dbNodeIds;
         this.shape = shape;
         this.lifecycleState = lifecycleState;
@@ -213,6 +219,43 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder vmClusterIds(java.util.List<String> vmClusterIds) {
             this.vmClusterIds = vmClusterIds;
             this.__explicitlySet__.add("vmClusterIds");
+            return this;
+        }
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
+        private java.util.List<String> autonomousVmClusterIds;
+
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+         *
+         * @param autonomousVmClusterIds the value to set
+         * @return this builder
+         **/
+        public Builder autonomousVmClusterIds(java.util.List<String> autonomousVmClusterIds) {
+            this.autonomousVmClusterIds = autonomousVmClusterIds;
+            this.__explicitlySet__.add("autonomousVmClusterIds");
+            return this;
+        }
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
+        private java.util.List<String> autonomousVirtualMachineIds;
+
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+         *
+         * @param autonomousVirtualMachineIds the value to set
+         * @return this builder
+         **/
+        public Builder autonomousVirtualMachineIds(
+                java.util.List<String> autonomousVirtualMachineIds) {
+            this.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
+            this.__explicitlySet__.add("autonomousVirtualMachineIds");
             return this;
         }
         /**
@@ -416,6 +459,8 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
                             this.vmClusterIds,
+                            this.autonomousVmClusterIds,
+                            this.autonomousVirtualMachineIds,
                             this.dbNodeIds,
                             this.shape,
                             this.lifecycleState,
@@ -458,6 +503,12 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("vmClusterIds")) {
                 this.vmClusterIds(model.getVmClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousVmClusterIds")) {
+                this.autonomousVmClusterIds(model.getAutonomousVmClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousVirtualMachineIds")) {
+                this.autonomousVirtualMachineIds(model.getAutonomousVirtualMachineIds());
             }
             if (model.wasPropertyExplicitlySet("dbNodeIds")) {
                 this.dbNodeIds(model.getDbNodeIds());
@@ -619,6 +670,38 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
      **/
     public java.util.List<String> getVmClusterIds() {
         return vmClusterIds;
+    }
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
+    private final java.util.List<String> autonomousVmClusterIds;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getAutonomousVmClusterIds() {
+        return autonomousVmClusterIds;
+    }
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
+    private final java.util.List<String> autonomousVirtualMachineIds;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getAutonomousVirtualMachineIds() {
+        return autonomousVirtualMachineIds;
     }
 
     /**
@@ -859,6 +942,9 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", vmClusterIds=").append(String.valueOf(this.vmClusterIds));
+        sb.append(", autonomousVmClusterIds=").append(String.valueOf(this.autonomousVmClusterIds));
+        sb.append(", autonomousVirtualMachineIds=")
+                .append(String.valueOf(this.autonomousVirtualMachineIds));
         sb.append(", dbNodeIds=").append(String.valueOf(this.dbNodeIds));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -895,6 +981,10 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
                 && java.util.Objects.equals(this.vmClusterIds, other.vmClusterIds)
+                && java.util.Objects.equals(
+                        this.autonomousVmClusterIds, other.autonomousVmClusterIds)
+                && java.util.Objects.equals(
+                        this.autonomousVirtualMachineIds, other.autonomousVirtualMachineIds)
                 && java.util.Objects.equals(this.dbNodeIds, other.dbNodeIds)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -934,6 +1024,16 @@ public final class DbServerSummary extends com.oracle.bmc.http.internal.Explicit
                                 ? 43
                                 : this.dbNodeStorageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.vmClusterIds == null ? 43 : this.vmClusterIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousVmClusterIds == null
+                                ? 43
+                                : this.autonomousVmClusterIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousVirtualMachineIds == null
+                                ? 43
+                                : this.autonomousVirtualMachineIds.hashCode());
         result = (result * PRIME) + (this.dbNodeIds == null ? 43 : this.dbNodeIds.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =

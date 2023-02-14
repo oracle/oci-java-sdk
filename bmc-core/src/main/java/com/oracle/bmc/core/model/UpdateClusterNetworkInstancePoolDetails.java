@@ -135,12 +135,14 @@ public final class UpdateClusterNetworkInstancePoolDetails
         }
         /**
          * The number of instances that should be in the instance pool.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
 
         /**
          * The number of instances that should be in the instance pool.
+         *
          * @param size the value to set
          * @return this builder
          **/
@@ -299,12 +301,14 @@ public final class UpdateClusterNetworkInstancePoolDetails
 
     /**
      * The number of instances that should be in the instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Integer size;
 
     /**
      * The number of instances that should be in the instance pool.
+     *
      * @return the value
      **/
     public Integer getSize() {

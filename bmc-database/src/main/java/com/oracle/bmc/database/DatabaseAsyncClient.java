@@ -6787,6 +6787,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutonomousVirtualMachineResponse>
+            getAutonomousVirtualMachine(
+                    GetAutonomousVirtualMachineRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousVirtualMachineRequest,
+                                    GetAutonomousVirtualMachineResponse>
+                            handler) {
+        LOG.trace("Called async getAutonomousVirtualMachine");
+        final GetAutonomousVirtualMachineRequest interceptedRequest =
+                GetAutonomousVirtualMachineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousVirtualMachineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetAutonomousVirtualMachine",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVirtualMachine/GetAutonomousVirtualMachine");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAutonomousVirtualMachineResponse>
+                transformer =
+                        GetAutonomousVirtualMachineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutonomousVirtualMachineRequest, GetAutonomousVirtualMachineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAutonomousVirtualMachineRequest,
+                                GetAutonomousVirtualMachineResponse>,
+                        java.util.concurrent.Future<GetAutonomousVirtualMachineResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAutonomousVirtualMachineRequest, GetAutonomousVirtualMachineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutonomousVmClusterResponse> getAutonomousVmCluster(
             GetAutonomousVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9701,6 +9752,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAutonomousExadataInfrastructuresRequest,
                     ListAutonomousExadataInfrastructuresResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutonomousVirtualMachinesResponse>
+            listAutonomousVirtualMachines(
+                    ListAutonomousVirtualMachinesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousVirtualMachinesRequest,
+                                    ListAutonomousVirtualMachinesResponse>
+                            handler) {
+        LOG.trace("Called async listAutonomousVirtualMachines");
+        final ListAutonomousVirtualMachinesRequest interceptedRequest =
+                ListAutonomousVirtualMachinesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousVirtualMachinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousVirtualMachines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVirtualMachine/ListAutonomousVirtualMachines");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAutonomousVirtualMachinesResponse>
+                transformer =
+                        ListAutonomousVirtualMachinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutonomousVirtualMachinesRequest, ListAutonomousVirtualMachinesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAutonomousVirtualMachinesRequest,
+                                ListAutonomousVirtualMachinesResponse>,
+                        java.util.concurrent.Future<ListAutonomousVirtualMachinesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAutonomousVirtualMachinesRequest, ListAutonomousVirtualMachinesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

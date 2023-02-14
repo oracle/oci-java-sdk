@@ -197,7 +197,7 @@ public final class CreateBootVolumeDetails
             return this;
         }
         /**
-         * The OCID of the Key Management key to assign as the master encryption key
+         * The OCID of the Vault service key to assign as the master encryption key
          * for the boot volume.
          *
          **/
@@ -205,7 +205,7 @@ public final class CreateBootVolumeDetails
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key to assign as the master encryption key
+         * The OCID of the Vault service key to assign as the master encryption key
          * for the boot volume.
          *
          * @param kmsKeyId the value to set
@@ -537,7 +537,7 @@ public final class CreateBootVolumeDetails
     }
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key
+     * The OCID of the Vault service key to assign as the master encryption key
      * for the boot volume.
      *
      **/
@@ -545,7 +545,7 @@ public final class CreateBootVolumeDetails
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key
+     * The OCID of the Vault service key to assign as the master encryption key
      * for the boot volume.
      *
      * @return the value

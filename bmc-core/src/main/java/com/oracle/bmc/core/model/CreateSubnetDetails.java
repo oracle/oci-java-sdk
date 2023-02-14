@@ -228,7 +228,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
          * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
          * The value cannot be changed.
          * <p>
@@ -248,7 +248,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
          * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
          * The value cannot be changed.
          * <p>
@@ -714,7 +714,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
      * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
      * The value cannot be changed.
      * <p>
@@ -734,7 +734,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
      * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
      * The value cannot be changed.
      * <p>
