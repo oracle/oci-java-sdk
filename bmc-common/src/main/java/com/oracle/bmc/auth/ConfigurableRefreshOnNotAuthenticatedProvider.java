@@ -21,8 +21,19 @@ public interface ConfigurableRefreshOnNotAuthenticatedProvider<T> {
 
     /**
      * Refreshes the authentication data used by the provider
-     *
+     * if the token is expiring within the provided duration
+     * @param time the duration to check
      * @return the refreshed authentication data
      */
     T refreshIfExpiringWithin(Duration time);
+
+    /**
+     * Refreshes the authentication data used by the provider
+     * if the token is expiring within the provided duration and
+     * allows to enable/disable refresh of keys
+     * @param time the duration to check
+     * @param refreshKeys boolean value to enable/disable refresh of keys
+     * @return the refreshed authentication data
+     */
+    T refreshIfExpiringWithin(Duration time, boolean refreshKeys);
 }

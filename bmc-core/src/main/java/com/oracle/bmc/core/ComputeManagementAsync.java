@@ -13,6 +13,8 @@ import com.oracle.bmc.core.responses.*;
  * documentation for the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
  * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
  * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * The required permissions are documented in the
+ * [Details for the Core Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -208,7 +210,8 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create an instance pool.
+     * Creates an instance pool.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -356,11 +359,11 @@ public interface ComputeManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Launches an instance from an instance configuration.
+     * Creates an instance from an instance configuration.
      * <p>
      * If the instance configuration does not include all of the parameters that are
-     * required to launch an instance, such as the availability domain and subnet ID, you must
-     * provide these parameters when you launch an instance from the instance configuration.
+     * required to create an instance, such as the availability domain and subnet ID, you must
+     * provide these parameters when you create an instance from the instance configuration.
      * For more information, see the {@link InstanceConfiguration}
      * resource.
      *

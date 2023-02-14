@@ -65,6 +65,7 @@ import java.util.Optional;
  * <p>If set, the value from environment variable is used.</p>
  * <p>Otherwise, it uses the default resource principal token path provider.</p>
  * </li>
+ *
  * </ul>
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
@@ -155,16 +156,21 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         return federationClient.refreshAndGetSecurityToken();
     }
 
+    @Override
+    public String refreshIfExpiringWithin(Duration time) {
+        return refreshIfExpiringWithin(time, true);
+    }
+
     /**
      * Refreshes the authentication data used by the provider
      *
      * @return the refreshed authentication data
      */
     @Override
-    public String refreshIfExpiringWithin(Duration time) {
+    public String refreshIfExpiringWithin(Duration time, boolean refreshKeys) {
         if (federationClient instanceof ProvidesConfigurableRefresh) {
             return ((ProvidesConfigurableRefresh) federationClient)
-                    .refreshAndGetSecurityTokenIfExpiringWithin(time);
+                    .refreshAndGetSecurityTokenIfExpiringWithin(time, refreshKeys);
         }
         return federationClient.refreshAndGetSecurityToken();
     }
@@ -400,7 +406,6 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                 federationEndpoint = ociResourcePrincipalRpstEndpoint;
             } else {
                 federationEndpoint = autoDetectEndpointUsingMetadataUrl();
-                ;
             }
             sessionKeySupplier = new SessionKeySupplierImpl();
             federationClient = createFederationClient(sessionKeySupplier);

@@ -35,7 +35,7 @@ public final class AddDrgRouteRuleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+         * Type of destination for the rule.
          * Allowed values:
          *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
          *
@@ -44,7 +44,7 @@ public final class AddDrgRouteRuleDetails
         private DestinationType destinationType;
 
         /**
-         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+         * Type of destination for the rule.
          * Allowed values:
          *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
          *
@@ -145,7 +145,7 @@ public final class AddDrgRouteRuleDetails
     }
 
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Type of destination for the rule.
      * Allowed values:
      *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *
@@ -182,7 +182,7 @@ public final class AddDrgRouteRuleDetails
         }
     };
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Type of destination for the rule.
      * Allowed values:
      *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *
@@ -191,7 +191,7 @@ public final class AddDrgRouteRuleDetails
     private final DestinationType destinationType;
 
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Type of destination for the rule.
      * Allowed values:
      *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *

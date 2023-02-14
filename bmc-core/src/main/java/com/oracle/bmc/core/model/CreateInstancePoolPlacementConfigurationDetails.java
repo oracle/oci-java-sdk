@@ -109,14 +109,16 @@ public final class CreateInstancePoolPlacementConfigurationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
+         * instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
         private String primarySubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
+         * instances.
          *
          * @param primarySubnetId the value to set
          * @return this builder
@@ -252,14 +254,16 @@ public final class CreateInstancePoolPlacementConfigurationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
+     * instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     private final String primarySubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
+     * instances.
      *
      * @return the value
      **/

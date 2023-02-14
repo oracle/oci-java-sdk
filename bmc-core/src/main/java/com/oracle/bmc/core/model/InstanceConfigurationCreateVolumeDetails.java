@@ -192,7 +192,7 @@ public final class InstanceConfigurationCreateVolumeDetails
             return this;
         }
         /**
-         * The OCID of the Key Management key to assign as the master encryption key
+         * The OCID of the Vault service key to assign as the master encryption key
          * for the volume.
          *
          **/
@@ -200,7 +200,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key to assign as the master encryption key
+         * The OCID of the Vault service key to assign as the master encryption key
          * for the volume.
          *
          * @param kmsKeyId the value to set
@@ -488,7 +488,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     }
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key
+     * The OCID of the Vault service key to assign as the master encryption key
      * for the volume.
      *
      **/
@@ -496,7 +496,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key
+     * The OCID of the Vault service key to assign as the master encryption key
      * for the volume.
      *
      * @return the value

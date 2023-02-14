@@ -25,12 +25,12 @@ public class UpdateBootVolumeKmsKeyRequest
         return bootVolumeId;
     }
     /**
-     * Updates the Key Management master encryption key assigned to the specified boot volume.
+     * Updates the Vault service master encryption key assigned to the specified boot volume.
      */
     private com.oracle.bmc.core.model.UpdateBootVolumeKmsKeyDetails updateBootVolumeKmsKeyDetails;
 
     /**
-     * Updates the Key Management master encryption key assigned to the specified boot volume.
+     * Updates the Vault service master encryption key assigned to the specified boot volume.
      */
     public com.oracle.bmc.core.model.UpdateBootVolumeKmsKeyDetails
             getUpdateBootVolumeKmsKeyDetails() {
@@ -88,13 +88,13 @@ public class UpdateBootVolumeKmsKeyRequest
         }
 
         /**
-         * Updates the Key Management master encryption key assigned to the specified boot volume.
+         * Updates the Vault service master encryption key assigned to the specified boot volume.
          */
         private com.oracle.bmc.core.model.UpdateBootVolumeKmsKeyDetails
                 updateBootVolumeKmsKeyDetails = null;
 
         /**
-         * Updates the Key Management master encryption key assigned to the specified boot volume.
+         * Updates the Vault service master encryption key assigned to the specified boot volume.
          * @param updateBootVolumeKmsKeyDetails the value to set
          * @return this builder instance
          */

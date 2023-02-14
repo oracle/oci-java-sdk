@@ -117,7 +117,7 @@ public final class UpdatePrivateIpDetails
         /**
          * The hostname for the private IP. Used for DNS. The value
          * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -125,7 +125,7 @@ public final class UpdatePrivateIpDetails
          * For more information, see
          * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
-         * Example: {@code bminstance-1}
+         * Example: {@code bminstance1}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -134,7 +134,7 @@ public final class UpdatePrivateIpDetails
         /**
          * The hostname for the private IP. Used for DNS. The value
          * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -142,7 +142,7 @@ public final class UpdatePrivateIpDetails
          * For more information, see
          * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
-         * Example: {@code bminstance-1}
+         * Example: {@code bminstance1}
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -287,7 +287,7 @@ public final class UpdatePrivateIpDetails
     /**
      * The hostname for the private IP. Used for DNS. The value
      * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -295,7 +295,7 @@ public final class UpdatePrivateIpDetails
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: {@code bminstance-1}
+     * Example: {@code bminstance1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -304,7 +304,7 @@ public final class UpdatePrivateIpDetails
     /**
      * The hostname for the private IP. Used for DNS. The value
      * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -312,7 +312,7 @@ public final class UpdatePrivateIpDetails
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: {@code bminstance-1}
+     * Example: {@code bminstance1}
      *
      * @return the value
      **/

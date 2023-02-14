@@ -550,7 +550,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
             return this;
         }
         /**
-         * The OCID of dedicated VM host.
+         * The OCID of the dedicated virtual machine host to place the instance on.
          * <p>
          * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They
          * cannot be used to launch instance pools.
@@ -560,7 +560,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         private String dedicatedVmHostId;
 
         /**
-         * The OCID of dedicated VM host.
+         * The OCID of the dedicated virtual machine host to place the instance on.
          * <p>
          * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They
          * cannot be used to launch instance pools.
@@ -1223,7 +1223,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     }
 
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host to place the instance on.
      * <p>
      * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They
      * cannot be used to launch instance pools.
@@ -1233,7 +1233,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
     private final String dedicatedVmHostId;
 
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host to place the instance on.
      * <p>
      * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They
      * cannot be used to launch instance pools.

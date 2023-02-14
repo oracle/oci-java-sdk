@@ -88,7 +88,7 @@ public final class UpdateDrgRouteRuleDetails
             return this;
         }
         /**
-         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+         * Type of destination for the rule.
          * Allowed values:
          *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
          *
@@ -97,7 +97,7 @@ public final class UpdateDrgRouteRuleDetails
         private DestinationType destinationType;
 
         /**
-         * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+         * Type of destination for the rule.
          * Allowed values:
          *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
          *
@@ -216,7 +216,7 @@ public final class UpdateDrgRouteRuleDetails
     }
 
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Type of destination for the rule.
      * Allowed values:
      *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *
@@ -253,7 +253,7 @@ public final class UpdateDrgRouteRuleDetails
         }
     };
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Type of destination for the rule.
      * Allowed values:
      *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *
@@ -262,7 +262,7 @@ public final class UpdateDrgRouteRuleDetails
     private final DestinationType destinationType;
 
     /**
-     * Type of destination for the rule. Required if {@code direction} = {@code EGRESS}.
+     * Type of destination for the rule.
      * Allowed values:
      *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *

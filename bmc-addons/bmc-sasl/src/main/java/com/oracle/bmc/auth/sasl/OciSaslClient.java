@@ -33,9 +33,9 @@ import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Implementation of a {@link SaslClient} for the OCI SASL mechanism.
@@ -53,9 +53,7 @@ public class OciSaslClient implements SaslClient {
     private final OciMechanism mechanism;
     private final BasicAuthenticationDetailsProvider authProvider;
     private final String intent;
-
     private OciPrivateKey currentPrivateKey = null;
-
     private State state = State.KEY_ID;
 
     private enum State {
@@ -102,7 +100,7 @@ public class OciSaslClient implements SaslClient {
             // Get a new token for each new key exchange to prevent stale keys
             if (authProvider instanceof ConfigurableRefreshOnNotAuthenticatedProvider) {
                 ((ConfigurableRefreshOnNotAuthenticatedProvider<?>) authProvider)
-                        .refreshIfExpiringWithin(Duration.ofMinutes(5));
+                        .refreshIfExpiringWithin(Duration.ofMinutes(5), false);
             }
 
             if (currentPrivateKey != null) {
@@ -299,10 +297,10 @@ public class OciSaslClient implements SaslClient {
     static class AuthProviderCache {
 
         private static final Map<String, BasicAuthenticationDetailsProvider> authProvidersCache =
-                new HashMap<>();
+                new ConcurrentHashMap<>();
 
         static String cache(BasicAuthenticationDetailsProvider authProvider) {
-            String key = UUID.randomUUID().toString();
+            final String key = UUID.randomUUID().toString();
             authProvidersCache.put(key, authProvider);
             return key;
         }

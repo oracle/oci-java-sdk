@@ -273,9 +273,9 @@ public final class BootVolumeBackup extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The OCID of the Key Management master encryption assigned to the boot volume backup.
-         * For more information about the Key Management service and encryption keys, see
-         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * The OCID of the Vault service master encryption assigned to the boot volume backup.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
          * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          **/
@@ -283,9 +283,9 @@ public final class BootVolumeBackup extends com.oracle.bmc.http.internal.Explici
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management master encryption assigned to the boot volume backup.
-         * For more information about the Key Management service and encryption keys, see
-         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * The OCID of the Vault service master encryption assigned to the boot volume backup.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
          * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param kmsKeyId the value to set
@@ -703,9 +703,9 @@ public final class BootVolumeBackup extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The OCID of the Key Management master encryption assigned to the boot volume backup.
-     * For more information about the Key Management service and encryption keys, see
-     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * The OCID of the Vault service master encryption assigned to the boot volume backup.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
      * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      **/
@@ -713,9 +713,9 @@ public final class BootVolumeBackup extends com.oracle.bmc.http.internal.Explici
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management master encryption assigned to the boot volume backup.
-     * For more information about the Key Management service and encryption keys, see
-     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * The OCID of the Vault service master encryption assigned to the boot volume backup.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
      * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
