@@ -13,6 +13,9 @@ import com.oracle.bmc.core.responses.*;
  * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
  * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
  * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * The required permissions are documented in the [Details for the Core
+ * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * article.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -204,7 +207,7 @@ public interface ComputeManagement extends AutoCloseable {
             CreateInstanceConfigurationRequest request);
 
     /**
-     * Create an instance pool.
+     * Creates an instance pool.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -352,11 +355,11 @@ public interface ComputeManagement extends AutoCloseable {
             GetInstancePoolLoadBalancerAttachmentRequest request);
 
     /**
-     * Launches an instance from an instance configuration.
+     * Creates an instance from an instance configuration.
      *
      * <p>If the instance configuration does not include all of the parameters that are required to
-     * launch an instance, such as the availability domain and subnet ID, you must provide these
-     * parameters when you launch an instance from the instance configuration. For more information,
+     * create an instance, such as the availability domain and subnet ID, you must provide these
+     * parameters when you create an instance from the instance configuration. For more information,
      * see the {@link InstanceConfiguration} resource.
      *
      * @param request The request object containing the details to send

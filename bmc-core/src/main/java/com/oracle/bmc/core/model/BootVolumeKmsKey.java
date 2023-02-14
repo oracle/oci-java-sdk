@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The Key Management master encryption key associated with this volume. <br>
+ * The Vault service master encryption key associated with this volume. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,15 +30,15 @@ public final class BootVolumeKmsKey
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the Key Management key assigned to this volume. If the volume is not using
-         * Key Management, then the {@code kmsKeyId} will be a null string.
+         * The OCID of the Vault service key assigned to this volume. If the volume is not using
+         * Vault service, then the {@code kmsKeyId} will be a null string.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key assigned to this volume. If the volume is not using
-         * Key Management, then the {@code kmsKeyId} will be a null string.
+         * The OCID of the Vault service key assigned to this volume. If the volume is not using
+         * Vault service, then the {@code kmsKeyId} will be a null string.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -79,15 +79,15 @@ public final class BootVolumeKmsKey
     }
 
     /**
-     * The OCID of the Key Management key assigned to this volume. If the volume is not using Key
-     * Management, then the {@code kmsKeyId} will be a null string.
+     * The OCID of the Vault service key assigned to this volume. If the volume is not using Vault
+     * service, then the {@code kmsKeyId} will be a null string.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management key assigned to this volume. If the volume is not using Key
-     * Management, then the {@code kmsKeyId} will be a null string.
+     * The OCID of the Vault service key assigned to this volume. If the volume is not using Vault
+     * service, then the {@code kmsKeyId} will be a null string.
      *
      * @return the value
      */

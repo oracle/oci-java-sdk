@@ -6714,6 +6714,121 @@ public class DatabaseWaiters {
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousVirtualMachineRequest, GetAutonomousVirtualMachineResponse>
+            forAutonomousVirtualMachine(
+                    GetAutonomousVirtualMachineRequest request,
+                    com.oracle.bmc.database.model.AutonomousVirtualMachine.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAutonomousVirtualMachine(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousVirtualMachineRequest, GetAutonomousVirtualMachineResponse>
+            forAutonomousVirtualMachine(
+                    GetAutonomousVirtualMachineRequest request,
+                    com.oracle.bmc.database.model.AutonomousVirtualMachine.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forAutonomousVirtualMachine(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousVirtualMachineRequest, GetAutonomousVirtualMachineResponse>
+            forAutonomousVirtualMachine(
+                    GetAutonomousVirtualMachineRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.AutonomousVirtualMachine.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forAutonomousVirtualMachine(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AutonomousVirtualMachine.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousVirtualMachineRequest, GetAutonomousVirtualMachineResponse>
+            forAutonomousVirtualMachine(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAutonomousVirtualMachineRequest request,
+                    final com.oracle.bmc.database.model.AutonomousVirtualMachine.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.AutonomousVirtualMachine.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetAutonomousVirtualMachineRequest,
+                                GetAutonomousVirtualMachineResponse>() {
+                            @Override
+                            public GetAutonomousVirtualMachineResponse apply(
+                                    GetAutonomousVirtualMachineRequest request) {
+                                return client.getAutonomousVirtualMachine(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetAutonomousVirtualMachineResponse>() {
+                            @Override
+                            public boolean test(GetAutonomousVirtualMachineResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAutonomousVirtualMachine().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.AutonomousVirtualMachine
+                                        .LifecycleState.Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetAutonomousVmClusterRequest, GetAutonomousVmClusterResponse>
             forAutonomousVmCluster(
                     GetAutonomousVmClusterRequest request,

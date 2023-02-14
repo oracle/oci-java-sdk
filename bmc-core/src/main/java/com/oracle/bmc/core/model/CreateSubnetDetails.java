@@ -233,7 +233,7 @@ public final class CreateSubnetDetails
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter and is unique within the VCN. The value cannot be
          * changed.
          *
@@ -252,7 +252,7 @@ public final class CreateSubnetDetails
         /**
          * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS
          * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
+         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
          * string that begins with a letter and is unique within the VCN. The value cannot be
          * changed.
          *
@@ -726,8 +726,8 @@ public final class CreateSubnetDetails
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter and is unique within the VCN. The value cannot be changed.
      *
      * <p>This value must be set if you want to use the Internet and VCN Resolver to resolve the
      * hostnames of instances in the subnet. It can only be set if the VCN itself was created with a
@@ -744,8 +744,8 @@ public final class CreateSubnetDetails
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label
      * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that
-     * begins with a letter and is unique within the VCN. The value cannot be changed.
+     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
+     * with a letter and is unique within the VCN. The value cannot be changed.
      *
      * <p>This value must be set if you want to use the Internet and VCN Resolver to resolve the
      * hostnames of instances in the subnet. It can only be set if the VCN itself was created with a

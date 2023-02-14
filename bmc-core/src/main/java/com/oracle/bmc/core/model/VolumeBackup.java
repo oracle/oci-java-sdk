@@ -240,10 +240,10 @@ public final class VolumeBackup extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The OCID of the Key Management key which is the master encryption key for the volume
-         * backup. For more information about the Key Management service and encryption keys, see
-         * [Overview of Key
-         * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+         * The OCID of the Vault service key which is the master encryption key for the volume
+         * backup. For more information about the Vault service and encryption keys, see [Overview
+         * of Vault
+         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
          * and [Using
          * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
@@ -251,10 +251,10 @@ public final class VolumeBackup extends com.oracle.bmc.http.client.internal.Expl
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key which is the master encryption key for the volume
-         * backup. For more information about the Key Management service and encryption keys, see
-         * [Overview of Key
-         * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+         * The OCID of the Vault service key which is the master encryption key for the volume
+         * backup. For more information about the Vault service and encryption keys, see [Overview
+         * of Vault
+         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
          * and [Using
          * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
@@ -689,10 +689,9 @@ public final class VolumeBackup extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The OCID of the Key Management key which is the master encryption key for the volume backup.
-     * For more information about the Key Management service and encryption keys, see [Overview of
-     * Key
-     * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * The OCID of the Vault service key which is the master encryption key for the volume backup.
+     * For more information about the Vault service and encryption keys, see [Overview of Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
      * and [Using
      * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
@@ -700,10 +699,9 @@ public final class VolumeBackup extends com.oracle.bmc.http.client.internal.Expl
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management key which is the master encryption key for the volume backup.
-     * For more information about the Key Management service and encryption keys, see [Overview of
-     * Key
-     * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * The OCID of the Vault service key which is the master encryption key for the volume backup.
+     * For more information about the Vault service and encryption keys, see [Overview of Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
      * and [Using
      * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *

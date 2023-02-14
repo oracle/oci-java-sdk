@@ -4648,6 +4648,42 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutonomousVirtualMachineResponse>
+            getAutonomousVirtualMachine(
+                    GetAutonomousVirtualMachineRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousVirtualMachineRequest,
+                                    GetAutonomousVirtualMachineResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousVirtualMachineId(),
+                "autonomousVirtualMachineId must not be blank");
+
+        return clientCall(request, GetAutonomousVirtualMachineResponse::builder)
+                .logger(LOG, "getAutonomousVirtualMachine")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousVirtualMachine",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVirtualMachine/GetAutonomousVirtualMachine")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousVirtualMachineRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVirtualMachines")
+                .appendPathParam(request.getAutonomousVirtualMachineId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousVirtualMachine.class,
+                        GetAutonomousVirtualMachineResponse.Builder::autonomousVirtualMachine)
+                .handleResponseHeaderString(
+                        "etag", GetAutonomousVirtualMachineResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAutonomousVirtualMachineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutonomousVmClusterResponse> getAutonomousVmCluster(
             GetAutonomousVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6768,6 +6804,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAutonomousExadataInfrastructuresResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutonomousVirtualMachinesResponse>
+            listAutonomousVirtualMachines(
+                    ListAutonomousVirtualMachinesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousVirtualMachinesRequest,
+                                    ListAutonomousVirtualMachinesResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId is required");
+
+        return clientCall(request, ListAutonomousVirtualMachinesResponse::builder)
+                .logger(LOG, "listAutonomousVirtualMachines")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousVirtualMachines",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVirtualMachine/ListAutonomousVirtualMachines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousVirtualMachinesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVirtualMachines")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("autonomousVmClusterId", request.getAutonomousVmClusterId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.AutonomousVirtualMachineSummary.class,
+                        ListAutonomousVirtualMachinesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousVirtualMachinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutonomousVirtualMachinesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

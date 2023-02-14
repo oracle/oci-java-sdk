@@ -13,6 +13,9 @@ import com.oracle.bmc.core.responses.*;
  * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
  * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
  * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * The required permissions are documented in the [Details for the Core
+ * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * article.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface VirtualNetworkAsync extends AutoCloseable {
@@ -2008,9 +2011,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified VCN. The VCN must be empty and have no attached gateways. This is an
-     * asynchronous operation. The VCN's `lifecycleState` will change to TERMINATING temporarily
-     * until the VCN is completely removed.
+     * Deletes the specified VCN. The VCN must be completely empty and have no attached gateways.
+     * This is an asynchronous operation.
+     *
+     * <p>A deleted VCN's `lifecycleState` changes to TERMINATING and then TERMINATED temporarily
+     * until the VCN is completely removed. A completely removed VCN does not appear in the results
+     * of a `ListVcns` operation and can't be used in a `GetVcn` operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

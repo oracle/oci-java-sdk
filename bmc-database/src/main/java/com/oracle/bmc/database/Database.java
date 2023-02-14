@@ -2176,6 +2176,23 @@ public interface Database extends AutoCloseable {
     GetAutonomousPatchResponse getAutonomousPatch(GetAutonomousPatchRequest request);
 
     /**
+     * Gets the details of specific Autonomous Virtual Machine.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVirtualMachineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAutonomousVirtualMachine API.
+     */
+    GetAutonomousVirtualMachineResponse getAutonomousVirtualMachine(
+            GetAutonomousVirtualMachineRequest request);
+
+    /**
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer
      * system. To get information about an Autonomous VM Cluster in the Oracle cloud, see {@link
      * #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest)
@@ -3238,6 +3255,23 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousExadataInfrastructuresResponse listAutonomousExadataInfrastructures(
             ListAutonomousExadataInfrastructuresRequest request);
+
+    /**
+     * Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVirtualMachinesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAutonomousVirtualMachines API.
+     */
+    ListAutonomousVirtualMachinesResponse listAutonomousVirtualMachines(
+            ListAutonomousVirtualMachinesRequest request);
 
     /**
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To

@@ -36,6 +36,7 @@ public final class CreateAutonomousVmClusterDetails
         "memoryPerOracleComputeUnitInGBs",
         "autonomousDataStorageSizeInTBs",
         "maintenanceWindowDetails",
+        "dbServers",
         "freeformTags",
         "definedTags",
         "scanListenerPortTls",
@@ -56,6 +57,7 @@ public final class CreateAutonomousVmClusterDetails
             Integer memoryPerOracleComputeUnitInGBs,
             Double autonomousDataStorageSizeInTBs,
             MaintenanceWindow maintenanceWindowDetails,
+            java.util.List<String> dbServers,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Integer scanListenerPortTls,
@@ -75,6 +77,7 @@ public final class CreateAutonomousVmClusterDetails
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.dbServers = dbServers;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.scanListenerPortTls = scanListenerPortTls;
@@ -304,6 +307,27 @@ public final class CreateAutonomousVmClusterDetails
             return this;
         }
         /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * servers.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * servers.
+         *
+         * @param dbServers the value to set
+         * @return this builder
+         */
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -419,6 +443,7 @@ public final class CreateAutonomousVmClusterDetails
                             this.memoryPerOracleComputeUnitInGBs,
                             this.autonomousDataStorageSizeInTBs,
                             this.maintenanceWindowDetails,
+                            this.dbServers,
                             this.freeformTags,
                             this.definedTags,
                             this.scanListenerPortTls,
@@ -470,6 +495,9 @@ public final class CreateAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
                 this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -760,6 +788,23 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the Db servers.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    private final java.util.List<String> dbServers;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the Db servers.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDbServers() {
+        return dbServers;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -877,6 +922,7 @@ public final class CreateAutonomousVmClusterDetails
                 .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
@@ -914,6 +960,7 @@ public final class CreateAutonomousVmClusterDetails
                         this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.scanListenerPortTls, other.scanListenerPortTls)
@@ -974,6 +1021,7 @@ public final class CreateAutonomousVmClusterDetails
                         + (this.maintenanceWindowDetails == null
                                 ? 43
                                 : this.maintenanceWindowDetails.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

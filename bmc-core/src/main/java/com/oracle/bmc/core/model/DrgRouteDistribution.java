@@ -16,11 +16,12 @@ package com.oracle.bmc.core.model;
  * an import route distribution specify how how incoming route advertisements through a referenced
  * attachment or all attachments of a certain type are inserted into the route table.
  *
- * <p>You can assign a route distribution as a DRG attachment's export distribution. Export route
- * distribution statements specify how routes in a DRG attachment's assigned table are advertised
- * out through the attachment. When a DRG attachment is created, a route distribution is created
- * with a single ACCEPT statement with match criteria MATCH_ALL. Exporting routes through VCN
- * attachments is unsupported, so no VCN attachments are assigned an export distribution.
+ * <p>You can assign a route distribution as a DRG attachment's export distribution unless the
+ * attachment has the type VCN. Exporting routes through a VCN attachment is unsupported. Export
+ * route distribution statements specify how routes in a DRG attachment's assigned table are
+ * advertised out through the attachment. When a DRG is created, a route distribution is created
+ * with a single ACCEPT statement with match criteria MATCH_ALL. By default, all DRG attachments
+ * (except for those of type VCN), are assigned this distribution.
  *
  * <p>The two auto-generated DRG route tables (one as the default for VCN attachments, and the other
  * for all other types of attachments) are each assigned an auto generated import route

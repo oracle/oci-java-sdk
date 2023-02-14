@@ -148,10 +148,6 @@ com.github.stephenc.jcip:jcip-annotations
 * License: Apache License 2.0
 * Source code: https://github.com/stephenc/jcip-annotations
 
-com.nimbusds:nimbus-jose-jwt
-* Copyright © 2012 - 2020, Connect2id Ltd
-* License: Apache License 2.0
-
 com.sun.activation:jakarta.activation
 * Copyright © 2018 Oracle and/or its affiliates. All rights reserved.
 * License: Eclipse Distribution License 1.0
@@ -2254,15 +2250,6 @@ http://www.w3.org/Consortium/Legal/
 
 ========================= Fourth Party Notices =========================
 
-
-com.nimbusds:nimbus-jose-jwt
-
-
-Nimbus JOSE + JWT
-
-Copyright 2012 - 2020, Connect2id Ltd.
-
-------------------------------------------------------------------------
 
 commons-logging
 

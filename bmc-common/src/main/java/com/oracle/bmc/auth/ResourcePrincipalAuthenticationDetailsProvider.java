@@ -156,9 +156,19 @@ public class ResourcePrincipalAuthenticationDetailsProvider
      */
     @Override
     public String refreshIfExpiringWithin(Duration time) {
+        return refreshIfExpiringWithin(time, true);
+    }
+
+    /**
+     * Refreshes the authentication data used by the provider
+     *
+     * @return the refreshed authentication data
+     */
+    @Override
+    public String refreshIfExpiringWithin(Duration time, boolean refreshKeys) {
         if (federationClient instanceof ProvidesConfigurableRefresh) {
             return ((ProvidesConfigurableRefresh) federationClient)
-                    .refreshAndGetSecurityTokenIfExpiringWithin(time);
+                    .refreshAndGetSecurityTokenIfExpiringWithin(time, refreshKeys);
         }
         return federationClient.refreshAndGetSecurityToken();
     }
