@@ -7,7 +7,18 @@ package com.oracle.bmc.core.model;
 /**
  * A compute host. The image used to launch the instance determines its operating system and other
  * software. The shape specified during the launch process determines the number of CPUs and memory
- * allocated to the instance. For more information, see
+ * allocated to the instance.
+ * <p>
+ * When you launch an instance, it is automatically attached to a virtual
+ * network interface card (VNIC), called the *primary VNIC*. The VNIC
+ * has a private IP address from the subnet's CIDR. You can either assign a
+ * private IP address of your choice or let Oracle automatically assign one.
+ * You can choose whether the instance has a public IP address. To retrieve the
+ * addresses, use the {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments}
+ * operation to get the VNIC ID for the instance, and then call
+ * {@link #getVnic(GetVnicRequest) getVnic} with the VNIC ID.
+ * <p>
+ * For more information, see
  * [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -183,14 +194,14 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The OCID of dedicated VM host.
+         * The OCID of the dedicated virtual machine host that the instance is placed on.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
         private String dedicatedVmHostId;
 
         /**
-         * The OCID of dedicated VM host.
+         * The OCID of the dedicated virtual machine host that the instance is placed on.
          *
          * @param dedicatedVmHostId the value to set
          * @return this builder
@@ -883,14 +894,14 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host that the instance is placed on.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
     private final String dedicatedVmHostId;
 
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated virtual machine host that the instance is placed on.
      *
      * @return the value
      **/

@@ -31,8 +31,8 @@ public final class UpdateVolumeKmsKeyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the new Key Management key to assign to protect the specified volume.
-         * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+         * The OCID of the new Vault service key to assign to protect the specified volume.
+         * This key has to be a valid Vault service key, and policies must exist to allow the user and the Block Volume service to access this key.
          * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
          *
          **/
@@ -40,8 +40,8 @@ public final class UpdateVolumeKmsKeyDetails
         private String kmsKeyId;
 
         /**
-         * The OCID of the new Key Management key to assign to protect the specified volume.
-         * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+         * The OCID of the new Vault service key to assign to protect the specified volume.
+         * This key has to be a valid Vault service key, and policies must exist to allow the user and the Block Volume service to access this key.
          * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
          *
          * @param kmsKeyId the value to set
@@ -85,8 +85,8 @@ public final class UpdateVolumeKmsKeyDetails
     }
 
     /**
-     * The OCID of the new Key Management key to assign to protect the specified volume.
-     * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+     * The OCID of the new Vault service key to assign to protect the specified volume.
+     * This key has to be a valid Vault service key, and policies must exist to allow the user and the Block Volume service to access this key.
      * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
      *
      **/
@@ -94,8 +94,8 @@ public final class UpdateVolumeKmsKeyDetails
     private final String kmsKeyId;
 
     /**
-     * The OCID of the new Key Management key to assign to protect the specified volume.
-     * This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+     * The OCID of the new Vault service key to assign to protect the specified volume.
+     * This key has to be a valid Vault service key, and policies must exist to allow the user and the Block Volume service to access this key.
      * If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
      *
      * @return the value

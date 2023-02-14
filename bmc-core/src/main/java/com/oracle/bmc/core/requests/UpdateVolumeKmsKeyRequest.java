@@ -25,12 +25,12 @@ public class UpdateVolumeKmsKeyRequest
         return volumeId;
     }
     /**
-     * Updates the Key Management master encryption key assigned to the specified volume.
+     * Updates the Vault service master encryption key assigned to the specified volume.
      */
     private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails;
 
     /**
-     * Updates the Key Management master encryption key assigned to the specified volume.
+     * Updates the Vault service master encryption key assigned to the specified volume.
      */
     public com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails getUpdateVolumeKmsKeyDetails() {
         return updateVolumeKmsKeyDetails;
@@ -87,13 +87,13 @@ public class UpdateVolumeKmsKeyRequest
         }
 
         /**
-         * Updates the Key Management master encryption key assigned to the specified volume.
+         * Updates the Vault service master encryption key assigned to the specified volume.
          */
         private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails =
                 null;
 
         /**
-         * Updates the Key Management master encryption key assigned to the specified volume.
+         * Updates the Vault service master encryption key assigned to the specified volume.
          * @param updateVolumeKmsKeyDetails the value to set
          * @return this builder instance
          */

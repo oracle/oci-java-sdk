@@ -119,7 +119,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
          * portion of the primary private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -138,7 +138,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
          * portion of the primary private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -345,7 +345,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -364,7 +364,7 @@ public final class UpdateVnicDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).

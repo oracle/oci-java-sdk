@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Parameters for the softReset {@link #instanceAction(InstanceActionRequest) instanceAction}. If omitted, default values are used.
+ * Parameters for the {@code softReset} {@link #instanceAction(InstanceActionRequest) instanceAction}. If omitted, default values are used.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

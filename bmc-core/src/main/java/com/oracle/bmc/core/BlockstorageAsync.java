@@ -13,6 +13,8 @@ import com.oracle.bmc.core.responses.*;
  * documentation for the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
  * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
  * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * The required permissions are documented in the
+ * [Details for the Core Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -440,7 +442,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes the specified boot volume's assigned Key Management encryption key.
+     * Removes the specified boot volume's assigned Vault Service encryption key.
      *
      *
      * @param request The request object containing the details to send
@@ -567,7 +569,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes the specified volume's assigned Key Management encryption key.
+     * Removes the specified volume's assigned Vault service encryption key.
      *
      *
      * @param request The request object containing the details to send
@@ -631,7 +633,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the Key Management encryption key assigned to the specified boot volume.
+     * Gets the Vault service encryption key assigned to the specified boot volume.
      *
      *
      * @param request The request object containing the details to send
@@ -795,7 +797,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the Key Management encryption key assigned to the specified volume.
+     * Gets the Vault service encryption key assigned to the specified volume.
      *
      *
      * @param request The request object containing the details to send
@@ -1016,7 +1018,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified volume with a new Key Management master encryption key.
+     * Updates the specified volume with a new Vault service master encryption key.
      *
      *
      * @param request The request object containing the details to send

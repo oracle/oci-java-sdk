@@ -62,13 +62,13 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
             return this;
         }
         /**
-         * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * @param kmsKeyId the value to set
          * @return this builder
          **/
@@ -206,13 +206,13 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     }
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * @return the value
      **/
     public String getKmsKeyId() {

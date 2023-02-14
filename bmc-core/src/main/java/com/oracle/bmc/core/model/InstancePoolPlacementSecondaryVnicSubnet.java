@@ -32,7 +32,7 @@ public final class InstancePoolPlacementSecondaryVnicSubnet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the VNIC. This is also use to match against the instance configuration defined
+         * The display name of the VNIC. This is also used to match against the instance configuration defined
          * secondary VNIC.
          *
          **/
@@ -40,7 +40,7 @@ public final class InstancePoolPlacementSecondaryVnicSubnet
         private String displayName;
 
         /**
-         * The display name of the VNIC. This is also use to match against the instance configuration defined
+         * The display name of the VNIC. This is also used to match against the instance configuration defined
          * secondary VNIC.
          *
          * @param displayName the value to set
@@ -104,7 +104,7 @@ public final class InstancePoolPlacementSecondaryVnicSubnet
     }
 
     /**
-     * The display name of the VNIC. This is also use to match against the instance configuration defined
+     * The display name of the VNIC. This is also used to match against the instance configuration defined
      * secondary VNIC.
      *
      **/
@@ -112,7 +112,7 @@ public final class InstancePoolPlacementSecondaryVnicSubnet
     private final String displayName;
 
     /**
-     * The display name of the VNIC. This is also use to match against the instance configuration defined
+     * The display name of the VNIC. This is also used to match against the instance configuration defined
      * secondary VNIC.
      *
      * @return the value
