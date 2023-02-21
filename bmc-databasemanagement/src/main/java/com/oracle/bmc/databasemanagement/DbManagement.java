@@ -139,6 +139,20 @@ public interface DbManagement extends AutoCloseable {
                     ChangeDbManagementPrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves the external DB system and its related resources (excluding databases) to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeExternalDbSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalDbSystemCompartment API.
+     */
+    ChangeExternalDbSystemCompartmentResponse changeExternalDbSystemCompartment(
+            ChangeExternalDbSystemCompartmentRequest request);
+
+    /**
      * Moves a job.
      *
      * @param request The request object containing the details to send
@@ -168,6 +182,22 @@ public interface DbManagement extends AutoCloseable {
             ChangeManagedDatabaseGroupCompartmentRequest request);
 
     /**
+     * Checks the status of the external DB system component connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CheckExternalDbSystemConnectorConnectionStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckExternalDbSystemConnectorConnectionStatus API.
+     */
+    CheckExternalDbSystemConnectorConnectionStatusResponse
+            checkExternalDbSystemConnectorConnectionStatus(
+                    CheckExternalDbSystemConnectorConnectionStatusRequest request);
+
+    /**
      * Creates a new Database Management private endpoint.
      *
      * @param request The request object containing the details to send
@@ -180,6 +210,46 @@ public interface DbManagement extends AutoCloseable {
      */
     CreateDbManagementPrivateEndpointResponse createDbManagementPrivateEndpoint(
             CreateDbManagementPrivateEndpointRequest request);
+
+    /**
+     * Creates an external DB system and its related resources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateExternalDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalDbSystem API.
+     */
+    CreateExternalDbSystemResponse createExternalDbSystem(CreateExternalDbSystemRequest request);
+
+    /**
+     * Creates a new external connector.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateExternalDbSystemConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalDbSystemConnector API.
+     */
+    CreateExternalDbSystemConnectorResponse createExternalDbSystemConnector(
+            CreateExternalDbSystemConnectorRequest request);
+
+    /**
+     * Creates an external DB system discovery resource and initiates the discovery process.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateExternalDbSystemDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalDbSystemDiscovery API.
+     */
+    CreateExternalDbSystemDiscoveryResponse createExternalDbSystemDiscovery(
+            CreateExternalDbSystemDiscoveryRequest request);
 
     /**
      * Creates a job to be executed on a Managed Database or Managed Database Group. Only one
@@ -238,6 +308,47 @@ public interface DbManagement extends AutoCloseable {
             DeleteDbManagementPrivateEndpointRequest request);
 
     /**
+     * Deletes the external DB system specified by `externalDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteExternalDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalDbSystem API.
+     */
+    DeleteExternalDbSystemResponse deleteExternalDbSystem(DeleteExternalDbSystemRequest request);
+
+    /**
+     * Deletes the external connector specified by `externalDbSystemConnectorId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteExternalDbSystemConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalDbSystemConnector API.
+     */
+    DeleteExternalDbSystemConnectorResponse deleteExternalDbSystemConnector(
+            DeleteExternalDbSystemConnectorRequest request);
+
+    /**
+     * Deletes the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteExternalDbSystemDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalDbSystemDiscovery API.
+     */
+    DeleteExternalDbSystemDiscoveryResponse deleteExternalDbSystemDiscovery(
+            DeleteExternalDbSystemDiscoveryRequest request);
+
+    /**
      * Deletes the job specified by jobId.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -279,6 +390,21 @@ public interface DbManagement extends AutoCloseable {
             DeletePreferredCredentialRequest request);
 
     /**
+     * Disables Database Management service for all the components of the specified
+     * external DB system (except databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalDbSystemDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalDbSystemDatabaseManagement API.
+     */
+    DisableExternalDbSystemDatabaseManagementResponse disableExternalDbSystemDatabaseManagement(
+            DisableExternalDbSystemDatabaseManagementRequest request);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
      *
      * @param request The request object containing the details to send
@@ -290,6 +416,21 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropTablespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropTablespace API.
      */
     DropTablespaceResponse dropTablespace(DropTablespaceRequest request);
+
+    /**
+     * Enables Database Management service for all the components of the specified
+     * external DB system (except databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalDbSystemDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalDbSystemDatabaseManagement API.
+     */
+    EnableExternalDbSystemDatabaseManagementResponse enableExternalDbSystemDatabaseManagement(
+            EnableExternalDbSystemDatabaseManagementRequest request);
 
     /**
      * Creates an AWR snapshot for the target database.
@@ -384,6 +525,153 @@ public interface DbManagement extends AutoCloseable {
      */
     GetDbManagementPrivateEndpointResponse getDbManagementPrivateEndpoint(
             GetDbManagementPrivateEndpointRequest request);
+
+    /**
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalAsmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalAsm API.
+     */
+    GetExternalAsmResponse getExternalAsm(GetExternalAsmRequest request);
+
+    /**
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalAsmConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalAsmConfiguration API.
+     */
+    GetExternalAsmConfigurationResponse getExternalAsmConfiguration(
+            GetExternalAsmConfigurationRequest request);
+
+    /**
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalAsmInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalAsmInstance API.
+     */
+    GetExternalAsmInstanceResponse getExternalAsmInstance(GetExternalAsmInstanceRequest request);
+
+    /**
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalCluster API.
+     */
+    GetExternalClusterResponse getExternalCluster(GetExternalClusterRequest request);
+
+    /**
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalClusterInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalClusterInstance API.
+     */
+    GetExternalClusterInstanceResponse getExternalClusterInstance(
+            GetExternalClusterInstanceRequest request);
+
+    /**
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDbHome API.
+     */
+    GetExternalDbHomeResponse getExternalDbHome(GetExternalDbHomeRequest request);
+
+    /**
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalDbNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDbNode API.
+     */
+    GetExternalDbNodeResponse getExternalDbNode(GetExternalDbNodeRequest request);
+
+    /**
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDbSystem API.
+     */
+    GetExternalDbSystemResponse getExternalDbSystem(GetExternalDbSystemRequest request);
+
+    /**
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalDbSystemConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDbSystemConnector API.
+     */
+    GetExternalDbSystemConnectorResponse getExternalDbSystemConnector(
+            GetExternalDbSystemConnectorRequest request);
+
+    /**
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalDbSystemDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDbSystemDiscovery API.
+     */
+    GetExternalDbSystemDiscoveryResponse getExternalDbSystemDiscovery(
+            GetExternalDbSystemDiscoveryRequest request);
+
+    /**
+     * Gets the details for the external listener specified by `externalListenerId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalListener API.
+     */
+    GetExternalListenerResponse getExternalListener(GetExternalListenerRequest request);
 
     /**
      * Gets the details for the job specified by jobId.
@@ -677,6 +965,184 @@ public interface DbManagement extends AutoCloseable {
             ListDbManagementPrivateEndpointsRequest request);
 
     /**
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalAsmDiskGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalAsmDiskGroups API.
+     */
+    ListExternalAsmDiskGroupsResponse listExternalAsmDiskGroups(
+            ListExternalAsmDiskGroupsRequest request);
+
+    /**
+     * Lists the ASM instances in the specified external ASM.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalAsmInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalAsmInstances API.
+     */
+    ListExternalAsmInstancesResponse listExternalAsmInstances(
+            ListExternalAsmInstancesRequest request);
+
+    /**
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalAsmUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalAsmUsers API.
+     */
+    ListExternalAsmUsersResponse listExternalAsmUsers(ListExternalAsmUsersRequest request);
+
+    /**
+     * Lists the ASMs in the specified external DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalAsmsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalAsms API.
+     */
+    ListExternalAsmsResponse listExternalAsms(ListExternalAsmsRequest request);
+
+    /**
+     * Lists the cluster instances in the specified external cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalClusterInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalClusterInstances API.
+     */
+    ListExternalClusterInstancesResponse listExternalClusterInstances(
+            ListExternalClusterInstancesRequest request);
+
+    /**
+     * Lists the clusters in the specified external DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalClusters API.
+     */
+    ListExternalClustersResponse listExternalClusters(ListExternalClustersRequest request);
+
+    /**
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDatabases API.
+     */
+    ListExternalDatabasesResponse listExternalDatabases(ListExternalDatabasesRequest request);
+
+    /**
+     * Lists the DB homes in the specified external DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDbHomesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDbHomes API.
+     */
+    ListExternalDbHomesResponse listExternalDbHomes(ListExternalDbHomesRequest request);
+
+    /**
+     * Lists the external DB nodes in the specified external DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDbNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDbNodes API.
+     */
+    ListExternalDbNodesResponse listExternalDbNodes(ListExternalDbNodesRequest request);
+
+    /**
+     * Lists the external connectors in the specified external DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDbSystemConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDbSystemConnectors API.
+     */
+    ListExternalDbSystemConnectorsResponse listExternalDbSystemConnectors(
+            ListExternalDbSystemConnectorsRequest request);
+
+    /**
+     * Lists the external DB system discovery resources in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDbSystemDiscoveriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDbSystemDiscoveries API.
+     */
+    ListExternalDbSystemDiscoveriesResponse listExternalDbSystemDiscoveries(
+            ListExternalDbSystemDiscoveriesRequest request);
+
+    /**
+     * Lists the external DB systems in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalDbSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDbSystems API.
+     */
+    ListExternalDbSystemsResponse listExternalDbSystems(ListExternalDbSystemsRequest request);
+
+    /**
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalListenerServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalListenerServices API.
+     */
+    ListExternalListenerServicesResponse listExternalListenerServices(
+            ListExternalListenerServicesRequest request);
+
+    /**
+     * Lists the listeners in the specified external DB system.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalListenersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalListeners API.
+     */
+    ListExternalListenersResponse listExternalListeners(ListExternalListenersRequest request);
+
+    /**
      * Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
      * in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
@@ -967,6 +1433,20 @@ public interface DbManagement extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/PatchExternalDbSystemDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchExternalDbSystemDiscovery API.
+     */
+    PatchExternalDbSystemDiscoveryResponse patchExternalDbSystemDiscovery(
+            PatchExternalDbSystemDiscoveryRequest request);
+
+    /**
      * Removes a data file or temp file from the tablespace.
      *
      * @param request The request object containing the details to send
@@ -1175,6 +1655,77 @@ public interface DbManagement extends AutoCloseable {
             SummarizeAwrDbWaitEventsRequest request);
 
     /**
+     * Gets metrics for the external ASM specified by `externalAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalAsmMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExternalAsmMetrics API.
+     */
+    SummarizeExternalAsmMetricsResponse summarizeExternalAsmMetrics(
+            SummarizeExternalAsmMetricsRequest request);
+
+    /**
+     * Gets metrics for the external cluster specified by `externalClusterId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalClusterMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExternalClusterMetrics API.
+     */
+    SummarizeExternalClusterMetricsResponse summarizeExternalClusterMetrics(
+            SummarizeExternalClusterMetricsRequest request);
+
+    /**
+     * Gets metrics for the external DB node specified by `externalDbNodeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalDbNodeMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExternalDbNodeMetrics API.
+     */
+    SummarizeExternalDbNodeMetricsResponse summarizeExternalDbNodeMetrics(
+            SummarizeExternalDbNodeMetricsRequest request);
+
+    /**
+     * Gets availability metrics for the components present in the external DB system specified by `externalDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalDbSystemAvailabilityMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExternalDbSystemAvailabilityMetrics API.
+     */
+    SummarizeExternalDbSystemAvailabilityMetricsResponse
+            summarizeExternalDbSystemAvailabilityMetrics(
+                    SummarizeExternalDbSystemAvailabilityMetricsRequest request);
+
+    /**
+     * Gets metrics for the external listener specified by `externalListenerId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalListenerMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExternalListenerMetrics API.
+     */
+    SummarizeExternalListenerMetricsResponse summarizeExternalListenerMetrics(
+            SummarizeExternalListenerMetricsRequest request);
+
+    /**
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1186,6 +1737,21 @@ public interface DbManagement extends AutoCloseable {
      */
     SummarizeJobExecutionsStatusesResponse summarizeJobExecutionsStatuses(
             SummarizeJobExecutionsStatusesRequest request);
+
+    /**
+     * Gets the availability metrics related to managed database for the Oracle
+     * database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeManagedDatabaseAvailabilityMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeManagedDatabaseAvailabilityMetrics API.
+     */
+    SummarizeManagedDatabaseAvailabilityMetricsResponse summarizeManagedDatabaseAvailabilityMetrics(
+            SummarizeManagedDatabaseAvailabilityMetricsRequest request);
 
     /**
      * Tests the preferred credential.
@@ -1212,6 +1778,112 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateDbManagementPrivateEndpointResponse updateDbManagementPrivateEndpoint(
             UpdateDbManagementPrivateEndpointRequest request);
+
+    /**
+     * Updates the external ASM specified by `externalAsmId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalAsmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalAsm API.
+     */
+    UpdateExternalAsmResponse updateExternalAsm(UpdateExternalAsmRequest request);
+
+    /**
+     * Updates the external cluster specified by `externalClusterId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalCluster API.
+     */
+    UpdateExternalClusterResponse updateExternalCluster(UpdateExternalClusterRequest request);
+
+    /**
+     * Updates the external cluster instance specified by `externalClusterInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalClusterInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalClusterInstance API.
+     */
+    UpdateExternalClusterInstanceResponse updateExternalClusterInstance(
+            UpdateExternalClusterInstanceRequest request);
+
+    /**
+     * Updates the external DB node specified by `externalDbNodeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDbNode API.
+     */
+    UpdateExternalDbNodeResponse updateExternalDbNode(UpdateExternalDbNodeRequest request);
+
+    /**
+     * Updates the external DB system specified by `externalDbSystemId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDbSystem API.
+     */
+    UpdateExternalDbSystemResponse updateExternalDbSystem(UpdateExternalDbSystemRequest request);
+
+    /**
+     * Updates the external connector specified by `externalDbSystemConnectorId`.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbSystemConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDbSystemConnector API.
+     */
+    UpdateExternalDbSystemConnectorResponse updateExternalDbSystemConnector(
+            UpdateExternalDbSystemConnectorRequest request);
+
+    /**
+     * Updates the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbSystemDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDbSystemDiscovery API.
+     */
+    UpdateExternalDbSystemDiscoveryResponse updateExternalDbSystemDiscovery(
+            UpdateExternalDbSystemDiscoveryRequest request);
+
+    /**
+     * Updates the external listener specified by `externalListenerId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalListener API.
+     */
+    UpdateExternalListenerResponse updateExternalListener(UpdateExternalListenerRequest request);
 
     /**
      * Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.

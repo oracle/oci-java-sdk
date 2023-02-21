@@ -134,6 +134,15 @@ public class SecurityTokenAdapter {
         }
     }
 
+    /** Get half of the token duration
+     *
+     * @return half of the token duration
+     */
+    public Duration getTokenValidDuration() {
+        return Duration.ofMillis(
+                jwt.get().getExpirationTime().getTime() - jwt.get().getIssueTime().getTime());
+    }
+
     public String getSecurityToken() {
         return this.securityToken;
     }

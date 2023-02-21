@@ -50,6 +50,14 @@ public class JwtClaimsSet {
     }
 
     /**
+     * Return the JWT issued time
+     * @return issued time
+     */
+    public Date getIssueTime() {
+        return jwt.getIssueTime();
+    }
+
+    /**
      * Return the string claim for the key.
      * @param jwk key for the claim
      * @return string claim

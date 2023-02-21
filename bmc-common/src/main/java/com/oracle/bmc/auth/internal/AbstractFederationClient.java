@@ -7,6 +7,7 @@ package com.oracle.bmc.auth.internal;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
+import com.oracle.bmc.auth.ProvidesCustomRequestSigner;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
@@ -48,7 +49,6 @@ public abstract class AbstractFederationClient
     protected final SessionKeySupplier sessionKeySupplier;
     protected final String resourcePrincipalTokenEndpoint;
     protected final String federationEndpoint;
-
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
     ClientConfiguration clientConfiguration = null;
     protected final RestClient restClient;
@@ -78,8 +78,15 @@ public abstract class AbstractFederationClient
         this.sessionKeySupplier =
                 Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
 
-        RequestSigner requestSigner =
-                DefaultRequestSigner.createRequestSigner(basicAuthenticationDetailsProvider);
+        RequestSigner requestSigner;
+        if (basicAuthenticationDetailsProvider instanceof ProvidesCustomRequestSigner) {
+            requestSigner =
+                    ((ProvidesCustomRequestSigner) basicAuthenticationDetailsProvider)
+                            .getCustomRequestSigner();
+        } else {
+            requestSigner =
+                    DefaultRequestSigner.createRequestSigner(basicAuthenticationDetailsProvider);
+        }
 
         if (circuitBreakerConfiguration != null) {
             clientConfiguration =
@@ -109,6 +116,14 @@ public abstract class AbstractFederationClient
         }
 
         return refreshAndGetSecurityTokenInner(true, Optional.empty(), true);
+    }
+
+    /**
+     * Get securityTokenAdapter
+     * @return securityTokenAdapter
+     */
+    protected SecurityTokenAdapter getSecurityTokenAdapter() {
+        return securityTokenAdapter;
     }
 
     /**

@@ -21,17 +21,28 @@ package com.oracle.bmc.databasemanagement.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"entityType", "actionType", "identifier", "entityUri"})
+    @java.beans.ConstructorProperties({
+        "entityType",
+        "actionType",
+        "identifier",
+        "entityUri",
+        "entityName",
+        "entityDependencies"
+    })
     public WorkRequestResource(
             String entityType,
             WorkRequestResourceActionType actionType,
             String identifier,
-            String entityUri) {
+            String entityUri,
+            String entityName,
+            java.util.List<WorkRequestSubResource> entityDependencies) {
         super();
         this.entityType = entityType;
         this.actionType = actionType;
         this.identifier = identifier;
         this.entityUri = entityUri;
+        this.entityName = entityName;
+        this.entityDependencies = entityDependencies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -108,6 +119,43 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("entityUri");
             return this;
         }
+        /**
+         * The name of the WorkRequest resource entity.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("entityName")
+        private String entityName;
+
+        /**
+         * The name of the WorkRequest resource entity.
+         * @param entityName the value to set
+         * @return this builder
+         **/
+        public Builder entityName(String entityName) {
+            this.entityName = entityName;
+            this.__explicitlySet__.add("entityName");
+            return this;
+        }
+        /**
+         * The dependent resources of this work request resource, these can only be provisioned
+         * when primary resource successfully completes.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("entityDependencies")
+        private java.util.List<WorkRequestSubResource> entityDependencies;
+
+        /**
+         * The dependent resources of this work request resource, these can only be provisioned
+         * when primary resource successfully completes.
+         *
+         * @param entityDependencies the value to set
+         * @return this builder
+         **/
+        public Builder entityDependencies(
+                java.util.List<WorkRequestSubResource> entityDependencies) {
+            this.entityDependencies = entityDependencies;
+            this.__explicitlySet__.add("entityDependencies");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -115,7 +163,12 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         public WorkRequestResource build() {
             WorkRequestResource model =
                     new WorkRequestResource(
-                            this.entityType, this.actionType, this.identifier, this.entityUri);
+                            this.entityType,
+                            this.actionType,
+                            this.identifier,
+                            this.entityUri,
+                            this.entityName,
+                            this.entityDependencies);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -135,6 +188,12 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("entityUri")) {
                 this.entityUri(model.getEntityUri());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("entityDependencies")) {
+                this.entityDependencies(model.getEntityDependencies());
             }
             return this;
         }
@@ -215,6 +274,38 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         return entityUri;
     }
 
+    /**
+     * The name of the WorkRequest resource entity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entityName")
+    private final String entityName;
+
+    /**
+     * The name of the WorkRequest resource entity.
+     * @return the value
+     **/
+    public String getEntityName() {
+        return entityName;
+    }
+
+    /**
+     * The dependent resources of this work request resource, these can only be provisioned
+     * when primary resource successfully completes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entityDependencies")
+    private final java.util.List<WorkRequestSubResource> entityDependencies;
+
+    /**
+     * The dependent resources of this work request resource, these can only be provisioned
+     * when primary resource successfully completes.
+     *
+     * @return the value
+     **/
+    public java.util.List<WorkRequestSubResource> getEntityDependencies() {
+        return entityDependencies;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -233,6 +324,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         sb.append(", actionType=").append(String.valueOf(this.actionType));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", entityUri=").append(String.valueOf(this.entityUri));
+        sb.append(", entityName=").append(String.valueOf(this.entityName));
+        sb.append(", entityDependencies=").append(String.valueOf(this.entityDependencies));
         sb.append(")");
         return sb.toString();
     }
@@ -251,6 +344,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.actionType, other.actionType)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.entityUri, other.entityUri)
+                && java.util.Objects.equals(this.entityName, other.entityName)
+                && java.util.Objects.equals(this.entityDependencies, other.entityDependencies)
                 && super.equals(other);
     }
 
@@ -262,6 +357,12 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.entityUri == null ? 43 : this.entityUri.hashCode());
+        result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityDependencies == null
+                                ? 43
+                                : this.entityDependencies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

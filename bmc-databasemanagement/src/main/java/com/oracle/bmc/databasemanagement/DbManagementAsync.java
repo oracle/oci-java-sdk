@@ -155,6 +155,25 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the external DB system and its related resources (excluding databases) to the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExternalDbSystemCompartmentResponse>
+            changeExternalDbSystemCompartment(
+                    ChangeExternalDbSystemCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalDbSystemCompartmentRequest,
+                                    ChangeExternalDbSystemCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a job.
      *
      *
@@ -193,6 +212,26 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Checks the status of the external DB system component connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CheckExternalDbSystemConnectorConnectionStatusResponse>
+            checkExternalDbSystemConnectorConnectionStatus(
+                    CheckExternalDbSystemConnectorConnectionStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CheckExternalDbSystemConnectorConnectionStatusRequest,
+                                    CheckExternalDbSystemConnectorConnectionStatusResponse>
+                            handler);
+
+    /**
      * Creates a new Database Management private endpoint.
      *
      *
@@ -209,6 +248,60 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CreateDbManagementPrivateEndpointRequest,
                                     CreateDbManagementPrivateEndpointResponse>
+                            handler);
+
+    /**
+     * Creates an external DB system and its related resources.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalDbSystemResponse> createExternalDbSystem(
+            CreateExternalDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExternalDbSystemRequest, CreateExternalDbSystemResponse>
+                    handler);
+
+    /**
+     * Creates a new external connector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalDbSystemConnectorResponse>
+            createExternalDbSystemConnector(
+                    CreateExternalDbSystemConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalDbSystemConnectorRequest,
+                                    CreateExternalDbSystemConnectorResponse>
+                            handler);
+
+    /**
+     * Creates an external DB system discovery resource and initiates the discovery process.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalDbSystemDiscoveryResponse>
+            createExternalDbSystemDiscovery(
+                    CreateExternalDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalDbSystemDiscoveryRequest,
+                                    CreateExternalDbSystemDiscoveryResponse>
                             handler);
 
     /**
@@ -281,6 +374,61 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the external DB system specified by `externalDbSystemId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalDbSystemResponse> deleteExternalDbSystem(
+            DeleteExternalDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExternalDbSystemRequest, DeleteExternalDbSystemResponse>
+                    handler);
+
+    /**
+     * Deletes the external connector specified by `externalDbSystemConnectorId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalDbSystemConnectorResponse>
+            deleteExternalDbSystemConnector(
+                    DeleteExternalDbSystemConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalDbSystemConnectorRequest,
+                                    DeleteExternalDbSystemConnectorResponse>
+                            handler);
+
+    /**
+     * Deletes the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalDbSystemDiscoveryResponse>
+            deleteExternalDbSystemDiscovery(
+                    DeleteExternalDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalDbSystemDiscoveryRequest,
+                                    DeleteExternalDbSystemDiscoveryResponse>
+                            handler);
+
+    /**
      * Deletes the job specified by jobId.
      *
      * @param request The request object containing the details to send
@@ -330,6 +478,26 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disables Database Management service for all the components of the specified
+     * external DB system (except databases).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalDbSystemDatabaseManagementResponse>
+            disableExternalDbSystemDatabaseManagement(
+                    DisableExternalDbSystemDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalDbSystemDatabaseManagementRequest,
+                                    DisableExternalDbSystemDatabaseManagementResponse>
+                            handler);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
      *
      *
@@ -344,6 +512,26 @@ public interface DbManagementAsync extends AutoCloseable {
             DropTablespaceRequest request,
             com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
                     handler);
+
+    /**
+     * Enables Database Management service for all the components of the specified
+     * external DB system (except databases).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalDbSystemDatabaseManagementResponse>
+            enableExternalDbSystemDatabaseManagement(
+                    EnableExternalDbSystemDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalDbSystemDatabaseManagementRequest,
+                                    EnableExternalDbSystemDatabaseManagementResponse>
+                            handler);
 
     /**
      * Creates an AWR snapshot for the target database.
@@ -467,6 +655,194 @@ public interface DbManagementAsync extends AutoCloseable {
                                     GetDbManagementPrivateEndpointRequest,
                                     GetDbManagementPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Gets the details for the external ASM specified by `externalAsmId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalAsmResponse> getExternalAsm(
+            GetExternalAsmRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetExternalAsmRequest, GetExternalAsmResponse>
+                    handler);
+
+    /**
+     * Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalAsmConfigurationResponse> getExternalAsmConfiguration(
+            GetExternalAsmConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalAsmConfigurationRequest, GetExternalAsmConfigurationResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external ASM instance specified by `externalAsmInstanceId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalAsmInstanceResponse> getExternalAsmInstance(
+            GetExternalAsmInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalAsmInstanceRequest, GetExternalAsmInstanceResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external cluster specified by `externalClusterId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalClusterResponse> getExternalCluster(
+            GetExternalClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalClusterRequest, GetExternalClusterResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external cluster instance specified by `externalClusterInstanceId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalClusterInstanceResponse> getExternalClusterInstance(
+            GetExternalClusterInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalClusterInstanceRequest, GetExternalClusterInstanceResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external DB home specified by `externalDbHomeId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalDbHomeResponse> getExternalDbHome(
+            GetExternalDbHomeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalDbHomeRequest, GetExternalDbHomeResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external DB node specified by `externalDbNodeId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalDbNodeResponse> getExternalDbNode(
+            GetExternalDbNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalDbNodeRequest, GetExternalDbNodeResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external DB system specified by `externalDbSystemId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalDbSystemResponse> getExternalDbSystem(
+            GetExternalDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalDbSystemRequest, GetExternalDbSystemResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external connector specified by `externalDbSystemConnectorId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalDbSystemConnectorResponse> getExternalDbSystemConnector(
+            GetExternalDbSystemConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalDbSystemConnectorRequest,
+                            GetExternalDbSystemConnectorResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalDbSystemDiscoveryResponse> getExternalDbSystemDiscovery(
+            GetExternalDbSystemDiscoveryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalDbSystemDiscoveryRequest,
+                            GetExternalDbSystemDiscoveryResponse>
+                    handler);
+
+    /**
+     * Gets the details for the external listener specified by `externalListenerId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalListenerResponse> getExternalListener(
+            GetExternalListenerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalListenerRequest, GetExternalListenerResponse>
+                    handler);
 
     /**
      * Gets the details for the job specified by jobId.
@@ -837,6 +1213,239 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists ASM disk groups for the external ASM specified by `externalAsmId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalAsmDiskGroupsResponse> listExternalAsmDiskGroups(
+            ListExternalAsmDiskGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalAsmDiskGroupsRequest, ListExternalAsmDiskGroupsResponse>
+                    handler);
+
+    /**
+     * Lists the ASM instances in the specified external ASM.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalAsmInstancesResponse> listExternalAsmInstances(
+            ListExternalAsmInstancesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalAsmInstancesRequest, ListExternalAsmInstancesResponse>
+                    handler);
+
+    /**
+     * Lists ASM users for the external ASM specified by `externalAsmId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalAsmUsersResponse> listExternalAsmUsers(
+            ListExternalAsmUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalAsmUsersRequest, ListExternalAsmUsersResponse>
+                    handler);
+
+    /**
+     * Lists the ASMs in the specified external DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalAsmsResponse> listExternalAsms(
+            ListExternalAsmsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListExternalAsmsRequest, ListExternalAsmsResponse>
+                    handler);
+
+    /**
+     * Lists the cluster instances in the specified external cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalClusterInstancesResponse> listExternalClusterInstances(
+            ListExternalClusterInstancesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalClusterInstancesRequest,
+                            ListExternalClusterInstancesResponse>
+                    handler);
+
+    /**
+     * Lists the clusters in the specified external DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalClustersResponse> listExternalClusters(
+            ListExternalClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalClustersRequest, ListExternalClustersResponse>
+                    handler);
+
+    /**
+     * Lists the external databases in the specified compartment or in the specified DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDatabasesResponse> listExternalDatabases(
+            ListExternalDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalDatabasesRequest, ListExternalDatabasesResponse>
+                    handler);
+
+    /**
+     * Lists the DB homes in the specified external DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDbHomesResponse> listExternalDbHomes(
+            ListExternalDbHomesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalDbHomesRequest, ListExternalDbHomesResponse>
+                    handler);
+
+    /**
+     * Lists the external DB nodes in the specified external DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDbNodesResponse> listExternalDbNodes(
+            ListExternalDbNodesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalDbNodesRequest, ListExternalDbNodesResponse>
+                    handler);
+
+    /**
+     * Lists the external connectors in the specified external DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDbSystemConnectorsResponse>
+            listExternalDbSystemConnectors(
+                    ListExternalDbSystemConnectorsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalDbSystemConnectorsRequest,
+                                    ListExternalDbSystemConnectorsResponse>
+                            handler);
+
+    /**
+     * Lists the external DB system discovery resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDbSystemDiscoveriesResponse>
+            listExternalDbSystemDiscoveries(
+                    ListExternalDbSystemDiscoveriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalDbSystemDiscoveriesRequest,
+                                    ListExternalDbSystemDiscoveriesResponse>
+                            handler);
+
+    /**
+     * Lists the external DB systems in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalDbSystemsResponse> listExternalDbSystems(
+            ListExternalDbSystemsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalDbSystemsRequest, ListExternalDbSystemsResponse>
+                    handler);
+
+    /**
+     * Lists the database services registered with the specified external listener
+     * for the specified Managed Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalListenerServicesResponse> listExternalListenerServices(
+            ListExternalListenerServicesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalListenerServicesRequest,
+                            ListExternalListenerServicesResponse>
+                    handler);
+
+    /**
+     * Lists the listeners in the specified external DB system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalListenersResponse> listExternalListeners(
+            ListExternalListenersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalListenersRequest, ListExternalListenersResponse>
+                    handler);
+
+    /**
      * Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
      * in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
@@ -1196,6 +1805,25 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchExternalDbSystemDiscoveryResponse>
+            patchExternalDbSystemDiscovery(
+                    PatchExternalDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PatchExternalDbSystemDiscoveryRequest,
+                                    PatchExternalDbSystemDiscoveryResponse>
+                            handler);
+
+    /**
      * Removes a data file or temp file from the tablespace.
      *
      *
@@ -1456,6 +2084,99 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets metrics for the external ASM specified by `externalAsmId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExternalAsmMetricsResponse> summarizeExternalAsmMetrics(
+            SummarizeExternalAsmMetricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeExternalAsmMetricsRequest, SummarizeExternalAsmMetricsResponse>
+                    handler);
+
+    /**
+     * Gets metrics for the external cluster specified by `externalClusterId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExternalClusterMetricsResponse>
+            summarizeExternalClusterMetrics(
+                    SummarizeExternalClusterMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExternalClusterMetricsRequest,
+                                    SummarizeExternalClusterMetricsResponse>
+                            handler);
+
+    /**
+     * Gets metrics for the external DB node specified by `externalDbNodeId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExternalDbNodeMetricsResponse>
+            summarizeExternalDbNodeMetrics(
+                    SummarizeExternalDbNodeMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExternalDbNodeMetricsRequest,
+                                    SummarizeExternalDbNodeMetricsResponse>
+                            handler);
+
+    /**
+     * Gets availability metrics for the components present in the external DB system specified by `externalDbSystemId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExternalDbSystemAvailabilityMetricsResponse>
+            summarizeExternalDbSystemAvailabilityMetrics(
+                    SummarizeExternalDbSystemAvailabilityMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExternalDbSystemAvailabilityMetricsRequest,
+                                    SummarizeExternalDbSystemAvailabilityMetricsResponse>
+                            handler);
+
+    /**
+     * Gets metrics for the external listener specified by `externalListenerId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExternalListenerMetricsResponse>
+            summarizeExternalListenerMetrics(
+                    SummarizeExternalListenerMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExternalListenerMetricsRequest,
+                                    SummarizeExternalListenerMetricsResponse>
+                            handler);
+
+    /**
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      *
      * @param request The request object containing the details to send
@@ -1471,6 +2192,26 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     SummarizeJobExecutionsStatusesRequest,
                                     SummarizeJobExecutionsStatusesResponse>
+                            handler);
+
+    /**
+     * Gets the availability metrics related to managed database for the Oracle
+     * database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeManagedDatabaseAvailabilityMetricsResponse>
+            summarizeManagedDatabaseAvailabilityMetrics(
+                    SummarizeManagedDatabaseAvailabilityMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagedDatabaseAvailabilityMetricsRequest,
+                                    SummarizeManagedDatabaseAvailabilityMetricsResponse>
                             handler);
 
     /**
@@ -1507,6 +2248,147 @@ public interface DbManagementAsync extends AutoCloseable {
                                     UpdateDbManagementPrivateEndpointRequest,
                                     UpdateDbManagementPrivateEndpointResponse>
                             handler);
+
+    /**
+     * Updates the external ASM specified by `externalAsmId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalAsmResponse> updateExternalAsm(
+            UpdateExternalAsmRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalAsmRequest, UpdateExternalAsmResponse>
+                    handler);
+
+    /**
+     * Updates the external cluster specified by `externalClusterId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalClusterResponse> updateExternalCluster(
+            UpdateExternalClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalClusterRequest, UpdateExternalClusterResponse>
+                    handler);
+
+    /**
+     * Updates the external cluster instance specified by `externalClusterInstanceId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalClusterInstanceResponse>
+            updateExternalClusterInstance(
+                    UpdateExternalClusterInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalClusterInstanceRequest,
+                                    UpdateExternalClusterInstanceResponse>
+                            handler);
+
+    /**
+     * Updates the external DB node specified by `externalDbNodeId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalDbNodeResponse> updateExternalDbNode(
+            UpdateExternalDbNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalDbNodeRequest, UpdateExternalDbNodeResponse>
+                    handler);
+
+    /**
+     * Updates the external DB system specified by `externalDbSystemId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalDbSystemResponse> updateExternalDbSystem(
+            UpdateExternalDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalDbSystemRequest, UpdateExternalDbSystemResponse>
+                    handler);
+
+    /**
+     * Updates the external connector specified by `externalDbSystemConnectorId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalDbSystemConnectorResponse>
+            updateExternalDbSystemConnector(
+                    UpdateExternalDbSystemConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalDbSystemConnectorRequest,
+                                    UpdateExternalDbSystemConnectorResponse>
+                            handler);
+
+    /**
+     * Updates the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalDbSystemDiscoveryResponse>
+            updateExternalDbSystemDiscovery(
+                    UpdateExternalDbSystemDiscoveryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalDbSystemDiscoveryRequest,
+                                    UpdateExternalDbSystemDiscoveryResponse>
+                            handler);
+
+    /**
+     * Updates the external listener specified by `externalListenerId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalListenerResponse> updateExternalListener(
+            UpdateExternalListenerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalListenerRequest, UpdateExternalListenerResponse>
+                    handler);
 
     /**
      * Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.

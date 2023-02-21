@@ -21,17 +21,45 @@ package com.oracle.bmc.aianomalydetection.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targetFap", "trainingFraction", "dataAssetIds"})
+    @java.beans.ConstructorProperties({
+        "algorithmHint",
+        "targetFap",
+        "trainingFraction",
+        "windowSize",
+        "dataAssetIds"
+    })
     public ModelTrainingDetails(
-            Float targetFap, Float trainingFraction, java.util.List<String> dataAssetIds) {
+            AlgorithmHint algorithmHint,
+            Float targetFap,
+            Float trainingFraction,
+            Integer windowSize,
+            java.util.List<String> dataAssetIds) {
         super();
+        this.algorithmHint = algorithmHint;
         this.targetFap = targetFap;
         this.trainingFraction = trainingFraction;
+        this.windowSize = windowSize;
         this.dataAssetIds = dataAssetIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * User can choose specific algorithm for training.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("algorithmHint")
+        private AlgorithmHint algorithmHint;
+
+        /**
+         * User can choose specific algorithm for training.
+         * @param algorithmHint the value to set
+         * @return this builder
+         **/
+        public Builder algorithmHint(AlgorithmHint algorithmHint) {
+            this.algorithmHint = algorithmHint;
+            this.__explicitlySet__.add("algorithmHint");
+            return this;
+        }
         /**
          * A target model accuracy metric user provides as their requirement
          **/
@@ -65,6 +93,22 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * This value would determine the window size of the training algorithm.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("windowSize")
+        private Integer windowSize;
+
+        /**
+         * This value would determine the window size of the training algorithm.
+         * @param windowSize the value to set
+         * @return this builder
+         **/
+        public Builder windowSize(Integer windowSize) {
+            this.windowSize = windowSize;
+            this.__explicitlySet__.add("windowSize");
+            return this;
+        }
+        /**
          * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetIds")
@@ -87,7 +131,11 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
         public ModelTrainingDetails build() {
             ModelTrainingDetails model =
                     new ModelTrainingDetails(
-                            this.targetFap, this.trainingFraction, this.dataAssetIds);
+                            this.algorithmHint,
+                            this.targetFap,
+                            this.trainingFraction,
+                            this.windowSize,
+                            this.dataAssetIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -96,11 +144,17 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ModelTrainingDetails model) {
+            if (model.wasPropertyExplicitlySet("algorithmHint")) {
+                this.algorithmHint(model.getAlgorithmHint());
+            }
             if (model.wasPropertyExplicitlySet("targetFap")) {
                 this.targetFap(model.getTargetFap());
             }
             if (model.wasPropertyExplicitlySet("trainingFraction")) {
                 this.trainingFraction(model.getTrainingFraction());
+            }
+            if (model.wasPropertyExplicitlySet("windowSize")) {
+                this.windowSize(model.getWindowSize());
             }
             if (model.wasPropertyExplicitlySet("dataAssetIds")) {
                 this.dataAssetIds(model.getDataAssetIds());
@@ -118,6 +172,68 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * User can choose specific algorithm for training.
+     **/
+    public enum AlgorithmHint {
+        MultivariateMset("MULTIVARIATE_MSET"),
+        UnivariateOcsvm("UNIVARIATE_OCSVM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AlgorithmHint.class);
+
+        private final String value;
+        private static java.util.Map<String, AlgorithmHint> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AlgorithmHint v : AlgorithmHint.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AlgorithmHint(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AlgorithmHint create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AlgorithmHint', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * User can choose specific algorithm for training.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("algorithmHint")
+    private final AlgorithmHint algorithmHint;
+
+    /**
+     * User can choose specific algorithm for training.
+     * @return the value
+     **/
+    public AlgorithmHint getAlgorithmHint() {
+        return algorithmHint;
     }
 
     /**
@@ -149,6 +265,20 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * This value would determine the window size of the training algorithm.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("windowSize")
+    private final Integer windowSize;
+
+    /**
+     * This value would determine the window size of the training algorithm.
+     * @return the value
+     **/
+    public Integer getWindowSize() {
+        return windowSize;
+    }
+
+    /**
      * The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetIds")
@@ -176,8 +306,10 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModelTrainingDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("targetFap=").append(String.valueOf(this.targetFap));
+        sb.append("algorithmHint=").append(String.valueOf(this.algorithmHint));
+        sb.append(", targetFap=").append(String.valueOf(this.targetFap));
         sb.append(", trainingFraction=").append(String.valueOf(this.trainingFraction));
+        sb.append(", windowSize=").append(String.valueOf(this.windowSize));
         sb.append(", dataAssetIds=").append(String.valueOf(this.dataAssetIds));
         sb.append(")");
         return sb.toString();
@@ -193,8 +325,10 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
         }
 
         ModelTrainingDetails other = (ModelTrainingDetails) o;
-        return java.util.Objects.equals(this.targetFap, other.targetFap)
+        return java.util.Objects.equals(this.algorithmHint, other.algorithmHint)
+                && java.util.Objects.equals(this.targetFap, other.targetFap)
                 && java.util.Objects.equals(this.trainingFraction, other.trainingFraction)
+                && java.util.Objects.equals(this.windowSize, other.windowSize)
                 && java.util.Objects.equals(this.dataAssetIds, other.dataAssetIds)
                 && super.equals(other);
     }
@@ -203,10 +337,14 @@ public final class ModelTrainingDetails extends com.oracle.bmc.http.internal.Exp
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.algorithmHint == null ? 43 : this.algorithmHint.hashCode());
         result = (result * PRIME) + (this.targetFap == null ? 43 : this.targetFap.hashCode());
         result =
                 (result * PRIME)
                         + (this.trainingFraction == null ? 43 : this.trainingFraction.hashCode());
+        result = (result * PRIME) + (this.windowSize == null ? 43 : this.windowSize.hashCode());
         result = (result * PRIME) + (this.dataAssetIds == null ? 43 : this.dataAssetIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
