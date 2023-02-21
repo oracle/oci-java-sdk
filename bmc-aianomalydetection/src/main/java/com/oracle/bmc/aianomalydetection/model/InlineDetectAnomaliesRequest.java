@@ -5,8 +5,8 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * This is the specialised JSON format that we accept as Training data, with an additional
- * field for 'requestType' which is a required field used deciding whether it is an inline
+ * This is the specialised JSON format that is accepted as training data, with an additional
+ * field for 'requestType'. This is a required field used deciding whether it is an inline
  * request or contains embedded data.
  *
  * <br/>
@@ -36,6 +36,15 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sensitivity")
+        private Float sensitivity;
+
+        public Builder sensitivity(Float sensitivity) {
+            this.sensitivity = sensitivity;
+            this.__explicitlySet__.add("sensitivity");
             return this;
         }
         /**
@@ -76,7 +85,8 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
 
         public InlineDetectAnomaliesRequest build() {
             InlineDetectAnomaliesRequest model =
-                    new InlineDetectAnomaliesRequest(this.modelId, this.signalNames, this.data);
+                    new InlineDetectAnomaliesRequest(
+                            this.modelId, this.sensitivity, this.signalNames, this.data);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +97,9 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
         public Builder copy(InlineDetectAnomaliesRequest model) {
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("sensitivity")) {
+                this.sensitivity(model.getSensitivity());
             }
             if (model.wasPropertyExplicitlySet("signalNames")) {
                 this.signalNames(model.getSignalNames());
@@ -111,8 +124,11 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
 
     @Deprecated
     public InlineDetectAnomaliesRequest(
-            String modelId, java.util.List<String> signalNames, java.util.List<DataItem> data) {
-        super(modelId);
+            String modelId,
+            Float sensitivity,
+            java.util.List<String> signalNames,
+            java.util.List<DataItem> data) {
+        super(modelId, sensitivity);
         this.signalNames = signalNames;
         this.data = data;
     }

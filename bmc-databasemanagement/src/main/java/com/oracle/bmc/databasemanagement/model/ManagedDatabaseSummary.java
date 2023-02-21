@@ -33,6 +33,8 @@ public final class ManagedDatabaseSummary
         "workloadType",
         "isCluster",
         "parentContainerId",
+        "dbSystemId",
+        "storageSystemId",
         "timeCreated"
     })
     public ManagedDatabaseSummary(
@@ -46,6 +48,8 @@ public final class ManagedDatabaseSummary
             WorkloadType workloadType,
             Boolean isCluster,
             String parentContainerId,
+            String dbSystemId,
+            String storageSystemId,
             java.util.Date timeCreated) {
         super();
         this.id = id;
@@ -58,6 +62,8 @@ public final class ManagedDatabaseSummary
         this.workloadType = workloadType;
         this.isCluster = isCluster;
         this.parentContainerId = parentContainerId;
+        this.dbSystemId = dbSystemId;
+        this.storageSystemId = storageSystemId;
         this.timeCreated = timeCreated;
     }
 
@@ -232,6 +238,42 @@ public final class ManagedDatabaseSummary
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external
+         * DB system that this Managed Database is part of.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external
+         * DB system that this Managed Database is part of.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the storage DB system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSystemId")
+        private String storageSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the storage DB system.
+         * @param storageSystemId the value to set
+         * @return this builder
+         **/
+        public Builder storageSystemId(String storageSystemId) {
+            this.storageSystemId = storageSystemId;
+            this.__explicitlySet__.add("storageSystemId");
+            return this;
+        }
+        /**
          * The date and time the Managed Database was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -264,6 +306,8 @@ public final class ManagedDatabaseSummary
                             this.workloadType,
                             this.isCluster,
                             this.parentContainerId,
+                            this.dbSystemId,
+                            this.storageSystemId,
                             this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -302,6 +346,12 @@ public final class ManagedDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("parentContainerId")) {
                 this.parentContainerId(model.getParentContainerId());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("storageSystemId")) {
+                this.storageSystemId(model.getStorageSystemId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -470,6 +520,38 @@ public final class ManagedDatabaseSummary
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external
+     * DB system that this Managed Database is part of.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    private final String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external
+     * DB system that this Managed Database is part of.
+     *
+     * @return the value
+     **/
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the storage DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSystemId")
+    private final String storageSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the storage DB system.
+     * @return the value
+     **/
+    public String getStorageSystemId() {
+        return storageSystemId;
+    }
+
+    /**
      * The date and time the Managed Database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -507,6 +589,8 @@ public final class ManagedDatabaseSummary
         sb.append(", workloadType=").append(String.valueOf(this.workloadType));
         sb.append(", isCluster=").append(String.valueOf(this.isCluster));
         sb.append(", parentContainerId=").append(String.valueOf(this.parentContainerId));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", storageSystemId=").append(String.valueOf(this.storageSystemId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
         return sb.toString();
@@ -532,6 +616,8 @@ public final class ManagedDatabaseSummary
                 && java.util.Objects.equals(this.workloadType, other.workloadType)
                 && java.util.Objects.equals(this.isCluster, other.isCluster)
                 && java.util.Objects.equals(this.parentContainerId, other.parentContainerId)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.storageSystemId, other.storageSystemId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
     }
@@ -560,6 +646,10 @@ public final class ManagedDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.parentContainerId == null ? 43 : this.parentContainerId.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSystemId == null ? 43 : this.storageSystemId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

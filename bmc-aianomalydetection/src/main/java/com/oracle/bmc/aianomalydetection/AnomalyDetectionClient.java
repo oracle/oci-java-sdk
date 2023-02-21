@@ -536,11 +536,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -572,7 +575,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -580,7 +583,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "AnomalyDetection",
                         "ChangeAiPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/ChangeAiPrivateEndpointCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAiPrivateEndpointCompartmentResponse>
                 transformer =
@@ -617,7 +620,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -625,7 +628,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "AnomalyDetection",
                         "ChangeDataAssetCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/ChangeDataAssetCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeDataAssetCompartmentResponse>
                 transformer =
                         ChangeDataAssetCompartmentConverter.fromResponse(
@@ -651,6 +654,50 @@ public class AnomalyDetectionClient implements AnomalyDetection {
     }
 
     @Override
+    public ChangeDetectAnomalyJobCompartmentResponse changeDetectAnomalyJobCompartment(
+            ChangeDetectAnomalyJobCompartmentRequest request) {
+        LOG.trace("Called changeDetectAnomalyJobCompartment");
+        final ChangeDetectAnomalyJobCompartmentRequest interceptedRequest =
+                ChangeDetectAnomalyJobCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDetectAnomalyJobCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnomalyDetection",
+                        "ChangeDetectAnomalyJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/ChangeDetectAnomalyJobCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDetectAnomalyJobCompartmentResponse>
+                transformer =
+                        ChangeDetectAnomalyJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDetectAnomalyJobCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeModelCompartmentResponse changeModelCompartment(
             ChangeModelCompartmentRequest request) {
         LOG.trace("Called changeModelCompartment");
@@ -661,7 +708,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -669,7 +716,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "AnomalyDetection",
                         "ChangeModelCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ChangeModelCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer =
                         ChangeModelCompartmentConverter.fromResponse(
@@ -704,7 +751,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -712,7 +759,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "AnomalyDetection",
                         "ChangeProjectCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ChangeProjectCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer =
                         ChangeProjectCompartmentConverter.fromResponse(
@@ -747,7 +794,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -755,7 +802,7 @@ public class AnomalyDetectionClient implements AnomalyDetection {
                         "AnomalyDetection",
                         "CreateAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/CreateAiPrivateEndpoint");
         java.util.function.Function<javax.ws.rs.core.Response, CreateAiPrivateEndpointResponse>
                 transformer =
                         CreateAiPrivateEndpointConverter.fromResponse(
@@ -789,12 +836,15 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "CreateDataAsset", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "CreateDataAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/CreateDataAsset");
         java.util.function.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer =
                         CreateDataAssetConverter.fromResponse(
@@ -819,6 +869,49 @@ public class AnomalyDetectionClient implements AnomalyDetection {
     }
 
     @Override
+    public CreateDetectAnomalyJobResponse createDetectAnomalyJob(
+            CreateDetectAnomalyJobRequest request) {
+        LOG.trace("Called createDetectAnomalyJob");
+        final CreateDetectAnomalyJobRequest interceptedRequest =
+                CreateDetectAnomalyJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDetectAnomalyJobConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnomalyDetection",
+                        "CreateDetectAnomalyJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/CreateDetectAnomalyJob");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDetectAnomalyJobResponse>
+                transformer =
+                        CreateDetectAnomalyJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDetectAnomalyJobDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateModelResponse createModel(CreateModelRequest request) {
         LOG.trace("Called createModel");
         final CreateModelRequest interceptedRequest =
@@ -828,12 +921,15 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "CreateModel", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "CreateModel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/CreateModel");
         java.util.function.Function<javax.ws.rs.core.Response, CreateModelResponse> transformer =
                 CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -865,12 +961,15 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "CreateProject", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "CreateProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/CreateProject");
         java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse> transformer =
                 CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -903,14 +1002,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection",
                         "DeleteAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/DeleteAiPrivateEndpoint");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteAiPrivateEndpointResponse>
                 transformer =
                         DeleteAiPrivateEndpointConverter.fromResponse(
@@ -941,14 +1040,56 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "DeleteDataAsset", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "DeleteDataAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/DeleteDataAsset");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer =
                         DeleteDataAssetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDetectAnomalyJobResponse deleteDetectAnomalyJob(
+            DeleteDetectAnomalyJobRequest request) {
+        LOG.trace("Called deleteDetectAnomalyJob");
+        final DeleteDetectAnomalyJobRequest interceptedRequest =
+                DeleteDetectAnomalyJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDetectAnomalyJobConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnomalyDetection",
+                        "DeleteDetectAnomalyJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/DeleteDetectAnomalyJob");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDetectAnomalyJobResponse>
+                transformer =
+                        DeleteDetectAnomalyJobConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -976,11 +1117,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "DeleteModel", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "DeleteModel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DeleteModel");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteModelResponse> transformer =
                 DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1009,11 +1153,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "DeleteProject", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "DeleteProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/DeleteProject");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse> transformer =
                 DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1042,12 +1189,15 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "DetectAnomalies", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "DetectAnomalies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DetectAnomalies");
         java.util.function.Function<javax.ws.rs.core.Response, DetectAnomaliesResponse>
                 transformer =
                         DetectAnomaliesConverter.fromResponse(
@@ -1081,14 +1231,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection",
                         "GetAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/GetAiPrivateEndpoint");
         java.util.function.Function<javax.ws.rs.core.Response, GetAiPrivateEndpointResponse>
                 transformer =
                         GetAiPrivateEndpointConverter.fromResponse(
@@ -1118,13 +1268,53 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "GetDataAsset", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "GetDataAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/GetDataAsset");
         java.util.function.Function<javax.ws.rs.core.Response, GetDataAssetResponse> transformer =
                 GetDataAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDetectAnomalyJobResponse getDetectAnomalyJob(GetDetectAnomalyJobRequest request) {
+        LOG.trace("Called getDetectAnomalyJob");
+        final GetDetectAnomalyJobRequest interceptedRequest =
+                GetDetectAnomalyJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDetectAnomalyJobConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnomalyDetection",
+                        "GetDetectAnomalyJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/GetDetectAnomalyJob");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDetectAnomalyJobResponse>
+                transformer =
+                        GetDetectAnomalyJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1149,11 +1339,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "GetModel", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "GetModel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/GetModel");
         java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
                 GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1180,11 +1373,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "GetProject", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "GetProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/GetProject");
         java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse> transformer =
                 GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1212,11 +1408,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1245,14 +1444,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection",
                         "ListAiPrivateEndpoints",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpointCollection/ListAiPrivateEndpoints");
         java.util.function.Function<javax.ws.rs.core.Response, ListAiPrivateEndpointsResponse>
                 transformer =
                         ListAiPrivateEndpointsConverter.fromResponse(
@@ -1282,13 +1481,54 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "ListDataAssets", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "ListDataAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAssetCollection/ListDataAssets");
         java.util.function.Function<javax.ws.rs.core.Response, ListDataAssetsResponse> transformer =
                 ListDataAssetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDetectAnomalyJobsResponse listDetectAnomalyJobs(
+            ListDetectAnomalyJobsRequest request) {
+        LOG.trace("Called listDetectAnomalyJobs");
+        final ListDetectAnomalyJobsRequest interceptedRequest =
+                ListDetectAnomalyJobsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDetectAnomalyJobsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnomalyDetection",
+                        "ListDetectAnomalyJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJobCollection/ListDetectAnomalyJobs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDetectAnomalyJobsResponse>
+                transformer =
+                        ListDetectAnomalyJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1313,11 +1553,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "ListModels", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "ListModels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ListModels");
         java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
                 ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1345,11 +1588,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "ListProjects", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "ListProjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ListProjects");
         java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse> transformer =
                 ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1378,14 +1624,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1415,14 +1661,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1452,11 +1698,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1487,14 +1736,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "AnomalyDetection",
                         "UpdateAiPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/UpdateAiPrivateEndpoint");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateAiPrivateEndpointResponse>
                 transformer =
                         UpdateAiPrivateEndpointConverter.fromResponse(
@@ -1528,11 +1777,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "UpdateDataAsset", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "UpdateDataAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/UpdateDataAsset");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer =
                         UpdateDataAssetConverter.fromResponse(
@@ -1557,6 +1809,48 @@ public class AnomalyDetectionClient implements AnomalyDetection {
     }
 
     @Override
+    public UpdateDetectAnomalyJobResponse updateDetectAnomalyJob(
+            UpdateDetectAnomalyJobRequest request) {
+        LOG.trace("Called updateDetectAnomalyJob");
+        final UpdateDetectAnomalyJobRequest interceptedRequest =
+                UpdateDetectAnomalyJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDetectAnomalyJobConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnomalyDetection",
+                        "UpdateDetectAnomalyJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/UpdateDetectAnomalyJob");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDetectAnomalyJobResponse>
+                transformer =
+                        UpdateDetectAnomalyJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDetectAnomalyJobDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateModelResponse updateModel(UpdateModelRequest request) {
         LOG.trace("Called updateModel");
         final UpdateModelRequest interceptedRequest =
@@ -1566,11 +1860,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "UpdateModel", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "UpdateModel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/UpdateModel");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateModelResponse> transformer =
                 UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1602,11 +1899,14 @@ public class AnomalyDetectionClient implements AnomalyDetection {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AnomalyDetection", "UpdateProject", ib.getRequestUri().toString(), "");
+                        "AnomalyDetection",
+                        "UpdateProject",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/UpdateProject");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse> transformer =
                 UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

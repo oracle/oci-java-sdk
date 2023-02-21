@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>2.53.0</version>
+    <version>2.54.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -20,6 +20,7 @@
     <module>bmc-graalvm-addon</module>
     <module>bmc-resteasy-client-configurator</module>
     <module>bmc-sasl</module>
+    <module>bmc-oke-workload-identity</module>
   </modules>
 
 </project>
