@@ -110,7 +110,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeProtectedDatabaseCompartmentResponse::builder)
                 .logger(LOG, "changeProtectedDatabaseCompartment")
-                .serviceDetails("DatabaseRecovery", "ChangeProtectedDatabaseCompartment", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ChangeProtectedDatabaseCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeProtectedDatabaseCompartmentRequest::builder)
                 .basePath("/20210216")
@@ -147,7 +150,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeProtectionPolicyCompartmentResponse::builder)
                 .logger(LOG, "changeProtectionPolicyCompartment")
-                .serviceDetails("DatabaseRecovery", "ChangeProtectionPolicyCompartment", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ChangeProtectionPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/ChangeProtectionPolicyCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeProtectionPolicyCompartmentRequest::builder)
                 .basePath("/20210216")
@@ -185,7 +191,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeRecoveryServiceSubnetCompartmentResponse::builder)
                 .logger(LOG, "changeRecoveryServiceSubnetCompartment")
-                .serviceDetails("DatabaseRecovery", "ChangeRecoveryServiceSubnetCompartment", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ChangeRecoveryServiceSubnetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/ChangeRecoveryServiceSubnetCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRecoveryServiceSubnetCompartmentRequest::builder)
                 .basePath("/20210216")
@@ -218,7 +227,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateProtectedDatabaseResponse::builder)
                 .logger(LOG, "createProtectedDatabase")
-                .serviceDetails("DatabaseRecovery", "CreateProtectedDatabase", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CreateProtectedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CreateProtectedDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateProtectedDatabaseRequest::builder)
                 .basePath("/20210216")
@@ -253,7 +265,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateProtectionPolicyResponse::builder)
                 .logger(LOG, "createProtectionPolicy")
-                .serviceDetails("DatabaseRecovery", "CreateProtectionPolicy", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CreateProtectionPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/CreateProtectionPolicy")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateProtectionPolicyRequest::builder)
                 .basePath("/20210216")
@@ -290,7 +305,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateRecoveryServiceSubnetResponse::builder)
                 .logger(LOG, "createRecoveryServiceSubnet")
-                .serviceDetails("DatabaseRecovery", "CreateRecoveryServiceSubnet", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CreateRecoveryServiceSubnet",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/CreateRecoveryServiceSubnet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRecoveryServiceSubnetRequest::builder)
                 .basePath("/20210216")
@@ -326,7 +344,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteProtectedDatabaseResponse::builder)
                 .logger(LOG, "deleteProtectedDatabase")
-                .serviceDetails("DatabaseRecovery", "DeleteProtectedDatabase", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "DeleteProtectedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/DeleteProtectedDatabase")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteProtectedDatabaseRequest::builder)
                 .basePath("/20210216")
@@ -354,7 +375,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteProtectionPolicyResponse::builder)
                 .logger(LOG, "deleteProtectionPolicy")
-                .serviceDetails("DatabaseRecovery", "DeleteProtectionPolicy", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "DeleteProtectionPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/DeleteProtectionPolicy")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteProtectionPolicyRequest::builder)
                 .basePath("/20210216")
@@ -385,7 +409,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteRecoveryServiceSubnetResponse::builder)
                 .logger(LOG, "deleteRecoveryServiceSubnet")
-                .serviceDetails("DatabaseRecovery", "DeleteRecoveryServiceSubnet", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "DeleteRecoveryServiceSubnet",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/DeleteRecoveryServiceSubnet")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRecoveryServiceSubnetRequest::builder)
                 .basePath("/20210216")
@@ -416,7 +443,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, FetchProtectedDatabaseConfigurationResponse::builder)
                 .logger(LOG, "fetchProtectedDatabaseConfiguration")
-                .serviceDetails("DatabaseRecovery", "FetchProtectedDatabaseConfiguration", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "FetchProtectedDatabaseConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/FetchProtectedDatabaseConfiguration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(FetchProtectedDatabaseConfigurationRequest::builder)
                 .basePath("/20210216")
@@ -451,7 +481,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetProtectedDatabaseResponse::builder)
                 .logger(LOG, "getProtectedDatabase")
-                .serviceDetails("DatabaseRecovery", "GetProtectedDatabase", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "GetProtectedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/GetProtectedDatabase")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProtectedDatabaseRequest::builder)
                 .basePath("/20210216")
@@ -479,7 +512,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetProtectionPolicyResponse::builder)
                 .logger(LOG, "getProtectionPolicy")
-                .serviceDetails("DatabaseRecovery", "GetProtectionPolicy", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "GetProtectionPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/GetProtectionPolicy")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProtectionPolicyRequest::builder)
                 .basePath("/20210216")
@@ -508,7 +544,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetRecoveryServiceSubnetResponse::builder)
                 .logger(LOG, "getRecoveryServiceSubnet")
-                .serviceDetails("DatabaseRecovery", "GetRecoveryServiceSubnet", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "GetRecoveryServiceSubnet",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/GetRecoveryServiceSubnet")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRecoveryServiceSubnetRequest::builder)
                 .basePath("/20210216")
@@ -536,7 +575,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("DatabaseRecovery", "GetWorkRequest", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210216")
@@ -564,7 +606,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListProtectedDatabasesResponse::builder)
                 .logger(LOG, "listProtectedDatabases")
-                .serviceDetails("DatabaseRecovery", "ListProtectedDatabases", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListProtectedDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabaseCollection/ListProtectedDatabases")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListProtectedDatabasesRequest::builder)
                 .basePath("/20210216")
@@ -601,7 +646,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListProtectionPoliciesResponse::builder)
                 .logger(LOG, "listProtectionPolicies")
-                .serviceDetails("DatabaseRecovery", "ListProtectionPolicies", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListProtectionPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicyCollection/ListProtectionPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListProtectionPoliciesRequest::builder)
                 .basePath("/20210216")
@@ -639,7 +687,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListRecoveryServiceSubnetsResponse::builder)
                 .logger(LOG, "listRecoveryServiceSubnets")
-                .serviceDetails("DatabaseRecovery", "ListRecoveryServiceSubnets", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListRecoveryServiceSubnets",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnetCollection/ListRecoveryServiceSubnets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRecoveryServiceSubnetsRequest::builder)
                 .basePath("/20210216")
@@ -676,7 +727,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("DatabaseRecovery", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestErrorCollection/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210216")
@@ -710,7 +764,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("DatabaseRecovery", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestLogEntryCollection/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210216")
@@ -743,7 +800,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("DatabaseRecovery", "ListWorkRequests", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestSummaryCollection/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210216")
@@ -783,7 +843,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateProtectedDatabaseResponse::builder)
                 .logger(LOG, "updateProtectedDatabase")
-                .serviceDetails("DatabaseRecovery", "UpdateProtectedDatabase", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "UpdateProtectedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/UpdateProtectedDatabase")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateProtectedDatabaseRequest::builder)
                 .basePath("/20210216")
@@ -815,7 +878,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateProtectionPolicyResponse::builder)
                 .logger(LOG, "updateProtectionPolicy")
-                .serviceDetails("DatabaseRecovery", "UpdateProtectionPolicy", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "UpdateProtectionPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/UpdateProtectionPolicy")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateProtectionPolicyRequest::builder)
                 .basePath("/20210216")
@@ -850,7 +916,10 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateRecoveryServiceSubnetResponse::builder)
                 .logger(LOG, "updateRecoveryServiceSubnet")
-                .serviceDetails("DatabaseRecovery", "UpdateRecoveryServiceSubnet", "")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "UpdateRecoveryServiceSubnet",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/UpdateRecoveryServiceSubnet")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRecoveryServiceSubnetRequest::builder)
                 .basePath("/20210216")

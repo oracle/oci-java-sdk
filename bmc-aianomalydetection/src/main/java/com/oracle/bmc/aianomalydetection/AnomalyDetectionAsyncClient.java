@@ -105,7 +105,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("AnomalyDetection", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20210101")
@@ -136,7 +139,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeAiPrivateEndpointCompartmentResponse::builder)
                 .logger(LOG, "changeAiPrivateEndpointCompartment")
-                .serviceDetails("AnomalyDetection", "ChangeAiPrivateEndpointCompartment", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ChangeAiPrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/ChangeAiPrivateEndpointCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeAiPrivateEndpointCompartmentRequest::builder)
                 .basePath("/20210101")
@@ -174,7 +180,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeDataAssetCompartmentResponse::builder)
                 .logger(LOG, "changeDataAssetCompartment")
-                .serviceDetails("AnomalyDetection", "ChangeDataAssetCompartment", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ChangeDataAssetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/ChangeDataAssetCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDataAssetCompartmentRequest::builder)
                 .basePath("/20210101")
@@ -198,6 +207,43 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDetectAnomalyJobCompartmentResponse>
+            changeDetectAnomalyJobCompartment(
+                    ChangeDetectAnomalyJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDetectAnomalyJobCompartmentRequest,
+                                    ChangeDetectAnomalyJobCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDetectAnomalyJobId(), "detectAnomalyJobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDetectAnomalyJobCompartmentDetails(),
+                "changeDetectAnomalyJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeDetectAnomalyJobCompartmentResponse::builder)
+                .logger(LOG, "changeDetectAnomalyJobCompartment")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ChangeDetectAnomalyJobCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/ChangeDetectAnomalyJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDetectAnomalyJobCompartmentRequest::builder)
+                .basePath("/20210101")
+                .appendPathParam("detectAnomalyJobs")
+                .appendPathParam(request.getDetectAnomalyJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDetectAnomalyJobCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeModelCompartmentResponse> changeModelCompartment(
             ChangeModelCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -211,7 +257,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeModelCompartmentResponse::builder)
                 .logger(LOG, "changeModelCompartment")
-                .serviceDetails("AnomalyDetection", "ChangeModelCompartment", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ChangeModelCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ChangeModelCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeModelCompartmentRequest::builder)
                 .basePath("/20210101")
@@ -243,7 +292,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeProjectCompartmentResponse::builder)
                 .logger(LOG, "changeProjectCompartment")
-                .serviceDetails("AnomalyDetection", "ChangeProjectCompartment", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ChangeProjectCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ChangeProjectCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeProjectCompartmentRequest::builder)
                 .basePath("/20210101")
@@ -273,7 +325,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateAiPrivateEndpointResponse::builder)
                 .logger(LOG, "createAiPrivateEndpoint")
-                .serviceDetails("AnomalyDetection", "CreateAiPrivateEndpoint", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "CreateAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/CreateAiPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAiPrivateEndpointRequest::builder)
                 .basePath("/20210101")
@@ -301,7 +356,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateDataAssetResponse::builder)
                 .logger(LOG, "createDataAsset")
-                .serviceDetails("AnomalyDetection", "CreateDataAsset", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "CreateDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/CreateDataAsset")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDataAssetRequest::builder)
                 .basePath("/20210101")
@@ -320,6 +378,39 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDetectAnomalyJobResponse> createDetectAnomalyJob(
+            CreateDetectAnomalyJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDetectAnomalyJobRequest, CreateDetectAnomalyJobResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateDetectAnomalyJobDetails(),
+                "createDetectAnomalyJobDetails is required");
+
+        return clientCall(request, CreateDetectAnomalyJobResponse::builder)
+                .logger(LOG, "createDetectAnomalyJob")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "CreateDetectAnomalyJob",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/CreateDetectAnomalyJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDetectAnomalyJobRequest::builder)
+                .basePath("/20210101")
+                .appendPathParam("detectAnomalyJobs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob.class,
+                        CreateDetectAnomalyJobResponse.Builder::detectAnomalyJob)
+                .handleResponseHeaderString("etag", CreateDetectAnomalyJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDetectAnomalyJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
@@ -328,7 +419,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateModelResponse::builder)
                 .logger(LOG, "createModel")
-                .serviceDetails("AnomalyDetection", "CreateModel", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "CreateModel",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/CreateModel")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateModelRequest::builder)
                 .basePath("/20210101")
@@ -359,7 +453,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateProjectResponse::builder)
                 .logger(LOG, "createProject")
-                .serviceDetails("AnomalyDetection", "CreateProject", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "CreateProject",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/CreateProject")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateProjectRequest::builder)
                 .basePath("/20210101")
@@ -389,7 +486,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteAiPrivateEndpointResponse::builder)
                 .logger(LOG, "deleteAiPrivateEndpoint")
-                .serviceDetails("AnomalyDetection", "DeleteAiPrivateEndpoint", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "DeleteAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/DeleteAiPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAiPrivateEndpointRequest::builder)
                 .basePath("/20210101")
@@ -417,7 +517,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteDataAssetResponse::builder)
                 .logger(LOG, "deleteDataAsset")
-                .serviceDetails("AnomalyDetection", "DeleteDataAsset", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "DeleteDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/DeleteDataAsset")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDataAssetRequest::builder)
                 .basePath("/20210101")
@@ -432,6 +535,34 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDetectAnomalyJobResponse> deleteDetectAnomalyJob(
+            DeleteDetectAnomalyJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDetectAnomalyJobRequest, DeleteDetectAnomalyJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDetectAnomalyJobId(), "detectAnomalyJobId must not be blank");
+
+        return clientCall(request, DeleteDetectAnomalyJobResponse::builder)
+                .logger(LOG, "deleteDetectAnomalyJob")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "DeleteDetectAnomalyJob",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/DeleteDetectAnomalyJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDetectAnomalyJobRequest::builder)
+                .basePath("/20210101")
+                .appendPathParam("detectAnomalyJobs")
+                .appendPathParam(request.getDetectAnomalyJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDetectAnomalyJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
@@ -441,7 +572,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteModelResponse::builder)
                 .logger(LOG, "deleteModel")
-                .serviceDetails("AnomalyDetection", "DeleteModel", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "DeleteModel",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DeleteModel")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteModelRequest::builder)
                 .basePath("/20210101")
@@ -467,7 +601,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteProjectResponse::builder)
                 .logger(LOG, "deleteProject")
-                .serviceDetails("AnomalyDetection", "DeleteProject", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "DeleteProject",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/DeleteProject")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteProjectRequest::builder)
                 .basePath("/20210101")
@@ -494,7 +631,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DetectAnomaliesResponse::builder)
                 .logger(LOG, "detectAnomalies")
-                .serviceDetails("AnomalyDetection", "DetectAnomalies", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "DetectAnomalies",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DetectAnomalies")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetectAnomaliesRequest::builder)
                 .basePath("/20210101")
@@ -525,7 +665,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetAiPrivateEndpointResponse::builder)
                 .logger(LOG, "getAiPrivateEndpoint")
-                .serviceDetails("AnomalyDetection", "GetAiPrivateEndpoint", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "GetAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/GetAiPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAiPrivateEndpointRequest::builder)
                 .basePath("/20210101")
@@ -552,7 +695,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetDataAssetResponse::builder)
                 .logger(LOG, "getDataAsset")
-                .serviceDetails("AnomalyDetection", "GetDataAsset", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "GetDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/GetDataAsset")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDataAssetRequest::builder)
                 .basePath("/20210101")
@@ -570,6 +716,37 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<GetDetectAnomalyJobResponse> getDetectAnomalyJob(
+            GetDetectAnomalyJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDetectAnomalyJobRequest, GetDetectAnomalyJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDetectAnomalyJobId(), "detectAnomalyJobId must not be blank");
+
+        return clientCall(request, GetDetectAnomalyJobResponse::builder)
+                .logger(LOG, "getDetectAnomalyJob")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "GetDetectAnomalyJob",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/GetDetectAnomalyJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDetectAnomalyJobRequest::builder)
+                .basePath("/20210101")
+                .appendPathParam("detectAnomalyJobs")
+                .appendPathParam(request.getDetectAnomalyJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob.class,
+                        GetDetectAnomalyJobResponse.Builder::detectAnomalyJob)
+                .handleResponseHeaderString("etag", GetDetectAnomalyJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDetectAnomalyJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetModelResponse> getModel(
             GetModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse>
@@ -579,7 +756,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetModelResponse::builder)
                 .logger(LOG, "getModel")
-                .serviceDetails("AnomalyDetection", "GetModel", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "GetModel",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/GetModel")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModelRequest::builder)
                 .basePath("/20210101")
@@ -606,7 +786,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetProjectResponse::builder)
                 .logger(LOG, "getProject")
-                .serviceDetails("AnomalyDetection", "GetProject", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "GetProject",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/GetProject")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProjectRequest::builder)
                 .basePath("/20210101")
@@ -634,7 +817,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("AnomalyDetection", "GetWorkRequest", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210101")
@@ -663,7 +849,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListAiPrivateEndpointsResponse::builder)
                 .logger(LOG, "listAiPrivateEndpoints")
-                .serviceDetails("AnomalyDetection", "ListAiPrivateEndpoints", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListAiPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpointCollection/ListAiPrivateEndpoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAiPrivateEndpointsRequest::builder)
                 .basePath("/20210101")
@@ -698,7 +887,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListDataAssetsResponse::builder)
                 .logger(LOG, "listDataAssets")
-                .serviceDetails("AnomalyDetection", "ListDataAssets", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListDataAssets",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAssetCollection/ListDataAssets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDataAssetsRequest::builder)
                 .basePath("/20210101")
@@ -724,6 +916,48 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<ListDetectAnomalyJobsResponse> listDetectAnomalyJobs(
+            ListDetectAnomalyJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDetectAnomalyJobsRequest, ListDetectAnomalyJobsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDetectAnomalyJobsResponse::builder)
+                .logger(LOG, "listDetectAnomalyJobs")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListDetectAnomalyJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJobCollection/ListDetectAnomalyJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDetectAnomalyJobsRequest::builder)
+                .basePath("/20210101")
+                .appendPathParam("detectAnomalyJobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("modelId", request.getModelId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("detectAnomalyJobId", request.getDetectAnomalyJobId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aianomalydetection.model.DetectAnomalyJobCollection.class,
+                        ListDetectAnomalyJobsResponse.Builder::detectAnomalyJobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDetectAnomalyJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDetectAnomalyJobsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDetectAnomalyJobsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResponse> listModels(
             ListModelsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse>
@@ -732,7 +966,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListModelsResponse::builder)
                 .logger(LOG, "listModels")
-                .serviceDetails("AnomalyDetection", "ListModels", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListModels",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ListModels")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModelsRequest::builder)
                 .basePath("/20210101")
@@ -766,7 +1003,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListProjectsResponse::builder)
                 .logger(LOG, "listProjects")
-                .serviceDetails("AnomalyDetection", "ListProjects", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListProjects",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ListProjects")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListProjectsRequest::builder)
                 .basePath("/20210101")
@@ -801,7 +1041,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("AnomalyDetection", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210101")
@@ -833,7 +1076,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("AnomalyDetection", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210101")
@@ -864,7 +1110,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("AnomalyDetection", "ListWorkRequests", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210101")
@@ -900,7 +1149,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateAiPrivateEndpointResponse::builder)
                 .logger(LOG, "updateAiPrivateEndpoint")
-                .serviceDetails("AnomalyDetection", "UpdateAiPrivateEndpoint", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "UpdateAiPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/UpdateAiPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAiPrivateEndpointRequest::builder)
                 .basePath("/20210101")
@@ -931,7 +1183,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateDataAssetResponse::builder)
                 .logger(LOG, "updateDataAsset")
-                .serviceDetails("AnomalyDetection", "UpdateDataAsset", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "UpdateDataAsset",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/UpdateDataAsset")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDataAssetRequest::builder)
                 .basePath("/20210101")
@@ -951,6 +1206,42 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDetectAnomalyJobResponse> updateDetectAnomalyJob(
+            UpdateDetectAnomalyJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDetectAnomalyJobRequest, UpdateDetectAnomalyJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDetectAnomalyJobId(), "detectAnomalyJobId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDetectAnomalyJobDetails(),
+                "updateDetectAnomalyJobDetails is required");
+
+        return clientCall(request, UpdateDetectAnomalyJobResponse::builder)
+                .logger(LOG, "updateDetectAnomalyJob")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "UpdateDetectAnomalyJob",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/UpdateDetectAnomalyJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDetectAnomalyJobRequest::builder)
+                .basePath("/20210101")
+                .appendPathParam("detectAnomalyJobs")
+                .appendPathParam(request.getDetectAnomalyJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aianomalydetection.model.DetectAnomalyJob.class,
+                        UpdateDetectAnomalyJobResponse.Builder::detectAnomalyJob)
+                .handleResponseHeaderString("etag", UpdateDetectAnomalyJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDetectAnomalyJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateModelResponse> updateModel(
             UpdateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
@@ -961,7 +1252,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateModelResponse::builder)
                 .logger(LOG, "updateModel")
-                .serviceDetails("AnomalyDetection", "UpdateModel", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "UpdateModel",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/UpdateModel")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateModelRequest::builder)
                 .basePath("/20210101")
@@ -990,7 +1284,10 @@ public class AnomalyDetectionAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateProjectResponse::builder)
                 .logger(LOG, "updateProject")
-                .serviceDetails("AnomalyDetection", "UpdateProject", "")
+                .serviceDetails(
+                        "AnomalyDetection",
+                        "UpdateProject",
+                        "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/UpdateProject")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateProjectRequest::builder)
                 .basePath("/20210101")

@@ -33,6 +33,8 @@ public final class ManagedDatabase
         "isCluster",
         "parentContainerId",
         "managedDatabaseGroups",
+        "dbSystemId",
+        "storageSystemId",
         "timeCreated",
         "databaseStatus",
         "parentContainerName",
@@ -55,6 +57,8 @@ public final class ManagedDatabase
             Boolean isCluster,
             String parentContainerId,
             java.util.List<ParentGroup> managedDatabaseGroups,
+            String dbSystemId,
+            String storageSystemId,
             java.util.Date timeCreated,
             DatabaseStatus databaseStatus,
             String parentContainerName,
@@ -76,6 +80,8 @@ public final class ManagedDatabase
         this.isCluster = isCluster;
         this.parentContainerId = parentContainerId;
         this.managedDatabaseGroups = managedDatabaseGroups;
+        this.dbSystemId = dbSystemId;
+        this.storageSystemId = storageSystemId;
         this.timeCreated = timeCreated;
         this.databaseStatus = databaseStatus;
         this.parentContainerName = parentContainerName;
@@ -272,6 +278,44 @@ public final class ManagedDatabase
             this.__explicitlySet__.add("managedDatabaseGroups");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * external DB system that this Managed Database is part of.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * external DB system that this Managed Database is part of.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * storage DB system.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageSystemId")
+        private String storageSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * storage DB system.
+         *
+         * @param storageSystemId the value to set
+         * @return this builder
+         */
+        public Builder storageSystemId(String storageSystemId) {
+            this.storageSystemId = storageSystemId;
+            this.__explicitlySet__.add("storageSystemId");
+            return this;
+        }
         /** The date and time the Managed Database was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -439,6 +483,8 @@ public final class ManagedDatabase
                             this.isCluster,
                             this.parentContainerId,
                             this.managedDatabaseGroups,
+                            this.dbSystemId,
+                            this.storageSystemId,
                             this.timeCreated,
                             this.databaseStatus,
                             this.parentContainerName,
@@ -488,6 +534,12 @@ public final class ManagedDatabase
             }
             if (model.wasPropertyExplicitlySet("managedDatabaseGroups")) {
                 this.managedDatabaseGroups(model.getManagedDatabaseGroups());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("storageSystemId")) {
+                this.storageSystemId(model.getStorageSystemId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -690,6 +742,40 @@ public final class ManagedDatabase
         return managedDatabaseGroups;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * external DB system that this Managed Database is part of.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    private final String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * external DB system that this Managed Database is part of.
+     *
+     * @return the value
+     */
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * storage DB system.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageSystemId")
+    private final String storageSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * storage DB system.
+     *
+     * @return the value
+     */
+    public String getStorageSystemId() {
+        return storageSystemId;
+    }
+
     /** The date and time the Managed Database was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -847,6 +933,8 @@ public final class ManagedDatabase
         sb.append(", isCluster=").append(String.valueOf(this.isCluster));
         sb.append(", parentContainerId=").append(String.valueOf(this.parentContainerId));
         sb.append(", managedDatabaseGroups=").append(String.valueOf(this.managedDatabaseGroups));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", storageSystemId=").append(String.valueOf(this.storageSystemId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", databaseStatus=").append(String.valueOf(this.databaseStatus));
         sb.append(", parentContainerName=").append(String.valueOf(this.parentContainerName));
@@ -882,6 +970,8 @@ public final class ManagedDatabase
                 && java.util.Objects.equals(this.isCluster, other.isCluster)
                 && java.util.Objects.equals(this.parentContainerId, other.parentContainerId)
                 && java.util.Objects.equals(this.managedDatabaseGroups, other.managedDatabaseGroups)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.storageSystemId, other.storageSystemId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.databaseStatus, other.databaseStatus)
                 && java.util.Objects.equals(this.parentContainerName, other.parentContainerName)
@@ -924,6 +1014,10 @@ public final class ManagedDatabase
                         + (this.managedDatabaseGroups == null
                                 ? 43
                                 : this.managedDatabaseGroups.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageSystemId == null ? 43 : this.storageSystemId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

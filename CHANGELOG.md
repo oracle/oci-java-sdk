@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.5.0 - 2023-02-21
+### Added
+- Support for async jobs in the AI Anomaly Detection service
+- Support for specifying algorithm hints and windows sizes during model training in the AI Anomaly Detection service
+- Support for specifying a sensitivity value during model detection in the AI Anomaly Detection service
+- Support for discovery and monitoring of external Oracle database infrastructure components in the Database Management service  
+ 
+### Breaking Changes
+- The data type of `systemTags` field has been changed from a Map of String to another map to a Map of String to Object for the models `com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint`, `com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointSummary`, `com.oracle.bmc.aianomalydetection.model.DataAsset`, `com.oracle.bmc.aianomalydetection.model.DataAssetSummary`, `com.oracle.bmc.aianomalydetection.model.Model`, `com.oracle.bmc.aianomalydetection.model.ModelSummary`, `com.oracle.bmc.aianomalydetection.model.Project` and `com.oracle.bmc.aianomalydetection.model.ProjectSummary` in the AI Anomaly Detection service
+- Support for retries by default on operations of the AI Anomaly Detection service
+
 ## 3.4.0 - 2023-02-14
 ### Added
 - Support for the Visual Builder Studio service
