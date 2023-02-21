@@ -28,6 +28,7 @@ public final class AwrDbWaitEventSummary
         "timeEnd",
         "waitsPerSec",
         "avgWaitTimePerSec",
+        "avgWaitTimePerWait",
         "snapshotId"
     })
     public AwrDbWaitEventSummary(
@@ -36,6 +37,7 @@ public final class AwrDbWaitEventSummary
             java.util.Date timeEnd,
             Double waitsPerSec,
             Double avgWaitTimePerSec,
+            Double avgWaitTimePerWait,
             Integer snapshotId) {
         super();
         this.name = name;
@@ -43,6 +45,7 @@ public final class AwrDbWaitEventSummary
         this.timeEnd = timeEnd;
         this.waitsPerSec = waitsPerSec;
         this.avgWaitTimePerSec = avgWaitTimePerSec;
+        this.avgWaitTimePerWait = avgWaitTimePerWait;
         this.snapshotId = snapshotId;
     }
 
@@ -129,6 +132,22 @@ public final class AwrDbWaitEventSummary
             return this;
         }
         /**
+         * The average wait time in milliseconds per wait.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerWait")
+        private Double avgWaitTimePerWait;
+
+        /**
+         * The average wait time in milliseconds per wait.
+         * @param avgWaitTimePerWait the value to set
+         * @return this builder
+         **/
+        public Builder avgWaitTimePerWait(Double avgWaitTimePerWait) {
+            this.avgWaitTimePerWait = avgWaitTimePerWait;
+            this.__explicitlySet__.add("avgWaitTimePerWait");
+            return this;
+        }
+        /**
          * The ID of the snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          * It can be retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
@@ -162,6 +181,7 @@ public final class AwrDbWaitEventSummary
                             this.timeEnd,
                             this.waitsPerSec,
                             this.avgWaitTimePerSec,
+                            this.avgWaitTimePerWait,
                             this.snapshotId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -185,6 +205,9 @@ public final class AwrDbWaitEventSummary
             }
             if (model.wasPropertyExplicitlySet("avgWaitTimePerSec")) {
                 this.avgWaitTimePerSec(model.getAvgWaitTimePerSec());
+            }
+            if (model.wasPropertyExplicitlySet("avgWaitTimePerWait")) {
+                this.avgWaitTimePerWait(model.getAvgWaitTimePerWait());
             }
             if (model.wasPropertyExplicitlySet("snapshotId")) {
                 this.snapshotId(model.getSnapshotId());
@@ -275,6 +298,20 @@ public final class AwrDbWaitEventSummary
     }
 
     /**
+     * The average wait time in milliseconds per wait.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("avgWaitTimePerWait")
+    private final Double avgWaitTimePerWait;
+
+    /**
+     * The average wait time in milliseconds per wait.
+     * @return the value
+     **/
+    public Double getAvgWaitTimePerWait() {
+        return avgWaitTimePerWait;
+    }
+
+    /**
      * The ID of the snapshot. The snapshot ID is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
@@ -313,6 +350,7 @@ public final class AwrDbWaitEventSummary
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", waitsPerSec=").append(String.valueOf(this.waitsPerSec));
         sb.append(", avgWaitTimePerSec=").append(String.valueOf(this.avgWaitTimePerSec));
+        sb.append(", avgWaitTimePerWait=").append(String.valueOf(this.avgWaitTimePerWait));
         sb.append(", snapshotId=").append(String.valueOf(this.snapshotId));
         sb.append(")");
         return sb.toString();
@@ -333,6 +371,7 @@ public final class AwrDbWaitEventSummary
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.waitsPerSec, other.waitsPerSec)
                 && java.util.Objects.equals(this.avgWaitTimePerSec, other.avgWaitTimePerSec)
+                && java.util.Objects.equals(this.avgWaitTimePerWait, other.avgWaitTimePerWait)
                 && java.util.Objects.equals(this.snapshotId, other.snapshotId)
                 && super.equals(other);
     }
@@ -348,6 +387,11 @@ public final class AwrDbWaitEventSummary
         result =
                 (result * PRIME)
                         + (this.avgWaitTimePerSec == null ? 43 : this.avgWaitTimePerSec.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.avgWaitTimePerWait == null
+                                ? 43
+                                : this.avgWaitTimePerWait.hashCode());
         result = (result * PRIME) + (this.snapshotId == null ? 43 : this.snapshotId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

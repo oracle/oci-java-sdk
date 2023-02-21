@@ -5,8 +5,8 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Base class for the DetectAnomalies call. It contains the identifier that will
- * be used for deciding what type of request this is.
+ * Base class for the DetectAnomalies call. It contains the identifier that is
+ * used for deciding what type of request this is.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -36,24 +36,39 @@ package com.oracle.bmc.aianomalydetection.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DetectAnomaliesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"modelId"})
-    protected DetectAnomaliesDetails(String modelId) {
+    @java.beans.ConstructorProperties({"modelId", "sensitivity"})
+    protected DetectAnomaliesDetails(String modelId, Float sensitivity) {
         super();
         this.modelId = modelId;
+        this.sensitivity = sensitivity;
     }
 
     /**
-     * The OCID of the trained model\u3002
+     * The OCID of the trained model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The OCID of the trained model\u3002
+     * The OCID of the trained model.
      * @return the value
      **/
     public String getModelId() {
         return modelId;
+    }
+
+    /**
+     * Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get flagged. The value estimated during training is used by default. You can choose to provide a custom value.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sensitivity")
+    private final Float sensitivity;
+
+    /**
+     * Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get flagged. The value estimated during training is used by default. You can choose to provide a custom value.
+     * @return the value
+     **/
+    public Float getSensitivity() {
+        return sensitivity;
     }
 
     @Override
@@ -71,6 +86,7 @@ public class DetectAnomaliesDetails extends com.oracle.bmc.http.internal.Explici
         sb.append("DetectAnomaliesDetails(");
         sb.append("super=").append(super.toString());
         sb.append("modelId=").append(String.valueOf(this.modelId));
+        sb.append(", sensitivity=").append(String.valueOf(this.sensitivity));
         sb.append(")");
         return sb.toString();
     }
@@ -85,7 +101,9 @@ public class DetectAnomaliesDetails extends com.oracle.bmc.http.internal.Explici
         }
 
         DetectAnomaliesDetails other = (DetectAnomaliesDetails) o;
-        return java.util.Objects.equals(this.modelId, other.modelId) && super.equals(other);
+        return java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(this.sensitivity, other.sensitivity)
+                && super.equals(other);
     }
 
     @Override
@@ -93,13 +111,14 @@ public class DetectAnomaliesDetails extends com.oracle.bmc.http.internal.Explici
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result = (result * PRIME) + (this.sensitivity == null ? 43 : this.sensitivity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
 
     /**
-     * Type of request. This parameter will be filled autmatically by classes generated
-     * by the SDK. For raw curl request, user will have to provide this field.
+     * Type of request. This parameter is automatically populated by classes generated
+     * by the SDK. For raw curl requests, you must provide this field.
      *
      **/
     public enum RequestType {

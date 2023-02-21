@@ -24,6 +24,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
     @java.beans.ConstructorProperties({
         "fap",
         "multivariateFap",
+        "algorithm",
+        "windowSize",
         "isTrainingGoalAchieved",
         "warning",
         "signalDetails",
@@ -32,6 +34,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
     public ModelTrainingResults(
             Float fap,
             Float multivariateFap,
+            Algorithm algorithm,
+            Integer windowSize,
             Boolean isTrainingGoalAchieved,
             String warning,
             java.util.List<PerSignalDetails> signalDetails,
@@ -39,6 +43,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         super();
         this.fap = fap;
         this.multivariateFap = multivariateFap;
+        this.algorithm = algorithm;
+        this.windowSize = windowSize;
         this.isTrainingGoalAchieved = isTrainingGoalAchieved;
         this.warning = warning;
         this.signalDetails = signalDetails;
@@ -77,6 +83,38 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         public Builder multivariateFap(Float multivariateFap) {
             this.multivariateFap = multivariateFap;
             this.__explicitlySet__.add("multivariateFap");
+            return this;
+        }
+        /**
+         * Actual algorithm used to train the model
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
+        private Algorithm algorithm;
+
+        /**
+         * Actual algorithm used to train the model
+         * @param algorithm the value to set
+         * @return this builder
+         **/
+        public Builder algorithm(Algorithm algorithm) {
+            this.algorithm = algorithm;
+            this.__explicitlySet__.add("algorithm");
+            return this;
+        }
+        /**
+         * Window size defined during training or deduced by the algorithm.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("windowSize")
+        private Integer windowSize;
+
+        /**
+         * Window size defined during training or deduced by the algorithm.
+         * @param windowSize the value to set
+         * @return this builder
+         **/
+        public Builder windowSize(Integer windowSize) {
+            this.windowSize = windowSize;
+            this.__explicitlySet__.add("windowSize");
             return this;
         }
         /**
@@ -145,6 +183,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
                     new ModelTrainingResults(
                             this.fap,
                             this.multivariateFap,
+                            this.algorithm,
+                            this.windowSize,
                             this.isTrainingGoalAchieved,
                             this.warning,
                             this.signalDetails,
@@ -162,6 +202,12 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("multivariateFap")) {
                 this.multivariateFap(model.getMultivariateFap());
+            }
+            if (model.wasPropertyExplicitlySet("algorithm")) {
+                this.algorithm(model.getAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("windowSize")) {
+                this.windowSize(model.getWindowSize());
             }
             if (model.wasPropertyExplicitlySet("isTrainingGoalAchieved")) {
                 this.isTrainingGoalAchieved(model.getIsTrainingGoalAchieved());
@@ -216,6 +262,82 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
      **/
     public Float getMultivariateFap() {
         return multivariateFap;
+    }
+
+    /**
+     * Actual algorithm used to train the model
+     **/
+    public enum Algorithm {
+        MultivariateMset("MULTIVARIATE_MSET"),
+        UnivariateOcsvm("UNIVARIATE_OCSVM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Algorithm.class);
+
+        private final String value;
+        private static java.util.Map<String, Algorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Algorithm v : Algorithm.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Algorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Algorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Algorithm', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Actual algorithm used to train the model
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
+    private final Algorithm algorithm;
+
+    /**
+     * Actual algorithm used to train the model
+     * @return the value
+     **/
+    public Algorithm getAlgorithm() {
+        return algorithm;
+    }
+
+    /**
+     * Window size defined during training or deduced by the algorithm.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("windowSize")
+    private final Integer windowSize;
+
+    /**
+     * Window size defined during training or deduced by the algorithm.
+     * @return the value
+     **/
+    public Integer getWindowSize() {
+        return windowSize;
     }
 
     /**
@@ -283,6 +405,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         sb.append("super=").append(super.toString());
         sb.append("fap=").append(String.valueOf(this.fap));
         sb.append(", multivariateFap=").append(String.valueOf(this.multivariateFap));
+        sb.append(", algorithm=").append(String.valueOf(this.algorithm));
+        sb.append(", windowSize=").append(String.valueOf(this.windowSize));
         sb.append(", isTrainingGoalAchieved=").append(String.valueOf(this.isTrainingGoalAchieved));
         sb.append(", warning=").append(String.valueOf(this.warning));
         sb.append(", signalDetails=").append(String.valueOf(this.signalDetails));
@@ -303,6 +427,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         ModelTrainingResults other = (ModelTrainingResults) o;
         return java.util.Objects.equals(this.fap, other.fap)
                 && java.util.Objects.equals(this.multivariateFap, other.multivariateFap)
+                && java.util.Objects.equals(this.algorithm, other.algorithm)
+                && java.util.Objects.equals(this.windowSize, other.windowSize)
                 && java.util.Objects.equals(
                         this.isTrainingGoalAchieved, other.isTrainingGoalAchieved)
                 && java.util.Objects.equals(this.warning, other.warning)
@@ -319,6 +445,8 @@ public final class ModelTrainingResults extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.multivariateFap == null ? 43 : this.multivariateFap.hashCode());
+        result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
+        result = (result * PRIME) + (this.windowSize == null ? 43 : this.windowSize.hashCode());
         result =
                 (result * PRIME)
                         + (this.isTrainingGoalAchieved == null

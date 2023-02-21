@@ -38,6 +38,15 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sensitivity")
+        private Float sensitivity;
+
+        public Builder sensitivity(Float sensitivity) {
+            this.sensitivity = sensitivity;
+            this.__explicitlySet__.add("sensitivity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private ContentType contentType;
 
@@ -62,7 +71,7 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
         public EmbeddedDetectAnomaliesRequest build() {
             EmbeddedDetectAnomaliesRequest model =
                     new EmbeddedDetectAnomaliesRequest(
-                            this.modelId, this.contentType, this.content);
+                            this.modelId, this.sensitivity, this.contentType, this.content);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -73,6 +82,9 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
         public Builder copy(EmbeddedDetectAnomaliesRequest model) {
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("sensitivity")) {
+                this.sensitivity(model.getSensitivity());
             }
             if (model.wasPropertyExplicitlySet("contentType")) {
                 this.contentType(model.getContentType());
@@ -96,8 +108,9 @@ public final class EmbeddedDetectAnomaliesRequest extends DetectAnomaliesDetails
     }
 
     @Deprecated
-    public EmbeddedDetectAnomaliesRequest(String modelId, ContentType contentType, byte[] content) {
-        super(modelId);
+    public EmbeddedDetectAnomaliesRequest(
+            String modelId, Float sensitivity, ContentType contentType, byte[] content) {
+        super(modelId, sensitivity);
         this.contentType = contentType;
         this.content = content;
     }

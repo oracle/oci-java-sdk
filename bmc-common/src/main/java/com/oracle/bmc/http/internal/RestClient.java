@@ -1489,7 +1489,7 @@ public class RestClient implements AutoCloseable {
         return new InvocationInformation(requestId, ib.getHeaders());
     }
 
-    private static String generateRequestId() {
+    public static String generateRequestId() {
         return UUID.randomUUID().toString().replace("-", "").toUpperCase();
     }
 

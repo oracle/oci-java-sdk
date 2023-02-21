@@ -91,13 +91,13 @@ public final class Anomaly extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The value imputed by one of IDP step for missing values in origin data
+         * The value imputed by an IDP step for missing values in origin data.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
         private Double imputedValue;
 
         /**
-         * The value imputed by one of IDP step for missing values in origin data
+         * The value imputed by an IDP step for missing values in origin data.
          * @param imputedValue the value to set
          * @return this builder
          **/
@@ -107,13 +107,13 @@ public final class Anomaly extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * A significant score ranged from 0 to 1 to each anomaly point
+         * A significant score ranged from 0 to 1 to each anomaly point.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
         private Double anomalyScore;
 
         /**
-         * A significant score ranged from 0 to 1 to each anomaly point
+         * A significant score ranged from 0 to 1 to each anomaly point.
          * @param anomalyScore the value to set
          * @return this builder
          **/
@@ -215,13 +215,13 @@ public final class Anomaly extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The value imputed by one of IDP step for missing values in origin data
+     * The value imputed by an IDP step for missing values in origin data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
     private final Double imputedValue;
 
     /**
-     * The value imputed by one of IDP step for missing values in origin data
+     * The value imputed by an IDP step for missing values in origin data.
      * @return the value
      **/
     public Double getImputedValue() {
@@ -229,13 +229,13 @@ public final class Anomaly extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * A significant score ranged from 0 to 1 to each anomaly point
+     * A significant score ranged from 0 to 1 to each anomaly point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
     private final Double anomalyScore;
 
     /**
-     * A significant score ranged from 0 to 1 to each anomaly point
+     * A significant score ranged from 0 to 1 to each anomaly point.
      * @return the value
      **/
     public Double getAnomalyScore() {
