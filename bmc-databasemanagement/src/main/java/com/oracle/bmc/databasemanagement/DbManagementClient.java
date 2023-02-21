@@ -298,6 +298,43 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ChangeExternalDbSystemCompartmentResponse changeExternalDbSystemCompartment(
+            ChangeExternalDbSystemCompartmentRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeExternalDbSystemCompartmentDetails(),
+                "changeExternalDbSystemCompartmentDetails is required");
+
+        return clientCall(request, ChangeExternalDbSystemCompartmentResponse::builder)
+                .logger(LOG, "changeExternalDbSystemCompartment")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeExternalDbSystemCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/ChangeExternalDbSystemCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExternalDbSystemCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExternalDbSystemCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExternalDbSystemCompartmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -363,6 +400,48 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CheckExternalDbSystemConnectorConnectionStatusResponse
+            checkExternalDbSystemConnectorConnectionStatus(
+                    CheckExternalDbSystemConnectorConnectionStatusRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemConnectorId(),
+                "externalDbSystemConnectorId must not be blank");
+
+        return clientCall(request, CheckExternalDbSystemConnectorConnectionStatusResponse::builder)
+                .logger(LOG, "checkExternalDbSystemConnectorConnectionStatus")
+                .serviceDetails(
+                        "DbManagement",
+                        "CheckExternalDbSystemConnectorConnectionStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemConnector/CheckExternalDbSystemConnectorConnectionStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckExternalDbSystemConnectorConnectionStatusRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemConnectors")
+                .appendPathParam(request.getExternalDbSystemConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("checkConnectionStatus")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
+                        CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
+                                ::externalDbSystemConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
+                                ::contentLocation)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateDbManagementPrivateEndpointResponse createDbManagementPrivateEndpoint(
             CreateDbManagementPrivateEndpointRequest request) {
         Objects.requireNonNull(
@@ -397,6 +476,118 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateDbManagementPrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateDbManagementPrivateEndpointResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalDbSystemResponse createExternalDbSystem(
+            CreateExternalDbSystemRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalDbSystemDetails(),
+                "createExternalDbSystemDetails is required");
+
+        return clientCall(request, CreateExternalDbSystemResponse::builder)
+                .logger(LOG, "createExternalDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/CreateExternalDbSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
+                        CreateExternalDbSystemResponse.Builder::externalDbSystem)
+                .handleResponseHeaderString("etag", CreateExternalDbSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExternalDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExternalDbSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalDbSystemResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateExternalDbSystemResponse.Builder::contentLocation)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalDbSystemConnectorResponse createExternalDbSystemConnector(
+            CreateExternalDbSystemConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalDbSystemConnectorDetails(),
+                "createExternalDbSystemConnectorDetails is required");
+
+        return clientCall(request, CreateExternalDbSystemConnectorResponse::builder)
+                .logger(LOG, "createExternalDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemConnector/CreateExternalDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemConnectors")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
+                        CreateExternalDbSystemConnectorResponse.Builder::externalDbSystemConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalDbSystemConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalDbSystemConnectorResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalDbSystemDiscoveryResponse createExternalDbSystemDiscovery(
+            CreateExternalDbSystemDiscoveryRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalDbSystemDiscoveryDetails(),
+                "createExternalDbSystemDiscoveryDetails is required");
+
+        return clientCall(request, CreateExternalDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "createExternalDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemDiscovery/CreateExternalDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemDiscoveries")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
+                        CreateExternalDbSystemDiscoveryResponse.Builder::externalDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExternalDbSystemDiscoveryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalDbSystemDiscoveryResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalDbSystemDiscoveryResponse.Builder::contentLocation)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -524,6 +715,90 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteExternalDbSystemResponse deleteExternalDbSystem(
+            DeleteExternalDbSystemRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+
+        return clientCall(request, DeleteExternalDbSystemResponse::builder)
+                .logger(LOG, "deleteExternalDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/DeleteExternalDbSystem")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExternalDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalDbSystemResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExternalDbSystemConnectorResponse deleteExternalDbSystemConnector(
+            DeleteExternalDbSystemConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemConnectorId(),
+                "externalDbSystemConnectorId must not be blank");
+
+        return clientCall(request, DeleteExternalDbSystemConnectorResponse::builder)
+                .logger(LOG, "deleteExternalDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemConnector/DeleteExternalDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemConnectors")
+                .appendPathParam(request.getExternalDbSystemConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalDbSystemConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExternalDbSystemDiscoveryResponse deleteExternalDbSystemDiscovery(
+            DeleteExternalDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemDiscoveryId(),
+                "externalDbSystemDiscoveryId must not be blank");
+
+        return clientCall(request, DeleteExternalDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "deleteExternalDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemDiscovery/DeleteExternalDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemDiscoveries")
+                .appendPathParam(request.getExternalDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -602,6 +877,40 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DisableExternalDbSystemDatabaseManagementResponse
+            disableExternalDbSystemDatabaseManagement(
+                    DisableExternalDbSystemDatabaseManagementRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+
+        return clientCall(request, DisableExternalDbSystemDatabaseManagementResponse::builder)
+                .logger(LOG, "disableExternalDbSystemDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalDbSystemDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/DisableExternalDbSystemDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalDbSystemDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalDbSystemDatabaseManagementResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DropTablespaceResponse dropTablespace(DropTablespaceRequest request) {
 
         Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
@@ -634,6 +943,44 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         DropTablespaceResponse.Builder::tablespaceAdminStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", DropTablespaceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalDbSystemDatabaseManagementResponse
+            enableExternalDbSystemDatabaseManagement(
+                    EnableExternalDbSystemDatabaseManagementRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalDbSystemDatabaseManagementDetails(),
+                "enableExternalDbSystemDatabaseManagementDetails is required");
+
+        return clientCall(request, EnableExternalDbSystemDatabaseManagementResponse::builder)
+                .logger(LOG, "enableExternalDbSystemDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalDbSystemDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/EnableExternalDbSystemDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalDbSystemDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalDbSystemDatabaseManagementResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -886,6 +1233,329 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDbManagementPrivateEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExternalAsmResponse getExternalAsm(GetExternalAsmRequest request) {
+
+        Validate.notBlank(request.getExternalAsmId(), "externalAsmId must not be blank");
+
+        return clientCall(request, GetExternalAsmResponse::builder)
+                .logger(LOG, "getExternalAsm")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalAsm",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/GetExternalAsm")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalAsmRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendPathParam(request.getExternalAsmId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsm.class,
+                        GetExternalAsmResponse.Builder::externalAsm)
+                .handleResponseHeaderString("etag", GetExternalAsmResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalAsmResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalAsmConfigurationResponse getExternalAsmConfiguration(
+            GetExternalAsmConfigurationRequest request) {
+
+        Validate.notBlank(request.getExternalAsmId(), "externalAsmId must not be blank");
+
+        return clientCall(request, GetExternalAsmConfigurationResponse::builder)
+                .logger(LOG, "getExternalAsmConfiguration")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalAsmConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/GetExternalAsmConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalAsmConfigurationRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendPathParam(request.getExternalAsmId())
+                .appendPathParam("configuration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmConfiguration.class,
+                        GetExternalAsmConfigurationResponse.Builder::externalAsmConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalAsmConfigurationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalAsmInstanceResponse getExternalAsmInstance(
+            GetExternalAsmInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getExternalAsmInstanceId(), "externalAsmInstanceId must not be blank");
+
+        return clientCall(request, GetExternalAsmInstanceResponse::builder)
+                .logger(LOG, "getExternalAsmInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalAsmInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsmInstance/GetExternalAsmInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalAsmInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsmInstances")
+                .appendPathParam(request.getExternalAsmInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
+                        GetExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalAsmInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalClusterResponse getExternalCluster(GetExternalClusterRequest request) {
+
+        Validate.notBlank(request.getExternalClusterId(), "externalClusterId must not be blank");
+
+        return clientCall(request, GetExternalClusterResponse::builder)
+                .logger(LOG, "getExternalCluster")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalCluster/GetExternalCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalClusterRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusters")
+                .appendPathParam(request.getExternalClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalCluster.class,
+                        GetExternalClusterResponse.Builder::externalCluster)
+                .handleResponseHeaderString("etag", GetExternalClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalClusterResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalClusterInstanceResponse getExternalClusterInstance(
+            GetExternalClusterInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getExternalClusterInstanceId(),
+                "externalClusterInstanceId must not be blank");
+
+        return clientCall(request, GetExternalClusterInstanceResponse::builder)
+                .logger(LOG, "getExternalClusterInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalClusterInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalClusterInstance/GetExternalClusterInstance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalClusterInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusterInstances")
+                .appendPathParam(request.getExternalClusterInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalClusterInstance.class,
+                        GetExternalClusterInstanceResponse.Builder::externalClusterInstance)
+                .handleResponseHeaderString(
+                        "etag", GetExternalClusterInstanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalClusterInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalDbHomeResponse getExternalDbHome(GetExternalDbHomeRequest request) {
+
+        Validate.notBlank(request.getExternalDbHomeId(), "externalDbHomeId must not be blank");
+
+        return clientCall(request, GetExternalDbHomeResponse::builder)
+                .logger(LOG, "getExternalDbHome")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalDbHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbHome/GetExternalDbHome")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalDbHomeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbHomes")
+                .appendPathParam(request.getExternalDbHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
+                        GetExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalDbHomeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalDbNodeResponse getExternalDbNode(GetExternalDbNodeRequest request) {
+
+        Validate.notBlank(request.getExternalDbNodeId(), "externalDbNodeId must not be blank");
+
+        return clientCall(request, GetExternalDbNodeResponse::builder)
+                .logger(LOG, "getExternalDbNode")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalDbNode",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbNode/GetExternalDbNode")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalDbNodeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbNodes")
+                .appendPathParam(request.getExternalDbNodeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbNode.class,
+                        GetExternalDbNodeResponse.Builder::externalDbNode)
+                .handleResponseHeaderString("etag", GetExternalDbNodeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalDbNodeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalDbSystemResponse getExternalDbSystem(GetExternalDbSystemRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+
+        return clientCall(request, GetExternalDbSystemResponse::builder)
+                .logger(LOG, "getExternalDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/GetExternalDbSystem")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
+                        GetExternalDbSystemResponse.Builder::externalDbSystem)
+                .handleResponseHeaderString("etag", GetExternalDbSystemResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalDbSystemResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalDbSystemConnectorResponse getExternalDbSystemConnector(
+            GetExternalDbSystemConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemConnectorId(),
+                "externalDbSystemConnectorId must not be blank");
+
+        return clientCall(request, GetExternalDbSystemConnectorResponse::builder)
+                .logger(LOG, "getExternalDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemConnector/GetExternalDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemConnectors")
+                .appendPathParam(request.getExternalDbSystemConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnector.class,
+                        GetExternalDbSystemConnectorResponse.Builder::externalDbSystemConnector)
+                .handleResponseHeaderString(
+                        "etag", GetExternalDbSystemConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalDbSystemConnectorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalDbSystemDiscoveryResponse getExternalDbSystemDiscovery(
+            GetExternalDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemDiscoveryId(),
+                "externalDbSystemDiscoveryId must not be blank");
+
+        return clientCall(request, GetExternalDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "getExternalDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemDiscovery/GetExternalDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemDiscoveries")
+                .appendPathParam(request.getExternalDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
+                        GetExternalDbSystemDiscoveryResponse.Builder::externalDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", GetExternalDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalListenerResponse getExternalListener(GetExternalListenerRequest request) {
+
+        Validate.notBlank(request.getExternalListenerId(), "externalListenerId must not be blank");
+
+        return clientCall(request, GetExternalListenerResponse::builder)
+                .logger(LOG, "getExternalListener")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalListener",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalListener/GetExternalListener")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalListenerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalListeners")
+                .appendPathParam(request.getExternalListenerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalListener.class,
+                        GetExternalListenerResponse.Builder::externalListener)
+                .handleResponseHeaderString("etag", GetExternalListenerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalListenerResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1634,6 +2304,497 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ListExternalAsmDiskGroupsResponse listExternalAsmDiskGroups(
+            ListExternalAsmDiskGroupsRequest request) {
+
+        Validate.notBlank(request.getExternalAsmId(), "externalAsmId must not be blank");
+
+        return clientCall(request, ListExternalAsmDiskGroupsResponse::builder)
+                .logger(LOG, "listExternalAsmDiskGroups")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalAsmDiskGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/ListExternalAsmDiskGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalAsmDiskGroupsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendPathParam(request.getExternalAsmId())
+                .appendPathParam("diskGroups")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupCollection
+                                .class,
+                        ListExternalAsmDiskGroupsResponse.Builder::externalAsmDiskGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalAsmDiskGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalAsmDiskGroupsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalAsmInstancesResponse listExternalAsmInstances(
+            ListExternalAsmInstancesRequest request) {
+
+        return clientCall(request, ListExternalAsmInstancesResponse::builder)
+                .logger(LOG, "listExternalAsmInstances")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalAsmInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsmInstance/ListExternalAsmInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalAsmInstancesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsmInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalAsmId", request.getExternalAsmId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceCollection.class,
+                        ListExternalAsmInstancesResponse.Builder::externalAsmInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalAsmInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalAsmInstancesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalAsmUsersResponse listExternalAsmUsers(ListExternalAsmUsersRequest request) {
+
+        Validate.notBlank(request.getExternalAsmId(), "externalAsmId must not be blank");
+
+        return clientCall(request, ListExternalAsmUsersResponse::builder)
+                .logger(LOG, "listExternalAsmUsers")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalAsmUsers",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/ListExternalAsmUsers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalAsmUsersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendPathParam(request.getExternalAsmId())
+                .appendPathParam("users")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmUserCollection.class,
+                        ListExternalAsmUsersResponse.Builder::externalAsmUserCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalAsmUsersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalAsmUsersResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalAsmsResponse listExternalAsms(ListExternalAsmsRequest request) {
+
+        return clientCall(request, ListExternalAsmsResponse::builder)
+                .logger(LOG, "listExternalAsms")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalAsms",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/ListExternalAsms")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalAsmsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmCollection.class,
+                        ListExternalAsmsResponse.Builder::externalAsmCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalAsmsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalAsmsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalClusterInstancesResponse listExternalClusterInstances(
+            ListExternalClusterInstancesRequest request) {
+
+        return clientCall(request, ListExternalClusterInstancesResponse::builder)
+                .logger(LOG, "listExternalClusterInstances")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalClusterInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalClusterInstance/ListExternalClusterInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalClusterInstancesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusterInstances")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalClusterId", request.getExternalClusterId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceCollection
+                                .class,
+                        ListExternalClusterInstancesResponse.Builder
+                                ::externalClusterInstanceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalClusterInstancesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalClusterInstancesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalClustersResponse listExternalClusters(ListExternalClustersRequest request) {
+
+        return clientCall(request, ListExternalClustersResponse::builder)
+                .logger(LOG, "listExternalClusters")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalCluster/ListExternalClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalClustersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalClusterCollection.class,
+                        ListExternalClustersResponse.Builder::externalClusterCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalClustersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalClustersResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalDatabasesResponse listExternalDatabases(
+            ListExternalDatabasesRequest request) {
+
+        return clientCall(request, ListExternalDatabasesResponse::builder)
+                .logger(LOG, "listExternalDatabases")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDatabaseCollection/ListExternalDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDatabaseCollection.class,
+                        ListExternalDatabasesResponse.Builder::externalDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalDatabasesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalDbHomesResponse listExternalDbHomes(ListExternalDbHomesRequest request) {
+
+        return clientCall(request, ListExternalDbHomesResponse::builder)
+                .logger(LOG, "listExternalDbHomes")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalDbHomes",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbHome/ListExternalDbHomes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalDbHomesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbHomes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbHomeCollection.class,
+                        ListExternalDbHomesResponse.Builder::externalDbHomeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalDbHomesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalDbHomesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalDbNodesResponse listExternalDbNodes(ListExternalDbNodesRequest request) {
+
+        return clientCall(request, ListExternalDbNodesResponse::builder)
+                .logger(LOG, "listExternalDbNodes")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalDbNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbNode/ListExternalDbNodes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalDbNodesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbNodes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbNodeCollection.class,
+                        ListExternalDbNodesResponse.Builder::externalDbNodeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalDbNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalDbNodesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalDbSystemConnectorsResponse listExternalDbSystemConnectors(
+            ListExternalDbSystemConnectorsRequest request) {
+
+        return clientCall(request, ListExternalDbSystemConnectorsResponse::builder)
+                .logger(LOG, "listExternalDbSystemConnectors")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalDbSystemConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemConnector/ListExternalDbSystemConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalDbSystemConnectorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemConnectors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorCollection
+                                .class,
+                        ListExternalDbSystemConnectorsResponse.Builder
+                                ::externalDbSystemConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalDbSystemConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExternalDbSystemConnectorsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalDbSystemDiscoveriesResponse listExternalDbSystemDiscoveries(
+            ListExternalDbSystemDiscoveriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExternalDbSystemDiscoveriesResponse::builder)
+                .logger(LOG, "listExternalDbSystemDiscoveries")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalDbSystemDiscoveries",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemDiscovery/ListExternalDbSystemDiscoveries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalDbSystemDiscoveriesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemDiscoveries")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoveryCollection
+                                .class,
+                        ListExternalDbSystemDiscoveriesResponse.Builder
+                                ::externalDbSystemDiscoveryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalDbSystemDiscoveriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExternalDbSystemDiscoveriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalDbSystemsResponse listExternalDbSystems(
+            ListExternalDbSystemsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExternalDbSystemsResponse::builder)
+                .logger(LOG, "listExternalDbSystems")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalDbSystems",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/ListExternalDbSystems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalDbSystemsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemCollection.class,
+                        ListExternalDbSystemsResponse.Builder::externalDbSystemCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalDbSystemsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalDbSystemsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalListenerServicesResponse listExternalListenerServices(
+            ListExternalListenerServicesRequest request) {
+
+        Validate.notBlank(request.getExternalListenerId(), "externalListenerId must not be blank");
+        Objects.requireNonNull(request.getManagedDatabaseId(), "managedDatabaseId is required");
+
+        return clientCall(request, ListExternalListenerServicesResponse::builder)
+                .logger(LOG, "listExternalListenerServices")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalListenerServices",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalListener/ListExternalListenerServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalListenerServicesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalListeners")
+                .appendPathParam(request.getExternalListenerId())
+                .appendPathParam("services")
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalListenerServiceCollection
+                                .class,
+                        ListExternalListenerServicesResponse.Builder
+                                ::externalListenerServiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalListenerServicesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalListenerServicesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalListenersResponse listExternalListeners(
+            ListExternalListenersRequest request) {
+
+        return clientCall(request, ListExternalListenersResponse::builder)
+                .logger(LOG, "listExternalListeners")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalListeners",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalListener/ListExternalListeners")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalListenersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalListeners")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("externalDbSystemId", request.getExternalDbSystemId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalListenerCollection.class,
+                        ListExternalListenersResponse.Builder::externalListenerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalListenersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalListenersResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListJobExecutionsResponse listJobExecutions(ListJobExecutionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -2351,6 +3512,43 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public PatchExternalDbSystemDiscoveryResponse patchExternalDbSystemDiscovery(
+            PatchExternalDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemDiscoveryId(),
+                "externalDbSystemDiscoveryId must not be blank");
+        Objects.requireNonNull(
+                request.getPatchExternalDbSystemDiscoveryDetails(),
+                "patchExternalDbSystemDiscoveryDetails is required");
+
+        return clientCall(request, PatchExternalDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "patchExternalDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "PatchExternalDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemDiscovery/PatchExternalDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchExternalDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemDiscoveries")
+                .appendPathParam(request.getExternalDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
+                        PatchExternalDbSystemDiscoveryResponse.Builder::externalDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", PatchExternalDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RemoveDataFileResponse removeDataFile(RemoveDataFileRequest request) {
 
         Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
@@ -2970,6 +4168,220 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public SummarizeExternalAsmMetricsResponse summarizeExternalAsmMetrics(
+            SummarizeExternalAsmMetricsRequest request) {
+
+        Validate.notBlank(request.getExternalAsmId(), "externalAsmId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeExternalAsmMetricsResponse::builder)
+                .logger(LOG, "summarizeExternalAsmMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeExternalAsmMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/SummarizeExternalAsmMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeExternalAsmMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendPathParam(request.getExternalAsmId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeExternalAsmMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeExternalAsmMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeExternalAsmMetricsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeExternalClusterMetricsResponse summarizeExternalClusterMetrics(
+            SummarizeExternalClusterMetricsRequest request) {
+
+        Validate.notBlank(request.getExternalClusterId(), "externalClusterId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeExternalClusterMetricsResponse::builder)
+                .logger(LOG, "summarizeExternalClusterMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeExternalClusterMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalCluster/SummarizeExternalClusterMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeExternalClusterMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusters")
+                .appendPathParam(request.getExternalClusterId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeExternalClusterMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeExternalClusterMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeExternalClusterMetricsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeExternalDbNodeMetricsResponse summarizeExternalDbNodeMetrics(
+            SummarizeExternalDbNodeMetricsRequest request) {
+
+        Validate.notBlank(request.getExternalDbNodeId(), "externalDbNodeId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeExternalDbNodeMetricsResponse::builder)
+                .logger(LOG, "summarizeExternalDbNodeMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeExternalDbNodeMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbNode/SummarizeExternalDbNodeMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeExternalDbNodeMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbNodes")
+                .appendPathParam(request.getExternalDbNodeId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeExternalDbNodeMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeExternalDbNodeMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeExternalDbNodeMetricsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeExternalDbSystemAvailabilityMetricsResponse
+            summarizeExternalDbSystemAvailabilityMetrics(
+                    SummarizeExternalDbSystemAvailabilityMetricsRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeExternalDbSystemAvailabilityMetricsResponse::builder)
+                .logger(LOG, "summarizeExternalDbSystemAvailabilityMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeExternalDbSystemAvailabilityMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/SummarizeExternalDbSystemAvailabilityMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeExternalDbSystemAvailabilityMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .appendPathParam("availabilityMetrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("filterByComponentTypes", request.getFilterByComponentTypes())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeExternalDbSystemAvailabilityMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeExternalDbSystemAvailabilityMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeExternalDbSystemAvailabilityMetricsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeExternalListenerMetricsResponse summarizeExternalListenerMetrics(
+            SummarizeExternalListenerMetricsRequest request) {
+
+        Validate.notBlank(request.getExternalListenerId(), "externalListenerId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeExternalListenerMetricsResponse::builder)
+                .logger(LOG, "summarizeExternalListenerMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeExternalListenerMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalListener/SummarizeExternalListenerMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeExternalListenerMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalListeners")
+                .appendPathParam(request.getExternalListenerId())
+                .appendPathParam("metrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeExternalListenerMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeExternalListenerMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeExternalListenerMetricsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public SummarizeJobExecutionsStatusesResponse summarizeJobExecutionsStatuses(
             SummarizeJobExecutionsStatusesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -3007,6 +4419,49 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         SummarizeJobExecutionsStatusesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SummarizeManagedDatabaseAvailabilityMetricsResponse
+            summarizeManagedDatabaseAvailabilityMetrics(
+                    SummarizeManagedDatabaseAvailabilityMetricsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeManagedDatabaseAvailabilityMetricsResponse::builder)
+                .logger(LOG, "summarizeManagedDatabaseAvailabilityMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeManagedDatabaseAvailabilityMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeManagedDatabaseAvailabilityMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeManagedDatabaseAvailabilityMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("availabilityMetrics")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
+                                .class,
+                        SummarizeManagedDatabaseAvailabilityMetricsResponse.Builder
+                                ::metricsAggregationRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeManagedDatabaseAvailabilityMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeManagedDatabaseAvailabilityMetricsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -3079,6 +4534,270 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         UpdateDbManagementPrivateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateDbManagementPrivateEndpointResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalAsmResponse updateExternalAsm(UpdateExternalAsmRequest request) {
+
+        Validate.notBlank(request.getExternalAsmId(), "externalAsmId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalAsmDetails(), "updateExternalAsmDetails is required");
+
+        return clientCall(request, UpdateExternalAsmResponse::builder)
+                .logger(LOG, "updateExternalAsm")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalAsm",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsm/UpdateExternalAsm")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalAsmRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsms")
+                .appendPathParam(request.getExternalAsmId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalAsmResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateExternalAsmResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalClusterResponse updateExternalCluster(
+            UpdateExternalClusterRequest request) {
+
+        Validate.notBlank(request.getExternalClusterId(), "externalClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalClusterDetails(),
+                "updateExternalClusterDetails is required");
+
+        return clientCall(request, UpdateExternalClusterResponse::builder)
+                .logger(LOG, "updateExternalCluster")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalCluster/UpdateExternalCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalClusterRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusters")
+                .appendPathParam(request.getExternalClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalClusterResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalClusterInstanceResponse updateExternalClusterInstance(
+            UpdateExternalClusterInstanceRequest request) {
+
+        Validate.notBlank(
+                request.getExternalClusterInstanceId(),
+                "externalClusterInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalClusterInstanceDetails(),
+                "updateExternalClusterInstanceDetails is required");
+
+        return clientCall(request, UpdateExternalClusterInstanceResponse::builder)
+                .logger(LOG, "updateExternalClusterInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalClusterInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalClusterInstance/UpdateExternalClusterInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalClusterInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalClusterInstances")
+                .appendPathParam(request.getExternalClusterInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalClusterInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalClusterInstanceResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalDbNodeResponse updateExternalDbNode(UpdateExternalDbNodeRequest request) {
+
+        Validate.notBlank(request.getExternalDbNodeId(), "externalDbNodeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbNodeDetails(),
+                "updateExternalDbNodeDetails is required");
+
+        return clientCall(request, UpdateExternalDbNodeResponse::builder)
+                .logger(LOG, "updateExternalDbNode")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbNode",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbNode/UpdateExternalDbNode")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbNodeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbNodes")
+                .appendPathParam(request.getExternalDbNodeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalDbNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalDbNodeResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalDbSystemResponse updateExternalDbSystem(
+            UpdateExternalDbSystemRequest request) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbSystemDetails(),
+                "updateExternalDbSystemDetails is required");
+
+        return clientCall(request, UpdateExternalDbSystemResponse::builder)
+                .logger(LOG, "updateExternalDbSystem")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/UpdateExternalDbSystem")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbSystemRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystem.class,
+                        UpdateExternalDbSystemResponse.Builder::externalDbSystem)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalDbSystemResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalDbSystemResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalDbSystemConnectorResponse updateExternalDbSystemConnector(
+            UpdateExternalDbSystemConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemConnectorId(),
+                "externalDbSystemConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbSystemConnectorDetails(),
+                "updateExternalDbSystemConnectorDetails is required");
+
+        return clientCall(request, UpdateExternalDbSystemConnectorResponse::builder)
+                .logger(LOG, "updateExternalDbSystemConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbSystemConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemConnector/UpdateExternalDbSystemConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbSystemConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemConnectors")
+                .appendPathParam(request.getExternalDbSystemConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalDbSystemConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalDbSystemConnectorResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalDbSystemDiscoveryResponse updateExternalDbSystemDiscovery(
+            UpdateExternalDbSystemDiscoveryRequest request) {
+
+        Validate.notBlank(
+                request.getExternalDbSystemDiscoveryId(),
+                "externalDbSystemDiscoveryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbSystemDiscoveryDetails(),
+                "updateExternalDbSystemDiscoveryDetails is required");
+
+        return clientCall(request, UpdateExternalDbSystemDiscoveryResponse::builder)
+                .logger(LOG, "updateExternalDbSystemDiscovery")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbSystemDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystemDiscovery/UpdateExternalDbSystemDiscovery")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbSystemDiscoveryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystemDiscoveries")
+                .appendPathParam(request.getExternalDbSystemDiscoveryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscovery.class,
+                        UpdateExternalDbSystemDiscoveryResponse.Builder::externalDbSystemDiscovery)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalDbSystemDiscoveryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalListenerResponse updateExternalListener(
+            UpdateExternalListenerRequest request) {
+
+        Validate.notBlank(request.getExternalListenerId(), "externalListenerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalListenerDetails(),
+                "updateExternalListenerDetails is required");
+
+        return clientCall(request, UpdateExternalListenerResponse::builder)
+                .logger(LOG, "updateExternalListener")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalListener",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalListener/UpdateExternalListener")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalListenerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalListeners")
+                .appendPathParam(request.getExternalListenerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalListenerResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalListenerResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

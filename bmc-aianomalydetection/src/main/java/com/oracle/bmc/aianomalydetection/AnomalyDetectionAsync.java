@@ -106,6 +106,25 @@ public interface AnomalyDetectionAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a asynchronous anomaly detect job resource from one compartment to another. When
+     * provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDetectAnomalyJobCompartmentResponse>
+            changeDetectAnomalyJobCompartment(
+                    ChangeDetectAnomalyJobCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDetectAnomalyJobCompartmentRequest,
+                                    ChangeDetectAnomalyJobCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a Model resource from one compartment to another. When provided, If-Match is checked
      * against ETag values of the resource.
      *
@@ -171,6 +190,22 @@ public interface AnomalyDetectionAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a job to perform anomaly detection.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDetectAnomalyJobResponse> createDetectAnomalyJob(
+            CreateDetectAnomalyJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDetectAnomalyJobRequest, CreateDetectAnomalyJobResponse>
+                    handler);
+
+    /**
      * Creates a new Model.
      *
      * @param request The request object containing the details to send
@@ -228,6 +263,22 @@ public interface AnomalyDetectionAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteDataAssetResponse> deleteDataAsset(
             DeleteDataAssetRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteDataAssetRequest, DeleteDataAssetResponse>
+                    handler);
+
+    /**
+     * Deletes an accepted, but not started detect anomaly asynchronous job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDetectAnomalyJobResponse> deleteDetectAnomalyJob(
+            DeleteDetectAnomalyJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDetectAnomalyJobRequest, DeleteDetectAnomalyJobResponse>
                     handler);
 
     /**
@@ -310,6 +361,22 @@ public interface AnomalyDetectionAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a detect anomaly asynchronous job by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDetectAnomalyJobResponse> getDetectAnomalyJob(
+            GetDetectAnomalyJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDetectAnomalyJobRequest, GetDetectAnomalyJobResponse>
+                    handler);
+
+    /**
      * Gets a Model by identifier
      *
      * @param request The request object containing the details to send
@@ -381,6 +448,22 @@ public interface AnomalyDetectionAsync extends AutoCloseable {
     java.util.concurrent.Future<ListDataAssetsResponse> listDataAssets(
             ListDataAssetsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
+                    handler);
+
+    /**
+     * Returns a list of all the Anomaly Detection jobs in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDetectAnomalyJobsResponse> listDetectAnomalyJobs(
+            ListDetectAnomalyJobsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDetectAnomalyJobsRequest, ListDetectAnomalyJobsResponse>
                     handler);
 
     /**
@@ -488,6 +571,22 @@ public interface AnomalyDetectionAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateDataAssetResponse> updateDataAsset(
             UpdateDataAssetRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateDataAssetRequest, UpdateDataAssetResponse>
+                    handler);
+
+    /**
+     * Updates the detect anomaly asynchronous job by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDetectAnomalyJobResponse> updateDetectAnomalyJob(
+            UpdateDetectAnomalyJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDetectAnomalyJobRequest, UpdateDetectAnomalyJobResponse>
                     handler);
 
     /**

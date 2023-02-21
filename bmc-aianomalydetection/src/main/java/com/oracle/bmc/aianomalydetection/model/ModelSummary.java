@@ -46,7 +46,7 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
             String projectId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, Object> systemTags) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -240,19 +240,19 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+        private java.util.Map<String, Object> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
          *
          * @param systemTags the value to set
          * @return this builder
          */
-        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        public Builder systemTags(java.util.Map<String, Object> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
@@ -485,19 +485,19 @@ public final class ModelSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+    private final java.util.Map<String, Object> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
      *
      * @return the value
      */
-    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+    public java.util.Map<String, Object> getSystemTags() {
         return systemTags;
     }
 

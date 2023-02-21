@@ -676,6 +676,1757 @@ public class DbManagementPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listExternalAsmDiskGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalAsmDiskGroupsResponse> listExternalAsmDiskGroupsResponseIterator(
+            final ListExternalAsmDiskGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalAsmDiskGroupsRequest.Builder,
+                ListExternalAsmDiskGroupsRequest,
+                ListExternalAsmDiskGroupsResponse>(
+                new java.util.function.Supplier<ListExternalAsmDiskGroupsRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmDiskGroupsRequest.Builder get() {
+                        return ListExternalAsmDiskGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmDiskGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmDiskGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmDiskGroupsRequest.Builder>,
+                        ListExternalAsmDiskGroupsRequest>() {
+                    @Override
+                    public ListExternalAsmDiskGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmDiskGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmDiskGroupsRequest, ListExternalAsmDiskGroupsResponse>() {
+                    @Override
+                    public ListExternalAsmDiskGroupsResponse apply(
+                            ListExternalAsmDiskGroupsRequest request) {
+                        return client.listExternalAsmDiskGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupSummary} objects contained in
+     * responses from the listExternalAsmDiskGroups operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupSummary>
+            listExternalAsmDiskGroupsRecordIterator(
+                    final ListExternalAsmDiskGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalAsmDiskGroupsRequest.Builder,
+                ListExternalAsmDiskGroupsRequest,
+                ListExternalAsmDiskGroupsResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalAsmDiskGroupSummary>(
+                new java.util.function.Supplier<ListExternalAsmDiskGroupsRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmDiskGroupsRequest.Builder get() {
+                        return ListExternalAsmDiskGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmDiskGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmDiskGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmDiskGroupsRequest.Builder>,
+                        ListExternalAsmDiskGroupsRequest>() {
+                    @Override
+                    public ListExternalAsmDiskGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmDiskGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmDiskGroupsRequest, ListExternalAsmDiskGroupsResponse>() {
+                    @Override
+                    public ListExternalAsmDiskGroupsResponse apply(
+                            ListExternalAsmDiskGroupsRequest request) {
+                        return client.listExternalAsmDiskGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmDiskGroupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalAsmDiskGroupSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalAsmDiskGroupSummary>
+                            apply(ListExternalAsmDiskGroupsResponse response) {
+                        return response.getExternalAsmDiskGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalAsmInstances operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalAsmInstancesResponse> listExternalAsmInstancesResponseIterator(
+            final ListExternalAsmInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalAsmInstancesRequest.Builder,
+                ListExternalAsmInstancesRequest,
+                ListExternalAsmInstancesResponse>(
+                new java.util.function.Supplier<ListExternalAsmInstancesRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmInstancesRequest.Builder get() {
+                        return ListExternalAsmInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmInstancesRequest.Builder>,
+                        ListExternalAsmInstancesRequest>() {
+                    @Override
+                    public ListExternalAsmInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmInstancesRequest, ListExternalAsmInstancesResponse>() {
+                    @Override
+                    public ListExternalAsmInstancesResponse apply(
+                            ListExternalAsmInstancesRequest request) {
+                        return client.listExternalAsmInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceSummary} objects contained in
+     * responses from the listExternalAsmInstances operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceSummary>
+            listExternalAsmInstancesRecordIterator(final ListExternalAsmInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalAsmInstancesRequest.Builder,
+                ListExternalAsmInstancesRequest,
+                ListExternalAsmInstancesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalAsmInstanceSummary>(
+                new java.util.function.Supplier<ListExternalAsmInstancesRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmInstancesRequest.Builder get() {
+                        return ListExternalAsmInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmInstancesRequest.Builder>,
+                        ListExternalAsmInstancesRequest>() {
+                    @Override
+                    public ListExternalAsmInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmInstancesRequest, ListExternalAsmInstancesResponse>() {
+                    @Override
+                    public ListExternalAsmInstancesResponse apply(
+                            ListExternalAsmInstancesRequest request) {
+                        return client.listExternalAsmInstances(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalAsmInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalAsmInstanceSummary>
+                            apply(ListExternalAsmInstancesResponse response) {
+                        return response.getExternalAsmInstanceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalAsmUsers operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalAsmUsersResponse> listExternalAsmUsersResponseIterator(
+            final ListExternalAsmUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalAsmUsersRequest.Builder,
+                ListExternalAsmUsersRequest,
+                ListExternalAsmUsersResponse>(
+                new java.util.function.Supplier<ListExternalAsmUsersRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmUsersRequest.Builder get() {
+                        return ListExternalAsmUsersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmUsersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmUsersRequest.Builder>,
+                        ListExternalAsmUsersRequest>() {
+                    @Override
+                    public ListExternalAsmUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmUsersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmUsersRequest, ListExternalAsmUsersResponse>() {
+                    @Override
+                    public ListExternalAsmUsersResponse apply(ListExternalAsmUsersRequest request) {
+                        return client.listExternalAsmUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalAsmUserSummary} objects contained in
+     * responses from the listExternalAsmUsers operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalAsmUserSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalAsmUserSummary>
+            listExternalAsmUsersRecordIterator(final ListExternalAsmUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalAsmUsersRequest.Builder,
+                ListExternalAsmUsersRequest,
+                ListExternalAsmUsersResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalAsmUserSummary>(
+                new java.util.function.Supplier<ListExternalAsmUsersRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmUsersRequest.Builder get() {
+                        return ListExternalAsmUsersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmUsersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmUsersRequest.Builder>,
+                        ListExternalAsmUsersRequest>() {
+                    @Override
+                    public ListExternalAsmUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmUsersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmUsersRequest, ListExternalAsmUsersResponse>() {
+                    @Override
+                    public ListExternalAsmUsersResponse apply(ListExternalAsmUsersRequest request) {
+                        return client.listExternalAsmUsers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmUsersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ExternalAsmUserSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalAsmUserSummary>
+                            apply(ListExternalAsmUsersResponse response) {
+                        return response.getExternalAsmUserCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalAsms operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalAsmsResponse> listExternalAsmsResponseIterator(
+            final ListExternalAsmsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalAsmsRequest.Builder, ListExternalAsmsRequest, ListExternalAsmsResponse>(
+                new java.util.function.Supplier<ListExternalAsmsRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmsRequest.Builder get() {
+                        return ListExternalAsmsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmsRequest.Builder>,
+                        ListExternalAsmsRequest>() {
+                    @Override
+                    public ListExternalAsmsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmsRequest, ListExternalAsmsResponse>() {
+                    @Override
+                    public ListExternalAsmsResponse apply(ListExternalAsmsRequest request) {
+                        return client.listExternalAsms(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalAsmSummary} objects contained in responses
+     * from the listExternalAsms operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalAsmSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalAsmSummary>
+            listExternalAsmsRecordIterator(final ListExternalAsmsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalAsmsRequest.Builder,
+                ListExternalAsmsRequest,
+                ListExternalAsmsResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalAsmSummary>(
+                new java.util.function.Supplier<ListExternalAsmsRequest.Builder>() {
+                    @Override
+                    public ListExternalAsmsRequest.Builder get() {
+                        return ListExternalAsmsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalAsmsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalAsmsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalAsmsRequest.Builder>,
+                        ListExternalAsmsRequest>() {
+                    @Override
+                    public ListExternalAsmsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalAsmsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmsRequest, ListExternalAsmsResponse>() {
+                    @Override
+                    public ListExternalAsmsResponse apply(ListExternalAsmsRequest request) {
+                        return client.listExternalAsms(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalAsmsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ExternalAsmSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalAsmSummary>
+                            apply(ListExternalAsmsResponse response) {
+                        return response.getExternalAsmCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalClusterInstances operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalClusterInstancesResponse>
+            listExternalClusterInstancesResponseIterator(
+                    final ListExternalClusterInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalClusterInstancesRequest.Builder,
+                ListExternalClusterInstancesRequest,
+                ListExternalClusterInstancesResponse>(
+                new java.util.function.Supplier<ListExternalClusterInstancesRequest.Builder>() {
+                    @Override
+                    public ListExternalClusterInstancesRequest.Builder get() {
+                        return ListExternalClusterInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalClusterInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalClusterInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalClusterInstancesRequest.Builder>,
+                        ListExternalClusterInstancesRequest>() {
+                    @Override
+                    public ListExternalClusterInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalClusterInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalClusterInstancesRequest,
+                        ListExternalClusterInstancesResponse>() {
+                    @Override
+                    public ListExternalClusterInstancesResponse apply(
+                            ListExternalClusterInstancesRequest request) {
+                        return client.listExternalClusterInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceSummary} objects contained in
+     * responses from the listExternalClusterInstances operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceSummary>
+            listExternalClusterInstancesRecordIterator(
+                    final ListExternalClusterInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalClusterInstancesRequest.Builder,
+                ListExternalClusterInstancesRequest,
+                ListExternalClusterInstancesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalClusterInstanceSummary>(
+                new java.util.function.Supplier<ListExternalClusterInstancesRequest.Builder>() {
+                    @Override
+                    public ListExternalClusterInstancesRequest.Builder get() {
+                        return ListExternalClusterInstancesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalClusterInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalClusterInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalClusterInstancesRequest.Builder>,
+                        ListExternalClusterInstancesRequest>() {
+                    @Override
+                    public ListExternalClusterInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalClusterInstancesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalClusterInstancesRequest,
+                        ListExternalClusterInstancesResponse>() {
+                    @Override
+                    public ListExternalClusterInstancesResponse apply(
+                            ListExternalClusterInstancesRequest request) {
+                        return client.listExternalClusterInstances(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalClusterInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalClusterInstanceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalClusterInstanceSummary>
+                            apply(ListExternalClusterInstancesResponse response) {
+                        return response.getExternalClusterInstanceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalClusters operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalClustersResponse> listExternalClustersResponseIterator(
+            final ListExternalClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalClustersRequest.Builder,
+                ListExternalClustersRequest,
+                ListExternalClustersResponse>(
+                new java.util.function.Supplier<ListExternalClustersRequest.Builder>() {
+                    @Override
+                    public ListExternalClustersRequest.Builder get() {
+                        return ListExternalClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalClustersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalClustersRequest.Builder>,
+                        ListExternalClustersRequest>() {
+                    @Override
+                    public ListExternalClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalClustersRequest, ListExternalClustersResponse>() {
+                    @Override
+                    public ListExternalClustersResponse apply(ListExternalClustersRequest request) {
+                        return client.listExternalClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalClusterSummary} objects contained in
+     * responses from the listExternalClusters operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalClusterSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalClusterSummary>
+            listExternalClustersRecordIterator(final ListExternalClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalClustersRequest.Builder,
+                ListExternalClustersRequest,
+                ListExternalClustersResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalClusterSummary>(
+                new java.util.function.Supplier<ListExternalClustersRequest.Builder>() {
+                    @Override
+                    public ListExternalClustersRequest.Builder get() {
+                        return ListExternalClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalClustersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalClustersRequest.Builder>,
+                        ListExternalClustersRequest>() {
+                    @Override
+                    public ListExternalClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalClustersRequest, ListExternalClustersResponse>() {
+                    @Override
+                    public ListExternalClustersResponse apply(ListExternalClustersRequest request) {
+                        return client.listExternalClusters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalClustersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ExternalClusterSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalClusterSummary>
+                            apply(ListExternalClustersResponse response) {
+                        return response.getExternalClusterCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalDatabases operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalDatabasesResponse> listExternalDatabasesResponseIterator(
+            final ListExternalDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDatabasesRequest.Builder,
+                ListExternalDatabasesRequest,
+                ListExternalDatabasesResponse>(
+                new java.util.function.Supplier<ListExternalDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalDatabasesRequest.Builder get() {
+                        return ListExternalDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDatabasesRequest.Builder>,
+                        ListExternalDatabasesRequest>() {
+                    @Override
+                    public ListExternalDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDatabasesRequest, ListExternalDatabasesResponse>() {
+                    @Override
+                    public ListExternalDatabasesResponse apply(
+                            ListExternalDatabasesRequest request) {
+                        return client.listExternalDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalDatabaseSummary} objects contained in
+     * responses from the listExternalDatabases operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalDatabaseSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalDatabaseSummary>
+            listExternalDatabasesRecordIterator(final ListExternalDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDatabasesRequest.Builder,
+                ListExternalDatabasesRequest,
+                ListExternalDatabasesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalDatabaseSummary>(
+                new java.util.function.Supplier<ListExternalDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalDatabasesRequest.Builder get() {
+                        return ListExternalDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDatabasesRequest.Builder>,
+                        ListExternalDatabasesRequest>() {
+                    @Override
+                    public ListExternalDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDatabasesRequest, ListExternalDatabasesResponse>() {
+                    @Override
+                    public ListExternalDatabasesResponse apply(
+                            ListExternalDatabasesRequest request) {
+                        return client.listExternalDatabases(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalDatabaseSummary>
+                            apply(ListExternalDatabasesResponse response) {
+                        return response.getExternalDatabaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalDbHomes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalDbHomesResponse> listExternalDbHomesResponseIterator(
+            final ListExternalDbHomesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDbHomesRequest.Builder,
+                ListExternalDbHomesRequest,
+                ListExternalDbHomesResponse>(
+                new java.util.function.Supplier<ListExternalDbHomesRequest.Builder>() {
+                    @Override
+                    public ListExternalDbHomesRequest.Builder get() {
+                        return ListExternalDbHomesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbHomesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbHomesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbHomesRequest.Builder>,
+                        ListExternalDbHomesRequest>() {
+                    @Override
+                    public ListExternalDbHomesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbHomesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbHomesRequest, ListExternalDbHomesResponse>() {
+                    @Override
+                    public ListExternalDbHomesResponse apply(ListExternalDbHomesRequest request) {
+                        return client.listExternalDbHomes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalDbHomeSummary} objects contained in responses
+     * from the listExternalDbHomes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalDbHomeSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalDbHomeSummary>
+            listExternalDbHomesRecordIterator(final ListExternalDbHomesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDbHomesRequest.Builder,
+                ListExternalDbHomesRequest,
+                ListExternalDbHomesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalDbHomeSummary>(
+                new java.util.function.Supplier<ListExternalDbHomesRequest.Builder>() {
+                    @Override
+                    public ListExternalDbHomesRequest.Builder get() {
+                        return ListExternalDbHomesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbHomesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbHomesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbHomesRequest.Builder>,
+                        ListExternalDbHomesRequest>() {
+                    @Override
+                    public ListExternalDbHomesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbHomesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbHomesRequest, ListExternalDbHomesResponse>() {
+                    @Override
+                    public ListExternalDbHomesResponse apply(ListExternalDbHomesRequest request) {
+                        return client.listExternalDbHomes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbHomesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ExternalDbHomeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalDbHomeSummary>
+                            apply(ListExternalDbHomesResponse response) {
+                        return response.getExternalDbHomeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalDbNodes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalDbNodesResponse> listExternalDbNodesResponseIterator(
+            final ListExternalDbNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDbNodesRequest.Builder,
+                ListExternalDbNodesRequest,
+                ListExternalDbNodesResponse>(
+                new java.util.function.Supplier<ListExternalDbNodesRequest.Builder>() {
+                    @Override
+                    public ListExternalDbNodesRequest.Builder get() {
+                        return ListExternalDbNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbNodesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbNodesRequest.Builder>,
+                        ListExternalDbNodesRequest>() {
+                    @Override
+                    public ListExternalDbNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbNodesRequest, ListExternalDbNodesResponse>() {
+                    @Override
+                    public ListExternalDbNodesResponse apply(ListExternalDbNodesRequest request) {
+                        return client.listExternalDbNodes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalDbNodeSummary} objects contained in responses
+     * from the listExternalDbNodes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalDbNodeSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalDbNodeSummary>
+            listExternalDbNodesRecordIterator(final ListExternalDbNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDbNodesRequest.Builder,
+                ListExternalDbNodesRequest,
+                ListExternalDbNodesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalDbNodeSummary>(
+                new java.util.function.Supplier<ListExternalDbNodesRequest.Builder>() {
+                    @Override
+                    public ListExternalDbNodesRequest.Builder get() {
+                        return ListExternalDbNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbNodesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbNodesRequest.Builder>,
+                        ListExternalDbNodesRequest>() {
+                    @Override
+                    public ListExternalDbNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbNodesRequest, ListExternalDbNodesResponse>() {
+                    @Override
+                    public ListExternalDbNodesResponse apply(ListExternalDbNodesRequest request) {
+                        return client.listExternalDbNodes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbNodesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ExternalDbNodeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalDbNodeSummary>
+                            apply(ListExternalDbNodesResponse response) {
+                        return response.getExternalDbNodeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalDbSystemConnectors operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalDbSystemConnectorsResponse>
+            listExternalDbSystemConnectorsResponseIterator(
+                    final ListExternalDbSystemConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDbSystemConnectorsRequest.Builder,
+                ListExternalDbSystemConnectorsRequest,
+                ListExternalDbSystemConnectorsResponse>(
+                new java.util.function.Supplier<ListExternalDbSystemConnectorsRequest.Builder>() {
+                    @Override
+                    public ListExternalDbSystemConnectorsRequest.Builder get() {
+                        return ListExternalDbSystemConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbSystemConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbSystemConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbSystemConnectorsRequest.Builder>,
+                        ListExternalDbSystemConnectorsRequest>() {
+                    @Override
+                    public ListExternalDbSystemConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbSystemConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemConnectorsRequest,
+                        ListExternalDbSystemConnectorsResponse>() {
+                    @Override
+                    public ListExternalDbSystemConnectorsResponse apply(
+                            ListExternalDbSystemConnectorsRequest request) {
+                        return client.listExternalDbSystemConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorSummary} objects contained
+     * in responses from the listExternalDbSystemConnectors operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorSummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorSummary>
+            listExternalDbSystemConnectorsRecordIterator(
+                    final ListExternalDbSystemConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDbSystemConnectorsRequest.Builder,
+                ListExternalDbSystemConnectorsRequest,
+                ListExternalDbSystemConnectorsResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalDbSystemConnectorSummary>(
+                new java.util.function.Supplier<ListExternalDbSystemConnectorsRequest.Builder>() {
+                    @Override
+                    public ListExternalDbSystemConnectorsRequest.Builder get() {
+                        return ListExternalDbSystemConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbSystemConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbSystemConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbSystemConnectorsRequest.Builder>,
+                        ListExternalDbSystemConnectorsRequest>() {
+                    @Override
+                    public ListExternalDbSystemConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbSystemConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemConnectorsRequest,
+                        ListExternalDbSystemConnectorsResponse>() {
+                    @Override
+                    public ListExternalDbSystemConnectorsResponse apply(
+                            ListExternalDbSystemConnectorsRequest request) {
+                        return client.listExternalDbSystemConnectors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalDbSystemConnectorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalDbSystemConnectorSummary>
+                            apply(ListExternalDbSystemConnectorsResponse response) {
+                        return response.getExternalDbSystemConnectorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalDbSystemDiscoveries operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalDbSystemDiscoveriesResponse>
+            listExternalDbSystemDiscoveriesResponseIterator(
+                    final ListExternalDbSystemDiscoveriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDbSystemDiscoveriesRequest.Builder,
+                ListExternalDbSystemDiscoveriesRequest,
+                ListExternalDbSystemDiscoveriesResponse>(
+                new java.util.function.Supplier<ListExternalDbSystemDiscoveriesRequest.Builder>() {
+                    @Override
+                    public ListExternalDbSystemDiscoveriesRequest.Builder get() {
+                        return ListExternalDbSystemDiscoveriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbSystemDiscoveriesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbSystemDiscoveriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbSystemDiscoveriesRequest.Builder>,
+                        ListExternalDbSystemDiscoveriesRequest>() {
+                    @Override
+                    public ListExternalDbSystemDiscoveriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbSystemDiscoveriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemDiscoveriesRequest,
+                        ListExternalDbSystemDiscoveriesResponse>() {
+                    @Override
+                    public ListExternalDbSystemDiscoveriesResponse apply(
+                            ListExternalDbSystemDiscoveriesRequest request) {
+                        return client.listExternalDbSystemDiscoveries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoverySummary} objects contained
+     * in responses from the listExternalDbSystemDiscoveries operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoverySummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoverySummary>
+            listExternalDbSystemDiscoveriesRecordIterator(
+                    final ListExternalDbSystemDiscoveriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDbSystemDiscoveriesRequest.Builder,
+                ListExternalDbSystemDiscoveriesRequest,
+                ListExternalDbSystemDiscoveriesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalDbSystemDiscoverySummary>(
+                new java.util.function.Supplier<ListExternalDbSystemDiscoveriesRequest.Builder>() {
+                    @Override
+                    public ListExternalDbSystemDiscoveriesRequest.Builder get() {
+                        return ListExternalDbSystemDiscoveriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbSystemDiscoveriesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbSystemDiscoveriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbSystemDiscoveriesRequest.Builder>,
+                        ListExternalDbSystemDiscoveriesRequest>() {
+                    @Override
+                    public ListExternalDbSystemDiscoveriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbSystemDiscoveriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemDiscoveriesRequest,
+                        ListExternalDbSystemDiscoveriesResponse>() {
+                    @Override
+                    public ListExternalDbSystemDiscoveriesResponse apply(
+                            ListExternalDbSystemDiscoveriesRequest request) {
+                        return client.listExternalDbSystemDiscoveries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemDiscoveriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalDbSystemDiscoverySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalDbSystemDiscoverySummary>
+                            apply(ListExternalDbSystemDiscoveriesResponse response) {
+                        return response.getExternalDbSystemDiscoveryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalDbSystems operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalDbSystemsResponse> listExternalDbSystemsResponseIterator(
+            final ListExternalDbSystemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalDbSystemsRequest.Builder,
+                ListExternalDbSystemsRequest,
+                ListExternalDbSystemsResponse>(
+                new java.util.function.Supplier<ListExternalDbSystemsRequest.Builder>() {
+                    @Override
+                    public ListExternalDbSystemsRequest.Builder get() {
+                        return ListExternalDbSystemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbSystemsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbSystemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbSystemsRequest.Builder>,
+                        ListExternalDbSystemsRequest>() {
+                    @Override
+                    public ListExternalDbSystemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbSystemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemsRequest, ListExternalDbSystemsResponse>() {
+                    @Override
+                    public ListExternalDbSystemsResponse apply(
+                            ListExternalDbSystemsRequest request) {
+                        return client.listExternalDbSystems(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalDbSystemSummary} objects contained in
+     * responses from the listExternalDbSystems operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalDbSystemSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalDbSystemSummary>
+            listExternalDbSystemsRecordIterator(final ListExternalDbSystemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalDbSystemsRequest.Builder,
+                ListExternalDbSystemsRequest,
+                ListExternalDbSystemsResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalDbSystemSummary>(
+                new java.util.function.Supplier<ListExternalDbSystemsRequest.Builder>() {
+                    @Override
+                    public ListExternalDbSystemsRequest.Builder get() {
+                        return ListExternalDbSystemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalDbSystemsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalDbSystemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalDbSystemsRequest.Builder>,
+                        ListExternalDbSystemsRequest>() {
+                    @Override
+                    public ListExternalDbSystemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalDbSystemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemsRequest, ListExternalDbSystemsResponse>() {
+                    @Override
+                    public ListExternalDbSystemsResponse apply(
+                            ListExternalDbSystemsRequest request) {
+                        return client.listExternalDbSystems(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalDbSystemsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalDbSystemSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalDbSystemSummary>
+                            apply(ListExternalDbSystemsResponse response) {
+                        return response.getExternalDbSystemCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalListenerServices operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalListenerServicesResponse>
+            listExternalListenerServicesResponseIterator(
+                    final ListExternalListenerServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalListenerServicesRequest.Builder,
+                ListExternalListenerServicesRequest,
+                ListExternalListenerServicesResponse>(
+                new java.util.function.Supplier<ListExternalListenerServicesRequest.Builder>() {
+                    @Override
+                    public ListExternalListenerServicesRequest.Builder get() {
+                        return ListExternalListenerServicesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalListenerServicesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalListenerServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalListenerServicesRequest.Builder>,
+                        ListExternalListenerServicesRequest>() {
+                    @Override
+                    public ListExternalListenerServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalListenerServicesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalListenerServicesRequest,
+                        ListExternalListenerServicesResponse>() {
+                    @Override
+                    public ListExternalListenerServicesResponse apply(
+                            ListExternalListenerServicesRequest request) {
+                        return client.listExternalListenerServices(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalListenerServiceSummary} objects contained in
+     * responses from the listExternalListenerServices operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalListenerServiceSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalListenerServiceSummary>
+            listExternalListenerServicesRecordIterator(
+                    final ListExternalListenerServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalListenerServicesRequest.Builder,
+                ListExternalListenerServicesRequest,
+                ListExternalListenerServicesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalListenerServiceSummary>(
+                new java.util.function.Supplier<ListExternalListenerServicesRequest.Builder>() {
+                    @Override
+                    public ListExternalListenerServicesRequest.Builder get() {
+                        return ListExternalListenerServicesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalListenerServicesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalListenerServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalListenerServicesRequest.Builder>,
+                        ListExternalListenerServicesRequest>() {
+                    @Override
+                    public ListExternalListenerServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalListenerServicesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalListenerServicesRequest,
+                        ListExternalListenerServicesResponse>() {
+                    @Override
+                    public ListExternalListenerServicesResponse apply(
+                            ListExternalListenerServicesRequest request) {
+                        return client.listExternalListenerServices(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalListenerServicesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalListenerServiceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalListenerServiceSummary>
+                            apply(ListExternalListenerServicesResponse response) {
+                        return response.getExternalListenerServiceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listExternalListeners operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalListenersResponse> listExternalListenersResponseIterator(
+            final ListExternalListenersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalListenersRequest.Builder,
+                ListExternalListenersRequest,
+                ListExternalListenersResponse>(
+                new java.util.function.Supplier<ListExternalListenersRequest.Builder>() {
+                    @Override
+                    public ListExternalListenersRequest.Builder get() {
+                        return ListExternalListenersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalListenersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalListenersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalListenersRequest.Builder>,
+                        ListExternalListenersRequest>() {
+                    @Override
+                    public ListExternalListenersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalListenersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalListenersRequest, ListExternalListenersResponse>() {
+                    @Override
+                    public ListExternalListenersResponse apply(
+                            ListExternalListenersRequest request) {
+                        return client.listExternalListeners(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalListenerSummary} objects contained in
+     * responses from the listExternalListeners operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalListenerSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalListenerSummary>
+            listExternalListenersRecordIterator(final ListExternalListenersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalListenersRequest.Builder,
+                ListExternalListenersRequest,
+                ListExternalListenersResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalListenerSummary>(
+                new java.util.function.Supplier<ListExternalListenersRequest.Builder>() {
+                    @Override
+                    public ListExternalListenersRequest.Builder get() {
+                        return ListExternalListenersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalListenersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalListenersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalListenersRequest.Builder>,
+                        ListExternalListenersRequest>() {
+                    @Override
+                    public ListExternalListenersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalListenersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalListenersRequest, ListExternalListenersResponse>() {
+                    @Override
+                    public ListExternalListenersResponse apply(
+                            ListExternalListenersRequest request) {
+                        return client.listExternalListeners(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalListenersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalListenerSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ExternalListenerSummary>
+                            apply(ListExternalListenersResponse response) {
+                        return response.getExternalListenerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listJobExecutions operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

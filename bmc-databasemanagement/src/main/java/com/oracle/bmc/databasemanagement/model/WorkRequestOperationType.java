@@ -9,6 +9,14 @@ package com.oracle.bmc.databasemanagement.model;
 public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDbManagementPrivateEndpoint("CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT"),
     DeleteDbManagementPrivateEndpoint("DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT"),
+    CreateDbSystemDiscovery("CREATE_DB_SYSTEM_DISCOVERY"),
+    CreateDbSystem("CREATE_DB_SYSTEM"),
+    UpdateDbSystem("UPDATE_DB_SYSTEM"),
+    DbSystemEnableDbmgmt("DB_SYSTEM_ENABLE_DBMGMT"),
+    DbSystemDisableDbmgmt("DB_SYSTEM_DISABLE_DBMGMT"),
+    DeleteDbSystem("DELETE_DB_SYSTEM"),
+    UpdateExternalDbSystemConnector("UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR"),
+    ChangeExternalDbSystemCompartment("CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
