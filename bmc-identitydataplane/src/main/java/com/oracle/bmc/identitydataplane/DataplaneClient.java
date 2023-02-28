@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class DataplaneClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Dataplane {
     /** Service instance for Dataplane. */
@@ -24,7 +24,7 @@ public class DataplaneClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DataplaneAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DataplaneClient.class);
 
     private DataplaneClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -65,7 +65,7 @@ public class DataplaneClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public DataplaneClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataplaneClient(this, authenticationDetailsProvider);

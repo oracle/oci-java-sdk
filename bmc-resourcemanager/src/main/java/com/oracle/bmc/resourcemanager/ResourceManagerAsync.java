@@ -14,7 +14,7 @@ import com.oracle.bmc.resourcemanager.responses.*;
  * infrastructure anywhere. For more information, see [the Resource Manager
  * documentation](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public interface ResourceManagerAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

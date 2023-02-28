@@ -11,7 +11,7 @@ import com.oracle.bmc.apmsynthetics.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteDedicatedVantagePointRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class DeleteDedicatedVantagePointRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateConnectionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConnectionRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class UpdateConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.UpdateConnectionDetails> {

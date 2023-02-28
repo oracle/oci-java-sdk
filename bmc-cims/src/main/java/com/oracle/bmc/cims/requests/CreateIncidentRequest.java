@@ -10,7 +10,7 @@ import com.oracle.bmc.cims.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/CreateIncidentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateIncidentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class CreateIncidentRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.CreateIncident> {
 

@@ -10,7 +10,7 @@ import com.oracle.bmc.functions.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetApplicationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetApplicationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetApplicationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /** Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum EntityCloudType implements com.oracle.bmc.http.internal.BmcEnum {
     Cloud("CLOUD"),
     NonCloud("NON_CLOUD"),

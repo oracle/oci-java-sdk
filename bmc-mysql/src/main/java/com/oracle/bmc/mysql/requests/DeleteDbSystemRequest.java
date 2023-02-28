@@ -10,7 +10,7 @@ import com.oracle.bmc.mysql.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteDbSystemExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDbSystemRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class DeleteDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

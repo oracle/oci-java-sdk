@@ -8,7 +8,7 @@ import com.oracle.bmc.osuborganizationsubscription.requests.*;
 import com.oracle.bmc.osuborganizationsubscription.responses.*;
 
 /** API that returns data for the list of subscription ids returned from Organizations API */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public interface OrganizationSubscriptionAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

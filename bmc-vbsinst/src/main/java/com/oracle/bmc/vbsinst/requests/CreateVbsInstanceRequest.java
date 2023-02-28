@@ -10,7 +10,7 @@ import com.oracle.bmc.vbsinst.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vbsinst/CreateVbsInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateVbsInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class CreateVbsInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.vbsinst.model.CreateVbsInstanceDetails> {

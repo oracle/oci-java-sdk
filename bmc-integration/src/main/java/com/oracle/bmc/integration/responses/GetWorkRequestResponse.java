@@ -6,7 +6,7 @@ package com.oracle.bmc.integration.responses;
 
 import com.oracle.bmc.integration.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

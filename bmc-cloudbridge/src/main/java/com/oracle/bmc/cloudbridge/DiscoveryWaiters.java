@@ -14,7 +14,7 @@ import com.oracle.bmc.cloudbridge.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class DiscoveryWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Discovery client;

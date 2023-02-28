@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Discovery {
     /** Service instance for Discovery. */
@@ -24,7 +24,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DiscoveryAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DiscoveryClient.class);
 
     private final DiscoveryWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public DiscoveryClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DiscoveryClient(this, authenticationDetailsProvider, executorService);

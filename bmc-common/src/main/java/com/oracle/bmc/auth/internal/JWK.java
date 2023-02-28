@@ -4,23 +4,20 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.oracle.bmc.util.internal.Validate;
 
-import javax.annotation.concurrent.Immutable;
-
 /**
  * Representation of a RSA public key in JSON Web Key (JWK) format.
  *
  * @see <a href="https://tools.ietf.org/html/rfc7517">JSON Web Key Specification</a>
+ *     <p>Class is immutable. @Immutable
  */
-@Immutable
 public final class JWK {
     private static final String KEY_TYPE = "RSA";
     private static final String USE = "sig";

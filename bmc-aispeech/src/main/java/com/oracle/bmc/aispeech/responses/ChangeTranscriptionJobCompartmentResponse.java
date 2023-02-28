@@ -6,7 +6,7 @@ package com.oracle.bmc.aispeech.responses;
 
 import com.oracle.bmc.aispeech.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class ChangeTranscriptionJobCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

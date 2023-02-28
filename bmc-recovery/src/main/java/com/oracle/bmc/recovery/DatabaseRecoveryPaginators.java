@@ -33,7 +33,7 @@ import com.oracle.bmc.recovery.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class DatabaseRecoveryPaginators {
     private final DatabaseRecovery client;
 

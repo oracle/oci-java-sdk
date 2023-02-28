@@ -5,7 +5,7 @@
 package com.oracle.bmc.oce.model;
 
 /** Instance lifecycle details */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
     Standby("STANDBY"),
     Failover("FAILOVER"),

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Monitoring {
     /** Service instance for Monitoring. */
@@ -24,7 +24,7 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(MonitoringAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(MonitoringClient.class);
 
     private final MonitoringWaiters waiters;
 
@@ -103,7 +103,7 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
          * @return the client
          */
         public MonitoringClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MonitoringClient(this, authenticationDetailsProvider, executorService);

@@ -12,7 +12,7 @@ import com.oracle.bmc.rover.responses.*;
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public interface RoverNode extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

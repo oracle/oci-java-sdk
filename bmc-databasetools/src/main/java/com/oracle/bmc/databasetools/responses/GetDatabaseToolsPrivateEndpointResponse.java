@@ -6,7 +6,7 @@ package com.oracle.bmc.databasetools.responses;
 
 import com.oracle.bmc.databasetools.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class GetDatabaseToolsPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

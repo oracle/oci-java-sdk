@@ -8,7 +8,7 @@ package com.oracle.bmc.logging.model;
  * The state of the LogSavedSearch 1. CREATING 2. ACTIVE LogSavedSearch is active and can be used by
  * other users 3. UPDATING 4. INACTIVE 5. DELETING 6. FAILED
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public enum LogSavedSearchLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

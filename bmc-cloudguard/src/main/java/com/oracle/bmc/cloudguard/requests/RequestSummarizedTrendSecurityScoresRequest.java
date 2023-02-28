@@ -11,7 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RequestSummarizedTrendSecurityScoresRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class RequestSummarizedTrendSecurityScoresRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -6,7 +6,7 @@ package com.oracle.bmc.integration.responses;
 
 import com.oracle.bmc.integration.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public class StopIntegrationInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

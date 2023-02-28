@@ -6,7 +6,7 @@ package com.oracle.bmc.nosql.responses;
 
 import com.oracle.bmc.nosql.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class CreateTableResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

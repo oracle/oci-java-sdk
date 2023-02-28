@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /** The failure action will be taken on behalf of container instance status. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public enum ContainerHealthCheckFailureAction implements com.oracle.bmc.http.internal.BmcEnum {
     Kill("KILL"),
     None("NONE"),

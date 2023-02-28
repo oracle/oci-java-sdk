@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /** The lifecycle state of a run. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public enum RunLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),

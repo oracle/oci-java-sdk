@@ -10,7 +10,7 @@ package com.oracle.bmc.loganalytics.model;
  * different fields. The subsystem parameter identifies the default subsystem to use when
  * validating/querying a field that is not explicitly qualified by its subsystem.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum SubSystemName implements com.oracle.bmc.http.internal.BmcEnum {
     Log("LOG"),
 

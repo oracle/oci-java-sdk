@@ -11,7 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateLogAnalyticsEmBridgeRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class CreateLogAnalyticsEmBridgeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEmBridgeDetails> {

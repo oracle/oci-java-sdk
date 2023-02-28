@@ -10,7 +10,7 @@ import com.oracle.bmc.datasafe.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPoliciesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingPoliciesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** A filter to return only resources that match the specified compartment OCID. */

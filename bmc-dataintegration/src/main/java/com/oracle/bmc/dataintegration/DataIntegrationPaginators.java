@@ -33,7 +33,7 @@ import com.oracle.bmc.dataintegration.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class DataIntegrationPaginators {
     private final DataIntegration client;
 

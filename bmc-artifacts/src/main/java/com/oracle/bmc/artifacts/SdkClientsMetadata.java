@@ -6,6 +6,6 @@ package com.oracle.bmc.artifacts;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @SdkClients({ArtifactsAsyncClient.class, ArtifactsClient.class})
 public final class SdkClientsMetadata {}

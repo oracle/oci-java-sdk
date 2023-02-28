@@ -6,7 +6,7 @@ package com.oracle.bmc.rover.responses;
 
 import com.oracle.bmc.rover.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcResponse {
     /** */
     private String opcRequestId;

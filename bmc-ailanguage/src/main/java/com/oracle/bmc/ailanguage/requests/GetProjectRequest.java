@@ -10,7 +10,7 @@ import com.oracle.bmc.ailanguage.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetProjectExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetProjectRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class GetProjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the project. */

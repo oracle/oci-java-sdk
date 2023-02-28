@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class DashxApisClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DashxApis {
     /** Service instance for DashxApis. */
@@ -25,7 +25,7 @@ public class DashxApisClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DashxApisAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DashxApisClient.class);
 
     private final DashxApisWaiters waiters;
 
@@ -104,7 +104,7 @@ public class DashxApisClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public DashxApisClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DashxApisClient(this, authenticationDetailsProvider, executorService);

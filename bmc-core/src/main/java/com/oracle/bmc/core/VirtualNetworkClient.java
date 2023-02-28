@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements VirtualNetwork {
     /** Service instance for VirtualNetwork. */
@@ -24,7 +24,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(VirtualNetworkAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(VirtualNetworkClient.class);
 
     protected final java.util.concurrent.ExecutorService executorService;
     private final VirtualNetworkWaiters waiters;
@@ -105,7 +105,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public VirtualNetworkClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new VirtualNetworkClient(this, authenticationDetailsProvider, executorService);

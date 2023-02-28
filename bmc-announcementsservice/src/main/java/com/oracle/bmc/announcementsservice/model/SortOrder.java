@@ -5,7 +5,7 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /** Sort orders. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

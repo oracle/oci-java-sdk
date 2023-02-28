@@ -33,7 +33,7 @@ import com.oracle.bmc.analytics.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public class AnalyticsPaginators {
     private final Analytics client;
 

@@ -33,7 +33,7 @@ import com.oracle.bmc.cloudmigrations.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class MigrationPaginators {
     private final Migration client;
 

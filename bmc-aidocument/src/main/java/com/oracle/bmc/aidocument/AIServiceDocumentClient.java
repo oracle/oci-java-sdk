@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AIServiceDocument {
     /** Service instance for AIServiceDocument. */
@@ -25,7 +25,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AIServiceDocumentAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AIServiceDocumentClient.class);
 
     private final AIServiceDocumentWaiters waiters;
 
@@ -100,7 +100,7 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
          * @return the client
          */
         public AIServiceDocumentClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AIServiceDocumentClient(

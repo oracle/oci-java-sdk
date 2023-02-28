@@ -11,7 +11,7 @@ import com.oracle.bmc.waa.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetWebAppAccelerationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class GetWebAppAccelerationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -11,7 +11,7 @@ import com.oracle.bmc.opsi.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListAwrDatabaseSnapshotsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListAwrDatabaseSnapshotsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

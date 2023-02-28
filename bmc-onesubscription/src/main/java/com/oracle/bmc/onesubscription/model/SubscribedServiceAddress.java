@@ -14,7 +14,7 @@ package com.oracle.bmc.onesubscription.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = SubscribedServiceAddress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

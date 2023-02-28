@@ -10,7 +10,7 @@ import com.oracle.bmc.threatintelligence.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorCountsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIndicatorCountsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListIndicatorCountsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the tenancy (root compartment) that is used to filter results. */

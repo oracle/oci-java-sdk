@@ -6,7 +6,7 @@ package com.oracle.bmc.osmanagement.responses;
 
 import com.oracle.bmc.osmanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class SkipNextScheduledJobExecutionResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

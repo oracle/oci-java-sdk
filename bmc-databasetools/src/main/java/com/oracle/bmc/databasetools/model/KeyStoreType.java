@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /** The key store type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum KeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
     JavaKeyStore("JAVA_KEY_STORE"),
     JavaTrustStore("JAVA_TRUST_STORE"),

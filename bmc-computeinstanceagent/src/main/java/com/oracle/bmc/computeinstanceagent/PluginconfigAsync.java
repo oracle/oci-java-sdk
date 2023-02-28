@@ -11,7 +11,7 @@ import com.oracle.bmc.computeinstanceagent.responses.*;
  * API for the Oracle Cloud Agent software running on compute instances. Oracle Cloud Agent is a
  * lightweight process that monitors and manages compute instances.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public interface PluginconfigAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

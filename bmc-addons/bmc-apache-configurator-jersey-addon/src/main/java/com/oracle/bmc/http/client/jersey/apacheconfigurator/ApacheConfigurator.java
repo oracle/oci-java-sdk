@@ -6,7 +6,7 @@ package com.oracle.bmc.http.client.jersey.apacheconfigurator;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import javax.net.ssl.SSLContext;
 
 import com.oracle.bmc.http.ClientConfigurator;

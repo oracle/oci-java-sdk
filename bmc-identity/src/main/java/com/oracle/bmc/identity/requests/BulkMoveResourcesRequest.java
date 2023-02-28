@@ -10,7 +10,7 @@ import com.oracle.bmc.identity.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/BulkMoveResourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use BulkMoveResourcesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class BulkMoveResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.BulkMoveResourcesDetails> {

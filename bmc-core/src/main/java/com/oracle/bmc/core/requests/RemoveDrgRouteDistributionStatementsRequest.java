@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RemoveDrgRouteDistributionStatementsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RemoveDrgRouteDistributionStatementsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.RemoveDrgRouteDistributionStatementsDetails> {

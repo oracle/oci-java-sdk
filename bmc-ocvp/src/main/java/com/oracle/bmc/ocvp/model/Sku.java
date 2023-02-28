@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /** SKU offerings */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public enum Sku implements com.oracle.bmc.http.internal.BmcEnum {
     Hour("HOUR"),
     Month("MONTH"),

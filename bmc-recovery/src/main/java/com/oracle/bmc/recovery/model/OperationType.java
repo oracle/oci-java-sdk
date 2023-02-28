@@ -5,7 +5,7 @@
 package com.oracle.bmc.recovery.model;
 
 /** The type of work request. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateProtectedDatabase("CREATE_PROTECTED_DATABASE"),
     UpdateProtectedDatabase("UPDATE_PROTECTED_DATABASE"),

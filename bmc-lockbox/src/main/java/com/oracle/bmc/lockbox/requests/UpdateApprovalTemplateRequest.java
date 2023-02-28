@@ -11,7 +11,7 @@ import com.oracle.bmc.lockbox.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateApprovalTemplateRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class UpdateApprovalTemplateRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.lockbox.model.UpdateApprovalTemplateDetails> {

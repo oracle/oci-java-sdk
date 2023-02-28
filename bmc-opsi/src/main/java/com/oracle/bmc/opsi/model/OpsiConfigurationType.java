@@ -9,7 +9,7 @@ package com.oracle.bmc.opsi.model;
  * through different OPSI configuration types. UX_CONFIGURATION: OPSI configuration resource of this
  * type can be created only once in each compartment. It is a compartment level singleton resource.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum OpsiConfigurationType implements com.oracle.bmc.http.internal.BmcEnum {
     UxConfiguration("UX_CONFIGURATION"),
 

@@ -6,7 +6,7 @@ package com.oracle.bmc.waa.responses;
 
 import com.oracle.bmc.waa.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class CreateWebAppAccelerationResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

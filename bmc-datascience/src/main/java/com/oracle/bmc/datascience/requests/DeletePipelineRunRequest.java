@@ -10,7 +10,7 @@ import com.oracle.bmc.datascience.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeletePipelineRunExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeletePipelineRunRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class DeletePipelineRunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

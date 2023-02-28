@@ -6,6 +6,6 @@ package com.oracle.bmc.autoscaling;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @SdkClients({AutoScalingAsyncClient.class, AutoScalingClient.class})
 public final class SdkClientsMetadata {}

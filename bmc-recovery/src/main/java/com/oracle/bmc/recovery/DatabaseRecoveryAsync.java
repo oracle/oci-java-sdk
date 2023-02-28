@@ -8,7 +8,7 @@ import com.oracle.bmc.recovery.requests.*;
 import com.oracle.bmc.recovery.responses.*;
 
 /** Use Oracle Database Autonomous Recovery Service API to manage Protected Databases. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public interface DatabaseRecoveryAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

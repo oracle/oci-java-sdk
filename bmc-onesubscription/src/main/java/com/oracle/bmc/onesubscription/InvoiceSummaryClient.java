@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class InvoiceSummaryClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements InvoiceSummary {
     /** Service instance for InvoiceSummary. */
@@ -24,7 +24,7 @@ public class InvoiceSummaryClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(InvoiceSummaryAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(InvoiceSummaryClient.class);
 
     private final InvoiceSummaryPaginators paginators;
 
@@ -69,7 +69,7 @@ public class InvoiceSummaryClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public InvoiceSummaryClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new InvoiceSummaryClient(this, authenticationDetailsProvider);

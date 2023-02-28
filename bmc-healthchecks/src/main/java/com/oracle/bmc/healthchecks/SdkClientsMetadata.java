@@ -6,6 +6,6 @@ package com.oracle.bmc.healthchecks;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @SdkClients({HealthChecksAsyncClient.class, HealthChecksClient.class})
 public final class SdkClientsMetadata {}

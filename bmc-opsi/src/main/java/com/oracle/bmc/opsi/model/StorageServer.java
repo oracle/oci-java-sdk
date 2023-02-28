@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Displays exadata storage server resource metrics */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum StorageServer implements com.oracle.bmc.http.internal.BmcEnum {
     Storage("STORAGE"),
     Iops("IOPS"),

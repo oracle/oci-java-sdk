@@ -11,7 +11,7 @@ import com.oracle.bmc.waf.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListProtectionCapabilityGroupTagsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class ListProtectionCapabilityGroupTagsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -8,7 +8,7 @@ package com.oracle.bmc.logging.model;
  * The state of the configuration: 1. *VALID* configuration is valid and usable 2. *INVALID*
  * configuration has compilation errors and is not usable
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public enum UnifiedAgentServiceConfigurationStates implements com.oracle.bmc.http.internal.BmcEnum {
     Valid("VALID"),
     Invalid("INVALID"),

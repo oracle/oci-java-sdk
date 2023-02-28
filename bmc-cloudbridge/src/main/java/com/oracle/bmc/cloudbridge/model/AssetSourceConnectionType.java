@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /** The type of connection for an asset source. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public enum AssetSourceConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     Discovery("DISCOVERY"),
     Replication("REPLICATION"),

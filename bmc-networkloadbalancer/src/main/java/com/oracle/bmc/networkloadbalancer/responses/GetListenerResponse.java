@@ -6,7 +6,7 @@ package com.oracle.bmc.networkloadbalancer.responses;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a

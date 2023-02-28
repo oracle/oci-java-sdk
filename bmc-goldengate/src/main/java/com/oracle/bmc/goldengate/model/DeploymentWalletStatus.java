@@ -5,7 +5,7 @@
 package com.oracle.bmc.goldengate.model;
 
 /** The possible states that applies to import/export operations of wallet from/to deployment. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum DeploymentWalletStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Exporting("EXPORTING"),
     Exported("EXPORTED"),

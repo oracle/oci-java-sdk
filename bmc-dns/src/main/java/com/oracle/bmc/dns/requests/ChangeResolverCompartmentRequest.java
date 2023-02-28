@@ -11,7 +11,7 @@ import com.oracle.bmc.dns.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeResolverCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class ChangeResolverCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dns.model.ChangeResolverCompartmentDetails> {

@@ -6,7 +6,7 @@ package com.oracle.bmc.managementdashboard.responses;
 
 import com.oracle.bmc.managementdashboard.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class DeleteManagementSavedSearchResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

@@ -6,7 +6,7 @@ package com.oracle.bmc.recovery.responses;
 
 import com.oracle.bmc.recovery.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class ChangeRecoveryServiceSubnetCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /** Unique Oracle-assigned identifier of the work request. */

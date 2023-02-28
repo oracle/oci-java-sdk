@@ -10,7 +10,7 @@ import com.oracle.bmc.apmcontrolplane.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmcontrolplane/UpdateApmDomainExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateApmDomainRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class UpdateApmDomainRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails> {

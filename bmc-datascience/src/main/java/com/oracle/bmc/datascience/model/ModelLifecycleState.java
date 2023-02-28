@@ -5,7 +5,7 @@
 package com.oracle.bmc.datascience.model;
 
 /** The lifecycle state of a model. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public enum ModelLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Deleted("DELETED"),

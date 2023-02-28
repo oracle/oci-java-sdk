@@ -15,7 +15,7 @@ package com.oracle.bmc.datacatalog.model;
  * APPROVED status. ESCALATED - The review of this term is escalated to fast track for use in
  * tagging.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum TermWorkflowStatus implements com.oracle.bmc.http.internal.BmcEnum {
     New("NEW"),
     Approved("APPROVED"),

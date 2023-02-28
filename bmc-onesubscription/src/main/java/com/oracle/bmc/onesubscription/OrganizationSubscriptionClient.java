@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class OrganizationSubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements OrganizationSubscription {
     /** Service instance for OrganizationSubscription. */
@@ -24,7 +24,7 @@ public class OrganizationSubscriptionClient extends com.oracle.bmc.http.internal
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OrganizationSubscriptionAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OrganizationSubscriptionClient.class);
 
     private final OrganizationSubscriptionPaginators paginators;
 
@@ -70,7 +70,7 @@ public class OrganizationSubscriptionClient extends com.oracle.bmc.http.internal
          * @return the client
          */
         public OrganizationSubscriptionClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OrganizationSubscriptionClient(this, authenticationDetailsProvider);

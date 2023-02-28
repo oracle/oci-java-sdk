@@ -14,7 +14,7 @@ import com.oracle.bmc.operatoraccesscontrol.responses.*;
  *
  * <p>Use the table of contents and search tool to explore the OperatorAccessControl API.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface OperatorActionsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

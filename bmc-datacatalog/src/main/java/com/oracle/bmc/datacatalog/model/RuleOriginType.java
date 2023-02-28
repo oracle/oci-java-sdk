@@ -9,7 +9,7 @@ package com.oracle.bmc.datacatalog.model;
  * system. USER - Represents user defined rules at data catalog system. PROFILING - Represents rules
  * which are inferred via profiling.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum RuleOriginType implements com.oracle.bmc.http.internal.BmcEnum {
     Source("SOURCE"),
     User("USER"),

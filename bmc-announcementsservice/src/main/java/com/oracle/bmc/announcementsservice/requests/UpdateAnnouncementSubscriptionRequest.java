@@ -11,7 +11,7 @@ import com.oracle.bmc.announcementsservice.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateAnnouncementSubscriptionRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class UpdateAnnouncementSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.UpdateAnnouncementSubscriptionDetails> {

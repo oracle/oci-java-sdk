@@ -5,7 +5,7 @@
 package com.oracle.bmc;
 
 import com.oracle.bmc.util.internal.NameUtils;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Locale;

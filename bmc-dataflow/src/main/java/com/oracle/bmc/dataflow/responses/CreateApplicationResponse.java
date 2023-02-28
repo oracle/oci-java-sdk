@@ -6,7 +6,7 @@ package com.oracle.bmc.dataflow.responses;
 
 import com.oracle.bmc.dataflow.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency

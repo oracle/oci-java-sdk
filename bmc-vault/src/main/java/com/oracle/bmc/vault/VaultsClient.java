@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Vaults {
     /** Service instance for Vaults. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(VaultsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(VaultsClient.class);
 
     private final VaultsWaiters waiters;
 
@@ -102,7 +102,7 @@ public class VaultsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
          * @return the client
          */
         public VaultsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new VaultsClient(this, authenticationDetailsProvider, executorService);

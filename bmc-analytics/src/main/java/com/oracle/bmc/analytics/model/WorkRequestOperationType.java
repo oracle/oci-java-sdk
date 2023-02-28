@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /** The types of work request operations. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateAnalyticsInstance("CREATE_ANALYTICS_INSTANCE"),
     DeleteAnalyticsInstance("DELETE_ANALYTICS_INSTANCE"),

@@ -10,7 +10,7 @@ import com.oracle.bmc.datacatalog.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateEntityRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class CreateEntityRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.CreateEntityDetails> {

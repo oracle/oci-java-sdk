@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AccessRequests {
     /** Service instance for AccessRequests. */
@@ -25,7 +25,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AccessRequestsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AccessRequestsClient.class);
 
     private final AccessRequestsWaiters waiters;
 
@@ -104,7 +104,7 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public AccessRequestsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AccessRequestsClient(this, authenticationDetailsProvider, executorService);

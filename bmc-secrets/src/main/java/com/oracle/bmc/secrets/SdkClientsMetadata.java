@@ -6,6 +6,6 @@ package com.oracle.bmc.secrets;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 @SdkClients({SecretsAsyncClient.class, SecretsClient.class})
 public final class SdkClientsMetadata {}

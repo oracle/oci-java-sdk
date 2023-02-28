@@ -6,6 +6,6 @@ package com.oracle.bmc.cloudguard;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @SdkClients({CloudGuardAsyncClient.class, CloudGuardClient.class})
 public final class SdkClientsMetadata {}

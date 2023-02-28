@@ -14,7 +14,7 @@ import com.oracle.bmc.email.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class EmailWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Email client;

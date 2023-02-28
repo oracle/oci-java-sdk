@@ -11,7 +11,7 @@ import com.oracle.bmc.databasemigration.responses.*;
  * Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration
  * operations.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public interface DatabaseMigrationAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

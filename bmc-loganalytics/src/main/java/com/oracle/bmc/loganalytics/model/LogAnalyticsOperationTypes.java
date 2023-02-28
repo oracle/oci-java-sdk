@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum LogAnalyticsOperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CreateLogAnalytics("CREATE_LOG_ANALYTICS"),
     DeleteLogAnalytics("DELETE_LOG_ANALYTICS"),

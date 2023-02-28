@@ -11,7 +11,7 @@ import com.oracle.bmc.loganalytics.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeLogAnalyticsEntityCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ChangeLogAnalyticsEntityCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEntityCompartmentDetails> {

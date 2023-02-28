@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.http.client.jersey.internal;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Priority;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Priority;
 import javax.ws.rs.Priorities;
 
 import com.oracle.bmc.http.client.HttpRequest;

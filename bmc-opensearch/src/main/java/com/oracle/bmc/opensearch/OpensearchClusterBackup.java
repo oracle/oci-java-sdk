@@ -12,7 +12,7 @@ import com.oracle.bmc.opensearch.responses.*;
  * client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no
  * circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public interface OpensearchClusterBackup extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

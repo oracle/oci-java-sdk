@@ -6,7 +6,7 @@ package com.oracle.bmc.oda.responses;
 
 import com.oracle.bmc.oda.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class UpdateTranslatorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency

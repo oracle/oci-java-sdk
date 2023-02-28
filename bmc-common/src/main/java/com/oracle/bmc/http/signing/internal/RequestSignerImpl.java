@@ -25,9 +25,8 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.TimeZone;
 import java.util.function.Supplier;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.util.StreamUtils;
@@ -46,8 +45,9 @@ import com.oracle.bmc.util.internal.Validate;
  * Implementation of the {@linkplain RequestSigner} interface
  *
  * <p>This contains the main code that is used for signing a request
+ *
+ * <p>Class is immutable. @Immutable
  */
-@Immutable
 public class RequestSignerImpl implements RequestSigner {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RequestSignerImpl.class);

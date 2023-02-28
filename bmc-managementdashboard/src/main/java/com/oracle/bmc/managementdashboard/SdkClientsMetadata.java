@@ -6,6 +6,6 @@ package com.oracle.bmc.managementdashboard;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 @SdkClients({DashxApisAsyncClient.class, DashxApisClient.class})
 public final class SdkClientsMetadata {}

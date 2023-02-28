@@ -15,7 +15,7 @@ import com.oracle.bmc.threatintelligence.responses.*;
  * the [Threat Intelligence
  * documentation](https://docs.cloud.oracle.com/iaas/Content/threat-intel/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface ThreatintelAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

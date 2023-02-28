@@ -12,7 +12,7 @@ import com.oracle.bmc.managementdashboard.responses.*;
  * metadata preservation and to perform tasks such as creating a dashboard, creating a saved search,
  * and obtaining a list of dashboards and saved searches in a compartment.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public interface DashxApisAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

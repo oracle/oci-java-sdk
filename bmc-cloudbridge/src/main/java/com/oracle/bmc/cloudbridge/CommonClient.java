@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class CommonClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Common {
     /** Service instance for Common. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class CommonClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(CommonAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(CommonClient.class);
 
     private final CommonWaiters waiters;
 
@@ -102,7 +102,7 @@ public class CommonClient extends com.oracle.bmc.http.internal.BaseSyncClient im
          * @return the client
          */
         public CommonClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new CommonClient(this, authenticationDetailsProvider, executorService);

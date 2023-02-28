@@ -14,7 +14,7 @@ import com.oracle.bmc.monitoring.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class MonitoringWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Monitoring client;

@@ -6,6 +6,6 @@ package com.oracle.bmc.bds;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @SdkClients({BdsAsyncClient.class, BdsClient.class})
 public final class SdkClientsMetadata {}

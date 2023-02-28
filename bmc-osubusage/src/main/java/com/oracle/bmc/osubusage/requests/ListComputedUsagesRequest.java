@@ -10,7 +10,7 @@ import com.oracle.bmc.osubusage.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubusage/ListComputedUsagesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListComputedUsagesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the root compartment. */

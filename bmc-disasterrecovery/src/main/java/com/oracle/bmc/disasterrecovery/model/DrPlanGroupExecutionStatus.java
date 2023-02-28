@@ -14,7 +14,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * execution has timed out, but was ignored. - PAUSED - DR Plan Group execution is paused. -
  * CANCELED - DR Plan Group execution has been canceled.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanGroupExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Queued("QUEUED"),
     Disabled("DISABLED"),

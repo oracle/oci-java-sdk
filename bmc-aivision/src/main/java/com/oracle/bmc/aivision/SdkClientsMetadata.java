@@ -6,6 +6,6 @@ package com.oracle.bmc.aivision;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @SdkClients({AIServiceVisionAsyncClient.class, AIServiceVisionClient.class})
 public final class SdkClientsMetadata {}

@@ -5,7 +5,7 @@
 package com.oracle.bmc.certificates.model;
 
 /** The current revocation state of the certificate. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum RevocationReason implements com.oracle.bmc.http.internal.BmcEnum {
     Unspecified("UNSPECIFIED"),
     KeyCompromise("KEY_COMPROMISE"),

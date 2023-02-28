@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class MarketplaceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Marketplace {
     /** Service instance for Marketplace. */
@@ -24,7 +24,7 @@ public class MarketplaceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(MarketplaceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(MarketplaceClient.class);
 
     private final MarketplaceWaiters waiters;
 
@@ -103,7 +103,7 @@ public class MarketplaceClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public MarketplaceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MarketplaceClient(this, authenticationDetailsProvider, executorService);

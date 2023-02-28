@@ -20,7 +20,7 @@ import com.oracle.bmc.core.responses.*;
  * <p>This service client does not use circuit breakers by default if the user has not defined a
  * circuit breaker configuration.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Compute extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

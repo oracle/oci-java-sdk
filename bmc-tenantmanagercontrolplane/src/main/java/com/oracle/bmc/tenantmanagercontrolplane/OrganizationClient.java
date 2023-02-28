@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Organization {
     /** Service instance for Organization. */
@@ -25,7 +25,7 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OrganizationAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OrganizationClient.class);
 
     private final OrganizationWaiters waiters;
 
@@ -104,7 +104,7 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public OrganizationClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OrganizationClient(this, authenticationDetailsProvider, executorService);

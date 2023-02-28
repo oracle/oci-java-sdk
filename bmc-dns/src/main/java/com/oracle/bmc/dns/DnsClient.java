@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Dns {
     /** Service instance for Dns. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -22,8 +22,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                     .serviceEndpointTemplate("https://dns.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DnsAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(DnsClient.class);
 
     private final DnsWaiters waiters;
 
@@ -102,7 +101,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
          * @return the client
          */
         public DnsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DnsClient(this, authenticationDetailsProvider, executorService);

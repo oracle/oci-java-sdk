@@ -5,7 +5,7 @@
 package com.oracle.bmc.waf.model;
 
 /** Type of the WebAppFirewall, as example LOAD_BALANCER. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public enum BackendType implements com.oracle.bmc.http.internal.BmcEnum {
     LoadBalancer("LOAD_BALANCER"),
 

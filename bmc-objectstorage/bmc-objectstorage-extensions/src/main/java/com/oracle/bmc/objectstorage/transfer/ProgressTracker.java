@@ -4,10 +4,9 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.NotThreadSafe;
+import jakarta.annotation.Nonnull;
 
-@NotThreadSafe
+/** This class is not thread-safe. @NotThreadSafe */
 class ProgressTracker {
     @Nonnull private final ProgressReporter progressReporter;
     private final long totalBytes;

@@ -6,7 +6,7 @@ package com.oracle.bmc.filestorage.responses;
 
 import com.oracle.bmc.filestorage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class UpdateMountTargetResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

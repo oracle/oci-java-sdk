@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class DataConnectivityManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DataConnectivityManagement {
     /** Service instance for DataConnectivityManagement. */
@@ -25,7 +25,7 @@ public class DataConnectivityManagementClient extends com.oracle.bmc.http.intern
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DataConnectivityManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DataConnectivityManagementClient.class);
 
     private final DataConnectivityManagementWaiters waiters;
 
@@ -105,7 +105,7 @@ public class DataConnectivityManagementClient extends com.oracle.bmc.http.intern
          * @return the client
          */
         public DataConnectivityManagementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataConnectivityManagementClient(

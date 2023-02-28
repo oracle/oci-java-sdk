@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class HealthChecksClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements HealthChecks {
     /** Service instance for HealthChecks. */
@@ -25,7 +25,7 @@ public class HealthChecksClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(HealthChecksAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(HealthChecksClient.class);
 
     private final HealthChecksPaginators paginators;
 
@@ -70,7 +70,7 @@ public class HealthChecksClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public HealthChecksClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new HealthChecksClient(this, authenticationDetailsProvider);

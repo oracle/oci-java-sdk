@@ -12,7 +12,7 @@ import com.oracle.bmc.apmconfig.responses.*;
  * Performance Monitoring configuration. For more information, see [Application Performance
  * Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface ConfigAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

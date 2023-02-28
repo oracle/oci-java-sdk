@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class DataFlowAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DataFlowAsync {
     /** Service instance for DataFlow. */
@@ -75,7 +75,7 @@ public class DataFlowAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
          * @return the client
          */
         public DataFlowAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataFlowAsyncClient(this, authenticationDetailsProvider);

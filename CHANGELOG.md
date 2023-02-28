@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.6.0 - 2023-02-28
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the eu-dcc-rating-1, eu-dcc-rating-2, eu-dcc-dublin-1, eu-dcc-dublin-2, and eu-dcc-milan-2 regions
+- Support for on-demand bootstrap script execution in the Big Data Service
+   
+### Fixed
+- The log names for synchronous clients now use the correct class names (e.g. ComputeClient uses ComputeClient, not ComputeAsyncClient)
+ 
+### Breaking Changes
+- The dependency on FindBugs (`com.google.code.findbugs:jsr305`) has been removed:
+  - `javax.annotation.Nonnull` has been replaced by `jakarta.annotation.Nonnull`
+  - `javax.annotation.Nullable` has been replaced by `jakarta.annotation.Nullable`
+  - `javax.annotation.Generated` has been replaced by `jakarta.annotation.Generated`
+  - `javax.annotation.concurrent.Immutable`, `javax.annotation.concurrent.NotThreadSafe`, and `javax.annotation.concurrent.ThreadSafe` have been replaced by comments
+
 ## 3.5.0 - 2023-02-21
 ### Added
 - Support for async jobs in the AI Anomaly Detection service

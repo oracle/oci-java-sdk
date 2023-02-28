@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class VnMonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements VnMonitoring {
     /** Service instance for VnMonitoring. */
@@ -24,7 +24,7 @@ public class VnMonitoringClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(VnMonitoringAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(VnMonitoringClient.class);
 
     private final VnMonitoringWaiters waiters;
 
@@ -103,7 +103,7 @@ public class VnMonitoringClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public VnMonitoringClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new VnMonitoringClient(this, authenticationDetailsProvider, executorService);

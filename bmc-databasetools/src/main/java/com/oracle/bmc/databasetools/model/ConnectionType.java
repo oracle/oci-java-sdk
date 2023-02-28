@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /** The connection type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleDatabase("ORACLE_DATABASE"),
     Mysql("MYSQL"),

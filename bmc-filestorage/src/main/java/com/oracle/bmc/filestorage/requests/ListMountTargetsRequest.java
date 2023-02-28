@@ -10,7 +10,7 @@ import com.oracle.bmc.filestorage.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListMountTargetsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMountTargetsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

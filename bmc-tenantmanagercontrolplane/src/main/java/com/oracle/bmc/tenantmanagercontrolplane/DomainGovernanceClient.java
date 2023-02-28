@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class DomainGovernanceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DomainGovernance {
     /** Service instance for DomainGovernance. */
@@ -25,7 +25,7 @@ public class DomainGovernanceClient extends com.oracle.bmc.http.internal.BaseSyn
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DomainGovernanceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DomainGovernanceClient.class);
 
     private final DomainGovernanceWaiters waiters;
 
@@ -104,7 +104,7 @@ public class DomainGovernanceClient extends com.oracle.bmc.http.internal.BaseSyn
          * @return the client
          */
         public DomainGovernanceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DomainGovernanceClient(this, authenticationDetailsProvider, executorService);

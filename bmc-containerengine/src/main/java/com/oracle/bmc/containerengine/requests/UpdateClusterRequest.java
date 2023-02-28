@@ -10,7 +10,7 @@ import com.oracle.bmc.containerengine.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateClusterRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class UpdateClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.UpdateClusterDetails> {

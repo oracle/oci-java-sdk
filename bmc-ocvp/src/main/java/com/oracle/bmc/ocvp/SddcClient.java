@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Sddc {
     /** Service instance for Sddc. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -22,8 +22,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                     .serviceEndpointTemplate("https://ocvps.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(SddcAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(SddcClient.class);
 
     private final SddcWaiters waiters;
 
@@ -102,7 +101,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
          * @return the client
          */
         public SddcClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new SddcClient(this, authenticationDetailsProvider, executorService);

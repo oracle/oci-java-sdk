@@ -8,7 +8,7 @@ import com.oracle.bmc.cloudmigrations.requests.*;
 import com.oracle.bmc.cloudmigrations.responses.*;
 
 /** A description of the Oracle Cloud Migrations API. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public interface MigrationAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

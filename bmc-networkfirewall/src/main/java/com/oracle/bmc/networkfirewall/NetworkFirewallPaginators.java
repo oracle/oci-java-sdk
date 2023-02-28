@@ -33,7 +33,7 @@ import com.oracle.bmc.networkfirewall.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class NetworkFirewallPaginators {
     private final NetworkFirewall client;
 

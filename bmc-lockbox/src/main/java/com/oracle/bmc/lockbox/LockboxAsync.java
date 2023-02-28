@@ -14,7 +14,7 @@ import com.oracle.bmc.lockbox.responses.*;
  *
  * <p>Use the table of contents and search tool to explore the Managed Access API.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public interface LockboxAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

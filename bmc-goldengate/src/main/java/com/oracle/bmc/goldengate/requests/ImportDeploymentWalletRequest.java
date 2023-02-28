@@ -11,7 +11,7 @@ import com.oracle.bmc.goldengate.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ImportDeploymentWalletRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ImportDeploymentWalletRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.ImportDeploymentWalletDetails> {

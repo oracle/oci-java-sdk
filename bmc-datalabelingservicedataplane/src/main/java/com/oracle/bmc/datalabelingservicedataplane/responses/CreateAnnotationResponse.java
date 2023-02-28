@@ -6,7 +6,7 @@ package com.oracle.bmc.datalabelingservicedataplane.responses;
 
 import com.oracle.bmc.datalabelingservicedataplane.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class CreateAnnotationResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

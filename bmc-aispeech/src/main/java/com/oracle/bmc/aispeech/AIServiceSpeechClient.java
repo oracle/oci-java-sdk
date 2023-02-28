@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AIServiceSpeech {
     /** Service instance for AIServiceSpeech. */
@@ -25,7 +25,7 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AIServiceSpeechAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AIServiceSpeechClient.class);
 
     private final AIServiceSpeechWaiters waiters;
 
@@ -104,7 +104,7 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public AIServiceSpeechClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AIServiceSpeechClient(this, authenticationDetailsProvider, executorService);

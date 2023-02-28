@@ -6,7 +6,7 @@ package com.oracle.bmc.cloudmigrations.responses;
 
 import com.oracle.bmc.cloudmigrations.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class ListTargetAssetsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

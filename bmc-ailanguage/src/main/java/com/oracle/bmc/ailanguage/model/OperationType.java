@@ -5,7 +5,7 @@
 package com.oracle.bmc.ailanguage.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateModel("CREATE_MODEL"),
     UpdateModel("UPDATE_MODEL"),

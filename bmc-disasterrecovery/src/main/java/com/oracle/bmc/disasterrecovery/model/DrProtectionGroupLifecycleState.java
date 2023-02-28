@@ -12,7 +12,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * DELETED - DR Protection Group has been deleted. - FAILED - DR Protection Group is in a failed
  * state.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

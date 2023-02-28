@@ -6,6 +6,6 @@ package com.oracle.bmc.loadbalancer;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @SdkClients({LoadBalancerAsyncClient.class, LoadBalancerClient.class})
 public final class SdkClientsMetadata {}

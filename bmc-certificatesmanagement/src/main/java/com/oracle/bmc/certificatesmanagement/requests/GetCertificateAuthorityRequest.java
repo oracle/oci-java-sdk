@@ -11,7 +11,7 @@ import com.oracle.bmc.certificatesmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetCertificateAuthorityRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class GetCertificateAuthorityRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

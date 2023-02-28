@@ -5,7 +5,7 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /** This object is deprecated. Protocols supported for the listener of the network load balancer. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public enum NetworkLoadBalancersProtocolSummary implements com.oracle.bmc.http.internal.BmcEnum {
     Any("ANY"),
     Tcp("TCP"),

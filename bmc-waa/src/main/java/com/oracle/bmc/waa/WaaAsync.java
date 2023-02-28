@@ -11,7 +11,7 @@ import com.oracle.bmc.waa.responses.*;
  * API for the Web Application Acceleration service. Use this API to manage regional Web App
  * Acceleration policies such as Caching and Compression for accelerating HTTP services.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public interface WaaAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -6,7 +6,7 @@ package com.oracle.bmc.mysql.responses;
 
 import com.oracle.bmc.mysql.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class GenerateHeatWaveClusterMemoryEstimateResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

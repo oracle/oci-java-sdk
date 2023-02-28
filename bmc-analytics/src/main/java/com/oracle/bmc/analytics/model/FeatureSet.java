@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /** Analytics feature set. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum FeatureSet implements com.oracle.bmc.http.internal.BmcEnum {
     SelfServiceAnalytics("SELF_SERVICE_ANALYTICS"),
     EnterpriseAnalytics("ENTERPRISE_ANALYTICS"),

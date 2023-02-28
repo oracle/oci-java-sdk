@@ -6,6 +6,6 @@ package com.oracle.bmc.identitydataplane;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @SdkClients({DataplaneAsyncClient.class, DataplaneClient.class})
 public final class SdkClientsMetadata {}

@@ -6,7 +6,7 @@ package com.oracle.bmc.aidocument.responses;
 
 import com.oracle.bmc.aidocument.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 public class CreateProcessorJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

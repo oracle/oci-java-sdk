@@ -5,7 +5,7 @@
 package com.oracle.bmc.mediaservices.model;
 
 /** The field to sort by. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public enum MediaAssetSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     CompartmentId("compartmentId"),
     Type("type"),

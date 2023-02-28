@@ -33,7 +33,7 @@ import com.oracle.bmc.rover.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverEntitlementPaginators {
     private final RoverEntitlement client;
 

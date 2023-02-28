@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class CertificatesManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements CertificatesManagement {
     /** Service instance for CertificatesManagement. */
@@ -25,7 +25,7 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(CertificatesManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(CertificatesManagementClient.class);
 
     private final CertificatesManagementWaiters waiters;
 
@@ -105,7 +105,7 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
          * @return the client
          */
         public CertificatesManagementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new CertificatesManagementClient(

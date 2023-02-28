@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverEntitlementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements RoverEntitlementAsync {
     /** Service instance for RoverEntitlement. */
@@ -76,7 +76,7 @@ public class RoverEntitlementAsyncClient extends com.oracle.bmc.http.internal.Ba
          * @return the client
          */
         public RoverEntitlementAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RoverEntitlementAsyncClient(this, authenticationDetailsProvider);

@@ -11,7 +11,7 @@ import com.oracle.bmc.opa.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeOpaInstanceCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 public class ChangeOpaInstanceCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opa.model.ChangeOpaInstanceCompartmentDetails> {

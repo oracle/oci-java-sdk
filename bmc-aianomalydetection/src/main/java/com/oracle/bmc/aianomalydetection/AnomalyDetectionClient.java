@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AnomalyDetection {
     /** Service instance for AnomalyDetection. */
@@ -25,7 +25,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AnomalyDetectionAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AnomalyDetectionClient.class);
 
     private final AnomalyDetectionWaiters waiters;
 
@@ -104,7 +104,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
          * @return the client
          */
         public AnomalyDetectionClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AnomalyDetectionClient(this, authenticationDetailsProvider, executorService);

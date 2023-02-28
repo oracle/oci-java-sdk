@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Waf {
     /** Service instance for Waf. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -22,8 +22,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                     .serviceEndpointTemplate("https://waf.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(WafAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(WafClient.class);
 
     private final WafWaiters waiters;
 
@@ -102,7 +101,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
          * @return the client
          */
         public WafClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new WafClient(this, authenticationDetailsProvider, executorService);

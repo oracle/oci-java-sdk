@@ -11,7 +11,7 @@ import com.oracle.bmc.managementagent.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListManagementAgentInstallKeysRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class ListManagementAgentInstallKeysRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

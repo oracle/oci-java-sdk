@@ -10,7 +10,7 @@ import com.oracle.bmc.osubusage.responses.*;
 /**
  * OneSubscription API Common set of Subscription Plan Management (SPM) Usage Computation resources
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public interface ComputedUsageAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

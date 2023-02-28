@@ -6,7 +6,7 @@ package com.oracle.bmc.waas;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @SdkClients({
     RedirectAsyncClient.class,
     RedirectClient.class,

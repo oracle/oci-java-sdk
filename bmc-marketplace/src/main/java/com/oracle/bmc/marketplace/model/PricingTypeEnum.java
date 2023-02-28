@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /** Possible values for the listing package's pricing model. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum PricingTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     Free("FREE"),
     Byol("BYOL"),

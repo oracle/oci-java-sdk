@@ -6,7 +6,7 @@ package com.oracle.bmc.onesubscription;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @SdkClients({
     BillingScheduleAsyncClient.class,
     BillingScheduleClient.class,

@@ -10,7 +10,7 @@ import com.oracle.bmc.apmsynthetics.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteScriptExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteScriptRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class DeleteScriptRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The APM domain ID the request is intended for. */

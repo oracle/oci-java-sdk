@@ -8,7 +8,7 @@ import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
 
 /** OCI Web Application Acceleration and Security Services */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public interface RedirectAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

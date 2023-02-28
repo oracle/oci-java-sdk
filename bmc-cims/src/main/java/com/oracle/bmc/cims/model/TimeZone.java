@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cims.model;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum TimeZone implements com.oracle.bmc.http.internal.BmcEnum {
     GreenwichMeanTime("GREENWICH_MEAN_TIME"),
     EuropeanCentralTime("EUROPEAN_CENTRAL_TIME"),

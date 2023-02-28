@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class DataLabelingManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DataLabelingManagementAsync {
     /** Service instance for DataLabelingManagement. */
@@ -77,7 +77,7 @@ public class DataLabelingManagementAsyncClient extends com.oracle.bmc.http.inter
          * @return the client
          */
         public DataLabelingManagementAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataLabelingManagementAsyncClient(this, authenticationDetailsProvider);

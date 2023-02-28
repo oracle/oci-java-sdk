@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /** The field to sort by. You can only provide one sort order. The default value is dateUpdated. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
     DateUpdated("dateUpdated"),
     Severity("severity"),

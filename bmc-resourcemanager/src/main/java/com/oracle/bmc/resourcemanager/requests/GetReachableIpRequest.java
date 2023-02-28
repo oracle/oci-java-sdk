@@ -10,7 +10,7 @@ import com.oracle.bmc.resourcemanager.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetReachableIpExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetReachableIpRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class GetReachableIpRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The IP address of the resource in the private subnet. */

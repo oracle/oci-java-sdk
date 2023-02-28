@@ -13,7 +13,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * Execution has been deleted. - PAUSING - DR Plan Execution is being paused. - PAUSED - DR Plan
  * Execution has been paused. - RESUMING - DR Plan Execution is resuming.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanExecutionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),

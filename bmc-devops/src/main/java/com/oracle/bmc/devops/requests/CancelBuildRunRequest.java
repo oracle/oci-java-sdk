@@ -10,7 +10,7 @@ import com.oracle.bmc.devops.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelBuildRunExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelBuildRunRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class CancelBuildRunRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.CancelBuildRunDetails> {

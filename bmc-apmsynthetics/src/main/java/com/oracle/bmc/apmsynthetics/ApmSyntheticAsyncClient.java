@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ApmSyntheticAsync {
     /** Service instance for ApmSynthetic. */
@@ -76,7 +76,7 @@ public class ApmSyntheticAsyncClient extends com.oracle.bmc.http.internal.BaseAs
          * @return the client
          */
         public ApmSyntheticAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ApmSyntheticAsyncClient(this, authenticationDetailsProvider);

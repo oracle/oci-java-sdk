@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Possible Metadata keys for workRequest resource metadata */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
     RelatedResourceIds("RELATED_RESOURCE_IDS"),
     ResourceName("RESOURCE_NAME"),

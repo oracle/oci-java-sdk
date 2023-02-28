@@ -11,7 +11,7 @@ import com.oracle.bmc.optimizer.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * FilterResourceActionsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class FilterResourceActionsRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.optimizer.model.QueryDetails> {
 

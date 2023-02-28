@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Supported database manual connection subtypes */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public enum DatabaseManualConnectionSubTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Oracle("ORACLE"),
     RdsOracle("RDS_ORACLE"),

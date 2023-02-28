@@ -6,6 +6,6 @@ package com.oracle.bmc.waf;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @SdkClients({WafAsyncClient.class, WafClient.class})
 public final class SdkClientsMetadata {}

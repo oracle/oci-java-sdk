@@ -6,7 +6,7 @@ package com.oracle.bmc.mediaservices.responses;
 
 import com.oracle.bmc.mediaservices.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ChangeMediaWorkflowConfigurationCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

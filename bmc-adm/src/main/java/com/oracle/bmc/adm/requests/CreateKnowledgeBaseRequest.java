@@ -10,7 +10,7 @@ import com.oracle.bmc.adm.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateKnowledgeBaseExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateKnowledgeBaseRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class CreateKnowledgeBaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.adm.model.CreateKnowledgeBaseDetails> {

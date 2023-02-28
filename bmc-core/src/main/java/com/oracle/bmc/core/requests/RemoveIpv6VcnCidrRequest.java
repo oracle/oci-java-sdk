@@ -10,7 +10,7 @@ import com.oracle.bmc.core.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveIpv6VcnCidrExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveIpv6VcnCidrRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RemoveIpv6VcnCidrRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails> {

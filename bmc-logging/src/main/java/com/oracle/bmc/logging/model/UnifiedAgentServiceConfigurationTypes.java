@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /** Type of Unified Agent service configuration. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public enum UnifiedAgentServiceConfigurationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Logging("LOGGING"),
 

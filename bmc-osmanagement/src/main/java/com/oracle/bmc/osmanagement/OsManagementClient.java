@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class OsManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements OsManagement {
     /** Service instance for OsManagement. */
@@ -24,7 +24,7 @@ public class OsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OsManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OsManagementClient.class);
 
     private final OsManagementWaiters waiters;
 
@@ -103,7 +103,7 @@ public class OsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public OsManagementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OsManagementClient(this, authenticationDetailsProvider, executorService);

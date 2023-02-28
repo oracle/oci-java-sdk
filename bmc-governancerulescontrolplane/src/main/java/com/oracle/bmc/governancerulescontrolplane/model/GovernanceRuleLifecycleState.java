@@ -5,7 +5,7 @@
 package com.oracle.bmc.governancerulescontrolplane.model;
 
 /** The current state of governance rule. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public enum GovernanceRuleLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Deleted("DELETED"),

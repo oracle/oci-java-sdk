@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     Create("CREATE"),
     Update("UPDATE"),

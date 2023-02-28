@@ -6,6 +6,6 @@ package com.oracle.bmc.monitoring;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @SdkClients({MonitoringAsyncClient.class, MonitoringClient.class})
 public final class SdkClientsMetadata {}

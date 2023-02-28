@@ -6,7 +6,7 @@ package com.oracle.bmc.waa;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 @SdkClients({
     WaaAsyncClient.class,
     WaaClient.class,

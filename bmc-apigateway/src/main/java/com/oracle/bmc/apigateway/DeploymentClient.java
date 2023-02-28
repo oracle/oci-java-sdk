@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Deployment {
     /** Service instance for Deployment. */
@@ -24,7 +24,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DeploymentAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DeploymentClient.class);
 
     private final DeploymentWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
          * @return the client
          */
         public DeploymentClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DeploymentClient(this, authenticationDetailsProvider, executorService);

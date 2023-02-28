@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /** Possible strategy types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public enum StrategyParameterType implements com.oracle.bmc.http.internal.BmcEnum {
     String("STRING"),
     Boolean("BOOLEAN"),

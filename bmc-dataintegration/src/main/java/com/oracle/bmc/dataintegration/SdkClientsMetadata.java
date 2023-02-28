@@ -6,6 +6,6 @@ package com.oracle.bmc.dataintegration;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @SdkClients({DataIntegrationAsyncClient.class, DataIntegrationClient.class})
 public final class SdkClientsMetadata {}

@@ -10,7 +10,7 @@ import com.oracle.bmc.managementagent.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeployPluginsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeployPluginsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class DeployPluginsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.managementagent.model.DeployPluginsDetails> {

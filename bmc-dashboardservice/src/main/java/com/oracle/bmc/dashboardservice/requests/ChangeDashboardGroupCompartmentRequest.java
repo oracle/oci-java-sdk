@@ -11,7 +11,7 @@ import com.oracle.bmc.dashboardservice.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeDashboardGroupCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class ChangeDashboardGroupCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dashboardservice.model.ChangeDashboardGroupCompartmentDetails> {

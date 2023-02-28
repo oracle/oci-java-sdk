@@ -11,7 +11,7 @@ import com.oracle.bmc.opensearch.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListOpensearchVersionsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class ListOpensearchVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

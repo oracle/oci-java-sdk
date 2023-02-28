@@ -11,7 +11,7 @@ import com.oracle.bmc.governancerulescontrolplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListEnforcedGovernanceRulesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class ListEnforcedGovernanceRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

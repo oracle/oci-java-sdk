@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.waiter;
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 
 public class Waiters {
 

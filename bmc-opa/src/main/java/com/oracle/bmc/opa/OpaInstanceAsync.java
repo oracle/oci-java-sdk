@@ -8,7 +8,7 @@ import com.oracle.bmc.opa.requests.*;
 import com.oracle.bmc.opa.responses.*;
 
 /** A description of the OracleProcessAutomation API */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 public interface OpaInstanceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

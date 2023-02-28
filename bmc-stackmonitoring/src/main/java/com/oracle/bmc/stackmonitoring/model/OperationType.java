@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateResources("CREATE_RESOURCES"),
     UpdateResources("UPDATE_RESOURCES"),

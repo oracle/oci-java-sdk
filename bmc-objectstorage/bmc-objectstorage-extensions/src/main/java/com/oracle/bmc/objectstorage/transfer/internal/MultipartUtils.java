@@ -9,7 +9,7 @@ import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 
 import com.oracle.bmc.util.internal.Validate;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 public final class MultipartUtils {
     private static final org.slf4j.Logger LOG =

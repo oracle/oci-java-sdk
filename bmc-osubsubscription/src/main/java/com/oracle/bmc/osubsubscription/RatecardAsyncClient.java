@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class RatecardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements RatecardAsync {
     /** Service instance for Ratecard. */
@@ -75,7 +75,7 @@ public class RatecardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
          * @return the client
          */
         public RatecardAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RatecardAsyncClient(this, authenticationDetailsProvider);

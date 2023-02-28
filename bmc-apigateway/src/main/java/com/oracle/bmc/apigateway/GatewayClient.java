@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Gateway {
     /** Service instance for Gateway. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GatewayAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(GatewayClient.class);
 
     private final GatewayWaiters waiters;
 
@@ -102,7 +102,7 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public GatewayClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new GatewayClient(this, authenticationDetailsProvider, executorService);

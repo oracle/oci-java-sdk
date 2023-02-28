@@ -11,7 +11,7 @@ import com.oracle.bmc.servicemesh.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListVirtualServiceRouteTablesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ListVirtualServiceRouteTablesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

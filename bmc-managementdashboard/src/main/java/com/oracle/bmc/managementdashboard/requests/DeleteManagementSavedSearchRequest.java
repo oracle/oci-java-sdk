@@ -11,7 +11,7 @@ import com.oracle.bmc.managementdashboard.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteManagementSavedSearchRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class DeleteManagementSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

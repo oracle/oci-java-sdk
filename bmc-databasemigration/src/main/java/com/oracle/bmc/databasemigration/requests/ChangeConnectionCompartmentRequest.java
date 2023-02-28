@@ -11,7 +11,7 @@ import com.oracle.bmc.databasemigration.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeConnectionCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class ChangeConnectionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.ChangeConnectionCompartmentDetails> {

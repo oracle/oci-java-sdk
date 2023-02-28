@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicLong;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import static java.lang.String.format;
 
 import com.oracle.bmc.util.internal.Validate;

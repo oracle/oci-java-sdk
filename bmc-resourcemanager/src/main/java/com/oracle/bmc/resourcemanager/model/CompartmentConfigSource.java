@@ -15,7 +15,7 @@ package com.oracle.bmc.resourcemanager.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CompartmentConfigSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(

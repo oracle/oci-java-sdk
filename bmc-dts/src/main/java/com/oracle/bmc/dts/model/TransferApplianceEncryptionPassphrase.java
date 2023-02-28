@@ -14,7 +14,7 @@ package com.oracle.bmc.dts.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = TransferApplianceEncryptionPassphrase.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

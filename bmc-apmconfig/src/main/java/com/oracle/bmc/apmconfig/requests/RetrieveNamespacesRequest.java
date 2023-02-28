@@ -10,7 +10,7 @@ import com.oracle.bmc.apmconfig.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespacesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RetrieveNamespacesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class RetrieveNamespacesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The APM Domain ID the request is intended for. */

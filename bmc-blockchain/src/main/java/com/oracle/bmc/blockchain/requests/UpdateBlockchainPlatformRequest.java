@@ -11,7 +11,7 @@ import com.oracle.bmc.blockchain.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateBlockchainPlatformRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class UpdateBlockchainPlatformRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.blockchain.model.UpdateBlockchainPlatformDetails> {

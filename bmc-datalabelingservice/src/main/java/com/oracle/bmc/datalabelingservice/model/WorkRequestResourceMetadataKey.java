@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /** Possible Metadata keys for workRequest resource metadata */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
     Namespace("NAMESPACE"),
     Bucket("BUCKET"),

@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class DataplaneAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DataplaneAsync {
     /** Service instance for Dataplane. */
@@ -75,7 +75,7 @@ public class DataplaneAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
          * @return the client
          */
         public DataplaneAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataplaneAsyncClient(this, authenticationDetailsProvider);

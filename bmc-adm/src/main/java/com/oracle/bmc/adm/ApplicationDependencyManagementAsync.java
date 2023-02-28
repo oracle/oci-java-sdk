@@ -12,7 +12,7 @@ import com.oracle.bmc.adm.responses.*;
  * For more information, see
  * [ADM](https://docs.cloud.oracle.com/Content/application-dependency-management/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public interface ApplicationDependencyManagementAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

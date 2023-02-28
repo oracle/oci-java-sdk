@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class RatecardClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Ratecard {
     /** Service instance for Ratecard. */
@@ -24,7 +24,7 @@ public class RatecardClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RatecardAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RatecardClient.class);
 
     private final RatecardPaginators paginators;
 
@@ -69,7 +69,7 @@ public class RatecardClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public RatecardClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RatecardClient(this, authenticationDetailsProvider);

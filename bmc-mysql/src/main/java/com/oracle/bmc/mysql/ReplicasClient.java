@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Replicas {
     /** Service instance for Replicas. */
@@ -24,7 +24,7 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ReplicasAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ReplicasClient.class);
 
     private final ReplicasWaiters waiters;
 
@@ -103,7 +103,7 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public ReplicasClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ReplicasClient(this, authenticationDetailsProvider, executorService);

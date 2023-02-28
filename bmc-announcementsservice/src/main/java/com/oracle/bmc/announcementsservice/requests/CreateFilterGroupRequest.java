@@ -10,7 +10,7 @@ import com.oracle.bmc.announcementsservice.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/CreateFilterGroupExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateFilterGroupRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class CreateFilterGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.CreateFilterGroupDetails> {

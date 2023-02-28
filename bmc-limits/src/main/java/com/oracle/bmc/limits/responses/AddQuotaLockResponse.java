@@ -6,7 +6,7 @@ package com.oracle.bmc.limits.responses;
 
 import com.oracle.bmc.limits.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class AddQuotaLockResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

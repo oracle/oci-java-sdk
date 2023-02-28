@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 public class VbInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements VbInstanceAsync {
     /** Service instance for VbInstance. */
@@ -76,7 +76,7 @@ public class VbInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
          * @return the client
          */
         public VbInstanceAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new VbInstanceAsyncClient(this, authenticationDetailsProvider);

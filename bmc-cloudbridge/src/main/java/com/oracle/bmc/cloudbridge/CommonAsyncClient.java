@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class CommonAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements CommonAsync {
     /** Service instance for Common. */
@@ -75,7 +75,7 @@ public class CommonAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
          * @return the client
          */
         public CommonAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new CommonAsyncClient(this, authenticationDetailsProvider);

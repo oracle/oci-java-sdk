@@ -6,7 +6,7 @@ package com.oracle.bmc.disasterrecovery.responses;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class GetDrPlanResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic

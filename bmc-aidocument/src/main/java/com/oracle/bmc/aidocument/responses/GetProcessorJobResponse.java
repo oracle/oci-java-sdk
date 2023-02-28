@@ -6,7 +6,7 @@ package com.oracle.bmc.aidocument.responses;
 
 import com.oracle.bmc.aidocument.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 public class GetProcessorJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

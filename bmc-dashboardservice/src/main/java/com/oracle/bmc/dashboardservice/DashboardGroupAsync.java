@@ -18,7 +18,7 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * the home region, you won't be able to view those resources in the Console. Therefore, creating
  * resources outside of the home region is not recommended.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public interface DashboardGroupAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasetools.model;
 
 /** The related MySQL Server type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public enum RelatedResourceEntityTypeMySql implements com.oracle.bmc.http.internal.BmcEnum {
     Mysqldbsystem("MYSQLDBSYSTEM"),
 

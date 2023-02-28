@@ -6,7 +6,7 @@ package com.oracle.bmc.streaming.responses;
 
 import com.oracle.bmc.streaming.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

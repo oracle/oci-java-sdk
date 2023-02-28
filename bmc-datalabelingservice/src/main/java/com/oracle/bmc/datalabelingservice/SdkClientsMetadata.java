@@ -6,6 +6,6 @@ package com.oracle.bmc.datalabelingservice;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @SdkClients({DataLabelingManagementAsyncClient.class, DataLabelingManagementClient.class})
 public final class SdkClientsMetadata {}

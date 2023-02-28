@@ -11,7 +11,7 @@ import com.oracle.bmc.aidocument.responses.*;
  * Document AI helps customers perform various analysis on their documents. If a customer has lots
  * of documents, they can process them in batch using asynchronous API endpoints.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 public interface AIServiceDocumentAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

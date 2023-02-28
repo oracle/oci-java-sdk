@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements InvoiceService {
     /** Service instance for InvoiceService. */
@@ -24,7 +24,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(InvoiceServiceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(InvoiceServiceClient.class);
 
     private final InvoiceServicePaginators paginators;
 
@@ -69,7 +69,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public InvoiceServiceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new InvoiceServiceClient(this, authenticationDetailsProvider);

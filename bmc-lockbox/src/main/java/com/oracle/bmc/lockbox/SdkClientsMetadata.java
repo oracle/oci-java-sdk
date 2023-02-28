@@ -6,6 +6,6 @@ package com.oracle.bmc.lockbox;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @SdkClients({LockboxAsyncClient.class, LockboxClient.class})
 public final class SdkClientsMetadata {}

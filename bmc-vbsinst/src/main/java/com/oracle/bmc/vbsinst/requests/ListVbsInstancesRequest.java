@@ -10,7 +10,7 @@ import com.oracle.bmc.vbsinst.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vbsinst/ListVbsInstancesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVbsInstancesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */

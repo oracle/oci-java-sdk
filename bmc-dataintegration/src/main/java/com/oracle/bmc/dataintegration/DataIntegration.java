@@ -15,7 +15,7 @@ import com.oracle.bmc.dataintegration.responses.*;
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public interface DataIntegration extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

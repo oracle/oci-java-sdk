@@ -10,7 +10,7 @@ import com.oracle.bmc.oce.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/CreateOceInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOceInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public class CreateOceInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oce.model.CreateOceInstanceDetails> {

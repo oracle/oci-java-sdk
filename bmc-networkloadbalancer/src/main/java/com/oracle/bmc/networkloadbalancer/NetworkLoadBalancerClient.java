@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements NetworkLoadBalancer {
     /** Service instance for NetworkLoadBalancer. */
@@ -25,7 +25,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(NetworkLoadBalancerAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(NetworkLoadBalancerClient.class);
 
     private final NetworkLoadBalancerWaiters waiters;
 
@@ -105,7 +105,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public NetworkLoadBalancerClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NetworkLoadBalancerClient(

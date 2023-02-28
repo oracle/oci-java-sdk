@@ -6,7 +6,7 @@ package com.oracle.bmc.dataconnectivity.responses;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class ValidateDataAssetNetworkReachablityResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

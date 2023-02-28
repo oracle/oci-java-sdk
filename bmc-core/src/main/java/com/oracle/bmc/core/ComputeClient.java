@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Compute {
     /** Service instance for Compute. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ComputeAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ComputeClient.class);
 
     protected final java.util.concurrent.ExecutorService executorService;
     private final ComputeWaiters waiters;
@@ -101,7 +101,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public ComputeClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ComputeClient(this, authenticationDetailsProvider, executorService);

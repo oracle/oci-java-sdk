@@ -6,7 +6,7 @@ package com.oracle.bmc.osmanagement.responses;
 
 import com.oracle.bmc.osmanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /** A link to the created Scheduled Job */
     private String location;

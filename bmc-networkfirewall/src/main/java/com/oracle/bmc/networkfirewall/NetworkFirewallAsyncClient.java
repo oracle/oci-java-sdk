@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class NetworkFirewallAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements NetworkFirewallAsync {
     /** Service instance for NetworkFirewall. */
@@ -77,7 +77,7 @@ public class NetworkFirewallAsyncClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public NetworkFirewallAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NetworkFirewallAsyncClient(this, authenticationDetailsProvider);

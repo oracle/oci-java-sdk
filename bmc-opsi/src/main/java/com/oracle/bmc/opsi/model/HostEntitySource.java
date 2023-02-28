@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Source of the host entity. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum HostEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     MacsManagedExternalHost("MACS_MANAGED_EXTERNAL_HOST"),
     EmManagedExternalHost("EM_MANAGED_EXTERNAL_HOST"),

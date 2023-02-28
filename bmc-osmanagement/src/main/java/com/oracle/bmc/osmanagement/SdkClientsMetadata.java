@@ -6,7 +6,7 @@ package com.oracle.bmc.osmanagement;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @SdkClients({
     EventAsyncClient.class,
     EventClient.class,

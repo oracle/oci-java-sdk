@@ -6,7 +6,7 @@ package com.oracle.bmc.disasterrecovery.responses;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class UpdateDrProtectionGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier (OCID) for the asynchronous request. You can use this to

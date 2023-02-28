@@ -9,7 +9,7 @@ package com.oracle.bmc.mediaservices.model;
  * mediaAssetParentId. DELETE_DERIVATIONS deletes all the Media Assets with a given
  * masterMediaAssetId.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public enum DeleteMode implements com.oracle.bmc.http.internal.BmcEnum {
     DeleteChildren("DELETE_CHILDREN"),
     DeleteDerivations("DELETE_DERIVATIONS"),

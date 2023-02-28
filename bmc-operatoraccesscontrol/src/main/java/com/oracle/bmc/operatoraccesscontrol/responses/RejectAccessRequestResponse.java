@@ -6,7 +6,7 @@ package com.oracle.bmc.operatoraccesscontrol.responses;
 
 import com.oracle.bmc.operatoraccesscontrol.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class RejectAccessRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

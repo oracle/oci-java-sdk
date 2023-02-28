@@ -14,7 +14,7 @@ import com.oracle.bmc.devops.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class DevopsWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Devops client;

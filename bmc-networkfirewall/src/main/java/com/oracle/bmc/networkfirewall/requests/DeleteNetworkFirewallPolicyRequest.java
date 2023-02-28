@@ -11,7 +11,7 @@ import com.oracle.bmc.networkfirewall.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteNetworkFirewallPolicyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class DeleteNetworkFirewallPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

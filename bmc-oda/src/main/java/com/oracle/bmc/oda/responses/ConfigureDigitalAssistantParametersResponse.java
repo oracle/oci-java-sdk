@@ -6,7 +6,7 @@ package com.oracle.bmc.oda.responses;
 
 import com.oracle.bmc.oda.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ConfigureDigitalAssistantParametersResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

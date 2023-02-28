@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Event {
     /** Service instance for Event. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EventAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EventClient.class);
 
     private final EventPaginators paginators;
 
@@ -68,7 +68,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public EventClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new EventClient(this, authenticationDetailsProvider);

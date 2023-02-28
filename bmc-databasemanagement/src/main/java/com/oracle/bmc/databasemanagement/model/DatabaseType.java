@@ -11,7 +11,7 @@ package com.oracle.bmc.databasemanagement.model;
  * SHARED: Autonomous shared database in Oracle Cloud. - DEDICATED: Autonomous dedicated database in
  * Oracle Cloud.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
     ExternalSidb("EXTERNAL_SIDB"),
     ExternalRac("EXTERNAL_RAC"),

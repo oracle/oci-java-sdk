@@ -8,7 +8,7 @@ package com.oracle.bmc.analytics.model;
  * Various types of Oracle Service categories that can be whitelisted to access an Analytics
  * Instance.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum AccessControlServiceType implements com.oracle.bmc.http.internal.BmcEnum {
     All("ALL"),
 

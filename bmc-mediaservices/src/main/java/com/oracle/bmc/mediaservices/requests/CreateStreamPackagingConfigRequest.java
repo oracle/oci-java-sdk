@@ -11,7 +11,7 @@ import com.oracle.bmc.mediaservices.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateStreamPackagingConfigRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class CreateStreamPackagingConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mediaservices.model.CreateStreamPackagingConfigDetails> {

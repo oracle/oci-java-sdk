@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.internal;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * DefaultEndpointConfiguration provides a way to construct the host endpoint for a service given a

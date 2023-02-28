@@ -10,7 +10,7 @@ import com.oracle.bmc.servicecatalog.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreateServiceCatalogExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateServiceCatalogRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public class CreateServiceCatalogRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.servicecatalog.model.CreateServiceCatalogDetails> {

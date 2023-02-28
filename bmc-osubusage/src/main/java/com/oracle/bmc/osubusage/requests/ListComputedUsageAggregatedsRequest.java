@@ -11,7 +11,7 @@ import com.oracle.bmc.osubusage.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListComputedUsageAggregatedsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class ListComputedUsageAggregatedsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

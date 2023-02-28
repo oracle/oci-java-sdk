@@ -11,7 +11,7 @@ import com.oracle.bmc.monitoring.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeAlarmCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class ChangeAlarmCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.monitoring.model.ChangeAlarmCompartmentDetails> {

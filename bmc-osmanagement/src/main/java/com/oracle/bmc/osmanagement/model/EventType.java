@@ -15,7 +15,7 @@ package com.oracle.bmc.osmanagement.model;
  * Used to identify security related events * {@code ERROR} - Used to identify error related events
  * * {@code WARNING} - Used to identify warning related events
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public enum EventType implements com.oracle.bmc.http.internal.BmcEnum {
     KernelOops("KERNEL_OOPS"),
     KernelCrash("KERNEL_CRASH"),

@@ -6,7 +6,7 @@ package com.oracle.bmc.rover;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @SdkClients({
     RoverClusterAsyncClient.class,
     RoverClusterClient.class,

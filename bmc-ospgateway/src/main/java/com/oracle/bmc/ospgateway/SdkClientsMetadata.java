@@ -6,7 +6,7 @@ package com.oracle.bmc.ospgateway;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @SdkClients({
     InvoiceServiceAsyncClient.class,
     InvoiceServiceClient.class,

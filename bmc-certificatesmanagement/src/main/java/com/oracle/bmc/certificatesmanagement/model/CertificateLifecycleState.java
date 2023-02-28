@@ -5,7 +5,7 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /** The current lifecycle state of the certificate. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum CertificateLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

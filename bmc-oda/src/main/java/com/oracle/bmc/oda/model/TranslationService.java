@@ -5,7 +5,7 @@
 package com.oracle.bmc.oda.model;
 
 /** The valid set of Translation Services to use for translation. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public enum TranslationService implements com.oracle.bmc.http.internal.BmcEnum {
     Google("GOOGLE"),
     Microsoft("MICROSOFT"),

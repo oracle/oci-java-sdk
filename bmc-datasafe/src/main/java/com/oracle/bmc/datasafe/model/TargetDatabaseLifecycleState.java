@@ -12,7 +12,7 @@ package com.oracle.bmc.datasafe.model;
  * target database is deleted. - NEEDS_ATTENTION - Represents that the target database needs user
  * attention. - FAILED - Represents that the target database is failed.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum TargetDatabaseLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),

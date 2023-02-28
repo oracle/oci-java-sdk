@@ -11,7 +11,7 @@ import com.oracle.bmc.oda.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateDigitalAssistantRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateDigitalAssistantRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oda.model.CreateDigitalAssistantDetails> {

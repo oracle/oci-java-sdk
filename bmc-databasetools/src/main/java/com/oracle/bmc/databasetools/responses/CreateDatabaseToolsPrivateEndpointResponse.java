@@ -6,7 +6,7 @@ package com.oracle.bmc.databasetools.responses;
 
 import com.oracle.bmc.databasetools.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class CreateDatabaseToolsPrivateEndpointResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /** URI of the new resource which was created by the request. */

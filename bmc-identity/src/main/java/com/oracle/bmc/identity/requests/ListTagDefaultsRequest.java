@@ -10,7 +10,7 @@ import com.oracle.bmc.identity.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListTagDefaultsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTagDefaultsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The value of the {@code opc-next-page} response header from the previous "List" call. */

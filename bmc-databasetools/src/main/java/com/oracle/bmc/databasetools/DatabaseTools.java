@@ -12,7 +12,7 @@ import com.oracle.bmc.databasetools.responses.*;
  * Database Tools service. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for
  * all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public interface DatabaseTools extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

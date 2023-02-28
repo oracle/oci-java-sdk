@@ -11,7 +11,7 @@ import com.oracle.bmc.waf.responses.*;
  * API for the Web Application Firewall service. Use this API to manage regional Web App Firewalls
  * and corresponding policies for protecting HTTP services.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public interface WafAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

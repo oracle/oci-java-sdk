@@ -6,7 +6,7 @@ package com.oracle.bmc.streaming.responses;
 
 import com.oracle.bmc.streaming.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /** The cursor to use to get the next batch of messages. */
     private String opcNextCursor;

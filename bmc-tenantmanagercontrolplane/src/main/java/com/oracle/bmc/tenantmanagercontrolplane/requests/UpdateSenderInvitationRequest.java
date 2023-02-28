@@ -11,7 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateSenderInvitationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class UpdateSenderInvitationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.tenantmanagercontrolplane.model.UpdateSenderInvitationDetails> {

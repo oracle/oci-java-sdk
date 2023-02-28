@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class WorkRequestsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements WorkRequestsAsync {
     /** Service instance for WorkRequests. */
@@ -75,7 +75,7 @@ public class WorkRequestsAsyncClient extends com.oracle.bmc.http.internal.BaseAs
          * @return the client
          */
         public WorkRequestsAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new WorkRequestsAsyncClient(this, authenticationDetailsProvider);

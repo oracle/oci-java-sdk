@@ -5,7 +5,7 @@
 package com.oracle.bmc.retrier;
 
 import com.oracle.bmc.model.BmcException;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /** Interface that defines the condition for which a retry may be attempted. */
 @FunctionalInterface

@@ -6,6 +6,6 @@ package com.oracle.bmc.datacatalog;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @SdkClients({DataCatalogAsyncClient.class, DataCatalogClient.class})
 public final class SdkClientsMetadata {}

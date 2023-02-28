@@ -16,7 +16,7 @@ import com.oracle.bmc.cloudguard.responses.*;
  * <p>*Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the
  * reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public interface CloudGuardAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

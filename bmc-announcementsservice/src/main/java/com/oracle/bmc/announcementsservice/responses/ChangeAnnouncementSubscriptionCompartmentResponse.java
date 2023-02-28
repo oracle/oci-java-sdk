@@ -6,7 +6,7 @@ package com.oracle.bmc.announcementsservice.responses;
 
 import com.oracle.bmc.announcementsservice.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class ChangeAnnouncementSubscriptionCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DatabaseMigrationAsync {
     /** Service instance for DatabaseMigration. */
@@ -76,7 +76,7 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
          * @return the client
          */
         public DatabaseMigrationAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DatabaseMigrationAsyncClient(this, authenticationDetailsProvider);

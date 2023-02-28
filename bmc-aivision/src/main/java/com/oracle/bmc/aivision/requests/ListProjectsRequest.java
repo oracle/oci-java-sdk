@@ -10,7 +10,7 @@ import com.oracle.bmc.aivision.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/ListProjectsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProjectsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */

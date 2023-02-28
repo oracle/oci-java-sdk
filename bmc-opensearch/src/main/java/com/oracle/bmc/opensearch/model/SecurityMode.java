@@ -5,7 +5,7 @@
 package com.oracle.bmc.opensearch.model;
 
 /** The security mode of cluster */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public enum SecurityMode implements com.oracle.bmc.http.internal.BmcEnum {
     Disabled("DISABLED"),
     Permissive("PERMISSIVE"),

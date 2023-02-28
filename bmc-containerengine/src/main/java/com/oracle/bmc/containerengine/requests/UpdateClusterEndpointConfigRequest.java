@@ -11,7 +11,7 @@ import com.oracle.bmc.containerengine.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateClusterEndpointConfigRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class UpdateClusterEndpointConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.UpdateClusterEndpointConfigDetails> {

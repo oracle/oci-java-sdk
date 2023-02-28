@@ -33,7 +33,7 @@ import com.oracle.bmc.announcementsservice.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class AnnouncementSubscriptionPaginators {
     private final AnnouncementSubscription client;
 

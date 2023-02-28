@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /** The field to sort managed instances. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum ManagedInstanceSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     TimeFirstSeen("timeFirstSeen"),
     TimeLastSeen("timeLastSeen"),

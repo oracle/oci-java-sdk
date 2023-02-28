@@ -33,7 +33,7 @@ import com.oracle.bmc.containerinstances.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class ContainerInstancePaginators {
     private final ContainerInstance client;
 

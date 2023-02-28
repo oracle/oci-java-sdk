@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ThreatintelAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ThreatintelAsync {
     /** Service instance for Threatintel. */
@@ -76,7 +76,7 @@ public class ThreatintelAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
          * @return the client
          */
         public ThreatintelAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ThreatintelAsyncClient(this, authenticationDetailsProvider);

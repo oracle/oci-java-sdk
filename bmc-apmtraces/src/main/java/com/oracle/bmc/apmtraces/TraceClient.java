@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Trace {
     /** Service instance for Trace. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(TraceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(TraceClient.class);
 
     private TraceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -64,7 +64,7 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public TraceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new TraceClient(this, authenticationDetailsProvider);

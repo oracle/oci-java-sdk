@@ -6,6 +6,6 @@ package com.oracle.bmc.aidocument;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @SdkClients({AIServiceDocumentAsyncClient.class, AIServiceDocumentClient.class})
 public final class SdkClientsMetadata {}

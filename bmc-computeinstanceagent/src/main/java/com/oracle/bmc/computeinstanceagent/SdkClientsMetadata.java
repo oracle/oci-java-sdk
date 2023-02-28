@@ -6,7 +6,7 @@ package com.oracle.bmc.computeinstanceagent;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @SdkClients({
     ComputeInstanceAgentAsyncClient.class,
     ComputeInstanceAgentClient.class,

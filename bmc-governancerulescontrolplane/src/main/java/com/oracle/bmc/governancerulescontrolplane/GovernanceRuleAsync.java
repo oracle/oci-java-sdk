@@ -8,7 +8,7 @@ import com.oracle.bmc.governancerulescontrolplane.requests.*;
 import com.oracle.bmc.governancerulescontrolplane.responses.*;
 
 /** A description of the GovernanceRulesControlPlane API */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public interface GovernanceRuleAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

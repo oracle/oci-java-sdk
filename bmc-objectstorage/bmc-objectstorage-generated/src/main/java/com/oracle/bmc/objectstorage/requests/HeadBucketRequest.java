@@ -10,7 +10,7 @@ import com.oracle.bmc.objectstorage.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadBucketExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use HeadBucketRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class HeadBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The Object Storage namespace used for the request. */

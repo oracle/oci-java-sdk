@@ -11,7 +11,7 @@ import com.oracle.bmc.adm.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeKnowledgeBaseCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ChangeKnowledgeBaseCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.adm.model.ChangeKnowledgeBaseCompartmentDetails> {

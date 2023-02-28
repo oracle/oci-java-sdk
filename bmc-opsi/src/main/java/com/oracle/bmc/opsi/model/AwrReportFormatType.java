@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Possible AWR report format type */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum AwrReportFormatType implements com.oracle.bmc.http.internal.BmcEnum {
     Html("HTML"),
     Text("TEXT"),

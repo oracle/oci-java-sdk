@@ -10,7 +10,7 @@ import com.oracle.bmc.resourcesearch.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/SearchResourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchResourcesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class SearchResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.resourcesearch.model.SearchDetails> {

@@ -12,7 +12,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
  * metrics for a fleet of Managed Databases or a specific Managed Database, creating Managed
  * Database Groups, and running a SQL job on a Managed Database or Managed Database Group.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public interface DbManagementAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagement.model;
 
 /** Possible update types */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public enum UpdateTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Security("SECURITY"),
     Bug("BUG"),

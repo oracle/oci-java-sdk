@@ -5,7 +5,7 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreatePathAnalysisResult("CREATE_PATH_ANALYSIS_RESULT"),
 

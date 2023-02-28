@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /** The field to sort Java Runtimes. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum JreSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     Distribution("distribution"),
     TimeFirstSeen("timeFirstSeen"),

@@ -11,7 +11,7 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateOperatorControlRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class UpdateOperatorControlRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.operatoraccesscontrol.model.UpdateOperatorControlDetails> {

@@ -6,6 +6,6 @@ package com.oracle.bmc.datascience;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @SdkClients({DataScienceAsyncClient.class, DataScienceClient.class})
 public final class SdkClientsMetadata {}

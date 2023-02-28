@@ -6,7 +6,7 @@ package com.oracle.bmc.marketplace;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @SdkClients({
     AccountAsyncClient.class,
     AccountClient.class,

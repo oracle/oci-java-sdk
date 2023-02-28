@@ -11,7 +11,7 @@ import com.oracle.bmc.stackmonitoring.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateMonitoredResourceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class CreateMonitoredResourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails> {

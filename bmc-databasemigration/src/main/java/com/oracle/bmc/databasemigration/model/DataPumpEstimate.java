@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Estimate size of dumps that will be generated. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public enum DataPumpEstimate implements com.oracle.bmc.http.internal.BmcEnum {
     Blocks("BLOCKS"),
     Statistics("STATISTICS"),

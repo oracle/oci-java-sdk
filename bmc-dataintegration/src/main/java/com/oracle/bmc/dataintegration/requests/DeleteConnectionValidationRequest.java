@@ -11,7 +11,7 @@ import com.oracle.bmc.dataintegration.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteConnectionValidationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class DeleteConnectionValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

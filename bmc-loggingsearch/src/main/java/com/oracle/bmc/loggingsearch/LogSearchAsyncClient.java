@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public class LogSearchAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements LogSearchAsync {
     /** Service instance for LogSearch. */
@@ -75,7 +75,7 @@ public class LogSearchAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
          * @return the client
          */
         public LogSearchAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LogSearchAsyncClient(this, authenticationDetailsProvider);

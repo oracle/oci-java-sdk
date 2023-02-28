@@ -10,7 +10,7 @@ import com.oracle.bmc.certificatesmanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCaBundleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCaBundleRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class UpdateCaBundleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.certificatesmanagement.model.UpdateCaBundleDetails> {

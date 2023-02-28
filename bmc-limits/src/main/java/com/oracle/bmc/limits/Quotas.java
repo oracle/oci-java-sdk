@@ -12,7 +12,7 @@ import com.oracle.bmc.limits.responses.*;
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public interface Quotas extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -11,7 +11,7 @@ import com.oracle.bmc.dataflow.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdatePrivateEndpointRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class UpdatePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataflow.model.UpdatePrivateEndpointDetails> {

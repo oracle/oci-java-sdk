@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class NotificationControlPlaneAsyncClient
         extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements NotificationControlPlaneAsync {
@@ -77,7 +77,7 @@ public class NotificationControlPlaneAsyncClient
          * @return the client
          */
         public NotificationControlPlaneAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NotificationControlPlaneAsyncClient(this, authenticationDetailsProvider);

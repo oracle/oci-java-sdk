@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Budget {
     /** Service instance for Budget. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BudgetAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(BudgetClient.class);
 
     private final BudgetWaiters waiters;
 
@@ -102,7 +102,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
          * @return the client
          */
         public BudgetClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BudgetClient(this, authenticationDetailsProvider, executorService);

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Bastion {
     /** Service instance for Bastion. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BastionAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(BastionClient.class);
 
     private final BastionWaiters waiters;
 
@@ -102,7 +102,7 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public BastionClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BastionClient(this, authenticationDetailsProvider, executorService);

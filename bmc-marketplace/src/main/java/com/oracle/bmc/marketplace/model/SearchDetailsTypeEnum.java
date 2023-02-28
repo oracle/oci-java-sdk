@@ -9,7 +9,7 @@ package com.oracle.bmc.marketplace.model;
  * that must be present in the resource. Structured - A request that uses Search's structured query
  * language to specify filter conditions to apply to search results.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum SearchDetailsTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     FreeText("FreeText"),
     Structured("Structured"),

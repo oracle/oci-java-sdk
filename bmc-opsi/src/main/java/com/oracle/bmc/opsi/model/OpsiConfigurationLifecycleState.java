@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Possible lifecycle states of OPSI configuration resource. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum OpsiConfigurationLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),

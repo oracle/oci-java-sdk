@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /** Type of license associated with the Java version. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
     Otn("OTN"),
     Nftc("NFTC"),

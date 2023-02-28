@@ -6,7 +6,7 @@ package com.oracle.bmc.apigateway.responses;
 
 import com.oracle.bmc.apigateway.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class UpdateSubscriberResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)

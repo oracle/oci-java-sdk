@@ -6,7 +6,7 @@ package com.oracle.bmc.fusionapps.responses;
 
 import com.oracle.bmc.fusionapps.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class DeleteFusionEnvironmentAdminUserResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

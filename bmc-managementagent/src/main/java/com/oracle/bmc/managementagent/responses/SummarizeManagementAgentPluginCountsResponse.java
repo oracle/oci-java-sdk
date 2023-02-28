@@ -6,7 +6,7 @@ package com.oracle.bmc.managementagent.responses;
 
 import com.oracle.bmc.managementagent.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class SummarizeManagementAgentPluginCountsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

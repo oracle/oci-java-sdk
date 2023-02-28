@@ -6,6 +6,6 @@ package com.oracle.bmc.audit;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @SdkClients({AuditAsyncClient.class, AuditClient.class})
 public final class SdkClientsMetadata {}

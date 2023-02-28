@@ -5,7 +5,7 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /** The algorithm used to create key pairs. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum KeyAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
     Rsa2048("RSA2048"),
     Rsa4096("RSA4096"),

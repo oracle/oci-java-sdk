@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Secrets {
     /** Service instance for Secrets. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -24,7 +24,7 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(SecretsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(SecretsClient.class);
 
     private final SecretsPaginators paginators;
 
@@ -69,7 +69,7 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public SecretsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new SecretsClient(this, authenticationDetailsProvider);

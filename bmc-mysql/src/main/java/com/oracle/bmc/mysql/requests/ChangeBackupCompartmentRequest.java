@@ -11,7 +11,7 @@ import com.oracle.bmc.mysql.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeBackupCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ChangeBackupCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mysql.model.ChangeBackupCompartmentDetails> {

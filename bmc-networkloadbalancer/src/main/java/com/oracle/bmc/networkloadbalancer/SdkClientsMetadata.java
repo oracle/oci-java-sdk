@@ -6,6 +6,6 @@ package com.oracle.bmc.networkloadbalancer;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @SdkClients({NetworkLoadBalancerAsyncClient.class, NetworkLoadBalancerClient.class})
 public final class SdkClientsMetadata {}

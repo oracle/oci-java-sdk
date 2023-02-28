@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements OperatorControl {
     /** Service instance for OperatorControl. */
@@ -25,7 +25,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OperatorControlAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OperatorControlClient.class);
 
     private final OperatorControlWaiters waiters;
 
@@ -104,7 +104,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public OperatorControlClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OperatorControlClient(this, authenticationDetailsProvider, executorService);

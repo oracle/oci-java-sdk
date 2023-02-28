@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /** Possible mode type for responder rule resource. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ResponderModeTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Autoaction("AUTOACTION"),
     Useraction("USERACTION"),

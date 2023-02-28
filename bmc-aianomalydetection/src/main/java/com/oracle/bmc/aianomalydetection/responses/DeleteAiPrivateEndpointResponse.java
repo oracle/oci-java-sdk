@@ -6,7 +6,7 @@ package com.oracle.bmc.aianomalydetection.responses;
 
 import com.oracle.bmc.aianomalydetection.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class DeleteAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

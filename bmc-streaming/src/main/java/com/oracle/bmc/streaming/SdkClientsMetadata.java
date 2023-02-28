@@ -6,7 +6,7 @@ package com.oracle.bmc.streaming;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @SdkClients({
     StreamAdminAsyncClient.class,
     StreamAdminClient.class,

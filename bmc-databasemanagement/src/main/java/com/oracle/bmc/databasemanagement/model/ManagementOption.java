@@ -12,7 +12,7 @@ package com.oracle.bmc.databasemanagement.model;
  * that includes basic database management, fleet management, advanced Performance Hub and Managed
  * Database features.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum ManagementOption implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
     Advanced("ADVANCED"),

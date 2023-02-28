@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsVaultAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements KmsVaultAsync {
     /** Service instance for KmsVault. */
@@ -75,7 +75,7 @@ public class KmsVaultAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
          * @return the client
          */
         public KmsVaultAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new KmsVaultAsyncClient(this, authenticationDetailsProvider);

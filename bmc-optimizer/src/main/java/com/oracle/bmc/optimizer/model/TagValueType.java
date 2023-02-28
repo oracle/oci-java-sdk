@@ -22,7 +22,7 @@ package com.oracle.bmc.optimizer.model;
  * overrides to the recommendation criteria only occur for resources that have the tag key B with
  * the associated tag value s1.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public enum TagValueType implements com.oracle.bmc.http.internal.BmcEnum {
     Value("VALUE"),
     Any("ANY"),

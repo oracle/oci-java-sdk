@@ -6,7 +6,7 @@ package com.oracle.bmc.containerengine.responses;
 
 import com.oracle.bmc.containerengine.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse {
     /** The OCID of the work request handling the operation. */
     private String opcWorkRequestId;

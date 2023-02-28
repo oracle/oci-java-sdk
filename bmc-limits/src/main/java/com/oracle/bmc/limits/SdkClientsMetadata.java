@@ -6,7 +6,7 @@ package com.oracle.bmc.limits;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @SdkClients({
     LimitsAsyncClient.class,
     LimitsClient.class,

@@ -11,7 +11,7 @@ import com.oracle.bmc.waas.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteCustomProtectionRuleRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class DeleteCustomProtectionRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

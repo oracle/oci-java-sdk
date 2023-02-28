@@ -11,7 +11,7 @@ import com.oracle.bmc.servicemesh.responses.*;
  * Use the Service Mesh API to manage mesh, virtual service, access policy and other mesh related
  * items.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public interface ServiceMeshAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

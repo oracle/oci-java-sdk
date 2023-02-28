@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DataSafe {
     /** Service instance for DataSafe. */
@@ -24,7 +24,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DataSafeAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DataSafeClient.class);
 
     private final DataSafeWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public DataSafeClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataSafeClient(this, authenticationDetailsProvider, executorService);

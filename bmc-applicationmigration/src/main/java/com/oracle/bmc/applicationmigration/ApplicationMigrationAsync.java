@@ -14,7 +14,7 @@ import com.oracle.bmc.applicationmigration.responses.*;
  * instances, to Oracle Cloud Infrastructure. For more information, see [Overview of Application
  * Migration](https://docs.cloud.oracle.com/iaas/application-migration/appmigrationoverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public interface ApplicationMigrationAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

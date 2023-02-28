@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class IncidentClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Incident {
     /** Service instance for Incident. */
@@ -25,7 +25,7 @@ public class IncidentClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(IncidentAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(IncidentClient.class);
 
     private final IncidentPaginators paginators;
 
@@ -70,7 +70,7 @@ public class IncidentClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public IncidentClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new IncidentClient(this, authenticationDetailsProvider);

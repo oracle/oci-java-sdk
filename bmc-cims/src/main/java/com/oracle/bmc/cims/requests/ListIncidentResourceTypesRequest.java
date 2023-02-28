@@ -11,7 +11,7 @@ import com.oracle.bmc.cims.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListIncidentResourceTypesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ListIncidentResourceTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /** The field to sort Java Servers. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum JavaServerSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     ServerName("serverName"),
     ServerVersion("serverVersion"),

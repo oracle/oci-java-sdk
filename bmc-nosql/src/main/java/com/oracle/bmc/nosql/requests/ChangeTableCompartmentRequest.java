@@ -11,7 +11,7 @@ import com.oracle.bmc.nosql.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeTableCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class ChangeTableCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.nosql.model.ChangeTableCompartmentDetails> {

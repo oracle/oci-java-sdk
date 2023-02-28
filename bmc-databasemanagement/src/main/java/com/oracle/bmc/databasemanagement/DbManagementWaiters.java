@@ -14,7 +14,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class DbManagementWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final DbManagement client;

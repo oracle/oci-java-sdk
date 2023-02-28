@@ -10,7 +10,7 @@ import com.oracle.bmc.monitoring.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/PostMetricDataExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use PostMetricDataRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class PostMetricDataRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.monitoring.model.PostMetricDataDetails> {

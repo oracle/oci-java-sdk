@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateAgentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAgentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class UpdateAgentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.UpdateAgentDetails> {

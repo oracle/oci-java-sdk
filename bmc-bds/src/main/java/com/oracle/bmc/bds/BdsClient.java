@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Bds {
     /** Service instance for Bds. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,8 +23,7 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                             "https://bigdataservice.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BdsAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(BdsClient.class);
 
     private final BdsWaiters waiters;
 
@@ -103,7 +102,7 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
          * @return the client
          */
         public BdsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BdsClient(this, authenticationDetailsProvider, executorService);
@@ -532,6 +531,41 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ExecuteBootstrapScriptResponse executeBootstrapScript(
+            ExecuteBootstrapScriptRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getExecuteBootstrapScriptDetails(),
+                "executeBootstrapScriptDetails is required");
+
+        return clientCall(request, ExecuteBootstrapScriptResponse::builder)
+                .logger(LOG, "executeBootstrapScript")
+                .serviceDetails(
+                        "Bds",
+                        "ExecuteBootstrapScript",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ExecuteBootstrapScript")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExecuteBootstrapScriptRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("executeBootstrapScript")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ExecuteBootstrapScriptResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExecuteBootstrapScriptResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

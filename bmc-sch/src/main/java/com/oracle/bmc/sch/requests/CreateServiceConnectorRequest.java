@@ -11,7 +11,7 @@ import com.oracle.bmc.sch.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateServiceConnectorRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public class CreateServiceConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.sch.model.CreateServiceConnectorDetails> {

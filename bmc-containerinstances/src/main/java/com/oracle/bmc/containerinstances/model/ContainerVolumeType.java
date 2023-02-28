@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /** Container Volume Type */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public enum ContainerVolumeType implements com.oracle.bmc.http.internal.BmcEnum {
     Emptydir("EMPTYDIR"),
     Configfile("CONFIGFILE"),

@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DataCatalogAsync {
     /** Service instance for DataCatalog. */
@@ -75,7 +75,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
          * @return the client
          */
         public DataCatalogAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataCatalogAsyncClient(this, authenticationDetailsProvider);

@@ -11,7 +11,7 @@ import com.oracle.bmc.ailanguage.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DetectLanguageKeyPhrasesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class DetectLanguageKeyPhrasesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesDetails> {

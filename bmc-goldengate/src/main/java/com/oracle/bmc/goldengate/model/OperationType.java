@@ -5,7 +5,7 @@
 package com.oracle.bmc.goldengate.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     GoldengateDatabaseRegistrationCreate("GOLDENGATE_DATABASE_REGISTRATION_CREATE"),
     GoldengateDatabaseRegistrationUpdate("GOLDENGATE_DATABASE_REGISTRATION_UPDATE"),

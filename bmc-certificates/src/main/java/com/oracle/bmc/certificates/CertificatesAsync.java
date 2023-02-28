@@ -8,7 +8,7 @@ import com.oracle.bmc.certificates.requests.*;
 import com.oracle.bmc.certificates.responses.*;
 
 /** API for retrieving certificates. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public interface CertificatesAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

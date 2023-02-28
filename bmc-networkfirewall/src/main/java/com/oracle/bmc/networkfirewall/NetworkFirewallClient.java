@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements NetworkFirewall {
     /** Service instance for NetworkFirewall. */
@@ -25,7 +25,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(NetworkFirewallAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(NetworkFirewallClient.class);
 
     private final NetworkFirewallWaiters waiters;
 
@@ -104,7 +104,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public NetworkFirewallClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NetworkFirewallClient(this, authenticationDetailsProvider, executorService);

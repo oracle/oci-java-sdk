@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class TransferPackageClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements TransferPackage {
     /** Service instance for TransferPackage. */
@@ -25,7 +25,7 @@ public class TransferPackageClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(TransferPackageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(TransferPackageClient.class);
 
     private final TransferPackageWaiters waiters;
 
@@ -100,7 +100,7 @@ public class TransferPackageClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public TransferPackageClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new TransferPackageClient(this, authenticationDetailsProvider, executorService);

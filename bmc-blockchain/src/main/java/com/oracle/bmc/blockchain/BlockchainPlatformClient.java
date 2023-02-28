@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class BlockchainPlatformClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements BlockchainPlatform {
     /** Service instance for BlockchainPlatform. */
@@ -24,7 +24,7 @@ public class BlockchainPlatformClient extends com.oracle.bmc.http.internal.BaseS
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BlockchainPlatformAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(BlockchainPlatformClient.class);
 
     private final BlockchainPlatformWaiters waiters;
 
@@ -103,7 +103,7 @@ public class BlockchainPlatformClient extends com.oracle.bmc.http.internal.BaseS
          * @return the client
          */
         public BlockchainPlatformClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BlockchainPlatformClient(

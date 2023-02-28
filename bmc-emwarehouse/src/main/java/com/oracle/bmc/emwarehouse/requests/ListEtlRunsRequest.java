@@ -10,7 +10,7 @@ import com.oracle.bmc.emwarehouse.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emwarehouse/ListEtlRunsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEtlRunsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class ListEtlRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** unique EmWarehouse identifier */

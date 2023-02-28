@@ -10,7 +10,7 @@ import com.oracle.bmc.rover.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClustersExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRoverClustersRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the compartment in which to list resources. */

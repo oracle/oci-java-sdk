@@ -14,7 +14,7 @@ import com.oracle.bmc.loganalytics.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class LogAnalyticsWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final LogAnalytics client;

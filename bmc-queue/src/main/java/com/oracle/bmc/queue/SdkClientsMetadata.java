@@ -6,7 +6,7 @@ package com.oracle.bmc.queue;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @SdkClients({
     QueueAdminAsyncClient.class,
     QueueAdminClient.class,

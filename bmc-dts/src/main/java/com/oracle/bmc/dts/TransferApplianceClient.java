@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class TransferApplianceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements TransferAppliance {
     /** Service instance for TransferAppliance. */
@@ -25,7 +25,7 @@ public class TransferApplianceClient extends com.oracle.bmc.http.internal.BaseSy
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(TransferApplianceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(TransferApplianceClient.class);
 
     private final TransferApplianceWaiters waiters;
 
@@ -100,7 +100,7 @@ public class TransferApplianceClient extends com.oracle.bmc.http.internal.BaseSy
          * @return the client
          */
         public TransferApplianceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new TransferApplianceClient(

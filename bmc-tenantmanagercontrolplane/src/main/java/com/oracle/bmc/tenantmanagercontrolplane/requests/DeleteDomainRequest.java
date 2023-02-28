@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/DeleteDomainExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDomainRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class DeleteDomainRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The domain OCID. */

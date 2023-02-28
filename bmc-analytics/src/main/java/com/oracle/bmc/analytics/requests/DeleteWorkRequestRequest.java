@@ -10,7 +10,7 @@ import com.oracle.bmc.analytics.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeleteWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteWorkRequestRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public class DeleteWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the work request. */

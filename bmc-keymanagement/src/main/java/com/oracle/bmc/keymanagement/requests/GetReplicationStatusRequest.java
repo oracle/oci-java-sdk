@@ -10,7 +10,7 @@ import com.oracle.bmc.keymanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetReplicationStatusExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetReplicationStatusRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class GetReplicationStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

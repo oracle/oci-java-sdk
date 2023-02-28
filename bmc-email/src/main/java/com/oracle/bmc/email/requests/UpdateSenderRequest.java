@@ -10,7 +10,7 @@ import com.oracle.bmc.email.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateSenderExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSenderRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class UpdateSenderRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.email.model.UpdateSenderDetails> {
 

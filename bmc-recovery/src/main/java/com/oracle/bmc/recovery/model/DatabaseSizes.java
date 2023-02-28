@@ -5,7 +5,7 @@
 package com.oracle.bmc.recovery.model;
 
 /** Possible database sizes. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public enum DatabaseSizes implements com.oracle.bmc.http.internal.BmcEnum {
     Xs("XS"),
     S("S"),

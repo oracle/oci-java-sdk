@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Migration {
     /** Service instance for Migration. */
@@ -25,7 +25,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(MigrationAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(MigrationClient.class);
 
     private final MigrationWaiters waiters;
 
@@ -104,7 +104,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public MigrationClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MigrationClient(this, authenticationDetailsProvider, executorService);

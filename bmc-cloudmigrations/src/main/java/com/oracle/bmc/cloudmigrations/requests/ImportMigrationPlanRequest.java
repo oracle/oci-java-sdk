@@ -10,7 +10,7 @@ import com.oracle.bmc.cloudmigrations.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ImportMigrationPlanExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ImportMigrationPlanRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class ImportMigrationPlanRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 

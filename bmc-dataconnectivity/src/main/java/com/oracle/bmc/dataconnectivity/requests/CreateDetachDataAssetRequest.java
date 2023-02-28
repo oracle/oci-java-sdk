@@ -11,7 +11,7 @@ import com.oracle.bmc.dataconnectivity.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateDetachDataAssetRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class CreateDetachDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataconnectivity.model.CreateDetachDataAssetDetails> {

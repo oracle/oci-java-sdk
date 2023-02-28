@@ -6,6 +6,6 @@ package com.oracle.bmc.managementagent;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @SdkClients({ManagementAgentAsyncClient.class, ManagementAgentClient.class})
 public final class SdkClientsMetadata {}

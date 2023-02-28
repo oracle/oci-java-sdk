@@ -10,7 +10,7 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetOperatorControlExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOperatorControlRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetOperatorControlRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** unique OperatorControl identifier */

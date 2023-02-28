@@ -6,6 +6,6 @@ package com.oracle.bmc.apmtraces;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @SdkClients({QueryAsyncClient.class, QueryClient.class, TraceAsyncClient.class, TraceClient.class})
 public final class SdkClientsMetadata {}

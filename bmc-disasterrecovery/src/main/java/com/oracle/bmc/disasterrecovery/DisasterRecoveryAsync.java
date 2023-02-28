@@ -13,7 +13,7 @@ import com.oracle.bmc.disasterrecovery.responses.*;
  * comprehensive disaster recovery capabilities for all layers of an application stack, including
  * infrastructure, middleware, database, and application.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public interface DisasterRecoveryAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

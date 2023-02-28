@@ -10,7 +10,7 @@ import com.oracle.bmc.budget.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateAlertRuleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAlertRuleRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class UpdateAlertRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.budget.model.UpdateAlertRuleDetails> {

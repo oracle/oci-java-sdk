@@ -11,7 +11,7 @@ import com.oracle.bmc.datacatalog.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AttachCatalogPrivateEndpointRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class AttachCatalogPrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.AttachCatalogPrivateEndpointDetails> {

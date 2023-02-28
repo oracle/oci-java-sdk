@@ -6,6 +6,6 @@ package com.oracle.bmc.aispeech;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @SdkClients({AIServiceSpeechAsyncClient.class, AIServiceSpeechClient.class})
 public final class SdkClientsMetadata {}

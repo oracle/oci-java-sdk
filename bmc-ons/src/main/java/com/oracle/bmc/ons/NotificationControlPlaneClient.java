@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class NotificationControlPlaneClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements NotificationControlPlane {
     /** Service instance for NotificationControlPlane. */
@@ -24,7 +24,7 @@ public class NotificationControlPlaneClient extends com.oracle.bmc.http.internal
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(NotificationControlPlaneAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(NotificationControlPlaneClient.class);
 
     private final NotificationControlPlanePaginators paginators;
 
@@ -70,7 +70,7 @@ public class NotificationControlPlaneClient extends com.oracle.bmc.http.internal
          * @return the client
          */
         public NotificationControlPlaneClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NotificationControlPlaneClient(this, authenticationDetailsProvider);

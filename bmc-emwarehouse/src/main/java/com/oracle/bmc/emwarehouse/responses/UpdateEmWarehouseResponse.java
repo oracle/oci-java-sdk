@@ -6,7 +6,7 @@ package com.oracle.bmc.emwarehouse.responses;
 
 import com.oracle.bmc.emwarehouse.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class UpdateEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its

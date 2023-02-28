@@ -6,7 +6,7 @@ package com.oracle.bmc.objectstorage.responses;
 
 import com.oracle.bmc.objectstorage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ReencryptBucketResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. If you need to contact Oracle

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Email {
     /** Service instance for Email. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EmailAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EmailClient.class);
 
     private final EmailWaiters waiters;
 
@@ -102,7 +102,7 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public EmailClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new EmailClient(this, authenticationDetailsProvider, executorService);

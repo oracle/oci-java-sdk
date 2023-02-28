@@ -6,7 +6,7 @@ package com.oracle.bmc.networkloadbalancer.responses;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class UpdateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

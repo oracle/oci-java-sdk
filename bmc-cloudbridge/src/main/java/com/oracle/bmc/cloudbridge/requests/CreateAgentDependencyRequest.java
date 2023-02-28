@@ -11,7 +11,7 @@ import com.oracle.bmc.cloudbridge.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateAgentDependencyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class CreateAgentDependencyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudbridge.model.CreateAgentDependencyDetails> {

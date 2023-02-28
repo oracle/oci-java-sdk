@@ -15,7 +15,7 @@ import com.oracle.bmc.apmtraces.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface Trace extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

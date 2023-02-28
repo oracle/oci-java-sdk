@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ComputedUsageClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ComputedUsage {
     /** Service instance for ComputedUsage. */
@@ -24,7 +24,7 @@ public class ComputedUsageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ComputedUsageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ComputedUsageClient.class);
 
     private final ComputedUsagePaginators paginators;
 
@@ -69,7 +69,7 @@ public class ComputedUsageClient extends com.oracle.bmc.http.internal.BaseSyncCl
          * @return the client
          */
         public ComputedUsageClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ComputedUsageClient(this, authenticationDetailsProvider);

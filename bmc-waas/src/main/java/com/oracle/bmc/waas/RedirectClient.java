@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Redirect {
     /** Service instance for Redirect. */
@@ -24,7 +24,7 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RedirectAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RedirectClient.class);
 
     private final RedirectWaiters waiters;
 
@@ -103,7 +103,7 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public RedirectClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RedirectClient(this, authenticationDetailsProvider, executorService);

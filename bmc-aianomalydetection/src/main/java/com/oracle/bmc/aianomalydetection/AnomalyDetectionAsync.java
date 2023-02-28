@@ -13,7 +13,7 @@ import com.oracle.bmc.aianomalydetection.responses.*;
  * set up in house team of AI and ML experts. This allows enterprises to focus on business drivers
  * and development work rather than AI/ML operations, shortening the time to market.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public interface AnomalyDetectionAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

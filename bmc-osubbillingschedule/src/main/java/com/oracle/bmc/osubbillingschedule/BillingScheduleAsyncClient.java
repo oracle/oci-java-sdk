@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class BillingScheduleAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements BillingScheduleAsync {
     /** Service instance for BillingSchedule. */
@@ -76,7 +76,7 @@ public class BillingScheduleAsyncClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public BillingScheduleAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BillingScheduleAsyncClient(this, authenticationDetailsProvider);

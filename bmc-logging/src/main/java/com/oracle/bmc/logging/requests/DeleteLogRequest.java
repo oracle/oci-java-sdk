@@ -10,7 +10,7 @@ import com.oracle.bmc.logging.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteLogRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class DeleteLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** OCID of a log group to work with. */

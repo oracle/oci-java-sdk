@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 public class ServiceManagerProxyClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ServiceManagerProxy {
     /** Service instance for ServiceManagerProxy. */
@@ -24,7 +24,7 @@ public class ServiceManagerProxyClient extends com.oracle.bmc.http.internal.Base
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ServiceManagerProxyAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ServiceManagerProxyClient.class);
 
     private final ServiceManagerProxyPaginators paginators;
 
@@ -70,7 +70,7 @@ public class ServiceManagerProxyClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public ServiceManagerProxyClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ServiceManagerProxyClient(this, authenticationDetailsProvider);

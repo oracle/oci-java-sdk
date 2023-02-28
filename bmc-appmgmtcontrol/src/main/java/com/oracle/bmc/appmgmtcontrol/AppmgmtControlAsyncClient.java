@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class AppmgmtControlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements AppmgmtControlAsync {
     /** Service instance for AppmgmtControl. */
@@ -76,7 +76,7 @@ public class AppmgmtControlAsyncClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public AppmgmtControlAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AppmgmtControlAsyncClient(this, authenticationDetailsProvider);

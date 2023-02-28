@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /** Entities type for data source. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
     ExternalIp("EXTERNAL_IP"),
     InternalIp("INTERNAL_IP"),

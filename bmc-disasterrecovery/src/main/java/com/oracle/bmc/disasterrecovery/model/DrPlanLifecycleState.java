@@ -11,7 +11,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * DELETED - DR Plan has been deleted. - FAILED - DR Plan creation failed. - NEEDS_ATTENTION - DR
  * Plan has failed to update.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),

@@ -6,7 +6,7 @@ package com.oracle.bmc.autoscaling.responses;
 
 import com.oracle.bmc.autoscaling.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ListAutoScalingPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results

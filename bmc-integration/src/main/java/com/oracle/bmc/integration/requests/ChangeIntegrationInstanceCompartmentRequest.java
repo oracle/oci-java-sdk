@@ -11,7 +11,7 @@ import com.oracle.bmc.integration.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeIntegrationInstanceCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public class ChangeIntegrationInstanceCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.integration.model.ChangeIntegrationInstanceCompartmentDetails> {

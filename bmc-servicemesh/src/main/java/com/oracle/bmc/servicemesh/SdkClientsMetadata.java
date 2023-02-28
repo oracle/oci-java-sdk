@@ -6,6 +6,6 @@ package com.oracle.bmc.servicemesh;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @SdkClients({ServiceMeshAsyncClient.class, ServiceMeshClient.class})
 public final class SdkClientsMetadata {}

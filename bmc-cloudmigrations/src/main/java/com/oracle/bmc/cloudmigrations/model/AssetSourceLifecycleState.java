@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /** Lifecycle state of an asset source. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public enum AssetSourceLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

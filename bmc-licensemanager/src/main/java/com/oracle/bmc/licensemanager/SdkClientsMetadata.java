@@ -6,6 +6,6 @@ package com.oracle.bmc.licensemanager;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @SdkClients({LicenseManagerAsyncClient.class, LicenseManagerClient.class})
 public final class SdkClientsMetadata {}

@@ -11,7 +11,7 @@ import com.oracle.bmc.ocvp.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeSddcCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ChangeSddcCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ocvp.model.ChangeSddcCompartmentDetails> {

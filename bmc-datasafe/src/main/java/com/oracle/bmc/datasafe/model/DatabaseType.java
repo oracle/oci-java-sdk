@@ -9,7 +9,7 @@ package com.oracle.bmc.datasafe.model;
  * Database Cloud Services. - AUTONOMOUS_DATABASE - Represents Oracle Autonomous Databases. -
  * INSTALLED_DATABASE - Represents databases running on-premises or on compute instances.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
     DatabaseCloudService("DATABASE_CLOUD_SERVICE"),
     AutonomousDatabase("AUTONOMOUS_DATABASE"),

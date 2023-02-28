@@ -10,7 +10,7 @@ import com.oracle.bmc.containerinstances.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetContainerInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetContainerInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class GetContainerInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

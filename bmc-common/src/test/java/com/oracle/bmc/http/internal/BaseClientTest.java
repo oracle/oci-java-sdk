@@ -141,7 +141,7 @@ public class BaseClientTest {
              * @return the client
              */
             public TestBaseClient build(
-                    @javax.annotation.Nonnull
+                    @jakarta.annotation.Nonnull
                             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                     authenticationDetailsProvider) {
                 return new TestBaseClient(this, authenticationDetailsProvider, executorService);

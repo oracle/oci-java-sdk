@@ -6,7 +6,7 @@ package com.oracle.bmc.appmgmtcontrol.responses;
 
 import com.oracle.bmc.appmgmtcontrol.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class PublishTopProcessesMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

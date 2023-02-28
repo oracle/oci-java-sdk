@@ -11,7 +11,7 @@ import com.oracle.bmc.datacatalog.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AssociateCustomPropertyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class AssociateCustomPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.TypeCustomPropertyDetails> {

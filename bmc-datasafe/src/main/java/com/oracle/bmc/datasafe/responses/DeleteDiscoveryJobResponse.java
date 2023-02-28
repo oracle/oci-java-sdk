@@ -6,7 +6,7 @@ package com.oracle.bmc.datasafe.responses;
 
 import com.oracle.bmc.datasafe.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DeleteDiscoveryJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)

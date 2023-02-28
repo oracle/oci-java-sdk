@@ -6,6 +6,6 @@ package com.oracle.bmc.recovery;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 @SdkClients({DatabaseRecoveryAsyncClient.class, DatabaseRecoveryClient.class})
 public final class SdkClientsMetadata {}

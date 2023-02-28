@@ -6,6 +6,6 @@ package com.oracle.bmc.vault;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @SdkClients({VaultsAsyncClient.class, VaultsClient.class})
 public final class SdkClientsMetadata {}

@@ -11,7 +11,7 @@ import com.oracle.bmc.oce.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListWorkRequestErrorsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

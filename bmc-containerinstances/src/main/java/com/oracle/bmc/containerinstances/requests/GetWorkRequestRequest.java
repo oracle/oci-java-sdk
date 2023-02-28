@@ -10,7 +10,7 @@ import com.oracle.bmc.containerinstances.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetWorkRequestRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the asynchronous request. */

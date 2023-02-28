@@ -10,7 +10,7 @@ import com.oracle.bmc.appmgmtcontrol.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/appmgmtcontrol/GetMonitoredInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMonitoredInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class GetMonitoredInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

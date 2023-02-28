@@ -9,7 +9,7 @@ package com.oracle.bmc.datacatalog.model;
  * successfully. FAILED - The connection validation failed. This could be due to incorrect or
  * insufficient credentials or invalid connection metadata.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum ConnectionResult implements com.oracle.bmc.http.internal.BmcEnum {
     Succeeded("SUCCEEDED"),
     Failed("FAILED"),

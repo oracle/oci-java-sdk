@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ObjectStorageAsync {
     /** Service instance for ObjectStorage. */
@@ -80,7 +80,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
          * @return the client
          */
         public ObjectStorageAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ObjectStorageAsyncClient(this, authenticationDetailsProvider);

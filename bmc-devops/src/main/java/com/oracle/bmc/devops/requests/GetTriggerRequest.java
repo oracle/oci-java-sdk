@@ -10,7 +10,7 @@ import com.oracle.bmc.devops.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetTriggerExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTriggerRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetTriggerRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique trigger identifier. */

@@ -6,7 +6,7 @@ package com.oracle.bmc.governancerulescontrolplane.responses;
 
 import com.oracle.bmc.governancerulescontrolplane.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class GetInclusionCriterionResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

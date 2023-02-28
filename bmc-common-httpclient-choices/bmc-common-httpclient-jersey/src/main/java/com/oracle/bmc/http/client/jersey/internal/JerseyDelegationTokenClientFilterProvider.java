@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.http.client.jersey.internal;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.internal.DelegationTokenClientFilterProvider;

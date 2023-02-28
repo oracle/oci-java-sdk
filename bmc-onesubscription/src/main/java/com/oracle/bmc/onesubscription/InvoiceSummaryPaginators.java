@@ -33,7 +33,7 @@ import com.oracle.bmc.onesubscription.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class InvoiceSummaryPaginators {
     private final InvoiceSummary client;
 

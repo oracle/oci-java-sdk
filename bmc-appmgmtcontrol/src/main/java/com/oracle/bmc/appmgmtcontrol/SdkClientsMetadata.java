@@ -6,6 +6,6 @@ package com.oracle.bmc.appmgmtcontrol;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @SdkClients({AppmgmtControlAsyncClient.class, AppmgmtControlClient.class})
 public final class SdkClientsMetadata {}

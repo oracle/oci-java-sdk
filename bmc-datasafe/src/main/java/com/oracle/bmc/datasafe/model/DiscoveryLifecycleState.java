@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /** The current state of a discovery resource such as sensitive data model or sensitive type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum DiscoveryLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

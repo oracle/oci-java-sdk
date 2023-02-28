@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class ShapeClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Shape {
     /** Service instance for Shape. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class ShapeClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ShapeAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ShapeClient.class);
 
     private final ShapePaginators paginators;
 
@@ -68,7 +68,7 @@ public class ShapeClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public ShapeClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ShapeClient(this, authenticationDetailsProvider);

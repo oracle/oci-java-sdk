@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements IntegrationInstance {
     /** Service instance for IntegrationInstance. */
@@ -24,7 +24,7 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(IntegrationInstanceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(IntegrationInstanceClient.class);
 
     private final IntegrationInstanceWaiters waiters;
 
@@ -104,7 +104,7 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public IntegrationInstanceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new IntegrationInstanceClient(

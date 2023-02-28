@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class AnnouncementsPreferencesClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AnnouncementsPreferences {
     /** Service instance for AnnouncementsPreferences. */
@@ -24,7 +24,7 @@ public class AnnouncementsPreferencesClient extends com.oracle.bmc.http.internal
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AnnouncementsPreferencesAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AnnouncementsPreferencesClient.class);
 
     private final AnnouncementsPreferencesPaginators paginators;
 
@@ -70,7 +70,7 @@ public class AnnouncementsPreferencesClient extends com.oracle.bmc.http.internal
          * @return the client
          */
         public AnnouncementsPreferencesClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AnnouncementsPreferencesClient(this, authenticationDetailsProvider);

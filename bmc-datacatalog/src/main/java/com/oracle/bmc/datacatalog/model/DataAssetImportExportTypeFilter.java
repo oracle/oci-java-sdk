@@ -9,7 +9,7 @@ package com.oracle.bmc.datacatalog.model;
  * the data asset enumerated by the other type filters. CUSTOM_PROPERTY_VALUES - Includes custom
  * property values set on the objects within the export scope.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum DataAssetImportExportTypeFilter implements com.oracle.bmc.http.internal.BmcEnum {
     CustomPropertyValues("CUSTOM_PROPERTY_VALUES"),
     All("ALL"),

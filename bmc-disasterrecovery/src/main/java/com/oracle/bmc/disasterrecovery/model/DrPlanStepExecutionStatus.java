@@ -13,7 +13,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * has timed out, but was ignored. - PAUSED - DR Plan Step execution has paused. - CANCELED - DR
  * Plan Step execution has been canceled.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanStepExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Queued("QUEUED"),
     Disabled("DISABLED"),

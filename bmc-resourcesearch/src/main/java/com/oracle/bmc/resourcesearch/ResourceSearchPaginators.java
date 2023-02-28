@@ -33,7 +33,7 @@ import com.oracle.bmc.resourcesearch.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class ResourceSearchPaginators {
     private final ResourceSearch client;
 

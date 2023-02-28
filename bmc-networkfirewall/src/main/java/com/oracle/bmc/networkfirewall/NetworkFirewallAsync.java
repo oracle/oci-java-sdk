@@ -11,7 +11,7 @@ import com.oracle.bmc.networkfirewall.responses.*;
  * Use the Network Firewall API to create network firewalls and configure policies that regulates
  * network traffic in and across VCNs.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public interface NetworkFirewallAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

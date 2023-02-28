@@ -10,7 +10,7 @@ import com.oracle.bmc.core.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteByoipRangeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteByoipRangeRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DeleteByoipRangeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

@@ -10,7 +10,7 @@ import com.oracle.bmc.identity.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListUsersExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUsersRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the compartment (remember that the tenancy is simply the root compartment). */

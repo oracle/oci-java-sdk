@@ -6,7 +6,7 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.BmcResponse {
     /** */
     private String opcRequestId;

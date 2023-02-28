@@ -10,7 +10,7 @@ import com.oracle.bmc.licensemanager.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProductLicensesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class ListProductLicensesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

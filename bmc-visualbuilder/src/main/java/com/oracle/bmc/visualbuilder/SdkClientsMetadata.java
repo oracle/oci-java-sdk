@@ -6,6 +6,6 @@ package com.oracle.bmc.visualbuilder;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 @SdkClients({VbInstanceAsyncClient.class, VbInstanceClient.class})
 public final class SdkClientsMetadata {}

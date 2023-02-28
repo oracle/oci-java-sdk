@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GenericArtifactsContentClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements GenericArtifactsContent {
     /** Service instance for GenericArtifactsContent. */
@@ -25,7 +25,7 @@ public class GenericArtifactsContentClient extends com.oracle.bmc.http.internal.
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GenericArtifactsContentAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(GenericArtifactsContentClient.class);
 
     private GenericArtifactsContentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -67,7 +67,7 @@ public class GenericArtifactsContentClient extends com.oracle.bmc.http.internal.
          * @return the client
          */
         public GenericArtifactsContentClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new GenericArtifactsContentClient(this, authenticationDetailsProvider);

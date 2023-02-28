@@ -6,6 +6,6 @@ package com.oracle.bmc.stackmonitoring;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @SdkClients({StackMonitoringAsyncClient.class, StackMonitoringClient.class})
 public final class SdkClientsMetadata {}

@@ -11,7 +11,7 @@ import com.oracle.bmc.oce.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeOceInstanceCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public class ChangeOceInstanceCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.oce.model.ChangeOceInstanceCompartmentDetails> {

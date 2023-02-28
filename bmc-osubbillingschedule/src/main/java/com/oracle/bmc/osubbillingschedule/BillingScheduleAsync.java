@@ -8,7 +8,7 @@ import com.oracle.bmc.osubbillingschedule.requests.*;
 import com.oracle.bmc.osubbillingschedule.responses.*;
 
 /** OneSubscription API for Billing Schedule information */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public interface BillingScheduleAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

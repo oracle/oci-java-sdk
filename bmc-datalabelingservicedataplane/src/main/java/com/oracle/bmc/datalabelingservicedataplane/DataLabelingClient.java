@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DataLabeling {
     /** Service instance for DataLabeling. */
@@ -25,7 +25,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DataLabelingAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DataLabelingClient.class);
 
     private final DataLabelingWaiters waiters;
 
@@ -104,7 +104,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public DataLabelingClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataLabelingClient(this, authenticationDetailsProvider, executorService);

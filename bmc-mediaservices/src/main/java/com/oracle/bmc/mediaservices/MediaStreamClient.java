@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class MediaStreamClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements MediaStream {
     /** Service instance for MediaStream. */
@@ -25,7 +25,7 @@ public class MediaStreamClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(MediaStreamAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(MediaStreamClient.class);
 
     private MediaStreamClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -66,7 +66,7 @@ public class MediaStreamClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public MediaStreamClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MediaStreamClient(this, authenticationDetailsProvider);

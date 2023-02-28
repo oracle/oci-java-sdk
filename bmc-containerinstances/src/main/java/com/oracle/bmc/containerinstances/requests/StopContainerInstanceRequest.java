@@ -11,7 +11,7 @@ import com.oracle.bmc.containerinstances.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * StopContainerInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class StopContainerInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

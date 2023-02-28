@@ -10,7 +10,7 @@ import com.oracle.bmc.loadbalancer.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetHealthExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBackendSetHealthRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

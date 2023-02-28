@@ -10,7 +10,7 @@ import com.oracle.bmc.bastion.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/UpdateBastionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBastionRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public class UpdateBastionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bastion.model.UpdateBastionDetails> {

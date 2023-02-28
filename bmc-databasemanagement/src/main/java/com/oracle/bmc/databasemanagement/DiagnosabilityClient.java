@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class DiagnosabilityClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Diagnosability {
     /** Service instance for Diagnosability. */
@@ -24,7 +24,7 @@ public class DiagnosabilityClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DiagnosabilityAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DiagnosabilityClient.class);
 
     private final DiagnosabilityPaginators paginators;
 
@@ -69,7 +69,7 @@ public class DiagnosabilityClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public DiagnosabilityClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DiagnosabilityClient(this, authenticationDetailsProvider);

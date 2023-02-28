@@ -11,7 +11,7 @@ import com.oracle.bmc.blockchain.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeBlockchainPlatformCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class ChangeBlockchainPlatformCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails> {

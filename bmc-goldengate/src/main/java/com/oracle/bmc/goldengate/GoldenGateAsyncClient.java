@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements GoldenGateAsync {
     /** Service instance for GoldenGate. */
@@ -75,7 +75,7 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
          * @return the client
          */
         public GoldenGateAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new GoldenGateAsyncClient(this, authenticationDetailsProvider);

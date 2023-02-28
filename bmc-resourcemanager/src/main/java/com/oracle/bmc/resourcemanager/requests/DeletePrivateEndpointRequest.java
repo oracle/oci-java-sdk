@@ -11,7 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeletePrivateEndpointRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class DeletePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -13,7 +13,7 @@ package com.oracle.bmc.datacatalog.model;
  * currently in progress. DEFERRED - The dependencies are incomplete and the resolution of the
  * metadata is deferred until all information is available for the object.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum HarvestStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Complete("COMPLETE"),
     Error("ERROR"),

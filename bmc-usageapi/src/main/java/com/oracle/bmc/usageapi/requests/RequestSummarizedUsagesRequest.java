@@ -11,7 +11,7 @@ import com.oracle.bmc.usageapi.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RequestSummarizedUsagesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class RequestSummarizedUsagesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.usageapi.model.RequestSummarizedUsagesDetails> {

@@ -6,7 +6,7 @@ package com.oracle.bmc.containerinstances.responses;
 
 import com.oracle.bmc.containerinstances.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

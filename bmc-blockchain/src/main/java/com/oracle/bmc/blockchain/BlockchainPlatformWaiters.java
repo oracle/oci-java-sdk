@@ -14,7 +14,7 @@ import com.oracle.bmc.blockchain.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class BlockchainPlatformWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final BlockchainPlatform client;

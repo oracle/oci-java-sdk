@@ -33,7 +33,7 @@ import com.oracle.bmc.adm.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ApplicationDependencyManagementPaginators {
     private final ApplicationDependencyManagement client;
 

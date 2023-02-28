@@ -10,7 +10,7 @@ import com.oracle.bmc.rover.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverEntitlementExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRoverEntitlementRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class GetRoverEntitlementRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** ID of the rover node or cluster entitlement */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /** The current state of the archive retrieval. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum AuditArchiveRetrievalLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

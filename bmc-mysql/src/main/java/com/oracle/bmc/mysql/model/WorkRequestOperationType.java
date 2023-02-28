@@ -5,7 +5,7 @@
 package com.oracle.bmc.mysql.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDbsystem("CREATE_DBSYSTEM"),
     UpdateDbsystem("UPDATE_DBSYSTEM"),

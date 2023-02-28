@@ -10,7 +10,7 @@ package com.oracle.bmc.logging.model;
  * change requested, but the backend service has not confirmed the update. 4. *INACTIVE* Log group
  * is disabled. 5. *DELETING* Log group is being deleted.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public enum LogGroupLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

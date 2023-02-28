@@ -6,7 +6,7 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /** The number of bytes remaining in the snapshot. */
     private Integer opcBytesRemaining;

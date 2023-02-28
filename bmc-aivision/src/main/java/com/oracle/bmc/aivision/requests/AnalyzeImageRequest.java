@@ -10,7 +10,7 @@ import com.oracle.bmc.aivision.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/AnalyzeImageExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use AnalyzeImageRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class AnalyzeImageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aivision.model.AnalyzeImageDetails> {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /** The type of application to be migrated. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public enum MigrationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Jcs("JCS"),
     Soacs("SOACS"),
