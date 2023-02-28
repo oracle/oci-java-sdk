@@ -11,7 +11,7 @@ import com.oracle.bmc.vault.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ScheduleSecretVersionDeletionRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public class ScheduleSecretVersionDeletionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.vault.model.ScheduleSecretVersionDeletionDetails> {

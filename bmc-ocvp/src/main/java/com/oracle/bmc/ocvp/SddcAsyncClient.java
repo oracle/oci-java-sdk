@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements SddcAsync {
     /** Service instance for Sddc. */
@@ -75,7 +75,7 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
          * @return the client
          */
         public SddcAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new SddcAsyncClient(this, authenticationDetailsProvider);

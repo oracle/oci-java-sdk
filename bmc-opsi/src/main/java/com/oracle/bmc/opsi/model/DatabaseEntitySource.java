@@ -8,7 +8,7 @@ package com.oracle.bmc.opsi.model;
  * Source of the database entity. CRUD operations for Autonomous and MACS managed databases all
  * route through DBaaS.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum DatabaseEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     EmManagedExternalDatabase("EM_MANAGED_EXTERNAL_DATABASE"),
     PeComanagedDatabase("PE_COMANAGED_DATABASE"),

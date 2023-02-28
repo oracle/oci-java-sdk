@@ -5,7 +5,7 @@
 package com.oracle.bmc.servicemesh.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateMesh("CREATE_MESH"),
     UpdateMesh("UPDATE_MESH"),

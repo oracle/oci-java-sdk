@@ -33,7 +33,7 @@ import com.oracle.bmc.oce.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public class OceInstancePaginators {
     private final OceInstance client;
 

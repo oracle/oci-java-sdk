@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Source of the Exadata entity. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum ExadataEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     EmManagedExternalExadata("EM_MANAGED_EXTERNAL_EXADATA"),
     PeComanagedExadata("PE_COMANAGED_EXADATA"),

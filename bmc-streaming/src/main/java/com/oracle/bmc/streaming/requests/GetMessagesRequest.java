@@ -10,7 +10,7 @@ import com.oracle.bmc.streaming.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetMessagesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMessagesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the stream. */

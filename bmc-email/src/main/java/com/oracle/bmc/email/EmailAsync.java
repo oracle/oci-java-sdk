@@ -16,7 +16,7 @@ import com.oracle.bmc.email.responses.*;
  * reflected by the API. If a subsequent read request fails to reflect your changes, wait a few
  * minutes and try again.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public interface EmailAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

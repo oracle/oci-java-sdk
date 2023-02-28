@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.responses;
 
 import com.oracle.bmc.loadbalancer.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ListPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results

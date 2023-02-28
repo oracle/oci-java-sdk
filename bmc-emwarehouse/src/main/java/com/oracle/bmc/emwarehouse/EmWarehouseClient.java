@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements EmWarehouse {
     /** Service instance for EmWarehouse. */
@@ -25,7 +25,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EmWarehouseAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EmWarehouseClient.class);
 
     private final EmWarehouseWaiters waiters;
 
@@ -104,7 +104,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public EmWarehouseClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new EmWarehouseClient(this, authenticationDetailsProvider, executorService);

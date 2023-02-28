@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class FunctionsManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements FunctionsManagement {
     /** Service instance for FunctionsManagement. */
@@ -24,7 +24,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(FunctionsManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(FunctionsManagementClient.class);
 
     private final FunctionsManagementWaiters waiters;
 
@@ -104,7 +104,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public FunctionsManagementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new FunctionsManagementClient(

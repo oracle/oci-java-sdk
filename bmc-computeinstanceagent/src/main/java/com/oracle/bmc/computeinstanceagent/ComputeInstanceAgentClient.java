@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ComputeInstanceAgent {
     /** Service instance for ComputeInstanceAgent. */
@@ -24,7 +24,7 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ComputeInstanceAgentAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ComputeInstanceAgentClient.class);
 
     private final ComputeInstanceAgentWaiters waiters;
 
@@ -104,7 +104,7 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public ComputeInstanceAgentClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ComputeInstanceAgentClient(

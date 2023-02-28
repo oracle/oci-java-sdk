@@ -12,7 +12,7 @@ import com.oracle.bmc.managementagent.responses.*;
  * plugins and install keys. For more information, see [Management
  * Agent](https://docs.cloud.oracle.com/iaas/management-agents/index.html).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public interface ManagementAgentAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

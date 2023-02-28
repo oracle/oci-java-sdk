@@ -6,7 +6,7 @@ package com.oracle.bmc.stackmonitoring.responses;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class DisableExternalDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

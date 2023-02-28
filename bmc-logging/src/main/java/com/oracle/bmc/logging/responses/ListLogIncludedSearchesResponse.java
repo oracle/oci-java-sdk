@@ -6,7 +6,7 @@ package com.oracle.bmc.logging.responses;
 
 import com.oracle.bmc.logging.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results

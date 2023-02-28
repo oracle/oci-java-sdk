@@ -6,6 +6,6 @@ package com.oracle.bmc.loggingsearch;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 @SdkClients({LogSearchAsyncClient.class, LogSearchClient.class})
 public final class SdkClientsMetadata {}

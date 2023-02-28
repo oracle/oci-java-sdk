@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateTablespaceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTablespaceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class UpdateTablespaceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails> {

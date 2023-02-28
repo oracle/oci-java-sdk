@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class TransferDeviceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements TransferDevice {
     /** Service instance for TransferDevice. */
@@ -25,7 +25,7 @@ public class TransferDeviceClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(TransferDeviceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(TransferDeviceClient.class);
 
     private final TransferDeviceWaiters waiters;
 
@@ -100,7 +100,7 @@ public class TransferDeviceClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public TransferDeviceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new TransferDeviceClient(this, authenticationDetailsProvider, executorService);

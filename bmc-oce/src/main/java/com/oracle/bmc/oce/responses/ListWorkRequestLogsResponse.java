@@ -6,7 +6,7 @@ package com.oracle.bmc.oce.responses;
 
 import com.oracle.bmc.oce.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

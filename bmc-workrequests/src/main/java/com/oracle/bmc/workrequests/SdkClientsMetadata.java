@@ -6,6 +6,6 @@ package com.oracle.bmc.workrequests;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @SdkClients({WorkRequestAsyncClient.class, WorkRequestClient.class})
 public final class SdkClientsMetadata {}

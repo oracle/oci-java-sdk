@@ -6,7 +6,7 @@ package com.oracle.bmc.databasemanagement;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @SdkClients({
     DbManagementAsyncClient.class,
     DbManagementClient.class,

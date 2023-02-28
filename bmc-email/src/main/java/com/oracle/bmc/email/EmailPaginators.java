@@ -33,7 +33,7 @@ import com.oracle.bmc.email.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class EmailPaginators {
     private final Email client;
 

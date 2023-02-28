@@ -10,7 +10,7 @@ import com.oracle.bmc.optimizer.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetRecommendationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRecommendationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class GetRecommendationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The unique OCID associated with the recommendation. */

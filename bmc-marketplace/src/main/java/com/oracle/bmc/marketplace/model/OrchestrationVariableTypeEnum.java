@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /** Possible data types for an orchestration variable. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum OrchestrationVariableTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     String("STRING"),
     Integer("INTEGER"),

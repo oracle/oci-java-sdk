@@ -13,7 +13,7 @@ import com.oracle.bmc.opsi.responses.*;
  * Oracle Cloud Infrastructure Operations
  * Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface OperationsInsightsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

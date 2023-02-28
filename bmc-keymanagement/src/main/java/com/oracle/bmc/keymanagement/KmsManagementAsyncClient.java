@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements KmsManagementAsync {
     /** Service instance for KmsManagement. */

@@ -6,7 +6,7 @@ package com.oracle.bmc.waf.responses;
 
 import com.oracle.bmc.waf.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

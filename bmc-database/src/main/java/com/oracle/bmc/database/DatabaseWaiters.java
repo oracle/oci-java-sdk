@@ -14,22 +14,22 @@ import com.oracle.bmc.database.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DatabaseWaiters {
-    @javax.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
-    @javax.annotation.Nonnull private final Database client;
+    @jakarta.annotation.Nonnull private final java.util.concurrent.ExecutorService executorService;
+    @jakarta.annotation.Nonnull private final Database client;
     private final com.oracle.bmc.workrequests.WorkRequest workRequestClient;
 
     @Deprecated
     public DatabaseWaiters(
-            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
-            @javax.annotation.Nonnull Database client) {
+            @jakarta.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @jakarta.annotation.Nonnull Database client) {
         this(executorService, client, null);
     }
 
     public DatabaseWaiters(
-            @javax.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
-            @javax.annotation.Nonnull Database client,
+            @jakarta.annotation.Nonnull java.util.concurrent.ExecutorService executorService,
+            @jakarta.annotation.Nonnull Database client,
             com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
         if (executorService == null) {
             throw new NullPointerException("executorService is marked non-null but is null");

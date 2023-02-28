@@ -6,7 +6,7 @@ package com.oracle.bmc.ons;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @SdkClients({
     NotificationControlPlaneAsyncClient.class,
     NotificationControlPlaneClient.class,

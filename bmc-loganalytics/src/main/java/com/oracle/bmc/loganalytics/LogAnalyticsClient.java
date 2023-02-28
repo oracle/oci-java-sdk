@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements LogAnalytics {
     /** Service instance for LogAnalytics. */
@@ -25,7 +25,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LogAnalyticsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LogAnalyticsClient.class);
 
     private final LogAnalyticsWaiters waiters;
 
@@ -104,7 +104,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public LogAnalyticsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LogAnalyticsClient(this, authenticationDetailsProvider, executorService);

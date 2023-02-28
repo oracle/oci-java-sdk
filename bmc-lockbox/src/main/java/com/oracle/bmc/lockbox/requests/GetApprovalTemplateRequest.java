@@ -10,7 +10,7 @@ import com.oracle.bmc.lockbox.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetApprovalTemplateExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetApprovalTemplateRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class GetApprovalTemplateRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The unique identifier (OCID) of the approval template. */

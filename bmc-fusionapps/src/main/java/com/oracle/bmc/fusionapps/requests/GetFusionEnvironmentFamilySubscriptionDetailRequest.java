@@ -11,7 +11,7 @@ import com.oracle.bmc.fusionapps.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetFusionEnvironmentFamilySubscriptionDetailRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class GetFusionEnvironmentFamilySubscriptionDetailRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

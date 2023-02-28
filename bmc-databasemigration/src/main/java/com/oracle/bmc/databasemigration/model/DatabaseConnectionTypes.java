@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Supported database connection types */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public enum DatabaseConnectionTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Manual("MANUAL"),
     Autonomous("AUTONOMOUS"),

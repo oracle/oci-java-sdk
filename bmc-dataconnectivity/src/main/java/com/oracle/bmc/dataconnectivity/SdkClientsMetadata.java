@@ -6,7 +6,7 @@ package com.oracle.bmc.dataconnectivity;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @SdkClients({
     DataConnectivityManagementAsyncClient.class,
     DataConnectivityManagementClient.class,

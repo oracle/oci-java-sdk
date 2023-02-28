@@ -9,7 +9,7 @@ package com.oracle.bmc.databasemanagement.model;
  * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
  * Database.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DatabaseSubType implements com.oracle.bmc.http.internal.BmcEnum {
     Cdb("CDB"),
     Pdb("PDB"),

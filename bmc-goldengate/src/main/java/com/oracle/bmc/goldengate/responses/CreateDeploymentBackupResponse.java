@@ -6,7 +6,7 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class CreateDeploymentBackupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query

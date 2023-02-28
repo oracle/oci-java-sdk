@@ -11,7 +11,7 @@ import com.oracle.bmc.dataconnectivity.responses.*;
  * Use the Data Connectivity Management Service APIs to perform common extract, load, and transform
  * (ETL) tasks.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public interface NetworkValidationAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

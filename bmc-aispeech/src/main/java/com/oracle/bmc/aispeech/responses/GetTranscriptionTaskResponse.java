@@ -6,7 +6,7 @@ package com.oracle.bmc.aispeech.responses;
 
 import com.oracle.bmc.aispeech.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class GetTranscriptionTaskResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

@@ -13,7 +13,7 @@ import com.oracle.bmc.osubbillingschedule.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public interface BillingSchedule extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

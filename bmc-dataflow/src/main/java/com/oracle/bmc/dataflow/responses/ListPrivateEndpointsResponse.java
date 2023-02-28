@@ -6,7 +6,7 @@ package com.oracle.bmc.dataflow.responses;
 
 import com.oracle.bmc.dataflow.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Retrieves the previous page of results. When this header appears in the response, previous

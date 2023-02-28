@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ResourceSearch {
     /** Service instance for ResourceSearch. */
@@ -24,7 +24,7 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ResourceSearchAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ResourceSearchClient.class);
 
     private final ResourceSearchPaginators paginators;
 
@@ -69,7 +69,7 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public ResourceSearchClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ResourceSearchClient(this, authenticationDetailsProvider);

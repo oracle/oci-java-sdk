@@ -5,7 +5,7 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /** Summary of network load balancing policy */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public enum NetworkLoadBalancersPolicySummary implements com.oracle.bmc.http.internal.BmcEnum {
     TwoTuple("TWO_TUPLE"),
     ThreeTuple("THREE_TUPLE"),

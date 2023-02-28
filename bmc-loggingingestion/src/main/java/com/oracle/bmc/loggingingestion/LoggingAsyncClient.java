@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public class LoggingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements LoggingAsync {
     /** Service instance for Logging. */
@@ -76,7 +76,7 @@ public class LoggingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
          * @return the client
          */
         public LoggingAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LoggingAsyncClient(this, authenticationDetailsProvider);

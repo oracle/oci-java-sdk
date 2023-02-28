@@ -5,7 +5,7 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /** Step types in a DR Plan. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     ComputeInstanceStopPrecheck("COMPUTE_INSTANCE_STOP_PRECHECK"),
     ComputeInstanceLaunchPrecheck("COMPUTE_INSTANCE_LAUNCH_PRECHECK"),

@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /** Job execution mode */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum JobMode implements com.oracle.bmc.http.internal.BmcEnum {
     Foreground("FOREGROUND"),
     Background("BACKGROUND"),

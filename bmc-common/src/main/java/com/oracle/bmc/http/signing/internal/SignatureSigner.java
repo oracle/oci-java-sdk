@@ -9,16 +9,16 @@ import java.security.NoSuchAlgorithmException;
 import java.security.Signature;
 import java.security.SignatureException;
 import java.security.interfaces.RSAPrivateKey;
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import jakarta.annotation.Nonnull;
 
 import com.oracle.bmc.util.internal.Validate;
 
 /**
  * The SignatureSigner is used to actually sign a message with a private key. This version is
  * specific to RSA.
+ *
+ * <p>Class is immutable. @Immutable
  */
-@Immutable
 public class SignatureSigner {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SignatureSigner.class);

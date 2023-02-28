@@ -5,7 +5,7 @@
 package com.oracle.bmc.lockbox.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateLockbox("CREATE_LOCKBOX"),
     UpdateLockbox("UPDATE_LOCKBOX"),

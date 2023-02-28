@@ -8,7 +8,7 @@ package com.oracle.bmc.databasemanagement.model;
  * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or
  * UNKNOWN at the current time.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DatabaseStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Up("UP"),
     Down("DOWN"),

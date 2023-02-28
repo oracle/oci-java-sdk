@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements LoggingManagement {
     /** Service instance for LoggingManagement. */
@@ -24,7 +24,7 @@ public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSy
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LoggingManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LoggingManagementClient.class);
 
     private final LoggingManagementWaiters waiters;
 
@@ -103,7 +103,7 @@ public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSy
          * @return the client
          */
         public LoggingManagementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LoggingManagementClient(

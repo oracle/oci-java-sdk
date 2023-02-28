@@ -15,7 +15,7 @@ package com.oracle.bmc.aispeech.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = TranscriptionTaskCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

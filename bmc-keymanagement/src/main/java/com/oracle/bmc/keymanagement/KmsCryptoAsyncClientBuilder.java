@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 public class KmsCryptoAsyncClientBuilder
         extends AbstractKmsCryptoClientBuilder<KmsCryptoAsyncClientBuilder, KmsCryptoAsyncClient> {

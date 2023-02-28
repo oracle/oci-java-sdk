@@ -9,10 +9,10 @@ import java.io.InputStream;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Stream;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.requests.BmcRequest;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /** Group of utility methods to configure the SDK retry behavior */
 public final class Retriers {

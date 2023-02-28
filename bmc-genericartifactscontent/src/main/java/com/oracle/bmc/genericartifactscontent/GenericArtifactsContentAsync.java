@@ -11,7 +11,7 @@ import com.oracle.bmc.genericartifactscontent.responses.*;
  * API covering the Generic Artifacts Service content Use this API to put and get generic artifact
  * content.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface GenericArtifactsContentAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

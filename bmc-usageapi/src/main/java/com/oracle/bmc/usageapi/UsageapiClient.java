@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Usageapi {
     /** Service instance for Usageapi. */
@@ -24,7 +24,7 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(UsageapiAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(UsageapiClient.class);
 
     private final UsageapiWaiters waiters;
 
@@ -103,7 +103,7 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public UsageapiClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new UsageapiClient(this, authenticationDetailsProvider, executorService);

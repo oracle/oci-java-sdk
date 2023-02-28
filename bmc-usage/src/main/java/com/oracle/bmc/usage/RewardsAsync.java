@@ -12,7 +12,7 @@ import com.oracle.bmc.usage.responses.*;
  * and manage users who redeem rewards. For more information, see [Oracle Support Rewards
  * Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface RewardsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

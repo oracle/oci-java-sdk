@@ -6,6 +6,6 @@ package com.oracle.bmc.email;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @SdkClients({EmailAsyncClient.class, EmailClient.class})
 public final class SdkClientsMetadata {}

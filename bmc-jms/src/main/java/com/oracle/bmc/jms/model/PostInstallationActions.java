@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /** list of post installation actions */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum PostInstallationActions implements com.oracle.bmc.http.internal.BmcEnum {
     ChangeMinimumKeyLengthForEc("CHANGE_MINIMUM_KEY_LENGTH_FOR_EC"),
     ChangeMinimumKeyLengthForDsa("CHANGE_MINIMUM_KEY_LENGTH_FOR_DSA"),

@@ -16,7 +16,7 @@ package com.oracle.bmc.certificates.model;
  * previous one in use. Only certificate versions marked {@code DEPRECATED} can be scheduled for
  * deletion.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum VersionStage implements com.oracle.bmc.http.internal.BmcEnum {
     Current("CURRENT"),
     Pending("PENDING"),

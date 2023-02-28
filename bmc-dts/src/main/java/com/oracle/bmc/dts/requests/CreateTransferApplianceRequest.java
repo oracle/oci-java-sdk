@@ -11,7 +11,7 @@ import com.oracle.bmc.dts.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateTransferApplianceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class CreateTransferApplianceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.CreateTransferApplianceDetails> {

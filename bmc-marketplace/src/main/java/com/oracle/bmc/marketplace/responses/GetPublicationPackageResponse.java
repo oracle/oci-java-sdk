@@ -6,7 +6,7 @@ package com.oracle.bmc.marketplace.responses;
 
 import com.oracle.bmc.marketplace.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /** The type of preferred credential. Only 'BASIC' is supported currently. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum PreferredCredentialType implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
 

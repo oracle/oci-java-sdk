@@ -33,7 +33,7 @@ import com.oracle.bmc.loganalytics.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class LogAnalyticsPaginators {
     private final LogAnalytics client;
 

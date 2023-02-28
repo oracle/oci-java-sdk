@@ -13,7 +13,7 @@ import com.oracle.bmc.apmcontrolplane.responses.*;
  * operations using the work request APIs. For more information, see [Application Performance
  * Monitoring](https://docs.cloud.oracle.com/iaas/application-performance-monitoring/index.html).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface ApmDomainAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

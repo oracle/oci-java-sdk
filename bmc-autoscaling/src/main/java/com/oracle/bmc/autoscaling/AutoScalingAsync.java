@@ -18,7 +18,7 @@ import com.oracle.bmc.autoscaling.responses.*;
  * see [Oracle Cloud Infrastructure US Government
  * Cloud](https://docs.cloud.oracle.com/Content/General/Concepts/govoverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface AutoScalingAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

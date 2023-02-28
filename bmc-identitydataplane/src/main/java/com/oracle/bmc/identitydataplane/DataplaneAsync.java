@@ -8,7 +8,7 @@ import com.oracle.bmc.identitydataplane.requests.*;
 import com.oracle.bmc.identitydataplane.responses.*;
 
 /** API for the Identity Dataplane */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public interface DataplaneAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

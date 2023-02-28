@@ -17,7 +17,7 @@ import com.oracle.bmc.workrequests.responses.*;
  * [Viewing the State of a Compute Work
  * Request](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/viewingworkrequestcompute.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface WorkRequestAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

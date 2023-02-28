@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /** Possible values of on why a tenant cannot launch a listing */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum IneligibilityReasonEnum implements com.oracle.bmc.http.internal.BmcEnum {
     IneligibleAccountCountry("INELIGIBLE_ACCOUNT_COUNTRY"),
     IneligibleRegion("INELIGIBLE_REGION"),

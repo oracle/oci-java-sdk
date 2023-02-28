@@ -12,7 +12,7 @@ import com.oracle.bmc.vault.responses.*;
  * [Managing
  * Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public interface VaultsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

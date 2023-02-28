@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class AppmgmtControlClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AppmgmtControl {
     /** Service instance for AppmgmtControl. */
@@ -24,7 +24,7 @@ public class AppmgmtControlClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AppmgmtControlAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AppmgmtControlClient.class);
 
     private final AppmgmtControlWaiters waiters;
 
@@ -103,7 +103,7 @@ public class AppmgmtControlClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public AppmgmtControlClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AppmgmtControlClient(this, authenticationDetailsProvider, executorService);

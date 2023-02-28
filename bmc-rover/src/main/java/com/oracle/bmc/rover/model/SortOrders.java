@@ -5,7 +5,7 @@
 package com.oracle.bmc.rover.model;
 
 /** Sort orders. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

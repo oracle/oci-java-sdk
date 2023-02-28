@@ -11,7 +11,7 @@ import com.oracle.bmc.aispeech.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CancelTranscriptionTaskRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class CancelTranscriptionTaskRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

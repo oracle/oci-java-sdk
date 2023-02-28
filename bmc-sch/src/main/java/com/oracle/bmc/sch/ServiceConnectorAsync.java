@@ -12,7 +12,7 @@ import com.oracle.bmc.sch.responses.*;
  * Infrastructure. For more information about Service Connector Hub, see [Service Connector Hub
  * Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public interface ServiceConnectorAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

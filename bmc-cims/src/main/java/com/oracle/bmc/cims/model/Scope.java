@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /** The scope of the service category or resource. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
     Ad("AD"),
     Region("REGION"),

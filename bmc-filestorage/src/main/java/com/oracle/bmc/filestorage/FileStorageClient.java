@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements FileStorage {
     /** Service instance for FileStorage. */
@@ -24,7 +24,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(FileStorageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(FileStorageClient.class);
 
     private final FileStorageWaiters waiters;
 
@@ -103,7 +103,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public FileStorageClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new FileStorageClient(this, authenticationDetailsProvider, executorService);

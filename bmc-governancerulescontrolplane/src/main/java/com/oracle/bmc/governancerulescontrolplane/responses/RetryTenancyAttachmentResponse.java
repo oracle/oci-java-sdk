@@ -6,7 +6,7 @@ package com.oracle.bmc.governancerulescontrolplane.responses;
 
 import com.oracle.bmc.governancerulescontrolplane.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class RetryTenancyAttachmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its

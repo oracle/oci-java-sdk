@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class BlockstorageClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Blockstorage {
     /** Service instance for Blockstorage. */
@@ -24,7 +24,7 @@ public class BlockstorageClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BlockstorageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(BlockstorageClient.class);
 
     protected final java.util.concurrent.ExecutorService executorService;
     private final BlockstorageWaiters waiters;
@@ -105,7 +105,7 @@ public class BlockstorageClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public BlockstorageClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BlockstorageClient(this, authenticationDetailsProvider, executorService);

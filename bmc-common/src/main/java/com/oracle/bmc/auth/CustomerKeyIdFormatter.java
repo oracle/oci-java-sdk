@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.auth;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /** Formatter used to create the correct 'keyId' needed for signing requests. */
 public class CustomerKeyIdFormatter {

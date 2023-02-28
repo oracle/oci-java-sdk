@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class AccountClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Account {
     /** Service instance for Account. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class AccountClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AccountAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AccountClient.class);
 
     private AccountClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -64,7 +64,7 @@ public class AccountClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public AccountClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AccountClient(this, authenticationDetailsProvider);

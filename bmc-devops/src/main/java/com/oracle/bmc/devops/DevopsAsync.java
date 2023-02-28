@@ -13,7 +13,7 @@ import com.oracle.bmc.devops.responses.*;
  * deploy software applications. For more information, see
  * [DevOps](https://docs.cloud.oracle.com/Content/devops/using/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public interface DevopsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

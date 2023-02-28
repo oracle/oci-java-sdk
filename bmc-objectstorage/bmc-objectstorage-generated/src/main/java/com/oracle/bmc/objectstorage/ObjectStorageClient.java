@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ObjectStorage {
     /** Service instance for ObjectStorage. */
@@ -24,7 +24,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ObjectStorageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ObjectStorageClient.class);
 
     private final ObjectStorageWaiters waiters;
 
@@ -108,7 +108,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
          * @return the client
          */
         public ObjectStorageClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ObjectStorageClient(this, authenticationDetailsProvider, executorService);

@@ -5,7 +5,7 @@
 package com.oracle.bmc.vbsinst.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateVbsInstance("CREATE_VBS_INSTANCE"),
     UpdateVbsInstance("UPDATE_VBS_INSTANCE"),

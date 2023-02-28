@@ -11,7 +11,7 @@ import com.oracle.bmc.osmanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListWindowsUpdatesInstalledOnManagedInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class ListWindowsUpdatesInstalledOnManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

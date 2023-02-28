@@ -6,6 +6,6 @@ package com.oracle.bmc.fusionapps;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @SdkClients({FusionApplicationsAsyncClient.class, FusionApplicationsClient.class})
 public final class SdkClientsMetadata {}

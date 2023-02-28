@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements WaaAsync {
     /** Service instance for Waa. */
@@ -75,7 +75,7 @@ public class WaaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
          * @return the client
          */
         public WaaAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new WaaAsyncClient(this, authenticationDetailsProvider);

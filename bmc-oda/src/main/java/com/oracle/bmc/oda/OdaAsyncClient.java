@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class OdaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements OdaAsync {
     /** Service instance for Oda. */
@@ -76,7 +76,7 @@ public class OdaAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
          * @return the client
          */
         public OdaAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OdaAsyncClient(this, authenticationDetailsProvider);

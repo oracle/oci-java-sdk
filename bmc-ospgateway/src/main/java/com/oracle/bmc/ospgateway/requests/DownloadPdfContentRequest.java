@@ -10,7 +10,7 @@ import com.oracle.bmc.ospgateway.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/DownloadPdfContentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DownloadPdfContentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class DownloadPdfContentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The home region's public name of the logged in user. */

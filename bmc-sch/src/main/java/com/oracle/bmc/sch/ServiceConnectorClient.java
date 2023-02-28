@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ServiceConnector {
     /** Service instance for ServiceConnector. */
@@ -25,7 +25,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ServiceConnectorAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ServiceConnectorClient.class);
 
     private final ServiceConnectorWaiters waiters;
 
@@ -104,7 +104,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
          * @return the client
          */
         public ServiceConnectorClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ServiceConnectorClient(this, authenticationDetailsProvider, executorService);

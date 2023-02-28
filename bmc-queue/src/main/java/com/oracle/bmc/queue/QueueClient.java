@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Queue {
     /** Service instance for Queue. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(QueueAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(QueueClient.class);
 
     private QueueClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -64,7 +64,7 @@ public class QueueClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public QueueClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new QueueClient(this, authenticationDetailsProvider);

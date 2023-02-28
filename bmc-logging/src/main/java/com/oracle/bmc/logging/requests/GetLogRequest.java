@@ -10,7 +10,7 @@ import com.oracle.bmc.logging.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetLogRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class GetLogRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** OCID of a log group to work with. */

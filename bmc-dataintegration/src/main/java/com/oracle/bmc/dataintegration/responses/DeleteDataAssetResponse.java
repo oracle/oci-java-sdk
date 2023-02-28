@@ -6,7 +6,7 @@ package com.oracle.bmc.dataintegration.responses;
 
 import com.oracle.bmc.dataintegration.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class DeleteDataAssetResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

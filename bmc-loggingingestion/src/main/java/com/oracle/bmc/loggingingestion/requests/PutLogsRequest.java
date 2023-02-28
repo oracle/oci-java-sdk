@@ -10,7 +10,7 @@ import com.oracle.bmc.loggingingestion.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingingestion/PutLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use PutLogsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public class PutLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loggingingestion.model.PutLogsDetails> {

@@ -11,7 +11,7 @@ import com.oracle.bmc.bds.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ActivateBdsMetastoreConfigurationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class ActivateBdsMetastoreConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bds.model.ActivateBdsMetastoreConfigurationDetails> {

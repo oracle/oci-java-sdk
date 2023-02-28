@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ComputeAsync {
     /** Service instance for Compute. */
@@ -75,7 +75,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
          * @return the client
          */
         public ComputeAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ComputeAsyncClient(this, authenticationDetailsProvider);

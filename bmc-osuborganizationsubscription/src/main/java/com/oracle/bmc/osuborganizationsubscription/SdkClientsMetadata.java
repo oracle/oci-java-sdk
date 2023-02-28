@@ -6,6 +6,6 @@ package com.oracle.bmc.osuborganizationsubscription;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 @SdkClients({OrganizationSubscriptionAsyncClient.class, OrganizationSubscriptionClient.class})
 public final class SdkClientsMetadata {}

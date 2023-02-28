@@ -6,6 +6,6 @@ package com.oracle.bmc.resourcesearch;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @SdkClients({ResourceSearchAsyncClient.class, ResourceSearchClient.class})
 public final class SdkClientsMetadata {}

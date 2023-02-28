@@ -11,7 +11,7 @@ import com.oracle.bmc.streaming.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeConnectHarnessCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class ChangeConnectHarnessCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails> {

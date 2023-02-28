@@ -11,7 +11,7 @@ import com.oracle.bmc.genericartifactscontent.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetGenericArtifactContentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetGenericArtifactContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

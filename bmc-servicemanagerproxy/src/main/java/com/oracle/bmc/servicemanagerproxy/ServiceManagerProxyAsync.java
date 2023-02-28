@@ -11,7 +11,7 @@ import com.oracle.bmc.servicemanagerproxy.responses.*;
  * Use the Service Manager Proxy API to obtain information about SaaS environments provisioned by
  * Service Manager. You can get information such as service types and service environment URLs.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 public interface ServiceManagerProxyAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

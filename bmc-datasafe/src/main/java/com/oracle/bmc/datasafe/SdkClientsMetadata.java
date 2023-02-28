@@ -6,6 +6,6 @@ package com.oracle.bmc.datasafe;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @SdkClients({DataSafeAsyncClient.class, DataSafeClient.class})
 public final class SdkClientsMetadata {}

@@ -11,7 +11,7 @@ package com.oracle.bmc.datasafe.model;
  * Represents that the database is running on on-premises infrastructure. - NON_ORACLE_CLOUD -
  * Represents that the database is running on non-Oracle cloud infrastructure.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum InfrastructureType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleCloud("ORACLE_CLOUD"),
     CloudAtCustomer("CLOUD_AT_CUSTOMER"),

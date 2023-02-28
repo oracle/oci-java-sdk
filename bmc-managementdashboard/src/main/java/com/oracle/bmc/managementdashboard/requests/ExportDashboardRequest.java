@@ -10,7 +10,7 @@ import com.oracle.bmc.managementdashboard.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ExportDashboardExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ExportDashboardRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class ExportDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

@@ -12,7 +12,7 @@ import com.oracle.bmc.datascience.responses.*;
  * and build, train, deploy and manage models and model deployments. For more information, see [Data
  * Science](https://docs.oracle.com/iaas/data-science/using/data-science.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public interface DataScienceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

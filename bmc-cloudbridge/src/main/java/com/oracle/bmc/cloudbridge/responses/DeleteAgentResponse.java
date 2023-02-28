@@ -6,7 +6,7 @@ package com.oracle.bmc.cloudbridge.responses;
 
 import com.oracle.bmc.cloudbridge.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class DeleteAgentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

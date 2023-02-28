@@ -11,7 +11,7 @@ import com.oracle.bmc.ons.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ResendSubscriptionConfirmationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ResendSubscriptionConfirmationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

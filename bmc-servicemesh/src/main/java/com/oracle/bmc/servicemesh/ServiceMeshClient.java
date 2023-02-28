@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ServiceMesh {
     /** Service instance for ServiceMesh. */
@@ -24,7 +24,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ServiceMeshAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ServiceMeshClient.class);
 
     private final ServiceMeshWaiters waiters;
 
@@ -103,7 +103,7 @@ public class ServiceMeshClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public ServiceMeshClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ServiceMeshClient(this, authenticationDetailsProvider, executorService);

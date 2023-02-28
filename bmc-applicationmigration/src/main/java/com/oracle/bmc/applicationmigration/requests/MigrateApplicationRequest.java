@@ -10,7 +10,7 @@ import com.oracle.bmc.applicationmigration.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/applicationmigration/MigrateApplicationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use MigrateApplicationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public class MigrateApplicationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

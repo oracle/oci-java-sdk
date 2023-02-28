@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class ContainerInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ContainerInstanceAsync {
     /** Service instance for ContainerInstance. */
@@ -77,7 +77,7 @@ public class ContainerInstanceAsyncClient extends com.oracle.bmc.http.internal.B
          * @return the client
          */
         public ContainerInstanceAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ContainerInstanceAsyncClient(this, authenticationDetailsProvider);

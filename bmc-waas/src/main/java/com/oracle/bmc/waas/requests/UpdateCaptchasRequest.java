@@ -10,7 +10,7 @@ import com.oracle.bmc.waas.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCaptchasExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCaptchasRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class UpdateCaptchasRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 java.util.List<com.oracle.bmc.waas.model.Captcha>> {

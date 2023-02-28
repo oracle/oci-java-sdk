@@ -14,7 +14,7 @@ package com.oracle.bmc.filestorage.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateFileSystemDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

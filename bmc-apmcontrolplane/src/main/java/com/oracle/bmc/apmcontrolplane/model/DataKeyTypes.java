@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /** Possible types of Data Keys. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum DataKeyTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Private("PRIVATE"),
     Public("PUBLIC"),

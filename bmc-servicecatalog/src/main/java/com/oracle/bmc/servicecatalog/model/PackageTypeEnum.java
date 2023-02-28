@@ -5,7 +5,7 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /** Type of a package. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public enum PackageTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     Stack("STACK"),
 

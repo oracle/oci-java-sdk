@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class ResourceSearchAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ResourceSearchAsync {
     /** Service instance for ResourceSearch. */
@@ -76,7 +76,7 @@ public class ResourceSearchAsyncClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public ResourceSearchAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ResourceSearchAsyncClient(this, authenticationDetailsProvider);

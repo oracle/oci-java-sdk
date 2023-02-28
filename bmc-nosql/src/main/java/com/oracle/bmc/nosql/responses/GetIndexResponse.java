@@ -6,7 +6,7 @@ package com.oracle.bmc.nosql.responses;
 
 import com.oracle.bmc.nosql.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class GetIndexResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

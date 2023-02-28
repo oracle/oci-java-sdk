@@ -6,6 +6,6 @@ package com.oracle.bmc.apmconfig;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @SdkClients({ConfigAsyncClient.class, ConfigClient.class})
 public final class SdkClientsMetadata {}

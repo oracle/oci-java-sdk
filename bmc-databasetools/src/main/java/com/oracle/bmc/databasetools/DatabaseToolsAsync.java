@@ -11,7 +11,7 @@ import com.oracle.bmc.databasetools.responses.*;
  * Use the Database Tools API to manage connections, private endpoints, and work requests in the
  * Database Tools service.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public interface DatabaseToolsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

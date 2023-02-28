@@ -6,7 +6,7 @@ package com.oracle.bmc.email.responses;
 
 import com.oracle.bmc.email.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
     /** The full URI of the resource related to the request */
     private String contentLocation;

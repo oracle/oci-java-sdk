@@ -14,7 +14,7 @@ import com.oracle.bmc.usage.responses.*;
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface Rewards extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

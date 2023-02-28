@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DomainGovernanceAsync {
     /** Service instance for DomainGovernance. */
@@ -77,7 +77,7 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
          * @return the client
          */
         public DomainGovernanceAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DomainGovernanceAsyncClient(this, authenticationDetailsProvider);

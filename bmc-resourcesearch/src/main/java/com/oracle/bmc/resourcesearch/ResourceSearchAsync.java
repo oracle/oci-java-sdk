@@ -8,7 +8,7 @@ import com.oracle.bmc.resourcesearch.requests.*;
 import com.oracle.bmc.resourcesearch.responses.*;
 
 /** Search for resources in your cloud network. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public interface ResourceSearchAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

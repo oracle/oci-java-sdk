@@ -5,7 +5,7 @@
 package com.oracle.bmc.datascience.model;
 
 /** The lifecycle state of a pipeline run. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public enum PipelineRunLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),

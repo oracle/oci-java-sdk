@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class NetworkValidationAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements NetworkValidationAsync {
     /** Service instance for NetworkValidation. */
@@ -77,7 +77,7 @@ public class NetworkValidationAsyncClient extends com.oracle.bmc.http.internal.B
          * @return the client
          */
         public NetworkValidationAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NetworkValidationAsyncClient(this, authenticationDetailsProvider);

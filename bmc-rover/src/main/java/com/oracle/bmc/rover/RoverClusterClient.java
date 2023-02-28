@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements RoverCluster {
     /** Service instance for RoverCluster. */
@@ -24,7 +24,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RoverClusterAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RoverClusterClient.class);
 
     private final RoverClusterWaiters waiters;
 
@@ -103,7 +103,7 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public RoverClusterClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RoverClusterClient(this, authenticationDetailsProvider, executorService);

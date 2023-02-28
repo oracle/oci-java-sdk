@@ -6,7 +6,7 @@ package com.oracle.bmc.secrets.responses;
 
 import com.oracle.bmc.secrets.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public class GetSecretBundleResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

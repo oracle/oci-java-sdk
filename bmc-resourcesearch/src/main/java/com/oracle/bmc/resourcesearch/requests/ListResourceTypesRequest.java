@@ -10,7 +10,7 @@ import com.oracle.bmc.resourcesearch.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/ListResourceTypesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourceTypesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The maximum number of items to return. The value must be between 1 and 1000. */

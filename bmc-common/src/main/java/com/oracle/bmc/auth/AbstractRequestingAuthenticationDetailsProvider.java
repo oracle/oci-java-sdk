@@ -73,7 +73,7 @@ public class AbstractRequestingAuthenticationDetailsProvider
          * @return this builder
          */
         public B additionalFederationClientConfigurator(
-                @javax.annotation.Nonnull ClientConfigurator additionalClientConfigurator) {
+                @jakarta.annotation.Nonnull ClientConfigurator additionalClientConfigurator) {
             if (additionalClientConfigurator == null) {
                 throw new NullPointerException(
                         "additionalClientConfigurator is marked non-null but is null");

@@ -10,7 +10,7 @@ import com.oracle.bmc.mediaservices.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamCdnConfigsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListStreamCdnConfigsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ListStreamCdnConfigsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -10,7 +10,7 @@ import com.oracle.bmc.analytics.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdateVanityUrlExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateVanityUrlRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public class UpdateVanityUrlRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.UpdateVanityUrlDetails> {

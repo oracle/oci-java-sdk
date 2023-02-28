@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class VbsInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements VbsInstance {
     /** Service instance for VbsInstance. */
@@ -24,7 +24,7 @@ public class VbsInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(VbsInstanceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(VbsInstanceClient.class);
 
     private final VbsInstanceWaiters waiters;
 
@@ -103,7 +103,7 @@ public class VbsInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public VbsInstanceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new VbsInstanceClient(this, authenticationDetailsProvider, executorService);

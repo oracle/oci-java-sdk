@@ -12,7 +12,7 @@ import com.oracle.bmc.circuitbreaker.internal.resilience4j.OciCircuitBreakerImpl
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.model.BmcException;
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import java.util.Objects;
 import java.util.function.Predicate;
 

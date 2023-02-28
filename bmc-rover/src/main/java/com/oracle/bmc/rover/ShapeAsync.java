@@ -8,7 +8,7 @@ import com.oracle.bmc.rover.requests.*;
 import com.oracle.bmc.rover.responses.*;
 
 /** A description of the RoverCloudService API. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public interface ShapeAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

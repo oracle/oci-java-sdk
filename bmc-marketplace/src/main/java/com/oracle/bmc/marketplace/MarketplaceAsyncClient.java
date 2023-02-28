@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class MarketplaceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements MarketplaceAsync {
     /** Service instance for Marketplace. */
@@ -75,7 +75,7 @@ public class MarketplaceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
          * @return the client
          */
         public MarketplaceAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MarketplaceAsyncClient(this, authenticationDetailsProvider);

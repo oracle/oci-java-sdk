@@ -6,7 +6,7 @@ package com.oracle.bmc.waf.responses;
 
 import com.oracle.bmc.waf.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class ChangeWebAppFirewallPolicyCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /** Monitor request http auth scheme. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum RequestAuthenticationSchemes implements com.oracle.bmc.http.internal.BmcEnum {
     Oauth("OAUTH"),
     None("NONE"),

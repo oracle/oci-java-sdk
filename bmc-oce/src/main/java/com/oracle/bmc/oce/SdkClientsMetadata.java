@@ -6,6 +6,6 @@ package com.oracle.bmc.oce;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @SdkClients({OceInstanceAsyncClient.class, OceInstanceClient.class})
 public final class SdkClientsMetadata {}

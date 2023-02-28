@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class PluginAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements PluginAsync {
     /** Service instance for Plugin. */
@@ -75,7 +75,7 @@ public class PluginAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
          * @return the client
          */
         public PluginAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new PluginAsyncClient(this, authenticationDetailsProvider);

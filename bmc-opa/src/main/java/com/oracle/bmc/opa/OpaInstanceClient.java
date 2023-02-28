@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements OpaInstance {
     /** Service instance for OpaInstance. */
@@ -25,7 +25,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OpaInstanceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OpaInstanceClient.class);
 
     private final OpaInstanceWaiters waiters;
 
@@ -104,7 +104,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public OpaInstanceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OpaInstanceClient(this, authenticationDetailsProvider, executorService);

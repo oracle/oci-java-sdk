@@ -12,7 +12,7 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 
 import com.oracle.bmc.util.internal.StringUtils;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * EndpointBuilder provides a wrapper to construct the appropriate endpoint for a service. The

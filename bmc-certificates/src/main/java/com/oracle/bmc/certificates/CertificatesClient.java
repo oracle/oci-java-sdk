@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class CertificatesClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Certificates {
     /** Service instance for Certificates. */
@@ -25,7 +25,7 @@ public class CertificatesClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(CertificatesAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(CertificatesClient.class);
 
     private CertificatesClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -66,7 +66,7 @@ public class CertificatesClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public CertificatesClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new CertificatesClient(this, authenticationDetailsProvider);

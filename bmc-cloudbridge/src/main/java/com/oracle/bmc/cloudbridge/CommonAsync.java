@@ -8,7 +8,7 @@ import com.oracle.bmc.cloudbridge.requests.*;
 import com.oracle.bmc.cloudbridge.responses.*;
 
 /** API for Oracle Cloud Bridge service. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public interface CommonAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

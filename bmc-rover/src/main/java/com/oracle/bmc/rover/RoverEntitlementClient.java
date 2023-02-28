@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements RoverEntitlement {
     /** Service instance for RoverEntitlement. */
@@ -24,7 +24,7 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RoverEntitlementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RoverEntitlementClient.class);
 
     private final RoverEntitlementWaiters waiters;
 
@@ -103,7 +103,7 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
          * @return the client
          */
         public RoverEntitlementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RoverEntitlementClient(this, authenticationDetailsProvider, executorService);

@@ -6,7 +6,7 @@ package com.oracle.bmc.lockbox.responses;
 
 import com.oracle.bmc.lockbox.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class OpensearchClusterBackupClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements OpensearchClusterBackup {
     /** Service instance for OpensearchClusterBackup. */
@@ -25,7 +25,7 @@ public class OpensearchClusterBackupClient extends com.oracle.bmc.http.internal.
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OpensearchClusterBackupAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OpensearchClusterBackupClient.class);
 
     private final OpensearchClusterBackupWaiters waiters;
 
@@ -105,7 +105,7 @@ public class OpensearchClusterBackupClient extends com.oracle.bmc.http.internal.
          * @return the client
          */
         public OpensearchClusterBackupClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OpensearchClusterBackupClient(

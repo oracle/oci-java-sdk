@@ -8,7 +8,7 @@ import com.oracle.bmc.queue.requests.*;
 import com.oracle.bmc.queue.responses.*;
 
 /** A description of the Queue API */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface QueueAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

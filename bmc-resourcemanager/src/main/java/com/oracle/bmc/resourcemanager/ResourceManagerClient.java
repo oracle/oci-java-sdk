@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ResourceManager {
     /** Service instance for ResourceManager. */
@@ -24,7 +24,7 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ResourceManagerAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ResourceManagerClient.class);
 
     private final ResourceManagerWaiters waiters;
 
@@ -103,7 +103,7 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public ResourceManagerClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ResourceManagerClient(this, authenticationDetailsProvider, executorService);

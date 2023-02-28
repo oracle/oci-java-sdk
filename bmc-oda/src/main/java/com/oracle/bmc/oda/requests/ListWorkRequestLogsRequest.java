@@ -10,7 +10,7 @@ import com.oracle.bmc.oda.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListWorkRequestLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The identifier of the asynchronous work request. */

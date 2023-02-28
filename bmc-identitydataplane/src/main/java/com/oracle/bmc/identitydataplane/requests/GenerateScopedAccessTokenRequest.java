@@ -11,7 +11,7 @@ import com.oracle.bmc.identitydataplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GenerateScopedAccessTokenRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GenerateScopedAccessTokenRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails> {

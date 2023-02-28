@@ -10,7 +10,7 @@ import com.oracle.bmc.core.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpv6sExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIpv6sRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

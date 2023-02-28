@@ -9,8 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 import com.oracle.bmc.InternalSdk;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;

@@ -11,7 +11,7 @@ import com.oracle.bmc.aianomalydetection.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeAiPrivateEndpointCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class ChangeAiPrivateEndpointCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aianomalydetection.model.ChangeAiPrivateEndpointCompartmentDetails> {

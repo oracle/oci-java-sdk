@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Devops {
     /** Service instance for Devops. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DevopsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DevopsClient.class);
 
     private final DevopsWaiters waiters;
 
@@ -102,7 +102,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
          * @return the client
          */
         public DevopsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DevopsClient(this, authenticationDetailsProvider, executorService);

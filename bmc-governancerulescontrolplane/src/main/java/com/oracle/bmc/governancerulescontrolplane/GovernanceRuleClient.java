@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class GovernanceRuleClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements GovernanceRule {
     /** Service instance for GovernanceRule. */
@@ -25,7 +25,7 @@ public class GovernanceRuleClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GovernanceRuleAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(GovernanceRuleClient.class);
 
     private final GovernanceRuleWaiters waiters;
 
@@ -104,7 +104,7 @@ public class GovernanceRuleClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public GovernanceRuleClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new GovernanceRuleClient(this, authenticationDetailsProvider, executorService);

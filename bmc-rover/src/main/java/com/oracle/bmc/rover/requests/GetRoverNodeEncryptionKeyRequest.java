@@ -11,7 +11,7 @@ import com.oracle.bmc.rover.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetRoverNodeEncryptionKeyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class GetRoverNodeEncryptionKeyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

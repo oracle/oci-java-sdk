@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class QueueAdminAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements QueueAdminAsync {
     /** Service instance for QueueAdmin. */
@@ -75,7 +75,7 @@ public class QueueAdminAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
          * @return the client
          */
         public QueueAdminAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new QueueAdminAsyncClient(this, authenticationDetailsProvider);

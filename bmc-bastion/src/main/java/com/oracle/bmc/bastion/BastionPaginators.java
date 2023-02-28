@@ -33,7 +33,7 @@ import com.oracle.bmc.bastion.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public class BastionPaginators {
     private final Bastion client;
 

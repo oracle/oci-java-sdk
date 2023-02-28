@@ -6,7 +6,7 @@ package com.oracle.bmc.resourcemanager.responses;
 
 import com.oracle.bmc.resourcemanager.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class GetTemplateLogoResponse extends com.oracle.bmc.responses.BmcResponse {
     /** Unique identifier for the request. */
     private String opcRequestId;

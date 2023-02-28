@@ -6,7 +6,7 @@ package com.oracle.bmc.blockchain.responses;
 
 import com.oracle.bmc.blockchain.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class DeleteOsnResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

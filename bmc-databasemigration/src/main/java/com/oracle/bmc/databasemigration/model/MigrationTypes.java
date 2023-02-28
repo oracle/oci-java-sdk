@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Supported Migration types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public enum MigrationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Online("ONLINE"),
     Offline("OFFLINE"),

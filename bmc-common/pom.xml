@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.5.0</version>
+    <version>3.6.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -45,10 +45,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>jsr305</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
     </dependency>
@@ -71,12 +67,12 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.5.0</version>
+      <version>3.6.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.5.0</version>
+      <version>3.6.0</version>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
@@ -117,8 +113,9 @@
     </dependency>
     <!-- Build only dependencies -->
     <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
+      <version>${jakarta9.annotations.version}</version>
     </dependency>
     <!-- Direct dependencies -->
     <dependency>

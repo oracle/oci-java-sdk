@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     BulkApplyRecommendations("BULK_APPLY_RECOMMENDATIONS"),
 

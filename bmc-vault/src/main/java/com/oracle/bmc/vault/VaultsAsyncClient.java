@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements VaultsAsync {
     /** Service instance for Vaults. */
@@ -75,7 +75,7 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
          * @return the client
          */
         public VaultsAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new VaultsAsyncClient(this, authenticationDetailsProvider);

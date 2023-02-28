@@ -6,7 +6,7 @@ package com.oracle.bmc.queue.responses;
 
 import com.oracle.bmc.queue.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class GetQueueResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

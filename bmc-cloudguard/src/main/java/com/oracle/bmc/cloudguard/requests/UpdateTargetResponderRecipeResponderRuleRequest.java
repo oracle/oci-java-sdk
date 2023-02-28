@@ -11,7 +11,7 @@ import com.oracle.bmc.cloudguard.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateTargetResponderRecipeResponderRuleRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class UpdateTargetResponderRecipeResponderRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails> {

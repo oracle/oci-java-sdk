@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AIServiceVision {
     /** Service instance for AIServiceVision. */
@@ -25,7 +25,7 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AIServiceVisionAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AIServiceVisionClient.class);
 
     private final AIServiceVisionWaiters waiters;
 
@@ -104,7 +104,7 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public AIServiceVisionClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AIServiceVisionClient(this, authenticationDetailsProvider, executorService);

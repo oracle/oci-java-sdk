@@ -6,7 +6,7 @@ package com.oracle.bmc.servicemanagerproxy.responses;
 
 import com.oracle.bmc.servicemanagerproxy.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 public class GetServiceEnvironmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

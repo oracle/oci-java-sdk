@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements GoldenGate {
     /** Service instance for GoldenGate. */
@@ -24,7 +24,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GoldenGateAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(GoldenGateClient.class);
 
     private final GoldenGateWaiters waiters;
 
@@ -103,7 +103,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
          * @return the client
          */
         public GoldenGateClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new GoldenGateClient(this, authenticationDetailsProvider, executorService);

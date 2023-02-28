@@ -33,7 +33,7 @@ import com.oracle.bmc.cloudbridge.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class OcbAgentSvcPaginators {
     private final OcbAgentSvc client;
 

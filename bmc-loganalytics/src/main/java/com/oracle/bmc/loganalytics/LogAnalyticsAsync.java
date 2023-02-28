@@ -8,7 +8,7 @@ import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
 
 /** The LogAnalytics API for the LogAnalytics service. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public interface LogAnalyticsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -8,8 +8,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /** Main entry point for signing a request */
 public interface RequestSigner {

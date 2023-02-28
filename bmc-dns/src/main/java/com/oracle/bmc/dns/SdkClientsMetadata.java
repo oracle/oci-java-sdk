@@ -6,6 +6,6 @@ package com.oracle.bmc.dns;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @SdkClients({DnsAsyncClient.class, DnsClient.class})
 public final class SdkClientsMetadata {}

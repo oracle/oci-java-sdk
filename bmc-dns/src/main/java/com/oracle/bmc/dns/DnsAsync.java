@@ -12,7 +12,7 @@ import com.oracle.bmc.dns.responses.*;
  * more information, see [Overview of the DNS
  * Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public interface DnsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

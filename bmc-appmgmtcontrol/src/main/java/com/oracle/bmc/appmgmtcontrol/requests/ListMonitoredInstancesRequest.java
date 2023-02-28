@@ -11,7 +11,7 @@ import com.oracle.bmc.appmgmtcontrol.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListMonitoredInstancesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class ListMonitoredInstancesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

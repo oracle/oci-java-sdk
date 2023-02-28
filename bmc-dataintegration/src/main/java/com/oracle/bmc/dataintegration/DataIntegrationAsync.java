@@ -13,7 +13,7 @@ import com.oracle.bmc.dataintegration.responses.*;
  * data. For more information, see [Data
  * Integration](https://docs.oracle.com/iaas/data-integration/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public interface DataIntegrationAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

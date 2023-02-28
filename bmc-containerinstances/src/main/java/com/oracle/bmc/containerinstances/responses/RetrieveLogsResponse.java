@@ -6,7 +6,7 @@ package com.oracle.bmc.containerinstances.responses;
 
 import com.oracle.bmc.containerinstances.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class RetrieveLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

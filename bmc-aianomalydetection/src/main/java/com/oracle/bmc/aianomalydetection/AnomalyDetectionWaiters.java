@@ -14,7 +14,7 @@ import com.oracle.bmc.aianomalydetection.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class AnomalyDetectionWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final AnomalyDetection client;

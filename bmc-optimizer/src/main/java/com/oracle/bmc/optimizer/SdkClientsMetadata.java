@@ -6,6 +6,6 @@ package com.oracle.bmc.optimizer;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @SdkClients({OptimizerAsyncClient.class, OptimizerClient.class})
 public final class SdkClientsMetadata {}

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Oda {
     /** Service instance for Oda. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,8 +23,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                             "https://digitalassistant-api.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OdaAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(OdaClient.class);
 
     private final OdaWaiters waiters;
 
@@ -103,7 +102,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
          * @return the client
          */
         public OdaClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OdaClient(this, authenticationDetailsProvider, executorService);

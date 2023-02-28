@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /** Access levels. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
     Accessible("ACCESSIBLE"),
     Restricted("RESTRICTED"),

@@ -5,7 +5,7 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreatePrivateApplication("CREATE_PRIVATE_APPLICATION"),
     UpdatePrivateApplication("UPDATE_PRIVATE_APPLICATION"),

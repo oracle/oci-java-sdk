@@ -6,6 +6,6 @@ package com.oracle.bmc.servicemanagerproxy;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 @SdkClients({ServiceManagerProxyAsyncClient.class, ServiceManagerProxyClient.class})
 public final class SdkClientsMetadata {}

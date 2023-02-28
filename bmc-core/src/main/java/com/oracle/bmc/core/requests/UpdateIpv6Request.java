@@ -10,7 +10,7 @@ import com.oracle.bmc.core.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIpv6Example.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateIpv6Request.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateIpv6Request
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateIpv6Details> {
 

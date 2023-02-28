@@ -10,7 +10,7 @@ import com.oracle.bmc.disasterrecovery.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetDrPlanExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDrPlanRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class GetDrPlanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

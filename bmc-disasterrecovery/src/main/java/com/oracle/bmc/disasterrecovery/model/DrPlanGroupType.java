@@ -9,7 +9,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * - BUILT_IN - DR Plan group whose contents are pre-defined by the service. - BUILT_IN_PRECHECK -
  * DR Plan precheck group whose contents are pre-defined by the service.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanGroupType implements com.oracle.bmc.http.internal.BmcEnum {
     UserDefined("USER_DEFINED"),
     BuiltIn("BUILT_IN"),

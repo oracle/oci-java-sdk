@@ -10,7 +10,7 @@ import com.oracle.bmc.cloudguard.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetManagedListExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetManagedListRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetManagedListRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The cloudguard list OCID to be passed in the request. */

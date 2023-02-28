@@ -12,7 +12,7 @@ import com.oracle.bmc.licensemanager.responses.*;
  * see [License Manager
  * Overview](https://docs.cloud.oracle.com/iaas/Content/LicenseManager/Concepts/licensemanageroverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public interface LicenseManagerAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

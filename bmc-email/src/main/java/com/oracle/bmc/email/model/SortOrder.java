@@ -5,7 +5,7 @@
 package com.oracle.bmc.email.model;
 
 /** Sort orders. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

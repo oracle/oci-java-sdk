@@ -12,7 +12,7 @@ import com.oracle.bmc.bds.responses.*;
  * Data Service clusters. Build on Hadoop, Spark and Data Science distributions, which can be fully
  * integrated with existing enterprise data in Oracle Database and Oracle applications.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public interface BdsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -269,6 +269,22 @@ public interface BdsAsync extends AutoCloseable {
                                     DeleteBdsMetastoreConfigurationRequest,
                                     DeleteBdsMetastoreConfigurationResponse>
                             handler);
+
+    /**
+     * Execute bootstrap script.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ExecuteBootstrapScriptResponse> executeBootstrapScript(
+            ExecuteBootstrapScriptRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExecuteBootstrapScriptRequest, ExecuteBootstrapScriptResponse>
+                    handler);
 
     /**
      * Returns details of the autoscale configuration identified by the given ID.

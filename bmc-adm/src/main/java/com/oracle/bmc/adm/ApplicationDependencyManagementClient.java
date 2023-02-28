@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ApplicationDependencyManagementClient
         extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ApplicationDependencyManagement {
@@ -25,7 +25,7 @@ public class ApplicationDependencyManagementClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ApplicationDependencyManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ApplicationDependencyManagementClient.class);
 
     private final ApplicationDependencyManagementWaiters waiters;
 
@@ -105,7 +105,7 @@ public class ApplicationDependencyManagementClient
          * @return the client
          */
         public ApplicationDependencyManagementClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ApplicationDependencyManagementClient(

@@ -10,7 +10,7 @@ import com.oracle.bmc.monitoring.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsStatusExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAlarmsStatusRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

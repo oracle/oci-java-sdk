@@ -5,7 +5,7 @@
 package com.oracle.bmc.licensemanager.model;
 
 /** The product license status. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
     Incomplete("INCOMPLETE"),
     IssuesFound("ISSUES_FOUND"),

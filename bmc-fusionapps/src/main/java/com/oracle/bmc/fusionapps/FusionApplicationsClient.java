@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements FusionApplications {
     /** Service instance for FusionApplications. */
@@ -24,7 +24,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(FusionApplicationsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(FusionApplicationsClient.class);
 
     private final FusionApplicationsWaiters waiters;
 
@@ -103,7 +103,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
          * @return the client
          */
         public FusionApplicationsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new FusionApplicationsClient(

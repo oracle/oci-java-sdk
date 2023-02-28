@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DatabaseRecovery {
     /** Service instance for DatabaseRecovery. */
@@ -24,7 +24,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DatabaseRecoveryAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DatabaseRecoveryClient.class);
 
     private final DatabaseRecoveryWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
          * @return the client
          */
         public DatabaseRecoveryClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DatabaseRecoveryClient(this, authenticationDetailsProvider, executorService);

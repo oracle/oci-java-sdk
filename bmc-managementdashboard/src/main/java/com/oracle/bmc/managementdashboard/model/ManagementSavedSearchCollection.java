@@ -14,7 +14,7 @@ package com.oracle.bmc.managementdashboard.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = ManagementSavedSearchCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

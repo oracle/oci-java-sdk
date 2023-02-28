@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DataCatalog {
     /** Service instance for DataCatalog. */
@@ -24,7 +24,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DataCatalogAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DataCatalogClient.class);
 
     private final DataCatalogWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DataCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public DataCatalogClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataCatalogClient(this, authenticationDetailsProvider, executorService);

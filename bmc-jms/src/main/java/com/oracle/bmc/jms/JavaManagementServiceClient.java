@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements JavaManagementService {
     /** Service instance for JavaManagementService. */
@@ -25,7 +25,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(JavaManagementServiceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(JavaManagementServiceClient.class);
 
     private final JavaManagementServiceWaiters waiters;
 
@@ -105,7 +105,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
          * @return the client
          */
         public JavaManagementServiceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new JavaManagementServiceClient(

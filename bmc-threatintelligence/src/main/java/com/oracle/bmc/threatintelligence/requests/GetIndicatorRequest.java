@@ -10,7 +10,7 @@ import com.oracle.bmc.threatintelligence.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/GetIndicatorExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetIndicatorRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The unique identifier (OCID) of the threat indicator. */

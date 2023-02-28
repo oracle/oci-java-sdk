@@ -10,7 +10,7 @@ import com.oracle.bmc.resourcesearch.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/GetResourceTypeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetResourceTypeRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The name of the resource type. */

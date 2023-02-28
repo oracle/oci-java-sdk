@@ -8,7 +8,7 @@ import com.oracle.bmc.networkloadbalancer.requests.*;
 import com.oracle.bmc.networkloadbalancer.responses.*;
 
 /** This describes the network load balancer API. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public interface NetworkLoadBalancerAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

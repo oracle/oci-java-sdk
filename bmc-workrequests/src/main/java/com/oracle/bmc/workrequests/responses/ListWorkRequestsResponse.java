@@ -6,7 +6,7 @@ package com.oracle.bmc.workrequests.responses;
 
 import com.oracle.bmc.workrequests.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results

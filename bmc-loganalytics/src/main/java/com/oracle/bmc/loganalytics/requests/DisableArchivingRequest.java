@@ -10,7 +10,7 @@ import com.oracle.bmc.loganalytics.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DisableArchivingExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DisableArchivingRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class DisableArchivingRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The Logging Analytics namespace used for the request. */

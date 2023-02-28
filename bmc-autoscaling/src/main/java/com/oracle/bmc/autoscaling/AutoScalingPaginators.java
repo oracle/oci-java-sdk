@@ -33,7 +33,7 @@ import com.oracle.bmc.autoscaling.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class AutoScalingPaginators {
     private final AutoScaling client;
 

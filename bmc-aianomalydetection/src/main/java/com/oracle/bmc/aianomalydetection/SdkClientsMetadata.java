@@ -6,6 +6,6 @@ package com.oracle.bmc.aianomalydetection;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @SdkClients({AnomalyDetectionAsyncClient.class, AnomalyDetectionClient.class})
 public final class SdkClientsMetadata {}

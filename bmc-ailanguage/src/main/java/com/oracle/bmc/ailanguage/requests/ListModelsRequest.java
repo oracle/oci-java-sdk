@@ -10,7 +10,7 @@ import com.oracle.bmc.ailanguage.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListModelsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListModelsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the compartment in which to list resources. */

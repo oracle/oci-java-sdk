@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements StackMonitoring {
     /** Service instance for StackMonitoring. */
@@ -25,7 +25,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(StackMonitoringAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(StackMonitoringClient.class);
 
     private final StackMonitoringWaiters waiters;
 
@@ -104,7 +104,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public StackMonitoringClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new StackMonitoringClient(this, authenticationDetailsProvider, executorService);

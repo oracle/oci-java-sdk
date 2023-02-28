@@ -11,7 +11,7 @@ import com.oracle.bmc.disasterrecovery.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeDrProtectionGroupCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class ChangeDrProtectionGroupCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.ChangeDrProtectionGroupCompartmentDetails> {

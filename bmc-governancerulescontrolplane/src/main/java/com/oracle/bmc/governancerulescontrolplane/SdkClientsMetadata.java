@@ -6,7 +6,7 @@ package com.oracle.bmc.governancerulescontrolplane;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 @SdkClients({
     GovernanceRuleAsyncClient.class,
     GovernanceRuleClient.class,

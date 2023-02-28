@@ -8,7 +8,7 @@ import com.oracle.bmc.loggingingestion.requests.*;
 import com.oracle.bmc.loggingingestion.responses.*;
 
 /** Use the Logging Ingestion API to ingest your application logs. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public interface LoggingAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -6,7 +6,7 @@ package com.oracle.bmc.aianomalydetection.responses;
 
 import com.oracle.bmc.aianomalydetection.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

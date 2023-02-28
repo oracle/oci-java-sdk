@@ -8,7 +8,7 @@ package com.oracle.bmc.certificatesmanagement.model;
  * The name of the profile used to create the certificate, which depends on the type of certificate
  * you need.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum CertificateProfileType implements com.oracle.bmc.http.internal.BmcEnum {
     TlsServerOrClient("TLS_SERVER_OR_CLIENT"),
     TlsServer("TLS_SERVER"),

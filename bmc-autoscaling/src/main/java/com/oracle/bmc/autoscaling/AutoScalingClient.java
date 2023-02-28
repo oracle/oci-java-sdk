@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements AutoScaling {
     /** Service instance for AutoScaling. */
@@ -24,7 +24,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AutoScalingAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AutoScalingClient.class);
 
     private final AutoScalingPaginators paginators;
 
@@ -69,7 +69,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public AutoScalingClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AutoScalingClient(this, authenticationDetailsProvider);

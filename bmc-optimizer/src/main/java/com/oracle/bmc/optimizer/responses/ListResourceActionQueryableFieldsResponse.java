@@ -6,7 +6,7 @@ package com.oracle.bmc.optimizer.responses;
 
 import com.oracle.bmc.optimizer.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class ListResourceActionQueryableFieldsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

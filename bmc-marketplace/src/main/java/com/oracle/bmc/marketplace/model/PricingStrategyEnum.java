@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /** The possible values for a listing package's pricing strategy. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum PricingStrategyEnum implements com.oracle.bmc.http.internal.BmcEnum {
     PerOcpuLinear("PER_OCPU_LINEAR"),
     PerOcpuMinBilling("PER_OCPU_MIN_BILLING"),

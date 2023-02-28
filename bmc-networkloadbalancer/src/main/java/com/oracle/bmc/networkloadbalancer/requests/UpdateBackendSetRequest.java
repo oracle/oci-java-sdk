@@ -10,7 +10,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendSetExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBackendSetRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class UpdateBackendSetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.networkloadbalancer.model.UpdateBackendSetDetails> {

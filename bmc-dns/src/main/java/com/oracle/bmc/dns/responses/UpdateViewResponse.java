@@ -6,7 +6,7 @@ package com.oracle.bmc.dns.responses;
 
 import com.oracle.bmc.dns.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The current version of the resource, ending with a representation-specific suffix. This value

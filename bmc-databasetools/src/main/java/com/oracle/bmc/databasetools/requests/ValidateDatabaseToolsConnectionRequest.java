@@ -11,7 +11,7 @@ import com.oracle.bmc.databasetools.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ValidateDatabaseToolsConnectionRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class ValidateDatabaseToolsConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionDetails> {

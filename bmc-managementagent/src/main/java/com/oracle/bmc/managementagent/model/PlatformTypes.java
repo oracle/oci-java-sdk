@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementagent.model;
 
 /** Supported platform types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public enum PlatformTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Linux("LINUX"),
     Windows("WINDOWS"),

@@ -13,7 +13,7 @@ package com.oracle.bmc.datacatalog.model;
  * aborted by the worker due to a user request. SUCCEEDED_WITH_WARNINGS - Job has successfully
  * completed execution with one or more warnings.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum JobExecutionState implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     InProgress("IN_PROGRESS"),

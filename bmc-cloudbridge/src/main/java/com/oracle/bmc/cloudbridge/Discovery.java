@@ -12,7 +12,7 @@ import com.oracle.bmc.cloudbridge.responses.*;
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public interface Discovery extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

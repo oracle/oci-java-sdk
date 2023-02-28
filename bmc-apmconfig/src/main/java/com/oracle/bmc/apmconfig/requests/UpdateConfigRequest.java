@@ -10,7 +10,7 @@ import com.oracle.bmc.apmconfig.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class UpdateConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmconfig.model.UpdateConfigDetails> {

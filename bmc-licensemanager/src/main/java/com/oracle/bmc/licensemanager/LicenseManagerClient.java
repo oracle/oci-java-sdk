@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements LicenseManager {
     /** Service instance for LicenseManager. */
@@ -25,7 +25,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LicenseManagerAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LicenseManagerClient.class);
 
     private final LicenseManagerWaiters waiters;
 
@@ -104,7 +104,7 @@ public class LicenseManagerClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public LicenseManagerClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LicenseManagerClient(this, authenticationDetailsProvider, executorService);

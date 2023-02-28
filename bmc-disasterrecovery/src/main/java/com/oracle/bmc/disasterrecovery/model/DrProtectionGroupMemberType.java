@@ -9,7 +9,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * Cloud compute instance. - VOLUME_GROUP - An Oracle Cloud volume group. - DATABASE - An Oracle
  * Database Cloud Service database. - AUTONOMOUS_DATABASE - An Oracle Autonomous Database.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupMemberType implements com.oracle.bmc.http.internal.BmcEnum {
     ComputeInstance("COMPUTE_INSTANCE"),
     VolumeGroup("VOLUME_GROUP"),

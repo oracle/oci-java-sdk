@@ -12,7 +12,7 @@ import com.oracle.bmc.keymanagement.responses.*;
  * secrets, see the Vault Service Secret Management API. For the API for retrieving secrets, see the
  * Vault Service Secret Retrieval API.)
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsManagementAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

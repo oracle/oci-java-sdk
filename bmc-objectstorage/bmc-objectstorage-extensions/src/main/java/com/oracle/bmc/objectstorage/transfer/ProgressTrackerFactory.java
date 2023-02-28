@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import javax.annotation.concurrent.ThreadSafe;
-
 abstract class ProgressTrackerFactory {
     private static final ProgressTrackerFactory DUMMY_PROGRESS_TRACKER_FACTORY =
             new ProgressTrackerFactory() {
@@ -72,8 +70,9 @@ abstract class ProgressTrackerFactory {
         /**
          * This progress tracker is thread-safe as updates to the aggregate root progress tracker is
          * synchronized.
+         *
+         * <p>This class is thread-safe. @ThreadSafe
          */
-        @ThreadSafe
         private class SubProgressTracker extends ProgressTracker {
             private SubProgressTracker() {
                 super(DUMMY_PROGRESS_REPORTER, Long.MAX_VALUE);

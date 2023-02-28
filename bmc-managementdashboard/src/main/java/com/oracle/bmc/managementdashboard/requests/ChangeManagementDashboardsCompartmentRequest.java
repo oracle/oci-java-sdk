@@ -11,7 +11,7 @@ import com.oracle.bmc.managementdashboard.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeManagementDashboardsCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class ChangeManagementDashboardsCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.managementdashboard.model

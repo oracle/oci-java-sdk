@@ -11,7 +11,7 @@ import com.oracle.bmc.emwarehouse.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeEmWarehouseCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class ChangeEmWarehouseCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.emwarehouse.model.ChangeEmWarehouseCompartmentDetails> {

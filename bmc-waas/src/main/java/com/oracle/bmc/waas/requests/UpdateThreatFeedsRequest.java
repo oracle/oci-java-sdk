@@ -10,7 +10,7 @@ import com.oracle.bmc.waas.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateThreatFeedsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateThreatFeedsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class UpdateThreatFeedsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction>> {

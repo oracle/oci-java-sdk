@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ShippingVendorsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ShippingVendors {
     /** Service instance for ShippingVendors. */
@@ -25,7 +25,7 @@ public class ShippingVendorsClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ShippingVendorsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ShippingVendorsClient.class);
 
     private ShippingVendorsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -66,7 +66,7 @@ public class ShippingVendorsClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public ShippingVendorsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ShippingVendorsClient(this, authenticationDetailsProvider);

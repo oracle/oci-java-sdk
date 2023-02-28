@@ -6,7 +6,7 @@ package com.oracle.bmc.datalabelingservice.responses;
 
 import com.oracle.bmc.datalabelingservice.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For the pagination of a list of items. When paging through a list, if this header appears in

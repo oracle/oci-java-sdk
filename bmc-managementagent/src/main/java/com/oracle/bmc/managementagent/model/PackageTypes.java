@@ -8,7 +8,7 @@ package com.oracle.bmc.managementagent.model;
  * The agent image installation package type. RPM - Package is in rpm format. ZIP - Package is in
  * zip format.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public enum PackageTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Rpm("RPM"),
     Zip("ZIP"),

@@ -11,7 +11,7 @@ import com.oracle.bmc.healthchecks.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListHealthChecksVantagePointsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class ListHealthChecksVantagePointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

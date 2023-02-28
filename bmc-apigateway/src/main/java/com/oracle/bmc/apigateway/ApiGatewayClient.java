@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ApiGateway {
     /** Service instance for ApiGateway. */
@@ -24,7 +24,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ApiGatewayAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ApiGatewayClient.class);
 
     private final ApiGatewayWaiters waiters;
 
@@ -103,7 +103,7 @@ public class ApiGatewayClient extends com.oracle.bmc.http.internal.BaseSyncClien
          * @return the client
          */
         public ApiGatewayClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ApiGatewayClient(this, authenticationDetailsProvider, executorService);

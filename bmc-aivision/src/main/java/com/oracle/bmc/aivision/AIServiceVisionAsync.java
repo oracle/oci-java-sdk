@@ -13,7 +13,7 @@ import com.oracle.bmc.aivision.responses.*;
  * thematically split between Document AI for document-centric images, and Image Analysis for object
  * and scene-based images. Pretrained models and custom models are supported.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public interface AIServiceVisionAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

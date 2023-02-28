@@ -8,7 +8,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * Types of error modes for steps in a DR Plan. - STOP_ON_ERROR - Stop DR Plan execution if this
  * step fails. - CONTINUE_ON_ERROR - Continue DR Plan execution even if this step fails.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanStepErrorMode implements com.oracle.bmc.http.internal.BmcEnum {
     StopOnError("STOP_ON_ERROR"),
     ContinueOnError("CONTINUE_ON_ERROR"),

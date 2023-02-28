@@ -10,7 +10,7 @@ import com.oracle.bmc.loggingsearch.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingsearch/SearchLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchLogsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public class SearchLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loggingsearch.model.SearchLogsDetails> {

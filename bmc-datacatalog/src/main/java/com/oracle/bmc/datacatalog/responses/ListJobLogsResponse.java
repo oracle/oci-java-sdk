@@ -6,7 +6,7 @@ package com.oracle.bmc.datacatalog.responses;
 
 import com.oracle.bmc.datacatalog.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ListJobLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class DomainClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Domain {
     /** Service instance for Domain. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -24,7 +24,7 @@ public class DomainClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DomainAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DomainClient.class);
 
     private final DomainWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DomainClient extends com.oracle.bmc.http.internal.BaseSyncClient im
          * @return the client
          */
         public DomainClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DomainClient(this, authenticationDetailsProvider, executorService);

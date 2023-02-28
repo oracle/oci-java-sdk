@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /** The type of work request operation. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDbManagementPrivateEndpoint("CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT"),
     DeleteDbManagementPrivateEndpoint("DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT"),

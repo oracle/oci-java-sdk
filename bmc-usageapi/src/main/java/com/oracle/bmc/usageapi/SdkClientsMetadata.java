@@ -6,6 +6,6 @@ package com.oracle.bmc.usageapi;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @SdkClients({UsageapiAsyncClient.class, UsageapiClient.class})
 public final class SdkClientsMetadata {}

@@ -8,7 +8,7 @@ import com.oracle.bmc.opensearch.requests.*;
 import com.oracle.bmc.opensearch.responses.*;
 
 /** The OpenSearch service API provides access to OCI Search Service with OpenSearch. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public interface OpensearchClusterAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

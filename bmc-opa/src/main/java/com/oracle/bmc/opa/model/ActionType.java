@@ -5,7 +5,7 @@
 package com.oracle.bmc.opa.model;
 
 /** Possible types of actions. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),

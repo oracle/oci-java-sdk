@@ -6,7 +6,7 @@ package com.oracle.bmc.osubsubscription.responses;
 
 import com.oracle.bmc.osubsubscription.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

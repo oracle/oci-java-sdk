@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements AccessRequestsAsync {
     /** Service instance for AccessRequests. */
@@ -77,7 +77,7 @@ public class AccessRequestsAsyncClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public AccessRequestsAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AccessRequestsAsyncClient(this, authenticationDetailsProvider);

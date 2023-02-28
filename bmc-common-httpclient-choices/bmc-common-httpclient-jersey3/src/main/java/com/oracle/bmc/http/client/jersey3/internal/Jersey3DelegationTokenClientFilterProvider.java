@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.http.client.jersey3.internal;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.internal.DelegationTokenClientFilterProvider;
@@ -15,7 +15,7 @@ public class Jersey3DelegationTokenClientFilterProvider
             new Jersey3DelegationTokenClientFilterProvider();
 
     static {
-        // make loading this class fail if javax.annotation is not on classpath
+        // make loading this class fail if jakarta.annotation is not on classpath
         jakarta.annotation.Priority.class.getName();
     }
 

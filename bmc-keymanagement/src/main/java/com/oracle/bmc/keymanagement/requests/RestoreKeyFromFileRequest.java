@@ -10,7 +10,7 @@ import com.oracle.bmc.keymanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromFileExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreKeyFromFileRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class RestoreKeyFromFileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
         implements com.oracle.bmc.requests.HasContentLength {

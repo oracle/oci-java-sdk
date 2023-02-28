@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class ShapeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ShapeAsync {
     /** Service instance for Shape. */
@@ -75,7 +75,7 @@ public class ShapeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
          * @return the client
          */
         public ShapeAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ShapeAsyncClient(this, authenticationDetailsProvider);

@@ -10,7 +10,7 @@ import com.oracle.bmc.ailanguage.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteModelExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteModelRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class DeleteModelRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** unique model OCID. */

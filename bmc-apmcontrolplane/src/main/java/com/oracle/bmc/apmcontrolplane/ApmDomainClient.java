@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ApmDomainClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ApmDomain {
     /** Service instance for ApmDomain. */
@@ -24,7 +24,7 @@ public class ApmDomainClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ApmDomainAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ApmDomainClient.class);
 
     private final ApmDomainWaiters waiters;
 
@@ -103,7 +103,7 @@ public class ApmDomainClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public ApmDomainClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ApmDomainClient(this, authenticationDetailsProvider, executorService);

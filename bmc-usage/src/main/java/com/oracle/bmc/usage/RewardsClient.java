@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class RewardsClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Rewards {
     /** Service instance for Rewards. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class RewardsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RewardsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RewardsClient.class);
 
     private final RewardsPaginators paginators;
 
@@ -68,7 +68,7 @@ public class RewardsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public RewardsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RewardsClient(this, authenticationDetailsProvider);

@@ -5,7 +5,7 @@
 package com.oracle.bmc.datascience.model;
 
 /** Possible sources where artifact would be present */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public enum ArtifactSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleObjectStorage("ORACLE_OBJECT_STORAGE"),
     ;

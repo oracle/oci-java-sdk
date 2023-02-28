@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Lockbox {
     /** Service instance for Lockbox. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -24,7 +24,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LockboxAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LockboxClient.class);
 
     private final LockboxWaiters waiters;
 
@@ -103,7 +103,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
          * @return the client
          */
         public LockboxClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LockboxClient(this, authenticationDetailsProvider, executorService);

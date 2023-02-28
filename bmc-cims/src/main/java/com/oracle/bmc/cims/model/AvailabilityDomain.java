@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /** The list of availability domains supported by the Support Management API. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum AvailabilityDomain implements com.oracle.bmc.http.internal.BmcEnum {
     Dev1("DEV_1"),
     Dev2("DEV_2"),

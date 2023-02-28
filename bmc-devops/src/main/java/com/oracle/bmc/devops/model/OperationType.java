@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateProject("CREATE_PROJECT"),
     UpdateProject("UPDATE_PROJECT"),

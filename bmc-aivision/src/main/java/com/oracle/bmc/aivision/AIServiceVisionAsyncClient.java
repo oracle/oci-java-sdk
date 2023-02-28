@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class AIServiceVisionAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements AIServiceVisionAsync {
     /** Service instance for AIServiceVision. */
@@ -77,7 +77,7 @@ public class AIServiceVisionAsyncClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public AIServiceVisionAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AIServiceVisionAsyncClient(this, authenticationDetailsProvider);

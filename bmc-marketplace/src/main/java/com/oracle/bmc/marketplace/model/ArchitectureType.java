@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /** Possible values for a listings compatbile architecture */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum ArchitectureType implements com.oracle.bmc.http.internal.BmcEnum {
     X86("X86"),
     Arm("ARM"),

@@ -11,7 +11,7 @@ import com.oracle.bmc.dns.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateResolverEndpointRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class UpdateResolverEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dns.model.UpdateResolverEndpointDetails> {

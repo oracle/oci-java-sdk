@@ -10,7 +10,7 @@ import com.oracle.bmc.email.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSendersRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID for the compartment. */

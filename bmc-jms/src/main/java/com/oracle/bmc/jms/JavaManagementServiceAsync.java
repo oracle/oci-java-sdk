@@ -8,7 +8,7 @@ import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
 
 /** API for the Java Management Service. Use this API to view, create, and manage Fleets. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public interface JavaManagementServiceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

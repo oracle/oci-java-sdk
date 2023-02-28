@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class NetworkValidationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements NetworkValidation {
     /** Service instance for NetworkValidation. */
@@ -25,7 +25,7 @@ public class NetworkValidationClient extends com.oracle.bmc.http.internal.BaseSy
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(NetworkValidationAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(NetworkValidationClient.class);
 
     private NetworkValidationClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -66,7 +66,7 @@ public class NetworkValidationClient extends com.oracle.bmc.http.internal.BaseSy
          * @return the client
          */
         public NetworkValidationClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NetworkValidationClient(this, authenticationDetailsProvider);

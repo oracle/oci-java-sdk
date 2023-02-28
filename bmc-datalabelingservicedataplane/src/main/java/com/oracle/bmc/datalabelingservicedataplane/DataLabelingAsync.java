@@ -10,7 +10,7 @@ import com.oracle.bmc.datalabelingservicedataplane.responses.*;
 /**
  * Use Data Labeling API to create Annotations on Images, Texts & Documents, and generate snapshots.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public interface DataLabelingAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /** The status types of a SQL Tuning Advisor task. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum SqlTuningTaskStatusTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Completed("COMPLETED"),
     Initial("INITIAL"),

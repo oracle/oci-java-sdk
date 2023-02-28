@@ -10,7 +10,7 @@ package com.oracle.bmc.disasterrecovery.model;
  * switchover DR Plan. - FAILOVER - Failover to standby. - FAILOVER_PRECHECK - Precheck for failover
  * DR Plan.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrPlanExecutionType implements com.oracle.bmc.http.internal.BmcEnum {
     Switchover("SWITCHOVER"),
     SwitchoverPrecheck("SWITCHOVER_PRECHECK"),

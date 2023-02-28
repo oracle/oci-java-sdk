@@ -6,7 +6,7 @@ package com.oracle.bmc.waas.responses;
 
 import com.oracle.bmc.waas.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListEdgeSubnetsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

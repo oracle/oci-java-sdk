@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements KmsVault {
     /** Service instance for KmsVault. */
@@ -24,7 +24,7 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(KmsVaultAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(KmsVaultClient.class);
 
     private final KmsVaultWaiters waiters;
 
@@ -103,7 +103,7 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public KmsVaultClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new KmsVaultClient(this, authenticationDetailsProvider, executorService);

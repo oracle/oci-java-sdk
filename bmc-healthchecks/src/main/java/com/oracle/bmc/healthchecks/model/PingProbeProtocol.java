@@ -5,7 +5,7 @@
 package com.oracle.bmc.healthchecks.model;
 
 /** The protocols for ping probes. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public enum PingProbeProtocol implements com.oracle.bmc.http.internal.BmcEnum {
     Icmp("ICMP"),
     Tcp("TCP"),

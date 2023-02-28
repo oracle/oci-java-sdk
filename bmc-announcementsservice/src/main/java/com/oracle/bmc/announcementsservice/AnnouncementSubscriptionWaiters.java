@@ -14,7 +14,7 @@ import com.oracle.bmc.announcementsservice.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class AnnouncementSubscriptionWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final AnnouncementSubscription client;

@@ -13,7 +13,7 @@ import com.oracle.bmc.bastion.responses.*;
  * resources using Secure Shell (SSH) sessions. For more information, see [the Bastion
  * documentation](https://docs.cloud.oracle.com/iaas/Content/Bastion/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public interface BastionAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

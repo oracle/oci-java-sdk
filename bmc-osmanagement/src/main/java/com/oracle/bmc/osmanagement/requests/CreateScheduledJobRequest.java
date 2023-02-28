@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/CreateScheduledJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateScheduledJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class CreateScheduledJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model.CreateScheduledJobDetails> {

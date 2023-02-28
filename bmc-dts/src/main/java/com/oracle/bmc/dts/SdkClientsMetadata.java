@@ -6,7 +6,7 @@ package com.oracle.bmc.dts;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @SdkClients({
     ApplianceExportJobAsyncClient.class,
     ApplianceExportJobClient.class,

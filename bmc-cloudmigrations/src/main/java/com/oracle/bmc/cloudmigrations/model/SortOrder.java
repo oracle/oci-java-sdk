@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /** Sort orders */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

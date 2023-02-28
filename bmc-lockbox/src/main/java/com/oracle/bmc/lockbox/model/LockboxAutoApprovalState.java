@@ -5,7 +5,7 @@
 package com.oracle.bmc.lockbox.model;
 
 /** Possible lockbox auto-approval states. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public enum LockboxAutoApprovalState implements com.oracle.bmc.http.internal.BmcEnum {
     Enabled("ENABLED"),
     Disabled("DISABLED"),

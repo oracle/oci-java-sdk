@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ServiceCatalog {
     /** Service instance for ServiceCatalog. */
@@ -25,7 +25,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ServiceCatalogAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ServiceCatalogClient.class);
 
     private final ServiceCatalogWaiters waiters;
 
@@ -104,7 +104,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public ServiceCatalogClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ServiceCatalogClient(this, authenticationDetailsProvider, executorService);

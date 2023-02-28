@@ -13,7 +13,7 @@ import com.oracle.bmc.optimizer.responses.*;
  * improve security. For more information, see [Cloud
  * Advisor](https://docs.cloud.oracle.com/Content/CloudAdvisor/Concepts/cloudadvisoroverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public interface OptimizerAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

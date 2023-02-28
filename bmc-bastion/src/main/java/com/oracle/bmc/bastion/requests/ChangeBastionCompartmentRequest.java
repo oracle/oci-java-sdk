@@ -11,7 +11,7 @@ import com.oracle.bmc.bastion.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeBastionCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public class ChangeBastionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bastion.model.ChangeBastionCompartmentDetails> {

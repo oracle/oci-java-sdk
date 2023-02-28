@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /** Possible values for a link type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public enum LinkEnum implements com.oracle.bmc.http.internal.BmcEnum {
     Self("SELF"),
     Canonical("CANONICAL"),

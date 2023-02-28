@@ -12,7 +12,7 @@ import com.oracle.bmc.datacatalog.responses.*;
  * technical, business, and operational metadata. For more information, see [Data
  * Catalog](https://docs.oracle.com/iaas/data-catalog/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public interface DataCatalogAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

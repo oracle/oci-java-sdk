@@ -13,7 +13,7 @@ import com.oracle.bmc.fusionapps.responses.*;
  * Management
  * documentation](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public interface FusionApplicationsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

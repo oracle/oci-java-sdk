@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ContainerEngine {
     /** Service instance for ContainerEngine. */
@@ -25,7 +25,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ContainerEngineAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ContainerEngineClient.class);
 
     private final ContainerEngineWaiters waiters;
 
@@ -104,7 +104,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public ContainerEngineClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ContainerEngineClient(this, authenticationDetailsProvider, executorService);

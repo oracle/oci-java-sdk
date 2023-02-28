@@ -6,7 +6,7 @@ package com.oracle.bmc.computeinstanceagent.responses;
 
 import com.oracle.bmc.computeinstanceagent.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 public class GetInstanceAgentCommandResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

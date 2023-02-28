@@ -11,7 +11,7 @@ import com.oracle.bmc.rover.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateRoverEntitlementRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class CreateRoverEntitlementRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.rover.model.CreateRoverEntitlementDetails> {

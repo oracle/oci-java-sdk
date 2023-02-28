@@ -5,7 +5,7 @@
 package com.oracle.bmc.lockbox.model;
 
 /** The partner associated with the resource of the lockbox. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public enum LockboxPartner implements com.oracle.bmc.http.internal.BmcEnum {
     Faaas("FAAAS"),
     Canary("CANARY"),

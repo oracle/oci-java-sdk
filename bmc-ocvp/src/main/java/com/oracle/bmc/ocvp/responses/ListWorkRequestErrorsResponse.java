@@ -6,7 +6,7 @@ package com.oracle.bmc.ocvp.responses;
 
 import com.oracle.bmc.ocvp.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For list pagination. When this header appears in the response, additional pages of results

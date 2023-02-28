@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DatabaseTools {
     /** Service instance for DatabaseTools. */
@@ -24,7 +24,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DatabaseToolsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DatabaseToolsClient.class);
 
     private final DatabaseToolsWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
          * @return the client
          */
         public DatabaseToolsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DatabaseToolsClient(this, authenticationDetailsProvider, executorService);

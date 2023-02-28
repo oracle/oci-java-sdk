@@ -13,7 +13,7 @@ import com.oracle.bmc.ailanguage.responses.*;
  * up an house team of AI and ML experts. This allows enterprises to focus on business drivers and
  * development work rather than AI and ML operations, which shortens the time to market.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public interface AIServiceLanguageAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

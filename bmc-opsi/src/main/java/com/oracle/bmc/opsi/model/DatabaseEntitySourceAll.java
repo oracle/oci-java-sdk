@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Source of the database entity. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum DatabaseEntitySourceAll implements com.oracle.bmc.http.internal.BmcEnum {
     AutonomousDatabase("AUTONOMOUS_DATABASE"),
     EmManagedExternalDatabase("EM_MANAGED_EXTERNAL_DATABASE"),

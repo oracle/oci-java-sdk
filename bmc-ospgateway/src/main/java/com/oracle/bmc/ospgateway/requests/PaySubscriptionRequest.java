@@ -10,7 +10,7 @@ import com.oracle.bmc.ospgateway.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/PaySubscriptionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use PaySubscriptionRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class PaySubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ospgateway.model.PaySubscriptionDetails> {

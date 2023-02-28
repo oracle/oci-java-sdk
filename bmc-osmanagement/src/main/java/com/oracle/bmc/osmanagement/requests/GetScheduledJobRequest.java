@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetScheduledJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetScheduledJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetScheduledJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ID of the scheduled job. */

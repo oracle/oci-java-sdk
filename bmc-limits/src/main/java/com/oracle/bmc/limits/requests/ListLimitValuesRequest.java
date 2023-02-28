@@ -10,7 +10,7 @@ import com.oracle.bmc.limits.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListLimitValuesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLimitValuesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

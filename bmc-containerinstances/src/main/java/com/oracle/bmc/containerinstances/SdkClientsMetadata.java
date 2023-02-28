@@ -6,6 +6,6 @@ package com.oracle.bmc.containerinstances;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @SdkClients({ContainerInstanceAsyncClient.class, ContainerInstanceClient.class})
 public final class SdkClientsMetadata {}

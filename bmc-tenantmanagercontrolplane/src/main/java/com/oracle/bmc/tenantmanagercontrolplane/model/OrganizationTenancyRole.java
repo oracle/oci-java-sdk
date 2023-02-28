@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /** Possible roles for the OrganizationTenancy. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public enum OrganizationTenancyRole implements com.oracle.bmc.http.internal.BmcEnum {
     Parent("PARENT"),
     Child("CHILD"),

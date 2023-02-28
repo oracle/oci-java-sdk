@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class DashboardGroupAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DashboardGroupAsync {
     /** Service instance for DashboardGroup. */
@@ -76,7 +76,7 @@ public class DashboardGroupAsyncClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public DashboardGroupAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DashboardGroupAsyncClient(this, authenticationDetailsProvider);

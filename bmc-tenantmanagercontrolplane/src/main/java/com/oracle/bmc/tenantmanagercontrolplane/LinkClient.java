@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Link {
     /** Service instance for Link. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,8 +23,7 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                             "https://organizations.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LinkAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(LinkClient.class);
 
     private final LinkWaiters waiters;
 
@@ -103,7 +102,7 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
          * @return the client
          */
         public LinkClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LinkClient(this, authenticationDetailsProvider, executorService);

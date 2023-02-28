@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class OrganizationSubscriptionAsyncClient
         extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements OrganizationSubscriptionAsync {
@@ -77,7 +77,7 @@ public class OrganizationSubscriptionAsyncClient
          * @return the client
          */
         public OrganizationSubscriptionAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OrganizationSubscriptionAsyncClient(this, authenticationDetailsProvider);

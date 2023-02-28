@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

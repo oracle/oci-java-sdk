@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplace.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListCategoriesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCategoriesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ListCategoriesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

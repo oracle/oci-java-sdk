@@ -5,7 +5,7 @@
 package com.oracle.bmc.goldengate.model;
 
 /** The deployment backup cancel type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum CancelDeploymentBackupType implements com.oracle.bmc.http.internal.BmcEnum {
     Default("DEFAULT"),
     ;

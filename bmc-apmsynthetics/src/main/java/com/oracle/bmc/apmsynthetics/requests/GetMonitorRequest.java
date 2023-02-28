@@ -10,7 +10,7 @@ import com.oracle.bmc.apmsynthetics.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMonitorRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The APM domain ID the request is intended for. */

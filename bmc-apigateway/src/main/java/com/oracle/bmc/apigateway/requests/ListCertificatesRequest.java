@@ -10,7 +10,7 @@ import com.oracle.bmc.apigateway.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListCertificatesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCertificatesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The ocid of the compartment in which to list resources. */

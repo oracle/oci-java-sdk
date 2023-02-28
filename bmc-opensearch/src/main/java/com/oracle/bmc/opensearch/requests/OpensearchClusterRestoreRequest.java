@@ -11,7 +11,7 @@ import com.oracle.bmc.opensearch.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * OpensearchClusterRestoreRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class OpensearchClusterRestoreRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opensearch.model.RestoreOpensearchClusterDetails> {

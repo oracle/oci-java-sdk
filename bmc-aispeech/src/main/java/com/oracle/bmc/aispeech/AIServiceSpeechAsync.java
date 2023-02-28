@@ -11,7 +11,7 @@ import com.oracle.bmc.aispeech.responses.*;
  * The OCI Speech Service harnesses the power of spoken language by allowing developers to easily
  * convert file-based data containing human speech into highly accurate text transcriptions.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public interface AIServiceSpeechAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

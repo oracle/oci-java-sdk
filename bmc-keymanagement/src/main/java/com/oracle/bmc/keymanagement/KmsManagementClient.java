@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements KmsManagement {
     /** Service instance for KmsManagement. */
@@ -24,7 +24,7 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(KmsManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(KmsManagementClient.class);
 
     private final KmsManagementWaiters waiters;
 

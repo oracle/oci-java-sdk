@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements KmsCrypto {
     /** Service instance for KmsCrypto. */
@@ -24,7 +24,7 @@ public class KmsCryptoClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(KmsCryptoAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(KmsCryptoClient.class);
 
     private KmsCryptoClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,

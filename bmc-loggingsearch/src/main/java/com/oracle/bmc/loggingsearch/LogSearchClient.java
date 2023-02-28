@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public class LogSearchClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements LogSearch {
     /** Service instance for LogSearch. */
@@ -24,7 +24,7 @@ public class LogSearchClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LogSearchAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LogSearchClient.class);
 
     private LogSearchClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
@@ -65,7 +65,7 @@ public class LogSearchClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public LogSearchClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LogSearchClient(this, authenticationDetailsProvider);

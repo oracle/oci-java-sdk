@@ -6,7 +6,7 @@ package com.oracle.bmc.servicemesh.responses;
 
 import com.oracle.bmc.servicemesh.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class DeleteAccessPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

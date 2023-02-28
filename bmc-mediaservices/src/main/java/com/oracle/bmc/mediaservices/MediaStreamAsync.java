@@ -17,7 +17,7 @@ import com.oracle.bmc.mediaservices.responses.*;
  * see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
  * Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public interface MediaStreamAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

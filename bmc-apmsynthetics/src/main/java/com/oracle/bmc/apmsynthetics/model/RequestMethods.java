@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /** Monitor request method. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum RequestMethods implements com.oracle.bmc.http.internal.BmcEnum {
     Get("GET"),
     Post("POST"),

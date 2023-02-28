@@ -11,7 +11,7 @@ import com.oracle.bmc.secrets.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetSecretBundleByNameRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public class GetSecretBundleByNameRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

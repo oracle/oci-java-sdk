@@ -6,7 +6,7 @@ package com.oracle.bmc.certificatesmanagement.responses;
 
 import com.oracle.bmc.certificatesmanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class ListCaBundlesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

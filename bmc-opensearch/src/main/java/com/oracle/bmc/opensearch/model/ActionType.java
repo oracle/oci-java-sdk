@@ -5,7 +5,7 @@
 package com.oracle.bmc.opensearch.model;
 
 /** The way in which this resource was affected by the operation that spawned the work request. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),

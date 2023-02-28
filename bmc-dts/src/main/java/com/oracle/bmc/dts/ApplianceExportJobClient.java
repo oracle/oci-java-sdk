@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ApplianceExportJobClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ApplianceExportJob {
     /** Service instance for ApplianceExportJob. */
@@ -25,7 +25,7 @@ public class ApplianceExportJobClient extends com.oracle.bmc.http.internal.BaseS
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ApplianceExportJobAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ApplianceExportJobClient.class);
 
     private final ApplianceExportJobWaiters waiters;
 
@@ -104,7 +104,7 @@ public class ApplianceExportJobClient extends com.oracle.bmc.http.internal.BaseS
          * @return the client
          */
         public ApplianceExportJobClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ApplianceExportJobClient(

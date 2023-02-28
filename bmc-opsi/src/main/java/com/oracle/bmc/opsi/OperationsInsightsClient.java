@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements OperationsInsights {
     /** Service instance for OperationsInsights. */
@@ -25,7 +25,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OperationsInsightsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OperationsInsightsClient.class);
 
     private final OperationsInsightsWaiters waiters;
 
@@ -104,7 +104,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
          * @return the client
          */
         public OperationsInsightsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new OperationsInsightsClient(

@@ -10,7 +10,7 @@ import com.oracle.bmc.opa.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opa/CreateOpaInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOpaInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 public class CreateOpaInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opa.model.CreateOpaInstanceDetails> {

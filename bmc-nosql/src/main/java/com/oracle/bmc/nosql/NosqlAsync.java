@@ -12,7 +12,7 @@ import com.oracle.bmc.nosql.responses.*;
  * operations, including creation and deletion of tables and indexes; population and access of data
  * in tables; and access of table usage metrics.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public interface NosqlAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

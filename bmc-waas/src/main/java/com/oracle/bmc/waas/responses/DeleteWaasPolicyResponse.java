@@ -6,7 +6,7 @@ package com.oracle.bmc.waas.responses;
 
 import com.oracle.bmc.waas.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class DeleteWaasPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

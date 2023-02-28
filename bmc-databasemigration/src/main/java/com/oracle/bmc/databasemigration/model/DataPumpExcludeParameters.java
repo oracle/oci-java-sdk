@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Supported Import/Export exclude parameters */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public enum DataPumpExcludeParameters implements com.oracle.bmc.http.internal.BmcEnum {
     Index("INDEX"),
     MaterializedView("MATERIALIZED_VIEW"),

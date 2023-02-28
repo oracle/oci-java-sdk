@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /** Possible data masking categories */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum DataMaskCategory implements com.oracle.bmc.http.internal.BmcEnum {
     Actor("ACTOR"),
     Pii("PII"),

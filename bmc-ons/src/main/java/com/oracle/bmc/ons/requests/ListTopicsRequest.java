@@ -10,7 +10,7 @@ import com.oracle.bmc.ons.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListTopicsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTopicsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListTopicsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

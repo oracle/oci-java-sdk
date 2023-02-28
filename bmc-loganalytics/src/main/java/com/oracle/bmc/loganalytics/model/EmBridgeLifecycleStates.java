@@ -8,7 +8,7 @@ package com.oracle.bmc.loganalytics.model;
  * Enterprise manager lifecycle state. Supported states are CREATING, ACTIVE, DELETED,
  * NEEDS_ATTENTION
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum EmBridgeLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

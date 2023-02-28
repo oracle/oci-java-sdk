@@ -5,7 +5,7 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /** Mode specifying the IP version of HCS Infra. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public enum HcsInfraIpVersion implements com.oracle.bmc.http.internal.BmcEnum {
     Ipv4("IPV4"),
     Ipv4AndIpv6("IPV4_AND_IPV6"),

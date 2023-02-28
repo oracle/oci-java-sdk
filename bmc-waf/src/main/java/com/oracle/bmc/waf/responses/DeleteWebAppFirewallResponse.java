@@ -6,7 +6,7 @@ package com.oracle.bmc.waf.responses;
 
 import com.oracle.bmc.waf.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class DeleteWebAppFirewallResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

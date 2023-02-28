@@ -10,7 +10,7 @@ import com.oracle.bmc.applicationmigration.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/applicationmigration/UpdateSourceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSourceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public class UpdateSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.applicationmigration.model.UpdateSourceDetails> {

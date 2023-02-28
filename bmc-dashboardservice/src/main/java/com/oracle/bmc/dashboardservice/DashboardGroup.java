@@ -21,7 +21,7 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public interface DashboardGroup extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

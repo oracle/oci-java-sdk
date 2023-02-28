@@ -10,7 +10,7 @@ import com.oracle.bmc.managementagent.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagementAgentsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class ListManagementAgentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

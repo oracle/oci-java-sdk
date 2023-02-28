@@ -6,7 +6,7 @@ package com.oracle.bmc.ocvp;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @SdkClients({
     EsxiHostAsyncClient.class,
     EsxiHostClient.class,

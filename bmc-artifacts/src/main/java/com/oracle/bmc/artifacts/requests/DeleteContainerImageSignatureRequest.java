@@ -11,7 +11,7 @@ import com.oracle.bmc.artifacts.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteContainerImageSignatureRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DeleteContainerImageSignatureRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

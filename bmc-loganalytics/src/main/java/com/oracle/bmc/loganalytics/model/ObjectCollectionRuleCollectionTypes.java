@@ -14,7 +14,7 @@ package com.oracle.bmc.loganalytics.model;
  * should collect all the objects that ever gets into this bucket till this rule is configured and
  * active.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum ObjectCollectionRuleCollectionTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Live("LIVE"),
     Historic("HISTORIC"),

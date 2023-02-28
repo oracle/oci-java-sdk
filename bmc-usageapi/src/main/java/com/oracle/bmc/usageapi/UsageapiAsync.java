@@ -15,7 +15,7 @@ import com.oracle.bmc.usageapi.responses.*;
  * API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api)
  * for more information.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public interface UsageapiAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

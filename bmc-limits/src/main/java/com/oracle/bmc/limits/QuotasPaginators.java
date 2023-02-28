@@ -33,7 +33,7 @@ import com.oracle.bmc.limits.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class QuotasPaginators {
     private final Quotas client;
 

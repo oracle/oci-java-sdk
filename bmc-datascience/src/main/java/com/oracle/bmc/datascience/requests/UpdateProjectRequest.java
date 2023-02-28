@@ -10,7 +10,7 @@ import com.oracle.bmc.datascience.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateProjectExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProjectRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class UpdateProjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.UpdateProjectDetails> {

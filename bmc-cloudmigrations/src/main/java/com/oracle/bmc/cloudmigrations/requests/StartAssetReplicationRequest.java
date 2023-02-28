@@ -11,7 +11,7 @@ import com.oracle.bmc.cloudmigrations.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * StartAssetReplicationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class StartAssetReplicationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

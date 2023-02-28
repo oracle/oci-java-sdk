@@ -10,7 +10,7 @@ package com.oracle.bmc.databasemanagement.model;
  * for that resource at which point it will transition to CREATED, UPDATED, or DELETED,
  * respectively.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum WorkRequestResourceActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),

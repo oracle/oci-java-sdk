@@ -9,7 +9,7 @@ package com.oracle.bmc.datacatalog.model;
  * property value) is performed by the user on this type. ENABLED - Event is emitted. DISABLED -
  * Event is not emitted.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum EventConfigStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Enabled("ENABLED"),
     Disabled("DISABLED"),

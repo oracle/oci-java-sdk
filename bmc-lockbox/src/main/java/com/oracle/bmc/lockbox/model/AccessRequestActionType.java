@@ -5,7 +5,7 @@
 package com.oracle.bmc.lockbox.model;
 
 /** Possible action types for updating access request. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public enum AccessRequestActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Approve("APPROVE"),
     Deny("DENY"),

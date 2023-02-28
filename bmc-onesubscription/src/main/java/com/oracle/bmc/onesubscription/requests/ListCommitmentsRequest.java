@@ -10,7 +10,7 @@ import com.oracle.bmc.onesubscription.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListCommitmentsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCommitmentsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** This param is used to get the commitments for a particular subscribed service */

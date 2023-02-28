@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class DiscoveryAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DiscoveryAsync {
     /** Service instance for Discovery. */
@@ -75,7 +75,7 @@ public class DiscoveryAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
          * @return the client
          */
         public DiscoveryAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DiscoveryAsyncClient(this, authenticationDetailsProvider);

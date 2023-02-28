@@ -11,7 +11,7 @@ import com.oracle.bmc.networkloadbalancer.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateNetworkLoadBalancerRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class UpdateNetworkLoadBalancerRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails> {

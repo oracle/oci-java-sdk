@@ -10,7 +10,7 @@ import com.oracle.bmc.osubsubscription.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListRateCardsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRateCardsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Line level Subscription Id */

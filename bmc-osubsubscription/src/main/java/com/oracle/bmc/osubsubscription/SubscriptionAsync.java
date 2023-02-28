@@ -8,7 +8,7 @@ import com.oracle.bmc.osubsubscription.requests.*;
 import com.oracle.bmc.osubsubscription.responses.*;
 
 /** Set of APIs that return the Subscription Details, Commitment and Effective Rate Card Details */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public interface SubscriptionAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

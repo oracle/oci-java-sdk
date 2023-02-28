@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ComputeManagementAsync {
     /** Service instance for ComputeManagement. */
@@ -76,7 +76,7 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
          * @return the client
          */
         public ComputeManagementAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ComputeManagementAsyncClient(this, authenticationDetailsProvider);

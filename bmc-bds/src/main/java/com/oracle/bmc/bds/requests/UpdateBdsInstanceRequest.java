@@ -10,7 +10,7 @@ import com.oracle.bmc.bds.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBdsInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class UpdateBdsInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bds.model.UpdateBdsInstanceDetails> {

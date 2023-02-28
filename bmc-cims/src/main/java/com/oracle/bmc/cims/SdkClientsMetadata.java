@@ -6,7 +6,7 @@ package com.oracle.bmc.cims;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @SdkClients({
     IncidentAsyncClient.class,
     IncidentClient.class,

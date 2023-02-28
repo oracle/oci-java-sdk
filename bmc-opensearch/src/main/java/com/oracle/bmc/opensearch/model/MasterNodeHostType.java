@@ -5,7 +5,7 @@
 package com.oracle.bmc.opensearch.model;
 
 /** The instance type for the cluster's master nodes. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public enum MasterNodeHostType implements com.oracle.bmc.http.internal.BmcEnum {
     Flex("FLEX"),
     Bm("BM"),

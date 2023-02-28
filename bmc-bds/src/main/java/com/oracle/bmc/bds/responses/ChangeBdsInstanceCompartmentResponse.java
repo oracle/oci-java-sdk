@@ -6,7 +6,7 @@ package com.oracle.bmc.bds.responses;
 
 import com.oracle.bmc.bds.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class ChangeBdsInstanceCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

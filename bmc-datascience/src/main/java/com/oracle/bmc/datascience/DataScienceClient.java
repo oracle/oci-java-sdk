@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DataScience {
     /** Service instance for DataScience. */
@@ -24,7 +24,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DataScienceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DataScienceClient.class);
 
     private final DataScienceWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
          * @return the client
          */
         public DataScienceClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DataScienceClient(this, authenticationDetailsProvider, executorService);

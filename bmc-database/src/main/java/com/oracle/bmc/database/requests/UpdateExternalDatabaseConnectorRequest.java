@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateExternalDatabaseConnectorRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateExternalDatabaseConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateExternalDatabaseConnectorDetails> {

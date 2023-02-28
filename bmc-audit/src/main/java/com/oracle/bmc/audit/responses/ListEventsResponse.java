@@ -6,7 +6,7 @@ package com.oracle.bmc.audit.responses;
 
 import com.oracle.bmc.audit.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of audit events. When this header appears in the response, it means

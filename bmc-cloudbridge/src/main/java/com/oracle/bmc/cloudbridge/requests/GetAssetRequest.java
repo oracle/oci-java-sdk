@@ -10,7 +10,7 @@ import com.oracle.bmc.cloudbridge.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAssetRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class GetAssetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique asset identifier. */

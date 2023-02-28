@@ -14,7 +14,7 @@ import com.oracle.bmc.visualbuilder.responses.*;
  * would take in other tools. The Visual Builder Instance Management API allows users to create and
  * manage a Visual Builder instance.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 public interface VbInstanceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

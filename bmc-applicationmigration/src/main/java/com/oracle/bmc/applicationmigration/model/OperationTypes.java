@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CreateSource("CREATE_SOURCE"),
     UpdateSource("UPDATE_SOURCE"),

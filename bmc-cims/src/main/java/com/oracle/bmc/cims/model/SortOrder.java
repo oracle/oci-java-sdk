@@ -8,7 +8,7 @@ package com.oracle.bmc.cims.model;
  * The sort order to use to query support ticket lists, either ascending ({@code ASC}) or descending
  * ({@code DESC}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

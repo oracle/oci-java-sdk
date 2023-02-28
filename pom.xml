@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.5.0</version>
+  <version>3.6.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -41,9 +41,9 @@
     <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
     <apache-httpcomponents.httpcore.version>4.4.13</apache-httpcomponents.httpcore.version>
     <junit.version>4.13.2</junit.version>
-    <jsr305.version>3.0.2</jsr305.version>
     <slf4j.version>1.7.33</slf4j.version>
     <javax.annotation.version>1.3.2</javax.annotation.version>
+    <jakarta9.annotations.version>2.1.1</jakarta9.annotations.version>
     <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
     <!-- Update resilience4jVersion and io.vavr.version together -->
     <resilience4jVersion>1.7.1</resilience4jVersion>
@@ -527,11 +527,6 @@
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcprov-jdk15on</artifactId>
         <version>${bouncycastle.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>jsr305</artifactId>
-        <version>${jsr305.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>

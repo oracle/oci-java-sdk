@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class MysqlaasAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements MysqlaasAsync {
     /** Service instance for Mysqlaas. */
@@ -75,7 +75,7 @@ public class MysqlaasAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
          * @return the client
          */
         public MysqlaasAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MysqlaasAsyncClient(this, authenticationDetailsProvider);

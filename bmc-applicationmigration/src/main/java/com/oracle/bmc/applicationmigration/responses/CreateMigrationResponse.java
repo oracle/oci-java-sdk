@@ -6,7 +6,7 @@ package com.oracle.bmc.applicationmigration.responses;
 
 import com.oracle.bmc.applicationmigration.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

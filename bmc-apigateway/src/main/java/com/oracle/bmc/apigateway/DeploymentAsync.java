@@ -12,7 +12,7 @@ import com.oracle.bmc.apigateway.responses.*;
  * For more information, see [Overview of API
  * Gateway](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public interface DeploymentAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

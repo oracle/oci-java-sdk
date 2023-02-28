@@ -8,7 +8,7 @@ import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
 
 /** This site describes all the Rest endpoints of OSP Gateway. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public interface InvoiceServiceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -8,7 +8,7 @@ package com.oracle.bmc.datasafe.model;
  * The entity type. It can be either a sensitive type with regular expressions or a sensitive
  * category used for grouping similar sensitive types.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum SensitiveTypeEntity implements com.oracle.bmc.http.internal.BmcEnum {
     SensitiveType("SENSITIVE_TYPE"),
     SensitiveCategory("SENSITIVE_CATEGORY"),

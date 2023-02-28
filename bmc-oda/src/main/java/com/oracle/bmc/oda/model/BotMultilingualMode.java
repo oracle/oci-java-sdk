@@ -5,7 +5,7 @@
 package com.oracle.bmc.oda.model;
 
 /** The valid set of multilingual modes. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public enum BotMultilingualMode implements com.oracle.bmc.http.internal.BmcEnum {
     Native("NATIVE"),
     Translation("TRANSLATION"),

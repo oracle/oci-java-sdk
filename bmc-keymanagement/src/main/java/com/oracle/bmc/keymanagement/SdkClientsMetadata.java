@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @SdkClients({
     KmsCryptoAsyncClient.class,
     KmsCryptoClient.class,

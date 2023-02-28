@@ -10,7 +10,7 @@ import com.oracle.bmc.visualbuilder.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/StopVbInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use StopVbInstanceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 public class StopVbInstanceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique Vb Instance identifier. */

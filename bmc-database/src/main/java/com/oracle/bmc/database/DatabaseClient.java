@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Database {
     /** Service instance for Database. */
@@ -24,7 +24,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DatabaseAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DatabaseClient.class);
 
     protected final java.util.concurrent.ExecutorService executorService;
     private final DatabaseWaiters waiters;
@@ -105,7 +105,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public DatabaseClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DatabaseClient(this, authenticationDetailsProvider, executorService);

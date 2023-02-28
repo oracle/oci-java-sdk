@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements IncidentAsync {
     /** Service instance for Incident. */
@@ -76,7 +76,7 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
          * @return the client
          */
         public IncidentAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new IncidentAsyncClient(this, authenticationDetailsProvider);

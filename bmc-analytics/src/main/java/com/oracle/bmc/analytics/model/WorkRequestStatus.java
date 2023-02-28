@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /** The status of a work request. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),

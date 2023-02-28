@@ -14,7 +14,7 @@ import com.oracle.bmc.streaming.responses.*;
  * service client does not use circuit breakers by default if the user has not defined a circuit
  * breaker configuration.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public interface Stream extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

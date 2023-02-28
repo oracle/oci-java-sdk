@@ -5,7 +5,7 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateNetworkFirewall("CREATE_NETWORK_FIREWALL"),
     UpdateNetworkFirewall("UPDATE_NETWORK_FIREWALL"),

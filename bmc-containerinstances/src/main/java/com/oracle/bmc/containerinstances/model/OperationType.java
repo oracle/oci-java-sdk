@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateContainerInstance("CREATE_CONTAINER_INSTANCE"),
     UpdateContainerInstance("UPDATE_CONTAINER_INSTANCE"),

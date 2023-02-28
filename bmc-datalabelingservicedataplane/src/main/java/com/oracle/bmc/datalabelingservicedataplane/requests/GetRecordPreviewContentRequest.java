@@ -11,7 +11,7 @@ import com.oracle.bmc.datalabelingservicedataplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetRecordPreviewContentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class GetRecordPreviewContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

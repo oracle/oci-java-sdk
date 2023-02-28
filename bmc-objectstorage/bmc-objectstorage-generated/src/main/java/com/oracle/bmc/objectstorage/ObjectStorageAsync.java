@@ -14,7 +14,7 @@ import com.oracle.bmc.objectstorage.responses.*;
  * [Overview of Archive
  * Storage](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ObjectStorageAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

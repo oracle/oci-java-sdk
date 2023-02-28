@@ -10,7 +10,7 @@ import com.oracle.bmc.cims.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIncidentsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The Customer Support Identifier associated with the support account. */

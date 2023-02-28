@@ -16,7 +16,7 @@ package com.oracle.bmc.mysql.model;
  * between MySQL major releases, so that all data files are fully prepared in case the upgrade
  * process updates the file format.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public enum InnoDbShutdownMode implements com.oracle.bmc.http.internal.BmcEnum {
     Immediate("IMMEDIATE"),
     Fast("FAST"),

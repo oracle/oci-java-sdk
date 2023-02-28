@@ -11,7 +11,7 @@ import com.oracle.bmc.databasemanagement.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeAwrDbParametersRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class SummarizeAwrDbParametersRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

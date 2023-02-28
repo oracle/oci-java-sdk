@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.http.client.Serialization;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /** A helper class to support json related operations */
 public class JsonConverter {

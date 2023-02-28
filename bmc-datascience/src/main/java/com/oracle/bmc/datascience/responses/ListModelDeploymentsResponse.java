@@ -6,7 +6,7 @@ package com.oracle.bmc.datascience.responses;
 
 import com.oracle.bmc.datascience.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class ListModelDeploymentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Retrieves the next page of results. When this header appears in the response, additional

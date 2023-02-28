@@ -11,7 +11,7 @@ import com.oracle.bmc.recovery.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateProtectedDatabaseRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class CreateProtectedDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.recovery.model.CreateProtectedDatabaseDetails> {

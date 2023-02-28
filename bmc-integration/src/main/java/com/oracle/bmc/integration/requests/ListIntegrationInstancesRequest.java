@@ -11,7 +11,7 @@ import com.oracle.bmc.integration.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListIntegrationInstancesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public class ListIntegrationInstancesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

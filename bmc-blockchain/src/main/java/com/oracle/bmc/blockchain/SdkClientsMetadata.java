@@ -6,6 +6,6 @@ package com.oracle.bmc.blockchain;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @SdkClients({BlockchainPlatformAsyncClient.class, BlockchainPlatformClient.class})
 public final class SdkClientsMetadata {}

@@ -6,7 +6,7 @@ package com.oracle.bmc.announcementsservice;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @SdkClients({
     AnnouncementAsyncClient.class,
     AnnouncementClient.class,

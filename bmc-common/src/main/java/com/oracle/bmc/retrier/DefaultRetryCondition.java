@@ -13,7 +13,7 @@ import java.util.Set;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * Class that represents the conditions documented in

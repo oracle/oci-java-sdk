@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RoverClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements RoverClusterAsync {
     /** Service instance for RoverCluster. */
@@ -75,7 +75,7 @@ public class RoverClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
          * @return the client
          */
         public RoverClusterAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RoverClusterAsyncClient(this, authenticationDetailsProvider);

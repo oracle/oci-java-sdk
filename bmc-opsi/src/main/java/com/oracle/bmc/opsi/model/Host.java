@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Displays exadata host resource metrics */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum Host implements com.oracle.bmc.http.internal.BmcEnum {
     Cpu("CPU"),
     Memory("MEMORY"),

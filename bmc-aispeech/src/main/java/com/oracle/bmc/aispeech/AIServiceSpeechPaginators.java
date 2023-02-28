@@ -33,7 +33,7 @@ import com.oracle.bmc.aispeech.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class AIServiceSpeechPaginators {
     private final AIServiceSpeech client;
 

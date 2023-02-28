@@ -33,7 +33,7 @@ import com.oracle.bmc.threatintelligence.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ThreatintelPaginators {
     private final Threatintel client;
 

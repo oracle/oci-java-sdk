@@ -6,7 +6,7 @@ package com.oracle.bmc.recovery.responses;
 
 import com.oracle.bmc.recovery.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

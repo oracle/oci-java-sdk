@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements WorkRequests {
     /** Service instance for WorkRequests. */
@@ -24,7 +24,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(WorkRequestsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(WorkRequestsClient.class);
 
     private final WorkRequestsWaiters waiters;
 
@@ -103,7 +103,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public WorkRequestsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new WorkRequestsClient(this, authenticationDetailsProvider, executorService);

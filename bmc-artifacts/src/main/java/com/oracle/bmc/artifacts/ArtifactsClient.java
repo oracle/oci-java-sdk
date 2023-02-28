@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Artifacts {
     /** Service instance for Artifacts. */
@@ -24,7 +24,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ArtifactsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ArtifactsClient.class);
 
     private final ArtifactsWaiters waiters;
 
@@ -103,7 +103,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public ArtifactsClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ArtifactsClient(this, authenticationDetailsProvider, executorService);

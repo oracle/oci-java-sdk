@@ -8,7 +8,7 @@ import com.oracle.bmc.vbsinst.requests.*;
 import com.oracle.bmc.vbsinst.responses.*;
 
 /** A description of the VbsControlplaneInstance API */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public interface VbsInstanceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

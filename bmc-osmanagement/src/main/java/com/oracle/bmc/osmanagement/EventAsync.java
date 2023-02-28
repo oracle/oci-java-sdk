@@ -11,7 +11,7 @@ import com.oracle.bmc.osmanagement.responses.*;
  * API for the OS Management service. Use these API operations for working with Managed instances
  * and Managed instance groups.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public interface EventAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -6,7 +6,7 @@ package com.oracle.bmc.filestorage.responses;
 
 import com.oracle.bmc.filestorage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class DeleteExportResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

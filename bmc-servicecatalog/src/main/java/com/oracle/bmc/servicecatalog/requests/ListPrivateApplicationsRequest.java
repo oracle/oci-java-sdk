@@ -11,7 +11,7 @@ import com.oracle.bmc.servicecatalog.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListPrivateApplicationsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public class ListPrivateApplicationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

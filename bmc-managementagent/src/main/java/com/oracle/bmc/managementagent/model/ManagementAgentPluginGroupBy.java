@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementagent.model;
 
 /** Supported groupBy types for Management Agent Plugin. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public enum ManagementAgentPluginGroupBy implements com.oracle.bmc.http.internal.BmcEnum {
     PluginName("pluginName"),
     ;

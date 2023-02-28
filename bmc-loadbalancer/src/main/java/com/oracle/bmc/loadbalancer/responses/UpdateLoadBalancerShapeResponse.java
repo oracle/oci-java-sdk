@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.responses;
 
 import com.oracle.bmc.loadbalancer.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class UpdateLoadBalancerShapeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of

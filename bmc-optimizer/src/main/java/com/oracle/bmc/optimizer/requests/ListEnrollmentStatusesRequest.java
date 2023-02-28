@@ -11,7 +11,7 @@ import com.oracle.bmc.optimizer.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListEnrollmentStatusesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class ListEnrollmentStatusesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

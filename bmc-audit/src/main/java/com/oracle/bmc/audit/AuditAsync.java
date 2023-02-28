@@ -14,7 +14,7 @@ import com.oracle.bmc.audit.responses.*;
  *
  * <p>*Tip**: This API is good for queries, but not bulk-export operations.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public interface AuditAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

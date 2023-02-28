@@ -14,7 +14,7 @@ package com.oracle.bmc.containerengine.model;
  * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
  * constructor cannot distinguish explicit {@code null} from unset {@code null}).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateImagePolicyConfigDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

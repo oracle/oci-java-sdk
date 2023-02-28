@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class HealthChecksAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements HealthChecksAsync {
     /** Service instance for HealthChecks. */
@@ -76,7 +76,7 @@ public class HealthChecksAsyncClient extends com.oracle.bmc.http.internal.BaseAs
          * @return the client
          */
         public HealthChecksAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new HealthChecksAsyncClient(this, authenticationDetailsProvider);

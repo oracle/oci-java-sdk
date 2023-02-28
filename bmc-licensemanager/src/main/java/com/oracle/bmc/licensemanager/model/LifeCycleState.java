@@ -5,7 +5,7 @@
 package com.oracle.bmc.licensemanager.model;
 
 /** The current license state. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public enum LifeCycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Inactive("INACTIVE"),

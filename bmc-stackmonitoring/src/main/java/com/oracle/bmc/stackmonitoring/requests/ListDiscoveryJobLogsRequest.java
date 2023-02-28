@@ -10,7 +10,7 @@ import com.oracle.bmc.stackmonitoring.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListDiscoveryJobLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDiscoveryJobLogsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class ListDiscoveryJobLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

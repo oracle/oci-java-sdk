@@ -11,7 +11,7 @@ import com.oracle.bmc.autoscaling.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteAutoScalingPolicyRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class DeleteAutoScalingPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

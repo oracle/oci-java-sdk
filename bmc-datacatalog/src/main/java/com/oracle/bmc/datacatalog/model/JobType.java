@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
  * entities. PURGE - Job type for cleaning up schedules, executions and logs of a Job.
  * IMPORT_DATA_ASSET - Job type to import technical objects to a data asset.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum JobType implements com.oracle.bmc.http.internal.BmcEnum {
     Harvest("HARVEST"),
     Profiling("PROFILING"),

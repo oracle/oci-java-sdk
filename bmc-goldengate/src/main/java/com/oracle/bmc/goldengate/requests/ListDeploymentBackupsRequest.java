@@ -11,7 +11,7 @@ import com.oracle.bmc.goldengate.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListDeploymentBackupsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListDeploymentBackupsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

@@ -10,7 +10,7 @@ import com.oracle.bmc.governancerulescontrolplane.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetTenancyAttachmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTenancyAttachmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class GetTenancyAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

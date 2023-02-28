@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class LinkAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements LinkAsync {
     /** Service instance for Link. */
@@ -76,7 +76,7 @@ public class LinkAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
          * @return the client
          */
         public LinkAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LinkAsyncClient(this, authenticationDetailsProvider);

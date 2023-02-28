@@ -10,7 +10,7 @@ import com.oracle.bmc.database.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDbHomeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDbHomeRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateDbHomeRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.database.model.CreateDbHomeBase> {
 

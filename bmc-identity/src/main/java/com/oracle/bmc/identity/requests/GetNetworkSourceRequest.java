@@ -10,7 +10,7 @@ import com.oracle.bmc.identity.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetNetworkSourceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetNetworkSourceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetNetworkSourceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the network source. */

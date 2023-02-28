@@ -11,7 +11,7 @@ import com.oracle.bmc.disasterrecovery.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateDrProtectionGroupRoleRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class UpdateDrProtectionGroupRoleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.UpdateDrProtectionGroupRoleDetails> {

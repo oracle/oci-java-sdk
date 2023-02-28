@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Inventory {
     /** Service instance for Inventory. */
@@ -24,7 +24,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(InventoryAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(InventoryClient.class);
 
     private final InventoryWaiters waiters;
 
@@ -103,7 +103,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public InventoryClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new InventoryClient(this, authenticationDetailsProvider, executorService);

@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /** The format of the masking policy file. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum PolicyFormat implements com.oracle.bmc.http.internal.BmcEnum {
     Xml("XML"),
     ;

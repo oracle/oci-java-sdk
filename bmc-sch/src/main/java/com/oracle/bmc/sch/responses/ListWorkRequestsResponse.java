@@ -6,7 +6,7 @@ package com.oracle.bmc.sch.responses;
 
 import com.oracle.bmc.sch.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

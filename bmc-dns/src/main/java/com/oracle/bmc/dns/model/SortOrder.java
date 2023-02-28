@@ -5,7 +5,7 @@
 package com.oracle.bmc.dns.model;
 
 /** The order to sort the resources. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),

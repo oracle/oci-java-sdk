@@ -12,7 +12,7 @@ import com.oracle.bmc.artifacts.responses.*;
  * [Registry](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryoverview.htm)
  * services. Use this API to manage resources such as generic artifacts and container images.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ArtifactsAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

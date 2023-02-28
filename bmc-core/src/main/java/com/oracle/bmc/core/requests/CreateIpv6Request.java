@@ -10,7 +10,7 @@ import com.oracle.bmc.core.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIpv6Example.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateIpv6Request.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateIpv6Request
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateIpv6Details> {
 

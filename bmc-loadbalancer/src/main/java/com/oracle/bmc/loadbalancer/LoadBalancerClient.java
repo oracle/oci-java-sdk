@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class LoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements LoadBalancer {
     /** Service instance for LoadBalancer. */
@@ -24,7 +24,7 @@ public class LoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncCli
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LoadBalancerAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LoadBalancerClient.class);
 
     private final LoadBalancerWaiters waiters;
 
@@ -103,7 +103,7 @@ public class LoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncCli
          * @return the client
          */
         public LoadBalancerClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LoadBalancerClient(this, authenticationDetailsProvider, executorService);

@@ -11,7 +11,7 @@ import com.oracle.bmc.apmconfig.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ValidateSpanFilterPatternRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class ValidateSpanFilterPatternRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmconfig.model.ValidateSpanFilterPatternDetails> {

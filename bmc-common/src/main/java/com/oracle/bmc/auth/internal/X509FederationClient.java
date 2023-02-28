@@ -34,8 +34,7 @@ import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import org.slf4j.Logger;
 
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import jakarta.annotation.Nonnull;
 import javax.security.auth.RefreshFailedException;
 import javax.security.auth.Refreshable;
 import java.net.URI;
@@ -416,7 +415,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         return this.tenancyId;
     }
 
-    @Immutable
+    /** Class is immutable. @Immutable */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class X509FederationRequest {
         private final Set<String> intermediateCertificates;

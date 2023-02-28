@@ -6,7 +6,7 @@ package com.oracle.bmc.apigateway;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @SdkClients({
     ApiGatewayAsyncClient.class,
     ApiGatewayClient.class,

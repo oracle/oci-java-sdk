@@ -11,7 +11,7 @@ import com.oracle.bmc.jms.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateFleetAdvancedFeatureConfigurationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class UpdateFleetAdvancedFeatureConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails> {

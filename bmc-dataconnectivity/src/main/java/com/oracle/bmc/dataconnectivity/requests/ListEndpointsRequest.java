@@ -10,7 +10,7 @@ import com.oracle.bmc.dataconnectivity.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListEndpointsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEndpointsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the compartment containing the resources you want to list. */

@@ -14,7 +14,7 @@ package com.oracle.bmc.datacatalog.model;
  * available. FAILED - The resource is in a failed state due to validation or other errors. MOVING -
  * The resource is being moved to another compartment (action changeCompartment)
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

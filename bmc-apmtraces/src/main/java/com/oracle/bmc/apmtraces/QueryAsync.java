@@ -12,7 +12,7 @@ import com.oracle.bmc.apmtraces.responses.*;
  * spans in Trace Explorer. For more information, see [Application Performance
  * Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface QueryAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

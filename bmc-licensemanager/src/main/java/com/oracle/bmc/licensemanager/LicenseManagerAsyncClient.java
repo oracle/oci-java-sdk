@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class LicenseManagerAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements LicenseManagerAsync {
     /** Service instance for LicenseManager. */
@@ -77,7 +77,7 @@ public class LicenseManagerAsyncClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public LicenseManagerAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new LicenseManagerAsyncClient(this, authenticationDetailsProvider);

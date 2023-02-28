@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class RecipientInvitationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements RecipientInvitation {
     /** Service instance for RecipientInvitation. */
@@ -25,7 +25,7 @@ public class RecipientInvitationClient extends com.oracle.bmc.http.internal.Base
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RecipientInvitationAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RecipientInvitationClient.class);
 
     private final RecipientInvitationWaiters waiters;
 
@@ -105,7 +105,7 @@ public class RecipientInvitationClient extends com.oracle.bmc.http.internal.Base
          * @return the client
          */
         public RecipientInvitationClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new RecipientInvitationClient(

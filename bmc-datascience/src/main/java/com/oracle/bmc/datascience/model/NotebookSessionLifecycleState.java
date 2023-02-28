@@ -5,7 +5,7 @@
 package com.oracle.bmc.datascience.model;
 
 /** The lifecycle state of a notebook session. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public enum NotebookSessionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

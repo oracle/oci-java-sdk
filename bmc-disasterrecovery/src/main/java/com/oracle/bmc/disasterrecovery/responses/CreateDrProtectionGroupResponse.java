@@ -6,7 +6,7 @@ package com.oracle.bmc.disasterrecovery.responses;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class CreateDrProtectionGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /** A URI for the new resource which was created by the request. */
     private String location;

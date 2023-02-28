@@ -12,7 +12,7 @@ package com.oracle.bmc.operatoraccesscontrol.model;
  * "Full Administration: Allows full root access without any constraints." - "Cell Management: Only
  * applicable to cell server layer of Exadata. Allows cell management actions."
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum OperatorActionCategories implements com.oracle.bmc.http.internal.BmcEnum {
     Servicediagnostics("SERVICEDIAGNOSTICS"),
     Servicemanagement("SERVICEMANAGEMENT"),

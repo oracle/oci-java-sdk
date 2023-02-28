@@ -10,7 +10,7 @@ import com.oracle.bmc.loganalytics.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListIngestTimeRulesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIngestTimeRulesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListIngestTimeRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The Logging Analytics namespace used for the request. */

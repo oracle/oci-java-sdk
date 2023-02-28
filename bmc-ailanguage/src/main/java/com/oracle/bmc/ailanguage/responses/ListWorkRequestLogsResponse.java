@@ -6,7 +6,7 @@ package com.oracle.bmc.ailanguage.responses;
 
 import com.oracle.bmc.ailanguage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

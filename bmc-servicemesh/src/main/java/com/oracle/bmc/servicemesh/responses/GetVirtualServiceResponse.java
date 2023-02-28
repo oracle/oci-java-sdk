@@ -6,7 +6,7 @@ package com.oracle.bmc.servicemesh.responses;
 
 import com.oracle.bmc.servicemesh.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

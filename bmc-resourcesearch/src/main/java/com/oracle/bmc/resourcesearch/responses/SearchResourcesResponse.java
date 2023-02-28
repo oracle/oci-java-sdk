@@ -6,7 +6,7 @@ package com.oracle.bmc.resourcesearch.responses;
 
 import com.oracle.bmc.resourcesearch.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

@@ -5,7 +5,7 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /** Levels of priorities associated with an access request */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum AccessRequestSeverities implements com.oracle.bmc.http.internal.BmcEnum {
     S1("S1"),
     S2("S2"),

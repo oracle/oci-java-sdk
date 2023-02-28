@@ -11,7 +11,7 @@ import com.oracle.bmc.oda.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteAuthenticationProviderRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class DeleteAuthenticationProviderRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

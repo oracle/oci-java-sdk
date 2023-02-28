@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class FunctionsInvokeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements FunctionsInvokeAsync {
     /** Service instance for FunctionsInvoke. */
@@ -76,7 +76,7 @@ public class FunctionsInvokeAsyncClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public FunctionsInvokeAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new FunctionsInvokeAsyncClient(this, authenticationDetailsProvider);

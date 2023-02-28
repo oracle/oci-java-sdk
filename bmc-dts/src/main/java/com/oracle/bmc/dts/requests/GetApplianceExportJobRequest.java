@@ -11,7 +11,7 @@ import com.oracle.bmc.dts.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetApplianceExportJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class GetApplianceExportJobRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

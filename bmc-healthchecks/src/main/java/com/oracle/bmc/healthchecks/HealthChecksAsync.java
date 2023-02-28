@@ -12,7 +12,7 @@ import com.oracle.bmc.healthchecks.responses.*;
  * information, see [Overview of the Health Checks
  * Service](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Concepts/healthchecks.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public interface HealthChecksAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

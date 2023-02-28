@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /** The container health check type. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public enum ContainerHealthCheckType implements com.oracle.bmc.http.internal.BmcEnum {
     Http("HTTP"),
     Tcp("TCP"),

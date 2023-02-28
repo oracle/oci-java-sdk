@@ -6,7 +6,7 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /** */
     private String opcRequestId;

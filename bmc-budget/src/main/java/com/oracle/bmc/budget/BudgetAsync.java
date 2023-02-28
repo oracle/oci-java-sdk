@@ -8,7 +8,7 @@ import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
 
 /** Use the Budgets API to manage budgets and budget alerts. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface BudgetAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

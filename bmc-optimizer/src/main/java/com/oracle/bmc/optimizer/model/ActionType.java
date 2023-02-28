@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /** Possible recommended actions. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     KbArticle("KB_ARTICLE"),
 

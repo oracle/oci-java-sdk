@@ -11,7 +11,7 @@ import com.oracle.bmc.cloudmigrations.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateReplicationScheduleRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class UpdateReplicationScheduleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudmigrations.model.UpdateReplicationScheduleDetails> {

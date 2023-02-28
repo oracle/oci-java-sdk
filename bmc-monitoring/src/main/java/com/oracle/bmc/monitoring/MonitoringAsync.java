@@ -14,7 +14,7 @@ import com.oracle.bmc.monitoring.responses.*;
  * endpoints. For information about monitoring, see [Monitoring
  * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public interface MonitoringAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

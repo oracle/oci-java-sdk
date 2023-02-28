@@ -6,7 +6,7 @@ package com.oracle.bmc.vault.responses;
 
 import com.oracle.bmc.vault.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public class ScheduleSecretVersionDeletionResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

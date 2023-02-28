@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /** Detector sub type associated with the target. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ProblemCategoryEnum implements com.oracle.bmc.http.internal.BmcEnum {
     SecurityZone("SECURITY_ZONE"),
     ;

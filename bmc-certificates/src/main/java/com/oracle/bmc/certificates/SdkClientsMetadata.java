@@ -6,6 +6,6 @@ package com.oracle.bmc.certificates;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @SdkClients({CertificatesAsyncClient.class, CertificatesClient.class})
 public final class SdkClientsMetadata {}

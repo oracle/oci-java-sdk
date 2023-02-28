@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public class AuditClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Audit {
     /** Service instance for Audit. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class AuditClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AuditAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AuditClient.class);
 
     private final AuditPaginators paginators;
 
@@ -68,7 +68,7 @@ public class AuditClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public AuditClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new AuditClient(this, authenticationDetailsProvider);

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class BillingScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements BillingSchedule {
     /** Service instance for BillingSchedule. */
@@ -24,7 +24,7 @@ public class BillingScheduleClient extends com.oracle.bmc.http.internal.BaseSync
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BillingScheduleAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(BillingScheduleClient.class);
 
     private final BillingSchedulePaginators paginators;
 
@@ -69,7 +69,7 @@ public class BillingScheduleClient extends com.oracle.bmc.http.internal.BaseSync
          * @return the client
          */
         public BillingScheduleClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new BillingScheduleClient(this, authenticationDetailsProvider);

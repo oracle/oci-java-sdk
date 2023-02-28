@@ -5,7 +5,7 @@
 package com.oracle.bmc.ospgateway.model;
 
 /** Payment method */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public enum PaymentMethod implements com.oracle.bmc.http.internal.BmcEnum {
     CreditCard("CREDIT_CARD"),
     Paypal("PAYPAL"),

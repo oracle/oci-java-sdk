@@ -10,7 +10,7 @@ import com.oracle.bmc.dns.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateZoneRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class UpdateZoneRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.UpdateZoneDetails> {
 

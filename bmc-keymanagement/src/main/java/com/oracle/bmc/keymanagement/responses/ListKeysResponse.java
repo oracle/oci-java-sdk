@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement.responses;
 
 import com.oracle.bmc.keymanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class ListKeysResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

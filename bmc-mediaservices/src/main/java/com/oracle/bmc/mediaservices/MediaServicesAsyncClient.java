@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements MediaServicesAsync {
     /** Service instance for MediaServices. */
@@ -76,7 +76,7 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
          * @return the client
          */
         public MediaServicesAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new MediaServicesAsyncClient(this, authenticationDetailsProvider);

@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetSoftwareSourceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSoftwareSourceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetSoftwareSourceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the software source. */

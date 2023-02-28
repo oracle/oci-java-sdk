@@ -12,7 +12,7 @@ import com.oracle.bmc.appmgmtcontrol.responses.*;
  * and perform actions. For more information, see [Resource Discovery and
  * Monitoring](https://docs.oracle.com/iaas/os-management/osms/osms-resource-discovery-monitoring.htm).
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public interface AppmgmtControlAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

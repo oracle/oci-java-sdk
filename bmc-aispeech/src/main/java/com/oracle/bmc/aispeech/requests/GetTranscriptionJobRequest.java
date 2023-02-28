@@ -10,7 +10,7 @@ import com.oracle.bmc.aispeech.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetTranscriptionJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTranscriptionJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class GetTranscriptionJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique Transcription Job identifier. */

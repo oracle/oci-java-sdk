@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class IdentityAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements IdentityAsync {
     /** Service instance for Identity. */
@@ -75,7 +75,7 @@ public class IdentityAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
          * @return the client
          */
         public IdentityAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new IdentityAsyncClient(this, authenticationDetailsProvider);

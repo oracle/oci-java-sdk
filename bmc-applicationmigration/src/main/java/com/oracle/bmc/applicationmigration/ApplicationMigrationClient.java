@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements ApplicationMigration {
     /** Service instance for ApplicationMigration. */
@@ -25,7 +25,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ApplicationMigrationAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ApplicationMigrationClient.class);
 
     private final ApplicationMigrationWaiters waiters;
 
@@ -105,7 +105,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public ApplicationMigrationClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ApplicationMigrationClient(

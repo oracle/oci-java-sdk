@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /** Possible payload types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public enum PayloadType implements com.oracle.bmc.http.internal.BmcEnum {
     Json("JSON"),
     Gzip("GZIP"),

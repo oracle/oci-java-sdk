@@ -11,7 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetLoadBalancerHealthRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class GetLoadBalancerHealthRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

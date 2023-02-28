@@ -6,6 +6,6 @@ package com.oracle.bmc.bastion;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @SdkClients({BastionAsyncClient.class, BastionClient.class})
 public final class SdkClientsMetadata {}

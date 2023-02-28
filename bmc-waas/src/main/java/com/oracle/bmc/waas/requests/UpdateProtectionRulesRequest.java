@@ -11,7 +11,7 @@ import com.oracle.bmc.waas.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateProtectionRulesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class UpdateProtectionRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 java.util.List<com.oracle.bmc.waas.model.ProtectionRuleAction>> {

@@ -6,7 +6,7 @@ package com.oracle.bmc.managementdashboard.responses;
 
 import com.oracle.bmc.managementdashboard.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 public class GetManagementSavedSearchResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

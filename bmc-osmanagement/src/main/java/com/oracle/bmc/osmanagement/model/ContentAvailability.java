@@ -12,7 +12,7 @@ package com.oracle.bmc.osmanagement.model;
  * AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS - content is available on the instance and its upload is
  * in progress
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public enum ContentAvailability implements com.oracle.bmc.http.internal.BmcEnum {
     NotAvailable("NOT_AVAILABLE"),
     AvailableOnInstance("AVAILABLE_ON_INSTANCE"),

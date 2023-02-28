@@ -10,7 +10,7 @@ import com.oracle.bmc.dashboardservice.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/GetDashboardExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDashboardRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class GetDashboardRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

@@ -11,7 +11,7 @@ import com.oracle.bmc.functions.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeApplicationCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ChangeApplicationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails> {

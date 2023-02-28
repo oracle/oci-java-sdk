@@ -6,7 +6,7 @@ package com.oracle.bmc.oce.responses;
 
 import com.oracle.bmc.oce.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public class CreateOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query

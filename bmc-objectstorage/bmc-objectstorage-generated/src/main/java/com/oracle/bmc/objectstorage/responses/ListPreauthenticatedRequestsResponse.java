@@ -6,7 +6,7 @@ package com.oracle.bmc.objectstorage.responses;
 
 import com.oracle.bmc.objectstorage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Echoes back the value passed in the opc-client-request-id header, for use by clients when

@@ -10,7 +10,7 @@ import com.oracle.bmc.containerengine.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetClusterRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class GetClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The OCID of the cluster. */

@@ -6,6 +6,6 @@ package com.oracle.bmc.logging;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @SdkClients({LoggingManagementAsyncClient.class, LoggingManagementClient.class})
 public final class SdkClientsMetadata {}

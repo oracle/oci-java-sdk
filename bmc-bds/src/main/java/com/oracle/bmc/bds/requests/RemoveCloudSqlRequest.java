@@ -10,7 +10,7 @@ import com.oracle.bmc.bds.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveCloudSqlExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveCloudSqlRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class RemoveCloudSqlRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.bds.model.RemoveCloudSqlDetails> {
 

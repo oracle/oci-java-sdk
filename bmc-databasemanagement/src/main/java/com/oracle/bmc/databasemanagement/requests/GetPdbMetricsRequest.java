@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetPdbMetricsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPdbMetricsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetPdbMetricsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

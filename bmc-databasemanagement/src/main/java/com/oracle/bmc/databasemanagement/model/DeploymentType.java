@@ -12,7 +12,7 @@ package com.oracle.bmc.databasemanagement.model;
  * - EXADATA_CC: Exadata Cloud@Customer infrastructure in customer's data center. - AUTONOMOUS:
  * Oracle Autonomous Cloud infrastructure
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     Onpremise("ONPREMISE"),
     Bm("BM"),

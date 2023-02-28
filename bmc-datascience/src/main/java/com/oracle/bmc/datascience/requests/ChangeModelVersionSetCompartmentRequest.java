@@ -11,7 +11,7 @@ import com.oracle.bmc.datascience.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeModelVersionSetCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class ChangeModelVersionSetCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.ChangeModelVersionSetCompartmentDetails> {

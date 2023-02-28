@@ -11,7 +11,7 @@ import com.oracle.bmc.datalabelingservice.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListAnnotationFormatsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class ListAnnotationFormatsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

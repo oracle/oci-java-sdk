@@ -11,7 +11,7 @@ import com.oracle.bmc.logging.responses.*;
  * Use the Logging Management API to create, read, list, update, and delete log groups, log objects,
  * and agent configurations.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public interface LoggingManagementAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

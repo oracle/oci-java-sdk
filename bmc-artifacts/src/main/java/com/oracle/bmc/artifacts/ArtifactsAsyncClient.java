@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ArtifactsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ArtifactsAsync {
     /** Service instance for Artifacts. */
@@ -75,7 +75,7 @@ public class ArtifactsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
          * @return the client
          */
         public ArtifactsAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ArtifactsAsyncClient(this, authenticationDetailsProvider);

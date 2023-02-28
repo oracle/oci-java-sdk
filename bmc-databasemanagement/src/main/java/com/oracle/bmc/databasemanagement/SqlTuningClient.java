@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements SqlTuning {
     /** Service instance for SqlTuning. */
@@ -24,7 +24,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(SqlTuningAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(SqlTuningClient.class);
 
     private final SqlTuningPaginators paginators;
 
@@ -69,7 +69,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public SqlTuningClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new SqlTuningClient(this, authenticationDetailsProvider);

@@ -13,7 +13,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public interface DomainGovernance extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

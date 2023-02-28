@@ -14,7 +14,7 @@ import com.oracle.bmc.stackmonitoring.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class StackMonitoringWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final StackMonitoring client;

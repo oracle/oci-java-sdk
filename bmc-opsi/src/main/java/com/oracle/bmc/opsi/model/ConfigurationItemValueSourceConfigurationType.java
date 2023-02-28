@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /** Source configuration from where the most preferred value is taken for a configuration item. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum ConfigurationItemValueSourceConfigurationType
         implements com.oracle.bmc.http.internal.BmcEnum {
     Default("DEFAULT"),

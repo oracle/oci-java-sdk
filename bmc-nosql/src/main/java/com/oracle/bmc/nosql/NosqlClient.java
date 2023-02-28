@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Nosql {
     /** Service instance for Nosql. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -23,7 +23,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(NosqlAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(NosqlClient.class);
 
     private final NosqlWaiters waiters;
 
@@ -102,7 +102,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
          * @return the client
          */
         public NosqlClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new NosqlClient(this, authenticationDetailsProvider, executorService);

@@ -11,7 +11,7 @@ import com.oracle.bmc.stackmonitoring.responses.*;
  * Stack Monitoring API. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for
  * all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public interface StackMonitoring extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

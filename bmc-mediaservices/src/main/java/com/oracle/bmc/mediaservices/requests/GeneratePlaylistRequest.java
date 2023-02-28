@@ -10,7 +10,7 @@ import com.oracle.bmc.mediaservices.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GeneratePlaylistRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class GeneratePlaylistRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Unique Stream Packaging Configuration identifier. */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /** Possible operation types. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateModel("CREATE_MODEL"),
     UpdateModel("UPDATE_MODEL"),

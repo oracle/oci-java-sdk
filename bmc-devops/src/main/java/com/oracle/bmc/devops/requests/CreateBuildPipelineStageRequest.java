@@ -11,7 +11,7 @@ import com.oracle.bmc.devops.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateBuildPipelineStageRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class CreateBuildPipelineStageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.CreateBuildPipelineStageDetails> {

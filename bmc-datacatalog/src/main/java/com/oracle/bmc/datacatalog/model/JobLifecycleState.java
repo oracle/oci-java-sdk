@@ -10,7 +10,7 @@ package com.oracle.bmc.datacatalog.model;
  * is ACTIVE. EXPIRED - The job's schedule has expired and will not result in any further
  * executions. This is a terminal state.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public enum JobLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Inactive("INACTIVE"),

@@ -15,7 +15,7 @@ import com.oracle.bmc.cims.responses.*;
  * (SSO) account, and you need to register your Customer Support Identifier (CSI) with My Oracle
  * Support.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public interface IncidentAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

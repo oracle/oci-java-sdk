@@ -12,7 +12,7 @@ import com.oracle.bmc.servicecatalog.responses.*;
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public interface ServiceCatalog extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

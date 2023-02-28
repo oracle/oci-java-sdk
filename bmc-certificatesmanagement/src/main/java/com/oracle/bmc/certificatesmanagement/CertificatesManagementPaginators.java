@@ -33,7 +33,7 @@ import com.oracle.bmc.certificatesmanagement.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public class CertificatesManagementPaginators {
     private final CertificatesManagement client;
 

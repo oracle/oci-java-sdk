@@ -6,7 +6,7 @@ package com.oracle.bmc.opensearch.responses;
 
 import com.oracle.bmc.opensearch.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class GetOpensearchClusterBackupResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

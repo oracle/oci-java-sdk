@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ShippingVendorsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ShippingVendorsAsync {
     /** Service instance for ShippingVendors. */
@@ -77,7 +77,7 @@ public class ShippingVendorsAsyncClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public ShippingVendorsAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ShippingVendorsAsyncClient(this, authenticationDetailsProvider);

@@ -6,7 +6,7 @@ package com.oracle.bmc.functions.responses;
 
 import com.oracle.bmc.functions.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetFunctionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a PUT

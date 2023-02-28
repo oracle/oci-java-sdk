@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Waas {
     /** Service instance for Waas. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -22,8 +22,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                     .serviceEndpointTemplate("https://waas.{region}.oci.{secondLevelDomain}")
                     .build();
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(WaasAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(WaasClient.class);
 
     private final WaasWaiters waiters;
 
@@ -102,7 +101,7 @@ public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
          * @return the client
          */
         public WaasClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new WaasClient(this, authenticationDetailsProvider, executorService);

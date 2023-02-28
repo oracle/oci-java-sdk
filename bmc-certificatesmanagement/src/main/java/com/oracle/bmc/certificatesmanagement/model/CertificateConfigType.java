@@ -10,7 +10,7 @@ package com.oracle.bmc.certificatesmanagement.model;
  * externally. Alternatively, you can import a certificate that was issued by an external,
  * third-party public or private CA, and then manage it internally.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 public enum CertificateConfigType implements com.oracle.bmc.http.internal.BmcEnum {
     IssuedByInternalCa("ISSUED_BY_INTERNAL_CA"),
     ManagedExternallyIssuedByInternalCa("MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA"),

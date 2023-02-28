@@ -6,7 +6,7 @@ package com.oracle.bmc.licensemanager.responses;
 
 import com.oracle.bmc.licensemanager.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class DeleteLicenseRecordResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the

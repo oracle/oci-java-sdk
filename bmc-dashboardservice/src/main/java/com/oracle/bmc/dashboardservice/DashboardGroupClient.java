@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DashboardGroup {
     /** Service instance for DashboardGroup. */
@@ -24,7 +24,7 @@ public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncC
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DashboardGroupAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DashboardGroupClient.class);
 
     private final DashboardGroupWaiters waiters;
 
@@ -103,7 +103,7 @@ public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncC
          * @return the client
          */
         public DashboardGroupClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DashboardGroupClient(this, authenticationDetailsProvider, executorService);

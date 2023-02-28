@@ -7,7 +7,7 @@ package com.oracle.bmc.streaming;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 public class StreamClientBuilder
         extends AbstractStreamBasedClientBuilder<StreamClientBuilder, StreamClient> {

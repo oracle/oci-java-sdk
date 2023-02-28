@@ -6,7 +6,7 @@ package com.oracle.bmc.mysql;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @SdkClients({
     ChannelsAsyncClient.class,
     ChannelsClient.class,

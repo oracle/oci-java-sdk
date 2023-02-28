@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /** The current sub-state of the audit trail. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum AuditTrailStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Starting("STARTING"),
     Collecting("COLLECTING"),

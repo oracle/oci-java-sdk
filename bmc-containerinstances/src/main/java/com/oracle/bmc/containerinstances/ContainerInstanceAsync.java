@@ -8,7 +8,7 @@ import com.oracle.bmc.containerinstances.requests.*;
 import com.oracle.bmc.containerinstances.responses.*;
 
 /** A description of the Container Instance API */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public interface ContainerInstanceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */

@@ -10,7 +10,7 @@ import com.oracle.bmc.dataintegration.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLineagesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTaskRunLineagesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListTaskRunLineagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** The workspace ID. */

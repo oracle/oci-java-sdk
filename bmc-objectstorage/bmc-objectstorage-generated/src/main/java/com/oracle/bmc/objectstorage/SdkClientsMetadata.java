@@ -6,6 +6,6 @@ package com.oracle.bmc.objectstorage;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @SdkClients({ObjectStorageAsyncClient.class, ObjectStorageClient.class})
 public final class SdkClientsMetadata {}

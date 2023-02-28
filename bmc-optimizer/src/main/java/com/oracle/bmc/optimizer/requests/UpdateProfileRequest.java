@@ -10,7 +10,7 @@ import com.oracle.bmc.optimizer.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateProfileExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProfileRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class UpdateProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.optimizer.model.UpdateProfileDetails> {

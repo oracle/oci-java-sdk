@@ -11,7 +11,7 @@ import com.oracle.bmc.licensemanager.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * BulkUploadLicenseRecordsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public class BulkUploadLicenseRecordsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.licensemanager.model.BulkUploadLicenseRecordsDetails> {

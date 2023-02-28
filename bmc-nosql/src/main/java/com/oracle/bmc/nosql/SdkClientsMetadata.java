@@ -6,6 +6,6 @@ package com.oracle.bmc.nosql;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @SdkClients({NosqlAsyncClient.class, NosqlClient.class})
 public final class SdkClientsMetadata {}

@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements ResourceManagerAsync {
     /** Service instance for ResourceManager. */
@@ -76,7 +76,7 @@ public class ResourceManagerAsyncClient extends com.oracle.bmc.http.internal.Bas
          * @return the client
          */
         public ResourceManagerAsyncClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new ResourceManagerAsyncClient(this, authenticationDetailsProvider);

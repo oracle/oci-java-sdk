@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.http.client.jersey;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.Response;
 import java.io.IOException;

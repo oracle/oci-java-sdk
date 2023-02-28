@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /** Type of probe mode for network configuration. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum ProbeMode implements com.oracle.bmc.http.internal.BmcEnum {
     Sack("SACK"),
     Syn("SYN"),

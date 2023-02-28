@@ -5,7 +5,7 @@
 package com.oracle.bmc.budget.model;
 
 /** The type of threshold. Valid values are PERCENTAGE or ABSOLUTE. */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public enum ThresholdType implements com.oracle.bmc.http.internal.BmcEnum {
     Percentage("PERCENTAGE"),
     Absolute("ABSOLUTE"),

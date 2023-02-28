@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements EsxiHost {
     /** Service instance for EsxiHost. */
@@ -24,7 +24,7 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EsxiHostAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EsxiHostClient.class);
 
     private final EsxiHostWaiters waiters;
 
@@ -103,7 +103,7 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
          * @return the client
          */
         public EsxiHostClient build(
-                @javax.annotation.Nonnull
+                @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new EsxiHostClient(this, authenticationDetailsProvider, executorService);
