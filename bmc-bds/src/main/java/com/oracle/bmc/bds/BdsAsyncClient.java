@@ -1122,6 +1122,59 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteBootstrapScriptResponse> executeBootstrapScript(
+            ExecuteBootstrapScriptRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExecuteBootstrapScriptRequest, ExecuteBootstrapScriptResponse>
+                    handler) {
+        LOG.trace("Called async executeBootstrapScript");
+        final ExecuteBootstrapScriptRequest interceptedRequest =
+                ExecuteBootstrapScriptConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExecuteBootstrapScriptConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ExecuteBootstrapScript",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ExecuteBootstrapScript");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExecuteBootstrapScriptResponse>
+                transformer =
+                        ExecuteBootstrapScriptConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExecuteBootstrapScriptRequest, ExecuteBootstrapScriptResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExecuteBootstrapScriptRequest, ExecuteBootstrapScriptResponse>,
+                        java.util.concurrent.Future<ExecuteBootstrapScriptResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExecuteBootstrapScriptDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExecuteBootstrapScriptRequest, ExecuteBootstrapScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutoScalingConfigurationResponse>
             getAutoScalingConfiguration(
                     GetAutoScalingConfigurationRequest request,
