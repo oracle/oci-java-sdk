@@ -202,6 +202,31 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getCdbName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "cdbName",
+                            request.getCdbName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getHighUtilizationThreshold() != null) {
+            target =
+                    target.queryParam(
+                            "highUtilizationThreshold",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHighUtilizationThreshold()));
+        }
+
+        if (request.getLowUtilizationThreshold() != null) {
+            target =
+                    target.queryParam(
+                            "lowUtilizationThreshold",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLowUtilizationThreshold()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

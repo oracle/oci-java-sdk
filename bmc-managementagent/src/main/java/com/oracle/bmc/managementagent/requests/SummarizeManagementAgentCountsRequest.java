@@ -58,6 +58,17 @@ public class SummarizeManagementAgentCountsRequest
         return installType;
     }
     /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
@@ -160,6 +171,21 @@ public class SummarizeManagementAgentCountsRequest
         }
 
         /**
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
@@ -221,6 +247,7 @@ public class SummarizeManagementAgentCountsRequest
             groupBy(o.getGroupBy());
             hasPlugins(o.getHasPlugins());
             installType(o.getInstallType());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -260,10 +287,11 @@ public class SummarizeManagementAgentCountsRequest
             request.groupBy = groupBy;
             request.hasPlugins = hasPlugins;
             request.installType = installType;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeManagementAgentCountsRequest(compartmentId, groupBy, hasPlugins, installType, page, opcRequestId);
+            // new SummarizeManagementAgentCountsRequest(compartmentId, groupBy, hasPlugins, installType, compartmentIdInSubtree, page, opcRequestId);
         }
     }
 
@@ -277,6 +305,7 @@ public class SummarizeManagementAgentCountsRequest
                 .groupBy(groupBy)
                 .hasPlugins(hasPlugins)
                 .installType(installType)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .page(page)
                 .opcRequestId(opcRequestId);
     }
@@ -298,6 +327,7 @@ public class SummarizeManagementAgentCountsRequest
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
         sb.append(",hasPlugins=").append(String.valueOf(this.hasPlugins));
         sb.append(",installType=").append(String.valueOf(this.installType));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -319,6 +349,8 @@ public class SummarizeManagementAgentCountsRequest
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.hasPlugins, other.hasPlugins)
                 && java.util.Objects.equals(this.installType, other.installType)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -333,6 +365,11 @@ public class SummarizeManagementAgentCountsRequest
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
         result = (result * PRIME) + (this.hasPlugins == null ? 43 : this.hasPlugins.hashCode());
         result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

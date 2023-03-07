@@ -52,6 +52,14 @@ public class SummarizeManagementAgentPluginCountsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getGroupBy().getValue()));
 
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

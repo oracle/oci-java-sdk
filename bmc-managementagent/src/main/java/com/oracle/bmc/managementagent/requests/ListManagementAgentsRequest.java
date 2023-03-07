@@ -123,6 +123,17 @@ public class ListManagementAgentsRequest
         return installType;
     }
     /**
+     * Filter to return only results having the particular gatewayId.
+     */
+    private java.util.List<String> gatewayId;
+
+    /**
+     * Filter to return only results having the particular gatewayId.
+     */
+    public java.util.List<String> getGatewayId() {
+        return gatewayId;
+    }
+    /**
      * The maximum number of items to return.
      */
     private Integer limit;
@@ -471,6 +482,30 @@ public class ListManagementAgentsRequest
         }
 
         /**
+         * Filter to return only results having the particular gatewayId.
+         */
+        private java.util.List<String> gatewayId = null;
+
+        /**
+         * Filter to return only results having the particular gatewayId.
+         * @param gatewayId the value to set
+         * @return this builder instance
+         */
+        public Builder gatewayId(java.util.List<String> gatewayId) {
+            this.gatewayId = gatewayId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter to return only results having the particular gatewayId.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder gatewayId(String singularValue) {
+            return this.gatewayId(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * The maximum number of items to return.
          */
         private Integer limit = null;
@@ -617,6 +652,7 @@ public class ListManagementAgentsRequest
             platformType(o.getPlatformType());
             isCustomerDeployed(o.getIsCustomerDeployed());
             installType(o.getInstallType());
+            gatewayId(o.getGatewayId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -666,6 +702,7 @@ public class ListManagementAgentsRequest
             request.platformType = platformType;
             request.isCustomerDeployed = isCustomerDeployed;
             request.installType = installType;
+            request.gatewayId = gatewayId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -674,7 +711,7 @@ public class ListManagementAgentsRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             return request;
-            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
+            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, gatewayId, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
         }
     }
 
@@ -694,6 +731,7 @@ public class ListManagementAgentsRequest
                 .platformType(platformType)
                 .isCustomerDeployed(isCustomerDeployed)
                 .installType(installType)
+                .gatewayId(gatewayId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -726,6 +764,7 @@ public class ListManagementAgentsRequest
         sb.append(",platformType=").append(String.valueOf(this.platformType));
         sb.append(",isCustomerDeployed=").append(String.valueOf(this.isCustomerDeployed));
         sb.append(",installType=").append(String.valueOf(this.installType));
+        sb.append(",gatewayId=").append(String.valueOf(this.gatewayId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -758,6 +797,7 @@ public class ListManagementAgentsRequest
                 && java.util.Objects.equals(this.platformType, other.platformType)
                 && java.util.Objects.equals(this.isCustomerDeployed, other.isCustomerDeployed)
                 && java.util.Objects.equals(this.installType, other.installType)
+                && java.util.Objects.equals(this.gatewayId, other.gatewayId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -794,6 +834,7 @@ public class ListManagementAgentsRequest
                                 ? 43
                                 : this.isCustomerDeployed.hashCode());
         result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
+        result = (result * PRIME) + (this.gatewayId == null ? 43 : this.gatewayId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

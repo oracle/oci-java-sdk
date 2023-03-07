@@ -31,6 +31,7 @@ public final class UpdateAutonomousDatabaseDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpuCoreCount",
+        "longTermBackupSchedule",
         "computeCount",
         "ocpuCount",
         "dataStorageSizeInTBs",
@@ -72,6 +73,7 @@ public final class UpdateAutonomousDatabaseDetails
     })
     public UpdateAutonomousDatabaseDetails(
             Integer cpuCoreCount,
+            LongTermBackUpScheduleDetails longTermBackupSchedule,
             Float computeCount,
             Float ocpuCount,
             Integer dataStorageSizeInTBs,
@@ -112,6 +114,7 @@ public final class UpdateAutonomousDatabaseDetails
             Integer secretVersionNumber) {
         super();
         this.cpuCoreCount = cpuCoreCount;
+        this.longTermBackupSchedule = longTermBackupSchedule;
         this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -174,6 +177,16 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("longTermBackupSchedule")
+        private LongTermBackUpScheduleDetails longTermBackupSchedule;
+
+        public Builder longTermBackupSchedule(
+                LongTermBackUpScheduleDetails longTermBackupSchedule) {
+            this.longTermBackupSchedule = longTermBackupSchedule;
+            this.__explicitlySet__.add("longTermBackupSchedule");
             return this;
         }
         /**
@@ -996,6 +1009,7 @@ public final class UpdateAutonomousDatabaseDetails
             UpdateAutonomousDatabaseDetails model =
                     new UpdateAutonomousDatabaseDetails(
                             this.cpuCoreCount,
+                            this.longTermBackupSchedule,
                             this.computeCount,
                             this.ocpuCount,
                             this.dataStorageSizeInTBs,
@@ -1044,6 +1058,9 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder copy(UpdateAutonomousDatabaseDetails model) {
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("longTermBackupSchedule")) {
+                this.longTermBackupSchedule(model.getLongTermBackupSchedule());
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
@@ -1192,6 +1209,13 @@ public final class UpdateAutonomousDatabaseDetails
      **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("longTermBackupSchedule")
+    private final LongTermBackUpScheduleDetails longTermBackupSchedule;
+
+    public LongTermBackUpScheduleDetails getLongTermBackupSchedule() {
+        return longTermBackupSchedule;
     }
 
     /**
@@ -2130,6 +2154,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append("UpdateAutonomousDatabaseDetails(");
         sb.append("super=").append(super.toString());
         sb.append("cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", longTermBackupSchedule=").append(String.valueOf(this.longTermBackupSchedule));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -2187,6 +2212,8 @@ public final class UpdateAutonomousDatabaseDetails
 
         UpdateAutonomousDatabaseDetails other = (UpdateAutonomousDatabaseDetails) o;
         return java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(
+                        this.longTermBackupSchedule, other.longTermBackupSchedule)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
@@ -2238,6 +2265,11 @@ public final class UpdateAutonomousDatabaseDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.longTermBackupSchedule == null
+                                ? 43
+                                : this.longTermBackupSchedule.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =

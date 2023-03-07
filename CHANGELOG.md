@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.55.0 - 2023-03-07
+### Added
+- Support for creating and updating autonomous database long-term backup schedules in the Database service
+- Support for creating, updating, and deleting autonomous database long-term backups in the Database service
+- Support for model deployment resources to use customized container images containing runtime dependencies of ML models and custom web servers to handle inference requests in the Data Science service
+- Support for using the compartmentIdInSubtree parameter when summarizing management agent counts in the Management Agent Cloud service
+- Support for getting agent property details in the Management Agent Cloud service
+- Support for filtering by gateway ID when listing agents in the Management Agent Cloud service
+- Support for the Hebrew and Greek languages during AI language text translation in the AI Language service
+- Support for auto-detection when analyzing text with pre-trained models in the AI Language service
+- Support for specifying update operation constraints when updating an instance in the Compute Service
+- Support for disaster recovery in the Content Management service
+- Support for advanced autonomous databases insights in the Operations Insights service
+ 
+### Breaking Changes
+- Support for retries by default on operations of the Analytics Cloud service
+- Enum value `ACTIVE` has been removed from the model `com.oracle.bmc.oce.model.LifecycleDetails` in the Content Management service
+
 ## 2.54.1 - 2023-02-28
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-dcc-rating-1, eu-dcc-rating-2, eu-dcc-dublin-1, eu-dcc-dublin-2, and eu-dcc-milan-2 regions

@@ -205,6 +205,22 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
+        /**
+         * Flag is to identify if advanced features for autonomous database is enabled or not
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+        private Boolean isAdvancedFeaturesEnabled;
+
+        /**
+         * Flag is to identify if advanced features for autonomous database is enabled or not
+         * @param isAdvancedFeaturesEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -230,7 +246,8 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.databaseConnectionStatusDetails,
-                            this.databaseResourceType);
+                            this.databaseResourceType,
+                            this.isAdvancedFeaturesEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -296,6 +313,9 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
             if (model.wasPropertyExplicitlySet("databaseResourceType")) {
                 this.databaseResourceType(model.getDatabaseResourceType());
             }
+            if (model.wasPropertyExplicitlySet("isAdvancedFeaturesEnabled")) {
+                this.isAdvancedFeaturesEnabled(model.getIsAdvancedFeaturesEnabled());
+            }
             return this;
         }
     }
@@ -331,7 +351,8 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String databaseConnectionStatusDetails,
-            String databaseResourceType) {
+            String databaseResourceType,
+            Boolean isAdvancedFeaturesEnabled) {
         super(
                 id,
                 databaseId,
@@ -352,6 +373,7 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
                 lifecycleDetails,
                 databaseConnectionStatusDetails);
         this.databaseResourceType = databaseResourceType;
+        this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
     }
 
     /**
@@ -366,6 +388,20 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
      **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
+    }
+
+    /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+    private final Boolean isAdvancedFeaturesEnabled;
+
+    /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     * @return the value
+     **/
+    public Boolean getIsAdvancedFeaturesEnabled() {
+        return isAdvancedFeaturesEnabled;
     }
 
     @Override
@@ -383,6 +419,8 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
         sb.append("AutonomousDatabaseInsightSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
+        sb.append(", isAdvancedFeaturesEnabled=")
+                .append(String.valueOf(this.isAdvancedFeaturesEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -398,6 +436,8 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
 
         AutonomousDatabaseInsightSummary other = (AutonomousDatabaseInsightSummary) o;
         return java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
+                && java.util.Objects.equals(
+                        this.isAdvancedFeaturesEnabled, other.isAdvancedFeaturesEnabled)
                 && super.equals(other);
     }
 
@@ -410,6 +450,11 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
                         + (this.databaseResourceType == null
                                 ? 43
                                 : this.databaseResourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAdvancedFeaturesEnabled == null
+                                ? 43
+                                : this.isAdvancedFeaturesEnabled.hashCode());
         return result;
     }
 }

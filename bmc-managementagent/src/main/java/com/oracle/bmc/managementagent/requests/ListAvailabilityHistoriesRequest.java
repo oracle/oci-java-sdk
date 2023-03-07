@@ -37,7 +37,7 @@ public class ListAvailabilityHistoriesRequest
     /**
      * Filter to limit the availability history results to that of time after the input time including the boundary record.
      * Defaulted to current date minus one year.
-     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      *
      */
     private java.util.Date timeAvailabilityStatusEndedGreaterThan;
@@ -45,7 +45,7 @@ public class ListAvailabilityHistoriesRequest
     /**
      * Filter to limit the availability history results to that of time after the input time including the boundary record.
      * Defaulted to current date minus one year.
-     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      *
      */
     public java.util.Date getTimeAvailabilityStatusEndedGreaterThan() {
@@ -54,7 +54,7 @@ public class ListAvailabilityHistoriesRequest
     /**
      * Filter to limit the availability history results to that of time before the input time including the boundary record
      * Defaulted to current date.
-     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      *
      */
     private java.util.Date timeAvailabilityStatusStartedLessThan;
@@ -62,7 +62,7 @@ public class ListAvailabilityHistoriesRequest
     /**
      * Filter to limit the availability history results to that of time before the input time including the boundary record
      * Defaulted to current date.
-     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      *
      */
     public java.util.Date getTimeAvailabilityStatusStartedLessThan() {
@@ -227,7 +227,7 @@ public class ListAvailabilityHistoriesRequest
         /**
          * Filter to limit the availability history results to that of time after the input time including the boundary record.
          * Defaulted to current date minus one year.
-         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          *
          */
         private java.util.Date timeAvailabilityStatusEndedGreaterThan = null;
@@ -235,7 +235,7 @@ public class ListAvailabilityHistoriesRequest
         /**
          * Filter to limit the availability history results to that of time after the input time including the boundary record.
          * Defaulted to current date minus one year.
-         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          *
          * @param timeAvailabilityStatusEndedGreaterThan the value to set
          * @return this builder instance
@@ -249,7 +249,7 @@ public class ListAvailabilityHistoriesRequest
         /**
          * Filter to limit the availability history results to that of time before the input time including the boundary record
          * Defaulted to current date.
-         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          *
          */
         private java.util.Date timeAvailabilityStatusStartedLessThan = null;
@@ -257,7 +257,7 @@ public class ListAvailabilityHistoriesRequest
         /**
          * Filter to limit the availability history results to that of time before the input time including the boundary record
          * Defaulted to current date.
-         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          *
          * @param timeAvailabilityStatusStartedLessThan the value to set
          * @return this builder instance
