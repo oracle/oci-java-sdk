@@ -2856,6 +2856,46 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DeleteAutonomousDatabaseBackupResponse deleteAutonomousDatabaseBackup(
+            DeleteAutonomousDatabaseBackupRequest request) {
+        LOG.trace("Called deleteAutonomousDatabaseBackup");
+        final DeleteAutonomousDatabaseBackupRequest interceptedRequest =
+                DeleteAutonomousDatabaseBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/DeleteAutonomousDatabaseBackup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteAutonomousDatabaseBackupResponse>
+                transformer =
+                        DeleteAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteAutonomousVmClusterResponse deleteAutonomousVmCluster(
             DeleteAutonomousVmClusterRequest request) {
         LOG.trace("Called deleteAutonomousVmCluster");
@@ -11058,6 +11098,50 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateAutonomousDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAutonomousDatabaseBackupResponse updateAutonomousDatabaseBackup(
+            UpdateAutonomousDatabaseBackupRequest request) {
+        LOG.trace("Called updateAutonomousDatabaseBackup");
+        final UpdateAutonomousDatabaseBackupRequest interceptedRequest =
+                UpdateAutonomousDatabaseBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/UpdateAutonomousDatabaseBackup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseBackupResponse>
+                transformer =
+                        UpdateAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateAutonomousDatabaseBackupDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

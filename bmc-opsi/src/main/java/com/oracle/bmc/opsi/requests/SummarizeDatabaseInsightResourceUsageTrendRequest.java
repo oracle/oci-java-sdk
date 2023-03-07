@@ -432,6 +432,19 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
     public java.util.List<String> getVmclusterName() {
         return vmclusterName;
     }
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
+    private java.util.List<String> cdbName;
+
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
+    public java.util.List<String> getCdbName() {
+        return cdbName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -970,6 +983,33 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         }
 
         /**
+         * Filter by one or more cdb name.
+         *
+         */
+        private java.util.List<String> cdbName = null;
+
+        /**
+         * Filter by one or more cdb name.
+         *
+         * @param cdbName the value to set
+         * @return this builder instance
+         */
+        public Builder cdbName(java.util.List<String> cdbName) {
+            this.cdbName = cdbName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more cdb name.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder cdbName(String singularValue) {
+            return this.cdbName(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -1018,6 +1058,7 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
             freeformTagExists(o.getFreeformTagExists());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             vmclusterName(o.getVmclusterName());
+            cdbName(o.getCdbName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1073,8 +1114,9 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
             request.freeformTagExists = freeformTagExists;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.vmclusterName = vmclusterName;
+            request.cdbName = cdbName;
             return request;
-            // new SummarizeDatabaseInsightResourceUsageTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, databaseType, databaseId, id, exadataInsightId, page, sortOrder, sortBy, hostName, isDatabaseInstanceLevelMetrics, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, vmclusterName);
+            // new SummarizeDatabaseInsightResourceUsageTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, databaseType, databaseId, id, exadataInsightId, page, sortOrder, sortBy, hostName, isDatabaseInstanceLevelMetrics, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, vmclusterName, cdbName);
         }
     }
 
@@ -1104,7 +1146,8 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
                 .definedTagExists(definedTagExists)
                 .freeformTagExists(freeformTagExists)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
-                .vmclusterName(vmclusterName);
+                .vmclusterName(vmclusterName)
+                .cdbName(cdbName);
     }
 
     /**
@@ -1142,6 +1185,7 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",vmclusterName=").append(String.valueOf(this.vmclusterName));
+        sb.append(",cdbName=").append(String.valueOf(this.cdbName));
         sb.append(")");
         return sb.toString();
     }
@@ -1180,7 +1224,8 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
                 && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
-                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName);
+                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName)
+                && java.util.Objects.equals(this.cdbName, other.cdbName);
     }
 
     @Override
@@ -1240,6 +1285,7 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
         result =
                 (result * PRIME)
                         + (this.vmclusterName == null ? 43 : this.vmclusterName.hashCode());
+        result = (result * PRIME) + (this.cdbName == null ? 43 : this.cdbName.hashCode());
         return result;
     }
 }

@@ -602,6 +602,28 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
     public java.util.List<String> getVmclusterName() {
         return vmclusterName;
     }
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     */
+    private Integer highUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     */
+    public Integer getHighUtilizationThreshold() {
+        return highUtilizationThreshold;
+    }
+    /**
+     * Percent value in which a resource metric is considered low utilized.
+     */
+    private Integer lowUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered low utilized.
+     */
+    public Integer getLowUtilizationThreshold() {
+        return lowUtilizationThreshold;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -1257,6 +1279,36 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
         }
 
         /**
+         * Percent value in which a resource metric is considered highly utilized.
+         */
+        private Integer highUtilizationThreshold = null;
+
+        /**
+         * Percent value in which a resource metric is considered highly utilized.
+         * @param highUtilizationThreshold the value to set
+         * @return this builder instance
+         */
+        public Builder highUtilizationThreshold(Integer highUtilizationThreshold) {
+            this.highUtilizationThreshold = highUtilizationThreshold;
+            return this;
+        }
+
+        /**
+         * Percent value in which a resource metric is considered low utilized.
+         */
+        private Integer lowUtilizationThreshold = null;
+
+        /**
+         * Percent value in which a resource metric is considered low utilized.
+         * @param lowUtilizationThreshold the value to set
+         * @return this builder instance
+         */
+        public Builder lowUtilizationThreshold(Integer lowUtilizationThreshold) {
+            this.lowUtilizationThreshold = lowUtilizationThreshold;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -1310,6 +1362,8 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
             freeformTagExists(o.getFreeformTagExists());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             vmclusterName(o.getVmclusterName());
+            highUtilizationThreshold(o.getHighUtilizationThreshold());
+            lowUtilizationThreshold(o.getLowUtilizationThreshold());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1371,8 +1425,10 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
             request.freeformTagExists = freeformTagExists;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.vmclusterName = vmclusterName;
+            request.highUtilizationThreshold = highUtilizationThreshold;
+            request.lowUtilizationThreshold = lowUtilizationThreshold;
             return request;
-            // new SummarizeDatabaseInsightResourceForecastTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, databaseType, databaseId, id, exadataInsightId, cdbName, statistic, forecastDays, forecastModel, utilizationLevel, confidence, page, hostName, tablespaceName, isDatabaseInstanceLevelMetrics, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, vmclusterName);
+            // new SummarizeDatabaseInsightResourceForecastTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, databaseType, databaseId, id, exadataInsightId, cdbName, statistic, forecastDays, forecastModel, utilizationLevel, confidence, page, hostName, tablespaceName, isDatabaseInstanceLevelMetrics, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, vmclusterName, highUtilizationThreshold, lowUtilizationThreshold);
         }
     }
 
@@ -1407,7 +1463,9 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
                 .definedTagExists(definedTagExists)
                 .freeformTagExists(freeformTagExists)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
-                .vmclusterName(vmclusterName);
+                .vmclusterName(vmclusterName)
+                .highUtilizationThreshold(highUtilizationThreshold)
+                .lowUtilizationThreshold(lowUtilizationThreshold);
     }
 
     /**
@@ -1450,6 +1508,9 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
         sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",vmclusterName=").append(String.valueOf(this.vmclusterName));
+        sb.append(",highUtilizationThreshold=")
+                .append(String.valueOf(this.highUtilizationThreshold));
+        sb.append(",lowUtilizationThreshold=").append(String.valueOf(this.lowUtilizationThreshold));
         sb.append(")");
         return sb.toString();
     }
@@ -1493,7 +1554,11 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
                 && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
-                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName);
+                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName)
+                && java.util.Objects.equals(
+                        this.highUtilizationThreshold, other.highUtilizationThreshold)
+                && java.util.Objects.equals(
+                        this.lowUtilizationThreshold, other.lowUtilizationThreshold);
     }
 
     @Override
@@ -1564,6 +1629,16 @@ public class SummarizeDatabaseInsightResourceForecastTrendRequest
         result =
                 (result * PRIME)
                         + (this.vmclusterName == null ? 43 : this.vmclusterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.highUtilizationThreshold == null
+                                ? 43
+                                : this.highUtilizationThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lowUtilizationThreshold == null
+                                ? 43
+                                : this.lowUtilizationThreshold.hashCode());
         return result;
     }
 }

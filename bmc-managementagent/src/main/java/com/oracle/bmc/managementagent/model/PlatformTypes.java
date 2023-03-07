@@ -12,6 +12,7 @@ public enum PlatformTypes {
     Linux("LINUX"),
     Windows("WINDOWS"),
     Solaris("SOLARIS"),
+    Macosx("MACOSX"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

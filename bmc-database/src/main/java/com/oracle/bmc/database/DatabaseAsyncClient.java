@@ -3437,6 +3437,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAutonomousDatabaseBackupResponse>
+            deleteAutonomousDatabaseBackup(
+                    DeleteAutonomousDatabaseBackupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutonomousDatabaseBackupRequest,
+                                    DeleteAutonomousDatabaseBackupResponse>
+                            handler) {
+        LOG.trace("Called async deleteAutonomousDatabaseBackup");
+        final DeleteAutonomousDatabaseBackupRequest interceptedRequest =
+                DeleteAutonomousDatabaseBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/DeleteAutonomousDatabaseBackup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteAutonomousDatabaseBackupResponse>
+                transformer =
+                        DeleteAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteAutonomousDatabaseBackupRequest,
+                        DeleteAutonomousDatabaseBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAutonomousDatabaseBackupRequest,
+                                DeleteAutonomousDatabaseBackupResponse>,
+                        java.util.concurrent.Future<DeleteAutonomousDatabaseBackupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAutonomousDatabaseBackupRequest, DeleteAutonomousDatabaseBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAutonomousVmClusterResponse> deleteAutonomousVmCluster(
             DeleteAutonomousVmClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -14038,6 +14090,63 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAutonomousDatabaseRequest, UpdateAutonomousDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutonomousDatabaseBackupResponse>
+            updateAutonomousDatabaseBackup(
+                    UpdateAutonomousDatabaseBackupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseBackupRequest,
+                                    UpdateAutonomousDatabaseBackupResponse>
+                            handler) {
+        LOG.trace("Called async updateAutonomousDatabaseBackup");
+        final UpdateAutonomousDatabaseBackupRequest interceptedRequest =
+                UpdateAutonomousDatabaseBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousDatabaseBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/UpdateAutonomousDatabaseBackup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseBackupResponse>
+                transformer =
+                        UpdateAutonomousDatabaseBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAutonomousDatabaseBackupRequest,
+                        UpdateAutonomousDatabaseBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAutonomousDatabaseBackupRequest,
+                                UpdateAutonomousDatabaseBackupResponse>,
+                        java.util.concurrent.Future<UpdateAutonomousDatabaseBackupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAutonomousDatabaseBackupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAutonomousDatabaseBackupRequest, UpdateAutonomousDatabaseBackupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

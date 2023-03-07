@@ -25,11 +25,22 @@ package com.oracle.bmc.database.model;
 public final class CreateAutonomousDatabaseBackupDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "autonomousDatabaseId"})
-    public CreateAutonomousDatabaseBackupDetails(String displayName, String autonomousDatabaseId) {
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "autonomousDatabaseId",
+        "retentionPeriodInDays",
+        "isLongTermBackup"
+    })
+    public CreateAutonomousDatabaseBackupDetails(
+            String displayName,
+            String autonomousDatabaseId,
+            Integer retentionPeriodInDays,
+            Boolean isLongTermBackup) {
         super();
         this.displayName = displayName;
         this.autonomousDatabaseId = autonomousDatabaseId;
+        this.retentionPeriodInDays = retentionPeriodInDays;
+        this.isLongTermBackup = isLongTermBackup;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -66,6 +77,38 @@ public final class CreateAutonomousDatabaseBackupDetails
             this.__explicitlySet__.add("autonomousDatabaseId");
             return this;
         }
+        /**
+         * Retention period, in days, for long-term backups
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+        private Integer retentionPeriodInDays;
+
+        /**
+         * Retention period, in days, for long-term backups
+         * @param retentionPeriodInDays the value to set
+         * @return this builder
+         **/
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
+            this.__explicitlySet__.add("retentionPeriodInDays");
+            return this;
+        }
+        /**
+         * Indicates whether the backup is long-term
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isLongTermBackup")
+        private Boolean isLongTermBackup;
+
+        /**
+         * Indicates whether the backup is long-term
+         * @param isLongTermBackup the value to set
+         * @return this builder
+         **/
+        public Builder isLongTermBackup(Boolean isLongTermBackup) {
+            this.isLongTermBackup = isLongTermBackup;
+            this.__explicitlySet__.add("isLongTermBackup");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -73,7 +116,10 @@ public final class CreateAutonomousDatabaseBackupDetails
         public CreateAutonomousDatabaseBackupDetails build() {
             CreateAutonomousDatabaseBackupDetails model =
                     new CreateAutonomousDatabaseBackupDetails(
-                            this.displayName, this.autonomousDatabaseId);
+                            this.displayName,
+                            this.autonomousDatabaseId,
+                            this.retentionPeriodInDays,
+                            this.isLongTermBackup);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +133,12 @@ public final class CreateAutonomousDatabaseBackupDetails
             }
             if (model.wasPropertyExplicitlySet("autonomousDatabaseId")) {
                 this.autonomousDatabaseId(model.getAutonomousDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriodInDays")) {
+                this.retentionPeriodInDays(model.getRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("isLongTermBackup")) {
+                this.isLongTermBackup(model.getIsLongTermBackup());
             }
             return this;
         }
@@ -131,6 +183,34 @@ public final class CreateAutonomousDatabaseBackupDetails
         return autonomousDatabaseId;
     }
 
+    /**
+     * Retention period, in days, for long-term backups
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+    private final Integer retentionPeriodInDays;
+
+    /**
+     * Retention period, in days, for long-term backups
+     * @return the value
+     **/
+    public Integer getRetentionPeriodInDays() {
+        return retentionPeriodInDays;
+    }
+
+    /**
+     * Indicates whether the backup is long-term
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLongTermBackup")
+    private final Boolean isLongTermBackup;
+
+    /**
+     * Indicates whether the backup is long-term
+     * @return the value
+     **/
+    public Boolean getIsLongTermBackup() {
+        return isLongTermBackup;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -147,6 +227,8 @@ public final class CreateAutonomousDatabaseBackupDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
+        sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
+        sb.append(", isLongTermBackup=").append(String.valueOf(this.isLongTermBackup));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +245,8 @@ public final class CreateAutonomousDatabaseBackupDetails
         CreateAutonomousDatabaseBackupDetails other = (CreateAutonomousDatabaseBackupDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
+                && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
+                && java.util.Objects.equals(this.isLongTermBackup, other.isLongTermBackup)
                 && super.equals(other);
     }
 
@@ -176,6 +260,14 @@ public final class CreateAutonomousDatabaseBackupDetails
                         + (this.autonomousDatabaseId == null
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodInDays == null
+                                ? 43
+                                : this.retentionPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLongTermBackup == null ? 43 : this.isLongTermBackup.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

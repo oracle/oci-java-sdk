@@ -234,6 +234,22 @@ public class SummarizeDatabaseInsightResourceCapacityTrendConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getHighUtilizationThreshold() != null) {
+            target =
+                    target.queryParam(
+                            "highUtilizationThreshold",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHighUtilizationThreshold()));
+        }
+
+        if (request.getLowUtilizationThreshold() != null) {
+            target =
+                    target.queryParam(
+                            "lowUtilizationThreshold",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLowUtilizationThreshold()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

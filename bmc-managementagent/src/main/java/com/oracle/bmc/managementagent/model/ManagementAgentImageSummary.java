@@ -32,6 +32,7 @@ public final class ManagementAgentImageSummary
         "size",
         "checksum",
         "objectUrl",
+        "imageObjectStorageDetails",
         "lifecycleState"
     })
     public ManagementAgentImageSummary(
@@ -44,6 +45,7 @@ public final class ManagementAgentImageSummary
             java.math.BigDecimal size,
             String checksum,
             String objectUrl,
+            ObjectDetails imageObjectStorageDetails,
             LifecycleStates lifecycleState) {
         super();
         this.id = id;
@@ -55,6 +57,7 @@ public final class ManagementAgentImageSummary
         this.size = size;
         this.checksum = checksum;
         this.objectUrl = objectUrl;
+        this.imageObjectStorageDetails = imageObjectStorageDetails;
         this.lifecycleState = lifecycleState;
     }
 
@@ -204,6 +207,15 @@ public final class ManagementAgentImageSummary
             this.__explicitlySet__.add("objectUrl");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("imageObjectStorageDetails")
+        private ObjectDetails imageObjectStorageDetails;
+
+        public Builder imageObjectStorageDetails(ObjectDetails imageObjectStorageDetails) {
+            this.imageObjectStorageDetails = imageObjectStorageDetails;
+            this.__explicitlySet__.add("imageObjectStorageDetails");
+            return this;
+        }
         /**
          * The current state of Management Agent Image
          **/
@@ -236,6 +248,7 @@ public final class ManagementAgentImageSummary
                             this.size,
                             this.checksum,
                             this.objectUrl,
+                            this.imageObjectStorageDetails,
                             this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -271,6 +284,9 @@ public final class ManagementAgentImageSummary
             }
             if (model.wasPropertyExplicitlySet("objectUrl")) {
                 this.objectUrl(model.getObjectUrl());
+            }
+            if (model.wasPropertyExplicitlySet("imageObjectStorageDetails")) {
+                this.imageObjectStorageDetails(model.getImageObjectStorageDetails());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -416,6 +432,13 @@ public final class ManagementAgentImageSummary
         return objectUrl;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("imageObjectStorageDetails")
+    private final ObjectDetails imageObjectStorageDetails;
+
+    public ObjectDetails getImageObjectStorageDetails() {
+        return imageObjectStorageDetails;
+    }
+
     /**
      * The current state of Management Agent Image
      **/
@@ -454,6 +477,8 @@ public final class ManagementAgentImageSummary
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", checksum=").append(String.valueOf(this.checksum));
         sb.append(", objectUrl=").append(String.valueOf(this.objectUrl));
+        sb.append(", imageObjectStorageDetails=")
+                .append(String.valueOf(this.imageObjectStorageDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
@@ -479,6 +504,8 @@ public final class ManagementAgentImageSummary
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.checksum, other.checksum)
                 && java.util.Objects.equals(this.objectUrl, other.objectUrl)
+                && java.util.Objects.equals(
+                        this.imageObjectStorageDetails, other.imageObjectStorageDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
@@ -500,6 +527,11 @@ public final class ManagementAgentImageSummary
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + (this.checksum == null ? 43 : this.checksum.hashCode());
         result = (result * PRIME) + (this.objectUrl == null ? 43 : this.objectUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.imageObjectStorageDetails == null
+                                ? 43
+                                : this.imageObjectStorageDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

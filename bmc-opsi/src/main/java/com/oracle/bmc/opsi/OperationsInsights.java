@@ -69,6 +69,20 @@ public interface OperationsInsights extends AutoCloseable {
             AddExadataInsightMembersRequest request);
 
     /**
+     * Update connection detail for advanced features of Autonomous Database in Operations Insights.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeAutonomousDatabaseInsightAdvancedFeaturesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseInsightAdvancedFeatures API.
+     */
+    ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse
+            changeAutonomousDatabaseInsightAdvancedFeatures(
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest request);
+
+    /**
      * Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -403,6 +417,20 @@ public interface OperationsInsights extends AutoCloseable {
     DeleteOpsiConfigurationResponse deleteOpsiConfiguration(DeleteOpsiConfigurationRequest request);
 
     /**
+     * Disable advanced features for an Autonomous Database in Operations Insights. The connection detail and advanced features will be removed.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DisableAutonomousDatabaseInsightAdvancedFeaturesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAutonomousDatabaseInsightAdvancedFeatures API.
+     */
+    DisableAutonomousDatabaseInsightAdvancedFeaturesResponse
+            disableAutonomousDatabaseInsightAdvancedFeatures(
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest request);
+
+    /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -450,6 +478,20 @@ public interface OperationsInsights extends AutoCloseable {
      */
     DownloadOperationsInsightsWarehouseWalletResponse downloadOperationsInsightsWarehouseWallet(
             DownloadOperationsInsightsWarehouseWalletRequest request);
+
+    /**
+     * Enables advanced features for an Autonomous Database in Operations Insights. A direct connection will be available for further collection.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/EnableAutonomousDatabaseInsightAdvancedFeaturesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutonomousDatabaseInsightAdvancedFeatures API.
+     */
+    EnableAutonomousDatabaseInsightAdvancedFeaturesResponse
+            enableAutonomousDatabaseInsightAdvancedFeatures(
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest request);
 
     /**
      * Enables a database in Operations Insights. Database metric collection and analysis will be started.

@@ -184,7 +184,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * section 5.6.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
@@ -192,7 +192,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
         /**
          * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * section 5.6.
          *
          * @param timeAccepted the value to set
          * @return this builder
@@ -204,7 +204,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * section 5.6.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -212,7 +212,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
         /**
          * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * section 5.6.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -224,7 +224,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * section 5.6.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
@@ -232,7 +232,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
         /**
          * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * section 5.6.
          *
          * @param timeFinished the value to set
          * @return this builder
@@ -448,7 +448,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * section 5.6.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
@@ -456,7 +456,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The date and time the request was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * section 5.6.
      *
      * @return the value
      **/
@@ -466,7 +466,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * section 5.6.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -474,7 +474,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * section 5.6.
      *
      * @return the value
      **/
@@ -484,7 +484,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * section 5.6.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
@@ -492,7 +492,7 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The date and time the request was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * section 5.6.
      *
      * @return the value
      **/
