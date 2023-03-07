@@ -30,6 +30,19 @@ public class SummarizeManagementAgentPluginCountsRequest
         return groupBy;
     }
     /**
+     * if set to true then it fetches resources for all compartments where user has access to else
+     * only on the compartment specified.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else
+     * only on the compartment specified.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
      */
@@ -82,6 +95,24 @@ public class SummarizeManagementAgentPluginCountsRequest
         public Builder groupBy(
                 com.oracle.bmc.managementagent.model.ManagementAgentPluginGroupBy groupBy) {
             this.groupBy = groupBy;
+            return this;
+        }
+
+        /**
+         * if set to true then it fetches resources for all compartments where user has access to
+         * else only on the compartment specified.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * if set to true then it fetches resources for all compartments where user has access to
+         * else only on the compartment specified.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 
@@ -149,6 +180,7 @@ public class SummarizeManagementAgentPluginCountsRequest
         public Builder copy(SummarizeManagementAgentPluginCountsRequest o) {
             compartmentId(o.getCompartmentId());
             groupBy(o.getGroupBy());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -190,11 +222,12 @@ public class SummarizeManagementAgentPluginCountsRequest
                     new SummarizeManagementAgentPluginCountsRequest();
             request.compartmentId = compartmentId;
             request.groupBy = groupBy;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeManagementAgentPluginCountsRequest(compartmentId, groupBy, page,
-            // opcRequestId);
+            // new SummarizeManagementAgentPluginCountsRequest(compartmentId, groupBy,
+            // compartmentIdInSubtree, page, opcRequestId);
         }
     }
 
@@ -207,6 +240,7 @@ public class SummarizeManagementAgentPluginCountsRequest
         return new Builder()
                 .compartmentId(compartmentId)
                 .groupBy(groupBy)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .page(page)
                 .opcRequestId(opcRequestId);
     }
@@ -227,6 +261,7 @@ public class SummarizeManagementAgentPluginCountsRequest
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",groupBy=").append(String.valueOf(this.groupBy));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -247,6 +282,8 @@ public class SummarizeManagementAgentPluginCountsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.groupBy, other.groupBy)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -259,6 +296,11 @@ public class SummarizeManagementAgentPluginCountsRequest
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

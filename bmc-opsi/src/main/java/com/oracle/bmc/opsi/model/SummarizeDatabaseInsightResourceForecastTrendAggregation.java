@@ -25,6 +25,8 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
         "timeIntervalEnd",
+        "highUtilizationThreshold",
+        "lowUtilizationThreshold",
         "resourceMetric",
         "usageUnit",
         "pattern",
@@ -35,6 +37,8 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
     public SummarizeDatabaseInsightResourceForecastTrendAggregation(
             java.util.Date timeIntervalStart,
             java.util.Date timeIntervalEnd,
+            Integer highUtilizationThreshold,
+            Integer lowUtilizationThreshold,
             ResourceMetric resourceMetric,
             UsageUnit usageUnit,
             Pattern pattern,
@@ -44,6 +48,8 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
         super();
         this.timeIntervalStart = timeIntervalStart;
         this.timeIntervalEnd = timeIntervalEnd;
+        this.highUtilizationThreshold = highUtilizationThreshold;
+        this.lowUtilizationThreshold = lowUtilizationThreshold;
         this.resourceMetric = resourceMetric;
         this.usageUnit = usageUnit;
         this.pattern = pattern;
@@ -82,6 +88,36 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
+            return this;
+        }
+        /** Percent value in which a resource metric is considered highly utilized. */
+        @com.fasterxml.jackson.annotation.JsonProperty("highUtilizationThreshold")
+        private Integer highUtilizationThreshold;
+
+        /**
+         * Percent value in which a resource metric is considered highly utilized.
+         *
+         * @param highUtilizationThreshold the value to set
+         * @return this builder
+         */
+        public Builder highUtilizationThreshold(Integer highUtilizationThreshold) {
+            this.highUtilizationThreshold = highUtilizationThreshold;
+            this.__explicitlySet__.add("highUtilizationThreshold");
+            return this;
+        }
+        /** Percent value in which a resource metric is considered lowly utilized. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lowUtilizationThreshold")
+        private Integer lowUtilizationThreshold;
+
+        /**
+         * Percent value in which a resource metric is considered lowly utilized.
+         *
+         * @param lowUtilizationThreshold the value to set
+         * @return this builder
+         */
+        public Builder lowUtilizationThreshold(Integer lowUtilizationThreshold) {
+            this.lowUtilizationThreshold = lowUtilizationThreshold;
+            this.__explicitlySet__.add("lowUtilizationThreshold");
             return this;
         }
         /** Defines the type of resource metric (example: CPU, STORAGE) */
@@ -183,6 +219,8 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
                     new SummarizeDatabaseInsightResourceForecastTrendAggregation(
                             this.timeIntervalStart,
                             this.timeIntervalEnd,
+                            this.highUtilizationThreshold,
+                            this.lowUtilizationThreshold,
                             this.resourceMetric,
                             this.usageUnit,
                             this.pattern,
@@ -202,6 +240,12 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
             }
             if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
                 this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("highUtilizationThreshold")) {
+                this.highUtilizationThreshold(model.getHighUtilizationThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("lowUtilizationThreshold")) {
+                this.lowUtilizationThreshold(model.getLowUtilizationThreshold());
             }
             if (model.wasPropertyExplicitlySet("resourceMetric")) {
                 this.resourceMetric(model.getResourceMetric());
@@ -258,6 +302,32 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
      */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
+    }
+
+    /** Percent value in which a resource metric is considered highly utilized. */
+    @com.fasterxml.jackson.annotation.JsonProperty("highUtilizationThreshold")
+    private final Integer highUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     *
+     * @return the value
+     */
+    public Integer getHighUtilizationThreshold() {
+        return highUtilizationThreshold;
+    }
+
+    /** Percent value in which a resource metric is considered lowly utilized. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lowUtilizationThreshold")
+    private final Integer lowUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered lowly utilized.
+     *
+     * @return the value
+     */
+    public Integer getLowUtilizationThreshold() {
+        return lowUtilizationThreshold;
     }
 
     /** Defines the type of resource metric (example: CPU, STORAGE) */
@@ -506,6 +576,10 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
         sb.append("super=").append(super.toString());
         sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", highUtilizationThreshold=")
+                .append(String.valueOf(this.highUtilizationThreshold));
+        sb.append(", lowUtilizationThreshold=")
+                .append(String.valueOf(this.lowUtilizationThreshold));
         sb.append(", resourceMetric=").append(String.valueOf(this.resourceMetric));
         sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
         sb.append(", pattern=").append(String.valueOf(this.pattern));
@@ -529,6 +603,10 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
                 (SummarizeDatabaseInsightResourceForecastTrendAggregation) o;
         return java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
                 && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(
+                        this.highUtilizationThreshold, other.highUtilizationThreshold)
+                && java.util.Objects.equals(
+                        this.lowUtilizationThreshold, other.lowUtilizationThreshold)
                 && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
                 && java.util.Objects.equals(this.usageUnit, other.usageUnit)
                 && java.util.Objects.equals(this.pattern, other.pattern)
@@ -548,6 +626,16 @@ public final class SummarizeDatabaseInsightResourceForecastTrendAggregation
         result =
                 (result * PRIME)
                         + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.highUtilizationThreshold == null
+                                ? 43
+                                : this.highUtilizationThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lowUtilizationThreshold == null
+                                ? 43
+                                : this.lowUtilizationThreshold.hashCode());
         result =
                 (result * PRIME)
                         + (this.resourceMetric == null ? 43 : this.resourceMetric.hashCode());

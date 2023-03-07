@@ -2029,6 +2029,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteAutonomousDatabaseBackupResponse deleteAutonomousDatabaseBackup(
+            DeleteAutonomousDatabaseBackupRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseBackupId(),
+                "autonomousDatabaseBackupId must not be blank");
+
+        return clientCall(request, DeleteAutonomousDatabaseBackupResponse::builder)
+                .logger(LOG, "deleteAutonomousDatabaseBackup")
+                .serviceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabaseBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/DeleteAutonomousDatabaseBackup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAutonomousDatabaseBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseBackups")
+                .appendPathParam(request.getAutonomousDatabaseBackupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteAutonomousDatabaseBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteAutonomousDatabaseBackupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteAutonomousVmClusterResponse deleteAutonomousVmCluster(
             DeleteAutonomousVmClusterRequest request) {
 
@@ -9122,6 +9153,46 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAutonomousDatabaseResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAutonomousDatabaseBackupResponse updateAutonomousDatabaseBackup(
+            UpdateAutonomousDatabaseBackupRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseBackupId(),
+                "autonomousDatabaseBackupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAutonomousDatabaseBackupDetails(),
+                "updateAutonomousDatabaseBackupDetails is required");
+
+        return clientCall(request, UpdateAutonomousDatabaseBackupResponse::builder)
+                .logger(LOG, "updateAutonomousDatabaseBackup")
+                .serviceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/UpdateAutonomousDatabaseBackup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAutonomousDatabaseBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseBackups")
+                .appendPathParam(request.getAutonomousDatabaseBackupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseBackup.class,
+                        UpdateAutonomousDatabaseBackupResponse.Builder::autonomousDatabaseBackup)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateAutonomousDatabaseBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateAutonomousDatabaseBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAutonomousDatabaseBackupResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

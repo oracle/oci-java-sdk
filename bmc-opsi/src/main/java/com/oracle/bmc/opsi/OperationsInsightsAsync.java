@@ -72,6 +72,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update connection detail for advanced features of Autonomous Database in Operations Insights.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+            changeAutonomousDatabaseInsightAdvancedFeatures(
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                    ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                            handler);
+
+    /**
      * Moves a DatabaseInsight resource from one compartment identifier to another. When provided,
      * If-Match is checked against ETag values of the resource.
      *
@@ -519,6 +537,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disable advanced features for an Autonomous Database in Operations Insights. The connection
+     * detail and advanced features will be removed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+            disableAutonomousDatabaseInsightAdvancedFeatures(
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                    DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                            handler);
+
+    /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be
      * stopped.
      *
@@ -585,6 +622,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DownloadOperationsInsightsWarehouseWalletRequest,
                                     DownloadOperationsInsightsWarehouseWalletResponse>
+                            handler);
+
+    /**
+     * Enables advanced features for an Autonomous Database in Operations Insights. A direct
+     * connection will be available for further collection.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+            enableAutonomousDatabaseInsightAdvancedFeatures(
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                    EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
                             handler);
 
     /**

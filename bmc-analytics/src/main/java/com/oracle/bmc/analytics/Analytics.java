@@ -60,9 +60,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ChangeAnalyticsInstanceCompartmentExample.java.html"
@@ -78,9 +78,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ChangeAnalyticsInstanceNetworkEndpointExample.java.html"
@@ -96,9 +96,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/CreateAnalyticsInstanceExample.java.html"
@@ -113,9 +113,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/CreatePrivateAccessChannelExample.java.html"
@@ -131,9 +131,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/CreateVanityUrlExample.java.html"
@@ -148,9 +148,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeleteAnalyticsInstanceExample.java.html"
@@ -164,9 +164,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeletePrivateAccessChannelExample.java.html"
@@ -181,9 +181,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeleteVanityUrlExample.java.html"
@@ -213,9 +213,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetAnalyticsInstanceExample.java.html"
@@ -229,9 +229,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetPrivateAccessChannelExample.java.html"
@@ -245,9 +245,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetWorkRequestExample.java.html"
@@ -260,9 +260,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ListAnalyticsInstancesExample.java.html"
@@ -276,9 +276,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ListWorkRequestErrorsExample.java.html"
@@ -292,9 +292,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ListWorkRequestLogsExample.java.html"
@@ -308,9 +308,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ListWorkRequestsExample.java.html"
@@ -325,9 +325,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ScaleAnalyticsInstanceExample.java.html"
@@ -342,9 +342,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/SetKmsKeyExample.java.html"
@@ -358,9 +358,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/StartAnalyticsInstanceExample.java.html"
@@ -375,9 +375,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/StopAnalyticsInstanceExample.java.html"
@@ -409,9 +409,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdatePrivateAccessChannelExample.java.html"
@@ -427,9 +427,9 @@ public interface Analytics extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdateVanityUrlExample.java.html"

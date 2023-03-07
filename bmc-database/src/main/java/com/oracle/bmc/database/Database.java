@@ -1072,6 +1072,23 @@ public interface Database extends AutoCloseable {
             DeleteAutonomousDatabaseRequest request);
 
     /**
+     * Deletes a long-term backup. You cannot delete other backups using this API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteAutonomousDatabaseBackup API.
+     */
+    DeleteAutonomousDatabaseBackupResponse deleteAutonomousDatabaseBackup(
+            DeleteAutonomousDatabaseBackupRequest request);
+
+    /**
      * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system. To delete an
      * Autonomous VM Cluster in the Oracle cloud, see {@link
      * #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest)
@@ -4756,6 +4773,24 @@ public interface Database extends AutoCloseable {
      */
     UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request);
+
+    /**
+     * Updates the Autonomous Database backup of the specified database based on the request
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateAutonomousDatabaseBackup API.
+     */
+    UpdateAutonomousDatabaseBackupResponse updateAutonomousDatabaseBackup(
+            UpdateAutonomousDatabaseBackupRequest request);
 
     /**
      * Updates the Autonomous Database regional wallet.

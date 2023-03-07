@@ -38,12 +38,23 @@ public final class SingleModelDeploymentConfigurationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentConfigurationDetails")
+        private ModelDeploymentEnvironmentConfigurationDetails environmentConfigurationDetails;
+
+        public Builder environmentConfigurationDetails(
+                ModelDeploymentEnvironmentConfigurationDetails environmentConfigurationDetails) {
+            this.environmentConfigurationDetails = environmentConfigurationDetails;
+            this.__explicitlySet__.add("environmentConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SingleModelDeploymentConfigurationDetails build() {
             SingleModelDeploymentConfigurationDetails model =
-                    new SingleModelDeploymentConfigurationDetails(this.modelConfigurationDetails);
+                    new SingleModelDeploymentConfigurationDetails(
+                            this.modelConfigurationDetails, this.environmentConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -54,6 +65,9 @@ public final class SingleModelDeploymentConfigurationDetails
         public Builder copy(SingleModelDeploymentConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("modelConfigurationDetails")) {
                 this.modelConfigurationDetails(model.getModelConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("environmentConfigurationDetails")) {
+                this.environmentConfigurationDetails(model.getEnvironmentConfigurationDetails());
             }
             return this;
         }
@@ -70,9 +84,11 @@ public final class SingleModelDeploymentConfigurationDetails
 
     @Deprecated
     public SingleModelDeploymentConfigurationDetails(
-            ModelConfigurationDetails modelConfigurationDetails) {
+            ModelConfigurationDetails modelConfigurationDetails,
+            ModelDeploymentEnvironmentConfigurationDetails environmentConfigurationDetails) {
         super();
         this.modelConfigurationDetails = modelConfigurationDetails;
+        this.environmentConfigurationDetails = environmentConfigurationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("modelConfigurationDetails")
@@ -80,6 +96,13 @@ public final class SingleModelDeploymentConfigurationDetails
 
     public ModelConfigurationDetails getModelConfigurationDetails() {
         return modelConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentConfigurationDetails")
+    private final ModelDeploymentEnvironmentConfigurationDetails environmentConfigurationDetails;
+
+    public ModelDeploymentEnvironmentConfigurationDetails getEnvironmentConfigurationDetails() {
+        return environmentConfigurationDetails;
     }
 
     @Override
@@ -99,6 +122,8 @@ public final class SingleModelDeploymentConfigurationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", modelConfigurationDetails=")
                 .append(String.valueOf(this.modelConfigurationDetails));
+        sb.append(", environmentConfigurationDetails=")
+                .append(String.valueOf(this.environmentConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -116,6 +141,8 @@ public final class SingleModelDeploymentConfigurationDetails
                 (SingleModelDeploymentConfigurationDetails) o;
         return java.util.Objects.equals(
                         this.modelConfigurationDetails, other.modelConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.environmentConfigurationDetails, other.environmentConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -128,6 +155,11 @@ public final class SingleModelDeploymentConfigurationDetails
                         + (this.modelConfigurationDetails == null
                                 ? 43
                                 : this.modelConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentConfigurationDetails == null
+                                ? 43
+                                : this.environmentConfigurationDetails.hashCode());
         return result;
     }
 }
