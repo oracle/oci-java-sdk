@@ -28,6 +28,8 @@ public final class UpdateOceInstanceDetails
         "instanceLicenseType",
         "instanceUsageType",
         "addOnFeatures",
+        "lifecycleDetails",
+        "drRegion",
         "freeformTags",
         "definedTags"
     })
@@ -37,6 +39,8 @@ public final class UpdateOceInstanceDetails
             LicenseType instanceLicenseType,
             InstanceUsageType instanceUsageType,
             java.util.List<String> addOnFeatures,
+            LifecycleDetails lifecycleDetails,
+            String drRegion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -45,6 +49,8 @@ public final class UpdateOceInstanceDetails
         this.instanceLicenseType = instanceLicenseType;
         this.instanceUsageType = instanceUsageType;
         this.addOnFeatures = addOnFeatures;
+        this.lifecycleDetails = lifecycleDetails;
+        this.drRegion = drRegion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -132,6 +138,38 @@ public final class UpdateOceInstanceDetails
             return this;
         }
         /**
+         * Details of the current state of the instance lifecycle
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private LifecycleDetails lifecycleDetails;
+
+        /**
+         * Details of the current state of the instance lifecycle
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
+         * disaster recovery paired ragion name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("drRegion")
+        private String drRegion;
+
+        /**
+         * disaster recovery paired ragion name
+         * @param drRegion the value to set
+         * @return this builder
+         **/
+        public Builder drRegion(String drRegion) {
+            this.drRegion = drRegion;
+            this.__explicitlySet__.add("drRegion");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -184,6 +222,8 @@ public final class UpdateOceInstanceDetails
                             this.instanceLicenseType,
                             this.instanceUsageType,
                             this.addOnFeatures,
+                            this.lifecycleDetails,
+                            this.drRegion,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -208,6 +248,12 @@ public final class UpdateOceInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("addOnFeatures")) {
                 this.addOnFeatures(model.getAddOnFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("drRegion")) {
+                this.drRegion(model.getDrRegion());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -336,6 +382,34 @@ public final class UpdateOceInstanceDetails
     }
 
     /**
+     * Details of the current state of the instance lifecycle
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final LifecycleDetails lifecycleDetails;
+
+    /**
+     * Details of the current state of the instance lifecycle
+     * @return the value
+     **/
+    public LifecycleDetails getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
+     * disaster recovery paired ragion name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drRegion")
+    private final String drRegion;
+
+    /**
+     * disaster recovery paired ragion name
+     * @return the value
+     **/
+    public String getDrRegion() {
+        return drRegion;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -390,6 +464,8 @@ public final class UpdateOceInstanceDetails
         sb.append(", instanceLicenseType=").append(String.valueOf(this.instanceLicenseType));
         sb.append(", instanceUsageType=").append(String.valueOf(this.instanceUsageType));
         sb.append(", addOnFeatures=").append(String.valueOf(this.addOnFeatures));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", drRegion=").append(String.valueOf(this.drRegion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -411,6 +487,8 @@ public final class UpdateOceInstanceDetails
                 && java.util.Objects.equals(this.instanceLicenseType, other.instanceLicenseType)
                 && java.util.Objects.equals(this.instanceUsageType, other.instanceUsageType)
                 && java.util.Objects.equals(this.addOnFeatures, other.addOnFeatures)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.drRegion, other.drRegion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -435,6 +513,10 @@ public final class UpdateOceInstanceDetails
         result =
                 (result * PRIME)
                         + (this.addOnFeatures == null ? 43 : this.addOnFeatures.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.drRegion == null ? 43 : this.drRegion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

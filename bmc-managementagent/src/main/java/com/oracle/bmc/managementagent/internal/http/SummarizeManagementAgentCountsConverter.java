@@ -66,6 +66,14 @@ public class SummarizeManagementAgentCountsConverter {
                                     request.getInstallType().getValue()));
         }
 
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

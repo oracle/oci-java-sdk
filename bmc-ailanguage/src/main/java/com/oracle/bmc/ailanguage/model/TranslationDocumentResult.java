@@ -75,13 +75,63 @@ public final class TranslationDocumentResult
             return this;
         }
         /**
-         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code supported
+         * Automatically detect language - auto
+         * Arabic - ar
+         * Brazilian Portuguese -  pt-BR
+         * Czech - cs
+         * Danish - da
+         * Dutch - nl
+         * English - en
+         * Finnish - fi
+         * French - fr
+         * Canadian French - fr-CA
+         * German - de
+         * Italian - it
+         * Japanese - ja
+         * Korean - ko
+         * Norwegian - no
+         * Polish - pl
+         * Romanian - ro
+         * Simplified Chinese - zh-CN
+         * Spanish - es
+         * Swedish - sv
+         * Traditional Chinese - zh-TW
+         * Turkish - tr
+         * Greek - el
+         * Hebrew - he
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
         private String sourceLanguageCode;
 
         /**
-         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code supported
+         * Automatically detect language - auto
+         * Arabic - ar
+         * Brazilian Portuguese -  pt-BR
+         * Czech - cs
+         * Danish - da
+         * Dutch - nl
+         * English - en
+         * Finnish - fi
+         * French - fr
+         * Canadian French - fr-CA
+         * German - de
+         * Italian - it
+         * Japanese - ja
+         * Korean - ko
+         * Norwegian - no
+         * Polish - pl
+         * Romanian - ro
+         * Simplified Chinese - zh-CN
+         * Spanish - es
+         * Swedish - sv
+         * Traditional Chinese - zh-TW
+         * Turkish - tr
+         * Greek - el
+         * Hebrew - he
+         *
          * @param sourceLanguageCode the value to set
          * @return this builder
          **/
@@ -91,13 +141,63 @@ public final class TranslationDocumentResult
             return this;
         }
         /**
-         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code supported
+         * Automatically detect language - auto
+         * Arabic - ar
+         * Brazilian Portuguese -  pt-BR
+         * Czech - cs
+         * Danish - da
+         * Dutch - nl
+         * English - en
+         * Finnish - fi
+         * French - fr
+         * Canadian French - fr-CA
+         * German - de
+         * Italian - it
+         * Japanese - ja
+         * Korean - ko
+         * Norwegian - no
+         * Polish - pl
+         * Romanian - ro
+         * Simplified Chinese - zh-CN
+         * Spanish - es
+         * Swedish - sv
+         * Traditional Chinese - zh-TW
+         * Turkish - tr
+         * Greek - el
+         * Hebrew - he
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
         private String targetLanguageCode;
 
         /**
-         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code supported
+         * Automatically detect language - auto
+         * Arabic - ar
+         * Brazilian Portuguese -  pt-BR
+         * Czech - cs
+         * Danish - da
+         * Dutch - nl
+         * English - en
+         * Finnish - fi
+         * French - fr
+         * Canadian French - fr-CA
+         * German - de
+         * Italian - it
+         * Japanese - ja
+         * Korean - ko
+         * Norwegian - no
+         * Polish - pl
+         * Romanian - ro
+         * Simplified Chinese - zh-CN
+         * Spanish - es
+         * Swedish - sv
+         * Traditional Chinese - zh-TW
+         * Turkish - tr
+         * Greek - el
+         * Hebrew - he
+         *
          * @param targetLanguageCode the value to set
          * @return this builder
          **/
@@ -181,13 +281,63 @@ public final class TranslationDocumentResult
     }
 
     /**
-     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code supported
+     * Automatically detect language - auto
+     * Arabic - ar
+     * Brazilian Portuguese -  pt-BR
+     * Czech - cs
+     * Danish - da
+     * Dutch - nl
+     * English - en
+     * Finnish - fi
+     * French - fr
+     * Canadian French - fr-CA
+     * German - de
+     * Italian - it
+     * Japanese - ja
+     * Korean - ko
+     * Norwegian - no
+     * Polish - pl
+     * Romanian - ro
+     * Simplified Chinese - zh-CN
+     * Spanish - es
+     * Swedish - sv
+     * Traditional Chinese - zh-TW
+     * Turkish - tr
+     * Greek - el
+     * Hebrew - he
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
     private final String sourceLanguageCode;
 
     /**
-     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code supported
+     * Automatically detect language - auto
+     * Arabic - ar
+     * Brazilian Portuguese -  pt-BR
+     * Czech - cs
+     * Danish - da
+     * Dutch - nl
+     * English - en
+     * Finnish - fi
+     * French - fr
+     * Canadian French - fr-CA
+     * German - de
+     * Italian - it
+     * Japanese - ja
+     * Korean - ko
+     * Norwegian - no
+     * Polish - pl
+     * Romanian - ro
+     * Simplified Chinese - zh-CN
+     * Spanish - es
+     * Swedish - sv
+     * Traditional Chinese - zh-TW
+     * Turkish - tr
+     * Greek - el
+     * Hebrew - he
+     *
      * @return the value
      **/
     public String getSourceLanguageCode() {
@@ -195,13 +345,63 @@ public final class TranslationDocumentResult
     }
 
     /**
-     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code supported
+     * Automatically detect language - auto
+     * Arabic - ar
+     * Brazilian Portuguese -  pt-BR
+     * Czech - cs
+     * Danish - da
+     * Dutch - nl
+     * English - en
+     * Finnish - fi
+     * French - fr
+     * Canadian French - fr-CA
+     * German - de
+     * Italian - it
+     * Japanese - ja
+     * Korean - ko
+     * Norwegian - no
+     * Polish - pl
+     * Romanian - ro
+     * Simplified Chinese - zh-CN
+     * Spanish - es
+     * Swedish - sv
+     * Traditional Chinese - zh-TW
+     * Turkish - tr
+     * Greek - el
+     * Hebrew - he
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
     private final String targetLanguageCode;
 
     /**
-     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code supported
+     * Automatically detect language - auto
+     * Arabic - ar
+     * Brazilian Portuguese -  pt-BR
+     * Czech - cs
+     * Danish - da
+     * Dutch - nl
+     * English - en
+     * Finnish - fi
+     * French - fr
+     * Canadian French - fr-CA
+     * German - de
+     * Italian - it
+     * Japanese - ja
+     * Korean - ko
+     * Norwegian - no
+     * Polish - pl
+     * Romanian - ro
+     * Simplified Chinese - zh-CN
+     * Spanish - es
+     * Swedish - sv
+     * Traditional Chinese - zh-TW
+     * Turkish - tr
+     * Greek - el
+     * Hebrew - he
+     *
      * @return the value
      **/
     public String getTargetLanguageCode() {

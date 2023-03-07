@@ -235,6 +235,56 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
             this.__explicitlySet__.add("dbAdditionalDetails");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
+        private String opsiPrivateEndpointId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+         * @param opsiPrivateEndpointId the value to set
+         * @return this builder
+         **/
+        public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            this.__explicitlySet__.add("opsiPrivateEndpointId");
+            return this;
+        }
+        /**
+         * Flag is to identify if advanced features for autonomous database is enabled or not
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+        private Boolean isAdvancedFeaturesEnabled;
+
+        /**
+         * Flag is to identify if advanced features for autonomous database is enabled or not
+         * @param isAdvancedFeaturesEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+        private ConnectionDetails connectionDetails;
+
+        public Builder connectionDetails(ConnectionDetails connectionDetails) {
+            this.connectionDetails = connectionDetails;
+            this.__explicitlySet__.add("connectionDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
+        private CredentialDetails credentialDetails;
+
+        public Builder credentialDetails(CredentialDetails credentialDetails) {
+            this.credentialDetails = credentialDetails;
+            this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -260,7 +310,11 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
                             this.databaseName,
                             this.databaseDisplayName,
                             this.databaseResourceType,
-                            this.dbAdditionalDetails);
+                            this.dbAdditionalDetails,
+                            this.opsiPrivateEndpointId,
+                            this.isAdvancedFeaturesEnabled,
+                            this.connectionDetails,
+                            this.credentialDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -326,6 +380,18 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
             if (model.wasPropertyExplicitlySet("dbAdditionalDetails")) {
                 this.dbAdditionalDetails(model.getDbAdditionalDetails());
             }
+            if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
+                this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("isAdvancedFeaturesEnabled")) {
+                this.isAdvancedFeaturesEnabled(model.getIsAdvancedFeaturesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("connectionDetails")) {
+                this.connectionDetails(model.getConnectionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
             return this;
         }
     }
@@ -361,7 +427,11 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
             String databaseName,
             String databaseDisplayName,
             String databaseResourceType,
-            Object dbAdditionalDetails) {
+            Object dbAdditionalDetails,
+            String opsiPrivateEndpointId,
+            Boolean isAdvancedFeaturesEnabled,
+            ConnectionDetails connectionDetails,
+            CredentialDetails credentialDetails) {
         super(
                 id,
                 compartmentId,
@@ -382,6 +452,10 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
         this.databaseDisplayName = databaseDisplayName;
         this.databaseResourceType = databaseResourceType;
         this.dbAdditionalDetails = dbAdditionalDetails;
+        this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+        this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+        this.connectionDetails = connectionDetails;
+        this.credentialDetails = credentialDetails;
     }
 
     /**
@@ -456,6 +530,48 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
         return dbAdditionalDetails;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
+    private final String opsiPrivateEndpointId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+     * @return the value
+     **/
+    public String getOpsiPrivateEndpointId() {
+        return opsiPrivateEndpointId;
+    }
+
+    /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+    private final Boolean isAdvancedFeaturesEnabled;
+
+    /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     * @return the value
+     **/
+    public Boolean getIsAdvancedFeaturesEnabled() {
+        return isAdvancedFeaturesEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+    private final ConnectionDetails connectionDetails;
+
+    public ConnectionDetails getConnectionDetails() {
+        return connectionDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("credentialDetails")
+    private final CredentialDetails credentialDetails;
+
+    public CredentialDetails getCredentialDetails() {
+        return credentialDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -475,6 +591,11 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
         sb.append(", databaseDisplayName=").append(String.valueOf(this.databaseDisplayName));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
         sb.append(", dbAdditionalDetails=").append(String.valueOf(this.dbAdditionalDetails));
+        sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(", isAdvancedFeaturesEnabled=")
+                .append(String.valueOf(this.isAdvancedFeaturesEnabled));
+        sb.append(", connectionDetails=").append(String.valueOf(this.connectionDetails));
+        sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -494,6 +615,11 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
                 && java.util.Objects.equals(this.databaseDisplayName, other.databaseDisplayName)
                 && java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
                 && java.util.Objects.equals(this.dbAdditionalDetails, other.dbAdditionalDetails)
+                && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(
+                        this.isAdvancedFeaturesEnabled, other.isAdvancedFeaturesEnabled)
+                && java.util.Objects.equals(this.connectionDetails, other.connectionDetails)
+                && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
                 && super.equals(other);
     }
 
@@ -518,6 +644,22 @@ public final class AutonomousDatabaseInsight extends DatabaseInsight {
                         + (this.dbAdditionalDetails == null
                                 ? 43
                                 : this.dbAdditionalDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opsiPrivateEndpointId == null
+                                ? 43
+                                : this.opsiPrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAdvancedFeaturesEnabled == null
+                                ? 43
+                                : this.isAdvancedFeaturesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionDetails == null ? 43 : this.connectionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
         return result;
     }
 }

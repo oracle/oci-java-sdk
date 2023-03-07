@@ -493,6 +493,69 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+            changeAutonomousDatabaseInsightAdvancedFeatures(
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                    ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                            handler) {
+        LOG.trace("Called async changeAutonomousDatabaseInsightAdvancedFeatures");
+        final ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest interceptedRequest =
+                ChangeAutonomousDatabaseInsightAdvancedFeaturesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAutonomousDatabaseInsightAdvancedFeaturesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ChangeAutonomousDatabaseInsightAdvancedFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeAutonomousDatabaseInsightAdvancedFeatures");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                transformer =
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>,
+                        java.util.concurrent.Future<
+                                ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeAutonomousDatabaseInsightAdvancedFeaturesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseInsightCompartmentResponse>
             changeDatabaseInsightCompartment(
                     ChangeDatabaseInsightCompartmentRequest request,
@@ -1857,6 +1920,63 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+            disableAutonomousDatabaseInsightAdvancedFeatures(
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                    DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                            handler) {
+        LOG.trace("Called async disableAutonomousDatabaseInsightAdvancedFeatures");
+        final DisableAutonomousDatabaseInsightAdvancedFeaturesRequest interceptedRequest =
+                DisableAutonomousDatabaseInsightAdvancedFeaturesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "DisableAutonomousDatabaseInsightAdvancedFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableAutonomousDatabaseInsightAdvancedFeatures");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                transformer =
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>,
+                        java.util.concurrent.Future<
+                                DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableDatabaseInsightResponse> disableDatabaseInsight(
             DisableDatabaseInsightRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2060,6 +2180,69 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DownloadOperationsInsightsWarehouseWalletRequest,
                     DownloadOperationsInsightsWarehouseWalletResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+            enableAutonomousDatabaseInsightAdvancedFeatures(
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                    EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                            handler) {
+        LOG.trace("Called async enableAutonomousDatabaseInsightAdvancedFeatures");
+        final EnableAutonomousDatabaseInsightAdvancedFeaturesRequest interceptedRequest =
+                EnableAutonomousDatabaseInsightAdvancedFeaturesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "EnableAutonomousDatabaseInsightAdvancedFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableAutonomousDatabaseInsightAdvancedFeatures");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                transformer =
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                                EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>,
+                        java.util.concurrent.Future<
+                                EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableAutonomousDatabaseInsightAdvancedFeaturesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest,
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

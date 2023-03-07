@@ -437,14 +437,14 @@ public class SummarizeHostInsightResourceStatisticsRequest
     }
     /**
      * Filter by one or more host types.
-     * Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      *
      */
     private java.util.List<String> hostType;
 
     /**
      * Filter by one or more host types.
-     * Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      *
      */
     public java.util.List<String> getHostType() {
@@ -997,14 +997,14 @@ public class SummarizeHostInsightResourceStatisticsRequest
 
         /**
          * Filter by one or more host types.
-         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          *
          */
         private java.util.List<String> hostType = null;
 
         /**
          * Filter by one or more host types.
-         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          *
          * @param hostType the value to set
          * @return this builder instance
@@ -1016,7 +1016,7 @@ public class SummarizeHostInsightResourceStatisticsRequest
 
         /**
          * Singular setter. Filter by one or more host types.
-         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          *
          * @param singularValue the singular value to set
          * @return this builder instance

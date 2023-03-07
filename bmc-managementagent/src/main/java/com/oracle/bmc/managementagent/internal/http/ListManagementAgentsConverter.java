@@ -116,6 +116,15 @@ public class ListManagementAgentsConverter {
                                     request.getInstallType().getValue()));
         }
 
+        if (request.getGatewayId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "gatewayId",
+                            request.getGatewayId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

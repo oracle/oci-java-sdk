@@ -8,6 +8,7 @@ package com.oracle.bmc.managementagent.model;
  * Supported architecture types.
  * X86_64 - Package architecture is x86-64
  * SPARC - Package architecture is SPARC
+ * M1 - Package architecture for M1 chipset
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
@@ -15,6 +16,7 @@ public enum ArchitectureTypes {
     X8664("X86_64"),
     Sparc("SPARC"),
     X86("X86"),
+    M1("M1"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

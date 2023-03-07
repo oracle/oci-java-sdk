@@ -570,6 +570,54 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse
+            changeAutonomousDatabaseInsightAdvancedFeatures(
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest request) {
+        LOG.trace("Called changeAutonomousDatabaseInsightAdvancedFeatures");
+        final ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest interceptedRequest =
+                ChangeAutonomousDatabaseInsightAdvancedFeaturesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAutonomousDatabaseInsightAdvancedFeaturesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ChangeAutonomousDatabaseInsightAdvancedFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeAutonomousDatabaseInsightAdvancedFeatures");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                transformer =
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeAutonomousDatabaseInsightAdvancedFeaturesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDatabaseInsightCompartmentResponse changeDatabaseInsightCompartment(
             ChangeDatabaseInsightCompartmentRequest request) {
         LOG.trace("Called changeDatabaseInsightCompartment");
@@ -1633,6 +1681,50 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public DisableAutonomousDatabaseInsightAdvancedFeaturesResponse
+            disableAutonomousDatabaseInsightAdvancedFeatures(
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest request) {
+        LOG.trace("Called disableAutonomousDatabaseInsightAdvancedFeatures");
+        final DisableAutonomousDatabaseInsightAdvancedFeaturesRequest interceptedRequest =
+                DisableAutonomousDatabaseInsightAdvancedFeaturesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "DisableAutonomousDatabaseInsightAdvancedFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableAutonomousDatabaseInsightAdvancedFeatures");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                transformer =
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableDatabaseInsightResponse disableDatabaseInsight(
             DisableDatabaseInsightRequest request) {
         LOG.trace("Called disableDatabaseInsight");
@@ -1803,6 +1895,54 @@ public class OperationsInsightsClient implements OperationsInsights {
                                                 ib,
                                                 retriedRequest
                                                         .getDownloadOperationsInsightsWarehouseWalletDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableAutonomousDatabaseInsightAdvancedFeaturesResponse
+            enableAutonomousDatabaseInsightAdvancedFeatures(
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest request) {
+        LOG.trace("Called enableAutonomousDatabaseInsightAdvancedFeatures");
+        final EnableAutonomousDatabaseInsightAdvancedFeaturesRequest interceptedRequest =
+                EnableAutonomousDatabaseInsightAdvancedFeaturesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "EnableAutonomousDatabaseInsightAdvancedFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableAutonomousDatabaseInsightAdvancedFeatures");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
+                transformer =
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableAutonomousDatabaseInsightAdvancedFeaturesDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

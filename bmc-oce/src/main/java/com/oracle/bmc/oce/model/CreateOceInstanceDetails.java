@@ -38,6 +38,7 @@ public final class CreateOceInstanceDetails
         "wafPrimaryDomain",
         "instanceAccessType",
         "instanceLicenseType",
+        "drRegion",
         "freeformTags",
         "definedTags"
     })
@@ -57,6 +58,7 @@ public final class CreateOceInstanceDetails
             String wafPrimaryDomain,
             InstanceAccessType instanceAccessType,
             LicenseType instanceLicenseType,
+            String drRegion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -75,6 +77,7 @@ public final class CreateOceInstanceDetails
         this.wafPrimaryDomain = wafPrimaryDomain;
         this.instanceAccessType = instanceAccessType;
         this.instanceLicenseType = instanceLicenseType;
+        this.drRegion = drRegion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -319,6 +322,22 @@ public final class CreateOceInstanceDetails
             return this;
         }
         /**
+         * disaster recovery paired ragion name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("drRegion")
+        private String drRegion;
+
+        /**
+         * disaster recovery paired ragion name
+         * @param drRegion the value to set
+         * @return this builder
+         **/
+        public Builder drRegion(String drRegion) {
+            this.drRegion = drRegion;
+            this.__explicitlySet__.add("drRegion");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -381,6 +400,7 @@ public final class CreateOceInstanceDetails
                             this.wafPrimaryDomain,
                             this.instanceAccessType,
                             this.instanceLicenseType,
+                            this.drRegion,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -435,6 +455,9 @@ public final class CreateOceInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("instanceLicenseType")) {
                 this.instanceLicenseType(model.getInstanceLicenseType());
+            }
+            if (model.wasPropertyExplicitlySet("drRegion")) {
+                this.drRegion(model.getDrRegion());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -735,6 +758,20 @@ public final class CreateOceInstanceDetails
     }
 
     /**
+     * disaster recovery paired ragion name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drRegion")
+    private final String drRegion;
+
+    /**
+     * disaster recovery paired ragion name
+     * @return the value
+     **/
+    public String getDrRegion() {
+        return drRegion;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -799,6 +836,7 @@ public final class CreateOceInstanceDetails
         sb.append(", wafPrimaryDomain=").append(String.valueOf(this.wafPrimaryDomain));
         sb.append(", instanceAccessType=").append(String.valueOf(this.instanceAccessType));
         sb.append(", instanceLicenseType=").append(String.valueOf(this.instanceLicenseType));
+        sb.append(", drRegion=").append(String.valueOf(this.drRegion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -831,6 +869,7 @@ public final class CreateOceInstanceDetails
                 && java.util.Objects.equals(this.wafPrimaryDomain, other.wafPrimaryDomain)
                 && java.util.Objects.equals(this.instanceAccessType, other.instanceAccessType)
                 && java.util.Objects.equals(this.instanceLicenseType, other.instanceLicenseType)
+                && java.util.Objects.equals(this.drRegion, other.drRegion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -881,6 +920,7 @@ public final class CreateOceInstanceDetails
                         + (this.instanceLicenseType == null
                                 ? 43
                                 : this.instanceLicenseType.hashCode());
+        result = (result * PRIME) + (this.drRegion == null ? 43 : this.drRegion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
