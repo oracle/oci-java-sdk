@@ -153,6 +153,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeAnalyticsInstanceCompartmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -190,6 +191,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ChangeAnalyticsInstanceNetworkEndpointResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -222,6 +224,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateAnalyticsInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "location", CreateAnalyticsInstanceResponse.Builder::location)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -256,6 +259,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreatePrivateAccessChannelResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -287,6 +291,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateVanityUrlResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateVanityUrlResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -317,6 +322,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteAnalyticsInstanceResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -352,6 +358,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeletePrivateAccessChannelResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -384,6 +391,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", DeleteVanityUrlResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteVanityUrlResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -436,6 +444,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetAnalyticsInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAnalyticsInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -470,6 +479,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetPrivateAccessChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPrivateAccessChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -499,6 +509,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -535,6 +546,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAnalyticsInstancesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAnalyticsInstancesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -567,6 +579,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -598,6 +611,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -635,6 +649,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -671,6 +686,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ScaleAnalyticsInstanceResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -703,6 +719,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", SetKmsKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", SetKmsKeyResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -735,6 +752,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StartAnalyticsInstanceResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -767,6 +785,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         StopAnalyticsInstanceResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -840,6 +859,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdatePrivateAccessChannelResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -875,6 +895,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", UpdateVanityUrlResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateVanityUrlResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

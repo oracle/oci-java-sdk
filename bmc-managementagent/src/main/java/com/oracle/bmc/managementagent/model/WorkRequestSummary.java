@@ -159,14 +159,14 @@ public final class WorkRequestSummary
         }
         /**
          * The date and time the request was created, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The date and time the request was created, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          *
          * @param timeAccepted the value to set
          * @return this builder
@@ -178,14 +178,14 @@ public final class WorkRequestSummary
         }
         /**
          * The date and time the request was started, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time the request was started, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -366,14 +366,14 @@ public final class WorkRequestSummary
 
     /**
      * The date and time the request was created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The date and time the request was created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      *
      * @return the value
      */
@@ -383,14 +383,14 @@ public final class WorkRequestSummary
 
     /**
      * The date and time the request was started, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time the request was started, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      *
      * @return the value
      */

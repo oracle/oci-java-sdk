@@ -159,6 +159,46 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse
+            changeAutonomousDatabaseInsightAdvancedFeatures(
+                    ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest request) {
+        Objects.requireNonNull(
+                request.getChangeAutonomousDatabaseInsightAdvancedFeaturesDetails(),
+                "changeAutonomousDatabaseInsightAdvancedFeaturesDetails is required");
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+
+        return clientCall(request, ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse::builder)
+                .logger(LOG, "changeAutonomousDatabaseInsightAdvancedFeatures")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeAutonomousDatabaseInsightAdvancedFeatures",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeAutonomousDatabaseInsightAdvancedFeatures")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("changeAutonomousDatabaseInsightAdvancedFeatures")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
+                                ::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeDatabaseInsightCompartmentResponse changeDatabaseInsightCompartment(
             ChangeDatabaseInsightCompartmentRequest request) {
 
@@ -1057,6 +1097,43 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public DisableAutonomousDatabaseInsightAdvancedFeaturesResponse
+            disableAutonomousDatabaseInsightAdvancedFeatures(
+                    DisableAutonomousDatabaseInsightAdvancedFeaturesRequest request) {
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+
+        return clientCall(
+                        request, DisableAutonomousDatabaseInsightAdvancedFeaturesResponse::builder)
+                .logger(LOG, "disableAutonomousDatabaseInsightAdvancedFeatures")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "DisableAutonomousDatabaseInsightAdvancedFeatures",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableAutonomousDatabaseInsightAdvancedFeatures")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAutonomousDatabaseInsightAdvancedFeaturesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("disableAutonomousDatabaseInsightAdvancedFeatures")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
+                                ::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DisableDatabaseInsightResponse disableDatabaseInsight(
             DisableDatabaseInsightRequest request) {
 
@@ -1193,6 +1270,46 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderDate(
                         "last-modified",
                         DownloadOperationsInsightsWarehouseWalletResponse.Builder::lastModified)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public EnableAutonomousDatabaseInsightAdvancedFeaturesResponse
+            enableAutonomousDatabaseInsightAdvancedFeatures(
+                    EnableAutonomousDatabaseInsightAdvancedFeaturesRequest request) {
+        Objects.requireNonNull(
+                request.getEnableAutonomousDatabaseInsightAdvancedFeaturesDetails(),
+                "enableAutonomousDatabaseInsightAdvancedFeaturesDetails is required");
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+
+        return clientCall(request, EnableAutonomousDatabaseInsightAdvancedFeaturesResponse::builder)
+                .logger(LOG, "enableAutonomousDatabaseInsightAdvancedFeatures")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "EnableAutonomousDatabaseInsightAdvancedFeatures",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableAutonomousDatabaseInsightAdvancedFeatures")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAutonomousDatabaseInsightAdvancedFeaturesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("enableAutonomousDatabaseInsightAdvancedFeatures")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableAutonomousDatabaseInsightAdvancedFeaturesResponse.Builder
+                                ::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -3985,6 +4102,8 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4082,6 +4201,8 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4178,6 +4299,8 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4264,6 +4387,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendListQueryParam(
                         "vmclusterName",
                         request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "cdbName",
+                        request.getCdbName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -4352,6 +4479,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendListQueryParam(
                         "vmclusterName",
                         request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "cdbName",
+                        request.getCdbName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -4443,6 +4574,12 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "cdbName",
+                        request.getCdbName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5870,6 +6007,10 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "vmclusterName",
+                        request.getVmclusterName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

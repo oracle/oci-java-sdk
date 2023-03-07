@@ -10,7 +10,7 @@ public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
     Standby("STANDBY"),
     Failover("FAILOVER"),
     Down("DOWN"),
-    Active("ACTIVE"),
+    Primary("PRIMARY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

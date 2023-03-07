@@ -32,6 +32,7 @@ public final class UpdateInstanceDetails
         "extendedMetadata",
         "shape",
         "shapeConfig",
+        "updateOperationConstraint",
         "instanceOptions",
         "faultDomain",
         "launchOptions",
@@ -48,6 +49,7 @@ public final class UpdateInstanceDetails
             java.util.Map<String, Object> extendedMetadata,
             String shape,
             UpdateInstanceShapeConfigDetails shapeConfig,
+            UpdateOperationConstraint updateOperationConstraint,
             InstanceOptions instanceOptions,
             String faultDomain,
             UpdateLaunchOptions launchOptions,
@@ -63,6 +65,7 @@ public final class UpdateInstanceDetails
         this.extendedMetadata = extendedMetadata;
         this.shape = shape;
         this.shapeConfig = shapeConfig;
+        this.updateOperationConstraint = updateOperationConstraint;
         this.instanceOptions = instanceOptions;
         this.faultDomain = faultDomain;
         this.launchOptions = launchOptions;
@@ -306,6 +309,36 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("shapeConfig");
             return this;
         }
+        /**
+         * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
+         * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot
+         * the instance while updating the instance if a reboot is required. * {@code
+         * AVOID_DOWNTIME} - If the instance is in running state, Compute tries to update the
+         * instance without rebooting it. If the instance requires a reboot to be updated, an error
+         * is returned and the instance is not updated. If the instance is stopped, it is updated
+         * and remains in the stopped state.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("updateOperationConstraint")
+        private UpdateOperationConstraint updateOperationConstraint;
+
+        /**
+         * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
+         * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot
+         * the instance while updating the instance if a reboot is required. * {@code
+         * AVOID_DOWNTIME} - If the instance is in running state, Compute tries to update the
+         * instance without rebooting it. If the instance requires a reboot to be updated, an error
+         * is returned and the instance is not updated. If the instance is stopped, it is updated
+         * and remains in the stopped state.
+         *
+         * @param updateOperationConstraint the value to set
+         * @return this builder
+         */
+        public Builder updateOperationConstraint(
+                UpdateOperationConstraint updateOperationConstraint) {
+            this.updateOperationConstraint = updateOperationConstraint;
+            this.__explicitlySet__.add("updateOperationConstraint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
         private InstanceOptions instanceOptions;
@@ -442,6 +475,7 @@ public final class UpdateInstanceDetails
                             this.extendedMetadata,
                             this.shape,
                             this.shapeConfig,
+                            this.updateOperationConstraint,
                             this.instanceOptions,
                             this.faultDomain,
                             this.launchOptions,
@@ -481,6 +515,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("shapeConfig")) {
                 this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("updateOperationConstraint")) {
+                this.updateOperationConstraint(model.getUpdateOperationConstraint());
             }
             if (model.wasPropertyExplicitlySet("instanceOptions")) {
                 this.instanceOptions(model.getInstanceOptions());
@@ -725,6 +762,71 @@ public final class UpdateInstanceDetails
         return shapeConfig;
     }
 
+    /**
+     * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
+     * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot the
+     * instance while updating the instance if a reboot is required. * {@code AVOID_DOWNTIME} - If
+     * the instance is in running state, Compute tries to update the instance without rebooting it.
+     * If the instance requires a reboot to be updated, an error is returned and the instance is not
+     * updated. If the instance is stopped, it is updated and remains in the stopped state.
+     */
+    public enum UpdateOperationConstraint implements com.oracle.bmc.http.internal.BmcEnum {
+        AllowDowntime("ALLOW_DOWNTIME"),
+        AvoidDowntime("AVOID_DOWNTIME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, UpdateOperationConstraint> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UpdateOperationConstraint v : UpdateOperationConstraint.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        UpdateOperationConstraint(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UpdateOperationConstraint create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid UpdateOperationConstraint: " + key);
+        }
+    };
+    /**
+     * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
+     * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot the
+     * instance while updating the instance if a reboot is required. * {@code AVOID_DOWNTIME} - If
+     * the instance is in running state, Compute tries to update the instance without rebooting it.
+     * If the instance requires a reboot to be updated, an error is returned and the instance is not
+     * updated. If the instance is stopped, it is updated and remains in the stopped state.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("updateOperationConstraint")
+    private final UpdateOperationConstraint updateOperationConstraint;
+
+    /**
+     * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
+     * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot the
+     * instance while updating the instance if a reboot is required. * {@code AVOID_DOWNTIME} - If
+     * the instance is in running state, Compute tries to update the instance without rebooting it.
+     * If the instance requires a reboot to be updated, an error is returned and the instance is not
+     * updated. If the instance is stopped, it is updated and remains in the stopped state.
+     *
+     * @return the value
+     */
+    public UpdateOperationConstraint getUpdateOperationConstraint() {
+        return updateOperationConstraint;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
     private final InstanceOptions instanceOptions;
 
@@ -856,6 +958,8 @@ public final class UpdateInstanceDetails
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", updateOperationConstraint=")
+                .append(String.valueOf(this.updateOperationConstraint));
         sb.append(", instanceOptions=").append(String.valueOf(this.instanceOptions));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", launchOptions=").append(String.valueOf(this.launchOptions));
@@ -885,6 +989,8 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(
+                        this.updateOperationConstraint, other.updateOperationConstraint)
                 && java.util.Objects.equals(this.instanceOptions, other.instanceOptions)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.launchOptions, other.launchOptions)
@@ -913,6 +1019,11 @@ public final class UpdateInstanceDetails
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateOperationConstraint == null
+                                ? 43
+                                : this.updateOperationConstraint.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceOptions == null ? 43 : this.instanceOptions.hashCode());

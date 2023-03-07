@@ -39,7 +39,11 @@ public final class AutonomousDatabaseBackup
         "keyStoreWalletName",
         "kmsKeyId",
         "vaultId",
-        "kmsKeyVersionId"
+        "kmsKeyVersionId",
+        "retentionPeriodInDays",
+        "timeAvailableTill",
+        "dbVersion",
+        "sizeInTBs"
     })
     public AutonomousDatabaseBackup(
             String id,
@@ -58,7 +62,11 @@ public final class AutonomousDatabaseBackup
             String keyStoreWalletName,
             String kmsKeyId,
             String vaultId,
-            String kmsKeyVersionId) {
+            String kmsKeyVersionId,
+            Integer retentionPeriodInDays,
+            java.util.Date timeAvailableTill,
+            String dbVersion,
+            Double sizeInTBs) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -77,6 +85,10 @@ public final class AutonomousDatabaseBackup
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
         this.kmsKeyVersionId = kmsKeyVersionId;
+        this.retentionPeriodInDays = retentionPeriodInDays;
+        this.timeAvailableTill = timeAvailableTill;
+        this.dbVersion = dbVersion;
+        this.sizeInTBs = sizeInTBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -370,6 +382,66 @@ public final class AutonomousDatabaseBackup
             this.__explicitlySet__.add("kmsKeyVersionId");
             return this;
         }
+        /** Retention period, in days, for long-term backups */
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+        private Integer retentionPeriodInDays;
+
+        /**
+         * Retention period, in days, for long-term backups
+         *
+         * @param retentionPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
+            this.__explicitlySet__.add("retentionPeriodInDays");
+            return this;
+        }
+        /** Timestamp until when the backup will be available */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeAvailableTill")
+        private java.util.Date timeAvailableTill;
+
+        /**
+         * Timestamp until when the backup will be available
+         *
+         * @param timeAvailableTill the value to set
+         * @return this builder
+         */
+        public Builder timeAvailableTill(java.util.Date timeAvailableTill) {
+            this.timeAvailableTill = timeAvailableTill;
+            this.__explicitlySet__.add("timeAvailableTill");
+            return this;
+        }
+        /** A valid Oracle Database version for Autonomous Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        /**
+         * A valid Oracle Database version for Autonomous Database.
+         *
+         * @param dbVersion the value to set
+         * @return this builder
+         */
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+        /** The backup size in terrabytes (TB). */
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInTBs")
+        private Double sizeInTBs;
+
+        /**
+         * The backup size in terrabytes (TB).
+         *
+         * @param sizeInTBs the value to set
+         * @return this builder
+         */
+        public Builder sizeInTBs(Double sizeInTBs) {
+            this.sizeInTBs = sizeInTBs;
+            this.__explicitlySet__.add("sizeInTBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -393,7 +465,11 @@ public final class AutonomousDatabaseBackup
                             this.keyStoreWalletName,
                             this.kmsKeyId,
                             this.vaultId,
-                            this.kmsKeyVersionId);
+                            this.kmsKeyVersionId,
+                            this.retentionPeriodInDays,
+                            this.timeAvailableTill,
+                            this.dbVersion,
+                            this.sizeInTBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -452,6 +528,18 @@ public final class AutonomousDatabaseBackup
             }
             if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
                 this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriodInDays")) {
+                this.retentionPeriodInDays(model.getRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("timeAvailableTill")) {
+                this.timeAvailableTill(model.getTimeAvailableTill());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInTBs")) {
+                this.sizeInTBs(model.getSizeInTBs());
             }
             return this;
         }
@@ -534,6 +622,7 @@ public final class AutonomousDatabaseBackup
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Incremental("INCREMENTAL"),
         Full("FULL"),
+        Longterm("LONGTERM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -659,6 +748,7 @@ public final class AutonomousDatabaseBackup
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -812,6 +902,58 @@ public final class AutonomousDatabaseBackup
         return kmsKeyVersionId;
     }
 
+    /** Retention period, in days, for long-term backups */
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+    private final Integer retentionPeriodInDays;
+
+    /**
+     * Retention period, in days, for long-term backups
+     *
+     * @return the value
+     */
+    public Integer getRetentionPeriodInDays() {
+        return retentionPeriodInDays;
+    }
+
+    /** Timestamp until when the backup will be available */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeAvailableTill")
+    private final java.util.Date timeAvailableTill;
+
+    /**
+     * Timestamp until when the backup will be available
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeAvailableTill() {
+        return timeAvailableTill;
+    }
+
+    /** A valid Oracle Database version for Autonomous Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    private final String dbVersion;
+
+    /**
+     * A valid Oracle Database version for Autonomous Database.
+     *
+     * @return the value
+     */
+    public String getDbVersion() {
+        return dbVersion;
+    }
+
+    /** The backup size in terrabytes (TB). */
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInTBs")
+    private final Double sizeInTBs;
+
+    /**
+     * The backup size in terrabytes (TB).
+     *
+     * @return the value
+     */
+    public Double getSizeInTBs() {
+        return sizeInTBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -844,6 +986,10 @@ public final class AutonomousDatabaseBackup
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
+        sb.append(", timeAvailableTill=").append(String.valueOf(this.timeAvailableTill));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", sizeInTBs=").append(String.valueOf(this.sizeInTBs));
         sb.append(")");
         return sb.toString();
     }
@@ -875,6 +1021,10 @@ public final class AutonomousDatabaseBackup
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
+                && java.util.Objects.equals(this.timeAvailableTill, other.timeAvailableTill)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.sizeInTBs, other.sizeInTBs)
                 && super.equals(other);
     }
 
@@ -917,6 +1067,16 @@ public final class AutonomousDatabaseBackup
         result =
                 (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodInDays == null
+                                ? 43
+                                : this.retentionPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeAvailableTill == null ? 43 : this.timeAvailableTill.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result = (result * PRIME) + (this.sizeInTBs == null ? 43 : this.sizeInTBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -42,6 +42,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "drRegion",
         "stateMessage",
         "freeformTags",
         "definedTags",
@@ -70,6 +71,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             LifecycleDetails lifecycleDetails,
+            String drRegion,
             String stateMessage,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -97,6 +99,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.drRegion = drRegion;
         this.stateMessage = stateMessage;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -419,6 +422,21 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** disaster recovery paired ragion name */
+        @com.fasterxml.jackson.annotation.JsonProperty("drRegion")
+        private String drRegion;
+
+        /**
+         * disaster recovery paired ragion name
+         *
+         * @param drRegion the value to set
+         * @return this builder
+         */
+        public Builder drRegion(String drRegion) {
+            this.drRegion = drRegion;
+            this.__explicitlySet__.add("drRegion");
+            return this;
+        }
         /**
          * An message describing the current state in more detail. For example, can be used to
          * provide actionable information for a resource in Failed state.
@@ -539,6 +557,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.drRegion,
                             this.stateMessage,
                             this.freeformTags,
                             this.definedTags,
@@ -614,6 +633,9 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("drRegion")) {
+                this.drRegion(model.getDrRegion());
             }
             if (model.wasPropertyExplicitlySet("stateMessage")) {
                 this.stateMessage(model.getStateMessage());
@@ -1055,6 +1077,19 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
         return lifecycleDetails;
     }
 
+    /** disaster recovery paired ragion name */
+    @com.fasterxml.jackson.annotation.JsonProperty("drRegion")
+    private final String drRegion;
+
+    /**
+     * disaster recovery paired ragion name
+     *
+     * @return the value
+     */
+    public String getDrRegion() {
+        return drRegion;
+    }
+
     /**
      * An message describing the current state in more detail. For example, can be used to provide
      * actionable information for a resource in Failed state.
@@ -1172,6 +1207,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", drRegion=").append(String.valueOf(this.drRegion));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1213,6 +1249,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.drRegion, other.drRegion)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1274,6 +1311,7 @@ public final class OceInstance extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.drRegion == null ? 43 : this.drRegion.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

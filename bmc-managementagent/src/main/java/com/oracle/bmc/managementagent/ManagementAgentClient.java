@@ -600,6 +600,10 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("isCustomerDeployed", request.getIsCustomerDeployed())
                 .appendEnumQueryParam("installType", request.getInstallType())
+                .appendListQueryParam(
+                        "gatewayId",
+                        request.getGatewayId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -777,6 +781,7 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hasPlugins", request.getHasPlugins())
                 .appendEnumQueryParam("installType", request.getInstallType())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -813,6 +818,7 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendPathParam("managementAgentPluginCounts")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("groupBy", request.getGroupBy())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())

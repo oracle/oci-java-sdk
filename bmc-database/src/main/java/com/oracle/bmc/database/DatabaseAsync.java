@@ -1083,6 +1083,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a long-term backup. You cannot delete other backups using this API.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAutonomousDatabaseBackupResponse>
+            deleteAutonomousDatabaseBackup(
+                    DeleteAutonomousDatabaseBackupRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutonomousDatabaseBackupRequest,
+                                    DeleteAutonomousDatabaseBackupResponse>
+                            handler);
+
+    /**
      * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system. To delete an
      * Autonomous VM Cluster in the Oracle cloud, see {@link
      * #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest, Consumer, Consumer)
@@ -4801,6 +4819,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAutonomousDatabaseRequest, UpdateAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Updates the Autonomous Database backup of the specified database based on the request
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutonomousDatabaseBackupResponse>
+            updateAutonomousDatabaseBackup(
+                    UpdateAutonomousDatabaseBackupRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseBackupRequest,
+                                    UpdateAutonomousDatabaseBackupResponse>
+                            handler);
 
     /**
      * Updates the Autonomous Database regional wallet.

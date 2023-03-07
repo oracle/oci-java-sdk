@@ -37,6 +37,8 @@ public final class AutonomousDatabaseSummary
         "dbName",
         "characterSet",
         "ncharacterSet",
+        "nextLongTermBackupTimeStamp",
+        "longTermBackupSchedule",
         "isFreeTier",
         "systemTags",
         "timeReclamationOfFreeAutonomousDatabase",
@@ -135,6 +137,8 @@ public final class AutonomousDatabaseSummary
             String dbName,
             String characterSet,
             String ncharacterSet,
+            java.util.Date nextLongTermBackupTimeStamp,
+            LongTermBackUpScheduleDetails longTermBackupSchedule,
             Boolean isFreeTier,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeReclamationOfFreeAutonomousDatabase,
@@ -232,6 +236,8 @@ public final class AutonomousDatabaseSummary
         this.dbName = dbName;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
+        this.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
+        this.longTermBackupSchedule = longTermBackupSchedule;
         this.isFreeTier = isFreeTier;
         this.systemTags = systemTags;
         this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
@@ -552,6 +558,31 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
+        /** The date and time when the next long-term backup would be created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nextLongTermBackupTimeStamp")
+        private java.util.Date nextLongTermBackupTimeStamp;
+
+        /**
+         * The date and time when the next long-term backup would be created.
+         *
+         * @param nextLongTermBackupTimeStamp the value to set
+         * @return this builder
+         */
+        public Builder nextLongTermBackupTimeStamp(java.util.Date nextLongTermBackupTimeStamp) {
+            this.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
+            this.__explicitlySet__.add("nextLongTermBackupTimeStamp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("longTermBackupSchedule")
+        private LongTermBackUpScheduleDetails longTermBackupSchedule;
+
+        public Builder longTermBackupSchedule(
+                LongTermBackUpScheduleDetails longTermBackupSchedule) {
+            this.longTermBackupSchedule = longTermBackupSchedule;
+            this.__explicitlySet__.add("longTermBackupSchedule");
+            return this;
+        }
         /**
          * Indicates if this is an Always Free resource. The default value is false. Note that
          * Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free
@@ -742,12 +773,12 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-        /** Retention period, in days, for backups. */
+        /** Retention period, in days, for long-term backups */
         @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
         private Integer backupRetentionPeriodInDays;
 
         /**
-         * Retention period, in days, for backups.
+         * Retention period, in days, for long-term backups
          *
          * @param backupRetentionPeriodInDays the value to set
          * @return this builder
@@ -2270,6 +2301,8 @@ public final class AutonomousDatabaseSummary
                             this.dbName,
                             this.characterSet,
                             this.ncharacterSet,
+                            this.nextLongTermBackupTimeStamp,
+                            this.longTermBackupSchedule,
                             this.isFreeTier,
                             this.systemTags,
                             this.timeReclamationOfFreeAutonomousDatabase,
@@ -2395,6 +2428,12 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("ncharacterSet")) {
                 this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("nextLongTermBackupTimeStamp")) {
+                this.nextLongTermBackupTimeStamp(model.getNextLongTermBackupTimeStamp());
+            }
+            if (model.wasPropertyExplicitlySet("longTermBackupSchedule")) {
+                this.longTermBackupSchedule(model.getLongTermBackupSchedule());
             }
             if (model.wasPropertyExplicitlySet("isFreeTier")) {
                 this.isFreeTier(model.getIsFreeTier());
@@ -2937,6 +2976,26 @@ public final class AutonomousDatabaseSummary
         return ncharacterSet;
     }
 
+    /** The date and time when the next long-term backup would be created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextLongTermBackupTimeStamp")
+    private final java.util.Date nextLongTermBackupTimeStamp;
+
+    /**
+     * The date and time when the next long-term backup would be created.
+     *
+     * @return the value
+     */
+    public java.util.Date getNextLongTermBackupTimeStamp() {
+        return nextLongTermBackupTimeStamp;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("longTermBackupSchedule")
+    private final LongTermBackUpScheduleDetails longTermBackupSchedule;
+
+    public LongTermBackUpScheduleDetails getLongTermBackupSchedule() {
+        return longTermBackupSchedule;
+    }
+
     /**
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
      * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
@@ -3154,12 +3213,12 @@ public final class AutonomousDatabaseSummary
         return computeCount;
     }
 
-    /** Retention period, in days, for backups. */
+    /** Retention period, in days, for long-term backups */
     @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
     private final Integer backupRetentionPeriodInDays;
 
     /**
-     * Retention period, in days, for backups.
+     * Retention period, in days, for long-term backups
      *
      * @return the value
      */
@@ -5211,6 +5270,9 @@ public final class AutonomousDatabaseSummary
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
+        sb.append(", nextLongTermBackupTimeStamp=")
+                .append(String.valueOf(this.nextLongTermBackupTimeStamp));
+        sb.append(", longTermBackupSchedule=").append(String.valueOf(this.longTermBackupSchedule));
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeReclamationOfFreeAutonomousDatabase=")
@@ -5346,6 +5408,10 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
+                && java.util.Objects.equals(
+                        this.nextLongTermBackupTimeStamp, other.nextLongTermBackupTimeStamp)
+                && java.util.Objects.equals(
+                        this.longTermBackupSchedule, other.longTermBackupSchedule)
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
@@ -5492,6 +5558,16 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextLongTermBackupTimeStamp == null
+                                ? 43
+                                : this.nextLongTermBackupTimeStamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.longTermBackupSchedule == null
+                                ? 43
+                                : this.longTermBackupSchedule.hashCode());
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
