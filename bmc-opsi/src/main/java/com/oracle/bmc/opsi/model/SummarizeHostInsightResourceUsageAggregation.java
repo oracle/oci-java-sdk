@@ -264,6 +264,8 @@ public final class SummarizeHostInsightResourceUsageAggregation
         Cpu("CPU"),
         Memory("MEMORY"),
         LogicalMemory("LOGICAL_MEMORY"),
+        Storage("STORAGE"),
+        Network("NETWORK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

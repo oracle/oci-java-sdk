@@ -24,6 +24,14 @@ package com.oracle.bmc.opsi.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostNetworkStatistics.class,
+        name = "HOST_NETWORK_STATISTICS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostStorageStatistics.class,
+        name = "HOST_STORAGE_STATISTICS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = HostMemoryStatistics.class,
         name = "HOST_MEMORY_STATISTICS"
     ),
@@ -177,6 +185,8 @@ public class HostResourceStatistics extends com.oracle.bmc.http.internal.Explici
     public enum ResourceName {
         HostCpuStatistics("HOST_CPU_STATISTICS"),
         HostMemoryStatistics("HOST_MEMORY_STATISTICS"),
+        HostStorageStatistics("HOST_STORAGE_STATISTICS"),
+        HostNetworkStatistics("HOST_NETWORK_STATISTICS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

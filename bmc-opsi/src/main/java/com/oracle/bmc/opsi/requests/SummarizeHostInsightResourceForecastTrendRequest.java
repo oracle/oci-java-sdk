@@ -25,12 +25,14 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     }
     /**
      * Filter by host resource metric.
+     * Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
      *
      */
     private String resourceMetric;
 
     /**
      * Filter by host resource metric.
+     * Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
      *
      */
     public String getResourceMetric() {
@@ -554,6 +556,54 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     public java.util.List<String> getVmclusterName() {
         return vmclusterName;
     }
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     */
+    private Integer highUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     */
+    public Integer getHighUtilizationThreshold() {
+        return highUtilizationThreshold;
+    }
+    /**
+     * Percent value in which a resource metric is considered low utilized.
+     */
+    private Integer lowUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered low utilized.
+     */
+    public Integer getLowUtilizationThreshold() {
+        return lowUtilizationThreshold;
+    }
+    /**
+     * Mount points are specialized NTFS filesystem objects.
+     *
+     */
+    private String mountPoint;
+
+    /**
+     * Mount points are specialized NTFS filesystem objects.
+     *
+     */
+    public String getMountPoint() {
+        return mountPoint;
+    }
+    /**
+     * Name of the network interface.
+     *
+     */
+    private String interfaceName;
+
+    /**
+     * Name of the network interface.
+     *
+     */
+    public String getInterfaceName() {
+        return interfaceName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -579,12 +629,14 @@ public class SummarizeHostInsightResourceForecastTrendRequest
 
         /**
          * Filter by host resource metric.
+         * Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
          *
          */
         private String resourceMetric = null;
 
         /**
          * Filter by host resource metric.
+         * Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
          *
          * @param resourceMetric the value to set
          * @return this builder instance
@@ -1141,6 +1193,70 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         }
 
         /**
+         * Percent value in which a resource metric is considered highly utilized.
+         */
+        private Integer highUtilizationThreshold = null;
+
+        /**
+         * Percent value in which a resource metric is considered highly utilized.
+         * @param highUtilizationThreshold the value to set
+         * @return this builder instance
+         */
+        public Builder highUtilizationThreshold(Integer highUtilizationThreshold) {
+            this.highUtilizationThreshold = highUtilizationThreshold;
+            return this;
+        }
+
+        /**
+         * Percent value in which a resource metric is considered low utilized.
+         */
+        private Integer lowUtilizationThreshold = null;
+
+        /**
+         * Percent value in which a resource metric is considered low utilized.
+         * @param lowUtilizationThreshold the value to set
+         * @return this builder instance
+         */
+        public Builder lowUtilizationThreshold(Integer lowUtilizationThreshold) {
+            this.lowUtilizationThreshold = lowUtilizationThreshold;
+            return this;
+        }
+
+        /**
+         * Mount points are specialized NTFS filesystem objects.
+         *
+         */
+        private String mountPoint = null;
+
+        /**
+         * Mount points are specialized NTFS filesystem objects.
+         *
+         * @param mountPoint the value to set
+         * @return this builder instance
+         */
+        public Builder mountPoint(String mountPoint) {
+            this.mountPoint = mountPoint;
+            return this;
+        }
+
+        /**
+         * Name of the network interface.
+         *
+         */
+        private String interfaceName = null;
+
+        /**
+         * Name of the network interface.
+         *
+         * @param interfaceName the value to set
+         * @return this builder instance
+         */
+        public Builder interfaceName(String interfaceName) {
+            this.interfaceName = interfaceName;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -1191,6 +1307,10 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             hostType(o.getHostType());
             hostId(o.getHostId());
             vmclusterName(o.getVmclusterName());
+            highUtilizationThreshold(o.getHighUtilizationThreshold());
+            lowUtilizationThreshold(o.getLowUtilizationThreshold());
+            mountPoint(o.getMountPoint());
+            interfaceName(o.getInterfaceName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1248,8 +1368,12 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             request.hostType = hostType;
             request.hostId = hostId;
             request.vmclusterName = vmclusterName;
+            request.highUtilizationThreshold = highUtilizationThreshold;
+            request.lowUtilizationThreshold = lowUtilizationThreshold;
+            request.mountPoint = mountPoint;
+            request.interfaceName = interfaceName;
             return request;
-            // new SummarizeHostInsightResourceForecastTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, statistic, forecastDays, forecastModel, utilizationLevel, confidence, page, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId, vmclusterName);
+            // new SummarizeHostInsightResourceForecastTrendRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, statistic, forecastDays, forecastModel, utilizationLevel, confidence, page, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId, vmclusterName, highUtilizationThreshold, lowUtilizationThreshold, mountPoint, interfaceName);
         }
     }
 
@@ -1281,7 +1405,11 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .hostType(hostType)
                 .hostId(hostId)
-                .vmclusterName(vmclusterName);
+                .vmclusterName(vmclusterName)
+                .highUtilizationThreshold(highUtilizationThreshold)
+                .lowUtilizationThreshold(lowUtilizationThreshold)
+                .mountPoint(mountPoint)
+                .interfaceName(interfaceName);
     }
 
     /**
@@ -1320,6 +1448,11 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",vmclusterName=").append(String.valueOf(this.vmclusterName));
+        sb.append(",highUtilizationThreshold=")
+                .append(String.valueOf(this.highUtilizationThreshold));
+        sb.append(",lowUtilizationThreshold=").append(String.valueOf(this.lowUtilizationThreshold));
+        sb.append(",mountPoint=").append(String.valueOf(this.mountPoint));
+        sb.append(",interfaceName=").append(String.valueOf(this.interfaceName));
         sb.append(")");
         return sb.toString();
     }
@@ -1359,7 +1492,13 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.hostType, other.hostType)
                 && java.util.Objects.equals(this.hostId, other.hostId)
-                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName);
+                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName)
+                && java.util.Objects.equals(
+                        this.highUtilizationThreshold, other.highUtilizationThreshold)
+                && java.util.Objects.equals(
+                        this.lowUtilizationThreshold, other.lowUtilizationThreshold)
+                && java.util.Objects.equals(this.mountPoint, other.mountPoint)
+                && java.util.Objects.equals(this.interfaceName, other.interfaceName);
     }
 
     @Override
@@ -1421,6 +1560,20 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         result =
                 (result * PRIME)
                         + (this.vmclusterName == null ? 43 : this.vmclusterName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.highUtilizationThreshold == null
+                                ? 43
+                                : this.highUtilizationThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lowUtilizationThreshold == null
+                                ? 43
+                                : this.lowUtilizationThreshold.hashCode());
+        result = (result * PRIME) + (this.mountPoint == null ? 43 : this.mountPoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());
         return result;
     }
 }

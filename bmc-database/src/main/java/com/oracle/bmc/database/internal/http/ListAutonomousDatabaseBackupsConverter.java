@@ -98,6 +98,14 @@ public class ListAutonomousDatabaseBackupsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getType() != null) {
+            target =
+                    target.queryParam(
+                            "type",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getType()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

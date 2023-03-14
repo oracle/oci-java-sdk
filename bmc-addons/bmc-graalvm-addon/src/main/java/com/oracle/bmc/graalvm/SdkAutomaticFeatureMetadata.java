@@ -65,6 +65,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.healthchecks.SdkClientsMetadata",
     "com.oracle.bmc.identity.SdkClientsMetadata",
     "com.oracle.bmc.identitydataplane.SdkClientsMetadata",
+    "com.oracle.bmc.identitydomains.SdkClientsMetadata",
     "com.oracle.bmc.jms.SdkClientsMetadata",
     "com.oracle.bmc.keymanagement.SdkClientsMetadata",
     "com.oracle.bmc.licensemanager.SdkClientsMetadata",

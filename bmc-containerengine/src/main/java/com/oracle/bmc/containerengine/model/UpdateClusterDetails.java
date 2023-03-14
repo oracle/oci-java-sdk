@@ -27,7 +27,8 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         "options",
         "freeformTags",
         "definedTags",
-        "imagePolicyConfig"
+        "imagePolicyConfig",
+        "type"
     })
     public UpdateClusterDetails(
             String name,
@@ -35,7 +36,8 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             UpdateClusterOptionsDetails options,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            UpdateImagePolicyConfigDetails imagePolicyConfig) {
+            UpdateImagePolicyConfigDetails imagePolicyConfig,
+            ClusterType type) {
         super();
         this.name = name;
         this.kubernetesVersion = kubernetesVersion;
@@ -43,6 +45,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.imagePolicyConfig = imagePolicyConfig;
+        this.type = type;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -155,6 +158,22 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("imagePolicyConfig");
             return this;
         }
+        /**
+         * Type of cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private ClusterType type;
+
+        /**
+         * Type of cluster
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(ClusterType type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -167,7 +186,8 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
                             this.options,
                             this.freeformTags,
                             this.definedTags,
-                            this.imagePolicyConfig);
+                            this.imagePolicyConfig,
+                            this.type);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -193,6 +213,9 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("imagePolicyConfig")) {
                 this.imagePolicyConfig(model.getImagePolicyConfig());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             return this;
         }
@@ -304,6 +327,20 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         return imagePolicyConfig;
     }
 
+    /**
+     * Type of cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final ClusterType type;
+
+    /**
+     * Type of cluster
+     * @return the value
+     **/
+    public ClusterType getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -324,6 +361,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(")");
         return sb.toString();
     }
@@ -344,6 +382,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
+                && java.util.Objects.equals(this.type, other.type)
                 && super.equals(other);
     }
 
@@ -361,6 +400,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

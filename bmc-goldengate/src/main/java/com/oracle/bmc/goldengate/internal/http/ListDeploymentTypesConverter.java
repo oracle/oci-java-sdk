@@ -40,6 +40,22 @@ public class ListDeploymentTypesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getDeploymentType() != null) {
+            target =
+                    target.queryParam(
+                            "deploymentType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDeploymentType().getValue()));
+        }
+
+        if (request.getOggVersion() != null) {
+            target =
+                    target.queryParam(
+                            "oggVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getOggVersion()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

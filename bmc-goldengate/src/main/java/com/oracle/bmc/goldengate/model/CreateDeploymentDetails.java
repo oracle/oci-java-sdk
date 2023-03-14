@@ -38,7 +38,8 @@ public final class CreateDeploymentDetails
         "cpuCoreCount",
         "isAutoScalingEnabled",
         "deploymentType",
-        "oggData"
+        "oggData",
+        "maintenanceWindow"
     })
     public CreateDeploymentDetails(
             String displayName,
@@ -55,7 +56,8 @@ public final class CreateDeploymentDetails
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
             DeploymentType deploymentType,
-            CreateOggDeploymentDetails oggData) {
+            CreateOggDeploymentDetails oggData,
+            CreateMaintenanceWindowDetails maintenanceWindow) {
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
@@ -72,6 +74,7 @@ public final class CreateDeploymentDetails
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.deploymentType = deploymentType;
         this.oggData = oggData;
+        this.maintenanceWindow = maintenanceWindow;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -353,6 +356,15 @@ public final class CreateDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private CreateMaintenanceWindowDetails maintenanceWindow;
+
+        public Builder maintenanceWindow(CreateMaintenanceWindowDetails maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -373,7 +385,8 @@ public final class CreateDeploymentDetails
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
                             this.deploymentType,
-                            this.oggData);
+                            this.oggData,
+                            this.maintenanceWindow);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -426,6 +439,9 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
             }
             return this;
         }
@@ -687,6 +703,13 @@ public final class CreateDeploymentDetails
         return oggData;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    private final CreateMaintenanceWindowDetails maintenanceWindow;
+
+    public CreateMaintenanceWindowDetails getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -716,6 +739,7 @@ public final class CreateDeploymentDetails
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(")");
         return sb.toString();
     }
@@ -745,6 +769,7 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.oggData, other.oggData)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && super.equals(other);
     }
 
@@ -779,6 +804,9 @@ public final class CreateDeploymentDetails
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

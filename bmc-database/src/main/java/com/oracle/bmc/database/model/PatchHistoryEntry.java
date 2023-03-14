@@ -28,7 +28,8 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         "lifecycleState",
         "lifecycleDetails",
         "timeStarted",
-        "timeEnded"
+        "timeEnded",
+        "patchType"
     })
     public PatchHistoryEntry(
             String id,
@@ -37,7 +38,8 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeStarted,
-            java.util.Date timeEnded) {
+            java.util.Date timeEnded,
+            PatchType patchType) {
         super();
         this.id = id;
         this.patchId = patchId;
@@ -46,6 +48,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         this.lifecycleDetails = lifecycleDetails;
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
+        this.patchType = patchType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -166,6 +169,22 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
+        /**
+         * The type of Patch operation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("patchType")
+        private PatchType patchType;
+
+        /**
+         * The type of Patch operation.
+         * @param patchType the value to set
+         * @return this builder
+         **/
+        public Builder patchType(PatchType patchType) {
+            this.patchType = patchType;
+            this.__explicitlySet__.add("patchType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -179,7 +198,8 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeStarted,
-                            this.timeEnded);
+                            this.timeEnded,
+                            this.patchType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -208,6 +228,9 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("timeEnded")) {
                 this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("patchType")) {
+                this.patchType(model.getPatchType());
             }
             return this;
         }
@@ -422,6 +445,69 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         return timeEnded;
     }
 
+    /**
+     * The type of Patch operation.
+     **/
+    public enum PatchType {
+        Os("OS"),
+        Db("DB"),
+        Gi("GI"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchType.class);
+
+        private final String value;
+        private static java.util.Map<String, PatchType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PatchType v : PatchType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PatchType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PatchType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PatchType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of Patch operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchType")
+    private final PatchType patchType;
+
+    /**
+     * The type of Patch operation.
+     * @return the value
+     **/
+    public PatchType getPatchType() {
+        return patchType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -443,6 +529,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", patchType=").append(String.valueOf(this.patchType));
         sb.append(")");
         return sb.toString();
     }
@@ -464,6 +551,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.patchType, other.patchType)
                 && super.equals(other);
     }
 
@@ -482,6 +570,7 @@ public final class PatchHistoryEntry extends com.oracle.bmc.http.internal.Explic
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

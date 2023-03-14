@@ -35,7 +35,8 @@ public final class UpdateDeploymentDetails
         "fqdn",
         "cpuCoreCount",
         "isAutoScalingEnabled",
-        "oggData"
+        "oggData",
+        "maintenanceWindow"
     })
     public UpdateDeploymentDetails(
             String displayName,
@@ -49,7 +50,8 @@ public final class UpdateDeploymentDetails
             String fqdn,
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
-            UpdateOggDeploymentDetails oggData) {
+            UpdateOggDeploymentDetails oggData,
+            UpdateMaintenanceWindowDetails maintenanceWindow) {
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
@@ -63,6 +65,7 @@ public final class UpdateDeploymentDetails
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.oggData = oggData;
+        this.maintenanceWindow = maintenanceWindow;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -286,6 +289,15 @@ public final class UpdateDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private UpdateMaintenanceWindowDetails maintenanceWindow;
+
+        public Builder maintenanceWindow(UpdateMaintenanceWindowDetails maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -303,7 +315,8 @@ public final class UpdateDeploymentDetails
                             this.fqdn,
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
-                            this.oggData);
+                            this.oggData,
+                            this.maintenanceWindow);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -347,6 +360,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("oggData")) {
                 this.oggData(model.getOggData());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
             }
             return this;
         }
@@ -556,6 +572,13 @@ public final class UpdateDeploymentDetails
         return oggData;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    private final UpdateMaintenanceWindowDetails maintenanceWindow;
+
+    public UpdateMaintenanceWindowDetails getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -582,6 +605,7 @@ public final class UpdateDeploymentDetails
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(")");
         return sb.toString();
     }
@@ -608,6 +632,7 @@ public final class UpdateDeploymentDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && java.util.Objects.equals(this.oggData, other.oggData)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && super.equals(other);
     }
 
@@ -631,6 +656,9 @@ public final class UpdateDeploymentDetails
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

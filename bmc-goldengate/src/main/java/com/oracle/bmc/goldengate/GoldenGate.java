@@ -66,6 +66,20 @@ public interface GoldenGate extends AutoCloseable {
     CancelDeploymentBackupResponse cancelDeploymentBackup(CancelDeploymentBackupRequest request);
 
     /**
+     * Cancel snooze of a DeploymentUpgrade. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CancelSnoozeDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSnoozeDeploymentUpgrade API.
+     */
+    CancelSnoozeDeploymentUpgradeResponse cancelSnoozeDeploymentUpgrade(
+            CancelSnoozeDeploymentUpgradeRequest request);
+
+    /**
      * Moves the Connection into a different compartment within the same tenancy. When
      * provided, If-Match is checked against ETag values of the resource.  For information about
      * moving resources between compartments, see [Moving Resources Between
@@ -493,6 +507,19 @@ public interface GoldenGate extends AutoCloseable {
     ListDeploymentUpgradesResponse listDeploymentUpgrades(ListDeploymentUpgradesRequest request);
 
     /**
+     * Returns the list of available deployment versions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentVersions API.
+     */
+    ListDeploymentVersionsResponse listDeploymentVersions(ListDeploymentVersionsRequest request);
+
+    /**
      * Lists the wallets export/import operations to/from a deployment.
      *
      * @param request The request object containing the details to send
@@ -610,6 +637,33 @@ public interface GoldenGate extends AutoCloseable {
     RestoreDeploymentResponse restoreDeployment(RestoreDeploymentRequest request);
 
     /**
+     * Rollback a deployment to it's previous version. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RollbackDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RollbackDeploymentUpgrade API.
+     */
+    RollbackDeploymentUpgradeResponse rollbackDeploymentUpgrade(
+            RollbackDeploymentUpgradeRequest request);
+
+    /**
+     * Snooze a DeploymentUpgrade. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/SnoozeDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SnoozeDeploymentUpgrade API.
+     */
+    SnoozeDeploymentUpgradeResponse snoozeDeploymentUpgrade(SnoozeDeploymentUpgradeRequest request);
+
+    /**
      * Starts a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -701,6 +755,20 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpgradeDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDeployment API.
      */
     UpgradeDeploymentResponse upgradeDeployment(UpgradeDeploymentRequest request);
+
+    /**
+     * Upgrade a deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpgradeDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDeploymentUpgrade API.
+     */
+    UpgradeDeploymentUpgradeResponse upgradeDeploymentUpgrade(
+            UpgradeDeploymentUpgradeRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -61,6 +61,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         "domain",
         "kmsKeyId",
         "version",
+        "osVersion",
         "cpuCoreCount",
         "clusterName",
         "dataStoragePercentage",
@@ -110,6 +111,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             String domain,
             String kmsKeyId,
             String version,
+            String osVersion,
             Integer cpuCoreCount,
             String clusterName,
             Integer dataStoragePercentage,
@@ -158,6 +160,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         this.domain = domain;
         this.kmsKeyId = kmsKeyId;
         this.version = version;
+        this.osVersion = osVersion;
         this.cpuCoreCount = cpuCoreCount;
         this.clusterName = clusterName;
         this.dataStoragePercentage = dataStoragePercentage;
@@ -526,6 +529,22 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
+            return this;
+        }
+        /**
+         * The most recent OS Patch Version applied on the DB system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
+        private String osVersion;
+
+        /**
+         * The most recent OS Patch Version applied on the DB system.
+         * @param osVersion the value to set
+         * @return this builder
+         **/
+        public Builder osVersion(String osVersion) {
+            this.osVersion = osVersion;
+            this.__explicitlySet__.add("osVersion");
             return this;
         }
         /**
@@ -1052,6 +1071,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                             this.domain,
                             this.kmsKeyId,
                             this.version,
+                            this.osVersion,
                             this.cpuCoreCount,
                             this.clusterName,
                             this.dataStoragePercentage,
@@ -1144,6 +1164,9 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("osVersion")) {
+                this.osVersion(model.getOsVersion());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
@@ -1591,6 +1614,20 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
      **/
     public String getVersion() {
         return version;
+    }
+
+    /**
+     * The most recent OS Patch Version applied on the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
+    private final String osVersion;
+
+    /**
+     * The most recent OS Patch Version applied on the DB system.
+     * @return the value
+     **/
+    public String getOsVersion() {
+        return osVersion;
     }
 
     /**
@@ -2274,6 +2311,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", domain=").append(String.valueOf(this.domain));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", osVersion=").append(String.valueOf(this.osVersion));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", clusterName=").append(String.valueOf(this.clusterName));
         sb.append(", dataStoragePercentage=").append(String.valueOf(this.dataStoragePercentage));
@@ -2338,6 +2376,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.osVersion, other.osVersion)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.clusterName, other.clusterName)
                 && java.util.Objects.equals(this.dataStoragePercentage, other.dataStoragePercentage)
@@ -2417,6 +2456,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.osVersion == null ? 43 : this.osVersion.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result = (result * PRIME) + (this.clusterName == null ? 43 : this.clusterName.hashCode());
         result =

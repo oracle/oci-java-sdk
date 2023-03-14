@@ -39,7 +39,15 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "previousOggVersion",
+        "timeSchedule",
+        "isSnoozed",
+        "timeSnoozedUntil",
+        "timeReleased",
+        "releaseType",
+        "isSecurityFix",
+        "isRollbackAllowed"
     })
     public DeploymentUpgrade(
             String id,
@@ -58,7 +66,15 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String previousOggVersion,
+            java.util.Date timeSchedule,
+            Boolean isSnoozed,
+            java.util.Date timeSnoozedUntil,
+            java.util.Date timeReleased,
+            ReleaseType releaseType,
+            Boolean isSecurityFix,
+            Boolean isRollbackAllowed) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -77,6 +93,14 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.previousOggVersion = previousOggVersion;
+        this.timeSchedule = timeSchedule;
+        this.isSnoozed = isSnoozed;
+        this.timeSnoozedUntil = timeSnoozedUntil;
+        this.timeReleased = timeReleased;
+        this.releaseType = releaseType;
+        this.isSecurityFix = isSecurityFix;
+        this.isRollbackAllowed = isRollbackAllowed;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -416,6 +440,160 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Version of OGG
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("previousOggVersion")
+        private String previousOggVersion;
+
+        /**
+         * Version of OGG
+         *
+         * @param previousOggVersion the value to set
+         * @return this builder
+         **/
+        public Builder previousOggVersion(String previousOggVersion) {
+            this.previousOggVersion = previousOggVersion;
+            this.__explicitlySet__.add("previousOggVersion");
+            return this;
+        }
+        /**
+         * The time of upgrade schedule. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeSchedule")
+        private java.util.Date timeSchedule;
+
+        /**
+         * The time of upgrade schedule. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeSchedule the value to set
+         * @return this builder
+         **/
+        public Builder timeSchedule(java.util.Date timeSchedule) {
+            this.timeSchedule = timeSchedule;
+            this.__explicitlySet__.add("timeSchedule");
+            return this;
+        }
+        /**
+         * Indicates if upgrade notifications are snoozed or not.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSnoozed")
+        private Boolean isSnoozed;
+
+        /**
+         * Indicates if upgrade notifications are snoozed or not.
+         *
+         * @param isSnoozed the value to set
+         * @return this builder
+         **/
+        public Builder isSnoozed(Boolean isSnoozed) {
+            this.isSnoozed = isSnoozed;
+            this.__explicitlySet__.add("isSnoozed");
+            return this;
+        }
+        /**
+         * The time the upgrade notifications are snoozed until. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeSnoozedUntil")
+        private java.util.Date timeSnoozedUntil;
+
+        /**
+         * The time the upgrade notifications are snoozed until. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeSnoozedUntil the value to set
+         * @return this builder
+         **/
+        public Builder timeSnoozedUntil(java.util.Date timeSnoozedUntil) {
+            this.timeSnoozedUntil = timeSnoozedUntil;
+            this.__explicitlySet__.add("timeSnoozedUntil");
+            return this;
+        }
+        /**
+         * The time the resource was released. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
+        private java.util.Date timeReleased;
+
+        /**
+         * The time the resource was released. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeReleased the value to set
+         * @return this builder
+         **/
+        public Builder timeReleased(java.util.Date timeReleased) {
+            this.timeReleased = timeReleased;
+            this.__explicitlySet__.add("timeReleased");
+            return this;
+        }
+        /**
+         * The type of release.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
+        private ReleaseType releaseType;
+
+        /**
+         * The type of release.
+         *
+         * @param releaseType the value to set
+         * @return this builder
+         **/
+        public Builder releaseType(ReleaseType releaseType) {
+            this.releaseType = releaseType;
+            this.__explicitlySet__.add("releaseType");
+            return this;
+        }
+        /**
+         * Indicates if OGG release contains security fix.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSecurityFix")
+        private Boolean isSecurityFix;
+
+        /**
+         * Indicates if OGG release contains security fix.
+         *
+         * @param isSecurityFix the value to set
+         * @return this builder
+         **/
+        public Builder isSecurityFix(Boolean isSecurityFix) {
+            this.isSecurityFix = isSecurityFix;
+            this.__explicitlySet__.add("isSecurityFix");
+            return this;
+        }
+        /**
+         * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+         * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+         * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRollbackAllowed")
+        private Boolean isRollbackAllowed;
+
+        /**
+         * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+         * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+         * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+         *
+         * @param isRollbackAllowed the value to set
+         * @return this builder
+         **/
+        public Builder isRollbackAllowed(Boolean isRollbackAllowed) {
+            this.isRollbackAllowed = isRollbackAllowed;
+            this.__explicitlySet__.add("isRollbackAllowed");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -439,7 +617,15 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.previousOggVersion,
+                            this.timeSchedule,
+                            this.isSnoozed,
+                            this.timeSnoozedUntil,
+                            this.timeReleased,
+                            this.releaseType,
+                            this.isSecurityFix,
+                            this.isRollbackAllowed);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -498,6 +684,30 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("previousOggVersion")) {
+                this.previousOggVersion(model.getPreviousOggVersion());
+            }
+            if (model.wasPropertyExplicitlySet("timeSchedule")) {
+                this.timeSchedule(model.getTimeSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("isSnoozed")) {
+                this.isSnoozed(model.getIsSnoozed());
+            }
+            if (model.wasPropertyExplicitlySet("timeSnoozedUntil")) {
+                this.timeSnoozedUntil(model.getTimeSnoozedUntil());
+            }
+            if (model.wasPropertyExplicitlySet("timeReleased")) {
+                this.timeReleased(model.getTimeReleased());
+            }
+            if (model.wasPropertyExplicitlySet("releaseType")) {
+                this.releaseType(model.getReleaseType());
+            }
+            if (model.wasPropertyExplicitlySet("isSecurityFix")) {
+                this.isSecurityFix(model.getIsSecurityFix());
+            }
+            if (model.wasPropertyExplicitlySet("isRollbackAllowed")) {
+                this.isRollbackAllowed(model.getIsRollbackAllowed());
             }
             return this;
         }
@@ -814,6 +1024,144 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         return systemTags;
     }
 
+    /**
+     * Version of OGG
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("previousOggVersion")
+    private final String previousOggVersion;
+
+    /**
+     * Version of OGG
+     *
+     * @return the value
+     **/
+    public String getPreviousOggVersion() {
+        return previousOggVersion;
+    }
+
+    /**
+     * The time of upgrade schedule. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeSchedule")
+    private final java.util.Date timeSchedule;
+
+    /**
+     * The time of upgrade schedule. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeSchedule() {
+        return timeSchedule;
+    }
+
+    /**
+     * Indicates if upgrade notifications are snoozed or not.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSnoozed")
+    private final Boolean isSnoozed;
+
+    /**
+     * Indicates if upgrade notifications are snoozed or not.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSnoozed() {
+        return isSnoozed;
+    }
+
+    /**
+     * The time the upgrade notifications are snoozed until. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeSnoozedUntil")
+    private final java.util.Date timeSnoozedUntil;
+
+    /**
+     * The time the upgrade notifications are snoozed until. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeSnoozedUntil() {
+        return timeSnoozedUntil;
+    }
+
+    /**
+     * The time the resource was released. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
+    private final java.util.Date timeReleased;
+
+    /**
+     * The time the resource was released. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeReleased() {
+        return timeReleased;
+    }
+
+    /**
+     * The type of release.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
+    private final ReleaseType releaseType;
+
+    /**
+     * The type of release.
+     *
+     * @return the value
+     **/
+    public ReleaseType getReleaseType() {
+        return releaseType;
+    }
+
+    /**
+     * Indicates if OGG release contains security fix.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSecurityFix")
+    private final Boolean isSecurityFix;
+
+    /**
+     * Indicates if OGG release contains security fix.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSecurityFix() {
+        return isSecurityFix;
+    }
+
+    /**
+     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+     * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRollbackAllowed")
+    private final Boolean isRollbackAllowed;
+
+    /**
+     * Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+     * - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+     * - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+     *
+     * @return the value
+     **/
+    public Boolean getIsRollbackAllowed() {
+        return isRollbackAllowed;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -845,6 +1193,14 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", previousOggVersion=").append(String.valueOf(this.previousOggVersion));
+        sb.append(", timeSchedule=").append(String.valueOf(this.timeSchedule));
+        sb.append(", isSnoozed=").append(String.valueOf(this.isSnoozed));
+        sb.append(", timeSnoozedUntil=").append(String.valueOf(this.timeSnoozedUntil));
+        sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
+        sb.append(", releaseType=").append(String.valueOf(this.releaseType));
+        sb.append(", isSecurityFix=").append(String.valueOf(this.isSecurityFix));
+        sb.append(", isRollbackAllowed=").append(String.valueOf(this.isRollbackAllowed));
         sb.append(")");
         return sb.toString();
     }
@@ -876,6 +1232,14 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.previousOggVersion, other.previousOggVersion)
+                && java.util.Objects.equals(this.timeSchedule, other.timeSchedule)
+                && java.util.Objects.equals(this.isSnoozed, other.isSnoozed)
+                && java.util.Objects.equals(this.timeSnoozedUntil, other.timeSnoozedUntil)
+                && java.util.Objects.equals(this.timeReleased, other.timeReleased)
+                && java.util.Objects.equals(this.releaseType, other.releaseType)
+                && java.util.Objects.equals(this.isSecurityFix, other.isSecurityFix)
+                && java.util.Objects.equals(this.isRollbackAllowed, other.isRollbackAllowed)
                 && super.equals(other);
     }
 
@@ -912,6 +1276,24 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.previousOggVersion == null
+                                ? 43
+                                : this.previousOggVersion.hashCode());
+        result = (result * PRIME) + (this.timeSchedule == null ? 43 : this.timeSchedule.hashCode());
+        result = (result * PRIME) + (this.isSnoozed == null ? 43 : this.isSnoozed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSnoozedUntil == null ? 43 : this.timeSnoozedUntil.hashCode());
+        result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
+        result = (result * PRIME) + (this.releaseType == null ? 43 : this.releaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSecurityFix == null ? 43 : this.isSecurityFix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRollbackAllowed == null ? 43 : this.isRollbackAllowed.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

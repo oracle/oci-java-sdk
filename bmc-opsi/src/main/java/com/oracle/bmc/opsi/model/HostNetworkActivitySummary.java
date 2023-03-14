@@ -37,6 +37,22 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
             return this;
         }
         /**
+         * Name of the network interface
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
+        private String interfaceName;
+
+        /**
+         * Name of the network interface
+         * @param interfaceName the value to set
+         * @return this builder
+         **/
+        public Builder interfaceName(String interfaceName) {
+            this.interfaceName = interfaceName;
+            this.__explicitlySet__.add("interfaceName");
+            return this;
+        }
+        /**
          * All network interfaces read rate in Mbps
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
@@ -92,6 +108,7 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
             HostNetworkActivitySummary model =
                     new HostNetworkActivitySummary(
                             this.timeCollected,
+                            this.interfaceName,
                             this.allNetworkReadInMbps,
                             this.allNetworkWriteInMbps,
                             this.allNetworkIoInMbps);
@@ -105,6 +122,9 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         public Builder copy(HostNetworkActivitySummary model) {
             if (model.wasPropertyExplicitlySet("timeCollected")) {
                 this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceName")) {
+                this.interfaceName(model.getInterfaceName());
             }
             if (model.wasPropertyExplicitlySet("allNetworkReadInMbps")) {
                 this.allNetworkReadInMbps(model.getAllNetworkReadInMbps());
@@ -133,13 +153,29 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
     @Deprecated
     public HostNetworkActivitySummary(
             java.util.Date timeCollected,
+            String interfaceName,
             Double allNetworkReadInMbps,
             Double allNetworkWriteInMbps,
             Double allNetworkIoInMbps) {
         super(timeCollected);
+        this.interfaceName = interfaceName;
         this.allNetworkReadInMbps = allNetworkReadInMbps;
         this.allNetworkWriteInMbps = allNetworkWriteInMbps;
         this.allNetworkIoInMbps = allNetworkIoInMbps;
+    }
+
+    /**
+     * Name of the network interface
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceName")
+    private final String interfaceName;
+
+    /**
+     * Name of the network interface
+     * @return the value
+     **/
+    public String getInterfaceName() {
+        return interfaceName;
     }
 
     /**
@@ -198,6 +234,7 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostNetworkActivitySummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", interfaceName=").append(String.valueOf(this.interfaceName));
         sb.append(", allNetworkReadInMbps=").append(String.valueOf(this.allNetworkReadInMbps));
         sb.append(", allNetworkWriteInMbps=").append(String.valueOf(this.allNetworkWriteInMbps));
         sb.append(", allNetworkIoInMbps=").append(String.valueOf(this.allNetworkIoInMbps));
@@ -215,7 +252,8 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         }
 
         HostNetworkActivitySummary other = (HostNetworkActivitySummary) o;
-        return java.util.Objects.equals(this.allNetworkReadInMbps, other.allNetworkReadInMbps)
+        return java.util.Objects.equals(this.interfaceName, other.interfaceName)
+                && java.util.Objects.equals(this.allNetworkReadInMbps, other.allNetworkReadInMbps)
                 && java.util.Objects.equals(this.allNetworkWriteInMbps, other.allNetworkWriteInMbps)
                 && java.util.Objects.equals(this.allNetworkIoInMbps, other.allNetworkIoInMbps)
                 && super.equals(other);
@@ -225,6 +263,9 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());
         result =
                 (result * PRIME)
                         + (this.allNetworkReadInMbps == null

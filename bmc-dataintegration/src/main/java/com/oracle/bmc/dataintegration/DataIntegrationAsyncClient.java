@@ -602,6 +602,66 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApplicationDetailedDescriptionResponse>
+            createApplicationDetailedDescription(
+                    CreateApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateApplicationDetailedDescriptionRequest,
+                                    CreateApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async createApplicationDetailedDescription");
+        final CreateApplicationDetailedDescriptionRequest interceptedRequest =
+                CreateApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/CreateApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateApplicationDetailedDescriptionResponse>
+                transformer =
+                        CreateApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateApplicationDetailedDescriptionRequest,
+                        CreateApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateApplicationDetailedDescriptionRequest,
+                                CreateApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<CreateApplicationDetailedDescriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationDetailedDescriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateApplicationDetailedDescriptionRequest,
+                    CreateApplicationDetailedDescriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -698,6 +758,60 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateConnectionValidationRequest, CreateConnectionValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCopyObjectRequestResponse> createCopyObjectRequest(
+            CreateCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCopyObjectRequestRequest, CreateCopyObjectRequestResponse>
+                    handler) {
+        LOG.trace("Called async createCopyObjectRequest");
+        final CreateCopyObjectRequestRequest interceptedRequest =
+                CreateCopyObjectRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCopyObjectRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateCopyObjectRequest",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateCopyObjectRequestResponse>
+                transformer =
+                        CreateCopyObjectRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCopyObjectRequestRequest, CreateCopyObjectRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCopyObjectRequestRequest, CreateCopyObjectRequestResponse>,
+                        java.util.concurrent.Future<CreateCopyObjectRequestResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCopyObjectRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCopyObjectRequestRequest, CreateCopyObjectRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -908,6 +1022,68 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateDisApplicationRequest, CreateDisApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDisApplicationDetailedDescriptionResponse>
+            createDisApplicationDetailedDescription(
+                    CreateDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDisApplicationDetailedDescriptionRequest,
+                                    CreateDisApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async createDisApplicationDetailedDescription");
+        final CreateDisApplicationDetailedDescriptionRequest interceptedRequest =
+                CreateDisApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDisApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateDisApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/CreateDisApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDisApplicationDetailedDescriptionResponse>
+                transformer =
+                        CreateDisApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDisApplicationDetailedDescriptionRequest,
+                        CreateDisApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDisApplicationDetailedDescriptionRequest,
+                                CreateDisApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<
+                                CreateDisApplicationDetailedDescriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getCreateDisApplicationDetailedDescriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDisApplicationDetailedDescriptionRequest,
+                    CreateDisApplicationDetailedDescriptionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1864,6 +2040,60 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteApplicationDetailedDescriptionResponse>
+            deleteApplicationDetailedDescription(
+                    DeleteApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteApplicationDetailedDescriptionRequest,
+                                    DeleteApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async deleteApplicationDetailedDescription");
+        final DeleteApplicationDetailedDescriptionRequest interceptedRequest =
+                DeleteApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/DeleteApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteApplicationDetailedDescriptionResponse>
+                transformer =
+                        DeleteApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteApplicationDetailedDescriptionRequest,
+                        DeleteApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteApplicationDetailedDescriptionRequest,
+                                DeleteApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<DeleteApplicationDetailedDescriptionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteApplicationDetailedDescriptionRequest,
+                    DeleteApplicationDetailedDescriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResponse> deleteConnection(
             DeleteConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1948,6 +2178,54 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCopyObjectRequestResponse> deleteCopyObjectRequest(
+            DeleteCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCopyObjectRequestRequest, DeleteCopyObjectRequestResponse>
+                    handler) {
+        LOG.trace("Called async deleteCopyObjectRequest");
+        final DeleteCopyObjectRequestRequest interceptedRequest =
+                DeleteCopyObjectRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCopyObjectRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteCopyObjectRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteCopyObjectRequest");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCopyObjectRequestResponse>
+                transformer =
+                        DeleteCopyObjectRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCopyObjectRequestRequest, DeleteCopyObjectRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCopyObjectRequestRequest, DeleteCopyObjectRequestResponse>,
+                        java.util.concurrent.Future<DeleteCopyObjectRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCopyObjectRequestRequest, DeleteCopyObjectRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2134,6 +2412,61 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteDisApplicationRequest, DeleteDisApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDisApplicationDetailedDescriptionResponse>
+            deleteDisApplicationDetailedDescription(
+                    DeleteDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDisApplicationDetailedDescriptionRequest,
+                                    DeleteDisApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async deleteDisApplicationDetailedDescription");
+        final DeleteDisApplicationDetailedDescriptionRequest interceptedRequest =
+                DeleteDisApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDisApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteDisApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/DeleteDisApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDisApplicationDetailedDescriptionResponse>
+                transformer =
+                        DeleteDisApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDisApplicationDetailedDescriptionRequest,
+                        DeleteDisApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDisApplicationDetailedDescriptionRequest,
+                                DeleteDisApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<
+                                DeleteDisApplicationDetailedDescriptionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDisApplicationDetailedDescriptionRequest,
+                    DeleteDisApplicationDetailedDescriptionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2941,6 +3274,59 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetApplicationDetailedDescriptionResponse>
+            getApplicationDetailedDescription(
+                    GetApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetApplicationDetailedDescriptionRequest,
+                                    GetApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async getApplicationDetailedDescription");
+        final GetApplicationDetailedDescriptionRequest interceptedRequest =
+                GetApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApplicationDetailedDescriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/GetApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetApplicationDetailedDescriptionResponse>
+                transformer =
+                        GetApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetApplicationDetailedDescriptionRequest,
+                        GetApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApplicationDetailedDescriptionRequest,
+                                GetApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<GetApplicationDetailedDescriptionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApplicationDetailedDescriptionRequest,
+                    GetApplicationDetailedDescriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -3020,6 +3406,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetConnectionValidationRequest, GetConnectionValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCopyObjectRequestResponse> getCopyObjectRequest(
+            GetCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCopyObjectRequestRequest, GetCopyObjectRequestResponse>
+                    handler) {
+        LOG.trace("Called async getCopyObjectRequest");
+        final GetCopyObjectRequestRequest interceptedRequest =
+                GetCopyObjectRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCopyObjectRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetCopyObjectRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CopyObjectRequest/GetCopyObjectRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCopyObjectRequestResponse>
+                transformer =
+                        GetCopyObjectRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCopyObjectRequestRequest, GetCopyObjectRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCopyObjectRequestRequest, GetCopyObjectRequestResponse>,
+                        java.util.concurrent.Future<GetCopyObjectRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCopyObjectRequestRequest, GetCopyObjectRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3337,6 +3770,60 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDisApplicationRequest, GetDisApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisApplicationDetailedDescriptionResponse>
+            getDisApplicationDetailedDescription(
+                    GetDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDisApplicationDetailedDescriptionRequest,
+                                    GetDisApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async getDisApplicationDetailedDescription");
+        final GetDisApplicationDetailedDescriptionRequest interceptedRequest =
+                GetDisApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDisApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetDisApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/GetDisApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDisApplicationDetailedDescriptionResponse>
+                transformer =
+                        GetDisApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDisApplicationDetailedDescriptionRequest,
+                        GetDisApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDisApplicationDetailedDescriptionRequest,
+                                GetDisApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<GetDisApplicationDetailedDescriptionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDisApplicationDetailedDescriptionRequest,
+                    GetDisApplicationDetailedDescriptionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4156,6 +4643,50 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetTemplateResponse> getTemplate(
+            GetTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse>
+                    handler) {
+        LOG.trace("Called async getTemplate");
+        final GetTemplateRequest interceptedRequest =
+                GetTemplateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTemplateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetTemplate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Template/GetTemplate");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTemplateResponse>
+                transformer =
+                        GetTemplateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTemplateRequest, GetTemplateResponse>,
+                        java.util.concurrent.Future<GetTemplateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTemplateRequest, GetTemplateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserDefinedFunctionResponse> getUserDefinedFunction(
             GetUserDefinedFunctionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4473,6 +5004,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListConnectionsRequest, ListConnectionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCopyObjectRequestsResponse> listCopyObjectRequests(
+            ListCopyObjectRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listCopyObjectRequests");
+        final ListCopyObjectRequestsRequest interceptedRequest =
+                ListCopyObjectRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCopyObjectRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListCopyObjectRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CopyObjectRequestSummaryCollection/ListCopyObjectRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCopyObjectRequestsResponse>
+                transformer =
+                        ListCopyObjectRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>,
+                        java.util.concurrent.Future<ListCopyObjectRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5780,6 +6358,50 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListTemplatesResponse> listTemplates(
+            ListTemplatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
+                    handler) {
+        LOG.trace("Called async listTemplates");
+        final ListTemplatesRequest interceptedRequest =
+                ListTemplatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTemplatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListTemplates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Template/ListTemplates");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTemplatesResponse>
+                transformer =
+                        ListTemplatesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTemplatesRequest, ListTemplatesResponse>,
+                        java.util.concurrent.Future<ListTemplatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTemplatesRequest, ListTemplatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserDefinedFunctionValidationsResponse>
             listUserDefinedFunctionValidations(
                     ListUserDefinedFunctionValidationsRequest request,
@@ -6208,6 +6830,65 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApplicationDetailedDescriptionResponse>
+            updateApplicationDetailedDescription(
+                    UpdateApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateApplicationDetailedDescriptionRequest,
+                                    UpdateApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async updateApplicationDetailedDescription");
+        final UpdateApplicationDetailedDescriptionRequest interceptedRequest =
+                UpdateApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/UpdateApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateApplicationDetailedDescriptionResponse>
+                transformer =
+                        UpdateApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateApplicationDetailedDescriptionRequest,
+                        UpdateApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateApplicationDetailedDescriptionRequest,
+                                UpdateApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<UpdateApplicationDetailedDescriptionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplicationDetailedDescriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateApplicationDetailedDescriptionRequest,
+                    UpdateApplicationDetailedDescriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
             UpdateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6246,6 +6927,59 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateConnectionRequest, UpdateConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCopyObjectRequestResponse> updateCopyObjectRequest(
+            UpdateCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCopyObjectRequestRequest, UpdateCopyObjectRequestResponse>
+                    handler) {
+        LOG.trace("Called async updateCopyObjectRequest");
+        final UpdateCopyObjectRequestRequest interceptedRequest =
+                UpdateCopyObjectRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCopyObjectRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateCopyObjectRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateCopyObjectRequest");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCopyObjectRequestResponse>
+                transformer =
+                        UpdateCopyObjectRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCopyObjectRequestRequest, UpdateCopyObjectRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCopyObjectRequestRequest, UpdateCopyObjectRequestResponse>,
+                        java.util.concurrent.Future<UpdateCopyObjectRequestResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCopyObjectRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCopyObjectRequestRequest, UpdateCopyObjectRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6399,6 +7133,67 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateDisApplicationRequest, UpdateDisApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDisApplicationDetailedDescriptionResponse>
+            updateDisApplicationDetailedDescription(
+                    UpdateDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDisApplicationDetailedDescriptionRequest,
+                                    UpdateDisApplicationDetailedDescriptionResponse>
+                            handler) {
+        LOG.trace("Called async updateDisApplicationDetailedDescription");
+        final UpdateDisApplicationDetailedDescriptionRequest interceptedRequest =
+                UpdateDisApplicationDetailedDescriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDisApplicationDetailedDescriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateDisApplicationDetailedDescription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/UpdateDisApplicationDetailedDescription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDisApplicationDetailedDescriptionResponse>
+                transformer =
+                        UpdateDisApplicationDetailedDescriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDisApplicationDetailedDescriptionRequest,
+                        UpdateDisApplicationDetailedDescriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDisApplicationDetailedDescriptionRequest,
+                                UpdateDisApplicationDetailedDescriptionResponse>,
+                        java.util.concurrent.Future<
+                                UpdateDisApplicationDetailedDescriptionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateDisApplicationDetailedDescriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDisApplicationDetailedDescriptionRequest,
+                    UpdateDisApplicationDetailedDescriptionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
