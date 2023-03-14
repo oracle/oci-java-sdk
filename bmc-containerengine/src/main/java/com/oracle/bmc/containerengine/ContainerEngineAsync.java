@@ -116,6 +116,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a new virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVirtualNodePoolResponse> createVirtualNodePool(
+            CreateVirtualNodePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>
+                    handler);
+
+    /**
      * Delete a cluster.
      *
      * @param request The request object containing the details to send
@@ -160,6 +176,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVirtualNodePoolResponse> deleteVirtualNodePool(
+            DeleteVirtualNodePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVirtualNodePoolRequest, DeleteVirtualNodePoolResponse>
+                    handler);
+
+    /**
      * Cancel a work request that has not started.
      *
      * @param request The request object containing the details to send
@@ -174,6 +206,35 @@ public interface ContainerEngineAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteWorkRequestRequest, DeleteWorkRequestResponse>
                     handler);
+
+    /**
+     * Disable addon for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableAddonResponse> disableAddon(
+            DisableAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DisableAddonRequest, DisableAddonResponse>
+                    handler);
+
+    /**
+     * Get the specified addon for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAddonResponse> getAddon(
+            GetAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse> handler);
 
     /**
      * Get the details of a cluster.
@@ -254,6 +315,37 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the details of a virtual node.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVirtualNodeResponse> getVirtualNode(
+            GetVirtualNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVirtualNodeRequest, GetVirtualNodeResponse>
+                    handler);
+
+    /**
+     * Get the details of a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVirtualNodePoolResponse> getVirtualNodePool(
+            GetVirtualNodePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+                    handler);
+
+    /**
      * Get the details of a work request.
      *
      * @param request The request object containing the details to send
@@ -267,6 +359,50 @@ public interface ContainerEngineAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Install the specified addon for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallAddonResponse> installAddon(
+            InstallAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                    handler);
+
+    /**
+     * Get list of supported addons for a specific kubernetes version.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddonOptionsResponse> listAddonOptions(
+            ListAddonOptionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAddonOptionsRequest, ListAddonOptionsResponse>
+                    handler);
+
+    /**
+     * List addon for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddonsResponse> listAddons(
+            ListAddonsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse> handler);
 
     /**
      * List all the cluster objects in a compartment.
@@ -296,6 +432,52 @@ public interface ContainerEngineAsync extends AutoCloseable {
     java.util.concurrent.Future<ListNodePoolsResponse> listNodePools(
             ListNodePoolsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListNodePoolsRequest, ListNodePoolsResponse>
+                    handler);
+
+    /**
+     * List all the Pod Shapes in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPodShapesResponse> listPodShapes(
+            ListPodShapesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPodShapesRequest, ListPodShapesResponse>
+                    handler);
+
+    /**
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVirtualNodePoolsResponse> listVirtualNodePools(
+            ListVirtualNodePoolsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>
+                    handler);
+
+    /**
+     * List virtual nodes in a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVirtualNodesResponse> listVirtualNodes(
+            ListVirtualNodesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListVirtualNodesRequest, ListVirtualNodesResponse>
                     handler);
 
     /**
@@ -346,6 +528,20 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update addon details for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
+            UpdateAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse> handler);
+
+    /**
      * Update the details of a cluster.
      *
      * @param request The request object containing the details to send
@@ -389,5 +585,21 @@ public interface ContainerEngineAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateNodePoolResponse> updateNodePool(
             UpdateNodePoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateNodePoolRequest, UpdateNodePoolResponse>
+                    handler);
+
+    /**
+     * Update the details of a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVirtualNodePoolResponse> updateVirtualNodePool(
+            UpdateVirtualNodePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>
                     handler);
 }

@@ -34,7 +34,9 @@ public enum OperationType {
     GoldengateDeploymentDiagnosticCollect("GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT"),
     GoldengateDeploymentWalletExport("GOLDENGATE_DEPLOYMENT_WALLET_EXPORT"),
     GoldengateDeploymentWalletImport("GOLDENGATE_DEPLOYMENT_WALLET_IMPORT"),
-    GoldengateDeploymentPatch("GOLDENGATE_DEPLOYMENT_PATCH"),
+    GoldengateDeploymentUpgradeUpgrade("GOLDENGATE_DEPLOYMENT_UPGRADE_UPGRADE"),
+    GoldengateDeploymentUpgradeRollback("GOLDENGATE_DEPLOYMENT_UPGRADE_ROLLBACK"),
+    GoldengateDeploymentUpgradeSnooze("GOLDENGATE_DEPLOYMENT_UPGRADE_SNOOZE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

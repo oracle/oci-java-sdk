@@ -137,6 +137,14 @@ public class ListTaskRunsConverter {
                                     request.getNameStartsWith()));
         }
 
+        if (request.getNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "nameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNameContains()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

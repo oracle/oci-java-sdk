@@ -28,20 +28,23 @@ public final class CreateOggDeploymentDetails
         "adminUsername",
         "adminPassword",
         "certificate",
-        "key"
+        "key",
+        "oggVersion"
     })
     public CreateOggDeploymentDetails(
             String deploymentName,
             String adminUsername,
             String adminPassword,
             String certificate,
-            String key) {
+            String key,
+            String oggVersion) {
         super();
         this.deploymentName = deploymentName;
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.certificate = certificate;
         this.key = key;
+        this.oggVersion = oggVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -144,6 +147,24 @@ public final class CreateOggDeploymentDetails
             this.__explicitlySet__.add("key");
             return this;
         }
+        /**
+         * Version of OGG
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
+        private String oggVersion;
+
+        /**
+         * Version of OGG
+         *
+         * @param oggVersion the value to set
+         * @return this builder
+         **/
+        public Builder oggVersion(String oggVersion) {
+            this.oggVersion = oggVersion;
+            this.__explicitlySet__.add("oggVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -155,7 +176,8 @@ public final class CreateOggDeploymentDetails
                             this.adminUsername,
                             this.adminPassword,
                             this.certificate,
-                            this.key);
+                            this.key,
+                            this.oggVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -178,6 +200,9 @@ public final class CreateOggDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("oggVersion")) {
+                this.oggVersion(model.getOggVersion());
             }
             return this;
         }
@@ -282,6 +307,22 @@ public final class CreateOggDeploymentDetails
         return key;
     }
 
+    /**
+     * Version of OGG
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
+    private final String oggVersion;
+
+    /**
+     * Version of OGG
+     *
+     * @return the value
+     **/
+    public String getOggVersion() {
+        return oggVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -301,6 +342,7 @@ public final class CreateOggDeploymentDetails
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
         sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", oggVersion=").append(String.valueOf(this.oggVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -320,6 +362,7 @@ public final class CreateOggDeploymentDetails
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.certificate, other.certificate)
                 && java.util.Objects.equals(this.key, other.key)
+                && java.util.Objects.equals(this.oggVersion, other.oggVersion)
                 && super.equals(other);
     }
 
@@ -338,6 +381,7 @@ public final class CreateOggDeploymentDetails
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
         result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
+        result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

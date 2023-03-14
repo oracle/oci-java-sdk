@@ -11,6 +11,7 @@ package com.oracle.bmc.goldengate.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum UpgradeDeploymentType {
     CurrentRelease("CURRENT_RELEASE"),
+    SpecificRelease("SPECIFIC_RELEASE"),
     ;
 
     private final String value;

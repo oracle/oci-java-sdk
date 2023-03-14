@@ -51,7 +51,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "isStorageUtilizationLimitExceeded",
         "deploymentType",
         "oggData",
-        "deploymentDiagnosticData"
+        "deploymentDiagnosticData",
+        "maintenanceWindow",
+        "timeOfNextMaintenance",
+        "nextMaintenanceActionType",
+        "nextMaintenanceDescription"
     })
     public Deployment(
             String id,
@@ -84,7 +88,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             Boolean isStorageUtilizationLimitExceeded,
             DeploymentType deploymentType,
             OggDeployment oggData,
-            DeploymentDiagnosticData deploymentDiagnosticData) {
+            DeploymentDiagnosticData deploymentDiagnosticData,
+            MaintenanceWindow maintenanceWindow,
+            java.util.Date timeOfNextMaintenance,
+            MaintenanceActionType nextMaintenanceActionType,
+            String nextMaintenanceDescription) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -117,6 +125,10 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.deploymentType = deploymentType;
         this.oggData = oggData;
         this.deploymentDiagnosticData = deploymentDiagnosticData;
+        this.maintenanceWindow = maintenanceWindow;
+        this.timeOfNextMaintenance = timeOfNextMaintenance;
+        this.nextMaintenanceActionType = nextMaintenanceActionType;
+        this.nextMaintenanceDescription = nextMaintenanceDescription;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -599,6 +611,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
+         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+         * to check, when deployment will be forced to upgrade to a newer version.
+         * Old description:
          * The date the existing version in use will no longer be considered as usable
          * and an upgrade will be required.  This date is typically 6 months after the
          * version was released for use by GGS.  The format is defined by
@@ -609,6 +624,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         private java.util.Date timeUpgradeRequired;
 
         /**
+         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+         * to check, when deployment will be forced to upgrade to a newer version.
+         * Old description:
          * The date the existing version in use will no longer be considered as usable
          * and an upgrade will be required.  This date is typically 6 months after the
          * version was released for use by GGS.  The format is defined by
@@ -700,6 +718,71 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+        /**
+         * The time of next maintenance schedule. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextMaintenance")
+        private java.util.Date timeOfNextMaintenance;
+
+        /**
+         * The time of next maintenance schedule. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeOfNextMaintenance the value to set
+         * @return this builder
+         **/
+        public Builder timeOfNextMaintenance(java.util.Date timeOfNextMaintenance) {
+            this.timeOfNextMaintenance = timeOfNextMaintenance;
+            this.__explicitlySet__.add("timeOfNextMaintenance");
+            return this;
+        }
+        /**
+         * Type of the next maintenance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceActionType")
+        private MaintenanceActionType nextMaintenanceActionType;
+
+        /**
+         * Type of the next maintenance.
+         *
+         * @param nextMaintenanceActionType the value to set
+         * @return this builder
+         **/
+        public Builder nextMaintenanceActionType(MaintenanceActionType nextMaintenanceActionType) {
+            this.nextMaintenanceActionType = nextMaintenanceActionType;
+            this.__explicitlySet__.add("nextMaintenanceActionType");
+            return this;
+        }
+        /**
+         * Description of the next maintenance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceDescription")
+        private String nextMaintenanceDescription;
+
+        /**
+         * Description of the next maintenance.
+         *
+         * @param nextMaintenanceDescription the value to set
+         * @return this builder
+         **/
+        public Builder nextMaintenanceDescription(String nextMaintenanceDescription) {
+            this.nextMaintenanceDescription = nextMaintenanceDescription;
+            this.__explicitlySet__.add("nextMaintenanceDescription");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -736,7 +819,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.isStorageUtilizationLimitExceeded,
                             this.deploymentType,
                             this.oggData,
-                            this.deploymentDiagnosticData);
+                            this.deploymentDiagnosticData,
+                            this.maintenanceWindow,
+                            this.timeOfNextMaintenance,
+                            this.nextMaintenanceActionType,
+                            this.nextMaintenanceDescription);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -838,6 +925,18 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("deploymentDiagnosticData")) {
                 this.deploymentDiagnosticData(model.getDeploymentDiagnosticData());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfNextMaintenance")) {
+                this.timeOfNextMaintenance(model.getTimeOfNextMaintenance());
+            }
+            if (model.wasPropertyExplicitlySet("nextMaintenanceActionType")) {
+                this.nextMaintenanceActionType(model.getNextMaintenanceActionType());
+            }
+            if (model.wasPropertyExplicitlySet("nextMaintenanceDescription")) {
+                this.nextMaintenanceDescription(model.getNextMaintenanceDescription());
             }
             return this;
         }
@@ -1281,6 +1380,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+     * to check, when deployment will be forced to upgrade to a newer version.
+     * Old description:
      * The date the existing version in use will no longer be considered as usable
      * and an upgrade will be required.  This date is typically 6 months after the
      * version was released for use by GGS.  The format is defined by
@@ -1291,6 +1393,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     private final java.util.Date timeUpgradeRequired;
 
     /**
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+     * to check, when deployment will be forced to upgrade to a newer version.
+     * Old description:
      * The date the existing version in use will no longer be considered as usable
      * and an upgrade will be required.  This date is typically 6 months after the
      * version was released for use by GGS.  The format is defined by
@@ -1368,6 +1473,63 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         return deploymentDiagnosticData;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    private final MaintenanceWindow maintenanceWindow;
+
+    public MaintenanceWindow getMaintenanceWindow() {
+        return maintenanceWindow;
+    }
+
+    /**
+     * The time of next maintenance schedule. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextMaintenance")
+    private final java.util.Date timeOfNextMaintenance;
+
+    /**
+     * The time of next maintenance schedule. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeOfNextMaintenance() {
+        return timeOfNextMaintenance;
+    }
+
+    /**
+     * Type of the next maintenance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceActionType")
+    private final MaintenanceActionType nextMaintenanceActionType;
+
+    /**
+     * Type of the next maintenance.
+     *
+     * @return the value
+     **/
+    public MaintenanceActionType getNextMaintenanceActionType() {
+        return nextMaintenanceActionType;
+    }
+
+    /**
+     * Description of the next maintenance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceDescription")
+    private final String nextMaintenanceDescription;
+
+    /**
+     * Description of the next maintenance.
+     *
+     * @return the value
+     **/
+    public String getNextMaintenanceDescription() {
+        return nextMaintenanceDescription;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1416,6 +1578,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", deploymentDiagnosticData=")
                 .append(String.valueOf(this.deploymentDiagnosticData));
+        sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", timeOfNextMaintenance=").append(String.valueOf(this.timeOfNextMaintenance));
+        sb.append(", nextMaintenanceActionType=")
+                .append(String.valueOf(this.nextMaintenanceActionType));
+        sb.append(", nextMaintenanceDescription=")
+                .append(String.valueOf(this.nextMaintenanceDescription));
         sb.append(")");
         return sb.toString();
     }
@@ -1465,6 +1633,12 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(
                         this.deploymentDiagnosticData, other.deploymentDiagnosticData)
+                && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(this.timeOfNextMaintenance, other.timeOfNextMaintenance)
+                && java.util.Objects.equals(
+                        this.nextMaintenanceActionType, other.nextMaintenanceActionType)
+                && java.util.Objects.equals(
+                        this.nextMaintenanceDescription, other.nextMaintenanceDescription)
                 && super.equals(other);
     }
 
@@ -1545,6 +1719,24 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.deploymentDiagnosticData == null
                                 ? 43
                                 : this.deploymentDiagnosticData.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfNextMaintenance == null
+                                ? 43
+                                : this.timeOfNextMaintenance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextMaintenanceActionType == null
+                                ? 43
+                                : this.nextMaintenanceActionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nextMaintenanceDescription == null
+                                ? 43
+                                : this.nextMaintenanceDescription.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -29,7 +29,8 @@ public final class DeploymentTypeSummary
         "deploymentType",
         "connectionTypes",
         "sourceTechnologies",
-        "targetTechnologies"
+        "targetTechnologies",
+        "oggVersion"
     })
     public DeploymentTypeSummary(
             Category category,
@@ -37,7 +38,8 @@ public final class DeploymentTypeSummary
             DeploymentType deploymentType,
             java.util.List<ConnectionType> connectionTypes,
             java.util.List<String> sourceTechnologies,
-            java.util.List<String> targetTechnologies) {
+            java.util.List<String> targetTechnologies,
+            String oggVersion) {
         super();
         this.category = category;
         this.displayName = displayName;
@@ -45,6 +47,7 @@ public final class DeploymentTypeSummary
         this.connectionTypes = connectionTypes;
         this.sourceTechnologies = sourceTechnologies;
         this.targetTechnologies = targetTechnologies;
+        this.oggVersion = oggVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -171,6 +174,24 @@ public final class DeploymentTypeSummary
             this.__explicitlySet__.add("targetTechnologies");
             return this;
         }
+        /**
+         * Version of OGG
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
+        private String oggVersion;
+
+        /**
+         * Version of OGG
+         *
+         * @param oggVersion the value to set
+         * @return this builder
+         **/
+        public Builder oggVersion(String oggVersion) {
+            this.oggVersion = oggVersion;
+            this.__explicitlySet__.add("oggVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -183,7 +204,8 @@ public final class DeploymentTypeSummary
                             this.deploymentType,
                             this.connectionTypes,
                             this.sourceTechnologies,
-                            this.targetTechnologies);
+                            this.targetTechnologies,
+                            this.oggVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,6 +231,9 @@ public final class DeploymentTypeSummary
             }
             if (model.wasPropertyExplicitlySet("targetTechnologies")) {
                 this.targetTechnologies(model.getTargetTechnologies());
+            }
+            if (model.wasPropertyExplicitlySet("oggVersion")) {
+                this.oggVersion(model.getOggVersion());
             }
             return this;
         }
@@ -385,6 +410,22 @@ public final class DeploymentTypeSummary
         return targetTechnologies;
     }
 
+    /**
+     * Version of OGG
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
+    private final String oggVersion;
+
+    /**
+     * Version of OGG
+     *
+     * @return the value
+     **/
+    public String getOggVersion() {
+        return oggVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -405,6 +446,7 @@ public final class DeploymentTypeSummary
         sb.append(", connectionTypes=").append(String.valueOf(this.connectionTypes));
         sb.append(", sourceTechnologies=").append(String.valueOf(this.sourceTechnologies));
         sb.append(", targetTechnologies=").append(String.valueOf(this.targetTechnologies));
+        sb.append(", oggVersion=").append(String.valueOf(this.oggVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -425,6 +467,7 @@ public final class DeploymentTypeSummary
                 && java.util.Objects.equals(this.connectionTypes, other.connectionTypes)
                 && java.util.Objects.equals(this.sourceTechnologies, other.sourceTechnologies)
                 && java.util.Objects.equals(this.targetTechnologies, other.targetTechnologies)
+                && java.util.Objects.equals(this.oggVersion, other.oggVersion)
                 && super.equals(other);
     }
 
@@ -450,6 +493,7 @@ public final class DeploymentTypeSummary
                         + (this.targetTechnologies == null
                                 ? 43
                                 : this.targetTechnologies.hashCode());
+        result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

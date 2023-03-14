@@ -655,6 +655,59 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVirtualNodePoolResponse> createVirtualNodePool(
+            CreateVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>
+                    handler) {
+        LOG.trace("Called async createVirtualNodePool");
+        final CreateVirtualNodePoolRequest interceptedRequest =
+                CreateVirtualNodePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVirtualNodePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "CreateVirtualNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/CreateVirtualNodePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualNodePoolResponse>
+                transformer =
+                        CreateVirtualNodePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>,
+                        java.util.concurrent.Future<CreateVirtualNodePoolResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVirtualNodePoolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResponse> deleteCluster(
             DeleteClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteClusterRequest, DeleteClusterResponse>
@@ -787,6 +840,53 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteVirtualNodePoolResponse> deleteVirtualNodePool(
+            DeleteVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVirtualNodePoolRequest, DeleteVirtualNodePoolResponse>
+                    handler) {
+        LOG.trace("Called async deleteVirtualNodePool");
+        final DeleteVirtualNodePoolRequest interceptedRequest =
+                DeleteVirtualNodePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVirtualNodePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "DeleteVirtualNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/DeleteVirtualNodePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualNodePoolResponse>
+                transformer =
+                        DeleteVirtualNodePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteVirtualNodePoolRequest, DeleteVirtualNodePoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteVirtualNodePoolRequest, DeleteVirtualNodePoolResponse>,
+                        java.util.concurrent.Future<DeleteVirtualNodePoolResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteVirtualNodePoolRequest, DeleteVirtualNodePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWorkRequestResponse> deleteWorkRequest(
             DeleteWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -820,6 +920,91 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteWorkRequestRequest, DeleteWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAddonResponse> disableAddon(
+            DisableAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DisableAddonRequest, DisableAddonResponse>
+                    handler) {
+        LOG.trace("Called async disableAddon");
+        final DisableAddonRequest interceptedRequest =
+                DisableAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "DisableAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DisableAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, DisableAddonResponse>
+                transformer =
+                        DisableAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DisableAddonRequest, DisableAddonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableAddonRequest, DisableAddonResponse>,
+                        java.util.concurrent.Future<DisableAddonResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableAddonRequest, DisableAddonResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAddonResponse> getAddon(
+            GetAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse>
+                    handler) {
+        LOG.trace("Called async getAddon");
+        final GetAddonRequest interceptedRequest = GetAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "GetAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAddonResponse> transformer =
+                GetAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse>,
+                        java.util.concurrent.Future<GetAddonResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAddonRequest, GetAddonResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1065,6 +1250,97 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetVirtualNodeResponse> getVirtualNode(
+            GetVirtualNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualNodeRequest, GetVirtualNodeResponse>
+                    handler) {
+        LOG.trace("Called async getVirtualNode");
+        final GetVirtualNodeRequest interceptedRequest =
+                GetVirtualNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVirtualNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "GetVirtualNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNode");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVirtualNodeResponse>
+                transformer =
+                        GetVirtualNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetVirtualNodeRequest, GetVirtualNodeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVirtualNodeRequest, GetVirtualNodeResponse>,
+                        java.util.concurrent.Future<GetVirtualNodeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVirtualNodeRequest, GetVirtualNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVirtualNodePoolResponse> getVirtualNodePool(
+            GetVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+                    handler) {
+        LOG.trace("Called async getVirtualNodePool");
+        final GetVirtualNodePoolRequest interceptedRequest =
+                GetVirtualNodePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVirtualNodePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "GetVirtualNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNodePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVirtualNodePoolResponse>
+                transformer =
+                        GetVirtualNodePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>,
+                        java.util.concurrent.Future<GetVirtualNodePoolResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1097,6 +1373,145 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallAddonResponse> installAddon(
+            InstallAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                    handler) {
+        LOG.trace("Called async installAddon");
+        final InstallAddonRequest interceptedRequest =
+                InstallAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "InstallAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/InstallAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, InstallAddonResponse>
+                transformer =
+                        InstallAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallAddonRequest, InstallAddonResponse>,
+                        java.util.concurrent.Future<InstallAddonResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInstallAddonDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallAddonRequest, InstallAddonResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonOptionsResponse> listAddonOptions(
+            ListAddonOptionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAddonOptionsRequest, ListAddonOptionsResponse>
+                    handler) {
+        LOG.trace("Called async listAddonOptions");
+        final ListAddonOptionsRequest interceptedRequest =
+                ListAddonOptionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddonOptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ListAddonOptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/AddonOptionSummary/ListAddonOptions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAddonOptionsResponse>
+                transformer =
+                        ListAddonOptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAddonOptionsRequest, ListAddonOptionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddonOptionsRequest, ListAddonOptionsResponse>,
+                        java.util.concurrent.Future<ListAddonOptionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddonOptionsRequest, ListAddonOptionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonsResponse> listAddons(
+            ListAddonsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse>
+                    handler) {
+        LOG.trace("Called async listAddons");
+        final ListAddonsRequest interceptedRequest = ListAddonsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddonsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ListAddons",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ListAddons");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAddonsResponse>
+                transformer =
+                        ListAddonsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddonsRequest, ListAddonsResponse>,
+                        java.util.concurrent.Future<ListAddonsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddonsRequest, ListAddonsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1185,6 +1600,143 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListNodePoolsRequest, ListNodePoolsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPodShapesResponse> listPodShapes(
+            ListPodShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPodShapesRequest, ListPodShapesResponse>
+                    handler) {
+        LOG.trace("Called async listPodShapes");
+        final ListPodShapesRequest interceptedRequest =
+                ListPodShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPodShapesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ListPodShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/PodShapeSummary/ListPodShapes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPodShapesResponse>
+                transformer =
+                        ListPodShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListPodShapesRequest, ListPodShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPodShapesRequest, ListPodShapesResponse>,
+                        java.util.concurrent.Future<ListPodShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPodShapesRequest, ListPodShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualNodePoolsResponse> listVirtualNodePools(
+            ListVirtualNodePoolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>
+                    handler) {
+        LOG.trace("Called async listVirtualNodePools");
+        final ListVirtualNodePoolsRequest interceptedRequest =
+                ListVirtualNodePoolsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVirtualNodePoolsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ListVirtualNodePools",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePoolSummary/ListVirtualNodePools");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVirtualNodePoolsResponse>
+                transformer =
+                        ListVirtualNodePoolsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>,
+                        java.util.concurrent.Future<ListVirtualNodePoolsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualNodesResponse> listVirtualNodes(
+            ListVirtualNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualNodesRequest, ListVirtualNodesResponse>
+                    handler) {
+        LOG.trace("Called async listVirtualNodes");
+        final ListVirtualNodesRequest interceptedRequest =
+                ListVirtualNodesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVirtualNodesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ListVirtualNodes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/ListVirtualNodes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListVirtualNodesResponse>
+                transformer =
+                        ListVirtualNodesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListVirtualNodesRequest, ListVirtualNodesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVirtualNodesRequest, ListVirtualNodesResponse>,
+                        java.util.concurrent.Future<ListVirtualNodesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVirtualNodesRequest, ListVirtualNodesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1325,6 +1877,55 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
+            UpdateAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
+                    handler) {
+        LOG.trace("Called async updateAddon");
+        final UpdateAddonRequest interceptedRequest =
+                UpdateAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "UpdateAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAddonResponse>
+                transformer =
+                        UpdateAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAddonRequest, UpdateAddonResponse>,
+                        java.util.concurrent.Future<UpdateAddonResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAddonDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAddonRequest, UpdateAddonResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1480,6 +2081,58 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateNodePoolRequest, UpdateNodePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualNodePoolResponse> updateVirtualNodePool(
+            UpdateVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>
+                    handler) {
+        LOG.trace("Called async updateVirtualNodePool");
+        final UpdateVirtualNodePoolRequest interceptedRequest =
+                UpdateVirtualNodePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVirtualNodePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "UpdateVirtualNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/UpdateVirtualNodePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualNodePoolResponse>
+                transformer =
+                        UpdateVirtualNodePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>,
+                        java.util.concurrent.Future<UpdateVirtualNodePoolResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateVirtualNodePoolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
