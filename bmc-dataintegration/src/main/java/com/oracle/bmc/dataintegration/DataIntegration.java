@@ -93,6 +93,19 @@ public interface DataIntegration extends AutoCloseable {
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
     /**
+     * Creates detailed description for an application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplicationDetailedDescription API.
+     */
+    CreateApplicationDetailedDescriptionResponse createApplicationDetailedDescription(
+            CreateApplicationDetailedDescriptionRequest request);
+
+    /**
      * Creates a connection under an existing data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,6 +129,19 @@ public interface DataIntegration extends AutoCloseable {
      */
     CreateConnectionValidationResponse createConnectionValidation(
             CreateConnectionValidationRequest request);
+
+    /**
+     * Copy Metadata Object.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCopyObjectRequest API.
+     */
+    CreateCopyObjectRequestResponse createCopyObjectRequest(CreateCopyObjectRequestRequest request);
 
     /**
      * Creates a data asset with default connection.
@@ -168,6 +194,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplication API.
      */
     CreateDisApplicationResponse createDisApplication(CreateDisApplicationRequest request);
+
+    /**
+     * Creates detailed description for an application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplicationDetailedDescription API.
+     */
+    CreateDisApplicationDetailedDescriptionResponse createDisApplicationDetailedDescription(
+            CreateDisApplicationDetailedDescriptionRequest request);
 
     /**
      * Creates the data entity shape using the shape from the data asset.
@@ -402,6 +441,19 @@ public interface DataIntegration extends AutoCloseable {
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
     /**
+     * Deletes detailed description of an Application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplicationDetailedDescription API.
+     */
+    DeleteApplicationDetailedDescriptionResponse deleteApplicationDetailedDescription(
+            DeleteApplicationDetailedDescriptionRequest request);
+
+    /**
      * Removes a connection using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -425,6 +477,18 @@ public interface DataIntegration extends AutoCloseable {
      */
     DeleteConnectionValidationResponse deleteConnectionValidation(
             DeleteConnectionValidationRequest request);
+
+    /**
+     * Delete copy object request using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCopyObjectRequest API.
+     */
+    DeleteCopyObjectRequestResponse deleteCopyObjectRequest(DeleteCopyObjectRequestRequest request);
 
     /**
      * Removes a data asset using the specified identifier.
@@ -474,6 +538,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplication API.
      */
     DeleteDisApplicationResponse deleteDisApplication(DeleteDisApplicationRequest request);
+
+    /**
+     * Deletes detailed description of an Application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplicationDetailedDescription API.
+     */
+    DeleteDisApplicationDetailedDescriptionResponse deleteDisApplicationDetailedDescription(
+            DeleteDisApplicationDetailedDescriptionRequest request);
 
     /**
      * Removes a published object using the specified identifier.
@@ -687,6 +764,19 @@ public interface DataIntegration extends AutoCloseable {
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
     /**
+     * Retrieves detailed description of an Application
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplicationDetailedDescription API.
+     */
+    GetApplicationDetailedDescriptionResponse getApplicationDetailedDescription(
+            GetApplicationDetailedDescriptionRequest request);
+
+    /**
      * Retrieves the connection details using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -709,6 +799,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectionValidation API.
      */
     GetConnectionValidationResponse getConnectionValidation(GetConnectionValidationRequest request);
+
+    /**
+     * This endpoint can be used to get the summary/details of object being copied.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCopyObjectRequest API.
+     */
+    GetCopyObjectRequestResponse getCopyObjectRequest(GetCopyObjectRequestRequest request);
 
     /**
      * Retrieves statistics on a workspace. It returns an object with an array of property values, such as the number of projects, |
@@ -795,6 +898,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplication API.
      */
     GetDisApplicationResponse getDisApplication(GetDisApplicationRequest request);
+
+    /**
+     * Retrieves detailed description of an Application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplicationDetailedDescription API.
+     */
+    GetDisApplicationDetailedDescriptionResponse getDisApplicationDetailedDescription(
+            GetDisApplicationDetailedDescriptionRequest request);
 
     /**
      * Retrieves a publshed object in an task using the specified identifier.
@@ -1015,6 +1131,18 @@ public interface DataIntegration extends AutoCloseable {
     GetTaskValidationResponse getTaskValidation(GetTaskValidationRequest request);
 
     /**
+     * This endpoint can be used to get an application template using a key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplate API.
+     */
+    GetTemplateResponse getTemplate(GetTemplateRequest request);
+
+    /**
      * Retrieves a UserDefinedFunction using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1099,6 +1227,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
      */
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
+
+    /**
+     * This endpoint can be used to get the list of copy object requests.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListCopyObjectRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCopyObjectRequests API.
+     */
+    ListCopyObjectRequestsResponse listCopyObjectRequests(ListCopyObjectRequestsRequest request);
 
     /**
      * Retrieves a list of all data asset summaries.
@@ -1456,6 +1597,18 @@ public interface DataIntegration extends AutoCloseable {
     ListTasksResponse listTasks(ListTasksRequest request);
 
     /**
+     * This endpoint can be used to list application templates with filtering options.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplates API.
+     */
+    ListTemplatesResponse listTemplates(ListTemplatesRequest request);
+
+    /**
      * Retrieves a list of UserDefinedFunctionvalidations within the specified workspace.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1573,6 +1726,19 @@ public interface DataIntegration extends AutoCloseable {
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
     /**
+     * Updates the detailed description of an Application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplicationDetailedDescription API.
+     */
+    UpdateApplicationDetailedDescriptionResponse updateApplicationDetailedDescription(
+            UpdateApplicationDetailedDescriptionRequest request);
+
+    /**
      * Updates a connection under a data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1583,6 +1749,18 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection API.
      */
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
+
+    /**
+     * Updates the status of a copy object request.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCopyObjectRequest API.
+     */
+    UpdateCopyObjectRequestResponse updateCopyObjectRequest(UpdateCopyObjectRequestRequest request);
 
     /**
      * Updates a specific data asset with default connection.
@@ -1619,6 +1797,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplication API.
      */
     UpdateDisApplicationResponse updateDisApplication(UpdateDisApplicationRequest request);
+
+    /**
+     * Updates the detailed description of an Application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplicationDetailedDescription API.
+     */
+    UpdateDisApplicationDetailedDescriptionResponse updateDisApplicationDetailedDescription(
+            UpdateDisApplicationDetailedDescriptionRequest request);
 
     /**
      * Updates the external publication object.

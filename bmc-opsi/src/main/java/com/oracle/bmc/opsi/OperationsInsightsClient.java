@@ -5043,6 +5043,46 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public SummarizeHostInsightNetworkUsageTrendResponse summarizeHostInsightNetworkUsageTrend(
+            SummarizeHostInsightNetworkUsageTrendRequest request) {
+        LOG.trace("Called summarizeHostInsightNetworkUsageTrend");
+        final SummarizeHostInsightNetworkUsageTrendRequest interceptedRequest =
+                SummarizeHostInsightNetworkUsageTrendConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeHostInsightNetworkUsageTrendConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightNetworkUsageTrend",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightNetworkUsageTrend");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeHostInsightNetworkUsageTrendResponse>
+                transformer =
+                        SummarizeHostInsightNetworkUsageTrendConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SummarizeHostInsightResourceCapacityTrendResponse
             summarizeHostInsightResourceCapacityTrend(
                     SummarizeHostInsightResourceCapacityTrendRequest request) {
@@ -5271,6 +5311,46 @@ public class OperationsInsightsClient implements OperationsInsights {
                         SummarizeHostInsightResourceUtilizationInsightResponse>
                 transformer =
                         SummarizeHostInsightResourceUtilizationInsightConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeHostInsightStorageUsageTrendResponse summarizeHostInsightStorageUsageTrend(
+            SummarizeHostInsightStorageUsageTrendRequest request) {
+        LOG.trace("Called summarizeHostInsightStorageUsageTrend");
+        final SummarizeHostInsightStorageUsageTrendRequest interceptedRequest =
+                SummarizeHostInsightStorageUsageTrendConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeHostInsightStorageUsageTrendConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightStorageUsageTrend",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightStorageUsageTrend");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeHostInsightStorageUsageTrendResponse>
+                transformer =
+                        SummarizeHostInsightStorageUsageTrendConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

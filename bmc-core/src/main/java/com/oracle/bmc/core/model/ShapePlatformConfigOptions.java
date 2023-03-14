@@ -265,6 +265,7 @@ public final class ShapePlatformConfigOptions
      **/
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
+        AmdMilanBmGpu("AMD_MILAN_BM_GPU"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
         IntelIcelakeBm("INTEL_ICELAKE_BM"),

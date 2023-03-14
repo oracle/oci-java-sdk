@@ -23,6 +23,10 @@ package com.oracle.bmc.goldengate.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpgradeDeploymentSpecificReleaseDetails.class,
+        name = "SPECIFIC_RELEASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpgradeDeploymentCurrentReleaseDetails.class,
         name = "CURRENT_RELEASE"
     )

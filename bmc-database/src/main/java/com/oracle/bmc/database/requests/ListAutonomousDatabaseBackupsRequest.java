@@ -184,6 +184,17 @@ public class ListAutonomousDatabaseBackupsRequest
         return displayName;
     }
     /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    private String type;
+
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    public String getType() {
+        return type;
+    }
+    /**
      * Unique identifier for the request.
      *
      */
@@ -334,6 +345,21 @@ public class ListAutonomousDatabaseBackupsRequest
         }
 
         /**
+         * A filter to return only backups that matches with the given type of Backup.
+         */
+        private String type = null;
+
+        /**
+         * A filter to return only backups that matches with the given type of Backup.
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          *
          */
@@ -386,6 +412,7 @@ public class ListAutonomousDatabaseBackupsRequest
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            type(o.getType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -428,9 +455,10 @@ public class ListAutonomousDatabaseBackupsRequest
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.type = type;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAutonomousDatabaseBackupsRequest(autonomousDatabaseId, compartmentId, limit, page, sortBy, sortOrder, lifecycleState, displayName, opcRequestId);
+            // new ListAutonomousDatabaseBackupsRequest(autonomousDatabaseId, compartmentId, limit, page, sortBy, sortOrder, lifecycleState, displayName, type, opcRequestId);
         }
     }
 
@@ -448,6 +476,7 @@ public class ListAutonomousDatabaseBackupsRequest
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
+                .type(type)
                 .opcRequestId(opcRequestId);
     }
 
@@ -472,6 +501,7 @@ public class ListAutonomousDatabaseBackupsRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -496,6 +526,7 @@ public class ListAutonomousDatabaseBackupsRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -519,6 +550,7 @@ public class ListAutonomousDatabaseBackupsRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

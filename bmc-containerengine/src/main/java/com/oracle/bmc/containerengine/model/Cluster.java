@@ -37,7 +37,8 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "endpoints",
         "availableKubernetesUpgrades",
         "imagePolicyConfig",
-        "clusterPodNetworkOptions"
+        "clusterPodNetworkOptions",
+        "type"
     })
     public Cluster(
             String id,
@@ -57,7 +58,8 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             ClusterEndpoints endpoints,
             java.util.List<String> availableKubernetesUpgrades,
             ImagePolicyConfig imagePolicyConfig,
-            java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions) {
+            java.util.List<ClusterPodNetworkOptionDetails> clusterPodNetworkOptions,
+            ClusterType type) {
         super();
         this.id = id;
         this.name = name;
@@ -77,6 +79,7 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.availableKubernetesUpgrades = availableKubernetesUpgrades;
         this.imagePolicyConfig = imagePolicyConfig;
         this.clusterPodNetworkOptions = clusterPodNetworkOptions;
+        this.type = type;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -392,6 +395,22 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             this.__explicitlySet__.add("clusterPodNetworkOptions");
             return this;
         }
+        /**
+         * Type of cluster
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private ClusterType type;
+
+        /**
+         * Type of cluster
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(ClusterType type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -416,7 +435,8 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.endpoints,
                             this.availableKubernetesUpgrades,
                             this.imagePolicyConfig,
-                            this.clusterPodNetworkOptions);
+                            this.clusterPodNetworkOptions,
+                            this.type);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -478,6 +498,9 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("clusterPodNetworkOptions")) {
                 this.clusterPodNetworkOptions(model.getClusterPodNetworkOptions());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             return this;
         }
@@ -766,6 +789,20 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return clusterPodNetworkOptions;
     }
 
+    /**
+     * Type of cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final ClusterType type;
+
+    /**
+     * Type of cluster
+     * @return the value
+     **/
+    public ClusterType getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -800,6 +837,7 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
         sb.append(", clusterPodNetworkOptions=")
                 .append(String.valueOf(this.clusterPodNetworkOptions));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(")");
         return sb.toString();
     }
@@ -834,6 +872,7 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
                 && java.util.Objects.equals(
                         this.clusterPodNetworkOptions, other.clusterPodNetworkOptions)
+                && java.util.Objects.equals(this.type, other.type)
                 && super.equals(other);
     }
 
@@ -879,6 +918,7 @@ public final class Cluster extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.clusterPodNetworkOptions == null
                                 ? 43
                                 : this.clusterPodNetworkOptions.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

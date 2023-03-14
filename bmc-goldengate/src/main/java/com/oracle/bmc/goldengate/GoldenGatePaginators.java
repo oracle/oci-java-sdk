@@ -728,6 +728,123 @@ public class GoldenGatePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDeploymentVersionsResponse> listDeploymentVersionsResponseIterator(
+            final ListDeploymentVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentVersionsRequest.Builder, ListDeploymentVersionsRequest,
+                ListDeploymentVersionsResponse>(
+                new java.util.function.Supplier<ListDeploymentVersionsRequest.Builder>() {
+                    @Override
+                    public ListDeploymentVersionsRequest.Builder get() {
+                        return ListDeploymentVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentVersionsRequest.Builder>,
+                        ListDeploymentVersionsRequest>() {
+                    @Override
+                    public ListDeploymentVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentVersionsRequest, ListDeploymentVersionsResponse>() {
+                    @Override
+                    public ListDeploymentVersionsResponse apply(
+                            ListDeploymentVersionsRequest request) {
+                        return client.listDeploymentVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentVersionSummary} objects
+     * contained in responses from the listDeploymentVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentVersionSummary>
+            listDeploymentVersionsRecordIterator(final ListDeploymentVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentVersionsRequest.Builder, ListDeploymentVersionsRequest,
+                ListDeploymentVersionsResponse,
+                com.oracle.bmc.goldengate.model.DeploymentVersionSummary>(
+                new java.util.function.Supplier<ListDeploymentVersionsRequest.Builder>() {
+                    @Override
+                    public ListDeploymentVersionsRequest.Builder get() {
+                        return ListDeploymentVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentVersionsRequest.Builder>,
+                        ListDeploymentVersionsRequest>() {
+                    @Override
+                    public ListDeploymentVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentVersionsRequest, ListDeploymentVersionsResponse>() {
+                    @Override
+                    public ListDeploymentVersionsResponse apply(
+                            ListDeploymentVersionsRequest request) {
+                        return client.listDeploymentVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.DeploymentVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.DeploymentVersionSummary>
+                            apply(ListDeploymentVersionsResponse response) {
+                        return response.getDeploymentVersionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDeploymentWalletsOperations operation. This iterable
      * will fetch more data from the server as needed.
      *

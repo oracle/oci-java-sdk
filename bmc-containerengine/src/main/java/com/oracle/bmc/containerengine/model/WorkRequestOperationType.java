@@ -17,6 +17,14 @@ public enum WorkRequestOperationType {
     NodepoolDelete("NODEPOOL_DELETE"),
     NodepoolReconcile("NODEPOOL_RECONCILE"),
     WorkrequestCancel("WORKREQUEST_CANCEL"),
+    VirtualnodepoolCreate("VIRTUALNODEPOOL_CREATE"),
+    VirtualnodepoolUpdate("VIRTUALNODEPOOL_UPDATE"),
+    VirtualnodepoolDelete("VIRTUALNODEPOOL_DELETE"),
+    VirtualnodeDelete("VIRTUALNODE_DELETE"),
+    EnableAddon("ENABLE_ADDON"),
+    UpdateAddon("UPDATE_ADDON"),
+    DisableAddon("DISABLE_ADDON"),
+    ReconcileAddon("RECONCILE_ADDON"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

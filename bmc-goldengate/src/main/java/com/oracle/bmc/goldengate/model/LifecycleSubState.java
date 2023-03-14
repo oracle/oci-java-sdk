@@ -17,6 +17,7 @@ public enum LifecycleSubState {
     Upgrading("UPGRADING"),
     Restoring("RESTORING"),
     BackupInProgress("BACKUP_IN_PROGRESS"),
+    RollbackInProgress("ROLLBACK_IN_PROGRESS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

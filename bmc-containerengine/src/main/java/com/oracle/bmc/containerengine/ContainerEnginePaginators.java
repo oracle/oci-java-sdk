@@ -34,6 +34,228 @@ public class ContainerEnginePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAddonOptions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAddonOptionsResponse> listAddonOptionsResponseIterator(
+            final ListAddonOptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddonOptionsRequest.Builder, ListAddonOptionsRequest, ListAddonOptionsResponse>(
+                new java.util.function.Supplier<ListAddonOptionsRequest.Builder>() {
+                    @Override
+                    public ListAddonOptionsRequest.Builder get() {
+                        return ListAddonOptionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonOptionsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonOptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonOptionsRequest.Builder>,
+                        ListAddonOptionsRequest>() {
+                    @Override
+                    public ListAddonOptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonOptionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonOptionsRequest, ListAddonOptionsResponse>() {
+                    @Override
+                    public ListAddonOptionsResponse apply(ListAddonOptionsRequest request) {
+                        return client.listAddonOptions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.containerengine.model.AddonOptionSummary} objects
+     * contained in responses from the listAddonOptions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.containerengine.model.AddonOptionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.containerengine.model.AddonOptionSummary>
+            listAddonOptionsRecordIterator(final ListAddonOptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddonOptionsRequest.Builder, ListAddonOptionsRequest, ListAddonOptionsResponse,
+                com.oracle.bmc.containerengine.model.AddonOptionSummary>(
+                new java.util.function.Supplier<ListAddonOptionsRequest.Builder>() {
+                    @Override
+                    public ListAddonOptionsRequest.Builder get() {
+                        return ListAddonOptionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonOptionsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonOptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonOptionsRequest.Builder>,
+                        ListAddonOptionsRequest>() {
+                    @Override
+                    public ListAddonOptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonOptionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonOptionsRequest, ListAddonOptionsResponse>() {
+                    @Override
+                    public ListAddonOptionsResponse apply(ListAddonOptionsRequest request) {
+                        return client.listAddonOptions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonOptionsResponse,
+                        java.util.List<com.oracle.bmc.containerengine.model.AddonOptionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.containerengine.model.AddonOptionSummary>
+                            apply(ListAddonOptionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAddons operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAddonsResponse> listAddonsResponseIterator(
+            final ListAddonsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddonsRequest.Builder, ListAddonsRequest, ListAddonsResponse>(
+                new java.util.function.Supplier<ListAddonsRequest.Builder>() {
+                    @Override
+                    public ListAddonsRequest.Builder get() {
+                        return ListAddonsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonsRequest.Builder>,
+                        ListAddonsRequest>() {
+                    @Override
+                    public ListAddonsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAddonsRequest, ListAddonsResponse>() {
+                    @Override
+                    public ListAddonsResponse apply(ListAddonsRequest request) {
+                        return client.listAddons(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.containerengine.model.AddonSummary} objects
+     * contained in responses from the listAddons operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.containerengine.model.AddonSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.containerengine.model.AddonSummary> listAddonsRecordIterator(
+            final ListAddonsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddonsRequest.Builder, ListAddonsRequest, ListAddonsResponse,
+                com.oracle.bmc.containerengine.model.AddonSummary>(
+                new java.util.function.Supplier<ListAddonsRequest.Builder>() {
+                    @Override
+                    public ListAddonsRequest.Builder get() {
+                        return ListAddonsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonsRequest.Builder>,
+                        ListAddonsRequest>() {
+                    @Override
+                    public ListAddonsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAddonsRequest, ListAddonsResponse>() {
+                    @Override
+                    public ListAddonsResponse apply(ListAddonsRequest request) {
+                        return client.listAddons(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonsResponse,
+                        java.util.List<com.oracle.bmc.containerengine.model.AddonSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.containerengine.model.AddonSummary> apply(
+                            ListAddonsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listClusters operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -248,6 +470,344 @@ public class ContainerEnginePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.containerengine.model.NodePoolSummary>
                             apply(ListNodePoolsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPodShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPodShapesResponse> listPodShapesResponseIterator(
+            final ListPodShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPodShapesRequest.Builder, ListPodShapesRequest, ListPodShapesResponse>(
+                new java.util.function.Supplier<ListPodShapesRequest.Builder>() {
+                    @Override
+                    public ListPodShapesRequest.Builder get() {
+                        return ListPodShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPodShapesResponse, String>() {
+                    @Override
+                    public String apply(ListPodShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPodShapesRequest.Builder>,
+                        ListPodShapesRequest>() {
+                    @Override
+                    public ListPodShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPodShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPodShapesRequest, ListPodShapesResponse>() {
+                    @Override
+                    public ListPodShapesResponse apply(ListPodShapesRequest request) {
+                        return client.listPodShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.containerengine.model.PodShapeSummary} objects
+     * contained in responses from the listPodShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.containerengine.model.PodShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.containerengine.model.PodShapeSummary>
+            listPodShapesRecordIterator(final ListPodShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPodShapesRequest.Builder, ListPodShapesRequest, ListPodShapesResponse,
+                com.oracle.bmc.containerengine.model.PodShapeSummary>(
+                new java.util.function.Supplier<ListPodShapesRequest.Builder>() {
+                    @Override
+                    public ListPodShapesRequest.Builder get() {
+                        return ListPodShapesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPodShapesResponse, String>() {
+                    @Override
+                    public String apply(ListPodShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPodShapesRequest.Builder>,
+                        ListPodShapesRequest>() {
+                    @Override
+                    public ListPodShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPodShapesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPodShapesRequest, ListPodShapesResponse>() {
+                    @Override
+                    public ListPodShapesResponse apply(ListPodShapesRequest request) {
+                        return client.listPodShapes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPodShapesResponse,
+                        java.util.List<com.oracle.bmc.containerengine.model.PodShapeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.containerengine.model.PodShapeSummary>
+                            apply(ListPodShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVirtualNodePools operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVirtualNodePoolsResponse> listVirtualNodePoolsResponseIterator(
+            final ListVirtualNodePoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVirtualNodePoolsRequest.Builder, ListVirtualNodePoolsRequest,
+                ListVirtualNodePoolsResponse>(
+                new java.util.function.Supplier<ListVirtualNodePoolsRequest.Builder>() {
+                    @Override
+                    public ListVirtualNodePoolsRequest.Builder get() {
+                        return ListVirtualNodePoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVirtualNodePoolsResponse, String>() {
+                    @Override
+                    public String apply(ListVirtualNodePoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVirtualNodePoolsRequest.Builder>,
+                        ListVirtualNodePoolsRequest>() {
+                    @Override
+                    public ListVirtualNodePoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVirtualNodePoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>() {
+                    @Override
+                    public ListVirtualNodePoolsResponse apply(ListVirtualNodePoolsRequest request) {
+                        return client.listVirtualNodePools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.containerengine.model.VirtualNodePoolSummary} objects
+     * contained in responses from the listVirtualNodePools operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.containerengine.model.VirtualNodePoolSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.containerengine.model.VirtualNodePoolSummary>
+            listVirtualNodePoolsRecordIterator(final ListVirtualNodePoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVirtualNodePoolsRequest.Builder, ListVirtualNodePoolsRequest,
+                ListVirtualNodePoolsResponse,
+                com.oracle.bmc.containerengine.model.VirtualNodePoolSummary>(
+                new java.util.function.Supplier<ListVirtualNodePoolsRequest.Builder>() {
+                    @Override
+                    public ListVirtualNodePoolsRequest.Builder get() {
+                        return ListVirtualNodePoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVirtualNodePoolsResponse, String>() {
+                    @Override
+                    public String apply(ListVirtualNodePoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVirtualNodePoolsRequest.Builder>,
+                        ListVirtualNodePoolsRequest>() {
+                    @Override
+                    public ListVirtualNodePoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVirtualNodePoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>() {
+                    @Override
+                    public ListVirtualNodePoolsResponse apply(ListVirtualNodePoolsRequest request) {
+                        return client.listVirtualNodePools(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualNodePoolsResponse,
+                        java.util.List<
+                                com.oracle.bmc.containerengine.model.VirtualNodePoolSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.containerengine.model.VirtualNodePoolSummary>
+                            apply(ListVirtualNodePoolsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVirtualNodes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVirtualNodesResponse> listVirtualNodesResponseIterator(
+            final ListVirtualNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVirtualNodesRequest.Builder, ListVirtualNodesRequest, ListVirtualNodesResponse>(
+                new java.util.function.Supplier<ListVirtualNodesRequest.Builder>() {
+                    @Override
+                    public ListVirtualNodesRequest.Builder get() {
+                        return ListVirtualNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVirtualNodesResponse, String>() {
+                    @Override
+                    public String apply(ListVirtualNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVirtualNodesRequest.Builder>,
+                        ListVirtualNodesRequest>() {
+                    @Override
+                    public ListVirtualNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVirtualNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualNodesRequest, ListVirtualNodesResponse>() {
+                    @Override
+                    public ListVirtualNodesResponse apply(ListVirtualNodesRequest request) {
+                        return client.listVirtualNodes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.containerengine.model.VirtualNodeSummary} objects
+     * contained in responses from the listVirtualNodes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.containerengine.model.VirtualNodeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.containerengine.model.VirtualNodeSummary>
+            listVirtualNodesRecordIterator(final ListVirtualNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVirtualNodesRequest.Builder, ListVirtualNodesRequest, ListVirtualNodesResponse,
+                com.oracle.bmc.containerengine.model.VirtualNodeSummary>(
+                new java.util.function.Supplier<ListVirtualNodesRequest.Builder>() {
+                    @Override
+                    public ListVirtualNodesRequest.Builder get() {
+                        return ListVirtualNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListVirtualNodesResponse, String>() {
+                    @Override
+                    public String apply(ListVirtualNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVirtualNodesRequest.Builder>,
+                        ListVirtualNodesRequest>() {
+                    @Override
+                    public ListVirtualNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVirtualNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualNodesRequest, ListVirtualNodesResponse>() {
+                    @Override
+                    public ListVirtualNodesResponse apply(ListVirtualNodesRequest request) {
+                        return client.listVirtualNodes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListVirtualNodesResponse,
+                        java.util.List<com.oracle.bmc.containerengine.model.VirtualNodeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.containerengine.model.VirtualNodeSummary>
+                            apply(ListVirtualNodesResponse response) {
                         return response.getItems();
                     }
                 });
