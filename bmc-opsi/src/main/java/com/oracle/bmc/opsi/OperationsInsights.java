@@ -2103,6 +2103,24 @@ public interface OperationsInsights extends AutoCloseable {
     SummarizeExadataMembersResponse summarizeExadataMembers(SummarizeExadataMembersRequest request);
 
     /**
+     * Returns response with usage time series data with breakdown by network interface for the time
+     * period specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightNetworkUsageTrendExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeHostInsightNetworkUsageTrend API.
+     */
+    SummarizeHostInsightNetworkUsageTrendResponse summarizeHostInsightNetworkUsageTrend(
+            SummarizeHostInsightNetworkUsageTrendRequest request);
+
+    /**
      * Returns response with time series data (endTimestamp, capacity) for the time period
      * specified. The maximum time range for analysis is 2 years, hence this is intentionally not
      * paginated. If compartmentIdInSubtree is specified, aggregates resources in a compartment and
@@ -2220,6 +2238,24 @@ public interface OperationsInsights extends AutoCloseable {
     SummarizeHostInsightResourceUtilizationInsightResponse
             summarizeHostInsightResourceUtilizationInsight(
                     SummarizeHostInsightResourceUtilizationInsightRequest request);
+
+    /**
+     * Returns response with usage time series data with breakdown by filesystem for the time period
+     * specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightStorageUsageTrendExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeHostInsightStorageUsageTrend API.
+     */
+    SummarizeHostInsightStorageUsageTrendResponse summarizeHostInsightStorageUsageTrend(
+            SummarizeHostInsightStorageUsageTrendRequest request);
 
     /**
      * Returns response with aggregated data (timestamp, usageData) for top processes on a specific

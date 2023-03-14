@@ -5637,6 +5637,54 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeHostInsightNetworkUsageTrendResponse>
+            summarizeHostInsightNetworkUsageTrend(
+                    SummarizeHostInsightNetworkUsageTrendRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightNetworkUsageTrendRequest,
+                                    SummarizeHostInsightNetworkUsageTrendResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        return clientCall(request, SummarizeHostInsightNetworkUsageTrendResponse::builder)
+                .logger(LOG, "summarizeHostInsightNetworkUsageTrend")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightNetworkUsageTrend",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightNetworkUsageTrend")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightNetworkUsageTrendRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("networkUsageTrend")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model
+                                .SummarizeHostInsightNetworkUsageTrendAggregationCollection.class,
+                        SummarizeHostInsightNetworkUsageTrendResponse.Builder
+                                ::summarizeHostInsightNetworkUsageTrendAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightNetworkUsageTrendResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightNetworkUsageTrendResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeHostInsightResourceCapacityTrendResponse>
             summarizeHostInsightResourceCapacityTrend(
                     SummarizeHostInsightResourceCapacityTrendRequest request,
@@ -5706,6 +5754,8 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5795,6 +5845,10 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
+                .appendQueryParam("mountPoint", request.getMountPoint())
+                .appendQueryParam("interfaceName", request.getInterfaceName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5881,6 +5935,8 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -6131,6 +6187,8 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "vmclusterName",
                         request.getVmclusterName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -6142,6 +6200,54 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         "opc-request-id",
                         SummarizeHostInsightResourceUtilizationInsightResponse.Builder
                                 ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeHostInsightStorageUsageTrendResponse>
+            summarizeHostInsightStorageUsageTrend(
+                    SummarizeHostInsightStorageUsageTrendRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightStorageUsageTrendRequest,
+                                    SummarizeHostInsightStorageUsageTrendResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        return clientCall(request, SummarizeHostInsightStorageUsageTrendResponse::builder)
+                .logger(LOG, "summarizeHostInsightStorageUsageTrend")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightStorageUsageTrend",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightStorageUsageTrend")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightStorageUsageTrendRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("storageUsageTrend")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model
+                                .SummarizeHostInsightStorageUsageTrendAggregationCollection.class,
+                        SummarizeHostInsightStorageUsageTrendResponse.Builder
+                                ::summarizeHostInsightStorageUsageTrendAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightStorageUsageTrendResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightStorageUsageTrendResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -6186,6 +6292,7 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
                 .appendQueryParam("timestamp", request.getTimestamp())
+                .appendEnumQueryParam("statistic", request.getStatistic())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -6241,6 +6348,7 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("hostId", request.getHostId())
                 .appendQueryParam("processHash", request.getProcessHash())
+                .appendEnumQueryParam("statistic", request.getStatistic())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

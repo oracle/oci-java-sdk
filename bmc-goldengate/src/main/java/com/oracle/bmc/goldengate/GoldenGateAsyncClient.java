@@ -131,6 +131,45 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CancelSnoozeDeploymentUpgradeResponse>
+            cancelSnoozeDeploymentUpgrade(
+                    CancelSnoozeDeploymentUpgradeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelSnoozeDeploymentUpgradeRequest,
+                                    CancelSnoozeDeploymentUpgradeResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelSnoozeDeploymentUpgradeDetails(),
+                "cancelSnoozeDeploymentUpgradeDetails is required");
+
+        return clientCall(request, CancelSnoozeDeploymentUpgradeResponse::builder)
+                .logger(LOG, "cancelSnoozeDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CancelSnoozeDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/CancelSnoozeDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelSnoozeDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelSnooze")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelSnoozeDeploymentUpgradeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeConnectionCompartmentResponse>
             changeConnectionCompartment(
                     ChangeConnectionCompartmentRequest request,
@@ -1193,6 +1232,8 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .basePath("/20200407")
                 .appendPathParam("deploymentTypes")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam("oggVersion", request.getOggVersion())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1245,6 +1286,43 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListDeploymentUpgradesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentUpgradesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentVersionsResponse> listDeploymentVersions(
+            ListDeploymentVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentVersionsRequest, ListDeploymentVersionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDeploymentVersionsResponse::builder)
+                .logger(LOG, "listDeploymentVersions")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentVersionCollection/ListDeploymentVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentVersionsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("deploymentId", request.getDeploymentId())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentVersionCollection.class,
+                        ListDeploymentVersionsResponse.Builder::deploymentVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentVersionsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1582,6 +1660,81 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<RollbackDeploymentUpgradeResponse> rollbackDeploymentUpgrade(
+            RollbackDeploymentUpgradeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RollbackDeploymentUpgradeRequest, RollbackDeploymentUpgradeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getRollbackDeploymentUpgradeDetails(),
+                "rollbackDeploymentUpgradeDetails is required");
+
+        return clientCall(request, RollbackDeploymentUpgradeResponse::builder)
+                .logger(LOG, "rollbackDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RollbackDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/RollbackDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RollbackDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("rollback")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RollbackDeploymentUpgradeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RollbackDeploymentUpgradeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SnoozeDeploymentUpgradeResponse> snoozeDeploymentUpgrade(
+            SnoozeDeploymentUpgradeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SnoozeDeploymentUpgradeRequest, SnoozeDeploymentUpgradeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getSnoozeDeploymentUpgradeDetails(),
+                "snoozeDeploymentUpgradeDetails is required");
+
+        return clientCall(request, SnoozeDeploymentUpgradeResponse::builder)
+                .logger(LOG, "snoozeDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "SnoozeDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/SnoozeDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SnoozeDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("snooze")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", SnoozeDeploymentUpgradeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDeploymentResponse> startDeployment(
             StartDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1828,6 +1981,45 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-work-request-id", UpgradeDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpgradeDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeDeploymentUpgradeResponse> upgradeDeploymentUpgrade(
+            UpgradeDeploymentUpgradeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeDeploymentUpgradeRequest, UpgradeDeploymentUpgradeResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpgradeDeploymentUpgradeDetails(),
+                "upgradeDeploymentUpgradeDetails is required");
+
+        return clientCall(request, UpgradeDeploymentUpgradeResponse::builder)
+                .logger(LOG, "upgradeDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "UpgradeDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/UpgradeDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("upgrade")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpgradeDeploymentUpgradeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeDeploymentUpgradeResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

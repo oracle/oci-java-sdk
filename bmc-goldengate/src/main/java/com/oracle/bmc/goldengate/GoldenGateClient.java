@@ -157,6 +157,41 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public CancelSnoozeDeploymentUpgradeResponse cancelSnoozeDeploymentUpgrade(
+            CancelSnoozeDeploymentUpgradeRequest request) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelSnoozeDeploymentUpgradeDetails(),
+                "cancelSnoozeDeploymentUpgradeDetails is required");
+
+        return clientCall(request, CancelSnoozeDeploymentUpgradeResponse::builder)
+                .logger(LOG, "cancelSnoozeDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CancelSnoozeDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/CancelSnoozeDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelSnoozeDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelSnooze")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelSnoozeDeploymentUpgradeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeConnectionCompartmentResponse changeConnectionCompartment(
             ChangeConnectionCompartmentRequest request) {
 
@@ -1131,6 +1166,8 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .basePath("/20200407")
                 .appendPathParam("deploymentTypes")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam("oggVersion", request.getOggVersion())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -1181,6 +1218,41 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDeploymentUpgradesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentUpgradesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListDeploymentVersionsResponse listDeploymentVersions(
+            ListDeploymentVersionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDeploymentVersionsResponse::builder)
+                .logger(LOG, "listDeploymentVersions")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentVersionCollection/ListDeploymentVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentVersionsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentVersions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("deploymentId", request.getDeploymentId())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentVersionCollection.class,
+                        ListDeploymentVersionsResponse.Builder::deploymentVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentVersionsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1493,6 +1565,77 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public RollbackDeploymentUpgradeResponse rollbackDeploymentUpgrade(
+            RollbackDeploymentUpgradeRequest request) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getRollbackDeploymentUpgradeDetails(),
+                "rollbackDeploymentUpgradeDetails is required");
+
+        return clientCall(request, RollbackDeploymentUpgradeResponse::builder)
+                .logger(LOG, "rollbackDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RollbackDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/RollbackDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RollbackDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("rollback")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RollbackDeploymentUpgradeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RollbackDeploymentUpgradeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SnoozeDeploymentUpgradeResponse snoozeDeploymentUpgrade(
+            SnoozeDeploymentUpgradeRequest request) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getSnoozeDeploymentUpgradeDetails(),
+                "snoozeDeploymentUpgradeDetails is required");
+
+        return clientCall(request, SnoozeDeploymentUpgradeResponse::builder)
+                .logger(LOG, "snoozeDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "SnoozeDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/SnoozeDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SnoozeDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("snooze")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", SnoozeDeploymentUpgradeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public StartDeploymentResponse startDeployment(StartDeploymentRequest request) {
 
         Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
@@ -1717,6 +1860,43 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", UpgradeDeploymentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpgradeDeploymentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpgradeDeploymentUpgradeResponse upgradeDeploymentUpgrade(
+            UpgradeDeploymentUpgradeRequest request) {
+
+        Validate.notBlank(
+                request.getDeploymentUpgradeId(), "deploymentUpgradeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpgradeDeploymentUpgradeDetails(),
+                "upgradeDeploymentUpgradeDetails is required");
+
+        return clientCall(request, UpgradeDeploymentUpgradeResponse::builder)
+                .logger(LOG, "upgradeDeploymentUpgrade")
+                .serviceDetails(
+                        "GoldenGate",
+                        "UpgradeDeploymentUpgrade",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/UpgradeDeploymentUpgrade")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeDeploymentUpgradeRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentUpgrades")
+                .appendPathParam(request.getDeploymentUpgradeId())
+                .appendPathParam("actions")
+                .appendPathParam("upgrade")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpgradeDeploymentUpgradeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeDeploymentUpgradeResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

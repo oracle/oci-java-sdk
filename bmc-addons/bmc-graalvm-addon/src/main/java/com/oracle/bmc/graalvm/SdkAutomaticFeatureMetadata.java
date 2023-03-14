@@ -82,6 +82,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.identity.SdkClientsMetadata",
     "com.oracle.bmc.identitydataplane.SdkClientsMetadata",
     "com.oracle.bmc.identitydomains.SdkClientsMetadata",
+    "com.oracle.bmc.identitydomains.SdkClientsMetadata",
     "com.oracle.bmc.integration.SdkClientsMetadata",
     "com.oracle.bmc.internalcontainerinstances.SdkClientsMetadata",
     "com.oracle.bmc.jms.SdkClientsMetadata",

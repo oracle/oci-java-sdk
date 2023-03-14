@@ -29,18 +29,21 @@ public final class CreateAutonomousDatabaseBackupDetails
         "displayName",
         "autonomousDatabaseId",
         "retentionPeriodInDays",
-        "isLongTermBackup"
+        "isLongTermBackup",
+        "backupDestinationDetails"
     })
     public CreateAutonomousDatabaseBackupDetails(
             String displayName,
             String autonomousDatabaseId,
             Integer retentionPeriodInDays,
-            Boolean isLongTermBackup) {
+            Boolean isLongTermBackup,
+            BackupDestinationDetails backupDestinationDetails) {
         super();
         this.displayName = displayName;
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.retentionPeriodInDays = retentionPeriodInDays;
         this.isLongTermBackup = isLongTermBackup;
+        this.backupDestinationDetails = backupDestinationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -110,6 +113,15 @@ public final class CreateAutonomousDatabaseBackupDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+        private BackupDestinationDetails backupDestinationDetails;
+
+        public Builder backupDestinationDetails(BackupDestinationDetails backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
+            this.__explicitlySet__.add("backupDestinationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -119,7 +131,8 @@ public final class CreateAutonomousDatabaseBackupDetails
                             this.displayName,
                             this.autonomousDatabaseId,
                             this.retentionPeriodInDays,
-                            this.isLongTermBackup);
+                            this.isLongTermBackup,
+                            this.backupDestinationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -139,6 +152,9 @@ public final class CreateAutonomousDatabaseBackupDetails
             }
             if (model.wasPropertyExplicitlySet("isLongTermBackup")) {
                 this.isLongTermBackup(model.getIsLongTermBackup());
+            }
+            if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
+                this.backupDestinationDetails(model.getBackupDestinationDetails());
             }
             return this;
         }
@@ -209,6 +225,13 @@ public final class CreateAutonomousDatabaseBackupDetails
         return isLongTermBackup;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+    private final BackupDestinationDetails backupDestinationDetails;
+
+    public BackupDestinationDetails getBackupDestinationDetails() {
+        return backupDestinationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -228,6 +251,8 @@ public final class CreateAutonomousDatabaseBackupDetails
         sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
         sb.append(", isLongTermBackup=").append(String.valueOf(this.isLongTermBackup));
+        sb.append(", backupDestinationDetails=")
+                .append(String.valueOf(this.backupDestinationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -246,6 +271,8 @@ public final class CreateAutonomousDatabaseBackupDetails
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
                 && java.util.Objects.equals(this.isLongTermBackup, other.isLongTermBackup)
+                && java.util.Objects.equals(
+                        this.backupDestinationDetails, other.backupDestinationDetails)
                 && super.equals(other);
     }
 
@@ -267,6 +294,11 @@ public final class CreateAutonomousDatabaseBackupDetails
         result =
                 (result * PRIME)
                         + (this.isLongTermBackup == null ? 43 : this.isLongTermBackup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationDetails == null
+                                ? 43
+                                : this.backupDestinationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

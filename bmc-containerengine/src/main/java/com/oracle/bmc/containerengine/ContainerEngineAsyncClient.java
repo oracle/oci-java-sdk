@@ -223,6 +223,38 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVirtualNodePoolResponse> createVirtualNodePool(
+            CreateVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateVirtualNodePoolDetails(),
+                "createVirtualNodePoolDetails is required");
+
+        return clientCall(request, CreateVirtualNodePoolResponse::builder)
+                .logger(LOG, "createVirtualNodePool")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "CreateVirtualNodePool",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/CreateVirtualNodePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVirtualNodePoolRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVirtualNodePoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVirtualNodePoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResponse> deleteCluster(
             DeleteClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteClusterRequest, DeleteClusterResponse>
@@ -326,6 +358,43 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteVirtualNodePoolResponse> deleteVirtualNodePool(
+            DeleteVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVirtualNodePoolRequest, DeleteVirtualNodePoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVirtualNodePoolId(), "virtualNodePoolId must not be blank");
+
+        return clientCall(request, DeleteVirtualNodePoolResponse::builder)
+                .logger(LOG, "deleteVirtualNodePool")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "DeleteVirtualNodePool",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/DeleteVirtualNodePool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVirtualNodePoolRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .appendPathParam(request.getVirtualNodePoolId())
+                .appendQueryParam(
+                        "overrideEvictionGraceDurationVnp",
+                        request.getOverrideEvictionGraceDurationVnp())
+                .appendQueryParam(
+                        "isForceDeletionAfterOverrideGraceDurationVnp",
+                        request.getIsForceDeletionAfterOverrideGraceDurationVnp())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVirtualNodePoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVirtualNodePoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWorkRequestResponse> deleteWorkRequest(
             DeleteWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -350,6 +419,76 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteWorkRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAddonResponse> disableAddon(
+            DisableAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DisableAddonRequest, DisableAddonResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getAddonName(), "addonName must not be blank");
+        Objects.requireNonNull(
+                request.getIsRemoveExistingAddOn(), "isRemoveExistingAddOn is required");
+
+        return clientCall(request, DisableAddonResponse::builder)
+                .logger(LOG, "disableAddon")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "DisableAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DisableAddon")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DisableAddonRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("addons")
+                .appendPathParam(request.getAddonName())
+                .appendQueryParam("isRemoveExistingAddOn", request.getIsRemoveExistingAddOn())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DisableAddonResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisableAddonResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAddonResponse> getAddon(
+            GetAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getAddonName(), "addonName must not be blank");
+
+        return clientCall(request, GetAddonResponse::builder)
+                .logger(LOG, "getAddon")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "GetAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetAddon")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAddonRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("addons")
+                .appendPathParam(request.getAddonName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.Addon.class,
+                        GetAddonResponse.Builder::addon)
+                .handleResponseHeaderString("etag", GetAddonResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAddonResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -513,6 +652,72 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetVirtualNodeResponse> getVirtualNode(
+            GetVirtualNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualNodeRequest, GetVirtualNodeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVirtualNodePoolId(), "virtualNodePoolId must not be blank");
+
+        Validate.notBlank(request.getVirtualNodeId(), "virtualNodeId must not be blank");
+
+        return clientCall(request, GetVirtualNodeResponse::builder)
+                .logger(LOG, "getVirtualNode")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "GetVirtualNode",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNode")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualNodeRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .appendPathParam(request.getVirtualNodePoolId())
+                .appendPathParam("virtualNodes")
+                .appendPathParam(request.getVirtualNodeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.VirtualNode.class,
+                        GetVirtualNodeResponse.Builder::virtualNode)
+                .handleResponseHeaderString("etag", GetVirtualNodeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualNodeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVirtualNodePoolResponse> getVirtualNodePool(
+            GetVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVirtualNodePoolId(), "virtualNodePoolId must not be blank");
+
+        return clientCall(request, GetVirtualNodePoolResponse::builder)
+                .logger(LOG, "getVirtualNodePool")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "GetVirtualNodePool",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNodePool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualNodePoolRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .appendPathParam(request.getVirtualNodePoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.VirtualNodePool.class,
+                        GetVirtualNodePoolResponse.Builder::virtualNodePool)
+                .handleResponseHeaderString("etag", GetVirtualNodePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualNodePoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -542,6 +747,111 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallAddonResponse> installAddon(
+            InstallAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+        Objects.requireNonNull(request.getInstallAddonDetails(), "installAddonDetails is required");
+
+        return clientCall(request, InstallAddonResponse::builder)
+                .logger(LOG, "installAddon")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "InstallAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/InstallAddon")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallAddonRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("addons")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InstallAddonResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", InstallAddonResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonOptionsResponse> listAddonOptions(
+            ListAddonOptionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAddonOptionsRequest, ListAddonOptionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getKubernetesVersion(), "kubernetesVersion is required");
+
+        return clientCall(request, ListAddonOptionsResponse::builder)
+                .logger(LOG, "listAddonOptions")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ListAddonOptions",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/AddonOptionSummary/ListAddonOptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddonOptionsRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("addonOptions")
+                .appendQueryParam("kubernetesVersion", request.getKubernetesVersion())
+                .appendQueryParam("addonName", request.getAddonName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.containerengine.model.AddonOptionSummary.class,
+                        ListAddonOptionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddonOptionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddonOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonsResponse> listAddons(
+            ListAddonsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        return clientCall(request, ListAddonsResponse::builder)
+                .logger(LOG, "listAddons")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ListAddons",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ListAddons")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddonsRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("addons")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.containerengine.model.AddonSummary.class,
+                        ListAddonsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddonsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddonsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -621,6 +931,121 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListNodePoolsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListNodePoolsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPodShapesResponse> listPodShapes(
+            ListPodShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPodShapesRequest, ListPodShapesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPodShapesResponse::builder)
+                .logger(LOG, "listPodShapes")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ListPodShapes",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/PodShapeSummary/ListPodShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPodShapesRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("podShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.containerengine.model.PodShapeSummary.class,
+                        ListPodShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPodShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPodShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualNodePoolsResponse> listVirtualNodePools(
+            ListVirtualNodePoolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualNodePoolsRequest, ListVirtualNodePoolsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVirtualNodePoolsResponse::builder)
+                .logger(LOG, "listVirtualNodePools")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ListVirtualNodePools",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePoolSummary/ListVirtualNodePools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualNodePoolsRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("clusterId", request.getClusterId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.containerengine.model.VirtualNodePoolSummary.class,
+                        ListVirtualNodePoolsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualNodePoolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVirtualNodePoolsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualNodesResponse> listVirtualNodes(
+            ListVirtualNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualNodesRequest, ListVirtualNodesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVirtualNodePoolId(), "virtualNodePoolId must not be blank");
+
+        return clientCall(request, ListVirtualNodesResponse::builder)
+                .logger(LOG, "listVirtualNodes")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ListVirtualNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/ListVirtualNodes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualNodesRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .appendPathParam(request.getVirtualNodePoolId())
+                .appendPathParam("virtualNodes")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.containerengine.model.VirtualNodeSummary.class,
+                        ListVirtualNodesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualNodesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVirtualNodesResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -733,6 +1158,41 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
+            UpdateAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getAddonName(), "addonName must not be blank");
+        Objects.requireNonNull(request.getUpdateAddonDetails(), "updateAddonDetails is required");
+
+        return clientCall(request, UpdateAddonResponse::builder)
+                .logger(LOG, "updateAddon")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "UpdateAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateAddon")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAddonRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("addons")
+                .appendPathParam(request.getAddonName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAddonResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAddonResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClusterResponse> updateCluster(
             UpdateClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateClusterRequest, UpdateClusterResponse>
@@ -838,6 +1298,41 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-work-request-id", UpdateNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateNodePoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualNodePoolResponse> updateVirtualNodePool(
+            UpdateVirtualNodePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVirtualNodePoolId(), "virtualNodePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVirtualNodePoolDetails(),
+                "updateVirtualNodePoolDetails is required");
+
+        return clientCall(request, UpdateVirtualNodePoolResponse::builder)
+                .logger(LOG, "updateVirtualNodePool")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "UpdateVirtualNodePool",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/UpdateVirtualNodePool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVirtualNodePoolRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("virtualNodePools")
+                .appendPathParam(request.getVirtualNodePoolId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVirtualNodePoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVirtualNodePoolResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

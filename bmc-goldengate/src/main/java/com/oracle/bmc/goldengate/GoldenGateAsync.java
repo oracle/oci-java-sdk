@@ -66,6 +66,25 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancel snooze of a DeploymentUpgrade. When provided, If-Match is checked against ETag values
+     * of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelSnoozeDeploymentUpgradeResponse>
+            cancelSnoozeDeploymentUpgrade(
+                    CancelSnoozeDeploymentUpgradeRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CancelSnoozeDeploymentUpgradeRequest,
+                                    CancelSnoozeDeploymentUpgradeResponse>
+                            handler);
+
+    /**
      * Moves the Connection into a different compartment within the same tenancy. When provided,
      * If-Match is checked against ETag values of the resource. For information about moving
      * resources between compartments, see [Moving Resources Between
@@ -577,6 +596,22 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the list of available deployment versions.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDeploymentVersionsResponse> listDeploymentVersions(
+            ListDeploymentVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentVersionsRequest, ListDeploymentVersionsResponse>
+                    handler);
+
+    /**
      * Lists the wallets export/import operations to/from a deployment.
      *
      * @param request The request object containing the details to send
@@ -720,6 +755,40 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Rollback a deployment to it's previous version. When provided, If-Match is checked against
+     * ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RollbackDeploymentUpgradeResponse> rollbackDeploymentUpgrade(
+            RollbackDeploymentUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RollbackDeploymentUpgradeRequest, RollbackDeploymentUpgradeResponse>
+                    handler);
+
+    /**
+     * Snooze a DeploymentUpgrade. When provided, If-Match is checked against ETag values of the
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SnoozeDeploymentUpgradeResponse> snoozeDeploymentUpgrade(
+            SnoozeDeploymentUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SnoozeDeploymentUpgradeRequest, SnoozeDeploymentUpgradeResponse>
+                    handler);
+
+    /**
      * Starts a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -825,5 +894,21 @@ public interface GoldenGateAsync extends AutoCloseable {
             UpgradeDeploymentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpgradeDeploymentRequest, UpgradeDeploymentResponse>
+                    handler);
+
+    /**
+     * Upgrade a deployment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpgradeDeploymentUpgradeResponse> upgradeDeploymentUpgrade(
+            UpgradeDeploymentUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeDeploymentUpgradeRequest, UpgradeDeploymentUpgradeResponse>
                     handler);
 }

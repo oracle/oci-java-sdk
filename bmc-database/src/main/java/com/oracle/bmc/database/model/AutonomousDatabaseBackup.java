@@ -43,7 +43,8 @@ public final class AutonomousDatabaseBackup
         "retentionPeriodInDays",
         "timeAvailableTill",
         "dbVersion",
-        "sizeInTBs"
+        "sizeInTBs",
+        "backupDestinationDetails"
     })
     public AutonomousDatabaseBackup(
             String id,
@@ -66,7 +67,8 @@ public final class AutonomousDatabaseBackup
             Integer retentionPeriodInDays,
             java.util.Date timeAvailableTill,
             String dbVersion,
-            Double sizeInTBs) {
+            Double sizeInTBs,
+            BackupDestinationDetails backupDestinationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -89,6 +91,7 @@ public final class AutonomousDatabaseBackup
         this.timeAvailableTill = timeAvailableTill;
         this.dbVersion = dbVersion;
         this.sizeInTBs = sizeInTBs;
+        this.backupDestinationDetails = backupDestinationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -443,6 +446,15 @@ public final class AutonomousDatabaseBackup
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+        private BackupDestinationDetails backupDestinationDetails;
+
+        public Builder backupDestinationDetails(BackupDestinationDetails backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
+            this.__explicitlySet__.add("backupDestinationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -469,7 +481,8 @@ public final class AutonomousDatabaseBackup
                             this.retentionPeriodInDays,
                             this.timeAvailableTill,
                             this.dbVersion,
-                            this.sizeInTBs);
+                            this.sizeInTBs,
+                            this.backupDestinationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -540,6 +553,9 @@ public final class AutonomousDatabaseBackup
             }
             if (model.wasPropertyExplicitlySet("sizeInTBs")) {
                 this.sizeInTBs(model.getSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
+                this.backupDestinationDetails(model.getBackupDestinationDetails());
             }
             return this;
         }
@@ -954,6 +970,13 @@ public final class AutonomousDatabaseBackup
         return sizeInTBs;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+    private final BackupDestinationDetails backupDestinationDetails;
+
+    public BackupDestinationDetails getBackupDestinationDetails() {
+        return backupDestinationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -990,6 +1013,8 @@ public final class AutonomousDatabaseBackup
         sb.append(", timeAvailableTill=").append(String.valueOf(this.timeAvailableTill));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", sizeInTBs=").append(String.valueOf(this.sizeInTBs));
+        sb.append(", backupDestinationDetails=")
+                .append(String.valueOf(this.backupDestinationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1025,6 +1050,8 @@ public final class AutonomousDatabaseBackup
                 && java.util.Objects.equals(this.timeAvailableTill, other.timeAvailableTill)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.sizeInTBs, other.sizeInTBs)
+                && java.util.Objects.equals(
+                        this.backupDestinationDetails, other.backupDestinationDetails)
                 && super.equals(other);
     }
 
@@ -1077,6 +1104,11 @@ public final class AutonomousDatabaseBackup
                         + (this.timeAvailableTill == null ? 43 : this.timeAvailableTill.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.sizeInTBs == null ? 43 : this.sizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationDetails == null
+                                ? 43
+                                : this.backupDestinationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

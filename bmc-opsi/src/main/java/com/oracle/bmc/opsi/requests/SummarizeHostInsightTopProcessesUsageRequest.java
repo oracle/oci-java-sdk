@@ -187,6 +187,47 @@ public class SummarizeHostInsightTopProcessesUsageRequest
     public String getHostId() {
         return hostId;
     }
+    /** Choose the type of statistic metric data to be used for forecasting. */
+    private Statistic statistic;
+
+    /** Choose the type of statistic metric data to be used for forecasting. */
+    public enum Statistic implements com.oracle.bmc.http.internal.BmcEnum {
+        Avg("AVG"),
+        Max("MAX"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Statistic> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Statistic v : Statistic.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Statistic(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Statistic create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Statistic: " + key);
+        }
+    };
+
+    /** Choose the type of statistic metric data to be used for forecasting. */
+    public Statistic getStatistic() {
+        return statistic;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -443,6 +484,20 @@ public class SummarizeHostInsightTopProcessesUsageRequest
             return this;
         }
 
+        /** Choose the type of statistic metric data to be used for forecasting. */
+        private Statistic statistic = null;
+
+        /**
+         * Choose the type of statistic metric data to be used for forecasting.
+         *
+         * @param statistic the value to set
+         * @return this builder instance
+         */
+        public Builder statistic(Statistic statistic) {
+            this.statistic = statistic;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -485,6 +540,7 @@ public class SummarizeHostInsightTopProcessesUsageRequest
             analysisTimeInterval(o.getAnalysisTimeInterval());
             hostType(o.getHostType());
             hostId(o.getHostId());
+            statistic(o.getStatistic());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -534,10 +590,11 @@ public class SummarizeHostInsightTopProcessesUsageRequest
             request.analysisTimeInterval = analysisTimeInterval;
             request.hostType = hostType;
             request.hostId = hostId;
+            request.statistic = statistic;
             return request;
             // new SummarizeHostInsightTopProcessesUsageRequest(compartmentId, id, resourceMetric,
             // timestamp, timeIntervalStart, timeIntervalEnd, page, limit, opcRequestId,
-            // analysisTimeInterval, hostType, hostId);
+            // analysisTimeInterval, hostType, hostId, statistic);
         }
     }
 
@@ -559,7 +616,8 @@ public class SummarizeHostInsightTopProcessesUsageRequest
                 .opcRequestId(opcRequestId)
                 .analysisTimeInterval(analysisTimeInterval)
                 .hostType(hostType)
-                .hostId(hostId);
+                .hostId(hostId)
+                .statistic(statistic);
     }
 
     /**
@@ -588,6 +646,7 @@ public class SummarizeHostInsightTopProcessesUsageRequest
         sb.append(",analysisTimeInterval=").append(String.valueOf(this.analysisTimeInterval));
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
+        sb.append(",statistic=").append(String.valueOf(this.statistic));
         sb.append(")");
         return sb.toString();
     }
@@ -615,7 +674,8 @@ public class SummarizeHostInsightTopProcessesUsageRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.analysisTimeInterval, other.analysisTimeInterval)
                 && java.util.Objects.equals(this.hostType, other.hostType)
-                && java.util.Objects.equals(this.hostId, other.hostId);
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.statistic, other.statistic);
     }
 
     @Override
@@ -646,6 +706,7 @@ public class SummarizeHostInsightTopProcessesUsageRequest
                                 : this.analysisTimeInterval.hashCode());
         result = (result * PRIME) + (this.hostType == null ? 43 : this.hostType.hashCode());
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
         return result;
     }
 }

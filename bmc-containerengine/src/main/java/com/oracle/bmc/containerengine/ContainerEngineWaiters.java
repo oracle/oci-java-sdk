@@ -33,6 +33,105 @@ public class ContainerEngineWaiters {
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetAddonRequest, GetAddonResponse> forAddon(
+            GetAddonRequest request,
+            com.oracle.bmc.containerengine.model.AddonLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAddon(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAddonRequest, GetAddonResponse> forAddon(
+            GetAddonRequest request,
+            com.oracle.bmc.containerengine.model.AddonLifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forAddon(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAddonRequest, GetAddonResponse> forAddon(
+            GetAddonRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.containerengine.model.AddonLifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAddon(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Addon.
+    private com.oracle.bmc.waiter.Waiter<GetAddonRequest, GetAddonResponse> forAddon(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetAddonRequest request,
+            final com.oracle.bmc.containerengine.model.AddonLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.containerengine.model.AddonLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetAddonRequest, GetAddonResponse>() {
+                            @Override
+                            public GetAddonResponse apply(GetAddonRequest request) {
+                                return client.getAddon(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetAddonResponse>() {
+                            @Override
+                            public boolean test(GetAddonResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAddon().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.containerengine.model.AddonLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetClusterRequest, GetClusterResponse> forCluster(
             GetClusterRequest request,
             com.oracle.bmc.containerengine.model.ClusterLifecycleState... targetStates) {
@@ -221,6 +320,223 @@ public class ContainerEngineWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.containerengine.model.NodePoolLifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVirtualNodeRequest, GetVirtualNodeResponse>
+            forVirtualNode(
+                    GetVirtualNodeRequest request,
+                    com.oracle.bmc.containerengine.model.VirtualNodeLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVirtualNode(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVirtualNodeRequest, GetVirtualNodeResponse>
+            forVirtualNode(
+                    GetVirtualNodeRequest request,
+                    com.oracle.bmc.containerengine.model.VirtualNodeLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVirtualNode(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVirtualNodeRequest, GetVirtualNodeResponse>
+            forVirtualNode(
+                    GetVirtualNodeRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.containerengine.model.VirtualNodeLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVirtualNode(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VirtualNode.
+    private com.oracle.bmc.waiter.Waiter<GetVirtualNodeRequest, GetVirtualNodeResponse>
+            forVirtualNode(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVirtualNodeRequest request,
+                    final com.oracle.bmc.containerengine.model.VirtualNodeLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.containerengine.model.VirtualNodeLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVirtualNodeRequest, GetVirtualNodeResponse>() {
+                            @Override
+                            public GetVirtualNodeResponse apply(GetVirtualNodeRequest request) {
+                                return client.getVirtualNode(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetVirtualNodeResponse>() {
+                            @Override
+                            public boolean test(GetVirtualNodeResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVirtualNode().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.containerengine.model.VirtualNodeLifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+            forVirtualNodePool(
+                    GetVirtualNodePoolRequest request,
+                    com.oracle.bmc.containerengine.model.VirtualNodePoolLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVirtualNodePool(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+            forVirtualNodePool(
+                    GetVirtualNodePoolRequest request,
+                    com.oracle.bmc.containerengine.model.VirtualNodePoolLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forVirtualNodePool(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+            forVirtualNodePool(
+                    GetVirtualNodePoolRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.containerengine.model.VirtualNodePoolLifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forVirtualNodePool(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for VirtualNodePool.
+    private com.oracle.bmc.waiter.Waiter<GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>
+            forVirtualNodePool(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVirtualNodePoolRequest request,
+                    final com.oracle.bmc.containerengine.model.VirtualNodePoolLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.containerengine.model.VirtualNodePoolLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetVirtualNodePoolRequest, GetVirtualNodePoolResponse>() {
+                            @Override
+                            public GetVirtualNodePoolResponse apply(
+                                    GetVirtualNodePoolRequest request) {
+                                return client.getVirtualNodePool(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetVirtualNodePoolResponse>() {
+                            @Override
+                            public boolean test(GetVirtualNodePoolResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getVirtualNodePool().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.containerengine.model.VirtualNodePoolLifecycleState
                                         .Deleted)),
                 request);
     }

@@ -399,6 +399,130 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCopyObjectRequests operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCopyObjectRequestsResponse> listCopyObjectRequestsResponseIterator(
+            final ListCopyObjectRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCopyObjectRequestsRequest.Builder,
+                ListCopyObjectRequestsRequest,
+                ListCopyObjectRequestsResponse>(
+                new java.util.function.Supplier<ListCopyObjectRequestsRequest.Builder>() {
+                    @Override
+                    public ListCopyObjectRequestsRequest.Builder get() {
+                        return ListCopyObjectRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCopyObjectRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListCopyObjectRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCopyObjectRequestsRequest.Builder>,
+                        ListCopyObjectRequestsRequest>() {
+                    @Override
+                    public ListCopyObjectRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCopyObjectRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>() {
+                    @Override
+                    public ListCopyObjectRequestsResponse apply(
+                            ListCopyObjectRequestsRequest request) {
+                        return client.listCopyObjectRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataintegration.model.CopyObjectRequestSummary} objects contained in responses
+     * from the listCopyObjectRequests operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataintegration.model.CopyObjectRequestSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.CopyObjectRequestSummary>
+            listCopyObjectRequestsRecordIterator(final ListCopyObjectRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCopyObjectRequestsRequest.Builder,
+                ListCopyObjectRequestsRequest,
+                ListCopyObjectRequestsResponse,
+                com.oracle.bmc.dataintegration.model.CopyObjectRequestSummary>(
+                new java.util.function.Supplier<ListCopyObjectRequestsRequest.Builder>() {
+                    @Override
+                    public ListCopyObjectRequestsRequest.Builder get() {
+                        return ListCopyObjectRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCopyObjectRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListCopyObjectRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCopyObjectRequestsRequest.Builder>,
+                        ListCopyObjectRequestsRequest>() {
+                    @Override
+                    public ListCopyObjectRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCopyObjectRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>() {
+                    @Override
+                    public ListCopyObjectRequestsResponse apply(
+                            ListCopyObjectRequestsRequest request) {
+                        return client.listCopyObjectRequests(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCopyObjectRequestsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.CopyObjectRequestSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.CopyObjectRequestSummary>
+                            apply(ListCopyObjectRequestsResponse response) {
+                        return response.getCopyObjectRequestSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDataAssets
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -3724,6 +3848,120 @@ public class DataIntegrationPaginators {
                     public java.util.List<com.oracle.bmc.dataintegration.model.TaskSummary> apply(
                             ListTasksResponse response) {
                         return response.getTaskSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTemplates
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListTemplatesResponse> listTemplatesResponseIterator(
+            final ListTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTemplatesRequest.Builder, ListTemplatesRequest, ListTemplatesResponse>(
+                new java.util.function.Supplier<ListTemplatesRequest.Builder>() {
+                    @Override
+                    public ListTemplatesRequest.Builder get() {
+                        return ListTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTemplatesRequest.Builder>,
+                        ListTemplatesRequest>() {
+                    @Override
+                    public ListTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTemplatesRequest, ListTemplatesResponse>() {
+                    @Override
+                    public ListTemplatesResponse apply(ListTemplatesRequest request) {
+                        return client.listTemplates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataintegration.model.TemplateSummary} objects contained in responses from the
+     * listTemplates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataintegration.model.TemplateSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.TemplateSummary>
+            listTemplatesRecordIterator(final ListTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTemplatesRequest.Builder,
+                ListTemplatesRequest,
+                ListTemplatesResponse,
+                com.oracle.bmc.dataintegration.model.TemplateSummary>(
+                new java.util.function.Supplier<ListTemplatesRequest.Builder>() {
+                    @Override
+                    public ListTemplatesRequest.Builder get() {
+                        return ListTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTemplatesRequest.Builder>,
+                        ListTemplatesRequest>() {
+                    @Override
+                    public ListTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTemplatesRequest, ListTemplatesResponse>() {
+                    @Override
+                    public ListTemplatesResponse apply(ListTemplatesRequest request) {
+                        return client.listTemplates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTemplatesResponse,
+                        java.util.List<com.oracle.bmc.dataintegration.model.TemplateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.TemplateSummary>
+                            apply(ListTemplatesResponse response) {
+                        return response.getTemplateSummaryCollection().getItems();
                     }
                 });
     }
