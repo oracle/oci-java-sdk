@@ -36,6 +36,9 @@ package com.oracle.bmc.core.model;
             value = InstanceConfigurationIntelVmLaunchInstancePlatformConfig.class,
             name = "INTEL_VM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig.class,
+            name = "AMD_MILAN_BM_GPU"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.class,
             name = "INTEL_ICELAKE_BM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -206,6 +209,7 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
     /** The type of platform being configured. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         AmdMilanBm("AMD_MILAN_BM"),
+        AmdMilanBmGpu("AMD_MILAN_BM_GPU"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
         IntelIcelakeBm("INTEL_ICELAKE_BM"),

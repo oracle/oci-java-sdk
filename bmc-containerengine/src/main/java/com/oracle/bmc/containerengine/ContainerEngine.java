@@ -120,6 +120,22 @@ public interface ContainerEngine extends AutoCloseable {
     CreateNodePoolResponse createNodePool(CreateNodePoolRequest request);
 
     /**
+     * Create a new virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateVirtualNodePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateVirtualNodePool API.
+     */
+    CreateVirtualNodePoolResponse createVirtualNodePool(CreateVirtualNodePoolRequest request);
+
+    /**
      * Delete a cluster.
      *
      * @param request The request object containing the details to send
@@ -165,6 +181,22 @@ public interface ContainerEngine extends AutoCloseable {
     DeleteNodePoolResponse deleteNodePool(DeleteNodePoolRequest request);
 
     /**
+     * Delete a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteVirtualNodePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteVirtualNodePool API.
+     */
+    DeleteVirtualNodePoolResponse deleteVirtualNodePool(DeleteVirtualNodePoolRequest request);
+
+    /**
      * Cancel a work request that has not started.
      *
      * @param request The request object containing the details to send
@@ -179,6 +211,36 @@ public interface ContainerEngine extends AutoCloseable {
      *     API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
+
+    /**
+     * Disable addon for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DisableAddonExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAddon API.
+     */
+    DisableAddonResponse disableAddon(DisableAddonRequest request);
+
+    /**
+     * Get the specified addon for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetAddonExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAddon API.
+     */
+    GetAddonResponse getAddon(GetAddonRequest request);
 
     /**
      * Get the details of a cluster.
@@ -260,6 +322,37 @@ public interface ContainerEngine extends AutoCloseable {
     GetNodePoolOptionsResponse getNodePoolOptions(GetNodePoolOptionsRequest request);
 
     /**
+     * Get the details of a virtual node.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetVirtualNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualNode API.
+     */
+    GetVirtualNodeResponse getVirtualNode(GetVirtualNodeRequest request);
+
+    /**
+     * Get the details of a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetVirtualNodePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualNodePool
+     *     API.
+     */
+    GetVirtualNodePoolResponse getVirtualNodePool(GetVirtualNodePoolRequest request);
+
+    /**
      * Get the details of a work request.
      *
      * @param request The request object containing the details to send
@@ -273,6 +366,52 @@ public interface ContainerEngine extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Install the specified addon for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/InstallAddonExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallAddon API.
+     */
+    InstallAddonResponse installAddon(InstallAddonRequest request);
+
+    /**
+     * Get list of supported addons for a specific kubernetes version.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListAddonOptionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddonOptions
+     *     API.
+     */
+    ListAddonOptionsResponse listAddonOptions(ListAddonOptionsRequest request);
+
+    /**
+     * List addon for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListAddonsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddons API.
+     */
+    ListAddonsResponse listAddons(ListAddonsRequest request);
 
     /**
      * List all the cluster objects in a compartment.
@@ -303,6 +442,53 @@ public interface ContainerEngine extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodePools API.
      */
     ListNodePoolsResponse listNodePools(ListNodePoolsRequest request);
+
+    /**
+     * List all the Pod Shapes in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListPodShapesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPodShapes API.
+     */
+    ListPodShapesResponse listPodShapes(ListPodShapesRequest request);
+
+    /**
+     * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListVirtualNodePoolsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListVirtualNodePools API.
+     */
+    ListVirtualNodePoolsResponse listVirtualNodePools(ListVirtualNodePoolsRequest request);
+
+    /**
+     * List virtual nodes in a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListVirtualNodesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualNodes
+     *     API.
+     */
+    ListVirtualNodesResponse listVirtualNodes(ListVirtualNodesRequest request);
 
     /**
      * Get the errors of a work request.
@@ -353,6 +539,21 @@ public interface ContainerEngine extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Update addon details for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateAddonExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAddon API.
+     */
+    UpdateAddonResponse updateAddon(UpdateAddonRequest request);
+
+    /**
      * Update the details of a cluster.
      *
      * @param request The request object containing the details to send
@@ -398,6 +599,22 @@ public interface ContainerEngine extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNodePool API.
      */
     UpdateNodePoolResponse updateNodePool(UpdateNodePoolRequest request);
+
+    /**
+     * Update the details of a virtual node pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateVirtualNodePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateVirtualNodePool API.
+     */
+    UpdateVirtualNodePoolResponse updateVirtualNodePool(UpdateVirtualNodePoolRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

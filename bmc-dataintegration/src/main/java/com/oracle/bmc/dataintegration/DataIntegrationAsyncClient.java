@@ -212,6 +212,51 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApplicationDetailedDescriptionResponse>
+            createApplicationDetailedDescription(
+                    CreateApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateApplicationDetailedDescriptionRequest,
+                                    CreateApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateApplicationDetailedDescriptionDetails(),
+                "createApplicationDetailedDescriptionDetails is required");
+
+        return clientCall(request, CreateApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "createApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "CreateApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/CreateApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DetailedDescription.class,
+                        CreateApplicationDetailedDescriptionResponse.Builder::detailedDescription)
+                .handleResponseHeaderString(
+                        "etag", CreateApplicationDetailedDescriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateApplicationDetailedDescriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -284,6 +329,43 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "etag", CreateConnectionValidationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConnectionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCopyObjectRequestResponse> createCopyObjectRequest(
+            CreateCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCopyObjectRequestRequest, CreateCopyObjectRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateCopyObjectRequestDetails(),
+                "createCopyObjectRequestDetails is required");
+
+        return clientCall(request, CreateCopyObjectRequestResponse::builder)
+                .logger(LOG, "createCopyObjectRequest")
+                .serviceDetails("DataIntegration", "CreateCopyObjectRequest", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCopyObjectRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("copyObjectRequests")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.CopyObjectRequest.class,
+                        CreateCopyObjectRequestResponse.Builder::copyObjectRequest)
+                .handleResponseHeaderString("etag", CreateCopyObjectRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCopyObjectRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateCopyObjectRequestResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -430,6 +512,52 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateDisApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDisApplicationDetailedDescriptionResponse>
+            createDisApplicationDetailedDescription(
+                    CreateDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDisApplicationDetailedDescriptionRequest,
+                                    CreateDisApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getCreateDisApplicationDetailedDescriptionDetails(),
+                "createDisApplicationDetailedDescriptionDetails is required");
+
+        return clientCall(request, CreateDisApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "createDisApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "CreateDisApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/CreateDisApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDisApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DetailedDescription.class,
+                        CreateDisApplicationDetailedDescriptionResponse.Builder
+                                ::detailedDescription)
+                .handleResponseHeaderString(
+                        "etag", CreateDisApplicationDetailedDescriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDisApplicationDetailedDescriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1113,6 +1241,42 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteApplicationDetailedDescriptionResponse>
+            deleteApplicationDetailedDescription(
+                    DeleteApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteApplicationDetailedDescriptionRequest,
+                                    DeleteApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, DeleteApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "deleteApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "DeleteApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/DeleteApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteApplicationDetailedDescriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResponse> deleteConnection(
             DeleteConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1176,6 +1340,39 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConnectionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCopyObjectRequestResponse> deleteCopyObjectRequest(
+            DeleteCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCopyObjectRequestRequest, DeleteCopyObjectRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getCopyObjectRequestKey(), "copyObjectRequestKey must not be blank");
+
+        return clientCall(request, DeleteCopyObjectRequestResponse::builder)
+                .logger(LOG, "deleteCopyObjectRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "DeleteCopyObjectRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteCopyObjectRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCopyObjectRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("copyObjectRequests")
+                .appendPathParam(request.getCopyObjectRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCopyObjectRequestResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1305,6 +1502,42 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDisApplicationDetailedDescriptionResponse>
+            deleteDisApplicationDetailedDescription(
+                    DeleteDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDisApplicationDetailedDescriptionRequest,
+                                    DeleteDisApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, DeleteDisApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "deleteDisApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "DeleteDisApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/DeleteDisApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDisApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDisApplicationDetailedDescriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1888,6 +2121,46 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetApplicationDetailedDescriptionResponse>
+            getApplicationDetailedDescription(
+                    GetApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetApplicationDetailedDescriptionRequest,
+                                    GetApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, GetApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "getApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/GetApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DetailedDescription.class,
+                        GetApplicationDetailedDescriptionResponse.Builder::detailedDescription)
+                .handleResponseHeaderString(
+                        "etag", GetApplicationDetailedDescriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetApplicationDetailedDescriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -1954,6 +2227,42 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", GetConnectionValidationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetConnectionValidationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCopyObjectRequestResponse> getCopyObjectRequest(
+            GetCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCopyObjectRequestRequest, GetCopyObjectRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getCopyObjectRequestKey(), "copyObjectRequestKey must not be blank");
+
+        return clientCall(request, GetCopyObjectRequestResponse::builder)
+                .logger(LOG, "getCopyObjectRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetCopyObjectRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CopyObjectRequest/GetCopyObjectRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCopyObjectRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("copyObjectRequests")
+                .appendPathParam(request.getCopyObjectRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.CopyObjectRequest.class,
+                        GetCopyObjectRequestResponse.Builder::copyObjectRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCopyObjectRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetCopyObjectRequestResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -2210,6 +2519,46 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", GetDisApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisApplicationDetailedDescriptionResponse>
+            getDisApplicationDetailedDescription(
+                    GetDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDisApplicationDetailedDescriptionRequest,
+                                    GetDisApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+
+        return clientCall(request, GetDisApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "getDisApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetDisApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/GetDisApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDisApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DetailedDescription.class,
+                        GetDisApplicationDetailedDescriptionResponse.Builder::detailedDescription)
+                .handleResponseHeaderString(
+                        "etag", GetDisApplicationDetailedDescriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDisApplicationDetailedDescriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2905,6 +3254,39 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetTemplateResponse> getTemplate(
+            GetTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getTemplateId(), "templateId must not be blank");
+
+        return clientCall(request, GetTemplateResponse::builder)
+                .logger(LOG, "getTemplate")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetTemplate",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Template/GetTemplate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTemplateRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("templates")
+                .appendPathParam(request.getTemplateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.Template.class,
+                        GetTemplateResponse.Builder::template)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTemplateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserDefinedFunctionResponse> getUserDefinedFunction(
             GetUserDefinedFunctionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3192,6 +3574,49 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-prev-page", ListConnectionsResponse.Builder::opcPrevPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListConnectionsResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCopyObjectRequestsResponse> listCopyObjectRequests(
+            ListCopyObjectRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCopyObjectRequestsRequest, ListCopyObjectRequestsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListCopyObjectRequestsResponse::builder)
+                .logger(LOG, "listCopyObjectRequests")
+                .serviceDetails(
+                        "DataIntegration",
+                        "ListCopyObjectRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CopyObjectRequestSummaryCollection/ListCopyObjectRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCopyObjectRequestsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("copyObjectRequests")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("copyStatus", request.getCopyStatus())
+                .appendEnumQueryParam("projection", request.getProjection())
+                .appendQueryParam("timeStartedInMillis", request.getTimeStartedInMillis())
+                .appendQueryParam("timeEndedInMillis", request.getTimeEndedInMillis())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.CopyObjectRequestSummaryCollection
+                                .class,
+                        ListCopyObjectRequestsResponse.Builder::copyObjectRequestSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCopyObjectRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCopyObjectRequestsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4548,6 +4973,7 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                         request.getFilter(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("nameStartsWith", request.getNameStartsWith())
+                .appendQueryParam("nameContains", request.getNameContains())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -4724,6 +5150,55 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("opc-prev-page", ListTasksResponse.Builder::opcPrevPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListTasksResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTemplatesResponse> listTemplates(
+            ListTemplatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListTemplatesResponse::builder)
+                .logger(LOG, "listTemplates")
+                .serviceDetails(
+                        "DataIntegration",
+                        "ListTemplates",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Template/ListTemplates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTemplatesRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("templates")
+                .appendQueryParam("name", request.getName())
+                .appendListQueryParam(
+                        "identifier",
+                        request.getIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "fields",
+                        request.getFields(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.TemplateSummaryCollection.class,
+                        ListTemplatesResponse.Builder::templateSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTemplatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTemplatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTemplatesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTemplatesResponse.Builder::opcTotalItems)
                 .callAsync(handler);
     }
 
@@ -5091,6 +5566,51 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApplicationDetailedDescriptionResponse>
+            updateApplicationDetailedDescription(
+                    UpdateApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateApplicationDetailedDescriptionRequest,
+                                    UpdateApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateApplicationDetailedDescriptionDetails(),
+                "updateApplicationDetailedDescriptionDetails is required");
+
+        return clientCall(request, UpdateApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "updateApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "UpdateApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/UpdateApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DetailedDescription.class,
+                        UpdateApplicationDetailedDescriptionResponse.Builder::detailedDescription)
+                .handleResponseHeaderString(
+                        "etag", UpdateApplicationDetailedDescriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateApplicationDetailedDescriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
             UpdateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5126,6 +5646,47 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCopyObjectRequestResponse> updateCopyObjectRequest(
+            UpdateCopyObjectRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCopyObjectRequestRequest, UpdateCopyObjectRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(
+                request.getCopyObjectRequestKey(), "copyObjectRequestKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCopyObjectRequestDetails(),
+                "updateCopyObjectRequestDetails is required");
+
+        return clientCall(request, UpdateCopyObjectRequestResponse::builder)
+                .logger(LOG, "updateCopyObjectRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "UpdateCopyObjectRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateCopyObjectRequest")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCopyObjectRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("copyObjectRequests")
+                .appendPathParam(request.getCopyObjectRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.CopyObjectRequest.class,
+                        UpdateCopyObjectRequestResponse.Builder::copyObjectRequest)
+                .handleResponseHeaderString("etag", UpdateCopyObjectRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCopyObjectRequestResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5244,6 +5805,52 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateDisApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDisApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDisApplicationDetailedDescriptionResponse>
+            updateDisApplicationDetailedDescription(
+                    UpdateDisApplicationDetailedDescriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDisApplicationDetailedDescriptionRequest,
+                                    UpdateDisApplicationDetailedDescriptionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDisApplicationDetailedDescriptionDetails(),
+                "updateDisApplicationDetailedDescriptionDetails is required");
+
+        return clientCall(request, UpdateDisApplicationDetailedDescriptionResponse::builder)
+                .logger(LOG, "updateDisApplicationDetailedDescription")
+                .serviceDetails(
+                        "DataIntegration",
+                        "UpdateDisApplicationDetailedDescription",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DetailedDescription/UpdateDisApplicationDetailedDescription")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDisApplicationDetailedDescriptionRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("disApplications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("detailedDescription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.DetailedDescription.class,
+                        UpdateDisApplicationDetailedDescriptionResponse.Builder
+                                ::detailedDescription)
+                .handleResponseHeaderString(
+                        "etag", UpdateDisApplicationDetailedDescriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDisApplicationDetailedDescriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

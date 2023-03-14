@@ -237,6 +237,19 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getNameStartsWith() {
         return nameStartsWith;
     }
+    /**
+     * This parameter can be used to filter objects by the names that match partially or fully with
+     * the given value.
+     */
+    private String nameContains;
+
+    /**
+     * This parameter can be used to filter objects by the names that match partially or fully with
+     * the given value.
+     */
+    public String getNameContains() {
+        return nameContains;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -535,6 +548,24 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * This parameter can be used to filter objects by the names that match partially or fully
+         * with the given value.
+         */
+        private String nameContains = null;
+
+        /**
+         * This parameter can be used to filter objects by the names that match partially or fully
+         * with the given value.
+         *
+         * @param nameContains the value to set
+         * @return this builder instance
+         */
+        public Builder nameContains(String nameContains) {
+            this.nameContains = nameContains;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -578,6 +609,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             sortBy(o.getSortBy());
             filter(o.getFilter());
             nameStartsWith(o.getNameStartsWith());
+            nameContains(o.getNameContains());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -626,10 +658,11 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.filter = filter;
             request.nameStartsWith = nameStartsWith;
+            request.nameContains = nameContains;
             return request;
             // new ListTaskRunsRequest(workspaceId, applicationKey, opcRequestId, key,
             // aggregatorKey, fields, name, identifier, page, limit, sortOrder, sortBy, filter,
-            // nameStartsWith);
+            // nameStartsWith, nameContains);
         }
     }
 
@@ -653,7 +686,8 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .filter(filter)
-                .nameStartsWith(nameStartsWith);
+                .nameStartsWith(nameStartsWith)
+                .nameContains(nameContains);
     }
 
     /**
@@ -684,6 +718,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",filter=").append(String.valueOf(this.filter));
         sb.append(",nameStartsWith=").append(String.valueOf(this.nameStartsWith));
+        sb.append(",nameContains=").append(String.valueOf(this.nameContains));
         sb.append(")");
         return sb.toString();
     }
@@ -712,7 +747,8 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.filter, other.filter)
-                && java.util.Objects.equals(this.nameStartsWith, other.nameStartsWith);
+                && java.util.Objects.equals(this.nameStartsWith, other.nameStartsWith)
+                && java.util.Objects.equals(this.nameContains, other.nameContains);
     }
 
     @Override
@@ -739,6 +775,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
         result =
                 (result * PRIME)
                         + (this.nameStartsWith == null ? 43 : this.nameStartsWith.hashCode());
+        result = (result * PRIME) + (this.nameContains == null ? 43 : this.nameContains.hashCode());
         return result;
     }
 }

@@ -494,19 +494,23 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * The date the existing version in use will no longer be considered as usable and an
-         * upgrade will be required. This date is typically 6 months after the version was released
-         * for use by GGS. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-         * such as {@code 2016-08-25T21:10:29.600Z}.
+         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
+         * when deployment will be forced to upgrade to a newer version. Old description: The date
+         * the existing version in use will no longer be considered as usable and an upgrade will be
+         * required. This date is typically 6 months after the version was released for use by GGS.
+         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
+         * 2016-08-25T21:10:29.600Z}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
         private java.util.Date timeUpgradeRequired;
 
         /**
-         * The date the existing version in use will no longer be considered as usable and an
-         * upgrade will be required. This date is typically 6 months after the version was released
-         * for use by GGS. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-         * such as {@code 2016-08-25T21:10:29.600Z}.
+         * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
+         * when deployment will be forced to upgrade to a newer version. Old description: The date
+         * the existing version in use will no longer be considered as usable and an upgrade will be
+         * required. This date is typically 6 months after the version was released for use by GGS.
+         * The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
+         * 2016-08-25T21:10:29.600Z}.
          *
          * @param timeUpgradeRequired the value to set
          * @return this builder
@@ -1048,18 +1052,22 @@ public final class DeploymentSummary
     }
 
     /**
-     * The date the existing version in use will no longer be considered as usable and an upgrade
-     * will be required. This date is typically 6 months after the version was released for use by
-     * GGS. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
+     * when deployment will be forced to upgrade to a newer version. Old description: The date the
+     * existing version in use will no longer be considered as usable and an upgrade will be
+     * required. This date is typically 6 months after the version was released for use by GGS. The
+     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
      * 2016-08-25T21:10:29.600Z}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
     private final java.util.Date timeUpgradeRequired;
 
     /**
-     * The date the existing version in use will no longer be considered as usable and an upgrade
-     * will be required. This date is typically 6 months after the version was released for use by
-     * GGS. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
+     * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records to check,
+     * when deployment will be forced to upgrade to a newer version. Old description: The date the
+     * existing version in use will no longer be considered as usable and an upgrade will be
+     * required. This date is typically 6 months after the version was released for use by GGS. The
+     * format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code
      * 2016-08-25T21:10:29.600Z}.
      *
      * @return the value

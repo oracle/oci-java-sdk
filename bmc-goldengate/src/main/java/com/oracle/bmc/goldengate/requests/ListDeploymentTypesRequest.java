@@ -26,6 +26,26 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
     public String getCompartmentId() {
         return compartmentId;
     }
+    /**
+     * The type of deployment, the value determines the exact 'type' of the service executed in the
+     * deployment. Default value is DATABASE_ORACLE.
+     */
+    private com.oracle.bmc.goldengate.model.DeploymentType deploymentType;
+
+    /**
+     * The type of deployment, the value determines the exact 'type' of the service executed in the
+     * deployment. Default value is DATABASE_ORACLE.
+     */
+    public com.oracle.bmc.goldengate.model.DeploymentType getDeploymentType() {
+        return deploymentType;
+    }
+    /** Allows to query by a specific GoldenGate version. */
+    private String oggVersion;
+
+    /** Allows to query by a specific GoldenGate version. */
+    public String getOggVersion() {
+        return oggVersion;
+    }
     /** A filter to return only the resources that match the entire 'displayName' given. */
     private String displayName;
 
@@ -142,6 +162,39 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * The type of deployment, the value determines the exact 'type' of the service executed in
+         * the deployment. Default value is DATABASE_ORACLE.
+         */
+        private com.oracle.bmc.goldengate.model.DeploymentType deploymentType = null;
+
+        /**
+         * The type of deployment, the value determines the exact 'type' of the service executed in
+         * the deployment. Default value is DATABASE_ORACLE.
+         *
+         * @param deploymentType the value to set
+         * @return this builder instance
+         */
+        public Builder deploymentType(
+                com.oracle.bmc.goldengate.model.DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            return this;
+        }
+
+        /** Allows to query by a specific GoldenGate version. */
+        private String oggVersion = null;
+
+        /**
+         * Allows to query by a specific GoldenGate version.
+         *
+         * @param oggVersion the value to set
+         * @return this builder instance
+         */
+        public Builder oggVersion(String oggVersion) {
+            this.oggVersion = oggVersion;
             return this;
         }
 
@@ -270,6 +323,8 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(ListDeploymentTypesRequest o) {
             compartmentId(o.getCompartmentId());
+            deploymentType(o.getDeploymentType());
+            oggVersion(o.getOggVersion());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
@@ -311,6 +366,8 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
         public ListDeploymentTypesRequest buildWithoutInvocationCallback() {
             ListDeploymentTypesRequest request = new ListDeploymentTypesRequest();
             request.compartmentId = compartmentId;
+            request.deploymentType = deploymentType;
+            request.oggVersion = oggVersion;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
             request.limit = limit;
@@ -318,8 +375,8 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListDeploymentTypesRequest(compartmentId, displayName, opcRequestId, limit, page,
-            // sortOrder, sortBy);
+            // new ListDeploymentTypesRequest(compartmentId, deploymentType, oggVersion,
+            // displayName, opcRequestId, limit, page, sortOrder, sortBy);
         }
     }
 
@@ -331,6 +388,8 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .deploymentType(deploymentType)
+                .oggVersion(oggVersion)
                 .displayName(displayName)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
@@ -354,6 +413,8 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(",oggVersion=").append(String.valueOf(this.oggVersion));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -376,6 +437,8 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
         ListDeploymentTypesRequest other = (ListDeploymentTypesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(this.oggVersion, other.oggVersion)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -391,6 +454,10 @@ public class ListDeploymentTypesRequest extends com.oracle.bmc.requests.BmcReque
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

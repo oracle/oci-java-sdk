@@ -2118,6 +2118,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns response with usage time series data with breakdown by network interface for the time
+     * period specified.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeHostInsightNetworkUsageTrendResponse>
+            summarizeHostInsightNetworkUsageTrend(
+                    SummarizeHostInsightNetworkUsageTrendRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightNetworkUsageTrendRequest,
+                                    SummarizeHostInsightNetworkUsageTrendResponse>
+                            handler);
+
+    /**
      * Returns response with time series data (endTimestamp, capacity) for the time period
      * specified. The maximum time range for analysis is 2 years, hence this is intentionally not
      * paginated. If compartmentIdInSubtree is specified, aggregates resources in a compartment and
@@ -2239,6 +2258,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     SummarizeHostInsightResourceUtilizationInsightRequest,
                                     SummarizeHostInsightResourceUtilizationInsightResponse>
+                            handler);
+
+    /**
+     * Returns response with usage time series data with breakdown by filesystem for the time period
+     * specified.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeHostInsightStorageUsageTrendResponse>
+            summarizeHostInsightStorageUsageTrend(
+                    SummarizeHostInsightStorageUsageTrendRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightStorageUsageTrendRequest,
+                                    SummarizeHostInsightStorageUsageTrendResponse>
                             handler);
 
     /**
