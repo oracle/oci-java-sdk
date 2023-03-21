@@ -11,11 +11,18 @@ public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     Kafka("KAFKA"),
     KafkaSchemaRegistry("KAFKA_SCHEMA_REGISTRY"),
     Mysql("MYSQL"),
+    JavaMessageService("JAVA_MESSAGE_SERVICE"),
+    MicrosoftSqlserver("MICROSOFT_SQLSERVER"),
     OciObjectStorage("OCI_OBJECT_STORAGE"),
     Oracle("ORACLE"),
     AzureDataLakeStorage("AZURE_DATA_LAKE_STORAGE"),
     Postgresql("POSTGRESQL"),
     AzureSynapseAnalytics("AZURE_SYNAPSE_ANALYTICS"),
+    Snowflake("SNOWFLAKE"),
+    AmazonS3("AMAZON_S3"),
+    Hdfs("HDFS"),
+    OracleNosql("ORACLE_NOSQL"),
+    Mongodb("MONGODB"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

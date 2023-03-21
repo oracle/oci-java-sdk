@@ -22,15 +22,28 @@ package com.oracle.bmc.database.model;
 public final class BackupDestinationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"type", "id", "vpcUser", "vpcPassword", "internetProxy"})
+    @java.beans.ConstructorProperties({
+        "type",
+        "id",
+        "vpcUser",
+        "vpcPassword",
+        "internetProxy",
+        "dbrsPolicyId"
+    })
     public BackupDestinationDetails(
-            Type type, String id, String vpcUser, String vpcPassword, String internetProxy) {
+            Type type,
+            String id,
+            String vpcUser,
+            String vpcPassword,
+            String internetProxy,
+            String dbrsPolicyId) {
         super();
         this.type = type;
         this.id = id;
         this.vpcUser = vpcUser;
         this.vpcPassword = vpcPassword;
         this.internetProxy = internetProxy;
+        this.dbrsPolicyId = dbrsPolicyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -122,6 +135,25 @@ public final class BackupDestinationDetails
             this.__explicitlySet__.add("internetProxy");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * DBRS policy used for backup.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
+        private String dbrsPolicyId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * DBRS policy used for backup.
+         *
+         * @param dbrsPolicyId the value to set
+         * @return this builder
+         */
+        public Builder dbrsPolicyId(String dbrsPolicyId) {
+            this.dbrsPolicyId = dbrsPolicyId;
+            this.__explicitlySet__.add("dbrsPolicyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -129,7 +161,12 @@ public final class BackupDestinationDetails
         public BackupDestinationDetails build() {
             BackupDestinationDetails model =
                     new BackupDestinationDetails(
-                            this.type, this.id, this.vpcUser, this.vpcPassword, this.internetProxy);
+                            this.type,
+                            this.id,
+                            this.vpcUser,
+                            this.vpcPassword,
+                            this.internetProxy,
+                            this.dbrsPolicyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +190,9 @@ public final class BackupDestinationDetails
             if (model.wasPropertyExplicitlySet("internetProxy")) {
                 this.internetProxy(model.getInternetProxy());
             }
+            if (model.wasPropertyExplicitlySet("dbrsPolicyId")) {
+                this.dbrsPolicyId(model.getDbrsPolicyId());
+            }
             return this;
         }
     }
@@ -172,6 +212,7 @@ public final class BackupDestinationDetails
         RecoveryAppliance("RECOVERY_APPLIANCE"),
         ObjectStore("OBJECT_STORE"),
         Local("LOCAL"),
+        Dbrs("DBRS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -289,6 +330,23 @@ public final class BackupDestinationDetails
         return internetProxy;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * DBRS policy used for backup.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
+    private final String dbrsPolicyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * DBRS policy used for backup.
+     *
+     * @return the value
+     */
+    public String getDbrsPolicyId() {
+        return dbrsPolicyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -309,6 +367,7 @@ public final class BackupDestinationDetails
         sb.append(", vpcUser=").append(String.valueOf(this.vpcUser));
         sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
+        sb.append(", dbrsPolicyId=").append(String.valueOf(this.dbrsPolicyId));
         sb.append(")");
         return sb.toString();
     }
@@ -328,6 +387,7 @@ public final class BackupDestinationDetails
                 && java.util.Objects.equals(this.vpcUser, other.vpcUser)
                 && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
+                && java.util.Objects.equals(this.dbrsPolicyId, other.dbrsPolicyId)
                 && super.equals(other);
     }
 
@@ -342,6 +402,7 @@ public final class BackupDestinationDetails
         result =
                 (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());
+        result = (result * PRIME) + (this.dbrsPolicyId == null ? 43 : this.dbrsPolicyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

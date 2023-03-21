@@ -310,6 +310,68 @@ public class FunctionsManagementAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<GetPbfListingResponse> getPbfListing(
+            GetPbfListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetPbfListingRequest, GetPbfListingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPbfListingId(), "pbfListingId must not be blank");
+
+        return clientCall(request, GetPbfListingResponse::builder)
+                .logger(LOG, "getPbfListing")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "GetPbfListing",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/GetPbfListing")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPbfListingRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("pbfListings")
+                .appendPathParam(request.getPbfListingId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.functions.model.PbfListing.class,
+                        GetPbfListingResponse.Builder::pbfListing)
+                .handleResponseHeaderString("etag", GetPbfListingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPbfListingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPbfListingVersionResponse> getPbfListingVersion(
+            GetPbfListingVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPbfListingVersionRequest, GetPbfListingVersionResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getPbfListingVersionId(), "pbfListingVersionId must not be blank");
+
+        return clientCall(request, GetPbfListingVersionResponse::builder)
+                .logger(LOG, "getPbfListingVersion")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "GetPbfListingVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/GetPbfListingVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPbfListingVersionRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("pbfListingVersions")
+                .appendPathParam(request.getPbfListingVersionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.functions.model.PbfListingVersion.class,
+                        GetPbfListingVersionResponse.Builder::pbfListingVersion)
+                .handleResponseHeaderString("etag", GetPbfListingVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPbfListingVersionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResponse> listApplications(
             ListApplicationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -381,6 +443,120 @@ public class FunctionsManagementAsyncClient extends com.oracle.bmc.http.internal
                         "opc-next-page", ListFunctionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFunctionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPbfListingVersionsResponse> listPbfListingVersions(
+            ListPbfListingVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getPbfListingId(), "pbfListingId is required");
+
+        return clientCall(request, ListPbfListingVersionsResponse::builder)
+                .logger(LOG, "listPbfListingVersions")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "ListPbfListingVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/ListPbfListingVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPbfListingVersionsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("pbfListingVersions")
+                .appendQueryParam("pbfListingId", request.getPbfListingId())
+                .appendQueryParam("pbfListingVersionId", request.getPbfListingVersionId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("isCurrentVersion", request.getIsCurrentVersion())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.functions.model.PbfListingVersionsCollection.class,
+                        ListPbfListingVersionsResponse.Builder::pbfListingVersionsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPbfListingVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPbfListingVersionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPbfListingsResponse> listPbfListings(
+            ListPbfListingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPbfListingsRequest, ListPbfListingsResponse>
+                    handler) {
+
+        return clientCall(request, ListPbfListingsResponse::builder)
+                .logger(LOG, "listPbfListings")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "ListPbfListings",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/ListPbfListings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPbfListingsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("pbfListings")
+                .appendQueryParam("pbfListingId", request.getPbfListingId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendQueryParam("nameStartsWith", request.getNameStartsWith())
+                .appendListQueryParam(
+                        "trigger",
+                        request.getTrigger(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.functions.model.PbfListingsCollection.class,
+                        ListPbfListingsResponse.Builder::pbfListingsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPbfListingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPbfListingsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTriggersResponse> listTriggers(
+            ListTriggersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListTriggersRequest, ListTriggersResponse>
+                    handler) {
+
+        return clientCall(request, ListTriggersResponse::builder)
+                .logger(LOG, "listTriggers")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "ListTriggers",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/TriggersCollection/ListTriggers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTriggersRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("pbfListings")
+                .appendPathParam("triggers")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.functions.model.TriggersCollection.class,
+                        ListTriggersResponse.Builder::triggersCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTriggersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTriggersResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

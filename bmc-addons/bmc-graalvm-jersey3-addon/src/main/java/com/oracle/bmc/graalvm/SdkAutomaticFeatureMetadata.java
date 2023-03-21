@@ -52,7 +52,6 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.databaserecoverysystem.SdkClientsMetadata",
     "com.oracle.bmc.databasetools.SdkClientsMetadata",
     "com.oracle.bmc.datacatalog.SdkClientsMetadata",
-    "com.oracle.bmc.dataconnectivity.SdkClientsMetadata",
     "com.oracle.bmc.dataflow.SdkClientsMetadata",
     "com.oracle.bmc.dataflowinteractive.SdkClientsMetadata",
     "com.oracle.bmc.dataintegration.SdkClientsMetadata",

@@ -64,18 +64,18 @@ public class ImportDeploymentWalletRequest
     }
     /**
      * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
+     * server error, without the risk of executing that same action again. Retry tokens expire after
+     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
+     * resource was deleted and purged from the system, then a retry of the original creation
      * request is rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
+     * server error, without the risk of executing that same action again. Retry tokens expire after
+     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
+     * resource was deleted and purged from the system, then a retry of the original creation
      * request is rejected.
      */
     public String getOpcRetryToken() {
@@ -173,19 +173,19 @@ public class ImportDeploymentWalletRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request is rejected.
+         * server error, without the risk of executing that same action again. Retry tokens expire
+         * after 24 hours but can be invalidated before then due to conflicting operations. For
+         * example, if a resource was deleted and purged from the system, then a retry of the
+         * original creation request is rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request is rejected.
+         * server error, without the risk of executing that same action again. Retry tokens expire
+         * after 24 hours but can be invalidated before then due to conflicting operations. For
+         * example, if a resource was deleted and purged from the system, then a retry of the
+         * original creation request is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

@@ -109,10 +109,10 @@ public interface GoldenGate extends AutoCloseable {
             ChangeConnectionCompartmentRequest request);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead. Moves the DatabaseRegistration
-     * into a different compartment within the same tenancy. When provided, If-Match is checked
-     * against ETag values of the resource. For information about moving resources between
-     * compartments, see [Moving Resources Between
+     * Note: Deprecated. Use the /connections API instead. Moves the DatabaseRegistration into a
+     * different compartment within the same tenancy. When provided, If-Match is checked against
+     * ETag values of the resource. For information about moving resources between compartments, see
+     * [Moving Resources Between
      * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -221,8 +221,7 @@ public interface GoldenGate extends AutoCloseable {
             CreateConnectionAssignmentRequest request);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead. Creates a new
-     * DatabaseRegistration.
+     * Note: Deprecated. Use the /connections API instead. Creates a new DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -304,7 +303,7 @@ public interface GoldenGate extends AutoCloseable {
             DeleteConnectionAssignmentRequest request);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead. Deletes a DatabaseRegistration.
+     * Note: Deprecated. Use the /connections API instead. Deletes a DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -418,7 +417,7 @@ public interface GoldenGate extends AutoCloseable {
     GetConnectionAssignmentResponse getConnectionAssignment(GetConnectionAssignmentRequest request);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead. Retrieves a DatabaseRegistration.
+     * Note: Deprecated. Use the /connections API instead. Retrieves a DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -546,8 +545,8 @@ public interface GoldenGate extends AutoCloseable {
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead. Lists the DatabaseRegistrations in
-     * the compartment.
+     * Note: Deprecated. Use the /connections API instead. Lists the DatabaseRegistrations in the
+     * compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -854,7 +853,7 @@ public interface GoldenGate extends AutoCloseable {
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead. Updates the DatabaseRegistration.
+     * Note: Deprecated. Use the /connections API instead. Updates the DatabaseRegistration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

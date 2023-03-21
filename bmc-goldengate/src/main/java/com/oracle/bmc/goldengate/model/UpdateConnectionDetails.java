@@ -22,29 +22,50 @@ package com.oracle.bmc.goldengate.model;
         defaultImpl = UpdateConnectionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleConnectionDetails.class,
+            name = "ORACLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOciObjectStorageConnectionDetails.class,
+            name = "OCI_OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateMongoDbConnectionDetails.class,
+            name = "MONGODB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateAzureDataLakeStorageConnectionDetails.class,
+            name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateJavaMessageServiceConnectionDetails.class,
+            name = "JAVA_MESSAGE_SERVICE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateGoldenGateConnectionDetails.class,
+            name = "GOLDENGATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdatePostgresqlConnectionDetails.class,
             name = "POSTGRESQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOracleConnectionDetails.class,
-            name = "ORACLE"),
+            value = UpdateMicrosoftSqlserverConnectionDetails.class,
+            name = "MICROSOFT_SQLSERVER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleNosqlConnectionDetails.class,
+            name = "ORACLE_NOSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateKafkaSchemaRegistryConnectionDetails.class,
             name = "KAFKA_SCHEMA_REGISTRY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateOciObjectStorageConnectionDetails.class,
-            name = "OCI_OBJECT_STORAGE"),
+            value = UpdateAmazonS3ConnectionDetails.class,
+            name = "AMAZON_S3"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateSnowflakeConnectionDetails.class,
+            name = "SNOWFLAKE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateHdfsConnectionDetails.class,
+            name = "HDFS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateMysqlConnectionDetails.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateKafkaConnectionDetails.class,
             name = "KAFKA"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateAzureDataLakeStorageConnectionDetails.class,
-            name = "AZURE_DATA_LAKE_STORAGE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateGoldenGateConnectionDetails.class,
-            name = "GOLDENGATE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAzureSynapseConnectionDetails.class,
             name = "AZURE_SYNAPSE_ANALYTICS")
@@ -148,19 +169,17 @@ public class UpdateConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer vault being referenced. If provided, this will reference a vault which the customer
-     * will be required to ensure the policies are established to permit the GoldenGate Service to
-     * manage secrets contained within this vault.
+     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
+     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
+     * within this vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer vault being referenced. If provided, this will reference a vault which the customer
-     * will be required to ensure the policies are established to permit the GoldenGate Service to
-     * manage secrets contained within this vault.
+     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
+     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
+     * within this vault.
      *
      * @return the value
      */
@@ -169,19 +188,15 @@ public class UpdateConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer "Master" key being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
+     * Customers must add policies to permit GoldenGate to use this key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer "Master" key being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
+     * Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
      */

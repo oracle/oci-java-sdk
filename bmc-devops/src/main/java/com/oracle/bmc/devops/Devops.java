@@ -172,7 +172,8 @@ public interface Devops extends AutoCloseable {
             CreateBuildPipelineStageRequest request);
 
     /**
-     * Starts a build pipeline run for a predefined build pipeline.
+     * Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of
+     * any work request for creation/updation of Build Pipeline before starting a Build Run.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

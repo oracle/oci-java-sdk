@@ -40,6 +40,9 @@ package com.oracle.bmc.database.model;
             value = CreateAutonomousDatabaseFromBackupDetails.class,
             name = "BACKUP_FROM_ID"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateCrossRegionDisasterRecoveryDetails.class,
+            name = "CROSS_REGION_DISASTER_RECOVERY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutonomousDatabaseFromBackupTimestampDetails.class,
             name = "BACKUP_FROM_TIMESTAMP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -1628,6 +1631,7 @@ public class CreateAutonomousDatabaseBase
         BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
         CloneToRefreshable("CLONE_TO_REFRESHABLE"),
         CrossRegionDataguard("CROSS_REGION_DATAGUARD"),
+        CrossRegionDisasterRecovery("CROSS_REGION_DISASTER_RECOVERY"),
         ;
 
         private final String value;

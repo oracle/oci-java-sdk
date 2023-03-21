@@ -46,19 +46,17 @@ public final class ImportDeploymentWalletDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * customer vault being referenced. If provided, this will reference a vault which the
-         * customer will be required to ensure the policies are established to permit the GoldenGate
-         * Service to manage secrets contained within this vault.
+         * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate
+         * can manage secrets. Customers must add policies to permit GoldenGate to manage secrets
+         * contained within this vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * customer vault being referenced. If provided, this will reference a vault which the
-         * customer will be required to ensure the policies are established to permit the GoldenGate
-         * Service to manage secrets contained within this vault.
+         * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate
+         * can manage secrets. Customers must add policies to permit GoldenGate to manage secrets
+         * contained within this vault.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -69,19 +67,17 @@ public final class ImportDeploymentWalletDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * customer GGS Secret being referenced. If provided, this will reference a key which the
-         * customer will be required to ensure the policies are established to permit the GoldenGate
-         * Service to utilize this Secret
+         * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key
+         * that customers will be required to ensure the policies are established to permit
+         * GoldenGate to use this Secret.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("newWalletSecretId")
         private String newWalletSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * customer GGS Secret being referenced. If provided, this will reference a key which the
-         * customer will be required to ensure the policies are established to permit the GoldenGate
-         * Service to utilize this Secret
+         * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key
+         * that customers will be required to ensure the policies are established to permit
+         * GoldenGate to use this Secret.
          *
          * @param newWalletSecretId the value to set
          * @return this builder
@@ -107,19 +103,15 @@ public final class ImportDeploymentWalletDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * customer "Master" key being referenced. If provided, this will reference a key which the
-         * customer will be required to ensure the policies are established to permit the GoldenGate
-         * Service to utilize this key to manage secrets.
+         * Refers to the customer's master key OCID. If provided, it references a key to manage
+         * secrets. Customers must add policies to permit GoldenGate to use this key.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("masterEncryptionKeyId")
         private String masterEncryptionKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * customer "Master" key being referenced. If provided, this will reference a key which the
-         * customer will be required to ensure the policies are established to permit the GoldenGate
-         * Service to utilize this key to manage secrets.
+         * Refers to the customer's master key OCID. If provided, it references a key to manage
+         * secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          * @param masterEncryptionKeyId the value to set
          * @return this builder
@@ -193,19 +185,17 @@ public final class ImportDeploymentWalletDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer vault being referenced. If provided, this will reference a vault which the customer
-     * will be required to ensure the policies are established to permit the GoldenGate Service to
-     * manage secrets contained within this vault.
+     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
+     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
+     * within this vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer vault being referenced. If provided, this will reference a vault which the customer
-     * will be required to ensure the policies are established to permit the GoldenGate Service to
-     * manage secrets contained within this vault.
+     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
+     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
+     * within this vault.
      *
      * @return the value
      */
@@ -214,19 +204,17 @@ public final class ImportDeploymentWalletDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer GGS Secret being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this Secret
+     * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key that
+     * customers will be required to ensure the policies are established to permit GoldenGate to use
+     * this Secret.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("newWalletSecretId")
     private final String newWalletSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer GGS Secret being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this Secret
+     * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key that
+     * customers will be required to ensure the policies are established to permit GoldenGate to use
+     * this Secret.
      *
      * @return the value
      */
@@ -248,19 +236,15 @@ public final class ImportDeploymentWalletDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer "Master" key being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
+     * Customers must add policies to permit GoldenGate to use this key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("masterEncryptionKeyId")
     private final String masterEncryptionKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer "Master" key being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
+     * Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
      */

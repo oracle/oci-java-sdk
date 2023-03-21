@@ -27,6 +27,7 @@ public final class CreateFunctionDetails
         "applicationId",
         "image",
         "imageDigest",
+        "sourceDetails",
         "memoryInMBs",
         "config",
         "timeoutInSeconds",
@@ -40,6 +41,7 @@ public final class CreateFunctionDetails
             String applicationId,
             String image,
             String imageDigest,
+            FunctionSourceDetails sourceDetails,
             Long memoryInMBs,
             java.util.Map<String, String> config,
             Integer timeoutInSeconds,
@@ -52,6 +54,7 @@ public final class CreateFunctionDetails
         this.applicationId = applicationId;
         this.image = image;
         this.imageDigest = imageDigest;
+        this.sourceDetails = sourceDetails;
         this.memoryInMBs = memoryInMBs;
         this.config = config;
         this.timeoutInSeconds = timeoutInSeconds;
@@ -139,6 +142,15 @@ public final class CreateFunctionDetails
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private FunctionSourceDetails sourceDetails;
+
+        public Builder sourceDetails(FunctionSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
             return this;
         }
         /** Maximum usable memory for the function (MiB). */
@@ -285,6 +297,7 @@ public final class CreateFunctionDetails
                             this.applicationId,
                             this.image,
                             this.imageDigest,
+                            this.sourceDetails,
                             this.memoryInMBs,
                             this.config,
                             this.timeoutInSeconds,
@@ -311,6 +324,9 @@ public final class CreateFunctionDetails
             }
             if (model.wasPropertyExplicitlySet("imageDigest")) {
                 this.imageDigest(model.getImageDigest());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
             }
             if (model.wasPropertyExplicitlySet("memoryInMBs")) {
                 this.memoryInMBs(model.getMemoryInMBs());
@@ -414,6 +430,13 @@ public final class CreateFunctionDetails
      */
     public String getImageDigest() {
         return imageDigest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    private final FunctionSourceDetails sourceDetails;
+
+    public FunctionSourceDetails getSourceDetails() {
+        return sourceDetails;
     }
 
     /** Maximum usable memory for the function (MiB). */
@@ -552,6 +575,7 @@ public final class CreateFunctionDetails
         sb.append(", applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", memoryInMBs=").append(String.valueOf(this.memoryInMBs));
         sb.append(", config=").append(String.valueOf(this.config));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
@@ -578,6 +602,7 @@ public final class CreateFunctionDetails
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
                 && java.util.Objects.equals(this.image, other.image)
                 && java.util.Objects.equals(this.imageDigest, other.imageDigest)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.memoryInMBs, other.memoryInMBs)
                 && java.util.Objects.equals(this.config, other.config)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
@@ -599,6 +624,9 @@ public final class CreateFunctionDetails
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());
         result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
         result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
         result = (result * PRIME) + (this.memoryInMBs == null ? 43 : this.memoryInMBs.hashCode());
         result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
         result =

@@ -28,9 +28,6 @@ package com.oracle.bmc.dataintegration.model;
             value = CreateConnectionFromAmazonS3.class,
             name = "AMAZON_S3_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateConnectionFromLakehouse.class,
-            name = "LAKE_HOUSE_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateConnectionFromJdbc.class,
             name = "GENERIC_JDBC_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -56,7 +53,10 @@ package com.oracle.bmc.dataintegration.model;
             name = "ORACLEDB_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateConnectionFromObjectStorage.class,
-            name = "ORACLE_OBJECT_STORAGE_CONNECTION")
+            name = "ORACLE_OBJECT_STORAGE_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateConnectionFromLake.class,
+            name = "LAKE_CONNECTION")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
@@ -301,7 +301,7 @@ public class CreateConnectionDetails
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
         BipConnection("BIP_CONNECTION"),
-        LakeHouseConnection("LAKE_HOUSE_CONNECTION"),
+        LakeConnection("LAKE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
         ;
