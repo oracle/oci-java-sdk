@@ -146,6 +146,42 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             return this;
         }
         /**
+         * The username credential existing in the Oracle GoldenGate used to be connected to.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("username")
+        private String username;
+
+        /**
+         * The username credential existing in the Oracle GoldenGate used to be connected to.
+         *
+         * @param username the value to set
+         * @return this builder
+         **/
+        public Builder username(String username) {
+            this.username = username;
+            this.__explicitlySet__.add("username");
+            return this;
+        }
+        /**
+         * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("password")
+        private String password;
+
+        /**
+         * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+         *
+         * @param password the value to set
+         * @return this builder
+         **/
+        public Builder password(String password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -188,6 +224,8 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
                             this.deploymentId,
                             this.host,
                             this.port,
+                            this.username,
+                            this.password,
                             this.privateIp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -227,6 +265,12 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             if (model.wasPropertyExplicitlySet("port")) {
                 this.port(model.getPort());
             }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
@@ -257,11 +301,15 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             String deploymentId,
             String host,
             Integer port,
+            String username,
+            String password,
             String privateIp) {
         super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
         this.deploymentId = deploymentId;
         this.host = host;
         this.port = port;
+        this.username = username;
+        this.password = password;
         this.privateIp = privateIp;
     }
 
@@ -314,6 +362,38 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
     }
 
     /**
+     * The username credential existing in the Oracle GoldenGate used to be connected to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("username")
+    private final String username;
+
+    /**
+     * The username credential existing in the Oracle GoldenGate used to be connected to.
+     *
+     * @return the value
+     **/
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    private final String password;
+
+    /**
+     * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+     *
+     * @return the value
+     **/
+    public String getPassword() {
+        return password;
+    }
+
+    /**
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.
@@ -354,6 +434,8 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", password=").append("<redacted>");
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
@@ -372,6 +454,8 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
         return java.util.Objects.equals(this.deploymentId, other.deploymentId)
                 && java.util.Objects.equals(this.host, other.host)
                 && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
@@ -383,6 +467,8 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
         result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }

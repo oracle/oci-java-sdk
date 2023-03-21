@@ -243,6 +243,24 @@ public final class GoldenGateConnection extends Connection {
             return this;
         }
         /**
+         * The username credential existing in the Oracle GoldenGate used to be connected to.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("username")
+        private String username;
+
+        /**
+         * The username credential existing in the Oracle GoldenGate used to be connected to.
+         *
+         * @param username the value to set
+         * @return this builder
+         **/
+        public Builder username(String username) {
+            this.username = username;
+            this.__explicitlySet__.add("username");
+            return this;
+        }
+        /**
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -295,6 +313,7 @@ public final class GoldenGateConnection extends Connection {
                             this.deploymentId,
                             this.host,
                             this.port,
+                            this.username,
                             this.privateIp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -364,6 +383,9 @@ public final class GoldenGateConnection extends Connection {
             if (model.wasPropertyExplicitlySet("port")) {
                 this.port(model.getPort());
             }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
@@ -404,6 +426,7 @@ public final class GoldenGateConnection extends Connection {
             String deploymentId,
             String host,
             Integer port,
+            String username,
             String privateIp) {
         super(
                 id,
@@ -426,6 +449,7 @@ public final class GoldenGateConnection extends Connection {
         this.deploymentId = deploymentId;
         this.host = host;
         this.port = port;
+        this.username = username;
         this.privateIp = privateIp;
     }
 
@@ -539,6 +563,22 @@ public final class GoldenGateConnection extends Connection {
     }
 
     /**
+     * The username credential existing in the Oracle GoldenGate used to be connected to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("username")
+    private final String username;
+
+    /**
+     * The username credential existing in the Oracle GoldenGate used to be connected to.
+     *
+     * @return the value
+     **/
+    public String getUsername() {
+        return username;
+    }
+
+    /**
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.
@@ -580,6 +620,7 @@ public final class GoldenGateConnection extends Connection {
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(")");
         return sb.toString();
@@ -599,6 +640,7 @@ public final class GoldenGateConnection extends Connection {
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
                 && java.util.Objects.equals(this.host, other.host)
                 && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && super.equals(other);
     }
@@ -613,6 +655,7 @@ public final class GoldenGateConnection extends Connection {
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
         result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         return result;
     }

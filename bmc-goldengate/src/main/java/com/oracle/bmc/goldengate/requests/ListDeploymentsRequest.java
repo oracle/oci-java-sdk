@@ -12,13 +12,19 @@ import com.oracle.bmc.goldengate.model.*;
 public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request concerns
+     * multiple resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used.
      *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request concerns
+     * multiple resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used.
      *
      */
     public String getCompartmentId() {
@@ -51,13 +57,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return assignedConnectionId;
     }
     /**
-     * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     * Return the deployments to which the specified connectionId may be assigned.
      *
      */
     private String assignableConnectionId;
 
     /**
-     * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     * Return the deployments to which the specified connectionId may be assigned.
      *
      */
     public String getAssignableConnectionId() {
@@ -234,13 +240,19 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The OCID of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request concerns
+         * multiple resources, and those resources are not in the same compartment, it is up to the service team
+         * to pick the primary resource whose compartment should be used.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The OCID of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request concerns
+         * multiple resources, and those resources are not in the same compartment, it is up to the service team
+         * to pick the primary resource whose compartment should be used.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -286,13 +298,13 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+         * Return the deployments to which the specified connectionId may be assigned.
          *
          */
         private String assignableConnectionId = null;
 
         /**
-         * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+         * Return the deployments to which the specified connectionId may be assigned.
          *
          * @param assignableConnectionId the value to set
          * @return this builder instance

@@ -23,12 +23,12 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return repositoryId;
     }
     /**
-     * The commit or reference name where changes are coming from.
+     * The commit or reference name that represents the newer changes against the base version.
      */
     private String targetVersion;
 
     /**
-     * The commit or reference name where changes are coming from.
+     * The commit or reference name that represents the newer changes against the base version.
      */
     public String getTargetVersion() {
         return targetVersion;
@@ -90,12 +90,12 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The commit or reference name where changes are coming from.
+         * The commit or reference name that represents the newer changes against the base version.
          */
         private String targetVersion = null;
 
         /**
-         * The commit or reference name where changes are coming from.
+         * The commit or reference name that represents the newer changes against the base version.
          * @param targetVersion the value to set
          * @return this builder instance
          */

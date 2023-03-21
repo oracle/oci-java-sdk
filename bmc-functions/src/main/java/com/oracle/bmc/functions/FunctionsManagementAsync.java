@@ -163,6 +163,38 @@ public interface FunctionsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFunctionRequest, GetFunctionResponse> handler);
 
     /**
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPbfListingResponse> getPbfListing(
+            GetPbfListingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPbfListingRequest, GetPbfListingResponse>
+                    handler);
+
+    /**
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPbfListingVersionResponse> getPbfListingVersion(
+            GetPbfListingVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPbfListingVersionRequest, GetPbfListingVersionResponse>
+                    handler);
+
+    /**
      * Lists applications for a compartment.
      *
      * @param request The request object containing the details to send
@@ -190,6 +222,60 @@ public interface FunctionsManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<ListFunctionsResponse> listFunctions(
             ListFunctionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFunctionsRequest, ListFunctionsResponse>
+                    handler);
+
+    /**
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+     * containing an array of PbfListingVersionSummary response models.
+     * <p>
+     * Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+     * be thrown.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPbfListingVersionsResponse> listPbfListingVersions(
+            ListPbfListingVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>
+                    handler);
+
+    /**
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+     * an array of PbfListingSummary response models.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPbfListingsResponse> listPbfListings(
+            ListPbfListingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPbfListingsRequest, ListPbfListingsResponse>
+                    handler);
+
+    /**
+     * Returns a list of Triggers.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTriggersResponse> listTriggers(
+            ListTriggersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTriggersRequest, ListTriggersResponse>
                     handler);
 
     /**

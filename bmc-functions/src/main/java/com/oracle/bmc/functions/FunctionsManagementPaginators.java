@@ -254,4 +254,340 @@ public class FunctionsManagementPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPbfListingVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPbfListingVersionsResponse> listPbfListingVersionsResponseIterator(
+            final ListPbfListingVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPbfListingVersionsRequest.Builder, ListPbfListingVersionsRequest,
+                ListPbfListingVersionsResponse>(
+                new java.util.function.Supplier<ListPbfListingVersionsRequest.Builder>() {
+                    @Override
+                    public ListPbfListingVersionsRequest.Builder get() {
+                        return ListPbfListingVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPbfListingVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListPbfListingVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPbfListingVersionsRequest.Builder>,
+                        ListPbfListingVersionsRequest>() {
+                    @Override
+                    public ListPbfListingVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPbfListingVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>() {
+                    @Override
+                    public ListPbfListingVersionsResponse apply(
+                            ListPbfListingVersionsRequest request) {
+                        return client.listPbfListingVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.functions.model.PbfListingVersionSummary} objects
+     * contained in responses from the listPbfListingVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.functions.model.PbfListingVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.functions.model.PbfListingVersionSummary>
+            listPbfListingVersionsRecordIterator(final ListPbfListingVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPbfListingVersionsRequest.Builder, ListPbfListingVersionsRequest,
+                ListPbfListingVersionsResponse,
+                com.oracle.bmc.functions.model.PbfListingVersionSummary>(
+                new java.util.function.Supplier<ListPbfListingVersionsRequest.Builder>() {
+                    @Override
+                    public ListPbfListingVersionsRequest.Builder get() {
+                        return ListPbfListingVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPbfListingVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListPbfListingVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPbfListingVersionsRequest.Builder>,
+                        ListPbfListingVersionsRequest>() {
+                    @Override
+                    public ListPbfListingVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPbfListingVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>() {
+                    @Override
+                    public ListPbfListingVersionsResponse apply(
+                            ListPbfListingVersionsRequest request) {
+                        return client.listPbfListingVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPbfListingVersionsResponse,
+                        java.util.List<com.oracle.bmc.functions.model.PbfListingVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.functions.model.PbfListingVersionSummary>
+                            apply(ListPbfListingVersionsResponse response) {
+                        return response.getPbfListingVersionsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPbfListings operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPbfListingsResponse> listPbfListingsResponseIterator(
+            final ListPbfListingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPbfListingsRequest.Builder, ListPbfListingsRequest, ListPbfListingsResponse>(
+                new java.util.function.Supplier<ListPbfListingsRequest.Builder>() {
+                    @Override
+                    public ListPbfListingsRequest.Builder get() {
+                        return ListPbfListingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPbfListingsResponse, String>() {
+                    @Override
+                    public String apply(ListPbfListingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPbfListingsRequest.Builder>,
+                        ListPbfListingsRequest>() {
+                    @Override
+                    public ListPbfListingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPbfListingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPbfListingsRequest, ListPbfListingsResponse>() {
+                    @Override
+                    public ListPbfListingsResponse apply(ListPbfListingsRequest request) {
+                        return client.listPbfListings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.functions.model.PbfListingSummary} objects
+     * contained in responses from the listPbfListings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.functions.model.PbfListingSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.functions.model.PbfListingSummary> listPbfListingsRecordIterator(
+            final ListPbfListingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPbfListingsRequest.Builder, ListPbfListingsRequest, ListPbfListingsResponse,
+                com.oracle.bmc.functions.model.PbfListingSummary>(
+                new java.util.function.Supplier<ListPbfListingsRequest.Builder>() {
+                    @Override
+                    public ListPbfListingsRequest.Builder get() {
+                        return ListPbfListingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPbfListingsResponse, String>() {
+                    @Override
+                    public String apply(ListPbfListingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPbfListingsRequest.Builder>,
+                        ListPbfListingsRequest>() {
+                    @Override
+                    public ListPbfListingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPbfListingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPbfListingsRequest, ListPbfListingsResponse>() {
+                    @Override
+                    public ListPbfListingsResponse apply(ListPbfListingsRequest request) {
+                        return client.listPbfListings(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPbfListingsResponse,
+                        java.util.List<com.oracle.bmc.functions.model.PbfListingSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.functions.model.PbfListingSummary> apply(
+                            ListPbfListingsResponse response) {
+                        return response.getPbfListingsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTriggers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTriggersResponse> listTriggersResponseIterator(
+            final ListTriggersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTriggersRequest.Builder, ListTriggersRequest, ListTriggersResponse>(
+                new java.util.function.Supplier<ListTriggersRequest.Builder>() {
+                    @Override
+                    public ListTriggersRequest.Builder get() {
+                        return ListTriggersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTriggersResponse, String>() {
+                    @Override
+                    public String apply(ListTriggersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTriggersRequest.Builder>,
+                        ListTriggersRequest>() {
+                    @Override
+                    public ListTriggersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTriggersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTriggersRequest, ListTriggersResponse>() {
+                    @Override
+                    public ListTriggersResponse apply(ListTriggersRequest request) {
+                        return client.listTriggers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.functions.model.TriggerSummary} objects
+     * contained in responses from the listTriggers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.functions.model.TriggerSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.functions.model.TriggerSummary> listTriggersRecordIterator(
+            final ListTriggersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTriggersRequest.Builder, ListTriggersRequest, ListTriggersResponse,
+                com.oracle.bmc.functions.model.TriggerSummary>(
+                new java.util.function.Supplier<ListTriggersRequest.Builder>() {
+                    @Override
+                    public ListTriggersRequest.Builder get() {
+                        return ListTriggersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTriggersResponse, String>() {
+                    @Override
+                    public String apply(ListTriggersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTriggersRequest.Builder>,
+                        ListTriggersRequest>() {
+                    @Override
+                    public ListTriggersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTriggersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTriggersRequest, ListTriggersResponse>() {
+                    @Override
+                    public ListTriggersResponse apply(ListTriggersRequest request) {
+                        return client.listTriggers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTriggersResponse,
+                        java.util.List<com.oracle.bmc.functions.model.TriggerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.functions.model.TriggerSummary> apply(
+                            ListTriggersResponse response) {
+                        return response.getTriggersCollection().getItems();
+                    }
+                });
+    }
 }

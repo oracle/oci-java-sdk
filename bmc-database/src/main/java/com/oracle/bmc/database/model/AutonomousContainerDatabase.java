@@ -1592,6 +1592,7 @@ public final class AutonomousContainerDatabase
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        BackupCopy("BACKUP_COPY"),
         SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**

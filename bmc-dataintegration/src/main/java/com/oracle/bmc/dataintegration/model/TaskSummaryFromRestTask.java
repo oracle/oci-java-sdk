@@ -204,10 +204,17 @@ public final class TaskSummaryFromRestTask extends TaskSummary {
             this.__explicitlySet__.add("methodType");
             return this;
         }
-
+        /**
+         * Headers for payload.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private Object headers;
 
+        /**
+         * Headers for payload.
+         * @param headers the value to set
+         * @return this builder
+         **/
         public Builder headers(Object headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -580,9 +587,16 @@ public final class TaskSummaryFromRestTask extends TaskSummary {
         return methodType;
     }
 
+    /**
+     * Headers for payload.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final Object headers;
 
+    /**
+     * Headers for payload.
+     * @return the value
+     **/
     public Object getHeaders() {
         return headers;
     }

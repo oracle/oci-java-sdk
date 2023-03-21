@@ -26,17 +26,15 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code page}
-     * parameter for the subsequent GET request to get the next batch of items.
+     * The page token represents the page to start retrieving results. This is usually retrieved
+     * from a previous list call.
      *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code page}
-     * parameter for the subsequent GET request to get the next batch of items.
+     * The page token represents the page to start retrieving results. This is usually retrieved
+     * from a previous list call.
      *
      * @return the value
      */
@@ -111,17 +109,15 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the
-         * response, then a partial list might have been returned. Include this value as the {@code page}
-         * parameter for the subsequent GET request to get the next batch of items.
+         * The page token represents the page to start retrieving results. This is usually retrieved
+         * from a previous list call.
          *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the
-         * response, then a partial list might have been returned. Include this value as the {@code page}
-         * parameter for the subsequent GET request to get the next batch of items.
+         * The page token represents the page to start retrieving results. This is usually retrieved
+         * from a previous list call.
          *
          * @param opcNextPage the value to set
          * @return this builder

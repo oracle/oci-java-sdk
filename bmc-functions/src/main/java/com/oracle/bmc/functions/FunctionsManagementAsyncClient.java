@@ -775,6 +775,97 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<GetPbfListingResponse> getPbfListing(
+            GetPbfListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetPbfListingRequest, GetPbfListingResponse>
+                    handler) {
+        LOG.trace("Called async getPbfListing");
+        final GetPbfListingRequest interceptedRequest =
+                GetPbfListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPbfListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "GetPbfListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/GetPbfListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPbfListingResponse>
+                transformer =
+                        GetPbfListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetPbfListingRequest, GetPbfListingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPbfListingRequest, GetPbfListingResponse>,
+                        java.util.concurrent.Future<GetPbfListingResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPbfListingRequest, GetPbfListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPbfListingVersionResponse> getPbfListingVersion(
+            GetPbfListingVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPbfListingVersionRequest, GetPbfListingVersionResponse>
+                    handler) {
+        LOG.trace("Called async getPbfListingVersion");
+        final GetPbfListingVersionRequest interceptedRequest =
+                GetPbfListingVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPbfListingVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "GetPbfListingVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/GetPbfListingVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPbfListingVersionResponse>
+                transformer =
+                        GetPbfListingVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPbfListingVersionRequest, GetPbfListingVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPbfListingVersionRequest, GetPbfListingVersionResponse>,
+                        java.util.concurrent.Future<GetPbfListingVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPbfListingVersionRequest, GetPbfListingVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResponse> listApplications(
             ListApplicationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -852,6 +943,143 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFunctionsRequest, ListFunctionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPbfListingVersionsResponse> listPbfListingVersions(
+            ListPbfListingVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>
+                    handler) {
+        LOG.trace("Called async listPbfListingVersions");
+        final ListPbfListingVersionsRequest interceptedRequest =
+                ListPbfListingVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPbfListingVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListPbfListingVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/ListPbfListingVersions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPbfListingVersionsResponse>
+                transformer =
+                        ListPbfListingVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>,
+                        java.util.concurrent.Future<ListPbfListingVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPbfListingVersionsRequest, ListPbfListingVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPbfListingsResponse> listPbfListings(
+            ListPbfListingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPbfListingsRequest, ListPbfListingsResponse>
+                    handler) {
+        LOG.trace("Called async listPbfListings");
+        final ListPbfListingsRequest interceptedRequest =
+                ListPbfListingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPbfListingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListPbfListings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/ListPbfListings");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPbfListingsResponse>
+                transformer =
+                        ListPbfListingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListPbfListingsRequest, ListPbfListingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPbfListingsRequest, ListPbfListingsResponse>,
+                        java.util.concurrent.Future<ListPbfListingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPbfListingsRequest, ListPbfListingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTriggersResponse> listTriggers(
+            ListTriggersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListTriggersRequest, ListTriggersResponse>
+                    handler) {
+        LOG.trace("Called async listTriggers");
+        final ListTriggersRequest interceptedRequest =
+                ListTriggersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTriggersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListTriggers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/TriggersCollection/ListTriggers");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTriggersResponse>
+                transformer =
+                        ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListTriggersRequest, ListTriggersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTriggersRequest, ListTriggersResponse>,
+                        java.util.concurrent.Future<ListTriggersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTriggersRequest, ListTriggersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

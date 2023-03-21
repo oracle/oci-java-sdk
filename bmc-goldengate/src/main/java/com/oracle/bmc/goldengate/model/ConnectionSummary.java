@@ -32,20 +32,24 @@ package com.oracle.bmc.goldengate.model;
         name = "KAFKA_SCHEMA_REGISTRY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = PostgresqlConnectionSummary.class,
-        name = "POSTGRESQL"
+        value = JavaMessageServiceConnectionSummary.class,
+        name = "JAVA_MESSAGE_SERVICE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MicrosoftSqlserverConnectionSummary.class,
+        name = "MICROSOFT_SQLSERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OracleNosqlConnectionSummary.class,
+        name = "ORACLE_NOSQL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OracleConnectionSummary.class,
         name = "ORACLE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MysqlConnectionSummary.class,
-        name = "MYSQL"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = KafkaConnectionSummary.class,
-        name = "KAFKA"
+        value = SnowflakeConnectionSummary.class,
+        name = "SNOWFLAKE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OciObjectStorageConnectionSummary.class,
@@ -58,6 +62,30 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AzureSynapseConnectionSummary.class,
         name = "AZURE_SYNAPSE_ANALYTICS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MongoDbConnectionSummary.class,
+        name = "MONGODB"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AmazonS3ConnectionSummary.class,
+        name = "AMAZON_S3"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PostgresqlConnectionSummary.class,
+        name = "POSTGRESQL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MysqlConnectionSummary.class,
+        name = "MYSQL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = KafkaConnectionSummary.class,
+        name = "KAFKA"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HdfsConnectionSummary.class,
+        name = "HDFS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -320,22 +348,18 @@ public class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
-     * referenced.
-     * If provided, this will reference a vault which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to manage secrets contained
-     * within this vault.
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
-     * referenced.
-     * If provided, this will reference a vault which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to manage secrets contained
-     * within this vault.
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
      *
      * @return the value
      **/
@@ -344,22 +368,16 @@ public class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
-     * referenced.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this key to
-     * manage secrets.
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
-     * referenced.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this key to
-     * manage secrets.
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
      **/
@@ -384,14 +402,16 @@ public class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+     * Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
     private final java.util.List<IngressIpDetails> ingressIps;
 
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+     * Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      *
      * @return the value
      **/
