@@ -108,7 +108,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Moves the DatabaseRegistration into a different compartment within the same tenancy. When
      * provided, If-Match is checked against ETag values of the resource.  For information about
      * moving resources between compartments, see [Moving Resources Between
@@ -222,7 +222,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Creates a new DatabaseRegistration.
      *
      *
@@ -304,7 +304,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Deletes a DatabaseRegistration.
      *
      *
@@ -422,7 +422,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Retrieves a DatabaseRegistration.
      *
      *
@@ -555,7 +555,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Lists the DatabaseRegistrations in the compartment.
      *
      *
@@ -873,7 +873,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Note: Deprecated. Use the /connections API instead.
      * Updates the DatabaseRegistration.
      *
      *

@@ -120,7 +120,11 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         "actualUsedDataStorageSizeInTBs",
         "maxCpuCoreCount",
         "databaseEdition",
-        "dbToolsDetails"
+        "dbToolsDetails",
+        "localDisasterRecoveryType",
+        "disasterRecoveryRegionType",
+        "timeDisasterRecoveryRoleChanged",
+        "remoteDisasterRecoveryConfiguration"
     })
     public AutonomousDatabase(
             String id,
@@ -220,7 +224,11 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             Double actualUsedDataStorageSizeInTBs,
             Integer maxCpuCoreCount,
             DatabaseEdition databaseEdition,
-            java.util.List<DatabaseTool> dbToolsDetails) {
+            java.util.List<DatabaseTool> dbToolsDetails,
+            DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType,
+            DisasterRecoveryRegionType disasterRecoveryRegionType,
+            java.util.Date timeDisasterRecoveryRoleChanged,
+            DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -320,6 +328,10 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         this.maxCpuCoreCount = maxCpuCoreCount;
         this.databaseEdition = databaseEdition;
         this.dbToolsDetails = dbToolsDetails;
+        this.localDisasterRecoveryType = localDisasterRecoveryType;
+        this.disasterRecoveryRegionType = disasterRecoveryRegionType;
+        this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+        this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -2066,6 +2078,73 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("dbToolsDetails");
             return this;
         }
+        /**
+         * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("localDisasterRecoveryType")
+        private DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType;
+
+        /**
+         * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         *
+         * @param localDisasterRecoveryType the value to set
+         * @return this builder
+         **/
+        public Builder localDisasterRecoveryType(
+                DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType) {
+            this.localDisasterRecoveryType = localDisasterRecoveryType;
+            this.__explicitlySet__.add("localDisasterRecoveryType");
+            return this;
+        }
+        /**
+         * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryRegionType")
+        private DisasterRecoveryRegionType disasterRecoveryRegionType;
+
+        /**
+         * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+         * @param disasterRecoveryRegionType the value to set
+         * @return this builder
+         **/
+        public Builder disasterRecoveryRegionType(
+                DisasterRecoveryRegionType disasterRecoveryRegionType) {
+            this.disasterRecoveryRegionType = disasterRecoveryRegionType;
+            this.__explicitlySet__.add("disasterRecoveryRegionType");
+            return this;
+        }
+        /**
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
+        private java.util.Date timeDisasterRecoveryRoleChanged;
+
+        /**
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * @param timeDisasterRecoveryRoleChanged the value to set
+         * @return this builder
+         **/
+        public Builder timeDisasterRecoveryRoleChanged(
+                java.util.Date timeDisasterRecoveryRoleChanged) {
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            this.__explicitlySet__.add("timeDisasterRecoveryRoleChanged");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteDisasterRecoveryConfiguration")
+        private DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration;
+
+        public Builder remoteDisasterRecoveryConfiguration(
+                DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration) {
+            this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
+            this.__explicitlySet__.add("remoteDisasterRecoveryConfiguration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -2170,7 +2249,11 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                             this.actualUsedDataStorageSizeInTBs,
                             this.maxCpuCoreCount,
                             this.databaseEdition,
-                            this.dbToolsDetails);
+                            this.dbToolsDetails,
+                            this.localDisasterRecoveryType,
+                            this.disasterRecoveryRegionType,
+                            this.timeDisasterRecoveryRoleChanged,
+                            this.remoteDisasterRecoveryConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2475,6 +2558,19 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
+            }
+            if (model.wasPropertyExplicitlySet("localDisasterRecoveryType")) {
+                this.localDisasterRecoveryType(model.getLocalDisasterRecoveryType());
+            }
+            if (model.wasPropertyExplicitlySet("disasterRecoveryRegionType")) {
+                this.disasterRecoveryRegionType(model.getDisasterRecoveryRegionType());
+            }
+            if (model.wasPropertyExplicitlySet("timeDisasterRecoveryRoleChanged")) {
+                this.timeDisasterRecoveryRoleChanged(model.getTimeDisasterRecoveryRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("remoteDisasterRecoveryConfiguration")) {
+                this.remoteDisasterRecoveryConfiguration(
+                        model.getRemoteDisasterRecoveryConfiguration());
             }
             return this;
         }
@@ -4339,6 +4435,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        BackupCopy("BACKUP_COPY"),
         SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
@@ -4843,6 +4940,109 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         return dbToolsDetails;
     }
 
+    /**
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("localDisasterRecoveryType")
+    private final DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType;
+
+    /**
+     * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     *
+     * @return the value
+     **/
+    public DisasterRecoveryConfiguration.DisasterRecoveryType getLocalDisasterRecoveryType() {
+        return localDisasterRecoveryType;
+    }
+
+    /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     **/
+    public enum DisasterRecoveryRegionType {
+        Primary("PRIMARY"),
+        Remote("REMOTE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DisasterRecoveryRegionType.class);
+
+        private final String value;
+        private static java.util.Map<String, DisasterRecoveryRegionType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DisasterRecoveryRegionType v : DisasterRecoveryRegionType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DisasterRecoveryRegionType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DisasterRecoveryRegionType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DisasterRecoveryRegionType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryRegionType")
+    private final DisasterRecoveryRegionType disasterRecoveryRegionType;
+
+    /**
+     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return the value
+     **/
+    public DisasterRecoveryRegionType getDisasterRecoveryRegionType() {
+        return disasterRecoveryRegionType;
+    }
+
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
+    private final java.util.Date timeDisasterRecoveryRoleChanged;
+
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return the value
+     **/
+    public java.util.Date getTimeDisasterRecoveryRoleChanged() {
+        return timeDisasterRecoveryRoleChanged;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteDisasterRecoveryConfiguration")
+    private final DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration;
+
+    public DisasterRecoveryConfiguration getRemoteDisasterRecoveryConfiguration() {
+        return remoteDisasterRecoveryConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -4980,6 +5180,14 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
+        sb.append(", localDisasterRecoveryType=")
+                .append(String.valueOf(this.localDisasterRecoveryType));
+        sb.append(", disasterRecoveryRegionType=")
+                .append(String.valueOf(this.disasterRecoveryRegionType));
+        sb.append(", timeDisasterRecoveryRoleChanged=")
+                .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
+        sb.append(", remoteDisasterRecoveryConfiguration=")
+                .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -5124,6 +5332,15 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
                 && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
+                && java.util.Objects.equals(
+                        this.localDisasterRecoveryType, other.localDisasterRecoveryType)
+                && java.util.Objects.equals(
+                        this.disasterRecoveryRegionType, other.disasterRecoveryRegionType)
+                && java.util.Objects.equals(
+                        this.timeDisasterRecoveryRoleChanged, other.timeDisasterRecoveryRoleChanged)
+                && java.util.Objects.equals(
+                        this.remoteDisasterRecoveryConfiguration,
+                        other.remoteDisasterRecoveryConfiguration)
                 && super.equals(other);
     }
 
@@ -5453,6 +5670,26 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localDisasterRecoveryType == null
+                                ? 43
+                                : this.localDisasterRecoveryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disasterRecoveryRegionType == null
+                                ? 43
+                                : this.disasterRecoveryRegionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDisasterRecoveryRoleChanged == null
+                                ? 43
+                                : this.timeDisasterRecoveryRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteDisasterRecoveryConfiguration == null
+                                ? 43
+                                : this.remoteDisasterRecoveryConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

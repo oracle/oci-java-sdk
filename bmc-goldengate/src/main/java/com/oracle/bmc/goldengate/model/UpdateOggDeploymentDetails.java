@@ -56,8 +56,7 @@ public final class UpdateOggDeploymentDetails
         /**
          * The password associated with the GoldenGate deployment console username.
          * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
-         * and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-         * This field will be deprecated and replaced by "passwordSecretId".
+         * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
@@ -66,8 +65,7 @@ public final class UpdateOggDeploymentDetails
         /**
          * The password associated with the GoldenGate deployment console username.
          * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
-         * and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-         * This field will be deprecated and replaced by "passwordSecretId".
+         * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
          *
          * @param adminPassword the value to set
          * @return this builder
@@ -175,8 +173,7 @@ public final class UpdateOggDeploymentDetails
     /**
      * The password associated with the GoldenGate deployment console username.
      * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
-     * and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-     * This field will be deprecated and replaced by "passwordSecretId".
+     * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
@@ -185,8 +182,7 @@ public final class UpdateOggDeploymentDetails
     /**
      * The password associated with the GoldenGate deployment console username.
      * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
-     * and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-     * This field will be deprecated and replaced by "passwordSecretId".
+     * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
      *
      * @return the value
      **/
