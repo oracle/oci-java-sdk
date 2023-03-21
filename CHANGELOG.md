@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.57.0 - 2023-03-21
+### Added
+- Support for backup automation integration with the Database Recovery service in the Database service
+- Support for changing the disaster recovery configuration of an autonomous database in remote regions of its disaster recovery association in the Database service
+- Support for creating a remote disaster recovery association clone of an autonomous database in the Database service
+- Support for managed build stages to be configured to use custom shape build runners in the DevOps service
+- Support for listing pre-built functions and creating functions from pre-built functions in the Functions service
+- Support for connections types for database resources of type Amazon S3, HDFS, SQL Server, Java Messaging service, Mongo DB, Oracle NoSQL, and Snowflake in the GoldenGate service
+
+### Breaking Changes
+- The enum value `LAKE_HOUSE_CONNECTION` has been renamed to `LAKE_CONNECTION` in the enum `ModelType` in the models `Connection`, `ConnectionDetails`, `ConnectionSummary`, `CreateConnectionDetails`, `CreateDataAssetDetails`, `DataAssetSummary`, `UpdateConnectionDetails`, `UpdateDataAssetDetails` in the Data Integration service
+- The classes `ConnectionFromLakehouse`, `ConnectionFromLakehouseDetails`, `ConnectionSummaryFromLakehouse`, `CreateConnectionFromLakehouse`, `CreateDataAssetFromLakehouse`, `DataAssetFromLakehouseDetails`, `DataAssetSummaryFromLakehouse`, `UpdateConnectionFromLakehouse`, `UpdateDataAssetFromLakehouse` have been removed from the Data Integration service
+- Return type of method `public com.oracle.bmc.functions.model.FunctionSummary$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.functions.model.Function$LifecycleState` in the Functions service
+- Class `com.oracle.bmc.functions.model.FunctionSummary$LifecycleState` has been removed from the Functions service
+
 ## 2.56.0 - 2023-03-14
 ### Added
 - Support for the Identity Domains service

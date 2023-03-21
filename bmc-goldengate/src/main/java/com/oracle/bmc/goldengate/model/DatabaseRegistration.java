@@ -376,20 +376,20 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * A Private Endpoint IP Address created in the customer's subnet.  A customer
-         * database can expect network traffic initiated by GGS from this IP address and send network traffic
-         * to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize
-         * this IP address in Security Lists or Network Security Groups (NSG) as needed.
+         * A Private Endpoint IP address created in the customer's subnet.
+         * A customer database can expect network traffic initiated by GoldenGate Service from this IP address.
+         * It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.
+         * The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rcePrivateIp")
         private String rcePrivateIp;
 
         /**
-         * A Private Endpoint IP Address created in the customer's subnet.  A customer
-         * database can expect network traffic initiated by GGS from this IP address and send network traffic
-         * to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize
-         * this IP address in Security Lists or Network Security Groups (NSG) as needed.
+         * A Private Endpoint IP address created in the customer's subnet.
+         * A customer database can expect network traffic initiated by GoldenGate Service from this IP address.
+         * It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.
+         * The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
          *
          * @param rcePrivateIp the value to set
          * @return this builder
@@ -426,18 +426,18 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-         * already exist and be available for use by the database.  It must conform to the security
-         * requirements implemented by the database including length, case sensitivity, and so on.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-         * already exist and be available for use by the database.  It must conform to the security
-         * requirements implemented by the database including length, case sensitivity, and so on.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
@@ -448,16 +448,14 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-         * database.
+         * Connect descriptor or Easy Connect Naming method used to connect to a database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
-         * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-         * database.
+         * Connect descriptor or Easy Connect Naming method used to connect to a database.
          *
          * @param connectionString the value to set
          * @return this builder
@@ -510,22 +508,18 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
-         * referenced.
-         * If provided, this will reference a vault which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to manage secrets contained
-         * within this vault.
+         * Refers to the customer's vault OCID.
+         * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+         * to manage secrets contained within this vault.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
-         * referenced.
-         * If provided, this will reference a vault which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to manage secrets contained
-         * within this vault.
+         * Refers to the customer's vault OCID.
+         * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+         * to manage secrets contained within this vault.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -536,22 +530,16 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
-         * referenced.
-         * If provided, this will reference a key which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to utilize this key to
-         * manage secrets.
+         * Refers to the customer's master key OCID.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
-         * referenced.
-         * If provided, this will reference a key which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to utilize this key to
-         * manage secrets.
+         * Refers to the customer's master key OCID.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          * @param keyId the value to set
          * @return this builder
@@ -562,22 +550,16 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
-         * the GGS Secret will be created.
-         * If provided, this will reference a key which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to utilize this Compartment
-         * in which to create a Secret.
+         * The OCID of the compartment where the GoldenGate Secret will be created.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
         private String secretCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
-         * the GGS Secret will be created.
-         * If provided, this will reference a key which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to utilize this Compartment
-         * in which to create a Secret.
+         * The OCID of the compartment where the GoldenGate Secret will be created.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          * @param secretCompartmentId the value to set
          * @return this builder
@@ -588,20 +570,18 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
-         * referenced.
-         * If provided, this will reference a key which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to utilize this Secret
+         * The OCID of the customer's GoldenGate Service Secret.
+         * If provided, it references a key that customers will be required to ensure the policies are established
+         * to permit GoldenGate to use this Secret.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
-         * referenced.
-         * If provided, this will reference a key which the customer will be required to ensure
-         * the policies are established to permit the GoldenGate Service to utilize this Secret
+         * The OCID of the customer's GoldenGate Service Secret.
+         * If provided, it references a key that customers will be required to ensure the policies are established
+         * to permit GoldenGate to use this Secret.
          *
          * @param secretId the value to set
          * @return this builder
@@ -982,20 +962,20 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * A Private Endpoint IP Address created in the customer's subnet.  A customer
-     * database can expect network traffic initiated by GGS from this IP address and send network traffic
-     * to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize
-     * this IP address in Security Lists or Network Security Groups (NSG) as needed.
+     * A Private Endpoint IP address created in the customer's subnet.
+     * A customer database can expect network traffic initiated by GoldenGate Service from this IP address.
+     * It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.
+     * The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rcePrivateIp")
     private final String rcePrivateIp;
 
     /**
-     * A Private Endpoint IP Address created in the customer's subnet.  A customer
-     * database can expect network traffic initiated by GGS from this IP address and send network traffic
-     * to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize
-     * this IP address in Security Lists or Network Security Groups (NSG) as needed.
+     * A Private Endpoint IP address created in the customer's subnet.
+     * A customer database can expect network traffic initiated by GoldenGate Service from this IP address.
+     * It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.
+     * The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      *
      * @return the value
      **/
@@ -1028,18 +1008,18 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-     * already exist and be available for use by the database.  It must conform to the security
-     * requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-     * already exist and be available for use by the database.  It must conform to the security
-     * requirements implemented by the database including length, case sensitivity, and so on.
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
      **/
@@ -1048,16 +1028,14 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-     * database.
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
-     * Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-     * database.
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
      *
      * @return the value
      **/
@@ -1156,22 +1134,18 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
-     * referenced.
-     * If provided, this will reference a vault which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to manage secrets contained
-     * within this vault.
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer vault being
-     * referenced.
-     * If provided, this will reference a vault which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to manage secrets contained
-     * within this vault.
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
      *
      * @return the value
      **/
@@ -1180,22 +1154,16 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
-     * referenced.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this key to
-     * manage secrets.
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer "Master" key being
-     * referenced.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this key to
-     * manage secrets.
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
      **/
@@ -1204,22 +1172,16 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
-     * the GGS Secret will be created.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this Compartment
-     * in which to create a Secret.
+     * The OCID of the compartment where the GoldenGate Secret will be created.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
     private final String secretCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the
-     * the GGS Secret will be created.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this Compartment
-     * in which to create a Secret.
+     * The OCID of the compartment where the GoldenGate Secret will be created.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
      **/
@@ -1228,20 +1190,18 @@ public final class DatabaseRegistration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
-     * referenced.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this Secret
+     * The OCID of the customer's GoldenGate Service Secret.
+     * If provided, it references a key that customers will be required to ensure the policies are established
+     * to permit GoldenGate to use this Secret.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being
-     * referenced.
-     * If provided, this will reference a key which the customer will be required to ensure
-     * the policies are established to permit the GoldenGate Service to utilize this Secret
+     * The OCID of the customer's GoldenGate Service Secret.
+     * If provided, it references a key that customers will be required to ensure the policies are established
+     * to permit GoldenGate to use this Secret.
      *
      * @return the value
      **/

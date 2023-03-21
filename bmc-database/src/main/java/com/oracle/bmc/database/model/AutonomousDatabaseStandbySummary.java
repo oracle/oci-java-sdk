@@ -27,18 +27,21 @@ public final class AutonomousDatabaseStandbySummary
         "lagTimeInSeconds",
         "lifecycleState",
         "lifecycleDetails",
-        "timeDataGuardRoleChanged"
+        "timeDataGuardRoleChanged",
+        "timeDisasterRecoveryRoleChanged"
     })
     public AutonomousDatabaseStandbySummary(
             Integer lagTimeInSeconds,
             LifecycleState lifecycleState,
             String lifecycleDetails,
-            java.util.Date timeDataGuardRoleChanged) {
+            java.util.Date timeDataGuardRoleChanged,
+            java.util.Date timeDisasterRecoveryRoleChanged) {
         super();
         this.lagTimeInSeconds = lagTimeInSeconds;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+        this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,6 +110,23 @@ public final class AutonomousDatabaseStandbySummary
             this.__explicitlySet__.add("timeDataGuardRoleChanged");
             return this;
         }
+        /**
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
+        private java.util.Date timeDisasterRecoveryRoleChanged;
+
+        /**
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * @param timeDisasterRecoveryRoleChanged the value to set
+         * @return this builder
+         **/
+        public Builder timeDisasterRecoveryRoleChanged(
+                java.util.Date timeDisasterRecoveryRoleChanged) {
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            this.__explicitlySet__.add("timeDisasterRecoveryRoleChanged");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -117,7 +137,8 @@ public final class AutonomousDatabaseStandbySummary
                             this.lagTimeInSeconds,
                             this.lifecycleState,
                             this.lifecycleDetails,
-                            this.timeDataGuardRoleChanged);
+                            this.timeDataGuardRoleChanged,
+                            this.timeDisasterRecoveryRoleChanged);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -137,6 +158,9 @@ public final class AutonomousDatabaseStandbySummary
             }
             if (model.wasPropertyExplicitlySet("timeDataGuardRoleChanged")) {
                 this.timeDataGuardRoleChanged(model.getTimeDataGuardRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("timeDisasterRecoveryRoleChanged")) {
+                this.timeDisasterRecoveryRoleChanged(model.getTimeDisasterRecoveryRoleChanged());
             }
             return this;
         }
@@ -276,6 +300,20 @@ public final class AutonomousDatabaseStandbySummary
         return timeDataGuardRoleChanged;
     }
 
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDisasterRecoveryRoleChanged")
+    private final java.util.Date timeDisasterRecoveryRoleChanged;
+
+    /**
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return the value
+     **/
+    public java.util.Date getTimeDisasterRecoveryRoleChanged() {
+        return timeDisasterRecoveryRoleChanged;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -295,6 +333,8 @@ public final class AutonomousDatabaseStandbySummary
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeDataGuardRoleChanged=")
                 .append(String.valueOf(this.timeDataGuardRoleChanged));
+        sb.append(", timeDisasterRecoveryRoleChanged=")
+                .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
         sb.append(")");
         return sb.toString();
     }
@@ -314,6 +354,8 @@ public final class AutonomousDatabaseStandbySummary
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.timeDataGuardRoleChanged, other.timeDataGuardRoleChanged)
+                && java.util.Objects.equals(
+                        this.timeDisasterRecoveryRoleChanged, other.timeDisasterRecoveryRoleChanged)
                 && super.equals(other);
     }
 
@@ -335,6 +377,11 @@ public final class AutonomousDatabaseStandbySummary
                         + (this.timeDataGuardRoleChanged == null
                                 ? 43
                                 : this.timeDataGuardRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDisasterRecoveryRoleChanged == null
+                                ? 43
+                                : this.timeDisasterRecoveryRoleChanged.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

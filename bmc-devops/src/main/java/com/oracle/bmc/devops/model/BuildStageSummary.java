@@ -228,6 +228,15 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("buildRunnerShapeConfig")
+        private BuildRunnerShapeConfig buildRunnerShapeConfig;
+
+        public Builder buildRunnerShapeConfig(BuildRunnerShapeConfig buildRunnerShapeConfig) {
+            this.buildRunnerShapeConfig = buildRunnerShapeConfig;
+            this.__explicitlySet__.add("buildRunnerShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateAccessConfig")
         private NetworkChannel privateAccessConfig;
 
@@ -262,6 +271,7 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
                             this.stageExecutionTimeoutInSeconds,
                             this.buildSourceCollection,
                             this.primaryBuildSource,
+                            this.buildRunnerShapeConfig,
                             this.privateAccessConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -329,6 +339,9 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             if (model.wasPropertyExplicitlySet("primaryBuildSource")) {
                 this.primaryBuildSource(model.getPrimaryBuildSource());
             }
+            if (model.wasPropertyExplicitlySet("buildRunnerShapeConfig")) {
+                this.buildRunnerShapeConfig(model.getBuildRunnerShapeConfig());
+            }
             if (model.wasPropertyExplicitlySet("privateAccessConfig")) {
                 this.privateAccessConfig(model.getPrivateAccessConfig());
             }
@@ -368,6 +381,7 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
             Integer stageExecutionTimeoutInSeconds,
             BuildSourceCollection buildSourceCollection,
             String primaryBuildSource,
+            BuildRunnerShapeConfig buildRunnerShapeConfig,
             NetworkChannel privateAccessConfig) {
         super(
                 id,
@@ -389,6 +403,7 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
         this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
         this.buildSourceCollection = buildSourceCollection;
         this.primaryBuildSource = primaryBuildSource;
+        this.buildRunnerShapeConfig = buildRunnerShapeConfig;
         this.privateAccessConfig = privateAccessConfig;
     }
 
@@ -455,6 +470,13 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
         return primaryBuildSource;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("buildRunnerShapeConfig")
+    private final BuildRunnerShapeConfig buildRunnerShapeConfig;
+
+    public BuildRunnerShapeConfig getBuildRunnerShapeConfig() {
+        return buildRunnerShapeConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("privateAccessConfig")
     private final NetworkChannel privateAccessConfig;
 
@@ -482,6 +504,7 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
                 .append(String.valueOf(this.stageExecutionTimeoutInSeconds));
         sb.append(", buildSourceCollection=").append(String.valueOf(this.buildSourceCollection));
         sb.append(", primaryBuildSource=").append(String.valueOf(this.primaryBuildSource));
+        sb.append(", buildRunnerShapeConfig=").append(String.valueOf(this.buildRunnerShapeConfig));
         sb.append(", privateAccessConfig=").append(String.valueOf(this.privateAccessConfig));
         sb.append(")");
         return sb.toString();
@@ -503,6 +526,8 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
                         this.stageExecutionTimeoutInSeconds, other.stageExecutionTimeoutInSeconds)
                 && java.util.Objects.equals(this.buildSourceCollection, other.buildSourceCollection)
                 && java.util.Objects.equals(this.primaryBuildSource, other.primaryBuildSource)
+                && java.util.Objects.equals(
+                        this.buildRunnerShapeConfig, other.buildRunnerShapeConfig)
                 && java.util.Objects.equals(this.privateAccessConfig, other.privateAccessConfig)
                 && super.equals(other);
     }
@@ -530,6 +555,11 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
                         + (this.primaryBuildSource == null
                                 ? 43
                                 : this.primaryBuildSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.buildRunnerShapeConfig == null
+                                ? 43
+                                : this.buildRunnerShapeConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateAccessConfig == null

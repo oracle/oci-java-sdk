@@ -385,6 +385,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This operation updates the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database, and must be run on the standby side.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDisasterRecoveryConfigurationResponse>
+            changeDisasterRecoveryConfiguration(
+                    ChangeDisasterRecoveryConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDisasterRecoveryConfigurationRequest,
+                                    ChangeDisasterRecoveryConfigurationResponse>
+                            handler);
+
+    /**
      * Moves an Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
      * To move an Exadata Cloud Service infrastructure resource to another compartment, use the  {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation.
      *

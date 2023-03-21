@@ -511,6 +511,7 @@ public final class AutonomousDatabaseDataguardAssociation
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        BackupCopy("BACKUP_COPY"),
         SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**
@@ -660,6 +661,7 @@ public final class AutonomousDatabaseDataguardAssociation
         Primary("PRIMARY"),
         Standby("STANDBY"),
         DisabledStandby("DISABLED_STANDBY"),
+        BackupCopy("BACKUP_COPY"),
         SnapshotStandby("SNAPSHOT_STANDBY"),
 
         /**

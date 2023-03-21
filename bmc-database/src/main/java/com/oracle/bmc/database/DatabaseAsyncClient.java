@@ -1438,6 +1438,65 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDisasterRecoveryConfigurationResponse>
+            changeDisasterRecoveryConfiguration(
+                    ChangeDisasterRecoveryConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDisasterRecoveryConfigurationRequest,
+                                    ChangeDisasterRecoveryConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async changeDisasterRecoveryConfiguration");
+        final ChangeDisasterRecoveryConfigurationRequest interceptedRequest =
+                ChangeDisasterRecoveryConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDisasterRecoveryConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeDisasterRecoveryConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeDisasterRecoveryConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDisasterRecoveryConfigurationResponse>
+                transformer =
+                        ChangeDisasterRecoveryConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDisasterRecoveryConfigurationRequest,
+                        ChangeDisasterRecoveryConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDisasterRecoveryConfigurationRequest,
+                                ChangeDisasterRecoveryConfigurationResponse>,
+                        java.util.concurrent.Future<ChangeDisasterRecoveryConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDisasterRecoveryConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDisasterRecoveryConfigurationRequest,
+                    ChangeDisasterRecoveryConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeExadataInfrastructureCompartmentResponse>
             changeExadataInfrastructureCompartment(
                     ChangeExadataInfrastructureCompartmentRequest request,
