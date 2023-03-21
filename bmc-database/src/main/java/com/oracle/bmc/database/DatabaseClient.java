@@ -794,6 +794,47 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeDisasterRecoveryConfigurationResponse changeDisasterRecoveryConfiguration(
+            ChangeDisasterRecoveryConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDisasterRecoveryConfigurationDetails(),
+                "changeDisasterRecoveryConfigurationDetails is required");
+
+        return clientCall(request, ChangeDisasterRecoveryConfigurationResponse::builder)
+                .logger(LOG, "changeDisasterRecoveryConfiguration")
+                .serviceDetails(
+                        "Database",
+                        "ChangeDisasterRecoveryConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeDisasterRecoveryConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(ChangeDisasterRecoveryConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeDisasterRecoveryConfiguration")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabase.class,
+                        ChangeDisasterRecoveryConfigurationResponse.Builder::autonomousDatabase)
+                .handleResponseHeaderString(
+                        "etag", ChangeDisasterRecoveryConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDisasterRecoveryConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDisasterRecoveryConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
             ChangeExadataInfrastructureCompartmentRequest request) {
         Objects.requireNonNull(

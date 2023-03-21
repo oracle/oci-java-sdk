@@ -28,18 +28,21 @@ public final class DbBackupConfig
         "autoBackupEnabled",
         "recoveryWindowInDays",
         "autoBackupWindow",
-        "backupDestinationDetails"
+        "backupDestinationDetails",
+        "backupDeletionPolicy"
     })
     public DbBackupConfig(
             Boolean autoBackupEnabled,
             Integer recoveryWindowInDays,
             AutoBackupWindow autoBackupWindow,
-            java.util.List<BackupDestinationDetails> backupDestinationDetails) {
+            java.util.List<BackupDestinationDetails> backupDestinationDetails,
+            BackupDeletionPolicy backupDeletionPolicy) {
         super();
         this.autoBackupEnabled = autoBackupEnabled;
         this.recoveryWindowInDays = recoveryWindowInDays;
         this.autoBackupWindow = autoBackupWindow;
         this.backupDestinationDetails = backupDestinationDetails;
+        this.backupDeletionPolicy = backupDeletionPolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -135,6 +138,27 @@ public final class DbBackupConfig
             this.__explicitlySet__.add("backupDestinationDetails");
             return this;
         }
+        /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
+         * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the
+         * backups as per the policy defined for database backups.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDeletionPolicy")
+        private BackupDeletionPolicy backupDeletionPolicy;
+
+        /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
+         * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the
+         * backups as per the policy defined for database backups.
+         *
+         * @param backupDeletionPolicy the value to set
+         * @return this builder
+         */
+        public Builder backupDeletionPolicy(BackupDeletionPolicy backupDeletionPolicy) {
+            this.backupDeletionPolicy = backupDeletionPolicy;
+            this.__explicitlySet__.add("backupDeletionPolicy");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -145,7 +169,8 @@ public final class DbBackupConfig
                             this.autoBackupEnabled,
                             this.recoveryWindowInDays,
                             this.autoBackupWindow,
-                            this.backupDestinationDetails);
+                            this.backupDestinationDetails,
+                            this.backupDeletionPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -165,6 +190,9 @@ public final class DbBackupConfig
             }
             if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
                 this.backupDestinationDetails(model.getBackupDestinationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("backupDeletionPolicy")) {
+                this.backupDeletionPolicy(model.getBackupDeletionPolicy());
             }
             return this;
         }
@@ -325,6 +353,75 @@ public final class DbBackupConfig
         return backupDestinationDetails;
     }
 
+    /**
+     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
+     * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as
+     * per the policy defined for database backups.
+     */
+    public enum BackupDeletionPolicy implements com.oracle.bmc.http.internal.BmcEnum {
+        DeleteImmediately("DELETE_IMMEDIATELY"),
+        DeleteAfterRetentionPeriod("DELETE_AFTER_RETENTION_PERIOD"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackupDeletionPolicy.class);
+
+        private final String value;
+        private static java.util.Map<String, BackupDeletionPolicy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackupDeletionPolicy v : BackupDeletionPolicy.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BackupDeletionPolicy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackupDeletionPolicy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BackupDeletionPolicy', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
+     * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as
+     * per the policy defined for database backups.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDeletionPolicy")
+    private final BackupDeletionPolicy backupDeletionPolicy;
+
+    /**
+     * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for
+     * predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as
+     * per the policy defined for database backups.
+     *
+     * @return the value
+     */
+    public BackupDeletionPolicy getBackupDeletionPolicy() {
+        return backupDeletionPolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -345,6 +442,7 @@ public final class DbBackupConfig
         sb.append(", autoBackupWindow=").append(String.valueOf(this.autoBackupWindow));
         sb.append(", backupDestinationDetails=")
                 .append(String.valueOf(this.backupDestinationDetails));
+        sb.append(", backupDeletionPolicy=").append(String.valueOf(this.backupDeletionPolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -364,6 +462,7 @@ public final class DbBackupConfig
                 && java.util.Objects.equals(this.autoBackupWindow, other.autoBackupWindow)
                 && java.util.Objects.equals(
                         this.backupDestinationDetails, other.backupDestinationDetails)
+                && java.util.Objects.equals(this.backupDeletionPolicy, other.backupDeletionPolicy)
                 && super.equals(other);
     }
 
@@ -387,6 +486,11 @@ public final class DbBackupConfig
                         + (this.backupDestinationDetails == null
                                 ? 43
                                 : this.backupDestinationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDeletionPolicy == null
+                                ? 43
+                                : this.backupDeletionPolicy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

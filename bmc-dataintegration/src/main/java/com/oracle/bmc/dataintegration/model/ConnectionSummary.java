@@ -49,8 +49,8 @@ package com.oracle.bmc.dataintegration.model;
             value = ConnectionSummaryFromMySQL.class,
             name = "MYSQL_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionSummaryFromLakehouse.class,
-            name = "LAKE_HOUSE_CONNECTION"),
+            value = ConnectionSummaryFromLake.class,
+            name = "LAKE_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionSummaryFromBIP.class,
             name = "BIP_CONNECTION"),
@@ -376,7 +376,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
         BipConnection("BIP_CONNECTION"),
-        LakeHouseConnection("LAKE_HOUSE_CONNECTION"),
+        LakeConnection("LAKE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
 

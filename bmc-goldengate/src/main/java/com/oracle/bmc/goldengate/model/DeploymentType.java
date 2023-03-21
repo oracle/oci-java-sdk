@@ -10,6 +10,7 @@ public enum DeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     Ogg("OGG"),
     DatabaseOracle("DATABASE_ORACLE"),
     Bigdata("BIGDATA"),
+    DatabaseMicrosoftSqlserver("DATABASE_MICROSOFT_SQLSERVER"),
     DatabaseMysql("DATABASE_MYSQL"),
     DatabasePostgresql("DATABASE_POSTGRESQL"),
 

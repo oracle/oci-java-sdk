@@ -47,6 +47,8 @@ public final class DatabaseSummary
         "lifecycleState",
         "timeCreated",
         "lastBackupTimestamp",
+        "lastBackupDurationInSeconds",
+        "lastFailedBackupTimestamp",
         "dbBackupConfig",
         "freeformTags",
         "definedTags",
@@ -76,6 +78,8 @@ public final class DatabaseSummary
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date lastBackupTimestamp,
+            Integer lastBackupDurationInSeconds,
+            java.util.Date lastFailedBackupTimestamp,
             DbBackupConfig dbBackupConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -104,6 +108,8 @@ public final class DatabaseSummary
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.lastBackupTimestamp = lastBackupTimestamp;
+        this.lastBackupDurationInSeconds = lastBackupDurationInSeconds;
+        this.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
         this.dbBackupConfig = dbBackupConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -376,6 +382,36 @@ public final class DatabaseSummary
             this.__explicitlySet__.add("lastBackupTimestamp");
             return this;
         }
+        /** The duration when the latest database backup created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastBackupDurationInSeconds")
+        private Integer lastBackupDurationInSeconds;
+
+        /**
+         * The duration when the latest database backup created.
+         *
+         * @param lastBackupDurationInSeconds the value to set
+         * @return this builder
+         */
+        public Builder lastBackupDurationInSeconds(Integer lastBackupDurationInSeconds) {
+            this.lastBackupDurationInSeconds = lastBackupDurationInSeconds;
+            this.__explicitlySet__.add("lastBackupDurationInSeconds");
+            return this;
+        }
+        /** The date and time when the latest database backup failed. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastFailedBackupTimestamp")
+        private java.util.Date lastFailedBackupTimestamp;
+
+        /**
+         * The date and time when the latest database backup failed.
+         *
+         * @param lastFailedBackupTimestamp the value to set
+         * @return this builder
+         */
+        public Builder lastFailedBackupTimestamp(java.util.Date lastFailedBackupTimestamp) {
+            this.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
+            this.__explicitlySet__.add("lastFailedBackupTimestamp");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
         private DbBackupConfig dbBackupConfig;
@@ -612,6 +648,8 @@ public final class DatabaseSummary
                             this.lifecycleState,
                             this.timeCreated,
                             this.lastBackupTimestamp,
+                            this.lastBackupDurationInSeconds,
+                            this.lastFailedBackupTimestamp,
                             this.dbBackupConfig,
                             this.freeformTags,
                             this.definedTags,
@@ -676,6 +714,12 @@ public final class DatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("lastBackupTimestamp")) {
                 this.lastBackupTimestamp(model.getLastBackupTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("lastBackupDurationInSeconds")) {
+                this.lastBackupDurationInSeconds(model.getLastBackupDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("lastFailedBackupTimestamp")) {
+                this.lastFailedBackupTimestamp(model.getLastFailedBackupTimestamp());
             }
             if (model.wasPropertyExplicitlySet("dbBackupConfig")) {
                 this.dbBackupConfig(model.getDbBackupConfig());
@@ -1006,6 +1050,32 @@ public final class DatabaseSummary
         return lastBackupTimestamp;
     }
 
+    /** The duration when the latest database backup created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastBackupDurationInSeconds")
+    private final Integer lastBackupDurationInSeconds;
+
+    /**
+     * The duration when the latest database backup created.
+     *
+     * @return the value
+     */
+    public Integer getLastBackupDurationInSeconds() {
+        return lastBackupDurationInSeconds;
+    }
+
+    /** The date and time when the latest database backup failed. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastFailedBackupTimestamp")
+    private final java.util.Date lastFailedBackupTimestamp;
+
+    /**
+     * The date and time when the latest database backup failed.
+     *
+     * @return the value
+     */
+    public java.util.Date getLastFailedBackupTimestamp() {
+        return lastFailedBackupTimestamp;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
     private final DbBackupConfig dbBackupConfig;
 
@@ -1222,6 +1292,10 @@ public final class DatabaseSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lastBackupTimestamp=").append(String.valueOf(this.lastBackupTimestamp));
+        sb.append(", lastBackupDurationInSeconds=")
+                .append(String.valueOf(this.lastBackupDurationInSeconds));
+        sb.append(", lastFailedBackupTimestamp=")
+                .append(String.valueOf(this.lastFailedBackupTimestamp));
         sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1266,6 +1340,10 @@ public final class DatabaseSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lastBackupTimestamp, other.lastBackupTimestamp)
+                && java.util.Objects.equals(
+                        this.lastBackupDurationInSeconds, other.lastBackupDurationInSeconds)
+                && java.util.Objects.equals(
+                        this.lastFailedBackupTimestamp, other.lastFailedBackupTimestamp)
                 && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1316,6 +1394,16 @@ public final class DatabaseSummary
                         + (this.lastBackupTimestamp == null
                                 ? 43
                                 : this.lastBackupTimestamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastBackupDurationInSeconds == null
+                                ? 43
+                                : this.lastBackupDurationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastFailedBackupTimestamp == null
+                                ? 43
+                                : this.lastFailedBackupTimestamp.hashCode());
         result =
                 (result * PRIME)
                         + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());

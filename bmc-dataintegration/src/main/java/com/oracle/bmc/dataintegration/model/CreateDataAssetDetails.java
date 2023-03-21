@@ -28,6 +28,9 @@ package com.oracle.bmc.dataintegration.model;
             value = CreateDataAssetFromMySQL.class,
             name = "MYSQL_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDataAssetFromLake.class,
+            name = "LAKE_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDataAssetFromOracle.class,
             name = "ORACLE_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -42,9 +45,6 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDataAssetFromFusionApp.class,
             name = "FUSION_APP_DATA_ASSET"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDataAssetFromLakehouse.class,
-            name = "LAKE_HOUSE_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDataAssetFromAtp.class,
             name = "ORACLE_ATP_DATA_ASSET"),
@@ -294,7 +294,7 @@ public class CreateDataAssetDetails
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
-        LakeHouseDataAsset("LAKE_HOUSE_DATA_ASSET"),
+        LakeDataAsset("LAKE_DATA_ASSET"),
         RestDataAsset("REST_DATA_ASSET"),
         ;
 

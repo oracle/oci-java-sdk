@@ -29,6 +29,7 @@ public final class FunctionSummary
         "lifecycleState",
         "image",
         "imageDigest",
+        "sourceDetails",
         "memoryInMBs",
         "timeoutInSeconds",
         "provisionedConcurrencyConfig",
@@ -44,9 +45,10 @@ public final class FunctionSummary
             String displayName,
             String applicationId,
             String compartmentId,
-            LifecycleState lifecycleState,
+            Function.LifecycleState lifecycleState,
             String image,
             String imageDigest,
+            FunctionSourceDetails sourceDetails,
             Long memoryInMBs,
             Integer timeoutInSeconds,
             FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig,
@@ -64,6 +66,7 @@ public final class FunctionSummary
         this.lifecycleState = lifecycleState;
         this.image = image;
         this.imageDigest = imageDigest;
+        this.sourceDetails = sourceDetails;
         this.memoryInMBs = memoryInMBs;
         this.timeoutInSeconds = timeoutInSeconds;
         this.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
@@ -147,7 +150,7 @@ public final class FunctionSummary
         }
         /** The current state of the function. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private Function.LifecycleState lifecycleState;
 
         /**
          * The current state of the function.
@@ -155,7 +158,7 @@ public final class FunctionSummary
          * @param lifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(Function.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -202,6 +205,15 @@ public final class FunctionSummary
         public Builder imageDigest(String imageDigest) {
             this.imageDigest = imageDigest;
             this.__explicitlySet__.add("imageDigest");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private FunctionSourceDetails sourceDetails;
+
+        public Builder sourceDetails(FunctionSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
             return this;
         }
         /** Maximum usable memory for the function (MiB). */
@@ -383,6 +395,7 @@ public final class FunctionSummary
                             this.lifecycleState,
                             this.image,
                             this.imageDigest,
+                            this.sourceDetails,
                             this.memoryInMBs,
                             this.timeoutInSeconds,
                             this.provisionedConcurrencyConfig,
@@ -420,6 +433,9 @@ public final class FunctionSummary
             }
             if (model.wasPropertyExplicitlySet("imageDigest")) {
                 this.imageDigest(model.getImageDigest());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
             }
             if (model.wasPropertyExplicitlySet("memoryInMBs")) {
                 this.memoryInMBs(model.getMemoryInMBs());
@@ -522,66 +538,15 @@ public final class FunctionSummary
     }
 
     /** The current state of the function. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
-        Creating("CREATING"),
-        Active("ACTIVE"),
-        Inactive("INACTIVE"),
-        Updating("UPDATING"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-        Failed("FAILED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /** The current state of the function. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleState lifecycleState;
+    private final Function.LifecycleState lifecycleState;
 
     /**
      * The current state of the function.
      *
      * @return the value
      */
-    public LifecycleState getLifecycleState() {
+    public Function.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
@@ -623,6 +588,13 @@ public final class FunctionSummary
      */
     public String getImageDigest() {
         return imageDigest;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    private final FunctionSourceDetails sourceDetails;
+
+    public FunctionSourceDetails getSourceDetails() {
+        return sourceDetails;
     }
 
     /** Maximum usable memory for the function (MiB). */
@@ -792,6 +764,7 @@ public final class FunctionSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", memoryInMBs=").append(String.valueOf(this.memoryInMBs));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", provisionedConcurrencyConfig=")
@@ -823,6 +796,7 @@ public final class FunctionSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.image, other.image)
                 && java.util.Objects.equals(this.imageDigest, other.imageDigest)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.memoryInMBs, other.memoryInMBs)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(
@@ -853,6 +827,9 @@ public final class FunctionSummary
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
         result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
         result = (result * PRIME) + (this.memoryInMBs == null ? 43 : this.memoryInMBs.hashCode());
         result =
                 (result * PRIME)

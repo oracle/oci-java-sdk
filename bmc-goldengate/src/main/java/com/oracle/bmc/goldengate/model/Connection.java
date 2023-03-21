@@ -29,11 +29,11 @@ package com.oracle.bmc.goldengate.model;
             value = PostgresqlConnection.class,
             name = "POSTGRESQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OciObjectStorageConnection.class,
-            name = "OCI_OBJECT_STORAGE"),
+            value = JavaMessageServiceConnection.class,
+            name = "JAVA_MESSAGE_SERVICE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = KafkaSchemaRegistryConnection.class,
-            name = "KAFKA_SCHEMA_REGISTRY"),
+            value = SnowflakeConnection.class,
+            name = "SNOWFLAKE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoldenGateConnection.class,
             name = "GOLDENGATE"),
@@ -41,11 +41,32 @@ package com.oracle.bmc.goldengate.model;
             value = MysqlConnection.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AmazonS3Connection.class,
+            name = "AMAZON_S3"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OracleConnection.class,
             name = "ORACLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureDataLakeStorageConnection.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MongoDbConnection.class,
+            name = "MONGODB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HdfsConnection.class,
+            name = "HDFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OciObjectStorageConnection.class,
+            name = "OCI_OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = KafkaSchemaRegistryConnection.class,
+            name = "KAFKA_SCHEMA_REGISTRY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MicrosoftSqlserverConnection.class,
+            name = "MICROSOFT_SQLSERVER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleNosqlConnection.class,
+            name = "ORACLE_NOSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureSynapseConnection.class,
             name = "AZURE_SYNAPSE_ANALYTICS")
@@ -348,19 +369,17 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer vault being referenced. If provided, this will reference a vault which the customer
-     * will be required to ensure the policies are established to permit the GoldenGate Service to
-     * manage secrets contained within this vault.
+     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
+     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
+     * within this vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer vault being referenced. If provided, this will reference a vault which the customer
-     * will be required to ensure the policies are established to permit the GoldenGate Service to
-     * manage secrets contained within this vault.
+     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
+     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
+     * within this vault.
      *
      * @return the value
      */
@@ -369,19 +388,15 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer "Master" key being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
+     * Customers must add policies to permit GoldenGate to use this key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * customer "Master" key being referenced. If provided, this will reference a key which the
-     * customer will be required to ensure the policies are established to permit the GoldenGate
-     * Service to utilize this key to manage secrets.
+     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
+     * Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
      */
@@ -407,15 +422,17 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this
-     * connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this
+     * connection's privateIp. Customers may optionally set up ingress security rules to restrict
+     * traffic from these IP addresses.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
     private final java.util.List<IngressIpDetails> ingressIps;
 
     /**
-     * List of ingress IP addresses, from where the GoldenGate deployment connects to this
-     * connection's privateIp.
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this
+     * connection's privateIp. Customers may optionally set up ingress security rules to restrict
+     * traffic from these IP addresses.
      *
      * @return the value
      */

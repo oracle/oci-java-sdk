@@ -166,6 +166,37 @@ public interface FunctionsManagement extends AutoCloseable {
     GetFunctionResponse getFunction(GetFunctionRequest request);
 
     /**
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPbfListing API.
+     */
+    GetPbfListingResponse getPbfListing(GetPbfListingRequest request);
+
+    /**
+     * Gets a PbfListingVersion by identifier for a PbfListing.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetPbfListingVersion API.
+     */
+    GetPbfListingVersionResponse getPbfListingVersion(GetPbfListingVersionRequest request);
+
+    /**
      * Lists applications for a compartment.
      *
      * @param request The request object containing the details to send
@@ -195,6 +226,58 @@ public interface FunctionsManagement extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctions API.
      */
     ListFunctionsResponse listFunctions(ListFunctionsRequest request);
+
+    /**
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a
+     * PbfListingVersionCollection containing an array of PbfListingVersionSummary response models.
+     *
+     * <p>Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an
+     * exception shall be thrown.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPbfListingVersions API.
+     */
+    ListPbfListingVersionsResponse listPbfListingVersions(ListPbfListingVersionsRequest request);
+
+    /**
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a
+     * PbfListingCollection containing an array of PbfListingSummary response models.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPbfListings
+     *     API.
+     */
+    ListPbfListingsResponse listPbfListings(ListPbfListingsRequest request);
+
+    /**
+     * Returns a list of Triggers.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListTriggersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTriggers API.
+     */
+    ListTriggersResponse listTriggers(ListTriggersRequest request);
 
     /**
      * Modifies an application

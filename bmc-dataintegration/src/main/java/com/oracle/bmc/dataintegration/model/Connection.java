@@ -34,9 +34,6 @@ package com.oracle.bmc.dataintegration.model;
             value = ConnectionFromOracle.class,
             name = "ORACLEDB_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromLakehouse.class,
-            name = "LAKE_HOUSE_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromAmazonS3.class,
             name = "AMAZON_S3_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -54,6 +51,9 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromRestNoAuth.class,
             name = "REST_NO_AUTH_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromLake.class,
+            name = "LAKE_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromRestBasicAuth.class,
             name = "REST_BASIC_AUTH_CONNECTION")
@@ -376,7 +376,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
         BipConnection("BIP_CONNECTION"),
-        LakeHouseConnection("LAKE_HOUSE_CONNECTION"),
+        LakeConnection("LAKE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
 

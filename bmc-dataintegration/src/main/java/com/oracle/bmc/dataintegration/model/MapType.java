@@ -108,10 +108,16 @@ public final class MapType extends BaseType {
             this.__explicitlySet__.add("valueElementType");
             return this;
         }
-
+        /** Defines whether null values are allowed. */
         @com.fasterxml.jackson.annotation.JsonProperty("containsNull")
         private Boolean containsNull;
 
+        /**
+         * Defines whether null values are allowed.
+         *
+         * @param containsNull the value to set
+         * @return this builder
+         */
         public Builder containsNull(Boolean containsNull) {
             this.containsNull = containsNull;
             this.__explicitlySet__.add("containsNull");
@@ -224,9 +230,15 @@ public final class MapType extends BaseType {
         return valueElementType;
     }
 
+    /** Defines whether null values are allowed. */
     @com.fasterxml.jackson.annotation.JsonProperty("containsNull")
     private final Boolean containsNull;
 
+    /**
+     * Defines whether null values are allowed.
+     *
+     * @return the value
+     */
     public Boolean getContainsNull() {
         return containsNull;
     }

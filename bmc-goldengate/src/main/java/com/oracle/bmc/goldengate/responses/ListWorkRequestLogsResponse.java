@@ -9,16 +9,14 @@ import com.oracle.bmc.goldengate.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * The page token represents the page to start retrieving results. This is usually retrieved
+     * from a previous list call.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * The page token represents the page to start retrieving results. This is usually retrieved
+     * from a previous list call.
      *
      * @return the value
      */
@@ -92,16 +90,14 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * The page token represents the page to start retrieving results. This is usually retrieved
+         * from a previous list call.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * The page token represents the page to start retrieving results. This is usually retrieved
+         * from a previous list call.
          *
          * @param opcNextPage the value to set
          * @return this builder

@@ -190,10 +190,16 @@ public final class CreateTaskFromRestTask extends CreateTaskDetails {
             this.__explicitlySet__.add("methodType");
             return this;
         }
-
+        /** Headers data for the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private Object headers;
 
+        /**
+         * Headers data for the request.
+         *
+         * @param headers the value to set
+         * @return this builder
+         */
         public Builder headers(Object headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
@@ -569,9 +575,15 @@ public final class CreateTaskFromRestTask extends CreateTaskDetails {
         return methodType;
     }
 
+    /** Headers data for the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final Object headers;
 
+    /**
+     * Headers data for the request.
+     *
+     * @return the value
+     */
     public Object getHeaders() {
         return headers;
     }
