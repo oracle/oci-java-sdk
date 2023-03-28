@@ -8593,7 +8593,7 @@ public class DatabaseClient implements Database {
                         "Database",
                         "ListDbSystemComputePerformances",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemComputePerformances");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
                 transformer =
@@ -8745,7 +8745,7 @@ public class DatabaseClient implements Database {
                         "Database",
                         "ListDbSystemStoragePerformances",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemStoragePerformances");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
                 transformer =

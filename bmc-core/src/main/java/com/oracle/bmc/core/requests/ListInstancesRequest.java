@@ -51,6 +51,23 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return capacityReservationId;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
+     * A compute cluster is a remote direct memory access (RDMA) network group.
+     * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     *
+     */
+    private String computeClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
+     * A compute cluster is a remote direct memory access (RDMA) network group.
+     * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     *
+     */
+    public String getComputeClusterId() {
+        return computeClusterId;
+    }
+    /**
      * A filter to return only resources that match the given display name exactly.
      *
      */
@@ -300,6 +317,27 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
+         * A compute cluster is a remote direct memory access (RDMA) network group.
+         * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+         *
+         */
+        private String computeClusterId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
+         * A compute cluster is a remote direct memory access (RDMA) network group.
+         * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+         *
+         * @param computeClusterId the value to set
+         * @return this builder instance
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            return this;
+        }
+
+        /**
          * A filter to return only resources that match the given display name exactly.
          *
          */
@@ -463,6 +501,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             compartmentId(o.getCompartmentId());
             availabilityDomain(o.getAvailabilityDomain());
             capacityReservationId(o.getCapacityReservationId());
+            computeClusterId(o.getComputeClusterId());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());
@@ -504,6 +543,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.compartmentId = compartmentId;
             request.availabilityDomain = availabilityDomain;
             request.capacityReservationId = capacityReservationId;
+            request.computeClusterId = computeClusterId;
             request.displayName = displayName;
             request.limit = limit;
             request.page = page;
@@ -511,7 +551,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListInstancesRequest(compartmentId, availabilityDomain, capacityReservationId, displayName, limit, page, sortBy, sortOrder, lifecycleState);
+            // new ListInstancesRequest(compartmentId, availabilityDomain, capacityReservationId, computeClusterId, displayName, limit, page, sortBy, sortOrder, lifecycleState);
         }
     }
 
@@ -524,6 +564,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .compartmentId(compartmentId)
                 .availabilityDomain(availabilityDomain)
                 .capacityReservationId(capacityReservationId)
+                .computeClusterId(computeClusterId)
                 .displayName(displayName)
                 .limit(limit)
                 .page(page)
@@ -548,6 +589,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(",computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -572,6 +614,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -597,6 +640,9 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

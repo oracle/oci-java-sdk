@@ -10861,7 +10861,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         "Database",
                         "ListDbSystemComputePerformances",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances");
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemComputePerformances");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDbSystemComputePerformancesResponse>
                 transformer =
@@ -11060,7 +11060,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         "Database",
                         "ListDbSystemStoragePerformances",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances");
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemStoragePerformances");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDbSystemStoragePerformancesResponse>
                 transformer =

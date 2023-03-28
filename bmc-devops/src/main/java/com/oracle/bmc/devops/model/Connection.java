@@ -58,6 +58,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "projectId",
         "timeCreated",
         "timeUpdated",
+        "lastConnectionValidationResult",
         "lifecycleDetails",
         "lifecycleState",
         "freeformTags",
@@ -72,6 +73,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String projectId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            ConnectionValidationResult lastConnectionValidationResult,
             String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
@@ -85,6 +87,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.projectId = projectId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.lastConnectionValidationResult = lastConnectionValidationResult;
         this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
@@ -188,6 +191,13 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("lastConnectionValidationResult")
+    private final ConnectionValidationResult lastConnectionValidationResult;
+
+    public ConnectionValidationResult getLastConnectionValidationResult() {
+        return lastConnectionValidationResult;
     }
 
     /**
@@ -329,6 +339,8 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lastConnectionValidationResult=")
+                .append(String.valueOf(this.lastConnectionValidationResult));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -355,6 +367,8 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(
+                        this.lastConnectionValidationResult, other.lastConnectionValidationResult)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -376,6 +390,11 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastConnectionValidationResult == null
+                                ? 43
+                                : this.lastConnectionValidationResult.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

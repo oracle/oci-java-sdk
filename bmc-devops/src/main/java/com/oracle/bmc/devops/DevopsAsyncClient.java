@@ -4649,4 +4649,51 @@ public class DevopsAsyncClient implements DevopsAsync {
             return futureSupplier.apply(handlerToUse);
         }
     }
+
+    @Override
+    public java.util.concurrent.Future<ValidateConnectionResponse> validateConnection(
+            ValidateConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateConnectionRequest, ValidateConnectionResponse>
+                    handler) {
+        LOG.trace("Called async validateConnection");
+        final ValidateConnectionRequest interceptedRequest =
+                ValidateConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Devops",
+                        "ValidateConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/ValidateConnection");
+        final java.util.function.Function<javax.ws.rs.core.Response, ValidateConnectionResponse>
+                transformer =
+                        ValidateConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ValidateConnectionRequest, ValidateConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateConnectionRequest, ValidateConnectionResponse>,
+                        java.util.concurrent.Future<ValidateConnectionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateConnectionRequest, ValidateConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
 }
