@@ -28,6 +28,8 @@ public final class ClusterNetwork
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "hpcIslandId",
+        "networkBlockIds",
         "definedTags",
         "displayName",
         "freeformTags",
@@ -40,6 +42,8 @@ public final class ClusterNetwork
     public ClusterNetwork(
             String id,
             String compartmentId,
+            String hpcIslandId,
+            java.util.List<String> networkBlockIds,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
@@ -51,6 +55,8 @@ public final class ClusterNetwork
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.hpcIslandId = hpcIslandId;
+        this.networkBlockIds = networkBlockIds;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -99,6 +105,40 @@ public final class ClusterNetwork
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the hpc island used by the cluster network.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
+        private String hpcIslandId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the hpc island used by the cluster network.
+         *
+         * @param hpcIslandId the value to set
+         * @return this builder
+         */
+        public Builder hpcIslandId(String hpcIslandId) {
+            this.hpcIslandId = hpcIslandId;
+            this.__explicitlySet__.add("hpcIslandId");
+            return this;
+        }
+        /** The list of network block OCIDs of the HPC island. */
+        @com.fasterxml.jackson.annotation.JsonProperty("networkBlockIds")
+        private java.util.List<String> networkBlockIds;
+
+        /**
+         * The list of network block OCIDs of the HPC island.
+         *
+         * @param networkBlockIds the value to set
+         * @return this builder
+         */
+        public Builder networkBlockIds(java.util.List<String> networkBlockIds) {
+            this.networkBlockIds = networkBlockIds;
+            this.__explicitlySet__.add("networkBlockIds");
             return this;
         }
         /**
@@ -272,6 +312,8 @@ public final class ClusterNetwork
                     new ClusterNetwork(
                             this.id,
                             this.compartmentId,
+                            this.hpcIslandId,
+                            this.networkBlockIds,
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
@@ -293,6 +335,12 @@ public final class ClusterNetwork
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("hpcIslandId")) {
+                this.hpcIslandId(model.getHpcIslandId());
+            }
+            if (model.wasPropertyExplicitlySet("networkBlockIds")) {
+                this.networkBlockIds(model.getNetworkBlockIds());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -363,6 +411,36 @@ public final class ClusterNetwork
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the hpc island used by the cluster network.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
+    private final String hpcIslandId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the hpc island used by the cluster network.
+     *
+     * @return the value
+     */
+    public String getHpcIslandId() {
+        return hpcIslandId;
+    }
+
+    /** The list of network block OCIDs of the HPC island. */
+    @com.fasterxml.jackson.annotation.JsonProperty("networkBlockIds")
+    private final java.util.List<String> networkBlockIds;
+
+    /**
+     * The list of network block OCIDs of the HPC island.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNetworkBlockIds() {
+        return networkBlockIds;
     }
 
     /**
@@ -578,6 +656,8 @@ public final class ClusterNetwork
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", hpcIslandId=").append(String.valueOf(this.hpcIslandId));
+        sb.append(", networkBlockIds=").append(String.valueOf(this.networkBlockIds));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -602,6 +682,8 @@ public final class ClusterNetwork
         ClusterNetwork other = (ClusterNetwork) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.hpcIslandId, other.hpcIslandId)
+                && java.util.Objects.equals(this.networkBlockIds, other.networkBlockIds)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -622,6 +704,10 @@ public final class ClusterNetwork
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.hpcIslandId == null ? 43 : this.hpcIslandId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkBlockIds == null ? 43 : this.networkBlockIds.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

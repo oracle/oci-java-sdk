@@ -329,6 +329,44 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeClusterCompartmentResponse>
+            changeComputeClusterCompartment(
+                    ChangeComputeClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeClusterCompartmentRequest,
+                                    ChangeComputeClusterCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeClusterCompartmentDetails(),
+                "changeComputeClusterCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeClusterCompartmentResponse::builder)
+                .logger(LOG, "changeComputeClusterCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ChangeComputeClusterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeClusterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeClusters")
+                .appendPathParam(request.getComputeClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request,
@@ -563,6 +601,39 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeClusterResponse> createComputeCluster(
+            CreateComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeClusterRequest, CreateComputeClusterResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateComputeClusterDetails(),
+                "createComputeClusterDetails is required");
+
+        return clientCall(request, CreateComputeClusterResponse::builder)
+                .logger(LOG, "createComputeCluster")
+                .serviceDetails(
+                        "Compute",
+                        "CreateComputeCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/CreateComputeCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeClusters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCluster.class,
+                        CreateComputeClusterResponse.Builder::computeCluster)
+                .handleResponseHeaderString("etag", CreateComputeClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateComputeClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
                     CreateComputeImageCapabilitySchemaRequest request,
@@ -764,6 +835,34 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteComputeClusterResponse> deleteComputeCluster(
+            DeleteComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeClusterRequest, DeleteComputeClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
+
+        return clientCall(request, DeleteComputeClusterResponse::builder)
+                .logger(LOG, "deleteComputeCluster")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/DeleteComputeCluster")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeClusters")
+                .appendPathParam(request.getComputeClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteComputeClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1199,6 +1298,37 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeCapacityReservationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeClusterResponse> getComputeCluster(
+            GetComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeClusterRequest, GetComputeClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
+
+        return clientCall(request, GetComputeClusterResponse::builder)
+                .logger(LOG, "getComputeCluster")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/GetComputeCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeClusters")
+                .appendPathParam(request.getComputeClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCluster.class,
+                        GetComputeClusterResponse.Builder::computeCluster)
+                .handleResponseHeaderString("etag", GetComputeClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2049,6 +2179,43 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeClustersResponse> listComputeClusters(
+            ListComputeClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeClustersRequest, ListComputeClustersResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeClustersResponse::builder)
+                .logger(LOG, "listComputeClusters")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ListComputeClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeClustersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeClusters")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeClusterCollection.class,
+                        ListComputeClustersResponse.Builder::computeClusterCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeClustersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeClustersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
             listComputeGlobalImageCapabilitySchemaVersions(
                     ListComputeGlobalImageCapabilitySchemaVersionsRequest request,
@@ -2540,6 +2707,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendPathParam("instances")
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("capacityReservationId", request.getCapacityReservationId())
+                .appendQueryParam("computeClusterId", request.getComputeClusterId())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
@@ -2754,6 +2922,43 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateComputeCapacityReservationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeClusterResponse> updateComputeCluster(
+            UpdateComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeClusterRequest, UpdateComputeClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeClusterDetails(),
+                "updateComputeClusterDetails is required");
+
+        return clientCall(request, UpdateComputeClusterResponse::builder)
+                .logger(LOG, "updateComputeCluster")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/UpdateComputeCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeClusters")
+                .appendPathParam(request.getComputeClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCluster.class,
+                        UpdateComputeClusterResponse.Builder::computeCluster)
+                .handleResponseHeaderString("etag", UpdateComputeClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateComputeClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

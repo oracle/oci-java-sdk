@@ -27,6 +27,7 @@ public final class AutonomousDatabase
         "compartmentId",
         "lifecycleState",
         "lifecycleDetails",
+        "additionalDatabaseStatus",
         "kmsKeyId",
         "vaultId",
         "kmsKeyLifecycleDetails",
@@ -131,6 +132,7 @@ public final class AutonomousDatabase
             String compartmentId,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            java.util.List<String> additionalDatabaseStatus,
             String kmsKeyId,
             String vaultId,
             String kmsKeyLifecycleDetails,
@@ -234,6 +236,7 @@ public final class AutonomousDatabase
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.additionalDatabaseStatus = additionalDatabaseStatus;
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
         this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
@@ -402,6 +405,35 @@ public final class AutonomousDatabase
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
+         * Additional details about the status of the database, such as the progress of a backup or
+         * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock
+         * console functionality but will not be published in the SDK or documentation. It will be
+         * present in responses, so deprecating will require coordination to ensure we do not break
+         * customers if they begin relying on this field. Please see
+         * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
+         * regarding the motivation of this field and the longer term plan.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalDatabaseStatus")
+        private java.util.List<String> additionalDatabaseStatus;
+
+        /**
+         * Additional details about the status of the database, such as the progress of a backup or
+         * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock
+         * console functionality but will not be published in the SDK or documentation. It will be
+         * present in responses, so deprecating will require coordination to ensure we do not break
+         * customers if they begin relying on this field. Please see
+         * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
+         * regarding the motivation of this field and the longer term plan.
+         *
+         * @param additionalDatabaseStatus the value to set
+         * @return this builder
+         */
+        public Builder additionalDatabaseStatus(java.util.List<String> additionalDatabaseStatus) {
+            this.additionalDatabaseStatus = additionalDatabaseStatus;
+            this.__explicitlySet__.add("additionalDatabaseStatus");
             return this;
         }
         /**
@@ -2387,6 +2419,7 @@ public final class AutonomousDatabase
                             this.compartmentId,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.additionalDatabaseStatus,
                             this.kmsKeyId,
                             this.vaultId,
                             this.kmsKeyLifecycleDetails,
@@ -2504,6 +2537,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("additionalDatabaseStatus")) {
+                this.additionalDatabaseStatus(model.getAdditionalDatabaseStatus());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
@@ -2939,6 +2975,33 @@ public final class AutonomousDatabase
      */
     public String getLifecycleDetails() {
         return lifecycleDetails;
+    }
+
+    /**
+     * Additional details about the status of the database, such as the progress of a backup or
+     * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock console
+     * functionality but will not be published in the SDK or documentation. It will be present in
+     * responses, so deprecating will require coordination to ensure we do not break customers if
+     * they begin relying on this field. Please see
+     * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
+     * regarding the motivation of this field and the longer term plan.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalDatabaseStatus")
+    private final java.util.List<String> additionalDatabaseStatus;
+
+    /**
+     * Additional details about the status of the database, such as the progress of a backup or
+     * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock console
+     * functionality but will not be published in the SDK or documentation. It will be present in
+     * responses, so deprecating will require coordination to ensure we do not break customers if
+     * they begin relying on this field. Please see
+     * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
+     * regarding the motivation of this field and the longer term plan.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getAdditionalDatabaseStatus() {
+        return additionalDatabaseStatus;
     }
 
     /**
@@ -5500,6 +5563,8 @@ public final class AutonomousDatabase
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", additionalDatabaseStatus=")
+                .append(String.valueOf(this.additionalDatabaseStatus));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyLifecycleDetails=").append(String.valueOf(this.kmsKeyLifecycleDetails));
@@ -5645,6 +5710,8 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.additionalDatabaseStatus, other.additionalDatabaseStatus)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(
@@ -5797,6 +5864,11 @@ public final class AutonomousDatabase
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalDatabaseStatus == null
+                                ? 43
+                                : this.additionalDatabaseStatus.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result =

@@ -90,6 +90,16 @@ public final class BitbucketServerTokenConnectionSummary extends ConnectionSumma
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastConnectionValidationResult")
+        private ConnectionValidationResult lastConnectionValidationResult;
+
+        public Builder lastConnectionValidationResult(
+                ConnectionValidationResult lastConnectionValidationResult) {
+            this.lastConnectionValidationResult = lastConnectionValidationResult;
+            this.__explicitlySet__.add("lastConnectionValidationResult");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -188,6 +198,7 @@ public final class BitbucketServerTokenConnectionSummary extends ConnectionSumma
                             this.projectId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.lastConnectionValidationResult,
                             this.lifecycleDetails,
                             this.lifecycleState,
                             this.freeformTags,
@@ -224,6 +235,9 @@ public final class BitbucketServerTokenConnectionSummary extends ConnectionSumma
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lastConnectionValidationResult")) {
+                this.lastConnectionValidationResult(model.getLastConnectionValidationResult());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -271,6 +285,7 @@ public final class BitbucketServerTokenConnectionSummary extends ConnectionSumma
             String projectId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            ConnectionValidationResult lastConnectionValidationResult,
             String lifecycleDetails,
             Connection.LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
@@ -287,6 +302,7 @@ public final class BitbucketServerTokenConnectionSummary extends ConnectionSumma
                 projectId,
                 timeCreated,
                 timeUpdated,
+                lastConnectionValidationResult,
                 lifecycleDetails,
                 lifecycleState,
                 freeformTags,

@@ -444,14 +444,14 @@ public final class DbSystemShapeSummary
         }
         /**
          * The maximum number of CPU cores per database node that can be enabled for this shape.
-         * Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
+         * Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
         private Integer availableCoreCountPerNode;
 
         /**
          * The maximum number of CPU cores per database node that can be enabled for this shape.
-         * Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
+         * Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
          *
          * @param availableCoreCountPerNode the value to set
          * @return this builder
@@ -921,14 +921,14 @@ public final class DbSystemShapeSummary
 
     /**
      * The maximum number of CPU cores per database node that can be enabled for this shape. Only
-     * applicable to the flex Exadata shape and ExaCC Elastic shapes.
+     * applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
     private final Integer availableCoreCountPerNode;
 
     /**
      * The maximum number of CPU cores per database node that can be enabled for this shape. Only
-     * applicable to the flex Exadata shape and ExaCC Elastic shapes.
+     * applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
      *
      * @return the value
      */

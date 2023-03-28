@@ -27,17 +27,20 @@ public final class InstanceReservationConfigDetails
         "instanceShape",
         "instanceShapeConfig",
         "faultDomain",
+        "clusterConfig",
         "reservedCount"
     })
     public InstanceReservationConfigDetails(
             String instanceShape,
             InstanceReservationShapeConfigDetails instanceShapeConfig,
             String faultDomain,
+            ClusterConfigDetails clusterConfig,
             Long reservedCount) {
         super();
         this.instanceShape = instanceShape;
         this.instanceShapeConfig = instanceShapeConfig;
         this.faultDomain = faultDomain;
+        this.clusterConfig = clusterConfig;
         this.reservedCount = reservedCount;
     }
 
@@ -115,6 +118,15 @@ public final class InstanceReservationConfigDetails
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterConfig")
+        private ClusterConfigDetails clusterConfig;
+
+        public Builder clusterConfig(ClusterConfigDetails clusterConfig) {
+            this.clusterConfig = clusterConfig;
+            this.__explicitlySet__.add("clusterConfig");
+            return this;
+        }
         /** The total number of instances that can be launched from the capacity configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
         private Long reservedCount;
@@ -140,6 +152,7 @@ public final class InstanceReservationConfigDetails
                             this.instanceShape,
                             this.instanceShapeConfig,
                             this.faultDomain,
+                            this.clusterConfig,
                             this.reservedCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -157,6 +170,9 @@ public final class InstanceReservationConfigDetails
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterConfig")) {
+                this.clusterConfig(model.getClusterConfig());
             }
             if (model.wasPropertyExplicitlySet("reservedCount")) {
                 this.reservedCount(model.getReservedCount());
@@ -237,6 +253,13 @@ public final class InstanceReservationConfigDetails
         return faultDomain;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterConfig")
+    private final ClusterConfigDetails clusterConfig;
+
+    public ClusterConfigDetails getClusterConfig() {
+        return clusterConfig;
+    }
+
     /** The total number of instances that can be launched from the capacity configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
     private final Long reservedCount;
@@ -268,6 +291,7 @@ public final class InstanceReservationConfigDetails
         sb.append("instanceShape=").append(String.valueOf(this.instanceShape));
         sb.append(", instanceShapeConfig=").append(String.valueOf(this.instanceShapeConfig));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", clusterConfig=").append(String.valueOf(this.clusterConfig));
         sb.append(", reservedCount=").append(String.valueOf(this.reservedCount));
         sb.append(")");
         return sb.toString();
@@ -286,6 +310,7 @@ public final class InstanceReservationConfigDetails
         return java.util.Objects.equals(this.instanceShape, other.instanceShape)
                 && java.util.Objects.equals(this.instanceShapeConfig, other.instanceShapeConfig)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.clusterConfig, other.clusterConfig)
                 && java.util.Objects.equals(this.reservedCount, other.reservedCount)
                 && super.equals(other);
     }
@@ -303,6 +328,9 @@ public final class InstanceReservationConfigDetails
                                 ? 43
                                 : this.instanceShapeConfig.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterConfig == null ? 43 : this.clusterConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.reservedCount == null ? 43 : this.reservedCount.hashCode());
