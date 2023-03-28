@@ -310,6 +310,41 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<ConnectionDiagnosticsResponse> connectionDiagnostics(
+            ConnectionDiagnosticsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConnectionDiagnosticsRequest, ConnectionDiagnosticsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+
+        return clientCall(request, ConnectionDiagnosticsResponse::builder)
+                .logger(LOG, "connectionDiagnostics")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ConnectionDiagnostics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ConnectionDiagnostics")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConnectionDiagnosticsRequest::builder)
+                .basePath("/20210929")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("diagnostics")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.DiagnosticsResult.class,
+                        ConnectionDiagnosticsResponse.Builder::diagnosticsResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConnectionDiagnosticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ConnectionDiagnosticsResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

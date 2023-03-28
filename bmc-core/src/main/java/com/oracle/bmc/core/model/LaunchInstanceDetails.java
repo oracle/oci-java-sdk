@@ -34,6 +34,7 @@ public final class LaunchInstanceDetails
         "extendedMetadata",
         "faultDomain",
         "freeformTags",
+        "computeClusterId",
         "hostnameLabel",
         "imageId",
         "ipxeScript",
@@ -61,6 +62,7 @@ public final class LaunchInstanceDetails
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
             java.util.Map<String, String> freeformTags,
+            String computeClusterId,
             String hostnameLabel,
             String imageId,
             String ipxeScript,
@@ -87,6 +89,7 @@ public final class LaunchInstanceDetails
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
         this.freeformTags = freeformTags;
+        this.computeClusterId = computeClusterId;
         this.hostnameLabel = hostnameLabel;
         this.imageId = imageId;
         this.ipxeScript = ipxeScript;
@@ -329,6 +332,29 @@ public final class LaunchInstanceDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the [compute
+         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+         * that the instance will be created in.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+        private String computeClusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the [compute
+         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+         * that the instance will be created in.
+         *
+         * @param computeClusterId the value to set
+         * @return this builder
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
@@ -699,6 +725,7 @@ public final class LaunchInstanceDetails
                             this.extendedMetadata,
                             this.faultDomain,
                             this.freeformTags,
+                            this.computeClusterId,
                             this.hostnameLabel,
                             this.imageId,
                             this.ipxeScript,
@@ -751,6 +778,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("computeClusterId")) {
+                this.computeClusterId(model.getComputeClusterId());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -1010,6 +1040,27 @@ public final class LaunchInstanceDetails
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+     * the instance will be created in.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+    private final String computeClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+     * the instance will be created in.
+     *
+     * @return the value
+     */
+    public String getComputeClusterId() {
+        return computeClusterId;
     }
 
     /**
@@ -1350,6 +1401,7 @@ public final class LaunchInstanceDetails
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", ipxeScript=").append(String.valueOf(this.ipxeScript));
@@ -1391,6 +1443,7 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.ipxeScript, other.ipxeScript)
@@ -1441,6 +1494,9 @@ public final class LaunchInstanceDetails
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

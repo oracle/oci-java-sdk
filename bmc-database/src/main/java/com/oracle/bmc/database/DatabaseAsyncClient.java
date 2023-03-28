@@ -7663,7 +7663,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .serviceDetails(
                         "Database",
                         "ListDbSystemComputePerformances",
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances")
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemComputePerformances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDbSystemComputePerformancesRequest::builder)
                 .basePath("/20160918")
@@ -7803,7 +7803,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .serviceDetails(
                         "Database",
                         "ListDbSystemStoragePerformances",
-                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances")
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemStoragePerformances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDbSystemStoragePerformancesRequest::builder)
                 .basePath("/20160918")

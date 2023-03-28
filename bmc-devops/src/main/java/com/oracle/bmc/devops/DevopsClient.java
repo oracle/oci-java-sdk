@@ -3051,6 +3051,38 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public ValidateConnectionResponse validateConnection(ValidateConnectionRequest request) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+
+        return clientCall(request, ValidateConnectionResponse::builder)
+                .logger(LOG, "validateConnection")
+                .serviceDetails(
+                        "Devops",
+                        "ValidateConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/ValidateConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateConnectionRequest::builder)
+                .basePath("/20210630")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("validate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.devops.model.Connection.class,
+                        ValidateConnectionResponse.Builder::connection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateConnectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ValidateConnectionResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DevopsWaiters getWaiters() {
         return waiters;
     }

@@ -30,6 +30,7 @@ public final class AutonomousContainerDatabaseSummary
         "compartmentId",
         "displayName",
         "dbUniqueName",
+        "dbName",
         "serviceLevelAgreementType",
         "autonomousExadataInfrastructureId",
         "autonomousVmClusterId",
@@ -70,6 +71,7 @@ public final class AutonomousContainerDatabaseSummary
             String compartmentId,
             String displayName,
             String dbUniqueName,
+            String dbName,
             ServiceLevelAgreementType serviceLevelAgreementType,
             String autonomousExadataInfrastructureId,
             String autonomousVmClusterId,
@@ -109,6 +111,7 @@ public final class AutonomousContainerDatabaseSummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.dbUniqueName = dbUniqueName;
+        this.dbName = dbName;
         this.serviceLevelAgreementType = serviceLevelAgreementType;
         this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
         this.autonomousVmClusterId = autonomousVmClusterId;
@@ -211,6 +214,27 @@ public final class AutonomousContainerDatabaseSummary
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+        /**
+         * The database name for the Autonomous Container Database. The name must be unique within
+         * the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by
+         * 1 to 7 alphanumeric characters.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+        private String dbName;
+
+        /**
+         * The database name for the Autonomous Container Database. The name must be unique within
+         * the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by
+         * 1 to 7 alphanumeric characters.
+         *
+         * @param dbName the value to set
+         * @return this builder
+         */
+        public Builder dbName(String dbName) {
+            this.dbName = dbName;
+            this.__explicitlySet__.add("dbName");
             return this;
         }
         /** The service level agreement type of the container database. The default is STANDARD. */
@@ -811,6 +835,7 @@ public final class AutonomousContainerDatabaseSummary
                             this.compartmentId,
                             this.displayName,
                             this.dbUniqueName,
+                            this.dbName,
                             this.serviceLevelAgreementType,
                             this.autonomousExadataInfrastructureId,
                             this.autonomousVmClusterId,
@@ -864,6 +889,9 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("dbUniqueName")) {
                 this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
             }
             if (model.wasPropertyExplicitlySet("serviceLevelAgreementType")) {
                 this.serviceLevelAgreementType(model.getServiceLevelAgreementType());
@@ -1037,6 +1065,25 @@ public final class AutonomousContainerDatabaseSummary
      */
     public String getDbUniqueName() {
         return dbUniqueName;
+    }
+
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the
+     * Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7
+     * alphanumeric characters.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+    private final String dbName;
+
+    /**
+     * The database name for the Autonomous Container Database. The name must be unique within the
+     * Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7
+     * alphanumeric characters.
+     *
+     * @return the value
+     */
+    public String getDbName() {
+        return dbName;
     }
 
     /** The service level agreement type of the container database. The default is STANDARD. */
@@ -1912,6 +1959,7 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", serviceLevelAgreementType=")
                 .append(String.valueOf(this.serviceLevelAgreementType));
         sb.append(", autonomousExadataInfrastructureId=")
@@ -1970,6 +2018,7 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(
                         this.serviceLevelAgreementType, other.serviceLevelAgreementType)
                 && java.util.Objects.equals(
@@ -2024,6 +2073,7 @@ public final class AutonomousContainerDatabaseSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceLevelAgreementType == null
