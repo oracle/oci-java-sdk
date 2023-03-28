@@ -25,6 +25,7 @@ public final class InstanceReservationConfig
     @Deprecated
     @java.beans.ConstructorProperties({
         "faultDomain",
+        "clusterConfig",
         "instanceShape",
         "instanceShapeConfig",
         "reservedCount",
@@ -32,12 +33,14 @@ public final class InstanceReservationConfig
     })
     public InstanceReservationConfig(
             String faultDomain,
+            ClusterConfigDetails clusterConfig,
             String instanceShape,
             InstanceReservationShapeConfigDetails instanceShapeConfig,
             Long reservedCount,
             Long usedCount) {
         super();
         this.faultDomain = faultDomain;
+        this.clusterConfig = clusterConfig;
         this.instanceShape = instanceShape;
         this.instanceShapeConfig = instanceShapeConfig;
         this.reservedCount = reservedCount;
@@ -66,6 +69,15 @@ public final class InstanceReservationConfig
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterConfig")
+        private ClusterConfigDetails clusterConfig;
+
+        public Builder clusterConfig(ClusterConfigDetails clusterConfig) {
+            this.clusterConfig = clusterConfig;
+            this.__explicitlySet__.add("clusterConfig");
             return this;
         }
         /**
@@ -140,6 +152,7 @@ public final class InstanceReservationConfig
             InstanceReservationConfig model =
                     new InstanceReservationConfig(
                             this.faultDomain,
+                            this.clusterConfig,
                             this.instanceShape,
                             this.instanceShapeConfig,
                             this.reservedCount,
@@ -154,6 +167,9 @@ public final class InstanceReservationConfig
         public Builder copy(InstanceReservationConfig model) {
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterConfig")) {
+                this.clusterConfig(model.getClusterConfig());
             }
             if (model.wasPropertyExplicitlySet("instanceShape")) {
                 this.instanceShape(model.getInstanceShape());
@@ -200,6 +216,13 @@ public final class InstanceReservationConfig
      **/
     public String getFaultDomain() {
         return faultDomain;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterConfig")
+    private final ClusterConfigDetails clusterConfig;
+
+    public ClusterConfigDetails getClusterConfig() {
+        return clusterConfig;
     }
 
     /**
@@ -272,6 +295,7 @@ public final class InstanceReservationConfig
         sb.append("InstanceReservationConfig(");
         sb.append("super=").append(super.toString());
         sb.append("faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", clusterConfig=").append(String.valueOf(this.clusterConfig));
         sb.append(", instanceShape=").append(String.valueOf(this.instanceShape));
         sb.append(", instanceShapeConfig=").append(String.valueOf(this.instanceShapeConfig));
         sb.append(", reservedCount=").append(String.valueOf(this.reservedCount));
@@ -291,6 +315,7 @@ public final class InstanceReservationConfig
 
         InstanceReservationConfig other = (InstanceReservationConfig) o;
         return java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(this.clusterConfig, other.clusterConfig)
                 && java.util.Objects.equals(this.instanceShape, other.instanceShape)
                 && java.util.Objects.equals(this.instanceShapeConfig, other.instanceShapeConfig)
                 && java.util.Objects.equals(this.reservedCount, other.reservedCount)
@@ -303,6 +328,9 @@ public final class InstanceReservationConfig
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterConfig == null ? 43 : this.clusterConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceShape == null ? 43 : this.instanceShape.hashCode());

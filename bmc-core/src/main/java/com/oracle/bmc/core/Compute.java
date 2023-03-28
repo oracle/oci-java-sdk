@@ -172,6 +172,24 @@ public interface Compute extends AutoCloseable {
             ChangeComputeCapacityReservationCompartmentRequest request);
 
     /**
+     * Moves a compute cluster into a different compartment within the same tenancy.
+     * A compute cluster is a remote direct memory access (RDMA) network group.
+     * <p>
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeClusterCompartment API.
+     */
+    ChangeComputeClusterCompartmentResponse changeComputeClusterCompartment(
+            ChangeComputeClusterCompartmentRequest request);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
      *         [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -266,6 +284,25 @@ public interface Compute extends AutoCloseable {
      */
     CreateComputeCapacityReservationResponse createComputeCapacityReservation(
             CreateComputeCapacityReservationRequest request);
+
+    /**
+     * Creates an empty compute cluster, which is a remote direct memory access (RDMA) network group.
+     * After the compute cluster is created, you can use the compute cluster's OCID with the
+     * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
+     * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * <p>
+     * To create a cluster network that uses intance pools to manage groups of identical instances,
+     * see {@link #createClusterNetwork(CreateClusterNetworkRequest) createClusterNetwork}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCluster API.
+     */
+    CreateComputeClusterResponse createComputeCluster(CreateComputeClusterRequest request);
 
     /**
      * Creates compute image capability schema.
@@ -375,6 +412,20 @@ public interface Compute extends AutoCloseable {
      */
     DeleteComputeCapacityReservationResponse deleteComputeCapacityReservation(
             DeleteComputeCapacityReservationRequest request);
+
+    /**
+     * Deletes the compute cluster, which is a remote direct memory access (RDMA) network group.
+     * To delete a compute cluster, all instances in the cluster must be deleted first.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCluster API.
+     */
+    DeleteComputeClusterResponse deleteComputeCluster(DeleteComputeClusterRequest request);
 
     /**
      * Deletes the specified Compute Image Capability Schema
@@ -582,6 +633,18 @@ public interface Compute extends AutoCloseable {
      */
     GetComputeCapacityReservationResponse getComputeCapacityReservation(
             GetComputeCapacityReservationRequest request);
+
+    /**
+     * Gets information about the specified compute cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCluster API.
+     */
+    GetComputeClusterResponse getComputeCluster(GetComputeClusterRequest request);
 
     /**
      * Gets the specified Compute Global Image Capability Schema
@@ -992,6 +1055,20 @@ public interface Compute extends AutoCloseable {
             ListComputeCapacityReservationsRequest request);
 
     /**
+     * Lists the compute clusters in the specified compartment.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeClusters API.
+     */
+    ListComputeClustersResponse listComputeClusters(ListComputeClustersRequest request);
+
+    /**
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -1283,6 +1360,18 @@ public interface Compute extends AutoCloseable {
      */
     UpdateComputeCapacityReservationResponse updateComputeCapacityReservation(
             UpdateComputeCapacityReservationRequest request);
+
+    /**
+     * Updates the specified compute cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCluster API.
+     */
+    UpdateComputeClusterResponse updateComputeCluster(UpdateComputeClusterRequest request);
 
     /**
      * Updates the specified Compute Image Capability Schema

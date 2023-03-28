@@ -814,6 +814,65 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeClusterCompartmentResponse>
+            changeComputeClusterCompartment(
+                    ChangeComputeClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeClusterCompartmentRequest,
+                                    ChangeComputeClusterCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeClusterCompartment");
+        final ChangeComputeClusterCompartmentRequest interceptedRequest =
+                ChangeComputeClusterCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ChangeComputeClusterCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeClusterCompartmentResponse>
+                transformer =
+                        ChangeComputeClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeClusterCompartmentRequest,
+                        ChangeComputeClusterCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeClusterCompartmentRequest,
+                                ChangeComputeClusterCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeComputeClusterCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeComputeClusterCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeClusterCompartmentRequest,
+                    ChangeComputeClusterCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request,
@@ -1160,6 +1219,59 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeClusterResponse> createComputeCluster(
+            CreateComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeClusterRequest, CreateComputeClusterResponse>
+                    handler) {
+        LOG.trace("Called async createComputeCluster");
+        final CreateComputeClusterRequest interceptedRequest =
+                CreateComputeClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "CreateComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/CreateComputeCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateComputeClusterResponse>
+                transformer =
+                        CreateComputeClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateComputeClusterRequest, CreateComputeClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateComputeClusterRequest, CreateComputeClusterResponse>,
+                        java.util.concurrent.Future<CreateComputeClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateComputeClusterRequest, CreateComputeClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
                     CreateComputeImageCapabilitySchemaRequest request,
@@ -1472,6 +1584,53 @@ public class ComputeAsyncClient implements ComputeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteComputeCapacityReservationRequest,
                     DeleteComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteComputeClusterResponse> deleteComputeCluster(
+            DeleteComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteComputeClusterRequest, DeleteComputeClusterResponse>
+                    handler) {
+        LOG.trace("Called async deleteComputeCluster");
+        final DeleteComputeClusterRequest interceptedRequest =
+                DeleteComputeClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "DeleteComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/DeleteComputeCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteComputeClusterResponse>
+                transformer =
+                        DeleteComputeClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteComputeClusterRequest, DeleteComputeClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteComputeClusterRequest, DeleteComputeClusterResponse>,
+                        java.util.concurrent.Future<DeleteComputeClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteComputeClusterRequest, DeleteComputeClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2145,6 +2304,52 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetComputeCapacityReservationRequest, GetComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeClusterResponse> getComputeCluster(
+            GetComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeClusterRequest, GetComputeClusterResponse>
+                    handler) {
+        LOG.trace("Called async getComputeCluster");
+        final GetComputeClusterRequest interceptedRequest =
+                GetComputeClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/GetComputeCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetComputeClusterResponse>
+                transformer =
+                        GetComputeClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetComputeClusterRequest, GetComputeClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeClusterRequest, GetComputeClusterResponse>,
+                        java.util.concurrent.Future<GetComputeClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeClusterRequest, GetComputeClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3362,6 +3567,53 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeClustersResponse> listComputeClusters(
+            ListComputeClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeClustersRequest, ListComputeClustersResponse>
+                    handler) {
+        LOG.trace("Called async listComputeClusters");
+        final ListComputeClustersRequest interceptedRequest =
+                ListComputeClustersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ListComputeClusters");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListComputeClustersResponse>
+                transformer =
+                        ListComputeClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeClustersRequest, ListComputeClustersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeClustersRequest, ListComputeClustersResponse>,
+                        java.util.concurrent.Future<ListComputeClustersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeClustersRequest, ListComputeClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
             listComputeGlobalImageCapabilitySchemaVersions(
                     ListComputeGlobalImageCapabilitySchemaVersionsRequest request,
@@ -4290,6 +4542,59 @@ public class ComputeAsyncClient implements ComputeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateComputeCapacityReservationRequest,
                     UpdateComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeClusterResponse> updateComputeCluster(
+            UpdateComputeClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeClusterRequest, UpdateComputeClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateComputeCluster");
+        final UpdateComputeClusterRequest interceptedRequest =
+                UpdateComputeClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/UpdateComputeCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeClusterResponse>
+                transformer =
+                        UpdateComputeClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeClusterRequest, UpdateComputeClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeClusterRequest, UpdateComputeClusterResponse>,
+                        java.util.concurrent.Future<UpdateComputeClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeClusterRequest, UpdateComputeClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

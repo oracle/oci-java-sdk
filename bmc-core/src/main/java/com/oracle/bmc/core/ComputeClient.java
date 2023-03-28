@@ -821,6 +821,51 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ChangeComputeClusterCompartmentResponse changeComputeClusterCompartment(
+            ChangeComputeClusterCompartmentRequest request) {
+        LOG.trace("Called changeComputeClusterCompartment");
+        final ChangeComputeClusterCompartmentRequest interceptedRequest =
+                ChangeComputeClusterCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ChangeComputeClusterCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeClusterCompartmentResponse>
+                transformer =
+                        ChangeComputeClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeComputeClusterCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeComputeImageCapabilitySchemaCompartmentResponse
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request) {
@@ -1090,6 +1135,48 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public CreateComputeClusterResponse createComputeCluster(CreateComputeClusterRequest request) {
+        LOG.trace("Called createComputeCluster");
+        final CreateComputeClusterRequest interceptedRequest =
+                CreateComputeClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "CreateComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/CreateComputeCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateComputeClusterResponse>
+                transformer =
+                        CreateComputeClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateComputeClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
             CreateComputeImageCapabilitySchemaRequest request) {
         LOG.trace("Called createComputeImageCapabilitySchema");
@@ -1324,6 +1411,44 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, DeleteComputeCapacityReservationResponse>
                 transformer =
                         DeleteComputeCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteComputeClusterResponse deleteComputeCluster(DeleteComputeClusterRequest request) {
+        LOG.trace("Called deleteComputeCluster");
+        final DeleteComputeClusterRequest interceptedRequest =
+                DeleteComputeClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "DeleteComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/DeleteComputeCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteComputeClusterResponse>
+                transformer =
+                        DeleteComputeClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1854,6 +1979,43 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, GetComputeCapacityReservationResponse>
                 transformer =
                         GetComputeCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetComputeClusterResponse getComputeCluster(GetComputeClusterRequest request) {
+        LOG.trace("Called getComputeCluster");
+        final GetComputeClusterRequest interceptedRequest =
+                GetComputeClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/GetComputeCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, GetComputeClusterResponse>
+                transformer =
+                        GetComputeClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2795,6 +2957,43 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ListComputeClustersResponse listComputeClusters(ListComputeClustersRequest request) {
+        LOG.trace("Called listComputeClusters");
+        final ListComputeClustersRequest interceptedRequest =
+                ListComputeClustersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeClustersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ListComputeClusters");
+        java.util.function.Function<javax.ws.rs.core.Response, ListComputeClustersResponse>
+                transformer =
+                        ListComputeClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListComputeGlobalImageCapabilitySchemaVersionsResponse
             listComputeGlobalImageCapabilitySchemaVersions(
                     ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
@@ -3510,6 +3709,48 @@ public class ComputeClient implements Compute {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateComputeCapacityReservationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateComputeClusterResponse updateComputeCluster(UpdateComputeClusterRequest request) {
+        LOG.trace("Called updateComputeCluster");
+        final UpdateComputeClusterRequest interceptedRequest =
+                UpdateComputeClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/UpdateComputeCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeClusterResponse>
+                transformer =
+                        UpdateComputeClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateComputeClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
