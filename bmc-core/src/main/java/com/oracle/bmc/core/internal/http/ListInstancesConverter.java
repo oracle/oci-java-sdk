@@ -50,6 +50,14 @@ public class ListInstancesConverter {
                                     request.getCapacityReservationId()));
         }
 
+        if (request.getComputeClusterId() != null) {
+            target =
+                    target.queryParam(
+                            "computeClusterId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getComputeClusterId()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

@@ -901,6 +901,119 @@ public class ComputePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeClustersResponse> listComputeClustersResponseIterator(
+            final ListComputeClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeClustersRequest.Builder, ListComputeClustersRequest,
+                ListComputeClustersResponse>(
+                new java.util.function.Supplier<ListComputeClustersRequest.Builder>() {
+                    @Override
+                    public ListComputeClustersRequest.Builder get() {
+                        return ListComputeClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeClustersResponse, String>() {
+                    @Override
+                    public String apply(ListComputeClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeClustersRequest.Builder>,
+                        ListComputeClustersRequest>() {
+                    @Override
+                    public ListComputeClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeClustersRequest, ListComputeClustersResponse>() {
+                    @Override
+                    public ListComputeClustersResponse apply(ListComputeClustersRequest request) {
+                        return client.listComputeClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeClusterSummary} objects
+     * contained in responses from the listComputeClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeClusterSummary>
+            listComputeClustersRecordIterator(final ListComputeClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeClustersRequest.Builder, ListComputeClustersRequest,
+                ListComputeClustersResponse, com.oracle.bmc.core.model.ComputeClusterSummary>(
+                new java.util.function.Supplier<ListComputeClustersRequest.Builder>() {
+                    @Override
+                    public ListComputeClustersRequest.Builder get() {
+                        return ListComputeClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComputeClustersResponse, String>() {
+                    @Override
+                    public String apply(ListComputeClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeClustersRequest.Builder>,
+                        ListComputeClustersRequest>() {
+                    @Override
+                    public ListComputeClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeClustersRequest, ListComputeClustersResponse>() {
+                    @Override
+                    public ListComputeClustersResponse apply(ListComputeClustersRequest request) {
+                        return client.listComputeClusters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComputeClustersResponse,
+                        java.util.List<com.oracle.bmc.core.model.ComputeClusterSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ComputeClusterSummary> apply(
+                            ListComputeClustersResponse response) {
+                        return response.getComputeClusterCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable
      * will fetch more data from the server as needed.
      *

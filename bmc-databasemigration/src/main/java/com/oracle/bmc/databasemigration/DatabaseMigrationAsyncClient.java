@@ -750,6 +750,54 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ConnectionDiagnosticsResponse> connectionDiagnostics(
+            ConnectionDiagnosticsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConnectionDiagnosticsRequest, ConnectionDiagnosticsResponse>
+                    handler) {
+        LOG.trace("Called async connectionDiagnostics");
+        final ConnectionDiagnosticsRequest interceptedRequest =
+                ConnectionDiagnosticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConnectionDiagnosticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ConnectionDiagnostics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ConnectionDiagnostics");
+        final java.util.function.Function<javax.ws.rs.core.Response, ConnectionDiagnosticsResponse>
+                transformer =
+                        ConnectionDiagnosticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConnectionDiagnosticsRequest, ConnectionDiagnosticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConnectionDiagnosticsRequest, ConnectionDiagnosticsResponse>,
+                        java.util.concurrent.Future<ConnectionDiagnosticsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConnectionDiagnosticsRequest, ConnectionDiagnosticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

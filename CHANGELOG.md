@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.57.1 - 2023-03-28
+### Added
+- Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
+- Support for validating the credentials of a connection in the DevOps service
+- Support for GoldenGate Replicat performance profiles when creating a migration in the Database Migration service
+- Support for connection diagnostics on registered databases in the Database Migration service
+- Support for launching bare metal instances in an RDMA network in the Compute service
+
 ## 2.57.0 - 2023-03-21
 ### Added
 - Support for backup automation integration with the Database Recovery service in the Database service
@@ -110,6 +118,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Adding to circuit breaker history is now a thread-safe operation
 
 ## 2.51.1 - 2023-01-17
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the us-chicago-1 region
 - Support for cross-region replication in the File Storage service
@@ -122,6 +132,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for configurable timeouts in the Service Mesh service
 
 ## 2.51.0 - 2022-12-13
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for the Queue service
 - Support for Intel X9 shapes when launching VM database systems in the Database service
@@ -162,6 +174,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualService$LifecycleState` in  `com.oracle.bmc.servicemesh.requests.ListVirtualServicesRequest` in the Service Mesh service
 
 ## 2.50.0 - 2022-12-06
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for the Container Instances service
 - Support for the Document Understanding service
@@ -193,7 +207,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - A required property `CompartmentId` was added to the model `com.oracle.bmc.datasafe.model.PatchAlertsDetails` in the Data Safe service
 
 ## 2.49.1 - 2022-11-15
-
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for mTLS authentication with listeners during Autonomous VM Cluster creation on Exadata Cloud at Customer in the Database service
 - Support for providing custom values for TLS and non-TLS ports during Autonomous VM Cluster creation on Exadata Cloud at Customer in the Database service
@@ -204,6 +219,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for the Oracle distribution of Apache Hadoop 2.0 in the Big Data service
 
 ## 2.49.0 - 2022-11-08
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for listing local and cross-region refreshable clones in the Database service
 - Support for adding multiple cloud VM clusters in the Database service
@@ -218,6 +235,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Field `certificateId` has been made mandatory in `com.oracle.bmc.resourcemanager.model.PrivateServerConfigDetails`
 
 ## 2.48.0 - 2022-11-01
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for cloning from a backup from the last available timestamp in the Database service
 - Support for third-party scanning using Qualys in the Vulnerability Scanning service
@@ -228,6 +247,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Enum `Vendor` has been removed from the model `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration` in the Vulnerability Scanning service
 
 ## 2.47.0 - 2022-10-25
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for the Disaster Recovery service
 - Support for running code interactively with session applications using statements in the Data Flow service
