@@ -456,7 +456,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "ChangeContainerInstanceCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/ChangeContainerInstanceCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeContainerInstanceCompartmentResponse>
                 transformer =
@@ -513,7 +513,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "CreateContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/CreateContainerInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateContainerInstanceResponse>
                 transformer =
@@ -566,7 +566,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "DeleteContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/DeleteContainerInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteContainerInstanceResponse>
                 transformer =
@@ -610,7 +610,10 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                 GetContainerConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "GetContainer", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "GetContainer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/GetContainer");
         final java.util.function.Function<javax.ws.rs.core.Response, GetContainerResponse>
                 transformer =
                         GetContainerConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -655,7 +658,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "GetContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/GetContainerInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, GetContainerInstanceResponse>
                 transformer =
                         GetContainerInstanceConverter.fromResponse(
@@ -699,7 +702,10 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -746,7 +752,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "ListContainerInstanceShapes",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceShapeCollection/ListContainerInstanceShapes");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListContainerInstanceShapesResponse>
                 transformer =
@@ -795,7 +801,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "ListContainerInstances",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceCollection/ListContainerInstances");
         final java.util.function.Function<javax.ws.rs.core.Response, ListContainerInstancesResponse>
                 transformer =
                         ListContainerInstancesConverter.fromResponse(
@@ -839,7 +845,10 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                 ListContainersConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "ListContainers", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "ListContainers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerCollection/ListContainers");
         final java.util.function.Function<javax.ws.rs.core.Response, ListContainersResponse>
                 transformer =
                         ListContainersConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -884,7 +893,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestErrorCollection/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -931,7 +940,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -975,7 +984,10 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestSummaryCollection/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1021,7 +1033,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "RestartContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/RestartContainerInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RestartContainerInstanceResponse>
                 transformer =
@@ -1075,7 +1087,10 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                 RetrieveLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "RetrieveLogs", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "RetrieveLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/RetrieveLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, RetrieveLogsResponse>
                 transformer =
                         RetrieveLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1120,7 +1135,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "StartContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StartContainerInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, StartContainerInstanceResponse>
                 transformer =
                         StartContainerInstanceConverter.fromResponse(
@@ -1167,7 +1182,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "StopContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StopContainerInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, StopContainerInstanceResponse>
                 transformer =
                         StopContainerInstanceConverter.fromResponse(
@@ -1211,7 +1226,10 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                 UpdateContainerConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "UpdateContainer", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "UpdateContainer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/UpdateContainer");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateContainerResponse>
                 transformer =
                         UpdateContainerConverter.fromResponse(
@@ -1262,7 +1280,7 @@ public class ContainerInstanceAsyncClient implements ContainerInstanceAsync {
                         "ContainerInstance",
                         "UpdateContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/UpdateContainerInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateContainerInstanceResponse>
                 transformer =

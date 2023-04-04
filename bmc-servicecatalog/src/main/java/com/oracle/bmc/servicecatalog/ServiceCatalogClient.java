@@ -26,7 +26,7 @@ public class ServiceCatalogClient implements ServiceCatalog {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ServiceCatalogAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ServiceCatalogClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

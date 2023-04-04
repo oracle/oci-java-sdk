@@ -26,7 +26,7 @@ public class ContainerEngineClient implements ContainerEngine {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ContainerEngineAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ContainerEngineClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

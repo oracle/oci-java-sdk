@@ -25,7 +25,7 @@ public class ObjectStorageClient implements ObjectStorage {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ObjectStorageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ObjectStorageClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

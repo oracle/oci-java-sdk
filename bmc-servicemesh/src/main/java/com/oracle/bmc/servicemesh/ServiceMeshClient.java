@@ -25,7 +25,7 @@ public class ServiceMeshClient implements ServiceMesh {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ServiceMeshAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ServiceMeshClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

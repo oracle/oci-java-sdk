@@ -26,7 +26,7 @@ public class LoggingClient implements Logging {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(LoggingAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(LoggingClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

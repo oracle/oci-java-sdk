@@ -25,7 +25,7 @@ public class ResourceManagerClient implements ResourceManager {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ResourceManagerAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ResourceManagerClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

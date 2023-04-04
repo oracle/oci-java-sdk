@@ -29,7 +29,8 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         "retries",
         "timeoutInMillis",
         "intervalInMillis",
-        "responseBodyRegex"
+        "responseBodyRegex",
+        "isForcePlainText"
     })
     public HealthChecker(
             String protocol,
@@ -39,7 +40,8 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
             Integer retries,
             Integer timeoutInMillis,
             Integer intervalInMillis,
-            String responseBodyRegex) {
+            String responseBodyRegex,
+            Boolean isForcePlainText) {
         super();
         this.protocol = protocol;
         this.urlPath = urlPath;
@@ -49,6 +51,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         this.timeoutInMillis = timeoutInMillis;
         this.intervalInMillis = intervalInMillis;
         this.responseBodyRegex = responseBodyRegex;
+        this.isForcePlainText = isForcePlainText;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -237,6 +240,42 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("responseBodyRegex");
             return this;
         }
+        /**
+         * Specifies if health checks should always be done using plain text instead of depending on
+         * whether or not the associated backend set is using SSL.
+         * <p>
+         * If "true", health checks will be done using plain text even if the associated backend set is configured
+         * to use SSL.
+         * <p>
+         * If "false", health checks will be done using SSL encryption if the associated backend set is configured
+         * to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+         * <p>
+         * Example: {@code false}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isForcePlainText")
+        private Boolean isForcePlainText;
+
+        /**
+         * Specifies if health checks should always be done using plain text instead of depending on
+         * whether or not the associated backend set is using SSL.
+         * <p>
+         * If "true", health checks will be done using plain text even if the associated backend set is configured
+         * to use SSL.
+         * <p>
+         * If "false", health checks will be done using SSL encryption if the associated backend set is configured
+         * to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+         * <p>
+         * Example: {@code false}
+         *
+         * @param isForcePlainText the value to set
+         * @return this builder
+         **/
+        public Builder isForcePlainText(Boolean isForcePlainText) {
+            this.isForcePlainText = isForcePlainText;
+            this.__explicitlySet__.add("isForcePlainText");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -251,7 +290,8 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
                             this.retries,
                             this.timeoutInMillis,
                             this.intervalInMillis,
-                            this.responseBodyRegex);
+                            this.responseBodyRegex,
+                            this.isForcePlainText);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -283,6 +323,9 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("responseBodyRegex")) {
                 this.responseBodyRegex(model.getResponseBodyRegex());
+            }
+            if (model.wasPropertyExplicitlySet("isForcePlainText")) {
+                this.isForcePlainText(model.getIsForcePlainText());
             }
             return this;
         }
@@ -467,6 +510,40 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         return responseBodyRegex;
     }
 
+    /**
+     * Specifies if health checks should always be done using plain text instead of depending on
+     * whether or not the associated backend set is using SSL.
+     * <p>
+     * If "true", health checks will be done using plain text even if the associated backend set is configured
+     * to use SSL.
+     * <p>
+     * If "false", health checks will be done using SSL encryption if the associated backend set is configured
+     * to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+     * <p>
+     * Example: {@code false}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isForcePlainText")
+    private final Boolean isForcePlainText;
+
+    /**
+     * Specifies if health checks should always be done using plain text instead of depending on
+     * whether or not the associated backend set is using SSL.
+     * <p>
+     * If "true", health checks will be done using plain text even if the associated backend set is configured
+     * to use SSL.
+     * <p>
+     * If "false", health checks will be done using SSL encryption if the associated backend set is configured
+     * to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+     * <p>
+     * Example: {@code false}
+     *
+     * @return the value
+     **/
+    public Boolean getIsForcePlainText() {
+        return isForcePlainText;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -489,6 +566,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", timeoutInMillis=").append(String.valueOf(this.timeoutInMillis));
         sb.append(", intervalInMillis=").append(String.valueOf(this.intervalInMillis));
         sb.append(", responseBodyRegex=").append(String.valueOf(this.responseBodyRegex));
+        sb.append(", isForcePlainText=").append(String.valueOf(this.isForcePlainText));
         sb.append(")");
         return sb.toString();
     }
@@ -511,6 +589,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.timeoutInMillis, other.timeoutInMillis)
                 && java.util.Objects.equals(this.intervalInMillis, other.intervalInMillis)
                 && java.util.Objects.equals(this.responseBodyRegex, other.responseBodyRegex)
+                && java.util.Objects.equals(this.isForcePlainText, other.isForcePlainText)
                 && super.equals(other);
     }
 
@@ -532,6 +611,9 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.responseBodyRegex == null ? 43 : this.responseBodyRegex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForcePlainText == null ? 43 : this.isForcePlainText.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
