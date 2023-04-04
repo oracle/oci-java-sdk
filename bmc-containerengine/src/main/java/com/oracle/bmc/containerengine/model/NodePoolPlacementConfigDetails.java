@@ -26,17 +26,20 @@ public final class NodePoolPlacementConfigDetails
         "availabilityDomain",
         "subnetId",
         "capacityReservationId",
+        "preemptibleNodeConfig",
         "faultDomains"
     })
     public NodePoolPlacementConfigDetails(
             String availabilityDomain,
             String subnetId,
             String capacityReservationId,
+            PreemptibleNodeConfigDetails preemptibleNodeConfig,
             java.util.List<String> faultDomains) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.subnetId = subnetId;
         this.capacityReservationId = capacityReservationId;
+        this.preemptibleNodeConfig = preemptibleNodeConfig;
         this.faultDomains = faultDomains;
     }
 
@@ -87,6 +90,15 @@ public final class NodePoolPlacementConfigDetails
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("preemptibleNodeConfig")
+        private PreemptibleNodeConfigDetails preemptibleNodeConfig;
+
+        public Builder preemptibleNodeConfig(PreemptibleNodeConfigDetails preemptibleNodeConfig) {
+            this.preemptibleNodeConfig = preemptibleNodeConfig;
+            this.__explicitlySet__.add("preemptibleNodeConfig");
+            return this;
+        }
         /** A list of fault domains in which to place nodes. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
         private java.util.List<String> faultDomains;
@@ -112,6 +124,7 @@ public final class NodePoolPlacementConfigDetails
                             this.availabilityDomain,
                             this.subnetId,
                             this.capacityReservationId,
+                            this.preemptibleNodeConfig,
                             this.faultDomains);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -129,6 +142,9 @@ public final class NodePoolPlacementConfigDetails
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("preemptibleNodeConfig")) {
+                this.preemptibleNodeConfig(model.getPreemptibleNodeConfig());
             }
             if (model.wasPropertyExplicitlySet("faultDomains")) {
                 this.faultDomains(model.getFaultDomains());
@@ -185,6 +201,13 @@ public final class NodePoolPlacementConfigDetails
         return capacityReservationId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("preemptibleNodeConfig")
+    private final PreemptibleNodeConfigDetails preemptibleNodeConfig;
+
+    public PreemptibleNodeConfigDetails getPreemptibleNodeConfig() {
+        return preemptibleNodeConfig;
+    }
+
     /** A list of fault domains in which to place nodes. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
     private final java.util.List<String> faultDomains;
@@ -216,6 +239,7 @@ public final class NodePoolPlacementConfigDetails
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", preemptibleNodeConfig=").append(String.valueOf(this.preemptibleNodeConfig));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(")");
         return sb.toString();
@@ -234,6 +258,7 @@ public final class NodePoolPlacementConfigDetails
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.preemptibleNodeConfig, other.preemptibleNodeConfig)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && super.equals(other);
     }
@@ -253,6 +278,11 @@ public final class NodePoolPlacementConfigDetails
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.preemptibleNodeConfig == null
+                                ? 43
+                                : this.preemptibleNodeConfig.hashCode());
         result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
