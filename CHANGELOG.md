@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.10.0 - 2023-04-04
+### Added
+- Support for pre-emptible worker nodes in the Container Engine for Kubernetes service
+- Support for larger data storage (now up to 128TB) in the MySQL Database service
+- Support for HTTP health checks for HTTPS backend sets in the Load Balancer service  
+ 
+### Breaking Changes
+- The property `backendSetName` has been changed from optional to required in the model `com.oracle.bmc.loadbalancer.model.ForwardToBackendSet` in the Load Balancer service
+
 ## 3.9.1 - 2023-03-28
 ### Added
 - Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
