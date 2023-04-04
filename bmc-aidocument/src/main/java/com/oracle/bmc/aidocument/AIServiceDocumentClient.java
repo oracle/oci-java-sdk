@@ -26,7 +26,7 @@ public class AIServiceDocumentClient implements AIServiceDocument {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(AIServiceDocumentAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(AIServiceDocumentClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
@@ -539,7 +539,7 @@ public class AIServiceDocumentClient implements AIServiceDocument {
                         "AIServiceDocument",
                         "CancelProcessorJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CancelProcessorJob");
         java.util.function.Function<javax.ws.rs.core.Response, CancelProcessorJobResponse>
                 transformer =
                         CancelProcessorJobConverter.fromResponse(
@@ -578,7 +578,7 @@ public class AIServiceDocumentClient implements AIServiceDocument {
                         "AIServiceDocument",
                         "CreateProcessorJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CreateProcessorJob");
         java.util.function.Function<javax.ws.rs.core.Response, CreateProcessorJobResponse>
                 transformer =
                         CreateProcessorJobConverter.fromResponse(
@@ -616,7 +616,10 @@ public class AIServiceDocumentClient implements AIServiceDocument {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AIServiceDocument", "GetProcessorJob", ib.getRequestUri().toString(), "");
+                        "AIServiceDocument",
+                        "GetProcessorJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/GetProcessorJob");
         java.util.function.Function<javax.ws.rs.core.Response, GetProcessorJobResponse>
                 transformer =
                         GetProcessorJobConverter.fromResponse(

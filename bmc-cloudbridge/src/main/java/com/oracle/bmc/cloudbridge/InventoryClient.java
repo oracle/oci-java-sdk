@@ -25,7 +25,7 @@ public class InventoryClient implements Inventory {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(InventoryAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(InventoryClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

@@ -26,7 +26,7 @@ public class DomainClient implements Domain {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DomainAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DomainClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

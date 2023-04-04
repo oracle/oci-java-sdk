@@ -25,7 +25,7 @@ public class WorkRequestClient implements WorkRequest {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(WorkRequestAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(WorkRequestClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

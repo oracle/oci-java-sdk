@@ -25,7 +25,7 @@ public class KmsManagementClient implements KmsManagement {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(KmsManagementAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(KmsManagementClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

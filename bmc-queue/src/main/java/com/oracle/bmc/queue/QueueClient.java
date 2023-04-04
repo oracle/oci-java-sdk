@@ -25,7 +25,7 @@ public class QueueClient implements Queue {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(QueueAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(QueueClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
@@ -462,7 +462,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "DeleteMessage", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "DeleteMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessage");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteMessageResponse> transformer =
                 DeleteMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -495,7 +498,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "DeleteMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "DeleteMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessages");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteMessagesResponse> transformer =
                 DeleteMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -531,7 +537,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "GetMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "GetMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/GetMessages");
         java.util.function.Function<javax.ws.rs.core.Response, GetMessagesResponse> transformer =
                 GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -562,7 +571,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "GetStats", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "GetStats",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueStats/GetStats");
         java.util.function.Function<javax.ws.rs.core.Response, GetStatsResponse> transformer =
                 GetStatsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -594,7 +606,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "PutMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "PutMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/PutMessage/PutMessages");
         java.util.function.Function<javax.ws.rs.core.Response, PutMessagesResponse> transformer =
                 PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -630,7 +645,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "UpdateMessage", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "UpdateMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/UpdatedMessage/UpdateMessage");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateMessageResponse> transformer =
                 UpdateMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -666,7 +684,10 @@ public class QueueClient implements Queue {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "UpdateMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "UpdateMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/UpdateMessages");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateMessagesResponse> transformer =
                 UpdateMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

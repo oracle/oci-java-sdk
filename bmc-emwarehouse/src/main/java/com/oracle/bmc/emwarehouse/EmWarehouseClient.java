@@ -26,7 +26,7 @@ public class EmWarehouseClient implements EmWarehouse {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EmWarehouseAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EmWarehouseClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

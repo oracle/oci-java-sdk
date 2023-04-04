@@ -449,7 +449,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 ChangeQueueCompartmentConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ChangeQueueCompartment", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ChangeQueueCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/ChangeQueueCompartment");
         final java.util.function.Function<javax.ws.rs.core.Response, ChangeQueueCompartmentResponse>
                 transformer =
                         ChangeQueueCompartmentConverter.fromResponse(
@@ -498,7 +501,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "CreateQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "CreateQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/CreateQueue");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateQueueResponse>
                 transformer =
                         CreateQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -544,7 +550,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 DeleteQueueConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "DeleteQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "DeleteQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/DeleteQueue");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteQueueResponse>
                 transformer =
                         DeleteQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -584,7 +593,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 GetQueueConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "GetQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "GetQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/GetQueue");
         final java.util.function.Function<javax.ws.rs.core.Response, GetQueueResponse> transformer =
                 GetQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetQueueRequest, GetQueueResponse> handlerToUse =
@@ -624,7 +636,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -664,7 +679,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 ListQueuesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListQueues", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListQueues",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueCollection/ListQueues");
         final java.util.function.Function<javax.ws.rs.core.Response, ListQueuesResponse>
                 transformer =
                         ListQueuesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -706,7 +724,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestErrorCollection/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -750,7 +771,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -794,7 +818,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestSummaryCollection/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -835,7 +862,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 PurgeQueueConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "PurgeQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "PurgeQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/PurgeQueue");
         final java.util.function.Function<javax.ws.rs.core.Response, PurgeQueueResponse>
                 transformer =
                         PurgeQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -881,7 +911,10 @@ public class QueueAdminAsyncClient implements QueueAdminAsync {
                 UpdateQueueConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "UpdateQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "UpdateQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/UpdateQueue");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateQueueResponse>
                 transformer =
                         UpdateQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));

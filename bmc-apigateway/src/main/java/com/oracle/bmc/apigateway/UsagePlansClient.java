@@ -25,7 +25,7 @@ public class UsagePlansClient implements UsagePlans {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(UsagePlansAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(UsagePlansClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

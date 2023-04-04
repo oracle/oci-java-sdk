@@ -25,7 +25,7 @@ public class StreamAdminClient implements StreamAdmin {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(StreamAdminAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(StreamAdminClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

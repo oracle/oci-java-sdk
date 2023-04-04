@@ -25,7 +25,7 @@ public class StreamClient implements Stream {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(StreamAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(StreamClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

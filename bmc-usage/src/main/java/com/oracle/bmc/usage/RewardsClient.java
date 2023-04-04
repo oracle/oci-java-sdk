@@ -25,7 +25,7 @@ public class RewardsClient implements Rewards {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(RewardsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(RewardsClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

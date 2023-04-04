@@ -25,7 +25,7 @@ public class EsxiHostClient implements EsxiHost {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EsxiHostAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EsxiHostClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
