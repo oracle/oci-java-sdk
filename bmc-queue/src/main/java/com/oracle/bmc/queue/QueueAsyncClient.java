@@ -448,7 +448,10 @@ public class QueueAsyncClient implements QueueAsync {
                 DeleteMessageConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "DeleteMessage", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "DeleteMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessage");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMessageResponse>
                 transformer =
                         DeleteMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -490,7 +493,10 @@ public class QueueAsyncClient implements QueueAsync {
                 DeleteMessagesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "DeleteMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "DeleteMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessages");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMessagesResponse>
                 transformer =
                         DeleteMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -536,7 +542,10 @@ public class QueueAsyncClient implements QueueAsync {
                 GetMessagesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "GetMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "GetMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/GetMessages");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMessagesResponse>
                 transformer =
                         GetMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -576,7 +585,10 @@ public class QueueAsyncClient implements QueueAsync {
                 GetStatsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "GetStats", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "GetStats",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueStats/GetStats");
         final java.util.function.Function<javax.ws.rs.core.Response, GetStatsResponse> transformer =
                 GetStatsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetStatsRequest, GetStatsResponse> handlerToUse =
@@ -615,7 +627,10 @@ public class QueueAsyncClient implements QueueAsync {
                 PutMessagesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "PutMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "PutMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/PutMessage/PutMessages");
         final java.util.function.Function<javax.ws.rs.core.Response, PutMessagesResponse>
                 transformer =
                         PutMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -661,7 +676,10 @@ public class QueueAsyncClient implements QueueAsync {
                 UpdateMessageConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "UpdateMessage", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "UpdateMessage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/UpdatedMessage/UpdateMessage");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMessageResponse>
                 transformer =
                         UpdateMessageConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -708,7 +726,10 @@ public class QueueAsyncClient implements QueueAsync {
                 UpdateMessagesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Queue", "UpdateMessages", ib.getRequestUri().toString(), "");
+                        "Queue",
+                        "UpdateMessages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/UpdateMessages");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMessagesResponse>
                 transformer =
                         UpdateMessagesConverter.fromResponse(java.util.Optional.of(serviceDetails));

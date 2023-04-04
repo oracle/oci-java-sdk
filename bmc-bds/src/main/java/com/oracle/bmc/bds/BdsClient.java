@@ -25,8 +25,7 @@ public class BdsClient implements Bds {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(BdsAsyncClient.class);
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(BdsClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

@@ -454,7 +454,7 @@ public class AIServiceDocumentAsyncClient implements AIServiceDocumentAsync {
                         "AIServiceDocument",
                         "CancelProcessorJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CancelProcessorJob");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelProcessorJobResponse>
                 transformer =
                         CancelProcessorJobConverter.fromResponse(
@@ -501,7 +501,7 @@ public class AIServiceDocumentAsyncClient implements AIServiceDocumentAsync {
                         "AIServiceDocument",
                         "CreateProcessorJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CreateProcessorJob");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateProcessorJobResponse>
                 transformer =
                         CreateProcessorJobConverter.fromResponse(
@@ -549,7 +549,10 @@ public class AIServiceDocumentAsyncClient implements AIServiceDocumentAsync {
                 GetProcessorJobConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AIServiceDocument", "GetProcessorJob", ib.getRequestUri().toString(), "");
+                        "AIServiceDocument",
+                        "GetProcessorJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/GetProcessorJob");
         final java.util.function.Function<javax.ws.rs.core.Response, GetProcessorJobResponse>
                 transformer =
                         GetProcessorJobConverter.fromResponse(

@@ -25,7 +25,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DatabaseRecoveryAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DatabaseRecoveryClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
@@ -543,7 +543,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ChangeProtectedDatabaseCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeProtectedDatabaseCompartmentResponse>
                 transformer =
@@ -587,7 +587,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ChangeProtectionPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/ChangeProtectionPolicyCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeProtectionPolicyCompartmentResponse>
                 transformer =
@@ -632,7 +632,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ChangeRecoveryServiceSubnetCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/ChangeRecoveryServiceSubnetCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRecoveryServiceSubnetCompartmentResponse>
                 transformer =
@@ -677,7 +677,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "CreateProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CreateProtectedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, CreateProtectedDatabaseResponse>
                 transformer =
                         CreateProtectedDatabaseConverter.fromResponse(
@@ -720,7 +720,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "CreateProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/CreateProtectionPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, CreateProtectionPolicyResponse>
                 transformer =
                         CreateProtectionPolicyConverter.fromResponse(
@@ -763,7 +763,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "CreateRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/CreateRecoveryServiceSubnet");
         java.util.function.Function<javax.ws.rs.core.Response, CreateRecoveryServiceSubnetResponse>
                 transformer =
                         CreateRecoveryServiceSubnetConverter.fromResponse(
@@ -806,7 +806,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "DeleteProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/DeleteProtectedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteProtectedDatabaseResponse>
                 transformer =
                         DeleteProtectedDatabaseConverter.fromResponse(
@@ -845,7 +845,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "DeleteProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/DeleteProtectionPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteProtectionPolicyResponse>
                 transformer =
                         DeleteProtectionPolicyConverter.fromResponse(
@@ -884,7 +884,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "DeleteRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/DeleteRecoveryServiceSubnet");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteRecoveryServiceSubnetResponse>
                 transformer =
                         DeleteRecoveryServiceSubnetConverter.fromResponse(
@@ -934,7 +934,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "FetchProtectedDatabaseConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/FetchProtectedDatabaseConfiguration");
         java.util.function.Function<
                         javax.ws.rs.core.Response, FetchProtectedDatabaseConfigurationResponse>
                 transformer =
@@ -977,7 +977,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "GetProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/GetProtectedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, GetProtectedDatabaseResponse>
                 transformer =
                         GetProtectedDatabaseConverter.fromResponse(
@@ -1014,7 +1014,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "GetProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/GetProtectionPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, GetProtectionPolicyResponse>
                 transformer =
                         GetProtectionPolicyConverter.fromResponse(
@@ -1052,7 +1052,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "GetRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/GetRecoveryServiceSubnet");
         java.util.function.Function<javax.ws.rs.core.Response, GetRecoveryServiceSubnetResponse>
                 transformer =
                         GetRecoveryServiceSubnetConverter.fromResponse(
@@ -1086,7 +1086,10 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseRecovery", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "DatabaseRecovery",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1122,7 +1125,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ListProtectedDatabases",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabaseCollection/ListProtectedDatabases");
         java.util.function.Function<javax.ws.rs.core.Response, ListProtectedDatabasesResponse>
                 transformer =
                         ListProtectedDatabasesConverter.fromResponse(
@@ -1160,7 +1163,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ListProtectionPolicies",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicyCollection/ListProtectionPolicies");
         java.util.function.Function<javax.ws.rs.core.Response, ListProtectionPoliciesResponse>
                 transformer =
                         ListProtectionPoliciesConverter.fromResponse(
@@ -1198,7 +1201,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ListRecoveryServiceSubnets",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnetCollection/ListRecoveryServiceSubnets");
         java.util.function.Function<javax.ws.rs.core.Response, ListRecoveryServiceSubnetsResponse>
                 transformer =
                         ListRecoveryServiceSubnetsConverter.fromResponse(
@@ -1236,7 +1239,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestErrorCollection/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1273,7 +1276,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1307,7 +1310,10 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseRecovery", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "DatabaseRecovery",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestSummaryCollection/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1345,7 +1351,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "UpdateProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/UpdateProtectedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectedDatabaseResponse>
                 transformer =
                         UpdateProtectedDatabaseConverter.fromResponse(
@@ -1387,7 +1393,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "UpdateProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/UpdateProtectionPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectionPolicyResponse>
                 transformer =
                         UpdateProtectionPolicyConverter.fromResponse(
@@ -1429,7 +1435,7 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
                         "DatabaseRecovery",
                         "UpdateRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/UpdateRecoveryServiceSubnet");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateRecoveryServiceSubnetResponse>
                 transformer =
                         UpdateRecoveryServiceSubnetConverter.fromResponse(

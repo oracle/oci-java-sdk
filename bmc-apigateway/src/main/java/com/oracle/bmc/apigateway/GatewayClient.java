@@ -25,7 +25,7 @@ public class GatewayClient implements Gateway {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GatewayAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(GatewayClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

@@ -25,7 +25,7 @@ public class QueueAdminClient implements QueueAdmin {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(QueueAdminAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(QueueAdminClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
@@ -540,7 +540,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ChangeQueueCompartment", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ChangeQueueCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/ChangeQueueCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeQueueCompartmentResponse>
                 transformer =
                         ChangeQueueCompartmentConverter.fromResponse(
@@ -579,7 +582,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "CreateQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "CreateQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/CreateQueue");
         java.util.function.Function<javax.ws.rs.core.Response, CreateQueueResponse> transformer =
                 CreateQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -615,7 +621,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "DeleteQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "DeleteQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/DeleteQueue");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteQueueResponse> transformer =
                 DeleteQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -647,7 +656,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "GetQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "GetQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/GetQueue");
         java.util.function.Function<javax.ws.rs.core.Response, GetQueueResponse> transformer =
                 GetQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -679,7 +691,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -710,7 +725,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListQueues", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListQueues",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueCollection/ListQueues");
         java.util.function.Function<javax.ws.rs.core.Response, ListQueuesResponse> transformer =
                 ListQueuesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -743,7 +761,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestErrorCollection/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -777,7 +798,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -811,7 +835,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestSummaryCollection/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -844,7 +871,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "PurgeQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "PurgeQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/PurgeQueue");
         java.util.function.Function<javax.ws.rs.core.Response, PurgeQueueResponse> transformer =
                 PurgeQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -880,7 +910,10 @@ public class QueueAdminClient implements QueueAdmin {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "QueueAdmin", "UpdateQueue", ib.getRequestUri().toString(), "");
+                        "QueueAdmin",
+                        "UpdateQueue",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/UpdateQueue");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateQueueResponse> transformer =
                 UpdateQueueConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

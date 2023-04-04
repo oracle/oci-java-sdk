@@ -455,7 +455,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ChangeProtectedDatabaseCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeProtectedDatabaseCompartmentResponse>
                 transformer =
@@ -513,7 +513,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ChangeProtectionPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/ChangeProtectionPolicyCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeProtectionPolicyCompartmentResponse>
                 transformer =
@@ -572,7 +572,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ChangeRecoveryServiceSubnetCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/ChangeRecoveryServiceSubnetCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRecoveryServiceSubnetCompartmentResponse>
                 transformer =
@@ -630,7 +630,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "CreateProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CreateProtectedDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateProtectedDatabaseResponse>
                 transformer =
@@ -684,7 +684,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "CreateProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/CreateProtectionPolicy");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateProtectionPolicyResponse>
                 transformer =
                         CreateProtectionPolicyConverter.fromResponse(
@@ -739,7 +739,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "CreateRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/CreateRecoveryServiceSubnet");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateRecoveryServiceSubnetResponse>
                 transformer =
@@ -793,7 +793,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "DeleteProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/DeleteProtectedDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteProtectedDatabaseResponse>
                 transformer =
@@ -841,7 +841,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "DeleteProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/DeleteProtectionPolicy");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteProtectionPolicyResponse>
                 transformer =
                         DeleteProtectionPolicyConverter.fromResponse(
@@ -890,7 +890,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "DeleteRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/DeleteRecoveryServiceSubnet");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteRecoveryServiceSubnetResponse>
                 transformer =
@@ -952,7 +952,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "FetchProtectedDatabaseConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/FetchProtectedDatabaseConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, FetchProtectedDatabaseConfigurationResponse>
                 transformer =
@@ -1008,7 +1008,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "GetProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/GetProtectedDatabase");
         final java.util.function.Function<javax.ws.rs.core.Response, GetProtectedDatabaseResponse>
                 transformer =
                         GetProtectedDatabaseConverter.fromResponse(
@@ -1055,7 +1055,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "GetProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/GetProtectionPolicy");
         final java.util.function.Function<javax.ws.rs.core.Response, GetProtectionPolicyResponse>
                 transformer =
                         GetProtectionPolicyConverter.fromResponse(
@@ -1102,7 +1102,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "GetRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/GetRecoveryServiceSubnet");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetRecoveryServiceSubnetResponse>
                 transformer =
@@ -1147,7 +1147,10 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseRecovery", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "DatabaseRecovery",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1192,7 +1195,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ListProtectedDatabases",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabaseCollection/ListProtectedDatabases");
         final java.util.function.Function<javax.ws.rs.core.Response, ListProtectedDatabasesResponse>
                 transformer =
                         ListProtectedDatabasesConverter.fromResponse(
@@ -1239,7 +1242,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ListProtectionPolicies",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicyCollection/ListProtectionPolicies");
         final java.util.function.Function<javax.ws.rs.core.Response, ListProtectionPoliciesResponse>
                 transformer =
                         ListProtectionPoliciesConverter.fromResponse(
@@ -1288,7 +1291,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ListRecoveryServiceSubnets",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnetCollection/ListRecoveryServiceSubnets");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListRecoveryServiceSubnetsResponse>
                 transformer =
@@ -1337,7 +1340,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestErrorCollection/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1384,7 +1387,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1428,7 +1431,10 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseRecovery", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "DatabaseRecovery",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestSummaryCollection/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1474,7 +1480,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "UpdateProtectedDatabase",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/UpdateProtectedDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateProtectedDatabaseResponse>
                 transformer =
@@ -1527,7 +1533,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "UpdateProtectionPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/UpdateProtectionPolicy");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectionPolicyResponse>
                 transformer =
                         UpdateProtectionPolicyConverter.fromResponse(
@@ -1581,7 +1587,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                         "DatabaseRecovery",
                         "UpdateRecoveryServiceSubnet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/UpdateRecoveryServiceSubnet");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateRecoveryServiceSubnetResponse>
                 transformer =

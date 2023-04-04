@@ -26,7 +26,7 @@ public class GovernanceRuleClient implements GovernanceRule {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GovernanceRuleAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(GovernanceRuleClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

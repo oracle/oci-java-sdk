@@ -26,7 +26,7 @@ public class ContainerInstanceClient implements ContainerInstance {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(ContainerInstanceAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(ContainerInstanceClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
@@ -544,7 +544,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "ChangeContainerInstanceCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/ChangeContainerInstanceCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeContainerInstanceCompartmentResponse>
                 transformer =
@@ -589,7 +589,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "CreateContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/CreateContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, CreateContainerInstanceResponse>
                 transformer =
                         CreateContainerInstanceConverter.fromResponse(
@@ -631,7 +631,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "DeleteContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/DeleteContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteContainerInstanceResponse>
                 transformer =
                         DeleteContainerInstanceConverter.fromResponse(
@@ -666,7 +666,10 @@ public class ContainerInstanceClient implements ContainerInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "GetContainer", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "GetContainer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/GetContainer");
         java.util.function.Function<javax.ws.rs.core.Response, GetContainerResponse> transformer =
                 GetContainerConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -701,7 +704,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "GetContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/GetContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, GetContainerInstanceResponse>
                 transformer =
                         GetContainerInstanceConverter.fromResponse(
@@ -735,7 +738,10 @@ public class ContainerInstanceClient implements ContainerInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -771,7 +777,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "ListContainerInstanceShapes",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceShapeCollection/ListContainerInstanceShapes");
         java.util.function.Function<javax.ws.rs.core.Response, ListContainerInstanceShapesResponse>
                 transformer =
                         ListContainerInstanceShapesConverter.fromResponse(
@@ -809,7 +815,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "ListContainerInstances",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceCollection/ListContainerInstances");
         java.util.function.Function<javax.ws.rs.core.Response, ListContainerInstancesResponse>
                 transformer =
                         ListContainerInstancesConverter.fromResponse(
@@ -843,7 +849,10 @@ public class ContainerInstanceClient implements ContainerInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "ListContainers", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "ListContainers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerCollection/ListContainers");
         java.util.function.Function<javax.ws.rs.core.Response, ListContainersResponse> transformer =
                 ListContainersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -879,7 +888,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestErrorCollection/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -916,7 +925,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -950,7 +959,10 @@ public class ContainerInstanceClient implements ContainerInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestSummaryCollection/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -988,7 +1000,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "RestartContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/RestartContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, RestartContainerInstanceResponse>
                 transformer =
                         RestartContainerInstanceConverter.fromResponse(
@@ -1033,7 +1045,10 @@ public class ContainerInstanceClient implements ContainerInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "RetrieveLogs", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "RetrieveLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/RetrieveLogs");
         java.util.function.Function<javax.ws.rs.core.Response, RetrieveLogsResponse> transformer =
                 RetrieveLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1070,7 +1085,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "StartContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StartContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, StartContainerInstanceResponse>
                 transformer =
                         StartContainerInstanceConverter.fromResponse(
@@ -1109,7 +1124,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "StopContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StopContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, StopContainerInstanceResponse>
                 transformer =
                         StopContainerInstanceConverter.fromResponse(
@@ -1144,7 +1159,10 @@ public class ContainerInstanceClient implements ContainerInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerInstance", "UpdateContainer", ib.getRequestUri().toString(), "");
+                        "ContainerInstance",
+                        "UpdateContainer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/UpdateContainer");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateContainerResponse>
                 transformer =
                         UpdateContainerConverter.fromResponse(
@@ -1186,7 +1204,7 @@ public class ContainerInstanceClient implements ContainerInstance {
                         "ContainerInstance",
                         "UpdateContainerInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/UpdateContainerInstance");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateContainerInstanceResponse>
                 transformer =
                         UpdateContainerInstanceConverter.fromResponse(

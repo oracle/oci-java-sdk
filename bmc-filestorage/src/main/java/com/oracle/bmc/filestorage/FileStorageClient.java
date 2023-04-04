@@ -25,7 +25,7 @@ public class FileStorageClient implements FileStorage {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(FileStorageAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(FileStorageClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

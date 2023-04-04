@@ -26,7 +26,7 @@ public class CertificatesClient implements Certificates {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(CertificatesAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(CertificatesClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

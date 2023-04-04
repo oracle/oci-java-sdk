@@ -25,7 +25,7 @@ public class DiagnosabilityClient implements Diagnosability {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DiagnosabilityAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(DiagnosabilityClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;

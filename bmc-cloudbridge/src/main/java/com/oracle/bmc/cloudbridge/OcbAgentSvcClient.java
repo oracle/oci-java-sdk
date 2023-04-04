@@ -25,7 +25,7 @@ public class OcbAgentSvcClient implements OcbAgentSvc {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(OcbAgentSvcAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(OcbAgentSvcClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
