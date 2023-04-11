@@ -28,7 +28,7 @@ public class AnnouncementClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final AnnouncementPaginators paginators;
 
-    private AnnouncementClient(
+    AnnouncementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

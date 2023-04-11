@@ -31,7 +31,7 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
 
     private final CertificatesManagementPaginators paginators;
 
-    private CertificatesManagementClient(
+    CertificatesManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

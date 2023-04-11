@@ -31,7 +31,7 @@ public class SenderInvitationClient extends com.oracle.bmc.http.internal.BaseSyn
 
     private final SenderInvitationPaginators paginators;
 
-    private SenderInvitationClient(
+    SenderInvitationClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

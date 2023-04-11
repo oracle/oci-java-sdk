@@ -30,7 +30,7 @@ public class AppmgmtControlClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final AppmgmtControlPaginators paginators;
 
-    private AppmgmtControlClient(
+    AppmgmtControlClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

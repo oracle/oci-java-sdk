@@ -29,7 +29,7 @@ public class OperatorActionsClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final OperatorActionsPaginators paginators;
 
-    private OperatorActionsClient(
+    OperatorActionsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

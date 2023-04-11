@@ -40,7 +40,7 @@ public class LicenseManagerAsyncClient extends com.oracle.bmc.http.internal.Base
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LicenseManagerAsyncClient.class);
 
-    private LicenseManagerAsyncClient(
+    LicenseManagerAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

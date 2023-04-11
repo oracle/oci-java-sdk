@@ -31,7 +31,7 @@ public class RecipientInvitationClient extends com.oracle.bmc.http.internal.Base
 
     private final RecipientInvitationPaginators paginators;
 
-    private RecipientInvitationClient(
+    RecipientInvitationClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -30,7 +30,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
 
     private final DatabaseMigrationPaginators paginators;
 
-    private DatabaseMigrationClient(
+    DatabaseMigrationClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

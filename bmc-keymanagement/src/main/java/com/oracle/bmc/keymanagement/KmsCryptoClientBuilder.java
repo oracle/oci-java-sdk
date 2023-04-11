@@ -24,12 +24,13 @@ public class KmsCryptoClientBuilder
 
         String cryptoEndpoint = getEndpoint();
 
-        return new KmsCryptoClient(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                requestSignerFactory,
-                additionalClientConfigurators,
-                cryptoEndpoint);
+        // We create a copy of the builder and set the endpoint there, this way we don't modify this
+        // builder
+        // Otherwise, we might have both endpoint and vault or vaultSummary set, which would cause
+        // an exception to be thrown in getEndpoint(), if this builder were used a second time.
+        KmsCryptoClientBuilder copy =
+                KmsCryptoClient.builder().copyFrom(this).endpoint(cryptoEndpoint);
+
+        return new KmsCryptoClient(copy, authenticationDetailsProvider);
     }
 }

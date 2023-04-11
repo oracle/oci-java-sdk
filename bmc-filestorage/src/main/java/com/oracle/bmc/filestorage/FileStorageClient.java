@@ -30,7 +30,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final FileStoragePaginators paginators;
 
-    private FileStorageClient(
+    FileStorageClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

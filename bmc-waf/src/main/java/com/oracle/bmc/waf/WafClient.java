@@ -28,7 +28,7 @@ public class WafClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
     private final WafPaginators paginators;
 
-    private WafClient(
+    WafClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

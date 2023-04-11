@@ -30,7 +30,7 @@ public class OceInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final OceInstancePaginators paginators;
 
-    private OceInstanceClient(
+    OceInstanceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

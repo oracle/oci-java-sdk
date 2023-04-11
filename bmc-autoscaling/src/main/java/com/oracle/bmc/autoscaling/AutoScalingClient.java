@@ -28,7 +28,7 @@ public class AutoScalingClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final AutoScalingPaginators paginators;
 
-    private AutoScalingClient(
+    AutoScalingClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

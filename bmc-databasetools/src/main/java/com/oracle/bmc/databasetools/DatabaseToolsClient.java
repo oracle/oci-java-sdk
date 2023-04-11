@@ -30,7 +30,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
     private final DatabaseToolsPaginators paginators;
 
-    private DatabaseToolsClient(
+    DatabaseToolsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

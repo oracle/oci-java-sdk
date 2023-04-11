@@ -29,7 +29,7 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
     private final BdsPaginators paginators;
 
-    private BdsClient(
+    BdsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

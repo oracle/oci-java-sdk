@@ -242,12 +242,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("displayOrder");
             return this;
         }
-        /** Specifies the time at which the report definition was created. */
+        /** Specifies the data and time the report definition was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Specifies the time at which the report definition was created.
+         * Specifies the data and time the report definition was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -257,12 +257,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time of the report definition update in Data Safe. */
+        /** The date and time the report definition was update. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time of the report definition update in Data Safe.
+         * The date and time the report definition was update.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -272,12 +272,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Additional scim filters used to specialize the report. */
+        /** Additional SCIM filters used to define the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
         private String scimFilter;
 
         /**
-         * Additional scim filters used to specialize the report.
+         * Additional SCIM filters used to define the report.
          *
          * @param scimFilter the value to set
          * @return this builder
@@ -311,7 +311,7 @@ public final class ReportDefinition
             return this;
         }
         /**
-         * An array of column filter objects. A column Filter object stores all information about a
+         * An array of columnFilter objects. A columnFilter object stores all information about a
          * column filter including field name, an operator, one or more expressions, if the filter
          * is enabled, or if the filter is hidden.
          */
@@ -319,7 +319,7 @@ public final class ReportDefinition
         private java.util.List<ColumnFilter> columnFilters;
 
         /**
-         * An array of column filter objects. A column Filter object stores all information about a
+         * An array of columnFilter objects. A columnFilter object stores all information about a
          * column filter including field name, an operator, one or more expressions, if the filter
          * is enabled, or if the filter is hidden.
          *
@@ -406,7 +406,7 @@ public final class ReportDefinition
             return this;
         }
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          *
          * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -424,7 +424,7 @@ public final class ReportDefinition
         private String schedule;
 
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          *
          * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -446,12 +446,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies the format of report to be excel or pdf */
+        /** Specifies the format of the report ( either XLS or PDF ) */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of the report ( either XLS or PDF )
          *
          * @param scheduledReportMimeType the value to set
          * @return this builder
@@ -461,12 +461,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("scheduledReportMimeType");
             return this;
         }
-        /** Specifies the limit on number of rows in report. */
+        /** Specifies the limit on the number of rows in the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportRowLimit")
         private Integer scheduledReportRowLimit;
 
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          *
          * @param scheduledReportRowLimit the value to set
          * @return this builder
@@ -491,16 +491,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("scheduledReportName");
             return this;
         }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the scheduled resource should be created.
-         */
+        /** The OCID of the compartment in which the scheduled resource should be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
         private String scheduledReportCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource should be created.
          *
          * @param scheduledReportCompartmentId the value to set
          * @return this builder
@@ -511,23 +507,23 @@ public final class ReportDefinition
             return this;
         }
         /**
-         * The time span of records in report to be scheduled. <period-value><period> Allowed period
-         * strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A
-         * workRequest is created only when period-value satisfies all the constraints. Constraints
-         * introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D
-         * (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for
-         * period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+         * The time span for the records in the report to be scheduled. <period-value><period>
+         * Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce
+         * constraints. A workRequest is created only when period-value satisfies all the
+         * constraints. Constraints introduced: 1. period = H (The allowed range for period-value is
+         * [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The
+         * allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("recordTimeSpan")
         private String recordTimeSpan;
 
         /**
-         * The time span of records in report to be scheduled. <period-value><period> Allowed period
-         * strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A
-         * workRequest is created only when period-value satisfies all the constraints. Constraints
-         * introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D
-         * (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for
-         * period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+         * The time span for the records in the report to be scheduled. <period-value><period>
+         * Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce
+         * constraints. A workRequest is created only when period-value satisfies all the
+         * constraints. Constraints introduced: 1. period = H (The allowed range for period-value is
+         * [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The
+         * allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
          *
          * @param recordTimeSpan the value to set
          * @return this builder
@@ -538,14 +534,14 @@ public final class ReportDefinition
             return this;
         }
         /**
-         * The list of data protection regulations/standards used in the report that will help
+         * The list of the data protection regulations/standards used in the report that will help
          * demonstrate compliance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
         private java.util.List<String> complianceStandards;
 
         /**
-         * The list of data protection regulations/standards used in the report that will help
+         * The list of the data protection regulations/standards used in the report that will help
          * demonstrate compliance.
          *
          * @param complianceStandards the value to set
@@ -927,12 +923,12 @@ public final class ReportDefinition
         return displayOrder;
     }
 
-    /** Specifies the time at which the report definition was created. */
+    /** Specifies the data and time the report definition was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Specifies the time at which the report definition was created.
+     * Specifies the data and time the report definition was created.
      *
      * @return the value
      */
@@ -940,12 +936,12 @@ public final class ReportDefinition
         return timeCreated;
     }
 
-    /** The date and time of the report definition update in Data Safe. */
+    /** The date and time the report definition was update. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time of the report definition update in Data Safe.
+     * The date and time the report definition was update.
      *
      * @return the value
      */
@@ -953,12 +949,12 @@ public final class ReportDefinition
         return timeUpdated;
     }
 
-    /** Additional scim filters used to specialize the report. */
+    /** Additional SCIM filters used to define the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
     private final String scimFilter;
 
     /**
-     * Additional scim filters used to specialize the report.
+     * Additional SCIM filters used to define the report.
      *
      * @return the value
      */
@@ -988,17 +984,17 @@ public final class ReportDefinition
     }
 
     /**
-     * An array of column filter objects. A column Filter object stores all information about a
-     * column filter including field name, an operator, one or more expressions, if the filter is
-     * enabled, or if the filter is hidden.
+     * An array of columnFilter objects. A columnFilter object stores all information about a column
+     * filter including field name, an operator, one or more expressions, if the filter is enabled,
+     * or if the filter is hidden.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("columnFilters")
     private final java.util.List<ColumnFilter> columnFilters;
 
     /**
-     * An array of column filter objects. A column Filter object stores all information about a
-     * column filter including field name, an operator, one or more expressions, if the filter is
-     * enabled, or if the filter is hidden.
+     * An array of columnFilter objects. A columnFilter object stores all information about a column
+     * filter including field name, an operator, one or more expressions, if the filter is enabled,
+     * or if the filter is hidden.
      *
      * @return the value
      */
@@ -1073,7 +1069,7 @@ public final class ReportDefinition
     }
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      *
      * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -1090,7 +1086,7 @@ public final class ReportDefinition
     private final String schedule;
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      *
      * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -1109,7 +1105,7 @@ public final class ReportDefinition
         return schedule;
     }
 
-    /** Specifies the format of report to be excel or pdf */
+    /** Specifies the format of the report ( either XLS or PDF ) */
     public enum ScheduledReportMimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -1155,12 +1151,12 @@ public final class ReportDefinition
             return UnknownEnumValue;
         }
     };
-    /** Specifies the format of report to be excel or pdf */
+    /** Specifies the format of the report ( either XLS or PDF ) */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      *
      * @return the value
      */
@@ -1168,12 +1164,12 @@ public final class ReportDefinition
         return scheduledReportMimeType;
     }
 
-    /** Specifies the limit on number of rows in report. */
+    /** Specifies the limit on the number of rows in the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportRowLimit")
     private final Integer scheduledReportRowLimit;
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      *
      * @return the value
      */
@@ -1194,16 +1190,12 @@ public final class ReportDefinition
         return scheduledReportName;
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the scheduled resource should be created.
-     */
+    /** The OCID of the compartment in which the scheduled resource should be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
     private final String scheduledReportCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource should be created.
      *
      * @return the value
      */
@@ -1212,9 +1204,9 @@ public final class ReportDefinition
     }
 
     /**
-     * The time span of records in report to be scheduled. <period-value><period> Allowed period
-     * strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A
-     * workRequest is created only when period-value satisfies all the constraints. Constraints
+     * The time span for the records in the report to be scheduled. <period-value><period> Allowed
+     * period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints.
+     * A workRequest is created only when period-value satisfies all the constraints. Constraints
      * introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The
      * allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value
      * is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -1223,9 +1215,9 @@ public final class ReportDefinition
     private final String recordTimeSpan;
 
     /**
-     * The time span of records in report to be scheduled. <period-value><period> Allowed period
-     * strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A
-     * workRequest is created only when period-value satisfies all the constraints. Constraints
+     * The time span for the records in the report to be scheduled. <period-value><period> Allowed
+     * period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints.
+     * A workRequest is created only when period-value satisfies all the constraints. Constraints
      * introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The
      * allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value
      * is [1, 11]) 4. period = Y (The minimum period-value is 1)
@@ -1237,14 +1229,14 @@ public final class ReportDefinition
     }
 
     /**
-     * The list of data protection regulations/standards used in the report that will help
+     * The list of the data protection regulations/standards used in the report that will help
      * demonstrate compliance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
     private final java.util.List<String> complianceStandards;
 
     /**
-     * The list of data protection regulations/standards used in the report that will help
+     * The list of the data protection regulations/standards used in the report that will help
      * demonstrate compliance.
      *
      * @return the value

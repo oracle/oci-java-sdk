@@ -30,7 +30,7 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final DiscoveryPaginators paginators;
 
-    private DiscoveryClient(
+    DiscoveryClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

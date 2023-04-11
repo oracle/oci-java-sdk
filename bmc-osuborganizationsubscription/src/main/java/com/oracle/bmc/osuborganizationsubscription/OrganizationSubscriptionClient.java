@@ -28,7 +28,7 @@ public class OrganizationSubscriptionClient extends com.oracle.bmc.http.internal
 
     private final OrganizationSubscriptionPaginators paginators;
 
-    private OrganizationSubscriptionClient(
+    OrganizationSubscriptionClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

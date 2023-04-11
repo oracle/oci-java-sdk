@@ -42,6 +42,764 @@ public class OperationsInsightsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAddmDbFindingCategories operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddmDbFindingCategoriesResponse>
+            listAddmDbFindingCategoriesResponseIterator(
+                    final ListAddmDbFindingCategoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddmDbFindingCategoriesRequest.Builder,
+                ListAddmDbFindingCategoriesRequest,
+                ListAddmDbFindingCategoriesResponse>(
+                new java.util.function.Supplier<ListAddmDbFindingCategoriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbFindingCategoriesRequest.Builder get() {
+                        return ListAddmDbFindingCategoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbFindingCategoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbFindingCategoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbFindingCategoriesRequest.Builder>,
+                        ListAddmDbFindingCategoriesRequest>() {
+                    @Override
+                    public ListAddmDbFindingCategoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbFindingCategoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbFindingCategoriesRequest, ListAddmDbFindingCategoriesResponse>() {
+                    @Override
+                    public ListAddmDbFindingCategoriesResponse apply(
+                            ListAddmDbFindingCategoriesRequest request) {
+                        return client.listAddmDbFindingCategories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AddmDbFindingCategorySummary} objects contained in responses from
+     * the listAddmDbFindingCategories operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AddmDbFindingCategorySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AddmDbFindingCategorySummary>
+            listAddmDbFindingCategoriesRecordIterator(
+                    final ListAddmDbFindingCategoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddmDbFindingCategoriesRequest.Builder,
+                ListAddmDbFindingCategoriesRequest,
+                ListAddmDbFindingCategoriesResponse,
+                com.oracle.bmc.opsi.model.AddmDbFindingCategorySummary>(
+                new java.util.function.Supplier<ListAddmDbFindingCategoriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbFindingCategoriesRequest.Builder get() {
+                        return ListAddmDbFindingCategoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbFindingCategoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbFindingCategoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbFindingCategoriesRequest.Builder>,
+                        ListAddmDbFindingCategoriesRequest>() {
+                    @Override
+                    public ListAddmDbFindingCategoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbFindingCategoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbFindingCategoriesRequest, ListAddmDbFindingCategoriesResponse>() {
+                    @Override
+                    public ListAddmDbFindingCategoriesResponse apply(
+                            ListAddmDbFindingCategoriesRequest request) {
+                        return client.listAddmDbFindingCategories(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbFindingCategoriesResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.AddmDbFindingCategorySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AddmDbFindingCategorySummary>
+                            apply(ListAddmDbFindingCategoriesResponse response) {
+                        return response.getAddmDbFindingCategoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAddmDbFindingsTimeSeries operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddmDbFindingsTimeSeriesResponse>
+            listAddmDbFindingsTimeSeriesResponseIterator(
+                    final ListAddmDbFindingsTimeSeriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddmDbFindingsTimeSeriesRequest.Builder,
+                ListAddmDbFindingsTimeSeriesRequest,
+                ListAddmDbFindingsTimeSeriesResponse>(
+                new java.util.function.Supplier<ListAddmDbFindingsTimeSeriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbFindingsTimeSeriesRequest.Builder get() {
+                        return ListAddmDbFindingsTimeSeriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbFindingsTimeSeriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbFindingsTimeSeriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbFindingsTimeSeriesRequest.Builder>,
+                        ListAddmDbFindingsTimeSeriesRequest>() {
+                    @Override
+                    public ListAddmDbFindingsTimeSeriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbFindingsTimeSeriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbFindingsTimeSeriesRequest,
+                        ListAddmDbFindingsTimeSeriesResponse>() {
+                    @Override
+                    public ListAddmDbFindingsTimeSeriesResponse apply(
+                            ListAddmDbFindingsTimeSeriesRequest request) {
+                        return client.listAddmDbFindingsTimeSeries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesSummary} objects contained in responses
+     * from the listAddmDbFindingsTimeSeries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesSummary>
+            listAddmDbFindingsTimeSeriesRecordIterator(
+                    final ListAddmDbFindingsTimeSeriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddmDbFindingsTimeSeriesRequest.Builder,
+                ListAddmDbFindingsTimeSeriesRequest,
+                ListAddmDbFindingsTimeSeriesResponse,
+                com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesSummary>(
+                new java.util.function.Supplier<ListAddmDbFindingsTimeSeriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbFindingsTimeSeriesRequest.Builder get() {
+                        return ListAddmDbFindingsTimeSeriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbFindingsTimeSeriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbFindingsTimeSeriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbFindingsTimeSeriesRequest.Builder>,
+                        ListAddmDbFindingsTimeSeriesRequest>() {
+                    @Override
+                    public ListAddmDbFindingsTimeSeriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbFindingsTimeSeriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbFindingsTimeSeriesRequest,
+                        ListAddmDbFindingsTimeSeriesResponse>() {
+                    @Override
+                    public ListAddmDbFindingsTimeSeriesResponse apply(
+                            ListAddmDbFindingsTimeSeriesRequest request) {
+                        return client.listAddmDbFindingsTimeSeries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbFindingsTimeSeriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesSummary>
+                            apply(ListAddmDbFindingsTimeSeriesResponse response) {
+                        return response.getAddmDbFindingsTimeSeriesCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAddmDbParameterCategories operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddmDbParameterCategoriesResponse>
+            listAddmDbParameterCategoriesResponseIterator(
+                    final ListAddmDbParameterCategoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddmDbParameterCategoriesRequest.Builder,
+                ListAddmDbParameterCategoriesRequest,
+                ListAddmDbParameterCategoriesResponse>(
+                new java.util.function.Supplier<ListAddmDbParameterCategoriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbParameterCategoriesRequest.Builder get() {
+                        return ListAddmDbParameterCategoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbParameterCategoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbParameterCategoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbParameterCategoriesRequest.Builder>,
+                        ListAddmDbParameterCategoriesRequest>() {
+                    @Override
+                    public ListAddmDbParameterCategoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbParameterCategoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbParameterCategoriesRequest,
+                        ListAddmDbParameterCategoriesResponse>() {
+                    @Override
+                    public ListAddmDbParameterCategoriesResponse apply(
+                            ListAddmDbParameterCategoriesRequest request) {
+                        return client.listAddmDbParameterCategories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AddmDbParameterCategorySummary} objects contained in responses from
+     * the listAddmDbParameterCategories operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AddmDbParameterCategorySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AddmDbParameterCategorySummary>
+            listAddmDbParameterCategoriesRecordIterator(
+                    final ListAddmDbParameterCategoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddmDbParameterCategoriesRequest.Builder,
+                ListAddmDbParameterCategoriesRequest,
+                ListAddmDbParameterCategoriesResponse,
+                com.oracle.bmc.opsi.model.AddmDbParameterCategorySummary>(
+                new java.util.function.Supplier<ListAddmDbParameterCategoriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbParameterCategoriesRequest.Builder get() {
+                        return ListAddmDbParameterCategoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbParameterCategoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbParameterCategoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbParameterCategoriesRequest.Builder>,
+                        ListAddmDbParameterCategoriesRequest>() {
+                    @Override
+                    public ListAddmDbParameterCategoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbParameterCategoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbParameterCategoriesRequest,
+                        ListAddmDbParameterCategoriesResponse>() {
+                    @Override
+                    public ListAddmDbParameterCategoriesResponse apply(
+                            ListAddmDbParameterCategoriesRequest request) {
+                        return client.listAddmDbParameterCategories(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbParameterCategoriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model.AddmDbParameterCategorySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AddmDbParameterCategorySummary>
+                            apply(ListAddmDbParameterCategoriesResponse response) {
+                        return response.getAddmDbParameterCategoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAddmDbRecommendationCategories operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddmDbRecommendationCategoriesResponse>
+            listAddmDbRecommendationCategoriesResponseIterator(
+                    final ListAddmDbRecommendationCategoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddmDbRecommendationCategoriesRequest.Builder,
+                ListAddmDbRecommendationCategoriesRequest,
+                ListAddmDbRecommendationCategoriesResponse>(
+                new java.util.function.Supplier<
+                        ListAddmDbRecommendationCategoriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbRecommendationCategoriesRequest.Builder get() {
+                        return ListAddmDbRecommendationCategoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationCategoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbRecommendationCategoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbRecommendationCategoriesRequest.Builder>,
+                        ListAddmDbRecommendationCategoriesRequest>() {
+                    @Override
+                    public ListAddmDbRecommendationCategoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbRecommendationCategoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationCategoriesRequest,
+                        ListAddmDbRecommendationCategoriesResponse>() {
+                    @Override
+                    public ListAddmDbRecommendationCategoriesResponse apply(
+                            ListAddmDbRecommendationCategoriesRequest request) {
+                        return client.listAddmDbRecommendationCategories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AddmDbRecommendationCategorySummary} objects contained in responses
+     * from the listAddmDbRecommendationCategories operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AddmDbRecommendationCategorySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AddmDbRecommendationCategorySummary>
+            listAddmDbRecommendationCategoriesRecordIterator(
+                    final ListAddmDbRecommendationCategoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddmDbRecommendationCategoriesRequest.Builder,
+                ListAddmDbRecommendationCategoriesRequest,
+                ListAddmDbRecommendationCategoriesResponse,
+                com.oracle.bmc.opsi.model.AddmDbRecommendationCategorySummary>(
+                new java.util.function.Supplier<
+                        ListAddmDbRecommendationCategoriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbRecommendationCategoriesRequest.Builder get() {
+                        return ListAddmDbRecommendationCategoriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationCategoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbRecommendationCategoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbRecommendationCategoriesRequest.Builder>,
+                        ListAddmDbRecommendationCategoriesRequest>() {
+                    @Override
+                    public ListAddmDbRecommendationCategoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbRecommendationCategoriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationCategoriesRequest,
+                        ListAddmDbRecommendationCategoriesResponse>() {
+                    @Override
+                    public ListAddmDbRecommendationCategoriesResponse apply(
+                            ListAddmDbRecommendationCategoriesRequest request) {
+                        return client.listAddmDbRecommendationCategories(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationCategoriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model.AddmDbRecommendationCategorySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.opsi.model.AddmDbRecommendationCategorySummary>
+                            apply(ListAddmDbRecommendationCategoriesResponse response) {
+                        return response.getAddmDbRecommendationCategoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAddmDbRecommendationsTimeSeries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddmDbRecommendationsTimeSeriesResponse>
+            listAddmDbRecommendationsTimeSeriesResponseIterator(
+                    final ListAddmDbRecommendationsTimeSeriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddmDbRecommendationsTimeSeriesRequest.Builder,
+                ListAddmDbRecommendationsTimeSeriesRequest,
+                ListAddmDbRecommendationsTimeSeriesResponse>(
+                new java.util.function.Supplier<
+                        ListAddmDbRecommendationsTimeSeriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbRecommendationsTimeSeriesRequest.Builder get() {
+                        return ListAddmDbRecommendationsTimeSeriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationsTimeSeriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbRecommendationsTimeSeriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbRecommendationsTimeSeriesRequest.Builder>,
+                        ListAddmDbRecommendationsTimeSeriesRequest>() {
+                    @Override
+                    public ListAddmDbRecommendationsTimeSeriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbRecommendationsTimeSeriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationsTimeSeriesRequest,
+                        ListAddmDbRecommendationsTimeSeriesResponse>() {
+                    @Override
+                    public ListAddmDbRecommendationsTimeSeriesResponse apply(
+                            ListAddmDbRecommendationsTimeSeriesRequest request) {
+                        return client.listAddmDbRecommendationsTimeSeries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesSummary} objects contained in
+     * responses from the listAddmDbRecommendationsTimeSeries operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesSummary>
+            listAddmDbRecommendationsTimeSeriesRecordIterator(
+                    final ListAddmDbRecommendationsTimeSeriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddmDbRecommendationsTimeSeriesRequest.Builder,
+                ListAddmDbRecommendationsTimeSeriesRequest,
+                ListAddmDbRecommendationsTimeSeriesResponse,
+                com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesSummary>(
+                new java.util.function.Supplier<
+                        ListAddmDbRecommendationsTimeSeriesRequest.Builder>() {
+                    @Override
+                    public ListAddmDbRecommendationsTimeSeriesRequest.Builder get() {
+                        return ListAddmDbRecommendationsTimeSeriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationsTimeSeriesResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbRecommendationsTimeSeriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbRecommendationsTimeSeriesRequest.Builder>,
+                        ListAddmDbRecommendationsTimeSeriesRequest>() {
+                    @Override
+                    public ListAddmDbRecommendationsTimeSeriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbRecommendationsTimeSeriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationsTimeSeriesRequest,
+                        ListAddmDbRecommendationsTimeSeriesResponse>() {
+                    @Override
+                    public ListAddmDbRecommendationsTimeSeriesResponse apply(
+                            ListAddmDbRecommendationsTimeSeriesRequest request) {
+                        return client.listAddmDbRecommendationsTimeSeries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbRecommendationsTimeSeriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model
+                                        .AddmDbRecommendationsTimeSeriesSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.opsi.model
+                                            .AddmDbRecommendationsTimeSeriesSummary>
+                            apply(ListAddmDbRecommendationsTimeSeriesResponse response) {
+                        return response.getAddmDbRecommendationsTimeSeriesCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAddmDbs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddmDbsResponse> listAddmDbsResponseIterator(
+            final ListAddmDbsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddmDbsRequest.Builder, ListAddmDbsRequest, ListAddmDbsResponse>(
+                new java.util.function.Supplier<ListAddmDbsRequest.Builder>() {
+                    @Override
+                    public ListAddmDbsRequest.Builder get() {
+                        return ListAddmDbsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbsResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbsRequest.Builder>,
+                        ListAddmDbsRequest>() {
+                    @Override
+                    public ListAddmDbsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAddmDbsRequest, ListAddmDbsResponse>() {
+                    @Override
+                    public ListAddmDbsResponse apply(ListAddmDbsRequest request) {
+                        return client.listAddmDbs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.opsi.model.AddmDbSummary} objects contained in responses from the listAddmDbs
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.opsi.model.AddmDbSummary} objects contained in responses received from the
+     *     service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AddmDbSummary> listAddmDbsRecordIterator(
+            final ListAddmDbsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddmDbsRequest.Builder,
+                ListAddmDbsRequest,
+                ListAddmDbsResponse,
+                com.oracle.bmc.opsi.model.AddmDbSummary>(
+                new java.util.function.Supplier<ListAddmDbsRequest.Builder>() {
+                    @Override
+                    public ListAddmDbsRequest.Builder get() {
+                        return ListAddmDbsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddmDbsResponse, String>() {
+                    @Override
+                    public String apply(ListAddmDbsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddmDbsRequest.Builder>,
+                        ListAddmDbsRequest>() {
+                    @Override
+                    public ListAddmDbsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddmDbsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAddmDbsRequest, ListAddmDbsResponse>() {
+                    @Override
+                    public ListAddmDbsResponse apply(ListAddmDbsRequest request) {
+                        return client.listAddmDbs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddmDbsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.AddmDbSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AddmDbSummary> apply(
+                            ListAddmDbsResponse response) {
+                        return response.getAddmDbCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAwrHubs
      * operation. This iterable will fetch more data from the server as needed.
      *

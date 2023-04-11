@@ -40,7 +40,7 @@ public class DataLabelingManagementAsyncClient extends com.oracle.bmc.http.inter
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DataLabelingManagementAsyncClient.class);
 
-    private DataLabelingManagementAsyncClient(
+    DataLabelingManagementAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

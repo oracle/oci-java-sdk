@@ -39,7 +39,7 @@ public class WafAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(WafAsyncClient.class);
 
-    private WafAsyncClient(
+    WafAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -39,7 +39,7 @@ public class VnMonitoringAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(VnMonitoringAsyncClient.class);
 
-    private VnMonitoringAsyncClient(
+    VnMonitoringAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

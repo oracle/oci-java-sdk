@@ -174,16 +174,16 @@ public class ListReportDefinitionsRequest
         return sortOrder;
     }
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified. The default
-     * order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending. The
-     * DISPLAYNAME sort order is case sensitive.
+     * The field used for sorting. Only one sorting parameter order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is
+     * ascending. The DISPLAYNAME sort order is case sensitive.
      */
     private SortBy sortBy;
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified. The default
-     * order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending. The
-     * DISPLAYNAME sort order is case sensitive.
+     * The field used for sorting. Only one sorting parameter order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is
+     * ascending. The DISPLAYNAME sort order is case sensitive.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
@@ -220,9 +220,9 @@ public class ListReportDefinitionsRequest
     };
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified. The default
-     * order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending. The
-     * DISPLAYNAME sort order is case sensitive.
+     * The field used for sorting. Only one sorting parameter order (sortOrder) can be specified.
+     * The default order for TIMECREATED is descending. The default order for DISPLAYNAME is
+     * ascending. The DISPLAYNAME sort order is case sensitive.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -443,16 +443,16 @@ public class ListReportDefinitionsRequest
         }
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified. The
-         * default order for TIMECREATED is descending. The default order for DISPLAYNAME is
-         * ascending. The DISPLAYNAME sort order is case sensitive.
+         * The field used for sorting. Only one sorting parameter order (sortOrder) can be
+         * specified. The default order for TIMECREATED is descending. The default order for
+         * DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified. The
-         * default order for TIMECREATED is descending. The default order for DISPLAYNAME is
-         * ascending. The DISPLAYNAME sort order is case sensitive.
+         * The field used for sorting. Only one sorting parameter order (sortOrder) can be
+         * specified. The default order for TIMECREATED is descending. The default order for
+         * DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance

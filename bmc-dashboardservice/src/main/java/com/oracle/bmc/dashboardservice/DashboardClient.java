@@ -30,7 +30,7 @@ public class DashboardClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final DashboardPaginators paginators;
 
-    private DashboardClient(
+    DashboardClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

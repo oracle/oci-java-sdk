@@ -30,7 +30,7 @@ public class VnMonitoringClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final VnMonitoringPaginators paginators;
 
-    private VnMonitoringClient(
+    VnMonitoringClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

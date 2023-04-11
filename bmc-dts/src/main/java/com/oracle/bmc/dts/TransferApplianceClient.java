@@ -29,7 +29,7 @@ public class TransferApplianceClient extends com.oracle.bmc.http.internal.BaseSy
 
     private final TransferApplianceWaiters waiters;
 
-    private TransferApplianceClient(
+    TransferApplianceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

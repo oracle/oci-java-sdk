@@ -452,6 +452,19 @@ public class ListSensitiveColumnsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A boolean flag indicating whether the search should be case-insensitive. The search is
+     * case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     */
+    private Boolean isCaseInSensitive;
+
+    /**
+     * A boolean flag indicating whether the search should be case-insensitive. The search is
+     * case-sensitive by default. Set this parameter to true to do case-insensitive search.
+     */
+    public Boolean getIsCaseInSensitive() {
+        return isCaseInSensitive;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -943,6 +956,24 @@ public class ListSensitiveColumnsRequest
         }
 
         /**
+         * A boolean flag indicating whether the search should be case-insensitive. The search is
+         * case-sensitive by default. Set this parameter to true to do case-insensitive search.
+         */
+        private Boolean isCaseInSensitive = null;
+
+        /**
+         * A boolean flag indicating whether the search should be case-insensitive. The search is
+         * case-sensitive by default. Set this parameter to true to do case-insensitive search.
+         *
+         * @param isCaseInSensitive the value to set
+         * @return this builder instance
+         */
+        public Builder isCaseInSensitive(Boolean isCaseInSensitive) {
+            this.isCaseInSensitive = isCaseInSensitive;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -993,6 +1024,7 @@ public class ListSensitiveColumnsRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            isCaseInSensitive(o.getIsCaseInSensitive());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1048,13 +1080,14 @@ public class ListSensitiveColumnsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.isCaseInSensitive = isCaseInSensitive;
             return request;
             // new ListSensitiveColumnsRequest(sensitiveDataModelId,
             // timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan,
             // timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, sensitiveColumnLifecycleState,
             // schemaName, objectName, columnName, objectType, dataType, status, sensitiveTypeId,
             // parentColumnKey, relationType, columnGroup, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // opcRequestId, isCaseInSensitive);
         }
     }
 
@@ -1085,7 +1118,8 @@ public class ListSensitiveColumnsRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isCaseInSensitive(isCaseInSensitive);
     }
 
     /**
@@ -1126,6 +1160,7 @@ public class ListSensitiveColumnsRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isCaseInSensitive=").append(String.valueOf(this.isCaseInSensitive));
         sb.append(")");
         return sb.toString();
     }
@@ -1164,7 +1199,8 @@ public class ListSensitiveColumnsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isCaseInSensitive, other.isCaseInSensitive);
     }
 
     @Override
@@ -1220,6 +1256,9 @@ public class ListSensitiveColumnsRequest
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCaseInSensitive == null ? 43 : this.isCaseInSensitive.hashCode());
         return result;
     }
 }

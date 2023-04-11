@@ -267,12 +267,26 @@ public final class CreateDatabaseDetails
             this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
-        /** The database workload type. */
+        /**
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on
+         * Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database
+         * Service. Support for this attribute will end in November 2023. You may choose to update
+         * your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass
+         * a value to the dbWorkload attribute, it will be ignored.
+         *
+         * <p>The database workload type.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
         /**
-         * The database workload type.
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on
+         * Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database
+         * Service. Support for this attribute will end in November 2023. You may choose to update
+         * your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass
+         * a value to the dbWorkload attribute, it will be ignored.
+         *
+         * <p>The database workload type.
          *
          * @param dbWorkload the value to set
          * @return this builder
@@ -674,7 +688,15 @@ public final class CreateDatabaseDetails
         return ncharacterSet;
     }
 
-    /** The database workload type. */
+    /**
+     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on
+     * Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database
+     * Service. Support for this attribute will end in November 2023. You may choose to update your
+     * custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value
+     * to the dbWorkload attribute, it will be ignored.
+     *
+     * <p>The database workload type.
+     */
     public enum DbWorkload implements com.oracle.bmc.http.internal.BmcEnum {
         Oltp("OLTP"),
         Dss("DSS"),
@@ -707,12 +729,26 @@ public final class CreateDatabaseDetails
             throw new IllegalArgumentException("Invalid DbWorkload: " + key);
         }
     };
-    /** The database workload type. */
+    /**
+     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on
+     * Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database
+     * Service. Support for this attribute will end in November 2023. You may choose to update your
+     * custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value
+     * to the dbWorkload attribute, it will be ignored.
+     *
+     * <p>The database workload type.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
     /**
-     * The database workload type.
+     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on
+     * Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database
+     * Service. Support for this attribute will end in November 2023. You may choose to update your
+     * custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value
+     * to the dbWorkload attribute, it will be ignored.
+     *
+     * <p>The database workload type.
      *
      * @return the value
      */

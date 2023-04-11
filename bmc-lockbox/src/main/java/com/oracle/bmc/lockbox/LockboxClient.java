@@ -30,7 +30,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
 
     private final LockboxPaginators paginators;
 
-    private LockboxClient(
+    LockboxClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

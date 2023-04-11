@@ -31,7 +31,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
     private final OperationsInsightsPaginators paginators;
 
-    private OperationsInsightsClient(
+    OperationsInsightsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
@@ -1903,6 +1903,40 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public IngestAddmReportsResponse ingestAddmReports(IngestAddmReportsRequest request) {
+        Objects.requireNonNull(
+                request.getIngestAddmReportsDetails(), "ingestAddmReportsDetails is required");
+
+        return clientCall(request, IngestAddmReportsResponse::builder)
+                .logger(LOG, "ingestAddmReports")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestAddmReports",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestAddmReports")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestAddmReportsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestAddmReports")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestAddmReportsResponseDetails.class,
+                        IngestAddmReportsResponse.Builder::ingestAddmReportsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestAddmReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestAddmReportsResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public IngestDatabaseConfigurationResponse ingestDatabaseConfiguration(
             IngestDatabaseConfigurationRequest request) {
         Objects.requireNonNull(
@@ -2148,6 +2182,384 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id", IngestSqlTextResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", IngestSqlTextResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListAddmDbFindingCategoriesResponse listAddmDbFindingCategories(
+            ListAddmDbFindingCategoriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAddmDbFindingCategoriesResponse::builder)
+                .logger(LOG, "listAddmDbFindingCategories")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbFindingCategories",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingCategories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddmDbFindingCategoriesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbFindingCategories")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbFindingCategoryCollection.class,
+                        ListAddmDbFindingCategoriesResponse.Builder
+                                ::addmDbFindingCategoryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddmDbFindingCategoriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddmDbFindingCategoriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListAddmDbFindingsTimeSeriesResponse listAddmDbFindingsTimeSeries(
+            ListAddmDbFindingsTimeSeriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAddmDbFindingsTimeSeriesResponse::builder)
+                .logger(LOG, "listAddmDbFindingsTimeSeries")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbFindingsTimeSeries",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingsTimeSeries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddmDbFindingsTimeSeriesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbFindingsTimeSeries")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("instanceNumber", request.getInstanceNumber())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("categoryName", request.getCategoryName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbFindingsTimeSeriesCollection.class,
+                        ListAddmDbFindingsTimeSeriesResponse.Builder
+                                ::addmDbFindingsTimeSeriesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAddmDbFindingsTimeSeriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddmDbFindingsTimeSeriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListAddmDbParameterCategoriesResponse listAddmDbParameterCategories(
+            ListAddmDbParameterCategoriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAddmDbParameterCategoriesResponse::builder)
+                .logger(LOG, "listAddmDbParameterCategories")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbParameterCategories",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbParameterCategories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddmDbParameterCategoriesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbParameterCategories")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbParameterCategoryCollection.class,
+                        ListAddmDbParameterCategoriesResponse.Builder
+                                ::addmDbParameterCategoryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAddmDbParameterCategoriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddmDbParameterCategoriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListAddmDbRecommendationCategoriesResponse listAddmDbRecommendationCategories(
+            ListAddmDbRecommendationCategoriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAddmDbRecommendationCategoriesResponse::builder)
+                .logger(LOG, "listAddmDbRecommendationCategories")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbRecommendationCategories",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationCategories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddmDbRecommendationCategoriesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbRecommendationCategories")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbRecommendationCategoryCollection.class,
+                        ListAddmDbRecommendationCategoriesResponse.Builder
+                                ::addmDbRecommendationCategoryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAddmDbRecommendationCategoriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAddmDbRecommendationCategoriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListAddmDbRecommendationsTimeSeriesResponse listAddmDbRecommendationsTimeSeries(
+            ListAddmDbRecommendationsTimeSeriesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAddmDbRecommendationsTimeSeriesResponse::builder)
+                .logger(LOG, "listAddmDbRecommendationsTimeSeries")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbRecommendationsTimeSeries",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationsTimeSeries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddmDbRecommendationsTimeSeriesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbRecommendationsTimeSeries")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("instanceNumber", request.getInstanceNumber())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("categoryName", request.getCategoryName())
+                .appendQueryParam("sqlIdentifier", request.getSqlIdentifier())
+                .appendQueryParam("ownerOrNameContains", request.getOwnerOrNameContains())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbRecommendationsTimeSeriesCollection.class,
+                        ListAddmDbRecommendationsTimeSeriesResponse.Builder
+                                ::addmDbRecommendationsTimeSeriesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAddmDbRecommendationsTimeSeriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAddmDbRecommendationsTimeSeriesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListAddmDbsResponse listAddmDbs(ListAddmDbsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAddmDbsResponse::builder)
+                .logger(LOG, "listAddmDbs")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbs",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddmDbsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbCollection.class,
+                        ListAddmDbsResponse.Builder::addmDbCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddmDbsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddmDbsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -3455,6 +3867,409 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RotateOperationsInsightsWarehouseWalletResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAddmDbFindingsResponse summarizeAddmDbFindings(
+            SummarizeAddmDbFindingsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, SummarizeAddmDbFindingsResponse::builder)
+                .logger(LOG, "summarizeAddmDbFindings")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbFindings",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbFindings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAddmDbFindingsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbFindings")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("instanceNumber", request.getInstanceNumber())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("categoryName", request.getCategoryName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbFindingAggregationCollection.class,
+                        SummarizeAddmDbFindingsResponse.Builder::addmDbFindingAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAddmDbFindingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAddmDbFindingsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAddmDbParameterChangesResponse summarizeAddmDbParameterChanges(
+            SummarizeAddmDbParameterChangesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getName(), "name is required");
+
+        return clientCall(request, SummarizeAddmDbParameterChangesResponse::builder)
+                .logger(LOG, "summarizeAddmDbParameterChanges")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbParameterChanges",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameterChanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAddmDbParameterChangesRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbParameterChanges")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("instanceNumber", request.getInstanceNumber())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("valueContains", request.getValueContains())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbParameterChangeAggregationCollection.class,
+                        SummarizeAddmDbParameterChangesResponse.Builder
+                                ::addmDbParameterChangeAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAddmDbParameterChangesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeAddmDbParameterChangesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAddmDbParametersResponse summarizeAddmDbParameters(
+            SummarizeAddmDbParametersRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, SummarizeAddmDbParametersResponse::builder)
+                .logger(LOG, "summarizeAddmDbParameters")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbParameters",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAddmDbParametersRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbParameters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("instanceNumber", request.getInstanceNumber())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("categoryName", request.getCategoryName())
+                .appendQueryParam("nameOrValueContains", request.getNameOrValueContains())
+                .appendEnumQueryParam("isChanged", request.getIsChanged())
+                .appendEnumQueryParam("isDefault", request.getIsDefault())
+                .appendEnumQueryParam("hasRecommendations", request.getHasRecommendations())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbParameterAggregationCollection.class,
+                        SummarizeAddmDbParametersResponse.Builder
+                                ::addmDbParameterAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAddmDbParametersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAddmDbParametersResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAddmDbRecommendationsResponse summarizeAddmDbRecommendations(
+            SummarizeAddmDbRecommendationsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, SummarizeAddmDbRecommendationsResponse::builder)
+                .logger(LOG, "summarizeAddmDbRecommendations")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbRecommendations",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbRecommendations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAddmDbRecommendationsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbRecommendations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("instanceNumber", request.getInstanceNumber())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("categoryName", request.getCategoryName())
+                .appendQueryParam("findingIdentifier", request.getFindingIdentifier())
+                .appendQueryParam("sqlIdentifier", request.getSqlIdentifier())
+                .appendQueryParam("ownerOrNameContains", request.getOwnerOrNameContains())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbRecommendationAggregationCollection.class,
+                        SummarizeAddmDbRecommendationsResponse.Builder
+                                ::addmDbRecommendationAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAddmDbRecommendationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeAddmDbRecommendationsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAddmDbSchemaObjectsResponse summarizeAddmDbSchemaObjects(
+            SummarizeAddmDbSchemaObjectsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getObjectIdentifier(), "objectIdentifier is required");
+
+        return clientCall(request, SummarizeAddmDbSchemaObjectsResponse::builder)
+                .logger(LOG, "summarizeAddmDbSchemaObjects")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbSchemaObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSchemaObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAddmDbSchemaObjectsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbSchemaObjects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectIdentifier",
+                        request.getObjectIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbSchemaObjectCollection.class,
+                        SummarizeAddmDbSchemaObjectsResponse.Builder::addmDbSchemaObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAddmDbSchemaObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAddmDbSchemaObjectsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public SummarizeAddmDbSqlStatementsResponse summarizeAddmDbSqlStatements(
+            SummarizeAddmDbSqlStatementsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getSqlIdentifier(), "sqlIdentifier is required");
+
+        return clientCall(request, SummarizeAddmDbSqlStatementsResponse::builder)
+                .logger(LOG, "summarizeAddmDbSqlStatements")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbSqlStatements",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSqlStatements")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAddmDbSqlStatementsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("addmDbSqlStatements")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "databaseId",
+                        request.getDatabaseId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "sqlIdentifier",
+                        request.getSqlIdentifier(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model.AddmDbSqlStatementCollection.class,
+                        SummarizeAddmDbSqlStatementsResponse.Builder::addmDbSqlStatementCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAddmDbSqlStatementsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAddmDbSqlStatementsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

@@ -31,7 +31,7 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final ManagementAgentPaginators paginators;
 
-    private ManagementAgentClient(
+    ManagementAgentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

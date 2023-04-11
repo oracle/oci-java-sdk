@@ -27,7 +27,7 @@ public class LimitsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final LimitsPaginators paginators;
 
-    private LimitsClient(
+    LimitsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -31,7 +31,7 @@ public class GovernanceRuleClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final GovernanceRulePaginators paginators;
 
-    private GovernanceRuleClient(
+    GovernanceRuleClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

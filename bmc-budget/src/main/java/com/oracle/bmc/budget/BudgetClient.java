@@ -29,7 +29,7 @@ public class BudgetClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final BudgetPaginators paginators;
 
-    private BudgetClient(
+    BudgetClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

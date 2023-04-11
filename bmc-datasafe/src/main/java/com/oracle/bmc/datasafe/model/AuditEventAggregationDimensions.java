@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details of aggregation dimensions used for summarizing audit events. <br>
+ * The details of the aggregation dimensions used for summarizing audit events. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -63,12 +63,12 @@ public final class AuditEventAggregationDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Time of audit event occurrence in the target database. */
+        /** The time the audit event occurred in the target database. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
         private java.util.List<java.util.Date> auditEventTime;
 
         /**
-         * Time of audit event occurrence in the target database.
+         * The time the audit event occurred in the target database.
          *
          * @param auditEventTime the value to set
          * @return this builder
@@ -222,15 +222,15 @@ public final class AuditEventAggregationDimensions
             return this;
         }
         /**
-         * Name of the detail action executed by the user on the target database. i.e ALTER
-         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE,
+         * CREATE TRIGGER, CREATE INDEX.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private java.util.List<String> eventName;
 
         /**
-         * Name of the detail action executed by the user on the target database. i.e ALTER
-         * SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE,
+         * CREATE TRIGGER, CREATE INDEX.
          *
          * @param eventName the value to set
          * @return this builder
@@ -312,12 +312,12 @@ public final class AuditEventAggregationDimensions
         return new Builder().copy(this);
     }
 
-    /** Time of audit event occurrence in the target database. */
+    /** The time the audit event occurred in the target database. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
     private final java.util.List<java.util.Date> auditEventTime;
 
     /**
-     * Time of audit event occurrence in the target database.
+     * The time the audit event occurred in the target database.
      *
      * @return the value
      */
@@ -546,15 +546,15 @@ public final class AuditEventAggregationDimensions
     }
 
     /**
-     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE,
-     * CREATE TRIGGER, CREATE INDEX.
+     * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE
+     * TRIGGER, CREATE INDEX.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final java.util.List<String> eventName;
 
     /**
-     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE,
-     * CREATE TRIGGER, CREATE INDEX.
+     * The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE
+     * TRIGGER, CREATE INDEX.
      *
      * @return the value
      */

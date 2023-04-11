@@ -39,7 +39,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ComputeAsyncClient.class);
 
-    private ComputeAsyncClient(
+    ComputeAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

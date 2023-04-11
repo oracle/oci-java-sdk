@@ -30,7 +30,7 @@ public class MysqlaasClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final MysqlaasPaginators paginators;
 
-    private MysqlaasClient(
+    MysqlaasClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

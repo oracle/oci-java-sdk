@@ -28,7 +28,7 @@ public class NotificationControlPlaneClient extends com.oracle.bmc.http.internal
 
     private final NotificationControlPlanePaginators paginators;
 
-    private NotificationControlPlaneClient(
+    NotificationControlPlaneClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

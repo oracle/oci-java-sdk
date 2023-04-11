@@ -39,7 +39,7 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(WorkRequestAsyncClient.class);
 
-    private WorkRequestAsyncClient(
+    WorkRequestAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

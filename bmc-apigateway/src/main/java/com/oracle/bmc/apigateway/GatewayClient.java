@@ -29,7 +29,7 @@ public class GatewayClient extends com.oracle.bmc.http.internal.BaseSyncClient i
 
     private final GatewayPaginators paginators;
 
-    private GatewayClient(
+    GatewayClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

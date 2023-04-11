@@ -29,7 +29,7 @@ public class CommonClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final CommonPaginators paginators;
 
-    private CommonClient(
+    CommonClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

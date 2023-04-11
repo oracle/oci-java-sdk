@@ -30,7 +30,7 @@ public class InventoryClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final InventoryPaginators paginators;
 
-    private InventoryClient(
+    InventoryClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

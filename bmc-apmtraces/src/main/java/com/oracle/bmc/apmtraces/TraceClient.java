@@ -25,7 +25,7 @@ public class TraceClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(TraceClient.class);
 
-    private TraceClient(
+    TraceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

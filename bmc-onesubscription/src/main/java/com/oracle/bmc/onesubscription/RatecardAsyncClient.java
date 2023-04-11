@@ -39,7 +39,7 @@ public class RatecardAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RatecardAsyncClient.class);
 
-    private RatecardAsyncClient(
+    RatecardAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

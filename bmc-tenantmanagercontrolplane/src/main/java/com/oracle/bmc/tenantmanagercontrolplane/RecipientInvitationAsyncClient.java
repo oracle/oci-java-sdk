@@ -40,7 +40,7 @@ public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RecipientInvitationAsyncClient.class);
 
-    private RecipientInvitationAsyncClient(
+    RecipientInvitationAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

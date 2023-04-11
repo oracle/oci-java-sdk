@@ -30,7 +30,7 @@ public class EsxiHostClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final EsxiHostPaginators paginators;
 
-    private EsxiHostClient(
+    EsxiHostClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

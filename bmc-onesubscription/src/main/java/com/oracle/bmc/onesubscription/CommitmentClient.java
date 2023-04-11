@@ -28,7 +28,7 @@ public class CommitmentClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final CommitmentPaginators paginators;
 
-    private CommitmentClient(
+    CommitmentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

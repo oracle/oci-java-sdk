@@ -40,6 +40,7 @@ public final class UserAssessment
         "targetIds",
         "timeCreated",
         "timeUpdated",
+        "timeLastAssessed",
         "triggeredBy",
         "type",
         "freeformTags",
@@ -64,6 +65,7 @@ public final class UserAssessment
             java.util.List<String> targetIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.Date timeLastAssessed,
             TriggeredBy triggeredBy,
             Type type,
             java.util.Map<String, String> freeformTags,
@@ -87,6 +89,7 @@ public final class UserAssessment
         this.targetIds = targetIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeLastAssessed = timeLastAssessed;
         this.triggeredBy = triggeredBy;
         this.type = type;
         this.freeformTags = freeformTags;
@@ -407,6 +410,25 @@ public final class UserAssessment
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /**
+         * The date and time the user assessment was last run, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastAssessed")
+        private java.util.Date timeLastAssessed;
+
+        /**
+         * The date and time the user assessment was last run, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeLastAssessed the value to set
+         * @return this builder
+         */
+        public Builder timeLastAssessed(java.util.Date timeLastAssessed) {
+            this.timeLastAssessed = timeLastAssessed;
+            this.__explicitlySet__.add("timeLastAssessed");
+            return this;
+        }
         /** Indicates whether the user assessment was created by system or user. */
         @com.fasterxml.jackson.annotation.JsonProperty("triggeredBy")
         private TriggeredBy triggeredBy;
@@ -431,9 +453,10 @@ public final class UserAssessment
          * 'refresh' action (triggered by the user). SAVE_SCHEDULE: A schedule to periodically save
          * LATEST assessments. COMPARTMENT: An automatic managed assessment type that stores all
          * details of targets in one compartment. This will keep an up-to-date status of all
-         * potential risks identified in the compartment. It is automatically updated once the
-         * latest assessment or refresh action is executed, as well as when a target is deleted or
-         * moved to a different compartment.
+         * potential risks identified in the compartment. It also keeps track of user count and
+         * target count for each profile available on the targets in a given compartment. It is
+         * automatically updated once the latest assessment or refresh action is executed, as well
+         * as when a target is deleted or moved to a different compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -447,9 +470,10 @@ public final class UserAssessment
          * 'refresh' action (triggered by the user). SAVE_SCHEDULE: A schedule to periodically save
          * LATEST assessments. COMPARTMENT: An automatic managed assessment type that stores all
          * details of targets in one compartment. This will keep an up-to-date status of all
-         * potential risks identified in the compartment. It is automatically updated once the
-         * latest assessment or refresh action is executed, as well as when a target is deleted or
-         * moved to a different compartment.
+         * potential risks identified in the compartment. It also keeps track of user count and
+         * target count for each profile available on the targets in a given compartment. It is
+         * automatically updated once the latest assessment or refresh action is executed, as well
+         * as when a target is deleted or moved to a different compartment.
          *
          * @param type the value to set
          * @return this builder
@@ -555,6 +579,7 @@ public final class UserAssessment
                             this.targetIds,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.timeLastAssessed,
                             this.triggeredBy,
                             this.type,
                             this.freeformTags,
@@ -618,6 +643,9 @@ public final class UserAssessment
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastAssessed")) {
+                this.timeLastAssessed(model.getTimeLastAssessed());
             }
             if (model.wasPropertyExplicitlySet("triggeredBy")) {
                 this.triggeredBy(model.getTriggeredBy());
@@ -916,6 +944,23 @@ public final class UserAssessment
         return timeUpdated;
     }
 
+    /**
+     * The date and time the user assessment was last run, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastAssessed")
+    private final java.util.Date timeLastAssessed;
+
+    /**
+     * The date and time the user assessment was last run, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastAssessed() {
+        return timeLastAssessed;
+    }
+
     /** Indicates whether the user assessment was created by system or user. */
     public enum TriggeredBy implements com.oracle.bmc.http.internal.BmcEnum {
         User("USER"),
@@ -984,8 +1029,10 @@ public final class UserAssessment
      * (triggered by the user). SAVE_SCHEDULE: A schedule to periodically save LATEST assessments.
      * COMPARTMENT: An automatic managed assessment type that stores all details of targets in one
      * compartment. This will keep an up-to-date status of all potential risks identified in the
-     * compartment. It is automatically updated once the latest assessment or refresh action is
-     * executed, as well as when a target is deleted or moved to a different compartment.
+     * compartment. It also keeps track of user count and target count for each profile available on
+     * the targets in a given compartment. It is automatically updated once the latest assessment or
+     * refresh action is executed, as well as when a target is deleted or moved to a different
+     * compartment.
      */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Latest("LATEST"),
@@ -1041,8 +1088,10 @@ public final class UserAssessment
      * (triggered by the user). SAVE_SCHEDULE: A schedule to periodically save LATEST assessments.
      * COMPARTMENT: An automatic managed assessment type that stores all details of targets in one
      * compartment. This will keep an up-to-date status of all potential risks identified in the
-     * compartment. It is automatically updated once the latest assessment or refresh action is
-     * executed, as well as when a target is deleted or moved to a different compartment.
+     * compartment. It also keeps track of user count and target count for each profile available on
+     * the targets in a given compartment. It is automatically updated once the latest assessment or
+     * refresh action is executed, as well as when a target is deleted or moved to a different
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
@@ -1056,8 +1105,10 @@ public final class UserAssessment
      * (triggered by the user). SAVE_SCHEDULE: A schedule to periodically save LATEST assessments.
      * COMPARTMENT: An automatic managed assessment type that stores all details of targets in one
      * compartment. This will keep an up-to-date status of all potential risks identified in the
-     * compartment. It is automatically updated once the latest assessment or refresh action is
-     * executed, as well as when a target is deleted or moved to a different compartment.
+     * compartment. It also keeps track of user count and target count for each profile available on
+     * the targets in a given compartment. It is automatically updated once the latest assessment or
+     * refresh action is executed, as well as when a target is deleted or moved to a different
+     * compartment.
      *
      * @return the value
      */
@@ -1162,6 +1213,7 @@ public final class UserAssessment
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeLastAssessed=").append(String.valueOf(this.timeLastAssessed));
         sb.append(", triggeredBy=").append(String.valueOf(this.triggeredBy));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1200,6 +1252,7 @@ public final class UserAssessment
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeLastAssessed, other.timeLastAssessed)
                 && java.util.Objects.equals(this.triggeredBy, other.triggeredBy)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1253,6 +1306,9 @@ public final class UserAssessment
         result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastAssessed == null ? 43 : this.timeLastAssessed.hashCode());
         result = (result * PRIME) + (this.triggeredBy == null ? 43 : this.triggeredBy.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

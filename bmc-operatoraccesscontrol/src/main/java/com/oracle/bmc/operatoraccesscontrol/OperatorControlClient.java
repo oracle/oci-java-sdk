@@ -31,7 +31,7 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final OperatorControlPaginators paginators;
 
-    private OperatorControlClient(
+    OperatorControlClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -28,7 +28,7 @@ public class ServiceManagerProxyClient extends com.oracle.bmc.http.internal.Base
 
     private final ServiceManagerProxyPaginators paginators;
 
-    private ServiceManagerProxyClient(
+    ServiceManagerProxyClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

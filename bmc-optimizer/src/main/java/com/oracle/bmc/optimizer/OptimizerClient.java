@@ -30,7 +30,7 @@ public class OptimizerClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final OptimizerPaginators paginators;
 
-    private OptimizerClient(
+    OptimizerClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

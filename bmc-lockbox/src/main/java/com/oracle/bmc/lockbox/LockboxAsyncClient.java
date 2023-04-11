@@ -40,7 +40,7 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LockboxAsyncClient.class);
 
-    private LockboxAsyncClient(
+    LockboxAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

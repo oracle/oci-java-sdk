@@ -31,7 +31,7 @@ public class OpensearchClusterBackupClient extends com.oracle.bmc.http.internal.
 
     private final OpensearchClusterBackupPaginators paginators;
 
-    private OpensearchClusterBackupClient(
+    OpensearchClusterBackupClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

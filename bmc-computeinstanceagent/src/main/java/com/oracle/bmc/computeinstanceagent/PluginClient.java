@@ -27,7 +27,7 @@ public class PluginClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final PluginPaginators paginators;
 
-    private PluginClient(
+    PluginClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

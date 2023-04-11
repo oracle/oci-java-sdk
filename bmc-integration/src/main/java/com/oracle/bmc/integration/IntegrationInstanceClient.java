@@ -30,7 +30,7 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
 
     private final IntegrationInstancePaginators paginators;
 
-    private IntegrationInstanceClient(
+    IntegrationInstanceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

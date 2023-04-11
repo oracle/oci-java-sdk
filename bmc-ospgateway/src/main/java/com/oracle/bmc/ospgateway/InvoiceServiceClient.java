@@ -28,7 +28,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final InvoiceServicePaginators paginators;
 
-    private InvoiceServiceClient(
+    InvoiceServiceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

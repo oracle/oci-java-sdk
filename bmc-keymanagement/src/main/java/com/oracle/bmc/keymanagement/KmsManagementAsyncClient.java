@@ -39,7 +39,7 @@ public class KmsManagementAsyncClient extends com.oracle.bmc.http.internal.BaseA
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(KmsManagementAsyncClient.class);
 
-    private KmsManagementAsyncClient(
+    KmsManagementAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

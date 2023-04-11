@@ -30,7 +30,7 @@ public class WorkRequestsClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final WorkRequestsPaginators paginators;
 
-    private WorkRequestsClient(
+    WorkRequestsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

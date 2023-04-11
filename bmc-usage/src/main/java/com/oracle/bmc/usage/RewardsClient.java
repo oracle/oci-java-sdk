@@ -27,7 +27,7 @@ public class RewardsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
 
     private final RewardsPaginators paginators;
 
-    private RewardsClient(
+    RewardsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

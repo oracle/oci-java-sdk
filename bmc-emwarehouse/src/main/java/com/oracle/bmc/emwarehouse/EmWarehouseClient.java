@@ -31,7 +31,7 @@ public class EmWarehouseClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final EmWarehousePaginators paginators;
 
-    private EmWarehouseClient(
+    EmWarehouseClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

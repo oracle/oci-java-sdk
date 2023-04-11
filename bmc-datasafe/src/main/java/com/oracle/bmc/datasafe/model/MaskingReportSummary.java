@@ -36,7 +36,12 @@ public final class MaskingReportSummary
         "timeMaskingStarted",
         "timeMaskingFinished",
         "lifecycleState",
-        "timeCreated"
+        "timeCreated",
+        "isDropTempTablesEnabled",
+        "isRedoLoggingEnabled",
+        "isRefreshStatsEnabled",
+        "parallelDegree",
+        "recompile"
     })
     public MaskingReportSummary(
             String id,
@@ -52,7 +57,12 @@ public final class MaskingReportSummary
             java.util.Date timeMaskingStarted,
             java.util.Date timeMaskingFinished,
             MaskingLifecycleState lifecycleState,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            Boolean isDropTempTablesEnabled,
+            Boolean isRedoLoggingEnabled,
+            Boolean isRefreshStatsEnabled,
+            String parallelDegree,
+            String recompile) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -68,6 +78,11 @@ public final class MaskingReportSummary
         this.timeMaskingFinished = timeMaskingFinished;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
+        this.isDropTempTablesEnabled = isDropTempTablesEnabled;
+        this.isRedoLoggingEnabled = isRedoLoggingEnabled;
+        this.isRefreshStatsEnabled = isRefreshStatsEnabled;
+        this.parallelDegree = parallelDegree;
+        this.recompile = recompile;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -298,6 +313,85 @@ public final class MaskingReportSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * Indicates if the temporary tables created during the masking operation were dropped after
+         * masking.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
+        private Boolean isDropTempTablesEnabled;
+
+        /**
+         * Indicates if the temporary tables created during the masking operation were dropped after
+         * masking.
+         *
+         * @param isDropTempTablesEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
+            this.isDropTempTablesEnabled = isDropTempTablesEnabled;
+            this.__explicitlySet__.add("isDropTempTablesEnabled");
+            return this;
+        }
+        /** Indicates if redo logging was enabled during the masking operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
+        private Boolean isRedoLoggingEnabled;
+
+        /**
+         * Indicates if redo logging was enabled during the masking operation.
+         *
+         * @param isRedoLoggingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
+            this.isRedoLoggingEnabled = isRedoLoggingEnabled;
+            this.__explicitlySet__.add("isRedoLoggingEnabled");
+            return this;
+        }
+        /** Indicates if statistics gathering was enabled during the masking operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
+        private Boolean isRefreshStatsEnabled;
+
+        /**
+         * Indicates if statistics gathering was enabled during the masking operation.
+         *
+         * @param isRefreshStatsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
+            this.isRefreshStatsEnabled = isRefreshStatsEnabled;
+            this.__explicitlySet__.add("isRefreshStatsEnabled");
+            return this;
+        }
+        /** Indicates if parallel execution was enabled during the masking operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
+        private String parallelDegree;
+
+        /**
+         * Indicates if parallel execution was enabled during the masking operation.
+         *
+         * @param parallelDegree the value to set
+         * @return this builder
+         */
+        public Builder parallelDegree(String parallelDegree) {
+            this.parallelDegree = parallelDegree;
+            this.__explicitlySet__.add("parallelDegree");
+            return this;
+        }
+        /** Indicates how invalid objects were recompiled post the masking operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("recompile")
+        private String recompile;
+
+        /**
+         * Indicates how invalid objects were recompiled post the masking operation.
+         *
+         * @param recompile the value to set
+         * @return this builder
+         */
+        public Builder recompile(String recompile) {
+            this.recompile = recompile;
+            this.__explicitlySet__.add("recompile");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -318,7 +412,12 @@ public final class MaskingReportSummary
                             this.timeMaskingStarted,
                             this.timeMaskingFinished,
                             this.lifecycleState,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.isDropTempTablesEnabled,
+                            this.isRedoLoggingEnabled,
+                            this.isRefreshStatsEnabled,
+                            this.parallelDegree,
+                            this.recompile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -368,6 +467,21 @@ public final class MaskingReportSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("isDropTempTablesEnabled")) {
+                this.isDropTempTablesEnabled(model.getIsDropTempTablesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRedoLoggingEnabled")) {
+                this.isRedoLoggingEnabled(model.getIsRedoLoggingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRefreshStatsEnabled")) {
+                this.isRefreshStatsEnabled(model.getIsRefreshStatsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("parallelDegree")) {
+                this.parallelDegree(model.getParallelDegree());
+            }
+            if (model.wasPropertyExplicitlySet("recompile")) {
+                this.recompile(model.getRecompile());
             }
             return this;
         }
@@ -580,6 +694,75 @@ public final class MaskingReportSummary
         return timeCreated;
     }
 
+    /**
+     * Indicates if the temporary tables created during the masking operation were dropped after
+     * masking.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
+    private final Boolean isDropTempTablesEnabled;
+
+    /**
+     * Indicates if the temporary tables created during the masking operation were dropped after
+     * masking.
+     *
+     * @return the value
+     */
+    public Boolean getIsDropTempTablesEnabled() {
+        return isDropTempTablesEnabled;
+    }
+
+    /** Indicates if redo logging was enabled during the masking operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
+    private final Boolean isRedoLoggingEnabled;
+
+    /**
+     * Indicates if redo logging was enabled during the masking operation.
+     *
+     * @return the value
+     */
+    public Boolean getIsRedoLoggingEnabled() {
+        return isRedoLoggingEnabled;
+    }
+
+    /** Indicates if statistics gathering was enabled during the masking operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
+    private final Boolean isRefreshStatsEnabled;
+
+    /**
+     * Indicates if statistics gathering was enabled during the masking operation.
+     *
+     * @return the value
+     */
+    public Boolean getIsRefreshStatsEnabled() {
+        return isRefreshStatsEnabled;
+    }
+
+    /** Indicates if parallel execution was enabled during the masking operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
+    private final String parallelDegree;
+
+    /**
+     * Indicates if parallel execution was enabled during the masking operation.
+     *
+     * @return the value
+     */
+    public String getParallelDegree() {
+        return parallelDegree;
+    }
+
+    /** Indicates how invalid objects were recompiled post the masking operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("recompile")
+    private final String recompile;
+
+    /**
+     * Indicates how invalid objects were recompiled post the masking operation.
+     *
+     * @return the value
+     */
+    public String getRecompile() {
+        return recompile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -610,6 +793,12 @@ public final class MaskingReportSummary
         sb.append(", timeMaskingFinished=").append(String.valueOf(this.timeMaskingFinished));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", isDropTempTablesEnabled=")
+                .append(String.valueOf(this.isDropTempTablesEnabled));
+        sb.append(", isRedoLoggingEnabled=").append(String.valueOf(this.isRedoLoggingEnabled));
+        sb.append(", isRefreshStatsEnabled=").append(String.valueOf(this.isRefreshStatsEnabled));
+        sb.append(", parallelDegree=").append(String.valueOf(this.parallelDegree));
+        sb.append(", recompile=").append(String.valueOf(this.recompile));
         sb.append(")");
         return sb.toString();
     }
@@ -639,6 +828,12 @@ public final class MaskingReportSummary
                 && java.util.Objects.equals(this.timeMaskingFinished, other.timeMaskingFinished)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(
+                        this.isDropTempTablesEnabled, other.isDropTempTablesEnabled)
+                && java.util.Objects.equals(this.isRedoLoggingEnabled, other.isRedoLoggingEnabled)
+                && java.util.Objects.equals(this.isRefreshStatsEnabled, other.isRefreshStatsEnabled)
+                && java.util.Objects.equals(this.parallelDegree, other.parallelDegree)
+                && java.util.Objects.equals(this.recompile, other.recompile)
                 && super.equals(other);
     }
 
@@ -696,6 +891,25 @@ public final class MaskingReportSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDropTempTablesEnabled == null
+                                ? 43
+                                : this.isDropTempTablesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRedoLoggingEnabled == null
+                                ? 43
+                                : this.isRedoLoggingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRefreshStatsEnabled == null
+                                ? 43
+                                : this.isRefreshStatsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parallelDegree == null ? 43 : this.parallelDegree.hashCode());
+        result = (result * PRIME) + (this.recompile == null ? 43 : this.recompile.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

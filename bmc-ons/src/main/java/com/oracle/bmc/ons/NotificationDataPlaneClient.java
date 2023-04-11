@@ -30,7 +30,7 @@ public class NotificationDataPlaneClient extends com.oracle.bmc.http.internal.Ba
 
     private final NotificationDataPlanePaginators paginators;
 
-    private NotificationDataPlaneClient(
+    NotificationDataPlaneClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

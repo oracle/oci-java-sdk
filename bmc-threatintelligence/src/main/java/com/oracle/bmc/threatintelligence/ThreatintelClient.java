@@ -31,7 +31,7 @@ public class ThreatintelClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final ThreatintelPaginators paginators;
 
-    private ThreatintelClient(
+    ThreatintelClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

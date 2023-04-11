@@ -29,7 +29,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final OdapackagePaginators paginators;
 
-    private OdapackageClient(
+    OdapackageClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

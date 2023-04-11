@@ -31,7 +31,7 @@ public class TransferJobClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final TransferJobPaginators paginators;
 
-    private TransferJobClient(
+    TransferJobClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

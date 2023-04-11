@@ -40,6 +40,7 @@ public final class UserAssessmentSummary
         "targetIds",
         "timeCreated",
         "timeUpdated",
+        "timeLastAssessed",
         "triggeredBy",
         "type",
         "freeformTags",
@@ -63,6 +64,7 @@ public final class UserAssessmentSummary
             java.util.List<String> targetIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.Date timeLastAssessed,
             TriggeredBy triggeredBy,
             Type type,
             java.util.Map<String, String> freeformTags,
@@ -85,6 +87,7 @@ public final class UserAssessmentSummary
         this.targetIds = targetIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeLastAssessed = timeLastAssessed;
         this.triggeredBy = triggeredBy;
         this.type = type;
         this.freeformTags = freeformTags;
@@ -400,6 +403,25 @@ public final class UserAssessmentSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /**
+         * The date and time the user assessment was last run, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastAssessed")
+        private java.util.Date timeLastAssessed;
+
+        /**
+         * The date and time the user assessment was last run, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeLastAssessed the value to set
+         * @return this builder
+         */
+        public Builder timeLastAssessed(java.util.Date timeLastAssessed) {
+            this.timeLastAssessed = timeLastAssessed;
+            this.__explicitlySet__.add("timeLastAssessed");
+            return this;
+        }
         /** Indicates whether the user assessment was created by system or user. */
         @com.fasterxml.jackson.annotation.JsonProperty("triggeredBy")
         private TriggeredBy triggeredBy;
@@ -527,6 +549,7 @@ public final class UserAssessmentSummary
                             this.targetIds,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.timeLastAssessed,
                             this.triggeredBy,
                             this.type,
                             this.freeformTags,
@@ -589,6 +612,9 @@ public final class UserAssessmentSummary
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastAssessed")) {
+                this.timeLastAssessed(model.getTimeLastAssessed());
             }
             if (model.wasPropertyExplicitlySet("triggeredBy")) {
                 this.triggeredBy(model.getTriggeredBy());
@@ -880,6 +906,23 @@ public final class UserAssessmentSummary
         return timeUpdated;
     }
 
+    /**
+     * The date and time the user assessment was last run, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastAssessed")
+    private final java.util.Date timeLastAssessed;
+
+    /**
+     * The date and time the user assessment was last run, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLastAssessed() {
+        return timeLastAssessed;
+    }
+
     /** Indicates whether the user assessment was created by system or user. */
     public enum TriggeredBy implements com.oracle.bmc.http.internal.BmcEnum {
         User("USER"),
@@ -1107,6 +1150,7 @@ public final class UserAssessmentSummary
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeLastAssessed=").append(String.valueOf(this.timeLastAssessed));
         sb.append(", triggeredBy=").append(String.valueOf(this.triggeredBy));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1144,6 +1188,7 @@ public final class UserAssessmentSummary
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeLastAssessed, other.timeLastAssessed)
                 && java.util.Objects.equals(this.triggeredBy, other.triggeredBy)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1196,6 +1241,9 @@ public final class UserAssessmentSummary
         result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastAssessed == null ? 43 : this.timeLastAssessed.hashCode());
         result = (result * PRIME) + (this.triggeredBy == null ? 43 : this.triggeredBy.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

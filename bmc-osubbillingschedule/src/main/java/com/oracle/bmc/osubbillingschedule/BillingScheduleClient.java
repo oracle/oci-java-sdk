@@ -28,7 +28,7 @@ public class BillingScheduleClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final BillingSchedulePaginators paginators;
 
-    private BillingScheduleClient(
+    BillingScheduleClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -29,7 +29,7 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
 
     private final LinkPaginators paginators;
 
-    private LinkClient(
+    LinkClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

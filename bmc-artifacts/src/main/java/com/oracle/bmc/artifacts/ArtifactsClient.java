@@ -30,7 +30,7 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final ArtifactsPaginators paginators;
 
-    private ArtifactsClient(
+    ArtifactsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

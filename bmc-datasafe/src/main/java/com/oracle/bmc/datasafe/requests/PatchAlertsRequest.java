@@ -15,10 +15,10 @@ public class PatchAlertsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.PatchAlertsDetails> {
 
-    /** Details to patch alerts. */
+    /** The alert details to update the status of one or more alert specified by the alert IDs. */
     private com.oracle.bmc.datasafe.model.PatchAlertsDetails patchAlertsDetails;
 
-    /** Details to patch alerts. */
+    /** The alert details to update the status of one or more alert specified by the alert IDs. */
     public com.oracle.bmc.datasafe.model.PatchAlertsDetails getPatchAlertsDetails() {
         return patchAlertsDetails;
     }
@@ -135,11 +135,13 @@ public class PatchAlertsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details to patch alerts. */
+        /**
+         * The alert details to update the status of one or more alert specified by the alert IDs.
+         */
         private com.oracle.bmc.datasafe.model.PatchAlertsDetails patchAlertsDetails = null;
 
         /**
-         * Details to patch alerts.
+         * The alert details to update the status of one or more alert specified by the alert IDs.
          *
          * @param patchAlertsDetails the value to set
          * @return this builder instance

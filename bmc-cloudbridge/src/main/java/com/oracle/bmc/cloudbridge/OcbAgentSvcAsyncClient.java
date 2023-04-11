@@ -39,7 +39,7 @@ public class OcbAgentSvcAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(OcbAgentSvcAsyncClient.class);
 
-    private OcbAgentSvcAsyncClient(
+    OcbAgentSvcAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

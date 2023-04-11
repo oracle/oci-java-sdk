@@ -31,7 +31,7 @@ public class AnomalyDetectionClient extends com.oracle.bmc.http.internal.BaseSyn
 
     private final AnomalyDetectionPaginators paginators;
 
-    private AnomalyDetectionClient(
+    AnomalyDetectionClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

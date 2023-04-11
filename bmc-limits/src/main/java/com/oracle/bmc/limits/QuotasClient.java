@@ -29,7 +29,7 @@ public class QuotasClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final QuotasPaginators paginators;
 
-    private QuotasClient(
+    QuotasClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

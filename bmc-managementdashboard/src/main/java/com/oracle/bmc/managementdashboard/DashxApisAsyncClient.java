@@ -40,7 +40,7 @@ public class DashxApisAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DashxApisAsyncClient.class);
 
-    private DashxApisAsyncClient(
+    DashxApisAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

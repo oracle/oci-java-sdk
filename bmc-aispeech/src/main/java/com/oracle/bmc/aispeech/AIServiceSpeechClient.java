@@ -31,7 +31,7 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final AIServiceSpeechPaginators paginators;
 
-    private AIServiceSpeechClient(
+    AIServiceSpeechClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

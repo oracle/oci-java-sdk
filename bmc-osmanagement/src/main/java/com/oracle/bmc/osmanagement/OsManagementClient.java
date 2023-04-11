@@ -30,7 +30,7 @@ public class OsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final OsManagementPaginators paginators;
 
-    private OsManagementClient(
+    OsManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

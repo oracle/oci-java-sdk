@@ -31,7 +31,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
     private final ApplicationMigrationPaginators paginators;
 
-    private ApplicationMigrationClient(
+    ApplicationMigrationClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -43,6 +43,124 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listApplicationVips operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListApplicationVipsResponse> listApplicationVipsResponseIterator(
+            final ListApplicationVipsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListApplicationVipsRequest.Builder,
+                ListApplicationVipsRequest,
+                ListApplicationVipsResponse>(
+                new java.util.function.Supplier<ListApplicationVipsRequest.Builder>() {
+                    @Override
+                    public ListApplicationVipsRequest.Builder get() {
+                        return ListApplicationVipsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListApplicationVipsResponse, String>() {
+                    @Override
+                    public String apply(ListApplicationVipsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApplicationVipsRequest.Builder>,
+                        ListApplicationVipsRequest>() {
+                    @Override
+                    public ListApplicationVipsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApplicationVipsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationVipsRequest, ListApplicationVipsResponse>() {
+                    @Override
+                    public ListApplicationVipsResponse apply(ListApplicationVipsRequest request) {
+                        return client.listApplicationVips(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.ApplicationVipSummary} objects contained in responses from the
+     * listApplicationVips operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.ApplicationVipSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ApplicationVipSummary>
+            listApplicationVipsRecordIterator(final ListApplicationVipsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListApplicationVipsRequest.Builder,
+                ListApplicationVipsRequest,
+                ListApplicationVipsResponse,
+                com.oracle.bmc.database.model.ApplicationVipSummary>(
+                new java.util.function.Supplier<ListApplicationVipsRequest.Builder>() {
+                    @Override
+                    public ListApplicationVipsRequest.Builder get() {
+                        return ListApplicationVipsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListApplicationVipsResponse, String>() {
+                    @Override
+                    public String apply(ListApplicationVipsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApplicationVipsRequest.Builder>,
+                        ListApplicationVipsRequest>() {
+                    @Override
+                    public ListApplicationVipsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApplicationVipsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationVipsRequest, ListApplicationVipsResponse>() {
+                    @Override
+                    public ListApplicationVipsResponse apply(ListApplicationVipsRequest request) {
+                        return client.listApplicationVips(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationVipsResponse,
+                        java.util.List<com.oracle.bmc.database.model.ApplicationVipSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.ApplicationVipSummary>
+                            apply(ListApplicationVipsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousContainerDatabaseDataguardAssociations operation. This iterable will fetch more
      * data from the server as needed.
      *

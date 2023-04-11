@@ -29,7 +29,7 @@ public class TransferApplianceEntitlementClient extends com.oracle.bmc.http.inte
 
     private final TransferApplianceEntitlementWaiters waiters;
 
-    private TransferApplianceEntitlementClient(
+    TransferApplianceEntitlementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

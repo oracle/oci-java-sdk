@@ -31,7 +31,7 @@ public class VbInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final VbInstancePaginators paginators;
 
-    private VbInstanceClient(
+    VbInstanceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

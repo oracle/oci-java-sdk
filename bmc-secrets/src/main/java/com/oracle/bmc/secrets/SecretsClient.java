@@ -28,7 +28,7 @@ public class SecretsClient extends com.oracle.bmc.http.internal.BaseSyncClient i
 
     private final SecretsPaginators paginators;
 
-    private SecretsClient(
+    SecretsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

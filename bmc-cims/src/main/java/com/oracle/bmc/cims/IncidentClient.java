@@ -29,7 +29,7 @@ public class IncidentClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final IncidentPaginators paginators;
 
-    private IncidentClient(
+    IncidentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -31,7 +31,7 @@ public class ContainerEngineClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final ContainerEnginePaginators paginators;
 
-    private ContainerEngineClient(
+    ContainerEngineClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

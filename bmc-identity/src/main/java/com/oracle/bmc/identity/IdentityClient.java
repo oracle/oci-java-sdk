@@ -30,7 +30,7 @@ public class IdentityClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final IdentityPaginators paginators;
 
-    private IdentityClient(
+    IdentityClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

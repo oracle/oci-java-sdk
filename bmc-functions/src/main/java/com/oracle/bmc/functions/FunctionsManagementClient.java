@@ -30,7 +30,7 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
 
     private final FunctionsManagementPaginators paginators;
 
-    private FunctionsManagementClient(
+    FunctionsManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

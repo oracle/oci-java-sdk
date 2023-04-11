@@ -28,7 +28,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
 
     private final SddcPaginators paginators;
 
-    private SddcClient(
+    SddcClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

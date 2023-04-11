@@ -41,7 +41,7 @@ public class OperatorControlAssignmentAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(OperatorControlAssignmentAsyncClient.class);
 
-    private OperatorControlAssignmentAsyncClient(
+    OperatorControlAssignmentAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

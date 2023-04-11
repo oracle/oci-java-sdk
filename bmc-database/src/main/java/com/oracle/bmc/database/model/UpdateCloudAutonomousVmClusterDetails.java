@@ -106,6 +106,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
          * a value is not specified, the system will supply the value of {@code
          * BRING_YOUR_OWN_LICENSE}.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
+         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -122,6 +127,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
          * a value is not specified, the system will supply the value of {@code
          * BRING_YOUR_OWN_LICENSE}.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
+         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -311,6 +321,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      */
     public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
@@ -355,6 +370,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
@@ -370,6 +390,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      *
      * @return the value
      */

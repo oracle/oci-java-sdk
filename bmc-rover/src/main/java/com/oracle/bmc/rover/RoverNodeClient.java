@@ -30,7 +30,7 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final RoverNodePaginators paginators;
 
-    private RoverNodeClient(
+    RoverNodeClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

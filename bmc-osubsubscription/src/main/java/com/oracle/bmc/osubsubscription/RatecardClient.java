@@ -28,7 +28,7 @@ public class RatecardClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final RatecardPaginators paginators;
 
-    private RatecardClient(
+    RatecardClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -154,4 +154,22 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
             @Nonnull
                     com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                             authenticationDetailsProvider);
+
+    /**
+     * Set the values in this builder to be the same as in the provided other builder.
+     *
+     * @param fromBuilder other builder
+     * @return this builder, with updated values
+     */
+    public B copyFrom(B fromBuilder) {
+        return (B)
+                this.configuration(fromBuilder.configuration)
+                        .clientConfigurator(fromBuilder.clientConfigurator)
+                        .additionalClientConfigurators(fromBuilder.additionalClientConfigurators)
+                        .requestSignerFactory(fromBuilder.requestSignerFactory)
+                        .endpoint(fromBuilder.endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                fromBuilder.signingStrategyRequestSignerFactories)
+                        .httpProvider(fromBuilder.httpProvider);
+    }
 }

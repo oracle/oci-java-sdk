@@ -15,9 +15,15 @@ import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.client.jersey3.internal.DaemonClientAsyncExecutorProvider;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
 import org.apache.http.ConnectionReuseStrategy;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.NoConnectionReuseStrategy;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -81,6 +87,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private boolean useJerseyDefaultExecutorServiceProvider = false;
     private ClientBuilderDecorator decorator = SIMPLE_DECORATOR;
 
+    private boolean shouldSetDefaultConnectionManagerForApacheConnector = false;
+
     Jersey3HttpClientBuilder() {
         // buffer by default, for signing and better error messages.
         properties.put(
@@ -96,10 +104,12 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             properties.put(
                     ApacheClientProperties.CONNECTION_CLOSING_STRATEGY,
                     new ApacheConnectionClosingStrategy.ImmediateClosingStrategy());
-            PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
-            cm.setMaxTotal(50);
-            cm.setDefaultMaxPerRoute(50);
-            properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm);
+
+            // later, before constructing the client, we should set the connection manager,
+            // unless the user has set a different connection manager already using
+            // properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm)
+            this.shouldSetDefaultConnectionManagerForApacheConnector = true;
+
             property(
                     com.oracle.bmc.http.client.jersey3.ApacheClientProperties
                             .CONNECTION_MANAGER_SHARED,
@@ -190,7 +200,13 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
         } else if (key == ClientBuilderDecorator.PROPERTY) {
             decorator = (ClientBuilderDecorator) value;
         } else if (key instanceof Jersey3ClientProperty) {
-            properties.put(((Jersey3ClientProperty<T>) key).jerseyProperty, value);
+            String jerseyProperty = ((Jersey3ClientProperty<T>) key).jerseyProperty;
+            properties.put(jerseyProperty, value);
+            if (com.oracle.bmc.http.client.jersey3.ApacheClientProperties.CONNECTION_MANAGER
+                    .jerseyProperty.equals(jerseyProperty)) {
+                // user has set connection manager already, don't set default anymore
+                shouldSetDefaultConnectionManagerForApacheConnector = false;
+            }
         } else {
             throw new IllegalArgumentException(
                     "Unknown or unsupported HTTP client property " + key);
@@ -207,6 +223,12 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
 
     @Override
     public HttpClient build() {
+        if (shouldSetDefaultConnectionManagerForApacheConnector) {
+            PoolingHttpClientConnectionManager cm =
+                    buildDefaultPoolingHttpClientConnectionManagerForApacheConnector(sslContext);
+            properties.put(ApacheClientProperties.CONNECTION_MANAGER, cm);
+        }
+
         ClientBuilder clientBuilder = ClientBuilder.newBuilder();
         ClientConfig clientConfig = new ClientConfig();
         if (Jersey3HttpProvider.isApacheDependencyPresent) {
@@ -252,17 +274,17 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
         if (keyStore != null) {
             clientBuilder.keyStore(keyStore.getKeyStore(), keyStore.getPassword());
         }
+        if (hostnameVerifier != null) {
+            clientBuilder.hostnameVerifier(hostnameVerifier);
+        }
         if (sslContext == null) {
             if (trustStore != null) {
                 clientBuilder.trustStore(trustStore);
             }
-            if (hostnameVerifier != null) {
-                clientBuilder.hostnameVerifier(hostnameVerifier);
-            }
         } else {
-            if (trustStore != null || hostnameVerifier != null) {
+            if (trustStore != null) {
                 throw new IllegalStateException(
-                        "Cannot set trust store or hostname verifier when SSL context is also set");
+                        "Cannot set trust store when SSL context is also set");
             }
             clientBuilder.sslContext(sslContext);
         }
@@ -297,9 +319,11 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                     collectedProperties);
         }
 
+        WebTarget baseTarget = client.target(baseUri);
+
         return new Jersey3HttpClient(
                 client,
-                client.target(baseUri),
+                baseTarget,
                 requestInterceptors.stream()
                         .sorted(Comparator.comparingInt(p -> p.priority))
                         .map(p -> p.value)
@@ -315,5 +339,30 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             this.priority = priority;
             this.value = value;
         }
+    }
+
+    /**
+     * Build the default {@link PoolingHttpClientConnectionManager} used for the Apache Connector.
+     *
+     * @param sslContext SSL context, or null if none
+     * @return PoolingHttpClientConnectionManager
+     */
+    public static PoolingHttpClientConnectionManager
+            buildDefaultPoolingHttpClientConnectionManagerForApacheConnector(
+                    SSLContext sslContext) {
+        PoolingHttpClientConnectionManager cm;
+        if (sslContext != null) {
+            Registry<ConnectionSocketFactory> socketFactoryRegistry =
+                    RegistryBuilder.<ConnectionSocketFactory>create()
+                            .register("http", PlainConnectionSocketFactory.getSocketFactory())
+                            .register("https", new SSLConnectionSocketFactory(sslContext))
+                            .build();
+            cm = new PoolingHttpClientConnectionManager(socketFactoryRegistry);
+        } else {
+            cm = new PoolingHttpClientConnectionManager();
+        }
+        cm.setMaxTotal(50);
+        cm.setDefaultMaxPerRoute(50);
+        return cm;
     }
 }

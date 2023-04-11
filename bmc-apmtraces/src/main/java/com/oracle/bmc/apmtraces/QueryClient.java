@@ -27,7 +27,7 @@ public class QueryClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
     private final QueryPaginators paginators;
 
-    private QueryClient(
+    QueryClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
