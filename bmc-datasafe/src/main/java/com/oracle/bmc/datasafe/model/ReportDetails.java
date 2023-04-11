@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for the report schedule.
+ * The details of the report schedule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -75,6 +75,7 @@ public class ReportDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * The type of the report.
      **/
     public enum ReportType {
         Audit("AUDIT"),

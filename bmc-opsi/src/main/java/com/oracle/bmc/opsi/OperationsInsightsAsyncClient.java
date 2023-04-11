@@ -3080,6 +3080,58 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<IngestAddmReportsResponse> ingestAddmReports(
+            IngestAddmReportsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            IngestAddmReportsRequest, IngestAddmReportsResponse>
+                    handler) {
+        LOG.trace("Called async ingestAddmReports");
+        final IngestAddmReportsRequest interceptedRequest =
+                IngestAddmReportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                IngestAddmReportsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "IngestAddmReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestAddmReports");
+        final java.util.function.Function<javax.ws.rs.core.Response, IngestAddmReportsResponse>
+                transformer =
+                        IngestAddmReportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<IngestAddmReportsRequest, IngestAddmReportsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                IngestAddmReportsRequest, IngestAddmReportsResponse>,
+                        java.util.concurrent.Future<IngestAddmReportsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestAddmReportsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    IngestAddmReportsRequest, IngestAddmReportsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<IngestDatabaseConfigurationResponse>
             ingestDatabaseConfiguration(
                     IngestDatabaseConfigurationRequest request,
@@ -3435,6 +3487,310 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     IngestSqlTextRequest, IngestSqlTextResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddmDbFindingCategoriesResponse>
+            listAddmDbFindingCategories(
+                    ListAddmDbFindingCategoriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbFindingCategoriesRequest,
+                                    ListAddmDbFindingCategoriesResponse>
+                            handler) {
+        LOG.trace("Called async listAddmDbFindingCategories");
+        final ListAddmDbFindingCategoriesRequest interceptedRequest =
+                ListAddmDbFindingCategoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddmDbFindingCategoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbFindingCategories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingCategories");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAddmDbFindingCategoriesResponse>
+                transformer =
+                        ListAddmDbFindingCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAddmDbFindingCategoriesRequest, ListAddmDbFindingCategoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddmDbFindingCategoriesRequest,
+                                ListAddmDbFindingCategoriesResponse>,
+                        java.util.concurrent.Future<ListAddmDbFindingCategoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddmDbFindingCategoriesRequest, ListAddmDbFindingCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddmDbFindingsTimeSeriesResponse>
+            listAddmDbFindingsTimeSeries(
+                    ListAddmDbFindingsTimeSeriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbFindingsTimeSeriesRequest,
+                                    ListAddmDbFindingsTimeSeriesResponse>
+                            handler) {
+        LOG.trace("Called async listAddmDbFindingsTimeSeries");
+        final ListAddmDbFindingsTimeSeriesRequest interceptedRequest =
+                ListAddmDbFindingsTimeSeriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddmDbFindingsTimeSeriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbFindingsTimeSeries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingsTimeSeries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAddmDbFindingsTimeSeriesResponse>
+                transformer =
+                        ListAddmDbFindingsTimeSeriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAddmDbFindingsTimeSeriesRequest, ListAddmDbFindingsTimeSeriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddmDbFindingsTimeSeriesRequest,
+                                ListAddmDbFindingsTimeSeriesResponse>,
+                        java.util.concurrent.Future<ListAddmDbFindingsTimeSeriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddmDbFindingsTimeSeriesRequest, ListAddmDbFindingsTimeSeriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddmDbParameterCategoriesResponse>
+            listAddmDbParameterCategories(
+                    ListAddmDbParameterCategoriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbParameterCategoriesRequest,
+                                    ListAddmDbParameterCategoriesResponse>
+                            handler) {
+        LOG.trace("Called async listAddmDbParameterCategories");
+        final ListAddmDbParameterCategoriesRequest interceptedRequest =
+                ListAddmDbParameterCategoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddmDbParameterCategoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbParameterCategories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbParameterCategories");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAddmDbParameterCategoriesResponse>
+                transformer =
+                        ListAddmDbParameterCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAddmDbParameterCategoriesRequest, ListAddmDbParameterCategoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddmDbParameterCategoriesRequest,
+                                ListAddmDbParameterCategoriesResponse>,
+                        java.util.concurrent.Future<ListAddmDbParameterCategoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddmDbParameterCategoriesRequest, ListAddmDbParameterCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddmDbRecommendationCategoriesResponse>
+            listAddmDbRecommendationCategories(
+                    ListAddmDbRecommendationCategoriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbRecommendationCategoriesRequest,
+                                    ListAddmDbRecommendationCategoriesResponse>
+                            handler) {
+        LOG.trace("Called async listAddmDbRecommendationCategories");
+        final ListAddmDbRecommendationCategoriesRequest interceptedRequest =
+                ListAddmDbRecommendationCategoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddmDbRecommendationCategoriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbRecommendationCategories",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationCategories");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAddmDbRecommendationCategoriesResponse>
+                transformer =
+                        ListAddmDbRecommendationCategoriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAddmDbRecommendationCategoriesRequest,
+                        ListAddmDbRecommendationCategoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddmDbRecommendationCategoriesRequest,
+                                ListAddmDbRecommendationCategoriesResponse>,
+                        java.util.concurrent.Future<ListAddmDbRecommendationCategoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddmDbRecommendationCategoriesRequest,
+                    ListAddmDbRecommendationCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddmDbRecommendationsTimeSeriesResponse>
+            listAddmDbRecommendationsTimeSeries(
+                    ListAddmDbRecommendationsTimeSeriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbRecommendationsTimeSeriesRequest,
+                                    ListAddmDbRecommendationsTimeSeriesResponse>
+                            handler) {
+        LOG.trace("Called async listAddmDbRecommendationsTimeSeries");
+        final ListAddmDbRecommendationsTimeSeriesRequest interceptedRequest =
+                ListAddmDbRecommendationsTimeSeriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddmDbRecommendationsTimeSeriesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbRecommendationsTimeSeries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationsTimeSeries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAddmDbRecommendationsTimeSeriesResponse>
+                transformer =
+                        ListAddmDbRecommendationsTimeSeriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAddmDbRecommendationsTimeSeriesRequest,
+                        ListAddmDbRecommendationsTimeSeriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddmDbRecommendationsTimeSeriesRequest,
+                                ListAddmDbRecommendationsTimeSeriesResponse>,
+                        java.util.concurrent.Future<ListAddmDbRecommendationsTimeSeriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddmDbRecommendationsTimeSeriesRequest,
+                    ListAddmDbRecommendationsTimeSeriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddmDbsResponse> listAddmDbs(
+            ListAddmDbsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAddmDbsRequest, ListAddmDbsResponse>
+                    handler) {
+        LOG.trace("Called async listAddmDbs");
+        final ListAddmDbsRequest interceptedRequest =
+                ListAddmDbsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddmDbsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAddmDbs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAddmDbsResponse>
+                transformer =
+                        ListAddmDbsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAddmDbsRequest, ListAddmDbsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddmDbsRequest, ListAddmDbsResponse>,
+                        java.util.concurrent.Future<ListAddmDbsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddmDbsRequest, ListAddmDbsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4797,6 +5153,310 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RotateOperationsInsightsWarehouseWalletRequest,
                     RotateOperationsInsightsWarehouseWalletResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAddmDbFindingsResponse> summarizeAddmDbFindings(
+            SummarizeAddmDbFindingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAddmDbFindingsRequest, SummarizeAddmDbFindingsResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAddmDbFindings");
+        final SummarizeAddmDbFindingsRequest interceptedRequest =
+                SummarizeAddmDbFindingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAddmDbFindingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbFindings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbFindings");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAddmDbFindingsResponse>
+                transformer =
+                        SummarizeAddmDbFindingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAddmDbFindingsRequest, SummarizeAddmDbFindingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAddmDbFindingsRequest, SummarizeAddmDbFindingsResponse>,
+                        java.util.concurrent.Future<SummarizeAddmDbFindingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAddmDbFindingsRequest, SummarizeAddmDbFindingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAddmDbParameterChangesResponse>
+            summarizeAddmDbParameterChanges(
+                    SummarizeAddmDbParameterChangesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAddmDbParameterChangesRequest,
+                                    SummarizeAddmDbParameterChangesResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAddmDbParameterChanges");
+        final SummarizeAddmDbParameterChangesRequest interceptedRequest =
+                SummarizeAddmDbParameterChangesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAddmDbParameterChangesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbParameterChanges",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameterChanges");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAddmDbParameterChangesResponse>
+                transformer =
+                        SummarizeAddmDbParameterChangesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAddmDbParameterChangesRequest,
+                        SummarizeAddmDbParameterChangesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAddmDbParameterChangesRequest,
+                                SummarizeAddmDbParameterChangesResponse>,
+                        java.util.concurrent.Future<SummarizeAddmDbParameterChangesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAddmDbParameterChangesRequest,
+                    SummarizeAddmDbParameterChangesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAddmDbParametersResponse> summarizeAddmDbParameters(
+            SummarizeAddmDbParametersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAddmDbParametersRequest, SummarizeAddmDbParametersResponse>
+                    handler) {
+        LOG.trace("Called async summarizeAddmDbParameters");
+        final SummarizeAddmDbParametersRequest interceptedRequest =
+                SummarizeAddmDbParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAddmDbParametersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameters");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAddmDbParametersResponse>
+                transformer =
+                        SummarizeAddmDbParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAddmDbParametersRequest, SummarizeAddmDbParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAddmDbParametersRequest,
+                                SummarizeAddmDbParametersResponse>,
+                        java.util.concurrent.Future<SummarizeAddmDbParametersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAddmDbParametersRequest, SummarizeAddmDbParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAddmDbRecommendationsResponse>
+            summarizeAddmDbRecommendations(
+                    SummarizeAddmDbRecommendationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAddmDbRecommendationsRequest,
+                                    SummarizeAddmDbRecommendationsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAddmDbRecommendations");
+        final SummarizeAddmDbRecommendationsRequest interceptedRequest =
+                SummarizeAddmDbRecommendationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAddmDbRecommendationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbRecommendations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbRecommendations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAddmDbRecommendationsResponse>
+                transformer =
+                        SummarizeAddmDbRecommendationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAddmDbRecommendationsRequest,
+                        SummarizeAddmDbRecommendationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAddmDbRecommendationsRequest,
+                                SummarizeAddmDbRecommendationsResponse>,
+                        java.util.concurrent.Future<SummarizeAddmDbRecommendationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAddmDbRecommendationsRequest, SummarizeAddmDbRecommendationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAddmDbSchemaObjectsResponse>
+            summarizeAddmDbSchemaObjects(
+                    SummarizeAddmDbSchemaObjectsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAddmDbSchemaObjectsRequest,
+                                    SummarizeAddmDbSchemaObjectsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAddmDbSchemaObjects");
+        final SummarizeAddmDbSchemaObjectsRequest interceptedRequest =
+                SummarizeAddmDbSchemaObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAddmDbSchemaObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbSchemaObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSchemaObjects");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAddmDbSchemaObjectsResponse>
+                transformer =
+                        SummarizeAddmDbSchemaObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAddmDbSchemaObjectsRequest, SummarizeAddmDbSchemaObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAddmDbSchemaObjectsRequest,
+                                SummarizeAddmDbSchemaObjectsResponse>,
+                        java.util.concurrent.Future<SummarizeAddmDbSchemaObjectsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAddmDbSchemaObjectsRequest, SummarizeAddmDbSchemaObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAddmDbSqlStatementsResponse>
+            summarizeAddmDbSqlStatements(
+                    SummarizeAddmDbSqlStatementsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAddmDbSqlStatementsRequest,
+                                    SummarizeAddmDbSqlStatementsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAddmDbSqlStatements");
+        final SummarizeAddmDbSqlStatementsRequest interceptedRequest =
+                SummarizeAddmDbSqlStatementsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAddmDbSqlStatementsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAddmDbSqlStatements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSqlStatements");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAddmDbSqlStatementsResponse>
+                transformer =
+                        SummarizeAddmDbSqlStatementsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAddmDbSqlStatementsRequest, SummarizeAddmDbSqlStatementsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAddmDbSqlStatementsRequest,
+                                SummarizeAddmDbSqlStatementsResponse>,
+                        java.util.concurrent.Future<SummarizeAddmDbSqlStatementsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAddmDbSqlStatementsRequest, SummarizeAddmDbSqlStatementsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

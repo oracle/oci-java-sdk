@@ -321,16 +321,14 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The OCID of the compartment that contains the audit trail and its same as the compartment
-         * of audit profile resource.
+         * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the audit trail and its same as the compartment
-         * of audit profile resource.
+         * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -341,7 +339,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The date and time until which the audit events are collected from target database by Data Safe audit trail
+         * The date and time until when the audit events were collected from the target database by the Data Safe audit trail
          * collection process, in the format defined by RFC3339.
          *
          **/
@@ -349,7 +347,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
         private java.util.Date timeLastCollected;
 
         /**
-         * The date and time until which the audit events are collected from target database by Data Safe audit trail
+         * The date and time until when the audit events were collected from the target database by the Data Safe audit trail
          * collection process, in the format defined by RFC3339.
          *
          * @param timeLastCollected the value to set
@@ -736,16 +734,14 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The OCID of the compartment that contains the audit trail and its same as the compartment
-     * of audit profile resource.
+     * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the audit trail and its same as the compartment
-     * of audit profile resource.
+     * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      *
      * @return the value
      **/
@@ -754,7 +750,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The date and time until which the audit events are collected from target database by Data Safe audit trail
+     * The date and time until when the audit events were collected from the target database by the Data Safe audit trail
      * collection process, in the format defined by RFC3339.
      *
      **/
@@ -762,7 +758,7 @@ public final class AuditTrail extends com.oracle.bmc.http.internal.ExplicitlySet
     private final java.util.Date timeLastCollected;
 
     /**
-     * The date and time until which the audit events are collected from target database by Data Safe audit trail
+     * The date and time until when the audit events were collected from the target database by the Data Safe audit trail
      * collection process, in the format defined by RFC3339.
      *
      * @return the value

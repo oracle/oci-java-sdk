@@ -71,13 +71,13 @@ public final class UpdateReportDefinitionDetails
             return this;
         }
         /**
-         * A description of the report definition.
+         * The description of the report definition.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A description of the report definition.
+         * The description of the report definition.
          * @param description the value to set
          * @return this builder
          **/
@@ -272,13 +272,13 @@ public final class UpdateReportDefinitionDetails
     }
 
     /**
-     * A description of the report definition.
+     * The description of the report definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A description of the report definition.
+     * The description of the report definition.
      * @return the value
      **/
     public String getDescription() {

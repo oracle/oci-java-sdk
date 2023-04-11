@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to perform update all action on alerts.
+ * The details to update alerts in the specified compartment.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -64,13 +64,13 @@ public final class AlertsUpdateDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The OCID of the target associated with alerts.
+         * The OCID of the target database associated with the alerts.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target associated with alerts.
+         * The OCID of the target database associated with the alerts.
          * @param targetId the value to set
          * @return this builder
          **/
@@ -147,13 +147,13 @@ public final class AlertsUpdateDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The OCID of the target associated with alerts.
+     * The OCID of the target database associated with the alerts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target associated with alerts.
+     * The OCID of the target database associated with the alerts.
      * @return the value
      **/
     public String getTargetId() {

@@ -119,6 +119,53 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return userCategory;
     }
     /**
+     * A filter to return only items that match the specified user role.
+     */
+    private String userRole;
+
+    /**
+     * A filter to return only items that match the specified user role.
+     */
+    public String getUserRole() {
+        return userRole;
+    }
+    /**
+     * A filter to return only items that match the specified user profile.
+     */
+    private String userProfile;
+
+    /**
+     * A filter to return only items that match the specified user profile.
+     */
+    public String getUserProfile() {
+        return userProfile;
+    }
+    /**
+     * A filter to return only items that match the specified user type. The possible values can be
+     *   - ADMIN_PRIVILEGED
+     *   - APPLICATION
+     *   - PRIVILEGED
+     *   - SCHEMA
+     *   - NON_PRIVILEGED
+     * as specified by '#/definitions/userTypes'.
+     *
+     */
+    private String userType;
+
+    /**
+     * A filter to return only items that match the specified user type. The possible values can be
+     *   - ADMIN_PRIVILEGED
+     *   - APPLICATION
+     *   - PRIVILEGED
+     *   - SCHEMA
+     *   - NON_PRIVILEGED
+     * as specified by '#/definitions/userTypes'.
+     *
+     */
+    public String getUserType() {
+        return userType;
+    }
+    /**
      * A filter to return only items that match the specified user key.
      */
     private String userKey;
@@ -490,6 +537,65 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
+         * A filter to return only items that match the specified user role.
+         */
+        private String userRole = null;
+
+        /**
+         * A filter to return only items that match the specified user role.
+         * @param userRole the value to set
+         * @return this builder instance
+         */
+        public Builder userRole(String userRole) {
+            this.userRole = userRole;
+            return this;
+        }
+
+        /**
+         * A filter to return only items that match the specified user profile.
+         */
+        private String userProfile = null;
+
+        /**
+         * A filter to return only items that match the specified user profile.
+         * @param userProfile the value to set
+         * @return this builder instance
+         */
+        public Builder userProfile(String userProfile) {
+            this.userProfile = userProfile;
+            return this;
+        }
+
+        /**
+         * A filter to return only items that match the specified user type. The possible values can be
+         *   - ADMIN_PRIVILEGED
+         *   - APPLICATION
+         *   - PRIVILEGED
+         *   - SCHEMA
+         *   - NON_PRIVILEGED
+         * as specified by '#/definitions/userTypes'.
+         *
+         */
+        private String userType = null;
+
+        /**
+         * A filter to return only items that match the specified user type. The possible values can be
+         *   - ADMIN_PRIVILEGED
+         *   - APPLICATION
+         *   - PRIVILEGED
+         *   - SCHEMA
+         *   - NON_PRIVILEGED
+         * as specified by '#/definitions/userTypes'.
+         *
+         * @param userType the value to set
+         * @return this builder instance
+         */
+        public Builder userType(String userType) {
+            this.userType = userType;
+            return this;
+        }
+
+        /**
          * A filter to return only items that match the specified user key.
          */
         private String userKey = null;
@@ -784,6 +890,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
             userCategory(o.getUserCategory());
+            userRole(o.getUserRole());
+            userProfile(o.getUserProfile());
+            userType(o.getUserType());
             userKey(o.getUserKey());
             accountStatus(o.getAccountStatus());
             authenticationType(o.getAuthenticationType());
@@ -837,6 +946,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             request.userCategory = userCategory;
+            request.userRole = userRole;
+            request.userProfile = userProfile;
+            request.userType = userType;
             request.userKey = userKey;
             request.accountStatus = accountStatus;
             request.authenticationType = authenticationType;
@@ -854,7 +966,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListUsersRequest(userAssessmentId, limit, compartmentIdInSubtree, accessLevel, userCategory, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page, sortOrder, sortBy, opcRequestId);
+            // new ListUsersRequest(userAssessmentId, limit, compartmentIdInSubtree, accessLevel, userCategory, userRole, userProfile, userType, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -869,6 +981,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
                 .userCategory(userCategory)
+                .userRole(userRole)
+                .userProfile(userProfile)
+                .userType(userType)
                 .userKey(userKey)
                 .accountStatus(accountStatus)
                 .authenticationType(authenticationType)
@@ -905,6 +1020,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(",userCategory=").append(String.valueOf(this.userCategory));
+        sb.append(",userRole=").append(String.valueOf(this.userRole));
+        sb.append(",userProfile=").append(String.valueOf(this.userProfile));
+        sb.append(",userType=").append(String.valueOf(this.userType));
         sb.append(",userKey=").append(String.valueOf(this.userKey));
         sb.append(",accountStatus=").append(String.valueOf(this.accountStatus));
         sb.append(",authenticationType=").append(String.valueOf(this.authenticationType));
@@ -945,6 +1063,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
                 && java.util.Objects.equals(this.userCategory, other.userCategory)
+                && java.util.Objects.equals(this.userRole, other.userRole)
+                && java.util.Objects.equals(this.userProfile, other.userProfile)
+                && java.util.Objects.equals(this.userType, other.userType)
                 && java.util.Objects.equals(this.userKey, other.userKey)
                 && java.util.Objects.equals(this.accountStatus, other.accountStatus)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
@@ -985,6 +1106,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         result = (result * PRIME) + (this.userCategory == null ? 43 : this.userCategory.hashCode());
+        result = (result * PRIME) + (this.userRole == null ? 43 : this.userRole.hashCode());
+        result = (result * PRIME) + (this.userProfile == null ? 43 : this.userProfile.hashCode());
+        result = (result * PRIME) + (this.userType == null ? 43 : this.userType.hashCode());
         result = (result * PRIME) + (this.userKey == null ? 43 : this.userKey.hashCode());
         result =
                 (result * PRIME)

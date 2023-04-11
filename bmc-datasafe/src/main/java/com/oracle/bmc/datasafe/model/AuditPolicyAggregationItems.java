@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details of audit profile aggregation items.
+ * The details of the audit profile aggregation items.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,13 +41,13 @@ public final class AuditPolicyAggregationItems
             return this;
         }
         /**
-         * Total count of aggregated metric.
+         * The total count of the aggregated metric.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
         /**
-         * Total count of aggregated metric.
+         * The total count of the aggregated metric.
          * @param count the value to set
          * @return this builder
          **/
@@ -100,13 +100,13 @@ public final class AuditPolicyAggregationItems
     }
 
     /**
-     * Total count of aggregated metric.
+     * The total count of the aggregated metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
     /**
-     * Total count of aggregated metric.
+     * The total count of the aggregated metric.
      * @return the value
      **/
     public Long getCount() {

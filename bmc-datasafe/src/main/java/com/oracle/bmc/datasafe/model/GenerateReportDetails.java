@@ -139,13 +139,13 @@ public final class GenerateReportDetails
             return this;
         }
         /**
-         * Specifies the time before which the data needs to be reported.
+         * Specifies the time until which the data needs to be reported.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLessThan")
         private java.util.Date timeLessThan;
 
         /**
-         * Specifies the time before which the data needs to be reported.
+         * Specifies the time until which the data needs to be reported.
          * @param timeLessThan the value to set
          * @return this builder
          **/
@@ -171,13 +171,13 @@ public final class GenerateReportDetails
             return this;
         }
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
         private Integer rowLimit;
 
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          * @param rowLimit the value to set
          * @return this builder
          **/
@@ -358,13 +358,13 @@ public final class GenerateReportDetails
     }
 
     /**
-     * Specifies the time before which the data needs to be reported.
+     * Specifies the time until which the data needs to be reported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLessThan")
     private final java.util.Date timeLessThan;
 
     /**
-     * Specifies the time before which the data needs to be reported.
+     * Specifies the time until which the data needs to be reported.
      * @return the value
      **/
     public java.util.Date getTimeLessThan() {
@@ -386,13 +386,13 @@ public final class GenerateReportDetails
     }
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
     private final Integer rowLimit;
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      * @return the value
      **/
     public Integer getRowLimit() {

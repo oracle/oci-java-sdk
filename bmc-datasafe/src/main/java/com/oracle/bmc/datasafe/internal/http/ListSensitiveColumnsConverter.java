@@ -202,6 +202,14 @@ public class ListSensitiveColumnsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getIsCaseInSensitive() != null) {
+            target =
+                    target.queryParam(
+                            "isCaseInSensitive",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsCaseInSensitive()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

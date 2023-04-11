@@ -265,13 +265,21 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service.
+         * Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+         * <p>
          * The database workload type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private String dbWorkload;
 
         /**
+         * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service.
+         * Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+         * <p>
          * The database workload type.
+         *
          * @param dbWorkload the value to set
          * @return this builder
          **/
@@ -866,13 +874,21 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service.
+     * Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+     * <p>
      * The database workload type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final String dbWorkload;
 
     /**
+     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service.
+     * Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+     * <p>
      * The database workload type.
+     *
      * @return the value
      **/
     public String getDbWorkload() {

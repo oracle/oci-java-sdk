@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The type of the object to which a masking column belongs.
+ * The type of the object to which a column belongs.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum ObjectType {

@@ -14,13 +14,13 @@ public class PatchTargetAlertPolicyAssociationRequest
                 com.oracle.bmc.datasafe.model.PatchTargetAlertPolicyAssociationDetails> {
 
     /**
-     * The details used to patch target-alert policy associations.
+     * The details used to patch the target-alert policy associations.
      */
     private com.oracle.bmc.datasafe.model.PatchTargetAlertPolicyAssociationDetails
             patchTargetAlertPolicyAssociationDetails;
 
     /**
-     * The details used to patch target-alert policy associations.
+     * The details used to patch the target-alert policy associations.
      */
     public com.oracle.bmc.datasafe.model.PatchTargetAlertPolicyAssociationDetails
             getPatchTargetAlertPolicyAssociationDetails() {
@@ -78,13 +78,13 @@ public class PatchTargetAlertPolicyAssociationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The details used to patch target-alert policy associations.
+         * The details used to patch the target-alert policy associations.
          */
         private com.oracle.bmc.datasafe.model.PatchTargetAlertPolicyAssociationDetails
                 patchTargetAlertPolicyAssociationDetails = null;
 
         /**
-         * The details used to patch target-alert policy associations.
+         * The details used to patch the target-alert policy associations.
          * @param patchTargetAlertPolicyAssociationDetails the value to set
          * @return this builder instance
          */

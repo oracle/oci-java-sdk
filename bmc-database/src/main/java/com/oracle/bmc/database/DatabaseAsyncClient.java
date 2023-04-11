@@ -2077,6 +2077,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApplicationVipResponse> createApplicationVip(
+            CreateApplicationVipRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateApplicationVipRequest, CreateApplicationVipResponse>
+                    handler) {
+        LOG.trace("Called async createApplicationVip");
+        final CreateApplicationVipRequest interceptedRequest =
+                CreateApplicationVipConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApplicationVipConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateApplicationVip",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/CreateApplicationVip");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationVipResponse>
+                transformer =
+                        CreateApplicationVipConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateApplicationVipRequest, CreateApplicationVipResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateApplicationVipRequest, CreateApplicationVipResponse>,
+                        java.util.concurrent.Future<CreateApplicationVipResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationVipDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateApplicationVipRequest, CreateApplicationVipResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAutonomousContainerDatabaseResponse>
             createAutonomousContainerDatabase(
                     CreateAutonomousContainerDatabaseRequest request,
@@ -3435,6 +3488,53 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DbNodeActionRequest, DbNodeActionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationVipResponse> deleteApplicationVip(
+            DeleteApplicationVipRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApplicationVipRequest, DeleteApplicationVipResponse>
+                    handler) {
+        LOG.trace("Called async deleteApplicationVip");
+        final DeleteApplicationVipRequest interceptedRequest =
+                DeleteApplicationVipConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApplicationVipConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteApplicationVip",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/DeleteApplicationVip");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationVipResponse>
+                transformer =
+                        DeleteApplicationVipConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteApplicationVipRequest, DeleteApplicationVipResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteApplicationVipRequest, DeleteApplicationVipResponse>,
+                        java.util.concurrent.Future<DeleteApplicationVipResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteApplicationVipRequest, DeleteApplicationVipResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6431,6 +6531,52 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetApplicationVipResponse> getApplicationVip(
+            GetApplicationVipRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetApplicationVipRequest, GetApplicationVipResponse>
+                    handler) {
+        LOG.trace("Called async getApplicationVip");
+        final GetApplicationVipRequest interceptedRequest =
+                GetApplicationVipConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApplicationVipConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetApplicationVip",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/GetApplicationVip");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationVipResponse>
+                transformer =
+                        GetApplicationVipConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetApplicationVipRequest, GetApplicationVipResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApplicationVipRequest, GetApplicationVipResponse>,
+                        java.util.concurrent.Future<GetApplicationVipResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApplicationVipRequest, GetApplicationVipResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutonomousContainerDatabaseResponse>
             getAutonomousContainerDatabase(
                     GetAutonomousContainerDatabaseRequest request,
@@ -9172,6 +9318,53 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     LaunchDbSystemRequest, LaunchDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationVipsResponse> listApplicationVips(
+            ListApplicationVipsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListApplicationVipsRequest, ListApplicationVipsResponse>
+                    handler) {
+        LOG.trace("Called async listApplicationVips");
+        final ListApplicationVipsRequest interceptedRequest =
+                ListApplicationVipsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApplicationVipsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListApplicationVips",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVipSummary/ListApplicationVips");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationVipsResponse>
+                transformer =
+                        ListApplicationVipsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListApplicationVipsRequest, ListApplicationVipsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListApplicationVipsRequest, ListApplicationVipsResponse>,
+                        java.util.concurrent.Future<ListApplicationVipsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListApplicationVipsRequest, ListApplicationVipsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -13106,6 +13299,124 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RotateAutonomousDatabaseEncryptionKeyRequest,
                     RotateAutonomousDatabaseEncryptionKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateAutonomousVmClusterOrdsCertsResponse>
+            rotateAutonomousVmClusterOrdsCerts(
+                    RotateAutonomousVmClusterOrdsCertsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RotateAutonomousVmClusterOrdsCertsRequest,
+                                    RotateAutonomousVmClusterOrdsCertsResponse>
+                            handler) {
+        LOG.trace("Called async rotateAutonomousVmClusterOrdsCerts");
+        final RotateAutonomousVmClusterOrdsCertsRequest interceptedRequest =
+                RotateAutonomousVmClusterOrdsCertsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateAutonomousVmClusterOrdsCertsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateAutonomousVmClusterOrdsCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RotateAutonomousVmClusterOrdsCerts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RotateAutonomousVmClusterOrdsCertsResponse>
+                transformer =
+                        RotateAutonomousVmClusterOrdsCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RotateAutonomousVmClusterOrdsCertsRequest,
+                        RotateAutonomousVmClusterOrdsCertsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateAutonomousVmClusterOrdsCertsRequest,
+                                RotateAutonomousVmClusterOrdsCertsResponse>,
+                        java.util.concurrent.Future<RotateAutonomousVmClusterOrdsCertsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRotateAutonomousVmClusterOrdsCertsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateAutonomousVmClusterOrdsCertsRequest,
+                    RotateAutonomousVmClusterOrdsCertsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateAutonomousVmClusterSslCertsResponse>
+            rotateAutonomousVmClusterSslCerts(
+                    RotateAutonomousVmClusterSslCertsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RotateAutonomousVmClusterSslCertsRequest,
+                                    RotateAutonomousVmClusterSslCertsResponse>
+                            handler) {
+        LOG.trace("Called async rotateAutonomousVmClusterSslCerts");
+        final RotateAutonomousVmClusterSslCertsRequest interceptedRequest =
+                RotateAutonomousVmClusterSslCertsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateAutonomousVmClusterSslCertsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotateAutonomousVmClusterSslCerts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RotateAutonomousVmClusterSslCerts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RotateAutonomousVmClusterSslCertsResponse>
+                transformer =
+                        RotateAutonomousVmClusterSslCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RotateAutonomousVmClusterSslCertsRequest,
+                        RotateAutonomousVmClusterSslCertsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateAutonomousVmClusterSslCertsRequest,
+                                RotateAutonomousVmClusterSslCertsResponse>,
+                        java.util.concurrent.Future<RotateAutonomousVmClusterSslCertsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRotateAutonomousVmClusterSslCertsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateAutonomousVmClusterSslCertsRequest,
+                    RotateAutonomousVmClusterSslCertsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

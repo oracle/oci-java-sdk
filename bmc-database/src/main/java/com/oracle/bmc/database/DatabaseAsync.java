@@ -349,7 +349,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Switch the Autonomous Container Database role between Standby and Snapshot Standby.
      * For more information about changing Autonomous Container Databases Dataguard Role, see
-     * [Change Database Role to Snapshot Standby](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#changeRole).
+     * [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
      *
      *
      * @param request The request object containing the details to send
@@ -596,6 +596,23 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ConvertToPdbResponse> convertToPdb(
             ConvertToPdbRequest request,
             com.oracle.bmc.responses.AsyncHandler<ConvertToPdbRequest, ConvertToPdbResponse>
+                    handler);
+
+    /**
+     * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateApplicationVipResponse> createApplicationVip(
+            CreateApplicationVipRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateApplicationVipRequest, CreateApplicationVipResponse>
                     handler);
 
     /**
@@ -1056,6 +1073,23 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<DbNodeActionResponse> dbNodeAction(
             DbNodeActionRequest request,
             com.oracle.bmc.responses.AsyncHandler<DbNodeActionRequest, DbNodeActionResponse>
+                    handler);
+
+    /**
+     * Deletes and deregisters the specified application virtual IP (VIP) address.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteApplicationVipResponse> deleteApplicationVip(
+            DeleteApplicationVipRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApplicationVipRequest, DeleteApplicationVipResponse>
                     handler);
 
     /**
@@ -2062,6 +2096,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about a specified application virtual IP (VIP) address.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApplicationVipResponse> getApplicationVip(
+            GetApplicationVipRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetApplicationVipRequest, GetApplicationVipResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Autonomous Container Database.
      *
      * @param request The request object containing the details to send
@@ -3044,6 +3094,23 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<LaunchDbSystemResponse> launchDbSystem(
             LaunchDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<LaunchDbSystemRequest, LaunchDbSystemResponse>
+                    handler);
+
+    /**
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApplicationVipsResponse> listApplicationVips(
+            ListApplicationVipsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListApplicationVipsRequest, ListApplicationVipsResponse>
                     handler);
 
     /**
@@ -4414,6 +4481,44 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RotateAutonomousDatabaseEncryptionKeyRequest,
                                     RotateAutonomousDatabaseEncryptionKeyResponse>
+                            handler);
+
+    /**
+     * Rotates the Oracle REST Data Services (ORDS) certificates for Autonomous Exadata VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateAutonomousVmClusterOrdsCertsResponse>
+            rotateAutonomousVmClusterOrdsCerts(
+                    RotateAutonomousVmClusterOrdsCertsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateAutonomousVmClusterOrdsCertsRequest,
+                                    RotateAutonomousVmClusterOrdsCertsResponse>
+                            handler);
+
+    /**
+     * Rotates the SSL certificates for Autonomous Exadata VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateAutonomousVmClusterSslCertsResponse>
+            rotateAutonomousVmClusterSslCerts(
+                    RotateAutonomousVmClusterSslCertsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateAutonomousVmClusterSslCertsRequest,
+                                    RotateAutonomousVmClusterSslCertsResponse>
                             handler);
 
     /**

@@ -91,13 +91,13 @@ public final class ColumnFilter extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+         * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+         * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -107,13 +107,13 @@ public final class ColumnFilter extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+         * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
         /**
-         * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+         * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
          * @param isHidden the value to set
          * @return this builder
          **/
@@ -273,13 +273,13 @@ public final class ColumnFilter extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+     * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+     * Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
      * @return the value
      **/
     public Boolean getIsEnabled() {
@@ -287,13 +287,13 @@ public final class ColumnFilter extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+     * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
-     * Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+     * Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
      * @return the value
      **/
     public Boolean getIsHidden() {
