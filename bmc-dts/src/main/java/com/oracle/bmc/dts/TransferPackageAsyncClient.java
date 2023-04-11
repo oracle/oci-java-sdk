@@ -40,7 +40,7 @@ public class TransferPackageAsyncClient extends com.oracle.bmc.http.internal.Bas
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(TransferPackageAsyncClient.class);
 
-    private TransferPackageAsyncClient(
+    TransferPackageAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

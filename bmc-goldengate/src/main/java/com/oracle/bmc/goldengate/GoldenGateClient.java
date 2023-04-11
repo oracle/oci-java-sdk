@@ -30,7 +30,7 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final GoldenGatePaginators paginators;
 
-    private GoldenGateClient(
+    GoldenGateClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

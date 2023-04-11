@@ -40,7 +40,7 @@ public class LinkAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LinkAsyncClient.class);
 
-    private LinkAsyncClient(
+    LinkAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

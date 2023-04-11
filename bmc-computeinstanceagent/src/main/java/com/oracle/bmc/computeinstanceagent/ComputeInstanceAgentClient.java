@@ -30,7 +30,7 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
 
     private final ComputeInstanceAgentPaginators paginators;
 
-    private ComputeInstanceAgentClient(
+    ComputeInstanceAgentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

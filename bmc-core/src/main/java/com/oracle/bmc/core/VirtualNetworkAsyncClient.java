@@ -39,7 +39,7 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(VirtualNetworkAsyncClient.class);
 
-    private VirtualNetworkAsyncClient(
+    VirtualNetworkAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

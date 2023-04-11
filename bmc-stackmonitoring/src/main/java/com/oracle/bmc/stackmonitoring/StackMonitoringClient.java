@@ -31,7 +31,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final StackMonitoringPaginators paginators;
 
-    private StackMonitoringClient(
+    StackMonitoringClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

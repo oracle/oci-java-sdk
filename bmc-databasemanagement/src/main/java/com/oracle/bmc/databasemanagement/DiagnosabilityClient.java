@@ -28,7 +28,7 @@ public class DiagnosabilityClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final DiagnosabilityPaginators paginators;
 
-    private DiagnosabilityClient(
+    DiagnosabilityClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -29,7 +29,7 @@ public class BastionClient extends com.oracle.bmc.http.internal.BaseSyncClient i
 
     private final BastionPaginators paginators;
 
-    private BastionClient(
+    BastionClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

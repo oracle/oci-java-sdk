@@ -31,7 +31,7 @@ public class BlockstorageClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final BlockstoragePaginators paginators;
 
-    private BlockstorageClient(
+    BlockstorageClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

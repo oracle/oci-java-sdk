@@ -39,7 +39,7 @@ public class SqlTuningAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SqlTuningAsyncClient.class);
 
-    private SqlTuningAsyncClient(
+    SqlTuningAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

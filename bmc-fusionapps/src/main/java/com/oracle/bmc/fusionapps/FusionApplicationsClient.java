@@ -30,7 +30,7 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
 
     private final FusionApplicationsPaginators paginators;
 
-    private FusionApplicationsClient(
+    FusionApplicationsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

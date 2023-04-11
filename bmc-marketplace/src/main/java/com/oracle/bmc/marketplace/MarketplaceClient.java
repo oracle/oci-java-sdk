@@ -30,7 +30,7 @@ public class MarketplaceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final MarketplacePaginators paginators;
 
-    private MarketplaceClient(
+    MarketplaceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

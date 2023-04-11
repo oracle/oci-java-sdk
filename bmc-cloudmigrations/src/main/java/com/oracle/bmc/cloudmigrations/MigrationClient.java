@@ -31,7 +31,7 @@ public class MigrationClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final MigrationPaginators paginators;
 
-    private MigrationClient(
+    MigrationClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

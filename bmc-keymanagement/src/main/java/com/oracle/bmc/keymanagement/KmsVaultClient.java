@@ -30,7 +30,7 @@ public class KmsVaultClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final KmsVaultPaginators paginators;
 
-    private KmsVaultClient(
+    KmsVaultClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

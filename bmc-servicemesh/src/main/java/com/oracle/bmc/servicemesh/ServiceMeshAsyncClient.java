@@ -39,7 +39,7 @@ public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ServiceMeshAsyncClient.class);
 
-    private ServiceMeshAsyncClient(
+    ServiceMeshAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

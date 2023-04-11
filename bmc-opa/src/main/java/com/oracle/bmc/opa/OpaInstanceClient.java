@@ -31,7 +31,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final OpaInstancePaginators paginators;
 
-    private OpaInstanceClient(
+    OpaInstanceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

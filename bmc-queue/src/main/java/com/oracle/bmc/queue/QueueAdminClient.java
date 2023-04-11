@@ -30,7 +30,7 @@ public class QueueAdminClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final QueueAdminPaginators paginators;
 
-    private QueueAdminClient(
+    QueueAdminClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

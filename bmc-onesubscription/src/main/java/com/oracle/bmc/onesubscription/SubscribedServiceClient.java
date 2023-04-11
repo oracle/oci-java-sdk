@@ -28,7 +28,7 @@ public class SubscribedServiceClient extends com.oracle.bmc.http.internal.BaseSy
 
     private final SubscribedServicePaginators paginators;
 
-    private SubscribedServiceClient(
+    SubscribedServiceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

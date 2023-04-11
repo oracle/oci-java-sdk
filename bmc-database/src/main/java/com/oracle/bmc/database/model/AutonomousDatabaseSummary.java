@@ -30,7 +30,6 @@ public final class AutonomousDatabaseSummary
         "compartmentId",
         "lifecycleState",
         "lifecycleDetails",
-        "additionalDatabaseStatus",
         "kmsKeyId",
         "vaultId",
         "kmsKeyLifecycleDetails",
@@ -135,7 +134,6 @@ public final class AutonomousDatabaseSummary
             String compartmentId,
             LifecycleState lifecycleState,
             String lifecycleDetails,
-            java.util.List<String> additionalDatabaseStatus,
             String kmsKeyId,
             String vaultId,
             String kmsKeyLifecycleDetails,
@@ -239,7 +237,6 @@ public final class AutonomousDatabaseSummary
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
-        this.additionalDatabaseStatus = additionalDatabaseStatus;
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
         this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
@@ -408,35 +405,6 @@ public final class AutonomousDatabaseSummary
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-        /**
-         * Additional details about the status of the database, such as the progress of a backup or
-         * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock
-         * console functionality but will not be published in the SDK or documentation. It will be
-         * present in responses, so deprecating will require coordination to ensure we do not break
-         * customers if they begin relying on this field. Please see
-         * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-         * regarding the motivation of this field and the longer term plan.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("additionalDatabaseStatus")
-        private java.util.List<String> additionalDatabaseStatus;
-
-        /**
-         * Additional details about the status of the database, such as the progress of a backup or
-         * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock
-         * console functionality but will not be published in the SDK or documentation. It will be
-         * present in responses, so deprecating will require coordination to ensure we do not break
-         * customers if they begin relying on this field. Please see
-         * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-         * regarding the motivation of this field and the longer term plan.
-         *
-         * @param additionalDatabaseStatus the value to set
-         * @return this builder
-         */
-        public Builder additionalDatabaseStatus(java.util.List<String> additionalDatabaseStatus) {
-            this.additionalDatabaseStatus = additionalDatabaseStatus;
-            this.__explicitlySet__.add("additionalDatabaseStatus");
             return this;
         }
         /**
@@ -631,6 +599,12 @@ public final class AutonomousDatabaseSummary
          * Indicates if this is an Always Free resource. The default value is false. Note that
          * Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free
          * databases, memory and CPU cannot be scaled.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+         * isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds,
+         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or
+         * isLocalDataGuardEnabled
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
         private Boolean isFreeTier;
@@ -639,6 +613,12 @@ public final class AutonomousDatabaseSummary
          * Indicates if this is an Always Free resource. The default value is false. Note that
          * Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free
          * databases, memory and CPU cannot be scaled.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+         * isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds,
+         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or
+         * isLocalDataGuardEnabled
          *
          * @param isFreeTier the value to set
          * @return this builder
@@ -926,12 +906,12 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster. */
+        /** The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+         * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -1098,6 +1078,11 @@ public final class AutonomousDatabaseSummary
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
          * a value is not specified, the system will supply the value of {@code
          * BRING_YOUR_OWN_LICENSE}.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
+         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -1114,6 +1099,11 @@ public final class AutonomousDatabaseSummary
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
          * a value is not specified, the system will supply the value of {@code
          * BRING_YOUR_OWN_LICENSE}.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
+         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -1269,17 +1259,27 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The private endpoint label for the resource. Setting this to an empty string, after the
-         * private endpoint database gets created, will change the same private endpoint database to
-         * the public endpoint database.
+         * The resource's private endpoint label. Setting this to an empty string, after the
+         * creation of the private endpoint database, changes the private endpoint database to a
+         * public endpoint database.
+         *
+         * <p>This setting cannot be updated in parallel with any of the following: licenseModel,
+         * dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+         * isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
         private String privateEndpointLabel;
 
         /**
-         * The private endpoint label for the resource. Setting this to an empty string, after the
-         * private endpoint database gets created, will change the same private endpoint database to
-         * the public endpoint database.
+         * The resource's private endpoint label. Setting this to an empty string, after the
+         * creation of the private endpoint database, changes the private endpoint database to a
+         * public endpoint database.
+         *
+         * <p>This setting cannot be updated in parallel with any of the following: licenseModel,
+         * dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+         * isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param privateEndpointLabel the value to set
          * @return this builder
@@ -1341,6 +1341,11 @@ public final class AutonomousDatabaseSummary
          * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
          * indicates an Autonomous Database with the Oracle APEX Application Development workload
          * type.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+         * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
@@ -1352,6 +1357,11 @@ public final class AutonomousDatabaseSummary
          * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
          * indicates an Autonomous Database with the Oracle APEX Application Development workload
          * type.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+         * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param dbWorkload the value to set
          * @return this builder
@@ -1416,6 +1426,11 @@ public final class AutonomousDatabaseSummary
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
@@ -1436,6 +1451,11 @@ public final class AutonomousDatabaseSummary
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param whitelistedIps the value to set
          * @return this builder
@@ -1488,6 +1508,11 @@ public final class AutonomousDatabaseSummary
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
         private java.util.List<String> standbyWhitelistedIps;
@@ -1508,6 +1533,11 @@ public final class AutonomousDatabaseSummary
          *
          * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array
          * with a single empty string entry.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName,
+         * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param standbyWhitelistedIps the value to set
          * @return this builder
@@ -1622,12 +1652,24 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("timeMaintenanceEnd");
             return this;
         }
-        /** Indicates whether the Autonomous Database is a refreshable clone. */
+        /**
+         * Indicates if the Autonomous Database is a refreshable clone.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel,
+         * dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations,
+         * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
         private Boolean isRefreshableClone;
 
         /**
-         * Indicates whether the Autonomous Database is a refreshable clone.
+         * Indicates if the Autonomous Database is a refreshable clone.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel,
+         * dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations,
+         * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param isRefreshableClone the value to set
          * @return this builder
@@ -1689,15 +1731,23 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code
-         * READ_WRITE} mode.
+         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
+         * or {@code READ_WRITE} mode.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
+         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("openMode")
         private OpenMode openMode;
 
         /**
-         * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code
-         * READ_WRITE} mode.
+         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
+         * or {@code READ_WRITE} mode.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
+         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param openMode the value to set
          * @return this builder
@@ -1765,15 +1815,25 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The Autonomous Database permission level. Restricted mode allows access only to admin
+         * The Autonomous Database permission level. Restricted mode allows access only by admin
          * users.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
+         * nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
         private PermissionLevel permissionLevel;
 
         /**
-         * The Autonomous Database permission level. Restricted mode allows access only to admin
+         * The Autonomous Database permission level. Restricted mode allows access only by admin
          * users.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
+         * nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or
+         * isFreeTier.
          *
          * @param permissionLevel the value to set
          * @return this builder
@@ -2123,12 +2183,54 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("peerDbIds");
             return this;
         }
-        /** Indicates whether the Autonomous Database requires mTLS connections. */
+        /**
+         * Specifies if the Autonomous Database requires mTLS connections.
+         *
+         * <p>This may not be updated in parallel with any of the following: licenseModel,
+         * databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs,
+         * whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds,
+         * customerContacts, dbVersion, scheduledOperations, dbToolsDetails,
+         * isLocalDataGuardEnabled, or isFreeTier.
+         *
+         * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will
+         * change from true to false on July 1, 2023 in the following APIs: -
+         * CreateAutonomousDatabase - GetAutonomousDatabase - UpdateAutonomousDatabase Details:
+         * Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value
+         * was true. This applies to Autonomous Databases on shared Exadata infrastructure. Does
+         * this impact me? If you use or maintain custom scripts or Terraform scripts referencing
+         * the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs,
+         * you want to check, and possibly modify, the scripts for the changed default value of the
+         * attribute. Should you choose not to leave your scripts unchanged, the API calls
+         * containing this attribute will continue to work, but the default value will switch from
+         * true to false. How do I make this change? Using either OCI SDKs or command line tools,
+         * update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to
+         * true.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
         private Boolean isMtlsConnectionRequired;
 
         /**
-         * Indicates whether the Autonomous Database requires mTLS connections.
+         * Specifies if the Autonomous Database requires mTLS connections.
+         *
+         * <p>This may not be updated in parallel with any of the following: licenseModel,
+         * databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs,
+         * whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds,
+         * customerContacts, dbVersion, scheduledOperations, dbToolsDetails,
+         * isLocalDataGuardEnabled, or isFreeTier.
+         *
+         * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will
+         * change from true to false on July 1, 2023 in the following APIs: -
+         * CreateAutonomousDatabase - GetAutonomousDatabase - UpdateAutonomousDatabase Details:
+         * Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value
+         * was true. This applies to Autonomous Databases on shared Exadata infrastructure. Does
+         * this impact me? If you use or maintain custom scripts or Terraform scripts referencing
+         * the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs,
+         * you want to check, and possibly modify, the scripts for the changed default value of the
+         * attribute. Should you choose not to leave your scripts unchanged, the API calls
+         * containing this attribute will continue to work, but the default value will switch from
+         * true to false. How do I make this change? Using either OCI SDKs or command line tools,
+         * update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to
+         * true.
          *
          * @param isMtlsConnectionRequired the value to set
          * @return this builder
@@ -2197,12 +2299,24 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
             return this;
         }
-        /** list of scheduled operations */
+        /**
+         * The list of scheduled operations.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion,
+         * isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
         private java.util.List<ScheduledOperationDetails> scheduledOperations;
 
         /**
-         * list of scheduled operations
+         * The list of scheduled operations.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion,
+         * isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param scheduledOperations the value to set
          * @return this builder
@@ -2312,12 +2426,24 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
-        /** List of database tools details. */
+        /**
+         * The list of database tools details.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion,
+         * isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
         private java.util.List<DatabaseTool> dbToolsDetails;
 
         /**
-         * List of database tools details.
+         * The list of database tools details.
+         *
+         * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+         * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired,
+         * openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion,
+         * isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param dbToolsDetails the value to set
          * @return this builder
@@ -2422,7 +2548,6 @@ public final class AutonomousDatabaseSummary
                             this.compartmentId,
                             this.lifecycleState,
                             this.lifecycleDetails,
-                            this.additionalDatabaseStatus,
                             this.kmsKeyId,
                             this.vaultId,
                             this.kmsKeyLifecycleDetails,
@@ -2540,9 +2665,6 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
-            }
-            if (model.wasPropertyExplicitlySet("additionalDatabaseStatus")) {
-                this.additionalDatabaseStatus(model.getAdditionalDatabaseStatus());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
@@ -2981,33 +3103,6 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * Additional details about the status of the database, such as the progress of a backup or
-     * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock console
-     * functionality but will not be published in the SDK or documentation. It will be present in
-     * responses, so deprecating will require coordination to ensure we do not break customers if
-     * they begin relying on this field. Please see
-     * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-     * regarding the motivation of this field and the longer term plan.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("additionalDatabaseStatus")
-    private final java.util.List<String> additionalDatabaseStatus;
-
-    /**
-     * Additional details about the status of the database, such as the progress of a backup or
-     * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock console
-     * functionality but will not be published in the SDK or documentation. It will be present in
-     * responses, so deprecating will require coordination to ensure we do not break customers if
-     * they begin relying on this field. Please see
-     * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-     * regarding the motivation of this field and the longer term plan.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getAdditionalDatabaseStatus() {
-        return additionalDatabaseStatus;
-    }
-
-    /**
      * The OCID of the key container that is used as the master encryption key in database
      * transparent data encryption (TDE) operations.
      */
@@ -3176,6 +3271,11 @@ public final class AutonomousDatabaseSummary
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
      * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
      * and CPU cannot be scaled.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
     private final Boolean isFreeTier;
@@ -3184,6 +3284,11 @@ public final class AutonomousDatabaseSummary
      * Indicates if this is an Always Free resource. The default value is false. Note that Always
      * Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory
      * and CPU cannot be scaled.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
      *
      * @return the value
      */
@@ -3488,12 +3593,12 @@ public final class AutonomousDatabaseSummary
         return dataStorageSizeInTBs;
     }
 
-    /** The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster. */
+    /** The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -3683,6 +3788,11 @@ public final class AutonomousDatabaseSummary
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      */
     public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
@@ -3740,6 +3850,11 @@ public final class AutonomousDatabaseSummary
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
@@ -3755,6 +3870,11 @@ public final class AutonomousDatabaseSummary
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      *
      * @return the value
      */
@@ -3891,17 +4011,27 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The private endpoint label for the resource. Setting this to an empty string, after the
-     * private endpoint database gets created, will change the same private endpoint database to the
-     * public endpoint database.
+     * The resource's private endpoint label. Setting this to an empty string, after the creation of
+     * the private endpoint database, changes the private endpoint database to a public endpoint
+     * database.
+     *
+     * <p>This setting cannot be updated in parallel with any of the following: licenseModel,
+     * dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations,
+     * dbToolsDetails, or isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
     private final String privateEndpointLabel;
 
     /**
-     * The private endpoint label for the resource. Setting this to an empty string, after the
-     * private endpoint database gets created, will change the same private endpoint database to the
-     * public endpoint database.
+     * The resource's private endpoint label. Setting this to an empty string, after the creation of
+     * the private endpoint database, changes the private endpoint database to a public endpoint
+     * database.
+     *
+     * <p>This setting cannot be updated in parallel with any of the following: licenseModel,
+     * dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations,
+     * dbToolsDetails, or isFreeTier.
      *
      * @return the value
      */
@@ -3954,6 +4084,11 @@ public final class AutonomousDatabaseSummary
      * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
      * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
      * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     public enum DbWorkload implements com.oracle.bmc.http.internal.BmcEnum {
         Oltp("OLTP"),
@@ -4008,6 +4143,11 @@ public final class AutonomousDatabaseSummary
      * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
      * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
      * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
@@ -4018,6 +4158,11 @@ public final class AutonomousDatabaseSummary
      * <p>- OLTP - indicates an Autonomous Transaction Processing database - DW - indicates an
      * Autonomous Data Warehouse database - AJD - indicates an Autonomous JSON Database - APEX -
      * indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps,
+     * isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      */
@@ -4076,6 +4221,11 @@ public final class AutonomousDatabaseSummary
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations,
+     * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     private final java.util.List<String> whitelistedIps;
@@ -4096,6 +4246,11 @@ public final class AutonomousDatabaseSummary
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations,
+     * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      */
@@ -4144,6 +4299,11 @@ public final class AutonomousDatabaseSummary
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations,
+     * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("standbyWhitelistedIps")
     private final java.util.List<String> standbyWhitelistedIps;
@@ -4164,6 +4324,11 @@ public final class AutonomousDatabaseSummary
      *
      * <p>For an update operation, if you want to delete all the IPs in the ACL, use an array with a
      * single empty string entry.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations,
+     * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      */
@@ -4411,12 +4576,24 @@ public final class AutonomousDatabaseSummary
         return timeMaintenanceEnd;
     }
 
-    /** Indicates whether the Autonomous Database is a refreshable clone. */
+    /**
+     * Indicates if the Autonomous Database is a refreshable clone.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails,
+     * isLocalDataGuardEnabled, or isFreeTier.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
     private final Boolean isRefreshableClone;
 
     /**
-     * Indicates whether the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous Database is a refreshable clone.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails,
+     * isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      */
@@ -4468,8 +4645,12 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code
-     * READ_WRITE} mode.
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * {@code READ_WRITE} mode.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     public enum OpenMode implements com.oracle.bmc.http.internal.BmcEnum {
         ReadOnly("READ_ONLY"),
@@ -4517,15 +4698,23 @@ public final class AutonomousDatabaseSummary
         }
     };
     /**
-     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code
-     * READ_WRITE} mode.
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * {@code READ_WRITE} mode.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("openMode")
     private final OpenMode openMode;
 
     /**
-     * The {@code DATABASE OPEN} mode. You can open the database in {@code READ_ONLY} or {@code
-     * READ_WRITE} mode.
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * {@code READ_WRITE} mode.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      * @return the value
      */
@@ -4683,7 +4872,11 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     public enum PermissionLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Restricted("RESTRICTED"),
@@ -4731,13 +4924,21 @@ public final class AutonomousDatabaseSummary
         }
     };
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
     private final PermissionLevel permissionLevel;
 
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      * @return the value
      */
@@ -5147,12 +5348,52 @@ public final class AutonomousDatabaseSummary
         return peerDbIds;
     }
 
-    /** Indicates whether the Autonomous Database requires mTLS connections. */
+    /**
+     * Specifies if the Autonomous Database requires mTLS connections.
+     *
+     * <p>This may not be updated in parallel with any of the following: licenseModel,
+     * databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs,
+     * whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds,
+     * customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or
+     * isFreeTier.
+     *
+     * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will change
+     * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
+     * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
+     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
+     * Databases on shared Exadata infrastructure. Does this impact me? If you use or maintain
+     * custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
+     * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
+     * modify, the scripts for the changed default value of the attribute. Should you choose not to
+     * leave your scripts unchanged, the API calls containing this attribute will continue to work,
+     * but the default value will switch from true to false. How do I make this change? Using either
+     * OCI SDKs or command line tools, update your custom scripts to explicitly set the
+     * isMTLSConnectionRequired attribute to true.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
     private final Boolean isMtlsConnectionRequired;
 
     /**
-     * Indicates whether the Autonomous Database requires mTLS connections.
+     * Specifies if the Autonomous Database requires mTLS connections.
+     *
+     * <p>This may not be updated in parallel with any of the following: licenseModel,
+     * databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs,
+     * whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds,
+     * customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or
+     * isFreeTier.
+     *
+     * <p>Service Change: The default value of the isMTLSConnectionRequired attribute will change
+     * from true to false on July 1, 2023 in the following APIs: - CreateAutonomousDatabase -
+     * GetAutonomousDatabase - UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change,
+     * the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous
+     * Databases on shared Exadata infrastructure. Does this impact me? If you use or maintain
+     * custom scripts or Terraform scripts referencing the CreateAutonomousDatabase,
+     * GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly
+     * modify, the scripts for the changed default value of the attribute. Should you choose not to
+     * leave your scripts unchanged, the API calls containing this attribute will continue to work,
+     * but the default value will switch from true to false. How do I make this change? Using either
+     * OCI SDKs or command line tools, update your custom scripts to explicitly set the
+     * isMTLSConnectionRequired attribute to true.
      *
      * @return the value
      */
@@ -5262,12 +5503,24 @@ public final class AutonomousDatabaseSummary
         return autonomousMaintenanceScheduleType;
     }
 
-    /** list of scheduled operations */
+    /**
+     * The list of scheduled operations.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
     private final java.util.List<ScheduledOperationDetails> scheduledOperations;
 
     /**
-     * list of scheduled operations
+     * The list of scheduled operations.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      */
@@ -5408,12 +5661,24 @@ public final class AutonomousDatabaseSummary
         return databaseEdition;
     }
 
-    /** List of database tools details. */
+    /**
+     * The list of database tools details.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbToolsDetails")
     private final java.util.List<DatabaseTool> dbToolsDetails;
 
     /**
-     * List of database tools details.
+     * The list of database tools details.
+     *
+     * <p>This cannot be updated in parallel with any of the following: licenseModel, dbEdition,
+     * cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode,
+     * permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName,
+     * scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      */
@@ -5566,8 +5831,6 @@ public final class AutonomousDatabaseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append(", additionalDatabaseStatus=")
-                .append(String.valueOf(this.additionalDatabaseStatus));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyLifecycleDetails=").append(String.valueOf(this.kmsKeyLifecycleDetails));
@@ -5713,8 +5976,6 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(
-                        this.additionalDatabaseStatus, other.additionalDatabaseStatus)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(
@@ -5867,11 +6128,6 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.additionalDatabaseStatus == null
-                                ? 43
-                                : this.additionalDatabaseStatus.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result =

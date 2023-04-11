@@ -31,7 +31,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
 
     private final DisasterRecoveryPaginators paginators;
 
-    private DisasterRecoveryClient(
+    DisasterRecoveryClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

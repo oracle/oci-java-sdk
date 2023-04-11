@@ -28,6 +28,9 @@ package com.oracle.bmc.opsi.model;
             value = DBExternalInstance.class,
             name = "DB_EXTERNAL_INSTANCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DBParameters.class,
+            name = "DB_PARAMETERS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DBExternalProperties.class,
             name = "DB_EXTERNAL_PROPERTIES")
 })
@@ -105,6 +108,7 @@ public class DatabaseConfigurationMetricGroup
         DbExternalProperties("DB_EXTERNAL_PROPERTIES"),
         DbExternalInstance("DB_EXTERNAL_INSTANCE"),
         DbOsConfigInstance("DB_OS_CONFIG_INSTANCE"),
+        DbParameters("DB_PARAMETERS"),
         ;
 
         private final String value;

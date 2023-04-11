@@ -26,7 +26,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(IdentityDomainsClient.class);
 
-    private IdentityDomainsClient(
+    IdentityDomainsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

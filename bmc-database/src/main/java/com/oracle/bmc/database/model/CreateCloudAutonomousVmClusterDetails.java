@@ -187,12 +187,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The number of OCPU cores to be enabled per VM cluster node. */
+        /** The number of CPU cores to be enabled per VM cluster node. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
-         * The number of OCPU cores to be enabled per VM cluster node.
+         * The number of CPU cores to be enabled per VM cluster node.
          *
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
@@ -202,12 +202,12 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /** The amount of memory (in GBs) to be enabled per each OCPU core. */
+        /** The amount of memory (in GBs) to be enabled per each CPU core. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per each OCPU core.
+         * The amount of memory (in GBs) to be enabled per each CPU core.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -251,12 +251,20 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("clusterTimeZone");
             return this;
         }
-        /** The compute model of the Cloud Autonomous VM Cluster. */
+        /**
+         * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Cloud Autonomous VM Cluster.
+         * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -302,6 +310,11 @@ public final class CreateCloudAutonomousVmClusterDetails
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
          * a value is not specified, the system will supply the value of {@code
          * BRING_YOUR_OWN_LICENSE}.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
+         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
@@ -318,6 +331,11 @@ public final class CreateCloudAutonomousVmClusterDetails
          * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if
          * a value is not specified, the system will supply the value of {@code
          * BRING_YOUR_OWN_LICENSE}.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword,
+         * isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName,
+         * scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -593,12 +611,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return totalContainerDatabases;
     }
 
-    /** The number of OCPU cores to be enabled per VM cluster node. */
+    /** The number of CPU cores to be enabled per VM cluster node. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
-     * The number of OCPU cores to be enabled per VM cluster node.
+     * The number of CPU cores to be enabled per VM cluster node.
      *
      * @return the value
      */
@@ -606,12 +624,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return cpuCoreCountPerNode;
     }
 
-    /** The amount of memory (in GBs) to be enabled per each OCPU core. */
+    /** The amount of memory (in GBs) to be enabled per each CPU core. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      *
      * @return the value
      */
@@ -649,7 +667,12 @@ public final class CreateCloudAutonomousVmClusterDetails
         return clusterTimeZone;
     }
 
-    /** The compute model of the Cloud Autonomous VM Cluster. */
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
+     * Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -682,12 +705,20 @@ public final class CreateCloudAutonomousVmClusterDetails
             throw new IllegalArgumentException("Invalid ComputeModel: " + key);
         }
     };
-    /** The compute model of the Cloud Autonomous VM Cluster. */
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
+     * Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Cloud Autonomous VM Cluster.
+     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous
+     * Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */
@@ -726,6 +757,11 @@ public final class CreateCloudAutonomousVmClusterDetails
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      */
     public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
@@ -770,6 +806,11 @@ public final class CreateCloudAutonomousVmClusterDetails
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
@@ -785,6 +826,11 @@ public final class CreateCloudAutonomousVmClusterDetails
      * Infrastructure level. When using [shared Exadata
      * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a
      * value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload,
+     * privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or
+     * isFreeTier.
      *
      * @return the value
      */

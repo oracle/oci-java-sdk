@@ -40,7 +40,7 @@ public class ApplicationDependencyManagementAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ApplicationDependencyManagementAsyncClient.class);
 
-    private ApplicationDependencyManagementAsyncClient(
+    ApplicationDependencyManagementAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

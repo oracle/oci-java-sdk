@@ -29,7 +29,7 @@ public class ApmSyntheticClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final ApmSyntheticPaginators paginators;
 
-    private ApmSyntheticClient(
+    ApmSyntheticClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

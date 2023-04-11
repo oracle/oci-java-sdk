@@ -39,7 +39,7 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DevopsAsyncClient.class);
 
-    private DevopsAsyncClient(
+    DevopsAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

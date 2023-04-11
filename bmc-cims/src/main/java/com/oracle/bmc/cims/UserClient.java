@@ -25,7 +25,7 @@ public class UserClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
 
     private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(UserClient.class);
 
-    private UserClient(
+    UserClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

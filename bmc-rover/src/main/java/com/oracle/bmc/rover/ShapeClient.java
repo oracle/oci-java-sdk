@@ -27,7 +27,7 @@ public class ShapeClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
     private final ShapePaginators paginators;
 
-    private ShapeClient(
+    ShapeClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

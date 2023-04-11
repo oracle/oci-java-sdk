@@ -40,7 +40,7 @@ public class AIServiceDocumentAsyncClient extends com.oracle.bmc.http.internal.B
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(AIServiceDocumentAsyncClient.class);
 
-    private AIServiceDocumentAsyncClient(
+    AIServiceDocumentAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -6,6 +6,7 @@ package com.oracle.bmc.auth.internal;
 
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
+import com.oracle.bmc.auth.ProvidesCustomRequestSigner;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
@@ -29,7 +30,9 @@ import org.slf4j.Logger;
 
 import java.net.URI;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -47,10 +50,11 @@ public abstract class AbstractFederationClient
 
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
 
-    private final ClientConfigurator clientConfigurator;
-    private final OciCircuitBreaker circuitBreaker;
-    private final HttpClient resourcePrincipalTokenClient;
-    private final HttpClient federationClient;
+    protected final ClientConfigurator clientConfigurator;
+    protected final List<ClientConfigurator> additionalClientConfigurator;
+    protected final OciCircuitBreaker circuitBreaker;
+    protected final HttpClient resourcePrincipalTokenClient;
+    protected final HttpClient federationClient;
 
     /**
      * Constructor of AbstractFederationClient.
@@ -70,27 +74,68 @@ public abstract class AbstractFederationClient
             BasicAuthenticationDetailsProvider basicAuthenticationDetailsProvider,
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration) {
+        this(
+                resourcePrincipalTokenEndpoint,
+                federationEndpoint,
+                sessionKeySupplier,
+                basicAuthenticationDetailsProvider,
+                clientConfigurator,
+                circuitBreakerConfiguration,
+                new ArrayList<>());
+    }
+
+    /**
+     * Constructor of AbstractFederationClient.
+     *
+     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal
+     *     token.
+     * @param federationEndpoint the endpoint that can provide the resource principal session token.
+     * @param sessionKeySupplier the session key supplier.
+     * @param basicAuthenticationDetailsProvider the instance principals authentication details
+     *     provider.
+     * @param clientConfigurator the reset client configurator.
+     */
+    public AbstractFederationClient(
+            String resourcePrincipalTokenEndpoint,
+            String federationEndpoint,
+            SessionKeySupplier sessionKeySupplier,
+            BasicAuthenticationDetailsProvider basicAuthenticationDetailsProvider,
+            ClientConfigurator clientConfigurator,
+            CircuitBreakerConfiguration circuitBreakerConfiguration,
+            List<ClientConfigurator> additionalCLientConfigurators) {
         Objects.requireNonNull(resourcePrincipalTokenEndpoint, "resourcePrincipalTokenEndpoint");
         Objects.requireNonNull(federationEndpoint, "federationEndpoint");
         this.sessionKeySupplier =
                 Validate.notNull(sessionKeySupplier, "sessionKeySupplier must not be null");
 
-        RequestSigner requestSigner =
-                DefaultRequestSigner.createRequestSigner(basicAuthenticationDetailsProvider);
+        RequestSigner requestSigner;
+        if (basicAuthenticationDetailsProvider instanceof ProvidesCustomRequestSigner) {
+            requestSigner =
+                    ((ProvidesCustomRequestSigner) basicAuthenticationDetailsProvider)
+                            .getCustomRequestSigner();
+        } else {
+            requestSigner =
+                    DefaultRequestSigner.createRequestSigner(basicAuthenticationDetailsProvider);
+        }
 
         this.clientConfigurator = clientConfigurator;
+        this.additionalClientConfigurator =
+                Collections.unmodifiableList(additionalCLientConfigurators);
         this.resourcePrincipalTokenClient =
                 makeClient(resourcePrincipalTokenEndpoint, requestSigner);
         this.federationClient = makeClient(federationEndpoint, requestSigner);
-        this.circuitBreaker =
-                CircuitBreakerHelper.makeCircuitBreaker(
-                        federationClient, circuitBreakerConfiguration);
+        if (federationClient != null) {
+            this.circuitBreaker =
+                    CircuitBreakerHelper.makeCircuitBreaker(
+                            federationClient, circuitBreakerConfiguration);
+        } else {
+            this.circuitBreaker = null;
+        }
 
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
     }
 
-    private HttpClient makeClient(String endpoint, RequestSigner requestSigner) {
-        final HttpClient resourcePrincipalTokenClient;
+    protected HttpClient makeClient(String endpoint, RequestSigner requestSigner) {
         HttpClientBuilder rptBuilder =
                 HttpProvider.getDefault()
                         .newBuilder()
@@ -104,6 +149,9 @@ public abstract class AbstractFederationClient
                         .registerRequestInterceptor(Priorities.USER, new LogHeadersFilter());
         if (clientConfigurator != null) {
             clientConfigurator.customizeClient(rptBuilder);
+        }
+        for (ClientConfigurator additionalConfigurator : additionalClientConfigurator) {
+            additionalConfigurator.customizeClient(rptBuilder);
         }
         return rptBuilder.build();
     }
@@ -237,5 +285,14 @@ public abstract class AbstractFederationClient
                 .handleBody(GetResourcePrincipalTokenResponse.class, (w, b) -> w.body = b)
                 .clientConfigurator(clientConfigurator)
                 .circuitBreaker(circuitBreaker);
+    }
+
+    /**
+     * Get securityTokenAdapter
+     *
+     * @return securityTokenAdapter
+     */
+    protected SecurityTokenAdapter getSecurityTokenAdapter() {
+        return securityTokenAdapter;
     }
 }

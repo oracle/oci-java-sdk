@@ -28,7 +28,7 @@ public class ResourceSearchClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final ResourceSearchPaginators paginators;
 
-    private ResourceSearchClient(
+    ResourceSearchClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

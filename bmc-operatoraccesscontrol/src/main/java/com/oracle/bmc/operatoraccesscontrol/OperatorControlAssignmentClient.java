@@ -31,7 +31,7 @@ public class OperatorControlAssignmentClient extends com.oracle.bmc.http.interna
 
     private final OperatorControlAssignmentPaginators paginators;
 
-    private OperatorControlAssignmentClient(
+    OperatorControlAssignmentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

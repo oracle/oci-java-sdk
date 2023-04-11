@@ -31,7 +31,7 @@ public class ApplicationDependencyManagementClient
 
     private final ApplicationDependencyManagementPaginators paginators;
 
-    private ApplicationDependencyManagementClient(
+    ApplicationDependencyManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

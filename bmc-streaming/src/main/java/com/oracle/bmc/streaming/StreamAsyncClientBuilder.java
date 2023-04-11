@@ -23,14 +23,15 @@ public class StreamAsyncClientBuilder
                     "authenticationDetailsProvider is marked non-null but is null");
         }
 
-        String cryptoEndpoint = getEndpoint();
+        String streamEndpoint = getEndpoint();
 
-        return new StreamAsyncClient(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                requestSignerFactory,
-                additionalClientConfigurators,
-                cryptoEndpoint);
+        // We create a copy of the builder and set the endpoint there, this way we don't modify this
+        // builder
+        // Otherwise, we might have both endpoint and stream or streamSummary set, which would cause
+        // an exception to be thrown in getEndpoint(), if this builder were used a second time.
+        StreamAsyncClientBuilder copy =
+                StreamAsyncClient.builder().copyFrom(this).endpoint(streamEndpoint);
+
+        return new StreamAsyncClient(copy, authenticationDetailsProvider);
     }
 }

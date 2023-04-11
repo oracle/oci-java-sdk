@@ -30,7 +30,7 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final DbBackupsPaginators paginators;
 
-    private DbBackupsClient(
+    DbBackupsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

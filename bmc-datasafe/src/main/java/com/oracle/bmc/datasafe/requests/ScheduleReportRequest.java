@@ -23,14 +23,14 @@ public class ScheduleReportRequest
         return reportDefinitionId;
     }
     /**
-     * Details for report schedule. It contains details such as schedule, PDF/XLS and number of
-     * rows.
+     * The details for the audit report schedule. It contains details such as schedule, PDF/XLS and
+     * number of rows.
      */
     private com.oracle.bmc.datasafe.model.ScheduleReportDetails scheduleReportDetails;
 
     /**
-     * Details for report schedule. It contains details such as schedule, PDF/XLS and number of
-     * rows.
+     * The details for the audit report schedule. It contains details such as schedule, PDF/XLS and
+     * number of rows.
      */
     public com.oracle.bmc.datasafe.model.ScheduleReportDetails getScheduleReportDetails() {
         return scheduleReportDetails;
@@ -111,14 +111,14 @@ public class ScheduleReportRequest
         }
 
         /**
-         * Details for report schedule. It contains details such as schedule, PDF/XLS and number of
-         * rows.
+         * The details for the audit report schedule. It contains details such as schedule, PDF/XLS
+         * and number of rows.
          */
         private com.oracle.bmc.datasafe.model.ScheduleReportDetails scheduleReportDetails = null;
 
         /**
-         * Details for report schedule. It contains details such as schedule, PDF/XLS and number of
-         * rows.
+         * The details for the audit report schedule. It contains details such as schedule, PDF/XLS
+         * and number of rows.
          *
          * @param scheduleReportDetails the value to set
          * @return this builder instance

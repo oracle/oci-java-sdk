@@ -1051,7 +1051,7 @@ public final class ClientCall<
         }
     }
 
-    private static String generateRequestId() {
+    public static String generateRequestId() {
         return UUID.randomUUID().toString().replace("-", "").toUpperCase();
     }
 

@@ -39,7 +39,7 @@ public class TraceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(TraceAsyncClient.class);
 
-    private TraceAsyncClient(
+    TraceAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

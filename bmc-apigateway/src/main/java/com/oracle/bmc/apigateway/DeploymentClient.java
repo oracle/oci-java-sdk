@@ -30,7 +30,7 @@ public class DeploymentClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final DeploymentPaginators paginators;
 
-    private DeploymentClient(
+    DeploymentClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

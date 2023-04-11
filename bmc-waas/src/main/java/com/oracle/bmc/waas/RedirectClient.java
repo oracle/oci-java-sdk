@@ -30,7 +30,7 @@ public class RedirectClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final RedirectPaginators paginators;
 
-    private RedirectClient(
+    RedirectClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

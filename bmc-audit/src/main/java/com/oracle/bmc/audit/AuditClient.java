@@ -27,7 +27,7 @@ public class AuditClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
     private final AuditPaginators paginators;
 
-    private AuditClient(
+    AuditClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

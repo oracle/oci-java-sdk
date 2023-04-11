@@ -30,7 +30,7 @@ public class LoadBalancerClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final LoadBalancerPaginators paginators;
 
-    private LoadBalancerClient(
+    LoadBalancerClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

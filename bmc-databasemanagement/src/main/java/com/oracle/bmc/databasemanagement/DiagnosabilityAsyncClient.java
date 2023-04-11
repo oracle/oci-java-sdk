@@ -39,7 +39,7 @@ public class DiagnosabilityAsyncClient extends com.oracle.bmc.http.internal.Base
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DiagnosabilityAsyncClient.class);
 
-    private DiagnosabilityAsyncClient(
+    DiagnosabilityAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

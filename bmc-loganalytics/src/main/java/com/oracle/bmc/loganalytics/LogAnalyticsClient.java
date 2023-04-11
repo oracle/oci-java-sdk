@@ -31,7 +31,7 @@ public class LogAnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final LogAnalyticsPaginators paginators;
 
-    private LogAnalyticsClient(
+    LogAnalyticsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

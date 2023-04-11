@@ -30,7 +30,7 @@ public class ReplicasClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final ReplicasPaginators paginators;
 
-    private ReplicasClient(
+    ReplicasClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -31,7 +31,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final VirtualNetworkPaginators paginators;
 
-    private VirtualNetworkClient(
+    VirtualNetworkClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

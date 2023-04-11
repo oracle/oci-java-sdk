@@ -28,7 +28,7 @@ public class ComputedUsageClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
     private final ComputedUsagePaginators paginators;
 
-    private ComputedUsageClient(
+    ComputedUsageClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

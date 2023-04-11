@@ -25,10 +25,19 @@ public enum ApacheClientProperties {
     public static final Jersey3ClientProperty<HttpRequestRetryHandler> RETRY_HANDLER =
             Jersey3ClientProperty.create(
                     org.glassfish.jersey.apache.connector.ApacheClientProperties.RETRY_HANDLER);
+    /**
+     * Note that if you specify your own {@link javax.net.ssl.SSLContext} using {@link
+     * com.oracle.bmc.http.client.StandardClientProperties#SSL_CONTEXT}, you will most likely have
+     * to provide the {@link javax.net.ssl.SSLContext} to the connection manager as well.
+     *
+     * @see {@link
+     *     Jersey3HttpClientBuilder#buildDefaultPoolingHttpClientConnectionManagerForApacheConnector(javax.net.ssl.SSLContext)}
+     */
     public static final Jersey3ClientProperty<HttpClientConnectionManager> CONNECTION_MANAGER =
             Jersey3ClientProperty.create(
                     org.glassfish.jersey.apache.connector.ApacheClientProperties
                             .CONNECTION_MANAGER);
+
     public static final Jersey3ClientProperty<ApacheConnectionClosingStrategy>
             CONNECTION_CLOSING_STRATEGY =
                     Jersey3ClientProperty.create(

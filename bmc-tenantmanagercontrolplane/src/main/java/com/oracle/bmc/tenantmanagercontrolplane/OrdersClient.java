@@ -26,7 +26,7 @@ public class OrdersClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(OrdersClient.class);
 
-    private OrdersClient(
+    OrdersClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -39,7 +39,7 @@ public class InventoryAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(InventoryAsyncClient.class);
 
-    private InventoryAsyncClient(
+    InventoryAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

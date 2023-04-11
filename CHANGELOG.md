@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.11.0 - 2023-04-11
+### Added
+- Support for rotation of certificates on autonomous VM clusters on Exadata Cloud at Customer in the Database service
+- Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
+- Support for Exadata cloud service application virtual IPs (VIPs) in the Database service
+- Support for additional manageability features for large sensitive data models and masking policies in the Data Safe service
+- Support for getting user profile details and assignments for databases and fleets in the Data Safe service
+- Support for enabling ADDM spotlight for databases in the Operations Insights service
+- Support for Workload Identity Authentication when running on a cluster in the Container Engine for Kubernetes service  
+ 
+### Breaking Changes
+- The method public `java.util.List getAdditionalDatabaseStatus()` has been removed from from the models `AutonomousDatabase`, `AutonomousDatabaseSummary`, `AutonomousDataWarehouse`and `AutonomousDataWarehouseSummary` in the Database service
+ 
+### Fixed
+- Fixed ability to specify `httpProvider` in `KmsCryptoClientBuilder`, `KmsCryptoAsyncClientBuilder`, `KmsManagementClientBuilder`, `KmsManagementAsyncClientBuilder`, `StreamClientBuilder`, and `StreamAsyncClientBuilder` (see [#488](https://github.com/oracle/oci-java-sdk/issues/488))
+
 ## 3.10.0 - 2023-04-04
 ### Added
 - Support for pre-emptible worker nodes in the Container Engine for Kubernetes service
@@ -2575,7 +2591,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for Auth Token management in the Identity service
 
 ## 1.2.38 - 2018-05-17
-
 ### Fixed
 - Allow deserializing multiple query params
 - Updated `GetInstancePublicIpExample` to now account for public IPs that may be associated with secondary private IP addresses

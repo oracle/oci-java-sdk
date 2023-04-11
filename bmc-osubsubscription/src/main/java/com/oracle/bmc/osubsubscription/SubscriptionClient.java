@@ -28,7 +28,7 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final SubscriptionPaginators paginators;
 
-    private SubscriptionClient(
+    SubscriptionClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

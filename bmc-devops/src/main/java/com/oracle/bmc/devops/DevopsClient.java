@@ -29,7 +29,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final DevopsPaginators paginators;
 
-    private DevopsClient(
+    DevopsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

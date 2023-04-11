@@ -31,7 +31,7 @@ public class ServiceConnectorClient extends com.oracle.bmc.http.internal.BaseSyn
 
     private final ServiceConnectorPaginators paginators;
 
-    private ServiceConnectorClient(
+    ServiceConnectorClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

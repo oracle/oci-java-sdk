@@ -27,7 +27,7 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
     private final ConfigPaginators paginators;
 
-    private ConfigClient(
+    ConfigClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

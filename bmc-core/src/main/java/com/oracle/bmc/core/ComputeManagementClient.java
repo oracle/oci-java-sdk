@@ -31,7 +31,7 @@ public class ComputeManagementClient extends com.oracle.bmc.http.internal.BaseSy
 
     private final ComputeManagementPaginators paginators;
 
-    private ComputeManagementClient(
+    ComputeManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

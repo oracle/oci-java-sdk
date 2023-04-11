@@ -233,12 +233,12 @@ public final class ReportDefinitionSummary
             this.__explicitlySet__.add("dataSource");
             return this;
         }
-        /** The current state of the report */
+        /** The current state of the audit report. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ReportDefinitionLifecycleState lifecycleState;
 
         /**
-         * The current state of the report
+         * The current state of the audit report.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -249,36 +249,36 @@ public final class ReportDefinitionSummary
             return this;
         }
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          *
          * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
          * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints.
-         * A workrequest is created only when clock time satisfies all the constraints. Constraints
+         * A work request is created only when clock time satisfies all the constraints. Constraints
          * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes =
          * <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range
          * for <hh> is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number
          * between 1(Monday) and 7(Sunday)) No constraint introduced when it is '*'. When not, day
-         * of week must equal the given value 5. <day-of-month> can be either '*' (without quotes or
-         * a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
+         * of week must equal the given value. 5. <day-of-month> can be either '*' (without quotes
+         * or a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
          * month must equal the given value
          */
         @com.fasterxml.jackson.annotation.JsonProperty("schedule")
         private String schedule;
 
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          *
          * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
          * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints.
-         * A workrequest is created only when clock time satisfies all the constraints. Constraints
+         * A work request is created only when clock time satisfies all the constraints. Constraints
          * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes =
          * <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range
          * for <hh> is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number
          * between 1(Monday) and 7(Sunday)) No constraint introduced when it is '*'. When not, day
-         * of week must equal the given value 5. <day-of-month> can be either '*' (without quotes or
-         * a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
+         * of week must equal the given value. 5. <day-of-month> can be either '*' (without quotes
+         * or a number between 1 and 28) No constraint introduced when it is '*'. When not, day of
          * month must equal the given value
          *
          * @param schedule the value to set
@@ -632,12 +632,12 @@ public final class ReportDefinitionSummary
         return dataSource;
     }
 
-    /** The current state of the report */
+    /** The current state of the audit report. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ReportDefinitionLifecycleState lifecycleState;
 
     /**
-     * The current state of the report
+     * The current state of the audit report.
      *
      * @return the value
      */
@@ -646,35 +646,37 @@ public final class ReportDefinitionSummary
     }
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      *
      * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
      * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A
-     * workrequest is created only when clock time satisfies all the constraints. Constraints
+     * work request is created only when clock time satisfies all the constraints. Constraints
      * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm>
      * (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh>
      * is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday)
      * and 7(Sunday)) No constraint introduced when it is '*'. When not, day of week must equal the
-     * given value 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
-     * No constraint introduced when it is '*'. When not, day of month must equal the given value
+     * given value. 5. <day-of-month> can be either '*' (without quotes or a number between 1 and
+     * 28) No constraint introduced when it is '*'. When not, day of month must equal the given
+     * value
      */
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
     private final String schedule;
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      *
      * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
      * <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A
-     * workrequest is created only when clock time satisfies all the constraints. Constraints
+     * work request is created only when clock time satisfies all the constraints. Constraints
      * introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm>
      * (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh>
      * is [0, 23]) 4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday)
      * and 7(Sunday)) No constraint introduced when it is '*'. When not, day of week must equal the
-     * given value 5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
-     * No constraint introduced when it is '*'. When not, day of month must equal the given value
+     * given value. 5. <day-of-month> can be either '*' (without quotes or a number between 1 and
+     * 28) No constraint introduced when it is '*'. When not, day of month must equal the given
+     * value
      *
      * @return the value
      */

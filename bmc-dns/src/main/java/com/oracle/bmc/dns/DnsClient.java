@@ -28,7 +28,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
     private final DnsPaginators paginators;
 
-    private DnsClient(
+    DnsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

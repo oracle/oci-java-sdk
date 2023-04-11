@@ -28,7 +28,7 @@ public class SqlTuningClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final SqlTuningPaginators paginators;
 
-    private SqlTuningClient(
+    SqlTuningClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

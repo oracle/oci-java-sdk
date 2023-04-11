@@ -30,7 +30,7 @@ public class RoverEntitlementClient extends com.oracle.bmc.http.internal.BaseSyn
 
     private final RoverEntitlementPaginators paginators;
 
-    private RoverEntitlementClient(
+    RoverEntitlementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

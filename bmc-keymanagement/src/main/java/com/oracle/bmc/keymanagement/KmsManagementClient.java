@@ -30,7 +30,7 @@ public class KmsManagementClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
     private final KmsManagementPaginators paginators;
 
-    private KmsManagementClient(
+    KmsManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

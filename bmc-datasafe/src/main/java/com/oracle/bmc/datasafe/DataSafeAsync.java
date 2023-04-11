@@ -85,7 +85,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update alerts within a given compartment.
+     * Updates alerts in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -118,6 +118,32 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ApplyDiscoveryJobResultsRequest, ApplyDiscoveryJobResultsResponse>
                     handler);
+
+    /**
+     * Applies the difference of a SDM Masking policy difference resource to the specified masking
+     * policy. Note that the plannedAction attribute of difference columns is used for processing.
+     * You should first use PatchSdmMaskingPolicyDifferenceColumns to set the plannedAction
+     * attribute of the difference columns you want to process. ApplySdmMaskingPolicyDifference
+     * automatically reads the plannedAction attribute and updates the masking policy to reflect the
+     * actions you planned. If the sdmMaskingPolicydifferenceId is not passed, the latest
+     * sdmMaskingPolicydifference is used. Note that if the masking policy associated with the
+     * SdmMaskingPolicyDifference used for this operation is not associated with the original SDM
+     * anymore, this operation won't be allowed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ApplySdmMaskingPolicyDifferenceResponse>
+            applySdmMaskingPolicyDifference(
+                    ApplySdmMaskingPolicyDifferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ApplySdmMaskingPolicyDifferenceRequest,
+                                    ApplySdmMaskingPolicyDifferenceResponse>
+                            handler);
 
     /**
      * Calculates the volume of audit events available on the target database to be collected.
@@ -383,6 +409,24 @@ public interface DataSafeAsync extends AutoCloseable {
             ChangeRetentionRequest request,
             com.oracle.bmc.responses.AsyncHandler<ChangeRetentionRequest, ChangeRetentionResponse>
                     handler);
+
+    /**
+     * Moves the specified SDM masking policy difference into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSdmMaskingPolicyDifferenceCompartmentResponse>
+            changeSdmMaskingPolicyDifferenceCompartment(
+                    ChangeSdmMaskingPolicyDifferenceCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSdmMaskingPolicyDifferenceCompartmentRequest,
+                                    ChangeSdmMaskingPolicyDifferenceCompartmentResponse>
+                            handler);
 
     /**
      * Moves the specified saved security assessment or future scheduled assessments into a
@@ -724,6 +768,29 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates SDM masking policy difference for the specified masking policy. It finds the
+     * difference between masking columns of the masking policy and sensitive columns of the SDM.
+     * After performing this operation, you can use ListDifferenceColumns to view the difference
+     * columns, PatchSdmMaskingPolicyDifferenceColumns to specify the action you want perform on
+     * these columns, and then ApplySdmMaskingPolicyDifference to process the difference columns and
+     * apply them to the masking policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSdmMaskingPolicyDifferenceResponse>
+            createSdmMaskingPolicyDifference(
+                    CreateSdmMaskingPolicyDifferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSdmMaskingPolicyDifferenceRequest,
+                                    CreateSdmMaskingPolicyDifferenceResponse>
+                            handler);
+
+    /**
      * Creates a new saved security assessment for one or multiple targets in a compartment. When
      * this operation is performed, it will save the latest assessments in the specified
      * compartment. If a schedule is passed, it will persist the latest assessments, at the defined
@@ -1027,6 +1094,24 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteReportDefinitionRequest, DeleteReportDefinitionResponse>
                     handler);
+
+    /**
+     * Deletes the specified SDM Masking policy difference.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSdmMaskingPolicyDifferenceResponse>
+            deleteSdmMaskingPolicyDifference(
+                    DeleteSdmMaskingPolicyDifferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSdmMaskingPolicyDifferenceRequest,
+                                    DeleteSdmMaskingPolicyDifferenceResponse>
+                            handler);
 
     /**
      * Deletes the specified saved security assessment or schedule. To delete a security assessment
@@ -1497,7 +1582,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of alert by its ID.
+     * Gets the details of the specified alerts.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1662,6 +1747,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the specified SDM Masking policy difference column.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDifferenceColumnResponse> getDifferenceColumn(
+            GetDifferenceColumnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDifferenceColumnRequest, GetDifferenceColumnResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified discovery job.
      *
      * @param request The request object containing the details to send
@@ -1770,6 +1871,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the details of given profile available on the target.
+     *
+     * <p>The GetProfile operation returns only the profiles in the specified 'userAssessmentId'.
+     * This does not include any subcompartments of the current compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProfileResponse> getProfile(
+            GetProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetProfileRequest, GetProfileResponse> handler);
+
+    /**
      * Gets a report by identifier
      *
      * @param request The request object containing the details to send
@@ -1813,6 +1931,24 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetReportDefinitionRequest, GetReportDefinitionResponse>
                     handler);
+
+    /**
+     * Gets the details of the specified SDM Masking policy difference.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSdmMaskingPolicyDifferenceResponse>
+            getSdmMaskingPolicyDifference(
+                    GetSdmMaskingPolicyDifferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetSdmMaskingPolicyDifferenceRequest,
+                                    GetSdmMaskingPolicyDifferenceResponse>
+                            handler);
 
     /**
      * Gets the details of the specified security assessment.
@@ -1978,7 +2114,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns aggregation details of alerts.
+     * Returns the aggregation details of the alerts.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2058,13 +2194,19 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * By default ListAuditEventAnalytics operation will return all of the summary columns. To
-     * filter desired summary columns, specify it in the `summaryOf` query parameter.
+     * By default the ListAuditEventAnalytics operation will return all of the summary columns. To
+     * filter for a specific summary column, specify it in the `summaryField` query parameter.
      *
      * <p>*Example:**
-     * /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
-     * &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
-     * &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+     * /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
+     * &summaryField=dmls&summaryField=privilegeChanges&summaryField=ddls&summaryField=loginFailure&summaryField=loginSuccess
+     * &summaryField=allRecord&q=(auditEventTime ge \"2021-06-13T23:49:14\")
+     *
+     * <p>/ListAuditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
+     * This will give number of events grouped by periods. Period can be 1 day, 1 week, etc.
+     *
+     * <p>/ListAuditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the
+     * number of events group by targetName. Only targetName summary column would be returned.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2138,6 +2280,38 @@ public interface DataSafeAsync extends AutoCloseable {
             ListAuditPoliciesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListAuditPoliciesRequest, ListAuditPoliciesResponse>
+                    handler);
+
+    /**
+     * Gets a list of aggregated audit policy details on the target databases. A audit policy
+     * aggregation helps understand the overall state of policies provisioned on targets. It is
+     * especially useful to create dashboards or to support analytics.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform SummarizedAuditPolicyInfo
+     * on the specified `compartmentId` and when it is set to true, the entire hierarchy of
+     * compartments can be returned. To get a full list of all compartments and subcompartments in
+     * the tenancy (root compartment), set the parameter `compartmentIdInSubtree` to true and
+     * `accessLevel` to ACCESSIBLE.
+     *
+     * <p>*Example:** ListAuditPolicyAnalytics?groupBy=auditPolicyCategory
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAuditPolicyAnalyticsResponse> listAuditPolicyAnalytics(
+            ListAuditPolicyAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAuditPolicyAnalyticsRequest, ListAuditPolicyAnalyticsResponse>
                     handler);
 
     /**
@@ -2326,6 +2500,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of columns of a SDM masking policy difference resource based on the specified
+     * query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDifferenceColumnsResponse> listDifferenceColumns(
+            ListDifferenceColumnsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDifferenceColumnsRequest, ListDifferenceColumnsResponse>
+                    handler);
+
+    /**
      * Gets consolidated discovery analytics data based on the specified query parameters. If
      * CompartmentIdInSubtreeQueryParam is specified as true, the behaviour is equivalent to
      * accessLevel \"ACCESSIBLE\" by default.
@@ -2477,6 +2668,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of masking objects present in the specified masking policy and based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingObjectsResponse> listMaskingObjects(
+            ListMaskingObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMaskingObjectsRequest, ListMaskingObjectsResponse>
+                    handler);
+
+    /**
      * Gets a list of masking policies based on the specified query parameters.
      *
      * @param request The request object containing the details to send
@@ -2509,6 +2717,23 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of masking schemas present in the specified masking policy and based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingSchemasResponse> listMaskingSchemas(
+            ListMaskingSchemasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMaskingSchemasRequest, ListMaskingSchemasResponse>
+                    handler);
+
+    /**
      * Gets a list of on-premises connectors.
      *
      * @param request The request object containing the details to send
@@ -2522,6 +2747,75 @@ public interface DataSafeAsync extends AutoCloseable {
             ListOnPremConnectorsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListOnPremConnectorsRequest, ListOnPremConnectorsResponse>
+                    handler);
+
+    /**
+     * Gets a list of aggregated user profile details in the specified compartment. This provides
+     * information about the overall profiles available. For example, the user profile details
+     * include how many users have the profile assigned and do how many use password verification
+     * function. This data is especially useful content for dashboards or to support analytics.
+     *
+     * <p>When you perform the ListProfileAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the
+     * operation is performed at the root compartment. If the requestor does not have access to at
+     * least one subcompartment of the compartment specified by compartmentId, then \"Not
+     * Authorized\" is returned.
+     *
+     * <p>The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the
+     * compartmentId passed and when it is set to true, the entire hierarchy of compartments can be
+     * returned.
+     *
+     * <p>To use ListProfileAnalytics to get a full list of all compartments and subcompartments in
+     * the tenancy from the root compartment, set the parameter compartmentIdInSubtree to true and
+     * accessLevel to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProfileAnalyticsResponse> listProfileAnalytics(
+            ListProfileAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProfileAnalyticsRequest, ListProfileAnalyticsResponse>
+                    handler);
+
+    /**
+     * Gets a list of user profiles containing the profile details along with the target id and user
+     * counts.
+     *
+     * <p>The ListProfiles operation returns only the profiles belonging to a certain target. If
+     * compartment type user assessment id is provided, then profile information for all the targets
+     * belonging to the pertaining compartment is returned. The list does not include any
+     * subcompartments of the compartment under consideration.
+     *
+     * <p>The parameter 'accessLevel' specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * 'compartmentIdInSubtree' is set to 'true'.
+     *
+     * <p>The parameter 'compartmentIdInSubtree' applies when you perform ListUserProfiles on the
+     * 'compartmentId' belonging to the assessmentId passed and when it is set to true, the entire
+     * hierarchy of compartments can be returned. To get a full list of all compartments and
+     * subcompartments in the tenancy (root compartment), set the parameter 'compartmentIdInSubtree'
+     * to true and 'accessLevel' to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProfileSummariesResponse> listProfileSummaries(
+            ListProfileSummariesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProfileSummariesRequest, ListProfileSummariesResponse>
                     handler);
 
     /**
@@ -2586,6 +2880,25 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse> handler);
 
     /**
+     * Gets a list of SDM and masking policy difference resources based on the specified query
+     * parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSdmMaskingPolicyDifferencesResponse>
+            listSdmMaskingPolicyDifferences(
+                    ListSdmMaskingPolicyDifferencesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSdmMaskingPolicyDifferencesRequest,
+                                    ListSdmMaskingPolicyDifferencesResponse>
+                            handler);
+
+    /**
      * Gets a list of security assessments.
      *
      * <p>The ListSecurityAssessments operation returns only the assessments in the specified
@@ -2647,6 +2960,40 @@ public interface DataSafeAsync extends AutoCloseable {
             ListSensitiveDataModelsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSensitiveDataModelsRequest, ListSensitiveDataModelsResponse>
+                    handler);
+
+    /**
+     * Gets a list of sensitive objects present in the specified sensitive data model based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveObjectsResponse> listSensitiveObjects(
+            ListSensitiveObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveObjectsRequest, ListSensitiveObjectsResponse>
+                    handler);
+
+    /**
+     * Gets a list of sensitive schemas present in the specified sensitive data model based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveSchemasResponse> listSensitiveSchemas(
+            ListSensitiveSchemasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveSchemasRequest, ListSensitiveSchemasResponse>
                     handler);
 
     /**
@@ -2874,7 +3221,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Patch alerts. Updates one or more alerts by specifying alert Ids.
+     * Updates the status of one or more alert specified by the alert IDs.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2924,6 +3271,26 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Patches one or more SDM masking policy difference columns. You can use this operation to set
+     * the plannedAction attribute before using ApplySdmMaskingPolicyDifference to process the
+     * difference based on this attribute.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSdmMaskingPolicyDifferenceColumnsResponse>
+            patchSdmMaskingPolicyDifferenceColumns(
+                    PatchSdmMaskingPolicyDifferenceColumnsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PatchSdmMaskingPolicyDifferenceColumnsRequest,
+                                    PatchSdmMaskingPolicyDifferenceColumnsResponse>
+                            handler);
+
+    /**
      * Patches one or more columns in the specified sensitive data model. Use it to create, update,
      * or delete sensitive columns. To create sensitive columns, use CreateSensitiveColumnDetails as
      * the patch value. And to update sensitive columns, use UpdateSensitiveColumnDetails as the
@@ -2943,7 +3310,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates new target-alert policy associations that will be applied on target.
+     * Creates new target-alert policy associations that will be applied on the target database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3015,7 +3382,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes schedule of a PDF or XLS report.
+     * Deletes the schedule of a PDF or XLS report.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3215,7 +3582,7 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates alert status of the specified alert.
+     * Updates the status of the specified alert.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3409,6 +3776,24 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateReportDefinitionRequest, UpdateReportDefinitionResponse>
                     handler);
+
+    /**
+     * Updates one or more attributes of the specified sdm masking policy difference.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSdmMaskingPolicyDifferenceResponse>
+            updateSdmMaskingPolicyDifference(
+                    UpdateSdmMaskingPolicyDifferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateSdmMaskingPolicyDifferenceRequest,
+                                    UpdateSdmMaskingPolicyDifferenceResponse>
+                            handler);
 
     /**
      * Updates one or more attributes of the specified security assessment. This operation allows to

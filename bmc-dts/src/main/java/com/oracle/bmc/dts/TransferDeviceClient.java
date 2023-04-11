@@ -29,7 +29,7 @@ public class TransferDeviceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final TransferDeviceWaiters waiters;
 
-    private TransferDeviceClient(
+    TransferDeviceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

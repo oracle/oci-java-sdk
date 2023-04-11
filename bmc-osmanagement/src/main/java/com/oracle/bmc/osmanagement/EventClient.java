@@ -27,7 +27,7 @@ public class EventClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
     private final EventPaginators paginators;
 
-    private EventClient(
+    EventClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

@@ -30,7 +30,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
 
     private final DatabaseRecoveryPaginators paginators;
 
-    private DatabaseRecoveryClient(
+    DatabaseRecoveryClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

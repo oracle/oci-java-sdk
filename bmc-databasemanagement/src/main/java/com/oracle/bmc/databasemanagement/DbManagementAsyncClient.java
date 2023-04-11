@@ -39,7 +39,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DbManagementAsyncClient.class);
 
-    private DbManagementAsyncClient(
+    DbManagementAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

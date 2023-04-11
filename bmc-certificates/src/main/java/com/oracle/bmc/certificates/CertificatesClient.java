@@ -27,7 +27,7 @@ public class CertificatesClient extends com.oracle.bmc.http.internal.BaseSyncCli
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CertificatesClient.class);
 
-    private CertificatesClient(
+    CertificatesClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

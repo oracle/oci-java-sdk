@@ -15,10 +15,10 @@ public class AlertsUpdateRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.AlertsUpdateDetails> {
 
-    /** Details to update alerts within a given compartment. */
+    /** The details to update the alerts in the specified compartment. */
     private com.oracle.bmc.datasafe.model.AlertsUpdateDetails alertsUpdateDetails;
 
-    /** Details to update alerts within a given compartment. */
+    /** The details to update the alerts in the specified compartment. */
     public com.oracle.bmc.datasafe.model.AlertsUpdateDetails getAlertsUpdateDetails() {
         return alertsUpdateDetails;
     }
@@ -154,11 +154,11 @@ public class AlertsUpdateRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details to update alerts within a given compartment. */
+        /** The details to update the alerts in the specified compartment. */
         private com.oracle.bmc.datasafe.model.AlertsUpdateDetails alertsUpdateDetails = null;
 
         /**
-         * Details to update alerts within a given compartment.
+         * The details to update the alerts in the specified compartment.
          *
          * @param alertsUpdateDetails the value to set
          * @return this builder instance

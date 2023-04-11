@@ -31,7 +31,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final DataLabelingPaginators paginators;
 
-    private DataLabelingClient(
+    DataLabelingClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -30,7 +30,7 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
     private final UsagePlansPaginators paginators;
 
-    private UsagePlansClient(
+    UsagePlansClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -31,7 +31,7 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final NetworkFirewallPaginators paginators;
 
-    private NetworkFirewallClient(
+    NetworkFirewallClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

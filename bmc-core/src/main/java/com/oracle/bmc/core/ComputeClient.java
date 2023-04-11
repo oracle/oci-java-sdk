@@ -30,7 +30,7 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
 
     private final ComputePaginators paginators;
 
-    private ComputeClient(
+    ComputeClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

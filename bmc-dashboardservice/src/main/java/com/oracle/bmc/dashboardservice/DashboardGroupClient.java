@@ -30,7 +30,7 @@ public class DashboardGroupClient extends com.oracle.bmc.http.internal.BaseSyncC
 
     private final DashboardGroupPaginators paginators;
 
-    private DashboardGroupClient(
+    DashboardGroupClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

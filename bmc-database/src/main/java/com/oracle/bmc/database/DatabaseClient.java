@@ -31,7 +31,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final DatabasePaginators paginators;
 
-    private DatabaseClient(
+    DatabaseClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
@@ -1214,6 +1214,38 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateApplicationVipResponse createApplicationVip(CreateApplicationVipRequest request) {
+        Objects.requireNonNull(
+                request.getCreateApplicationVipDetails(),
+                "createApplicationVipDetails is required");
+
+        return clientCall(request, CreateApplicationVipResponse::builder)
+                .logger(LOG, "createApplicationVip")
+                .serviceDetails(
+                        "Database",
+                        "CreateApplicationVip",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/CreateApplicationVip")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateApplicationVipRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("applicationVip")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ApplicationVip.class,
+                        CreateApplicationVipResponse.Builder::applicationVip)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateApplicationVipResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateApplicationVipResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateApplicationVipResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateAutonomousContainerDatabaseResponse createAutonomousContainerDatabase(
             CreateAutonomousContainerDatabaseRequest request) {
         Objects.requireNonNull(
@@ -2037,6 +2069,33 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", DbNodeActionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", DbNodeActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteApplicationVipResponse deleteApplicationVip(DeleteApplicationVipRequest request) {
+
+        Validate.notBlank(request.getApplicationVipId(), "applicationVipId must not be blank");
+
+        return clientCall(request, DeleteApplicationVipResponse::builder)
+                .logger(LOG, "deleteApplicationVip")
+                .serviceDetails(
+                        "Database",
+                        "DeleteApplicationVip",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/DeleteApplicationVip")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteApplicationVipRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("applicationVip")
+                .appendPathParam(request.getApplicationVipId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteApplicationVipResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteApplicationVipResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3981,6 +4040,33 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetApplicationVipResponse getApplicationVip(GetApplicationVipRequest request) {
+
+        Validate.notBlank(request.getApplicationVipId(), "applicationVipId must not be blank");
+
+        return clientCall(request, GetApplicationVipResponse::builder)
+                .logger(LOG, "getApplicationVip")
+                .serviceDetails(
+                        "Database",
+                        "GetApplicationVip",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/GetApplicationVip")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetApplicationVipRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("applicationVip")
+                .appendPathParam(request.getApplicationVipId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ApplicationVip.class,
+                        GetApplicationVipResponse.Builder::applicationVip)
+                .handleResponseHeaderString("etag", GetApplicationVipResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetApplicationVipResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetAutonomousContainerDatabaseResponse getAutonomousContainerDatabase(
             GetAutonomousContainerDatabaseRequest request) {
 
@@ -5692,6 +5778,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", LaunchDbSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", LaunchDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListApplicationVipsResponse listApplicationVips(ListApplicationVipsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getCloudVmClusterId(), "cloudVmClusterId is required");
+
+        return clientCall(request, ListApplicationVipsResponse::builder)
+                .logger(LOG, "listApplicationVips")
+                .serviceDetails(
+                        "Database",
+                        "ListApplicationVips",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVipSummary/ListApplicationVips")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListApplicationVipsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("applicationVip")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("cloudVmClusterId", request.getCloudVmClusterId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ApplicationVipSummary.class,
+                        ListApplicationVipsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListApplicationVipsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListApplicationVipsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -8462,6 +8583,80 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RotateAutonomousDatabaseEncryptionKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RotateAutonomousVmClusterOrdsCertsResponse rotateAutonomousVmClusterOrdsCerts(
+            RotateAutonomousVmClusterOrdsCertsRequest request) {
+        Objects.requireNonNull(
+                request.getRotateAutonomousVmClusterOrdsCertsDetails(),
+                "rotateAutonomousVmClusterOrdsCertsDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, RotateAutonomousVmClusterOrdsCertsResponse::builder)
+                .logger(LOG, "rotateAutonomousVmClusterOrdsCerts")
+                .serviceDetails(
+                        "Database",
+                        "RotateAutonomousVmClusterOrdsCerts",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RotateAutonomousVmClusterOrdsCerts")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RotateAutonomousVmClusterOrdsCertsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("rotateOrdsCerts")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RotateAutonomousVmClusterOrdsCertsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RotateAutonomousVmClusterOrdsCertsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RotateAutonomousVmClusterSslCertsResponse rotateAutonomousVmClusterSslCerts(
+            RotateAutonomousVmClusterSslCertsRequest request) {
+        Objects.requireNonNull(
+                request.getRotateAutonomousVmClusterSslCertsDetails(),
+                "rotateAutonomousVmClusterSslCertsDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, RotateAutonomousVmClusterSslCertsResponse::builder)
+                .logger(LOG, "rotateAutonomousVmClusterSslCerts")
+                .serviceDetails(
+                        "Database",
+                        "RotateAutonomousVmClusterSslCerts",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RotateAutonomousVmClusterSslCerts")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RotateAutonomousVmClusterSslCertsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("rotateSslCerts")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RotateAutonomousVmClusterSslCertsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RotateAutonomousVmClusterSslCertsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -30,7 +30,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final DataSafePaginators paginators;
 
-    private DataSafeClient(
+    DataSafeClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
@@ -251,6 +251,44 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ApplyDiscoveryJobResultsResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ApplySdmMaskingPolicyDifferenceResponse applySdmMaskingPolicyDifference(
+            ApplySdmMaskingPolicyDifferenceRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getApplySdmMaskingPolicyDifferenceDetails(),
+                "applySdmMaskingPolicyDifferenceDetails is required");
+
+        return clientCall(request, ApplySdmMaskingPolicyDifferenceResponse::builder)
+                .logger(LOG, "applySdmMaskingPolicyDifference")
+                .serviceDetails(
+                        "DataSafe",
+                        "ApplySdmMaskingPolicyDifference",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ApplySdmMaskingPolicyDifference")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ApplySdmMaskingPolicyDifferenceRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("maskingColumns")
+                .appendPathParam("actions")
+                .appendPathParam("applyDifferenceToMaskingColumns")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ApplySdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ApplySdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -780,6 +818,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id", ChangeRetentionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeRetentionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ChangeSdmMaskingPolicyDifferenceCompartmentResponse
+            changeSdmMaskingPolicyDifferenceCompartment(
+                    ChangeSdmMaskingPolicyDifferenceCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSdmMaskingPolicyDifferenceCompartmentDetails(),
+                "changeSdmMaskingPolicyDifferenceCompartmentDetails is required");
+
+        return clientCall(request, ChangeSdmMaskingPolicyDifferenceCompartmentResponse::builder)
+                .logger(LOG, "changeSdmMaskingPolicyDifferenceCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSdmMaskingPolicyDifferenceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/ChangeSdmMaskingPolicyDifferenceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSdmMaskingPolicyDifferenceCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSdmMaskingPolicyDifferenceCompartmentResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1335,6 +1410,42 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         CreateReportDefinitionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateReportDefinitionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateSdmMaskingPolicyDifferenceResponse createSdmMaskingPolicyDifference(
+            CreateSdmMaskingPolicyDifferenceRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSdmMaskingPolicyDifferenceDetails(),
+                "createSdmMaskingPolicyDifferenceDetails is required");
+
+        return clientCall(request, CreateSdmMaskingPolicyDifferenceResponse::builder)
+                .logger(LOG, "createSdmMaskingPolicyDifference")
+                .serviceDetails("DataSafe", "CreateSdmMaskingPolicyDifference", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSdmMaskingPolicyDifferenceRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.class,
+                        CreateSdmMaskingPolicyDifferenceResponse.Builder
+                                ::sdmMaskingPolicyDifference)
+                .handleResponseHeaderString(
+                        "etag", CreateSdmMaskingPolicyDifferenceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateSdmMaskingPolicyDifferenceResponse.Builder::location)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1902,6 +2013,38 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteReportDefinitionResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteSdmMaskingPolicyDifferenceResponse deleteSdmMaskingPolicyDifference(
+            DeleteSdmMaskingPolicyDifferenceRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+
+        return clientCall(request, DeleteSdmMaskingPolicyDifferenceResponse::builder)
+                .logger(LOG, "deleteSdmMaskingPolicyDifference")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSdmMaskingPolicyDifference",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/DeleteSdmMaskingPolicyDifference")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSdmMaskingPolicyDifferenceRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -3071,6 +3214,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetDifferenceColumnResponse getDifferenceColumn(GetDifferenceColumnRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+
+        Validate.notBlank(
+                request.getDifferenceColumnKey(), "differenceColumnKey must not be blank");
+
+        return clientCall(request, GetDifferenceColumnResponse::builder)
+                .logger(LOG, "getDifferenceColumn")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetDifferenceColumn",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DifferenceColumn/GetDifferenceColumn")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDifferenceColumnRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .appendPathParam("differenceColumns")
+                .appendPathParam(request.getDifferenceColumnKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.DifferenceColumn.class,
+                        GetDifferenceColumnResponse.Builder::differenceColumn)
+                .handleResponseHeaderString("etag", GetDifferenceColumnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDifferenceColumnResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetDiscoveryJobResponse getDiscoveryJob(GetDiscoveryJobRequest request) {
 
         Validate.notBlank(request.getDiscoveryJobId(), "discoveryJobId must not be blank");
@@ -3278,6 +3456,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetProfileResponse getProfile(GetProfileRequest request) {
+
+        Validate.notBlank(request.getUserAssessmentId(), "userAssessmentId must not be blank");
+
+        Validate.notBlank(request.getProfileName(), "profileName must not be blank");
+
+        return clientCall(request, GetProfileResponse::builder)
+                .logger(LOG, "getProfile")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetProfile")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProfileRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("userAssessments")
+                .appendPathParam(request.getUserAssessmentId())
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datasafe.model.Profile.class,
+                        GetProfileResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetProfileResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", GetProfileResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetReportResponse getReport(GetReportRequest request) {
 
         Validate.notBlank(request.getReportId(), "reportId must not be blank");
@@ -3361,6 +3574,39 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetReportDefinitionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetReportDefinitionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetSdmMaskingPolicyDifferenceResponse getSdmMaskingPolicyDifference(
+            GetSdmMaskingPolicyDifferenceRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+
+        return clientCall(request, GetSdmMaskingPolicyDifferenceResponse::builder)
+                .logger(LOG, "getSdmMaskingPolicyDifference")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSdmMaskingPolicyDifference",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/GetSdmMaskingPolicyDifference")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSdmMaskingPolicyDifferenceRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.class,
+                        GetSdmMaskingPolicyDifferenceResponse.Builder::sdmMaskingPolicyDifference)
+                .handleResponseHeaderString(
+                        "etag", GetSdmMaskingPolicyDifferenceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -4021,6 +4267,49 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListAuditPolicyAnalyticsResponse listAuditPolicyAnalytics(
+            ListAuditPolicyAnalyticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAuditPolicyAnalyticsResponse::builder)
+                .logger(LOG, "listAuditPolicyAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListAuditPolicyAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicyAnalyticCollection/ListAuditPolicyAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAuditPolicyAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("auditPolicyAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("auditPolicyCategory", request.getAuditPolicyCategory())
+                .appendQueryParam("auditPolicyName", request.getAuditPolicyName())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AuditPolicyAnalyticCollection.class,
+                        ListAuditPolicyAnalyticsResponse.Builder::auditPolicyAnalyticCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAuditPolicyAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAuditPolicyAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListAuditPolicyAnalyticsResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListAuditProfileAnalyticsResponse listAuditProfileAnalytics(
             ListAuditProfileAnalyticsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -4371,6 +4660,62 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListDifferenceColumnsResponse listDifferenceColumns(
+            ListDifferenceColumnsRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+
+        return clientCall(request, ListDifferenceColumnsResponse::builder)
+                .logger(LOG, "listDifferenceColumns")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListDifferenceColumns",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/ListDifferenceColumns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDifferenceColumnsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .appendPathParam("differenceColumns")
+                .appendEnumQueryParam("differenceType", request.getDifferenceType())
+                .appendEnumQueryParam("plannedAction", request.getPlannedAction())
+                .appendEnumQueryParam("syncStatus", request.getSyncStatus())
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceColumnCollection
+                                .class,
+                        ListDifferenceColumnsResponse.Builder
+                                ::sdmMaskingPolicyDifferenceColumnCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDifferenceColumnsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDifferenceColumnsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListDifferenceColumnsResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListDiscoveryAnalyticsResponse listDiscoveryAnalytics(
             ListDiscoveryAnalyticsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -4519,6 +4864,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam(request.getSecurityAssessmentId())
                 .appendPathParam("findings")
                 .appendEnumQueryParam("severity", request.getSeverity())
+                .appendEnumQueryParam("references", request.getReferences())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
@@ -4801,6 +5147,54 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListMaskingObjectsResponse listMaskingObjects(ListMaskingObjectsRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+
+        return clientCall(request, ListMaskingObjectsResponse::builder)
+                .logger(LOG, "listMaskingObjects")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingObjectCollection/ListMaskingObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingObjectsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("maskingObjects")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectType",
+                        request.getObjectType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingObjectCollection.class,
+                        ListMaskingObjectsResponse.Builder::maskingObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMaskingObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMaskingObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListMaskingObjectsResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListMaskingPoliciesResponse listMaskingPolicies(ListMaskingPoliciesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -4884,6 +5278,46 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListMaskingSchemasResponse listMaskingSchemas(ListMaskingSchemasRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+
+        return clientCall(request, ListMaskingSchemasResponse::builder)
+                .logger(LOG, "listMaskingSchemas")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingSchemas",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingSchemaCollection/ListMaskingSchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingSchemasRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("maskingSchemas")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingSchemaCollection.class,
+                        ListMaskingSchemasResponse.Builder::maskingSchemaCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMaskingSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMaskingSchemasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListMaskingSchemasResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListOnPremConnectorsResponse listOnPremConnectors(ListOnPremConnectorsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -4917,6 +5351,114 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListOnPremConnectorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOnPremConnectorsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListProfileAnalyticsResponse listProfileAnalytics(ListProfileAnalyticsRequest request) {
+
+        Validate.notBlank(request.getUserAssessmentId(), "userAssessmentId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProfileAnalyticsResponse::builder)
+                .logger(LOG, "listProfileAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListProfileAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Profile/ListProfileAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProfileAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("userAssessments")
+                .appendPathParam(request.getUserAssessmentId())
+                .appendPathParam("profileAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("profileName", request.getProfileName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datasafe.model.ProfileAggregation.class,
+                        ListProfileAnalyticsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProfileAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProfileAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListProfileAnalyticsResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListProfileSummariesResponse listProfileSummaries(ListProfileSummariesRequest request) {
+
+        Validate.notBlank(request.getUserAssessmentId(), "userAssessmentId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProfileSummariesResponse::builder)
+                .logger(LOG, "listProfileSummaries")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListProfileSummaries",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListProfileSummaries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProfileSummariesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("userAssessments")
+                .appendPathParam(request.getUserAssessmentId())
+                .appendPathParam("profiles")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("profileName", request.getProfileName())
+                .appendQueryParam("isUserCreated", request.getIsUserCreated())
+                .appendQueryParam(
+                        "passwordVerificationFunction", request.getPasswordVerificationFunction())
+                .appendQueryParam(
+                        "userCountGreaterThanOrEqual", request.getUserCountGreaterThanOrEqual())
+                .appendQueryParam("userCountLessThan", request.getUserCountLessThan())
+                .appendQueryParam(
+                        "failedLoginAttemptsGreaterThanOrEqual",
+                        request.getFailedLoginAttemptsGreaterThanOrEqual())
+                .appendQueryParam(
+                        "failedLoginAttemptsLessThan", request.getFailedLoginAttemptsLessThan())
+                .appendQueryParam(
+                        "sessionsPerUserGreaterThanOrEqual",
+                        request.getSessionsPerUserGreaterThanOrEqual())
+                .appendQueryParam("sessionsPerUserLessThan", request.getSessionsPerUserLessThan())
+                .appendQueryParam(
+                        "inactiveAccountTimeGreaterThanOrEqual",
+                        request.getInactiveAccountTimeGreaterThanOrEqual())
+                .appendQueryParam(
+                        "inactiveAccountTimeLessThan", request.getInactiveAccountTimeLessThan())
+                .appendQueryParam(
+                        "passwordLockTimeGreaterThanOrEqual",
+                        request.getPasswordLockTimeGreaterThanOrEqual())
+                .appendQueryParam("passwordLockTimeLessThan", request.getPasswordLockTimeLessThan())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datasafe.model.ProfileSummary.class,
+                        ListProfileSummariesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProfileSummariesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProfileSummariesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListProfileSummariesResponse.Builder::opcPrevPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -5083,6 +5625,51 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListSdmMaskingPolicyDifferencesResponse listSdmMaskingPolicyDifferences(
+            ListSdmMaskingPolicyDifferencesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSdmMaskingPolicyDifferencesResponse::builder)
+                .logger(LOG, "listSdmMaskingPolicyDifferences")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSdmMaskingPolicyDifferences",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/ListSdmMaskingPolicyDifferences")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSdmMaskingPolicyDifferencesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("differenceAccessLevel", request.getDifferenceAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("sensitiveDataModelId", request.getSensitiveDataModelId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("maskingPolicyId", request.getMaskingPolicyId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceCollection.class,
+                        ListSdmMaskingPolicyDifferencesResponse.Builder
+                                ::sdmMaskingPolicyDifferenceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSdmMaskingPolicyDifferencesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSdmMaskingPolicyDifferencesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSdmMaskingPolicyDifferencesResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListSecurityAssessmentsResponse listSecurityAssessments(
             ListSecurityAssessmentsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -5200,6 +5787,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("isCaseInSensitive", request.getIsCaseInSensitive())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5256,6 +5844,96 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveDataModelsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveDataModelsResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveObjectsResponse listSensitiveObjects(ListSensitiveObjectsRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        return clientCall(request, ListSensitiveObjectsResponse::builder)
+                .logger(LOG, "listSensitiveObjects")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveObjectCollection/ListSensitiveObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveObjectsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("sensitiveObjects")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectType",
+                        request.getObjectType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveObjectCollection.class,
+                        ListSensitiveObjectsResponse.Builder::sensitiveObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSensitiveObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveObjectsResponse.Builder::opcPrevPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveSchemasResponse listSensitiveSchemas(ListSensitiveSchemasRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        return clientCall(request, ListSensitiveSchemasResponse::builder)
+                .logger(LOG, "listSensitiveSchemas")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveSchemas",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveSchemaCollection/ListSensitiveSchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveSchemasRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("sensitiveSchemas")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveSchemaCollection.class,
+                        ListSensitiveSchemasResponse.Builder::sensitiveSchemaCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSensitiveSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveSchemasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveSchemasResponse.Builder::opcPrevPage)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -5573,6 +6251,9 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .appendQueryParam("userCategory", request.getUserCategory())
+                .appendQueryParam("userRole", request.getUserRole())
+                .appendQueryParam("userProfile", request.getUserProfile())
+                .appendQueryParam("userType", request.getUserType())
                 .appendQueryParam("userKey", request.getUserKey())
                 .appendQueryParam("accountStatus", request.getAccountStatus())
                 .appendQueryParam("authenticationType", request.getAuthenticationType())
@@ -5863,6 +6544,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         PatchMaskingColumnsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchMaskingColumnsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public PatchSdmMaskingPolicyDifferenceColumnsResponse patchSdmMaskingPolicyDifferenceColumns(
+            PatchSdmMaskingPolicyDifferenceColumnsRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+        Objects.requireNonNull(
+                request.getPatchSdmMaskingPolicyDifferenceColumnsDetails(),
+                "patchSdmMaskingPolicyDifferenceColumnsDetails is required");
+
+        return clientCall(request, PatchSdmMaskingPolicyDifferenceColumnsResponse::builder)
+                .logger(LOG, "patchSdmMaskingPolicyDifferenceColumns")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchSdmMaskingPolicyDifferenceColumns",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/PatchSdmMaskingPolicyDifferenceColumns")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSdmMaskingPolicyDifferenceColumnsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .appendPathParam("differenceColumns")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchSdmMaskingPolicyDifferenceColumnsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchSdmMaskingPolicyDifferenceColumnsResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -6810,6 +7528,42 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         UpdateReportDefinitionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateReportDefinitionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateSdmMaskingPolicyDifferenceResponse updateSdmMaskingPolicyDifference(
+            UpdateSdmMaskingPolicyDifferenceRequest request) {
+
+        Validate.notBlank(
+                request.getSdmMaskingPolicyDifferenceId(),
+                "sdmMaskingPolicyDifferenceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSdmMaskingPolicyDifferenceDetails(),
+                "updateSdmMaskingPolicyDifferenceDetails is required");
+
+        return clientCall(request, UpdateSdmMaskingPolicyDifferenceResponse::builder)
+                .logger(LOG, "updateSdmMaskingPolicyDifference")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSdmMaskingPolicyDifference",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/UpdateSdmMaskingPolicyDifference")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSdmMaskingPolicyDifferenceRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sdmMaskingPolicyDifferences")
+                .appendPathParam(request.getSdmMaskingPolicyDifferenceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateSdmMaskingPolicyDifferenceResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

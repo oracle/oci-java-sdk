@@ -29,7 +29,7 @@ public class HealthChecksClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
     private final HealthChecksPaginators paginators;
 
-    private HealthChecksClient(
+    HealthChecksClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

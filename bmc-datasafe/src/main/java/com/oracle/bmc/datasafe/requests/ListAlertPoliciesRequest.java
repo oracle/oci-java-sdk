@@ -128,10 +128,10 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. Only one sort order may be provided. */
+    /** The field to sort by. Only one sort parameter may be provided. */
     private SortBy sortBy;
 
-    /** The field to sort by. Only one sort order may be provided. */
+    /** The field to sort by. Only one sort parameter may be provided. */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
@@ -165,7 +165,7 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The field to sort by. Only one sort order may be provided. */
+    /** The field to sort by. Only one sort parameter may be provided. */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -439,11 +439,11 @@ public class ListAlertPoliciesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The field to sort by. Only one sort order may be provided. */
+        /** The field to sort by. Only one sort parameter may be provided. */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided.
+         * The field to sort by. Only one sort parameter may be provided.
          *
          * @param sortBy the value to set
          * @return this builder instance

@@ -31,7 +31,6 @@ public final class AutonomousDataWarehouseSummary
         "compartmentId",
         "lifecycleState",
         "lifecycleDetails",
-        "additionalDatabaseStatus",
         "dbName",
         "cpuCoreCount",
         "dataStorageSizeInTBs",
@@ -49,7 +48,6 @@ public final class AutonomousDataWarehouseSummary
             String compartmentId,
             LifecycleState lifecycleState,
             String lifecycleDetails,
-            java.util.List<String> additionalDatabaseStatus,
             String dbName,
             Integer cpuCoreCount,
             Integer dataStorageSizeInTBs,
@@ -66,7 +64,6 @@ public final class AutonomousDataWarehouseSummary
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
-        this.additionalDatabaseStatus = additionalDatabaseStatus;
         this.dbName = dbName;
         this.cpuCoreCount = cpuCoreCount;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -148,35 +145,6 @@ public final class AutonomousDataWarehouseSummary
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-        /**
-         * Additional details about the status of the database, such as the progress of a backup or
-         * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock
-         * console functionality but will not be published in the SDK or documentation. It will be
-         * present in responses, so deprecating will require coordination to ensure we do not break
-         * customers if they begin relying on this field. Please see
-         * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-         * regarding the motivation of this field and the longer term plan.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("additionalDatabaseStatus")
-        private java.util.List<String> additionalDatabaseStatus;
-
-        /**
-         * Additional details about the status of the database, such as the progress of a backup or
-         * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock
-         * console functionality but will not be published in the SDK or documentation. It will be
-         * present in responses, so deprecating will require coordination to ensure we do not break
-         * customers if they begin relying on this field. Please see
-         * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-         * regarding the motivation of this field and the longer term plan.
-         *
-         * @param additionalDatabaseStatus the value to set
-         * @return this builder
-         */
-        public Builder additionalDatabaseStatus(java.util.List<String> additionalDatabaseStatus) {
-            this.additionalDatabaseStatus = additionalDatabaseStatus;
-            this.__explicitlySet__.add("additionalDatabaseStatus");
             return this;
         }
         /** The database name. */
@@ -387,7 +355,6 @@ public final class AutonomousDataWarehouseSummary
                             this.compartmentId,
                             this.lifecycleState,
                             this.lifecycleDetails,
-                            this.additionalDatabaseStatus,
                             this.dbName,
                             this.cpuCoreCount,
                             this.dataStorageSizeInTBs,
@@ -418,9 +385,6 @@ public final class AutonomousDataWarehouseSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
-            }
-            if (model.wasPropertyExplicitlySet("additionalDatabaseStatus")) {
-                this.additionalDatabaseStatus(model.getAdditionalDatabaseStatus());
             }
             if (model.wasPropertyExplicitlySet("dbName")) {
                 this.dbName(model.getDbName());
@@ -570,33 +534,6 @@ public final class AutonomousDataWarehouseSummary
      */
     public String getLifecycleDetails() {
         return lifecycleDetails;
-    }
-
-    /**
-     * Additional details about the status of the database, such as the progress of a backup or
-     * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock console
-     * functionality but will not be published in the SDK or documentation. It will be present in
-     * responses, so deprecating will require coordination to ensure we do not break customers if
-     * they begin relying on this field. Please see
-     * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-     * regarding the motivation of this field and the longer term plan.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("additionalDatabaseStatus")
-    private final java.util.List<String> additionalDatabaseStatus;
-
-    /**
-     * Additional details about the status of the database, such as the progress of a backup or
-     * restore operation. UNPUBLISHED "HIDDEN" FIELD. This field is being added to unblock console
-     * functionality but will not be published in the SDK or documentation. It will be present in
-     * responses, so deprecating will require coordination to ensure we do not break customers if
-     * they begin relying on this field. Please see
-     * https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details
-     * regarding the motivation of this field and the longer term plan.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getAdditionalDatabaseStatus() {
-        return additionalDatabaseStatus;
     }
 
     /** The database name. */
@@ -827,8 +764,6 @@ public final class AutonomousDataWarehouseSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append(", additionalDatabaseStatus=")
-                .append(String.valueOf(this.additionalDatabaseStatus));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -858,8 +793,6 @@ public final class AutonomousDataWarehouseSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(
-                        this.additionalDatabaseStatus, other.additionalDatabaseStatus)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
@@ -888,11 +821,6 @@ public final class AutonomousDataWarehouseSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.additionalDatabaseStatus == null
-                                ? 43
-                                : this.additionalDatabaseStatus.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =

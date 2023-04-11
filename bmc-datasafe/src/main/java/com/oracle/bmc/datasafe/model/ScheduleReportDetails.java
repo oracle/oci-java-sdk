@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for the report schedule. <br>
+ * The details of the report schedule. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -61,7 +61,7 @@ public final class ScheduleReportDetails
             return this;
         }
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          *
          * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -79,7 +79,7 @@ public final class ScheduleReportDetails
         private String schedule;
 
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          *
          * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -101,12 +101,12 @@ public final class ScheduleReportDetails
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies the format of report to be excel or pdf */
+        /** Specifies if the report will be in Excel or PDF format */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies if the report will be in Excel or PDF format
          *
          * @param mimeType the value to set
          * @return this builder
@@ -116,16 +116,12 @@ public final class ScheduleReportDetails
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the resource should be created.
-         */
+        /** The OCID of the compartment in which the resource should be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the resource should be created.
+         * The OCID of the compartment in which the resource should be created.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -206,7 +202,7 @@ public final class ScheduleReportDetails
     }
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      *
      * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -223,7 +219,7 @@ public final class ScheduleReportDetails
     private final String schedule;
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      *
      * <p>Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh>
@@ -242,7 +238,7 @@ public final class ScheduleReportDetails
         return schedule;
     }
 
-    /** Specifies the format of report to be excel or pdf */
+    /** Specifies if the report will be in Excel or PDF format */
     public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -275,12 +271,12 @@ public final class ScheduleReportDetails
             throw new IllegalArgumentException("Invalid MimeType: " + key);
         }
     };
-    /** Specifies the format of report to be excel or pdf */
+    /** Specifies if the report will be in Excel or PDF format */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies if the report will be in Excel or PDF format
      *
      * @return the value
      */
@@ -288,16 +284,12 @@ public final class ScheduleReportDetails
         return mimeType;
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the resource should be created.
-     */
+    /** The OCID of the compartment in which the resource should be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the resource should be created.
+     * The OCID of the compartment in which the resource should be created.
      *
      * @return the value
      */

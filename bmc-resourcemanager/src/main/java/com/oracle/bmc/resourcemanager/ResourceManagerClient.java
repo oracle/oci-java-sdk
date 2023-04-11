@@ -30,7 +30,7 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
 
     private final ResourceManagerPaginators paginators;
 
-    private ResourceManagerClient(
+    ResourceManagerClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

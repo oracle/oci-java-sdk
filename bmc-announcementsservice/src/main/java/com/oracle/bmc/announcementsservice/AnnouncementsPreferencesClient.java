@@ -28,7 +28,7 @@ public class AnnouncementsPreferencesClient extends com.oracle.bmc.http.internal
 
     private final AnnouncementsPreferencesPaginators paginators;
 
-    private AnnouncementsPreferencesClient(
+    AnnouncementsPreferencesClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

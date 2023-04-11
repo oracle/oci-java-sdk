@@ -31,7 +31,7 @@ public class DashxApisClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final DashxApisPaginators paginators;
 
-    private DashxApisClient(
+    DashxApisClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

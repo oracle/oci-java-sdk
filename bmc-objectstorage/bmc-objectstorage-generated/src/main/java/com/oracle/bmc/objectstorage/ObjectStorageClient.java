@@ -30,7 +30,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
     private final ObjectStoragePaginators paginators;
 
-    private ObjectStorageClient(
+    ObjectStorageClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

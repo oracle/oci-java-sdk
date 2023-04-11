@@ -30,7 +30,7 @@ public class ChannelsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final ChannelsPaginators paginators;
 
-    private ChannelsClient(
+    ChannelsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

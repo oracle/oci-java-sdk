@@ -39,7 +39,7 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SddcAsyncClient.class);
 
-    private SddcAsyncClient(
+    SddcAsyncClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {

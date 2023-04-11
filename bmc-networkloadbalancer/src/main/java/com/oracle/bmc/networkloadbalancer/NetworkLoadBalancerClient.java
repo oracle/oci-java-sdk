@@ -31,7 +31,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
 
     private final NetworkLoadBalancerPaginators paginators;
 
-    private NetworkLoadBalancerClient(
+    NetworkLoadBalancerClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

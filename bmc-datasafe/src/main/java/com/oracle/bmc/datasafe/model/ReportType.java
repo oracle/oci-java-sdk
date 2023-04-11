@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The type of the report. */
+/** The type of the audit report. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum ReportType implements com.oracle.bmc.http.internal.BmcEnum {
     Generated("GENERATED"),

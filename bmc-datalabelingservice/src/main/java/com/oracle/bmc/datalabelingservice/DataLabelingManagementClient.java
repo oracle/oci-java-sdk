@@ -31,7 +31,7 @@ public class DataLabelingManagementClient extends com.oracle.bmc.http.internal.B
 
     private final DataLabelingManagementPaginators paginators;
 
-    private DataLabelingManagementClient(
+    DataLabelingManagementClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

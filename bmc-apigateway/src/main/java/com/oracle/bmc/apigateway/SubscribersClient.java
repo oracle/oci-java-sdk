@@ -30,7 +30,7 @@ public class SubscribersClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     private final SubscribersPaginators paginators;
 
-    private SubscribersClient(
+    SubscribersClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -13,7 +13,7 @@ import java.util.Optional;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import org.slf4j.Logger;
 
-class SecurityTokenAdapter {
+public class SecurityTokenAdapter {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SecurityTokenAdapter.class);
     private final Optional<JwtClaimsSet> jwt;
     private final Optional<RSAPublicKey> jwkAsJce;
@@ -21,7 +21,7 @@ class SecurityTokenAdapter {
     private final String securityToken;
     private static final String JWK = "jwk";
 
-    SecurityTokenAdapter(String securityToken, SessionKeySupplier sessionKeySupplier) {
+    public SecurityTokenAdapter(String securityToken, SessionKeySupplier sessionKeySupplier) {
         this.securityToken = securityToken;
         if (securityToken != null && !securityToken.isEmpty()) {
             JwtClaimsSet jwtClaims = new JwtClaimsSet(securityToken);
@@ -132,6 +132,16 @@ class SecurityTokenAdapter {
         } catch (ParseException e) {
             throw new IllegalStateException("JWT parsing failed");
         }
+    }
+
+    /**
+     * Get the duration the token is valid, from issue time to expiration time.
+     *
+     * @return token validity duration
+     */
+    public Duration getTokenValidDuration() {
+        return Duration.ofMillis(
+                jwt.get().getExpirationTime().getTime() - jwt.get().getIssueTime().getTime());
     }
 
     public String getSecurityToken() {

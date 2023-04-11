@@ -31,7 +31,7 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
 
     private final AIServiceLanguagePaginators paginators;
 
-    private AIServiceLanguageClient(
+    AIServiceLanguageClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

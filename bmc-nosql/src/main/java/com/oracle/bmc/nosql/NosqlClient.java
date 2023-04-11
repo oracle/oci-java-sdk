@@ -29,7 +29,7 @@ public class NosqlClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
 
     private final NosqlPaginators paginators;
 
-    private NosqlClient(
+    NosqlClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

@@ -30,7 +30,7 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     private final AnalyticsPaginators paginators;
 
-    private AnalyticsClient(
+    AnalyticsClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

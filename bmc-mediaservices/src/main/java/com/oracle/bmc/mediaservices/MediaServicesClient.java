@@ -31,7 +31,7 @@ public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
     private final MediaServicesPaginators paginators;
 
-    private MediaServicesClient(
+    MediaServicesClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

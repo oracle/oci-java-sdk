@@ -31,7 +31,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
 
     private final JavaManagementServicePaginators paginators;
 
-    private JavaManagementServiceClient(
+    JavaManagementServiceClient(
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {

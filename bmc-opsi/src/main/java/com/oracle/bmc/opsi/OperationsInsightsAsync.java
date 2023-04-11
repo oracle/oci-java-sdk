@@ -927,6 +927,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<IngestAddmReportsResponse> ingestAddmReports(
+            IngestAddmReportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            IngestAddmReportsRequest, IngestAddmReportsResponse>
+                    handler);
+
+    /**
      * This is a generic ingest endpoint for all database configuration metrics.
      *
      * @param request The request object containing the details to send
@@ -1040,6 +1057,107 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             IngestSqlTextRequest request,
             com.oracle.bmc.responses.AsyncHandler<IngestSqlTextRequest, IngestSqlTextResponse>
                     handler);
+
+    /**
+     * Gets list of ADDM finding categories.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddmDbFindingCategoriesResponse> listAddmDbFindingCategories(
+            ListAddmDbFindingCategoriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAddmDbFindingCategoriesRequest, ListAddmDbFindingCategoriesResponse>
+                    handler);
+
+    /**
+     * Get the ADDM findings time series for the specified databases for a given time period.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddmDbFindingsTimeSeriesResponse> listAddmDbFindingsTimeSeries(
+            ListAddmDbFindingsTimeSeriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAddmDbFindingsTimeSeriesRequest,
+                            ListAddmDbFindingsTimeSeriesResponse>
+                    handler);
+
+    /**
+     * Gets list of ADDM database parameter categories for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddmDbParameterCategoriesResponse>
+            listAddmDbParameterCategories(
+                    ListAddmDbParameterCategoriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbParameterCategoriesRequest,
+                                    ListAddmDbParameterCategoriesResponse>
+                            handler);
+
+    /**
+     * Gets list of ADDM recommendation categories for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddmDbRecommendationCategoriesResponse>
+            listAddmDbRecommendationCategories(
+                    ListAddmDbRecommendationCategoriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbRecommendationCategoriesRequest,
+                                    ListAddmDbRecommendationCategoriesResponse>
+                            handler);
+
+    /**
+     * Gets time series data for ADDM recommendations for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddmDbRecommendationsTimeSeriesResponse>
+            listAddmDbRecommendationsTimeSeries(
+                    ListAddmDbRecommendationsTimeSeriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAddmDbRecommendationsTimeSeriesRequest,
+                                    ListAddmDbRecommendationsTimeSeriesResponse>
+                            handler);
+
+    /**
+     * Gets a list of ADDM database information
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddmDbsResponse> listAddmDbs(
+            ListAddmDbsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAddmDbsRequest, ListAddmDbsResponse> handler);
 
     /**
      * Lists AWR snapshots for the specified database in the AWR.
@@ -1534,6 +1652,113 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     RotateOperationsInsightsWarehouseWalletRequest,
                                     RotateOperationsInsightsWarehouseWalletResponse>
                             handler);
+
+    /**
+     * Summarizes ADDM findings for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAddmDbFindingsResponse> summarizeAddmDbFindings(
+            SummarizeAddmDbFindingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAddmDbFindingsRequest, SummarizeAddmDbFindingsResponse>
+                    handler);
+
+    /**
+     * Summarizes the AWR database parameter change history for the specified parameter. There will
+     * be one element for each time that parameter changed during the specified time period. This
+     * API is limited to only one parameter per request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAddmDbParameterChangesResponse>
+            summarizeAddmDbParameterChanges(
+                    SummarizeAddmDbParameterChangesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAddmDbParameterChangesRequest,
+                                    SummarizeAddmDbParameterChangesResponse>
+                            handler);
+
+    /**
+     * Summarizes database parameter history information for the specified databases. Return a list
+     * of parameters with information on whether the parameter values were changed or not within the
+     * specified time period. The response does not include the individual parameter changes within
+     * the time period.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAddmDbParametersResponse> summarizeAddmDbParameters(
+            SummarizeAddmDbParametersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAddmDbParametersRequest, SummarizeAddmDbParametersResponse>
+                    handler);
+
+    /**
+     * Summarizes ADDM recommendations for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAddmDbRecommendationsResponse>
+            summarizeAddmDbRecommendations(
+                    SummarizeAddmDbRecommendationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAddmDbRecommendationsRequest,
+                                    SummarizeAddmDbRecommendationsResponse>
+                            handler);
+
+    /**
+     * Summarizes Schema objects for the specified databases for the specified objectIdentifiers
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAddmDbSchemaObjectsResponse> summarizeAddmDbSchemaObjects(
+            SummarizeAddmDbSchemaObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAddmDbSchemaObjectsRequest,
+                            SummarizeAddmDbSchemaObjectsResponse>
+                    handler);
+
+    /**
+     * Summarizes SQL Statements for the specified databases for the specified sqlIdentifiers
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAddmDbSqlStatementsResponse> summarizeAddmDbSqlStatements(
+            SummarizeAddmDbSqlStatementsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAddmDbSqlStatementsRequest,
+                            SummarizeAddmDbSqlStatementsResponse>
+                    handler);
 
     /**
      * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR. Based
