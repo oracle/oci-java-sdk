@@ -711,6 +711,20 @@ public interface OperationsInsights extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * This endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestAddmReportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestAddmReports API.
+     */
+    IngestAddmReportsResponse ingestAddmReports(IngestAddmReportsRequest request);
+
+    /**
      * This is a generic ingest endpoint for all database configuration metrics.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -803,6 +817,89 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestSqlText API.
      */
     IngestSqlTextResponse ingestSqlText(IngestSqlTextRequest request);
+
+    /**
+     * Gets list of ADDM finding categories.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAddmDbFindingCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddmDbFindingCategories API.
+     */
+    ListAddmDbFindingCategoriesResponse listAddmDbFindingCategories(
+            ListAddmDbFindingCategoriesRequest request);
+
+    /**
+     * Get the ADDM findings time series for the specified databases for a given time period.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAddmDbFindingsTimeSeriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddmDbFindingsTimeSeries API.
+     */
+    ListAddmDbFindingsTimeSeriesResponse listAddmDbFindingsTimeSeries(
+            ListAddmDbFindingsTimeSeriesRequest request);
+
+    /**
+     * Gets list of ADDM database parameter categories for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAddmDbParameterCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddmDbParameterCategories API.
+     */
+    ListAddmDbParameterCategoriesResponse listAddmDbParameterCategories(
+            ListAddmDbParameterCategoriesRequest request);
+
+    /**
+     * Gets list of ADDM recommendation categories for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAddmDbRecommendationCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddmDbRecommendationCategories API.
+     */
+    ListAddmDbRecommendationCategoriesResponse listAddmDbRecommendationCategories(
+            ListAddmDbRecommendationCategoriesRequest request);
+
+    /**
+     * Gets time series data for ADDM recommendations for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAddmDbRecommendationsTimeSeriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddmDbRecommendationsTimeSeries API.
+     */
+    ListAddmDbRecommendationsTimeSeriesResponse listAddmDbRecommendationsTimeSeries(
+            ListAddmDbRecommendationsTimeSeriesRequest request);
+
+    /**
+     * Gets a list of ADDM database information
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAddmDbsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddmDbs API.
+     */
+    ListAddmDbsResponse listAddmDbs(ListAddmDbsRequest request);
 
     /**
      * Lists AWR snapshots for the specified database in the AWR.
@@ -1196,6 +1293,94 @@ public interface OperationsInsights extends AutoCloseable {
      */
     RotateOperationsInsightsWarehouseWalletResponse rotateOperationsInsightsWarehouseWallet(
             RotateOperationsInsightsWarehouseWalletRequest request);
+
+    /**
+     * Summarizes ADDM findings for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbFindingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAddmDbFindings API.
+     */
+    SummarizeAddmDbFindingsResponse summarizeAddmDbFindings(SummarizeAddmDbFindingsRequest request);
+
+    /**
+     * Summarizes the AWR database parameter change history for the specified parameter. There will
+     * be one element for each time that parameter changed during the specified time period.
+     * This API is limited to only one parameter per request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbParameterChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAddmDbParameterChanges API.
+     */
+    SummarizeAddmDbParameterChangesResponse summarizeAddmDbParameterChanges(
+            SummarizeAddmDbParameterChangesRequest request);
+
+    /**
+     * Summarizes database parameter history information for the specified databases. Return a list of parameters
+     * with information on whether the parameter values were changed or not within the specified
+     * time period. The response does not include the individual parameter changes within the time
+     * period.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAddmDbParameters API.
+     */
+    SummarizeAddmDbParametersResponse summarizeAddmDbParameters(
+            SummarizeAddmDbParametersRequest request);
+
+    /**
+     * Summarizes ADDM recommendations for the specified databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAddmDbRecommendations API.
+     */
+    SummarizeAddmDbRecommendationsResponse summarizeAddmDbRecommendations(
+            SummarizeAddmDbRecommendationsRequest request);
+
+    /**
+     * Summarizes Schema objects for the specified databases for the specified objectIdentifiers
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbSchemaObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAddmDbSchemaObjects API.
+     */
+    SummarizeAddmDbSchemaObjectsResponse summarizeAddmDbSchemaObjects(
+            SummarizeAddmDbSchemaObjectsRequest request);
+
+    /**
+     * Summarizes SQL Statements for the specified databases for the specified sqlIdentifiers
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbSqlStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAddmDbSqlStatements API.
+     */
+    SummarizeAddmDbSqlStatementsResponse summarizeAddmDbSqlStatements(
+            SummarizeAddmDbSqlStatementsRequest request);
 
     /**
      * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.

@@ -6,8 +6,6 @@ package com.oracle.bmc.datasafe.model;
 
 /**
  * Details of the database for the registration in Data Safe.
- * To choose applicable database type and infrastructure type refer to
- * https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

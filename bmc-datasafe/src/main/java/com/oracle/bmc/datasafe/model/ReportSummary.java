@@ -125,13 +125,13 @@ public final class ReportSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of report to be excel or pdf.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of report to be excel or pdf.
          * @param mimeType the value to set
          * @return this builder
          **/
@@ -380,7 +380,7 @@ public final class ReportSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be excel or pdf.
      **/
     public enum MimeType {
         Pdf("PDF"),
@@ -428,13 +428,13 @@ public final class ReportSummary extends com.oracle.bmc.http.internal.Explicitly
         }
     };
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be excel or pdf.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be excel or pdf.
      * @return the value
      **/
     public MimeType getMimeType() {

@@ -101,6 +101,8 @@ public final class AutonomousDbPreviewVersionSummary
          * - DW - indicates an Autonomous Data Warehouse database
          * - AJD - indicates an Autonomous JSON Database
          * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
@@ -113,6 +115,8 @@ public final class AutonomousDbPreviewVersionSummary
          * - DW - indicates an Autonomous Data Warehouse database
          * - AJD - indicates an Autonomous JSON Database
          * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
          *
          * @param dbWorkload the value to set
          * @return this builder
@@ -237,6 +241,8 @@ public final class AutonomousDbPreviewVersionSummary
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
      * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      **/
     public enum DbWorkload {
@@ -293,6 +299,8 @@ public final class AutonomousDbPreviewVersionSummary
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
      * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
@@ -305,6 +313,8 @@ public final class AutonomousDbPreviewVersionSummary
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
      * - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
      * @return the value
      **/

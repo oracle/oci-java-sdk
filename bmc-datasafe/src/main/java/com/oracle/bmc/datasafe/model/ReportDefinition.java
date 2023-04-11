@@ -237,13 +237,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies the time at which the report definition was created.
+         * Specifies the data and time the report definition was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Specifies the time at which the report definition was created.
+         * Specifies the data and time the report definition was created.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -253,13 +253,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The date and time of the report definition update in Data Safe.
+         * The date and time the report definition was update.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time of the report definition update in Data Safe.
+         * The date and time the report definition was update.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -269,13 +269,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Additional scim filters used to specialize the report.
+         * Additional SCIM filters used to define the report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
         private String scimFilter;
 
         /**
-         * Additional scim filters used to specialize the report.
+         * Additional SCIM filters used to define the report.
          * @param scimFilter the value to set
          * @return this builder
          **/
@@ -301,13 +301,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+         * An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnFilters")
         private java.util.List<ColumnFilter> columnFilters;
 
         /**
-         * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+         * An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
          * @param columnFilters the value to set
          * @return this builder
          **/
@@ -381,7 +381,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          * <p>
          * Allowed version strings - "v1"
@@ -401,7 +401,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         private String schedule;
 
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          * <p>
          * Allowed version strings - "v1"
@@ -425,13 +425,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of the report ( either XLS or PDF )
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of the report ( either XLS or PDF )
          * @param scheduledReportMimeType the value to set
          * @return this builder
          **/
@@ -441,13 +441,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportRowLimit")
         private Integer scheduledReportRowLimit;
 
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          * @param scheduledReportRowLimit the value to set
          * @return this builder
          **/
@@ -473,16 +473,14 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-         * in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource should be created.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
         private String scheduledReportCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-         * in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource should be created.
          *
          * @param scheduledReportCompartmentId the value to set
          * @return this builder
@@ -493,7 +491,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The time span of records in report to be scheduled.
+         * The time span for the records in the report to be scheduled.
          * <period-value><period>
          * Allowed period strings - "H","D","M","Y"
          * Each of the above fields potentially introduce constraints. A workRequest is created only
@@ -508,7 +506,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         private String recordTimeSpan;
 
         /**
-         * The time span of records in report to be scheduled.
+         * The time span for the records in the report to be scheduled.
          * <period-value><period>
          * Allowed period strings - "H","D","M","Y"
          * Each of the above fields potentially introduce constraints. A workRequest is created only
@@ -527,13 +525,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
         private java.util.List<String> complianceStandards;
 
         /**
-         * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+         * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
          * @param complianceStandards the value to set
          * @return this builder
          **/
@@ -907,13 +905,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies the time at which the report definition was created.
+     * Specifies the data and time the report definition was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Specifies the time at which the report definition was created.
+     * Specifies the data and time the report definition was created.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -921,13 +919,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The date and time of the report definition update in Data Safe.
+     * The date and time the report definition was update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time of the report definition update in Data Safe.
+     * The date and time the report definition was update.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -935,13 +933,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Additional scim filters used to specialize the report.
+     * Additional SCIM filters used to define the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scimFilter")
     private final String scimFilter;
 
     /**
-     * Additional scim filters used to specialize the report.
+     * Additional SCIM filters used to define the report.
      * @return the value
      **/
     public String getScimFilter() {
@@ -963,13 +961,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+     * An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnFilters")
     private final java.util.List<ColumnFilter> columnFilters;
 
     /**
-     * An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+     * An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * @return the value
      **/
     public java.util.List<ColumnFilter> getColumnFilters() {
@@ -1033,7 +1031,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      * <p>
      * Allowed version strings - "v1"
@@ -1053,7 +1051,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     private final String schedule;
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      * <p>
      * Allowed version strings - "v1"
@@ -1075,7 +1073,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      **/
     public enum ScheduledReportMimeType {
         Pdf("PDF"),
@@ -1123,13 +1121,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of the report ( either XLS or PDF )
      * @return the value
      **/
     public ScheduledReportMimeType getScheduledReportMimeType() {
@@ -1137,13 +1135,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportRowLimit")
     private final Integer scheduledReportRowLimit;
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      * @return the value
      **/
     public Integer getScheduledReportRowLimit() {
@@ -1165,16 +1163,14 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-     * in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource should be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
     private final String scheduledReportCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-     * in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource should be created.
      *
      * @return the value
      **/
@@ -1183,7 +1179,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The time span of records in report to be scheduled.
+     * The time span for the records in the report to be scheduled.
      * <period-value><period>
      * Allowed period strings - "H","D","M","Y"
      * Each of the above fields potentially introduce constraints. A workRequest is created only
@@ -1198,7 +1194,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     private final String recordTimeSpan;
 
     /**
-     * The time span of records in report to be scheduled.
+     * The time span for the records in the report to be scheduled.
      * <period-value><period>
      * Allowed period strings - "H","D","M","Y"
      * Each of the above fields potentially introduce constraints. A workRequest is created only
@@ -1215,13 +1211,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("complianceStandards")
     private final java.util.List<String> complianceStandards;
 
     /**
-     * The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+     * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * @return the value
      **/
     public java.util.List<String> getComplianceStandards() {

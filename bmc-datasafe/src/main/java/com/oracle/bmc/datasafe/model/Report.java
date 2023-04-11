@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Description of Report.
+ * The description of the report.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -160,13 +160,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * Specifies the time at which the report was generated.
+         * Specifies the date and time the report was generated.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
         private java.util.Date timeGenerated;
 
         /**
-         * Specifies the time at which the report was generated.
+         * Specifies the date and time the report was generated.
          * @param timeGenerated the value to set
          * @return this builder
          **/
@@ -176,13 +176,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The current state of the report.
+         * The current state of the audit report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ReportLifecycleState lifecycleState;
 
         /**
-         * The current state of the report.
+         * The current state of the audit report.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -192,13 +192,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The type of the report.
+         * The type of the audit report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ReportType type;
 
         /**
-         * The type of the report.
+         * The type of the audit report.
          * @param type the value to set
          * @return this builder
          **/
@@ -483,13 +483,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * Specifies the time at which the report was generated.
+     * Specifies the date and time the report was generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeGenerated")
     private final java.util.Date timeGenerated;
 
     /**
-     * Specifies the time at which the report was generated.
+     * Specifies the date and time the report was generated.
      * @return the value
      **/
     public java.util.Date getTimeGenerated() {
@@ -497,13 +497,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The current state of the report.
+     * The current state of the audit report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ReportLifecycleState lifecycleState;
 
     /**
-     * The current state of the report.
+     * The current state of the audit report.
      * @return the value
      **/
     public ReportLifecycleState getLifecycleState() {
@@ -511,13 +511,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The type of the report.
+     * The type of the audit report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ReportType type;
 
     /**
-     * The type of the report.
+     * The type of the audit report.
      * @return the value
      **/
     public ReportType getType() {

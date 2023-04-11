@@ -279,7 +279,7 @@ public interface Database extends AutoCloseable {
     /**
      * Switch the Autonomous Container Database role between Standby and Snapshot Standby.
      * For more information about changing Autonomous Container Databases Dataguard Role, see
-     * [Change Database Role to Snapshot Standby](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#changeRole).
+     * [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -475,6 +475,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToPdbExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToPdb API.
      */
     ConvertToPdbResponse convertToPdb(ConvertToPdbRequest request);
+
+    /**
+     * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplicationVip API.
+     */
+    CreateApplicationVipResponse createApplicationVip(CreateApplicationVipRequest request);
 
     /**
      * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
@@ -838,6 +851,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DbNodeActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DbNodeAction API.
      */
     DbNodeActionResponse dbNodeAction(DbNodeActionRequest request);
+
+    /**
+     * Deletes and deregisters the specified application virtual IP (VIP) address.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplicationVip API.
+     */
+    DeleteApplicationVipResponse deleteApplicationVip(DeleteApplicationVipRequest request);
 
     /**
      * Deletes the specified Autonomous Database.
@@ -1622,6 +1648,18 @@ public interface Database extends AutoCloseable {
             GenerateRecommendedVmClusterNetworkRequest request);
 
     /**
+     * Gets information about a specified application virtual IP (VIP) address.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplicationVip API.
+     */
+    GetApplicationVipResponse getApplicationVip(GetApplicationVipRequest request);
+
+    /**
      * Gets information about the specified Autonomous Container Database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2394,6 +2432,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchDbSystem API.
      */
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
+
+    /**
+     * Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListApplicationVipsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationVips API.
+     */
+    ListApplicationVipsResponse listApplicationVips(ListApplicationVipsRequest request);
 
     /**
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
@@ -3448,6 +3499,34 @@ public interface Database extends AutoCloseable {
      */
     RotateAutonomousDatabaseEncryptionKeyResponse rotateAutonomousDatabaseEncryptionKey(
             RotateAutonomousDatabaseEncryptionKeyRequest request);
+
+    /**
+     * Rotates the Oracle REST Data Services (ORDS) certificates for Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousVmClusterOrdsCerts API.
+     */
+    RotateAutonomousVmClusterOrdsCertsResponse rotateAutonomousVmClusterOrdsCerts(
+            RotateAutonomousVmClusterOrdsCertsRequest request);
+
+    /**
+     * Rotates the SSL certificates for Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousVmClusterSslCerts API.
+     */
+    RotateAutonomousVmClusterSslCertsResponse rotateAutonomousVmClusterSslCerts(
+            RotateAutonomousVmClusterSslCertsRequest request);
 
     /**
      * Rotates the Oracle REST Data Services (ORDS) certificates for a cloud Autonomous Exadata VM cluster.

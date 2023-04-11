@@ -942,6 +942,123 @@ public class DataSafePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAuditPolicyAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAuditPolicyAnalyticsResponse> listAuditPolicyAnalyticsResponseIterator(
+            final ListAuditPolicyAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAuditPolicyAnalyticsRequest.Builder, ListAuditPolicyAnalyticsRequest,
+                ListAuditPolicyAnalyticsResponse>(
+                new java.util.function.Supplier<ListAuditPolicyAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListAuditPolicyAnalyticsRequest.Builder get() {
+                        return ListAuditPolicyAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAuditPolicyAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListAuditPolicyAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAuditPolicyAnalyticsRequest.Builder>,
+                        ListAuditPolicyAnalyticsRequest>() {
+                    @Override
+                    public ListAuditPolicyAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAuditPolicyAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAuditPolicyAnalyticsRequest, ListAuditPolicyAnalyticsResponse>() {
+                    @Override
+                    public ListAuditPolicyAnalyticsResponse apply(
+                            ListAuditPolicyAnalyticsRequest request) {
+                        return client.listAuditPolicyAnalytics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems} objects
+     * contained in responses from the listAuditPolicyAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems>
+            listAuditPolicyAnalyticsRecordIterator(final ListAuditPolicyAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAuditPolicyAnalyticsRequest.Builder, ListAuditPolicyAnalyticsRequest,
+                ListAuditPolicyAnalyticsResponse,
+                com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems>(
+                new java.util.function.Supplier<ListAuditPolicyAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListAuditPolicyAnalyticsRequest.Builder get() {
+                        return ListAuditPolicyAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAuditPolicyAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListAuditPolicyAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAuditPolicyAnalyticsRequest.Builder>,
+                        ListAuditPolicyAnalyticsRequest>() {
+                    @Override
+                    public ListAuditPolicyAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAuditPolicyAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAuditPolicyAnalyticsRequest, ListAuditPolicyAnalyticsResponse>() {
+                    @Override
+                    public ListAuditPolicyAnalyticsResponse apply(
+                            ListAuditPolicyAnalyticsRequest request) {
+                        return client.listAuditPolicyAnalytics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAuditPolicyAnalyticsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems>
+                            apply(ListAuditPolicyAnalyticsResponse response) {
+                        return response.getAuditPolicyAnalyticCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAuditProfileAnalytics operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1864,6 +1981,122 @@ public class DataSafePaginators {
                                     com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary>
                             apply(ListDataSafePrivateEndpointsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDifferenceColumns operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDifferenceColumnsResponse> listDifferenceColumnsResponseIterator(
+            final ListDifferenceColumnsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDifferenceColumnsRequest.Builder, ListDifferenceColumnsRequest,
+                ListDifferenceColumnsResponse>(
+                new java.util.function.Supplier<ListDifferenceColumnsRequest.Builder>() {
+                    @Override
+                    public ListDifferenceColumnsRequest.Builder get() {
+                        return ListDifferenceColumnsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDifferenceColumnsResponse, String>() {
+                    @Override
+                    public String apply(ListDifferenceColumnsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDifferenceColumnsRequest.Builder>,
+                        ListDifferenceColumnsRequest>() {
+                    @Override
+                    public ListDifferenceColumnsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDifferenceColumnsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDifferenceColumnsRequest, ListDifferenceColumnsResponse>() {
+                    @Override
+                    public ListDifferenceColumnsResponse apply(
+                            ListDifferenceColumnsRequest request) {
+                        return client.listDifferenceColumns(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DifferenceColumnSummary} objects
+     * contained in responses from the listDifferenceColumns operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DifferenceColumnSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.DifferenceColumnSummary>
+            listDifferenceColumnsRecordIterator(final ListDifferenceColumnsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDifferenceColumnsRequest.Builder, ListDifferenceColumnsRequest,
+                ListDifferenceColumnsResponse,
+                com.oracle.bmc.datasafe.model.DifferenceColumnSummary>(
+                new java.util.function.Supplier<ListDifferenceColumnsRequest.Builder>() {
+                    @Override
+                    public ListDifferenceColumnsRequest.Builder get() {
+                        return ListDifferenceColumnsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDifferenceColumnsResponse, String>() {
+                    @Override
+                    public String apply(ListDifferenceColumnsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDifferenceColumnsRequest.Builder>,
+                        ListDifferenceColumnsRequest>() {
+                    @Override
+                    public ListDifferenceColumnsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDifferenceColumnsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDifferenceColumnsRequest, ListDifferenceColumnsResponse>() {
+                    @Override
+                    public ListDifferenceColumnsResponse apply(
+                            ListDifferenceColumnsRequest request) {
+                        return client.listDifferenceColumns(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDifferenceColumnsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.DifferenceColumnSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.DifferenceColumnSummary>
+                            apply(ListDifferenceColumnsResponse response) {
+                        return response.getSdmMaskingPolicyDifferenceColumnCollection().getItems();
                     }
                 });
     }
@@ -2892,6 +3125,119 @@ public class DataSafePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listMaskingObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMaskingObjectsResponse> listMaskingObjectsResponseIterator(
+            final ListMaskingObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMaskingObjectsRequest.Builder, ListMaskingObjectsRequest,
+                ListMaskingObjectsResponse>(
+                new java.util.function.Supplier<ListMaskingObjectsRequest.Builder>() {
+                    @Override
+                    public ListMaskingObjectsRequest.Builder get() {
+                        return ListMaskingObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingObjectsRequest.Builder>,
+                        ListMaskingObjectsRequest>() {
+                    @Override
+                    public ListMaskingObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingObjectsRequest, ListMaskingObjectsResponse>() {
+                    @Override
+                    public ListMaskingObjectsResponse apply(ListMaskingObjectsRequest request) {
+                        return client.listMaskingObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingObjectSummary} objects
+     * contained in responses from the listMaskingObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.MaskingObjectSummary>
+            listMaskingObjectsRecordIterator(final ListMaskingObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMaskingObjectsRequest.Builder, ListMaskingObjectsRequest,
+                ListMaskingObjectsResponse, com.oracle.bmc.datasafe.model.MaskingObjectSummary>(
+                new java.util.function.Supplier<ListMaskingObjectsRequest.Builder>() {
+                    @Override
+                    public ListMaskingObjectsRequest.Builder get() {
+                        return ListMaskingObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingObjectsRequest.Builder>,
+                        ListMaskingObjectsRequest>() {
+                    @Override
+                    public ListMaskingObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingObjectsRequest, ListMaskingObjectsResponse>() {
+                    @Override
+                    public ListMaskingObjectsResponse apply(ListMaskingObjectsRequest request) {
+                        return client.listMaskingObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingObjectsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.MaskingObjectSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.MaskingObjectSummary> apply(
+                            ListMaskingObjectsResponse response) {
+                        return response.getMaskingObjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMaskingPolicies operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -3118,6 +3464,119 @@ public class DataSafePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listMaskingSchemas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMaskingSchemasResponse> listMaskingSchemasResponseIterator(
+            final ListMaskingSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMaskingSchemasRequest.Builder, ListMaskingSchemasRequest,
+                ListMaskingSchemasResponse>(
+                new java.util.function.Supplier<ListMaskingSchemasRequest.Builder>() {
+                    @Override
+                    public ListMaskingSchemasRequest.Builder get() {
+                        return ListMaskingSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingSchemasRequest.Builder>,
+                        ListMaskingSchemasRequest>() {
+                    @Override
+                    public ListMaskingSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingSchemasRequest, ListMaskingSchemasResponse>() {
+                    @Override
+                    public ListMaskingSchemasResponse apply(ListMaskingSchemasRequest request) {
+                        return client.listMaskingSchemas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingSchemaSummary} objects
+     * contained in responses from the listMaskingSchemas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingSchemaSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.MaskingSchemaSummary>
+            listMaskingSchemasRecordIterator(final ListMaskingSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMaskingSchemasRequest.Builder, ListMaskingSchemasRequest,
+                ListMaskingSchemasResponse, com.oracle.bmc.datasafe.model.MaskingSchemaSummary>(
+                new java.util.function.Supplier<ListMaskingSchemasRequest.Builder>() {
+                    @Override
+                    public ListMaskingSchemasRequest.Builder get() {
+                        return ListMaskingSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingSchemasRequest.Builder>,
+                        ListMaskingSchemasRequest>() {
+                    @Override
+                    public ListMaskingSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingSchemasRequest, ListMaskingSchemasResponse>() {
+                    @Override
+                    public ListMaskingSchemasResponse apply(ListMaskingSchemasRequest request) {
+                        return client.listMaskingSchemas(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingSchemasResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.MaskingSchemaSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.MaskingSchemaSummary> apply(
+                            ListMaskingSchemasResponse response) {
+                        return response.getMaskingSchemaCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listOnPremConnectors operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -3225,6 +3684,232 @@ public class DataSafePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.datasafe.model.OnPremConnectorSummary>
                             apply(ListOnPremConnectorsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listProfileAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProfileAnalyticsResponse> listProfileAnalyticsResponseIterator(
+            final ListProfileAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProfileAnalyticsRequest.Builder, ListProfileAnalyticsRequest,
+                ListProfileAnalyticsResponse>(
+                new java.util.function.Supplier<ListProfileAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListProfileAnalyticsRequest.Builder get() {
+                        return ListProfileAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProfileAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListProfileAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProfileAnalyticsRequest.Builder>,
+                        ListProfileAnalyticsRequest>() {
+                    @Override
+                    public ListProfileAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProfileAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProfileAnalyticsRequest, ListProfileAnalyticsResponse>() {
+                    @Override
+                    public ListProfileAnalyticsResponse apply(ListProfileAnalyticsRequest request) {
+                        return client.listProfileAnalytics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ProfileAggregation} objects
+     * contained in responses from the listProfileAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ProfileAggregation} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.ProfileAggregation>
+            listProfileAnalyticsRecordIterator(final ListProfileAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProfileAnalyticsRequest.Builder, ListProfileAnalyticsRequest,
+                ListProfileAnalyticsResponse, com.oracle.bmc.datasafe.model.ProfileAggregation>(
+                new java.util.function.Supplier<ListProfileAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListProfileAnalyticsRequest.Builder get() {
+                        return ListProfileAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProfileAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListProfileAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProfileAnalyticsRequest.Builder>,
+                        ListProfileAnalyticsRequest>() {
+                    @Override
+                    public ListProfileAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProfileAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProfileAnalyticsRequest, ListProfileAnalyticsResponse>() {
+                    @Override
+                    public ListProfileAnalyticsResponse apply(ListProfileAnalyticsRequest request) {
+                        return client.listProfileAnalytics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProfileAnalyticsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.ProfileAggregation>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.ProfileAggregation> apply(
+                            ListProfileAnalyticsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listProfileSummaries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProfileSummariesResponse> listProfileSummariesResponseIterator(
+            final ListProfileSummariesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProfileSummariesRequest.Builder, ListProfileSummariesRequest,
+                ListProfileSummariesResponse>(
+                new java.util.function.Supplier<ListProfileSummariesRequest.Builder>() {
+                    @Override
+                    public ListProfileSummariesRequest.Builder get() {
+                        return ListProfileSummariesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProfileSummariesResponse, String>() {
+                    @Override
+                    public String apply(ListProfileSummariesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProfileSummariesRequest.Builder>,
+                        ListProfileSummariesRequest>() {
+                    @Override
+                    public ListProfileSummariesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProfileSummariesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProfileSummariesRequest, ListProfileSummariesResponse>() {
+                    @Override
+                    public ListProfileSummariesResponse apply(ListProfileSummariesRequest request) {
+                        return client.listProfileSummaries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ProfileSummary} objects
+     * contained in responses from the listProfileSummaries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ProfileSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.ProfileSummary>
+            listProfileSummariesRecordIterator(final ListProfileSummariesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProfileSummariesRequest.Builder, ListProfileSummariesRequest,
+                ListProfileSummariesResponse, com.oracle.bmc.datasafe.model.ProfileSummary>(
+                new java.util.function.Supplier<ListProfileSummariesRequest.Builder>() {
+                    @Override
+                    public ListProfileSummariesRequest.Builder get() {
+                        return ListProfileSummariesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProfileSummariesResponse, String>() {
+                    @Override
+                    public String apply(ListProfileSummariesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProfileSummariesRequest.Builder>,
+                        ListProfileSummariesRequest>() {
+                    @Override
+                    public ListProfileSummariesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProfileSummariesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProfileSummariesRequest, ListProfileSummariesResponse>() {
+                    @Override
+                    public ListProfileSummariesResponse apply(ListProfileSummariesRequest request) {
+                        return client.listProfileSummaries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProfileSummariesResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.ProfileSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.ProfileSummary> apply(
+                            ListProfileSummariesResponse response) {
                         return response.getItems();
                     }
                 });
@@ -3676,6 +4361,129 @@ public class DataSafePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSdmMaskingPolicyDifferences operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSdmMaskingPolicyDifferencesResponse>
+            listSdmMaskingPolicyDifferencesResponseIterator(
+                    final ListSdmMaskingPolicyDifferencesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSdmMaskingPolicyDifferencesRequest.Builder,
+                ListSdmMaskingPolicyDifferencesRequest, ListSdmMaskingPolicyDifferencesResponse>(
+                new java.util.function.Supplier<ListSdmMaskingPolicyDifferencesRequest.Builder>() {
+                    @Override
+                    public ListSdmMaskingPolicyDifferencesRequest.Builder get() {
+                        return ListSdmMaskingPolicyDifferencesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSdmMaskingPolicyDifferencesResponse, String>() {
+                    @Override
+                    public String apply(ListSdmMaskingPolicyDifferencesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSdmMaskingPolicyDifferencesRequest.Builder>,
+                        ListSdmMaskingPolicyDifferencesRequest>() {
+                    @Override
+                    public ListSdmMaskingPolicyDifferencesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSdmMaskingPolicyDifferencesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSdmMaskingPolicyDifferencesRequest,
+                        ListSdmMaskingPolicyDifferencesResponse>() {
+                    @Override
+                    public ListSdmMaskingPolicyDifferencesResponse apply(
+                            ListSdmMaskingPolicyDifferencesRequest request) {
+                        return client.listSdmMaskingPolicyDifferences(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary} objects
+     * contained in responses from the listSdmMaskingPolicyDifferences operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary>
+            listSdmMaskingPolicyDifferencesRecordIterator(
+                    final ListSdmMaskingPolicyDifferencesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSdmMaskingPolicyDifferencesRequest.Builder,
+                ListSdmMaskingPolicyDifferencesRequest, ListSdmMaskingPolicyDifferencesResponse,
+                com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary>(
+                new java.util.function.Supplier<ListSdmMaskingPolicyDifferencesRequest.Builder>() {
+                    @Override
+                    public ListSdmMaskingPolicyDifferencesRequest.Builder get() {
+                        return ListSdmMaskingPolicyDifferencesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSdmMaskingPolicyDifferencesResponse, String>() {
+                    @Override
+                    public String apply(ListSdmMaskingPolicyDifferencesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSdmMaskingPolicyDifferencesRequest.Builder>,
+                        ListSdmMaskingPolicyDifferencesRequest>() {
+                    @Override
+                    public ListSdmMaskingPolicyDifferencesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSdmMaskingPolicyDifferencesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSdmMaskingPolicyDifferencesRequest,
+                        ListSdmMaskingPolicyDifferencesResponse>() {
+                    @Override
+                    public ListSdmMaskingPolicyDifferencesResponse apply(
+                            ListSdmMaskingPolicyDifferencesRequest request) {
+                        return client.listSdmMaskingPolicyDifferences(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSdmMaskingPolicyDifferencesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .SdmMaskingPolicyDifferenceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary>
+                            apply(ListSdmMaskingPolicyDifferencesResponse response) {
+                        return response.getSdmMaskingPolicyDifferenceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSecurityAssessments operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -4016,6 +4824,232 @@ public class DataSafePaginators {
                     public java.util.List<com.oracle.bmc.datasafe.model.SensitiveDataModelSummary>
                             apply(ListSensitiveDataModelsResponse response) {
                         return response.getSensitiveDataModelCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSensitiveObjectsResponse> listSensitiveObjectsResponseIterator(
+            final ListSensitiveObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSensitiveObjectsRequest.Builder, ListSensitiveObjectsRequest,
+                ListSensitiveObjectsResponse>(
+                new java.util.function.Supplier<ListSensitiveObjectsRequest.Builder>() {
+                    @Override
+                    public ListSensitiveObjectsRequest.Builder get() {
+                        return ListSensitiveObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveObjectsRequest.Builder>,
+                        ListSensitiveObjectsRequest>() {
+                    @Override
+                    public ListSensitiveObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveObjectsRequest, ListSensitiveObjectsResponse>() {
+                    @Override
+                    public ListSensitiveObjectsResponse apply(ListSensitiveObjectsRequest request) {
+                        return client.listSensitiveObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveObjectSummary} objects
+     * contained in responses from the listSensitiveObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SensitiveObjectSummary>
+            listSensitiveObjectsRecordIterator(final ListSensitiveObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSensitiveObjectsRequest.Builder, ListSensitiveObjectsRequest,
+                ListSensitiveObjectsResponse, com.oracle.bmc.datasafe.model.SensitiveObjectSummary>(
+                new java.util.function.Supplier<ListSensitiveObjectsRequest.Builder>() {
+                    @Override
+                    public ListSensitiveObjectsRequest.Builder get() {
+                        return ListSensitiveObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveObjectsRequest.Builder>,
+                        ListSensitiveObjectsRequest>() {
+                    @Override
+                    public ListSensitiveObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveObjectsRequest, ListSensitiveObjectsResponse>() {
+                    @Override
+                    public ListSensitiveObjectsResponse apply(ListSensitiveObjectsRequest request) {
+                        return client.listSensitiveObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveObjectsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SensitiveObjectSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SensitiveObjectSummary>
+                            apply(ListSensitiveObjectsResponse response) {
+                        return response.getSensitiveObjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveSchemas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSensitiveSchemasResponse> listSensitiveSchemasResponseIterator(
+            final ListSensitiveSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSensitiveSchemasRequest.Builder, ListSensitiveSchemasRequest,
+                ListSensitiveSchemasResponse>(
+                new java.util.function.Supplier<ListSensitiveSchemasRequest.Builder>() {
+                    @Override
+                    public ListSensitiveSchemasRequest.Builder get() {
+                        return ListSensitiveSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveSchemasRequest.Builder>,
+                        ListSensitiveSchemasRequest>() {
+                    @Override
+                    public ListSensitiveSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveSchemasRequest, ListSensitiveSchemasResponse>() {
+                    @Override
+                    public ListSensitiveSchemasResponse apply(ListSensitiveSchemasRequest request) {
+                        return client.listSensitiveSchemas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveSchemaSummary} objects
+     * contained in responses from the listSensitiveSchemas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveSchemaSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>
+            listSensitiveSchemasRecordIterator(final ListSensitiveSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSensitiveSchemasRequest.Builder, ListSensitiveSchemasRequest,
+                ListSensitiveSchemasResponse, com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>(
+                new java.util.function.Supplier<ListSensitiveSchemasRequest.Builder>() {
+                    @Override
+                    public ListSensitiveSchemasRequest.Builder get() {
+                        return ListSensitiveSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveSchemasRequest.Builder>,
+                        ListSensitiveSchemasRequest>() {
+                    @Override
+                    public ListSensitiveSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveSchemasRequest, ListSensitiveSchemasResponse>() {
+                    @Override
+                    public ListSensitiveSchemasResponse apply(ListSensitiveSchemasRequest request) {
+                        return client.listSensitiveSchemas(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveSchemasResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>
+                            apply(ListSensitiveSchemasResponse response) {
+                        return response.getSensitiveSchemaCollection().getItems();
                     }
                 });
     }

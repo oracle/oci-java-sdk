@@ -27,7 +27,12 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         "isIgnoreErrorsEnabled",
         "seed",
         "isMoveInterimTablesEnabled",
-        "isExecuteSavedScriptEnabled"
+        "isExecuteSavedScriptEnabled",
+        "isDropTempTablesEnabled",
+        "isRedoLoggingEnabled",
+        "isRefreshStatsEnabled",
+        "parallelDegree",
+        "recompile"
     })
     public MaskDataDetails(
             String targetId,
@@ -37,7 +42,12 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             Boolean isIgnoreErrorsEnabled,
             String seed,
             Boolean isMoveInterimTablesEnabled,
-            Boolean isExecuteSavedScriptEnabled) {
+            Boolean isExecuteSavedScriptEnabled,
+            Boolean isDropTempTablesEnabled,
+            Boolean isRedoLoggingEnabled,
+            Boolean isRefreshStatsEnabled,
+            String parallelDegree,
+            String recompile) {
         super();
         this.targetId = targetId;
         this.isDecrypt = isDecrypt;
@@ -47,6 +57,11 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         this.seed = seed;
         this.isMoveInterimTablesEnabled = isMoveInterimTablesEnabled;
         this.isExecuteSavedScriptEnabled = isExecuteSavedScriptEnabled;
+        this.isDropTempTablesEnabled = isDropTempTablesEnabled;
+        this.isRedoLoggingEnabled = isRedoLoggingEnabled;
+        this.isRefreshStatsEnabled = isRefreshStatsEnabled;
+        this.parallelDegree = parallelDegree;
+        this.recompile = recompile;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -219,6 +234,134 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("isExecuteSavedScriptEnabled");
             return this;
         }
+        /**
+         * Indicates if the temporary tables created during a masking operation should be dropped after masking.
+         * Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive
+         * data values to mask values. These temporary tables are dropped after masking if this attribute is set as true. But, in some cases, you may want
+         * to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables
+         * must be dropped before the database is available for unprivileged users.
+         * If it's not provided, the value of the isDropTempTablesEnabled attribute in the MaskingPolicy resource is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
+        private Boolean isDropTempTablesEnabled;
+
+        /**
+         * Indicates if the temporary tables created during a masking operation should be dropped after masking.
+         * Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive
+         * data values to mask values. These temporary tables are dropped after masking if this attribute is set as true. But, in some cases, you may want
+         * to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables
+         * must be dropped before the database is available for unprivileged users.
+         * If it's not provided, the value of the isDropTempTablesEnabled attribute in the MaskingPolicy resource is used.
+         *
+         * @param isDropTempTablesEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
+            this.isDropTempTablesEnabled = isDropTempTablesEnabled;
+            this.__explicitlySet__.add("isDropTempTablesEnabled");
+            return this;
+        }
+        /**
+         * Indicates if redo logging is enabled during a masking operation. Set this attribute to true to
+         * enable redo logging. If set as flase, masking disables redo logging and flashback logging to purge any original unmasked
+         * data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking,
+         * you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
+         * If it's not provided, the value of the isRedoLoggingEnabled attribute in the MaskingPolicy resource is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
+        private Boolean isRedoLoggingEnabled;
+
+        /**
+         * Indicates if redo logging is enabled during a masking operation. Set this attribute to true to
+         * enable redo logging. If set as flase, masking disables redo logging and flashback logging to purge any original unmasked
+         * data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking,
+         * you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
+         * If it's not provided, the value of the isRedoLoggingEnabled attribute in the MaskingPolicy resource is used.
+         *
+         * @param isRedoLoggingEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
+            this.isRedoLoggingEnabled = isRedoLoggingEnabled;
+            this.__explicitlySet__.add("isRedoLoggingEnabled");
+            return this;
+        }
+        /**
+         * Indicates if statistics gathering is enabled. Set this attribute to false to disable statistics
+         * gathering. The masking process gathers statistics on masked database tables after masking completes.
+         * If it's not provided, the value of the isRefreshStatsEnabled attribute in the MaskingPolicy resource is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
+        private Boolean isRefreshStatsEnabled;
+
+        /**
+         * Indicates if statistics gathering is enabled. Set this attribute to false to disable statistics
+         * gathering. The masking process gathers statistics on masked database tables after masking completes.
+         * If it's not provided, the value of the isRefreshStatsEnabled attribute in the MaskingPolicy resource is used.
+         *
+         * @param isRefreshStatsEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
+            this.isRefreshStatsEnabled = isRefreshStatsEnabled;
+            this.__explicitlySet__.add("isRefreshStatsEnabled");
+            return this;
+        }
+        /**
+         * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
+         * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
+         * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
+         * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
+        private String parallelDegree;
+
+        /**
+         * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
+         * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
+         * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
+         * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+         *
+         * @param parallelDegree the value to set
+         * @return this builder
+         **/
+        public Builder parallelDegree(String parallelDegree) {
+            this.parallelDegree = parallelDegree;
+            this.__explicitlySet__.add("parallelDegree");
+            return this;
+        }
+        /**
+         * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
+         * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
+         * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+         * recompile manually using UTL_RECOMP package.
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("recompile")
+        private String recompile;
+
+        /**
+         * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
+         * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
+         * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+         * recompile manually using UTL_RECOMP package.
+         * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+         *
+         * @param recompile the value to set
+         * @return this builder
+         **/
+        public Builder recompile(String recompile) {
+            this.recompile = recompile;
+            this.__explicitlySet__.add("recompile");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -233,7 +376,12 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                             this.isIgnoreErrorsEnabled,
                             this.seed,
                             this.isMoveInterimTablesEnabled,
-                            this.isExecuteSavedScriptEnabled);
+                            this.isExecuteSavedScriptEnabled,
+                            this.isDropTempTablesEnabled,
+                            this.isRedoLoggingEnabled,
+                            this.isRefreshStatsEnabled,
+                            this.parallelDegree,
+                            this.recompile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -265,6 +413,21 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("isExecuteSavedScriptEnabled")) {
                 this.isExecuteSavedScriptEnabled(model.getIsExecuteSavedScriptEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDropTempTablesEnabled")) {
+                this.isDropTempTablesEnabled(model.getIsDropTempTablesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRedoLoggingEnabled")) {
+                this.isRedoLoggingEnabled(model.getIsRedoLoggingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRefreshStatsEnabled")) {
+                this.isRefreshStatsEnabled(model.getIsRefreshStatsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("parallelDegree")) {
+                this.parallelDegree(model.getParallelDegree());
+            }
+            if (model.wasPropertyExplicitlySet("recompile")) {
+                this.recompile(model.getRecompile());
             }
             return this;
         }
@@ -433,6 +596,124 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         return isExecuteSavedScriptEnabled;
     }
 
+    /**
+     * Indicates if the temporary tables created during a masking operation should be dropped after masking.
+     * Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive
+     * data values to mask values. These temporary tables are dropped after masking if this attribute is set as true. But, in some cases, you may want
+     * to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables
+     * must be dropped before the database is available for unprivileged users.
+     * If it's not provided, the value of the isDropTempTablesEnabled attribute in the MaskingPolicy resource is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
+    private final Boolean isDropTempTablesEnabled;
+
+    /**
+     * Indicates if the temporary tables created during a masking operation should be dropped after masking.
+     * Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive
+     * data values to mask values. These temporary tables are dropped after masking if this attribute is set as true. But, in some cases, you may want
+     * to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables
+     * must be dropped before the database is available for unprivileged users.
+     * If it's not provided, the value of the isDropTempTablesEnabled attribute in the MaskingPolicy resource is used.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDropTempTablesEnabled() {
+        return isDropTempTablesEnabled;
+    }
+
+    /**
+     * Indicates if redo logging is enabled during a masking operation. Set this attribute to true to
+     * enable redo logging. If set as flase, masking disables redo logging and flashback logging to purge any original unmasked
+     * data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking,
+     * you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
+     * If it's not provided, the value of the isRedoLoggingEnabled attribute in the MaskingPolicy resource is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
+    private final Boolean isRedoLoggingEnabled;
+
+    /**
+     * Indicates if redo logging is enabled during a masking operation. Set this attribute to true to
+     * enable redo logging. If set as flase, masking disables redo logging and flashback logging to purge any original unmasked
+     * data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking,
+     * you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
+     * If it's not provided, the value of the isRedoLoggingEnabled attribute in the MaskingPolicy resource is used.
+     *
+     * @return the value
+     **/
+    public Boolean getIsRedoLoggingEnabled() {
+        return isRedoLoggingEnabled;
+    }
+
+    /**
+     * Indicates if statistics gathering is enabled. Set this attribute to false to disable statistics
+     * gathering. The masking process gathers statistics on masked database tables after masking completes.
+     * If it's not provided, the value of the isRefreshStatsEnabled attribute in the MaskingPolicy resource is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
+    private final Boolean isRefreshStatsEnabled;
+
+    /**
+     * Indicates if statistics gathering is enabled. Set this attribute to false to disable statistics
+     * gathering. The masking process gathers statistics on masked database tables after masking completes.
+     * If it's not provided, the value of the isRefreshStatsEnabled attribute in the MaskingPolicy resource is used.
+     *
+     * @return the value
+     **/
+    public Boolean getIsRefreshStatsEnabled() {
+        return isRefreshStatsEnabled;
+    }
+
+    /**
+     * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
+     * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
+     * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
+     * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
+    private final String parallelDegree;
+
+    /**
+     * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
+     * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
+     * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
+     * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+     *
+     * @return the value
+     **/
+    public String getParallelDegree() {
+        return parallelDegree;
+    }
+
+    /**
+     * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
+     * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
+     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+     * recompile manually using UTL_RECOMP package.
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recompile")
+    private final String recompile;
+
+    /**
+     * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
+     * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
+     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+     * recompile manually using UTL_RECOMP package.
+     * If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+     *
+     * @return the value
+     **/
+    public String getRecompile() {
+        return recompile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -457,6 +738,12 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                 .append(String.valueOf(this.isMoveInterimTablesEnabled));
         sb.append(", isExecuteSavedScriptEnabled=")
                 .append(String.valueOf(this.isExecuteSavedScriptEnabled));
+        sb.append(", isDropTempTablesEnabled=")
+                .append(String.valueOf(this.isDropTempTablesEnabled));
+        sb.append(", isRedoLoggingEnabled=").append(String.valueOf(this.isRedoLoggingEnabled));
+        sb.append(", isRefreshStatsEnabled=").append(String.valueOf(this.isRefreshStatsEnabled));
+        sb.append(", parallelDegree=").append(String.valueOf(this.parallelDegree));
+        sb.append(", recompile=").append(String.valueOf(this.recompile));
         sb.append(")");
         return sb.toString();
     }
@@ -481,6 +768,12 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                         this.isMoveInterimTablesEnabled, other.isMoveInterimTablesEnabled)
                 && java.util.Objects.equals(
                         this.isExecuteSavedScriptEnabled, other.isExecuteSavedScriptEnabled)
+                && java.util.Objects.equals(
+                        this.isDropTempTablesEnabled, other.isDropTempTablesEnabled)
+                && java.util.Objects.equals(this.isRedoLoggingEnabled, other.isRedoLoggingEnabled)
+                && java.util.Objects.equals(this.isRefreshStatsEnabled, other.isRefreshStatsEnabled)
+                && java.util.Objects.equals(this.parallelDegree, other.parallelDegree)
+                && java.util.Objects.equals(this.recompile, other.recompile)
                 && super.equals(other);
     }
 
@@ -508,6 +801,25 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                         + (this.isExecuteSavedScriptEnabled == null
                                 ? 43
                                 : this.isExecuteSavedScriptEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDropTempTablesEnabled == null
+                                ? 43
+                                : this.isDropTempTablesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRedoLoggingEnabled == null
+                                ? 43
+                                : this.isRedoLoggingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRefreshStatsEnabled == null
+                                ? 43
+                                : this.isRefreshStatsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parallelDegree == null ? 43 : this.parallelDegree.hashCode());
+        result = (result * PRIME) + (this.recompile == null ? 43 : this.recompile.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

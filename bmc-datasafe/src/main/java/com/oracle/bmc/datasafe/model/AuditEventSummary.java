@@ -148,13 +148,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+         * The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+         * The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -164,13 +164,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Name of the database user whose actions were audited.
+         * The name of the database user whose actions were audited.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
-         * Name of the database user whose actions were audited.
+         * The name of the database user whose actions were audited.
          * @param dbUserName the value to set
          * @return this builder
          **/
@@ -236,13 +236,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Class of the target that was audited.
+         * The class of the target that was audited.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetClass")
         private TargetClass targetClass;
 
         /**
-         * Class of the target that was audited.
+         * The class of the target that was audited.
          * @param targetClass the value to set
          * @return this builder
          **/
@@ -252,13 +252,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Time of audit event occurrence in the target database.
+         * The time of the audit event occurrence in the target database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
         private java.util.Date auditEventTime;
 
         /**
-         * Time of audit event occurrence in the target database.
+         * The time of the audit event occurrence in the target database.
          * @param auditEventTime the value to set
          * @return this builder
          **/
@@ -268,13 +268,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Timestamp when this audit event was collected from the target database by Data Safe.
+         * The timestamp when this audit event was collected from the target database by Data Safe.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
         /**
-         * Timestamp when this audit event was collected from the target database by Data Safe.
+         * The timestamp when this audit event was collected from the target database by Data Safe.
          * @param timeCollected the value to set
          * @return this builder
          **/
@@ -284,13 +284,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Name of the operating system user for the database session.
+         * The name of the operating system user for the database session.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osUserName")
         private String osUserName;
 
         /**
-         * Name of the operating system user for the database session.
+         * The name of the operating system user for the database session.
          * @param osUserName the value to set
          * @return this builder
          **/
@@ -300,13 +300,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+         * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+         * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
          * @param operation the value to set
          * @return this builder
          **/
@@ -332,13 +332,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private String eventName;
 
         /**
-         * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+         * The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
          * @param eventName the value to set
          * @return this builder
          **/
@@ -364,13 +364,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Detailed message on why the Error occurred.
+         * The detailed message on why the Error occurred.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Detailed message on why the Error occurred.
+         * The detailed message on why the Error occurred.
          * @param errorMessage the value to set
          * @return this builder
          **/
@@ -380,13 +380,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+         * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
         /**
-         * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+         * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
          * @param objectType the value to set
          * @return this builder
          **/
@@ -396,13 +396,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Name of the object affected by the action.
+         * The name of the object affected by the action.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
-         * Name of the object affected by the action.
+         * The name of the object affected by the action.
          * @param objectName the value to set
          * @return this builder
          **/
@@ -412,13 +412,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Schema name of object affected but the action.
+         * The schema name of the object affected by the action.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
         private String objectOwner;
 
         /**
-         * Schema name of object affected but the action.
+         * The schema name of the object affected by the action.
          * @param objectOwner the value to set
          * @return this builder
          **/
@@ -428,13 +428,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Name of the host machine from which the session was spawned.
+         * The name of the host machine from which the session was spawned.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientHostname")
         private String clientHostname;
 
         /**
-         * Name of the host machine from which the session was spawned.
+         * The name of the host machine from which the session was spawned.
          * @param clientHostname the value to set
          * @return this builder
          **/
@@ -444,13 +444,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * IP address of the host from which the session was spawned.
+         * The IP address of the host machine from which the session was spawned.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
         private String clientIp;
 
         /**
-         * IP address of the host from which the session was spawned.
+         * The IP address of the host machine from which the session was spawned.
          * @param clientIp the value to set
          * @return this builder
          **/
@@ -636,13 +636,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Type of auditing.
+         * The type of the auditing.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditType")
         private AuditType auditType;
 
         /**
-         * Type of auditing.
+         * The type of the auditing.
          * @param auditType the value to set
          * @return this builder
          **/
@@ -877,13 +877,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+     * The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+     * The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -891,13 +891,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Name of the database user whose actions were audited.
+     * The name of the database user whose actions were audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
-     * Name of the database user whose actions were audited.
+     * The name of the database user whose actions were audited.
      * @return the value
      **/
     public String getDbUserName() {
@@ -1008,7 +1008,7 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Class of the target that was audited.
+     * The class of the target that was audited.
      **/
     public enum TargetClass {
         Database("DATABASE"),
@@ -1055,13 +1055,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * Class of the target that was audited.
+     * The class of the target that was audited.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetClass")
     private final TargetClass targetClass;
 
     /**
-     * Class of the target that was audited.
+     * The class of the target that was audited.
      * @return the value
      **/
     public TargetClass getTargetClass() {
@@ -1069,13 +1069,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Time of audit event occurrence in the target database.
+     * The time of the audit event occurrence in the target database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditEventTime")
     private final java.util.Date auditEventTime;
 
     /**
-     * Time of audit event occurrence in the target database.
+     * The time of the audit event occurrence in the target database.
      * @return the value
      **/
     public java.util.Date getAuditEventTime() {
@@ -1083,13 +1083,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Timestamp when this audit event was collected from the target database by Data Safe.
+     * The timestamp when this audit event was collected from the target database by Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
-     * Timestamp when this audit event was collected from the target database by Data Safe.
+     * The timestamp when this audit event was collected from the target database by Data Safe.
      * @return the value
      **/
     public java.util.Date getTimeCollected() {
@@ -1097,13 +1097,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Name of the operating system user for the database session.
+     * The name of the operating system user for the database session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osUserName")
     private final String osUserName;
 
     /**
-     * Name of the operating system user for the database session.
+     * The name of the operating system user for the database session.
      * @return the value
      **/
     public String getOsUserName() {
@@ -1111,13 +1111,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
      * @return the value
      **/
     public String getOperation() {
@@ -1187,13 +1187,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final String eventName;
 
     /**
-     * Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      * @return the value
      **/
     public String getEventName() {
@@ -1215,13 +1215,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Detailed message on why the Error occurred.
+     * The detailed message on why the Error occurred.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * Detailed message on why the Error occurred.
+     * The detailed message on why the Error occurred.
      * @return the value
      **/
     public String getErrorMessage() {
@@ -1229,13 +1229,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
     /**
-     * Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      * @return the value
      **/
     public String getObjectType() {
@@ -1243,13 +1243,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Name of the object affected by the action.
+     * The name of the object affected by the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
-     * Name of the object affected by the action.
+     * The name of the object affected by the action.
      * @return the value
      **/
     public String getObjectName() {
@@ -1257,13 +1257,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Schema name of object affected but the action.
+     * The schema name of the object affected by the action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
     private final String objectOwner;
 
     /**
-     * Schema name of object affected but the action.
+     * The schema name of the object affected by the action.
      * @return the value
      **/
     public String getObjectOwner() {
@@ -1271,13 +1271,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Name of the host machine from which the session was spawned.
+     * The name of the host machine from which the session was spawned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientHostname")
     private final String clientHostname;
 
     /**
-     * Name of the host machine from which the session was spawned.
+     * The name of the host machine from which the session was spawned.
      * @return the value
      **/
     public String getClientHostname() {
@@ -1285,13 +1285,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * IP address of the host from which the session was spawned.
+     * The IP address of the host machine from which the session was spawned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientIp")
     private final String clientIp;
 
     /**
-     * IP address of the host from which the session was spawned.
+     * The IP address of the host machine from which the session was spawned.
      * @return the value
      **/
     public String getClientIp() {
@@ -1500,7 +1500,7 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Type of auditing.
+     * The type of the auditing.
      **/
     public enum AuditType {
         Standard("STANDARD"),
@@ -1554,13 +1554,13 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * Type of auditing.
+     * The type of the auditing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditType")
     private final AuditType auditType;
 
     /**
-     * Type of auditing.
+     * The type of the auditing.
      * @return the value
      **/
     public AuditType getAuditType() {

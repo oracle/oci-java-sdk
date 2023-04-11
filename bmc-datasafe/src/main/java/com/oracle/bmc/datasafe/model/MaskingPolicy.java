@@ -273,7 +273,7 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
         /**
          * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
          * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
-         * of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the
+         * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
          * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
          *
          **/
@@ -283,7 +283,7 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
         /**
          * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
          * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
-         * of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the
+         * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
          * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
          *
          * @param parallelDegree the value to set
@@ -297,7 +297,8 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
         /**
          * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
          * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-         * attribute is used.
+         * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+         * recompile manually using UTL_RECOMP package.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recompile")
@@ -306,7 +307,8 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
         /**
          * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
          * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-         * attribute is used.
+         * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+         * recompile manually using UTL_RECOMP package.
          *
          * @param recompile the value to set
          * @return this builder
@@ -681,7 +683,7 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
     /**
      * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
      * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
-     * of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the
+     * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
      * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      *
      **/
@@ -691,7 +693,7 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
     /**
      * Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
      * 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
-     * of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the
+     * of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
      * Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      *
      * @return the value
@@ -703,7 +705,8 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
     /**
      * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
      * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-     * attribute is used.
+     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+     * recompile manually using UTL_RECOMP package.
      *
      **/
     public enum Recompile {
@@ -755,7 +758,8 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
     /**
      * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
      * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-     * attribute is used.
+     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+     * recompile manually using UTL_RECOMP package.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recompile")
@@ -764,7 +768,8 @@ public final class MaskingPolicy extends com.oracle.bmc.http.internal.Explicitly
     /**
      * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
      * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-     * attribute is used.
+     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+     * recompile manually using UTL_RECOMP package.
      *
      * @return the value
      **/
