@@ -22,11 +22,13 @@ package com.oracle.bmc.datasafe.model;
 public final class AuditPolicyDimensions
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"auditPolicyCategory", "auditPolicyName"})
-    public AuditPolicyDimensions(AuditPolicyCategory auditPolicyCategory, String auditPolicyName) {
+    @java.beans.ConstructorProperties({"auditPolicyCategory", "auditPolicyName", "targetId"})
+    public AuditPolicyDimensions(
+            AuditPolicyCategory auditPolicyCategory, String auditPolicyName, String targetId) {
         super();
         this.auditPolicyCategory = auditPolicyCategory;
         this.auditPolicyName = auditPolicyName;
+        this.targetId = targetId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -48,14 +50,14 @@ public final class AuditPolicyDimensions
             return this;
         }
         /**
-         * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         * The name of the audit policy. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
         private String auditPolicyName;
 
         /**
-         * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         * The name of the audit policy. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
          *
          * @param auditPolicyName the value to set
          * @return this builder
@@ -65,13 +67,30 @@ public final class AuditPolicyDimensions
             this.__explicitlySet__.add("auditPolicyName");
             return this;
         }
+        /**
+         * The OCID of the target database for which the audit policy will be created.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetId")
+        private String targetId;
+
+        /**
+         * The OCID of the target database for which the audit policy will be created.
+         * @param targetId the value to set
+         * @return this builder
+         **/
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            this.__explicitlySet__.add("targetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditPolicyDimensions build() {
             AuditPolicyDimensions model =
-                    new AuditPolicyDimensions(this.auditPolicyCategory, this.auditPolicyName);
+                    new AuditPolicyDimensions(
+                            this.auditPolicyCategory, this.auditPolicyName, this.targetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +104,9 @@ public final class AuditPolicyDimensions
             }
             if (model.wasPropertyExplicitlySet("auditPolicyName")) {
                 this.auditPolicyName(model.getAuditPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
             }
             return this;
         }
@@ -116,19 +138,33 @@ public final class AuditPolicyDimensions
     }
 
     /**
-     * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+     * The name of the audit policy. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
     private final String auditPolicyName;
 
     /**
-     * Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+     * The name of the audit policy. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      *
      * @return the value
      **/
     public String getAuditPolicyName() {
         return auditPolicyName;
+    }
+
+    /**
+     * The OCID of the target database for which the audit policy will be created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetId")
+    private final String targetId;
+
+    /**
+     * The OCID of the target database for which the audit policy will be created.
+     * @return the value
+     **/
+    public String getTargetId() {
+        return targetId;
     }
 
     @Override
@@ -147,6 +183,7 @@ public final class AuditPolicyDimensions
         sb.append("super=").append(super.toString());
         sb.append("auditPolicyCategory=").append(String.valueOf(this.auditPolicyCategory));
         sb.append(", auditPolicyName=").append(String.valueOf(this.auditPolicyName));
+        sb.append(", targetId=").append(String.valueOf(this.targetId));
         sb.append(")");
         return sb.toString();
     }
@@ -163,6 +200,7 @@ public final class AuditPolicyDimensions
         AuditPolicyDimensions other = (AuditPolicyDimensions) o;
         return java.util.Objects.equals(this.auditPolicyCategory, other.auditPolicyCategory)
                 && java.util.Objects.equals(this.auditPolicyName, other.auditPolicyName)
+                && java.util.Objects.equals(this.targetId, other.targetId)
                 && super.equals(other);
     }
 
@@ -178,6 +216,7 @@ public final class AuditPolicyDimensions
         result =
                 (result * PRIME)
                         + (this.auditPolicyName == null ? 43 : this.auditPolicyName.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for the report schedule.
+ * The details of the report schedule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public final class ScheduleReportDetails
             return this;
         }
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          * <p>
          * Allowed version strings - "v1"
@@ -82,7 +82,7 @@ public final class ScheduleReportDetails
         private String schedule;
 
         /**
-         * Schedule to generate the report periodically in the specified format:
+         * The schedule to generate the report periodically in the specified format:
          * <version-string>;<version-specific-schedule>
          * <p>
          * Allowed version strings - "v1"
@@ -106,13 +106,13 @@ public final class ScheduleReportDetails
             return this;
         }
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies if the report will be in Excel or PDF format
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies if the report will be in Excel or PDF format
          * @param mimeType the value to set
          * @return this builder
          **/
@@ -122,7 +122,7 @@ public final class ScheduleReportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+         * The OCID of the compartment
          * in which the resource should be created.
          *
          **/
@@ -130,7 +130,7 @@ public final class ScheduleReportDetails
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+         * The OCID of the compartment
          * in which the resource should be created.
          *
          * @param compartmentId the value to set
@@ -215,7 +215,7 @@ public final class ScheduleReportDetails
     }
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      * <p>
      * Allowed version strings - "v1"
@@ -235,7 +235,7 @@ public final class ScheduleReportDetails
     private final String schedule;
 
     /**
-     * Schedule to generate the report periodically in the specified format:
+     * The schedule to generate the report periodically in the specified format:
      * <version-string>;<version-specific-schedule>
      * <p>
      * Allowed version strings - "v1"
@@ -257,7 +257,7 @@ public final class ScheduleReportDetails
     }
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies if the report will be in Excel or PDF format
      **/
     public enum MimeType {
         Pdf("PDF"),
@@ -292,13 +292,13 @@ public final class ScheduleReportDetails
         }
     };
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies if the report will be in Excel or PDF format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies if the report will be in Excel or PDF format
      * @return the value
      **/
     public MimeType getMimeType() {
@@ -306,7 +306,7 @@ public final class ScheduleReportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * The OCID of the compartment
      * in which the resource should be created.
      *
      **/
@@ -314,7 +314,7 @@ public final class ScheduleReportDetails
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * The OCID of the compartment
      * in which the resource should be created.
      *
      * @return the value

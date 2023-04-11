@@ -163,13 +163,19 @@ public final class DatabaseUpgradeHistoryEntrySummary
             return this;
         }
         /**
-         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDBVersion")
         private String targetDBVersion;
 
         /**
-         * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+         * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+         * <p>
+         * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+         *
          * @param targetDBVersion the value to set
          * @return this builder
          **/
@@ -584,13 +590,19 @@ public final class DatabaseUpgradeHistoryEntrySummary
     }
 
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDBVersion")
     private final String targetDBVersion;
 
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+     * <p>
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     *
      * @return the value
      **/
     public String getTargetDBVersion() {

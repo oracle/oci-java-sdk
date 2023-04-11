@@ -85,6 +85,17 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return severity;
     }
     /**
+     * An optional filter to return only findings containing the specified reference.
+     */
+    private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references;
+
+    /**
+     * An optional filter to return only findings containing the specified reference.
+     */
+    public com.oracle.bmc.datasafe.model.SecurityAssessmentReferences getReferences() {
+        return references;
+    }
+    /**
      * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
@@ -245,6 +256,22 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * An optional filter to return only findings containing the specified reference.
+         */
+        private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references = null;
+
+        /**
+         * An optional filter to return only findings containing the specified reference.
+         * @param references the value to set
+         * @return this builder instance
+         */
+        public Builder references(
+                com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references) {
+            this.references = references;
+            return this;
+        }
+
+        /**
          * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
@@ -362,6 +389,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             securityAssessmentId(o.getSecurityAssessmentId());
             opcRequestId(o.getOpcRequestId());
             severity(o.getSeverity());
+            references(o.getReferences());
             limit(o.getLimit());
             page(o.getPage());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
@@ -402,13 +430,14 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.securityAssessmentId = securityAssessmentId;
             request.opcRequestId = opcRequestId;
             request.severity = severity;
+            request.references = references;
             request.limit = limit;
             request.page = page;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
             request.findingKey = findingKey;
             return request;
-            // new ListFindingsRequest(securityAssessmentId, opcRequestId, severity, limit, page, compartmentIdInSubtree, accessLevel, findingKey);
+            // new ListFindingsRequest(securityAssessmentId, opcRequestId, severity, references, limit, page, compartmentIdInSubtree, accessLevel, findingKey);
         }
     }
 
@@ -421,6 +450,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .securityAssessmentId(securityAssessmentId)
                 .opcRequestId(opcRequestId)
                 .severity(severity)
+                .references(references)
                 .limit(limit)
                 .page(page)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
@@ -444,6 +474,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",securityAssessmentId=").append(String.valueOf(this.securityAssessmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",severity=").append(String.valueOf(this.severity));
+        sb.append(",references=").append(String.valueOf(this.references));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
@@ -467,6 +498,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.securityAssessmentId, other.securityAssessmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.references, other.references)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(
@@ -486,6 +518,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                                 : this.securityAssessmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result =

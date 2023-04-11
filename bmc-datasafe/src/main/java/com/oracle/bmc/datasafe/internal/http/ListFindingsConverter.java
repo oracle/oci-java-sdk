@@ -49,6 +49,14 @@ public class ListFindingsConverter {
                                     request.getSeverity().getValue()));
         }
 
+        if (request.getReferences() != null) {
+            target =
+                    target.queryParam(
+                            "references",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getReferences().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

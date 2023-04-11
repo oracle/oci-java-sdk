@@ -28,13 +28,13 @@ public final class ScheduleAuditReportDetails extends ReportDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
         private Integer rowLimit;
 
         /**
-         * Specifies the limit on number of rows in report.
+         * Specifies the limit on the number of rows in the report.
          * @param rowLimit the value to set
          * @return this builder
          **/
@@ -121,13 +121,13 @@ public final class ScheduleAuditReportDetails extends ReportDetails {
     }
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
     private final Integer rowLimit;
 
     /**
-     * Specifies the limit on number of rows in report.
+     * Specifies the limit on the number of rows in the report.
      * @return the value
      **/
     public Integer getRowLimit() {

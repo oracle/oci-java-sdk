@@ -72,6 +72,30 @@ public class ListUsersConverter {
                                     request.getUserCategory()));
         }
 
+        if (request.getUserRole() != null) {
+            target =
+                    target.queryParam(
+                            "userRole",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getUserRole()));
+        }
+
+        if (request.getUserProfile() != null) {
+            target =
+                    target.queryParam(
+                            "userProfile",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getUserProfile()));
+        }
+
+        if (request.getUserType() != null) {
+            target =
+                    target.queryParam(
+                            "userType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getUserType()));
+        }
+
         if (request.getUserKey() != null) {
             target =
                     target.queryParam(

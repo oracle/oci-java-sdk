@@ -28,6 +28,7 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
         "id",
         "timeCreated",
         "timeUpdated",
+        "timeLastAssessed",
         "compartmentId",
         "displayName",
         "targetIds",
@@ -54,6 +55,7 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
             String id,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.Date timeLastAssessed,
             String compartmentId,
             String displayName,
             java.util.List<String> targetIds,
@@ -79,6 +81,7 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
         this.id = id;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeLastAssessed = timeLastAssessed;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.targetIds = targetIds;
@@ -150,6 +153,22 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
+         * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastAssessed")
+        private java.util.Date timeLastAssessed;
+
+        /**
+         * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastAssessed the value to set
+         * @return this builder
+         **/
+        public Builder timeLastAssessed(java.util.Date timeLastAssessed) {
+            this.timeLastAssessed = timeLastAssessed;
+            this.__explicitlySet__.add("timeLastAssessed");
             return this;
         }
         /**
@@ -562,6 +581,7 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
                             this.id,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.timeLastAssessed,
                             this.compartmentId,
                             this.displayName,
                             this.targetIds,
@@ -599,6 +619,9 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastAssessed")) {
+                this.timeLastAssessed(model.getTimeLastAssessed());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -718,6 +741,20 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
+    }
+
+    /**
+     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastAssessed")
+    private final java.util.Date timeLastAssessed;
+
+    /**
+     * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
+    public java.util.Date getTimeLastAssessed() {
+        return timeLastAssessed;
     }
 
     /**
@@ -1198,6 +1235,7 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeLastAssessed=").append(String.valueOf(this.timeLastAssessed));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
@@ -1237,6 +1275,7 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeLastAssessed, other.timeLastAssessed)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
@@ -1271,6 +1310,9 @@ public final class SecurityAssessment extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastAssessed == null ? 43 : this.timeLastAssessed.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

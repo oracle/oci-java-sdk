@@ -60,7 +60,9 @@ public final class AutonomousVmClusterSummary
         "availableAutonomousDataStorageSizeInTBs",
         "scanListenerPortTls",
         "scanListenerPortNonTls",
-        "isMtlsEnabled"
+        "isMtlsEnabled",
+        "timeDatabaseSslCertificateExpires",
+        "timeOrdsCertificateExpires"
     })
     public AutonomousVmClusterSummary(
             String id,
@@ -99,7 +101,9 @@ public final class AutonomousVmClusterSummary
             Double availableAutonomousDataStorageSizeInTBs,
             Integer scanListenerPortTls,
             Integer scanListenerPortNonTls,
-            Boolean isMtlsEnabled) {
+            Boolean isMtlsEnabled,
+            java.util.Date timeDatabaseSslCertificateExpires,
+            java.util.Date timeOrdsCertificateExpires) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -138,6 +142,8 @@ public final class AutonomousVmClusterSummary
         this.scanListenerPortTls = scanListenerPortTls;
         this.scanListenerPortNonTls = scanListenerPortNonTls;
         this.isMtlsEnabled = isMtlsEnabled;
+        this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+        this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -321,13 +327,15 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The compute model of the Autonomous VM Cluster.
+         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster.
+         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         *
          * @param computeModel the value to set
          * @return this builder
          **/
@@ -385,13 +393,13 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * The amount of memory (in GBs) enabled per each OCPU core.
+         * The amount of memory (in GBs) to be enabled per each CPU core.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per each OCPU core.
+         * The amount of memory (in GBs) to be enabled per each CPU core.
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
          **/
@@ -653,13 +661,19 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         * For Autonomous Databases on Dedicated Exadata Infrastructure:
+         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Integer reclaimableCpus;
 
         /**
-         * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+         * For Autonomous Databases on Dedicated Exadata Infrastructure:
+         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         *
          * @param reclaimableCpus the value to set
          * @return this builder
          **/
@@ -749,6 +763,39 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("isMtlsEnabled");
             return this;
         }
+        /**
+         * The date and time of Database SSL certificate expiration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
+        private java.util.Date timeDatabaseSslCertificateExpires;
+
+        /**
+         * The date and time of Database SSL certificate expiration.
+         * @param timeDatabaseSslCertificateExpires the value to set
+         * @return this builder
+         **/
+        public Builder timeDatabaseSslCertificateExpires(
+                java.util.Date timeDatabaseSslCertificateExpires) {
+            this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            this.__explicitlySet__.add("timeDatabaseSslCertificateExpires");
+            return this;
+        }
+        /**
+         * The date and time of ORDS certificate expiration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOrdsCertificateExpires")
+        private java.util.Date timeOrdsCertificateExpires;
+
+        /**
+         * The date and time of ORDS certificate expiration.
+         * @param timeOrdsCertificateExpires the value to set
+         * @return this builder
+         **/
+        public Builder timeOrdsCertificateExpires(java.util.Date timeOrdsCertificateExpires) {
+            this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+            this.__explicitlySet__.add("timeOrdsCertificateExpires");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -792,7 +839,9 @@ public final class AutonomousVmClusterSummary
                             this.availableAutonomousDataStorageSizeInTBs,
                             this.scanListenerPortTls,
                             this.scanListenerPortNonTls,
-                            this.isMtlsEnabled);
+                            this.isMtlsEnabled,
+                            this.timeDatabaseSslCertificateExpires,
+                            this.timeOrdsCertificateExpires);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -912,6 +961,13 @@ public final class AutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("isMtlsEnabled")) {
                 this.isMtlsEnabled(model.getIsMtlsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("timeDatabaseSslCertificateExpires")) {
+                this.timeDatabaseSslCertificateExpires(
+                        model.getTimeDatabaseSslCertificateExpires());
+            }
+            if (model.wasPropertyExplicitlySet("timeOrdsCertificateExpires")) {
+                this.timeOrdsCertificateExpires(model.getTimeOrdsCertificateExpires());
             }
             return this;
         }
@@ -1138,7 +1194,8 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     *
      **/
     public enum ComputeModel {
         Ecpu("ECPU"),
@@ -1186,13 +1243,15 @@ public final class AutonomousVmClusterSummary
         }
     };
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     *
      * @return the value
      **/
     public ComputeModel getComputeModel() {
@@ -1242,13 +1301,13 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * The amount of memory (in GBs) to be enabled per each CPU core.
      * @return the value
      **/
     public Integer getMemoryPerOracleComputeUnitInGBs() {
@@ -1526,13 +1585,19 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Integer reclaimableCpus;
 
     /**
-     * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     *
      * @return the value
      **/
     public Integer getReclaimableCpus() {
@@ -1609,6 +1674,34 @@ public final class AutonomousVmClusterSummary
         return isMtlsEnabled;
     }
 
+    /**
+     * The date and time of Database SSL certificate expiration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
+    private final java.util.Date timeDatabaseSslCertificateExpires;
+
+    /**
+     * The date and time of Database SSL certificate expiration.
+     * @return the value
+     **/
+    public java.util.Date getTimeDatabaseSslCertificateExpires() {
+        return timeDatabaseSslCertificateExpires;
+    }
+
+    /**
+     * The date and time of ORDS certificate expiration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOrdsCertificateExpires")
+    private final java.util.Date timeOrdsCertificateExpires;
+
+    /**
+     * The date and time of ORDS certificate expiration.
+     * @return the value
+     **/
+    public java.util.Date getTimeOrdsCertificateExpires() {
+        return timeOrdsCertificateExpires;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1667,6 +1760,10 @@ public final class AutonomousVmClusterSummary
         sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
         sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
         sb.append(", isMtlsEnabled=").append(String.valueOf(this.isMtlsEnabled));
+        sb.append(", timeDatabaseSslCertificateExpires=")
+                .append(String.valueOf(this.timeDatabaseSslCertificateExpires));
+        sb.append(", timeOrdsCertificateExpires=")
+                .append(String.valueOf(this.timeOrdsCertificateExpires));
         sb.append(")");
         return sb.toString();
     }
@@ -1728,6 +1825,11 @@ public final class AutonomousVmClusterSummary
                 && java.util.Objects.equals(
                         this.scanListenerPortNonTls, other.scanListenerPortNonTls)
                 && java.util.Objects.equals(this.isMtlsEnabled, other.isMtlsEnabled)
+                && java.util.Objects.equals(
+                        this.timeDatabaseSslCertificateExpires,
+                        other.timeDatabaseSslCertificateExpires)
+                && java.util.Objects.equals(
+                        this.timeOrdsCertificateExpires, other.timeOrdsCertificateExpires)
                 && super.equals(other);
     }
 
@@ -1856,6 +1958,16 @@ public final class AutonomousVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.isMtlsEnabled == null ? 43 : this.isMtlsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDatabaseSslCertificateExpires == null
+                                ? 43
+                                : this.timeDatabaseSslCertificateExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOrdsCertificateExpires == null
+                                ? 43
+                                : this.timeOrdsCertificateExpires.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
