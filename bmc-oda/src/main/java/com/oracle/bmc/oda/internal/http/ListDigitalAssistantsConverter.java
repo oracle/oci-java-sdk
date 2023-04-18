@@ -40,12 +40,12 @@ public class ListDigitalAssistantsConverter {
                                         request.getOdaInstanceId()))
                         .path("digitalAssistants");
 
-        if (request.getDigitalAssistantId() != null) {
+        if (request.getId() != null) {
             target =
                     target.queryParam(
-                            "digitalAssistantId",
+                            "id",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDigitalAssistantId()));
+                                    request.getId()));
         }
 
         if (request.getCategory() != null) {

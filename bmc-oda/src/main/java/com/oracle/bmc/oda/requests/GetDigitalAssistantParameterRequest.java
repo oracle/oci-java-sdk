@@ -46,6 +46,23 @@ public class GetDigitalAssistantParameterRequest
         return parameterName;
     }
     /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+     * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+     *
+     */
+    private String ifNoneMatch;
+
+    /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+     * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+     *
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
@@ -110,6 +127,27 @@ public class GetDigitalAssistantParameterRequest
         }
 
         /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+         * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+         *
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+         * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
@@ -155,6 +193,7 @@ public class GetDigitalAssistantParameterRequest
             odaInstanceId(o.getOdaInstanceId());
             digitalAssistantId(o.getDigitalAssistantId());
             parameterName(o.getParameterName());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -191,9 +230,10 @@ public class GetDigitalAssistantParameterRequest
             request.odaInstanceId = odaInstanceId;
             request.digitalAssistantId = digitalAssistantId;
             request.parameterName = parameterName;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetDigitalAssistantParameterRequest(odaInstanceId, digitalAssistantId, parameterName, opcRequestId);
+            // new GetDigitalAssistantParameterRequest(odaInstanceId, digitalAssistantId, parameterName, ifNoneMatch, opcRequestId);
         }
     }
 
@@ -206,6 +246,7 @@ public class GetDigitalAssistantParameterRequest
                 .odaInstanceId(odaInstanceId)
                 .digitalAssistantId(digitalAssistantId)
                 .parameterName(parameterName)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -225,6 +266,7 @@ public class GetDigitalAssistantParameterRequest
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",digitalAssistantId=").append(String.valueOf(this.digitalAssistantId));
         sb.append(",parameterName=").append(String.valueOf(this.parameterName));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -244,6 +286,7 @@ public class GetDigitalAssistantParameterRequest
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.digitalAssistantId, other.digitalAssistantId)
                 && java.util.Objects.equals(this.parameterName, other.parameterName)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -262,6 +305,7 @@ public class GetDigitalAssistantParameterRequest
         result =
                 (result * PRIME)
                         + (this.parameterName == null ? 43 : this.parameterName.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

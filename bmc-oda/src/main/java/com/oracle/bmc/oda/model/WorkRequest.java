@@ -23,6 +23,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         "id",
         "compartmentId",
         "odaInstanceId",
+        "resourceId",
         "requestAction",
         "status",
         "statusMessage",
@@ -36,6 +37,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             String id,
             String compartmentId,
             String odaInstanceId,
+            String resourceId,
             RequestAction requestAction,
             Status status,
             String statusMessage,
@@ -48,6 +50,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         this.id = id;
         this.compartmentId = compartmentId;
         this.odaInstanceId = odaInstanceId;
+        this.resourceId = resourceId;
         this.requestAction = requestAction;
         this.status = status;
         this.statusMessage = statusMessage;
@@ -106,6 +109,22 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder odaInstanceId(String odaInstanceId) {
             this.odaInstanceId = odaInstanceId;
             this.__explicitlySet__.add("odaInstanceId");
+            return this;
+        }
+        /**
+         * The identifier of the resource to which this work request pertains.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+        private String resourceId;
+
+        /**
+         * The identifier of the resource to which this work request pertains.
+         * @param resourceId the value to set
+         * @return this builder
+         **/
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            this.__explicitlySet__.add("resourceId");
             return this;
         }
         /**
@@ -262,6 +281,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.id,
                             this.compartmentId,
                             this.odaInstanceId,
+                            this.resourceId,
                             this.requestAction,
                             this.status,
                             this.statusMessage,
@@ -286,6 +306,9 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("odaInstanceId")) {
                 this.odaInstanceId(model.getOdaInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
             }
             if (model.wasPropertyExplicitlySet("requestAction")) {
                 this.requestAction(model.getRequestAction());
@@ -369,6 +392,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * The identifier of the resource to which this work request pertains.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+    private final String resourceId;
+
+    /**
+     * The identifier of the resource to which this work request pertains.
+     * @return the value
+     **/
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    /**
      * The type of the operation that's associated with the work request.
      **/
     public enum RequestAction {
@@ -404,6 +441,14 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         ExtendDigitalAssistant("EXTEND_DIGITAL_ASSISTANT"),
         VersionDigitalAssistant("VERSION_DIGITAL_ASSISTANT"),
         ExportDigitalAssistant("EXPORT_DIGITAL_ASSISTANT"),
+        CreateOdaPrivateEndpoint("CREATE_ODA_PRIVATE_ENDPOINT"),
+        DeleteOdaPrivateEndpoint("DELETE_ODA_PRIVATE_ENDPOINT"),
+        UpdateOdaPrivateEndpoint("UPDATE_ODA_PRIVATE_ENDPOINT"),
+        ChangeOdaPrivateEndpointCompartment("CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT"),
+        CreateOdaPrivateEndpointScanProxy("CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"),
+        DeleteOdaPrivateEndpointScanProxy("DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"),
+        CreateOdaPrivateEndpointAttachment("CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"),
+        DeleteOdaPrivateEndpointAttachment("DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -642,6 +687,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", requestAction=").append(String.valueOf(this.requestAction));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusMessage=").append(String.valueOf(this.statusMessage));
@@ -667,6 +713,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.requestAction, other.requestAction)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusMessage, other.statusMessage)
@@ -689,6 +736,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result =
                 (result * PRIME)
                         + (this.requestAction == null ? 43 : this.requestAction.hashCode());

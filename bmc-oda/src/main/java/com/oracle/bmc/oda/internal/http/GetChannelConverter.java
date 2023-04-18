@@ -48,6 +48,10 @@ public class GetChannelConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
+        if (request.getIfNoneMatch() != null) {
+            ib.header("if-none-match", request.getIfNoneMatch());
+        }
+
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
         }

@@ -438,6 +438,66 @@ public class ManagementAsyncClient implements ManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeOdaPrivateEndpointCompartmentResponse>
+            changeOdaPrivateEndpointCompartment(
+                    ChangeOdaPrivateEndpointCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOdaPrivateEndpointCompartmentRequest,
+                                    ChangeOdaPrivateEndpointCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeOdaPrivateEndpointCompartment");
+        final ChangeOdaPrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeOdaPrivateEndpointCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOdaPrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ChangeOdaPrivateEndpointCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/ChangeOdaPrivateEndpointCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeOdaPrivateEndpointCompartmentResponse>
+                transformer =
+                        ChangeOdaPrivateEndpointCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeOdaPrivateEndpointCompartmentRequest,
+                        ChangeOdaPrivateEndpointCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeOdaPrivateEndpointCompartmentRequest,
+                                ChangeOdaPrivateEndpointCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeOdaPrivateEndpointCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeOdaPrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeOdaPrivateEndpointCompartmentRequest,
+                    ChangeOdaPrivateEndpointCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ConfigureDigitalAssistantParametersResponse>
             configureDigitalAssistantParameters(
                     ConfigureDigitalAssistantParametersRequest request,
@@ -451,7 +511,6 @@ public class ManagementAsyncClient implements ManagementAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ConfigureDigitalAssistantParametersConverter.fromRequest(
                         client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Management",
@@ -645,6 +704,178 @@ public class ManagementAsyncClient implements ManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateDigitalAssistantRequest, CreateDigitalAssistantResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOdaPrivateEndpointResponse> createOdaPrivateEndpoint(
+            CreateOdaPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateOdaPrivateEndpointRequest, CreateOdaPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async createOdaPrivateEndpoint");
+        final CreateOdaPrivateEndpointRequest interceptedRequest =
+                CreateOdaPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOdaPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateOdaPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateOdaPrivateEndpointResponse>
+                transformer =
+                        CreateOdaPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOdaPrivateEndpointRequest, CreateOdaPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOdaPrivateEndpointRequest, CreateOdaPrivateEndpointResponse>,
+                        java.util.concurrent.Future<CreateOdaPrivateEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOdaPrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOdaPrivateEndpointRequest, CreateOdaPrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOdaPrivateEndpointAttachmentResponse>
+            createOdaPrivateEndpointAttachment(
+                    CreateOdaPrivateEndpointAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOdaPrivateEndpointAttachmentRequest,
+                                    CreateOdaPrivateEndpointAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async createOdaPrivateEndpointAttachment");
+        final CreateOdaPrivateEndpointAttachmentRequest interceptedRequest =
+                CreateOdaPrivateEndpointAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOdaPrivateEndpointAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateOdaPrivateEndpointAttachment",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateOdaPrivateEndpointAttachmentResponse>
+                transformer =
+                        CreateOdaPrivateEndpointAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOdaPrivateEndpointAttachmentRequest,
+                        CreateOdaPrivateEndpointAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOdaPrivateEndpointAttachmentRequest,
+                                CreateOdaPrivateEndpointAttachmentResponse>,
+                        java.util.concurrent.Future<CreateOdaPrivateEndpointAttachmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOdaPrivateEndpointAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOdaPrivateEndpointAttachmentRequest,
+                    CreateOdaPrivateEndpointAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOdaPrivateEndpointScanProxyResponse>
+            createOdaPrivateEndpointScanProxy(
+                    CreateOdaPrivateEndpointScanProxyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOdaPrivateEndpointScanProxyRequest,
+                                    CreateOdaPrivateEndpointScanProxyResponse>
+                            handler) {
+        LOG.trace("Called async createOdaPrivateEndpointScanProxy");
+        final CreateOdaPrivateEndpointScanProxyRequest interceptedRequest =
+                CreateOdaPrivateEndpointScanProxyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOdaPrivateEndpointScanProxyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CreateOdaPrivateEndpointScanProxy",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateOdaPrivateEndpointScanProxyResponse>
+                transformer =
+                        CreateOdaPrivateEndpointScanProxyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOdaPrivateEndpointScanProxyRequest,
+                        CreateOdaPrivateEndpointScanProxyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOdaPrivateEndpointScanProxyRequest,
+                                CreateOdaPrivateEndpointScanProxyResponse>,
+                        java.util.concurrent.Future<CreateOdaPrivateEndpointScanProxyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOdaPrivateEndpointScanProxyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOdaPrivateEndpointScanProxyRequest,
+                    CreateOdaPrivateEndpointScanProxyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -942,6 +1173,160 @@ public class ManagementAsyncClient implements ManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteDigitalAssistantRequest, DeleteDigitalAssistantResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOdaPrivateEndpointResponse> deleteOdaPrivateEndpoint(
+            DeleteOdaPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOdaPrivateEndpointRequest, DeleteOdaPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async deleteOdaPrivateEndpoint");
+        final DeleteOdaPrivateEndpointRequest interceptedRequest =
+                DeleteOdaPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOdaPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteOdaPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/DeleteOdaPrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteOdaPrivateEndpointResponse>
+                transformer =
+                        DeleteOdaPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOdaPrivateEndpointRequest, DeleteOdaPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOdaPrivateEndpointRequest, DeleteOdaPrivateEndpointResponse>,
+                        java.util.concurrent.Future<DeleteOdaPrivateEndpointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOdaPrivateEndpointRequest, DeleteOdaPrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOdaPrivateEndpointAttachmentResponse>
+            deleteOdaPrivateEndpointAttachment(
+                    DeleteOdaPrivateEndpointAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOdaPrivateEndpointAttachmentRequest,
+                                    DeleteOdaPrivateEndpointAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async deleteOdaPrivateEndpointAttachment");
+        final DeleteOdaPrivateEndpointAttachmentRequest interceptedRequest =
+                DeleteOdaPrivateEndpointAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOdaPrivateEndpointAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteOdaPrivateEndpointAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointAttachment/DeleteOdaPrivateEndpointAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteOdaPrivateEndpointAttachmentResponse>
+                transformer =
+                        DeleteOdaPrivateEndpointAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOdaPrivateEndpointAttachmentRequest,
+                        DeleteOdaPrivateEndpointAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOdaPrivateEndpointAttachmentRequest,
+                                DeleteOdaPrivateEndpointAttachmentResponse>,
+                        java.util.concurrent.Future<DeleteOdaPrivateEndpointAttachmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOdaPrivateEndpointAttachmentRequest,
+                    DeleteOdaPrivateEndpointAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOdaPrivateEndpointScanProxyResponse>
+            deleteOdaPrivateEndpointScanProxy(
+                    DeleteOdaPrivateEndpointScanProxyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOdaPrivateEndpointScanProxyRequest,
+                                    DeleteOdaPrivateEndpointScanProxyResponse>
+                            handler) {
+        LOG.trace("Called async deleteOdaPrivateEndpointScanProxy");
+        final DeleteOdaPrivateEndpointScanProxyRequest interceptedRequest =
+                DeleteOdaPrivateEndpointScanProxyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOdaPrivateEndpointScanProxyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "DeleteOdaPrivateEndpointScanProxy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointScanProxy/DeleteOdaPrivateEndpointScanProxy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteOdaPrivateEndpointScanProxyResponse>
+                transformer =
+                        DeleteOdaPrivateEndpointScanProxyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOdaPrivateEndpointScanProxyRequest,
+                        DeleteOdaPrivateEndpointScanProxyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOdaPrivateEndpointScanProxyRequest,
+                                DeleteOdaPrivateEndpointScanProxyResponse>,
+                        java.util.concurrent.Future<DeleteOdaPrivateEndpointScanProxyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOdaPrivateEndpointScanProxyRequest,
+                    DeleteOdaPrivateEndpointScanProxyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1383,6 +1768,158 @@ public class ManagementAsyncClient implements ManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOdaPrivateEndpointResponse> getOdaPrivateEndpoint(
+            GetOdaPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async getOdaPrivateEndpoint");
+        final GetOdaPrivateEndpointRequest interceptedRequest =
+                GetOdaPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOdaPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetOdaPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/GetOdaPrivateEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetOdaPrivateEndpointResponse>
+                transformer =
+                        GetOdaPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>,
+                        java.util.concurrent.Future<GetOdaPrivateEndpointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOdaPrivateEndpointAttachmentResponse>
+            getOdaPrivateEndpointAttachment(
+                    GetOdaPrivateEndpointAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOdaPrivateEndpointAttachmentRequest,
+                                    GetOdaPrivateEndpointAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async getOdaPrivateEndpointAttachment");
+        final GetOdaPrivateEndpointAttachmentRequest interceptedRequest =
+                GetOdaPrivateEndpointAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOdaPrivateEndpointAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetOdaPrivateEndpointAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointAttachment/GetOdaPrivateEndpointAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOdaPrivateEndpointAttachmentResponse>
+                transformer =
+                        GetOdaPrivateEndpointAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOdaPrivateEndpointAttachmentRequest,
+                        GetOdaPrivateEndpointAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOdaPrivateEndpointAttachmentRequest,
+                                GetOdaPrivateEndpointAttachmentResponse>,
+                        java.util.concurrent.Future<GetOdaPrivateEndpointAttachmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOdaPrivateEndpointAttachmentRequest,
+                    GetOdaPrivateEndpointAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOdaPrivateEndpointScanProxyResponse>
+            getOdaPrivateEndpointScanProxy(
+                    GetOdaPrivateEndpointScanProxyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOdaPrivateEndpointScanProxyRequest,
+                                    GetOdaPrivateEndpointScanProxyResponse>
+                            handler) {
+        LOG.trace("Called async getOdaPrivateEndpointScanProxy");
+        final GetOdaPrivateEndpointScanProxyRequest interceptedRequest =
+                GetOdaPrivateEndpointScanProxyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOdaPrivateEndpointScanProxyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "GetOdaPrivateEndpointScanProxy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointScanProxy/GetOdaPrivateEndpointScanProxy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOdaPrivateEndpointScanProxyResponse>
+                transformer =
+                        GetOdaPrivateEndpointScanProxyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOdaPrivateEndpointScanProxyRequest,
+                        GetOdaPrivateEndpointScanProxyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOdaPrivateEndpointScanProxyRequest,
+                                GetOdaPrivateEndpointScanProxyResponse>,
+                        java.util.concurrent.Future<GetOdaPrivateEndpointScanProxyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOdaPrivateEndpointScanProxyRequest, GetOdaPrivateEndpointScanProxyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSkillResponse> getSkill(
             GetSkillRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSkillRequest, GetSkillResponse>
@@ -1756,6 +2293,160 @@ public class ManagementAsyncClient implements ManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOdaPrivateEndpointAttachmentsResponse>
+            listOdaPrivateEndpointAttachments(
+                    ListOdaPrivateEndpointAttachmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOdaPrivateEndpointAttachmentsRequest,
+                                    ListOdaPrivateEndpointAttachmentsResponse>
+                            handler) {
+        LOG.trace("Called async listOdaPrivateEndpointAttachments");
+        final ListOdaPrivateEndpointAttachmentsRequest interceptedRequest =
+                ListOdaPrivateEndpointAttachmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOdaPrivateEndpointAttachmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListOdaPrivateEndpointAttachments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointAttachment/ListOdaPrivateEndpointAttachments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOdaPrivateEndpointAttachmentsResponse>
+                transformer =
+                        ListOdaPrivateEndpointAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOdaPrivateEndpointAttachmentsRequest,
+                        ListOdaPrivateEndpointAttachmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOdaPrivateEndpointAttachmentsRequest,
+                                ListOdaPrivateEndpointAttachmentsResponse>,
+                        java.util.concurrent.Future<ListOdaPrivateEndpointAttachmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOdaPrivateEndpointAttachmentsRequest,
+                    ListOdaPrivateEndpointAttachmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOdaPrivateEndpointScanProxiesResponse>
+            listOdaPrivateEndpointScanProxies(
+                    ListOdaPrivateEndpointScanProxiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOdaPrivateEndpointScanProxiesRequest,
+                                    ListOdaPrivateEndpointScanProxiesResponse>
+                            handler) {
+        LOG.trace("Called async listOdaPrivateEndpointScanProxies");
+        final ListOdaPrivateEndpointScanProxiesRequest interceptedRequest =
+                ListOdaPrivateEndpointScanProxiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOdaPrivateEndpointScanProxiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListOdaPrivateEndpointScanProxies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointScanProxy/ListOdaPrivateEndpointScanProxies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOdaPrivateEndpointScanProxiesResponse>
+                transformer =
+                        ListOdaPrivateEndpointScanProxiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOdaPrivateEndpointScanProxiesRequest,
+                        ListOdaPrivateEndpointScanProxiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOdaPrivateEndpointScanProxiesRequest,
+                                ListOdaPrivateEndpointScanProxiesResponse>,
+                        java.util.concurrent.Future<ListOdaPrivateEndpointScanProxiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOdaPrivateEndpointScanProxiesRequest,
+                    ListOdaPrivateEndpointScanProxiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOdaPrivateEndpointsResponse> listOdaPrivateEndpoints(
+            ListOdaPrivateEndpointsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>
+                    handler) {
+        LOG.trace("Called async listOdaPrivateEndpoints");
+        final ListOdaPrivateEndpointsRequest interceptedRequest =
+                ListOdaPrivateEndpointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOdaPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "ListOdaPrivateEndpoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/ListOdaPrivateEndpoints");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOdaPrivateEndpointsResponse>
+                transformer =
+                        ListOdaPrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>,
+                        java.util.concurrent.Future<ListOdaPrivateEndpointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSkillParametersResponse> listSkillParameters(
             ListSkillParametersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1994,7 +2685,6 @@ public class ManagementAsyncClient implements ManagementAsync {
                 RotateChannelKeysConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RotateChannelKeysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Management",
@@ -2040,7 +2730,6 @@ public class ManagementAsyncClient implements ManagementAsync {
                 StartChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StartChannelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Management",
@@ -2085,7 +2774,6 @@ public class ManagementAsyncClient implements ManagementAsync {
                 StopChannelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 StopChannelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Management",
@@ -2323,6 +3011,59 @@ public class ManagementAsyncClient implements ManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateDigitalAssistantParameterRequest,
                     UpdateDigitalAssistantParameterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOdaPrivateEndpointResponse> updateOdaPrivateEndpoint(
+            UpdateOdaPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOdaPrivateEndpointRequest, UpdateOdaPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async updateOdaPrivateEndpoint");
+        final UpdateOdaPrivateEndpointRequest interceptedRequest =
+                UpdateOdaPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOdaPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "UpdateOdaPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/UpdateOdaPrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateOdaPrivateEndpointResponse>
+                transformer =
+                        UpdateOdaPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateOdaPrivateEndpointRequest, UpdateOdaPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOdaPrivateEndpointRequest, UpdateOdaPrivateEndpointResponse>,
+                        java.util.concurrent.Future<UpdateOdaPrivateEndpointResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOdaPrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOdaPrivateEndpointRequest, UpdateOdaPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

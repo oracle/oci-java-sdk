@@ -34,6 +34,23 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         return channelId;
     }
     /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+     * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+     *
+     */
+    private String ifNoneMatch;
+
+    /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+     * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+     *
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
@@ -83,6 +100,27 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+         * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+         *
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the
+         * requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+         * When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        /**
          * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
@@ -127,6 +165,7 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public Builder copy(GetChannelRequest o) {
             odaInstanceId(o.getOdaInstanceId());
             channelId(o.getChannelId());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -162,9 +201,10 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             GetChannelRequest request = new GetChannelRequest();
             request.odaInstanceId = odaInstanceId;
             request.channelId = channelId;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetChannelRequest(odaInstanceId, channelId, opcRequestId);
+            // new GetChannelRequest(odaInstanceId, channelId, ifNoneMatch, opcRequestId);
         }
     }
 
@@ -176,6 +216,7 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         return new Builder()
                 .odaInstanceId(odaInstanceId)
                 .channelId(channelId)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -194,6 +235,7 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",channelId=").append(String.valueOf(this.channelId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -212,6 +254,7 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.channelId, other.channelId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -223,6 +266,7 @@ public class GetChannelRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
         result = (result * PRIME) + (this.channelId == null ? 43 : this.channelId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -67,29 +67,6 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * A token that uniquely identifies a request so that you can retry the request if there's
-     * a timeout or server error without the risk of executing that same action again.
-     * <p>
-     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-     * conflicting operations. For example, if an instance was deleted and purged from the system,
-     * then the service might reject a retry of the original creation request.
-     *
-     */
-    private String opcRetryToken;
-
-    /**
-     * A token that uniquely identifies a request so that you can retry the request if there's
-     * a timeout or server error without the risk of executing that same action again.
-     * <p>
-     * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-     * conflicting operations. For example, if an instance was deleted and purged from the system,
-     * then the service might reject a retry of the original creation request.
-     *
-     */
-    public String getOpcRetryToken() {
-        return opcRetryToken;
-    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -171,33 +148,6 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's
-         * a timeout or server error without the risk of executing that same action again.
-         * <p>
-         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-         * conflicting operations. For example, if an instance was deleted and purged from the system,
-         * then the service might reject a retry of the original creation request.
-         *
-         */
-        private String opcRetryToken = null;
-
-        /**
-         * A token that uniquely identifies a request so that you can retry the request if there's
-         * a timeout or server error without the risk of executing that same action again.
-         * <p>
-         * Retry tokens expire after 24 hours, but they can become invalid before then if there are
-         * conflicting operations. For example, if an instance was deleted and purged from the system,
-         * then the service might reject a retry of the original creation request.
-         *
-         * @param opcRetryToken the value to set
-         * @return this builder instance
-         */
-        public Builder opcRetryToken(String opcRetryToken) {
-            this.opcRetryToken = opcRetryToken;
-            return this;
-        }
-
-        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -229,7 +179,6 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
             channelId(o.getChannelId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
-            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -266,9 +215,8 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
             request.channelId = channelId;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
-            request.opcRetryToken = opcRetryToken;
             return request;
-            // new RotateChannelKeysRequest(odaInstanceId, channelId, opcRequestId, ifMatch, opcRetryToken);
+            // new RotateChannelKeysRequest(odaInstanceId, channelId, opcRequestId, ifMatch);
         }
     }
 
@@ -281,8 +229,7 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
                 .odaInstanceId(odaInstanceId)
                 .channelId(channelId)
                 .opcRequestId(opcRequestId)
-                .ifMatch(ifMatch)
-                .opcRetryToken(opcRetryToken);
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -302,7 +249,6 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",channelId=").append(String.valueOf(this.channelId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
-        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -321,8 +267,7 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.channelId, other.channelId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -335,9 +280,6 @@ public class RotateChannelKeysRequest extends com.oracle.bmc.requests.BmcRequest
         result = (result * PRIME) + (this.channelId == null ? 43 : this.channelId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

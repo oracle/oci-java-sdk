@@ -30,7 +30,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "lifecycleState",
         "lifecycleDetails",
         "annotationFormat",
-        "lifetimeLogicalClock",
         "datasetSourceDetails",
         "datasetFormatDetails",
         "labelSet",
@@ -50,7 +49,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String annotationFormat,
-            Integer lifetimeLogicalClock,
             DatasetSourceDetails datasetSourceDetails,
             DatasetFormatDetails datasetFormatDetails,
             LabelSet labelSet,
@@ -69,7 +67,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.annotationFormat = annotationFormat;
-        this.lifetimeLogicalClock = lifetimeLogicalClock;
         this.datasetSourceDetails = datasetSourceDetails;
         this.datasetFormatDetails = datasetFormatDetails;
         this.labelSet = labelSet;
@@ -242,22 +239,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             this.__explicitlySet__.add("annotationFormat");
             return this;
         }
-        /**
-         * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lifetimeLogicalClock")
-        private Integer lifetimeLogicalClock;
-
-        /**
-         * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-         * @param lifetimeLogicalClock the value to set
-         * @return this builder
-         **/
-        public Builder lifetimeLogicalClock(Integer lifetimeLogicalClock) {
-            this.lifetimeLogicalClock = lifetimeLogicalClock;
-            this.__explicitlySet__.add("lifetimeLogicalClock");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("datasetSourceDetails")
         private DatasetSourceDetails datasetSourceDetails;
@@ -388,7 +369,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.annotationFormat,
-                            this.lifetimeLogicalClock,
                             this.datasetSourceDetails,
                             this.datasetFormatDetails,
                             this.labelSet,
@@ -431,9 +411,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("annotationFormat")) {
                 this.annotationFormat(model.getAnnotationFormat());
-            }
-            if (model.wasPropertyExplicitlySet("lifetimeLogicalClock")) {
-                this.lifetimeLogicalClock(model.getLifetimeLogicalClock());
             }
             if (model.wasPropertyExplicitlySet("datasetSourceDetails")) {
                 this.datasetSourceDetails(model.getDatasetSourceDetails());
@@ -678,20 +655,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return annotationFormat;
     }
 
-    /**
-     * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifetimeLogicalClock")
-    private final Integer lifetimeLogicalClock;
-
-    /**
-     * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-     * @return the value
-     **/
-    public Integer getLifetimeLogicalClock() {
-        return lifetimeLogicalClock;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("datasetSourceDetails")
     private final DatasetSourceDetails datasetSourceDetails;
 
@@ -811,7 +774,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", annotationFormat=").append(String.valueOf(this.annotationFormat));
-        sb.append(", lifetimeLogicalClock=").append(String.valueOf(this.lifetimeLogicalClock));
         sb.append(", datasetSourceDetails=").append(String.valueOf(this.datasetSourceDetails));
         sb.append(", datasetFormatDetails=").append(String.valueOf(this.datasetFormatDetails));
         sb.append(", labelSet=").append(String.valueOf(this.labelSet));
@@ -844,7 +806,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.annotationFormat, other.annotationFormat)
-                && java.util.Objects.equals(this.lifetimeLogicalClock, other.lifetimeLogicalClock)
                 && java.util.Objects.equals(this.datasetSourceDetails, other.datasetSourceDetails)
                 && java.util.Objects.equals(this.datasetFormatDetails, other.datasetFormatDetails)
                 && java.util.Objects.equals(this.labelSet, other.labelSet)
@@ -879,11 +840,6 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result =
                 (result * PRIME)
                         + (this.annotationFormat == null ? 43 : this.annotationFormat.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.lifetimeLogicalClock == null
-                                ? 43
-                                : this.lifetimeLogicalClock.hashCode());
         result =
                 (result * PRIME)
                         + (this.datasetSourceDetails == null

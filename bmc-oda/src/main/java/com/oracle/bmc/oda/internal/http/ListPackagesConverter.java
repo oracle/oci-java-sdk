@@ -49,6 +49,14 @@ public class ListPackagesConverter {
                                     request.getResourceType()));
         }
 
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
         if (request.getName() != null) {
             target =
                     target.queryParam(
@@ -65,12 +73,12 @@ public class ListPackagesConverter {
                                     request.getDisplayName()));
         }
 
-        if (request.getIsLatestSkillOnly() != null) {
+        if (request.getIsLatestVersionOnly() != null) {
             target =
                     target.queryParam(
-                            "isLatestSkillOnly",
+                            "isLatestVersionOnly",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getIsLatestSkillOnly()));
+                                    request.getIsLatestVersionOnly()));
         }
 
         if (request.getLimit() != null) {
