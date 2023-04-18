@@ -368,6 +368,38 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CancelBackupResponse> cancelBackup(
+            CancelBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CancelBackupRequest, CancelBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+
+        return clientCall(request, CancelBackupResponse::builder)
+                .logger(LOG, "cancelBackup")
+                .serviceDetails(
+                        "Database",
+                        "CancelBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CancelBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CancelBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelBackupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAutonomousContainerDatabaseCompartmentResponse>
             changeAutonomousContainerDatabaseCompartment(
                     ChangeAutonomousContainerDatabaseCompartmentRequest request,

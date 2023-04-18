@@ -26,6 +26,15 @@ package com.oracle.bmc.oda.model;
 public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -160,6 +169,7 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
         public UpdateTwilioChannelDetails build() {
             UpdateTwilioChannelDetails model =
                     new UpdateTwilioChannelDetails(
+                            this.name,
                             this.description,
                             this.sessionExpiryDurationInMilliseconds,
                             this.freeformTags,
@@ -178,6 +188,9 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateTwilioChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
@@ -224,6 +237,7 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
 
     @Deprecated
     public UpdateTwilioChannelDetails(
+            String name,
             String description,
             Long sessionExpiryDurationInMilliseconds,
             java.util.Map<String, String> freeformTags,
@@ -234,7 +248,7 @@ public final class UpdateTwilioChannelDetails extends UpdateChannelDetails {
             Boolean isMmsEnabled,
             String originalConnectorsUrl,
             String botId) {
-        super(description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.accountSID = accountSID;
         this.phoneNumber = phoneNumber;
         this.authToken = authToken;

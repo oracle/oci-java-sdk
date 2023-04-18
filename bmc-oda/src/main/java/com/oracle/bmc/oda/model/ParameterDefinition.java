@@ -353,6 +353,7 @@ public final class ParameterDefinition
         Uri("URI"),
         Url("URL"),
         Number("NUMBER"),
+        Boolean("BOOLEAN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

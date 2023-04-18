@@ -26,6 +26,7 @@ public final class WorkRequestSummary
         "id",
         "compartmentId",
         "odaInstanceId",
+        "resourceId",
         "requestAction",
         "status",
         "resources"
@@ -34,6 +35,7 @@ public final class WorkRequestSummary
             String id,
             String compartmentId,
             String odaInstanceId,
+            String resourceId,
             RequestAction requestAction,
             Status status,
             java.util.List<WorkRequestResource> resources) {
@@ -41,6 +43,7 @@ public final class WorkRequestSummary
         this.id = id;
         this.compartmentId = compartmentId;
         this.odaInstanceId = odaInstanceId;
+        this.resourceId = resourceId;
         this.requestAction = requestAction;
         this.status = status;
         this.resources = resources;
@@ -91,6 +94,21 @@ public final class WorkRequestSummary
         public Builder odaInstanceId(String odaInstanceId) {
             this.odaInstanceId = odaInstanceId;
             this.__explicitlySet__.add("odaInstanceId");
+            return this;
+        }
+        /** The identifier of the resource to which this work request pertains. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+        private String resourceId;
+
+        /**
+         * The identifier of the resource to which this work request pertains.
+         *
+         * @param resourceId the value to set
+         * @return this builder
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            this.__explicitlySet__.add("resourceId");
             return this;
         }
         /** The type of the operation that's associated with the work request. */
@@ -148,6 +166,7 @@ public final class WorkRequestSummary
                             this.id,
                             this.compartmentId,
                             this.odaInstanceId,
+                            this.resourceId,
                             this.requestAction,
                             this.status,
                             this.resources);
@@ -167,6 +186,9 @@ public final class WorkRequestSummary
             }
             if (model.wasPropertyExplicitlySet("odaInstanceId")) {
                 this.odaInstanceId(model.getOdaInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
             }
             if (model.wasPropertyExplicitlySet("requestAction")) {
                 this.requestAction(model.getRequestAction());
@@ -229,6 +251,19 @@ public final class WorkRequestSummary
         return odaInstanceId;
     }
 
+    /** The identifier of the resource to which this work request pertains. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+    private final String resourceId;
+
+    /**
+     * The identifier of the resource to which this work request pertains.
+     *
+     * @return the value
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
     /** The type of the operation that's associated with the work request. */
     public enum RequestAction implements com.oracle.bmc.http.internal.BmcEnum {
         CreateOdaInstance("CREATE_ODA_INSTANCE"),
@@ -262,6 +297,14 @@ public final class WorkRequestSummary
         ExtendDigitalAssistant("EXTEND_DIGITAL_ASSISTANT"),
         VersionDigitalAssistant("VERSION_DIGITAL_ASSISTANT"),
         ExportDigitalAssistant("EXPORT_DIGITAL_ASSISTANT"),
+        CreateOdaPrivateEndpoint("CREATE_ODA_PRIVATE_ENDPOINT"),
+        DeleteOdaPrivateEndpoint("DELETE_ODA_PRIVATE_ENDPOINT"),
+        UpdateOdaPrivateEndpoint("UPDATE_ODA_PRIVATE_ENDPOINT"),
+        ChangeOdaPrivateEndpointCompartment("CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT"),
+        CreateOdaPrivateEndpointScanProxy("CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"),
+        DeleteOdaPrivateEndpointScanProxy("DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"),
+        CreateOdaPrivateEndpointAttachment("CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"),
+        DeleteOdaPrivateEndpointAttachment("DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -410,6 +453,7 @@ public final class WorkRequestSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", requestAction=").append(String.valueOf(this.requestAction));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", resources=").append(String.valueOf(this.resources));
@@ -430,6 +474,7 @@ public final class WorkRequestSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.requestAction, other.requestAction)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.resources, other.resources)
@@ -447,6 +492,7 @@ public final class WorkRequestSummary
         result =
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result =
                 (result * PRIME)
                         + (this.requestAction == null ? 43 : this.requestAction.hashCode());

@@ -26,6 +26,15 @@ package com.oracle.bmc.oda.model;
 public final class UpdateMSTeamsChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -117,6 +126,7 @@ public final class UpdateMSTeamsChannelDetails extends UpdateChannelDetails {
         public UpdateMSTeamsChannelDetails build() {
             UpdateMSTeamsChannelDetails model =
                     new UpdateMSTeamsChannelDetails(
+                            this.name,
                             this.description,
                             this.sessionExpiryDurationInMilliseconds,
                             this.freeformTags,
@@ -132,6 +142,9 @@ public final class UpdateMSTeamsChannelDetails extends UpdateChannelDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateMSTeamsChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
@@ -169,6 +182,7 @@ public final class UpdateMSTeamsChannelDetails extends UpdateChannelDetails {
 
     @Deprecated
     public UpdateMSTeamsChannelDetails(
+            String name,
             String description,
             Long sessionExpiryDurationInMilliseconds,
             java.util.Map<String, String> freeformTags,
@@ -176,7 +190,7 @@ public final class UpdateMSTeamsChannelDetails extends UpdateChannelDetails {
             String msaAppId,
             String msaAppPassword,
             String botId) {
-        super(description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.msaAppId = msaAppId;
         this.msaAppPassword = msaAppPassword;
         this.botId = botId;

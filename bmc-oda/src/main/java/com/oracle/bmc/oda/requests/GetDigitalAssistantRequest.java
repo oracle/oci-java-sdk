@@ -28,6 +28,23 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
         return digitalAssistantId;
     }
     /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    private String ifNoneMatch;
+
+    /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing. This value is included in the opc-request-id response
      * header.
      */
@@ -72,6 +89,28 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder digitalAssistantId(String digitalAssistantId) {
             this.digitalAssistantId = digitalAssistantId;
+            return this;
+        }
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
             return this;
         }
 
@@ -125,6 +164,7 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(GetDigitalAssistantRequest o) {
             odaInstanceId(o.getOdaInstanceId());
             digitalAssistantId(o.getDigitalAssistantId());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -162,9 +202,11 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
             GetDigitalAssistantRequest request = new GetDigitalAssistantRequest();
             request.odaInstanceId = odaInstanceId;
             request.digitalAssistantId = digitalAssistantId;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetDigitalAssistantRequest(odaInstanceId, digitalAssistantId, opcRequestId);
+            // new GetDigitalAssistantRequest(odaInstanceId, digitalAssistantId, ifNoneMatch,
+            // opcRequestId);
         }
     }
 
@@ -177,6 +219,7 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
         return new Builder()
                 .odaInstanceId(odaInstanceId)
                 .digitalAssistantId(digitalAssistantId)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -196,6 +239,7 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",digitalAssistantId=").append(String.valueOf(this.digitalAssistantId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -214,6 +258,7 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.digitalAssistantId, other.digitalAssistantId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -229,6 +274,7 @@ public class GetDigitalAssistantRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.digitalAssistantId == null
                                 ? 43
                                 : this.digitalAssistantId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

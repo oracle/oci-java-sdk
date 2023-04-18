@@ -530,6 +530,392 @@ public class ManagementPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listOdaPrivateEndpointAttachments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOdaPrivateEndpointAttachmentsResponse>
+            listOdaPrivateEndpointAttachmentsResponseIterator(
+                    final ListOdaPrivateEndpointAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOdaPrivateEndpointAttachmentsRequest.Builder,
+                ListOdaPrivateEndpointAttachmentsRequest,
+                ListOdaPrivateEndpointAttachmentsResponse>(
+                new java.util.function.Supplier<
+                        ListOdaPrivateEndpointAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListOdaPrivateEndpointAttachmentsRequest.Builder get() {
+                        return ListOdaPrivateEndpointAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListOdaPrivateEndpointAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaPrivateEndpointAttachmentsRequest.Builder>,
+                        ListOdaPrivateEndpointAttachmentsRequest>() {
+                    @Override
+                    public ListOdaPrivateEndpointAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaPrivateEndpointAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointAttachmentsRequest,
+                        ListOdaPrivateEndpointAttachmentsResponse>() {
+                    @Override
+                    public ListOdaPrivateEndpointAttachmentsResponse apply(
+                            ListOdaPrivateEndpointAttachmentsRequest request) {
+                        return client.listOdaPrivateEndpointAttachments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentSummary} objects contained in responses
+     * from the listOdaPrivateEndpointAttachments operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentSummary>
+            listOdaPrivateEndpointAttachmentsRecordIterator(
+                    final ListOdaPrivateEndpointAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOdaPrivateEndpointAttachmentsRequest.Builder,
+                ListOdaPrivateEndpointAttachmentsRequest,
+                ListOdaPrivateEndpointAttachmentsResponse,
+                com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentSummary>(
+                new java.util.function.Supplier<
+                        ListOdaPrivateEndpointAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListOdaPrivateEndpointAttachmentsRequest.Builder get() {
+                        return ListOdaPrivateEndpointAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListOdaPrivateEndpointAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaPrivateEndpointAttachmentsRequest.Builder>,
+                        ListOdaPrivateEndpointAttachmentsRequest>() {
+                    @Override
+                    public ListOdaPrivateEndpointAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaPrivateEndpointAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointAttachmentsRequest,
+                        ListOdaPrivateEndpointAttachmentsResponse>() {
+                    @Override
+                    public ListOdaPrivateEndpointAttachmentsResponse apply(
+                            ListOdaPrivateEndpointAttachmentsRequest request) {
+                        return client.listOdaPrivateEndpointAttachments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointAttachmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentSummary>
+                            apply(ListOdaPrivateEndpointAttachmentsResponse response) {
+                        return response.getOdaPrivateEndpointAttachmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listOdaPrivateEndpointScanProxies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOdaPrivateEndpointScanProxiesResponse>
+            listOdaPrivateEndpointScanProxiesResponseIterator(
+                    final ListOdaPrivateEndpointScanProxiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOdaPrivateEndpointScanProxiesRequest.Builder,
+                ListOdaPrivateEndpointScanProxiesRequest,
+                ListOdaPrivateEndpointScanProxiesResponse>(
+                new java.util.function.Supplier<
+                        ListOdaPrivateEndpointScanProxiesRequest.Builder>() {
+                    @Override
+                    public ListOdaPrivateEndpointScanProxiesRequest.Builder get() {
+                        return ListOdaPrivateEndpointScanProxiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointScanProxiesResponse, String>() {
+                    @Override
+                    public String apply(ListOdaPrivateEndpointScanProxiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaPrivateEndpointScanProxiesRequest.Builder>,
+                        ListOdaPrivateEndpointScanProxiesRequest>() {
+                    @Override
+                    public ListOdaPrivateEndpointScanProxiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaPrivateEndpointScanProxiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointScanProxiesRequest,
+                        ListOdaPrivateEndpointScanProxiesResponse>() {
+                    @Override
+                    public ListOdaPrivateEndpointScanProxiesResponse apply(
+                            ListOdaPrivateEndpointScanProxiesRequest request) {
+                        return client.listOdaPrivateEndpointScanProxies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxySummary} objects contained in responses
+     * from the listOdaPrivateEndpointScanProxies operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxySummary>
+            listOdaPrivateEndpointScanProxiesRecordIterator(
+                    final ListOdaPrivateEndpointScanProxiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOdaPrivateEndpointScanProxiesRequest.Builder,
+                ListOdaPrivateEndpointScanProxiesRequest,
+                ListOdaPrivateEndpointScanProxiesResponse,
+                com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxySummary>(
+                new java.util.function.Supplier<
+                        ListOdaPrivateEndpointScanProxiesRequest.Builder>() {
+                    @Override
+                    public ListOdaPrivateEndpointScanProxiesRequest.Builder get() {
+                        return ListOdaPrivateEndpointScanProxiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointScanProxiesResponse, String>() {
+                    @Override
+                    public String apply(ListOdaPrivateEndpointScanProxiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaPrivateEndpointScanProxiesRequest.Builder>,
+                        ListOdaPrivateEndpointScanProxiesRequest>() {
+                    @Override
+                    public ListOdaPrivateEndpointScanProxiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaPrivateEndpointScanProxiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointScanProxiesRequest,
+                        ListOdaPrivateEndpointScanProxiesResponse>() {
+                    @Override
+                    public ListOdaPrivateEndpointScanProxiesResponse apply(
+                            ListOdaPrivateEndpointScanProxiesRequest request) {
+                        return client.listOdaPrivateEndpointScanProxies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointScanProxiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxySummary>
+                            apply(ListOdaPrivateEndpointScanProxiesResponse response) {
+                        return response.getOdaPrivateEndpointScanProxyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listOdaPrivateEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOdaPrivateEndpointsResponse> listOdaPrivateEndpointsResponseIterator(
+            final ListOdaPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOdaPrivateEndpointsRequest.Builder,
+                ListOdaPrivateEndpointsRequest,
+                ListOdaPrivateEndpointsResponse>(
+                new java.util.function.Supplier<ListOdaPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListOdaPrivateEndpointsRequest.Builder get() {
+                        return ListOdaPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOdaPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListOdaPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaPrivateEndpointsRequest.Builder>,
+                        ListOdaPrivateEndpointsRequest>() {
+                    @Override
+                    public ListOdaPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>() {
+                    @Override
+                    public ListOdaPrivateEndpointsResponse apply(
+                            ListOdaPrivateEndpointsRequest request) {
+                        return client.listOdaPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.OdaPrivateEndpointSummary} objects contained in responses from the
+     * listOdaPrivateEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.OdaPrivateEndpointSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.oda.model.OdaPrivateEndpointSummary>
+            listOdaPrivateEndpointsRecordIterator(final ListOdaPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOdaPrivateEndpointsRequest.Builder,
+                ListOdaPrivateEndpointsRequest,
+                ListOdaPrivateEndpointsResponse,
+                com.oracle.bmc.oda.model.OdaPrivateEndpointSummary>(
+                new java.util.function.Supplier<ListOdaPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListOdaPrivateEndpointsRequest.Builder get() {
+                        return ListOdaPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOdaPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListOdaPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOdaPrivateEndpointsRequest.Builder>,
+                        ListOdaPrivateEndpointsRequest>() {
+                    @Override
+                    public ListOdaPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOdaPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>() {
+                    @Override
+                    public ListOdaPrivateEndpointsResponse apply(
+                            ListOdaPrivateEndpointsRequest request) {
+                        return client.listOdaPrivateEndpoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOdaPrivateEndpointsResponse,
+                        java.util.List<com.oracle.bmc.oda.model.OdaPrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.oda.model.OdaPrivateEndpointSummary> apply(
+                            ListOdaPrivateEndpointsResponse response) {
+                        return response.getOdaPrivateEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listSkillParameters operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

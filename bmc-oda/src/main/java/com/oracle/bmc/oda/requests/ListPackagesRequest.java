@@ -33,6 +33,13 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getResourceType() {
         return resourceType;
     }
+    /** List the packages that belong to this compartment. */
+    private String compartmentId;
+
+    /** List the packages that belong to this compartment. */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /**
      * List only the information for the package with this name. Package names are unique to a
      * publisher and may not change.
@@ -68,11 +75,11 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return displayName;
     }
     /** Should we return only the latest version of a package (instead of all versions)? */
-    private Boolean isLatestSkillOnly;
+    private Boolean isLatestVersionOnly;
 
     /** Should we return only the latest version of a package (instead of all versions)? */
-    public Boolean getIsLatestSkillOnly() {
-        return isLatestSkillOnly;
+    public Boolean getIsLatestVersionOnly() {
+        return isLatestVersionOnly;
     }
     /** The maximum number of items to return per page. */
     private Integer limit;
@@ -263,6 +270,20 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** List the packages that belong to this compartment. */
+        private String compartmentId = null;
+
+        /**
+         * List the packages that belong to this compartment.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /**
          * List only the information for the package with this name. Package names are unique to a
          * publisher and may not change.
@@ -308,16 +329,16 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /** Should we return only the latest version of a package (instead of all versions)? */
-        private Boolean isLatestSkillOnly = null;
+        private Boolean isLatestVersionOnly = null;
 
         /**
          * Should we return only the latest version of a package (instead of all versions)?
          *
-         * @param isLatestSkillOnly the value to set
+         * @param isLatestVersionOnly the value to set
          * @return this builder instance
          */
-        public Builder isLatestSkillOnly(Boolean isLatestSkillOnly) {
-            this.isLatestSkillOnly = isLatestSkillOnly;
+        public Builder isLatestVersionOnly(Boolean isLatestVersionOnly) {
+            this.isLatestVersionOnly = isLatestVersionOnly;
             return this;
         }
 
@@ -453,9 +474,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(ListPackagesRequest o) {
             odaInstanceId(o.getOdaInstanceId());
             resourceType(o.getResourceType());
+            compartmentId(o.getCompartmentId());
             name(o.getName());
             displayName(o.getDisplayName());
-            isLatestSkillOnly(o.getIsLatestSkillOnly());
+            isLatestVersionOnly(o.getIsLatestVersionOnly());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -497,17 +519,18 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             ListPackagesRequest request = new ListPackagesRequest();
             request.odaInstanceId = odaInstanceId;
             request.resourceType = resourceType;
+            request.compartmentId = compartmentId;
             request.name = name;
             request.displayName = displayName;
-            request.isLatestSkillOnly = isLatestSkillOnly;
+            request.isLatestVersionOnly = isLatestVersionOnly;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPackagesRequest(odaInstanceId, resourceType, name, displayName,
-            // isLatestSkillOnly, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPackagesRequest(odaInstanceId, resourceType, compartmentId, name,
+            // displayName, isLatestVersionOnly, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -520,9 +543,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return new Builder()
                 .odaInstanceId(odaInstanceId)
                 .resourceType(resourceType)
+                .compartmentId(compartmentId)
                 .name(name)
                 .displayName(displayName)
-                .isLatestSkillOnly(isLatestSkillOnly)
+                .isLatestVersionOnly(isLatestVersionOnly)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -546,9 +570,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
-        sb.append(",isLatestSkillOnly=").append(String.valueOf(this.isLatestSkillOnly));
+        sb.append(",isLatestVersionOnly=").append(String.valueOf(this.isLatestVersionOnly));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -571,9 +596,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.isLatestSkillOnly, other.isLatestSkillOnly)
+                && java.util.Objects.equals(this.isLatestVersionOnly, other.isLatestVersionOnly)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -589,11 +615,16 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
-                        + (this.isLatestSkillOnly == null ? 43 : this.isLatestSkillOnly.hashCode());
+                        + (this.isLatestVersionOnly == null
+                                ? 43
+                                : this.isLatestVersionOnly.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

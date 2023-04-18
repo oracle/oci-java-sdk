@@ -28,6 +28,23 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return translatorId;
     }
     /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    private String ifNoneMatch;
+
+    /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing. This value is included in the opc-request-id response
      * header.
      */
@@ -72,6 +89,28 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
          */
         public Builder translatorId(String translatorId) {
             this.translatorId = translatorId;
+            return this;
+        }
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
             return this;
         }
 
@@ -125,6 +164,7 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder copy(GetTranslatorRequest o) {
             odaInstanceId(o.getOdaInstanceId());
             translatorId(o.getTranslatorId());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -162,9 +202,10 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
             GetTranslatorRequest request = new GetTranslatorRequest();
             request.odaInstanceId = odaInstanceId;
             request.translatorId = translatorId;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetTranslatorRequest(odaInstanceId, translatorId, opcRequestId);
+            // new GetTranslatorRequest(odaInstanceId, translatorId, ifNoneMatch, opcRequestId);
         }
     }
 
@@ -177,6 +218,7 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return new Builder()
                 .odaInstanceId(odaInstanceId)
                 .translatorId(translatorId)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -196,6 +238,7 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",translatorId=").append(String.valueOf(this.translatorId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -214,6 +257,7 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.translatorId, other.translatorId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -225,6 +269,7 @@ public class GetTranslatorRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
         result = (result * PRIME) + (this.translatorId == null ? 43 : this.translatorId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

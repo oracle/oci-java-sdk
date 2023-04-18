@@ -28,6 +28,23 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return skillId;
     }
     /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    private String ifNoneMatch;
+
+    /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing. This value is included in the opc-request-id response
      * header.
      */
@@ -71,6 +88,28 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
          */
         public Builder skillId(String skillId) {
             this.skillId = skillId;
+            return this;
+        }
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
             return this;
         }
 
@@ -124,6 +163,7 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         public Builder copy(GetSkillRequest o) {
             odaInstanceId(o.getOdaInstanceId());
             skillId(o.getSkillId());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -161,9 +201,10 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             GetSkillRequest request = new GetSkillRequest();
             request.odaInstanceId = odaInstanceId;
             request.skillId = skillId;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetSkillRequest(odaInstanceId, skillId, opcRequestId);
+            // new GetSkillRequest(odaInstanceId, skillId, ifNoneMatch, opcRequestId);
         }
     }
 
@@ -176,6 +217,7 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return new Builder()
                 .odaInstanceId(odaInstanceId)
                 .skillId(skillId)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -195,6 +237,7 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",skillId=").append(String.valueOf(this.skillId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -213,6 +256,7 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(this.skillId, other.skillId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -224,6 +268,7 @@ public class GetSkillRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
         result = (result * PRIME) + (this.skillId == null ? 43 : this.skillId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

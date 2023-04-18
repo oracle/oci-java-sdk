@@ -30,6 +30,23 @@ public class GetAuthenticationProviderRequest
         return authenticationProviderId;
     }
     /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    private String ifNoneMatch;
+
+    /**
+     * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+     * service will return the requested resource, with a 200 status, only if it doesn't have an
+     * ETag matching the given ones. When the condition fails for GET methods, then the service will
+     * return HTTP status code 304 (Not Modified).
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing. This value is included in the opc-request-id response
      * header.
      */
@@ -74,6 +91,28 @@ public class GetAuthenticationProviderRequest
          */
         public Builder authenticationProviderId(String authenticationProviderId) {
             this.authenticationProviderId = authenticationProviderId;
+            return this;
+        }
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * The If-None-Match HTTP request header makes the request conditional. For GET methods, the
+         * service will return the requested resource, with a 200 status, only if it doesn't have an
+         * ETag matching the given ones. When the condition fails for GET methods, then the service
+         * will return HTTP status code 304 (Not Modified).
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
             return this;
         }
 
@@ -127,6 +166,7 @@ public class GetAuthenticationProviderRequest
         public Builder copy(GetAuthenticationProviderRequest o) {
             odaInstanceId(o.getOdaInstanceId());
             authenticationProviderId(o.getAuthenticationProviderId());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -164,10 +204,11 @@ public class GetAuthenticationProviderRequest
             GetAuthenticationProviderRequest request = new GetAuthenticationProviderRequest();
             request.odaInstanceId = odaInstanceId;
             request.authenticationProviderId = authenticationProviderId;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
             // new GetAuthenticationProviderRequest(odaInstanceId, authenticationProviderId,
-            // opcRequestId);
+            // ifNoneMatch, opcRequestId);
         }
     }
 
@@ -180,6 +221,7 @@ public class GetAuthenticationProviderRequest
         return new Builder()
                 .odaInstanceId(odaInstanceId)
                 .authenticationProviderId(authenticationProviderId)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -200,6 +242,7 @@ public class GetAuthenticationProviderRequest
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(",authenticationProviderId=")
                 .append(String.valueOf(this.authenticationProviderId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -219,6 +262,7 @@ public class GetAuthenticationProviderRequest
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
                 && java.util.Objects.equals(
                         this.authenticationProviderId, other.authenticationProviderId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -234,6 +278,7 @@ public class GetAuthenticationProviderRequest
                         + (this.authenticationProviderId == null
                                 ? 43
                                 : this.authenticationProviderId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

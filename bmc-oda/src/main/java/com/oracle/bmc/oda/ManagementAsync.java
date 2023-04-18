@@ -50,6 +50,29 @@ public interface ManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Starts an asynchronous job to move the specified ODA Private Endpoint into a different
+     * compartment.
+     *
+     * <p>To monitor the status of the job, take the `opc-work-request-id` response header value and
+     * use it to call `GET /workRequests/{workRequestID}`. When provided, If-Match is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOdaPrivateEndpointCompartmentResponse>
+            changeOdaPrivateEndpointCompartment(
+                    ChangeOdaPrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOdaPrivateEndpointCompartmentRequest,
+                                    ChangeOdaPrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * This will store the provided parameters in the Digital Assistant instance and update any
      * Digital Assistants with matching parameters.
      *
@@ -115,6 +138,67 @@ public interface ManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDigitalAssistantRequest, CreateDigitalAssistantResponse>
                     handler);
+
+    /**
+     * Starts an asynchronous job to create an ODA Private Endpoint.
+     *
+     * <p>To monitor the status of the job, take the `opc-work-request-id` response header value and
+     * use it to call `GET /workRequests/{workRequestID}`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOdaPrivateEndpointResponse> createOdaPrivateEndpoint(
+            CreateOdaPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOdaPrivateEndpointRequest, CreateOdaPrivateEndpointResponse>
+                    handler);
+
+    /**
+     * Starts an asynchronous job to create an ODA Private Endpoint Attachment.
+     *
+     * <p>To monitor the status of the job, take the `opc-work-request-id` response header value and
+     * use it to call `GET /workRequests/{workRequestID}`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOdaPrivateEndpointAttachmentResponse>
+            createOdaPrivateEndpointAttachment(
+                    CreateOdaPrivateEndpointAttachmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOdaPrivateEndpointAttachmentRequest,
+                                    CreateOdaPrivateEndpointAttachmentResponse>
+                            handler);
+
+    /**
+     * Starts an asynchronous job to create an ODA Private Endpoint Scan Proxy.
+     *
+     * <p>To monitor the status of the job, take the `opc-work-request-id` response header value and
+     * use it to call `GET /workRequests/{workRequestID}`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOdaPrivateEndpointScanProxyResponse>
+            createOdaPrivateEndpointScanProxy(
+                    CreateOdaPrivateEndpointScanProxyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOdaPrivateEndpointScanProxyRequest,
+                                    CreateOdaPrivateEndpointScanProxyResponse>
+                            handler);
 
     /**
      * Creates a new Skill from scratch.
@@ -208,6 +292,64 @@ public interface ManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDigitalAssistantRequest, DeleteDigitalAssistantResponse>
                     handler);
+
+    /**
+     * Starts an asynchronous job to delete the specified ODA Private Endpoint. To monitor the
+     * status of the job, take the `opc-work-request-id` response header value and use it to call
+     * `GET /workRequests/{workRequestID}`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOdaPrivateEndpointResponse> deleteOdaPrivateEndpoint(
+            DeleteOdaPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOdaPrivateEndpointRequest, DeleteOdaPrivateEndpointResponse>
+                    handler);
+
+    /**
+     * Starts an asynchronous job to delete the specified ODA Private Endpoint Attachment. To
+     * monitor the status of the job, take the `opc-work-request-id` response header value and use
+     * it to call `GET /workRequests/{workRequestID}`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOdaPrivateEndpointAttachmentResponse>
+            deleteOdaPrivateEndpointAttachment(
+                    DeleteOdaPrivateEndpointAttachmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOdaPrivateEndpointAttachmentRequest,
+                                    DeleteOdaPrivateEndpointAttachmentResponse>
+                            handler);
+
+    /**
+     * Starts an asynchronous job to delete the specified ODA Private Endpoint Scan Proxy. To
+     * monitor the status of the job, take the `opc-work-request-id` response header value and use
+     * it to call `GET /workRequests/{workRequestID}`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOdaPrivateEndpointScanProxyResponse>
+            deleteOdaPrivateEndpointScanProxy(
+                    DeleteOdaPrivateEndpointScanProxyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOdaPrivateEndpointScanProxyRequest,
+                                    DeleteOdaPrivateEndpointScanProxyResponse>
+                            handler);
 
     /**
      * Delete the specified Skill.
@@ -348,6 +490,58 @@ public interface ManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified ODA Private Endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOdaPrivateEndpointResponse> getOdaPrivateEndpoint(
+            GetOdaPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+                    handler);
+
+    /**
+     * Gets the specified ODA Private Endpoint Attachment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOdaPrivateEndpointAttachmentResponse>
+            getOdaPrivateEndpointAttachment(
+                    GetOdaPrivateEndpointAttachmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOdaPrivateEndpointAttachmentRequest,
+                                    GetOdaPrivateEndpointAttachmentResponse>
+                            handler);
+
+    /**
+     * Gets the specified ODA Private Endpoint Scan Proxy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOdaPrivateEndpointScanProxyResponse>
+            getOdaPrivateEndpointScanProxy(
+                    GetOdaPrivateEndpointScanProxyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOdaPrivateEndpointScanProxyRequest,
+                                    GetOdaPrivateEndpointScanProxyResponse>
+                            handler);
+
+    /**
      * Gets the specified Skill.
      *
      * @param request The request object containing the details to send
@@ -486,6 +680,71 @@ public interface ManagementAsync extends AutoCloseable {
             ListDigitalAssistantsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDigitalAssistantsRequest, ListDigitalAssistantsResponse>
+                    handler);
+
+    /**
+     * Returns a page of ODA Instances attached to this ODA Private Endpoint.
+     *
+     * <p>If the `opc-next-page` header appears in the response, then there are more items to
+     * retrieve. To get the next page in the subsequent GET request, include the header's value as
+     * the `page` query parameter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOdaPrivateEndpointAttachmentsResponse>
+            listOdaPrivateEndpointAttachments(
+                    ListOdaPrivateEndpointAttachmentsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOdaPrivateEndpointAttachmentsRequest,
+                                    ListOdaPrivateEndpointAttachmentsResponse>
+                            handler);
+
+    /**
+     * Returns a page of ODA Private Endpoint Scan Proxies that belong to the specified ODA Private
+     * Endpoint.
+     *
+     * <p>If the `opc-next-page` header appears in the response, then there are more items to
+     * retrieve. To get the next page in the subsequent GET request, include the header's value as
+     * the `page` query parameter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOdaPrivateEndpointScanProxiesResponse>
+            listOdaPrivateEndpointScanProxies(
+                    ListOdaPrivateEndpointScanProxiesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOdaPrivateEndpointScanProxiesRequest,
+                                    ListOdaPrivateEndpointScanProxiesResponse>
+                            handler);
+
+    /**
+     * Returns a page of ODA Private Endpoints that belong to the specified compartment.
+     *
+     * <p>If the `opc-next-page` header appears in the response, then there are more items to
+     * retrieve. To get the next page in the subsequent GET request, include the header's value as
+     * the `page` query parameter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOdaPrivateEndpointsResponse> listOdaPrivateEndpoints(
+            ListOdaPrivateEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOdaPrivateEndpointsRequest, ListOdaPrivateEndpointsResponse>
                     handler);
 
     /**
@@ -688,6 +947,23 @@ public interface ManagementAsync extends AutoCloseable {
                                     UpdateDigitalAssistantParameterRequest,
                                     UpdateDigitalAssistantParameterResponse>
                             handler);
+
+    /**
+     * Starts an asynchronous job to update the specified ODA Private Endpoint with the information
+     * in the request body.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOdaPrivateEndpointResponse> updateOdaPrivateEndpoint(
+            UpdateOdaPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOdaPrivateEndpointRequest, UpdateOdaPrivateEndpointResponse>
+                    handler);
 
     /**
      * Updates the specified Skill with the information in the request body.

@@ -122,6 +122,44 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public ChangeOdaPrivateEndpointCompartmentResponse changeOdaPrivateEndpointCompartment(
+            ChangeOdaPrivateEndpointCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeOdaPrivateEndpointCompartmentDetails(),
+                "changeOdaPrivateEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeOdaPrivateEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeOdaPrivateEndpointCompartment")
+                .serviceDetails(
+                        "Management",
+                        "ChangeOdaPrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/ChangeOdaPrivateEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOdaPrivateEndpointCompartmentRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeOdaPrivateEndpointCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOdaPrivateEndpointCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ConfigureDigitalAssistantParametersResponse configureDigitalAssistantParameters(
             ConfigureDigitalAssistantParametersRequest request) {
 
@@ -145,11 +183,11 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("configureDigitalAssistantParameters")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ConfigureDigitalAssistantParametersResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -188,6 +226,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CreateAuthenticationProviderResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -221,6 +260,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", CreateChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -254,6 +294,117 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         CreateDigitalAssistantResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDigitalAssistantResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateOdaPrivateEndpointResponse createOdaPrivateEndpoint(
+            CreateOdaPrivateEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOdaPrivateEndpointDetails(),
+                "createOdaPrivateEndpointDetails is required");
+
+        return clientCall(request, CreateOdaPrivateEndpointResponse::builder)
+                .logger(LOG, "createOdaPrivateEndpoint")
+                .serviceDetails("Management", "CreateOdaPrivateEndpoint", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOdaPrivateEndpointRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpoint.class,
+                        CreateOdaPrivateEndpointResponse.Builder::odaPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "Location", CreateOdaPrivateEndpointResponse.Builder::location)
+                .handleResponseHeaderString("etag", CreateOdaPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOdaPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateOdaPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateOdaPrivateEndpointAttachmentResponse createOdaPrivateEndpointAttachment(
+            CreateOdaPrivateEndpointAttachmentRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOdaPrivateEndpointAttachmentDetails(),
+                "createOdaPrivateEndpointAttachmentDetails is required");
+
+        return clientCall(request, CreateOdaPrivateEndpointAttachmentResponse::builder)
+                .logger(LOG, "createOdaPrivateEndpointAttachment")
+                .serviceDetails("Management", "CreateOdaPrivateEndpointAttachment", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOdaPrivateEndpointAttachmentRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpointAttachments")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.class,
+                        CreateOdaPrivateEndpointAttachmentResponse.Builder
+                                ::odaPrivateEndpointAttachment)
+                .handleResponseHeaderString(
+                        "Location", CreateOdaPrivateEndpointAttachmentResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateOdaPrivateEndpointAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateOdaPrivateEndpointAttachmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateOdaPrivateEndpointAttachmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateOdaPrivateEndpointScanProxyResponse createOdaPrivateEndpointScanProxy(
+            CreateOdaPrivateEndpointScanProxyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOdaPrivateEndpointScanProxyDetails(),
+                "createOdaPrivateEndpointScanProxyDetails is required");
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+
+        return clientCall(request, CreateOdaPrivateEndpointScanProxyResponse::builder)
+                .logger(LOG, "createOdaPrivateEndpointScanProxy")
+                .serviceDetails("Management", "CreateOdaPrivateEndpointScanProxy", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOdaPrivateEndpointScanProxyRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .appendPathParam("odaPrivateEndpointScanProxies")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.class,
+                        CreateOdaPrivateEndpointScanProxyResponse.Builder
+                                ::odaPrivateEndpointScanProxy)
+                .handleResponseHeaderString(
+                        "Location", CreateOdaPrivateEndpointScanProxyResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "etag", CreateOdaPrivateEndpointScanProxyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateOdaPrivateEndpointScanProxyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateOdaPrivateEndpointScanProxyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -283,6 +434,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", CreateSkillResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSkillResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -322,6 +474,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSkillParameterResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", CreateSkillParameterResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -355,6 +508,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", CreateTranslatorResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateTranslatorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -387,6 +541,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteAuthenticationProviderResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -415,6 +570,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -444,6 +600,106 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDigitalAssistantResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteOdaPrivateEndpointResponse deleteOdaPrivateEndpoint(
+            DeleteOdaPrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+
+        return clientCall(request, DeleteOdaPrivateEndpointResponse::builder)
+                .logger(LOG, "deleteOdaPrivateEndpoint")
+                .serviceDetails(
+                        "Management",
+                        "DeleteOdaPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/DeleteOdaPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOdaPrivateEndpointRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteOdaPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOdaPrivateEndpointResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteOdaPrivateEndpointAttachmentResponse deleteOdaPrivateEndpointAttachment(
+            DeleteOdaPrivateEndpointAttachmentRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointAttachmentId(),
+                "odaPrivateEndpointAttachmentId must not be blank");
+
+        return clientCall(request, DeleteOdaPrivateEndpointAttachmentResponse::builder)
+                .logger(LOG, "deleteOdaPrivateEndpointAttachment")
+                .serviceDetails(
+                        "Management",
+                        "DeleteOdaPrivateEndpointAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointAttachment/DeleteOdaPrivateEndpointAttachment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOdaPrivateEndpointAttachmentRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpointAttachments")
+                .appendPathParam(request.getOdaPrivateEndpointAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteOdaPrivateEndpointAttachmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteOdaPrivateEndpointAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteOdaPrivateEndpointScanProxyResponse deleteOdaPrivateEndpointScanProxy(
+            DeleteOdaPrivateEndpointScanProxyRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointScanProxyId(),
+                "odaPrivateEndpointScanProxyId must not be blank");
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+
+        return clientCall(request, DeleteOdaPrivateEndpointScanProxyResponse::builder)
+                .logger(LOG, "deleteOdaPrivateEndpointScanProxy")
+                .serviceDetails(
+                        "Management",
+                        "DeleteOdaPrivateEndpointScanProxy",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointScanProxy/DeleteOdaPrivateEndpointScanProxy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOdaPrivateEndpointScanProxyRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .appendPathParam("odaPrivateEndpointScanProxies")
+                .appendPathParam(request.getOdaPrivateEndpointScanProxyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteOdaPrivateEndpointScanProxyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteOdaPrivateEndpointScanProxyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -472,6 +728,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSkillResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -504,6 +761,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSkillParameterResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -532,6 +790,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteTranslatorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -569,6 +828,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ExportDigitalAssistantResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -602,6 +862,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ExportSkillResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ExportSkillResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -629,6 +890,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("authenticationProviders")
                 .appendPathParam(request.getAuthenticationProviderId())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.oda.model.AuthenticationProvider.class,
@@ -636,6 +898,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", GetAuthenticationProviderResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAuthenticationProviderResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -660,12 +923,14 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("channels")
                 .appendPathParam(request.getChannelId())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.oda.model.Channel.class, GetChannelResponse.Builder::channel)
                 .handleResponseHeaderString("etag", GetChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -690,6 +955,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("digitalAssistants")
                 .appendPathParam(request.getDigitalAssistantId())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.oda.model.DigitalAssistant.class,
@@ -697,6 +963,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", GetDigitalAssistantResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDigitalAssistantResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -726,6 +993,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("parameters")
                 .appendPathParam(request.getParameterName())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.oda.model.DigitalAssistantParameter.class,
@@ -735,6 +1003,109 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDigitalAssistantParameterResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetOdaPrivateEndpointResponse getOdaPrivateEndpoint(
+            GetOdaPrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+
+        return clientCall(request, GetOdaPrivateEndpointResponse::builder)
+                .logger(LOG, "getOdaPrivateEndpoint")
+                .serviceDetails(
+                        "Management",
+                        "GetOdaPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/GetOdaPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOdaPrivateEndpointRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpoint.class,
+                        GetOdaPrivateEndpointResponse.Builder::odaPrivateEndpoint)
+                .handleResponseHeaderString("etag", GetOdaPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOdaPrivateEndpointResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetOdaPrivateEndpointAttachmentResponse getOdaPrivateEndpointAttachment(
+            GetOdaPrivateEndpointAttachmentRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointAttachmentId(),
+                "odaPrivateEndpointAttachmentId must not be blank");
+
+        return clientCall(request, GetOdaPrivateEndpointAttachmentResponse::builder)
+                .logger(LOG, "getOdaPrivateEndpointAttachment")
+                .serviceDetails(
+                        "Management",
+                        "GetOdaPrivateEndpointAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointAttachment/GetOdaPrivateEndpointAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOdaPrivateEndpointAttachmentRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpointAttachments")
+                .appendPathParam(request.getOdaPrivateEndpointAttachmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.class,
+                        GetOdaPrivateEndpointAttachmentResponse.Builder
+                                ::odaPrivateEndpointAttachment)
+                .handleResponseHeaderString(
+                        "etag", GetOdaPrivateEndpointAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetOdaPrivateEndpointAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetOdaPrivateEndpointScanProxyResponse getOdaPrivateEndpointScanProxy(
+            GetOdaPrivateEndpointScanProxyRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointScanProxyId(),
+                "odaPrivateEndpointScanProxyId must not be blank");
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+
+        return clientCall(request, GetOdaPrivateEndpointScanProxyResponse::builder)
+                .logger(LOG, "getOdaPrivateEndpointScanProxy")
+                .serviceDetails(
+                        "Management",
+                        "GetOdaPrivateEndpointScanProxy",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointScanProxy/GetOdaPrivateEndpointScanProxy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOdaPrivateEndpointScanProxyRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .appendPathParam("odaPrivateEndpointScanProxies")
+                .appendPathParam(request.getOdaPrivateEndpointScanProxyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.class,
+                        GetOdaPrivateEndpointScanProxyResponse.Builder::odaPrivateEndpointScanProxy)
+                .handleResponseHeaderString(
+                        "etag", GetOdaPrivateEndpointScanProxyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetOdaPrivateEndpointScanProxyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -759,11 +1130,13 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("skills")
                 .appendPathParam(request.getSkillId())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(com.oracle.bmc.oda.model.Skill.class, GetSkillResponse.Builder::skill)
                 .handleResponseHeaderString("etag", GetSkillResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSkillResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -792,6 +1165,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("parameters")
                 .appendPathParam(request.getParameterName())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.oda.model.SkillParameter.class,
@@ -799,6 +1173,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", GetSkillParameterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSkillParameterResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -823,6 +1198,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("translators")
                 .appendPathParam(request.getTranslatorId())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.oda.model.Translator.class,
@@ -830,6 +1206,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", GetTranslatorResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTranslatorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -860,6 +1237,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", ImportBotResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ImportBotResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -902,6 +1280,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListAuthenticationProvidersResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -942,6 +1321,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListChannelsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListChannelsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -988,6 +1368,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListDigitalAssistantParametersResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1009,7 +1390,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("odaInstances")
                 .appendPathParam(request.getOdaInstanceId())
                 .appendPathParam("digitalAssistants")
-                .appendQueryParam("digitalAssistantId", request.getDigitalAssistantId())
+                .appendQueryParam("id", request.getId())
                 .appendQueryParam("category", request.getCategory())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("version", request.getVersion())
@@ -1032,6 +1413,131 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListDigitalAssistantsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListDigitalAssistantsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListOdaPrivateEndpointAttachmentsResponse listOdaPrivateEndpointAttachments(
+            ListOdaPrivateEndpointAttachmentsRequest request) {
+        Objects.requireNonNull(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOdaPrivateEndpointAttachmentsResponse::builder)
+                .logger(LOG, "listOdaPrivateEndpointAttachments")
+                .serviceDetails(
+                        "Management",
+                        "ListOdaPrivateEndpointAttachments",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointAttachment/ListOdaPrivateEndpointAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOdaPrivateEndpointAttachmentsRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpointAttachments")
+                .appendQueryParam("odaPrivateEndpointId", request.getOdaPrivateEndpointId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointAttachmentCollection.class,
+                        ListOdaPrivateEndpointAttachmentsResponse.Builder
+                                ::odaPrivateEndpointAttachmentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOdaPrivateEndpointAttachmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOdaPrivateEndpointAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListOdaPrivateEndpointAttachmentsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListOdaPrivateEndpointScanProxiesResponse listOdaPrivateEndpointScanProxies(
+            ListOdaPrivateEndpointScanProxiesRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+
+        return clientCall(request, ListOdaPrivateEndpointScanProxiesResponse::builder)
+                .logger(LOG, "listOdaPrivateEndpointScanProxies")
+                .serviceDetails(
+                        "Management",
+                        "ListOdaPrivateEndpointScanProxies",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpointScanProxy/ListOdaPrivateEndpointScanProxies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOdaPrivateEndpointScanProxiesRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .appendPathParam("odaPrivateEndpointScanProxies")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxyCollection.class,
+                        ListOdaPrivateEndpointScanProxiesResponse.Builder
+                                ::odaPrivateEndpointScanProxyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOdaPrivateEndpointScanProxiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOdaPrivateEndpointScanProxiesResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListOdaPrivateEndpointScanProxiesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListOdaPrivateEndpointsResponse listOdaPrivateEndpoints(
+            ListOdaPrivateEndpointsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOdaPrivateEndpointsResponse::builder)
+                .logger(LOG, "listOdaPrivateEndpoints")
+                .serviceDetails(
+                        "Management",
+                        "ListOdaPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/ListOdaPrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOdaPrivateEndpointsRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.oda.model.OdaPrivateEndpointCollection.class,
+                        ListOdaPrivateEndpointsResponse.Builder::odaPrivateEndpointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOdaPrivateEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOdaPrivateEndpointsResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListOdaPrivateEndpointsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1073,6 +1579,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListSkillParametersResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListSkillParametersResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1093,7 +1600,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("odaInstances")
                 .appendPathParam(request.getOdaInstanceId())
                 .appendPathParam("skills")
-                .appendQueryParam("skillId", request.getSkillId())
+                .appendQueryParam("id", request.getId())
                 .appendQueryParam("category", request.getCategory())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("version", request.getVersion())
@@ -1116,6 +1623,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListSkillsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListSkillsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1155,6 +1663,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListTranslatorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListTranslatorsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1190,6 +1699,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", PublishDigitalAssistantResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", PublishDigitalAssistantResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1223,6 +1733,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", PublishSkillResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", PublishSkillResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1251,13 +1762,13 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleBody(
                         com.oracle.bmc.oda.model.CreateChannelResult.class,
                         RotateChannelKeysResponse.Builder::createChannelResult)
                 .handleResponseHeaderString("etag", RotateChannelKeysResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RotateChannelKeysResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1286,13 +1797,13 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleBody(
                         com.oracle.bmc.oda.model.Channel.class,
                         StartChannelResponse.Builder::channel)
                 .handleResponseHeaderString("etag", StartChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", StartChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1321,13 +1832,13 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleBody(
                         com.oracle.bmc.oda.model.Channel.class,
                         StopChannelResponse.Builder::channel)
                 .handleResponseHeaderString("etag", StopChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", StopChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1369,6 +1880,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateAuthenticationProviderResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1404,6 +1916,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateChannelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1441,6 +1954,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateDigitalAssistantResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDigitalAssistantResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1484,6 +1998,41 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateDigitalAssistantParameterResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateOdaPrivateEndpointResponse updateOdaPrivateEndpoint(
+            UpdateOdaPrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getOdaPrivateEndpointId(), "odaPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOdaPrivateEndpointDetails(),
+                "updateOdaPrivateEndpointDetails is required");
+
+        return clientCall(request, UpdateOdaPrivateEndpointResponse::builder)
+                .logger(LOG, "updateOdaPrivateEndpoint")
+                .serviceDetails(
+                        "Management",
+                        "UpdateOdaPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaPrivateEndpoint/UpdateOdaPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOdaPrivateEndpointRequest::builder)
+                .basePath("/20190506")
+                .appendPathParam("odaPrivateEndpoints")
+                .appendPathParam(request.getOdaPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOdaPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateOdaPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1517,6 +2066,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateSkillResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSkillResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1557,6 +2107,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateSkillParameterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSkillParameterResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1592,6 +2143,7 @@ public class ManagementClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString("etag", UpdateTranslatorResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateTranslatorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
