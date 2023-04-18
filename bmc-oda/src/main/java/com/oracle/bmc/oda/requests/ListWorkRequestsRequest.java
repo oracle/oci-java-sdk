@@ -40,6 +40,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
+    /** List only the information for this resource. */
+    private String resourceId;
+
+    /** List only the information for this resource. */
+    public String getResourceId() {
+        return resourceId;
+    }
     /**
      * The page at which to start retrieving results.
      *
@@ -233,6 +240,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** List only the information for this resource. */
+        private String resourceId = null;
+
+        /**
+         * List only the information for this resource.
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
         /**
          * The page at which to start retrieving results.
          *
@@ -348,6 +369,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             odaInstanceId(o.getOdaInstanceId());
+            resourceId(o.getResourceId());
             page(o.getPage());
             limit(o.getLimit());
             sortBy(o.getSortBy());
@@ -389,13 +411,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
             request.odaInstanceId = odaInstanceId;
+            request.resourceId = resourceId;
             request.page = page;
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, opcRequestId, odaInstanceId, page, limit,
-            // sortBy, sortOrder);
+            // new ListWorkRequestsRequest(compartmentId, opcRequestId, odaInstanceId, resourceId,
+            // page, limit, sortBy, sortOrder);
         }
     }
 
@@ -409,6 +432,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
                 .odaInstanceId(odaInstanceId)
+                .resourceId(resourceId)
                 .page(page)
                 .limit(limit)
                 .sortBy(sortBy)
@@ -432,6 +456,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -454,6 +479,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -471,6 +497,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

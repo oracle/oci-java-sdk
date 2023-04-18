@@ -26,6 +26,15 @@ package com.oracle.bmc.oda.model;
 public final class UpdateServiceCloudChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -197,6 +206,7 @@ public final class UpdateServiceCloudChannelDetails extends UpdateChannelDetails
         public UpdateServiceCloudChannelDetails build() {
             UpdateServiceCloudChannelDetails model =
                     new UpdateServiceCloudChannelDetails(
+                            this.name,
                             this.description,
                             this.sessionExpiryDurationInMilliseconds,
                             this.freeformTags,
@@ -214,6 +224,9 @@ public final class UpdateServiceCloudChannelDetails extends UpdateChannelDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateServiceCloudChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
@@ -257,6 +270,7 @@ public final class UpdateServiceCloudChannelDetails extends UpdateChannelDetails
 
     @Deprecated
     public UpdateServiceCloudChannelDetails(
+            String name,
             String description,
             Long sessionExpiryDurationInMilliseconds,
             java.util.Map<String, String> freeformTags,
@@ -266,7 +280,7 @@ public final class UpdateServiceCloudChannelDetails extends UpdateChannelDetails
             String userName,
             String password,
             ServiceCloudClientType clientType) {
-        super(description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.domainName = domainName;
         this.hostNamePrefix = hostNamePrefix;
         this.userName = userName;

@@ -120,6 +120,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         CreateImportedPackageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateImportedPackageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -153,6 +154,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         DeleteImportedPackageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteImportedPackageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -184,6 +186,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .handleResponseHeaderString(
                         "opc-request-id", GetImportedPackageResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetImportedPackageResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -214,6 +217,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         GetPackageResponse.Builder::packageItem)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPackageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -248,6 +252,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListImportedPackagesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListImportedPackagesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -266,9 +271,10 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("packages")
                 .appendQueryParam("odaInstanceId", request.getOdaInstanceId())
                 .appendQueryParam("resourceType", request.getResourceType())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("isLatestSkillOnly", request.getIsLatestSkillOnly())
+                .appendQueryParam("isLatestVersionOnly", request.getIsLatestVersionOnly())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -284,6 +290,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-next-page", ListPackagesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListPackagesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -325,6 +332,7 @@ public class OdapackageClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         UpdateImportedPackageResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateImportedPackageResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

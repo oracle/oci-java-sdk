@@ -21,6 +21,17 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         return odaInstanceId;
     }
     /**
+     * Retain the ODA instance being deleted for the given number of days before hard-delete/purge.
+     */
+    private Integer retentionTime;
+
+    /**
+     * Retain the ODA instance being deleted for the given number of days before hard-delete/purge.
+     */
+    public Integer getRetentionTime() {
+        return retentionTime;
+    }
+    /**
      * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
      * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
      * previous GET or POST response for that instance. The service updates or deletes the instance
@@ -68,6 +79,24 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder odaInstanceId(String odaInstanceId) {
             this.odaInstanceId = odaInstanceId;
+            return this;
+        }
+
+        /**
+         * Retain the ODA instance being deleted for the given number of days before
+         * hard-delete/purge.
+         */
+        private Integer retentionTime = null;
+
+        /**
+         * Retain the ODA instance being deleted for the given number of days before
+         * hard-delete/purge.
+         *
+         * @param retentionTime the value to set
+         * @return this builder instance
+         */
+        public Builder retentionTime(Integer retentionTime) {
+            this.retentionTime = retentionTime;
             return this;
         }
 
@@ -144,6 +173,7 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(DeleteOdaInstanceRequest o) {
             odaInstanceId(o.getOdaInstanceId());
+            retentionTime(o.getRetentionTime());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -181,10 +211,11 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         public DeleteOdaInstanceRequest buildWithoutInvocationCallback() {
             DeleteOdaInstanceRequest request = new DeleteOdaInstanceRequest();
             request.odaInstanceId = odaInstanceId;
+            request.retentionTime = retentionTime;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteOdaInstanceRequest(odaInstanceId, ifMatch, opcRequestId);
+            // new DeleteOdaInstanceRequest(odaInstanceId, retentionTime, ifMatch, opcRequestId);
         }
     }
 
@@ -196,6 +227,7 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
     public Builder toBuilder() {
         return new Builder()
                 .odaInstanceId(odaInstanceId)
+                .retentionTime(retentionTime)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -215,6 +247,7 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
+        sb.append(",retentionTime=").append(String.valueOf(this.retentionTime));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -233,6 +266,7 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         DeleteOdaInstanceRequest other = (DeleteOdaInstanceRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
+                && java.util.Objects.equals(this.retentionTime, other.retentionTime)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -244,6 +278,9 @@ public class DeleteOdaInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         result =
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionTime == null ? 43 : this.retentionTime.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

@@ -152,6 +152,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOdaInstanceCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -180,6 +181,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-work-request-id", CreateOdaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOdaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -213,6 +215,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         CreateOdaInstanceAttachmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOdaInstanceAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -232,6 +235,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .basePath("/20190506")
                 .appendPathParam("odaInstances")
                 .appendPathParam(request.getOdaInstanceId())
+                .appendQueryParam("retentionTime", request.getRetentionTime())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -239,6 +243,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-work-request-id", DeleteOdaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOdaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -271,6 +276,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         DeleteOdaInstanceAttachmentResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOdaInstanceAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -298,6 +304,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString("etag", GetOdaInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOdaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -331,6 +338,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString("etag", GetOdaInstanceAttachmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOdaInstanceAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -359,6 +367,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -398,6 +407,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderInteger(
                         "opc-total-items",
                         ListOdaInstanceAttachmentsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -433,6 +443,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListOdaInstancesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListOdaInstancesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -469,6 +480,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListWorkRequestErrorsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -504,6 +516,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListWorkRequestLogsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -523,6 +536,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("odaInstanceId", request.getOdaInstanceId())
+                .appendQueryParam("resourceId", request.getResourceId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -538,6 +552,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListWorkRequestsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -567,6 +582,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-work-request-id", StartOdaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StartOdaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -596,6 +612,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-work-request-id", StopOdaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", StopOdaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -627,6 +644,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString("etag", UpdateOdaInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOdaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -663,6 +681,7 @@ public class OdaClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateOdaInstanceAttachmentResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

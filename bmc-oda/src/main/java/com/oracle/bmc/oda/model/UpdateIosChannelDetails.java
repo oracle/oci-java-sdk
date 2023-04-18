@@ -26,6 +26,15 @@ package com.oracle.bmc.oda.model;
 public final class UpdateIosChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -115,6 +124,7 @@ public final class UpdateIosChannelDetails extends UpdateChannelDetails {
         public UpdateIosChannelDetails build() {
             UpdateIosChannelDetails model =
                     new UpdateIosChannelDetails(
+                            this.name,
                             this.description,
                             this.sessionExpiryDurationInMilliseconds,
                             this.freeformTags,
@@ -130,6 +140,9 @@ public final class UpdateIosChannelDetails extends UpdateChannelDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateIosChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
@@ -167,6 +180,7 @@ public final class UpdateIosChannelDetails extends UpdateChannelDetails {
 
     @Deprecated
     public UpdateIosChannelDetails(
+            String name,
             String description,
             Long sessionExpiryDurationInMilliseconds,
             java.util.Map<String, String> freeformTags,
@@ -174,7 +188,7 @@ public final class UpdateIosChannelDetails extends UpdateChannelDetails {
             Long maxTokenExpirationTimeInMinutes,
             Boolean isClientAuthenticationEnabled,
             String botId) {
-        super(description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
+        super(name, description, sessionExpiryDurationInMilliseconds, freeformTags, definedTags);
         this.maxTokenExpirationTimeInMinutes = maxTokenExpirationTimeInMinutes;
         this.isClientAuthenticationEnabled = isClientAuthenticationEnabled;
         this.botId = botId;

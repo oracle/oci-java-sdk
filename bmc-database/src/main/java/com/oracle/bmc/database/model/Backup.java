@@ -642,6 +642,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         Deleted("DELETED"),
         Failed("FAILED"),
         Restoring("RESTORING"),
+        Canceling("CANCELING"),
+        Canceled("CANCELED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -449,6 +449,346 @@ public class ManagementWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+            forOdaPrivateEndpoint(
+                    GetOdaPrivateEndpointRequest request,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpoint.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forOdaPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+            forOdaPrivateEndpoint(
+                    GetOdaPrivateEndpointRequest request,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpoint.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forOdaPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+            forOdaPrivateEndpoint(
+                    GetOdaPrivateEndpointRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpoint.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forOdaPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for OdaPrivateEndpoint.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>
+            forOdaPrivateEndpoint(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetOdaPrivateEndpointRequest request,
+                    final com.oracle.bmc.oda.model.OdaPrivateEndpoint.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.oda.model.OdaPrivateEndpoint.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetOdaPrivateEndpointRequest, GetOdaPrivateEndpointResponse>() {
+                            @Override
+                            public GetOdaPrivateEndpointResponse apply(
+                                    GetOdaPrivateEndpointRequest request) {
+                                return client.getOdaPrivateEndpoint(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetOdaPrivateEndpointResponse>() {
+                            @Override
+                            public boolean test(GetOdaPrivateEndpointResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getOdaPrivateEndpoint().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.oda.model.OdaPrivateEndpoint.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointAttachmentRequest, GetOdaPrivateEndpointAttachmentResponse>
+            forOdaPrivateEndpointAttachment(
+                    GetOdaPrivateEndpointAttachmentRequest request,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forOdaPrivateEndpointAttachment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointAttachmentRequest, GetOdaPrivateEndpointAttachmentResponse>
+            forOdaPrivateEndpointAttachment(
+                    GetOdaPrivateEndpointAttachmentRequest request,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forOdaPrivateEndpointAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointAttachmentRequest, GetOdaPrivateEndpointAttachmentResponse>
+            forOdaPrivateEndpointAttachment(
+                    GetOdaPrivateEndpointAttachmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forOdaPrivateEndpointAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for OdaPrivateEndpointAttachment.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointAttachmentRequest, GetOdaPrivateEndpointAttachmentResponse>
+            forOdaPrivateEndpointAttachment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetOdaPrivateEndpointAttachmentRequest request,
+                    final com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetOdaPrivateEndpointAttachmentRequest,
+                                GetOdaPrivateEndpointAttachmentResponse>() {
+                            @Override
+                            public GetOdaPrivateEndpointAttachmentResponse apply(
+                                    GetOdaPrivateEndpointAttachmentRequest request) {
+                                return client.getOdaPrivateEndpointAttachment(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetOdaPrivateEndpointAttachmentResponse>() {
+                            @Override
+                            public boolean test(GetOdaPrivateEndpointAttachmentResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getOdaPrivateEndpointAttachment()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.oda.model.OdaPrivateEndpointAttachment.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointScanProxyRequest, GetOdaPrivateEndpointScanProxyResponse>
+            forOdaPrivateEndpointScanProxy(
+                    GetOdaPrivateEndpointScanProxyRequest request,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forOdaPrivateEndpointScanProxy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointScanProxyRequest, GetOdaPrivateEndpointScanProxyResponse>
+            forOdaPrivateEndpointScanProxy(
+                    GetOdaPrivateEndpointScanProxyRequest request,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forOdaPrivateEndpointScanProxy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointScanProxyRequest, GetOdaPrivateEndpointScanProxyResponse>
+            forOdaPrivateEndpointScanProxy(
+                    GetOdaPrivateEndpointScanProxyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forOdaPrivateEndpointScanProxy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for OdaPrivateEndpointScanProxy.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetOdaPrivateEndpointScanProxyRequest, GetOdaPrivateEndpointScanProxyResponse>
+            forOdaPrivateEndpointScanProxy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetOdaPrivateEndpointScanProxyRequest request,
+                    final com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetOdaPrivateEndpointScanProxyRequest,
+                                GetOdaPrivateEndpointScanProxyResponse>() {
+                            @Override
+                            public GetOdaPrivateEndpointScanProxyResponse apply(
+                                    GetOdaPrivateEndpointScanProxyRequest request) {
+                                return client.getOdaPrivateEndpointScanProxy(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetOdaPrivateEndpointScanProxyResponse>() {
+                            @Override
+                            public boolean test(GetOdaPrivateEndpointScanProxyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getOdaPrivateEndpointScanProxy()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.oda.model.OdaPrivateEndpointScanProxy.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
      * @param targetState the desired states to wait for. If multiple states are provided then the
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance

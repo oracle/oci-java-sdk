@@ -369,6 +369,35 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CancelBackupResponse cancelBackup(CancelBackupRequest request) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+
+        return clientCall(request, CancelBackupResponse::builder)
+                .logger(LOG, "cancelBackup")
+                .serviceDetails(
+                        "Database",
+                        "CancelBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CancelBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CancelBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelBackupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeAutonomousContainerDatabaseCompartmentResponse
             changeAutonomousContainerDatabaseCompartment(
                     ChangeAutonomousContainerDatabaseCompartmentRequest request) {

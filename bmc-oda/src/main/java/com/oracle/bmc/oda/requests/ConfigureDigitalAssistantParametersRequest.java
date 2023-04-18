@@ -45,27 +45,6 @@ public class ConfigureDigitalAssistantParametersRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * A token that uniquely identifies a request so that you can retry the request if there's a
-     * timeout or server error without the risk of executing that same action again.
-     *
-     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
-     * conflicting operations. For example, if an instance was deleted and purged from the system,
-     * then the service might reject a retry of the original creation request.
-     */
-    private String opcRetryToken;
-
-    /**
-     * A token that uniquely identifies a request so that you can retry the request if there's a
-     * timeout or server error without the risk of executing that same action again.
-     *
-     * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there are
-     * conflicting operations. For example, if an instance was deleted and purged from the system,
-     * then the service might reject a retry of the original creation request.
-     */
-    public String getOpcRetryToken() {
-        return opcRetryToken;
-    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -136,32 +115,6 @@ public class ConfigureDigitalAssistantParametersRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that you can retry the request if there's a
-         * timeout or server error without the risk of executing that same action again.
-         *
-         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
-         * are conflicting operations. For example, if an instance was deleted and purged from the
-         * system, then the service might reject a retry of the original creation request.
-         */
-        private String opcRetryToken = null;
-
-        /**
-         * A token that uniquely identifies a request so that you can retry the request if there's a
-         * timeout or server error without the risk of executing that same action again.
-         *
-         * <p>Retry tokens expire after 24 hours, but they can become invalid before then if there
-         * are conflicting operations. For example, if an instance was deleted and purged from the
-         * system, then the service might reject a retry of the original creation request.
-         *
-         * @param opcRetryToken the value to set
-         * @return this builder instance
-         */
-        public Builder opcRetryToken(String opcRetryToken) {
-            this.opcRetryToken = opcRetryToken;
-            return this;
-        }
-
-        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -195,7 +148,6 @@ public class ConfigureDigitalAssistantParametersRequest
             configureDigitalAssistantParametersDetails(
                     o.getConfigureDigitalAssistantParametersDetails());
             opcRequestId(o.getOpcRequestId());
-            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -250,10 +202,9 @@ public class ConfigureDigitalAssistantParametersRequest
             request.configureDigitalAssistantParametersDetails =
                     configureDigitalAssistantParametersDetails;
             request.opcRequestId = opcRequestId;
-            request.opcRetryToken = opcRetryToken;
             return request;
             // new ConfigureDigitalAssistantParametersRequest(odaInstanceId,
-            // configureDigitalAssistantParametersDetails, opcRequestId, opcRetryToken);
+            // configureDigitalAssistantParametersDetails, opcRequestId);
         }
     }
 
@@ -267,8 +218,7 @@ public class ConfigureDigitalAssistantParametersRequest
                 .odaInstanceId(odaInstanceId)
                 .configureDigitalAssistantParametersDetails(
                         configureDigitalAssistantParametersDetails)
-                .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -289,7 +239,6 @@ public class ConfigureDigitalAssistantParametersRequest
         sb.append(",configureDigitalAssistantParametersDetails=")
                 .append(String.valueOf(this.configureDigitalAssistantParametersDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -310,8 +259,7 @@ public class ConfigureDigitalAssistantParametersRequest
                 && java.util.Objects.equals(
                         this.configureDigitalAssistantParametersDetails,
                         other.configureDigitalAssistantParametersDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
@@ -327,9 +275,6 @@ public class ConfigureDigitalAssistantParametersRequest
                                 ? 43
                                 : this.configureDigitalAssistantParametersDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

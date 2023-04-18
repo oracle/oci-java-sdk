@@ -23,11 +23,11 @@ public class ListDigitalAssistantsRequest
         return odaInstanceId;
     }
     /** Unique Digital Assistant identifier. */
-    private String digitalAssistantId;
+    private String id;
 
     /** Unique Digital Assistant identifier. */
-    public String getDigitalAssistantId() {
-        return digitalAssistantId;
+    public String getId() {
+        return id;
     }
     /** List only Bot resources with this category. */
     private String category;
@@ -275,16 +275,16 @@ public class ListDigitalAssistantsRequest
         }
 
         /** Unique Digital Assistant identifier. */
-        private String digitalAssistantId = null;
+        private String id = null;
 
         /**
          * Unique Digital Assistant identifier.
          *
-         * @param digitalAssistantId the value to set
+         * @param id the value to set
          * @return this builder instance
          */
-        public Builder digitalAssistantId(String digitalAssistantId) {
-            this.digitalAssistantId = digitalAssistantId;
+        public Builder id(String id) {
+            this.id = id;
             return this;
         }
 
@@ -535,7 +535,7 @@ public class ListDigitalAssistantsRequest
          */
         public Builder copy(ListDigitalAssistantsRequest o) {
             odaInstanceId(o.getOdaInstanceId());
-            digitalAssistantId(o.getDigitalAssistantId());
+            id(o.getId());
             category(o.getCategory());
             name(o.getName());
             version(o.getVersion());
@@ -583,7 +583,7 @@ public class ListDigitalAssistantsRequest
         public ListDigitalAssistantsRequest buildWithoutInvocationCallback() {
             ListDigitalAssistantsRequest request = new ListDigitalAssistantsRequest();
             request.odaInstanceId = odaInstanceId;
-            request.digitalAssistantId = digitalAssistantId;
+            request.id = id;
             request.category = category;
             request.name = name;
             request.version = version;
@@ -597,9 +597,9 @@ public class ListDigitalAssistantsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDigitalAssistantsRequest(odaInstanceId, digitalAssistantId, category, name,
-            // version, namespace, platformVersion, lifecycleState, lifecycleDetails, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListDigitalAssistantsRequest(odaInstanceId, id, category, name, version,
+            // namespace, platformVersion, lifecycleState, lifecycleDetails, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -611,7 +611,7 @@ public class ListDigitalAssistantsRequest
     public Builder toBuilder() {
         return new Builder()
                 .odaInstanceId(odaInstanceId)
-                .digitalAssistantId(digitalAssistantId)
+                .id(id)
                 .category(category)
                 .name(name)
                 .version(version)
@@ -641,7 +641,7 @@ public class ListDigitalAssistantsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
-        sb.append(",digitalAssistantId=").append(String.valueOf(this.digitalAssistantId));
+        sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",category=").append(String.valueOf(this.category));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",version=").append(String.valueOf(this.version));
@@ -670,7 +670,7 @@ public class ListDigitalAssistantsRequest
         ListDigitalAssistantsRequest other = (ListDigitalAssistantsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
-                && java.util.Objects.equals(this.digitalAssistantId, other.digitalAssistantId)
+                && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.version, other.version)
@@ -692,11 +692,7 @@ public class ListDigitalAssistantsRequest
         result =
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.digitalAssistantId == null
-                                ? 43
-                                : this.digitalAssistantId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());

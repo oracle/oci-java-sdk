@@ -48,12 +48,12 @@ public final class WorkRequestResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The action to take against the Digital Assistant instance. */
+        /** The action to take against the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
         private ResourceAction resourceAction;
 
         /**
-         * The action to take against the Digital Assistant instance.
+         * The action to take against the resource.
          *
          * @param resourceAction the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class WorkRequestResource
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The identifier of the Digital Assistant instance that is the subject of the request. */
+        /** The identifier of the resource that is the subject of the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The identifier of the Digital Assistant instance that is the subject of the request.
+         * The identifier of the resource that is the subject of the request.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -200,9 +200,10 @@ public final class WorkRequestResource
         return new Builder().copy(this);
     }
 
-    /** The action to take against the Digital Assistant instance. */
+    /** The action to take against the resource. */
     public enum ResourceAction implements com.oracle.bmc.http.internal.BmcEnum {
         Create("CREATE"),
+        Update("UPDATE"),
         Delete("DELETE"),
         Purge("PURGE"),
         Recover("RECOVER"),
@@ -263,12 +264,12 @@ public final class WorkRequestResource
             return UnknownEnumValue;
         }
     };
-    /** The action to take against the Digital Assistant instance. */
+    /** The action to take against the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
     private final ResourceAction resourceAction;
 
     /**
-     * The action to take against the Digital Assistant instance.
+     * The action to take against the resource.
      *
      * @return the value
      */
@@ -289,12 +290,12 @@ public final class WorkRequestResource
         return resourceType;
     }
 
-    /** The identifier of the Digital Assistant instance that is the subject of the request. */
+    /** The identifier of the resource that is the subject of the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The identifier of the Digital Assistant instance that is the subject of the request.
+     * The identifier of the resource that is the subject of the request.
      *
      * @return the value
      */

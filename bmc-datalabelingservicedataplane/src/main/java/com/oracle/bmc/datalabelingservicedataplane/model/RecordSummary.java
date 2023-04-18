@@ -30,6 +30,7 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
         "compartmentId",
         "isLabeled",
         "lifecycleState",
+        "recordMetadata",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +43,7 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
             String compartmentId,
             Boolean isLabeled,
             Record.LifecycleState lifecycleState,
+            RecordMetadata recordMetadata,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -53,6 +55,7 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
         this.compartmentId = compartmentId;
         this.isLabeled = isLabeled;
         this.lifecycleState = lifecycleState;
+        this.recordMetadata = recordMetadata;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -183,6 +186,15 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+        private RecordMetadata recordMetadata;
+
+        public Builder recordMetadata(RecordMetadata recordMetadata) {
+            this.recordMetadata = recordMetadata;
+            this.__explicitlySet__.add("recordMetadata");
+            return this;
+        }
         /**
          * A simple key-value pair that is applied without any predefined name, type, or scope. It
          * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
@@ -237,6 +249,7 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.compartmentId,
                             this.isLabeled,
                             this.lifecycleState,
+                            this.recordMetadata,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -270,6 +283,9 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("recordMetadata")) {
+                this.recordMetadata(model.getRecordMetadata());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -394,6 +410,13 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
         return lifecycleState;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+    private final RecordMetadata recordMetadata;
+
+    public RecordMetadata getRecordMetadata() {
+        return recordMetadata;
+    }
+
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It
      * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
@@ -451,6 +474,7 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isLabeled=").append(String.valueOf(this.isLabeled));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", recordMetadata=").append(String.valueOf(this.recordMetadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -475,6 +499,7 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isLabeled, other.isLabeled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.recordMetadata, other.recordMetadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -496,6 +521,9 @@ public final class RecordSummary extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recordMetadata == null ? 43 : this.recordMetadata.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
