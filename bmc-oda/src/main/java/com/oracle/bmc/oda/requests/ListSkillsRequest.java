@@ -25,13 +25,13 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * Unique Skill identifier.
      */
-    private String skillId;
+    private String id;
 
     /**
      * Unique Skill identifier.
      */
-    public String getSkillId() {
-        return skillId;
+    public String getId() {
+        return id;
     }
     /**
      * List only Bot resources with this category.
@@ -310,15 +310,15 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Unique Skill identifier.
          */
-        private String skillId = null;
+        private String id = null;
 
         /**
          * Unique Skill identifier.
-         * @param skillId the value to set
+         * @param id the value to set
          * @return this builder instance
          */
-        public Builder skillId(String skillId) {
-            this.skillId = skillId;
+        public Builder id(String id) {
+            this.id = id;
             return this;
         }
 
@@ -573,7 +573,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
          */
         public Builder copy(ListSkillsRequest o) {
             odaInstanceId(o.getOdaInstanceId());
-            skillId(o.getSkillId());
+            id(o.getId());
             category(o.getCategory());
             name(o.getName());
             version(o.getVersion());
@@ -619,7 +619,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public ListSkillsRequest buildWithoutInvocationCallback() {
             ListSkillsRequest request = new ListSkillsRequest();
             request.odaInstanceId = odaInstanceId;
-            request.skillId = skillId;
+            request.id = id;
             request.category = category;
             request.name = name;
             request.version = version;
@@ -633,7 +633,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSkillsRequest(odaInstanceId, skillId, category, name, version, namespace, platformVersion, lifecycleState, lifecycleDetails, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListSkillsRequest(odaInstanceId, id, category, name, version, namespace, platformVersion, lifecycleState, lifecycleDetails, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -644,7 +644,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public Builder toBuilder() {
         return new Builder()
                 .odaInstanceId(odaInstanceId)
-                .skillId(skillId)
+                .id(id)
                 .category(category)
                 .name(name)
                 .version(version)
@@ -673,7 +673,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",odaInstanceId=").append(String.valueOf(this.odaInstanceId));
-        sb.append(",skillId=").append(String.valueOf(this.skillId));
+        sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",category=").append(String.valueOf(this.category));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",version=").append(String.valueOf(this.version));
@@ -702,7 +702,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         ListSkillsRequest other = (ListSkillsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.odaInstanceId, other.odaInstanceId)
-                && java.util.Objects.equals(this.skillId, other.skillId)
+                && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.version, other.version)
@@ -724,7 +724,7 @@ public class ListSkillsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         result =
                 (result * PRIME)
                         + (this.odaInstanceId == null ? 43 : this.odaInstanceId.hashCode());
-        result = (result * PRIME) + (this.skillId == null ? 43 : this.skillId.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());

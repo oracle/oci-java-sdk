@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.60.0 - 2023-04-18
+### Added
+- Support for private endpoints in the Digital Assistant service
+- Support for canceling backups in the Database service
+- Support for improved labeling of key/value pairs in the Data Labeling service
+ 
+### Breaking Changes
+- The method `public java.lang.String getOpcRetryToken()` has been removed from `com.oracle.bmc.oda.requests.ConfigureDigitalAssistantParametersRequest`, `com.oracle.bmc.oda.requests.RotateChannelKeysRequest`, `com.oracle.bmc.oda.requests.StartChannelRequest` and `com.oracle.bmc.oda.requests.StopChannelRequest` in the Digital Assistant service
+- The method `public java.lang.String getDigitalAssistantId()` has been removed from `com.oracle.bmc.oda.requests.ListDigitalAssistantsRequest` in the Digital Assistant service
+- The method `public java.lang.Boolean getIsLatestSkillOnly()` has been removed from `com.oracle.bmc.oda.requests.ListPackagesRequest` in the Digital Assistant service
+- The method `public java.lang.String getSkillId()` has been removed from `com.oracle.bmc.oda.requests.ListSkillsRequest` in the Digital Assistant service
+- The method `public java.lang.Integer getLifetimeLogicalClock()` has been removed from `com.oracle.bmc.datalabelingservicedataplane.model.Annotation`, `com.oracle.bmc.datalabelingservicedataplane.model.Dataset` and `com.oracle.bmc.datalabelingservicedataplane.model.Record` in the Data Labeling service
+- Support for retries by default on operations of the Digital Assistant service
+
 ## 2.59.0 - 2023-04-11
 ### Added
 - Support for rotation of certificates on autonomous VM clusters on Exadata Cloud at Customer in the Database service

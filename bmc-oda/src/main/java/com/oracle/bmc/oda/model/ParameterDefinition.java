@@ -357,6 +357,7 @@ public final class ParameterDefinition extends com.oracle.bmc.http.internal.Expl
         Uri("URI"),
         Url("URL"),
         Number("NUMBER"),
+        Boolean("BOOLEAN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

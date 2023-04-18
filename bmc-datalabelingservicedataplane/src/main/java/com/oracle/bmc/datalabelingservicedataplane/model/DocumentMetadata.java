@@ -25,12 +25,28 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public final class DocumentMetadata extends RecordMetadata {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Job id ocid of OCR batch call.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("jobId")
+        private String jobId;
+
+        /**
+         * Job id ocid of OCR batch call.
+         * @param jobId the value to set
+         * @return this builder
+         **/
+        public Builder jobId(String jobId) {
+            this.jobId = jobId;
+            this.__explicitlySet__.add("jobId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentMetadata build() {
-            DocumentMetadata model = new DocumentMetadata();
+            DocumentMetadata model = new DocumentMetadata(this.jobId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -39,6 +55,9 @@ public final class DocumentMetadata extends RecordMetadata {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DocumentMetadata model) {
+            if (model.wasPropertyExplicitlySet("jobId")) {
+                this.jobId(model.getJobId());
+            }
             return this;
         }
     }
@@ -55,8 +74,23 @@ public final class DocumentMetadata extends RecordMetadata {
     }
 
     @Deprecated
-    public DocumentMetadata() {
+    public DocumentMetadata(String jobId) {
         super();
+        this.jobId = jobId;
+    }
+
+    /**
+     * Job id ocid of OCR batch call.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobId")
+    private final String jobId;
+
+    /**
+     * Job id ocid of OCR batch call.
+     * @return the value
+     **/
+    public String getJobId() {
+        return jobId;
     }
 
     @Override
@@ -73,6 +107,7 @@ public final class DocumentMetadata extends RecordMetadata {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DocumentMetadata(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", jobId=").append(String.valueOf(this.jobId));
         sb.append(")");
         return sb.toString();
     }
@@ -87,13 +122,14 @@ public final class DocumentMetadata extends RecordMetadata {
         }
 
         DocumentMetadata other = (DocumentMetadata) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.jobId, other.jobId) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
         return result;
     }
 }

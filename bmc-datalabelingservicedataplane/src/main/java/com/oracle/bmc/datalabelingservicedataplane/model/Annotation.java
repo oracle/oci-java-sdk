@@ -29,7 +29,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
         "entities",
         "compartmentId",
         "lifecycleState",
-        "lifetimeLogicalClock",
         "freeformTags",
         "definedTags"
     })
@@ -43,7 +42,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
             java.util.List<Entity> entities,
             String compartmentId,
             LifecycleState lifecycleState,
-            Integer lifetimeLogicalClock,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -56,7 +54,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
         this.entities = entities;
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
-        this.lifetimeLogicalClock = lifetimeLogicalClock;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -216,22 +213,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lifetimeLogicalClock")
-        private Integer lifetimeLogicalClock;
-
-        /**
-         * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-         * @param lifetimeLogicalClock the value to set
-         * @return this builder
-         **/
-        public Builder lifetimeLogicalClock(Integer lifetimeLogicalClock) {
-            this.lifetimeLogicalClock = lifetimeLogicalClock;
-            this.__explicitlySet__.add("lifetimeLogicalClock");
-            return this;
-        }
-        /**
          * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
          * For example: {@code {"bar-key": "value"}}
          *
@@ -288,7 +269,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.entities,
                             this.compartmentId,
                             this.lifecycleState,
-                            this.lifetimeLogicalClock,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -325,9 +305,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
-            }
-            if (model.wasPropertyExplicitlySet("lifetimeLogicalClock")) {
-                this.lifetimeLogicalClock(model.getLifetimeLogicalClock());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -538,20 +515,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifetimeLogicalClock")
-    private final Integer lifetimeLogicalClock;
-
-    /**
-     * An integer value used in achieving concurrency control, this field will be used to generate eTags.
-     * @return the value
-     **/
-    public Integer getLifetimeLogicalClock() {
-        return lifetimeLogicalClock;
-    }
-
-    /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
      * For example: {@code {"bar-key": "value"}}
      *
@@ -610,7 +573,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", entities=").append(String.valueOf(this.entities));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", lifetimeLogicalClock=").append(String.valueOf(this.lifetimeLogicalClock));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -636,7 +598,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.entities, other.entities)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.lifetimeLogicalClock, other.lifetimeLogicalClock)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -659,11 +620,6 @@ public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.lifetimeLogicalClock == null
-                                ? 43
-                                : this.lifetimeLogicalClock.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
