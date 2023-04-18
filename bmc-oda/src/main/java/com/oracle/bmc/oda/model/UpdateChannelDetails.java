@@ -83,21 +83,40 @@ package com.oracle.bmc.oda.model;
 public class UpdateChannelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "name",
         "description",
         "sessionExpiryDurationInMilliseconds",
         "freeformTags",
         "definedTags"
     })
     protected UpdateChannelDetails(
+            String name,
             String description,
             Long sessionExpiryDurationInMilliseconds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.name = name;
         this.description = description;
         this.sessionExpiryDurationInMilliseconds = sessionExpiryDurationInMilliseconds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+    }
+
+    /**
+     * The Channel's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * The Channel's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     *
+     * @return the value
+     **/
+    public String getName() {
+        return name;
     }
 
     /**
@@ -178,7 +197,8 @@ public class UpdateChannelDetails extends com.oracle.bmc.http.internal.Explicitl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateChannelDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("description=").append(String.valueOf(this.description));
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", sessionExpiryDurationInMilliseconds=")
                 .append(String.valueOf(this.sessionExpiryDurationInMilliseconds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -197,7 +217,8 @@ public class UpdateChannelDetails extends com.oracle.bmc.http.internal.Explicitl
         }
 
         UpdateChannelDetails other = (UpdateChannelDetails) o;
-        return java.util.Objects.equals(this.description, other.description)
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
                         this.sessionExpiryDurationInMilliseconds,
                         other.sessionExpiryDurationInMilliseconds)
@@ -210,6 +231,7 @@ public class UpdateChannelDetails extends com.oracle.bmc.http.internal.Explicitl
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)

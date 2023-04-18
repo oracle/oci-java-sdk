@@ -54,10 +54,6 @@ public class ConfigureDigitalAssistantParametersConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
-        if (request.getOpcRetryToken() != null) {
-            ib.header("opc-retry-token", request.getOpcRetryToken());
-        }
-
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

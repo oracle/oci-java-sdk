@@ -782,6 +782,51 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelBackupResponse> cancelBackup(
+            CancelBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CancelBackupRequest, CancelBackupResponse>
+                    handler) {
+        LOG.trace("Called async cancelBackup");
+        final CancelBackupRequest interceptedRequest =
+                CancelBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CancelBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CancelBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelBackupResponse>
+                transformer =
+                        CancelBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CancelBackupRequest, CancelBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelBackupRequest, CancelBackupResponse>,
+                        java.util.concurrent.Future<CancelBackupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelBackupRequest, CancelBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAutonomousContainerDatabaseCompartmentResponse>
             changeAutonomousContainerDatabaseCompartment(
                     ChangeAutonomousContainerDatabaseCompartmentRequest request,

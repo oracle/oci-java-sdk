@@ -48,13 +48,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The action to take against the Digital Assistant instance.
+         * The action to take against the resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
         private ResourceAction resourceAction;
 
         /**
-         * The action to take against the Digital Assistant instance.
+         * The action to take against the resource.
          * @param resourceAction the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The identifier of the Digital Assistant instance that is the subject of the request.
+         * The identifier of the resource that is the subject of the request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The identifier of the Digital Assistant instance that is the subject of the request.
+         * The identifier of the resource that is the subject of the request.
          * @param resourceId the value to set
          * @return this builder
          **/
@@ -206,10 +206,11 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The action to take against the Digital Assistant instance.
+     * The action to take against the resource.
      **/
     public enum ResourceAction {
         Create("CREATE"),
+        Update("UPDATE"),
         Delete("DELETE"),
         Purge("PURGE"),
         Recover("RECOVER"),
@@ -271,13 +272,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The action to take against the Digital Assistant instance.
+     * The action to take against the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAction")
     private final ResourceAction resourceAction;
 
     /**
-     * The action to take against the Digital Assistant instance.
+     * The action to take against the resource.
      * @return the value
      **/
     public ResourceAction getResourceAction() {
@@ -299,13 +300,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The identifier of the Digital Assistant instance that is the subject of the request.
+     * The identifier of the resource that is the subject of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The identifier of the Digital Assistant instance that is the subject of the request.
+     * The identifier of the resource that is the subject of the request.
      * @return the value
      **/
     public String getResourceId() {

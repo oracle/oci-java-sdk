@@ -40,12 +40,12 @@ public class ListSkillsConverter {
                                         request.getOdaInstanceId()))
                         .path("skills");
 
-        if (request.getSkillId() != null) {
+        if (request.getId() != null) {
             target =
                     target.queryParam(
-                            "skillId",
+                            "id",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSkillId()));
+                                    request.getId()));
         }
 
         if (request.getCategory() != null) {
