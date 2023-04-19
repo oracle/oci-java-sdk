@@ -1,5 +1,0 @@
-language: java
-jdk:
-  - openjdk8
-sudo: false
-script: travis_wait 30 mvn clean verify -q
