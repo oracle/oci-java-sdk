@@ -58,6 +58,16 @@ public interface AIServiceLanguage extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not. Set
+     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
+     * specific endpoint template, otherwise set it to "false"
+     *
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
+     *     template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * The API returns the detected language and a related confidence score (between 0 and 1). It
      * supports passing a batch of records.
      *

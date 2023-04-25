@@ -53,6 +53,16 @@ public interface IntegrationInstance extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not. Set
+     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
+     * specific endpoint template, otherwise set it to "false"
+     *
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
+     *     template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Change the compartment for an integration instance
      *
      * @param request The request object containing the details to send
@@ -88,13 +98,31 @@ public interface IntegrationInstance extends AutoCloseable {
             ChangeIntegrationInstanceNetworkEndpointRequest request);
 
     /**
-     * Creates a new Integration Instance.
+     * Change private endpoint outbound connection for given Integration instance. The operation is
+     * long-running and creates a new WorkRequest.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs. This operation will not retry by default, users
      *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
      *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangePrivateEndpointOutboundConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangePrivateEndpointOutboundConnection API.
+     */
+    ChangePrivateEndpointOutboundConnectionResponse changePrivateEndpointOutboundConnection(
+            ChangePrivateEndpointOutboundConnectionRequest request);
+
+    /**
+     * Creates a new Integration Instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/CreateIntegrationInstanceExample.java.html"
@@ -120,6 +148,22 @@ public interface IntegrationInstance extends AutoCloseable {
      */
     DeleteIntegrationInstanceResponse deleteIntegrationInstance(
             DeleteIntegrationInstanceRequest request);
+
+    /**
+     * Enable Process Automation for given Integration Instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/EnableProcessAutomationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableProcessAutomation API.
+     */
+    EnableProcessAutomationResponse enableProcessAutomation(EnableProcessAutomationRequest request);
 
     /**
      * Gets a IntegrationInstance by identifier

@@ -9,6 +9,8 @@ import java.net.URI;
 public interface HttpClientBuilder {
     HttpClientBuilder baseUri(URI uri);
 
+    HttpClientBuilder baseUri(String uri);
+
     <T> HttpClientBuilder property(ClientProperty<T> key, T value);
 
     HttpClientBuilder registerRequestInterceptor(int priority, RequestInterceptor interceptor);

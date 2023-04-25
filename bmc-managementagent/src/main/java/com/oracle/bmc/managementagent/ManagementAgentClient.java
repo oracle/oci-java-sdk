@@ -35,6 +35,14 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    ManagementAgentClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,11 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
         this.waiters = new ManagementAgentWaiters(executorService, this);
 
         this.paginators = new ManagementAgentPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "ManagementAgentClient", "getManagementAgentInstallKeyContent"));
+        }
     }
 
     /**
@@ -77,6 +90,7 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ManagementAgentClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -98,6 +112,17 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -107,7 +132,8 @@ public class ManagementAgentClient extends com.oracle.bmc.http.internal.BaseSync
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new ManagementAgentClient(this, authenticationDetailsProvider, executorService);
+            return new ManagementAgentClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

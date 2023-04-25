@@ -5,12 +5,14 @@
 package com.oracle.bmc.internal;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 
+import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.util.internal.StringUtils;
 import jakarta.annotation.Nonnull;
 
@@ -100,14 +102,60 @@ public class EndpointBuilder {
             return endpoint;
         }
 
-        final String endpointTemplateToUse;
+        boolean useOfRealmSpecificEndpointTemplateEnabled =
+                Options.getUseOfRealmSpecificEndpointTemplateByDefault();
+        boolean realmSpecificEndpointTemplateDefined =
+                service.getServiceEndpointTemplateForRealmMap() != null
+                        && service.getServiceEndpointTemplateForRealmMap()
+                                .containsKey(realm.getRealmId().toLowerCase(Locale.ROOT));
+
+        if (useOfRealmSpecificEndpointTemplateEnabled) {
+            if (realmSpecificEndpointTemplateDefined) {
+                return getRealmSpecificEndpointTemplate(regionIdToUse, service, realm);
+            } else {
+                LOG.debug(
+                        "Realm-specific endpoint template not defined for realm {}, using non-realm-specific endpoint template instead.",
+                        realm.getRealmId());
+            }
+        }
+        return getServiceEndpointTemplateToUse(regionIdToUse, service, realm);
+    }
+
+    public static String getRealmSpecificEndpointTemplate(
+            String regionId, Service service, Realm realm) {
+        Map<String, String> serviceEndpointTemplateForRealmMap =
+                service.getServiceEndpointTemplateForRealmMap();
+        String endpointTemplateToUse;
+        if (serviceEndpointTemplateForRealmMap.containsKey(
+                realm.getRealmId().toLowerCase(Locale.ROOT))) {
+            endpointTemplateToUse =
+                    serviceEndpointTemplateForRealmMap.get(
+                            realm.getRealmId().toLowerCase(Locale.ROOT));
+        } else {
+            LOG.debug(
+                    "Endpoint template not defined for {} realm, using non-realm-specific endpoint template instead",
+                    realm.getRealmId());
+            endpointTemplateToUse = getServiceEndpointTemplateToUse(regionId, service, realm);
+        }
+        LOG.debug("Setting endpoint template to: {}", endpointTemplateToUse);
+        return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
+                .regionId(regionId)
+                .serviceEndpointPrefix(service.getServiceEndpointPrefix())
+                .secondLevelDomain(realm.getSecondLevelDomain())
+                .build();
+    }
+
+    public static String getServiceEndpointTemplateToUse(
+            String regionId, Service service, Realm realm) {
+        String endpointTemplateToUse;
         if (StringUtils.isNotBlank(service.getServiceEndpointTemplate())) {
             endpointTemplateToUse = service.getServiceEndpointTemplate();
         } else {
             endpointTemplateToUse = DEFAULT_ENDPOINT_TEMPLATE;
         }
+        LOG.debug("Setting endpoint template to: {}", endpointTemplateToUse);
         return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
-                .regionId(regionIdToUse)
+                .regionId(regionId)
                 .serviceEndpointPrefix(service.getServiceEndpointPrefix())
                 .secondLevelDomain(realm.getSecondLevelDomain())
                 .build();

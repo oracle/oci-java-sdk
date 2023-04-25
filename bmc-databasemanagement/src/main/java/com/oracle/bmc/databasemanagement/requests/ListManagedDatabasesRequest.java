@@ -63,6 +63,19 @@ public class ListManagedDatabasesRequest
         return deploymentType;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure.
+     */
+    private String externalExadataInfrastructureId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure.
+     */
+    public String getExternalExadataInfrastructureId() {
+        return externalExadataInfrastructureId;
+    }
+    /**
      * The page token representing the page from where the next set of paginated results are
      * retrieved. This is usually retrieved from a previous list call.
      */
@@ -246,6 +259,24 @@ public class ListManagedDatabasesRequest
         }
 
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure.
+         */
+        private String externalExadataInfrastructureId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure.
+         *
+         * @param externalExadataInfrastructureId the value to set
+         * @return this builder instance
+         */
+        public Builder externalExadataInfrastructureId(String externalExadataInfrastructureId) {
+            this.externalExadataInfrastructureId = externalExadataInfrastructureId;
+            return this;
+        }
+
+        /**
          * The page token representing the page from where the next set of paginated results are
          * retrieved. This is usually retrieved from a previous list call.
          */
@@ -351,6 +382,7 @@ public class ListManagedDatabasesRequest
             name(o.getName());
             managementOption(o.getManagementOption());
             deploymentType(o.getDeploymentType());
+            externalExadataInfrastructureId(o.getExternalExadataInfrastructureId());
             page(o.getPage());
             limit(o.getLimit());
             sortBy(o.getSortBy());
@@ -395,13 +427,15 @@ public class ListManagedDatabasesRequest
             request.name = name;
             request.managementOption = managementOption;
             request.deploymentType = deploymentType;
+            request.externalExadataInfrastructureId = externalExadataInfrastructureId;
             request.page = page;
             request.limit = limit;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
             // new ListManagedDatabasesRequest(compartmentId, opcRequestId, id, name,
-            // managementOption, deploymentType, page, limit, sortBy, sortOrder);
+            // managementOption, deploymentType, externalExadataInfrastructureId, page, limit,
+            // sortBy, sortOrder);
         }
     }
 
@@ -418,6 +452,7 @@ public class ListManagedDatabasesRequest
                 .name(name)
                 .managementOption(managementOption)
                 .deploymentType(deploymentType)
+                .externalExadataInfrastructureId(externalExadataInfrastructureId)
                 .page(page)
                 .limit(limit)
                 .sortBy(sortBy)
@@ -444,6 +479,8 @@ public class ListManagedDatabasesRequest
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",managementOption=").append(String.valueOf(this.managementOption));
         sb.append(",deploymentType=").append(String.valueOf(this.deploymentType));
+        sb.append(",externalExadataInfrastructureId=")
+                .append(String.valueOf(this.externalExadataInfrastructureId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -469,6 +506,8 @@ public class ListManagedDatabasesRequest
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.managementOption, other.managementOption)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
+                && java.util.Objects.equals(
+                        this.externalExadataInfrastructureId, other.externalExadataInfrastructureId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -491,6 +530,11 @@ public class ListManagedDatabasesRequest
         result =
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalExadataInfrastructureId == null
+                                ? 43
+                                : this.externalExadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

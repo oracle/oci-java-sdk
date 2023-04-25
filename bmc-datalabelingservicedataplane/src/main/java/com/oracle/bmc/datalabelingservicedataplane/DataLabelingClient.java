@@ -35,6 +35,14 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    DataLabelingClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,11 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
         this.waiters = new DataLabelingWaiters(executorService, this);
 
         this.paginators = new DataLabelingPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "DataLabelingClient", "getRecordContent,getRecordPreviewContent"));
+        }
     }
 
     /**
@@ -77,6 +90,7 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DataLabelingClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -98,6 +112,17 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -107,7 +132,8 @@ public class DataLabelingClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new DataLabelingClient(this, authenticationDetailsProvider, executorService);
+            return new DataLabelingClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

@@ -13,10 +13,10 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /** OCID of the compartment. Always a tenancy OCID. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** OCID of the compartment. Always a tenancy OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -61,11 +61,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /** OCID of the compartment. Always a tenancy OCID. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * OCID of the compartment. Always a tenancy OCID.
          *
          * @param compartmentId the value to set
          * @return this builder instance

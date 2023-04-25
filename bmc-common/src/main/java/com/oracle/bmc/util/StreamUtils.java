@@ -9,6 +9,7 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import com.oracle.bmc.io.internal.WrappedByteArrayInputStream;
 import com.oracle.bmc.io.internal.WrappedFileInputStream;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.Validate;
 import org.slf4j.Logger;
 
@@ -26,6 +27,30 @@ import java.util.Optional;
 public class StreamUtils {
 
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(StreamUtils.class);
+
+    private static final boolean isExtraStreamLogsEnabled =
+            isExtraStreamLogsEnabledViaSystemProperty();
+
+    /**
+     * The boolean value indicating if extra logs related to operations that return streams are
+     * enabled/disabled. Disabling this will disable warnings to close the streams, logs about
+     * wrapping response stream in an auto-closeble stream. Default is true.
+     */
+    public static boolean isExtraStreamLogsEnabled() {
+        return StreamUtils.isExtraStreamLogsEnabled;
+    }
+
+    private static boolean isExtraStreamLogsEnabledViaSystemProperty() {
+        String streamLogsEnabledString =
+                System.getProperty("oci.javasdk.extra.stream.logs.enabled");
+        if (streamLogsEnabledString != null && !streamLogsEnabledString.isEmpty()) {
+            String trimmedValue = streamLogsEnabledString.trim();
+            if (StringUtils.equalsIgnoreCase("false", trimmedValue)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private StreamUtils() {}
 
@@ -188,5 +213,25 @@ public class StreamUtils {
                     }
                 };
         return new BufferedInputStream(limitedStream);
+    }
+
+    /** Gets the stream warning message to warn the users about closing the stream */
+    public static String getStreamWarningMessage(String clientName, String operationNames) {
+        final String warningMessage =
+                String.format(
+                        "Warning for OCI SDK usage "
+                                + "with the Apache Connector (the OCI SDK uses the Apache Connector by default, for HTTP calls):"
+                                + " the following operations of"
+                                + " %s "
+                                + "return a stream : [%s]. "
+                                + "If using Apache Connector, make sure to close all stream instances returned by the operation(s)"
+                                + " mentioned, explicitly, by calling 'close' to release the connection back to the connection pool "
+                                + "and avoid any indefinite hangs, or read the stream completely. The stream instances are wrapped in "
+                                + "an auto closeable stream, to disable this setting or for guidance on disabling this warning, "
+                                + "possible performance "
+                                + "optimizations, or disabling use of the Apache Connector in the OCI SDK, "
+                                + "please see https://github.com/oracle/oci-java-sdk/blob/master/ApacheConnector-README.md",
+                        clientName, operationNames);
+        return warningMessage;
     }
 }

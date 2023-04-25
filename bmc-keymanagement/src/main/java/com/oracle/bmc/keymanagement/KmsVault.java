@@ -57,6 +57,16 @@ public interface KmsVault extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not. Set
+     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
+     * specific endpoint template, otherwise set it to "false"
+     *
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
+     *     template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Backs up an encrypted file that contains all the metadata of a vault so that you can restore
      * the vault later. You can backup a vault whether or not it contains keys. This operation only
      * backs up the metadata of the vault, and does not include key metadata.

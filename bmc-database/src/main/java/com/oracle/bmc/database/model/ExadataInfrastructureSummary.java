@@ -70,6 +70,7 @@ public final class ExadataInfrastructureSummary
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
         "isCpsOfflineReportEnabled",
+        "networkBondingModeDetails",
         "freeformTags",
         "definedTags"
     })
@@ -118,6 +119,7 @@ public final class ExadataInfrastructureSummary
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
             Boolean isCpsOfflineReportEnabled,
+            NetworkBondingModeDetails networkBondingModeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -165,6 +167,7 @@ public final class ExadataInfrastructureSummary
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+        this.networkBondingModeDetails = networkBondingModeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -888,6 +891,16 @@ public final class ExadataInfrastructureSummary
             this.__explicitlySet__.add("isCpsOfflineReportEnabled");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("networkBondingModeDetails")
+        private NetworkBondingModeDetails networkBondingModeDetails;
+
+        public Builder networkBondingModeDetails(
+                NetworkBondingModeDetails networkBondingModeDetails) {
+            this.networkBondingModeDetails = networkBondingModeDetails;
+            this.__explicitlySet__.add("networkBondingModeDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -986,6 +999,7 @@ public final class ExadataInfrastructureSummary
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
                             this.isCpsOfflineReportEnabled,
+                            this.networkBondingModeDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -1128,6 +1142,9 @@ public final class ExadataInfrastructureSummary
             if (model.wasPropertyExplicitlySet("isCpsOfflineReportEnabled")) {
                 this.isCpsOfflineReportEnabled(model.getIsCpsOfflineReportEnabled());
             }
+            if (model.wasPropertyExplicitlySet("networkBondingModeDetails")) {
+                this.networkBondingModeDetails(model.getNetworkBondingModeDetails());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -1194,6 +1211,7 @@ public final class ExadataInfrastructureSummary
         Deleted("DELETED"),
         Disconnected("DISCONNECTED"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        WaitingForConnectivity("WAITING_FOR_CONNECTIVITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1929,6 +1947,13 @@ public final class ExadataInfrastructureSummary
         return isCpsOfflineReportEnabled;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkBondingModeDetails")
+    private final NetworkBondingModeDetails networkBondingModeDetails;
+
+    public NetworkBondingModeDetails getNetworkBondingModeDetails() {
+        return networkBondingModeDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -2043,6 +2068,8 @@ public final class ExadataInfrastructureSummary
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", isCpsOfflineReportEnabled=")
                 .append(String.valueOf(this.isCpsOfflineReportEnabled));
+        sb.append(", networkBondingModeDetails=")
+                .append(String.valueOf(this.networkBondingModeDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -2112,6 +2139,8 @@ public final class ExadataInfrastructureSummary
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(
                         this.isCpsOfflineReportEnabled, other.isCpsOfflineReportEnabled)
+                && java.util.Objects.equals(
+                        this.networkBondingModeDetails, other.networkBondingModeDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -2257,6 +2286,11 @@ public final class ExadataInfrastructureSummary
                         + (this.isCpsOfflineReportEnabled == null
                                 ? 43
                                 : this.isCpsOfflineReportEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkBondingModeDetails == null
+                                ? 43
+                                : this.networkBondingModeDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

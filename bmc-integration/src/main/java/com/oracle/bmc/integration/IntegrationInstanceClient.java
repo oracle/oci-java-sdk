@@ -198,6 +198,43 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public ChangePrivateEndpointOutboundConnectionResponse changePrivateEndpointOutboundConnection(
+            ChangePrivateEndpointOutboundConnectionRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePrivateEndpointOutboundConnectionDetails(),
+                "changePrivateEndpointOutboundConnectionDetails is required");
+
+        return clientCall(request, ChangePrivateEndpointOutboundConnectionResponse::builder)
+                .logger(LOG, "changePrivateEndpointOutboundConnection")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "ChangePrivateEndpointOutboundConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangePrivateEndpointOutboundConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePrivateEndpointOutboundConnectionRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("changePrivateEndpointOutboundConnection")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangePrivateEndpointOutboundConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangePrivateEndpointOutboundConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateIntegrationInstanceResponse createIntegrationInstance(
             CreateIntegrationInstanceRequest request) {
         Objects.requireNonNull(
@@ -223,6 +260,7 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         CreateIntegrationInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateIntegrationInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -252,6 +290,38 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         DeleteIntegrationInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIntegrationInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableProcessAutomationResponse enableProcessAutomation(
+            EnableProcessAutomationRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, EnableProcessAutomationResponse::builder)
+                .logger(LOG, "enableProcessAutomation")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "EnableProcessAutomation",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/EnableProcessAutomation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableProcessAutomationRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("enableProcessAutomation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableProcessAutomationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableProcessAutomationResponse.Builder::opcRequestId)
                 .callSync();
     }
 

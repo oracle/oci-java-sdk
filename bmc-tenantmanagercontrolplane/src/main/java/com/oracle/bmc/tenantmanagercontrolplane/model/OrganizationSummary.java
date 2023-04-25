@@ -69,12 +69,12 @@ public final class OrganizationSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A display name for the organization. */
+        /** A display name for the organization. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A display name for the organization.
+         * A display name for the organization. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -150,12 +150,12 @@ public final class OrganizationSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Date-time when this organization was created. */
+        /** Date and time when the organization was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Date-time when this organization was created.
+         * Date and time when the organization was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -165,12 +165,12 @@ public final class OrganizationSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Date-time when this organization was last updated. */
+        /** Date and time when the organization was last updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Date-time when this organization was last updated.
+         * Date and time when the organization was last updated.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -253,12 +253,12 @@ public final class OrganizationSummary
         return id;
     }
 
-    /** A display name for the organization. */
+    /** A display name for the organization. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A display name for the organization.
+     * A display name for the organization. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -324,12 +324,12 @@ public final class OrganizationSummary
         return lifecycleState;
     }
 
-    /** Date-time when this organization was created. */
+    /** Date and time when the organization was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Date-time when this organization was created.
+     * Date and time when the organization was created.
      *
      * @return the value
      */
@@ -337,12 +337,12 @@ public final class OrganizationSummary
         return timeCreated;
     }
 
-    /** Date-time when this organization was last updated. */
+    /** Date and time when the organization was last updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Date-time when this organization was last updated.
+     * Date and time when the organization was last updated.
      *
      * @return the value
      */

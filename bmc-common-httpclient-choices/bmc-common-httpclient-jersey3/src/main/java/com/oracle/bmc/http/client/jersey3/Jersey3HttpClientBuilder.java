@@ -77,6 +77,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
             new ArrayList<>();
     private final Map<String, Object> properties = new HashMap<>();
     private URI baseUri;
+    private String baseUriString;
     private boolean isApacheNonBufferingClient = false;
     private KeyStoreWithPassword keyStore;
     private KeyStore trustStore;
@@ -93,7 +94,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
         // buffer by default, for signing and better error messages.
         properties.put(
                 ClientProperties.REQUEST_ENTITY_PROCESSING, RequestEntityProcessing.BUFFERED);
-        if (Jersey3HttpProvider.isApacheDependencyPresent && useApacheConnector) {
+        if (shouldUseApacheConnector()) {
             properties.put(
                     ApacheClientProperties.REQUEST_CONFIG,
                     RequestConfig.custom()
@@ -130,6 +131,12 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     }
 
     @Override
+    public HttpClientBuilder baseUri(String uri) {
+        this.baseUriString = uri;
+        return this;
+    }
+
+    @Override
     public <T> HttpClientBuilder property(ClientProperty<T> key, T value) {
         if (key == StandardClientProperties.ASYNC_POOL_SIZE) {
             properties.put(ClientProperties.ASYNC_THREADPOOL_SIZE, value);
@@ -151,7 +158,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                         ClientProperties.REQUEST_ENTITY_PROCESSING,
                         RequestEntityProcessing.BUFFERED);
             } else {
-                if (Jersey3HttpProvider.isApacheDependencyPresent) {
+                if (shouldUseApacheConnector()) {
                     isApacheNonBufferingClient = true;
                 } else {
                     properties.put(
@@ -231,7 +238,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
 
         ClientBuilder clientBuilder = ClientBuilder.newBuilder();
         ClientConfig clientConfig = new ClientConfig();
-        if (Jersey3HttpProvider.isApacheDependencyPresent) {
+        if (shouldUseApacheConnector()) {
             LOG.info("Setting connector provider to ApacheConnectorProvider");
             clientConfig.connectorProvider(new ApacheConnectorProvider());
             // need to configure the client so that it doesn't fail if we provide Content-Length
@@ -319,7 +326,12 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                     collectedProperties);
         }
 
-        WebTarget baseTarget = client.target(baseUri);
+        WebTarget baseTarget;
+        if (baseUri != null) {
+            baseTarget = client.target(baseUri);
+        } else {
+            baseTarget = client.target(baseUriString);
+        }
 
         return new Jersey3HttpClient(
                 client,
@@ -329,6 +341,10 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                         .map(p -> p.value)
                         .collect(Collectors.toList()),
                 isApacheNonBufferingClient);
+    }
+
+    private boolean shouldUseApacheConnector() {
+        return Jersey3HttpProvider.isApacheDependencyPresent && useApacheConnector;
     }
 
     private static class PrioritizedValue<T> {

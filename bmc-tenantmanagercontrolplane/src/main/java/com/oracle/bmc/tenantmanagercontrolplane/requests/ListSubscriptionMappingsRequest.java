@@ -22,17 +22,17 @@ public class ListSubscriptionMappingsRequest
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** SubscriptionMappingId is a unique ID for subscription and tenancy mapping. */
+    /** A unique ID for subscription and tenancy mapping. */
     private String subscriptionMappingId;
 
-    /** SubscriptionMappingId is a unique ID for subscription and tenancy mapping. */
+    /** A unique ID for subscription and tenancy mapping. */
     public String getSubscriptionMappingId() {
         return subscriptionMappingId;
     }
-    /** The ID of the compartment in which to list resources. */
+    /** OCID of the compartment. Always a tenancy OCID. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** OCID of the compartment. Always a tenancy OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -153,11 +153,11 @@ public class ListSubscriptionMappingsRequest
             return this;
         }
 
-        /** SubscriptionMappingId is a unique ID for subscription and tenancy mapping. */
+        /** A unique ID for subscription and tenancy mapping. */
         private String subscriptionMappingId = null;
 
         /**
-         * SubscriptionMappingId is a unique ID for subscription and tenancy mapping.
+         * A unique ID for subscription and tenancy mapping.
          *
          * @param subscriptionMappingId the value to set
          * @return this builder instance
@@ -167,11 +167,11 @@ public class ListSubscriptionMappingsRequest
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /** OCID of the compartment. Always a tenancy OCID. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * OCID of the compartment. Always a tenancy OCID.
          *
          * @param compartmentId the value to set
          * @return this builder instance

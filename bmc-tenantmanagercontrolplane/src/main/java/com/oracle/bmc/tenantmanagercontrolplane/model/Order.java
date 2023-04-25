@@ -73,12 +73,12 @@ public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("dataCenterRegion");
             return this;
         }
-        /** Administrator email owning the subscription. */
+        /** Email address of the administrator who owns the subscription. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
         /**
-         * Administrator email owning the subscription.
+         * Email address of the administrator who owns the subscription.
          *
          * @param adminEmail the value to set
          * @return this builder
@@ -192,12 +192,12 @@ public final class Order extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return dataCenterRegion;
     }
 
-    /** Administrator email owning the subscription. */
+    /** Email address of the administrator who owns the subscription. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
     /**
-     * Administrator email owning the subscription.
+     * Email address of the administrator who owns the subscription.
      *
      * @return the value
      */

@@ -25,13 +25,13 @@ public class DeleteLinkResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the
      * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the
      * status of the asynchronous operation.
      *
      * @return the value
@@ -94,13 +94,13 @@ public class DeleteLinkResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * the status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
          * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * the status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder

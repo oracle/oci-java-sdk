@@ -73,11 +73,6 @@ class JerseyHttpResponse implements HttpResponse {
                 long contentLength = Long.parseLong(contentLengthStr);
                 if (contentLength > 0) {
                     if (Options.getShouldAutoCloseResponseInputStream()) {
-                        if (JerseyHttpRequest.isExtraStreamLogsEnabled) {
-                            log.warn(
-                                    "Wrapping response stream into auto closeable stream, to disable this, please "
-                                            + "use Options.shouldAutoCloseResponseInputStream(false)");
-                        }
                         inputStream =
                                 new AutoCloseableContentLengthVerifyingInputStream(
                                         inputStream, contentLength);

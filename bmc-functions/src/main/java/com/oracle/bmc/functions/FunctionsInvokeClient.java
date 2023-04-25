@@ -30,10 +30,23 @@ public class FunctionsInvokeClient extends com.oracle.bmc.http.internal.BaseSync
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
+        this(builder, authenticationDetailsProvider, true);
+    }
+
+    FunctionsInvokeClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
                 CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "FunctionsInvokeClient", "invokeFunction"));
+        }
     }
 
     /**
@@ -51,11 +64,24 @@ public class FunctionsInvokeClient extends com.oracle.bmc.http.internal.BaseSync
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, FunctionsInvokeClient> {
+        private boolean isStreamWarningEnabled = true;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
         }
 
         /**
@@ -68,7 +94,8 @@ public class FunctionsInvokeClient extends com.oracle.bmc.http.internal.BaseSync
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new FunctionsInvokeClient(this, authenticationDetailsProvider);
+            return new FunctionsInvokeClient(
+                    this, authenticationDetailsProvider, isStreamWarningEnabled);
         }
     }
 

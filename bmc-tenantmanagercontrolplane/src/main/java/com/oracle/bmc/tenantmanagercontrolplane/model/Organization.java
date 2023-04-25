@@ -114,7 +114,7 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-         * organization will automatically get assigned this subscription if a subscription is not
+         * organization will automatically get assigned this subscription, if a subscription is not
          * explictly assigned.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
@@ -122,7 +122,7 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
 
         /**
          * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-         * organization will automatically get assigned this subscription if a subscription is not
+         * organization will automatically get assigned this subscription, if a subscription is not
          * explictly assigned.
          *
          * @param defaultUcmSubscriptionId the value to set
@@ -148,12 +148,12 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Date-time when this organization was created. */
+        /** Date and time when the organization was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Date-time when this organization was created.
+         * Date and time when the organization was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -163,12 +163,12 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Date-time when this organization was last updated. */
+        /** Date and time when the organization was last updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Date-time when this organization was last updated.
+         * Date and time when the organization was last updated.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -292,7 +292,7 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-     * organization will automatically get assigned this subscription if a subscription is not
+     * organization will automatically get assigned this subscription, if a subscription is not
      * explictly assigned.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
@@ -300,7 +300,7 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-     * organization will automatically get assigned this subscription if a subscription is not
+     * organization will automatically get assigned this subscription, if a subscription is not
      * explictly assigned.
      *
      * @return the value
@@ -372,12 +372,12 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
         return lifecycleState;
     }
 
-    /** Date-time when this organization was created. */
+    /** Date and time when the organization was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Date-time when this organization was created.
+     * Date and time when the organization was created.
      *
      * @return the value
      */
@@ -385,12 +385,12 @@ public final class Organization extends com.oracle.bmc.http.client.internal.Expl
         return timeCreated;
     }
 
-    /** Date-time when this organization was last updated. */
+    /** Date and time when the organization was last updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Date-time when this organization was last updated.
+     * Date and time when the organization was last updated.
      *
      * @return the value
      */

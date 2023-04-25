@@ -22,12 +22,17 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ExternalDbSystemBasicInfo
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "displayName", "compartmentId"})
-    public ExternalDbSystemBasicInfo(String id, String displayName, String compartmentId) {
+    @java.beans.ConstructorProperties({"id", "displayName", "compartmentId", "exadataInfraInfo"})
+    public ExternalDbSystemBasicInfo(
+            String id,
+            String displayName,
+            String compartmentId,
+            ExternalExadataInfraBasicInfo exadataInfraInfo) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
+        this.exadataInfraInfo = exadataInfraInfo;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -86,12 +91,22 @@ public final class ExternalDbSystemBasicInfo
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraInfo")
+        private ExternalExadataInfraBasicInfo exadataInfraInfo;
+
+        public Builder exadataInfraInfo(ExternalExadataInfraBasicInfo exadataInfraInfo) {
+            this.exadataInfraInfo = exadataInfraInfo;
+            this.__explicitlySet__.add("exadataInfraInfo");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalDbSystemBasicInfo build() {
             ExternalDbSystemBasicInfo model =
-                    new ExternalDbSystemBasicInfo(this.id, this.displayName, this.compartmentId);
+                    new ExternalDbSystemBasicInfo(
+                            this.id, this.displayName, this.compartmentId, this.exadataInfraInfo);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -108,6 +123,9 @@ public final class ExternalDbSystemBasicInfo
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInfraInfo")) {
+                this.exadataInfraInfo(model.getExadataInfraInfo());
             }
             return this;
         }
@@ -169,6 +187,13 @@ public final class ExternalDbSystemBasicInfo
         return compartmentId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraInfo")
+    private final ExternalExadataInfraBasicInfo exadataInfraInfo;
+
+    public ExternalExadataInfraBasicInfo getExadataInfraInfo() {
+        return exadataInfraInfo;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -187,6 +212,7 @@ public final class ExternalDbSystemBasicInfo
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", exadataInfraInfo=").append(String.valueOf(this.exadataInfraInfo));
         sb.append(")");
         return sb.toString();
     }
@@ -204,6 +230,7 @@ public final class ExternalDbSystemBasicInfo
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.exadataInfraInfo, other.exadataInfraInfo)
                 && super.equals(other);
     }
 
@@ -216,6 +243,9 @@ public final class ExternalDbSystemBasicInfo
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfraInfo == null ? 43 : this.exadataInfraInfo.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

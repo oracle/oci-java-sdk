@@ -25,6 +25,7 @@ public final class RecipientInvitation
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subjects",
         "senderInvitationId",
         "senderTenancyId",
         "lifecycleState",
@@ -40,6 +41,7 @@ public final class RecipientInvitation
     public RecipientInvitation(
             String id,
             String compartmentId,
+            java.util.List<InvitationSubject> subjects,
             String senderInvitationId,
             String senderTenancyId,
             LifecycleState lifecycleState,
@@ -54,6 +56,7 @@ public final class RecipientInvitation
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subjects = subjects;
         this.senderInvitationId = senderInvitationId;
         this.senderTenancyId = senderTenancyId;
         this.lifecycleState = lifecycleState;
@@ -97,6 +100,21 @@ public final class RecipientInvitation
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** The list of subjects the invitation contains. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subjects")
+        private java.util.List<InvitationSubject> subjects;
+
+        /**
+         * The list of subjects the invitation contains.
+         *
+         * @param subjects the value to set
+         * @return this builder
+         */
+        public Builder subjects(java.util.List<InvitationSubject> subjects) {
+            this.subjects = subjects;
+            this.__explicitlySet__.add("subjects");
             return this;
         }
         /** OCID of the corresponding sender invitation. */
@@ -176,12 +194,12 @@ public final class RecipientInvitation
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Date-time when this recipient invitation was created. */
+        /** Date and time when the recipient invitation was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Date-time when this recipient invitation was created.
+         * Date and time when the recipient invitation was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -191,12 +209,12 @@ public final class RecipientInvitation
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Date-time when this recipient invitation was last updated. */
+        /** Date and time when the recipient invitation was last updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Date-time when this recipient invitation was last updated.
+         * Date and time when the recipient invitation was last updated.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -288,6 +306,7 @@ public final class RecipientInvitation
                     new RecipientInvitation(
                             this.id,
                             this.compartmentId,
+                            this.subjects,
                             this.senderInvitationId,
                             this.senderTenancyId,
                             this.lifecycleState,
@@ -312,6 +331,9 @@ public final class RecipientInvitation
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subjects")) {
+                this.subjects(model.getSubjects());
             }
             if (model.wasPropertyExplicitlySet("senderInvitationId")) {
                 this.senderInvitationId(model.getSenderInvitationId());
@@ -385,6 +407,19 @@ public final class RecipientInvitation
         return compartmentId;
     }
 
+    /** The list of subjects the invitation contains. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subjects")
+    private final java.util.List<InvitationSubject> subjects;
+
+    /**
+     * The list of subjects the invitation contains.
+     *
+     * @return the value
+     */
+    public java.util.List<InvitationSubject> getSubjects() {
+        return subjects;
+    }
+
     /** OCID of the corresponding sender invitation. */
     @com.fasterxml.jackson.annotation.JsonProperty("senderInvitationId")
     private final String senderInvitationId;
@@ -450,12 +485,12 @@ public final class RecipientInvitation
         return displayName;
     }
 
-    /** Date-time when this recipient invitation was created. */
+    /** Date and time when the recipient invitation was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Date-time when this recipient invitation was created.
+     * Date and time when the recipient invitation was created.
      *
      * @return the value
      */
@@ -463,12 +498,12 @@ public final class RecipientInvitation
         return timeCreated;
     }
 
-    /** Date-time when this recipient invitation was last updated. */
+    /** Date and time when the recipient invitation was last updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Date-time when this recipient invitation was last updated.
+     * Date and time when the recipient invitation was last updated.
      *
      * @return the value
      */
@@ -557,6 +592,7 @@ public final class RecipientInvitation
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subjects=").append(String.valueOf(this.subjects));
         sb.append(", senderInvitationId=").append(String.valueOf(this.senderInvitationId));
         sb.append(", senderTenancyId=").append(String.valueOf(this.senderTenancyId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -584,6 +620,7 @@ public final class RecipientInvitation
         RecipientInvitation other = (RecipientInvitation) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subjects, other.subjects)
                 && java.util.Objects.equals(this.senderInvitationId, other.senderInvitationId)
                 && java.util.Objects.equals(this.senderTenancyId, other.senderTenancyId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -606,6 +643,7 @@ public final class RecipientInvitation
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.subjects == null ? 43 : this.subjects.hashCode());
         result =
                 (result * PRIME)
                         + (this.senderInvitationId == null

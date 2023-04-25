@@ -35,6 +35,14 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    ServiceCatalogClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,12 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
         this.waiters = new ServiceCatalogWaiters(executorService, this);
 
         this.paginators = new ServiceCatalogPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "ServiceCatalogClient",
+                            "getPrivateApplicationActionDownloadLogo,getPrivateApplicationPackageActionDownloadConfig"));
+        }
     }
 
     /**
@@ -77,6 +91,7 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ServiceCatalogClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -98,6 +113,17 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -107,7 +133,8 @@ public class ServiceCatalogClient extends com.oracle.bmc.http.internal.BaseSyncC
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new ServiceCatalogClient(this, authenticationDetailsProvider, executorService);
+            return new ServiceCatalogClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

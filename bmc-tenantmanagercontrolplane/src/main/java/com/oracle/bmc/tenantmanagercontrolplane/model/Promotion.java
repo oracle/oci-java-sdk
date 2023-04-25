@@ -53,13 +53,15 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * How long the promotion related to the subscription, if any, is valid in duration units.
+         * Specifies how long the promotion related to the subscription, if any, is valid in
+         * duration units.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private Integer duration;
 
         /**
-         * How long the promotion related to the subscription, if any, is valid in duration units.
+         * Specifies how long the promotion related to the subscription, if any, is valid in
+         * duration units.
          *
          * @param duration the value to set
          * @return this builder
@@ -84,12 +86,16 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("durationUnit");
             return this;
         }
-        /** Total amount of credit for the promotion related to the subscription if there is one. */
+        /**
+         * If a subscription is present, indicates the total amount of promotional subscription
+         * credit.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("amount")
         private Float amount;
 
         /**
-         * Total amount of credit for the promotion related to the subscription if there is one.
+         * If a subscription is present, indicates the total amount of promotional subscription
+         * credit.
          *
          * @param amount the value to set
          * @return this builder
@@ -99,12 +105,14 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("amount");
             return this;
         }
-        /** Current status of the promotion related to the subscription if there is one. */
+        /**
+         * If a subscription is present, indicates the current status of the subscription promotion.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Current status of the promotion related to the subscription if there is one.
+         * If a subscription is present, indicates the current status of the subscription promotion.
          *
          * @param status the value to set
          * @return this builder
@@ -114,12 +122,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Whether or not customer intends to pay once the promotion is done. */
+        /** Speficies whether or not the customer intends to pay after the promotion has expired. */
         @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
         private Boolean isIntentToPay;
 
         /**
-         * Whether or not customer intends to pay once the promotion is done.
+         * Speficies whether or not the customer intends to pay after the promotion has expired.
          *
          * @param isIntentToPay the value to set
          * @return this builder
@@ -144,12 +152,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("currencyUnit");
             return this;
         }
-        /** Date-time for when the promotion starts. */
+        /** Date and time when the promotion starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * Date-time for when the promotion starts.
+         * Date and time when the promotion starts.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -159,12 +167,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** Date-time for when the promotion ends. */
+        /** Date and time when the promotion ends. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
         private java.util.Date timeExpired;
 
         /**
-         * Date-time for when the promotion ends.
+         * Date and time when the promotion ends.
          *
          * @param timeExpired the value to set
          * @return this builder
@@ -234,12 +242,16 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** How long the promotion related to the subscription, if any, is valid in duration units. */
+    /**
+     * Specifies how long the promotion related to the subscription, if any, is valid in duration
+     * units.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final Integer duration;
 
     /**
-     * How long the promotion related to the subscription, if any, is valid in duration units.
+     * Specifies how long the promotion related to the subscription, if any, is valid in duration
+     * units.
      *
      * @return the value
      */
@@ -260,12 +272,14 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         return durationUnit;
     }
 
-    /** Total amount of credit for the promotion related to the subscription if there is one. */
+    /**
+     * If a subscription is present, indicates the total amount of promotional subscription credit.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
     private final Float amount;
 
     /**
-     * Total amount of credit for the promotion related to the subscription if there is one.
+     * If a subscription is present, indicates the total amount of promotional subscription credit.
      *
      * @return the value
      */
@@ -273,7 +287,7 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         return amount;
     }
 
-    /** Current status of the promotion related to the subscription if there is one. */
+    /** If a subscription is present, indicates the current status of the subscription promotion. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Initialized("INITIALIZED"),
         Active("ACTIVE"),
@@ -319,12 +333,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** Current status of the promotion related to the subscription if there is one. */
+    /** If a subscription is present, indicates the current status of the subscription promotion. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Current status of the promotion related to the subscription if there is one.
+     * If a subscription is present, indicates the current status of the subscription promotion.
      *
      * @return the value
      */
@@ -332,12 +346,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         return status;
     }
 
-    /** Whether or not customer intends to pay once the promotion is done. */
+    /** Speficies whether or not the customer intends to pay after the promotion has expired. */
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
     private final Boolean isIntentToPay;
 
     /**
-     * Whether or not customer intends to pay once the promotion is done.
+     * Speficies whether or not the customer intends to pay after the promotion has expired.
      *
      * @return the value
      */
@@ -358,12 +372,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         return currencyUnit;
     }
 
-    /** Date-time for when the promotion starts. */
+    /** Date and time when the promotion starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * Date-time for when the promotion starts.
+     * Date and time when the promotion starts.
      *
      * @return the value
      */
@@ -371,12 +385,12 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         return timeStarted;
     }
 
-    /** Date-time for when the promotion ends. */
+    /** Date and time when the promotion ends. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
     private final java.util.Date timeExpired;
 
     /**
-     * Date-time for when the promotion ends.
+     * Date and time when the promotion ends.
      *
      * @return the value
      */
