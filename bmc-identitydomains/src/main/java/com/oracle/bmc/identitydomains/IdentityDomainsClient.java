@@ -25,7 +25,7 @@ public class IdentityDomainsClient implements IdentityDomains {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(IdentityDomainsAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(IdentityDomainsClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
@@ -46,6 +46,7 @@ public class IdentityDomainsClient implements IdentityDomains {
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.

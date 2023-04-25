@@ -6,12 +6,16 @@ package com.oracle.bmc.internal;
 
 import static junit.framework.TestCase.assertEquals;
 
+import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import org.junit.Test;
 
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.Services;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class EndpointBuilderTest {
 
@@ -85,5 +89,68 @@ public class EndpointBuilderTest {
         assertEquals(
                 "https://foobar.fake.oraclecloud.com",
                 EndpointBuilder.createEndpoint(testServiceWithDefaultTemplate, fakeRegion));
+    }
+
+    @Test
+    public void createEndpoint_useRealmSpecificEndpointTemplateIfPresentAndIfEnvVarIsTrue()
+            throws Exception {
+        Map<String, String> newEnvMap = new HashMap<>();
+        newEnvMap.put("OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED", "TRUE");
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest5")
+                        .serviceEndpointTemplate(
+                                "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc1",
+                                "http://{fooParameter+Dot}{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc3",
+                                "http://{barParameter+Dot}{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .build();
+        assertEquals(
+                "http://{fooParameter+Dot}foobar.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testService, Region.US_PHOENIX_1));
+    }
+
+    @Test
+    public void
+            createEndpoint_useCustomTemplateIfEnvVarIsTrueButRealmSpecificEndpointTemplateNotDefined()
+                    throws Exception {
+        Map<String, String> newEnvMap = new HashMap<>();
+        newEnvMap.put("OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED", "True");
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest7")
+                        .serviceEndpointTemplate(
+                                "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .build();
+        assertEquals(
+                "http://foobar.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testService, Region.US_PHOENIX_1));
+    }
+
+    @Test
+    public void createEndpoint_useCustomTemplateIfEnvVarIsFalse() throws Exception {
+        Map<String, String> newEnvMap = new HashMap<>();
+        newEnvMap.put("OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED", "FalSe");
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest6")
+                        .serviceEndpointTemplate(
+                                "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc1",
+                                "http://{serviceParameter+Dot}{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .build();
+        assertEquals(
+                "http://foobar.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testService, Region.US_PHOENIX_1));
     }
 }

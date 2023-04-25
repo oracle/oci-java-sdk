@@ -59,13 +59,13 @@ public final class SubscriptionInfo extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Service name for subscription.
+         * Subscription service name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
-         * Service name for subscription.
+         * Subscription service name.
          * @param service the value to set
          * @return this builder
          **/
@@ -187,13 +187,13 @@ public final class SubscriptionInfo extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Service name for subscription.
+     * Subscription service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
-     * Service name for subscription.
+     * Subscription service name.
      * @return the value
      **/
     public String getService() {

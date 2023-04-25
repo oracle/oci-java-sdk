@@ -52,6 +52,13 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Change the compartment for an integration instance
      *
      *
@@ -91,6 +98,26 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Change private endpoint outbound connection for given Integration instance. The operation is long-running
+     * and creates a new WorkRequest.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePrivateEndpointOutboundConnectionResponse>
+            changePrivateEndpointOutboundConnection(
+                    ChangePrivateEndpointOutboundConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePrivateEndpointOutboundConnectionRequest,
+                                    ChangePrivateEndpointOutboundConnectionResponse>
+                            handler);
+
+    /**
      * Creates a new Integration Instance.
      *
      *
@@ -121,6 +148,23 @@ public interface IntegrationInstanceAsync extends AutoCloseable {
             DeleteIntegrationInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteIntegrationInstanceRequest, DeleteIntegrationInstanceResponse>
+                    handler);
+
+    /**
+     * Enable Process Automation for given Integration Instance
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableProcessAutomationResponse> enableProcessAutomation(
+            EnableProcessAutomationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableProcessAutomationRequest, EnableProcessAutomationResponse>
                     handler);
 
     /**

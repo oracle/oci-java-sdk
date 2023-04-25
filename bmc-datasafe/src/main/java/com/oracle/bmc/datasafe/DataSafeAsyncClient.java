@@ -49,6 +49,7 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             signingStrategyRequestSignerFactories;
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -282,6 +283,7 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     LOG.info(
@@ -293,6 +295,12 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         }
         if (endpoint != null) {
             setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "DataSafeAsyncClient",
+                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -408,6 +416,7 @@ public class DataSafeAsyncClient implements DataSafeAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
         java.util.Optional<String> endpoint =
                 com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
@@ -421,6 +430,7 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     @Override
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -429,6 +439,23 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
     }
 
     @Override
@@ -3921,16 +3948,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                             DownloadDiscoveryReportRequest, DownloadDiscoveryReportResponse>
                     handler) {
         LOG.trace("Called async downloadDiscoveryReport");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadDiscoveryReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadDiscoveryReportRequest interceptedRequest =
                 DownloadDiscoveryReportConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -3984,16 +4001,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                             DownloadMaskingLogRequest, DownloadMaskingLogResponse>
                     handler) {
         LOG.trace("Called async downloadMaskingLog");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadMaskingLog returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadMaskingLogRequest interceptedRequest =
                 DownloadMaskingLogConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4045,16 +4052,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                             DownloadMaskingPolicyRequest, DownloadMaskingPolicyResponse>
                     handler) {
         LOG.trace("Called async downloadMaskingPolicy");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadMaskingPolicy returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadMaskingPolicyRequest interceptedRequest =
                 DownloadMaskingPolicyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4107,16 +4104,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                             DownloadMaskingReportRequest, DownloadMaskingReportResponse>
                     handler) {
         LOG.trace("Called async downloadMaskingReport");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadMaskingReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadMaskingReportRequest interceptedRequest =
                 DownloadMaskingReportConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4169,16 +4156,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                             DownloadPrivilegeScriptRequest, DownloadPrivilegeScriptResponse>
                     handler) {
         LOG.trace("Called async downloadPrivilegeScript");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadPrivilegeScript returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadPrivilegeScriptRequest interceptedRequest =
                 DownloadPrivilegeScriptConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4230,16 +4207,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                     DownloadSecurityAssessmentReportResponse>
                             handler) {
         LOG.trace("Called async downloadSecurityAssessmentReport");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadSecurityAssessmentReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadSecurityAssessmentReportRequest interceptedRequest =
                 DownloadSecurityAssessmentReportConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4299,16 +4266,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                     DownloadSensitiveDataModelResponse>
                             handler) {
         LOG.trace("Called async downloadSensitiveDataModel");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadSensitiveDataModel returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadSensitiveDataModelRequest interceptedRequest =
                 DownloadSensitiveDataModelConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4365,16 +4322,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                     DownloadUserAssessmentReportResponse>
                             handler) {
         LOG.trace("Called async downloadUserAssessmentReport");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "downloadUserAssessmentReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final DownloadUserAssessmentReportRequest interceptedRequest =
                 DownloadUserAssessmentReportConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -4662,16 +4609,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                                     GenerateOnPremConnectorConfigurationResponse>
                             handler) {
         LOG.trace("Called async generateOnPremConnectorConfiguration");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "generateOnPremConnectorConfiguration returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GenerateOnPremConnectorConfigurationRequest interceptedRequest =
                 GenerateOnPremConnectorConfigurationConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -5889,16 +5826,6 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                             GetReportContentRequest, GetReportContentResponse>
                     handler) {
         LOG.trace("Called async getReportContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getReportContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetReportContentRequest interceptedRequest =
                 GetReportContentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

@@ -19,6 +19,10 @@ public enum WorkRequestOperationType {
     DeleteDbSystem("DELETE_DB_SYSTEM"),
     UpdateExternalDbSystemConnector("UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR"),
     ChangeExternalDbSystemCompartment("CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"),
+    DisableExadataInfrasturcture("DISABLE_EXADATA_INFRASTURCTURE"),
+    EnableExadataInfrastructure("ENABLE_EXADATA_INFRASTRUCTURE"),
+    DeleteExadataInfrastructure("DELETE_EXADATA_INFRASTRUCTURE"),
+    ChangeExadataCompartment("CHANGE_EXADATA_COMPARTMENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -42,7 +42,8 @@ public final class IntegrationInstanceSummary
         "networkEndpointDetails",
         "freeformTags",
         "definedTags",
-        "shape"
+        "shape",
+        "privateEndpointOutboundConnection"
     })
     public IntegrationInstanceSummary(
             String id,
@@ -64,7 +65,8 @@ public final class IntegrationInstanceSummary
             NetworkEndpointDetails networkEndpointDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Shape shape) {
+            Shape shape,
+            OutboundConnection privateEndpointOutboundConnection) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -86,6 +88,7 @@ public final class IntegrationInstanceSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.shape = shape;
+        this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -419,6 +422,16 @@ public final class IntegrationInstanceSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointOutboundConnection")
+        private OutboundConnection privateEndpointOutboundConnection;
+
+        public Builder privateEndpointOutboundConnection(
+                OutboundConnection privateEndpointOutboundConnection) {
+            this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
+            this.__explicitlySet__.add("privateEndpointOutboundConnection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -444,7 +457,8 @@ public final class IntegrationInstanceSummary
                             this.networkEndpointDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.shape);
+                            this.shape,
+                            this.privateEndpointOutboundConnection);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -512,6 +526,10 @@ public final class IntegrationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointOutboundConnection")) {
+                this.privateEndpointOutboundConnection(
+                        model.getPrivateEndpointOutboundConnection());
             }
             return this;
         }
@@ -1016,6 +1034,13 @@ public final class IntegrationInstanceSummary
         return shape;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointOutboundConnection")
+    private final OutboundConnection privateEndpointOutboundConnection;
+
+    public OutboundConnection getPrivateEndpointOutboundConnection() {
+        return privateEndpointOutboundConnection;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1052,6 +1077,8 @@ public final class IntegrationInstanceSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", privateEndpointOutboundConnection=")
+                .append(String.valueOf(this.privateEndpointOutboundConnection));
         sb.append(")");
         return sb.toString();
     }
@@ -1090,6 +1117,9 @@ public final class IntegrationInstanceSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(
+                        this.privateEndpointOutboundConnection,
+                        other.privateEndpointOutboundConnection)
                 && super.equals(other);
     }
 
@@ -1145,6 +1175,11 @@ public final class IntegrationInstanceSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointOutboundConnection == null
+                                ? 43
+                                : this.privateEndpointOutboundConnection.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

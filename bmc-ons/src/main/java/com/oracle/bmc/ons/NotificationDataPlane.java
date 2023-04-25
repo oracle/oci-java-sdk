@@ -55,6 +55,13 @@ public interface NotificationDataPlane extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Moves a subscription into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).

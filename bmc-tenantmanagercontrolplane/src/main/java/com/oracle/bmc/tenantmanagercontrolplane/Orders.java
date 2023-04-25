@@ -8,7 +8,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 
 /**
- * The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+ * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
@@ -53,6 +53,13 @@ public interface Orders extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Triggers an order activation workflow on behalf of the tenant, given by compartment ID in the body.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -65,7 +72,7 @@ public interface Orders extends AutoCloseable {
     ActivateOrderResponse activateOrder(ActivateOrderRequest request);
 
     /**
-     * Returns the Order Details given by the order ID in the JWT.
+     * Returns the order details given by the order ID in the JWT.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

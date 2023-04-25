@@ -49,6 +49,7 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -360,6 +361,7 @@ public class IntegrationInstanceClient implements IntegrationInstance {
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     LOG.info(
@@ -498,6 +500,7 @@ public class IntegrationInstanceClient implements IntegrationInstance {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
         java.util.Optional<String> endpoint =
                 com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
@@ -511,6 +514,7 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     @Override
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -519,6 +523,23 @@ public class IntegrationInstanceClient implements IntegrationInstance {
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
     }
 
     @Override
@@ -620,6 +641,52 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     }
 
     @Override
+    public ChangePrivateEndpointOutboundConnectionResponse changePrivateEndpointOutboundConnection(
+            ChangePrivateEndpointOutboundConnectionRequest request) {
+        LOG.trace("Called changePrivateEndpointOutboundConnection");
+        final ChangePrivateEndpointOutboundConnectionRequest interceptedRequest =
+                ChangePrivateEndpointOutboundConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePrivateEndpointOutboundConnectionConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "ChangePrivateEndpointOutboundConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangePrivateEndpointOutboundConnection");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangePrivateEndpointOutboundConnectionResponse>
+                transformer =
+                        ChangePrivateEndpointOutboundConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangePrivateEndpointOutboundConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateIntegrationInstanceResponse createIntegrationInstance(
             CreateIntegrationInstanceRequest request) {
         LOG.trace("Called createIntegrationInstance");
@@ -630,7 +697,7 @@ public class IntegrationInstanceClient implements IntegrationInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -697,6 +764,46 @@ public class IntegrationInstanceClient implements IntegrationInstance {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableProcessAutomationResponse enableProcessAutomation(
+            EnableProcessAutomationRequest request) {
+        LOG.trace("Called enableProcessAutomation");
+        final EnableProcessAutomationRequest interceptedRequest =
+                EnableProcessAutomationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableProcessAutomationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "EnableProcessAutomation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/EnableProcessAutomation");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableProcessAutomationResponse>
+                transformer =
+                        EnableProcessAutomationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

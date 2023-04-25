@@ -75,13 +75,13 @@ public final class Order extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * Administrator email owning the subscription.
+         * Email address of the administrator who owns the subscription.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
         /**
-         * Administrator email owning the subscription.
+         * Email address of the administrator who owns the subscription.
          * @param adminEmail the value to set
          * @return this builder
          **/
@@ -201,13 +201,13 @@ public final class Order extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Administrator email owning the subscription.
+     * Email address of the administrator who owns the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
     /**
-     * Administrator email owning the subscription.
+     * Email address of the administrator who owns the subscription.
      * @return the value
      **/
     public String getAdminEmail() {

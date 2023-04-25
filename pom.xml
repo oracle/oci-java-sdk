@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.60.0</version>
+  <version>2.60.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -55,7 +55,7 @@
     <powermock.version>1.7.4</powermock.version>
     <hk2.version>2.6.1</hk2.version>
     <net.jodah.failsafe.version>0.9.2</net.jodah.failsafe.version>
-    <nimbus.jose.jwt.version>9.15.2</nimbus.jose.jwt.version>
+    <nimbus.jose.jwt.version>9.24.2</nimbus.jose.jwt.version>
     <hamcrest.core.version>1.3</hamcrest.core.version>
     <hamcrest.junit.version>2.0.0.0</hamcrest.junit.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
@@ -361,8 +361,8 @@
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
             <aggregate>true</aggregate>
-            <minmemory>1024m</minmemory>
-            <maxmemory>4096m</maxmemory>
+            <minmemory>2048</minmemory>
+            <maxmemory>6144m</maxmemory>
             <doclint>none</doclint>
             <sourcepath>src/main/java</sourcepath>
             <links>

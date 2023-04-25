@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Possible lifecycle states for the OrganizationTenancy.
+ * Possible lifecycle states for the organization tenancy.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public enum OrganizationTenancyLifecycleState {
