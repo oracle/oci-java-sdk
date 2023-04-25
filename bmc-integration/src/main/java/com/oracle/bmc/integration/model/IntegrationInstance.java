@@ -44,7 +44,8 @@ public final class IntegrationInstance
         "networkEndpointDetails",
         "idcsInfo",
         "attachments",
-        "shape"
+        "shape",
+        "privateEndpointOutboundConnection"
     })
     public IntegrationInstance(
             String id,
@@ -68,7 +69,8 @@ public final class IntegrationInstance
             NetworkEndpointDetails networkEndpointDetails,
             IdcsInfoDetails idcsInfo,
             java.util.List<AttachmentDetails> attachments,
-            Shape shape) {
+            Shape shape,
+            OutboundConnection privateEndpointOutboundConnection) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -92,6 +94,7 @@ public final class IntegrationInstance
         this.idcsInfo = idcsInfo;
         this.attachments = attachments;
         this.shape = shape;
+        this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -429,6 +432,16 @@ public final class IntegrationInstance
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointOutboundConnection")
+        private OutboundConnection privateEndpointOutboundConnection;
+
+        public Builder privateEndpointOutboundConnection(
+                OutboundConnection privateEndpointOutboundConnection) {
+            this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
+            this.__explicitlySet__.add("privateEndpointOutboundConnection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -456,7 +469,8 @@ public final class IntegrationInstance
                             this.networkEndpointDetails,
                             this.idcsInfo,
                             this.attachments,
-                            this.shape);
+                            this.shape,
+                            this.privateEndpointOutboundConnection);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -530,6 +544,10 @@ public final class IntegrationInstance
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointOutboundConnection")) {
+                this.privateEndpointOutboundConnection(
+                        model.getPrivateEndpointOutboundConnection());
             }
             return this;
         }
@@ -1022,6 +1040,13 @@ public final class IntegrationInstance
         return shape;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointOutboundConnection")
+    private final OutboundConnection privateEndpointOutboundConnection;
+
+    public OutboundConnection getPrivateEndpointOutboundConnection() {
+        return privateEndpointOutboundConnection;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1061,6 +1086,8 @@ public final class IntegrationInstance
         sb.append(", idcsInfo=").append(String.valueOf(this.idcsInfo));
         sb.append(", attachments=").append(String.valueOf(this.attachments));
         sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", privateEndpointOutboundConnection=")
+                .append(String.valueOf(this.privateEndpointOutboundConnection));
         sb.append(")");
         return sb.toString();
     }
@@ -1101,6 +1128,9 @@ public final class IntegrationInstance
                 && java.util.Objects.equals(this.idcsInfo, other.idcsInfo)
                 && java.util.Objects.equals(this.attachments, other.attachments)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(
+                        this.privateEndpointOutboundConnection,
+                        other.privateEndpointOutboundConnection)
                 && super.equals(other);
     }
 
@@ -1158,6 +1188,11 @@ public final class IntegrationInstance
         result = (result * PRIME) + (this.idcsInfo == null ? 43 : this.idcsInfo.hashCode());
         result = (result * PRIME) + (this.attachments == null ? 43 : this.attachments.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointOutboundConnection == null
+                                ? 43
+                                : this.privateEndpointOutboundConnection.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

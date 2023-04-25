@@ -61,6 +61,16 @@ public interface CloudGuard extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not. Set
+     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
+     * specific endpoint template, otherwise set it to "false"
+     *
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
+     *     template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Add an existing compartment to a security zone. If you previously removed a subcompartment
      * from a security zone, you can add it back to the same security zone. The security zone
      * ensures that resources in the subcompartment comply with the security zone's policies.

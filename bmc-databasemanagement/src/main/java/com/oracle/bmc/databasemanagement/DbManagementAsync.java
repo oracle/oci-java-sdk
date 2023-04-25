@@ -54,6 +54,16 @@ public interface DbManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not. Set
+     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
+     * specific endpoint template, otherwise set it to "false"
+     *
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
+     *     template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Adds data files or temp files to the tablespace.
      *
      * @param request The request object containing the details to send
@@ -167,6 +177,25 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the Exadata infrastructure and its related resources (storage server, storage server
+     * connectors and storage server grid) to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExternalExadataInfrastructureCompartmentResponse>
+            changeExternalExadataInfrastructureCompartment(
+                    ChangeExternalExadataInfrastructureCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalExadataInfrastructureCompartmentRequest,
+                                    ChangeExternalExadataInfrastructureCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a job.
      *
      * @param request The request object containing the details to send
@@ -218,6 +247,25 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CheckExternalDbSystemConnectorConnectionStatusRequest,
                                     CheckExternalDbSystemConnectorConnectionStatusResponse>
+                            handler);
+
+    /**
+     * Check the status of the Exadata storage server connection specified by
+     * exadataStorageConnectorId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CheckExternalExadataStorageConnectorResponse>
+            checkExternalExadataStorageConnector(
+                    CheckExternalExadataStorageConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CheckExternalExadataStorageConnectorRequest,
+                                    CheckExternalExadataStorageConnectorResponse>
                             handler);
 
     /**
@@ -288,6 +336,47 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CreateExternalDbSystemDiscoveryRequest,
                                     CreateExternalDbSystemDiscoveryResponse>
+                            handler);
+
+    /**
+     * Creates an OCI resource for the Exadata infrastructure and enable monitoring service on the
+     * exadata infrastructure. The following resource/subresources are created: Infrastructure
+     * Storage server connectors Storage servers Storage grids
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalExadataInfrastructureResponse>
+            createExternalExadataInfrastructure(
+                    CreateExternalExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalExadataInfrastructureRequest,
+                                    CreateExternalExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Create the storage server connector after validating the connection information. Or only
+     * validates the connection information for creating the connection to the storage server. The
+     * connector for one storage server is associated with the Exadata infrastructure discovery or
+     * existing Exadata infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalExadataStorageConnectorResponse>
+            createExternalExadataStorageConnector(
+                    CreateExternalExadataStorageConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalExadataStorageConnectorRequest,
+                                    CreateExternalExadataStorageConnectorResponse>
                             handler);
 
     /**
@@ -409,6 +498,42 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the the Exadata infrastructure specified by externalExadataInfrastructureId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalExadataInfrastructureResponse>
+            deleteExternalExadataInfrastructure(
+                    DeleteExternalExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalExadataInfrastructureRequest,
+                                    DeleteExternalExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Deletes the storage server connector specified by exadataStorageConnectorId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalExadataStorageConnectorResponse>
+            deleteExternalExadataStorageConnector(
+                    DeleteExternalExadataStorageConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalExadataStorageConnectorRequest,
+                                    DeleteExternalExadataStorageConnectorResponse>
+                            handler);
+
+    /**
      * Deletes the job specified by jobId.
      *
      * @param request The request object containing the details to send
@@ -475,6 +600,59 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disables Database Management service for the Exadata infrastructure specified by
+     * externalExadataInfrastructureId. It covers the following components Exadata infrastructure
+     * Exadata storage grid Exadata storage server Database systems within the Exdata infrastructure
+     * will not be impacted and should be disabled explicitly if needed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalExadataInfrastructureManagementResponse>
+            disableExternalExadataInfrastructureManagement(
+                    DisableExternalExadataInfrastructureManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalExadataInfrastructureManagementRequest,
+                                    DisableExternalExadataInfrastructureManagementResponse>
+                            handler);
+
+    /**
+     * Completes the Exadata system prechecking on the following: Verifies if the database systems
+     * are valid RAC database systems. Otherwise, return 400 status code with
+     * NON_RAC_DATABASE_SYSTEM error code. Verifies if the ASM connectors defined for each database
+     * system. Otherwise, return 400 status code with CONNECTOR_NOT_DEFINED error code. Verifies if
+     * the agents associated with ASM are valid and could be used for the storage servers.
+     * Otherwise, return 400 status code with INVALID_AGENT error code. Verifies if it is an Exadata
+     * system. Otherwise, return 400 status code with INVALID_EXADATA_SYSTEM error code.
+     *
+     * <p>Starts the discovery process for the Exadata system infrastructure.The following
+     * resources/components could be discovered storage servers from each database systems storage
+     * grid for all storage server exadata infrastructure The same API covers both new discovery and
+     * re-discovery cases. For the new discovery case, new managed resources/sub-resources are
+     * created or override the existing one. For re-discovery case, the existing managed
+     * resources/sub-resources are checked to find out which ones should be added or which one
+     * should be removed based on the unique key defined for each resource/sub-resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DiscoverExternalExadataInfrastructureResponse>
+            discoverExternalExadataInfrastructure(
+                    DiscoverExternalExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DiscoverExternalExadataInfrastructureRequest,
+                                    DiscoverExternalExadataInfrastructureResponse>
+                            handler);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by
      * managedDatabaseId.
      *
@@ -507,6 +685,26 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     EnableExternalDbSystemDatabaseManagementRequest,
                                     EnableExternalDbSystemDatabaseManagementResponse>
+                            handler);
+
+    /**
+     * Enables Database Management service for the exadata infrastructure specified by
+     * externalExadataInfrastructureId. It covers the following components Exadata infrastructure
+     * Exadata storage grid Exadata storage server
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalExadataInfrastructureManagementResponse>
+            enableExternalExadataInfrastructureManagement(
+                    EnableExternalExadataInfrastructureManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalExadataInfrastructureManagementRequest,
+                                    EnableExternalExadataInfrastructureManagementResponse>
                             handler);
 
     /**
@@ -792,6 +990,80 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details for the the Exadata infrastructure specified by
+     * externalExadataInfrastructureId. It includes the database systems and storage grid within the
+     * Exadata infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalExadataInfrastructureResponse>
+            getExternalExadataInfrastructure(
+                    GetExternalExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataInfrastructureRequest,
+                                    GetExternalExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Gets the details for the storage server connector specified by exadataStorageConnectorId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalExadataStorageConnectorResponse>
+            getExternalExadataStorageConnector(
+                    GetExternalExadataStorageConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataStorageConnectorRequest,
+                                    GetExternalExadataStorageConnectorResponse>
+                            handler);
+
+    /**
+     * Gets the details for the storage server grid specified by exadataStorageGridId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalExadataStorageGridResponse>
+            getExternalExadataStorageGrid(
+                    GetExternalExadataStorageGridRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataStorageGridRequest,
+                                    GetExternalExadataStorageGridResponse>
+                            handler);
+
+    /**
+     * Gets the summary for the storage server specified by exadataStorageServerId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalExadataStorageServerResponse>
+            getExternalExadataStorageServer(
+                    GetExternalExadataStorageServerRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataStorageServerRequest,
+                                    GetExternalExadataStorageServerResponse>
+                            handler);
+
+    /**
      * Gets the details for the external listener specified by `externalListenerId`.
      *
      * @param request The request object containing the details to send
@@ -806,6 +1078,20 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetExternalListenerRequest, GetExternalListenerResponse>
                     handler);
+
+    /**
+     * Get the IORM plan from the specific exadata storage server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIormPlanResponse> getIormPlan(
+            GetIormPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetIormPlanRequest, GetIormPlanResponse> handler);
 
     /**
      * Gets the details for the job specified by jobId.
@@ -880,6 +1166,22 @@ public interface DbManagementAsync extends AutoCloseable {
             GetManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Get open alerts from storage server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOpenAlertHistoryResponse> getOpenAlertHistory(
+            GetOpenAlertHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOpenAlertHistoryRequest, GetOpenAlertHistoryResponse>
                     handler);
 
     /**
@@ -987,6 +1289,22 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetTablespaceResponse> getTablespace(
             GetTablespaceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
+                    handler);
+
+    /**
+     * Get SQL ID with top cpu activity from storage server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTopSqlCpuActivityResponse> getTopSqlCpuActivity(
+            GetTopSqlCpuActivityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTopSqlCpuActivityRequest, GetTopSqlCpuActivityResponse>
                     handler);
 
     /**
@@ -1363,6 +1681,60 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListExternalDbSystemsRequest, ListExternalDbSystemsResponse>
                     handler);
+
+    /**
+     * Lists the Exadata infrastructures for a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalExadataInfrastructuresResponse>
+            listExternalExadataInfrastructures(
+                    ListExternalExadataInfrastructuresRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalExadataInfrastructuresRequest,
+                                    ListExternalExadataInfrastructuresResponse>
+                            handler);
+
+    /**
+     * Lists the connectors for the specific Exadata infrastructures.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalExadataStorageConnectorsResponse>
+            listExternalExadataStorageConnectors(
+                    ListExternalExadataStorageConnectorsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalExadataStorageConnectorsRequest,
+                                    ListExternalExadataStorageConnectorsResponse>
+                            handler);
+
+    /**
+     * Lists all the storage servers for the exadata infrastructure or storage grid.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalExadataStorageServersResponse>
+            listExternalExadataStorageServers(
+                    ListExternalExadataStorageServersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalExadataStorageServersRequest,
+                                    ListExternalExadataStorageServersResponse>
+                            handler);
 
     /**
      * Lists the database services registered with the specified external listener for the specified
@@ -2309,6 +2681,43 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateExternalDbSystemDiscoveryRequest,
                                     UpdateExternalDbSystemDiscoveryResponse>
+                            handler);
+
+    /**
+     * Updates the details for the the Exadata infrastructure specified by
+     * externalExadataInfrastructureId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalExadataInfrastructureResponse>
+            updateExternalExadataInfrastructure(
+                    UpdateExternalExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataInfrastructureRequest,
+                                    UpdateExternalExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Updates the details for the storage server connector specified by exadataStorageConnectorId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalExadataStorageConnectorResponse>
+            updateExternalExadataStorageConnector(
+                    UpdateExternalExadataStorageConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageConnectorRequest,
+                                    UpdateExternalExadataStorageConnectorResponse>
                             handler);
 
     /**

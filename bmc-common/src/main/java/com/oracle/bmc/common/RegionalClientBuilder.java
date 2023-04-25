@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.common;
 
+import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 import org.slf4j.Logger;
 
@@ -21,6 +22,8 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RegionalClientBuilder.class);
 
+    protected Region region;
+
     public RegionalClientBuilder(Service service) {
         super(service);
     }
@@ -32,6 +35,7 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
      * @return this builder
      */
     public B region(com.oracle.bmc.Region region) {
+        setRegion(region);
         Optional<String> endpoint = region.getEndpoint(service);
         if (endpoint.isPresent()) {
             endpoint(endpoint.get());
@@ -58,5 +62,10 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(service, regionId);
             return endpoint(endpoint);
         }
+    }
+
+    private B setRegion(Region region) {
+        this.region = region;
+        return (B) this;
     }
 }

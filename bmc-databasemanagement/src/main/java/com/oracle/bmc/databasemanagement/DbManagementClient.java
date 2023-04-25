@@ -335,6 +335,48 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ChangeExternalExadataInfrastructureCompartmentResponse
+            changeExternalExadataInfrastructureCompartment(
+                    ChangeExternalExadataInfrastructureCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeExternalExadataInfrastructureCompartmentDetails(),
+                "changeExternalExadataInfrastructureCompartmentDetails is required");
+
+        return clientCall(request, ChangeExternalExadataInfrastructureCompartmentResponse::builder)
+                .logger(LOG, "changeExternalExadataInfrastructureCompartment")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeExternalExadataInfrastructureCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/ChangeExternalExadataInfrastructureCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExternalExadataInfrastructureCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam(request.getExternalExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExternalExadataInfrastructureCompartmentResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExternalExadataInfrastructureCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -437,6 +479,45 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "content-location",
                         CheckExternalDbSystemConnectorConnectionStatusResponse.Builder
                                 ::contentLocation)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CheckExternalExadataStorageConnectorResponse checkExternalExadataStorageConnector(
+            CheckExternalExadataStorageConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageConnectorId(),
+                "externalExadataStorageConnectorId must not be blank");
+
+        return clientCall(request, CheckExternalExadataStorageConnectorResponse::builder)
+                .logger(LOG, "checkExternalExadataStorageConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CheckExternalExadataStorageConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/CheckExternalExadataStorageConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckExternalExadataStorageConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageConnectors")
+                .appendPathParam(request.getExternalExadataStorageConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("checkStatus")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ExternalExadataStorageConnectorStatus.class,
+                        CheckExternalExadataStorageConnectorResponse.Builder
+                                ::externalExadataStorageConnectorStatus)
+                .handleResponseHeaderString(
+                        "etag", CheckExternalExadataStorageConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CheckExternalExadataStorageConnectorResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -587,6 +668,75 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "content-location",
                         CreateExternalDbSystemDiscoveryResponse.Builder::contentLocation)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalExadataInfrastructureResponse createExternalExadataInfrastructure(
+            CreateExternalExadataInfrastructureRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalExadataInfrastructureDetails(),
+                "createExternalExadataInfrastructureDetails is required");
+
+        return clientCall(request, CreateExternalExadataInfrastructureResponse::builder)
+                .logger(LOG, "createExternalExadataInfrastructure")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/CreateExternalExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalExadataInfrastructureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
+                        CreateExternalExadataInfrastructureResponse.Builder
+                                ::externalExadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalExadataInfrastructureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalExadataInfrastructureResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalExadataStorageConnectorResponse createExternalExadataStorageConnector(
+            CreateExternalExadataStorageConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalExadataStorageConnectorDetails(),
+                "createExternalExadataStorageConnectorDetails is required");
+
+        return clientCall(request, CreateExternalExadataStorageConnectorResponse::builder)
+                .logger(LOG, "createExternalExadataStorageConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalExadataStorageConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/CreateExternalExadataStorageConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalExadataStorageConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageConnectors")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
+                                .class,
+                        CreateExternalExadataStorageConnectorResponse.Builder
+                                ::externalExadataStorageConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalExadataStorageConnectorResponse.Builder::etag)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -799,6 +949,65 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteExternalExadataInfrastructureResponse deleteExternalExadataInfrastructure(
+            DeleteExternalExadataInfrastructureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId must not be blank");
+
+        return clientCall(request, DeleteExternalExadataInfrastructureResponse::builder)
+                .logger(LOG, "deleteExternalExadataInfrastructure")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/DeleteExternalExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalExadataInfrastructureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam(request.getExternalExadataInfrastructureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalExadataInfrastructureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalExadataInfrastructureResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExternalExadataStorageConnectorResponse deleteExternalExadataStorageConnector(
+            DeleteExternalExadataStorageConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageConnectorId(),
+                "externalExadataStorageConnectorId must not be blank");
+
+        return clientCall(request, DeleteExternalExadataStorageConnectorResponse::builder)
+                .logger(LOG, "deleteExternalExadataStorageConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalExadataStorageConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/DeleteExternalExadataStorageConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalExadataStorageConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageConnectors")
+                .appendPathParam(request.getExternalExadataStorageConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteJobResponse deleteJob(DeleteJobRequest request) {
 
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
@@ -911,6 +1120,82 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DisableExternalExadataInfrastructureManagementResponse
+            disableExternalExadataInfrastructureManagement(
+                    DisableExternalExadataInfrastructureManagementRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId must not be blank");
+
+        return clientCall(request, DisableExternalExadataInfrastructureManagementResponse::builder)
+                .logger(LOG, "disableExternalExadataInfrastructureManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalExadataInfrastructureManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/DisableExternalExadataInfrastructureManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalExadataInfrastructureManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam(request.getExternalExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalExadataInfrastructureManagementResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalExadataInfrastructureManagementResponse.Builder
+                                ::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DiscoverExternalExadataInfrastructureResponse discoverExternalExadataInfrastructure(
+            DiscoverExternalExadataInfrastructureRequest request) {
+        Objects.requireNonNull(
+                request.getDiscoverExternalExadataInfrastructureDetails(),
+                "discoverExternalExadataInfrastructureDetails is required");
+
+        return clientCall(request, DiscoverExternalExadataInfrastructureResponse::builder)
+                .logger(LOG, "discoverExternalExadataInfrastructure")
+                .serviceDetails(
+                        "DbManagement",
+                        "DiscoverExternalExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/DiscoverExternalExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DiscoverExternalExadataInfrastructureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam("actions")
+                .appendPathParam("discoverExadataInfrastructure")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ExternalExadataInfrastructureDiscovery.class,
+                        DiscoverExternalExadataInfrastructureResponse.Builder
+                                ::externalExadataInfrastructureDiscovery)
+                .handleResponseHeaderString(
+                        "etag", DiscoverExternalExadataInfrastructureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DiscoverExternalExadataInfrastructureResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DropTablespaceResponse dropTablespace(DropTablespaceRequest request) {
 
         Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
@@ -980,6 +1265,47 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         EnableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public EnableExternalExadataInfrastructureManagementResponse
+            enableExternalExadataInfrastructureManagement(
+                    EnableExternalExadataInfrastructureManagementRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalExadataInfrastructureManagementDetails(),
+                "enableExternalExadataInfrastructureManagementDetails is required");
+
+        return clientCall(request, EnableExternalExadataInfrastructureManagementResponse::builder)
+                .logger(LOG, "enableExternalExadataInfrastructureManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalExadataInfrastructureManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/EnableExternalExadataInfrastructureManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalExadataInfrastructureManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam(request.getExternalExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalExadataInfrastructureManagementResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalExadataInfrastructureManagementResponse.Builder
+                                ::opcWorkRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1532,6 +1858,142 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetExternalExadataInfrastructureResponse getExternalExadataInfrastructure(
+            GetExternalExadataInfrastructureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId must not be blank");
+
+        return clientCall(request, GetExternalExadataInfrastructureResponse::builder)
+                .logger(LOG, "getExternalExadataInfrastructure")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/GetExternalExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalExadataInfrastructureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam(request.getExternalExadataInfrastructureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
+                        GetExternalExadataInfrastructureResponse.Builder
+                                ::externalExadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalExadataInfrastructureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetExternalExadataInfrastructureResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalExadataStorageConnectorResponse getExternalExadataStorageConnector(
+            GetExternalExadataStorageConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageConnectorId(),
+                "externalExadataStorageConnectorId must not be blank");
+
+        return clientCall(request, GetExternalExadataStorageConnectorResponse::builder)
+                .logger(LOG, "getExternalExadataStorageConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalExadataStorageConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/GetExternalExadataStorageConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalExadataStorageConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageConnectors")
+                .appendPathParam(request.getExternalExadataStorageConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
+                                .class,
+                        GetExternalExadataStorageConnectorResponse.Builder
+                                ::externalExadataStorageConnector)
+                .handleResponseHeaderString(
+                        "etag", GetExternalExadataStorageConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalExadataStorageGridResponse getExternalExadataStorageGrid(
+            GetExternalExadataStorageGridRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageGridId(),
+                "externalExadataStorageGridId must not be blank");
+
+        return clientCall(request, GetExternalExadataStorageGridResponse::builder)
+                .logger(LOG, "getExternalExadataStorageGrid")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalExadataStorageGrid",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageGrid/GetExternalExadataStorageGrid")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalExadataStorageGridRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageGrids")
+                .appendPathParam(request.getExternalExadataStorageGridId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid.class,
+                        GetExternalExadataStorageGridResponse.Builder::externalExadataStorageGrid)
+                .handleResponseHeaderString(
+                        "etag", GetExternalExadataStorageGridResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalExadataStorageGridResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetExternalExadataStorageServerResponse getExternalExadataStorageServer(
+            GetExternalExadataStorageServerRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+
+        return clientCall(request, GetExternalExadataStorageServerResponse::builder)
+                .logger(LOG, "getExternalExadataStorageServer")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalExadataStorageServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetExternalExadataStorageServer")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalExadataStorageServerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer.class,
+                        GetExternalExadataStorageServerResponse.Builder
+                                ::externalExadataStorageServer)
+                .handleResponseHeaderString(
+                        "etag", GetExternalExadataStorageServerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalExadataStorageServerResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public GetExternalListenerResponse getExternalListener(GetExternalListenerRequest request) {
 
         Validate.notBlank(request.getExternalListenerId(), "externalListenerId must not be blank");
@@ -1555,6 +2017,36 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", GetExternalListenerResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalListenerResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetIormPlanResponse getIormPlan(GetIormPlanRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+
+        return clientCall(request, GetIormPlanResponse::builder)
+                .logger(LOG, "getIormPlan")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetIormPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetIormPlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIormPlanRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .appendPathParam("iormPlan")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.IormPlan.class,
+                        GetIormPlanResponse.Builder::iormPlan)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIormPlanResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1690,6 +2182,36 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedDatabaseGroupResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetManagedDatabaseGroupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetOpenAlertHistoryResponse getOpenAlertHistory(GetOpenAlertHistoryRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+
+        return clientCall(request, GetOpenAlertHistoryResponse::builder)
+                .logger(LOG, "getOpenAlertHistory")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetOpenAlertHistory",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetOpenAlertHistory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOpenAlertHistoryRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .appendPathParam("openAlertHistory")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.OpenAlertHistory.class,
+                        GetOpenAlertHistoryResponse.Builder::openAlertHistory)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOpenAlertHistoryResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1894,6 +2416,36 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetTablespaceResponse.Builder::tablespace)
                 .handleResponseHeaderString(
                         "opc-request-id", GetTablespaceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetTopSqlCpuActivityResponse getTopSqlCpuActivity(GetTopSqlCpuActivityRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+
+        return clientCall(request, GetTopSqlCpuActivityResponse::builder)
+                .logger(LOG, "getTopSqlCpuActivity")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetTopSqlCpuActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetTopSqlCpuActivity")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTopSqlCpuActivityRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .appendPathParam("topSqlCpuActivity")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TopSqlCpuActivity.class,
+                        GetTopSqlCpuActivityResponse.Builder::topSqlCpuActivity)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTopSqlCpuActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -2721,6 +3273,134 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ListExternalExadataInfrastructuresResponse listExternalExadataInfrastructures(
+            ListExternalExadataInfrastructuresRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExternalExadataInfrastructuresResponse::builder)
+                .logger(LOG, "listExternalExadataInfrastructures")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalExadataInfrastructures",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/ListExternalExadataInfrastructures")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalExadataInfrastructuresRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ExternalExadataInfrastructureCollection.class,
+                        ListExternalExadataInfrastructuresResponse.Builder
+                                ::externalExadataInfrastructureCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalExadataInfrastructuresResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExternalExadataInfrastructuresResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalExadataStorageConnectorsResponse listExternalExadataStorageConnectors(
+            ListExternalExadataStorageConnectorsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId is required");
+
+        return clientCall(request, ListExternalExadataStorageConnectorsResponse::builder)
+                .logger(LOG, "listExternalExadataStorageConnectors")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalExadataStorageConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/ListExternalExadataStorageConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalExadataStorageConnectorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageConnectors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "externalExadataInfrastructureId",
+                        request.getExternalExadataInfrastructureId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ExternalExadataStorageConnectorCollection.class,
+                        ListExternalExadataStorageConnectorsResponse.Builder
+                                ::externalExadataStorageConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalExadataStorageConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExternalExadataStorageConnectorsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListExternalExadataStorageServersResponse listExternalExadataStorageServers(
+            ListExternalExadataStorageServersRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId is required");
+
+        return clientCall(request, ListExternalExadataStorageServersResponse::builder)
+                .logger(LOG, "listExternalExadataStorageServers")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalExadataStorageServers",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/ListExternalExadataStorageServers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalExadataStorageServersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam(
+                        "externalExadataInfrastructureId",
+                        request.getExternalExadataInfrastructureId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .ExternalExadataStorageServerCollection.class,
+                        ListExternalExadataStorageServersResponse.Builder
+                                ::externalExadataStorageServerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExternalExadataStorageServersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExternalExadataStorageServersResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListExternalListenerServicesResponse listExternalListenerServices(
             ListExternalListenerServicesRequest request) {
 
@@ -2959,6 +3639,9 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("name", request.getName())
                 .appendEnumQueryParam("managementOption", request.getManagementOption())
                 .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam(
+                        "externalExadataInfrastructureId",
+                        request.getExternalExadataInfrastructureId())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -4766,6 +5449,85 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateExternalDbSystemDiscoveryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalExadataInfrastructureResponse updateExternalExadataInfrastructure(
+            UpdateExternalExadataInfrastructureRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataInfrastructureId(),
+                "externalExadataInfrastructureId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataInfrastructureDetails(),
+                "updateExternalExadataInfrastructureDetails is required");
+
+        return clientCall(request, UpdateExternalExadataInfrastructureResponse::builder)
+                .logger(LOG, "updateExternalExadataInfrastructure")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/UpdateExternalExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataInfrastructureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataInfrastructures")
+                .appendPathParam(request.getExternalExadataInfrastructureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructure.class,
+                        UpdateExternalExadataInfrastructureResponse.Builder
+                                ::externalExadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataInfrastructureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataInfrastructureResponse.Builder::etag)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalExadataStorageConnectorResponse updateExternalExadataStorageConnector(
+            UpdateExternalExadataStorageConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageConnectorId(),
+                "externalExadataStorageConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageConnectorDetails(),
+                "updateExternalExadataStorageConnectorDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageConnectorResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/UpdateExternalExadataStorageConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageConnectors")
+                .appendPathParam(request.getExternalExadataStorageConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnector
+                                .class,
+                        UpdateExternalExadataStorageConnectorResponse.Builder
+                                ::externalExadataStorageConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageConnectorResponse.Builder::etag)
                 .callSync();
     }
 

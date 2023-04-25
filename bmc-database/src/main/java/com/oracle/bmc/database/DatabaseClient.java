@@ -35,6 +35,14 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    DatabaseClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -61,6 +69,12 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
         this.waiters = new DatabaseWaiters(executorService, this);
 
         this.paginators = new DatabasePaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "DatabaseClient",
+                            "downloadExadataInfrastructureConfigFile,downloadValidationReport,downloadVmClusterNetworkConfigFile,generateAutonomousDatabaseWallet"));
+        }
     }
 
     /**
@@ -78,6 +92,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DatabaseClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -99,6 +114,17 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -108,7 +134,8 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new DatabaseClient(this, authenticationDetailsProvider, executorService);
+            return new DatabaseClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

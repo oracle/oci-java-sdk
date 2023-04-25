@@ -13,6 +13,9 @@ public enum Options {
 
     private static volatile boolean SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM = true;
 
+    private static final String OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED_ENV_VAR =
+            "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED";
+
     /**
      * Sets the boolean value to indicate if the SDK should auto-close the InputStream stream
      * returned from the response once the stream has been read until the content-length of the
@@ -33,5 +36,18 @@ public enum Options {
      */
     public static boolean getShouldAutoCloseResponseInputStream() {
         return SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM;
+    }
+
+    /**
+     * Returns the boolean indicating if the SDK should use realm-specific endpoint templates or
+     * not.
+     *
+     * @return true if the client should use realm-specific endpoint template
+     */
+    public static boolean getUseOfRealmSpecificEndpointTemplateByDefault() {
+        final String useOfRealmSpecificEndpointTemplateEnabledEnvVar =
+                System.getenv(OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED_ENV_VAR);
+        return useOfRealmSpecificEndpointTemplateEnabledEnvVar != null
+                && useOfRealmSpecificEndpointTemplateEnabledEnvVar.equalsIgnoreCase("true");
     }
 }

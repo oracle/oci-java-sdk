@@ -32,6 +32,14 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    DnsClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -57,6 +65,11 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
         this.waiters = new DnsWaiters(executorService, this);
 
         this.paginators = new DnsPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "DnsClient", "getZoneContent"));
+        }
     }
 
     /**
@@ -74,6 +87,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DnsClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -95,6 +109,17 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -104,7 +129,8 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new DnsClient(this, authenticationDetailsProvider, executorService);
+            return new DnsClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

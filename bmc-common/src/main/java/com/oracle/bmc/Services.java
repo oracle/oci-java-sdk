@@ -6,6 +6,7 @@ package com.oracle.bmc;
 
 import org.slf4j.Logger;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ import com.oracle.bmc.util.internal.Validate;
 public class Services {
     private static final Map<String, Service> SERVICE_CACHE = new HashMap<>();
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Services.class);
+    private static final Map<String, String> REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP = new HashMap<>();
 
     /**
      * Create a new service definition. If the service has already been registered with different
@@ -115,6 +117,14 @@ public class Services {
             return this.serviceEndpointTemplate;
         }
 
+        public void addServiceEndpointTemplateForRealm(String realmId, String endpoint) {
+            REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP.put(realmId, endpoint);
+        }
+
+        public Map<String, String> getServiceEndpointTemplateForRealmMap() {
+            return Collections.unmodifiableMap(REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP);
+        }
+
         public String getEndpointServiceName() {
             return this.endpointServiceName;
         }
@@ -204,6 +214,11 @@ public class Services {
 
         public ServiceBuilder serviceEndpointTemplate(String serviceEndpointTemplate) {
             this.serviceEndpointTemplate = serviceEndpointTemplate;
+            return this;
+        }
+
+        public ServiceBuilder addServiceEndpointTemplateForRealm(String realmId, String endpoint) {
+            REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP.put(realmId, endpoint);
             return this;
         }
 

@@ -34,8 +34,11 @@ public final class CreateCloudAutonomousVmClusterDetails
         "autonomousDataStorageSizeInTBs",
         "clusterTimeZone",
         "computeModel",
+        "isMtlsEnabledVmCluster",
         "dbServers",
         "maintenanceWindowDetails",
+        "scanListenerPortTls",
+        "scanListenerPortNonTls",
         "licenseModel",
         "nsgIds",
         "freeformTags",
@@ -53,8 +56,11 @@ public final class CreateCloudAutonomousVmClusterDetails
             Double autonomousDataStorageSizeInTBs,
             String clusterTimeZone,
             ComputeModel computeModel,
+            Boolean isMtlsEnabledVmCluster,
             java.util.List<String> dbServers,
             MaintenanceWindow maintenanceWindowDetails,
+            Integer scanListenerPortTls,
+            Integer scanListenerPortNonTls,
             LicenseModel licenseModel,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
@@ -71,8 +77,11 @@ public final class CreateCloudAutonomousVmClusterDetails
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.clusterTimeZone = clusterTimeZone;
         this.computeModel = computeModel;
+        this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
         this.dbServers = dbServers;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.scanListenerPortTls = scanListenerPortTls;
+        this.scanListenerPortNonTls = scanListenerPortNonTls;
         this.licenseModel = licenseModel;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
@@ -274,6 +283,25 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("computeModel");
             return this;
         }
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+         * This is applicable to database TLS Certificates only. Default is TLS
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabledVmCluster")
+        private Boolean isMtlsEnabledVmCluster;
+
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster.
+         * This is applicable to database TLS Certificates only. Default is TLS
+         *
+         * @param isMtlsEnabledVmCluster the value to set
+         * @return this builder
+         */
+        public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
+            this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+            this.__explicitlySet__.add("isMtlsEnabledVmCluster");
+            return this;
+        }
         /** The list of database servers. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<String> dbServers;
@@ -296,6 +324,36 @@ public final class CreateCloudAutonomousVmClusterDetails
         public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
             this.maintenanceWindowDetails = maintenanceWindowDetails;
             this.__explicitlySet__.add("maintenanceWindowDetails");
+            return this;
+        }
+        /** The SCAN Listener TLS port. Default is 2484. */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+        private Integer scanListenerPortTls;
+
+        /**
+         * The SCAN Listener TLS port. Default is 2484.
+         *
+         * @param scanListenerPortTls the value to set
+         * @return this builder
+         */
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            this.scanListenerPortTls = scanListenerPortTls;
+            this.__explicitlySet__.add("scanListenerPortTls");
+            return this;
+        }
+        /** The SCAN Listener Non TLS port. Default is 1521. */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+        private Integer scanListenerPortNonTls;
+
+        /**
+         * The SCAN Listener Non TLS port. Default is 1521.
+         *
+         * @param scanListenerPortNonTls the value to set
+         * @return this builder
+         */
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = scanListenerPortNonTls;
+            this.__explicitlySet__.add("scanListenerPortNonTls");
             return this;
         }
         /**
@@ -439,8 +497,11 @@ public final class CreateCloudAutonomousVmClusterDetails
                             this.autonomousDataStorageSizeInTBs,
                             this.clusterTimeZone,
                             this.computeModel,
+                            this.isMtlsEnabledVmCluster,
                             this.dbServers,
                             this.maintenanceWindowDetails,
+                            this.scanListenerPortTls,
+                            this.scanListenerPortNonTls,
                             this.licenseModel,
                             this.nsgIds,
                             this.freeformTags,
@@ -486,11 +547,20 @@ public final class CreateCloudAutonomousVmClusterDetails
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
             }
+            if (model.wasPropertyExplicitlySet("isMtlsEnabledVmCluster")) {
+                this.isMtlsEnabledVmCluster(model.getIsMtlsEnabledVmCluster());
+            }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
                 this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTls")) {
+                this.scanListenerPortTls(model.getScanListenerPortTls());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortNonTls")) {
+                this.scanListenerPortNonTls(model.getScanListenerPortNonTls());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -726,6 +796,23 @@ public final class CreateCloudAutonomousVmClusterDetails
         return computeModel;
     }
 
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This
+     * is applicable to database TLS Certificates only. Default is TLS
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabledVmCluster")
+    private final Boolean isMtlsEnabledVmCluster;
+
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This
+     * is applicable to database TLS Certificates only. Default is TLS
+     *
+     * @return the value
+     */
+    public Boolean getIsMtlsEnabledVmCluster() {
+        return isMtlsEnabledVmCluster;
+    }
+
     /** The list of database servers. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
@@ -744,6 +831,32 @@ public final class CreateCloudAutonomousVmClusterDetails
 
     public MaintenanceWindow getMaintenanceWindowDetails() {
         return maintenanceWindowDetails;
+    }
+
+    /** The SCAN Listener TLS port. Default is 2484. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+    private final Integer scanListenerPortTls;
+
+    /**
+     * The SCAN Listener TLS port. Default is 2484.
+     *
+     * @return the value
+     */
+    public Integer getScanListenerPortTls() {
+        return scanListenerPortTls;
+    }
+
+    /** The SCAN Listener Non TLS port. Default is 1521. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+    private final Integer scanListenerPortNonTls;
+
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     *
+     * @return the value
+     */
+    public Integer getScanListenerPortNonTls() {
+        return scanListenerPortNonTls;
     }
 
     /**
@@ -935,9 +1048,12 @@ public final class CreateCloudAutonomousVmClusterDetails
                 .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
         sb.append(", clusterTimeZone=").append(String.valueOf(this.clusterTimeZone));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", isMtlsEnabledVmCluster=").append(String.valueOf(this.isMtlsEnabledVmCluster));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
+        sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -971,9 +1087,14 @@ public final class CreateCloudAutonomousVmClusterDetails
                         this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.clusterTimeZone, other.clusterTimeZone)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.isMtlsEnabledVmCluster, other.isMtlsEnabledVmCluster)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(this.scanListenerPortTls, other.scanListenerPortTls)
+                && java.util.Objects.equals(
+                        this.scanListenerPortNonTls, other.scanListenerPortNonTls)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1020,12 +1141,27 @@ public final class CreateCloudAutonomousVmClusterDetails
                 (result * PRIME)
                         + (this.clusterTimeZone == null ? 43 : this.clusterTimeZone.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMtlsEnabledVmCluster == null
+                                ? 43
+                                : this.isMtlsEnabledVmCluster.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)
                         + (this.maintenanceWindowDetails == null
                                 ? 43
                                 : this.maintenanceWindowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTls == null
+                                ? 43
+                                : this.scanListenerPortTls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortNonTls == null
+                                ? 43
+                                : this.scanListenerPortNonTls.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

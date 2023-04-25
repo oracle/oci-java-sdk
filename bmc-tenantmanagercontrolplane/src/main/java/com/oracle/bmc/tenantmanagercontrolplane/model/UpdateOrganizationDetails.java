@@ -31,15 +31,17 @@ public final class UpdateOrganizationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * OCID of the default UCM subscription. Any tenancy joining the organization will
-         * automatically get assigned this subscription if a subscription if not explictly assigned.
+         * OCID of the default Universal Credits Model subscription. Any tenancy joining the
+         * organization will automatically get assigned this subscription, if a subscription is not
+         * explictly assigned.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
         private String defaultUcmSubscriptionId;
 
         /**
-         * OCID of the default UCM subscription. Any tenancy joining the organization will
-         * automatically get assigned this subscription if a subscription if not explictly assigned.
+         * OCID of the default Universal Credits Model subscription. Any tenancy joining the
+         * organization will automatically get assigned this subscription, if a subscription is not
+         * explictly assigned.
          *
          * @param defaultUcmSubscriptionId the value to set
          * @return this builder
@@ -81,15 +83,17 @@ public final class UpdateOrganizationDetails
     }
 
     /**
-     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically
-     * get assigned this subscription if a subscription if not explictly assigned.
+     * OCID of the default Universal Credits Model subscription. Any tenancy joining the
+     * organization will automatically get assigned this subscription, if a subscription is not
+     * explictly assigned.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     private final String defaultUcmSubscriptionId;
 
     /**
-     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically
-     * get assigned this subscription if a subscription if not explictly assigned.
+     * OCID of the default Universal Credits Model subscription. Any tenancy joining the
+     * organization will automatically get assigned this subscription, if a subscription is not
+     * explictly assigned.
      *
      * @return the value
      */

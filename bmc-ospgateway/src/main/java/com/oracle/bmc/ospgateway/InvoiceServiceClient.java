@@ -32,12 +32,24 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
+        this(builder, authenticationDetailsProvider, true);
+    }
+
+    InvoiceServiceClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
                 CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         this.paginators = new InvoiceServicePaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "InvoiceServiceClient", "downloadPdfContent"));
+        }
     }
 
     /**
@@ -55,11 +67,24 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, InvoiceServiceClient> {
+        private boolean isStreamWarningEnabled = true;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
         }
 
         /**
@@ -72,7 +97,8 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new InvoiceServiceClient(this, authenticationDetailsProvider);
+            return new InvoiceServiceClient(
+                    this, authenticationDetailsProvider, isStreamWarningEnabled);
         }
     }
 

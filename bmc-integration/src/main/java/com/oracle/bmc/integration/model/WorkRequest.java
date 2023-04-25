@@ -283,6 +283,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         StopIntegrationInstance("STOP_INTEGRATION_INSTANCE"),
         StartIntegrationInstance("START_INTEGRATION_INSTANCE"),
         DeleteIntegrationInstance("DELETE_INTEGRATION_INSTANCE"),
+        ChangePrivateEndpointOutboundConnection("CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION"),
+        EnableProcessAutomation("ENABLE_PROCESS_AUTOMATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

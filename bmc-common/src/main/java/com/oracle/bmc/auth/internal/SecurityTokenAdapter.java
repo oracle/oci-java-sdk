@@ -39,7 +39,7 @@ public class SecurityTokenAdapter {
      *
      * @return true if valid
      */
-    boolean isValid() {
+    public boolean isValid() {
         return isValid(java.util.Optional.empty());
     }
 

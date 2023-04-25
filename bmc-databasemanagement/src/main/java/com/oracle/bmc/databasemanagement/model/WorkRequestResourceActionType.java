@@ -18,6 +18,8 @@ public enum WorkRequestResourceActionType implements com.oracle.bmc.http.interna
     InProgress("IN_PROGRESS"),
     Related("RELATED"),
     Failed("FAILED"),
+    Enabled("ENABLED"),
+    Disabled("DISABLED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

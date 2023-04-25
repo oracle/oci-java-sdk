@@ -13,10 +13,10 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Activation Token containing an order ID. A JWT RFC 7519 formatted string. */
+    /** Activation token containing an order ID. A JWT RFC 7519-formatted string. */
     private String activationToken;
 
-    /** Activation Token containing an order ID. A JWT RFC 7519 formatted string. */
+    /** Activation token containing an order ID. A JWT RFC 7519-formatted string. */
     public String getActivationToken() {
         return activationToken;
     }
@@ -33,11 +33,11 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Activation Token containing an order ID. A JWT RFC 7519 formatted string. */
+        /** Activation token containing an order ID. A JWT RFC 7519-formatted string. */
         private String activationToken = null;
 
         /**
-         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         * Activation token containing an order ID. A JWT RFC 7519-formatted string.
          *
          * @param activationToken the value to set
          * @return this builder instance

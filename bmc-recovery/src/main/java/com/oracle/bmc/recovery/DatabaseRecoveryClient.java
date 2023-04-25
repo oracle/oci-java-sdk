@@ -34,6 +34,14 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    DatabaseRecoveryClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -59,6 +67,11 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
         this.waiters = new DatabaseRecoveryWaiters(executorService, this);
 
         this.paginators = new DatabaseRecoveryPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "DatabaseRecoveryClient", "fetchProtectedDatabaseConfiguration"));
+        }
     }
 
     /**
@@ -76,6 +89,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DatabaseRecoveryClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -97,6 +111,17 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -106,7 +131,8 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new DatabaseRecoveryClient(this, authenticationDetailsProvider, executorService);
+            return new DatabaseRecoveryClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

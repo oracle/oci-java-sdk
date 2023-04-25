@@ -6,6 +6,7 @@ package com.oracle.bmc.common;
 
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.client.HttpProvider;
@@ -51,5 +52,9 @@ public class InternalBuilderAccess {
 
     public static HttpProvider getHttpProvider(ClientBuilderBase<?, ?> builder) {
         return builder.httpProvider;
+    }
+
+    public static Region getRegion(RegionalClientBuilder<?, ?> builder) {
+        return builder.region;
     }
 }

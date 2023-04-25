@@ -35,6 +35,14 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    JavaManagementServiceClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,11 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         this.waiters = new JavaManagementServiceWaiters(executorService, this);
 
         this.paginators = new JavaManagementServicePaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "JavaManagementServiceClient", "generateAgentDeployScript"));
+        }
     }
 
     /**
@@ -78,6 +91,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
                     Builder, JavaManagementServiceClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -99,6 +113,17 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -109,7 +134,7 @@ public class JavaManagementServiceClient extends com.oracle.bmc.http.internal.Ba
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new JavaManagementServiceClient(
-                    this, authenticationDetailsProvider, executorService);
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 

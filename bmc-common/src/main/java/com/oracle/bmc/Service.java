@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc;
 
+import java.util.Map;
+
 /**
  * Interface representing a service definition.
  *
@@ -29,6 +31,24 @@ public interface Service {
      * use the same variables.
      */
     String getServiceEndpointTemplate();
+
+    /**
+     * The map of all realm-specific service endpoint templates with realmId as key and endpoint
+     * template for corresponding realmId as the value ex
+     * "oc1={serviceParameter}{serviceEndpointPrefix}.{region}.{serviceSecondLevelDomain}".
+     *
+     * <p>This overrides the template used in {@link DefaultEndpointConfiguration}, but can still
+     * use the same variables.
+     */
+    Map<String, String> getServiceEndpointTemplateForRealmMap();
+
+    /**
+     * This method adds service endpoint templates for the realm to a map
+     *
+     * @param realmId Key in the map
+     * @param endpoint Value in the map
+     */
+    void addServiceEndpointTemplateForRealm(String realmId, String endpoint);
 
     /**
      * The service endpoint name that will be used only for dotted regions if set by the service.

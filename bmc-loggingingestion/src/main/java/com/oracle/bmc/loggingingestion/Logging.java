@@ -54,6 +54,16 @@ public interface Logging extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not. Set
+     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
+     * specific endpoint template, otherwise set it to "false"
+     *
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
+     *     template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * This API allows ingesting logs associated with a logId. A success response implies the data
      * has been accepted.
      *

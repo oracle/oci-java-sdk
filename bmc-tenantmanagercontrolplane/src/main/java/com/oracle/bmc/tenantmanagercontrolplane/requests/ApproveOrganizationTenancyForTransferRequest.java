@@ -15,10 +15,10 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 public class ApproveOrganizationTenancyForTransferRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /** OCID of the compartment. Always a tenancy OCID. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** OCID of the compartment. Always a tenancy OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -51,7 +51,7 @@ public class ApproveOrganizationTenancyForTransferRequest
      * server error, without risk of executing that same action again. Retry tokens expire after 24
      * hours, but can be invalidated before then due to conflicting operations. For example, if a
      * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * request will be rejected.
      */
     private String opcRetryToken;
 
@@ -60,7 +60,7 @@ public class ApproveOrganizationTenancyForTransferRequest
      * server error, without risk of executing that same action again. Retry tokens expire after 24
      * hours, but can be invalidated before then due to conflicting operations. For example, if a
      * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * request will be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -79,11 +79,11 @@ public class ApproveOrganizationTenancyForTransferRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /** OCID of the compartment. Always a tenancy OCID. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * OCID of the compartment. Always a tenancy OCID.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -134,7 +134,7 @@ public class ApproveOrganizationTenancyForTransferRequest
          * server error, without risk of executing that same action again. Retry tokens expire after
          * 24 hours, but can be invalidated before then due to conflicting operations. For example,
          * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * creation request will be rejected.
          */
         private String opcRetryToken = null;
 
@@ -143,7 +143,7 @@ public class ApproveOrganizationTenancyForTransferRequest
          * server error, without risk of executing that same action again. Retry tokens expire after
          * 24 hours, but can be invalidated before then due to conflicting operations. For example,
          * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * creation request will be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

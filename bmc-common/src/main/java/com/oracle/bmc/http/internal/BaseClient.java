@@ -5,6 +5,7 @@
 package com.oracle.bmc.http.internal;
 
 import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
@@ -14,6 +15,7 @@ import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.common.ClientBuilderBase;
 import com.oracle.bmc.common.InternalBuilderAccess;
+import com.oracle.bmc.common.RegionalClientBuilder;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.CompositeClientConfigurator;
 import com.oracle.bmc.http.DefaultConfigurator;
@@ -24,8 +26,10 @@ import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
+import com.oracle.bmc.util.internal.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,9 +38,12 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 abstract class BaseClient implements AutoCloseable {
     private static final ClientConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
@@ -58,6 +65,7 @@ abstract class BaseClient implements AutoCloseable {
 
     private volatile String endpoint;
     private volatile HttpClient httpClient;
+    private volatile Region region;
 
     protected BaseClient(
             ClientBuilderBase<?, ?> builder,
@@ -133,10 +141,171 @@ abstract class BaseClient implements AutoCloseable {
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
+        if (builder instanceof RegionalClientBuilder) {
+            region = InternalBuilderAccess.getRegion((RegionalClientBuilder) builder);
+            if (region != null) {
+                setRegion(region);
+            }
+        }
     }
 
     protected ClientConfigurator getDefaultConfigurator() {
         return DEFAULT_CONFIGURATOR;
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     *     enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        if (region == null) {
+            throw new java.lang.NullPointerException(
+                    "Cannot determine the realm since region is null or blank. useRealmSpecificEndpointTemplate() can only be used if region is set.");
+        }
+        String regionId = region.getRegionId();
+        try {
+            Realm realm = Region.fromRegionId(regionId).getRealm();
+
+            if (useOfRealmSpecificEndpointTemplateEnabled
+                    && (service.getServiceEndpointTemplateForRealmMap() == null)) {
+                useOfRealmSpecificEndpointTemplateEnabled = false;
+                logger.debug(
+                        "Realm-specific endpoint template not defined for realm {}, using non-realm-specific endpoint template instead.",
+                        realm.getRealmId().toLowerCase(Locale.ROOT));
+            }
+
+            String endpointTemplateToUse;
+            if (useOfRealmSpecificEndpointTemplateEnabled) {
+                endpointTemplateToUse =
+                        EndpointBuilder.getRealmSpecificEndpointTemplate(regionId, service, realm);
+            } else {
+                endpointTemplateToUse =
+                        EndpointBuilder.getServiceEndpointTemplateToUse(regionId, service, realm);
+            }
+            logger.debug("Setting endpoint template to: {}", endpointTemplateToUse);
+            setEndpoint(endpointTemplateToUse);
+        } catch (IllegalArgumentException e) {
+            logger.info(
+                    "Cannot determine the realm for unknown regionId '{}', falling back to default endpoint format `{}`",
+                    regionId,
+                    Region.formatDefaultRegionEndpoint(service, regionId));
+        }
+    }
+
+    /**
+     * Populate the parameters in the endpoint with its corresponding value and update the base
+     * endpoint. The value will be populated iff the parameter in endpoint is a required request
+     * path parameter or a required request query parameter. If not, the parameter in the endpoint
+     * will be ignored and left blank.
+     *
+     * @param endpoint The endpoint template in use
+     * @param requiredParametersMap Map of parameter name as key and value set in request path or
+     *     query parameter as value
+     */
+    public final void populateServiceParametersInEndpoint(
+            String endpoint, Map<String, Object> requiredParametersMap) {
+        if (!endpoint.contains("{")) {
+            return;
+        }
+
+        List<String> parameters = parseEndpointForParams(endpoint);
+        String updatedEndpoint = endpoint;
+        if (parameters != null && parameters.size() > 0 && requiredParametersMap.isEmpty()) {
+            updatedEndpoint = updatedEndpoint.replaceAll("\\{.*?\\}", "");
+            updateBaseEndpoint(updatedEndpoint);
+            return;
+        }
+
+        for (String parameter : parameters) {
+            boolean appendDot = false;
+            String paramName;
+
+            // If the parameter is defined with a "+Dot" string, it means we need to append a "."
+            // after populating the paramName value
+            if (parameter.endsWith("+Dot}")) {
+                appendDot = true;
+                paramName = parameter.substring(1, parameter.indexOf("+"));
+            } else {
+                paramName = parameter.substring(1, parameter.length() - 1);
+            }
+
+            if (requiredParametersMap.containsKey(paramName)) {
+                if (!(requiredParametersMap.get(paramName) instanceof String)) {
+                    logger.debug(
+                            "The parameter for {} cannot be populated since the value is not of type String",
+                            paramName);
+                    updatedEndpoint = updatedEndpoint.replace(parameter, "");
+                    updateBaseEndpoint(updatedEndpoint);
+                    continue;
+                }
+                if (appendDot) {
+                    updatedEndpoint =
+                            updatedEndpoint.replace(
+                                    parameter, requiredParametersMap.get(paramName) + ".");
+                } else {
+                    updatedEndpoint =
+                            updatedEndpoint.replace(
+                                    parameter, requiredParametersMap.get(paramName).toString());
+                }
+            } else {
+                updatedEndpoint = updatedEndpoint.replace(parameter, "");
+            }
+        }
+        updateBaseEndpoint(updatedEndpoint);
+    }
+
+    private List<String> parseEndpointForParams(String endpointTemplate) {
+        List<String> parsedParams = new ArrayList<>();
+        Matcher matcher = Pattern.compile("\\{(.*?)\\}").matcher(endpointTemplate);
+        while (matcher.find()) {
+            parsedParams.add(matcher.group());
+        }
+        return parsedParams;
+    }
+
+    /**
+     * This method should be used for parameterized endpoint templates only. This does not include
+     * {region} and {secondLevelDomain} parameters.
+     *
+     * @param endpoint The updated endpoint to use
+     */
+    public final synchronized void updateBaseEndpoint(String endpoint) {
+        logger.info("Updating endpoint to {}", endpoint);
+
+        HttpClientBuilder builder =
+                httpProvider
+                        .newBuilder()
+                        .baseUri(endpoint)
+                        .property(
+                                StandardClientProperties.CONNECT_TIMEOUT,
+                                Duration.ofMillis(
+                                        clientConfigurationToUse.getConnectionTimeoutMillis()))
+                        .property(
+                                StandardClientProperties.READ_TIMEOUT,
+                                Duration.ofMillis(clientConfigurationToUse.getReadTimeoutMillis()))
+                        .property(
+                                StandardClientProperties.ASYNC_POOL_SIZE,
+                                clientConfigurationToUse.getMaxAsyncThreads())
+                        .registerRequestInterceptor(
+                                Priorities.AUTHENTICATION,
+                                new AuthnClientFilter(defaultRequestSigner, requestSigners))
+                        .registerRequestInterceptor(Priorities.HEADER_DECORATOR, CLIENT_ID_FILTER)
+                        .registerRequestInterceptor(Priorities.USER, LOG_HEADERS_FILTER);
+        clientConfigurator.customizeClient(builder);
+        HttpClient oldClient = this.httpClient;
+        if (oldClient != null) {
+            oldClient.close();
+        }
+        this.httpClient = builder.build();
+
+        circuitBreaker =
+                CircuitBreakerHelper.makeCircuitBreaker(httpClient, circuitBreakerConfiguration);
     }
 
     public final synchronized void setEndpoint(String endpoint) {
@@ -193,6 +362,7 @@ abstract class BaseClient implements AutoCloseable {
     // the setRegion methods are exposed by overrides for those clients that are region-specific
 
     protected void setRegion(com.oracle.bmc.Region region) {
+        this.region = region;
         Optional<String> endpoint = region.getEndpoint(service);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());

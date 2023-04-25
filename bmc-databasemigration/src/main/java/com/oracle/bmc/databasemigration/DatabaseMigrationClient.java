@@ -34,6 +34,14 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    DatabaseMigrationClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -59,6 +67,11 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
         this.waiters = new DatabaseMigrationWaiters(executorService, this);
 
         this.paginators = new DatabaseMigrationPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "DatabaseMigrationClient", "getJobOutputContent"));
+        }
     }
 
     /**
@@ -76,6 +89,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DatabaseMigrationClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -97,6 +111,17 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -107,7 +132,7 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
             return new DatabaseMigrationClient(
-                    this, authenticationDetailsProvider, executorService);
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 
