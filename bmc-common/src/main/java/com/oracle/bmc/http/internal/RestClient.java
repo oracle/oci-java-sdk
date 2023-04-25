@@ -20,7 +20,6 @@ import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.Consumer;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import javax.annotation.Nonnull;
-import com.oracle.bmc.util.internal.StringUtils;
 import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.client.AsyncInvoker;
@@ -143,6 +142,10 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("endpoint is marked non-null but is null");
         }
         this.baseTarget = new WrappedWebTarget(client.target(endpoint));
+    }
+
+    public Client getClient() {
+        return client;
     }
 
     @Override

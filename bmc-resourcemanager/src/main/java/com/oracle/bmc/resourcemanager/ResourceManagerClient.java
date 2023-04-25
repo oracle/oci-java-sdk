@@ -49,6 +49,7 @@ public class ResourceManagerClient implements ResourceManager {
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -360,6 +361,7 @@ public class ResourceManagerClient implements ResourceManager {
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     LOG.info(
@@ -371,6 +373,12 @@ public class ResourceManagerClient implements ResourceManager {
         }
         if (endpoint != null) {
             setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "ResourceManagerClient",
+                            "getJobTfConfig,getJobTfPlan,getJobTfState,getStackTfConfig,getStackTfState,getTemplateLogo,getTemplateTfConfig"));
         }
     }
 
@@ -497,6 +505,7 @@ public class ResourceManagerClient implements ResourceManager {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
         java.util.Optional<String> endpoint =
                 com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
@@ -510,6 +519,7 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -518,6 +528,23 @@ public class ResourceManagerClient implements ResourceManager {
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
     }
 
     @Override
@@ -1325,16 +1352,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request) {
         LOG.trace("Called getJobTfConfig");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getJobTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetJobTfConfigRequest interceptedRequest =
                 GetJobTfConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1370,16 +1387,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfPlanResponse getJobTfPlan(GetJobTfPlanRequest request) {
         LOG.trace("Called getJobTfPlan");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getJobTfPlan returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetJobTfPlanRequest interceptedRequest =
                 GetJobTfPlanConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1415,16 +1422,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request) {
         LOG.trace("Called getJobTfState");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getJobTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetJobTfStateRequest interceptedRequest =
                 GetJobTfStateConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1567,16 +1564,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request) {
         LOG.trace("Called getStackTfConfig");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getStackTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetStackTfConfigRequest interceptedRequest =
                 GetStackTfConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1614,16 +1601,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request) {
         LOG.trace("Called getStackTfState");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getStackTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetStackTfStateRequest interceptedRequest =
                 GetStackTfStateConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1696,16 +1673,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetTemplateLogoResponse getTemplateLogo(GetTemplateLogoRequest request) {
         LOG.trace("Called getTemplateLogo");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getTemplateLogo returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetTemplateLogoRequest interceptedRequest =
                 GetTemplateLogoConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1743,16 +1710,6 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetTemplateTfConfigResponse getTemplateTfConfig(GetTemplateTfConfigRequest request) {
         LOG.trace("Called getTemplateTfConfig");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getTemplateTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetTemplateTfConfigRequest interceptedRequest =
                 GetTemplateTfConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

@@ -301,13 +301,13 @@ public final class AssignedSubscription extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+         * Tier for the subscription, whether it is a free promotion subscription or a paid subscription.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionTier")
         private String subscriptionTier;
 
         /**
-         * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+         * Tier for the subscription, whether it is a free promotion subscription or a paid subscription.
          * @param subscriptionTier the value to set
          * @return this builder
          **/
@@ -317,13 +317,13 @@ public final class AssignedSubscription extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Denotes if the subscription is a government subscription or not.
+         * Denotes whether or not the subscription is a government subscription.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGovernmentSubscription")
         private Boolean isGovernmentSubscription;
 
         /**
-         * Denotes if the subscription is a government subscription or not.
+         * Denotes whether or not the subscription is a government subscription.
          * @param isGovernmentSubscription the value to set
          * @return this builder
          **/
@@ -349,13 +349,13 @@ public final class AssignedSubscription extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Purchase entitlement id associated with the subscription.
+         * Purchase entitlement ID associated with the subscription.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("purchaseEntitlementId")
         private String purchaseEntitlementId;
 
         /**
-         * Purchase entitlement id associated with the subscription.
+         * Purchase entitlement ID associated with the subscription.
          * @param purchaseEntitlementId the value to set
          * @return this builder
          **/
@@ -725,13 +725,13 @@ public final class AssignedSubscription extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+     * Tier for the subscription, whether it is a free promotion subscription or a paid subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionTier")
     private final String subscriptionTier;
 
     /**
-     * Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+     * Tier for the subscription, whether it is a free promotion subscription or a paid subscription.
      * @return the value
      **/
     public String getSubscriptionTier() {
@@ -739,13 +739,13 @@ public final class AssignedSubscription extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Denotes if the subscription is a government subscription or not.
+     * Denotes whether or not the subscription is a government subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGovernmentSubscription")
     private final Boolean isGovernmentSubscription;
 
     /**
-     * Denotes if the subscription is a government subscription or not.
+     * Denotes whether or not the subscription is a government subscription.
      * @return the value
      **/
     public Boolean getIsGovernmentSubscription() {
@@ -767,13 +767,13 @@ public final class AssignedSubscription extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Purchase entitlement id associated with the subscription.
+     * Purchase entitlement ID associated with the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purchaseEntitlementId")
     private final String purchaseEntitlementId;
 
     /**
-     * Purchase entitlement id associated with the subscription.
+     * Purchase entitlement ID associated with the subscription.
      * @return the value
      **/
     public String getPurchaseEntitlementId() {

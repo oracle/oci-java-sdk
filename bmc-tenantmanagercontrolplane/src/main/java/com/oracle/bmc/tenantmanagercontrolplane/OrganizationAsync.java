@@ -8,7 +8,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 
 /**
- * The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+ * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public interface OrganizationAsync extends AutoCloseable {
@@ -50,6 +50,13 @@ public interface OrganizationAsync extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
      * Approve an organization's child tenancy for transfer.
@@ -165,7 +172,7 @@ public interface OrganizationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * An asynchronous API to restore tenancy.
+     * An asynchronous API to restore a tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -199,7 +206,7 @@ public interface OrganizationAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Assign the default subscription to the organization.
+     * Map the default subscription to the organization.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

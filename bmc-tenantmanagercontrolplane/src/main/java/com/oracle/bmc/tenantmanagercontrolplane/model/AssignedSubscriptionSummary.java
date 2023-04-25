@@ -33,7 +33,8 @@ public final class AssignedSubscriptionSummary
         "startDate",
         "endDate",
         "timeUpdated",
-        "timeCreated"
+        "timeCreated",
+        "csiNumber"
     })
     public AssignedSubscriptionSummary(
             String id,
@@ -46,7 +47,8 @@ public final class AssignedSubscriptionSummary
             java.util.Date startDate,
             java.util.Date endDate,
             java.util.Date timeUpdated,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            String csiNumber) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -59,6 +61,7 @@ public final class AssignedSubscriptionSummary
         this.endDate = endDate;
         this.timeUpdated = timeUpdated;
         this.timeCreated = timeCreated;
+        this.csiNumber = csiNumber;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -239,6 +242,22 @@ public final class AssignedSubscriptionSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * Customer service identifier for the customer associated with the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
+        private String csiNumber;
+
+        /**
+         * Customer service identifier for the customer associated with the subscription.
+         * @param csiNumber the value to set
+         * @return this builder
+         **/
+        public Builder csiNumber(String csiNumber) {
+            this.csiNumber = csiNumber;
+            this.__explicitlySet__.add("csiNumber");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -256,7 +275,8 @@ public final class AssignedSubscriptionSummary
                             this.startDate,
                             this.endDate,
                             this.timeUpdated,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.csiNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -297,6 +317,9 @@ public final class AssignedSubscriptionSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("csiNumber")) {
+                this.csiNumber(model.getCsiNumber());
             }
             return this;
         }
@@ -467,6 +490,20 @@ public final class AssignedSubscriptionSummary
         return timeCreated;
     }
 
+    /**
+     * Customer service identifier for the customer associated with the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
+    private final String csiNumber;
+
+    /**
+     * Customer service identifier for the customer associated with the subscription.
+     * @return the value
+     **/
+    public String getCsiNumber() {
+        return csiNumber;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -492,6 +529,7 @@ public final class AssignedSubscriptionSummary
         sb.append(", endDate=").append(String.valueOf(this.endDate));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", csiNumber=").append(String.valueOf(this.csiNumber));
         sb.append(")");
         return sb.toString();
     }
@@ -517,6 +555,7 @@ public final class AssignedSubscriptionSummary
                 && java.util.Objects.equals(this.endDate, other.endDate)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.csiNumber, other.csiNumber)
                 && super.equals(other);
     }
 
@@ -549,6 +588,7 @@ public final class AssignedSubscriptionSummary
         result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.csiNumber == null ? 43 : this.csiNumber.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

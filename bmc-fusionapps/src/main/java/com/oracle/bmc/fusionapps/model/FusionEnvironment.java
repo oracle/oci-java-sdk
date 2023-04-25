@@ -48,6 +48,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         "lifecycleState",
         "lifecycleDetails",
         "systemName",
+        "environmentRole",
         "freeformTags",
         "definedTags"
     })
@@ -78,6 +79,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String systemName,
+            EnvironmentRole environmentRole,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -107,6 +109,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.systemName = systemName;
+        this.environmentRole = environmentRole;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -515,6 +518,15 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("systemName");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentRole")
+        private EnvironmentRole environmentRole;
+
+        public Builder environmentRole(EnvironmentRole environmentRole) {
+            this.environmentRole = environmentRole;
+            this.__explicitlySet__.add("environmentRole");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
@@ -589,6 +601,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.systemName,
+                            this.environmentRole,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -676,6 +689,9 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("systemName")) {
                 this.systemName(model.getSystemName());
+            }
+            if (model.wasPropertyExplicitlySet("environmentRole")) {
+                this.environmentRole(model.getEnvironmentRole());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1150,6 +1166,13 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         return systemName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentRole")
+    private final EnvironmentRole environmentRole;
+
+    public EnvironmentRole getEnvironmentRole() {
+        return environmentRole;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
@@ -1229,6 +1252,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", systemName=").append(String.valueOf(this.systemName));
+        sb.append(", environmentRole=").append(String.valueOf(this.environmentRole));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1274,6 +1298,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.systemName, other.systemName)
+                && java.util.Objects.equals(this.environmentRole, other.environmentRole)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1345,6 +1370,9 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.systemName == null ? 43 : this.systemName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentRole == null ? 43 : this.environmentRole.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -49,6 +49,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             signingStrategyRequestSignerFactories;
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -282,6 +283,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     LOG.info(
@@ -408,6 +410,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
         java.util.Optional<String> endpoint =
                 com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
@@ -421,6 +424,7 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     @Override
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -429,6 +433,23 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
     }
 
     @Override
@@ -767,6 +788,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeExternalExadataInfrastructureCompartmentResponse>
+            changeExternalExadataInfrastructureCompartment(
+                    ChangeExternalExadataInfrastructureCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalExadataInfrastructureCompartmentRequest,
+                                    ChangeExternalExadataInfrastructureCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeExternalExadataInfrastructureCompartment");
+        final ChangeExternalExadataInfrastructureCompartmentRequest interceptedRequest =
+                ChangeExternalExadataInfrastructureCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExternalExadataInfrastructureCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ChangeExternalExadataInfrastructureCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/ChangeExternalExadataInfrastructureCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeExternalExadataInfrastructureCompartmentResponse>
+                transformer =
+                        ChangeExternalExadataInfrastructureCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeExternalExadataInfrastructureCompartmentRequest,
+                        ChangeExternalExadataInfrastructureCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeExternalExadataInfrastructureCompartmentRequest,
+                                ChangeExternalExadataInfrastructureCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeExternalExadataInfrastructureCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeExternalExadataInfrastructureCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeExternalExadataInfrastructureCompartmentRequest,
+                    ChangeExternalExadataInfrastructureCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
             ChangeJobCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -925,6 +1009,61 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CheckExternalDbSystemConnectorConnectionStatusRequest,
                     CheckExternalDbSystemConnectorConnectionStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckExternalExadataStorageConnectorResponse>
+            checkExternalExadataStorageConnector(
+                    CheckExternalExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CheckExternalExadataStorageConnectorRequest,
+                                    CheckExternalExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async checkExternalExadataStorageConnector");
+        final CheckExternalExadataStorageConnectorRequest interceptedRequest =
+                CheckExternalExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CheckExternalExadataStorageConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CheckExternalExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/CheckExternalExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CheckExternalExadataStorageConnectorResponse>
+                transformer =
+                        CheckExternalExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CheckExternalExadataStorageConnectorRequest,
+                        CheckExternalExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CheckExternalExadataStorageConnectorRequest,
+                                CheckExternalExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<CheckExternalExadataStorageConnectorResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CheckExternalExadataStorageConnectorRequest,
+                    CheckExternalExadataStorageConnectorResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1155,6 +1294,127 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateExternalDbSystemDiscoveryRequest,
                     CreateExternalDbSystemDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExternalExadataInfrastructureResponse>
+            createExternalExadataInfrastructure(
+                    CreateExternalExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalExadataInfrastructureRequest,
+                                    CreateExternalExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async createExternalExadataInfrastructure");
+        final CreateExternalExadataInfrastructureRequest interceptedRequest =
+                CreateExternalExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExternalExadataInfrastructureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateExternalExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/CreateExternalExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateExternalExadataInfrastructureResponse>
+                transformer =
+                        CreateExternalExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateExternalExadataInfrastructureRequest,
+                        CreateExternalExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateExternalExadataInfrastructureRequest,
+                                CreateExternalExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<CreateExternalExadataInfrastructureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExternalExadataInfrastructureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateExternalExadataInfrastructureRequest,
+                    CreateExternalExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExternalExadataStorageConnectorResponse>
+            createExternalExadataStorageConnector(
+                    CreateExternalExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalExadataStorageConnectorRequest,
+                                    CreateExternalExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async createExternalExadataStorageConnector");
+        final CreateExternalExadataStorageConnectorRequest interceptedRequest =
+                CreateExternalExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExternalExadataStorageConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateExternalExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/CreateExternalExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateExternalExadataStorageConnectorResponse>
+                transformer =
+                        CreateExternalExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateExternalExadataStorageConnectorRequest,
+                        CreateExternalExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateExternalExadataStorageConnectorRequest,
+                                CreateExternalExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<CreateExternalExadataStorageConnectorResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getCreateExternalExadataStorageConnectorDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateExternalExadataStorageConnectorRequest,
+                    CreateExternalExadataStorageConnectorResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1531,6 +1791,114 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteExternalExadataInfrastructureResponse>
+            deleteExternalExadataInfrastructure(
+                    DeleteExternalExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalExadataInfrastructureRequest,
+                                    DeleteExternalExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async deleteExternalExadataInfrastructure");
+        final DeleteExternalExadataInfrastructureRequest interceptedRequest =
+                DeleteExternalExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExternalExadataInfrastructureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteExternalExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/DeleteExternalExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteExternalExadataInfrastructureResponse>
+                transformer =
+                        DeleteExternalExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteExternalExadataInfrastructureRequest,
+                        DeleteExternalExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteExternalExadataInfrastructureRequest,
+                                DeleteExternalExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<DeleteExternalExadataInfrastructureResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteExternalExadataInfrastructureRequest,
+                    DeleteExternalExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExternalExadataStorageConnectorResponse>
+            deleteExternalExadataStorageConnector(
+                    DeleteExternalExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalExadataStorageConnectorRequest,
+                                    DeleteExternalExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async deleteExternalExadataStorageConnector");
+        final DeleteExternalExadataStorageConnectorRequest interceptedRequest =
+                DeleteExternalExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExternalExadataStorageConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteExternalExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/DeleteExternalExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteExternalExadataStorageConnectorResponse>
+                transformer =
+                        DeleteExternalExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteExternalExadataStorageConnectorRequest,
+                        DeleteExternalExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteExternalExadataStorageConnectorRequest,
+                                DeleteExternalExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<DeleteExternalExadataStorageConnectorResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteExternalExadataStorageConnectorRequest,
+                    DeleteExternalExadataStorageConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteJobResponse> deleteJob(
             DeleteJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
@@ -1730,6 +2098,124 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableExternalExadataInfrastructureManagementResponse>
+            disableExternalExadataInfrastructureManagement(
+                    DisableExternalExadataInfrastructureManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalExadataInfrastructureManagementRequest,
+                                    DisableExternalExadataInfrastructureManagementResponse>
+                            handler) {
+        LOG.trace("Called async disableExternalExadataInfrastructureManagement");
+        final DisableExternalExadataInfrastructureManagementRequest interceptedRequest =
+                DisableExternalExadataInfrastructureManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalExadataInfrastructureManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableExternalExadataInfrastructureManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/DisableExternalExadataInfrastructureManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalExadataInfrastructureManagementResponse>
+                transformer =
+                        DisableExternalExadataInfrastructureManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExternalExadataInfrastructureManagementRequest,
+                        DisableExternalExadataInfrastructureManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExternalExadataInfrastructureManagementRequest,
+                                DisableExternalExadataInfrastructureManagementResponse>,
+                        java.util.concurrent.Future<
+                                DisableExternalExadataInfrastructureManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExternalExadataInfrastructureManagementRequest,
+                    DisableExternalExadataInfrastructureManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverExternalExadataInfrastructureResponse>
+            discoverExternalExadataInfrastructure(
+                    DiscoverExternalExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DiscoverExternalExadataInfrastructureRequest,
+                                    DiscoverExternalExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async discoverExternalExadataInfrastructure");
+        final DiscoverExternalExadataInfrastructureRequest interceptedRequest =
+                DiscoverExternalExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DiscoverExternalExadataInfrastructureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DiscoverExternalExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/DiscoverExternalExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DiscoverExternalExadataInfrastructureResponse>
+                transformer =
+                        DiscoverExternalExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DiscoverExternalExadataInfrastructureRequest,
+                        DiscoverExternalExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DiscoverExternalExadataInfrastructureRequest,
+                                DiscoverExternalExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<DiscoverExternalExadataInfrastructureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDiscoverExternalExadataInfrastructureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DiscoverExternalExadataInfrastructureRequest,
+                    DiscoverExternalExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
             DropTablespaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1830,6 +2316,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableExternalDbSystemDatabaseManagementRequest,
                     EnableExternalDbSystemDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalExadataInfrastructureManagementResponse>
+            enableExternalExadataInfrastructureManagement(
+                    EnableExternalExadataInfrastructureManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalExadataInfrastructureManagementRequest,
+                                    EnableExternalExadataInfrastructureManagementResponse>
+                            handler) {
+        LOG.trace("Called async enableExternalExadataInfrastructureManagement");
+        final EnableExternalExadataInfrastructureManagementRequest interceptedRequest =
+                EnableExternalExadataInfrastructureManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalExadataInfrastructureManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableExternalExadataInfrastructureManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/EnableExternalExadataInfrastructureManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalExadataInfrastructureManagementResponse>
+                transformer =
+                        EnableExternalExadataInfrastructureManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExternalExadataInfrastructureManagementRequest,
+                        EnableExternalExadataInfrastructureManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExternalExadataInfrastructureManagementRequest,
+                                EnableExternalExadataInfrastructureManagementResponse>,
+                        java.util.concurrent.Future<
+                                EnableExternalExadataInfrastructureManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableExternalExadataInfrastructureManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExternalExadataInfrastructureManagementRequest,
+                    EnableExternalExadataInfrastructureManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2662,6 +3211,216 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetExternalExadataInfrastructureResponse>
+            getExternalExadataInfrastructure(
+                    GetExternalExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataInfrastructureRequest,
+                                    GetExternalExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async getExternalExadataInfrastructure");
+        final GetExternalExadataInfrastructureRequest interceptedRequest =
+                GetExternalExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExternalExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/GetExternalExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExternalExadataInfrastructureResponse>
+                transformer =
+                        GetExternalExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExternalExadataInfrastructureRequest,
+                        GetExternalExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExternalExadataInfrastructureRequest,
+                                GetExternalExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<GetExternalExadataInfrastructureResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExternalExadataInfrastructureRequest,
+                    GetExternalExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalExadataStorageConnectorResponse>
+            getExternalExadataStorageConnector(
+                    GetExternalExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataStorageConnectorRequest,
+                                    GetExternalExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async getExternalExadataStorageConnector");
+        final GetExternalExadataStorageConnectorRequest interceptedRequest =
+                GetExternalExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalExadataStorageConnectorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExternalExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/GetExternalExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExternalExadataStorageConnectorResponse>
+                transformer =
+                        GetExternalExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExternalExadataStorageConnectorRequest,
+                        GetExternalExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExternalExadataStorageConnectorRequest,
+                                GetExternalExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<GetExternalExadataStorageConnectorResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExternalExadataStorageConnectorRequest,
+                    GetExternalExadataStorageConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalExadataStorageGridResponse>
+            getExternalExadataStorageGrid(
+                    GetExternalExadataStorageGridRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataStorageGridRequest,
+                                    GetExternalExadataStorageGridResponse>
+                            handler) {
+        LOG.trace("Called async getExternalExadataStorageGrid");
+        final GetExternalExadataStorageGridRequest interceptedRequest =
+                GetExternalExadataStorageGridConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalExadataStorageGridConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExternalExadataStorageGrid",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageGrid/GetExternalExadataStorageGrid");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExternalExadataStorageGridResponse>
+                transformer =
+                        GetExternalExadataStorageGridConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExternalExadataStorageGridRequest, GetExternalExadataStorageGridResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExternalExadataStorageGridRequest,
+                                GetExternalExadataStorageGridResponse>,
+                        java.util.concurrent.Future<GetExternalExadataStorageGridResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExternalExadataStorageGridRequest, GetExternalExadataStorageGridResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExternalExadataStorageServerResponse>
+            getExternalExadataStorageServer(
+                    GetExternalExadataStorageServerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalExadataStorageServerRequest,
+                                    GetExternalExadataStorageServerResponse>
+                            handler) {
+        LOG.trace("Called async getExternalExadataStorageServer");
+        final GetExternalExadataStorageServerRequest interceptedRequest =
+                GetExternalExadataStorageServerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalExadataStorageServerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExternalExadataStorageServer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetExternalExadataStorageServer");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExternalExadataStorageServerResponse>
+                transformer =
+                        GetExternalExadataStorageServerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExternalExadataStorageServerRequest,
+                        GetExternalExadataStorageServerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExternalExadataStorageServerRequest,
+                                GetExternalExadataStorageServerResponse>,
+                        java.util.concurrent.Future<GetExternalExadataStorageServerResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExternalExadataStorageServerRequest,
+                    GetExternalExadataStorageServerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExternalListenerResponse> getExternalListener(
             GetExternalListenerRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2696,6 +3455,50 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetExternalListenerRequest, GetExternalListenerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIormPlanResponse> getIormPlan(
+            GetIormPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetIormPlanRequest, GetIormPlanResponse>
+                    handler) {
+        LOG.trace("Called async getIormPlan");
+        final GetIormPlanRequest interceptedRequest =
+                GetIormPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIormPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetIormPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetIormPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIormPlanResponse>
+                transformer =
+                        GetIormPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetIormPlanRequest, GetIormPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetIormPlanRequest, GetIormPlanResponse>,
+                        java.util.concurrent.Future<GetIormPlanResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetIormPlanRequest, GetIormPlanResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2917,6 +3720,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOpenAlertHistoryResponse> getOpenAlertHistory(
+            GetOpenAlertHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOpenAlertHistoryRequest, GetOpenAlertHistoryResponse>
+                    handler) {
+        LOG.trace("Called async getOpenAlertHistory");
+        final GetOpenAlertHistoryRequest interceptedRequest =
+                GetOpenAlertHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOpenAlertHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOpenAlertHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetOpenAlertHistory");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetOpenAlertHistoryResponse>
+                transformer =
+                        GetOpenAlertHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOpenAlertHistoryRequest, GetOpenAlertHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOpenAlertHistoryRequest, GetOpenAlertHistoryResponse>,
+                        java.util.concurrent.Future<GetOpenAlertHistoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOpenAlertHistoryRequest, GetOpenAlertHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3218,6 +4068,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetTablespaceRequest, GetTablespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTopSqlCpuActivityResponse> getTopSqlCpuActivity(
+            GetTopSqlCpuActivityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTopSqlCpuActivityRequest, GetTopSqlCpuActivityResponse>
+                    handler) {
+        LOG.trace("Called async getTopSqlCpuActivity");
+        final GetTopSqlCpuActivityRequest interceptedRequest =
+                GetTopSqlCpuActivityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTopSqlCpuActivityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetTopSqlCpuActivity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/GetTopSqlCpuActivity");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTopSqlCpuActivityResponse>
+                transformer =
+                        GetTopSqlCpuActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetTopSqlCpuActivityRequest, GetTopSqlCpuActivityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTopSqlCpuActivityRequest, GetTopSqlCpuActivityResponse>,
+                        java.util.concurrent.Future<GetTopSqlCpuActivityResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTopSqlCpuActivityRequest, GetTopSqlCpuActivityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4331,6 +5228,166 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListExternalDbSystemsRequest, ListExternalDbSystemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExternalExadataInfrastructuresResponse>
+            listExternalExadataInfrastructures(
+                    ListExternalExadataInfrastructuresRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalExadataInfrastructuresRequest,
+                                    ListExternalExadataInfrastructuresResponse>
+                            handler) {
+        LOG.trace("Called async listExternalExadataInfrastructures");
+        final ListExternalExadataInfrastructuresRequest interceptedRequest =
+                ListExternalExadataInfrastructuresConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExternalExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListExternalExadataInfrastructures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/ListExternalExadataInfrastructures");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListExternalExadataInfrastructuresResponse>
+                transformer =
+                        ListExternalExadataInfrastructuresConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExternalExadataInfrastructuresRequest,
+                        ListExternalExadataInfrastructuresResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExternalExadataInfrastructuresRequest,
+                                ListExternalExadataInfrastructuresResponse>,
+                        java.util.concurrent.Future<ListExternalExadataInfrastructuresResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExternalExadataInfrastructuresRequest,
+                    ListExternalExadataInfrastructuresResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExternalExadataStorageConnectorsResponse>
+            listExternalExadataStorageConnectors(
+                    ListExternalExadataStorageConnectorsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalExadataStorageConnectorsRequest,
+                                    ListExternalExadataStorageConnectorsResponse>
+                            handler) {
+        LOG.trace("Called async listExternalExadataStorageConnectors");
+        final ListExternalExadataStorageConnectorsRequest interceptedRequest =
+                ListExternalExadataStorageConnectorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExternalExadataStorageConnectorsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListExternalExadataStorageConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/ListExternalExadataStorageConnectors");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListExternalExadataStorageConnectorsResponse>
+                transformer =
+                        ListExternalExadataStorageConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExternalExadataStorageConnectorsRequest,
+                        ListExternalExadataStorageConnectorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExternalExadataStorageConnectorsRequest,
+                                ListExternalExadataStorageConnectorsResponse>,
+                        java.util.concurrent.Future<ListExternalExadataStorageConnectorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExternalExadataStorageConnectorsRequest,
+                    ListExternalExadataStorageConnectorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExternalExadataStorageServersResponse>
+            listExternalExadataStorageServers(
+                    ListExternalExadataStorageServersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalExadataStorageServersRequest,
+                                    ListExternalExadataStorageServersResponse>
+                            handler) {
+        LOG.trace("Called async listExternalExadataStorageServers");
+        final ListExternalExadataStorageServersRequest interceptedRequest =
+                ListExternalExadataStorageServersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExternalExadataStorageServersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListExternalExadataStorageServers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/ListExternalExadataStorageServers");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListExternalExadataStorageServersResponse>
+                transformer =
+                        ListExternalExadataStorageServersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExternalExadataStorageServersRequest,
+                        ListExternalExadataStorageServersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExternalExadataStorageServersRequest,
+                                ListExternalExadataStorageServersResponse>,
+                        java.util.concurrent.Future<ListExternalExadataStorageServersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExternalExadataStorageServersRequest,
+                    ListExternalExadataStorageServersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7018,6 +8075,126 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateExternalDbSystemDiscoveryRequest,
                     UpdateExternalDbSystemDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalExadataInfrastructureResponse>
+            updateExternalExadataInfrastructure(
+                    UpdateExternalExadataInfrastructureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataInfrastructureRequest,
+                                    UpdateExternalExadataInfrastructureResponse>
+                            handler) {
+        LOG.trace("Called async updateExternalExadataInfrastructure");
+        final UpdateExternalExadataInfrastructureRequest interceptedRequest =
+                UpdateExternalExadataInfrastructureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExternalExadataInfrastructureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataInfrastructure",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataInfrastructure/UpdateExternalExadataInfrastructure");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateExternalExadataInfrastructureResponse>
+                transformer =
+                        UpdateExternalExadataInfrastructureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateExternalExadataInfrastructureRequest,
+                        UpdateExternalExadataInfrastructureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateExternalExadataInfrastructureRequest,
+                                UpdateExternalExadataInfrastructureResponse>,
+                        java.util.concurrent.Future<UpdateExternalExadataInfrastructureResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExternalExadataInfrastructureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateExternalExadataInfrastructureRequest,
+                    UpdateExternalExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalExadataStorageConnectorResponse>
+            updateExternalExadataStorageConnector(
+                    UpdateExternalExadataStorageConnectorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageConnectorRequest,
+                                    UpdateExternalExadataStorageConnectorResponse>
+                            handler) {
+        LOG.trace("Called async updateExternalExadataStorageConnector");
+        final UpdateExternalExadataStorageConnectorRequest interceptedRequest =
+                UpdateExternalExadataStorageConnectorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExternalExadataStorageConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageConnector/UpdateExternalExadataStorageConnector");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateExternalExadataStorageConnectorResponse>
+                transformer =
+                        UpdateExternalExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateExternalExadataStorageConnectorRequest,
+                        UpdateExternalExadataStorageConnectorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateExternalExadataStorageConnectorRequest,
+                                UpdateExternalExadataStorageConnectorResponse>,
+                        java.util.concurrent.Future<UpdateExternalExadataStorageConnectorResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateExternalExadataStorageConnectorDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateExternalExadataStorageConnectorRequest,
+                    UpdateExternalExadataStorageConnectorResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

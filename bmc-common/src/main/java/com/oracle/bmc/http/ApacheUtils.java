@@ -178,6 +178,29 @@ public final class ApacheUtils {
         return true;
     }
 
+    /**
+     * Gets the stream warning message to warn the users about closing the stream
+     */
+    public static String getStreamWarningMessage(String clientName, String operationNames) {
+        final String warningMessage =
+                String.format(
+                        "Warning for OCI SDK usage "
+                                + "with the Apache Connector (the OCI SDK uses the Apache Connector by default, for HTTP calls):"
+                                + " the following operations of"
+                                + " %s "
+                                + "return a stream : [%s]. "
+                                + "If using Apache Connector, make sure to close all stream instances returned by the operation(s)"
+                                + " mentioned, explicitly, by calling 'close' to release the connection back to the connection pool "
+                                + "and avoid any indefinite hangs, or read the stream completely. The stream instances are wrapped in "
+                                + "an auto closeable stream, to disable this setting or for guidance on disabling this warning, "
+                                + "possible performance "
+                                + "optimizations, or disabling use of the Apache Connector in the OCI SDK, "
+                                + "please see https://github.com/oracle/oci-java-sdk/blob/legacy/v2/master/ApacheConnector-README.md",
+                        clientName,
+                        operationNames);
+        return warningMessage;
+    }
+
     private static Optional<ClientConfigurator> filterOutEffectiveCompositeConfigurator(
             CompositeClientConfigurator compositeClientConfigurator, Class[] classesToFilter) {
         return compositeClientConfigurator

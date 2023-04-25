@@ -74,6 +74,14 @@ public class ListManagedDatabasesConverter {
                                     request.getDeploymentType().getValue()));
         }
 
+        if (request.getExternalExadataInfrastructureId() != null) {
+            target =
+                    target.queryParam(
+                            "externalExadataInfrastructureId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getExternalExadataInfrastructureId()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

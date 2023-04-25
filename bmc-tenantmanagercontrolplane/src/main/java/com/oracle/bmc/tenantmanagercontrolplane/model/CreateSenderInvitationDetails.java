@@ -27,6 +27,7 @@ public final class CreateSenderInvitationDetails
         "recipientTenancyId",
         "recipientEmailAddress",
         "displayName",
+        "subjects",
         "freeformTags",
         "definedTags"
     })
@@ -35,6 +36,7 @@ public final class CreateSenderInvitationDetails
             String recipientTenancyId,
             String recipientEmailAddress,
             String displayName,
+            java.util.List<InvitationSubject> subjects,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -42,6 +44,7 @@ public final class CreateSenderInvitationDetails
         this.recipientTenancyId = recipientTenancyId;
         this.recipientEmailAddress = recipientEmailAddress;
         this.displayName = displayName;
+        this.subjects = subjects;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -113,6 +116,22 @@ public final class CreateSenderInvitationDetails
             return this;
         }
         /**
+         * The list of subjects this invitation contains.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subjects")
+        private java.util.List<InvitationSubject> subjects;
+
+        /**
+         * The list of subjects this invitation contains.
+         * @param subjects the value to set
+         * @return this builder
+         **/
+        public Builder subjects(java.util.List<InvitationSubject> subjects) {
+            this.subjects = subjects;
+            this.__explicitlySet__.add("subjects");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -164,6 +183,7 @@ public final class CreateSenderInvitationDetails
                             this.recipientTenancyId,
                             this.recipientEmailAddress,
                             this.displayName,
+                            this.subjects,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -185,6 +205,9 @@ public final class CreateSenderInvitationDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("subjects")) {
+                this.subjects(model.getSubjects());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -264,6 +287,20 @@ public final class CreateSenderInvitationDetails
     }
 
     /**
+     * The list of subjects this invitation contains.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subjects")
+    private final java.util.List<InvitationSubject> subjects;
+
+    /**
+     * The list of subjects this invitation contains.
+     * @return the value
+     **/
+    public java.util.List<InvitationSubject> getSubjects() {
+        return subjects;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -317,6 +354,7 @@ public final class CreateSenderInvitationDetails
         sb.append(", recipientTenancyId=").append(String.valueOf(this.recipientTenancyId));
         sb.append(", recipientEmailAddress=").append(String.valueOf(this.recipientEmailAddress));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", subjects=").append(String.valueOf(this.subjects));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -337,6 +375,7 @@ public final class CreateSenderInvitationDetails
                 && java.util.Objects.equals(this.recipientTenancyId, other.recipientTenancyId)
                 && java.util.Objects.equals(this.recipientEmailAddress, other.recipientEmailAddress)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.subjects, other.subjects)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -360,6 +399,7 @@ public final class CreateSenderInvitationDetails
                                 ? 43
                                 : this.recipientEmailAddress.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.subjects == null ? 43 : this.subjects.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

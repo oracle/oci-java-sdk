@@ -27,20 +27,23 @@ public final class CreateChildTenancyDetails
         "tenancyName",
         "homeRegion",
         "adminEmail",
-        "policyName"
+        "policyName",
+        "governanceStatus"
     })
     public CreateChildTenancyDetails(
             String compartmentId,
             String tenancyName,
             String homeRegion,
             String adminEmail,
-            String policyName) {
+            String policyName,
+            GovernanceStatus governanceStatus) {
         super();
         this.compartmentId = compartmentId;
         this.tenancyName = tenancyName;
         this.homeRegion = homeRegion;
         this.adminEmail = adminEmail;
         this.policyName = policyName;
+        this.governanceStatus = governanceStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -94,13 +97,13 @@ public final class CreateChildTenancyDetails
             return this;
         }
         /**
-         * The email address of the administrator of the child tenancy.
+         * Email address of the child tenancy administrator.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
         private String adminEmail;
 
         /**
-         * The email address of the administrator of the child tenancy.
+         * Email address of the child tenancy administrator.
          * @param adminEmail the value to set
          * @return this builder
          **/
@@ -125,6 +128,22 @@ public final class CreateChildTenancyDetails
             this.__explicitlySet__.add("policyName");
             return this;
         }
+        /**
+         * The governance status of the child tenancy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
+        private GovernanceStatus governanceStatus;
+
+        /**
+         * The governance status of the child tenancy.
+         * @param governanceStatus the value to set
+         * @return this builder
+         **/
+        public Builder governanceStatus(GovernanceStatus governanceStatus) {
+            this.governanceStatus = governanceStatus;
+            this.__explicitlySet__.add("governanceStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -136,7 +155,8 @@ public final class CreateChildTenancyDetails
                             this.tenancyName,
                             this.homeRegion,
                             this.adminEmail,
-                            this.policyName);
+                            this.policyName,
+                            this.governanceStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -159,6 +179,9 @@ public final class CreateChildTenancyDetails
             }
             if (model.wasPropertyExplicitlySet("policyName")) {
                 this.policyName(model.getPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("governanceStatus")) {
+                this.governanceStatus(model.getGovernanceStatus());
             }
             return this;
         }
@@ -218,13 +241,13 @@ public final class CreateChildTenancyDetails
     }
 
     /**
-     * The email address of the administrator of the child tenancy.
+     * Email address of the child tenancy administrator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     private final String adminEmail;
 
     /**
-     * The email address of the administrator of the child tenancy.
+     * Email address of the child tenancy administrator.
      * @return the value
      **/
     public String getAdminEmail() {
@@ -243,6 +266,20 @@ public final class CreateChildTenancyDetails
      **/
     public String getPolicyName() {
         return policyName;
+    }
+
+    /**
+     * The governance status of the child tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
+    private final GovernanceStatus governanceStatus;
+
+    /**
+     * The governance status of the child tenancy.
+     * @return the value
+     **/
+    public GovernanceStatus getGovernanceStatus() {
+        return governanceStatus;
     }
 
     @Override
@@ -264,6 +301,7 @@ public final class CreateChildTenancyDetails
         sb.append(", homeRegion=").append(String.valueOf(this.homeRegion));
         sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
         sb.append(", policyName=").append(String.valueOf(this.policyName));
+        sb.append(", governanceStatus=").append(String.valueOf(this.governanceStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -283,6 +321,7 @@ public final class CreateChildTenancyDetails
                 && java.util.Objects.equals(this.homeRegion, other.homeRegion)
                 && java.util.Objects.equals(this.adminEmail, other.adminEmail)
                 && java.util.Objects.equals(this.policyName, other.policyName)
+                && java.util.Objects.equals(this.governanceStatus, other.governanceStatus)
                 && super.equals(other);
     }
 
@@ -297,6 +336,9 @@ public final class CreateChildTenancyDetails
         result = (result * PRIME) + (this.homeRegion == null ? 43 : this.homeRegion.hashCode());
         result = (result * PRIME) + (this.adminEmail == null ? 43 : this.adminEmail.hashCode());
         result = (result * PRIME) + (this.policyName == null ? 43 : this.policyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.governanceStatus == null ? 43 : this.governanceStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

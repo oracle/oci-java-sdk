@@ -32,6 +32,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
         "additionalDetails",
         "lifecycleState",
         "lifecycleDetails",
+        "domainName",
         "timeCreated",
         "timeUpdated"
     })
@@ -48,6 +49,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
             java.util.Map<String, String> additionalDetails,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            String domainName,
             java.util.Date timeCreated,
             java.util.Date timeUpdated) {
         super();
@@ -63,6 +65,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
         this.additionalDetails = additionalDetails;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.domainName = domainName;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
     }
@@ -266,6 +269,22 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
+         * Name of the domain.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainName")
+        private String domainName;
+
+        /**
+         * Name of the domain.
+         * @param domainName the value to set
+         * @return this builder
+         **/
+        public Builder domainName(String domainName) {
+            this.domainName = domainName;
+            this.__explicitlySet__.add("domainName");
+            return this;
+        }
+        /**
          * The date and time the external DB node was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -316,6 +335,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
                             this.additionalDetails,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.domainName,
                             this.timeCreated,
                             this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -361,6 +381,9 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("domainName")) {
+                this.domainName(model.getDomainName());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -610,6 +633,20 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
+     * Name of the domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainName")
+    private final String domainName;
+
+    /**
+     * Name of the domain.
+     * @return the value
+     **/
+    public String getDomainName() {
+        return domainName;
+    }
+
+    /**
      * The date and time the external DB node was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -663,6 +700,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", domainName=").append(String.valueOf(this.domainName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
@@ -691,6 +729,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.domainName, other.domainName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
@@ -732,6 +771,7 @@ public final class ExternalDbNode extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.domainName == null ? 43 : this.domainName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
