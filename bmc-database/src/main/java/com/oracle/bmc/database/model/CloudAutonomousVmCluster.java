@@ -47,12 +47,15 @@ public final class CloudAutonomousVmCluster
         "cpuCoreCount",
         "ocpuCount",
         "computeModel",
+        "isMtlsEnabledVmCluster",
         "cpuCoreCountPerNode",
         "memorySizeInGBs",
         "licenseModel",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
         "maintenanceWindow",
+        "scanListenerPortTls",
+        "scanListenerPortNonTls",
         "freeformTags",
         "definedTags",
         "availableCpus",
@@ -88,12 +91,15 @@ public final class CloudAutonomousVmCluster
             Integer cpuCoreCount,
             Float ocpuCount,
             ComputeModel computeModel,
+            Boolean isMtlsEnabledVmCluster,
             Integer cpuCoreCountPerNode,
             Integer memorySizeInGBs,
             LicenseModel licenseModel,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
             MaintenanceWindow maintenanceWindow,
+            Integer scanListenerPortTls,
+            Integer scanListenerPortNonTls,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Float availableCpus,
@@ -128,12 +134,15 @@ public final class CloudAutonomousVmCluster
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
         this.computeModel = computeModel;
+        this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.memorySizeInGBs = memorySizeInGBs;
         this.licenseModel = licenseModel;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.maintenanceWindow = maintenanceWindow;
+        this.scanListenerPortTls = scanListenerPortTls;
+        this.scanListenerPortNonTls = scanListenerPortNonTls;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.availableCpus = availableCpus;
@@ -545,6 +554,22 @@ public final class CloudAutonomousVmCluster
             return this;
         }
         /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabledVmCluster")
+        private Boolean isMtlsEnabledVmCluster;
+
+        /**
+         * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+         * @param isMtlsEnabledVmCluster the value to set
+         * @return this builder
+         **/
+        public Builder isMtlsEnabledVmCluster(Boolean isMtlsEnabledVmCluster) {
+            this.isMtlsEnabledVmCluster = isMtlsEnabledVmCluster;
+            this.__explicitlySet__.add("isMtlsEnabledVmCluster");
+            return this;
+        }
+        /**
          * The number of CPU cores enabled per VM cluster node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
@@ -643,6 +668,38 @@ public final class CloudAutonomousVmCluster
         public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
             this.maintenanceWindow = maintenanceWindow;
             this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+        /**
+         * The SCAN Listenenr TLS port. Default is 2484.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+        private Integer scanListenerPortTls;
+
+        /**
+         * The SCAN Listenenr TLS port. Default is 2484.
+         * @param scanListenerPortTls the value to set
+         * @return this builder
+         **/
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            this.scanListenerPortTls = scanListenerPortTls;
+            this.__explicitlySet__.add("scanListenerPortTls");
+            return this;
+        }
+        /**
+         * The SCAN Listener Non TLS port. Default is 1521.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+        private Integer scanListenerPortNonTls;
+
+        /**
+         * The SCAN Listener Non TLS port. Default is 1521.
+         * @param scanListenerPortNonTls the value to set
+         * @return this builder
+         **/
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            this.scanListenerPortNonTls = scanListenerPortNonTls;
+            this.__explicitlySet__.add("scanListenerPortNonTls");
             return this;
         }
         /**
@@ -855,12 +912,15 @@ public final class CloudAutonomousVmCluster
                             this.cpuCoreCount,
                             this.ocpuCount,
                             this.computeModel,
+                            this.isMtlsEnabledVmCluster,
                             this.cpuCoreCountPerNode,
                             this.memorySizeInGBs,
                             this.licenseModel,
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
                             this.maintenanceWindow,
+                            this.scanListenerPortTls,
+                            this.scanListenerPortNonTls,
                             this.freeformTags,
                             this.definedTags,
                             this.availableCpus,
@@ -948,6 +1008,9 @@ public final class CloudAutonomousVmCluster
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
             }
+            if (model.wasPropertyExplicitlySet("isMtlsEnabledVmCluster")) {
+                this.isMtlsEnabledVmCluster(model.getIsMtlsEnabledVmCluster());
+            }
             if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
                 this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
             }
@@ -965,6 +1028,12 @@ public final class CloudAutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTls")) {
+                this.scanListenerPortTls(model.getScanListenerPortTls());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortNonTls")) {
+                this.scanListenerPortNonTls(model.getScanListenerPortNonTls());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1465,6 +1534,20 @@ public final class CloudAutonomousVmCluster
     }
 
     /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsEnabledVmCluster")
+    private final Boolean isMtlsEnabledVmCluster;
+
+    /**
+     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * @return the value
+     **/
+    public Boolean getIsMtlsEnabledVmCluster() {
+        return isMtlsEnabledVmCluster;
+    }
+
+    /**
      * The number of CPU cores enabled per VM cluster node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
@@ -1605,6 +1688,34 @@ public final class CloudAutonomousVmCluster
 
     public MaintenanceWindow getMaintenanceWindow() {
         return maintenanceWindow;
+    }
+
+    /**
+     * The SCAN Listenenr TLS port. Default is 2484.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTls")
+    private final Integer scanListenerPortTls;
+
+    /**
+     * The SCAN Listenenr TLS port. Default is 2484.
+     * @return the value
+     **/
+    public Integer getScanListenerPortTls() {
+        return scanListenerPortTls;
+    }
+
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortNonTls")
+    private final Integer scanListenerPortNonTls;
+
+    /**
+     * The SCAN Listener Non TLS port. Default is 1521.
+     * @return the value
+     **/
+    public Integer getScanListenerPortNonTls() {
+        return scanListenerPortNonTls;
     }
 
     /**
@@ -1804,12 +1915,15 @@ public final class CloudAutonomousVmCluster
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", isMtlsEnabledVmCluster=").append(String.valueOf(this.isMtlsEnabledVmCluster));
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
+        sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", availableCpus=").append(String.valueOf(this.availableCpus));
@@ -1864,12 +1978,17 @@ public final class CloudAutonomousVmCluster
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.isMtlsEnabledVmCluster, other.isMtlsEnabledVmCluster)
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(this.scanListenerPortTls, other.scanListenerPortTls)
+                && java.util.Objects.equals(
+                        this.scanListenerPortNonTls, other.scanListenerPortNonTls)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.availableCpus, other.availableCpus)
@@ -1947,6 +2066,11 @@ public final class CloudAutonomousVmCluster
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isMtlsEnabledVmCluster == null
+                                ? 43
+                                : this.isMtlsEnabledVmCluster.hashCode());
+        result =
+                (result * PRIME)
                         + (this.cpuCoreCountPerNode == null
                                 ? 43
                                 : this.cpuCoreCountPerNode.hashCode());
@@ -1967,6 +2091,16 @@ public final class CloudAutonomousVmCluster
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortTls == null
+                                ? 43
+                                : this.scanListenerPortTls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scanListenerPortNonTls == null
+                                ? 43
+                                : this.scanListenerPortNonTls.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

@@ -12,13 +12,13 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+     * Activation token containing an order ID. A JWT RFC 7519-formatted string.
      *
      */
     private String activationToken;
 
     /**
-     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+     * Activation token containing an order ID. A JWT RFC 7519-formatted string.
      *
      */
     public String getActivationToken() {
@@ -43,13 +43,13 @@ public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         * Activation token containing an order ID. A JWT RFC 7519-formatted string.
          *
          */
         private String activationToken = null;
 
         /**
-         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         * Activation token containing an order ID. A JWT RFC 7519-formatted string.
          *
          * @param activationToken the value to set
          * @return this builder instance

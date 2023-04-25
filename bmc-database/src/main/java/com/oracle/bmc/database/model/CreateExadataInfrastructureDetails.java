@@ -45,6 +45,7 @@ public final class CreateExadataInfrastructureDetails
         "dnsServer",
         "ntpServer",
         "isCpsOfflineReportEnabled",
+        "networkBondingModeDetails",
         "freeformTags",
         "definedTags"
     })
@@ -69,6 +70,7 @@ public final class CreateExadataInfrastructureDetails
             java.util.List<String> dnsServer,
             java.util.List<String> ntpServer,
             Boolean isCpsOfflineReportEnabled,
+            NetworkBondingModeDetails networkBondingModeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -92,6 +94,7 @@ public final class CreateExadataInfrastructureDetails
         this.dnsServer = dnsServer;
         this.ntpServer = ntpServer;
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+        this.networkBondingModeDetails = networkBondingModeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -429,6 +432,16 @@ public final class CreateExadataInfrastructureDetails
             this.__explicitlySet__.add("isCpsOfflineReportEnabled");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("networkBondingModeDetails")
+        private NetworkBondingModeDetails networkBondingModeDetails;
+
+        public Builder networkBondingModeDetails(
+                NetworkBondingModeDetails networkBondingModeDetails) {
+            this.networkBondingModeDetails = networkBondingModeDetails;
+            this.__explicitlySet__.add("networkBondingModeDetails");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -501,6 +514,7 @@ public final class CreateExadataInfrastructureDetails
                             this.dnsServer,
                             this.ntpServer,
                             this.isCpsOfflineReportEnabled,
+                            this.networkBondingModeDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -570,6 +584,9 @@ public final class CreateExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("isCpsOfflineReportEnabled")) {
                 this.isCpsOfflineReportEnabled(model.getIsCpsOfflineReportEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("networkBondingModeDetails")) {
+                this.networkBondingModeDetails(model.getNetworkBondingModeDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -883,6 +900,13 @@ public final class CreateExadataInfrastructureDetails
         return isCpsOfflineReportEnabled;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkBondingModeDetails")
+    private final NetworkBondingModeDetails networkBondingModeDetails;
+
+    public NetworkBondingModeDetails getNetworkBondingModeDetails() {
+        return networkBondingModeDetails;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -969,6 +993,8 @@ public final class CreateExadataInfrastructureDetails
         sb.append(", ntpServer=").append(String.valueOf(this.ntpServer));
         sb.append(", isCpsOfflineReportEnabled=")
                 .append(String.valueOf(this.isCpsOfflineReportEnabled));
+        sb.append(", networkBondingModeDetails=")
+                .append(String.valueOf(this.networkBondingModeDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1009,6 +1035,8 @@ public final class CreateExadataInfrastructureDetails
                 && java.util.Objects.equals(this.ntpServer, other.ntpServer)
                 && java.util.Objects.equals(
                         this.isCpsOfflineReportEnabled, other.isCpsOfflineReportEnabled)
+                && java.util.Objects.equals(
+                        this.networkBondingModeDetails, other.networkBondingModeDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1066,6 +1094,11 @@ public final class CreateExadataInfrastructureDetails
                         + (this.isCpsOfflineReportEnabled == null
                                 ? 43
                                 : this.isCpsOfflineReportEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkBondingModeDetails == null
+                                ? 43
+                                : this.networkBondingModeDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

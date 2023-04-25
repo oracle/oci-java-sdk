@@ -43,13 +43,13 @@ public final class UpdateDomainGovernanceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+         * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
         private String subscriptionEmail;
 
         /**
-         * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+         * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
          * @param subscriptionEmail the value to set
          * @return this builder
          **/
@@ -162,13 +162,13 @@ public final class UpdateDomainGovernanceDetails
     }
 
     /**
-     * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+     * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
     private final String subscriptionEmail;
 
     /**
-     * The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+     * Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
      * @return the value
      **/
     public String getSubscriptionEmail() {

@@ -50,6 +50,7 @@ public class ServiceCatalogClient implements ServiceCatalog {
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -361,6 +362,7 @@ public class ServiceCatalogClient implements ServiceCatalog {
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     LOG.info(
@@ -372,6 +374,12 @@ public class ServiceCatalogClient implements ServiceCatalog {
         }
         if (endpoint != null) {
             setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "ServiceCatalogClient",
+                            "getPrivateApplicationActionDownloadLogo,getPrivateApplicationPackageActionDownloadConfig"));
         }
     }
 
@@ -498,6 +506,7 @@ public class ServiceCatalogClient implements ServiceCatalog {
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
         java.util.Optional<String> endpoint =
                 com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
@@ -511,6 +520,7 @@ public class ServiceCatalogClient implements ServiceCatalog {
     @Override
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -519,6 +529,23 @@ public class ServiceCatalogClient implements ServiceCatalog {
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
     }
 
     @Override
@@ -949,16 +976,6 @@ public class ServiceCatalogClient implements ServiceCatalog {
     public GetPrivateApplicationActionDownloadLogoResponse getPrivateApplicationActionDownloadLogo(
             GetPrivateApplicationActionDownloadLogoRequest request) {
         LOG.trace("Called getPrivateApplicationActionDownloadLogo");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getPrivateApplicationActionDownloadLogo returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetPrivateApplicationActionDownloadLogoRequest interceptedRequest =
                 GetPrivateApplicationActionDownloadLogoConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
@@ -1038,16 +1055,6 @@ public class ServiceCatalogClient implements ServiceCatalog {
             getPrivateApplicationPackageActionDownloadConfig(
                     GetPrivateApplicationPackageActionDownloadConfigRequest request) {
         LOG.trace("Called getPrivateApplicationPackageActionDownloadConfig");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getPrivateApplicationPackageActionDownloadConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
         final GetPrivateApplicationPackageActionDownloadConfigRequest interceptedRequest =
                 GetPrivateApplicationPackageActionDownloadConfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

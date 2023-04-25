@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Possible roles for the OrganizationTenancy.
+ * Possible roles for the organization tenancy.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public enum OrganizationTenancyRole {

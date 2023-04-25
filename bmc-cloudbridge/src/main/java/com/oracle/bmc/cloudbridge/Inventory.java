@@ -53,6 +53,13 @@ public interface Inventory extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Returns an aggregation of assets. Aggregation groups are sorted by groupBy property.
      * Default sort order is ascending, but can be overridden by the sortOrder parameter.
      *

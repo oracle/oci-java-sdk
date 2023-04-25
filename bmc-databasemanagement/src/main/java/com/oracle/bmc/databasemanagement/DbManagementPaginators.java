@@ -2067,6 +2067,395 @@ public class DbManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalExadataInfrastructures operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalExadataInfrastructuresResponse>
+            listExternalExadataInfrastructuresResponseIterator(
+                    final ListExternalExadataInfrastructuresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalExadataInfrastructuresRequest.Builder,
+                ListExternalExadataInfrastructuresRequest,
+                ListExternalExadataInfrastructuresResponse>(
+                new java.util.function.Supplier<
+                        ListExternalExadataInfrastructuresRequest.Builder>() {
+                    @Override
+                    public ListExternalExadataInfrastructuresRequest.Builder get() {
+                        return ListExternalExadataInfrastructuresRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataInfrastructuresResponse, String>() {
+                    @Override
+                    public String apply(ListExternalExadataInfrastructuresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalExadataInfrastructuresRequest.Builder>,
+                        ListExternalExadataInfrastructuresRequest>() {
+                    @Override
+                    public ListExternalExadataInfrastructuresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalExadataInfrastructuresRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataInfrastructuresRequest,
+                        ListExternalExadataInfrastructuresResponse>() {
+                    @Override
+                    public ListExternalExadataInfrastructuresResponse apply(
+                            ListExternalExadataInfrastructuresRequest request) {
+                        return client.listExternalExadataInfrastructures(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureSummary} objects
+     * contained in responses from the listExternalExadataInfrastructures operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureSummary>
+            listExternalExadataInfrastructuresRecordIterator(
+                    final ListExternalExadataInfrastructuresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalExadataInfrastructuresRequest.Builder,
+                ListExternalExadataInfrastructuresRequest,
+                ListExternalExadataInfrastructuresResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalExadataInfrastructureSummary>(
+                new java.util.function.Supplier<
+                        ListExternalExadataInfrastructuresRequest.Builder>() {
+                    @Override
+                    public ListExternalExadataInfrastructuresRequest.Builder get() {
+                        return ListExternalExadataInfrastructuresRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataInfrastructuresResponse, String>() {
+                    @Override
+                    public String apply(ListExternalExadataInfrastructuresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalExadataInfrastructuresRequest.Builder>,
+                        ListExternalExadataInfrastructuresRequest>() {
+                    @Override
+                    public ListExternalExadataInfrastructuresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalExadataInfrastructuresRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataInfrastructuresRequest,
+                        ListExternalExadataInfrastructuresResponse>() {
+                    @Override
+                    public ListExternalExadataInfrastructuresResponse apply(
+                            ListExternalExadataInfrastructuresRequest request) {
+                        return client.listExternalExadataInfrastructures(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataInfrastructuresResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalExadataInfrastructureSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalExadataInfrastructureSummary>
+                            apply(ListExternalExadataInfrastructuresResponse response) {
+                        return response.getExternalExadataInfrastructureCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalExadataStorageConnectors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalExadataStorageConnectorsResponse>
+            listExternalExadataStorageConnectorsResponseIterator(
+                    final ListExternalExadataStorageConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalExadataStorageConnectorsRequest.Builder,
+                ListExternalExadataStorageConnectorsRequest,
+                ListExternalExadataStorageConnectorsResponse>(
+                new java.util.function.Supplier<
+                        ListExternalExadataStorageConnectorsRequest.Builder>() {
+                    @Override
+                    public ListExternalExadataStorageConnectorsRequest.Builder get() {
+                        return ListExternalExadataStorageConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalExadataStorageConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalExadataStorageConnectorsRequest.Builder>,
+                        ListExternalExadataStorageConnectorsRequest>() {
+                    @Override
+                    public ListExternalExadataStorageConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalExadataStorageConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageConnectorsRequest,
+                        ListExternalExadataStorageConnectorsResponse>() {
+                    @Override
+                    public ListExternalExadataStorageConnectorsResponse apply(
+                            ListExternalExadataStorageConnectorsRequest request) {
+                        return client.listExternalExadataStorageConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnectorSummary} objects
+     * contained in responses from the listExternalExadataStorageConnectors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnectorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnectorSummary>
+            listExternalExadataStorageConnectorsRecordIterator(
+                    final ListExternalExadataStorageConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalExadataStorageConnectorsRequest.Builder,
+                ListExternalExadataStorageConnectorsRequest,
+                ListExternalExadataStorageConnectorsResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalExadataStorageConnectorSummary>(
+                new java.util.function.Supplier<
+                        ListExternalExadataStorageConnectorsRequest.Builder>() {
+                    @Override
+                    public ListExternalExadataStorageConnectorsRequest.Builder get() {
+                        return ListExternalExadataStorageConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalExadataStorageConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalExadataStorageConnectorsRequest.Builder>,
+                        ListExternalExadataStorageConnectorsRequest>() {
+                    @Override
+                    public ListExternalExadataStorageConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalExadataStorageConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageConnectorsRequest,
+                        ListExternalExadataStorageConnectorsResponse>() {
+                    @Override
+                    public ListExternalExadataStorageConnectorsResponse apply(
+                            ListExternalExadataStorageConnectorsRequest request) {
+                        return client.listExternalExadataStorageConnectors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalExadataStorageConnectorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalExadataStorageConnectorSummary>
+                            apply(ListExternalExadataStorageConnectorsResponse response) {
+                        return response.getExternalExadataStorageConnectorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalExadataStorageServers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalExadataStorageServersResponse>
+            listExternalExadataStorageServersResponseIterator(
+                    final ListExternalExadataStorageServersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalExadataStorageServersRequest.Builder,
+                ListExternalExadataStorageServersRequest,
+                ListExternalExadataStorageServersResponse>(
+                new java.util.function.Supplier<
+                        ListExternalExadataStorageServersRequest.Builder>() {
+                    @Override
+                    public ListExternalExadataStorageServersRequest.Builder get() {
+                        return ListExternalExadataStorageServersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageServersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalExadataStorageServersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalExadataStorageServersRequest.Builder>,
+                        ListExternalExadataStorageServersRequest>() {
+                    @Override
+                    public ListExternalExadataStorageServersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalExadataStorageServersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageServersRequest,
+                        ListExternalExadataStorageServersResponse>() {
+                    @Override
+                    public ListExternalExadataStorageServersResponse apply(
+                            ListExternalExadataStorageServersRequest request) {
+                        return client.listExternalExadataStorageServers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServerSummary} objects
+     * contained in responses from the listExternalExadataStorageServers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServerSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServerSummary>
+            listExternalExadataStorageServersRecordIterator(
+                    final ListExternalExadataStorageServersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalExadataStorageServersRequest.Builder,
+                ListExternalExadataStorageServersRequest, ListExternalExadataStorageServersResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServerSummary>(
+                new java.util.function.Supplier<
+                        ListExternalExadataStorageServersRequest.Builder>() {
+                    @Override
+                    public ListExternalExadataStorageServersRequest.Builder get() {
+                        return ListExternalExadataStorageServersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageServersResponse, String>() {
+                    @Override
+                    public String apply(ListExternalExadataStorageServersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalExadataStorageServersRequest.Builder>,
+                        ListExternalExadataStorageServersRequest>() {
+                    @Override
+                    public ListExternalExadataStorageServersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalExadataStorageServersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageServersRequest,
+                        ListExternalExadataStorageServersResponse>() {
+                    @Override
+                    public ListExternalExadataStorageServersResponse apply(
+                            ListExternalExadataStorageServersRequest request) {
+                        return client.listExternalExadataStorageServers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalExadataStorageServersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalExadataStorageServerSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalExadataStorageServerSummary>
+                            apply(ListExternalExadataStorageServersResponse response) {
+                        return response.getExternalExadataStorageServerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listExternalListenerServices operation. This iterable
      * will fetch more data from the server as needed.
      *

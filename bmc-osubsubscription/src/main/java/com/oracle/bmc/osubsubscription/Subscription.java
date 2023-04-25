@@ -54,6 +54,13 @@ public interface Subscription extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * This list API returns all subscriptions for a given plan number or subscription id or buyer email
      * and provides additional parameters to include ratecard and commitment details.
      * This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw

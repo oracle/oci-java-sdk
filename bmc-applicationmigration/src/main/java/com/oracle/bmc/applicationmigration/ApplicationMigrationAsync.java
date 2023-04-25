@@ -56,6 +56,13 @@ public interface ApplicationMigrationAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
+     */
+    void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
      * Cancels the specified work request. When you cancel a work request, it causes the in-progress task to be canceled.
      * For example, if the create migration work request is in the accepted or in progress state for a long time, you can cancel the work request.
      * <p>

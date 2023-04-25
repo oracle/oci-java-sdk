@@ -280,13 +280,6 @@ public class ResponseHelper {
                                             Long.class);
                             if (contentLength > 0) {
                                 if (Options.getShouldAutoCloseResponseInputStream()) {
-                                    if (ApacheUtils.isExtraStreamLogsEnabled()) {
-                                        LOG.warn(
-                                                "Wrapping response stream into auto closeable stream, to disable this, please "
-                                                        + "use "
-                                                        + Options.class.getName()
-                                                        + ".shouldAutoCloseResponseInputStream(false)");
-                                    }
                                     inputStream =
                                             new AutoCloseableContentLengthVerifyingInputStream(
                                                     inputStream, contentLength);

@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The information about the OrganizationTenancy.
+ * The information about the organization tenancy.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,7 +28,8 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
         "role",
         "timeJoined",
         "timeLeft",
-        "isApprovedForTransfer"
+        "isApprovedForTransfer",
+        "governanceStatus"
     })
     public OrganizationTenancy(
             String tenancyId,
@@ -37,7 +38,8 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             OrganizationTenancyRole role,
             java.util.Date timeJoined,
             java.util.Date timeLeft,
-            Boolean isApprovedForTransfer) {
+            Boolean isApprovedForTransfer,
+            GovernanceStatus governanceStatus) {
         super();
         this.tenancyId = tenancyId;
         this.name = name;
@@ -46,6 +48,7 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
         this.timeJoined = timeJoined;
         this.timeLeft = timeLeft;
         this.isApprovedForTransfer = isApprovedForTransfer;
+        this.governanceStatus = governanceStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -83,13 +86,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Lifecycle state of the OrganizationTenancy.
+         * Lifecycle state of the organization tenancy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OrganizationTenancyLifecycleState lifecycleState;
 
         /**
-         * Lifecycle state of the OrganizationTenancy.
+         * Lifecycle state of the organization tenancy.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -99,13 +102,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Role of the OrganizationTenancy.
+         * Role of the organization tenancy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private OrganizationTenancyRole role;
 
         /**
-         * Role of the OrganizationTenancy.
+         * Role of the organization tenancy.
          * @param role the value to set
          * @return this builder
          **/
@@ -115,13 +118,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Date-time when this tenancy joined the organization.
+         * Date and time when the tenancy joined the organization.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
         private java.util.Date timeJoined;
 
         /**
-         * Date-time when this tenancy joined the organization.
+         * Date and time when the tenancy joined the organization.
          * @param timeJoined the value to set
          * @return this builder
          **/
@@ -131,13 +134,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Date-time when this tenancy left the organization.
+         * Date and time when the tenancy left the organization.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
         private java.util.Date timeLeft;
 
         /**
-         * Date-time when this tenancy left the organization.
+         * Date and time when the tenancy left the organization.
          * @param timeLeft the value to set
          * @return this builder
          **/
@@ -147,19 +150,35 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Flag to indicate the tenancy is approved for transfer to another organization.
+         * Parameter to indicate the tenancy is approved for transfer to another organization.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
         private Boolean isApprovedForTransfer;
 
         /**
-         * Flag to indicate the tenancy is approved for transfer to another organization.
+         * Parameter to indicate the tenancy is approved for transfer to another organization.
          * @param isApprovedForTransfer the value to set
          * @return this builder
          **/
         public Builder isApprovedForTransfer(Boolean isApprovedForTransfer) {
             this.isApprovedForTransfer = isApprovedForTransfer;
             this.__explicitlySet__.add("isApprovedForTransfer");
+            return this;
+        }
+        /**
+         * The governance status of the tenancy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
+        private GovernanceStatus governanceStatus;
+
+        /**
+         * The governance status of the tenancy.
+         * @param governanceStatus the value to set
+         * @return this builder
+         **/
+        public Builder governanceStatus(GovernanceStatus governanceStatus) {
+            this.governanceStatus = governanceStatus;
+            this.__explicitlySet__.add("governanceStatus");
             return this;
         }
 
@@ -175,7 +194,8 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
                             this.role,
                             this.timeJoined,
                             this.timeLeft,
-                            this.isApprovedForTransfer);
+                            this.isApprovedForTransfer,
+                            this.governanceStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -204,6 +224,9 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("isApprovedForTransfer")) {
                 this.isApprovedForTransfer(model.getIsApprovedForTransfer());
+            }
+            if (model.wasPropertyExplicitlySet("governanceStatus")) {
+                this.governanceStatus(model.getGovernanceStatus());
             }
             return this;
         }
@@ -249,13 +272,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Lifecycle state of the OrganizationTenancy.
+     * Lifecycle state of the organization tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OrganizationTenancyLifecycleState lifecycleState;
 
     /**
-     * Lifecycle state of the OrganizationTenancy.
+     * Lifecycle state of the organization tenancy.
      * @return the value
      **/
     public OrganizationTenancyLifecycleState getLifecycleState() {
@@ -263,13 +286,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Role of the OrganizationTenancy.
+     * Role of the organization tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final OrganizationTenancyRole role;
 
     /**
-     * Role of the OrganizationTenancy.
+     * Role of the organization tenancy.
      * @return the value
      **/
     public OrganizationTenancyRole getRole() {
@@ -277,13 +300,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Date-time when this tenancy joined the organization.
+     * Date and time when the tenancy joined the organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeJoined")
     private final java.util.Date timeJoined;
 
     /**
-     * Date-time when this tenancy joined the organization.
+     * Date and time when the tenancy joined the organization.
      * @return the value
      **/
     public java.util.Date getTimeJoined() {
@@ -291,13 +314,13 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Date-time when this tenancy left the organization.
+     * Date and time when the tenancy left the organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLeft")
     private final java.util.Date timeLeft;
 
     /**
-     * Date-time when this tenancy left the organization.
+     * Date and time when the tenancy left the organization.
      * @return the value
      **/
     public java.util.Date getTimeLeft() {
@@ -305,17 +328,31 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Flag to indicate the tenancy is approved for transfer to another organization.
+     * Parameter to indicate the tenancy is approved for transfer to another organization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isApprovedForTransfer")
     private final Boolean isApprovedForTransfer;
 
     /**
-     * Flag to indicate the tenancy is approved for transfer to another organization.
+     * Parameter to indicate the tenancy is approved for transfer to another organization.
      * @return the value
      **/
     public Boolean getIsApprovedForTransfer() {
         return isApprovedForTransfer;
+    }
+
+    /**
+     * The governance status of the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("governanceStatus")
+    private final GovernanceStatus governanceStatus;
+
+    /**
+     * The governance status of the tenancy.
+     * @return the value
+     **/
+    public GovernanceStatus getGovernanceStatus() {
+        return governanceStatus;
     }
 
     @Override
@@ -339,6 +376,7 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
         sb.append(", timeJoined=").append(String.valueOf(this.timeJoined));
         sb.append(", timeLeft=").append(String.valueOf(this.timeLeft));
         sb.append(", isApprovedForTransfer=").append(String.valueOf(this.isApprovedForTransfer));
+        sb.append(", governanceStatus=").append(String.valueOf(this.governanceStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -360,6 +398,7 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.timeJoined, other.timeJoined)
                 && java.util.Objects.equals(this.timeLeft, other.timeLeft)
                 && java.util.Objects.equals(this.isApprovedForTransfer, other.isApprovedForTransfer)
+                && java.util.Objects.equals(this.governanceStatus, other.governanceStatus)
                 && super.equals(other);
     }
 
@@ -380,6 +419,9 @@ public final class OrganizationTenancy extends com.oracle.bmc.http.internal.Expl
                         + (this.isApprovedForTransfer == null
                                 ? 43
                                 : this.isApprovedForTransfer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.governanceStatus == null ? 43 : this.governanceStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

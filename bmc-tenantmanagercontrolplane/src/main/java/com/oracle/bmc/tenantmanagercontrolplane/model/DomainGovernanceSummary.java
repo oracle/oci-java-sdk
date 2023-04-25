@@ -150,13 +150,13 @@ public final class DomainGovernanceSummary
             return this;
         }
         /**
-         * The email to notify the user, and that the ONS subscription will be created with.
+         * Email address to be used to notify the user, and that the ONS subscription will be created with.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
         private String subscriptionEmail;
 
         /**
-         * The email to notify the user, and that the ONS subscription will be created with.
+         * Email address to be used to notify the user, and that the ONS subscription will be created with.
          * @param subscriptionEmail the value to set
          * @return this builder
          **/
@@ -443,13 +443,13 @@ public final class DomainGovernanceSummary
     }
 
     /**
-     * The email to notify the user, and that the ONS subscription will be created with.
+     * Email address to be used to notify the user, and that the ONS subscription will be created with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
     private final String subscriptionEmail;
 
     /**
-     * The email to notify the user, and that the ONS subscription will be created with.
+     * Email address to be used to notify the user, and that the ONS subscription will be created with.
      * @return the value
      **/
     public String getSubscriptionEmail() {

@@ -49,6 +49,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
             signingStrategyRequestSignerFactories;
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.
@@ -282,6 +283,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     LOG.info(
@@ -409,6 +411,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
         java.util.Optional<String> endpoint =
                 com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
         if (endpoint.isPresent()) {
@@ -422,6 +425,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     @Override
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -430,6 +434,23 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
     }
 
     @Override
@@ -560,6 +581,68 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePrivateEndpointOutboundConnectionResponse>
+            changePrivateEndpointOutboundConnection(
+                    ChangePrivateEndpointOutboundConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePrivateEndpointOutboundConnectionRequest,
+                                    ChangePrivateEndpointOutboundConnectionResponse>
+                            handler) {
+        LOG.trace("Called async changePrivateEndpointOutboundConnection");
+        final ChangePrivateEndpointOutboundConnectionRequest interceptedRequest =
+                ChangePrivateEndpointOutboundConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePrivateEndpointOutboundConnectionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "ChangePrivateEndpointOutboundConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangePrivateEndpointOutboundConnection");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangePrivateEndpointOutboundConnectionResponse>
+                transformer =
+                        ChangePrivateEndpointOutboundConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePrivateEndpointOutboundConnectionRequest,
+                        ChangePrivateEndpointOutboundConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePrivateEndpointOutboundConnectionRequest,
+                                ChangePrivateEndpointOutboundConnectionResponse>,
+                        java.util.concurrent.Future<
+                                ChangePrivateEndpointOutboundConnectionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangePrivateEndpointOutboundConnectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePrivateEndpointOutboundConnectionRequest,
+                    ChangePrivateEndpointOutboundConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIntegrationInstanceResponse> createIntegrationInstance(
             CreateIntegrationInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -651,6 +734,55 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteIntegrationInstanceRequest, DeleteIntegrationInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableProcessAutomationResponse> enableProcessAutomation(
+            EnableProcessAutomationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableProcessAutomationRequest, EnableProcessAutomationResponse>
+                    handler) {
+        LOG.trace("Called async enableProcessAutomation");
+        final EnableProcessAutomationRequest interceptedRequest =
+                EnableProcessAutomationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableProcessAutomationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "EnableProcessAutomation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/EnableProcessAutomation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableProcessAutomationResponse>
+                transformer =
+                        EnableProcessAutomationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableProcessAutomationRequest, EnableProcessAutomationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableProcessAutomationRequest, EnableProcessAutomationResponse>,
+                        java.util.concurrent.Future<EnableProcessAutomationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableProcessAutomationRequest, EnableProcessAutomationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

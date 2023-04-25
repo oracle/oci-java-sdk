@@ -27,13 +27,13 @@ public class ActivateOrderRequest
         return activateOrderDetails;
     }
     /**
-     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+     * Activation token containing an order ID. A JWT RFC 7519-formatted string.
      *
      */
     private String activationToken;
 
     /**
-     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+     * Activation token containing an order ID. A JWT RFC 7519-formatted string.
      *
      */
     public String getActivationToken() {
@@ -44,7 +44,7 @@ public class ActivateOrderRequest
      * server error, without risk of executing that same action again. Retry tokens expire after 24
      * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
+     * will be rejected.
      *
      */
     private String opcRetryToken;
@@ -54,7 +54,7 @@ public class ActivateOrderRequest
      * server error, without risk of executing that same action again. Retry tokens expire after 24
      * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
+     * will be rejected.
      *
      */
     public String getOpcRetryToken() {
@@ -109,13 +109,13 @@ public class ActivateOrderRequest
         }
 
         /**
-         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         * Activation token containing an order ID. A JWT RFC 7519-formatted string.
          *
          */
         private String activationToken = null;
 
         /**
-         * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+         * Activation token containing an order ID. A JWT RFC 7519-formatted string.
          *
          * @param activationToken the value to set
          * @return this builder instance
@@ -130,7 +130,7 @@ public class ActivateOrderRequest
          * server error, without risk of executing that same action again. Retry tokens expire after 24
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * will be rejected.
          *
          */
         private String opcRetryToken = null;
@@ -140,7 +140,7 @@ public class ActivateOrderRequest
          * server error, without risk of executing that same action again. Retry tokens expire after 24
          * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
          * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * will be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

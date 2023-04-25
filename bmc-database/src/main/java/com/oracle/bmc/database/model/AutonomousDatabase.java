@@ -52,6 +52,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         "dataStorageSizeInTBs",
         "memoryPerOracleComputeUnitInGBs",
         "dataStorageSizeInGBs",
+        "usedDataStorageSizeInGBs",
         "infrastructureType",
         "isDedicated",
         "autonomousContainerDatabaseId",
@@ -156,6 +157,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             Integer dataStorageSizeInTBs,
             Integer memoryPerOracleComputeUnitInGBs,
             Integer dataStorageSizeInGBs,
+            Integer usedDataStorageSizeInGBs,
             InfrastructureType infrastructureType,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
@@ -259,6 +261,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.usedDataStorageSizeInGBs = usedDataStorageSizeInGBs;
         this.infrastructureType = infrastructureType;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
@@ -842,6 +845,22 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+        /**
+         * The storage space consumed by Autonomous Database in GBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInGBs")
+        private Integer usedDataStorageSizeInGBs;
+
+        /**
+         * The storage space consumed by Autonomous Database in GBs.
+         * @param usedDataStorageSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder usedDataStorageSizeInGBs(Integer usedDataStorageSizeInGBs) {
+            this.usedDataStorageSizeInGBs = usedDataStorageSizeInGBs;
+            this.__explicitlySet__.add("usedDataStorageSizeInGBs");
             return this;
         }
         /**
@@ -2263,6 +2282,7 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                             this.dataStorageSizeInTBs,
                             this.memoryPerOracleComputeUnitInGBs,
                             this.dataStorageSizeInGBs,
+                            this.usedDataStorageSizeInGBs,
                             this.infrastructureType,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
@@ -2432,6 +2452,9 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("usedDataStorageSizeInGBs")) {
+                this.usedDataStorageSizeInGBs(model.getUsedDataStorageSizeInGBs());
             }
             if (model.wasPropertyExplicitlySet("infrastructureType")) {
                 this.infrastructureType(model.getInfrastructureType());
@@ -3228,6 +3251,20 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
      **/
     public Integer getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
+    }
+
+    /**
+     * The storage space consumed by Autonomous Database in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInGBs")
+    private final Integer usedDataStorageSizeInGBs;
+
+    /**
+     * The storage space consumed by Autonomous Database in GBs.
+     * @return the value
+     **/
+    public Integer getUsedDataStorageSizeInGBs() {
+        return usedDataStorageSizeInGBs;
     }
 
     /**
@@ -5266,6 +5303,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", usedDataStorageSizeInGBs=")
+                .append(String.valueOf(this.usedDataStorageSizeInGBs));
         sb.append(", infrastructureType=").append(String.valueOf(this.infrastructureType));
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
@@ -5415,6 +5454,8 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(
+                        this.usedDataStorageSizeInGBs, other.usedDataStorageSizeInGBs)
                 && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
@@ -5605,6 +5646,11 @@ public final class AutonomousDatabase extends com.oracle.bmc.http.internal.Expli
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.usedDataStorageSizeInGBs == null
+                                ? 43
+                                : this.usedDataStorageSizeInGBs.hashCode());
         result =
                 (result * PRIME)
                         + (this.infrastructureType == null

@@ -12,6 +12,8 @@ import com.oracle.bmc.SdkClients;
     DomainClient.class,
     DomainGovernanceAsyncClient.class,
     DomainGovernanceClient.class,
+    GovernanceAsyncClient.class,
+    GovernanceClient.class,
     LinkAsyncClient.class,
     LinkClient.class,
     OrdersAsyncClient.class,

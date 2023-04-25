@@ -49,6 +49,7 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
             signingStrategyRequestSignerFactories;
     private final boolean isNonBufferingApacheClient;
     private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
      * Used to synchronize any updates on the `this.client` object.

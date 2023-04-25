@@ -29,6 +29,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
+import java.time.Duration;
 
 import static com.oracle.bmc.http.internal.RestClient.generateRequestId;
 
@@ -88,12 +89,13 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     @Override
     public String getSecurityToken() {
         try {
-            String token =
-                    refreshAndGetSecurityTokenIfExpiringWithin(
-                            getSecurityTokenAdapter().getTokenValidDuration().dividedBy(2));
-            return token;
+            Duration time = Duration.ZERO;
+            if (getSecurityTokenAdapter().isValid()) {
+                time = getSecurityTokenAdapter().getTokenValidDuration().dividedBy(2);
+            }
+            return refreshAndGetSecurityTokenIfExpiringWithin(time);
         } catch (Exception e) {
-            LOG.info("Refresh RPST token failed, use cached RPST token.");
+            LOG.info("Refresh RPST token failed, use cached RPST token.", e);
             return getSecurityTokenAdapter().getSecurityToken();
         }
     }
