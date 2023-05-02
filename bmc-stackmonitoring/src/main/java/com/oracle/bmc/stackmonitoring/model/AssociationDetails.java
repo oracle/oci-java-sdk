@@ -31,13 +31,15 @@ public final class AssociationDetails extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sourceResourceId the value to set
          * @return this builder
          **/
@@ -47,13 +49,15 @@ public final class AssociationDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Association Type
+         * Association Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
         /**
-         * Association Type
+         * Association Type.
+         *
          * @param associationType the value to set
          * @return this builder
          **/
@@ -99,13 +103,15 @@ public final class AssociationDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getSourceResourceId() {
@@ -113,13 +119,15 @@ public final class AssociationDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Association Type
+     * Association Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
     /**
-     * Association Type
+     * Association Type.
+     *
      * @return the value
      **/
     public String getAssociationType() {

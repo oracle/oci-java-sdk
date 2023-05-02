@@ -23,7 +23,9 @@ public class CircuitBreakerUtils {
     /**
      * Get default CircuitBreakerConfiguration
      * @return the default CircuitBreakerConfiguration
+     * @deprecated use {@link #getDefaultCircuitBreakerConfiguration()} instead
      */
+    @Deprecated
     public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfig() {
         return defaultCircuitBreakerConfiguration;
     }
@@ -37,6 +39,8 @@ public class CircuitBreakerUtils {
 
     /**
      * Gets the user defined CircuitBreaker
+     *
+     * @param configuration the client configuration to use
      * @return the user defined CircuitBreaker
      * @deprecated use getUserDefinedCircuitBreakerConfiguration instead
      */
@@ -74,6 +78,8 @@ public class CircuitBreakerUtils {
 
     /**
      * Gets the user defined CircuitBreakerConfiguration
+     *
+     * @param configuration the client configuration to use
      * @return the user defined CircuitBreakerConfiguration
      */
     public static CircuitBreakerConfiguration getUserDefinedCircuitBreakerConfiguration(
@@ -110,10 +116,20 @@ public class CircuitBreakerUtils {
         return true;
     }
 
+    /**
+     * Get default CircuitBreakerConfiguration
+     *
+     * @return the default CircuitBreakerConfiguration
+     */
     public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfiguration() {
         return CircuitBreakerUtils.defaultCircuitBreakerConfiguration;
     }
 
+    /**
+     * Set default CircuitBreakerConfiguration
+     *
+     * @param defaultCircuitBreakerConfiguration the default CircuitBreakerConfiguration to set
+     */
     public static void setDefaultCircuitBreakerConfiguration(
             CircuitBreakerConfiguration defaultCircuitBreakerConfiguration) {
         CircuitBreakerUtils.defaultCircuitBreakerConfiguration = defaultCircuitBreakerConfiguration;

@@ -5,7 +5,8 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Property of monitored resource
+ * Property of monitored resource.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,13 +33,15 @@ public final class MonitoredResourceProperty
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * property name
+         * Property Name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * property name
+         * Property Name.
+         *
          * @param name the value to set
          * @return this builder
          **/
@@ -48,13 +51,15 @@ public final class MonitoredResourceProperty
             return this;
         }
         /**
-         * property value
+         * Property Value.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * property value
+         * Property Value.
+         *
          * @param value the value to set
          * @return this builder
          **/
@@ -99,13 +104,15 @@ public final class MonitoredResourceProperty
     }
 
     /**
-     * property name
+     * Property Name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * property name
+     * Property Name.
+     *
      * @return the value
      **/
     public String getName() {
@@ -113,13 +120,15 @@ public final class MonitoredResourceProperty
     }
 
     /**
-     * property value
+     * Property Value.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * property value
+     * Property Value.
+     *
      * @return the value
      **/
     public String getValue() {

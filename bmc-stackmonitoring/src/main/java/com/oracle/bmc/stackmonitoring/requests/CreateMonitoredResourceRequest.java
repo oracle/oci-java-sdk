@@ -14,13 +14,15 @@ public class CreateMonitoredResourceRequest
                 com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails> {
 
     /**
-     * Details for the new Resource.
+     * Details for the new monitored resource.
+     *
      */
     private com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails
             createMonitoredResourceDetails;
 
     /**
-     * Details for the new Resource.
+     * Details for the new monitored resource.
+     *
      */
     public com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails
             getCreateMonitoredResourceDetails() {
@@ -101,13 +103,15 @@ public class CreateMonitoredResourceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new Resource.
+         * Details for the new monitored resource.
+         *
          */
         private com.oracle.bmc.stackmonitoring.model.CreateMonitoredResourceDetails
                 createMonitoredResourceDetails = null;
 
         /**
-         * Details for the new Resource.
+         * Details for the new monitored resource.
+         *
          * @param createMonitoredResourceDetails the value to set
          * @return this builder instance
          */

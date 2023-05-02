@@ -61,13 +61,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -77,13 +79,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sourceResourceId the value to set
          * @return this builder
          **/
@@ -93,13 +97,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Source Monitored Resource Name
+         * Source Monitored Resource Name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceName")
         private String sourceResourceName;
 
         /**
-         * Source Monitored Resource Name
+         * Source Monitored Resource Name.
+         *
          * @param sourceResourceName the value to set
          * @return this builder
          **/
@@ -109,13 +115,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Source Monitored Resource Type
+         * Source Monitored Resource Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceType")
         private String sourceResourceType;
 
         /**
-         * Source Monitored Resource Type
+         * Source Monitored Resource Type.
+         *
          * @param sourceResourceType the value to set
          * @return this builder
          **/
@@ -125,13 +133,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
 
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param destinationResourceId the value to set
          * @return this builder
          **/
@@ -141,13 +151,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Source Monitored Resource Name
+         * Source Monitored Resource Name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceName")
         private String destinationResourceName;
 
         /**
-         * Source Monitored Resource Name
+         * Source Monitored Resource Name.
+         *
          * @param destinationResourceName the value to set
          * @return this builder
          **/
@@ -157,13 +169,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Source Monitored Resource Type
+         * Source Monitored Resource Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceType")
         private String destinationResourceType;
 
         /**
-         * Source Monitored Resource Type
+         * Source Monitored Resource Type.
+         *
          * @param destinationResourceType the value to set
          * @return this builder
          **/
@@ -173,13 +187,15 @@ public final class SearchMonitoredResourceAssociationsDetails
             return this;
         }
         /**
-         * Association type to be created between source and destination resources
+         * Association type filter to search associated resources.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
         /**
-         * Association type to be created between source and destination resources
+         * Association type filter to search associated resources.
+         *
          * @param associationType the value to set
          * @return this builder
          **/
@@ -295,13 +311,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -309,13 +327,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getSourceResourceId() {
@@ -323,13 +343,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceName")
     private final String sourceResourceName;
 
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
+     *
      * @return the value
      **/
     public String getSourceResourceName() {
@@ -337,13 +359,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceType")
     private final String sourceResourceType;
 
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
+     *
      * @return the value
      **/
     public String getSourceResourceType() {
@@ -351,13 +375,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
     private final String destinationResourceId;
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getDestinationResourceId() {
@@ -365,13 +391,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceName")
     private final String destinationResourceName;
 
     /**
-     * Source Monitored Resource Name
+     * Source Monitored Resource Name.
+     *
      * @return the value
      **/
     public String getDestinationResourceName() {
@@ -379,13 +407,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceType")
     private final String destinationResourceType;
 
     /**
-     * Source Monitored Resource Type
+     * Source Monitored Resource Type.
+     *
      * @return the value
      **/
     public String getDestinationResourceType() {
@@ -393,13 +423,15 @@ public final class SearchMonitoredResourceAssociationsDetails
     }
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type filter to search associated resources.
+     *
      * @return the value
      **/
     public String getAssociationType() {

@@ -36,7 +36,7 @@ public class RealmSpecificEndpointTemplateUtils {
      * This method is called when use of realm-specific endpoint template is enabled.
      *
      * @param regionId
-     * @return
+     * @return Realm-specific endpoint template
      */
     public static String getRealmSpecificEndpointTemplate(
             boolean useOfRealmSpecificEndpointTemplateEnabled, String regionId, Service service) {

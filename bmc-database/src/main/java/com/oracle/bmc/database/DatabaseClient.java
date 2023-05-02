@@ -10632,7 +10632,11 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRotateCloudAutonomousVmClusterOrdsCertsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -10674,7 +10678,11 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRotateCloudAutonomousVmClusterSslCertsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

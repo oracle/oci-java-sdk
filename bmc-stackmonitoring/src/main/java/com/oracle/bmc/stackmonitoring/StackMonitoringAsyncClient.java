@@ -1481,6 +1481,59 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAndPropagateTagsResponse> updateAndPropagateTags(
+            UpdateAndPropagateTagsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAndPropagateTagsRequest, UpdateAndPropagateTagsResponse>
+                    handler) {
+        LOG.trace("Called async updateAndPropagateTags");
+        final UpdateAndPropagateTagsRequest interceptedRequest =
+                UpdateAndPropagateTagsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAndPropagateTagsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateAndPropagateTags",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateAndPropagateTags");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAndPropagateTagsResponse>
+                transformer =
+                        UpdateAndPropagateTagsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAndPropagateTagsRequest, UpdateAndPropagateTagsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAndPropagateTagsRequest, UpdateAndPropagateTagsResponse>,
+                        java.util.concurrent.Future<UpdateAndPropagateTagsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAndPropagateTagsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAndPropagateTagsRequest, UpdateAndPropagateTagsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMonitoredResourceResponse> updateMonitoredResource(
             UpdateMonitoredResourceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

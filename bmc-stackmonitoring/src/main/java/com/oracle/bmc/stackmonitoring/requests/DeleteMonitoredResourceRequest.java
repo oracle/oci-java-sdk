@@ -60,12 +60,16 @@ public class DeleteMonitoredResourceRequest
         return opcRequestId;
     }
     /**
-     * A filter to delete the associated children or not for given resource.
+     * If this query parameter is specified and set to true, all the member
+     * resources will be deleted before deleting the specified resource.
+     *
      */
     private Boolean isDeleteMembers;
 
     /**
-     * A filter to delete the associated children or not for given resource.
+     * If this query parameter is specified and set to true, all the member
+     * resources will be deleted before deleting the specified resource.
+     *
      */
     public Boolean getIsDeleteMembers() {
         return isDeleteMembers;
@@ -138,12 +142,16 @@ public class DeleteMonitoredResourceRequest
         }
 
         /**
-         * A filter to delete the associated children or not for given resource.
+         * If this query parameter is specified and set to true, all the member
+         * resources will be deleted before deleting the specified resource.
+         *
          */
         private Boolean isDeleteMembers = null;
 
         /**
-         * A filter to delete the associated children or not for given resource.
+         * If this query parameter is specified and set to true, all the member
+         * resources will be deleted before deleting the specified resource.
+         *
          * @param isDeleteMembers the value to set
          * @return this builder instance
          */

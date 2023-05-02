@@ -58,6 +58,8 @@ public final class CloudAutonomousVmClusterSummary
         "scanListenerPortNonTls",
         "freeformTags",
         "definedTags",
+        "timeDatabaseSslCertificateExpires",
+        "timeOrdsCertificateExpires",
         "availableCpus",
         "reclaimableCpus",
         "availableContainerDatabases",
@@ -102,6 +104,8 @@ public final class CloudAutonomousVmClusterSummary
             Integer scanListenerPortNonTls,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Date timeDatabaseSslCertificateExpires,
+            java.util.Date timeOrdsCertificateExpires,
             Float availableCpus,
             Float reclaimableCpus,
             Integer availableContainerDatabases,
@@ -145,6 +149,8 @@ public final class CloudAutonomousVmClusterSummary
         this.scanListenerPortNonTls = scanListenerPortNonTls;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+        this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
         this.availableCpus = availableCpus;
         this.reclaimableCpus = reclaimableCpus;
         this.availableContainerDatabases = availableContainerDatabases;
@@ -748,6 +754,39 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
         /**
+         * The date and time of Database SSL certificate expiration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
+        private java.util.Date timeDatabaseSslCertificateExpires;
+
+        /**
+         * The date and time of Database SSL certificate expiration.
+         * @param timeDatabaseSslCertificateExpires the value to set
+         * @return this builder
+         **/
+        public Builder timeDatabaseSslCertificateExpires(
+                java.util.Date timeDatabaseSslCertificateExpires) {
+            this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
+            this.__explicitlySet__.add("timeDatabaseSslCertificateExpires");
+            return this;
+        }
+        /**
+         * The date and time of ORDS certificate expiration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOrdsCertificateExpires")
+        private java.util.Date timeOrdsCertificateExpires;
+
+        /**
+         * The date and time of ORDS certificate expiration.
+         * @param timeOrdsCertificateExpires the value to set
+         * @return this builder
+         **/
+        public Builder timeOrdsCertificateExpires(java.util.Date timeOrdsCertificateExpires) {
+            this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+            this.__explicitlySet__.add("timeOrdsCertificateExpires");
+            return this;
+        }
+        /**
          * CPU cores available for allocation to Autonomous Databases.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
@@ -923,6 +962,8 @@ public final class CloudAutonomousVmClusterSummary
                             this.scanListenerPortNonTls,
                             this.freeformTags,
                             this.definedTags,
+                            this.timeDatabaseSslCertificateExpires,
+                            this.timeOrdsCertificateExpires,
                             this.availableCpus,
                             this.reclaimableCpus,
                             this.availableContainerDatabases,
@@ -1040,6 +1081,13 @@ public final class CloudAutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeDatabaseSslCertificateExpires")) {
+                this.timeDatabaseSslCertificateExpires(
+                        model.getTimeDatabaseSslCertificateExpires());
+            }
+            if (model.wasPropertyExplicitlySet("timeOrdsCertificateExpires")) {
+                this.timeOrdsCertificateExpires(model.getTimeOrdsCertificateExpires());
             }
             if (model.wasPropertyExplicitlySet("availableCpus")) {
                 this.availableCpus(model.getAvailableCpus());
@@ -1759,6 +1807,34 @@ public final class CloudAutonomousVmClusterSummary
     }
 
     /**
+     * The date and time of Database SSL certificate expiration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
+    private final java.util.Date timeDatabaseSslCertificateExpires;
+
+    /**
+     * The date and time of Database SSL certificate expiration.
+     * @return the value
+     **/
+    public java.util.Date getTimeDatabaseSslCertificateExpires() {
+        return timeDatabaseSslCertificateExpires;
+    }
+
+    /**
+     * The date and time of ORDS certificate expiration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOrdsCertificateExpires")
+    private final java.util.Date timeOrdsCertificateExpires;
+
+    /**
+     * The date and time of ORDS certificate expiration.
+     * @return the value
+     **/
+    public java.util.Date getTimeOrdsCertificateExpires() {
+        return timeOrdsCertificateExpires;
+    }
+
+    /**
      * CPU cores available for allocation to Autonomous Databases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
@@ -1926,6 +2002,10 @@ public final class CloudAutonomousVmClusterSummary
         sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", timeDatabaseSslCertificateExpires=")
+                .append(String.valueOf(this.timeDatabaseSslCertificateExpires));
+        sb.append(", timeOrdsCertificateExpires=")
+                .append(String.valueOf(this.timeOrdsCertificateExpires));
         sb.append(", availableCpus=").append(String.valueOf(this.availableCpus));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", availableContainerDatabases=")
@@ -1991,6 +2071,11 @@ public final class CloudAutonomousVmClusterSummary
                         this.scanListenerPortNonTls, other.scanListenerPortNonTls)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.timeDatabaseSslCertificateExpires,
+                        other.timeDatabaseSslCertificateExpires)
+                && java.util.Objects.equals(
+                        this.timeOrdsCertificateExpires, other.timeOrdsCertificateExpires)
                 && java.util.Objects.equals(this.availableCpus, other.availableCpus)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(
@@ -2103,6 +2188,16 @@ public final class CloudAutonomousVmClusterSummary
                                 : this.scanListenerPortNonTls.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeDatabaseSslCertificateExpires == null
+                                ? 43
+                                : this.timeDatabaseSslCertificateExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOrdsCertificateExpires == null
+                                ? 43
+                                : this.timeOrdsCertificateExpires.hashCode());
         result =
                 (result * PRIME)
                         + (this.availableCpus == null ? 43 : this.availableCpus.hashCode());
