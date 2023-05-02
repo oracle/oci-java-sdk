@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Encypted credentials [indicated by the type property in CredentialStore].
+ * Encrypted credentials [indicated by the type property in CredentialStore].
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -64,13 +64,17 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
             return this;
         }
         /**
-         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * The master key should be created in OCI Vault owned by the client of this API.
+         * The user should have permission to access the vault key.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
-         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * The master key should be created in OCI Vault owned by the client of this API.
+         * The user should have permission to access the vault key.
+         *
          * @param keyId the value to set
          * @return this builder
          **/
@@ -163,13 +167,17 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
     }
 
     /**
-     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * The master key should be created in OCI Vault owned by the client of this API.
+     * The user should have permission to access the vault key.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * The master key should be created in OCI Vault owned by the client of this API.
+     * The user should have permission to access the vault key.
+     *
      * @return the value
      **/
     public String getKeyId() {

@@ -429,7 +429,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                             .circuitBreakerConfigurator(
                                     circuitBreakerConfig != null
                                             ? circuitBreakerConfig
-                                            : CircuitBreakerUtils.getDefaultCircuitBreakerConfig())
+                                            : CircuitBreakerUtils
+                                                    .getDefaultCircuitBreakerConfiguration())
                             // InstancePrincipalsAuthenticationDetailsProvider and ResourcePrincipalsFederationClient's
                             // sessionKeysSupplier must be different. BTW ResourcePrincipalsFederationClient and
                             // ResourcePrincipalAuthenticationDetailsProvider's sessionKeysSupplier must be same.

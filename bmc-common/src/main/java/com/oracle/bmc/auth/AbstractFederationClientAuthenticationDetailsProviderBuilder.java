@@ -206,7 +206,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         CircuitBreakerConfiguration circuitBreakerConfig =
                 circuitBreakerConfiguration != null
                         ? circuitBreakerConfiguration
-                        : CircuitBreakerUtils.getDefaultCircuitBreakerConfig();
+                        : CircuitBreakerUtils.getDefaultCircuitBreakerConfiguration();
 
         if (purpose != null) {
             return new X509FederationClient(
@@ -478,11 +478,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * @deprecated use the function without Guava parameters instead
+     * Retry logic to get endpoint from instance metadata service
+     *
      * @param retryOperation
      * @param metadataServiceUrl
      * @param endpoint
-     * @param <T>
-     * @return
+     * @return The function result
      */
     @Deprecated
     public static <T> T simpleRetry(
@@ -493,6 +494,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         return simpleRetry(GuavaUtils.adaptFromGuava(retryOperation), metadataServiceUrl, endpoint);
     }
 
+    /**
+     * Retry logic to get endpoint from instance metadata service
+     *
+     * @param retryOperation
+     * @param metadataServiceUrl
+     * @param endpoint
+     * @return The function result
+     */
     public static <T> T simpleRetry(
             Function<WebTarget, T> retryOperation,
             final String metadataServiceUrl,

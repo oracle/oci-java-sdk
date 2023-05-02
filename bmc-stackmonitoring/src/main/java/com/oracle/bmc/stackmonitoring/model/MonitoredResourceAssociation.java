@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Association between two monitored resources.
+ * Association details between two monitored resources.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,6 +31,7 @@ public final class MonitoredResourceAssociation
         "sourceResourceDetails",
         "destinationResourceDetails",
         "timeCreated",
+        "category",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -44,6 +45,7 @@ public final class MonitoredResourceAssociation
             AssociationResourceDetails sourceResourceDetails,
             AssociationResourceDetails destinationResourceDetails,
             java.util.Date timeCreated,
+            Category category,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -56,6 +58,7 @@ public final class MonitoredResourceAssociation
         this.sourceResourceDetails = sourceResourceDetails;
         this.destinationResourceDetails = destinationResourceDetails;
         this.timeCreated = timeCreated;
+        this.category = category;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -64,13 +67,15 @@ public final class MonitoredResourceAssociation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Association Type
+         * Association Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
         /**
-         * Association Type
+         * Association Type.
+         *
          * @param associationType the value to set
          * @return this builder
          **/
@@ -80,13 +85,15 @@ public final class MonitoredResourceAssociation
             return this;
         }
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -96,13 +103,15 @@ public final class MonitoredResourceAssociation
             return this;
         }
         /**
-         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param tenantId the value to set
          * @return this builder
          **/
@@ -112,13 +121,15 @@ public final class MonitoredResourceAssociation
             return this;
         }
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sourceResourceId the value to set
          * @return this builder
          **/
@@ -128,13 +139,15 @@ public final class MonitoredResourceAssociation
             return this;
         }
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
 
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param destinationResourceId the value to set
          * @return this builder
          **/
@@ -163,19 +176,45 @@ public final class MonitoredResourceAssociation
             return this;
         }
         /**
-         * The time when the association was created. An RFC3339 formatted datetime string
+         * The time when the association was created. An RFC3339 formatted datetime string.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time when the association was created. An RFC3339 formatted datetime string
+         * The time when the association was created. An RFC3339 formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder
          **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * Association category. Possible values are:
+         * - System created (SYSTEM),
+         * - User created using API (USER_API)
+         * - User created using tags (USER_TAG_ASSOC).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private Category category;
+
+        /**
+         * Association category. Possible values are:
+         * - System created (SYSTEM),
+         * - User created using API (USER_API)
+         * - User created using tags (USER_TAG_ASSOC).
+         *
+         * @param category the value to set
+         * @return this builder
+         **/
+        public Builder category(Category category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
             return this;
         }
         /**
@@ -254,6 +293,7 @@ public final class MonitoredResourceAssociation
                             this.sourceResourceDetails,
                             this.destinationResourceDetails,
                             this.timeCreated,
+                            this.category,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -289,6 +329,9 @@ public final class MonitoredResourceAssociation
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -314,13 +357,15 @@ public final class MonitoredResourceAssociation
     }
 
     /**
-     * Association Type
+     * Association Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
     /**
-     * Association Type
+     * Association Type.
+     *
      * @return the value
      **/
     public String getAssociationType() {
@@ -328,13 +373,15 @@ public final class MonitoredResourceAssociation
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -342,13 +389,15 @@ public final class MonitoredResourceAssociation
     }
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getTenantId() {
@@ -356,13 +405,15 @@ public final class MonitoredResourceAssociation
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getSourceResourceId() {
@@ -370,13 +421,15 @@ public final class MonitoredResourceAssociation
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
     private final String destinationResourceId;
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getDestinationResourceId() {
@@ -398,17 +451,94 @@ public final class MonitoredResourceAssociation
     }
 
     /**
-     * The time when the association was created. An RFC3339 formatted datetime string
+     * The time when the association was created. An RFC3339 formatted datetime string.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time when the association was created. An RFC3339 formatted datetime string
+     * The time when the association was created. An RFC3339 formatted datetime string.
+     *
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
+    }
+
+    /**
+     * Association category. Possible values are:
+     * - System created (SYSTEM),
+     * - User created using API (USER_API)
+     * - User created using tags (USER_TAG_ASSOC).
+     *
+     **/
+    public enum Category {
+        System("SYSTEM"),
+        UserApi("USER_API"),
+        UserTagAssoc("USER_TAG_ASSOC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Category.class);
+
+        private final String value;
+        private static java.util.Map<String, Category> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Category v : Category.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Category(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Category create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Category', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Association category. Possible values are:
+     * - System created (SYSTEM),
+     * - User created using API (USER_API)
+     * - User created using tags (USER_TAG_ASSOC).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final Category category;
+
+    /**
+     * Association category. Possible values are:
+     * - System created (SYSTEM),
+     * - User created using API (USER_API)
+     * - User created using tags (USER_TAG_ASSOC).
+     *
+     * @return the value
+     **/
+    public Category getCategory() {
+        return category;
     }
 
     /**
@@ -488,6 +618,7 @@ public final class MonitoredResourceAssociation
         sb.append(", destinationResourceDetails=")
                 .append(String.valueOf(this.destinationResourceDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -514,6 +645,7 @@ public final class MonitoredResourceAssociation
                 && java.util.Objects.equals(
                         this.destinationResourceDetails, other.destinationResourceDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -550,6 +682,7 @@ public final class MonitoredResourceAssociation
                                 ? 43
                                 : this.destinationResourceDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -85,7 +85,7 @@ public class AuthUtils {
     /**
      * Computes the hex representation of a byte array.
      * @param bytes
-     * @return
+     * @return Hex representation of a byte array
      */
     private static String getHex(byte bytes[]) {
         char[] hexChars = new char[bytes.length * 2];
@@ -101,7 +101,7 @@ public class AuthUtils {
     /**
      * Convert JWK JSON string into a {@link RSAPublicKey}.
      *
-     * @return
+     * @return Optional of RSAPublicKey
      */
     public static Optional<RSAPublicKey> toPublicKeyFromJson(String json) {
         Validate.notBlank(json, "JSON for public key may not be blank");

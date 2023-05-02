@@ -14,13 +14,15 @@ public class AssociateMonitoredResourcesRequest
                 com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails> {
 
     /**
-     * Associate resources.
+     * Details to create association between two resources.
+     *
      */
     private com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails
             associateMonitoredResourcesDetails;
 
     /**
-     * Associate resources.
+     * Details to create association between two resources.
+     *
      */
     public com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails
             getAssociateMonitoredResourcesDetails() {
@@ -103,13 +105,15 @@ public class AssociateMonitoredResourcesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Associate resources.
+         * Details to create association between two resources.
+         *
          */
         private com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails
                 associateMonitoredResourcesDetails = null;
 
         /**
-         * Associate resources.
+         * Details to create association between two resources.
+         *
          * @param associateMonitoredResourcesDetails the value to set
          * @return this builder instance
          */

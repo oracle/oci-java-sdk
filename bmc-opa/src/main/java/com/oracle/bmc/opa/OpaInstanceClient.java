@@ -19,8 +19,7 @@ public class OpaInstanceClient implements OpaInstance {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("OPAINSTANCE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate(
-                            "https://process-automation.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://process.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -557,11 +556,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -593,14 +595,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "OpaInstance",
                         "ChangeOpaInstanceCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/ChangeOpaInstanceCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeOpaInstanceCompartmentResponse>
                 transformer =
                         ChangeOpaInstanceCompartmentConverter.fromResponse(
@@ -635,12 +637,15 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "CreateOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "CreateOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/CreateOpaInstance");
         java.util.function.Function<javax.ws.rs.core.Response, CreateOpaInstanceResponse>
                 transformer =
                         CreateOpaInstanceConverter.fromResponse(
@@ -674,11 +679,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "DeleteOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "DeleteOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/DeleteOpaInstance");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteOpaInstanceResponse>
                 transformer =
                         DeleteOpaInstanceConverter.fromResponse(
@@ -709,11 +717,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "GetOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "GetOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/GetOpaInstance");
         java.util.function.Function<javax.ws.rs.core.Response, GetOpaInstanceResponse> transformer =
                 GetOpaInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -741,11 +752,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -773,11 +787,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListOpaInstances", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListOpaInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstanceCollection/ListOpaInstances");
         java.util.function.Function<javax.ws.rs.core.Response, ListOpaInstancesResponse>
                 transformer =
                         ListOpaInstancesConverter.fromResponse(
@@ -808,11 +825,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -842,11 +862,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -876,11 +899,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -910,11 +936,14 @@ public class OpaInstanceClient implements OpaInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "UpdateOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "UpdateOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/UpdateOpaInstance");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateOpaInstanceResponse>
                 transformer =
                         UpdateOpaInstanceConverter.fromResponse(

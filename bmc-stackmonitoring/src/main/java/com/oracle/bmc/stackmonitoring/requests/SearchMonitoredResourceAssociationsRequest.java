@@ -14,13 +14,15 @@ public class SearchMonitoredResourceAssociationsRequest
                 com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceAssociationsDetails> {
 
     /**
-     * Search Criteria for the listing the monitored resource associations.
+     * Search criteria for listing monitored resource associations.
+     *
      */
     private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceAssociationsDetails
             searchMonitoredResourceAssociationsDetails;
 
     /**
-     * Search Criteria for the listing the monitored resource associations.
+     * Search criteria for listing monitored resource associations.
+     *
      */
     public com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceAssociationsDetails
             getSearchMonitoredResourceAssociationsDetails() {
@@ -139,13 +141,15 @@ public class SearchMonitoredResourceAssociationsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Search Criteria for the listing the monitored resource associations.
+         * Search criteria for listing monitored resource associations.
+         *
          */
         private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceAssociationsDetails
                 searchMonitoredResourceAssociationsDetails = null;
 
         /**
-         * Search Criteria for the listing the monitored resource associations.
+         * Search criteria for listing monitored resource associations.
+         *
          * @param searchMonitoredResourceAssociationsDetails the value to set
          * @return this builder instance
          */

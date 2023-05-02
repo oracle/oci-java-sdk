@@ -5,7 +5,8 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Monitored Resource Alias Reference Source Credential
+ * Monitored Resource Alias Reference Source Credential.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +34,19 @@ public final class MonitoredResourceAliasSourceCredential
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+         * The source type and source name combination,delimited with (.) separator.
+         * This refers to the pre-existing source which alias cred should point to.
+         * Ex. {source type}.{source name} and source type max char limit is 63.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
         /**
-         * The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+         * The source type and source name combination,delimited with (.) separator.
+         * This refers to the pre-existing source which alias cred should point to.
+         * Ex. {source type}.{source name} and source type max char limit is 63.
+         *
          * @param source the value to set
          * @return this builder
          **/
@@ -49,13 +56,17 @@ public final class MonitoredResourceAliasSourceCredential
             return this;
         }
         /**
-         * The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
+         * The name of the pre-existing source credential which alias cred should point to.
+         * This should refer to the pre-existing source attribute which is bound to credential name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
+         * The name of the pre-existing source credential which alias cred should point to.
+         * This should refer to the pre-existing source attribute which is bound to credential name.
+         *
          * @param name the value to set
          * @return this builder
          **/
@@ -65,13 +76,17 @@ public final class MonitoredResourceAliasSourceCredential
             return this;
         }
         /**
-         * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+         * The name of the service owning the credential.
+         * Example: stack-monitoring or dbmgmt
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
-         * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+         * The name of the service owning the credential.
+         * Example: stack-monitoring or dbmgmt
+         *
          * @param service the value to set
          * @return this builder
          **/
@@ -121,13 +136,19 @@ public final class MonitoredResourceAliasSourceCredential
     }
 
     /**
-     * The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+     * The source type and source name combination,delimited with (.) separator.
+     * This refers to the pre-existing source which alias cred should point to.
+     * Ex. {source type}.{source name} and source type max char limit is 63.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
-     * The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+     * The source type and source name combination,delimited with (.) separator.
+     * This refers to the pre-existing source which alias cred should point to.
+     * Ex. {source type}.{source name} and source type max char limit is 63.
+     *
      * @return the value
      **/
     public String getSource() {
@@ -135,13 +156,17 @@ public final class MonitoredResourceAliasSourceCredential
     }
 
     /**
-     * The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
+     * The name of the pre-existing source credential which alias cred should point to.
+     * This should refer to the pre-existing source attribute which is bound to credential name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
+     * The name of the pre-existing source credential which alias cred should point to.
+     * This should refer to the pre-existing source attribute which is bound to credential name.
+     *
      * @return the value
      **/
     public String getName() {
@@ -149,13 +174,17 @@ public final class MonitoredResourceAliasSourceCredential
     }
 
     /**
-     * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+     * The name of the service owning the credential.
+     * Example: stack-monitoring or dbmgmt
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
-     * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+     * The name of the service owning the credential.
+     * Example: stack-monitoring or dbmgmt
+     *
      * @return the value
      **/
     public String getService() {

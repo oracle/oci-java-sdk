@@ -29,20 +29,23 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
         "maxInGBs",
         "defaultPerOcpuInGBs",
         "minPerOcpuInGBs",
-        "maxPerOcpuInGBs"
+        "maxPerOcpuInGBs",
+        "maxPerNumaNodeInGBs"
     })
     public ShapeMemoryOptions(
             Float minInGBs,
             Float maxInGBs,
             Float defaultPerOcpuInGBs,
             Float minPerOcpuInGBs,
-            Float maxPerOcpuInGBs) {
+            Float maxPerOcpuInGBs,
+            Float maxPerNumaNodeInGBs) {
         super();
         this.minInGBs = minInGBs;
         this.maxInGBs = maxInGBs;
         this.defaultPerOcpuInGBs = defaultPerOcpuInGBs;
         this.minPerOcpuInGBs = minPerOcpuInGBs;
         this.maxPerOcpuInGBs = maxPerOcpuInGBs;
+        this.maxPerNumaNodeInGBs = maxPerNumaNodeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -137,6 +140,24 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("maxPerOcpuInGBs");
             return this;
         }
+        /**
+         * The maximum amount of memory per NUMA node, in gigabytes.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxPerNumaNodeInGBs")
+        private Float maxPerNumaNodeInGBs;
+
+        /**
+         * The maximum amount of memory per NUMA node, in gigabytes.
+         *
+         * @param maxPerNumaNodeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder maxPerNumaNodeInGBs(Float maxPerNumaNodeInGBs) {
+            this.maxPerNumaNodeInGBs = maxPerNumaNodeInGBs;
+            this.__explicitlySet__.add("maxPerNumaNodeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -148,7 +169,8 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
                             this.maxInGBs,
                             this.defaultPerOcpuInGBs,
                             this.minPerOcpuInGBs,
-                            this.maxPerOcpuInGBs);
+                            this.maxPerOcpuInGBs,
+                            this.maxPerNumaNodeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -171,6 +193,9 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("maxPerOcpuInGBs")) {
                 this.maxPerOcpuInGBs(model.getMaxPerOcpuInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxPerNumaNodeInGBs")) {
+                this.maxPerNumaNodeInGBs(model.getMaxPerNumaNodeInGBs());
             }
             return this;
         }
@@ -267,6 +292,22 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
         return maxPerOcpuInGBs;
     }
 
+    /**
+     * The maximum amount of memory per NUMA node, in gigabytes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxPerNumaNodeInGBs")
+    private final Float maxPerNumaNodeInGBs;
+
+    /**
+     * The maximum amount of memory per NUMA node, in gigabytes.
+     *
+     * @return the value
+     **/
+    public Float getMaxPerNumaNodeInGBs() {
+        return maxPerNumaNodeInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -286,6 +327,7 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
         sb.append(", defaultPerOcpuInGBs=").append(String.valueOf(this.defaultPerOcpuInGBs));
         sb.append(", minPerOcpuInGBs=").append(String.valueOf(this.minPerOcpuInGBs));
         sb.append(", maxPerOcpuInGBs=").append(String.valueOf(this.maxPerOcpuInGBs));
+        sb.append(", maxPerNumaNodeInGBs=").append(String.valueOf(this.maxPerNumaNodeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -305,6 +347,7 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.defaultPerOcpuInGBs, other.defaultPerOcpuInGBs)
                 && java.util.Objects.equals(this.minPerOcpuInGBs, other.minPerOcpuInGBs)
                 && java.util.Objects.equals(this.maxPerOcpuInGBs, other.maxPerOcpuInGBs)
+                && java.util.Objects.equals(this.maxPerNumaNodeInGBs, other.maxPerNumaNodeInGBs)
                 && super.equals(other);
     }
 
@@ -325,6 +368,11 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.maxPerOcpuInGBs == null ? 43 : this.maxPerOcpuInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxPerNumaNodeInGBs == null
+                                ? 43
+                                : this.maxPerNumaNodeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

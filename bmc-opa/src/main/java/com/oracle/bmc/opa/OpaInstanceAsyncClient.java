@@ -30,8 +30,7 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("OPAINSTANCE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate(
-                            "https://process-automation.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://process.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -471,7 +470,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -519,7 +521,7 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                         "OpaInstance",
                         "ChangeOpaInstanceCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/ChangeOpaInstanceCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeOpaInstanceCompartmentResponse>
                 transformer =
@@ -571,7 +573,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "CreateOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "CreateOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/CreateOpaInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateOpaInstanceResponse>
                 transformer =
                         CreateOpaInstanceConverter.fromResponse(
@@ -619,7 +624,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 DeleteOpaInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "DeleteOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "DeleteOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/DeleteOpaInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteOpaInstanceResponse>
                 transformer =
                         DeleteOpaInstanceConverter.fromResponse(
@@ -662,7 +670,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 GetOpaInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "GetOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "GetOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/GetOpaInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOpaInstanceResponse>
                 transformer =
                         GetOpaInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -704,7 +715,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -746,7 +760,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 ListOpaInstancesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListOpaInstances", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListOpaInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstanceCollection/ListOpaInstances");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOpaInstancesResponse>
                 transformer =
                         ListOpaInstancesConverter.fromResponse(
@@ -789,7 +806,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -833,7 +853,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -877,7 +900,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -920,7 +946,10 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 UpdateOpaInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpaInstance", "UpdateOpaInstance", ib.getRequestUri().toString(), "");
+                        "OpaInstance",
+                        "UpdateOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/UpdateOpaInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateOpaInstanceResponse>
                 transformer =
                         UpdateOpaInstanceConverter.fromResponse(

@@ -82,13 +82,15 @@ public final class SearchMonitoredResourcesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -98,13 +100,15 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * A filter to return resources that match exact resource name
+         * A filter to return resources that match exact resource name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * A filter to return resources that match exact resource name
+         * A filter to return resources that match exact resource name.
+         *
          * @param name the value to set
          * @return this builder
          **/
@@ -130,13 +134,15 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * A filter to return resources that match resource type
+         * A filter to return resources that match resource type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * A filter to return resources that match resource type
+         * A filter to return resources that match resource type.
+         *
          * @param type the value to set
          * @return this builder
          **/
@@ -146,13 +152,15 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * A filter to return resources with host name match
+         * A filter to return resources with host name match.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * A filter to return resources with host name match
+         * A filter to return resources with host name match.
+         *
          * @param hostName the value to set
          * @return this builder
          **/
@@ -164,8 +172,8 @@ public final class SearchMonitoredResourcesDetails
         /**
          * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
          * which is not a Stack Monitoring service resource.
-         * Currently supports only following resource type identifiers - externalcontainerdatabase,
-         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         * Currently supports only following resource types - Container database, non-container database,
+         * pluggable database and OCI compute instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
@@ -174,8 +182,8 @@ public final class SearchMonitoredResourcesDetails
         /**
          * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
          * which is not a Stack Monitoring service resource.
-         * Currently supports only following resource type identifiers - externalcontainerdatabase,
-         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         * Currently supports only following resource types - Container database, non-container database,
+         * pluggable database and OCI compute instance.
          *
          * @param externalId the value to set
          * @return this builder
@@ -186,13 +194,15 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * A filter to return resources with host name pattern
+         * A filter to return resources with host name pattern.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostNameContains")
         private String hostNameContains;
 
         /**
-         * A filter to return resources with host name pattern
+         * A filter to return resources with host name pattern.
+         *
          * @param hostNameContains the value to set
          * @return this builder
          **/
@@ -364,13 +374,19 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * Time zone in the form of tz database canonical zone ID.
+         * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+         * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+         * For example - America/Los_Angeles
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
         /**
-         * Time zone in the form of tz database canonical zone ID.
+         * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+         * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+         * For example - America/Los_Angeles
+         *
          * @param resourceTimeZone the value to set
          * @return this builder
          **/
@@ -530,13 +546,15 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -544,13 +562,15 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * A filter to return resources that match exact resource name
+     * A filter to return resources that match exact resource name.
+     *
      * @return the value
      **/
     public String getName() {
@@ -572,13 +592,15 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * A filter to return resources that match resource type
+     * A filter to return resources that match resource type.
+     *
      * @return the value
      **/
     public String getType() {
@@ -586,13 +608,15 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * A filter to return resources with host name match
+     * A filter to return resources with host name match.
+     *
      * @return the value
      **/
     public String getHostName() {
@@ -602,8 +626,8 @@ public final class SearchMonitoredResourcesDetails
     /**
      * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      * which is not a Stack Monitoring service resource.
-     * Currently supports only following resource type identifiers - externalcontainerdatabase,
-     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     * Currently supports only following resource types - Container database, non-container database,
+     * pluggable database and OCI compute instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
@@ -612,8 +636,8 @@ public final class SearchMonitoredResourcesDetails
     /**
      * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      * which is not a Stack Monitoring service resource.
-     * Currently supports only following resource type identifiers - externalcontainerdatabase,
-     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     * Currently supports only following resource types - Container database, non-container database,
+     * pluggable database and OCI compute instance.
      *
      * @return the value
      **/
@@ -622,13 +646,15 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostNameContains")
     private final String hostNameContains;
 
     /**
-     * A filter to return resources with host name pattern
+     * A filter to return resources with host name pattern.
+     *
      * @return the value
      **/
     public String getHostNameContains() {
@@ -784,13 +810,19 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+     * For example - America/Los_Angeles
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
     /**
-     * Time zone in the form of tz database canonical zone ID.
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+     * For example - America/Los_Angeles
+     *
      * @return the value
      **/
     public String getResourceTimeZone() {
