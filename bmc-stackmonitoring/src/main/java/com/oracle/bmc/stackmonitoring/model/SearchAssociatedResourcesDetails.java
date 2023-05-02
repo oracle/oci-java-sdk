@@ -46,13 +46,15 @@ public final class SearchAssociatedResourcesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -124,13 +126,15 @@ public final class SearchAssociatedResourcesDetails
             return this;
         }
         /**
-         * List of association types to be searched for finding associated resources
+         * Association types filter to be searched for finding associated resources.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationTypes")
         private java.util.List<String> associationTypes;
 
         /**
-         * List of association types to be searched for finding associated resources
+         * Association types filter to be searched for finding associated resources.
+         *
          * @param associationTypes the value to set
          * @return this builder
          **/
@@ -190,13 +194,15 @@ public final class SearchAssociatedResourcesDetails
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -260,13 +266,15 @@ public final class SearchAssociatedResourcesDetails
     }
 
     /**
-     * List of association types to be searched for finding associated resources
+     * Association types filter to be searched for finding associated resources.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationTypes")
     private final java.util.List<String> associationTypes;
 
     /**
-     * List of association types to be searched for finding associated resources
+     * Association types filter to be searched for finding associated resources.
+     *
      * @return the value
      **/
     public java.util.List<String> getAssociationTypes() {

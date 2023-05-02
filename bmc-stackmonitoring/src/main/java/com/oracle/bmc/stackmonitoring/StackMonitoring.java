@@ -60,7 +60,10 @@ public interface StackMonitoring extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Create an association between two monitored resources.
+     * Create an association between two monitored resources. Associations can be created
+     * between resources from different compartments as long they are in same tenancy.
+     * User should have required access in both the compartments.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -73,7 +76,9 @@ public interface StackMonitoring extends AutoCloseable {
             AssociateMonitoredResourcesRequest request);
 
     /**
-     * Moves a MonitoredResource resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a monitored resource from one compartment to another.
+     * When provided, If-Match is checked against ETag values of the resource.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -99,7 +104,9 @@ public interface StackMonitoring extends AutoCloseable {
     CreateDiscoveryJobResponse createDiscoveryJob(CreateDiscoveryJobRequest request);
 
     /**
-     * Creates a new monitored resource for the given resource type
+     * Creates a new monitored resource for the given resource type with the details and submits
+     * a work request for promoting the resource to agent. Once the resource is successfully
+     * added to agent, resource state will be marked active.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -124,7 +131,11 @@ public interface StackMonitoring extends AutoCloseable {
     DeleteDiscoveryJobResponse deleteDiscoveryJob(DeleteDiscoveryJobRequest request);
 
     /**
-     * Deletes a monitored resource by identifier
+     * Delete monitored resource by the given identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * By default, only the specified resource is deleted. If the parameter 'isDeleteMembers' is set to true,
+     * then the member resources will be deleted too. If the operation fails partially, the deleted entries
+     * will not be rolled back.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -136,7 +147,8 @@ public interface StackMonitoring extends AutoCloseable {
     DeleteMonitoredResourceResponse deleteMonitoredResource(DeleteMonitoredResourceRequest request);
 
     /**
-     * Disable external database resource monitoring.
+     * Disable external database resource monitoring. All the references in DBaaS,
+     * DBM and resource service will be deleted as part of this operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -175,7 +187,8 @@ public interface StackMonitoring extends AutoCloseable {
     GetDiscoveryJobResponse getDiscoveryJob(GetDiscoveryJobRequest request);
 
     /**
-     * Gets a monitored resource by identifier
+     * Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -264,7 +277,9 @@ public interface StackMonitoring extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * List associated monitored resources.
+     * List all associated resources recursively up-to a specified level,
+     * for the monitored resources of type specified.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -277,7 +292,8 @@ public interface StackMonitoring extends AutoCloseable {
             SearchAssociatedResourcesRequest request);
 
     /**
-     * Returns a list of monitored resource associations.
+     * Search associations in the given compartment based on the search criteria.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -290,7 +306,8 @@ public interface StackMonitoring extends AutoCloseable {
             SearchMonitoredResourceAssociationsRequest request);
 
     /**
-     * List resources which are members of the given monitored resource
+     * List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -303,7 +320,8 @@ public interface StackMonitoring extends AutoCloseable {
             SearchMonitoredResourceMembersRequest request);
 
     /**
-     * Returns a list of monitored resources.
+     * Gets a list of all monitored resources in a compartment for the given search criteria.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -316,7 +334,26 @@ public interface StackMonitoring extends AutoCloseable {
             SearchMonitoredResourcesRequest request);
 
     /**
-     * Updates the Monitored Resource
+     * Provided tags will be added or updated in the existing list of tags for the affected resources.
+     * Resources to be updated are identified based on association types specified.
+     * If association types not specified, then tags will be updated only for the resource identified by
+     * the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateAndPropagateTagsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAndPropagateTags API.
+     */
+    UpdateAndPropagateTagsResponse updateAndPropagateTags(UpdateAndPropagateTagsRequest request);
+
+    /**
+     * Update monitored resource by the given identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Note that \"properties\" object, if specified, will entirely replace the existing object,
+     * as part this operation.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

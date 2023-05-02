@@ -64,6 +64,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "region",
         "shape",
         "shapeConfig",
+        "isCrossNumaNode",
         "sourceDetails",
         "systemTags",
         "timeCreated",
@@ -94,6 +95,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String region,
             String shape,
             InstanceShapeConfig shapeConfig,
+            Boolean isCrossNumaNode,
             InstanceSourceDetails sourceDetails,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
@@ -123,6 +125,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.region = region;
         this.shape = shape;
         this.shapeConfig = shapeConfig;
+        this.isCrossNumaNode = isCrossNumaNode;
         this.sourceDetails = sourceDetails;
         this.systemTags = systemTags;
         this.timeCreated = timeCreated;
@@ -604,6 +607,24 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("shapeConfig");
             return this;
         }
+        /**
+         * Whether the instance\u2019s OCPUs and memory are distributed across multiple NUMA nodes.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isCrossNumaNode")
+        private Boolean isCrossNumaNode;
+
+        /**
+         * Whether the instance\u2019s OCPUs and memory are distributed across multiple NUMA nodes.
+         *
+         * @param isCrossNumaNode the value to set
+         * @return this builder
+         **/
+        public Builder isCrossNumaNode(Boolean isCrossNumaNode) {
+            this.isCrossNumaNode = isCrossNumaNode;
+            this.__explicitlySet__.add("isCrossNumaNode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private InstanceSourceDetails sourceDetails;
@@ -726,6 +747,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.region,
                             this.shape,
                             this.shapeConfig,
+                            this.isCrossNumaNode,
                             this.sourceDetails,
                             this.systemTags,
                             this.timeCreated,
@@ -805,6 +827,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("shapeConfig")) {
                 this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("isCrossNumaNode")) {
+                this.isCrossNumaNode(model.getIsCrossNumaNode());
             }
             if (model.wasPropertyExplicitlySet("sourceDetails")) {
                 this.sourceDetails(model.getSourceDetails());
@@ -1374,6 +1399,22 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return shapeConfig;
     }
 
+    /**
+     * Whether the instance\u2019s OCPUs and memory are distributed across multiple NUMA nodes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCrossNumaNode")
+    private final Boolean isCrossNumaNode;
+
+    /**
+     * Whether the instance\u2019s OCPUs and memory are distributed across multiple NUMA nodes.
+     *
+     * @return the value
+     **/
+    public Boolean getIsCrossNumaNode() {
+        return isCrossNumaNode;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     private final InstanceSourceDetails sourceDetails;
 
@@ -1492,6 +1533,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", isCrossNumaNode=").append(String.valueOf(this.isCrossNumaNode));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1536,6 +1578,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.isCrossNumaNode, other.isCrossNumaNode)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1600,6 +1643,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCrossNumaNode == null ? 43 : this.isCrossNumaNode.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());

@@ -5,7 +5,8 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Connection details to connect to the database. HostName, protocol, and port should be specified.
+ * Connection details for the database.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,13 +84,15 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Database connector Identifier
+         * Database connector Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * Database connector Identifier
+         * Database connector Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param connectorId the value to set
          * @return this builder
          **/
@@ -131,13 +134,15 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * dbId of the database
+         * dbId of the database.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
         /**
-         * dbId of the database
+         * dbId of the database.
+         *
          * @param dbId the value to set
          * @return this builder
          **/
@@ -147,13 +152,15 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
-         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sslSecretId the value to set
          * @return this builder
          **/
@@ -297,13 +304,15 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Database connector Identifier
+     * Database connector Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * Database connector Identifier
+     * Database connector Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getConnectorId() {
@@ -339,13 +348,15 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * dbId of the database
+     * dbId of the database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
     /**
-     * dbId of the database
+     * dbId of the database.
+     *
      * @return the value
      **/
     public String getDbId() {
@@ -353,13 +364,15 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
-     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getSslSecretId() {

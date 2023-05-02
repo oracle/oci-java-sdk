@@ -27,6 +27,7 @@ public final class AssociatedResourcesSummary
         "name",
         "displayName",
         "type",
+        "compartmentId",
         "hostName",
         "externalId",
         "managementAgentId",
@@ -38,6 +39,7 @@ public final class AssociatedResourcesSummary
             String name,
             String displayName,
             String type,
+            String compartmentId,
             String hostName,
             String externalId,
             String managementAgentId,
@@ -48,6 +50,7 @@ public final class AssociatedResourcesSummary
         this.name = name;
         this.displayName = displayName;
         this.type = type;
+        this.compartmentId = compartmentId;
         this.hostName = hostName;
         this.externalId = externalId;
         this.managementAgentId = managementAgentId;
@@ -58,13 +61,15 @@ public final class AssociatedResourcesSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param id the value to set
          * @return this builder
          **/
@@ -74,13 +79,15 @@ public final class AssociatedResourcesSummary
             return this;
         }
         /**
-         * Name of the monitored resource
+         * Monitored Resource Name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name of the monitored resource
+         * Monitored Resource Name.
+         *
          * @param name the value to set
          * @return this builder
          **/
@@ -106,13 +113,15 @@ public final class AssociatedResourcesSummary
             return this;
         }
         /**
-         * Type of the monitored resource
+         * Monitored Resource Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Type of the monitored resource
+         * Monitored Resource Type.
+         *
          * @param type the value to set
          * @return this builder
          **/
@@ -122,13 +131,33 @@ public final class AssociatedResourcesSummary
             return this;
         }
         /**
-         * Resource Host Name
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Monitored Resource Host Name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
-         * Resource Host Name
+         * Monitored Resource Host Name.
+         *
          * @param hostName the value to set
          * @return this builder
          **/
@@ -140,8 +169,8 @@ public final class AssociatedResourcesSummary
         /**
          * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
          * which is not a Stack Monitoring service resource.
-         * Currently supports only following resource type identifiers - externalcontainerdatabase,
-         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         * Currently supports only following resource types - Container database, non-container database,
+         * pluggable database and OCI compute instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
@@ -150,8 +179,8 @@ public final class AssociatedResourcesSummary
         /**
          * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
          * which is not a Stack Monitoring service resource.
-         * Currently supports only following resource type identifiers - externalcontainerdatabase,
-         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         * Currently supports only following resource types - Container database, non-container database,
+         * pluggable database and OCI compute instance.
          *
          * @param externalId the value to set
          * @return this builder
@@ -194,13 +223,15 @@ public final class AssociatedResourcesSummary
             return this;
         }
         /**
-         * List of associated monitored resources
+         * List of associated monitored resources.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResources")
         private java.util.List<AssociatedMonitoredResource> associatedResources;
 
         /**
-         * List of associated monitored resources
+         * List of associated monitored resources.
+         *
          * @param associatedResources the value to set
          * @return this builder
          **/
@@ -221,6 +252,7 @@ public final class AssociatedResourcesSummary
                             this.name,
                             this.displayName,
                             this.type,
+                            this.compartmentId,
                             this.hostName,
                             this.externalId,
                             this.managementAgentId,
@@ -245,6 +277,9 @@ public final class AssociatedResourcesSummary
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("hostName")) {
                 this.hostName(model.getHostName());
@@ -277,13 +312,15 @@ public final class AssociatedResourcesSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getId() {
@@ -291,13 +328,15 @@ public final class AssociatedResourcesSummary
     }
 
     /**
-     * Name of the monitored resource
+     * Monitored Resource Name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the monitored resource
+     * Monitored Resource Name.
+     *
      * @return the value
      **/
     public String getName() {
@@ -319,13 +358,15 @@ public final class AssociatedResourcesSummary
     }
 
     /**
-     * Type of the monitored resource
+     * Monitored Resource Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Type of the monitored resource
+     * Monitored Resource Type.
+     *
      * @return the value
      **/
     public String getType() {
@@ -333,13 +374,31 @@ public final class AssociatedResourcesSummary
     }
 
     /**
-     * Resource Host Name
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /**
+     * Monitored Resource Host Name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * Resource Host Name
+     * Monitored Resource Host Name.
+     *
      * @return the value
      **/
     public String getHostName() {
@@ -349,8 +408,8 @@ public final class AssociatedResourcesSummary
     /**
      * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      * which is not a Stack Monitoring service resource.
-     * Currently supports only following resource type identifiers - externalcontainerdatabase,
-     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     * Currently supports only following resource types - Container database, non-container database,
+     * pluggable database and OCI compute instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
@@ -359,8 +418,8 @@ public final class AssociatedResourcesSummary
     /**
      * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
      * which is not a Stack Monitoring service resource.
-     * Currently supports only following resource type identifiers - externalcontainerdatabase,
-     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     * Currently supports only following resource types - Container database, non-container database,
+     * pluggable database and OCI compute instance.
      *
      * @return the value
      **/
@@ -397,13 +456,15 @@ public final class AssociatedResourcesSummary
     }
 
     /**
-     * List of associated monitored resources
+     * List of associated monitored resources.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResources")
     private final java.util.List<AssociatedMonitoredResource> associatedResources;
 
     /**
-     * List of associated monitored resources
+     * List of associated monitored resources.
+     *
      * @return the value
      **/
     public java.util.List<AssociatedMonitoredResource> getAssociatedResources() {
@@ -428,6 +489,7 @@ public final class AssociatedResourcesSummary
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
         sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
@@ -451,6 +513,7 @@ public final class AssociatedResourcesSummary
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.hostName, other.hostName)
                 && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
@@ -467,6 +530,9 @@ public final class AssociatedResourcesSummary
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
         result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
         result =

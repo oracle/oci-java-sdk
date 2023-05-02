@@ -27,6 +27,7 @@ public final class CreateDiscoveryJobDetails
         "discoveryClient",
         "compartmentId",
         "discoveryDetails",
+        "shouldPropagateTagsToDiscoveredResources",
         "freeformTags",
         "definedTags"
     })
@@ -35,6 +36,7 @@ public final class CreateDiscoveryJobDetails
             String discoveryClient,
             String compartmentId,
             DiscoveryDetails discoveryDetails,
+            Boolean shouldPropagateTagsToDiscoveredResources,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -42,6 +44,7 @@ public final class CreateDiscoveryJobDetails
         this.discoveryClient = discoveryClient;
         this.compartmentId = compartmentId;
         this.discoveryDetails = discoveryDetails;
+        this.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -108,6 +111,30 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
+         * If this parameter set to true, the specified tags will be applied
+         * to all resources discovered in the current request.
+         * Default is true.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldPropagateTagsToDiscoveredResources")
+        private Boolean shouldPropagateTagsToDiscoveredResources;
+
+        /**
+         * If this parameter set to true, the specified tags will be applied
+         * to all resources discovered in the current request.
+         * Default is true.
+         *
+         * @param shouldPropagateTagsToDiscoveredResources the value to set
+         * @return this builder
+         **/
+        public Builder shouldPropagateTagsToDiscoveredResources(
+                Boolean shouldPropagateTagsToDiscoveredResources) {
+            this.shouldPropagateTagsToDiscoveredResources =
+                    shouldPropagateTagsToDiscoveredResources;
+            this.__explicitlySet__.add("shouldPropagateTagsToDiscoveredResources");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -159,6 +186,7 @@ public final class CreateDiscoveryJobDetails
                             this.discoveryClient,
                             this.compartmentId,
                             this.discoveryDetails,
+                            this.shouldPropagateTagsToDiscoveredResources,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -180,6 +208,10 @@ public final class CreateDiscoveryJobDetails
             }
             if (model.wasPropertyExplicitlySet("discoveryDetails")) {
                 this.discoveryDetails(model.getDiscoveryDetails());
+            }
+            if (model.wasPropertyExplicitlySet("shouldPropagateTagsToDiscoveredResources")) {
+                this.shouldPropagateTagsToDiscoveredResources(
+                        model.getShouldPropagateTagsToDiscoveredResources());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -291,6 +323,26 @@ public final class CreateDiscoveryJobDetails
     }
 
     /**
+     * If this parameter set to true, the specified tags will be applied
+     * to all resources discovered in the current request.
+     * Default is true.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldPropagateTagsToDiscoveredResources")
+    private final Boolean shouldPropagateTagsToDiscoveredResources;
+
+    /**
+     * If this parameter set to true, the specified tags will be applied
+     * to all resources discovered in the current request.
+     * Default is true.
+     *
+     * @return the value
+     **/
+    public Boolean getShouldPropagateTagsToDiscoveredResources() {
+        return shouldPropagateTagsToDiscoveredResources;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -344,6 +396,8 @@ public final class CreateDiscoveryJobDetails
         sb.append(", discoveryClient=").append(String.valueOf(this.discoveryClient));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", discoveryDetails=").append(String.valueOf(this.discoveryDetails));
+        sb.append(", shouldPropagateTagsToDiscoveredResources=")
+                .append(String.valueOf(this.shouldPropagateTagsToDiscoveredResources));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -364,6 +418,9 @@ public final class CreateDiscoveryJobDetails
                 && java.util.Objects.equals(this.discoveryClient, other.discoveryClient)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.discoveryDetails, other.discoveryDetails)
+                && java.util.Objects.equals(
+                        this.shouldPropagateTagsToDiscoveredResources,
+                        other.shouldPropagateTagsToDiscoveredResources)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -385,6 +442,11 @@ public final class CreateDiscoveryJobDetails
         result =
                 (result * PRIME)
                         + (this.discoveryDetails == null ? 43 : this.discoveryDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldPropagateTagsToDiscoveredResources == null
+                                ? 43
+                                : this.shouldPropagateTagsToDiscoveredResources.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

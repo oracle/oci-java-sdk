@@ -58,13 +58,15 @@ public final class MonitoredResourceAssociationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Association type to be created between source and destination resources
+         * Association type between source and destination resources.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
         /**
-         * Association type to be created between source and destination resources
+         * Association type between source and destination resources.
+         *
          * @param associationType the value to set
          * @return this builder
          **/
@@ -74,13 +76,15 @@ public final class MonitoredResourceAssociationSummary
             return this;
         }
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sourceResourceId the value to set
          * @return this builder
          **/
@@ -90,13 +94,15 @@ public final class MonitoredResourceAssociationSummary
             return this;
         }
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
 
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param destinationResourceId the value to set
          * @return this builder
          **/
@@ -106,13 +112,15 @@ public final class MonitoredResourceAssociationSummary
             return this;
         }
         /**
-         * The time the the association was created. An RFC3339 formatted datetime string
+         * The association creation time. An RFC3339 formatted datetime string.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the association was created. An RFC3339 formatted datetime string
+         * The association creation time. An RFC3339 formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -268,13 +276,15 @@ public final class MonitoredResourceAssociationSummary
     }
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type between source and destination resources.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type between source and destination resources.
+     *
      * @return the value
      **/
     public String getAssociationType() {
@@ -282,13 +292,15 @@ public final class MonitoredResourceAssociationSummary
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getSourceResourceId() {
@@ -296,13 +308,15 @@ public final class MonitoredResourceAssociationSummary
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
     private final String destinationResourceId;
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getDestinationResourceId() {
@@ -310,13 +324,15 @@ public final class MonitoredResourceAssociationSummary
     }
 
     /**
-     * The time the the association was created. An RFC3339 formatted datetime string
+     * The association creation time. An RFC3339 formatted datetime string.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the association was created. An RFC3339 formatted datetime string
+     * The association creation time. An RFC3339 formatted datetime string.
+     *
      * @return the value
      **/
     public java.util.Date getTimeCreated() {

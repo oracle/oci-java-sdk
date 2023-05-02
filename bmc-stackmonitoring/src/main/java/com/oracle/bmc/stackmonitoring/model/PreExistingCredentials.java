@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Plain text credentials [indicated by the type property in CredentialStore].
+ * Pre existing credentials [indicated by the type property in CredentialStore].
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

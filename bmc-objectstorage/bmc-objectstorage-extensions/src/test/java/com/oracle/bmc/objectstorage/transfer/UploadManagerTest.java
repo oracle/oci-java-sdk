@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
+import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.Service;
@@ -89,7 +90,8 @@ import static org.mockito.Mockito.when;
     RestClientFactory.class,
     CreateMultipartUploadConverter.class,
     UploadPartConverter.class,
-    CommitMultipartUploadConverter.class
+    CommitMultipartUploadConverter.class,
+    EndpointBuilder.class
 })
 public class UploadManagerTest {
     private static final String CONTENT =
@@ -615,6 +617,12 @@ public class UploadManagerTest {
                 CommitMultipartUploadResponse.builder().build();
         when(mockCommitResponseConverter.apply(any(javax.ws.rs.core.Response.class)))
                 .thenReturn(commitMultipartUploadResponse);
+
+        PowerMockito.mockStatic(EndpointBuilder.class);
+        PowerMockito.when(
+                        EndpointBuilder.populateServiceParametersInEndpoint(
+                                any(RestClient.class), any(Map.class)))
+                .thenReturn(mockBaseTarget);
 
         ObjectStorageClient objectStorageClient =
                 new ObjectStorageClient(

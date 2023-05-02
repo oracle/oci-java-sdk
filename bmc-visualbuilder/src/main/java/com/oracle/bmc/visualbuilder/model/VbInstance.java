@@ -37,7 +37,11 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
         "alternateCustomEndpoints",
         "consumptionModel",
         "idcsInfo",
-        "attachments"
+        "attachments",
+        "serviceNatGatewayIp",
+        "managementNatGatewayIp",
+        "serviceVcnId",
+        "managementVcnId"
     })
     public VbInstance(
             String id,
@@ -57,7 +61,11 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
             java.util.List<CustomEndpointDetails> alternateCustomEndpoints,
             ConsumptionModel consumptionModel,
             IdcsInfoDetails idcsInfo,
-            java.util.List<AttachmentDetails> attachments) {
+            java.util.List<AttachmentDetails> attachments,
+            String serviceNatGatewayIp,
+            String managementNatGatewayIp,
+            String serviceVcnId,
+            String managementVcnId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -77,6 +85,10 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
         this.consumptionModel = consumptionModel;
         this.idcsInfo = idcsInfo;
         this.attachments = attachments;
+        this.serviceNatGatewayIp = serviceNatGatewayIp;
+        this.managementNatGatewayIp = managementNatGatewayIp;
+        this.serviceVcnId = serviceVcnId;
+        this.managementVcnId = managementVcnId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -373,6 +385,70 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("attachments");
             return this;
         }
+        /**
+         * The NAT gateway IP address for the VB service VCN
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceNatGatewayIp")
+        private String serviceNatGatewayIp;
+
+        /**
+         * The NAT gateway IP address for the VB service VCN
+         * @param serviceNatGatewayIp the value to set
+         * @return this builder
+         **/
+        public Builder serviceNatGatewayIp(String serviceNatGatewayIp) {
+            this.serviceNatGatewayIp = serviceNatGatewayIp;
+            this.__explicitlySet__.add("serviceNatGatewayIp");
+            return this;
+        }
+        /**
+         * The NAT gateway IP address for the VB management VCN
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("managementNatGatewayIp")
+        private String managementNatGatewayIp;
+
+        /**
+         * The NAT gateway IP address for the VB management VCN
+         * @param managementNatGatewayIp the value to set
+         * @return this builder
+         **/
+        public Builder managementNatGatewayIp(String managementNatGatewayIp) {
+            this.managementNatGatewayIp = managementNatGatewayIp;
+            this.__explicitlySet__.add("managementNatGatewayIp");
+            return this;
+        }
+        /**
+         * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceVcnId")
+        private String serviceVcnId;
+
+        /**
+         * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+         * @param serviceVcnId the value to set
+         * @return this builder
+         **/
+        public Builder serviceVcnId(String serviceVcnId) {
+            this.serviceVcnId = serviceVcnId;
+            this.__explicitlySet__.add("serviceVcnId");
+            return this;
+        }
+        /**
+         * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("managementVcnId")
+        private String managementVcnId;
+
+        /**
+         * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+         * @param managementVcnId the value to set
+         * @return this builder
+         **/
+        public Builder managementVcnId(String managementVcnId) {
+            this.managementVcnId = managementVcnId;
+            this.__explicitlySet__.add("managementVcnId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -397,7 +473,11 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.alternateCustomEndpoints,
                             this.consumptionModel,
                             this.idcsInfo,
-                            this.attachments);
+                            this.attachments,
+                            this.serviceNatGatewayIp,
+                            this.managementNatGatewayIp,
+                            this.serviceVcnId,
+                            this.managementVcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -459,6 +539,18 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("attachments")) {
                 this.attachments(model.getAttachments());
+            }
+            if (model.wasPropertyExplicitlySet("serviceNatGatewayIp")) {
+                this.serviceNatGatewayIp(model.getServiceNatGatewayIp());
+            }
+            if (model.wasPropertyExplicitlySet("managementNatGatewayIp")) {
+                this.managementNatGatewayIp(model.getManagementNatGatewayIp());
+            }
+            if (model.wasPropertyExplicitlySet("serviceVcnId")) {
+                this.serviceVcnId(model.getServiceVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("managementVcnId")) {
+                this.managementVcnId(model.getManagementVcnId());
             }
             return this;
         }
@@ -831,6 +923,62 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
         return attachments;
     }
 
+    /**
+     * The NAT gateway IP address for the VB service VCN
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceNatGatewayIp")
+    private final String serviceNatGatewayIp;
+
+    /**
+     * The NAT gateway IP address for the VB service VCN
+     * @return the value
+     **/
+    public String getServiceNatGatewayIp() {
+        return serviceNatGatewayIp;
+    }
+
+    /**
+     * The NAT gateway IP address for the VB management VCN
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managementNatGatewayIp")
+    private final String managementNatGatewayIp;
+
+    /**
+     * The NAT gateway IP address for the VB management VCN
+     * @return the value
+     **/
+    public String getManagementNatGatewayIp() {
+        return managementNatGatewayIp;
+    }
+
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceVcnId")
+    private final String serviceVcnId;
+
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+     * @return the value
+     **/
+    public String getServiceVcnId() {
+        return serviceVcnId;
+    }
+
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managementVcnId")
+    private final String managementVcnId;
+
+    /**
+     * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+     * @return the value
+     **/
+    public String getManagementVcnId() {
+        return managementVcnId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -864,6 +1012,10 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
         sb.append(", idcsInfo=").append(String.valueOf(this.idcsInfo));
         sb.append(", attachments=").append(String.valueOf(this.attachments));
+        sb.append(", serviceNatGatewayIp=").append(String.valueOf(this.serviceNatGatewayIp));
+        sb.append(", managementNatGatewayIp=").append(String.valueOf(this.managementNatGatewayIp));
+        sb.append(", serviceVcnId=").append(String.valueOf(this.serviceVcnId));
+        sb.append(", managementVcnId=").append(String.valueOf(this.managementVcnId));
         sb.append(")");
         return sb.toString();
     }
@@ -898,6 +1050,11 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
                 && java.util.Objects.equals(this.idcsInfo, other.idcsInfo)
                 && java.util.Objects.equals(this.attachments, other.attachments)
+                && java.util.Objects.equals(this.serviceNatGatewayIp, other.serviceNatGatewayIp)
+                && java.util.Objects.equals(
+                        this.managementNatGatewayIp, other.managementNatGatewayIp)
+                && java.util.Objects.equals(this.serviceVcnId, other.serviceVcnId)
+                && java.util.Objects.equals(this.managementVcnId, other.managementVcnId)
                 && super.equals(other);
     }
 
@@ -939,6 +1096,20 @@ public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
         result = (result * PRIME) + (this.idcsInfo == null ? 43 : this.idcsInfo.hashCode());
         result = (result * PRIME) + (this.attachments == null ? 43 : this.attachments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceNatGatewayIp == null
+                                ? 43
+                                : this.serviceNatGatewayIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementNatGatewayIp == null
+                                ? 43
+                                : this.managementNatGatewayIp.hashCode());
+        result = (result * PRIME) + (this.serviceVcnId == null ? 43 : this.serviceVcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementVcnId == null ? 43 : this.managementVcnId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

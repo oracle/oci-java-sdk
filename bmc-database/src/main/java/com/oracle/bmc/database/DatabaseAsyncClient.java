@@ -13498,7 +13498,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                 RotateCloudAutonomousVmClusterOrdsCertsResponse>,
                         java.util.concurrent.Future<
                                 RotateCloudAutonomousVmClusterOrdsCertsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRotateCloudAutonomousVmClusterOrdsCertsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -13553,7 +13559,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                 RotateCloudAutonomousVmClusterSslCertsRequest,
                                 RotateCloudAutonomousVmClusterSslCertsResponse>,
                         java.util.concurrent.Future<RotateCloudAutonomousVmClusterSslCertsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRotateCloudAutonomousVmClusterSslCertsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

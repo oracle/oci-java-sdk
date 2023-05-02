@@ -43,13 +43,15 @@ public final class AssociateMonitoredResourcesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -59,13 +61,15 @@ public final class AssociateMonitoredResourcesDetails
             return this;
         }
         /**
-         * Association type to be created between source and destination resources
+         * Association type to be created between source and destination resources.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private String associationType;
 
         /**
-         * Association type to be created between source and destination resources
+         * Association type to be created between source and destination resources.
+         *
          * @param associationType the value to set
          * @return this builder
          **/
@@ -75,13 +79,15 @@ public final class AssociateMonitoredResourcesDetails
             return this;
         }
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
-         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param sourceResourceId the value to set
          * @return this builder
          **/
@@ -91,13 +97,15 @@ public final class AssociateMonitoredResourcesDetails
             return this;
         }
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
         private String destinationResourceId;
 
         /**
-         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param destinationResourceId the value to set
          * @return this builder
          **/
@@ -153,13 +161,15 @@ public final class AssociateMonitoredResourcesDetails
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -167,13 +177,15 @@ public final class AssociateMonitoredResourcesDetails
     }
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type to be created between source and destination resources.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final String associationType;
 
     /**
-     * Association type to be created between source and destination resources
+     * Association type to be created between source and destination resources.
+     *
      * @return the value
      **/
     public String getAssociationType() {
@@ -181,13 +193,15 @@ public final class AssociateMonitoredResourcesDetails
     }
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getSourceResourceId() {
@@ -195,13 +209,15 @@ public final class AssociateMonitoredResourcesDetails
     }
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationResourceId")
     private final String destinationResourceId;
 
     /**
-     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getDestinationResourceId() {

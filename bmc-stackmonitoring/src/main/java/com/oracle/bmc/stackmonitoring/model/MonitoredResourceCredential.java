@@ -5,7 +5,8 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Monitored Resource Credential Details
+ * Monitored Resource Credential Details.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -50,13 +51,17 @@ public class MonitoredResourceCredential
     }
 
     /**
-     * The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * The source type and source name combination, delimited with (.) separator.
+     * {source type}.{source name} and source type max char limit is 63.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
-     * The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * The source type and source name combination, delimited with (.) separator.
+     * {source type}.{source name} and source type max char limit is 63.
+     *
      * @return the value
      **/
     public String getSource() {
@@ -157,7 +162,16 @@ public class MonitoredResourceCredential
     }
 
     /**
-     * Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
+     * Type of credentials specified in the credentials element.
+     * Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need
+     *         to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in
+     *         encrypted format using KMS client which uses master key for encryption.
+     *         The same master key will be used to decrypt the credentials before passing
+     *         on to the management agent.
+     *
      **/
     public enum CredentialType {
         Existing("EXISTING"),

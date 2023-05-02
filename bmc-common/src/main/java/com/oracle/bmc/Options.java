@@ -22,7 +22,7 @@ public enum Options {
      * the Apache Connector since the Apache Connector uses connection pooling by default
      */
     public static void shouldAutoCloseResponseInputStream(final boolean shouldAutoClose) {
-        LOG.info("Setting auto-close of response input stream to", shouldAutoClose);
+        LOG.info("Setting auto-close of response input stream to {}", shouldAutoClose);
         SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM = shouldAutoClose;
     }
 

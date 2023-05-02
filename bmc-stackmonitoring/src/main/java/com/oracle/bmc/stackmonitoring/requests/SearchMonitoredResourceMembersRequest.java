@@ -25,13 +25,15 @@ public class SearchMonitoredResourceMembersRequest
         return monitoredResourceId;
     }
     /**
-     * Search criteria for the listing the member monitored resources.
+     * Search criteria for listing member monitored resources.
+     *
      */
     private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceMembersDetails
             searchMonitoredResourceMembersDetails;
 
     /**
-     * Search criteria for the listing the member monitored resources.
+     * Search criteria for listing member monitored resources.
+     *
      */
     public com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceMembersDetails
             getSearchMonitoredResourceMembersDetails() {
@@ -227,13 +229,15 @@ public class SearchMonitoredResourceMembersRequest
         }
 
         /**
-         * Search criteria for the listing the member monitored resources.
+         * Search criteria for listing member monitored resources.
+         *
          */
         private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourceMembersDetails
                 searchMonitoredResourceMembersDetails = null;
 
         /**
-         * Search criteria for the listing the member monitored resources.
+         * Search criteria for listing member monitored resources.
+         *
          * @param searchMonitoredResourceMembersDetails the value to set
          * @return this builder instance
          */

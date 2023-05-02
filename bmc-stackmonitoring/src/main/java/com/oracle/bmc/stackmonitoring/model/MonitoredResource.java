@@ -5,7 +5,10 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about monitored resource.
+ * The response object for create monitored resource and get monitored resource operations.
+ * This contains information about the monitored resource. Credentials and credential aliases attributes
+ * will be returned as null due to security reasons.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -90,13 +93,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param id the value to set
          * @return this builder
          **/
@@ -138,13 +143,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Monitored resource type
+         * Monitored Resource Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Monitored resource type
+         * Monitored Resource Type.
+         *
          * @param type the value to set
          * @return this builder
          **/
@@ -154,13 +161,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -170,13 +179,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param tenantId the value to set
          * @return this builder
          **/
@@ -202,20 +213,20 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * which is not a Stack Monitoring service resource.
-         * Currently supports only following resource type identifiers - externalcontainerdatabase,
-         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * External resource is any OCI resource which is not a Stack Monitoring service resource.
+         * Currently supports only following resource types - Container database, non-container database,
+         * pluggable database and OCI compute instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
-         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * which is not a Stack Monitoring service resource.
-         * Currently supports only following resource type identifiers - externalcontainerdatabase,
-         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * External resource is any OCI resource which is not a Stack Monitoring service resource.
+         * Currently supports only following resource types - Container database, non-container database,
+         * pluggable database and OCI compute instance.
          *
          * @param externalId the value to set
          * @return this builder
@@ -258,13 +269,17 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the the resource was created. An RFC3339 formatted datetime string
+         * The date and time when the monitored resource was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the resource was created. An RFC3339 formatted datetime string
+         * The date and time when the monitored resource was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -274,13 +289,17 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the the resource was updated. An RFC3339 formatted datetime string
+         * The date and time when the monitored resource was last updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the the resource was updated. An RFC3339 formatted datetime string
+         * The date and time when the monitored resource was last updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -306,13 +325,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * List of monitored resource properties
+         * List of monitored resource properties.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
 
         /**
-         * List of monitored resource properties
+         * List of monitored resource properties.
+         *
          * @param properties the value to set
          * @return this builder
          **/
@@ -520,13 +541,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.
+     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getId() {
@@ -562,13 +585,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Monitored resource type
+     * Monitored Resource Type.
+     *
      * @return the value
      **/
     public String getType() {
@@ -576,13 +601,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -590,13 +617,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
      **/
     public String getTenantId() {
@@ -618,20 +647,20 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * which is not a Stack Monitoring service resource.
-     * Currently supports only following resource type identifiers - externalcontainerdatabase,
-     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * External resource is any OCI resource which is not a Stack Monitoring service resource.
+     * Currently supports only following resource types - Container database, non-container database,
+     * pluggable database and OCI compute instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
-     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * which is not a Stack Monitoring service resource.
-     * Currently supports only following resource type identifiers - externalcontainerdatabase,
-     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * External resource is any OCI resource which is not a Stack Monitoring service resource.
+     * Currently supports only following resource types - Container database, non-container database,
+     * pluggable database and OCI compute instance.
      *
      * @return the value
      **/
@@ -668,13 +697,17 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the the resource was created. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the resource was created. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -682,13 +715,17 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the the resource was updated. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the the resource was updated. An RFC3339 formatted datetime string
+     * The date and time when the monitored resource was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -710,13 +747,15 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * List of monitored resource properties
+     * List of monitored resource properties.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
 
     /**
-     * List of monitored resource properties
+     * List of monitored resource properties.
+     *
      * @return the value
      **/
     public java.util.List<MonitoredResourceProperty> getProperties() {

@@ -5,7 +5,8 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Association Resource Details
+ * Association Resource Details.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,23 +23,26 @@ package com.oracle.bmc.stackmonitoring.model;
 public final class AssociationResourceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "type"})
-    public AssociationResourceDetails(String name, String type) {
+    @java.beans.ConstructorProperties({"name", "type", "compartmentId"})
+    public AssociationResourceDetails(String name, String type, String compartmentId) {
         super();
         this.name = name;
         this.type = type;
+        this.compartmentId = compartmentId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Monitored Resource Name
+         * Monitored Resource Name.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Monitored Resource Name
+         * Monitored Resource Name.
+         *
          * @param name the value to set
          * @return this builder
          **/
@@ -48,13 +52,15 @@ public final class AssociationResourceDetails
             return this;
         }
         /**
-         * Monitored Resource Type
+         * Monitored Resource Type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Monitored Resource Type
+         * Monitored Resource Type.
+         *
          * @param type the value to set
          * @return this builder
          **/
@@ -63,12 +69,31 @@ public final class AssociationResourceDetails
             this.__explicitlySet__.add("type");
             return this;
         }
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssociationResourceDetails build() {
-            AssociationResourceDetails model = new AssociationResourceDetails(this.name, this.type);
+            AssociationResourceDetails model =
+                    new AssociationResourceDetails(this.name, this.type, this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +107,9 @@ public final class AssociationResourceDetails
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             return this;
         }
@@ -99,13 +127,15 @@ public final class AssociationResourceDetails
     }
 
     /**
-     * Monitored Resource Name
+     * Monitored Resource Name.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Monitored Resource Name
+     * Monitored Resource Name.
+     *
      * @return the value
      **/
     public String getName() {
@@ -113,17 +143,35 @@ public final class AssociationResourceDetails
     }
 
     /**
-     * Monitored Resource Type
+     * Monitored Resource Type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Monitored Resource Type
+     * Monitored Resource Type.
+     *
      * @return the value
      **/
     public String getType() {
         return type;
+    }
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     @Override
@@ -142,6 +190,7 @@ public final class AssociationResourceDetails
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +207,7 @@ public final class AssociationResourceDetails
         AssociationResourceDetails other = (AssociationResourceDetails) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && super.equals(other);
     }
 
@@ -167,6 +217,9 @@ public final class AssociationResourceDetails
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
