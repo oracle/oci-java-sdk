@@ -8741,6 +8741,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RotateCloudAutonomousVmClusterOrdsCertsResponse.Builder::opcWorkRequestId)
@@ -8775,6 +8776,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RotateCloudAutonomousVmClusterSslCertsResponse.Builder::opcWorkRequestId)

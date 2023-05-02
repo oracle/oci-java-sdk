@@ -16,6 +16,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     AddSourcesToAgent("ADD_SOURCES_TO_AGENT"),
     BulkAddResources("BULK_ADD_RESOURCES"),
     BulkDeleteResources("BULK_DELETE_RESOURCES"),
+    UpdateAndPropagateTags("UPDATE_AND_PROPAGATE_TAGS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

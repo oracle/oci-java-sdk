@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Possible lifecycle states. */
+/** Possible lifecycle states for monitored resource. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public enum ResourceLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),

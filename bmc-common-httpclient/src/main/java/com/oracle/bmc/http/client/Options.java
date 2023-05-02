@@ -24,7 +24,7 @@ public enum Options {
      * default
      */
     public static void shouldAutoCloseResponseInputStream(final boolean shouldAutoClose) {
-        LOG.info("Setting auto-close of response input stream to", shouldAutoClose);
+        LOG.info("Setting auto-close of response input stream to {}", shouldAutoClose);
         SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM = shouldAutoClose;
     }
 

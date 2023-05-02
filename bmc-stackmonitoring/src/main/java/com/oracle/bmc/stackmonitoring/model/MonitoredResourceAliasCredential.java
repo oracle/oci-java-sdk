@@ -34,15 +34,15 @@ public final class MonitoredResourceAliasCredential
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The source type and source name combination,delimited with (.) separator. Ex. {source
-         * type}.{source name} and source type max char limit is 63.
+         * The source type and source name combination,delimited with (.) separator. Example:
+         * {source type}.{source name} and source type max char limit is 63.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
         /**
-         * The source type and source name combination,delimited with (.) separator. Ex. {source
-         * type}.{source name} and source type max char limit is 63.
+         * The source type and source name combination,delimited with (.) separator. Example:
+         * {source type}.{source name} and source type max char limit is 63.
          *
          * @param source the value to set
          * @return this builder
@@ -114,14 +114,14 @@ public final class MonitoredResourceAliasCredential
     }
 
     /**
-     * The source type and source name combination,delimited with (.) separator. Ex. {source
+     * The source type and source name combination,delimited with (.) separator. Example: {source
      * type}.{source name} and source type max char limit is 63.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
-     * The source type and source name combination,delimited with (.) separator. Ex. {source
+     * The source type and source name combination,delimited with (.) separator. Example: {source
      * type}.{source name} and source type max char limit is 63.
      *
      * @return the value

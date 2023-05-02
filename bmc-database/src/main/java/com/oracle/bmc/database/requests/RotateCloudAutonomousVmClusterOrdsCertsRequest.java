@@ -13,7 +13,8 @@ import com.oracle.bmc.database.model.*;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RotateCloudAutonomousVmClusterOrdsCertsRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails> {
 
     /**
      * The Cloud VM cluster
@@ -27,6 +28,21 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
      */
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
+    }
+    /**
+     * Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous
+     * Exadata VM cluster.
+     */
+    private com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails
+            rotateCloudAutonomousVmClusterOrdsCertsDetails;
+
+    /**
+     * Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous
+     * Exadata VM cluster.
+     */
+    public com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails
+            getRotateCloudAutonomousVmClusterOrdsCertsDetails() {
+        return rotateCloudAutonomousVmClusterOrdsCertsDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -72,9 +88,21 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
         return ifMatch;
     }
 
+    /**
+     * Alternative accessor for the body parameter.
+     *
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails getBody$() {
+        return rotateCloudAutonomousVmClusterOrdsCertsDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RotateCloudAutonomousVmClusterOrdsCertsRequest, java.lang.Void> {
+                    RotateCloudAutonomousVmClusterOrdsCertsRequest,
+                    com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
@@ -93,6 +121,28 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
          */
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            return this;
+        }
+
+        /**
+         * Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous
+         * Exadata VM cluster.
+         */
+        private com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails
+                rotateCloudAutonomousVmClusterOrdsCertsDetails = null;
+
+        /**
+         * Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous
+         * Exadata VM cluster.
+         *
+         * @param rotateCloudAutonomousVmClusterOrdsCertsDetails the value to set
+         * @return this builder instance
+         */
+        public Builder rotateCloudAutonomousVmClusterOrdsCertsDetails(
+                com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails
+                        rotateCloudAutonomousVmClusterOrdsCertsDetails) {
+            this.rotateCloudAutonomousVmClusterOrdsCertsDetails =
+                    rotateCloudAutonomousVmClusterOrdsCertsDetails;
             return this;
         }
 
@@ -187,6 +237,8 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
          */
         public Builder copy(RotateCloudAutonomousVmClusterOrdsCertsRequest o) {
             cloudAutonomousVmClusterId(o.getCloudAutonomousVmClusterId());
+            rotateCloudAutonomousVmClusterOrdsCertsDetails(
+                    o.getRotateCloudAutonomousVmClusterOrdsCertsDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
@@ -216,6 +268,19 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         *
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.database.model.RotateCloudAutonomousVmClusterOrdsCertsDetails body) {
+            rotateCloudAutonomousVmClusterOrdsCertsDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RotateCloudAutonomousVmClusterOrdsCertsRequest as configured by
          * this builder
          *
@@ -229,12 +294,15 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
             RotateCloudAutonomousVmClusterOrdsCertsRequest request =
                     new RotateCloudAutonomousVmClusterOrdsCertsRequest();
             request.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            request.rotateCloudAutonomousVmClusterOrdsCertsDetails =
+                    rotateCloudAutonomousVmClusterOrdsCertsDetails;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
             // new RotateCloudAutonomousVmClusterOrdsCertsRequest(cloudAutonomousVmClusterId,
-            // opcRetryToken, opcRequestId, ifMatch);
+            // rotateCloudAutonomousVmClusterOrdsCertsDetails, opcRetryToken, opcRequestId,
+            // ifMatch);
         }
     }
 
@@ -246,6 +314,8 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
     public Builder toBuilder() {
         return new Builder()
                 .cloudAutonomousVmClusterId(cloudAutonomousVmClusterId)
+                .rotateCloudAutonomousVmClusterOrdsCertsDetails(
+                        rotateCloudAutonomousVmClusterOrdsCertsDetails)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch);
@@ -267,6 +337,8 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
         sb.append("super=").append(super.toString());
         sb.append(",cloudAutonomousVmClusterId=")
                 .append(String.valueOf(this.cloudAutonomousVmClusterId));
+        sb.append(",rotateCloudAutonomousVmClusterOrdsCertsDetails=")
+                .append(String.valueOf(this.rotateCloudAutonomousVmClusterOrdsCertsDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
@@ -288,6 +360,9 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
         return super.equals(o)
                 && java.util.Objects.equals(
                         this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
+                && java.util.Objects.equals(
+                        this.rotateCloudAutonomousVmClusterOrdsCertsDetails,
+                        other.rotateCloudAutonomousVmClusterOrdsCertsDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
@@ -302,6 +377,11 @@ public class RotateCloudAutonomousVmClusterOrdsCertsRequest
                         + (this.cloudAutonomousVmClusterId == null
                                 ? 43
                                 : this.cloudAutonomousVmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotateCloudAutonomousVmClusterOrdsCertsDetails == null
+                                ? 43
+                                : this.rotateCloudAutonomousVmClusterOrdsCertsDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

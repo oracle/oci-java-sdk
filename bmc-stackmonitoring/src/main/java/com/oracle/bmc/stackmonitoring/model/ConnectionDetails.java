@@ -5,8 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Connection details to connect to the database. HostName, protocol, and port should be specified.
- * <br>
+ * Connection details for the database. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -82,12 +81,16 @@ public final class ConnectionDetails
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** Database connector Identifier */
+        /**
+         * Database connector Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
          * Database connector Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
          * @param connectorId the value to set
          * @return this builder
@@ -127,12 +130,12 @@ public final class ConnectionDetails
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-        /** dbId of the database */
+        /** dbId of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
         /**
-         * dbId of the database
+         * dbId of the database.
          *
          * @param dbId the value to set
          * @return this builder
@@ -144,14 +147,14 @@ public final class ConnectionDetails
         }
         /**
          * SSL Secret Identifier for TCPS connector in OCI
-         * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
          * SSL Secret Identifier for TCPS connector in OCI
-         * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
          * @param sslSecretId the value to set
          * @return this builder
@@ -289,12 +292,16 @@ public final class ConnectionDetails
         return port;
     }
 
-    /** Database connector Identifier */
+    /**
+     * Database connector Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
      * Database connector Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -328,12 +335,12 @@ public final class ConnectionDetails
         return dbUniqueName;
     }
 
-    /** dbId of the database */
+    /** dbId of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
     /**
-     * dbId of the database
+     * dbId of the database.
      *
      * @return the value
      */
@@ -343,14 +350,14 @@ public final class ConnectionDetails
 
     /**
      * SSL Secret Identifier for TCPS connector in OCI
-     * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
      * SSL Secret Identifier for TCPS connector in OCI
-     * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

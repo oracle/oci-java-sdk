@@ -316,7 +316,7 @@ abstract class BaseClient implements AutoCloseable {
         HttpClientBuilder builder =
                 httpProvider
                         .newBuilder()
-                        .baseUri(URI.create(endpoint))
+                        .baseUri(endpoint)
                         .property(
                                 StandardClientProperties.CONNECT_TIMEOUT,
                                 Duration.ofMillis(
