@@ -63,14 +63,14 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
         }
         /**
          * The credential properties list. Credential property values will be either in plain text
-         * format.
+         * format or encrypted for encrypted credentials.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<CredentialProperty> properties;
 
         /**
          * The credential properties list. Credential property values will be either in plain text
-         * format.
+         * format or encrypted for encrypted credentials.
          *
          * @param properties the value to set
          * @return this builder
@@ -137,14 +137,14 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
 
     /**
      * The credential properties list. Credential property values will be either in plain text
-     * format.
+     * format or encrypted for encrypted credentials.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<CredentialProperty> properties;
 
     /**
      * The credential properties list. Credential property values will be either in plain text
-     * format.
+     * format or encrypted for encrypted credentials.
      *
      * @return the value
      */

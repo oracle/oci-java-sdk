@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.13.0 - 2023-05-02
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the eu-jovanovac-1 region
+- Support for bring-your-own-license TLS and ORDS certificates in the Database service
+- Support for tags in the Stack Monitoring service
+- Support for GPU shapes for model deployments in the Data Science service
+- Support for returning networking details of instances in the Visual Builder service
+- Support for high-memory VMs in the Compute service
+- Support for integrating with the Integration Cloud service in the Process Automation service
+- Support for managing on-demand node upgrades in node pools in the Container Engine for Kubernetes service
+ 
+### Breaking Changes
+- Support for retries by default on operations of the Process Automation service
+- The model `com.oracle.bmc.containerengine.model.UpdateVirtualNodeDetails` has been removed from the Container Engine for Kubernetes service
+
 ## 3.12.1 - 2023-04-25
 ### Added
 - Support for enabling mTLS authentication with Listener and for providing custom value for TLS port and Non-TLS Port during AVM Cluster Creation in Database service

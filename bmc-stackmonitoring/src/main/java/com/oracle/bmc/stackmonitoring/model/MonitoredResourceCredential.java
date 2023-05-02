@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Monitored Resource Credential Details <br>
+ * Monitored Resource Credential Details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,14 +47,14 @@ public class MonitoredResourceCredential
     }
 
     /**
-     * The source type and source name combination,delimited with (.) separator. {source
+     * The source type and source name combination, delimited with (.) separator. {source
      * type}.{source name} and source type max char limit is 63.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
-     * The source type and source name combination,delimited with (.) separator. {source
+     * The source type and source name combination, delimited with (.) separator. {source
      * type}.{source name} and source type max char limit is 63.
      *
      * @return the value

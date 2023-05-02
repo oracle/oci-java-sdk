@@ -33,8 +33,7 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("OPAINSTANCE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate(
-                            "https://process-automation.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://process.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -104,7 +103,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("OpaInstance", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20210621")
@@ -134,7 +136,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ChangeOpaInstanceCompartmentResponse::builder)
                 .logger(LOG, "changeOpaInstanceCompartment")
-                .serviceDetails("OpaInstance", "ChangeOpaInstanceCompartment", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ChangeOpaInstanceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/ChangeOpaInstanceCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOpaInstanceCompartmentRequest::builder)
                 .basePath("/20210621")
@@ -166,7 +171,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, CreateOpaInstanceResponse::builder)
                 .logger(LOG, "createOpaInstance")
-                .serviceDetails("OpaInstance", "CreateOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "CreateOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/CreateOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -193,7 +201,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, DeleteOpaInstanceResponse::builder)
                 .logger(LOG, "deleteOpaInstance")
-                .serviceDetails("OpaInstance", "DeleteOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "DeleteOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/DeleteOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -220,7 +231,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetOpaInstanceResponse::builder)
                 .logger(LOG, "getOpaInstance")
-                .serviceDetails("OpaInstance", "GetOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "GetOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/GetOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -248,7 +262,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("OpaInstance", "GetWorkRequest", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210621")
@@ -276,7 +293,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListOpaInstancesResponse::builder)
                 .logger(LOG, "listOpaInstances")
-                .serviceDetails("OpaInstance", "ListOpaInstances", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListOpaInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstanceCollection/ListOpaInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOpaInstancesRequest::builder)
                 .basePath("/20210621")
@@ -312,7 +332,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("OpaInstance", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210621")
@@ -346,7 +369,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("OpaInstance", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210621")
@@ -378,7 +404,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("OpaInstance", "ListWorkRequests", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210621")
@@ -416,7 +445,10 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, UpdateOpaInstanceResponse::builder)
                 .logger(LOG, "updateOpaInstance")
-                .serviceDetails("OpaInstance", "UpdateOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "UpdateOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/UpdateOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOpaInstanceRequest::builder)
                 .basePath("/20210621")

@@ -33,16 +33,16 @@ public final class CredentialProperty
     public static class Builder {
         /**
          * The name of the credential property, should confirm with names of properties of this
-         * credential's type. Ex. For JMXCreds type , credential property name for weblogic user is
-         * 'Username'.
+         * credential's type. Example: For JMXCreds type, credential property name for weblogic user
+         * is 'Username'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the credential property, should confirm with names of properties of this
-         * credential's type. Ex. For JMXCreds type , credential property name for weblogic user is
-         * 'Username'.
+         * credential's type. Example: For JMXCreds type, credential property name for weblogic user
+         * is 'Username'.
          *
          * @param name the value to set
          * @return this builder
@@ -53,15 +53,15 @@ public final class CredentialProperty
             return this;
         }
         /**
-         * The value of the credential property name. Ex. For JMXCreds type, credential property
-         * value for 'Username' property is 'weblogic'.
+         * The value of the credential property name. Example: For JMXCreds type, credential
+         * property value for 'Username' property is 'weblogic'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The value of the credential property name. Ex. For JMXCreds type, credential property
-         * value for 'Username' property is 'weblogic'.
+         * The value of the credential property name. Example: For JMXCreds type, credential
+         * property value for 'Username' property is 'weblogic'.
          *
          * @param value the value to set
          * @return this builder
@@ -106,7 +106,7 @@ public final class CredentialProperty
 
     /**
      * The name of the credential property, should confirm with names of properties of this
-     * credential's type. Ex. For JMXCreds type , credential property name for weblogic user is
+     * credential's type. Example: For JMXCreds type, credential property name for weblogic user is
      * 'Username'.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -114,7 +114,7 @@ public final class CredentialProperty
 
     /**
      * The name of the credential property, should confirm with names of properties of this
-     * credential's type. Ex. For JMXCreds type , credential property name for weblogic user is
+     * credential's type. Example: For JMXCreds type, credential property name for weblogic user is
      * 'Username'.
      *
      * @return the value
@@ -124,15 +124,15 @@ public final class CredentialProperty
     }
 
     /**
-     * The value of the credential property name. Ex. For JMXCreds type, credential property value
-     * for 'Username' property is 'weblogic'.
+     * The value of the credential property name. Example: For JMXCreds type, credential property
+     * value for 'Username' property is 'weblogic'.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The value of the credential property name. Ex. For JMXCreds type, credential property value
-     * for 'Username' property is 'weblogic'.
+     * The value of the credential property name. Example: For JMXCreds type, credential property
+     * value for 'Username' property is 'weblogic'.
      *
      * @return the value
      */

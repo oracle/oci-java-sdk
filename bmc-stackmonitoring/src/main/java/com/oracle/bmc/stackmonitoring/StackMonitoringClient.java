@@ -826,6 +826,43 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public UpdateAndPropagateTagsResponse updateAndPropagateTags(
+            UpdateAndPropagateTagsRequest request) {
+
+        Validate.notBlank(
+                request.getMonitoredResourceId(), "monitoredResourceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAndPropagateTagsDetails(),
+                "updateAndPropagateTagsDetails is required");
+
+        return clientCall(request, UpdateAndPropagateTagsResponse::builder)
+                .logger(LOG, "updateAndPropagateTags")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateAndPropagateTags",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateAndPropagateTags")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateAndPropagateTagsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("monitoredResources")
+                .appendPathParam(request.getMonitoredResourceId())
+                .appendPathParam("actions")
+                .appendPathParam("updateAndPropagateTags")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAndPropagateTagsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAndPropagateTagsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public UpdateMonitoredResourceResponse updateMonitoredResource(
             UpdateMonitoredResourceRequest request) {
 

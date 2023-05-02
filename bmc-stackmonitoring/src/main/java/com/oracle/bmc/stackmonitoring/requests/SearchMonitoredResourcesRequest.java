@@ -16,11 +16,11 @@ public class SearchMonitoredResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourcesDetails> {
 
-    /** Property Search Criteria for the listing the monitored resources. */
+    /** Search Criteria for listing monitored resources. */
     private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourcesDetails
             searchMonitoredResourcesDetails;
 
-    /** Property Search Criteria for the listing the monitored resources. */
+    /** Search Criteria for listing monitored resources. */
     public com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourcesDetails
             getSearchMonitoredResourcesDetails() {
         return searchMonitoredResourcesDetails;
@@ -169,12 +169,12 @@ public class SearchMonitoredResourcesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Property Search Criteria for the listing the monitored resources. */
+        /** Search Criteria for listing monitored resources. */
         private com.oracle.bmc.stackmonitoring.model.SearchMonitoredResourcesDetails
                 searchMonitoredResourcesDetails = null;
 
         /**
-         * Property Search Criteria for the listing the monitored resources.
+         * Search Criteria for listing monitored resources.
          *
          * @param searchMonitoredResourcesDetails the value to set
          * @return this builder instance

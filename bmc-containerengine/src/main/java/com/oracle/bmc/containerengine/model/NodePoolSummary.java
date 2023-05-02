@@ -43,7 +43,8 @@ public final class NodePoolSummary
         "freeformTags",
         "definedTags",
         "systemTags",
-        "nodeEvictionNodePoolSettings"
+        "nodeEvictionNodePoolSettings",
+        "nodePoolCyclingDetails"
     })
     public NodePoolSummary(
             String id,
@@ -67,7 +68,8 @@ public final class NodePoolSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings) {
+            NodeEvictionNodePoolSettings nodeEvictionNodePoolSettings,
+            NodePoolCyclingDetails nodePoolCyclingDetails) {
         super();
         this.id = id;
         this.lifecycleState = lifecycleState;
@@ -91,6 +93,7 @@ public final class NodePoolSummary
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
+        this.nodePoolCyclingDetails = nodePoolCyclingDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -452,6 +455,15 @@ public final class NodePoolSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodePoolCyclingDetails")
+        private NodePoolCyclingDetails nodePoolCyclingDetails;
+
+        public Builder nodePoolCyclingDetails(NodePoolCyclingDetails nodePoolCyclingDetails) {
+            this.nodePoolCyclingDetails = nodePoolCyclingDetails;
+            this.__explicitlySet__.add("nodePoolCyclingDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -479,7 +491,8 @@ public final class NodePoolSummary
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.nodeEvictionNodePoolSettings);
+                            this.nodeEvictionNodePoolSettings,
+                            this.nodePoolCyclingDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -553,6 +566,9 @@ public final class NodePoolSummary
             }
             if (model.wasPropertyExplicitlySet("nodeEvictionNodePoolSettings")) {
                 this.nodeEvictionNodePoolSettings(model.getNodeEvictionNodePoolSettings());
+            }
+            if (model.wasPropertyExplicitlySet("nodePoolCyclingDetails")) {
+                this.nodePoolCyclingDetails(model.getNodePoolCyclingDetails());
             }
             return this;
         }
@@ -875,6 +891,13 @@ public final class NodePoolSummary
         return nodeEvictionNodePoolSettings;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("nodePoolCyclingDetails")
+    private final NodePoolCyclingDetails nodePoolCyclingDetails;
+
+    public NodePoolCyclingDetails getNodePoolCyclingDetails() {
+        return nodePoolCyclingDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -913,6 +936,7 @@ public final class NodePoolSummary
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", nodeEvictionNodePoolSettings=")
                 .append(String.valueOf(this.nodeEvictionNodePoolSettings));
+        sb.append(", nodePoolCyclingDetails=").append(String.valueOf(this.nodePoolCyclingDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -950,6 +974,8 @@ public final class NodePoolSummary
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.nodeEvictionNodePoolSettings, other.nodeEvictionNodePoolSettings)
+                && java.util.Objects.equals(
+                        this.nodePoolCyclingDetails, other.nodePoolCyclingDetails)
                 && super.equals(other);
     }
 
@@ -1003,6 +1029,11 @@ public final class NodePoolSummary
                         + (this.nodeEvictionNodePoolSettings == null
                                 ? 43
                                 : this.nodeEvictionNodePoolSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nodePoolCyclingDetails == null
+                                ? 43
+                                : this.nodePoolCyclingDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

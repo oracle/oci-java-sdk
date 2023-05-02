@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Property of monitored resource <br>
+ * Property of monitored resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class MonitoredResourceProperty
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** property name */
+        /** Property Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * property name
+         * Property Name.
          *
          * @param name the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class MonitoredResourceProperty
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** property value */
+        /** Property Value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * property value
+         * Property Value.
          *
          * @param value the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class MonitoredResourceProperty
         return new Builder().copy(this);
     }
 
-    /** property name */
+    /** Property Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * property name
+     * Property Name.
      *
      * @return the value
      */
@@ -107,12 +107,12 @@ public final class MonitoredResourceProperty
         return name;
     }
 
-    /** property value */
+    /** Property Value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * property value
+     * Property Value.
      *
      * @return the value
      */

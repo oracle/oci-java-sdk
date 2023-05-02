@@ -5,7 +5,7 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Monitored Resource Alias Reference Source Credential <br>
+ * Monitored Resource Alias Reference Source Credential. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,14 +55,14 @@ public final class MonitoredResourceAliasSourceCredential
         }
         /**
          * The name of the pre-existing source credential which alias cred should point to. This
-         * should refer to the pre-existing source attribute binded credential name.
+         * should refer to the pre-existing source attribute which is bound to credential name.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the pre-existing source credential which alias cred should point to. This
-         * should refer to the pre-existing source attribute binded credential name.
+         * should refer to the pre-existing source attribute which is bound to credential name.
          *
          * @param name the value to set
          * @return this builder
@@ -72,12 +72,12 @@ public final class MonitoredResourceAliasSourceCredential
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The name of the service owning the credential. Ex stack-monitoring or dbmgmt */
+        /** The name of the service owning the credential. Example: stack-monitoring or dbmgmt */
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
-         * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+         * The name of the service owning the credential. Example: stack-monitoring or dbmgmt
          *
          * @param service the value to set
          * @return this builder
@@ -146,14 +146,14 @@ public final class MonitoredResourceAliasSourceCredential
 
     /**
      * The name of the pre-existing source credential which alias cred should point to. This should
-     * refer to the pre-existing source attribute binded credential name.
+     * refer to the pre-existing source attribute which is bound to credential name.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the pre-existing source credential which alias cred should point to. This should
-     * refer to the pre-existing source attribute binded credential name.
+     * refer to the pre-existing source attribute which is bound to credential name.
      *
      * @return the value
      */
@@ -161,12 +161,12 @@ public final class MonitoredResourceAliasSourceCredential
         return name;
     }
 
-    /** The name of the service owning the credential. Ex stack-monitoring or dbmgmt */
+    /** The name of the service owning the credential. Example: stack-monitoring or dbmgmt */
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
-     * The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+     * The name of the service owning the credential. Example: stack-monitoring or dbmgmt
      *
      * @return the value
      */

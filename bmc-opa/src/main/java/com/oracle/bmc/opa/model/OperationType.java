@@ -11,6 +11,8 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateOpaInstance("UPDATE_OPA_INSTANCE"),
     DeleteOpaInstance("DELETE_OPA_INSTANCE"),
     MoveOpaInstance("MOVE_OPA_INSTANCE"),
+    CreateOpaInstanceAttachment("CREATE_OPA_INSTANCE_ATTACHMENT"),
+    DeleteOpaInstanceAttachment("DELETE_OPA_INSTANCE_ATTACHMENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

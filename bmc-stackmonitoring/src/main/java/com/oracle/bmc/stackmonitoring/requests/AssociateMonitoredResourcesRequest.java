@@ -16,11 +16,11 @@ public class AssociateMonitoredResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails> {
 
-    /** Associate resources. */
+    /** Details to create association between two resources. */
     private com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails
             associateMonitoredResourcesDetails;
 
-    /** Associate resources. */
+    /** Details to create association between two resources. */
     public com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails
             getAssociateMonitoredResourcesDetails() {
         return associateMonitoredResourcesDetails;
@@ -93,12 +93,12 @@ public class AssociateMonitoredResourcesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Associate resources. */
+        /** Details to create association between two resources. */
         private com.oracle.bmc.stackmonitoring.model.AssociateMonitoredResourcesDetails
                 associateMonitoredResourcesDetails = null;
 
         /**
-         * Associate resources.
+         * Details to create association between two resources.
          *
          * @param associateMonitoredResourcesDetails the value to set
          * @return this builder instance

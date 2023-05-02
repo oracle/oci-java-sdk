@@ -20,8 +20,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("OPAINSTANCE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate(
-                            "https://process-automation.{region}.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://process.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -128,7 +127,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("OpaInstance", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20210621")
@@ -139,6 +141,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -153,7 +156,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ChangeOpaInstanceCompartmentResponse::builder)
                 .logger(LOG, "changeOpaInstanceCompartment")
-                .serviceDetails("OpaInstance", "ChangeOpaInstanceCompartment", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ChangeOpaInstanceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/ChangeOpaInstanceCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOpaInstanceCompartmentRequest::builder)
                 .basePath("/20210621")
@@ -171,6 +177,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOpaInstanceCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -181,7 +188,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, CreateOpaInstanceResponse::builder)
                 .logger(LOG, "createOpaInstance")
-                .serviceDetails("OpaInstance", "CreateOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "CreateOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/CreateOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -194,6 +204,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-work-request-id", CreateOpaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateOpaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -204,7 +215,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, DeleteOpaInstanceResponse::builder)
                 .logger(LOG, "deleteOpaInstance")
-                .serviceDetails("OpaInstance", "DeleteOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "DeleteOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/DeleteOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -217,6 +231,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-work-request-id", DeleteOpaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOpaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -227,7 +242,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetOpaInstanceResponse::builder)
                 .logger(LOG, "getOpaInstance")
-                .serviceDetails("OpaInstance", "GetOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "GetOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/GetOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -241,6 +259,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", GetOpaInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOpaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -251,7 +270,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("OpaInstance", "GetWorkRequest", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210621")
@@ -267,6 +289,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -275,7 +298,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListOpaInstancesResponse::builder)
                 .logger(LOG, "listOpaInstances")
-                .serviceDetails("OpaInstance", "ListOpaInstances", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListOpaInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstanceCollection/ListOpaInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOpaInstancesRequest::builder)
                 .basePath("/20210621")
@@ -297,6 +323,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListOpaInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOpaInstancesResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -308,7 +335,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("OpaInstance", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210621")
@@ -328,6 +358,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -338,7 +369,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("OpaInstance", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210621")
@@ -358,6 +392,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -366,7 +401,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("OpaInstance", "ListWorkRequests", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210621")
@@ -388,6 +426,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -400,7 +439,10 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, UpdateOpaInstanceResponse::builder)
                 .logger(LOG, "updateOpaInstance")
-                .serviceDetails("OpaInstance", "UpdateOpaInstance", "")
+                .serviceDetails(
+                        "OpaInstance",
+                        "UpdateOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/UpdateOpaInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOpaInstanceRequest::builder)
                 .basePath("/20210621")
@@ -414,6 +456,7 @@ public class OpaInstanceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-work-request-id", UpdateOpaInstanceResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOpaInstanceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
