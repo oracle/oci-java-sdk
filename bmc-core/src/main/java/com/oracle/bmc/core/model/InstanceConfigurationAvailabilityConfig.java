@@ -23,14 +23,38 @@ package com.oracle.bmc.core.model;
 public final class InstanceConfigurationAvailabilityConfig
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"recoveryAction"})
-    public InstanceConfigurationAvailabilityConfig(RecoveryAction recoveryAction) {
+    @java.beans.ConstructorProperties({"isLiveMigrationPreferred", "recoveryAction"})
+    public InstanceConfigurationAvailabilityConfig(
+            Boolean isLiveMigrationPreferred, RecoveryAction recoveryAction) {
         super();
+        this.isLiveMigrationPreferred = isLiveMigrationPreferred;
         this.recoveryAction = recoveryAction;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether to live migrate supported VM instances to a healthy physical VM host without
+         * disrupting running instances during infrastructure maintenance events. If null, Oracle
+         * chooses the best option for migrating the VM during infrastructure maintenance events.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
+        private Boolean isLiveMigrationPreferred;
+
+        /**
+         * Whether to live migrate supported VM instances to a healthy physical VM host without
+         * disrupting running instances during infrastructure maintenance events. If null, Oracle
+         * chooses the best option for migrating the VM during infrastructure maintenance events.
+         *
+         * @param isLiveMigrationPreferred the value to set
+         * @return this builder
+         **/
+        public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
+            this.isLiveMigrationPreferred = isLiveMigrationPreferred;
+            this.__explicitlySet__.add("isLiveMigrationPreferred");
+            return this;
+        }
         /**
          * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
          * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
@@ -61,7 +85,8 @@ public final class InstanceConfigurationAvailabilityConfig
 
         public InstanceConfigurationAvailabilityConfig build() {
             InstanceConfigurationAvailabilityConfig model =
-                    new InstanceConfigurationAvailabilityConfig(this.recoveryAction);
+                    new InstanceConfigurationAvailabilityConfig(
+                            this.isLiveMigrationPreferred, this.recoveryAction);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -70,6 +95,9 @@ public final class InstanceConfigurationAvailabilityConfig
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfigurationAvailabilityConfig model) {
+            if (model.wasPropertyExplicitlySet("isLiveMigrationPreferred")) {
+                this.isLiveMigrationPreferred(model.getIsLiveMigrationPreferred());
+            }
             if (model.wasPropertyExplicitlySet("recoveryAction")) {
                 this.recoveryAction(model.getRecoveryAction());
             }
@@ -86,6 +114,26 @@ public final class InstanceConfigurationAvailabilityConfig
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Whether to live migrate supported VM instances to a healthy physical VM host without
+     * disrupting running instances during infrastructure maintenance events. If null, Oracle
+     * chooses the best option for migrating the VM during infrastructure maintenance events.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationPreferred")
+    private final Boolean isLiveMigrationPreferred;
+
+    /**
+     * Whether to live migrate supported VM instances to a healthy physical VM host without
+     * disrupting running instances during infrastructure maintenance events. If null, Oracle
+     * chooses the best option for migrating the VM during infrastructure maintenance events.
+     *
+     * @return the value
+     **/
+    public Boolean getIsLiveMigrationPreferred() {
+        return isLiveMigrationPreferred;
     }
 
     /**
@@ -176,7 +224,9 @@ public final class InstanceConfigurationAvailabilityConfig
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationAvailabilityConfig(");
         sb.append("super=").append(super.toString());
-        sb.append("recoveryAction=").append(String.valueOf(this.recoveryAction));
+        sb.append("isLiveMigrationPreferred=")
+                .append(String.valueOf(this.isLiveMigrationPreferred));
+        sb.append(", recoveryAction=").append(String.valueOf(this.recoveryAction));
         sb.append(")");
         return sb.toString();
     }
@@ -191,7 +241,9 @@ public final class InstanceConfigurationAvailabilityConfig
         }
 
         InstanceConfigurationAvailabilityConfig other = (InstanceConfigurationAvailabilityConfig) o;
-        return java.util.Objects.equals(this.recoveryAction, other.recoveryAction)
+        return java.util.Objects.equals(
+                        this.isLiveMigrationPreferred, other.isLiveMigrationPreferred)
+                && java.util.Objects.equals(this.recoveryAction, other.recoveryAction)
                 && super.equals(other);
     }
 
@@ -199,6 +251,11 @@ public final class InstanceConfigurationAvailabilityConfig
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isLiveMigrationPreferred == null
+                                ? 43
+                                : this.isLiveMigrationPreferred.hashCode());
         result =
                 (result * PRIME)
                         + (this.recoveryAction == null ? 43 : this.recoveryAction.hashCode());

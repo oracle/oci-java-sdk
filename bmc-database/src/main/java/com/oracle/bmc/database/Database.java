@@ -422,6 +422,20 @@ public interface Database extends AutoCloseable {
             ChangeKeyStoreCompartmentRequest request);
 
     /**
+     * Move the one-off patch to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeOneoffPatchCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOneoffPatchCompartment API.
+     */
+    ChangeOneoffPatchCompartmentResponse changeOneoffPatchCompartment(
+            ChangeOneoffPatchCompartmentRequest request);
+
+    /**
      * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
      * To move a cloud VM cluster in an Exadata Cloud Service instance to another compartment, use the {@link #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest) changeCloudVmClusterCompartment} operation.
      *
@@ -806,6 +820,19 @@ public interface Database extends AutoCloseable {
     CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request);
 
     /**
+     * Creates one-off patch for specified database version to download.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOneoffPatch API.
+     */
+    CreateOneoffPatchResponse createOneoffPatch(CreateOneoffPatchRequest request);
+
+    /**
      * Creates and starts a pluggable database in the specified container database.
      * Use the {@link #startPluggableDatabase(StartPluggableDatabaseRequest) startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest) stopPluggableDatabase} APIs to start and stop the pluggable database.
      *
@@ -1135,6 +1162,19 @@ public interface Database extends AutoCloseable {
     DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request);
 
     /**
+     * Deletes a one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOneoffPatch API.
+     */
+    DeleteOneoffPatchResponse deleteOneoffPatch(DeleteOneoffPatchRequest request);
+
+    /**
      * Deletes the specified pluggable database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1380,6 +1420,19 @@ public interface Database extends AutoCloseable {
      */
     DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request);
+
+    /**
+     * Download one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadOneoffPatch API.
+     */
+    DownloadOneoffPatchResponse downloadOneoffPatch(DownloadOneoffPatchRequest request);
 
     /**
      * Downloads the network validation report file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
@@ -2309,6 +2362,19 @@ public interface Database extends AutoCloseable {
             GetMaintenanceRunHistoryRequest request);
 
     /**
+     * Gets information about the specified one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOneoffPatch API.
+     */
+    GetOneoffPatchResponse getOneoffPatch(GetOneoffPatchRequest request);
+
+    /**
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      *
      * @param request The request object containing the details to send
@@ -3161,6 +3227,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceRuns API.
      */
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
+
+    /**
+     * Lists one-off patches in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListOneoffPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOneoffPatches API.
+     */
+    ListOneoffPatchesResponse listOneoffPatches(ListOneoffPatchesRequest request);
 
     /**
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
@@ -4153,6 +4232,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMaintenanceRun API.
      */
     UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
+
+    /**
+     * Updates the properties of the specified one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOneoffPatch API.
+     */
+    UpdateOneoffPatchResponse updateOneoffPatch(UpdateOneoffPatchRequest request);
 
     /**
      * Updates the specified pluggable database.

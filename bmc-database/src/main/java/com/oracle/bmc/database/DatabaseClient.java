@@ -1633,6 +1633,49 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeOneoffPatchCompartmentResponse changeOneoffPatchCompartment(
+            ChangeOneoffPatchCompartmentRequest request) {
+        LOG.trace("Called changeOneoffPatchCompartment");
+        final ChangeOneoffPatchCompartmentRequest interceptedRequest =
+                ChangeOneoffPatchCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOneoffPatchCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeOneoffPatchCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/ChangeOneoffPatchCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeOneoffPatchCompartmentResponse>
+                transformer =
+                        ChangeOneoffPatchCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
             ChangeVmClusterCompartmentRequest request) {
         LOG.trace("Called changeVmClusterCompartment");
@@ -2803,6 +2846,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateOneoffPatchResponse createOneoffPatch(CreateOneoffPatchRequest request) {
+        LOG.trace("Called createOneoffPatch");
+        final CreateOneoffPatchRequest interceptedRequest =
+                CreateOneoffPatchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOneoffPatchConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/CreateOneoffPatch");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOneoffPatchResponse>
+                transformer =
+                        CreateOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOneoffPatchDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreatePluggableDatabaseResponse createPluggableDatabase(
             CreatePluggableDatabaseRequest request) {
         LOG.trace("Called createPluggableDatabase");
@@ -3702,6 +3787,44 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DeleteOneoffPatchResponse deleteOneoffPatch(DeleteOneoffPatchRequest request) {
+        LOG.trace("Called deleteOneoffPatch");
+        final DeleteOneoffPatchRequest interceptedRequest =
+                DeleteOneoffPatchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOneoffPatchConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/DeleteOneoffPatch");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOneoffPatchResponse>
+                transformer =
+                        DeleteOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeletePluggableDatabaseResponse deletePluggableDatabase(
             DeletePluggableDatabaseRequest request) {
         LOG.trace("Called deletePluggableDatabase");
@@ -4410,6 +4533,45 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
                 transformer =
                         DownloadExadataInfrastructureConfigFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DownloadOneoffPatchResponse downloadOneoffPatch(DownloadOneoffPatchRequest request) {
+        LOG.trace("Called downloadOneoffPatch");
+        final DownloadOneoffPatchRequest interceptedRequest =
+                DownloadOneoffPatchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadOneoffPatchConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/DownloadOneoffPatch");
+        java.util.function.Function<javax.ws.rs.core.Response, DownloadOneoffPatchResponse>
+                transformer =
+                        DownloadOneoffPatchConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -7064,6 +7226,41 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetOneoffPatchResponse getOneoffPatch(GetOneoffPatchRequest request) {
+        LOG.trace("Called getOneoffPatch");
+        final GetOneoffPatchRequest interceptedRequest =
+                GetOneoffPatchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOneoffPatchConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/GetOneoffPatch");
+        java.util.function.Function<javax.ws.rs.core.Response, GetOneoffPatchResponse> transformer =
+                GetOneoffPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetPdbConversionHistoryEntryResponse getPdbConversionHistoryEntry(
             GetPdbConversionHistoryEntryRequest request) {
         LOG.trace("Called getPdbConversionHistoryEntry");
@@ -9413,6 +9610,43 @@ public class DatabaseClient implements Database {
         java.util.function.Function<javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
                 transformer =
                         ListMaintenanceRunsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOneoffPatchesResponse listOneoffPatches(ListOneoffPatchesRequest request) {
+        LOG.trace("Called listOneoffPatches");
+        final ListOneoffPatchesRequest interceptedRequest =
+                ListOneoffPatchesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOneoffPatchesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListOneoffPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/ListOneoffPatches");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOneoffPatchesResponse>
+                transformer =
+                        ListOneoffPatchesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -12399,6 +12633,47 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateMaintenanceRunDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOneoffPatchResponse updateOneoffPatch(UpdateOneoffPatchRequest request) {
+        LOG.trace("Called updateOneoffPatch");
+        final UpdateOneoffPatchRequest interceptedRequest =
+                UpdateOneoffPatchConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOneoffPatchConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/UpdateOneoffPatch");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOneoffPatchResponse>
+                transformer =
+                        UpdateOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOneoffPatchDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

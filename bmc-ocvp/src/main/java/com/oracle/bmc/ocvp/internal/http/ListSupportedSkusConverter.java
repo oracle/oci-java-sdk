@@ -56,6 +56,14 @@ public class ListSupportedSkusConverter {
                                     request.getPage()));
         }
 
+        if (request.getHostShapeName() != null) {
+            target =
+                    target.queryParam(
+                            "hostShapeName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHostShapeName()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

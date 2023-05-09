@@ -1524,6 +1524,65 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ChangeOneoffPatchCompartmentRequest, ChangeOneoffPatchCompartmentResponse>
+            forChangeOneoffPatchCompartment(ChangeOneoffPatchCompartmentRequest request) {
+        return forChangeOneoffPatchCompartment(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeOneoffPatchCompartmentRequest, ChangeOneoffPatchCompartmentResponse>
+            forChangeOneoffPatchCompartment(
+                    ChangeOneoffPatchCompartmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeOneoffPatchCompartmentResponse>() {
+                    @Override
+                    public ChangeOneoffPatchCompartmentResponse call() throws Exception {
+                        final ChangeOneoffPatchCompartmentResponse response =
+                                client.changeOneoffPatchCompartment(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ChangeVmClusterCompartmentRequest, ChangeVmClusterCompartmentResponse>
             forChangeVmClusterCompartment(ChangeVmClusterCompartmentRequest request) {
         return forChangeVmClusterCompartment(
@@ -2935,6 +2994,63 @@ public class DatabaseWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<CreateOneoffPatchRequest, CreateOneoffPatchResponse>
+            forCreateOneoffPatch(CreateOneoffPatchRequest request) {
+        return forCreateOneoffPatch(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<CreateOneoffPatchRequest, CreateOneoffPatchResponse>
+            forCreateOneoffPatch(
+                    CreateOneoffPatchRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<CreateOneoffPatchResponse>() {
+                    @Override
+                    public CreateOneoffPatchResponse call() throws Exception {
+                        final CreateOneoffPatchResponse response =
+                                client.createOneoffPatch(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
             forCreatePluggableDatabase(CreatePluggableDatabaseRequest request) {
@@ -4074,6 +4190,63 @@ public class DatabaseWaiters {
                     public DeleteExternalPluggableDatabaseResponse call() throws Exception {
                         final DeleteExternalPluggableDatabaseResponse response =
                                 client.deleteExternalPluggableDatabase(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>
+            forDeleteOneoffPatch(DeleteOneoffPatchRequest request) {
+        return forDeleteOneoffPatch(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>
+            forDeleteOneoffPatch(
+                    DeleteOneoffPatchRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DeleteOneoffPatchResponse>() {
+                    @Override
+                    public DeleteOneoffPatchResponse call() throws Exception {
+                        final DeleteOneoffPatchResponse response =
+                                client.deleteOneoffPatch(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =
@@ -9754,6 +9927,110 @@ public class DatabaseWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.MaintenanceRun.LifecycleState
                                         .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetOneoffPatchRequest, GetOneoffPatchResponse>
+            forOneoffPatch(
+                    GetOneoffPatchRequest request,
+                    com.oracle.bmc.database.model.OneoffPatch.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forOneoffPatch(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetOneoffPatchRequest, GetOneoffPatchResponse>
+            forOneoffPatch(
+                    GetOneoffPatchRequest request,
+                    com.oracle.bmc.database.model.OneoffPatch.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forOneoffPatch(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetOneoffPatchRequest, GetOneoffPatchResponse>
+            forOneoffPatch(
+                    GetOneoffPatchRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.OneoffPatch.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forOneoffPatch(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for OneoffPatch.
+    private com.oracle.bmc.waiter.Waiter<GetOneoffPatchRequest, GetOneoffPatchResponse>
+            forOneoffPatch(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetOneoffPatchRequest request,
+                    final com.oracle.bmc.database.model.OneoffPatch.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.OneoffPatch.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetOneoffPatchRequest, GetOneoffPatchResponse>() {
+                            @Override
+                            public GetOneoffPatchResponse apply(GetOneoffPatchRequest request) {
+                                return client.getOneoffPatch(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetOneoffPatchResponse>() {
+                            @Override
+                            public boolean test(GetOneoffPatchResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getOneoffPatch().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.OneoffPatch.LifecycleState
+                                        .Terminated)),
                 request);
     }
 
