@@ -62,6 +62,25 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
             return this;
         }
         /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot
+         * volume.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the boot
+         * volume.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+        /**
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
@@ -113,7 +132,10 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         public InstanceConfigurationInstanceSourceViaImageDetails build() {
             InstanceConfigurationInstanceSourceViaImageDetails model =
                     new InstanceConfigurationInstanceSourceViaImageDetails(
-                            this.bootVolumeSizeInGBs, this.imageId, this.bootVolumeVpusPerGB);
+                            this.bootVolumeSizeInGBs,
+                            this.imageId,
+                            this.kmsKeyId,
+                            this.bootVolumeVpusPerGB);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -127,6 +149,9 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
             }
             if (model.wasPropertyExplicitlySet("imageId")) {
                 this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
             }
             if (model.wasPropertyExplicitlySet("bootVolumeVpusPerGB")) {
                 this.bootVolumeVpusPerGB(model.getBootVolumeVpusPerGB());
@@ -146,10 +171,11 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
 
     @Deprecated
     public InstanceConfigurationInstanceSourceViaImageDetails(
-            Long bootVolumeSizeInGBs, String imageId, Long bootVolumeVpusPerGB) {
+            Long bootVolumeSizeInGBs, String imageId, String kmsKeyId, Long bootVolumeVpusPerGB) {
         super();
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
+        this.kmsKeyId = kmsKeyId;
         this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
     }
 
@@ -181,6 +207,21 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
      */
     public String getImageId() {
         return imageId;
+    }
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     *
+     * @return the value
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
     }
 
     /**
@@ -243,6 +284,7 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", bootVolumeVpusPerGB=").append(String.valueOf(this.bootVolumeVpusPerGB));
         sb.append(")");
         return sb.toString();
@@ -261,6 +303,7 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                 (InstanceConfigurationInstanceSourceViaImageDetails) o;
         return java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && java.util.Objects.equals(this.imageId, other.imageId)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.bootVolumeVpusPerGB, other.bootVolumeVpusPerGB)
                 && super.equals(other);
     }
@@ -275,6 +318,7 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                                 ? 43
                                 : this.bootVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootVolumeVpusPerGB == null

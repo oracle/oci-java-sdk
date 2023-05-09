@@ -959,6 +959,40 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<SoftstopInstancePoolResponse> softstopInstancePool(
+            SoftstopInstancePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SoftstopInstancePoolRequest, SoftstopInstancePoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        return clientCall(request, SoftstopInstancePoolResponse::builder)
+                .logger(LOG, "softstopInstancePool")
+                .serviceDetails(
+                        "ComputeManagement",
+                        "SoftstopInstancePool",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftstopInstancePool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SoftstopInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("softstop")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePool.class,
+                        SoftstopInstancePoolResponse.Builder::instancePool)
+                .handleResponseHeaderString("etag", SoftstopInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SoftstopInstancePoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInstancePoolResponse> startInstancePool(
             StartInstancePoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

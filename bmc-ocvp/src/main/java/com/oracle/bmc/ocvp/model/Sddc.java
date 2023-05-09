@@ -82,6 +82,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "initialHostOcpuCount",
         "isShieldedInstanceEnabled",
         "capacityReservationId",
+        "datastores",
         "freeformTags",
         "definedTags"
     })
@@ -138,6 +139,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             Float initialHostOcpuCount,
             Boolean isShieldedInstanceEnabled,
             String capacityReservationId,
+            java.util.List<DatastoreSummary> datastores,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -193,6 +195,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.initialHostOcpuCount = initialHostOcpuCount;
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
         this.capacityReservationId = capacityReservationId;
+        this.datastores = datastores;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -1290,12 +1293,12 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The vSphere licenses to be used when upgrade SDDC. */
+        /** The vSphere licenses to use when upgrading the SDDC. */
         @com.fasterxml.jackson.annotation.JsonProperty("upgradeLicenses")
         private java.util.List<VsphereLicense> upgradeLicenses;
 
         /**
-         * The vSphere licenses to be used when upgrade SDDC.
+         * The vSphere licenses to use when upgrading the SDDC.
          *
          * @param upgradeLicenses the value to set
          * @return this builder
@@ -1305,12 +1308,12 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("upgradeLicenses");
             return this;
         }
-        /** The link of guidance to upgrade vSphere. */
+        /** The link to guidance for upgrading vSphere. */
         @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeGuide")
         private String vsphereUpgradeGuide;
 
         /**
-         * The link of guidance to upgrade vSphere.
+         * The link to guidance for upgrading vSphere.
          *
          * @param vsphereUpgradeGuide the value to set
          * @return this builder
@@ -1320,12 +1323,12 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("vsphereUpgradeGuide");
             return this;
         }
-        /** The links of binary objects needed for upgrade vSphere. */
+        /** The links to binary objects needed to upgrade vSphere. */
         @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeObjects")
         private java.util.List<VsphereUpgradeObject> vsphereUpgradeObjects;
 
         /**
-         * The links of binary objects needed for upgrade vSphere.
+         * The links to binary objects needed to upgrade vSphere.
          *
          * @param vsphereUpgradeObjects the value to set
          * @return this builder
@@ -1402,6 +1405,21 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+        /** Datastores used for the Sddc. */
+        @com.fasterxml.jackson.annotation.JsonProperty("datastores")
+        private java.util.List<DatastoreSummary> datastores;
+
+        /**
+         * Datastores used for the Sddc.
+         *
+         * @param datastores the value to set
+         * @return this builder
+         */
+        public Builder datastores(java.util.List<DatastoreSummary> datastores) {
+            this.datastores = datastores;
+            this.__explicitlySet__.add("datastores");
             return this;
         }
         /**
@@ -1514,6 +1532,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.initialHostOcpuCount,
                             this.isShieldedInstanceEnabled,
                             this.capacityReservationId,
+                            this.datastores,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -1679,6 +1698,9 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("datastores")) {
+                this.datastores(model.getDatastores());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -2686,12 +2708,12 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return lifecycleState;
     }
 
-    /** The vSphere licenses to be used when upgrade SDDC. */
+    /** The vSphere licenses to use when upgrading the SDDC. */
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeLicenses")
     private final java.util.List<VsphereLicense> upgradeLicenses;
 
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
+     * The vSphere licenses to use when upgrading the SDDC.
      *
      * @return the value
      */
@@ -2699,12 +2721,12 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return upgradeLicenses;
     }
 
-    /** The link of guidance to upgrade vSphere. */
+    /** The link to guidance for upgrading vSphere. */
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeGuide")
     private final String vsphereUpgradeGuide;
 
     /**
-     * The link of guidance to upgrade vSphere.
+     * The link to guidance for upgrading vSphere.
      *
      * @return the value
      */
@@ -2712,12 +2734,12 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return vsphereUpgradeGuide;
     }
 
-    /** The links of binary objects needed for upgrade vSphere. */
+    /** The links to binary objects needed to upgrade vSphere. */
     @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeObjects")
     private final java.util.List<VsphereUpgradeObject> vsphereUpgradeObjects;
 
     /**
-     * The links of binary objects needed for upgrade vSphere.
+     * The links to binary objects needed to upgrade vSphere.
      *
      * @return the value
      */
@@ -2783,6 +2805,19 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
      */
     public String getCapacityReservationId() {
         return capacityReservationId;
+    }
+
+    /** Datastores used for the Sddc. */
+    @com.fasterxml.jackson.annotation.JsonProperty("datastores")
+    private final java.util.List<DatastoreSummary> datastores;
+
+    /**
+     * Datastores used for the Sddc.
+     *
+     * @return the value
+     */
+    public java.util.List<DatastoreSummary> getDatastores() {
+        return datastores;
     }
 
     /**
@@ -2903,6 +2938,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", isShieldedInstanceEnabled=")
                 .append(String.valueOf(this.isShieldedInstanceEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", datastores=").append(String.valueOf(this.datastores));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -2979,6 +3015,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(
                         this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.datastores, other.datastores)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -3172,6 +3209,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result = (result * PRIME) + (this.datastores == null ? 43 : this.datastores.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

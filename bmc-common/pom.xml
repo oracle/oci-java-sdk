@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.13.0</version>
+    <version>3.13.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,8 +12,6 @@
   <name>Oracle Cloud Infrastructure SDK - Common</name>
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
-
-
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>
@@ -67,12 +65,12 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.13.0</version>
+      <version>3.13.1</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.13.0</version>
+      <version>3.13.1</version>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>

@@ -379,15 +379,15 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The version of VMware software that the Oracle Cloud VMware Solution installed on the
-         * ESXi hosts.
+         * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi
+         * hosts.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
         private String vmwareSoftwareVersion;
 
         /**
-         * The version of VMware software that the Oracle Cloud VMware Solution installed on the
-         * ESXi hosts.
+         * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi
+         * hosts.
          *
          * @param vmwareSoftwareVersion the value to set
          * @return this builder
@@ -921,15 +921,13 @@ public final class EsxiHost extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi
-     * hosts.
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
     private final String vmwareSoftwareVersion;
 
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi
-     * hosts.
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      *
      * @return the value
      */

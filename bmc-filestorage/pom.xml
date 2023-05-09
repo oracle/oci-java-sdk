@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.13.0</version>
+    <version>3.13.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -14,13 +14,11 @@
   <description>This project contains the SDK used for Oracle Cloud Infrastructure File Storage</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
-
-
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.13.0</version>
+      <version>3.13.1</version>
     </dependency>
   </dependencies>
 

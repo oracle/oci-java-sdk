@@ -137,8 +137,9 @@ public interface SddcAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteSddcRequest, DeleteSddcResponse> handler);
 
     /**
-     * Downgrade the specified SDDC from HCX Enterprise to HCX Advanced. Downgrading from HCX
-     * Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
+     * Downgrade the specified SDDC from HCX Enterprise to HCX Advanced. SDDC with standard compute
+     * shapes will always use HCX Enterprise if HCX is enabled and cannot be downgraded. Downgrading
+     * from HCX Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
      * Downgrade remains in a `PENDING` state until the end of the current billing cycle. You can
      * use {@link #cancelDowngradeHcx(CancelDowngradeHcxRequest, Consumer, Consumer)
      * cancelDowngradeHcx} to cancel the downgrade while it's still in a `PENDING` state.

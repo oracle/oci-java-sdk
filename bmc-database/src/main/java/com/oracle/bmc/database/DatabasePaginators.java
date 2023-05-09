@@ -6031,6 +6031,124 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listOneoffPatches operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOneoffPatchesResponse> listOneoffPatchesResponseIterator(
+            final ListOneoffPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOneoffPatchesRequest.Builder,
+                ListOneoffPatchesRequest,
+                ListOneoffPatchesResponse>(
+                new java.util.function.Supplier<ListOneoffPatchesRequest.Builder>() {
+                    @Override
+                    public ListOneoffPatchesRequest.Builder get() {
+                        return ListOneoffPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOneoffPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListOneoffPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOneoffPatchesRequest.Builder>,
+                        ListOneoffPatchesRequest>() {
+                    @Override
+                    public ListOneoffPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOneoffPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOneoffPatchesRequest, ListOneoffPatchesResponse>() {
+                    @Override
+                    public ListOneoffPatchesResponse apply(ListOneoffPatchesRequest request) {
+                        return client.listOneoffPatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.OneoffPatchSummary} objects contained in responses from the
+     * listOneoffPatches operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.OneoffPatchSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.OneoffPatchSummary>
+            listOneoffPatchesRecordIterator(final ListOneoffPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOneoffPatchesRequest.Builder,
+                ListOneoffPatchesRequest,
+                ListOneoffPatchesResponse,
+                com.oracle.bmc.database.model.OneoffPatchSummary>(
+                new java.util.function.Supplier<ListOneoffPatchesRequest.Builder>() {
+                    @Override
+                    public ListOneoffPatchesRequest.Builder get() {
+                        return ListOneoffPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOneoffPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListOneoffPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOneoffPatchesRequest.Builder>,
+                        ListOneoffPatchesRequest>() {
+                    @Override
+                    public ListOneoffPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOneoffPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOneoffPatchesRequest, ListOneoffPatchesResponse>() {
+                    @Override
+                    public ListOneoffPatchesResponse apply(ListOneoffPatchesRequest request) {
+                        return client.listOneoffPatches(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOneoffPatchesResponse,
+                        java.util.List<com.oracle.bmc.database.model.OneoffPatchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.OneoffPatchSummary> apply(
+                            ListOneoffPatchesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listPdbConversionHistoryEntries operation. This iterable will fetch more data from the server
      * as needed.
      *

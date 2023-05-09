@@ -550,6 +550,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Move the one-off patch to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOneoffPatchCompartmentResponse> changeOneoffPatchCompartment(
+            ChangeOneoffPatchCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeOneoffPatchCompartmentRequest,
+                            ChangeOneoffPatchCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata
      * Cloud@Customer instances only. To move a cloud VM cluster in an Exadata Cloud Service
      * instance to another compartment, use the {@link
@@ -1053,6 +1070,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates one-off patch for specified database version to download.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOneoffPatchResponse> createOneoffPatch(
+            CreateOneoffPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOneoffPatchRequest, CreateOneoffPatchResponse>
+                    handler);
+
+    /**
      * Creates and starts a pluggable database in the specified container database. Use the {@link
      * #startPluggableDatabase(StartPluggableDatabaseRequest, Consumer, Consumer)
      * startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest,
@@ -1473,6 +1506,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOneoffPatchResponse> deleteOneoffPatch(
+            DeleteOneoffPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>
+                    handler);
+
+    /**
      * Deletes the specified pluggable database.
      *
      * @param request The request object containing the details to send
@@ -1775,6 +1824,22 @@ public interface DatabaseAsync extends AutoCloseable {
                                     DownloadExadataInfrastructureConfigFileRequest,
                                     DownloadExadataInfrastructureConfigFileResponse>
                             handler);
+
+    /**
+     * Download one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadOneoffPatchResponse> downloadOneoffPatch(
+            DownloadOneoffPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadOneoffPatchRequest, DownloadOneoffPatchResponse>
+                    handler);
 
     /**
      * Downloads the network validation report file for the specified VM cluster network. Applies to
@@ -2963,6 +3028,21 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOneoffPatchResponse> getOneoffPatch(
+            GetOneoffPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetOneoffPatchRequest, GetOneoffPatchResponse>
+                    handler);
+
+    /**
      * Gets the details of operations performed to convert the specified database from non-container
      * (non-CDB) to pluggable (PDB).
      *
@@ -4076,6 +4156,22 @@ public interface DatabaseAsync extends AutoCloseable {
             ListMaintenanceRunsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListMaintenanceRunsRequest, ListMaintenanceRunsResponse>
+                    handler);
+
+    /**
+     * Lists one-off patches in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOneoffPatchesResponse> listOneoffPatches(
+            ListOneoffPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOneoffPatchesRequest, ListOneoffPatchesResponse>
                     handler);
 
     /**
@@ -5401,6 +5497,22 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateMaintenanceRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateMaintenanceRunRequest, UpdateMaintenanceRunResponse>
+                    handler);
+
+    /**
+     * Updates the properties of the specified one-off patch.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOneoffPatchResponse> updateOneoffPatch(
+            UpdateOneoffPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOneoffPatchRequest, UpdateOneoffPatchResponse>
                     handler);
 
     /**

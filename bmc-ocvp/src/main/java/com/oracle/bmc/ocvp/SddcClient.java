@@ -376,6 +376,7 @@ public class SddcClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("hostShapeName", request.getHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
