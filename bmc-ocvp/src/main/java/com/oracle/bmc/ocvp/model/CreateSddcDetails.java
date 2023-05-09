@@ -49,6 +49,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
         "initialHostOcpuCount",
         "isShieldedInstanceEnabled",
         "capacityReservationId",
+        "datastores",
         "freeformTags",
         "definedTags"
     })
@@ -80,6 +81,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
             Float initialHostOcpuCount,
             Boolean isShieldedInstanceEnabled,
             String capacityReservationId,
+            java.util.List<DatastoreInfo> datastores,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -110,6 +112,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
         this.initialHostOcpuCount = initialHostOcpuCount;
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
         this.capacityReservationId = capacityReservationId;
+        this.datastores = datastores;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -275,14 +278,16 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Indicates whether to enable HCX for this SDDC.
+         * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC.
+         * For SDDC with standard compute shapes, this parameter is equivalent to {@code isHcxEnterpriseEnabled}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
         private Boolean isHcxEnabled;
 
         /**
-         * Indicates whether to enable HCX for this SDDC.
+         * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC.
+         * For SDDC with standard compute shapes, this parameter is equivalent to {@code isHcxEnterpriseEnabled}.
          *
          * @param isHcxEnabled the value to set
          * @return this builder
@@ -669,6 +674,26 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * A list of datastore info for the SDDC.
+         * This value is required only when {@code initialHostShapeName} is a standard shape.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("datastores")
+        private java.util.List<DatastoreInfo> datastores;
+
+        /**
+         * A list of datastore info for the SDDC.
+         * This value is required only when {@code initialHostShapeName} is a standard shape.
+         *
+         * @param datastores the value to set
+         * @return this builder
+         **/
+        public Builder datastores(java.util.List<DatastoreInfo> datastores) {
+            this.datastores = datastores;
+            this.__explicitlySet__.add("datastores");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -751,6 +776,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
                             this.initialHostOcpuCount,
                             this.isShieldedInstanceEnabled,
                             this.capacityReservationId,
+                            this.datastores,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -841,6 +867,9 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("datastores")) {
+                this.datastores(model.getDatastores());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1008,14 +1037,16 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC.
+     * For SDDC with standard compute shapes, this parameter is equivalent to {@code isHcxEnterpriseEnabled}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
     private final Boolean isHcxEnabled;
 
     /**
-     * Indicates whether to enable HCX for this SDDC.
+     * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC.
+     * For SDDC with standard compute shapes, this parameter is equivalent to {@code isHcxEnterpriseEnabled}.
      *
      * @return the value
      **/
@@ -1362,6 +1393,24 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * A list of datastore info for the SDDC.
+     * This value is required only when {@code initialHostShapeName} is a standard shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("datastores")
+    private final java.util.List<DatastoreInfo> datastores;
+
+    /**
+     * A list of datastore info for the SDDC.
+     * This value is required only when {@code initialHostShapeName} is a standard shape.
+     *
+     * @return the value
+     **/
+    public java.util.List<DatastoreInfo> getDatastores() {
+        return datastores;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -1449,6 +1498,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", isShieldedInstanceEnabled=")
                 .append(String.valueOf(this.isShieldedInstanceEnabled));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", datastores=").append(String.valueOf(this.datastores));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1496,6 +1546,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(
                         this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.datastores, other.datastores)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1602,6 +1653,7 @@ public final class CreateSddcDetails extends com.oracle.bmc.http.internal.Explic
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result = (result * PRIME) + (this.datastores == null ? 43 : this.datastores.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

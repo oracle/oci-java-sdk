@@ -25,6 +25,9 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         "autoBackupEnabled",
         "recoveryWindowInDays",
         "autoBackupWindow",
+        "autoFullBackupWindow",
+        "autoFullBackupDay",
+        "runImmediateFullBackup",
         "backupDestinationDetails",
         "backupDeletionPolicy"
     })
@@ -32,12 +35,18 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
             Boolean autoBackupEnabled,
             Integer recoveryWindowInDays,
             AutoBackupWindow autoBackupWindow,
+            AutoFullBackupWindow autoFullBackupWindow,
+            AutoFullBackupDay autoFullBackupDay,
+            Boolean runImmediateFullBackup,
             java.util.List<BackupDestinationDetails> backupDestinationDetails,
             BackupDeletionPolicy backupDeletionPolicy) {
         super();
         this.autoBackupEnabled = autoBackupEnabled;
         this.recoveryWindowInDays = recoveryWindowInDays;
         this.autoBackupWindow = autoBackupWindow;
+        this.autoFullBackupWindow = autoFullBackupWindow;
+        this.autoFullBackupDay = autoFullBackupDay;
+        this.runImmediateFullBackup = runImmediateFullBackup;
         this.backupDestinationDetails = backupDestinationDetails;
         this.backupDeletionPolicy = backupDeletionPolicy;
     }
@@ -105,6 +114,60 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+         * <p>
+         * Example: {@code SLOT_TWO}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autoFullBackupWindow")
+        private AutoFullBackupWindow autoFullBackupWindow;
+
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+         * <p>
+         * Example: {@code SLOT_TWO}
+         *
+         * @param autoFullBackupWindow the value to set
+         * @return this builder
+         **/
+        public Builder autoFullBackupWindow(AutoFullBackupWindow autoFullBackupWindow) {
+            this.autoFullBackupWindow = autoFullBackupWindow;
+            this.__explicitlySet__.add("autoFullBackupWindow");
+            return this;
+        }
+        /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autoFullBackupDay")
+        private AutoFullBackupDay autoFullBackupDay;
+
+        /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         * @param autoFullBackupDay the value to set
+         * @return this builder
+         **/
+        public Builder autoFullBackupDay(AutoFullBackupDay autoFullBackupDay) {
+            this.autoFullBackupDay = autoFullBackupDay;
+            this.__explicitlySet__.add("autoFullBackupDay");
+            return this;
+        }
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("runImmediateFullBackup")
+        private Boolean runImmediateFullBackup;
+
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         * @param runImmediateFullBackup the value to set
+         * @return this builder
+         **/
+        public Builder runImmediateFullBackup(Boolean runImmediateFullBackup) {
+            this.runImmediateFullBackup = runImmediateFullBackup;
+            this.__explicitlySet__.add("runImmediateFullBackup");
+            return this;
+        }
+        /**
          * Backup destination details.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
@@ -147,6 +210,9 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
                             this.autoBackupEnabled,
                             this.recoveryWindowInDays,
                             this.autoBackupWindow,
+                            this.autoFullBackupWindow,
+                            this.autoFullBackupDay,
+                            this.runImmediateFullBackup,
                             this.backupDestinationDetails,
                             this.backupDeletionPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -165,6 +231,15 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("autoBackupWindow")) {
                 this.autoBackupWindow(model.getAutoBackupWindow());
+            }
+            if (model.wasPropertyExplicitlySet("autoFullBackupWindow")) {
+                this.autoFullBackupWindow(model.getAutoFullBackupWindow());
+            }
+            if (model.wasPropertyExplicitlySet("autoFullBackupDay")) {
+                this.autoFullBackupDay(model.getAutoFullBackupDay());
+            }
+            if (model.wasPropertyExplicitlySet("runImmediateFullBackup")) {
+                this.runImmediateFullBackup(model.getRunImmediateFullBackup());
             }
             if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
                 this.backupDestinationDetails(model.getBackupDestinationDetails());
@@ -303,6 +378,168 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
+     * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+     * <p>
+     * Example: {@code SLOT_TWO}
+     *
+     **/
+    public enum AutoFullBackupWindow {
+        SlotOne("SLOT_ONE"),
+        SlotTwo("SLOT_TWO"),
+        SlotThree("SLOT_THREE"),
+        SlotFour("SLOT_FOUR"),
+        SlotFive("SLOT_FIVE"),
+        SlotSix("SLOT_SIX"),
+        SlotSeven("SLOT_SEVEN"),
+        SlotEight("SLOT_EIGHT"),
+        SlotNine("SLOT_NINE"),
+        SlotTen("SLOT_TEN"),
+        SlotEleven("SLOT_ELEVEN"),
+        SlotTwelve("SLOT_TWELVE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutoFullBackupWindow.class);
+
+        private final String value;
+        private static java.util.Map<String, AutoFullBackupWindow> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutoFullBackupWindow v : AutoFullBackupWindow.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutoFullBackupWindow(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutoFullBackupWindow create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutoFullBackupWindow', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+     * <p>
+     * Example: {@code SLOT_TWO}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoFullBackupWindow")
+    private final AutoFullBackupWindow autoFullBackupWindow;
+
+    /**
+     * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+     * <p>
+     * Example: {@code SLOT_TWO}
+     *
+     * @return the value
+     **/
+    public AutoFullBackupWindow getAutoFullBackupWindow() {
+        return autoFullBackupWindow;
+    }
+
+    /**
+     * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+     **/
+    public enum AutoFullBackupDay {
+        Sunday("SUNDAY"),
+        Monday("MONDAY"),
+        Tuesday("TUESDAY"),
+        Wednesday("WEDNESDAY"),
+        Thursday("THURSDAY"),
+        Friday("FRIDAY"),
+        Saturday("SATURDAY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutoFullBackupDay.class);
+
+        private final String value;
+        private static java.util.Map<String, AutoFullBackupDay> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutoFullBackupDay v : AutoFullBackupDay.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutoFullBackupDay(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutoFullBackupDay create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutoFullBackupDay', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoFullBackupDay")
+    private final AutoFullBackupDay autoFullBackupDay;
+
+    /**
+     * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+     * @return the value
+     **/
+    public AutoFullBackupDay getAutoFullBackupDay() {
+        return autoFullBackupDay;
+    }
+
+    /**
+     * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("runImmediateFullBackup")
+    private final Boolean runImmediateFullBackup;
+
+    /**
+     * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+     * @return the value
+     **/
+    public Boolean getRunImmediateFullBackup() {
+        return runImmediateFullBackup;
+    }
+
+    /**
      * Backup destination details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
@@ -395,6 +632,9 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         sb.append("autoBackupEnabled=").append(String.valueOf(this.autoBackupEnabled));
         sb.append(", recoveryWindowInDays=").append(String.valueOf(this.recoveryWindowInDays));
         sb.append(", autoBackupWindow=").append(String.valueOf(this.autoBackupWindow));
+        sb.append(", autoFullBackupWindow=").append(String.valueOf(this.autoFullBackupWindow));
+        sb.append(", autoFullBackupDay=").append(String.valueOf(this.autoFullBackupDay));
+        sb.append(", runImmediateFullBackup=").append(String.valueOf(this.runImmediateFullBackup));
         sb.append(", backupDestinationDetails=")
                 .append(String.valueOf(this.backupDestinationDetails));
         sb.append(", backupDeletionPolicy=").append(String.valueOf(this.backupDeletionPolicy));
@@ -415,6 +655,10 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         return java.util.Objects.equals(this.autoBackupEnabled, other.autoBackupEnabled)
                 && java.util.Objects.equals(this.recoveryWindowInDays, other.recoveryWindowInDays)
                 && java.util.Objects.equals(this.autoBackupWindow, other.autoBackupWindow)
+                && java.util.Objects.equals(this.autoFullBackupWindow, other.autoFullBackupWindow)
+                && java.util.Objects.equals(this.autoFullBackupDay, other.autoFullBackupDay)
+                && java.util.Objects.equals(
+                        this.runImmediateFullBackup, other.runImmediateFullBackup)
                 && java.util.Objects.equals(
                         this.backupDestinationDetails, other.backupDestinationDetails)
                 && java.util.Objects.equals(this.backupDeletionPolicy, other.backupDeletionPolicy)
@@ -436,6 +680,19 @@ public final class DbBackupConfig extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.autoBackupWindow == null ? 43 : this.autoBackupWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoFullBackupWindow == null
+                                ? 43
+                                : this.autoFullBackupWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoFullBackupDay == null ? 43 : this.autoFullBackupDay.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.runImmediateFullBackup == null
+                                ? 43
+                                : this.runImmediateFullBackup.hashCode());
         result =
                 (result * PRIME)
                         + (this.backupDestinationDetails == null

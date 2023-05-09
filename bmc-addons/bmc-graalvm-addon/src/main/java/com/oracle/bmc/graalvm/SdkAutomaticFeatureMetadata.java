@@ -5,6 +5,7 @@
 package com.oracle.bmc.graalvm;
 
 @SdkClientPackages({
+    "com.oracle.bmc.accessgovernancecp.SdkClientsMetadata",
     "com.oracle.bmc.aianomalydetection.SdkClientsMetadata",
     "com.oracle.bmc.aidocument.SdkClientsMetadata",
     "com.oracle.bmc.ailanguage.SdkClientsMetadata",
