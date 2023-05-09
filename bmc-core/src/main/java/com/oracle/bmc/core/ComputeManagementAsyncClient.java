@@ -1705,6 +1705,54 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SoftstopInstancePoolResponse> softstopInstancePool(
+            SoftstopInstancePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SoftstopInstancePoolRequest, SoftstopInstancePoolResponse>
+                    handler) {
+        LOG.trace("Called async softstopInstancePool");
+        final SoftstopInstancePoolRequest interceptedRequest =
+                SoftstopInstancePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SoftstopInstancePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ComputeManagement",
+                        "SoftstopInstancePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftstopInstancePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, SoftstopInstancePoolResponse>
+                transformer =
+                        SoftstopInstancePoolConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SoftstopInstancePoolRequest, SoftstopInstancePoolResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SoftstopInstancePoolRequest, SoftstopInstancePoolResponse>,
+                        java.util.concurrent.Future<SoftstopInstancePoolResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SoftstopInstancePoolRequest, SoftstopInstancePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInstancePoolResponse> startInstancePool(
             StartInstancePoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

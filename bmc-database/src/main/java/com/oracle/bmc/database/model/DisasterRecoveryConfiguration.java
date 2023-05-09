@@ -22,10 +22,19 @@ package com.oracle.bmc.database.model;
 public final class DisasterRecoveryConfiguration
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"disasterRecoveryType"})
-    public DisasterRecoveryConfiguration(DisasterRecoveryType disasterRecoveryType) {
+    @java.beans.ConstructorProperties({
+        "disasterRecoveryType",
+        "timeSnapshotStandbyEnabledTill",
+        "isSnapshotStandby"
+    })
+    public DisasterRecoveryConfiguration(
+            DisasterRecoveryType disasterRecoveryType,
+            java.util.Date timeSnapshotStandbyEnabledTill,
+            Boolean isSnapshotStandby) {
         super();
         this.disasterRecoveryType = disasterRecoveryType;
+        this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
+        this.isSnapshotStandby = isSnapshotStandby;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -52,13 +61,51 @@ public final class DisasterRecoveryConfiguration
             this.__explicitlySet__.add("disasterRecoveryType");
             return this;
         }
+        /**
+         * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotStandbyEnabledTill")
+        private java.util.Date timeSnapshotStandbyEnabledTill;
+
+        /**
+         * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+         * @param timeSnapshotStandbyEnabledTill the value to set
+         * @return this builder
+         **/
+        public Builder timeSnapshotStandbyEnabledTill(
+                java.util.Date timeSnapshotStandbyEnabledTill) {
+            this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
+            this.__explicitlySet__.add("timeSnapshotStandbyEnabledTill");
+            return this;
+        }
+        /**
+         * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotStandby")
+        private Boolean isSnapshotStandby;
+
+        /**
+         * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+         *
+         * @param isSnapshotStandby the value to set
+         * @return this builder
+         **/
+        public Builder isSnapshotStandby(Boolean isSnapshotStandby) {
+            this.isSnapshotStandby = isSnapshotStandby;
+            this.__explicitlySet__.add("isSnapshotStandby");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DisasterRecoveryConfiguration build() {
             DisasterRecoveryConfiguration model =
-                    new DisasterRecoveryConfiguration(this.disasterRecoveryType);
+                    new DisasterRecoveryConfiguration(
+                            this.disasterRecoveryType,
+                            this.timeSnapshotStandbyEnabledTill,
+                            this.isSnapshotStandby);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -69,6 +116,12 @@ public final class DisasterRecoveryConfiguration
         public Builder copy(DisasterRecoveryConfiguration model) {
             if (model.wasPropertyExplicitlySet("disasterRecoveryType")) {
                 this.disasterRecoveryType(model.getDisasterRecoveryType());
+            }
+            if (model.wasPropertyExplicitlySet("timeSnapshotStandbyEnabledTill")) {
+                this.timeSnapshotStandbyEnabledTill(model.getTimeSnapshotStandbyEnabledTill());
+            }
+            if (model.wasPropertyExplicitlySet("isSnapshotStandby")) {
+                this.isSnapshotStandby(model.getIsSnapshotStandby());
             }
             return this;
         }
@@ -156,6 +209,36 @@ public final class DisasterRecoveryConfiguration
         return disasterRecoveryType;
     }
 
+    /**
+     * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotStandbyEnabledTill")
+    private final java.util.Date timeSnapshotStandbyEnabledTill;
+
+    /**
+     * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     * @return the value
+     **/
+    public java.util.Date getTimeSnapshotStandbyEnabledTill() {
+        return timeSnapshotStandbyEnabledTill;
+    }
+
+    /**
+     * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotStandby")
+    private final Boolean isSnapshotStandby;
+
+    /**
+     * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSnapshotStandby() {
+        return isSnapshotStandby;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -171,6 +254,9 @@ public final class DisasterRecoveryConfiguration
         sb.append("DisasterRecoveryConfiguration(");
         sb.append("super=").append(super.toString());
         sb.append("disasterRecoveryType=").append(String.valueOf(this.disasterRecoveryType));
+        sb.append(", timeSnapshotStandbyEnabledTill=")
+                .append(String.valueOf(this.timeSnapshotStandbyEnabledTill));
+        sb.append(", isSnapshotStandby=").append(String.valueOf(this.isSnapshotStandby));
         sb.append(")");
         return sb.toString();
     }
@@ -186,6 +272,9 @@ public final class DisasterRecoveryConfiguration
 
         DisasterRecoveryConfiguration other = (DisasterRecoveryConfiguration) o;
         return java.util.Objects.equals(this.disasterRecoveryType, other.disasterRecoveryType)
+                && java.util.Objects.equals(
+                        this.timeSnapshotStandbyEnabledTill, other.timeSnapshotStandbyEnabledTill)
+                && java.util.Objects.equals(this.isSnapshotStandby, other.isSnapshotStandby)
                 && super.equals(other);
     }
 
@@ -198,6 +287,14 @@ public final class DisasterRecoveryConfiguration
                         + (this.disasterRecoveryType == null
                                 ? 43
                                 : this.disasterRecoveryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSnapshotStandbyEnabledTill == null
+                                ? 43
+                                : this.timeSnapshotStandbyEnabledTill.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSnapshotStandby == null ? 43 : this.isSnapshotStandby.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

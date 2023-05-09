@@ -1871,6 +1871,63 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeOneoffPatchCompartmentResponse>
+            changeOneoffPatchCompartment(
+                    ChangeOneoffPatchCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOneoffPatchCompartmentRequest,
+                                    ChangeOneoffPatchCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeOneoffPatchCompartment");
+        final ChangeOneoffPatchCompartmentRequest interceptedRequest =
+                ChangeOneoffPatchCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOneoffPatchCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeOneoffPatchCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/ChangeOneoffPatchCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeOneoffPatchCompartmentResponse>
+                transformer =
+                        ChangeOneoffPatchCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeOneoffPatchCompartmentRequest, ChangeOneoffPatchCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeOneoffPatchCompartmentRequest,
+                                ChangeOneoffPatchCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeOneoffPatchCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeOneoffPatchCompartmentRequest, ChangeOneoffPatchCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeVmClusterCompartmentResponse>
             changeVmClusterCompartment(
                     ChangeVmClusterCompartmentRequest request,
@@ -3369,6 +3426,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOneoffPatchResponse> createOneoffPatch(
+            CreateOneoffPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateOneoffPatchRequest, CreateOneoffPatchResponse>
+                    handler) {
+        LOG.trace("Called async createOneoffPatch");
+        final CreateOneoffPatchRequest interceptedRequest =
+                CreateOneoffPatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOneoffPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/CreateOneoffPatch");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateOneoffPatchResponse>
+                transformer =
+                        CreateOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateOneoffPatchRequest, CreateOneoffPatchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOneoffPatchRequest, CreateOneoffPatchResponse>,
+                        java.util.concurrent.Future<CreateOneoffPatchResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOneoffPatchDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOneoffPatchRequest, CreateOneoffPatchResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePluggableDatabaseResponse> createPluggableDatabase(
             CreatePluggableDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4509,6 +4618,52 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOneoffPatchResponse> deleteOneoffPatch(
+            DeleteOneoffPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>
+                    handler) {
+        LOG.trace("Called async deleteOneoffPatch");
+        final DeleteOneoffPatchRequest interceptedRequest =
+                DeleteOneoffPatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOneoffPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/DeleteOneoffPatch");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteOneoffPatchResponse>
+                transformer =
+                        DeleteOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>,
+                        java.util.concurrent.Future<DeleteOneoffPatchResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOneoffPatchRequest, DeleteOneoffPatchResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePluggableDatabaseResponse> deletePluggableDatabase(
             DeletePluggableDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5430,6 +5585,54 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DownloadExadataInfrastructureConfigFileRequest,
                     DownloadExadataInfrastructureConfigFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DownloadOneoffPatchResponse> downloadOneoffPatch(
+            DownloadOneoffPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DownloadOneoffPatchRequest, DownloadOneoffPatchResponse>
+                    handler) {
+        LOG.trace("Called async downloadOneoffPatch");
+        final DownloadOneoffPatchRequest interceptedRequest =
+                DownloadOneoffPatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadOneoffPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DownloadOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/DownloadOneoffPatch");
+        final java.util.function.Function<javax.ws.rs.core.Response, DownloadOneoffPatchResponse>
+                transformer =
+                        DownloadOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DownloadOneoffPatchRequest, DownloadOneoffPatchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DownloadOneoffPatchRequest, DownloadOneoffPatchResponse>,
+                        java.util.concurrent.Future<DownloadOneoffPatchResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DownloadOneoffPatchRequest, DownloadOneoffPatchResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8867,6 +9070,51 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOneoffPatchResponse> getOneoffPatch(
+            GetOneoffPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOneoffPatchRequest, GetOneoffPatchResponse>
+                    handler) {
+        LOG.trace("Called async getOneoffPatch");
+        final GetOneoffPatchRequest interceptedRequest =
+                GetOneoffPatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOneoffPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/GetOneoffPatch");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetOneoffPatchResponse>
+                transformer =
+                        GetOneoffPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetOneoffPatchRequest, GetOneoffPatchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOneoffPatchRequest, GetOneoffPatchResponse>,
+                        java.util.concurrent.Future<GetOneoffPatchResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOneoffPatchRequest, GetOneoffPatchResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPdbConversionHistoryEntryResponse>
             getPdbConversionHistoryEntry(
                     GetPdbConversionHistoryEntryRequest request,
@@ -11941,6 +12189,52 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListMaintenanceRunsRequest, ListMaintenanceRunsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOneoffPatchesResponse> listOneoffPatches(
+            ListOneoffPatchesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOneoffPatchesRequest, ListOneoffPatchesResponse>
+                    handler) {
+        LOG.trace("Called async listOneoffPatches");
+        final ListOneoffPatchesRequest interceptedRequest =
+                ListOneoffPatchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOneoffPatchesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListOneoffPatches",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/ListOneoffPatches");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListOneoffPatchesResponse>
+                transformer =
+                        ListOneoffPatchesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListOneoffPatchesRequest, ListOneoffPatchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOneoffPatchesRequest, ListOneoffPatchesResponse>,
+                        java.util.concurrent.Future<ListOneoffPatchesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOneoffPatchesRequest, ListOneoffPatchesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -15772,6 +16066,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateMaintenanceRunRequest, UpdateMaintenanceRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOneoffPatchResponse> updateOneoffPatch(
+            UpdateOneoffPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOneoffPatchRequest, UpdateOneoffPatchResponse>
+                    handler) {
+        LOG.trace("Called async updateOneoffPatch");
+        final UpdateOneoffPatchRequest interceptedRequest =
+                UpdateOneoffPatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOneoffPatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateOneoffPatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/UpdateOneoffPatch");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateOneoffPatchResponse>
+                transformer =
+                        UpdateOneoffPatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateOneoffPatchRequest, UpdateOneoffPatchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOneoffPatchRequest, UpdateOneoffPatchResponse>,
+                        java.util.concurrent.Future<UpdateOneoffPatchResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOneoffPatchDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOneoffPatchRequest, UpdateOneoffPatchResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

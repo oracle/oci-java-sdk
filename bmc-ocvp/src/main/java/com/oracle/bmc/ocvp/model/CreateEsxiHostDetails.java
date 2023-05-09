@@ -267,9 +267,9 @@ public final class CreateEsxiHostDetails
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * will be upgraded. This is an optional parameter. If this parameter
-         * is specified, an ESXi host with new version will be created to replace the
-         * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
-         * created Esxi host.
+         * is specified, an ESXi host with the new software version is created to replace the
+         * original one, and the {@code nonUpgradedEsxiHostId} field is updated in the newly
+         * created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more information.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
@@ -278,9 +278,9 @@ public final class CreateEsxiHostDetails
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * will be upgraded. This is an optional parameter. If this parameter
-         * is specified, an ESXi host with new version will be created to replace the
-         * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
-         * created Esxi host.
+         * is specified, an ESXi host with the new software version is created to replace the
+         * original one, and the {@code nonUpgradedEsxiHostId} field is updated in the newly
+         * created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more information.
          *
          * @param nonUpgradedEsxiHostId the value to set
          * @return this builder
@@ -600,9 +600,9 @@ public final class CreateEsxiHostDetails
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * will be upgraded. This is an optional parameter. If this parameter
-     * is specified, an ESXi host with new version will be created to replace the
-     * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
-     * created Esxi host.
+     * is specified, an ESXi host with the new software version is created to replace the
+     * original one, and the {@code nonUpgradedEsxiHostId} field is updated in the newly
+     * created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
@@ -611,9 +611,9 @@ public final class CreateEsxiHostDetails
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * will be upgraded. This is an optional parameter. If this parameter
-     * is specified, an ESXi host with new version will be created to replace the
-     * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
-     * created Esxi host.
+     * is specified, an ESXi host with the new software version is created to replace the
+     * original one, and the {@code nonUpgradedEsxiHostId} field is updated in the newly
+     * created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm) for more information.
      *
      * @return the value
      **/
