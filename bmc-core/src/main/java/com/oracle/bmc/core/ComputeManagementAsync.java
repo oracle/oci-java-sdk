@@ -499,6 +499,27 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Performs the softstop (ACPI shutdown and power on) action on the specified instance pool,
+     * which performs the action on all the instances in the pool.
+     *
+     * <p>Softstop gracefully reboots the instances by sending a shutdown command to the operating
+     * systems. After waiting 15 minutes for the OS to shutdown, the instances are powered off and
+     * then powered back on.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SoftstopInstancePoolResponse> softstopInstancePool(
+            SoftstopInstancePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SoftstopInstancePoolRequest, SoftstopInstancePoolResponse>
+                    handler);
+
+    /**
      * Performs the start (power on) action on the specified instance pool, which performs the
      * action on all the instances in the pool.
      *

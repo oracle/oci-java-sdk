@@ -1086,6 +1086,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeOneoffPatchCompartmentResponse changeOneoffPatchCompartment(
+            ChangeOneoffPatchCompartmentRequest request) {
+        Objects.requireNonNull(
+                request.getChangeCompartmentDetails(), "changeCompartmentDetails is required");
+
+        Validate.notBlank(request.getOneoffPatchId(), "oneoffPatchId must not be blank");
+
+        return clientCall(request, ChangeOneoffPatchCompartmentResponse::builder)
+                .logger(LOG, "changeOneoffPatchCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeOneoffPatchCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/ChangeOneoffPatchCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOneoffPatchCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .appendPathParam(request.getOneoffPatchId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeOneoffPatchCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOneoffPatchCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
             ChangeVmClusterCompartmentRequest request) {
         Objects.requireNonNull(
@@ -1997,6 +2032,36 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateOneoffPatchResponse createOneoffPatch(CreateOneoffPatchRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOneoffPatchDetails(), "createOneoffPatchDetails is required");
+
+        return clientCall(request, CreateOneoffPatchResponse::builder)
+                .logger(LOG, "createOneoffPatch")
+                .serviceDetails(
+                        "Database",
+                        "CreateOneoffPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/CreateOneoffPatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOneoffPatchRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.OneoffPatch.class,
+                        CreateOneoffPatchResponse.Builder::oneoffPatch)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateOneoffPatchResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateOneoffPatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOneoffPatchResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreatePluggableDatabaseResponse createPluggableDatabase(
             CreatePluggableDatabaseRequest request) {
         Objects.requireNonNull(
@@ -2673,6 +2738,32 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteOneoffPatchResponse deleteOneoffPatch(DeleteOneoffPatchRequest request) {
+
+        Validate.notBlank(request.getOneoffPatchId(), "oneoffPatchId must not be blank");
+
+        return clientCall(request, DeleteOneoffPatchResponse::builder)
+                .logger(LOG, "deleteOneoffPatch")
+                .serviceDetails(
+                        "Database",
+                        "DeleteOneoffPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/DeleteOneoffPatch")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOneoffPatchRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .appendPathParam(request.getOneoffPatchId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteOneoffPatchResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOneoffPatchResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeletePluggableDatabaseResponse deletePluggableDatabase(
             DeletePluggableDatabaseRequest request) {
 
@@ -3291,6 +3382,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderDate(
                         "last-modified",
                         DownloadExadataInfrastructureConfigFileResponse.Builder::lastModified)
+                .callSync();
+    }
+
+    @Override
+    public DownloadOneoffPatchResponse downloadOneoffPatch(DownloadOneoffPatchRequest request) {
+
+        Validate.notBlank(request.getOneoffPatchId(), "oneoffPatchId must not be blank");
+
+        return clientCall(request, DownloadOneoffPatchResponse::builder)
+                .logger(LOG, "downloadOneoffPatch")
+                .serviceDetails(
+                        "Database",
+                        "DownloadOneoffPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/DownloadOneoffPatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadOneoffPatchRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .appendPathParam(request.getOneoffPatchId())
+                .appendPathParam("actions")
+                .appendPathParam("downloadOneoffPatch")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.database.model.DownloadOneoffPatch.class,
+                        DownloadOneoffPatchResponse.Builder::downloadOneoffPatch)
+                .handleResponseHeaderString("etag", DownloadOneoffPatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DownloadOneoffPatchResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -5526,6 +5648,33 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetOneoffPatchResponse getOneoffPatch(GetOneoffPatchRequest request) {
+
+        Validate.notBlank(request.getOneoffPatchId(), "oneoffPatchId must not be blank");
+
+        return clientCall(request, GetOneoffPatchResponse::builder)
+                .logger(LOG, "getOneoffPatch")
+                .serviceDetails(
+                        "Database",
+                        "GetOneoffPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/GetOneoffPatch")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOneoffPatchRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .appendPathParam(request.getOneoffPatchId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.OneoffPatch.class,
+                        GetOneoffPatchResponse.Builder::oneoffPatch)
+                .handleResponseHeaderString("etag", GetOneoffPatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOneoffPatchResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetPdbConversionHistoryEntryResponse getPdbConversionHistoryEntry(
             GetPdbConversionHistoryEntryRequest request) {
 
@@ -7643,6 +7792,39 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListMaintenanceRunsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMaintenanceRunsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOneoffPatchesResponse listOneoffPatches(ListOneoffPatchesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOneoffPatchesResponse::builder)
+                .logger(LOG, "listOneoffPatches")
+                .serviceDetails(
+                        "Database",
+                        "ListOneoffPatches",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/ListOneoffPatches")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOneoffPatchesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.OneoffPatchSummary.class,
+                        ListOneoffPatchesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOneoffPatchesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOneoffPatchesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -10287,6 +10469,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateMaintenanceRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateMaintenanceRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateOneoffPatchResponse updateOneoffPatch(UpdateOneoffPatchRequest request) {
+
+        Validate.notBlank(request.getOneoffPatchId(), "oneoffPatchId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOneoffPatchDetails(), "updateOneoffPatchDetails is required");
+
+        return clientCall(request, UpdateOneoffPatchResponse::builder)
+                .logger(LOG, "updateOneoffPatch")
+                .serviceDetails(
+                        "Database",
+                        "UpdateOneoffPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/OneoffPatch/UpdateOneoffPatch")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOneoffPatchRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("oneoffPatches")
+                .appendPathParam(request.getOneoffPatchId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.OneoffPatch.class,
+                        UpdateOneoffPatchResponse.Builder::oneoffPatch)
+                .handleResponseHeaderString("etag", UpdateOneoffPatchResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOneoffPatchResponse.Builder::opcRequestId)
                 .callSync();
     }
 

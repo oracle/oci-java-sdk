@@ -26,6 +26,8 @@ public final class InstanceConfigurationCreateVolumeDetails
         "availabilityDomain",
         "backupPolicyId",
         "compartmentId",
+        "isAutoTuneEnabled",
+        "blockVolumeReplicas",
         "definedTags",
         "displayName",
         "freeformTags",
@@ -39,6 +41,8 @@ public final class InstanceConfigurationCreateVolumeDetails
             String availabilityDomain,
             String backupPolicyId,
             String compartmentId,
+            Boolean isAutoTuneEnabled,
+            java.util.List<InstanceConfigurationBlockVolumeReplicaDetails> blockVolumeReplicas,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
@@ -51,6 +55,8 @@ public final class InstanceConfigurationCreateVolumeDetails
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
         this.compartmentId = compartmentId;
+        this.isAutoTuneEnabled = isAutoTuneEnabled;
+        this.blockVolumeReplicas = blockVolumeReplicas;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -116,6 +122,48 @@ public final class InstanceConfigurationCreateVolumeDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Specifies whether the auto-tune performance is enabled for this boot volume. This field
+         * is deprecated. Use the {@code InstanceConfigurationDetachedVolumeAutotunePolicy} instead
+         * to enable the volume for detached autotune.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+        private Boolean isAutoTuneEnabled;
+
+        /**
+         * Specifies whether the auto-tune performance is enabled for this boot volume. This field
+         * is deprecated. Use the {@code InstanceConfigurationDetachedVolumeAutotunePolicy} instead
+         * to enable the volume for detached autotune.
+         *
+         * @param isAutoTuneEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
+            this.__explicitlySet__.add("isAutoTuneEnabled");
+            return this;
+        }
+        /**
+         * The list of block volume replicas to be enabled for this volume in the specified
+         * destination availability domains.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
+        private java.util.List<InstanceConfigurationBlockVolumeReplicaDetails> blockVolumeReplicas;
+
+        /**
+         * The list of block volume replicas to be enabled for this volume in the specified
+         * destination availability domains.
+         *
+         * @param blockVolumeReplicas the value to set
+         * @return this builder
+         */
+        public Builder blockVolumeReplicas(
+                java.util.List<InstanceConfigurationBlockVolumeReplicaDetails>
+                        blockVolumeReplicas) {
+            this.blockVolumeReplicas = blockVolumeReplicas;
+            this.__explicitlySet__.add("blockVolumeReplicas");
             return this;
         }
         /**
@@ -304,6 +352,8 @@ public final class InstanceConfigurationCreateVolumeDetails
                             this.availabilityDomain,
                             this.backupPolicyId,
                             this.compartmentId,
+                            this.isAutoTuneEnabled,
+                            this.blockVolumeReplicas,
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
@@ -328,6 +378,12 @@ public final class InstanceConfigurationCreateVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoTuneEnabled")) {
+                this.isAutoTuneEnabled(model.getIsAutoTuneEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("blockVolumeReplicas")) {
+                this.blockVolumeReplicas(model.getBlockVolumeReplicas());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -413,6 +469,43 @@ public final class InstanceConfigurationCreateVolumeDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is
+     * deprecated. Use the {@code InstanceConfigurationDetachedVolumeAutotunePolicy} instead to
+     * enable the volume for detached autotune.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+    private final Boolean isAutoTuneEnabled;
+
+    /**
+     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is
+     * deprecated. Use the {@code InstanceConfigurationDetachedVolumeAutotunePolicy} instead to
+     * enable the volume for detached autotune.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoTuneEnabled() {
+        return isAutoTuneEnabled;
+    }
+
+    /**
+     * The list of block volume replicas to be enabled for this volume in the specified destination
+     * availability domains.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeReplicas")
+    private final java.util.List<InstanceConfigurationBlockVolumeReplicaDetails>
+            blockVolumeReplicas;
+
+    /**
+     * The list of block volume replicas to be enabled for this volume in the specified destination
+     * availability domains.
+     *
+     * @return the value
+     */
+    public java.util.List<InstanceConfigurationBlockVolumeReplicaDetails> getBlockVolumeReplicas() {
+        return blockVolumeReplicas;
     }
 
     /**
@@ -589,6 +682,8 @@ public final class InstanceConfigurationCreateVolumeDetails
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", backupPolicyId=").append(String.valueOf(this.backupPolicyId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
+        sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -615,6 +710,8 @@ public final class InstanceConfigurationCreateVolumeDetails
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.backupPolicyId, other.backupPolicyId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
+                && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -641,6 +738,14 @@ public final class InstanceConfigurationCreateVolumeDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoTuneEnabled == null ? 43 : this.isAutoTuneEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockVolumeReplicas == null
+                                ? 43
+                                : this.blockVolumeReplicas.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

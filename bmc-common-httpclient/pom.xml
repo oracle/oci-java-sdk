@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.13.0</version>
+    <version>3.13.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,8 +12,6 @@
   <name>Oracle Cloud Infrastructure SDK - Common HTTP client</name>
   <description>This project contains the HTTP client API of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
-
-
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>

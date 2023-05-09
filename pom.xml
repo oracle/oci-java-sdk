@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.13.0</version>
+  <version>3.13.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -465,7 +465,7 @@
           </dependencies>
         </plugin>
         <plugin>
-          <!-- http://stdevtools.us.oracle.com:7777/twiki/pub/INTEGTeam/CodeSigningUserDoc/User_Doc_Code_Sign_V3.0.htm#_Toc432167412 -->
+          <!-- https://ocss.oci.oraclecorp.com/webcodesign/ -->
           <groupId>com.oracle.ccss</groupId>
           <artifactId>codesign-maven-plugin</artifactId>
           <version>4.4</version>
@@ -774,5 +774,6 @@
     <module>bmc-recovery</module>
     <module>bmc-vbsinst</module>
     <module>bmc-identitydomains</module>
+    <module>bmc-accessgovernancecp</module>
   </modules>
 </project>

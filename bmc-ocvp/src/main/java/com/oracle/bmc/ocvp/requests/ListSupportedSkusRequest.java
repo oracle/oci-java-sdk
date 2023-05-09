@@ -69,6 +69,13 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** A filter to return only resources that match or support the given ESXi host shape. */
+    private String hostShapeName;
+
+    /** A filter to return only resources that match or support the given ESXi host shape. */
+    public String getHostShapeName() {
+        return hostShapeName;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -152,6 +159,20 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /** A filter to return only resources that match or support the given ESXi host shape. */
+        private String hostShapeName = null;
+
+        /**
+         * A filter to return only resources that match or support the given ESXi host shape.
+         *
+         * @param hostShapeName the value to set
+         * @return this builder instance
+         */
+        public Builder hostShapeName(String hostShapeName) {
+            this.hostShapeName = hostShapeName;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -186,6 +207,7 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            hostShapeName(o.getHostShapeName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -224,8 +246,10 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.hostShapeName = hostShapeName;
             return request;
-            // new ListSupportedSkusRequest(compartmentId, limit, page, opcRequestId);
+            // new ListSupportedSkusRequest(compartmentId, limit, page, opcRequestId,
+            // hostShapeName);
         }
     }
 
@@ -239,7 +263,8 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
                 .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .hostShapeName(hostShapeName);
     }
 
     /**
@@ -260,6 +285,7 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",hostShapeName=").append(String.valueOf(this.hostShapeName));
         sb.append(")");
         return sb.toString();
     }
@@ -278,7 +304,8 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.hostShapeName, other.hostShapeName);
     }
 
     @Override
@@ -291,6 +318,9 @@ public class ListSupportedSkusRequest extends com.oracle.bmc.requests.BmcRequest
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());
         return result;
     }
 }

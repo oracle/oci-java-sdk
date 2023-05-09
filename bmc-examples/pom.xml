@@ -4,13 +4,14 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.13.0</version>
+    <version>3.13.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-examples</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Examples</name>
   <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+
   <build>
     <plugins>
       <plugin>
@@ -71,14 +72,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.13.0</version>
+        <version>3.13.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.13.0</version>
+        <version>3.13.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -624,6 +625,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-identitydomains</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-accessgovernancecp</artifactId>
     </dependency>
   </dependencies>
 </project>

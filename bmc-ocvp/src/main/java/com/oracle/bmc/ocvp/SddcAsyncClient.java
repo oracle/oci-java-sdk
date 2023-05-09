@@ -370,6 +370,7 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("hostShapeName", request.getHostShapeName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

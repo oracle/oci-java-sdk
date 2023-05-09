@@ -31,7 +31,8 @@ public final class SupportedHostShapeSummary
         "supportedSddcTypes",
         "supportedVmwareSoftwareVersions",
         "description",
-        "isSupportShieldedInstances"
+        "isSupportShieldedInstances",
+        "isSupportMonthlySku"
     })
     public SupportedHostShapeSummary(
             String name,
@@ -42,7 +43,8 @@ public final class SupportedHostShapeSummary
             java.util.List<SddcTypes> supportedSddcTypes,
             java.util.List<String> supportedVmwareSoftwareVersions,
             String description,
-            Boolean isSupportShieldedInstances) {
+            Boolean isSupportShieldedInstances,
+            Boolean isSupportMonthlySku) {
         super();
         this.name = name;
         this.supportedOperations = supportedOperations;
@@ -53,6 +55,7 @@ public final class SupportedHostShapeSummary
         this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
         this.description = description;
         this.isSupportShieldedInstances = isSupportShieldedInstances;
+        this.isSupportMonthlySku = isSupportMonthlySku;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -197,6 +200,21 @@ public final class SupportedHostShapeSummary
             this.__explicitlySet__.add("isSupportShieldedInstances");
             return this;
         }
+        /** Whether the shape supports "MONTH" SKU. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlySku")
+        private Boolean isSupportMonthlySku;
+
+        /**
+         * Whether the shape supports "MONTH" SKU.
+         *
+         * @param isSupportMonthlySku the value to set
+         * @return this builder
+         */
+        public Builder isSupportMonthlySku(Boolean isSupportMonthlySku) {
+            this.isSupportMonthlySku = isSupportMonthlySku;
+            this.__explicitlySet__.add("isSupportMonthlySku");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -212,7 +230,8 @@ public final class SupportedHostShapeSummary
                             this.supportedSddcTypes,
                             this.supportedVmwareSoftwareVersions,
                             this.description,
-                            this.isSupportShieldedInstances);
+                            this.isSupportShieldedInstances,
+                            this.isSupportMonthlySku);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -247,6 +266,9 @@ public final class SupportedHostShapeSummary
             }
             if (model.wasPropertyExplicitlySet("isSupportShieldedInstances")) {
                 this.isSupportShieldedInstances(model.getIsSupportShieldedInstances());
+            }
+            if (model.wasPropertyExplicitlySet("isSupportMonthlySku")) {
+                this.isSupportMonthlySku(model.getIsSupportMonthlySku());
             }
             return this;
         }
@@ -382,6 +404,19 @@ public final class SupportedHostShapeSummary
         return isSupportShieldedInstances;
     }
 
+    /** Whether the shape supports "MONTH" SKU. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlySku")
+    private final Boolean isSupportMonthlySku;
+
+    /**
+     * Whether the shape supports "MONTH" SKU.
+     *
+     * @return the value
+     */
+    public Boolean getIsSupportMonthlySku() {
+        return isSupportMonthlySku;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -408,6 +443,7 @@ public final class SupportedHostShapeSummary
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", isSupportShieldedInstances=")
                 .append(String.valueOf(this.isSupportShieldedInstances));
+        sb.append(", isSupportMonthlySku=").append(String.valueOf(this.isSupportMonthlySku));
         sb.append(")");
         return sb.toString();
     }
@@ -433,6 +469,7 @@ public final class SupportedHostShapeSummary
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
                         this.isSupportShieldedInstances, other.isSupportShieldedInstances)
+                && java.util.Objects.equals(this.isSupportMonthlySku, other.isSupportMonthlySku)
                 && super.equals(other);
     }
 
@@ -471,6 +508,11 @@ public final class SupportedHostShapeSummary
                         + (this.isSupportShieldedInstances == null
                                 ? 43
                                 : this.isSupportShieldedInstances.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSupportMonthlySku == null
+                                ? 43
+                                : this.isSupportMonthlySku.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
