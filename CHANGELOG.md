@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.62.0 - 2023-05-16
+### Added
+- Support for self-service integration in the Fusion Apps as a Service service
+ 
+### Breaking Changes
+- In the Fusion Apps as a Service service, the `AttachExistingInstanceDetails`, `CreateNewInstanceDetails`, `CreateOaxServiceInstanceDetails`, `CreateOicServiceInstanceDetails`, `CreateServiceInstanceDetails`, and `FawAdminInfoDetails` model classes were removed
+- In the Fusion Apps as a Service service, the `CreateServiceAttachmentDetails` model class is now `final`, since all subclasses have been removed
+- In the Fusion Apps as a Service service, the `action` property was removed in the `CreateServiceAttachmentDetails` model class
+
 ## 2.61.1 - 2023-05-09
 ### Added
 - Support for the Access Governance service

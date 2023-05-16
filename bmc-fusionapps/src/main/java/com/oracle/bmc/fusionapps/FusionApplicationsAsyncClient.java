@@ -858,6 +858,60 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceAttachmentResponse> createServiceAttachment(
+            CreateServiceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async createServiceAttachment");
+        final CreateServiceAttachmentRequest interceptedRequest =
+                CreateServiceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateServiceAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/CreateServiceAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateServiceAttachmentResponse>
+                transformer =
+                        CreateServiceAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>,
+                        java.util.concurrent.Future<CreateServiceAttachmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateServiceAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFusionEnvironmentResponse> deleteFusionEnvironment(
             DeleteFusionEnvironmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1044,6 +1098,54 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteRefreshActivityRequest, DeleteRefreshActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceAttachmentResponse> deleteServiceAttachment(
+            DeleteServiceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteServiceAttachmentRequest, DeleteServiceAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async deleteServiceAttachment");
+        final DeleteServiceAttachmentRequest interceptedRequest =
+                DeleteServiceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteServiceAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/DeleteServiceAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteServiceAttachmentResponse>
+                transformer =
+                        DeleteServiceAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteServiceAttachmentRequest, DeleteServiceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteServiceAttachmentRequest, DeleteServiceAttachmentResponse>,
+                        java.util.concurrent.Future<DeleteServiceAttachmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteServiceAttachmentRequest, DeleteServiceAttachmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2280,6 +2382,59 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateRefreshActivityRequest, UpdateRefreshActivityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyServiceAttachmentResponse> verifyServiceAttachment(
+            VerifyServiceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            VerifyServiceAttachmentRequest, VerifyServiceAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async verifyServiceAttachment");
+        final VerifyServiceAttachmentRequest interceptedRequest =
+                VerifyServiceAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyServiceAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "VerifyServiceAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/VerifyServiceAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, VerifyServiceAttachmentResponse>
+                transformer =
+                        VerifyServiceAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        VerifyServiceAttachmentRequest, VerifyServiceAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                VerifyServiceAttachmentRequest, VerifyServiceAttachmentResponse>,
+                        java.util.concurrent.Future<VerifyServiceAttachmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getVerifyServiceAttachmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    VerifyServiceAttachmentRequest, VerifyServiceAttachmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -23,7 +23,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
-        "action",
         "compartmentId",
         "serviceInstanceId",
         "displayName",
@@ -38,7 +37,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
     })
     public ServiceAttachment(
             String id,
-            CreateServiceAttachmentDetails.Action action,
             String compartmentId,
             String serviceInstanceId,
             String displayName,
@@ -52,7 +50,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
-        this.action = action;
         this.compartmentId = compartmentId;
         this.serviceInstanceId = serviceInstanceId;
         this.displayName = displayName;
@@ -82,22 +79,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
-            return this;
-        }
-        /**
-         * Action
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("action")
-        private CreateServiceAttachmentDetails.Action action;
-
-        /**
-         * Action
-         * @param action the value to set
-         * @return this builder
-         **/
-        public Builder action(CreateServiceAttachmentDetails.Action action) {
-            this.action = action;
-            this.__explicitlySet__.add("action");
             return this;
         }
         /**
@@ -293,7 +274,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
             ServiceAttachment model =
                     new ServiceAttachment(
                             this.id,
-                            this.action,
                             this.compartmentId,
                             this.serviceInstanceId,
                             this.displayName,
@@ -315,9 +295,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
         public Builder copy(ServiceAttachment model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
-            }
-            if (model.wasPropertyExplicitlySet("action")) {
-                this.action(model.getAction());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -379,20 +356,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
      **/
     public String getId() {
         return id;
-    }
-
-    /**
-     * Action
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
-    private final CreateServiceAttachmentDetails.Action action;
-
-    /**
-     * Action
-     * @return the value
-     **/
-    public CreateServiceAttachmentDetails.Action getAction() {
-        return action;
     }
 
     /**
@@ -675,7 +638,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
         sb.append("ServiceAttachment(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
-        sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", serviceInstanceId=").append(String.valueOf(this.serviceInstanceId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -702,7 +664,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
 
         ServiceAttachment other = (ServiceAttachment) o;
         return java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.serviceInstanceId, other.serviceInstanceId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -722,7 +683,6 @@ public final class ServiceAttachment extends com.oracle.bmc.http.internal.Explic
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
