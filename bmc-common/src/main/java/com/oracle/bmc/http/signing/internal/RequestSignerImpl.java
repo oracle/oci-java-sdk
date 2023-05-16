@@ -4,42 +4,41 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
+import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.RequestSignerException;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.io.internal.KeepOpenInputStream;
+import com.oracle.bmc.retrier.Retriers;
+import com.oracle.bmc.util.StreamUtils;
+import com.oracle.bmc.util.VisibleForTesting;
+import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
+
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
-import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Optional;
 import java.util.TimeZone;
 import java.util.function.Supplier;
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.oracle.bmc.util.StreamUtils;
-import com.oracle.bmc.util.VisibleForTesting;
-import com.oracle.bmc.http.client.Serialization;
-import com.oracle.bmc.http.signing.RequestSigner;
-import com.oracle.bmc.http.signing.RequestSignerException;
-import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.http.client.io.DuplicatableInputStream;
-import com.oracle.bmc.io.internal.KeepOpenInputStream;
-import com.oracle.bmc.retrier.Retriers;
-import com.oracle.bmc.util.internal.StringUtils;
-import com.oracle.bmc.util.internal.Validate;
 
 /**
  * Implementation of the {@linkplain RequestSigner} interface
@@ -291,8 +290,8 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
-            return Serialization.getObjectMapper().writeValueAsString(headers);
-        } catch (JsonProcessingException ex) {
+            return Serializer.getDefault().writeValueAsString(headers);
+        } catch (IOException ex) {
             LOG.debug("Unable to serialize headers to JSON string", ex);
             return "UNABLE TO SERIALIZE";
         }
@@ -527,7 +526,7 @@ public class RequestSignerImpl implements RequestSigner {
         }
         // use the same object mapper as the rest client to ensure the configurations match
         // what is sent
-        String bodyAsString = Serialization.getObjectMapper().writeValueAsString(body);
+        String bodyAsString = Serializer.getDefault().writeValueAsString(body);
 
         // Annoying ObjectMapper edge case: If given a set of empty braces, it
         // adds a set of quotes that causes auth to fail on the server-side as

@@ -9,7 +9,7 @@ import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -77,9 +77,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({
-    Serialization.class,
-})
+@PrepareForTest({Serializer.class})
 public class UploadManagerTest {
     private static final String CONTENT =
             StringUtils.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB

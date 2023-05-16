@@ -4,9 +4,7 @@
  */
 package com.oracle.bmc.model.internal;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.http.client.Serializer;
 
 import jakarta.annotation.Nonnull;
 
@@ -14,11 +12,6 @@ import jakarta.annotation.Nonnull;
 public class JsonConverter {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(JsonConverter.class);
-
-    /** Object mapper to support jackson json operations */
-    private static final ObjectMapper mapper =
-            Serialization.getObjectMapper()
-                    .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     /** Get desired object from the json provided */
     public static <T> T jsonBlobToObject(@Nonnull String jsonBlob, @Nonnull Class<T> clazz) {
@@ -30,7 +23,7 @@ public class JsonConverter {
         }
         T object = null;
         try {
-            object = mapper.readValue(jsonBlob, clazz);
+            object = Serializer.getDefault().readValue(jsonBlob, clazz);
         } catch (Exception e) {
             LOG.error("Exception in parsing out json blob {}", jsonBlob, e);
         }
@@ -44,7 +37,7 @@ public class JsonConverter {
         }
         String jsonBlob = null;
         try {
-            jsonBlob = mapper.writeValueAsString(object);
+            jsonBlob = Serializer.getDefault().writeValueAsString(object);
         } catch (Exception e) {
             LOG.error("Exception in writing json blob from object {}", object, e);
         }

@@ -10,15 +10,16 @@ package com.oracle.bmc.waas.model;
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
- * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
- * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
- * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Whitelist.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Whitelist extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "addresses", "addressLists"})
@@ -63,15 +64,15 @@ public final class Whitelist extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of IP address lists to include in the whitelist.
+         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP
+         * address lists to include in the whitelist.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
         private java.util.List<String> addressLists;
 
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of IP address lists to include in the whitelist.
+         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP
+         * address lists to include in the whitelist.
          *
          * @param addressLists the value to set
          * @return this builder
@@ -144,15 +145,15 @@ public final class Whitelist extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * IP address lists to include in the whitelist.
+     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address
+     * lists to include in the whitelist.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
     private final java.util.List<String> addressLists;
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * IP address lists to include in the whitelist.
+     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address
+     * lists to include in the whitelist.
      *
      * @return the value
      */

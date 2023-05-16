@@ -18,10 +18,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in
- * Serialization.java The ObjectMapper defined in Serialization.java should be re-used as
- * com.oracle.bmc.http.Serialization.getObjectMapper() Any new ObjectMapper object (including any
- * form of constructors) will cause the build to fail.
+ * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in the
+ * explicitly specified classes. Any new ObjectMapper object (including any form of constructors)
+ * will cause the build to fail. This is required to avoid incorrectly configured object mappers.
+ *
+ * <p>The ObjectMapper defined in a client choice should be re-used. As an example, use
+ * JacksonSerializer.getDefaultSerializer() from oci-java-sdk-common-httpclient-jersey to get the
+ * json mapper.
  */
 public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
 
@@ -60,7 +63,7 @@ public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
                             throw new EnforcerRuleException(
                                     "New ObjectMapper defined in "
                                             + javaFile.getAbsolutePath()
-                                            + ". Please re-use the ObjectMapper defined in Serialization.java by calling com.oracle.bmc.http.Serialization.getObjectMapper().");
+                                            + ". Please re-use the ObjectMapper defined in a client implementation (e.g. the JacksonSerializer.getDefaultObjectMapper() from oci-java-sdk-common-httpclient-jersey).");
                         }
                     }
                 }

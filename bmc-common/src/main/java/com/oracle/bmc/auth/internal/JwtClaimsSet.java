@@ -11,13 +11,12 @@ import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.util.internal.Validate;
 
 /** JSON Web Token Claim Set. */
 public class JwtClaimsSet {
-    private static final ObjectMapper OBJECT_MAPPER = Serialization.getObjectMapper();
+    private static final Serializer OBJECT_MAPPER = Serializer.getDefault();
     private final Map<String, Object> header;
     private final Map<String, Object> payload;
     private final String signature;

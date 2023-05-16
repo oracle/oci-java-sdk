@@ -10,15 +10,16 @@ package com.oracle.bmc.waas.model;
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
- * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
- * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
- * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Certificate extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
@@ -507,15 +508,13 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * certificate.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the certificate.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * certificate.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the certificate.
      *
      * @return the value
      */
@@ -524,15 +523,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * certificate's compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the certificate's
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * certificate's compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the certificate's
+     * compartment.
      *
      * @return the value
      */

@@ -6,6 +6,8 @@ package com.oracle.bmc.http.client.jersey;
 
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
+import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 
 import javax.ws.rs.client.Client;
 
@@ -37,6 +39,11 @@ public class JerseyHttpProvider implements HttpProvider {
     @Override
     public HttpClientBuilder newBuilder() {
         return new JerseyHttpClientBuilder();
+    }
+
+    @Override
+    public Serializer getSerializer() {
+        return JacksonSerializer.getDefaultSerializer();
     }
 
     private static boolean checkForApacheDependencies() {

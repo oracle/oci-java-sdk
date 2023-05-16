@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.http.client.jersey3;
 
-import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.http.client.ClientProperty;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpClientBuilder;
@@ -13,6 +12,7 @@ import com.oracle.bmc.http.client.ProxyConfiguration;
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.client.jersey3.internal.DaemonClientAsyncExecutorProvider;
+import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.WebTarget;
@@ -72,7 +72,8 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
 
     public static final JacksonJsonProvider JACKSON_JSON_PROVIDER =
             new JacksonJaxbJsonProvider(
-                    Serialization.getObjectMapper(), JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
+                    JacksonSerializer.getDefaultObjectMapper(),
+                    JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
     private final Collection<PrioritizedValue<RequestInterceptor>> requestInterceptors =
             new ArrayList<>();
     private final Map<String, Object> properties = new HashMap<>();

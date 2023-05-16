@@ -360,6 +360,43 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceAttachmentResponse> createServiceAttachment(
+            CreateServiceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateServiceAttachmentRequest, CreateServiceAttachmentResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateServiceAttachmentDetails(),
+                "createServiceAttachmentDetails is required");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, CreateServiceAttachmentResponse::builder)
+                .logger(LOG, "createServiceAttachment")
+                .serviceDetails(
+                        "FusionApplications",
+                        "CreateServiceAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/CreateServiceAttachment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateServiceAttachmentRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("serviceAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateServiceAttachmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateServiceAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFusionEnvironmentResponse> deleteFusionEnvironment(
             DeleteFusionEnvironmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -499,6 +536,43 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
                         DeleteRefreshActivityResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRefreshActivityResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceAttachmentResponse> deleteServiceAttachment(
+            DeleteServiceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteServiceAttachmentRequest, DeleteServiceAttachmentResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(
+                request.getServiceAttachmentId(), "serviceAttachmentId must not be blank");
+
+        return clientCall(request, DeleteServiceAttachmentResponse::builder)
+                .logger(LOG, "deleteServiceAttachment")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteServiceAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/DeleteServiceAttachment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteServiceAttachmentRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("serviceAttachments")
+                .appendPathParam(request.getServiceAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteServiceAttachmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteServiceAttachmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1463,6 +1537,41 @@ public class FusionApplicationsAsyncClient extends com.oracle.bmc.http.internal.
                 .handleResponseHeaderString("etag", UpdateRefreshActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRefreshActivityResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyServiceAttachmentResponse> verifyServiceAttachment(
+            VerifyServiceAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            VerifyServiceAttachmentRequest, VerifyServiceAttachmentResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getVerifyServiceAttachmentDetails(),
+                "verifyServiceAttachmentDetails is required");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, VerifyServiceAttachmentResponse::builder)
+                .logger(LOG, "verifyServiceAttachment")
+                .serviceDetails(
+                        "FusionApplications",
+                        "VerifyServiceAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/VerifyServiceAttachment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(VerifyServiceAttachmentRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("serviceAttachments")
+                .appendPathParam("actions")
+                .appendPathParam("verify")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", VerifyServiceAttachmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

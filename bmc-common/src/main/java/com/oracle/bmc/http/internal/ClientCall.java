@@ -4,19 +4,18 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.RequestInterceptor;
-import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.model.Range;
@@ -37,6 +36,7 @@ import com.oracle.bmc.waiter.WaiterScheduler;
 import org.slf4j.Logger;
 
 import jakarta.annotation.Nullable;
+import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -682,11 +682,11 @@ public final class ClientCall<
                                         if (((String) deserialized).startsWith("\"")
                                                 && ((String) deserialized).endsWith("\"")) {
                                             try {
-                                                return Serialization.getObjectMapper()
+                                                return Serializer.getDefault()
                                                         .readValue(
                                                                 (String) deserialized,
                                                                 String.class);
-                                            } catch (JsonProcessingException e) {
+                                            } catch (IOException e) {
                                                 logger.error(
                                                         "Unable to extract string response", e);
                                             }

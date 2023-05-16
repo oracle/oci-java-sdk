@@ -6,7 +6,7 @@ package com.oracle.bmc.model;
 
 import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.ServiceDetails;
-import com.oracle.bmc.http.client.internal.RFC3339DateFormat;
+import com.oracle.bmc.http.internal.HttpDateUtils;
 import com.oracle.bmc.util.internal.StringUtils;
 
 import java.util.Date;
@@ -242,7 +242,7 @@ public class BmcException extends RuntimeException {
                         : "";
         if (null != serviceDetails) {
             String targetService = serviceDetails.getServiceName();
-            String timestamp = RFC3339DateFormat.formatRfc3339(new Date(), true);
+            String timestamp = HttpDateUtils.formatAlwaysIncludeMillis(new Date());
             String clientVersion = ClientRuntime.getRuntime().getClientInfo();
             String errorTroubleshootingLink =
                     String.format(

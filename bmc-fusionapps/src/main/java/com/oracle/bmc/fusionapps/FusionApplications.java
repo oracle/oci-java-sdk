@@ -186,6 +186,22 @@ public interface FusionApplications extends AutoCloseable {
     CreateRefreshActivityResponse createRefreshActivity(CreateRefreshActivityRequest request);
 
     /**
+     * Attaches a service instance to the fusion pod.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/CreateServiceAttachmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateServiceAttachment API.
+     */
+    CreateServiceAttachmentResponse createServiceAttachment(CreateServiceAttachmentRequest request);
+
+    /**
      * Deletes the Fusion environment identified by it's OCID.
      *
      * @param request The request object containing the details to send
@@ -250,6 +266,22 @@ public interface FusionApplications extends AutoCloseable {
      *     DeleteRefreshActivity API.
      */
     DeleteRefreshActivityResponse deleteRefreshActivity(DeleteRefreshActivityRequest request);
+
+    /**
+     * Delete a service attachment by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/DeleteServiceAttachmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteServiceAttachment API.
+     */
+    DeleteServiceAttachmentResponse deleteServiceAttachment(DeleteServiceAttachmentRequest request);
 
     /**
      * Gets a DataMaskingActivity by identifier
@@ -659,6 +691,22 @@ public interface FusionApplications extends AutoCloseable {
      *     UpdateRefreshActivity API.
      */
     UpdateRefreshActivityResponse updateRefreshActivity(UpdateRefreshActivityRequest request);
+
+    /**
+     * Verify whether a service instance can be attached to the fusion pod
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/VerifyServiceAttachmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     VerifyServiceAttachment API.
+     */
+    VerifyServiceAttachmentResponse verifyServiceAttachment(VerifyServiceAttachmentRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

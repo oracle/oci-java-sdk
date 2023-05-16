@@ -2,7 +2,6 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.artifacts.ArtifactsClient;
@@ -19,6 +18,7 @@ import com.oracle.bmc.artifacts.responses.GetContainerImageResponse;
 import com.oracle.bmc.artifacts.responses.ListContainerImageSignaturesResponse;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.keymanagement.KmsCryptoClient;
 import com.oracle.bmc.keymanagement.model.SignDataDetails;
 import com.oracle.bmc.keymanagement.model.SignedData;
@@ -171,7 +171,7 @@ public class ContainerImageSigningExample {
         ContainerImage containerImage = getContainerImageMetadata(artifactsClient, imageId);
 
         // Generate message
-        ObjectMapper objectMapper = com.oracle.bmc.http.client.Serialization.getObjectMapper();
+        Serializer objectMapper = Serializer.getDefault();
         Map<String, Object> message = new LinkedHashMap<>();
         message.put("description", description);
         message.put("imageDigest", containerImage.getDigest());

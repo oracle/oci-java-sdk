@@ -4,6 +4,18 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
+import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.util.internal.Validate;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
+import org.bouncycastle.asn1.x500.RDN;
+import org.bouncycastle.asn1.x500.X500Name;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
+import org.slf4j.Logger;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -18,26 +30,10 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
-
-import com.oracle.bmc.InternalSdk;
-import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
-import com.oracle.bmc.http.client.Serialization;
-import com.oracle.bmc.util.internal.Validate;
-import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
-import org.bouncycastle.asn1.x500.RDN;
-import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Optional;
-
-import org.slf4j.Logger;
 
 /** Utilities dealing with authorization. */
 public class AuthUtils {
-    private static final ObjectMapper OBJECT_MAPPER = Serialization.getObjectMapper();
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(AuthUtils.class);
 
@@ -124,7 +120,7 @@ public class AuthUtils {
         Validate.notBlank(json, "JSON for JWK may not be blank");
 
         try {
-            JWK jwk = OBJECT_MAPPER.readValue(json, JWK.class);
+            JWK jwk = Serializer.getDefault().readValue(json, JWK.class);
             return Optional.of(jwk);
         } catch (IOException e) {
             LOG.debug("Exception reading or de-serializing jwk", e);

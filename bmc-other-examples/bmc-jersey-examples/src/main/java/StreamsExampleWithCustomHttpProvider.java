@@ -7,6 +7,7 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.jersey.JerseyHttpProvider;
 import com.oracle.bmc.streaming.StreamAdminClient;
 import com.oracle.bmc.streaming.StreamClient;
@@ -334,6 +335,11 @@ public class StreamsExampleWithCustomHttpProvider {
         public HttpClientBuilder newBuilder() {
             System.out.println("HttpProviderWrapper.newBuilder");
             return JerseyHttpProvider.getInstance().newBuilder();
+        }
+
+        @Override
+        public Serializer getSerializer() {
+            return JerseyHttpProvider.getInstance().getSerializer();
         }
     }
 }
