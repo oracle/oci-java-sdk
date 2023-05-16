@@ -859,6 +859,49 @@ public class FusionApplicationsClient implements FusionApplications {
     }
 
     @Override
+    public CreateServiceAttachmentResponse createServiceAttachment(
+            CreateServiceAttachmentRequest request) {
+        LOG.trace("Called createServiceAttachment");
+        final CreateServiceAttachmentRequest interceptedRequest =
+                CreateServiceAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceAttachmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "CreateServiceAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/CreateServiceAttachment");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceAttachmentResponse>
+                transformer =
+                        CreateServiceAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateServiceAttachmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteFusionEnvironmentResponse deleteFusionEnvironment(
             DeleteFusionEnvironmentRequest request) {
         LOG.trace("Called deleteFusionEnvironment");
@@ -999,6 +1042,45 @@ public class FusionApplicationsClient implements FusionApplications {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteRefreshActivityResponse>
                 transformer =
                         DeleteRefreshActivityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteServiceAttachmentResponse deleteServiceAttachment(
+            DeleteServiceAttachmentRequest request) {
+        LOG.trace("Called deleteServiceAttachment");
+        final DeleteServiceAttachmentRequest interceptedRequest =
+                DeleteServiceAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceAttachmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "DeleteServiceAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/DeleteServiceAttachment");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceAttachmentResponse>
+                transformer =
+                        DeleteServiceAttachmentConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1978,6 +2060,48 @@ public class FusionApplicationsClient implements FusionApplications {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateRefreshActivityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public VerifyServiceAttachmentResponse verifyServiceAttachment(
+            VerifyServiceAttachmentRequest request) {
+        LOG.trace("Called verifyServiceAttachment");
+        final VerifyServiceAttachmentRequest interceptedRequest =
+                VerifyServiceAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyServiceAttachmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "VerifyServiceAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/VerifyServiceAttachment");
+        java.util.function.Function<javax.ws.rs.core.Response, VerifyServiceAttachmentResponse>
+                transformer =
+                        VerifyServiceAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getVerifyServiceAttachmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
