@@ -4,9 +4,8 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.http.client.Serializer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -100,15 +99,14 @@ public class X509FederationClientTest {
     public void jacksonCanDeserializeSecurityToken() throws IOException {
         final String strToken = "{\"token\" : \"abcdef\"}";
         // this line will fail on original code if Jackson is not at exactly the right version
-        Serialization.getObjectMapper()
-                .readValue(strToken, X509FederationClient.SecurityToken.class);
+        Serializer.getDefault().readValue(strToken, X509FederationClient.SecurityToken.class);
     }
 
     @Test
     public void jacksonCanRoundTripSecurityToken() throws IOException {
         final X509FederationClient.SecurityToken secToken =
                 new X509FederationClient.SecurityToken("abcdef");
-        final ObjectMapper mapper = Serialization.getObjectMapper();
+        final Serializer mapper = Serializer.getDefault();
         assertEquals(
                 secToken.getToken(),
                 mapper.readValue(mapper.writeValueAsString(secToken), secToken.getClass())

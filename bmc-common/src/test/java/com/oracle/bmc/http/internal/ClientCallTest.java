@@ -4,39 +4,40 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Supplier;
-import java.util.concurrent.ExecutionException;
-import java.io.InputStream;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.model.BmcException;
 import org.junit.Test;
 import org.junit.Before;
 import org.slf4j.Logger;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Supplier;
+
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.atLeastOnce;
-import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class ClientCallTest {
     @Test
@@ -426,11 +427,9 @@ public class ClientCallTest {
         }
 
         @Test
-        public void test_throwIfNotSuccessful_InvalidHTMLResponse() throws JsonProcessingException {
+        public void test_throwIfNotSuccessful_InvalidHTMLResponse() throws IOException {
 
-            String jsonEncodedString =
-                    com.oracle.bmc.http.client.Serialization.getObjectMapper()
-                            .writeValueAsString("Dummy response");
+            String jsonEncodedString = Serializer.getDefault().writeValueAsString("Dummy response");
             when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
             when(mockResponse.header("content-type")).thenReturn("text/html");
             when(mockResponse.textBody())
@@ -588,9 +587,7 @@ public class ClientCallTest {
         @Test
         public void testReadEntity_encodedJsonString() throws Exception {
             // with embedded quote
-            String jsonEncodedString =
-                    com.oracle.bmc.http.client.Serialization.getObjectMapper()
-                            .writeValueAsString("foo \" bar");
+            String jsonEncodedString = Serializer.getDefault().writeValueAsString("foo \" bar");
             assertEquals("\"foo \\\" bar\"", jsonEncodedString);
 
             when(mockResponse.header("Content-Type")).thenReturn(JSON_MEDIA_TYPE);

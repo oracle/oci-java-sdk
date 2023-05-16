@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.13.1</version>
+    <version>3.14.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -48,10 +48,6 @@
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
     </dependency>
     <dependency>
@@ -65,12 +61,19 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.13.1</version>
+      <version>3.14.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.13.1</version>
+      <version>3.14.0</version>
+    </dependency>
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
+      <version>3.14.0</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
@@ -78,7 +81,6 @@
       <version>4.1.77.Final</version>
       <scope>test</scope>
     </dependency>
-    <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

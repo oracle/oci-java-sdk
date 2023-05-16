@@ -4,15 +4,14 @@
  */
 package com.oracle.bmc.http.client.jersey3;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.jersey3.internal.ApacheDuplicatableInputStreamEntity;
 import com.oracle.bmc.http.client.jersey3.internal.ApacheInputStreamEntity;
-import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -120,8 +119,8 @@ final class Jersey3HttpRequest implements HttpRequest {
             processedBody = "";
         } else {
             try {
-                processedBody = Serialization.getObjectMapper().writeValueAsString(body);
-            } catch (JsonProcessingException e) {
+                processedBody = JacksonSerializer.getDefaultSerializer().writeValueAsString(body);
+            } catch (IOException e) {
                 throw new IllegalArgumentException("Unable to process JSON body", e);
             }
         }

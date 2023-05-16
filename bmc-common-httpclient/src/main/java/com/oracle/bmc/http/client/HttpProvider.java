@@ -15,6 +15,8 @@ public interface HttpProvider {
 
     HttpClientBuilder newBuilder();
 
+    Serializer getSerializer();
+
     static HttpProvider getDefault() {
         HttpProvider httpProvider = DefaultHolder.getDefault();
         if (httpProvider == null) {

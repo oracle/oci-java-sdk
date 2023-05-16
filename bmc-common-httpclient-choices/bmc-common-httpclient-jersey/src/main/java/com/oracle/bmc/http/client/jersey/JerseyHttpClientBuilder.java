@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.http.client.jersey;
 
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import com.oracle.bmc.http.client.ClientProperty;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpClientBuilder;
@@ -72,7 +72,8 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
 
     public static final JacksonJsonProvider JACKSON_JSON_PROVIDER =
             new JacksonJaxbJsonProvider(
-                    Serialization.getObjectMapper(), JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
+                    JacksonSerializer.getDefaultObjectMapper(),
+                    JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
 
     private final Collection<PrioritizedValue<RequestInterceptor>> requestInterceptors =
             new ArrayList<>();

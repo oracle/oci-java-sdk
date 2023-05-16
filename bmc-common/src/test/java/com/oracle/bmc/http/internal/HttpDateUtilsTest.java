@@ -57,6 +57,18 @@ public class HttpDateUtilsTest {
     public void otherDateHeader_rfc3339_dateTime_utc() {
         Date date = HttpDateUtils.parse("other-date", "1985-04-12T23:20:50Z");
         assertEquals(482196050000L, date.getTime());
+
+        date = HttpDateUtils.parse("other-date", "1937-01-01T12:00:27.873834939+00:20");
+        assertEquals(-1041337172127L, date.getTime());
+
+        date = HttpDateUtils.parse("other-date", "1937-01-01T12:00:27.873834939Z");
+        assertEquals(-1041335972127L, date.getTime());
+
+        date = HttpDateUtils.parse("other-date", "2021-04-29T10:00:00Z");
+        assertEquals(1619690400000L, date.getTime());
+
+        date = HttpDateUtils.parse("other-date", "2021-05-13T10:58:09.628313-07:00");
+        assertEquals(1620928689628L, date.getTime());
     }
 
     @Test

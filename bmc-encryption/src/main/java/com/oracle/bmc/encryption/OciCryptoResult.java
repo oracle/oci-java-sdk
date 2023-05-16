@@ -4,10 +4,10 @@
  */
 package com.oracle.bmc.encryption;
 
-import java.util.Map;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.encryption.internal.EncryptionHeader;
+
+import java.io.IOException;
+import java.util.Map;
 
 /** OciCryptoResult holds the encryption/decryption output. */
 public class OciCryptoResult {
@@ -27,7 +27,7 @@ public class OciCryptoResult {
     public Map<String, String> getContext() {
         try {
             return header.getContext();
-        } catch (JsonProcessingException e) {
+        } catch (IOException e) {
             throw new IllegalStateException(e);
         }
     }

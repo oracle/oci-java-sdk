@@ -9,10 +9,10 @@ import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.RequestInterceptor;
-import com.oracle.bmc.http.client.Serialization;
 import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import com.oracle.bmc.http.client.jersey.internal.ApacheDuplicatableInputStreamEntity;
 import com.oracle.bmc.http.client.jersey.internal.ApacheInputStreamEntity;
+import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -120,7 +120,7 @@ final class JerseyHttpRequest implements HttpRequest {
             processedBody = "";
         } else {
             try {
-                processedBody = Serialization.getObjectMapper().writeValueAsString(body);
+                processedBody = JacksonSerializer.getDefaultObjectMapper().writeValueAsString(body);
             } catch (JsonProcessingException e) {
                 throw new IllegalArgumentException("Unable to process JSON body", e);
             }

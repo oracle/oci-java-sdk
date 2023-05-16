@@ -6,7 +6,6 @@ package com.oracle.bmc.http.client.internal;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.oracle.bmc.http.client.internal.ExplicitlySetFilter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,13 +13,25 @@ import java.util.Set;
 /**
  * Base class for models implementing the explicitly set behavior. Subclasses should be annotated
  * with {@code
- * com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)}.
+ * com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)}.
  *
  * <p>All the properties that were explicitly set by user will be serialized, even if set to {@code
  * null}.
  */
-@JsonFilter(ExplicitlySetFilter.NAME)
+@JsonFilter(ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public abstract class ExplicitlySetBmcModel {
+    /**
+     * The name of the explicitly set filter for usage in serialization / deserialization
+     * implementations
+     */
+    public static final String EXPLICITLY_SET_FILTER_NAME = "explicitlySetFilter";
+
+    /**
+     * The name of the explicitly set map property for usage in serialization / deserialization
+     * implementations
+     */
+    public static final String EXPLICITLY_SET_PROPERTY_NAME = "__explicitlySet__";
+
     /**
      * A hash set that stores the names of the properties that were explicitly set by user. These
      * properties will be included in the json request even if they were set to {@code null}.

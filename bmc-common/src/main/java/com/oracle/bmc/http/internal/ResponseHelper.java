@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.oracle.bmc.InternalSdk;
-import com.oracle.bmc.http.client.Serialization;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,8 +20,6 @@ import java.util.Objects;
 public class ResponseHelper {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ResponseHelper.class);
-    private static final ObjectReader STRING_READER =
-            Serialization.getObjectMapper().readerFor(String.class);
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     @InternalSdk public static final Map<Integer, String> DEFAULT_ERROR_MESSAGES = new HashMap<>();

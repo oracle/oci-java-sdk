@@ -367,6 +367,41 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public CreateServiceAttachmentResponse createServiceAttachment(
+            CreateServiceAttachmentRequest request) {
+        Objects.requireNonNull(
+                request.getCreateServiceAttachmentDetails(),
+                "createServiceAttachmentDetails is required");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, CreateServiceAttachmentResponse::builder)
+                .logger(LOG, "createServiceAttachment")
+                .serviceDetails(
+                        "FusionApplications",
+                        "CreateServiceAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/CreateServiceAttachment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateServiceAttachmentRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("serviceAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateServiceAttachmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateServiceAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public DeleteFusionEnvironmentResponse deleteFusionEnvironment(
             DeleteFusionEnvironmentRequest request) {
 
@@ -493,6 +528,41 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         DeleteRefreshActivityResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRefreshActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public DeleteServiceAttachmentResponse deleteServiceAttachment(
+            DeleteServiceAttachmentRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        Validate.notBlank(
+                request.getServiceAttachmentId(), "serviceAttachmentId must not be blank");
+
+        return clientCall(request, DeleteServiceAttachmentResponse::builder)
+                .logger(LOG, "deleteServiceAttachment")
+                .serviceDetails(
+                        "FusionApplications",
+                        "DeleteServiceAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/DeleteServiceAttachment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteServiceAttachmentRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("serviceAttachments")
+                .appendPathParam(request.getServiceAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteServiceAttachmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteServiceAttachmentResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1385,6 +1455,39 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString("etag", UpdateRefreshActivityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRefreshActivityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public VerifyServiceAttachmentResponse verifyServiceAttachment(
+            VerifyServiceAttachmentRequest request) {
+        Objects.requireNonNull(
+                request.getVerifyServiceAttachmentDetails(),
+                "verifyServiceAttachmentDetails is required");
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, VerifyServiceAttachmentResponse::builder)
+                .logger(LOG, "verifyServiceAttachment")
+                .serviceDetails(
+                        "FusionApplications",
+                        "VerifyServiceAttachment",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/ServiceAttachment/VerifyServiceAttachment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(VerifyServiceAttachmentRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("serviceAttachments")
+                .appendPathParam("actions")
+                .appendPathParam("verify")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", VerifyServiceAttachmentResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

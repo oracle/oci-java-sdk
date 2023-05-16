@@ -2,15 +2,14 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.http.client.internal;
+package com.oracle.bmc.serialization.jackson;
 
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.PropertyWriter;
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel;
-import com.oracle.bmc.http.client.internal.ExplicitlySetFilter;
+import com.oracle.bmc.serialization.jackson.internal.ExplicitlySetFilter;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -25,7 +24,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-public class ExplicitlySetFilterTest {
+public class Jersey3ExplicitlySetFilterTest {
+
+    private static final ExplicitlySetFilter filter = ExplicitlySetFilter.INSTANCE;
+
     @Test
     public void testFieldInSuperclass() throws Exception {
         Subclass pojo = Subclass.builder().baseVal(1).subVal("two").build();
@@ -34,7 +36,7 @@ public class ExplicitlySetFilterTest {
         PropertyWriter writer = mock(PropertyWriter.class);
         when(writer.getName()).thenReturn("baseVal");
 
-        ExplicitlySetFilter.INSTANCE.serializeAsField(pojo, jgen, provider, writer);
+        filter.serializeAsField(pojo, jgen, provider, writer);
 
         verify(writer, atLeast(1)).getName();
         verify(writer).serializeAsField(pojo, jgen, provider);
@@ -50,7 +52,7 @@ public class ExplicitlySetFilterTest {
 
         when(writer.getName()).thenReturn("subVal");
 
-        ExplicitlySetFilter.INSTANCE.serializeAsField(pojo, jgen, provider, writer);
+        filter.serializeAsField(pojo, jgen, provider, writer);
 
         verify(writer, atLeast(1)).getName();
         verify(writer).serializeAsField(pojo, jgen, provider);
@@ -66,7 +68,7 @@ public class ExplicitlySetFilterTest {
 
         when(writer.getName()).thenReturn("baseVal");
 
-        ExplicitlySetFilter.INSTANCE.serializeAsField(pojo, jgen, provider, writer);
+        filter.serializeAsField(pojo, jgen, provider, writer);
 
         verify(writer, atLeast(1)).getName();
         verify(writer).serializeAsField(pojo, jgen, provider);
@@ -82,7 +84,7 @@ public class ExplicitlySetFilterTest {
 
         when(writer.getName()).thenReturn("subVal");
 
-        ExplicitlySetFilter.INSTANCE.serializeAsField(pojo, jgen, provider, writer);
+        filter.serializeAsField(pojo, jgen, provider, writer);
 
         verify(writer, atLeast(1)).getName();
         verify(writer).serializeAsField(pojo, jgen, provider);
@@ -98,7 +100,7 @@ public class ExplicitlySetFilterTest {
 
         when(writer.getName()).thenReturn("baseVal");
 
-        ExplicitlySetFilter.INSTANCE.serializeAsField(pojo, jgen, provider, writer);
+        filter.serializeAsField(pojo, jgen, provider, writer);
 
         verify(writer, atLeast(1)).getName();
         verifyNoMoreInteractions(writer);
@@ -113,7 +115,7 @@ public class ExplicitlySetFilterTest {
 
         when(writer.getName()).thenReturn("subVal");
 
-        ExplicitlySetFilter.INSTANCE.serializeAsField(pojo, jgen, provider, writer);
+        filter.serializeAsField(pojo, jgen, provider, writer);
 
         verify(writer, atLeast(1)).getName();
         verifyNoMoreInteractions(writer);
@@ -128,11 +130,9 @@ public class ExplicitlySetFilterTest {
         String replaced = serialized.replace("sub", "unknown");
         assertTrue(replaced.contains("\"type\":\"unknown\""));
 
-        Baseclass parsedSub =
-                Serialization.getObjectMapper().readValue(serialized, Baseclass.class);
+        Baseclass parsedSub = Serializer.getDefault().readValue(serialized, Baseclass.class);
         assertEquals(Subclass.class, parsedSub.getClass());
-        Baseclass parsedUnknown =
-                Serialization.getObjectMapper().readValue(replaced, Baseclass.class);
+        Baseclass parsedUnknown = Serializer.getDefault().readValue(replaced, Baseclass.class);
         assertEquals(Baseclass.class, parsedUnknown.getClass());
     }
 
@@ -145,14 +145,13 @@ public class ExplicitlySetFilterTest {
     }
 
     @Test
-    public void serializeWeirdProperty() throws JsonProcessingException {
+    public void serializeWeirdProperty() throws IOException {
         Subclass sub = Subclass.builder().baseVal(1).subVal("two").ref("abc").build();
         String serializedBody = serializeForPost(sub);
 
         assertTrue(serializedBody.contains("\"$ref\":\"abc\""));
 
-        Subclass deserialized =
-                Serialization.getObjectMapper().readValue(serializedBody, Subclass.class);
+        Subclass deserialized = Serializer.getDefault().readValue(serializedBody, Subclass.class);
         assertEquals(sub, deserialized);
 
         sub = Subclass.builder().baseVal(1).subVal("two").build();
@@ -160,14 +159,14 @@ public class ExplicitlySetFilterTest {
 
         assertFalse(serializedBody.contains("\"$ref\":\"abc\""));
 
-        deserialized = Serialization.getObjectMapper().readValue(serializedBody, Subclass.class);
+        deserialized = Serializer.getDefault().readValue(serializedBody, Subclass.class);
         assertEquals(sub, deserialized);
     }
 
     private static String serializeForPost(Object o) {
         try {
-            return Serialization.getObjectMapper().writeValueAsString(o);
-        } catch (JsonProcessingException e) {
+            return Serializer.getDefault().writeValueAsString(o);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -180,8 +179,7 @@ public class ExplicitlySetFilterTest {
     @com.fasterxml.jackson.annotation.JsonSubTypes({
         @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Subclass.class, name = "sub")
     })
-    @com.fasterxml.jackson.annotation.JsonFilter(
-            com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+    @com.fasterxml.jackson.annotation.JsonFilter(ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
     static class Baseclass extends ExplicitlySetBmcModel {
         @com.fasterxml.jackson.annotation.JsonProperty("baseVal")
         private final Integer baseVal;
@@ -244,8 +242,7 @@ public class ExplicitlySetFilterTest {
             use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
             include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
             property = "type")
-    @com.fasterxml.jackson.annotation.JsonFilter(
-            com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+    @com.fasterxml.jackson.annotation.JsonFilter(ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
     static final class Subclass extends Baseclass {
         @com.fasterxml.jackson.annotation.JsonProperty("subVal")
         private final String subVal;

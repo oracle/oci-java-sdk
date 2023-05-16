@@ -4,12 +4,11 @@
  */
 package com.oracle.bmc.encryption;
 
+import com.oracle.bmc.encryption.internal.EncryptionHeader;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.oracle.bmc.encryption.internal.EncryptionHeader;
 
 /** OciCryptoInputStream holds the encrypted/decrypted stream. */
 public abstract class OciCryptoInputStream extends InputStream {
@@ -27,7 +26,7 @@ public abstract class OciCryptoInputStream extends InputStream {
     public Map<String, String> getContext() {
         try {
             return header.getContext();
-        } catch (JsonProcessingException e) {
+        } catch (IOException e) {
             throw new IllegalStateException(e);
         }
     }

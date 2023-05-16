@@ -7,7 +7,6 @@ package com.oracle.bmc.graalvm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.internal.RFC3339DateFormat;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.CreateTagDetails;
 import com.oracle.bmc.identity.model.CreateTagNamespaceDetails;
@@ -31,6 +30,7 @@ import com.oracle.bmc.util.internal.StringUtils;
 import net.jodah.failsafe.Failsafe;
 import net.jodah.failsafe.RetryPolicy;
 
+import java.time.format.DateTimeFormatter;
 import java.util.AbstractMap;
 import jakarta.annotation.Nonnull;
 import java.util.Date;
@@ -127,8 +127,8 @@ public class TaggingResourceHelper {
             assertEquals(assertMsg, expect.get(D_TAG_NAME_3), actualTag3Value);
         } else if (actualTag3Value instanceof String) {
             final String expectedDate =
-                    RFC3339DateFormat.formatRfc3339(
-                            (Date) expect.get(D_TAG_NAME_3), true /* Do include millis */);
+                    DateTimeFormatter.ISO_INSTANT.format(
+                            ((Date) expect.get(D_TAG_NAME_3)).toInstant());
             assertEquals(assertMsg, expectedDate, value.get(D_TAG_NAME_3));
         } else {
             fail(

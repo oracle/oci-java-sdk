@@ -30,7 +30,7 @@ import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.Method;
-import com.oracle.bmc.http.client.Serialization;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.internal.AuthnClientFilter;
 import com.oracle.bmc.http.internal.ClientCall;
 import com.oracle.bmc.http.internal.ClientIdFilter;
@@ -218,9 +218,9 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
             String payload = okeResourcePrincipalSessionToken.getToken();
             String jsonString = new String(Base64.getDecoder().decode(payload), "UTF-8");
 
-            ObjectMapper mapper = Serialization.getObjectMapper();
+            Serializer serializer = Serializer.getDefault();
             OkeResourcePrincipalSessionToken decoded =
-                    mapper.readValue(jsonString, OkeResourcePrincipalSessionToken.class);
+                    serializer.readValue(jsonString, OkeResourcePrincipalSessionToken.class);
 
             // Remove duplicated "ST$" for the token.
             String jwtToken = decoded.getToken().substring(3);
@@ -230,7 +230,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
             throw new IllegalArgumentException(
                     "RPST cannot be decoded correctly. Please contact OKE Foundation team for help.",
                     e);
-        } catch (JsonProcessingException e) {
+        } catch (IOException e) {
             throw new IllegalArgumentException(
                     "RPST cannot be parsed correctly. Please contact OKE Foundation team for help.",
                     e);

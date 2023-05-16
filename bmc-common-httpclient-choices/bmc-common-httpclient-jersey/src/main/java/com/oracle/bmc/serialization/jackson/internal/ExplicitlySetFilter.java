@@ -2,7 +2,7 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.http.client.internal;
+package com.oracle.bmc.serialization.jackson.internal;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -10,15 +10,18 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;
 import com.fasterxml.jackson.databind.ser.PropertyWriter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
+import com.oracle.bmc.http.client.InternalSdk;
 import com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel;
 
 import java.lang.reflect.Field;
 import java.util.Set;
 
+import static com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME;
+import static com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_PROPERTY_NAME;
+
+@InternalSdk
 public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
     public static final ExplicitlySetFilter INSTANCE = new ExplicitlySetFilter();
-    public static final String NAME = "explicitlySetFilter";
-    public static final String FIELD_NAME = "__explicitlySet__";
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ExplicitlySetFilter.class);
 
@@ -64,7 +67,7 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
     @Deprecated
     @SuppressWarnings("unchecked")
     private boolean hasExplicitlySetInAField(Object pojo, PropertyWriter writer) throws Exception {
-        Field explicitField = pojo.getClass().getDeclaredField(FIELD_NAME);
+        Field explicitField = pojo.getClass().getDeclaredField(EXPLICITLY_SET_FILTER_NAME);
         boolean explicitAccessible = explicitField.isAccessible();
         try {
             explicitField.setAccessible(true);
@@ -128,7 +131,7 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
 
     @Override
     protected boolean include(PropertyWriter writer) {
-        return !FIELD_NAME.equals(writer.getName());
+        return !EXPLICITLY_SET_PROPERTY_NAME.equals(writer.getName());
     }
 
     private static String lowerUnderscoreToLowerCamel(String s) {

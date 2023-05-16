@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.14.0 - 2023-05-16
+### Added
+- Support for self-service integration in the Fusion Apps as a Service service
+- The serializer is now pluggable and determined by the `HttpProvider`. For the Jersey 2 and Jersey 3 HTTP clients, Jackson continues to be used as the serializer
+ 
+### Breaking Changes
+- As part of the pluggable Serializer changes, when using the Jersey and Jersey 3 HTTP clients, the underlying Jackson `ObjectMapper` can now be obtained using `com.oracle.bmc.serialization.jackson.JacksonSerializer.getDefaultObjectMapper()`. The `com.oracle.bmc.http.client.Serialization.getObjectMapper()` method does not exist anymore.
+- In the Fusion Apps as a Service service, the `AttachExistingInstanceDetails`, `CreateNewInstanceDetails`, `CreateOaxServiceInstanceDetails`, `CreateOicServiceInstanceDetails`, `CreateServiceInstanceDetails`, and `FawAdminInfoDetails` model classes were removed
+- In the Fusion Apps as a Service service, the `CreateServiceAttachmentDetails` model class is now `final`, since all subclasses have been removed
+- In the Fusion Apps as a Service service, the `action` property was removed in the `CreateServiceAttachmentDetails` model class
+
 ## 3.13.1 - 2023-05-09
 ### Added
 - Support for the Access Governance service

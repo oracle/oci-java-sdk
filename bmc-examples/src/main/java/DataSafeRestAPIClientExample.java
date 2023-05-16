@@ -2,34 +2,14 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
-
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.datasafe.DataSafeClient;
 import com.oracle.bmc.datasafe.model.AuditEventSummary;
 import com.oracle.bmc.datasafe.requests.ListAuditEventsRequest;
 import com.oracle.bmc.datasafe.responses.ListAuditEventsResponse;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
@@ -38,6 +18,21 @@ import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 import com.oracle.bmc.objectstorage.transfer.UploadManager;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
 
 public class DataSafeRestAPIClientExample {
     /**
@@ -175,7 +170,7 @@ public class DataSafeRestAPIClientExample {
         System.out.println(
                 "Count" + eventList.getAuditEventCollection().getItems().size() + "\n\n");
         if (eventList.getAuditEventCollection().getItems().size() > 0) {
-            ObjectMapper mapper = com.oracle.bmc.http.client.Serialization.getObjectMapper();
+            Serializer mapper = Serializer.getDefault();
             StringBuffer sb = new StringBuffer();
             AtomicBoolean isFirst = new AtomicBoolean(true);
             count = eventList.getAuditEventCollection().getItems().size();
@@ -192,7 +187,7 @@ public class DataSafeRestAPIClientExample {
                                     }
                                     sb.append(mapper.writeValueAsString(it));
 
-                                } catch (JsonProcessingException e) {
+                                } catch (IOException e) {
                                     e.printStackTrace();
                                 }
                             });
