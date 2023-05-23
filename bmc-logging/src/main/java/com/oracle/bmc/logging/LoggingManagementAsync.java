@@ -8,7 +8,12 @@ import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
 
 /**
- * Use the Logging Management API to create, read, list, update, and delete log groups, log objects, and agent configurations.
+ * Use the Logging Management API to create, read, list, update, move and delete
+ * log groups, log objects, log saved searches, agent configurations, log data models,
+ * continuous queries, and managed continuous queries.
+ *
+ * For more information, see [Logging Overview](https://docs.cloud.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm).
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public interface LoggingManagementAsync extends AutoCloseable {
@@ -231,7 +236,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified log saved search.
+     * Deletes the specified LogSavedSearch.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -311,23 +316,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetLogGroupRequest, GetLogGroupResponse> handler);
 
     /**
-     * Retrieves a LogIncludedSearch.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<GetLogIncludedSearchResponse> getLogIncludedSearch(
-            GetLogIncludedSearchRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>
-                    handler);
-
-    /**
-     * Retrieves a log saved search.
+     * Retrieves a LogSavedSearch.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -390,24 +379,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists Logging Included Searches for this compartment.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<ListLogIncludedSearchesResponse> listLogIncludedSearches(
-            ListLogIncludedSearchesRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>
-                    handler);
-
-    /**
-     * Lists Logging Saved Searches for this compartment.
+     * Lists LogSavedSearches for this compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -554,7 +526,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates an  existing log saved search.
+     * Updates an  existing LogSavedSearch.
      *
      *
      * @param request The request object containing the details to send

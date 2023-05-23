@@ -89,19 +89,33 @@ public final class UnifiedAgentMultilineParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-
+        /**
+         * First line pattern format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatFirstline")
         private String formatFirstline;
 
+        /**
+         * First line pattern format.
+         * @param formatFirstline the value to set
+         * @return this builder
+         **/
         public Builder formatFirstline(String formatFirstline) {
             this.formatFirstline = formatFirstline;
             this.__explicitlySet__.add("formatFirstline");
             return this;
         }
-
+        /**
+         * Mutiline pattern format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private java.util.List<String> format;
 
+        /**
+         * Mutiline pattern format.
+         * @param format the value to set
+         * @return this builder
+         **/
         public Builder format(java.util.List<String> format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -196,16 +210,30 @@ public final class UnifiedAgentMultilineParser extends UnifiedAgentParser {
         this.format = format;
     }
 
+    /**
+     * First line pattern format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formatFirstline")
     private final String formatFirstline;
 
+    /**
+     * First line pattern format.
+     * @return the value
+     **/
     public String getFormatFirstline() {
         return formatFirstline;
     }
 
+    /**
+     * Mutiline pattern format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final java.util.List<String> format;
 
+    /**
+     * Mutiline pattern format.
+     * @return the value
+     **/
     public java.util.List<String> getFormat() {
         return format;
     }

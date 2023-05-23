@@ -1029,6 +1029,70 @@ public class DnsAsyncClient implements DnsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateZoneFromZoneFileResponse> createZoneFromZoneFile(
+            CreateZoneFromZoneFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateZoneFromZoneFileRequest, CreateZoneFromZoneFileResponse>
+                    handler) {
+        LOG.trace("Called async createZoneFromZoneFile");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, CreateZoneFromZoneFileRequest.builder());
+        }
+        final CreateZoneFromZoneFileRequest interceptedRequest =
+                CreateZoneFromZoneFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateZoneFromZoneFileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Dns",
+                        "CreateZoneFromZoneFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/CreateZoneFromZoneFile");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateZoneFromZoneFileResponse>
+                transformer =
+                        CreateZoneFromZoneFileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateZoneFromZoneFileRequest, CreateZoneFromZoneFileResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateZoneFromZoneFileRequest, CreateZoneFromZoneFileResponse>,
+                        java.util.concurrent.Future<CreateZoneFromZoneFileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateZoneFromZoneFileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateZoneFromZoneFileRequest, CreateZoneFromZoneFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getCreateZoneFromZoneFileDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainRecordsResponse> deleteDomainRecords(
             DeleteDomainRecordsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

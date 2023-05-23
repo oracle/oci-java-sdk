@@ -37,6 +37,14 @@ public class ListServicesConverter {
                         .path("registry")
                         .path("services");
 
+        if (request.getServiceStage() != null) {
+            target =
+                    target.queryParam(
+                            "serviceStage",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getServiceStage()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

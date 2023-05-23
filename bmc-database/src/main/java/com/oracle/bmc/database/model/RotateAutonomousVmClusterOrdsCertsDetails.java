@@ -44,13 +44,13 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
         private CertificateGenerationType certificateGenerationType;
 
         /**
-         * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
          * @param certificateGenerationType the value to set
          * @return this builder
          **/
@@ -161,7 +161,7 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
     }
 
     /**
-     * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
      **/
     public enum CertificateGenerationType {
         System("SYSTEM"),
@@ -196,13 +196,13 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
         }
     };
     /**
-     * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
     private final CertificateGenerationType certificateGenerationType;
 
     /**
-     * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
      * @return the value
      **/
     public CertificateGenerationType getCertificateGenerationType() {

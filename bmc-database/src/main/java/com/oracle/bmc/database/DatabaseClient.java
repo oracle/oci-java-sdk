@@ -6850,6 +6850,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetExadataInfrastructureUnAllocatedResourcesResponse
+            getExadataInfrastructureUnAllocatedResources(
+                    GetExadataInfrastructureUnAllocatedResourcesRequest request) {
+        LOG.trace("Called getExadataInfrastructureUnAllocatedResources");
+        final GetExadataInfrastructureUnAllocatedResourcesRequest interceptedRequest =
+                GetExadataInfrastructureUnAllocatedResourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadataInfrastructureUnAllocatedResourcesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadataInfrastructureUnAllocatedResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructureUnAllocatedResources/GetExadataInfrastructureUnAllocatedResources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetExadataInfrastructureUnAllocatedResourcesResponse>
+                transformer =
+                        GetExadataInfrastructureUnAllocatedResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetExadataIormConfigResponse getExadataIormConfig(GetExadataIormConfigRequest request) {
         LOG.trace("Called getExadataIormConfig");
         final GetExadataIormConfigRequest interceptedRequest =

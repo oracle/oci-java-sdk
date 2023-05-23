@@ -68,6 +68,7 @@ public final class ExadataInfrastructure
         "nextMaintenanceRunId",
         "isCpsOfflineReportEnabled",
         "networkBondingModeDetails",
+        "availabilityDomain",
         "freeformTags",
         "definedTags"
     })
@@ -117,6 +118,7 @@ public final class ExadataInfrastructure
             String nextMaintenanceRunId,
             Boolean isCpsOfflineReportEnabled,
             NetworkBondingModeDetails networkBondingModeDetails,
+            String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -165,6 +167,7 @@ public final class ExadataInfrastructure
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
         this.networkBondingModeDetails = networkBondingModeDetails;
+        this.availabilityDomain = availabilityDomain;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -896,6 +899,22 @@ public final class ExadataInfrastructure
             return this;
         }
         /**
+         * The name of the availability domain that the Exadata infrastructure is located in.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The name of the availability domain that the Exadata infrastructure is located in.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -992,6 +1011,7 @@ public final class ExadataInfrastructure
                             this.nextMaintenanceRunId,
                             this.isCpsOfflineReportEnabled,
                             this.networkBondingModeDetails,
+                            this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -1136,6 +1156,9 @@ public final class ExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("networkBondingModeDetails")) {
                 this.networkBondingModeDetails(model.getNetworkBondingModeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1950,6 +1973,20 @@ public final class ExadataInfrastructure
     }
 
     /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The name of the availability domain that the Exadata infrastructure is located in.
+     * @return the value
+     **/
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -2062,6 +2099,7 @@ public final class ExadataInfrastructure
                 .append(String.valueOf(this.isCpsOfflineReportEnabled));
         sb.append(", networkBondingModeDetails=")
                 .append(String.valueOf(this.networkBondingModeDetails));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -2133,6 +2171,7 @@ public final class ExadataInfrastructure
                         this.isCpsOfflineReportEnabled, other.isCpsOfflineReportEnabled)
                 && java.util.Objects.equals(
                         this.networkBondingModeDetails, other.networkBondingModeDetails)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -2283,6 +2322,11 @@ public final class ExadataInfrastructure
                         + (this.networkBondingModeDetails == null
                                 ? 43
                                 : this.networkBondingModeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

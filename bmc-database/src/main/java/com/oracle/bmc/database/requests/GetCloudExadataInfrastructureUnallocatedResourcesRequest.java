@@ -36,6 +36,17 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    private java.util.List<String> dbServers;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.
+     */
+    public java.util.List<String> getDbServers() {
+        return dbServers;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -77,6 +88,30 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
         }
 
         /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.
+         */
+        private java.util.List<String> dbServers = null;
+
+        /**
+         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.
+         * @param dbServers the value to set
+         * @return this builder instance
+         */
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * Singular setter. The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder dbServers(String singularValue) {
+            return this.dbServers(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -106,6 +141,7 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
         public Builder copy(GetCloudExadataInfrastructureUnallocatedResourcesRequest o) {
             cloudExadataInfrastructureId(o.getCloudExadataInfrastructureId());
             opcRequestId(o.getOpcRequestId());
+            dbServers(o.getDbServers());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -143,8 +179,9 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
                     new GetCloudExadataInfrastructureUnallocatedResourcesRequest();
             request.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             request.opcRequestId = opcRequestId;
+            request.dbServers = dbServers;
             return request;
-            // new GetCloudExadataInfrastructureUnallocatedResourcesRequest(cloudExadataInfrastructureId, opcRequestId);
+            // new GetCloudExadataInfrastructureUnallocatedResourcesRequest(cloudExadataInfrastructureId, opcRequestId, dbServers);
         }
     }
 
@@ -155,7 +192,8 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
     public Builder toBuilder() {
         return new Builder()
                 .cloudExadataInfrastructureId(cloudExadataInfrastructureId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .dbServers(dbServers);
     }
 
     /**
@@ -174,6 +212,7 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
         sb.append(",cloudExadataInfrastructureId=")
                 .append(String.valueOf(this.cloudExadataInfrastructureId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",dbServers=").append(String.valueOf(this.dbServers));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +231,8 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
         return super.equals(o)
                 && java.util.Objects.equals(
                         this.cloudExadataInfrastructureId, other.cloudExadataInfrastructureId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.dbServers, other.dbServers);
     }
 
     @Override
@@ -205,6 +245,7 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
                                 ? 43
                                 : this.cloudExadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         return result;
     }
 }
