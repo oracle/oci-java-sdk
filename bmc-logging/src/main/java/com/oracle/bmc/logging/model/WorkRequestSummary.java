@@ -103,12 +103,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The OCID of the work request\u2019s compartment. */
+        /** The OCID of the work request's compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the work request\u2019s compartment.
+         * The OCID of the work request's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -296,12 +296,12 @@ public final class WorkRequestSummary
         return status;
     }
 
-    /** The OCID of the work request\u2019s compartment. */
+    /** The OCID of the work request's compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the work request\u2019s compartment.
+     * The OCID of the work request's compartment.
      *
      * @return the value
      */

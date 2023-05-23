@@ -15,10 +15,10 @@ public class CreateLogSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.logging.model.CreateLogSavedSearchDetails> {
 
-    /** Specification of the Saved Search to create */
+    /** Specification of the saved search to create. */
     private com.oracle.bmc.logging.model.CreateLogSavedSearchDetails createLogSavedSearchDetails;
 
-    /** Specification of the Saved Search to create */
+    /** Specification of the saved search to create. */
     public com.oracle.bmc.logging.model.CreateLogSavedSearchDetails
             getCreateLogSavedSearchDetails() {
         return createLogSavedSearchDetails;
@@ -74,12 +74,12 @@ public class CreateLogSavedSearchRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Specification of the Saved Search to create */
+        /** Specification of the saved search to create. */
         private com.oracle.bmc.logging.model.CreateLogSavedSearchDetails
                 createLogSavedSearchDetails = null;
 
         /**
-         * Specification of the Saved Search to create
+         * Specification of the saved search to create.
          *
          * @param createLogSavedSearchDetails the value to set
          * @return this builder instance

@@ -61,24 +61,24 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     public LogType getLogType() {
         return logType;
     }
-    /** Service that created the log object. */
+    /** Service that created the log object, which is a field of LogSummary.Configuration.Source. */
     private String sourceService;
 
-    /** Service that created the log object. */
+    /** Service that created the log object, which is a field of LogSummary.Configuration.Source. */
     public String getSourceService() {
         return sourceService;
     }
-    /** Log object resource. */
+    /** Log object resource, which is a field of LogSummary.Configuration.Source. */
     private String sourceResource;
 
-    /** Log object resource. */
+    /** Log object resource, which is a field of LogSummary.Configuration.Source. */
     public String getSourceResource() {
         return sourceResource;
     }
-    /** Resource name */
+    /** Resource name. */
     private String displayName;
 
-    /** Resource name */
+    /** Resource name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -251,11 +251,13 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Service that created the log object. */
+        /**
+         * Service that created the log object, which is a field of LogSummary.Configuration.Source.
+         */
         private String sourceService = null;
 
         /**
-         * Service that created the log object.
+         * Service that created the log object, which is a field of LogSummary.Configuration.Source.
          *
          * @param sourceService the value to set
          * @return this builder instance
@@ -265,11 +267,11 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Log object resource. */
+        /** Log object resource, which is a field of LogSummary.Configuration.Source. */
         private String sourceResource = null;
 
         /**
-         * Log object resource.
+         * Log object resource, which is a field of LogSummary.Configuration.Source.
          *
          * @param sourceResource the value to set
          * @return this builder instance
@@ -279,11 +281,11 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Resource name */
+        /** Resource name. */
         private String displayName = null;
 
         /**
-         * Resource name
+         * Resource name.
          *
          * @param displayName the value to set
          * @return this builder instance

@@ -599,40 +599,6 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
-    public java.util.concurrent.Future<GetLogIncludedSearchResponse> getLogIncludedSearch(
-            GetLogIncludedSearchRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Validate.notBlank(
-                request.getLogIncludedSearchId(), "logIncludedSearchId must not be blank");
-
-        return clientCall(request, GetLogIncludedSearchResponse::builder)
-                .logger(LOG, "getLogIncludedSearch")
-                .serviceDetails(
-                        "LoggingManagement",
-                        "GetLogIncludedSearch",
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogIncludedSearchRequest::builder)
-                .basePath("/20200531")
-                .appendPathParam("logIncludedSearch")
-                .appendPathParam(request.getLogIncludedSearchId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.logging.model.LogIncludedSearch.class,
-                        GetLogIncludedSearchResponse.Builder::logIncludedSearch)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogIncludedSearchResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetLogIncludedSearchResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<GetLogSavedSearchResponse> getLogSavedSearch(
             GetLogSavedSearchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -772,46 +738,6 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
-    public java.util.concurrent.Future<ListLogIncludedSearchesResponse> listLogIncludedSearches(
-            ListLogIncludedSearchesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListLogIncludedSearchesResponse::builder)
-                .logger(LOG, "listLogIncludedSearches")
-                .serviceDetails(
-                        "LoggingManagement",
-                        "ListLogIncludedSearches",
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogIncludedSearchesRequest::builder)
-                .basePath("/20200531")
-                .appendPathParam("logIncludedSearches")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("logIncludedSearchId", request.getLogIncludedSearchId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection.class,
-                        ListLogIncludedSearchesResponse.Builder::logIncludedSearchSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogIncludedSearchesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-previous-page",
-                        ListLogIncludedSearchesResponse.Builder::opcPreviousPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogIncludedSearchesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<ListLogSavedSearchesResponse> listLogSavedSearches(
             ListLogSavedSearchesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -910,6 +836,7 @@ public class LoggingManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam("v2")
                 .appendPathParam("registry")
                 .appendPathParam("services")
+                .appendQueryParam("serviceStage", request.getServiceStage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

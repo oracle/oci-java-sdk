@@ -26,15 +26,22 @@ package com.oracle.bmc.dns.model;
 public final class UpdateZoneDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags", "externalMasters"})
+    @java.beans.ConstructorProperties({
+        "freeformTags",
+        "definedTags",
+        "externalMasters",
+        "externalDownstreams"
+    })
     public UpdateZoneDetails(
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<ExternalMaster> externalMasters) {
+            java.util.List<ExternalMaster> externalMasters,
+            java.util.List<ExternalDownstream> externalDownstreams) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.externalMasters = externalMasters;
+        this.externalDownstreams = externalDownstreams;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -109,6 +116,25 @@ public final class UpdateZoneDetails
             this.__explicitlySet__.add("externalMasters");
             return this;
         }
+        /**
+         * External secondary servers for the zone. This field is currently not supported when
+         * {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
+        private java.util.List<ExternalDownstream> externalDownstreams;
+
+        /**
+         * External secondary servers for the zone. This field is currently not supported when
+         * {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         *
+         * @param externalDownstreams the value to set
+         * @return this builder
+         */
+        public Builder externalDownstreams(java.util.List<ExternalDownstream> externalDownstreams) {
+            this.externalDownstreams = externalDownstreams;
+            this.__explicitlySet__.add("externalDownstreams");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +142,10 @@ public final class UpdateZoneDetails
         public UpdateZoneDetails build() {
             UpdateZoneDetails model =
                     new UpdateZoneDetails(
-                            this.freeformTags, this.definedTags, this.externalMasters);
+                            this.freeformTags,
+                            this.definedTags,
+                            this.externalMasters,
+                            this.externalDownstreams);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +162,9 @@ public final class UpdateZoneDetails
             }
             if (model.wasPropertyExplicitlySet("externalMasters")) {
                 this.externalMasters(model.getExternalMasters());
+            }
+            if (model.wasPropertyExplicitlySet("externalDownstreams")) {
+                this.externalDownstreams(model.getExternalDownstreams());
             }
             return this;
         }
@@ -210,6 +242,23 @@ public final class UpdateZoneDetails
         return externalMasters;
     }
 
+    /**
+     * External secondary servers for the zone. This field is currently not supported when {@code
+     * zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
+    private final java.util.List<ExternalDownstream> externalDownstreams;
+
+    /**
+     * External secondary servers for the zone. This field is currently not supported when {@code
+     * zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     *
+     * @return the value
+     */
+    public java.util.List<ExternalDownstream> getExternalDownstreams() {
+        return externalDownstreams;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -228,6 +277,7 @@ public final class UpdateZoneDetails
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
+        sb.append(", externalDownstreams=").append(String.valueOf(this.externalDownstreams));
         sb.append(")");
         return sb.toString();
     }
@@ -245,6 +295,7 @@ public final class UpdateZoneDetails
         return java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.externalMasters, other.externalMasters)
+                && java.util.Objects.equals(this.externalDownstreams, other.externalDownstreams)
                 && super.equals(other);
     }
 
@@ -257,6 +308,11 @@ public final class UpdateZoneDetails
         result =
                 (result * PRIME)
                         + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDownstreams == null
+                                ? 43
+                                : this.externalDownstreams.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -14,6 +14,19 @@ import com.oracle.bmc.logging.model.*;
 public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
+     * Service stage of a service. The allowed values are "ProductionStage", "DevStage" and
+     * "LAStage".
+     */
+    private String serviceStage;
+
+    /**
+     * Service stage of a service. The allowed values are "ProductionStage", "DevStage" and
+     * "LAStage".
+     */
+    public String getServiceStage() {
+        return serviceStage;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      */
@@ -32,6 +45,24 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                     ListServicesRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /**
+         * Service stage of a service. The allowed values are "ProductionStage", "DevStage" and
+         * "LAStage".
+         */
+        private String serviceStage = null;
+
+        /**
+         * Service stage of a service. The allowed values are "ProductionStage", "DevStage" and
+         * "LAStage".
+         *
+         * @param serviceStage the value to set
+         * @return this builder instance
+         */
+        public Builder serviceStage(String serviceStage) {
+            this.serviceStage = serviceStage;
+            return this;
+        }
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -81,6 +112,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
          * @return this builder instance
          */
         public Builder copy(ListServicesRequest o) {
+            serviceStage(o.getServiceStage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -116,9 +148,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public ListServicesRequest buildWithoutInvocationCallback() {
             ListServicesRequest request = new ListServicesRequest();
+            request.serviceStage = serviceStage;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListServicesRequest(opcRequestId);
+            // new ListServicesRequest(serviceStage, opcRequestId);
         }
     }
 
@@ -128,7 +161,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().opcRequestId(opcRequestId);
+        return new Builder().serviceStage(serviceStage).opcRequestId(opcRequestId);
     }
 
     /**
@@ -145,6 +178,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",serviceStage=").append(String.valueOf(this.serviceStage));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -160,13 +194,16 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         ListServicesRequest other = (ListServicesRequest) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.serviceStage, other.serviceStage)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.serviceStage == null ? 43 : this.serviceStage.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

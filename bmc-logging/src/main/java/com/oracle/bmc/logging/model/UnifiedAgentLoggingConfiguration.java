@@ -28,10 +28,16 @@ public final class UnifiedAgentLoggingConfiguration
         extends UnifiedAgentServiceConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** Logging source object. */
         @com.fasterxml.jackson.annotation.JsonProperty("sources")
         private java.util.List<UnifiedAgentLoggingSource> sources;
 
+        /**
+         * Logging source object.
+         *
+         * @param sources the value to set
+         * @return this builder
+         */
         public Builder sources(java.util.List<UnifiedAgentLoggingSource> sources) {
             this.sources = sources;
             this.__explicitlySet__.add("sources");
@@ -89,9 +95,15 @@ public final class UnifiedAgentLoggingConfiguration
         this.destination = destination;
     }
 
+    /** Logging source object. */
     @com.fasterxml.jackson.annotation.JsonProperty("sources")
     private final java.util.List<UnifiedAgentLoggingSource> sources;
 
+    /**
+     * Logging source object.
+     *
+     * @return the value
+     */
     public java.util.List<UnifiedAgentLoggingSource> getSources() {
         return sources;
     }

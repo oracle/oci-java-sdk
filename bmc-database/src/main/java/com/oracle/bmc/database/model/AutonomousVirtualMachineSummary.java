@@ -36,7 +36,8 @@ public final class AutonomousVirtualMachineSummary
         "compartmentId",
         "autonomousVmClusterId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "cloudAutonomousVmClusterId"
     })
     public AutonomousVirtualMachineSummary(
             String id,
@@ -51,7 +52,8 @@ public final class AutonomousVirtualMachineSummary
             String compartmentId,
             String autonomousVmClusterId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String cloudAutonomousVmClusterId) {
         super();
         this.id = id;
         this.vmName = vmName;
@@ -66,6 +68,7 @@ public final class AutonomousVirtualMachineSummary
         this.autonomousVmClusterId = autonomousVmClusterId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -298,6 +301,25 @@ public final class AutonomousVirtualMachineSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
+        private String cloudAutonomousVmClusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
+         *
+         * @param cloudAutonomousVmClusterId the value to set
+         * @return this builder
+         */
+        public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
+            this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            this.__explicitlySet__.add("cloudAutonomousVmClusterId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -317,7 +339,8 @@ public final class AutonomousVirtualMachineSummary
                             this.compartmentId,
                             this.autonomousVmClusterId,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.cloudAutonomousVmClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -364,6 +387,9 @@ public final class AutonomousVirtualMachineSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutonomousVmClusterId")) {
+                this.cloudAutonomousVmClusterId(model.getCloudAutonomousVmClusterId());
             }
             return this;
         }
@@ -630,6 +656,23 @@ public final class AutonomousVirtualMachineSummary
         return definedTags;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
+    private final String cloudAutonomousVmClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
+     *
+     * @return the value
+     */
+    public String getCloudAutonomousVmClusterId() {
+        return cloudAutonomousVmClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -658,6 +701,8 @@ public final class AutonomousVirtualMachineSummary
         sb.append(", autonomousVmClusterId=").append(String.valueOf(this.autonomousVmClusterId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", cloudAutonomousVmClusterId=")
+                .append(String.valueOf(this.cloudAutonomousVmClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -686,6 +731,8 @@ public final class AutonomousVirtualMachineSummary
                 && java.util.Objects.equals(this.autonomousVmClusterId, other.autonomousVmClusterId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
                 && super.equals(other);
     }
 
@@ -726,6 +773,11 @@ public final class AutonomousVirtualMachineSummary
                                 : this.autonomousVmClusterId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutonomousVmClusterId == null
+                                ? 43
+                                : this.cloudAutonomousVmClusterId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

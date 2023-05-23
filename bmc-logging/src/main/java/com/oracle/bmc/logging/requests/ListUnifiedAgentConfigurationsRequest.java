@@ -49,10 +49,10 @@ public class ListUnifiedAgentConfigurationsRequest
     public String getGroupId() {
         return groupId;
     }
-    /** Resource name */
+    /** Resource name. */
     private String displayName;
 
-    /** Resource name */
+    /** Resource name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -258,11 +258,11 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /** Resource name */
+        /** Resource name. */
         private String displayName = null;
 
         /**
-         * Resource name
+         * Resource name.
          *
          * @param displayName the value to set
          * @return this builder instance

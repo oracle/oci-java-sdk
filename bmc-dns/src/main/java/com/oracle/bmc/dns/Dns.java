@@ -271,6 +271,53 @@ public interface Dns extends AutoCloseable {
     CreateZoneResponse createZone(CreateZoneRequest request);
 
     /**
+     * Creates a new zone from a zone file in the specified compartment. Not supported for private
+     * zones.
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneFromZoneFileExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateZoneFromZoneFile API.
+     */
+    CreateZoneFromZoneFileResponse createZoneFromZoneFile(CreateZoneFromZoneFileRequest request);
+
+    /**
      * Deletes all records at the specified zone and domain.
      *
      * <p>When the zone name is provided as a path parameter and `PRIVATE` is used for the scope

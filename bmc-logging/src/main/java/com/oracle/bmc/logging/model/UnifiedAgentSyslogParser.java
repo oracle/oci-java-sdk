@@ -89,55 +89,91 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-
+        /** Time format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
         private String timeFormat;
 
+        /**
+         * Time format.
+         *
+         * @param timeFormat the value to set
+         * @return this builder
+         */
         public Builder timeFormat(String timeFormat) {
             this.timeFormat = timeFormat;
             this.__explicitlySet__.add("timeFormat");
             return this;
         }
-
+        /** rfc5424 time format. */
         @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
         private String rfc5424TimeFormat;
 
+        /**
+         * rfc5424 time format.
+         *
+         * @param rfc5424TimeFormat the value to set
+         * @return this builder
+         */
         public Builder rfc5424TimeFormat(String rfc5424TimeFormat) {
             this.rfc5424TimeFormat = rfc5424TimeFormat;
             this.__explicitlySet__.add("rfc5424TimeFormat");
             return this;
         }
-
+        /** Message format of syslog. */
         @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
         private MessageFormat messageFormat;
 
+        /**
+         * Message format of syslog.
+         *
+         * @param messageFormat the value to set
+         * @return this builder
+         */
         public Builder messageFormat(MessageFormat messageFormat) {
             this.messageFormat = messageFormat;
             this.__explicitlySet__.add("messageFormat");
             return this;
         }
-
+        /** With priority or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
         private Boolean isWithPriority;
 
+        /**
+         * With priority or not.
+         *
+         * @param isWithPriority the value to set
+         * @return this builder
+         */
         public Builder isWithPriority(Boolean isWithPriority) {
             this.isWithPriority = isWithPriority;
             this.__explicitlySet__.add("isWithPriority");
             return this;
         }
-
+        /** Support colonless ident or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
         private Boolean isSupportColonlessIdent;
 
+        /**
+         * Support colonless ident or not.
+         *
+         * @param isSupportColonlessIdent the value to set
+         * @return this builder
+         */
         public Builder isSupportColonlessIdent(Boolean isSupportColonlessIdent) {
             this.isSupportColonlessIdent = isSupportColonlessIdent;
             this.__explicitlySet__.add("isSupportColonlessIdent");
             return this;
         }
-
+        /** Syslog parser type. */
         @com.fasterxml.jackson.annotation.JsonProperty("syslogParserType")
         private SyslogParserType syslogParserType;
 
+        /**
+         * Syslog parser type.
+         *
+         * @param syslogParserType the value to set
+         * @return this builder
+         */
         public Builder syslogParserType(SyslogParserType syslogParserType) {
             this.syslogParserType = syslogParserType;
             this.__explicitlySet__.add("syslogParserType");
@@ -254,21 +290,33 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         this.syslogParserType = syslogParserType;
     }
 
+    /** Time format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
     private final String timeFormat;
 
+    /**
+     * Time format.
+     *
+     * @return the value
+     */
     public String getTimeFormat() {
         return timeFormat;
     }
 
+    /** rfc5424 time format. */
     @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
     private final String rfc5424TimeFormat;
 
+    /**
+     * rfc5424 time format.
+     *
+     * @return the value
+     */
     public String getRfc5424TimeFormat() {
         return rfc5424TimeFormat;
     }
 
-    /** */
+    /** Message format of syslog. */
     public enum MessageFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Rfc3164("RFC3164"),
         Rfc5424("RFC5424"),
@@ -315,29 +363,46 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return UnknownEnumValue;
         }
     };
-
+    /** Message format of syslog. */
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     private final MessageFormat messageFormat;
 
+    /**
+     * Message format of syslog.
+     *
+     * @return the value
+     */
     public MessageFormat getMessageFormat() {
         return messageFormat;
     }
 
+    /** With priority or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
     private final Boolean isWithPriority;
 
+    /**
+     * With priority or not.
+     *
+     * @return the value
+     */
     public Boolean getIsWithPriority() {
         return isWithPriority;
     }
 
+    /** Support colonless ident or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
     private final Boolean isSupportColonlessIdent;
 
+    /**
+     * Support colonless ident or not.
+     *
+     * @return the value
+     */
     public Boolean getIsSupportColonlessIdent() {
         return isSupportColonlessIdent;
     }
 
-    /** */
+    /** Syslog parser type. */
     public enum SyslogParserType implements com.oracle.bmc.http.internal.BmcEnum {
         String("STRING"),
         Regexp("REGEXP"),
@@ -383,10 +448,15 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return UnknownEnumValue;
         }
     };
-
+    /** Syslog parser type. */
     @com.fasterxml.jackson.annotation.JsonProperty("syslogParserType")
     private final SyslogParserType syslogParserType;
 
+    /**
+     * Syslog parser type.
+     *
+     * @return the value
+     */
     public SyslogParserType getSyslogParserType() {
         return syslogParserType;
     }

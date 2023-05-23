@@ -5254,6 +5254,10 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("cloudExadataInfrastructures")
                 .appendPathParam(request.getCloudExadataInfrastructureId())
                 .appendPathParam("unAllocatedResources")
+                .appendListQueryParam(
+                        "dbServers",
+                        request.getDbServers(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -5949,6 +5953,49 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetExadataInfrastructureOcpusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadataInfrastructureUnAllocatedResourcesResponse>
+            getExadataInfrastructureUnAllocatedResources(
+                    GetExadataInfrastructureUnAllocatedResourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExadataInfrastructureUnAllocatedResourcesRequest,
+                                    GetExadataInfrastructureUnAllocatedResourcesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
+
+        return clientCall(request, GetExadataInfrastructureUnAllocatedResourcesResponse::builder)
+                .logger(LOG, "getExadataInfrastructureUnAllocatedResources")
+                .serviceDetails(
+                        "Database",
+                        "GetExadataInfrastructureUnAllocatedResources",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructureUnAllocatedResources/GetExadataInfrastructureUnAllocatedResources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadataInfrastructureUnAllocatedResourcesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadataInfrastructures")
+                .appendPathParam(request.getExadataInfrastructureId())
+                .appendPathParam("unAllocatedResources")
+                .appendListQueryParam(
+                        "dbServers",
+                        request.getDbServers(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadataInfrastructureUnAllocatedResources
+                                .class,
+                        GetExadataInfrastructureUnAllocatedResourcesResponse.Builder
+                                ::exadataInfrastructureUnAllocatedResources)
+                .handleResponseHeaderString(
+                        "etag", GetExadataInfrastructureUnAllocatedResourcesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExadataInfrastructureUnAllocatedResourcesResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

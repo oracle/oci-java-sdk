@@ -53,6 +53,9 @@ package com.oracle.bmc.logging.model;
             value = UnifiedAgentTsvParser.class,
             name = "TSV"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UnifiedAgentCriParser.class,
+            name = "CRI"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UnifiedAgentApacheErrorParser.class,
             name = "APACHE_ERROR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -110,13 +113,26 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
         return fieldTimeKey;
     }
 
-    /** Specify types for converting a field into another type. */
+    /**
+     * Specify types for converting a field into another type. For example, With this configuration:
+     * <parse>
+     *
+     * @type csv keys time,host,req_id,user time_key time </parse>
+     *     <p>This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+     *     <p>is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+     *     <p>record: { "host" : "192.168.0.1", "req_id" : "111", "user" : "-" }
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("types")
     private final java.util.Map<String, String> types;
 
     /**
-     * Specify types for converting a field into another type.
+     * Specify types for converting a field into another type. For example, With this configuration:
+     * <parse>
      *
+     * @type csv keys time,host,req_id,user time_key time </parse>
+     *     <p>This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+     *     <p>is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+     *     <p>record: { "host" : "192.168.0.1", "req_id" : "111", "user" : "-" }
      * @return the value
      */
     public java.util.Map<String, String> getTypes() {
@@ -273,6 +289,7 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
     /** Type of fluent parser. */
     public enum ParserType implements com.oracle.bmc.http.internal.BmcEnum {
         Auditd("AUDITD"),
+        Cri("CRI"),
         Json("JSON"),
         Tsv("TSV"),
         Csv("CSV"),

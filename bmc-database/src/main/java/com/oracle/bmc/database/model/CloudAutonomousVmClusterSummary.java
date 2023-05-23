@@ -67,7 +67,8 @@ public final class CloudAutonomousVmClusterSummary
         "availableAutonomousDataStorageSizeInTBs",
         "autonomousDataStorageSizeInTBs",
         "dbNodeStorageSizeInGBs",
-        "memoryPerOracleComputeUnitInGBs"
+        "memoryPerOracleComputeUnitInGBs",
+        "dbServers"
     })
     public CloudAutonomousVmClusterSummary(
             String id,
@@ -113,7 +114,8 @@ public final class CloudAutonomousVmClusterSummary
             Double availableAutonomousDataStorageSizeInTBs,
             Double autonomousDataStorageSizeInTBs,
             Integer dbNodeStorageSizeInGBs,
-            Integer memoryPerOracleComputeUnitInGBs) {
+            Integer memoryPerOracleComputeUnitInGBs,
+            java.util.List<String> dbServers) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -159,6 +161,7 @@ public final class CloudAutonomousVmClusterSummary
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.dbServers = dbServers;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -957,12 +960,20 @@ public final class CloudAutonomousVmClusterSummary
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per each CPU core. */
+        /**
+         * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per each CPU core.
+         * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous
+         * Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -970,6 +981,27 @@ public final class CloudAutonomousVmClusterSummary
         public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
             this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * servers.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * servers.
+         *
+         * @param dbServers the value to set
+         * @return this builder
+         */
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
             return this;
         }
 
@@ -1022,7 +1054,8 @@ public final class CloudAutonomousVmClusterSummary
                             this.availableAutonomousDataStorageSizeInTBs,
                             this.autonomousDataStorageSizeInTBs,
                             this.dbNodeStorageSizeInGBs,
-                            this.memoryPerOracleComputeUnitInGBs);
+                            this.memoryPerOracleComputeUnitInGBs,
+                            this.dbServers);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1164,6 +1197,9 @@ public final class CloudAutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
                 this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
             }
             return this;
         }
@@ -2041,17 +2077,42 @@ public final class CloudAutonomousVmClusterSummary
         return dbNodeStorageSizeInGBs;
     }
 
-    /** The amount of memory (in GBs) enabled per each CPU core. */
+    /**
+     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous
+     * Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per each CPU core.
+     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous
+     * Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */
     public Integer getMemoryPerOracleComputeUnitInGBs() {
         return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the Db servers.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    private final java.util.List<String> dbServers;
+
+    /**
+     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * of the Db servers.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDbServers() {
+        return dbServers;
     }
 
     @Override
@@ -2122,6 +2183,7 @@ public final class CloudAutonomousVmClusterSummary
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(")");
         return sb.toString();
     }
@@ -2194,6 +2256,7 @@ public final class CloudAutonomousVmClusterSummary
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && super.equals(other);
     }
 
@@ -2337,6 +2400,7 @@ public final class CloudAutonomousVmClusterSummary
                         + (this.memoryPerOracleComputeUnitInGBs == null
                                 ? 43
                                 : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

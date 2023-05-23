@@ -89,19 +89,31 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-
+        /** Time type of JSON parser. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeType")
         private TimeType timeType;
 
+        /**
+         * Time type of JSON parser.
+         *
+         * @param timeType the value to set
+         * @return this builder
+         */
         public Builder timeType(TimeType timeType) {
             this.timeType = timeType;
             this.__explicitlySet__.add("timeType");
             return this;
         }
-
+        /** Process time value using the specified format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
         private String timeFormat;
 
+        /**
+         * Process time value using the specified format.
+         *
+         * @param timeFormat the value to set
+         * @return this builder
+         */
         public Builder timeFormat(String timeFormat) {
             this.timeFormat = timeFormat;
             this.__explicitlySet__.add("timeFormat");
@@ -194,7 +206,7 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         this.timeFormat = timeFormat;
     }
 
-    /** */
+    /** Time type of JSON parser. */
     public enum TimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Float("FLOAT"),
         Unixtime("UNIXTIME"),
@@ -241,17 +253,28 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             return UnknownEnumValue;
         }
     };
-
+    /** Time type of JSON parser. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeType")
     private final TimeType timeType;
 
+    /**
+     * Time type of JSON parser.
+     *
+     * @return the value
+     */
     public TimeType getTimeType() {
         return timeType;
     }
 
+    /** Process time value using the specified format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
     private final String timeFormat;
 
+    /**
+     * Process time value using the specified format.
+     *
+     * @return the value
+     */
     public String getTimeFormat() {
         return timeFormat;
     }

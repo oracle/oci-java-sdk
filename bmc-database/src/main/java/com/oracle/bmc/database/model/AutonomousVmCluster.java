@@ -411,12 +411,20 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** The amount of memory (in GBs) to be enabled per each CPU core. */
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+         * Autonomous Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per each CPU core.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+         * Autonomous Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -801,12 +809,12 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("isMtlsEnabled");
             return this;
         }
-        /** The date and time of Database SSL certificate expiration. */
+        /** The date and time of the Database SSL certificate expiration. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
         private java.util.Date timeDatabaseSslCertificateExpires;
 
         /**
-         * The date and time of Database SSL certificate expiration.
+         * The date and time of the Database SSL certificate expiration.
          *
          * @param timeDatabaseSslCertificateExpires the value to set
          * @return this builder
@@ -817,12 +825,12 @@ public final class AutonomousVmCluster
             this.__explicitlySet__.add("timeDatabaseSslCertificateExpires");
             return this;
         }
-        /** The date and time of ORDS certificate expiration. */
+        /** The date and time of the ORDS certificate expiration. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOrdsCertificateExpires")
         private java.util.Date timeOrdsCertificateExpires;
 
         /**
-         * The date and time of ORDS certificate expiration.
+         * The date and time of the ORDS certificate expiration.
          *
          * @param timeOrdsCertificateExpires the value to set
          * @return this builder
@@ -1351,12 +1359,20 @@ public final class AutonomousVmCluster
         return totalContainerDatabases;
     }
 
-    /** The amount of memory (in GBs) to be enabled per each CPU core. */
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+     * Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+     * Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */
@@ -1742,12 +1758,12 @@ public final class AutonomousVmCluster
         return isMtlsEnabled;
     }
 
-    /** The date and time of Database SSL certificate expiration. */
+    /** The date and time of the Database SSL certificate expiration. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
     private final java.util.Date timeDatabaseSslCertificateExpires;
 
     /**
-     * The date and time of Database SSL certificate expiration.
+     * The date and time of the Database SSL certificate expiration.
      *
      * @return the value
      */
@@ -1755,12 +1771,12 @@ public final class AutonomousVmCluster
         return timeDatabaseSslCertificateExpires;
     }
 
-    /** The date and time of ORDS certificate expiration. */
+    /** The date and time of the ORDS certificate expiration. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOrdsCertificateExpires")
     private final java.util.Date timeOrdsCertificateExpires;
 
     /**
-     * The date and time of ORDS certificate expiration.
+     * The date and time of the ORDS certificate expiration.
      *
      * @return the value
      */

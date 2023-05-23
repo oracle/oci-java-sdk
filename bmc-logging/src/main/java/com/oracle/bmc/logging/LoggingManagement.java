@@ -8,9 +8,15 @@ import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
 
 /**
- * Use the Logging Management API to create, read, list, update, and delete log groups, log objects,
- * and agent configurations. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER
- * for all the operations by default if no circuit breaker configuration is defined by the user.
+ * Use the Logging Management API to create, read, list, update, move and delete log groups, log
+ * objects, log saved searches, agent configurations, log data models, continuous queries, and
+ * managed continuous queries.
+ *
+ * <p>For more information, see [Logging
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Logging/Concepts/loggingoverview.htm).
+ *
+ * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
+ * default if no circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public interface LoggingManagement extends AutoCloseable {
@@ -235,7 +241,7 @@ public interface LoggingManagement extends AutoCloseable {
     DeleteLogGroupResponse deleteLogGroup(DeleteLogGroupRequest request);
 
     /**
-     * Deletes the specified log saved search.
+     * Deletes the specified LogSavedSearch.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -314,23 +320,7 @@ public interface LoggingManagement extends AutoCloseable {
     GetLogGroupResponse getLogGroup(GetLogGroupRequest request);
 
     /**
-     * Retrieves a LogIncludedSearch.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogIncludedSearchExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     GetLogIncludedSearch API.
-     */
-    GetLogIncludedSearchResponse getLogIncludedSearch(GetLogIncludedSearchRequest request);
-
-    /**
-     * Retrieves a log saved search.
+     * Retrieves a LogSavedSearch.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -393,23 +383,7 @@ public interface LoggingManagement extends AutoCloseable {
     ListLogGroupsResponse listLogGroups(ListLogGroupsRequest request);
 
     /**
-     * Lists Logging Included Searches for this compartment.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogIncludedSearchesExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     ListLogIncludedSearches API.
-     */
-    ListLogIncludedSearchesResponse listLogIncludedSearches(ListLogIncludedSearchesRequest request);
-
-    /**
-     * Lists Logging Saved Searches for this compartment.
+     * Lists LogSavedSearches for this compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -552,7 +526,7 @@ public interface LoggingManagement extends AutoCloseable {
     UpdateLogGroupResponse updateLogGroup(UpdateLogGroupRequest request);
 
     /**
-     * Updates an existing log saved search.
+     * Updates an existing LogSavedSearch.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
