@@ -511,6 +511,50 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateZoneFromZoneFileResponse> createZoneFromZoneFile(
+            CreateZoneFromZoneFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateZoneFromZoneFileRequest, CreateZoneFromZoneFileResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getCreateZoneFromZoneFileDetails(),
+                "createZoneFromZoneFileDetails is required");
+
+        return clientCall(request, CreateZoneFromZoneFileResponse::builder)
+                .logger(LOG, "createZoneFromZoneFile")
+                .serviceDetails(
+                        "Dns",
+                        "CreateZoneFromZoneFile",
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/CreateZoneFromZoneFile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateZoneFromZoneFileRequest::builder)
+                .basePath("/20180115")
+                .appendPathParam("actions")
+                .appendPathParam("createZoneFromZoneFile")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("scope", request.getScope())
+                .appendQueryParam("viewId", request.getViewId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dns.model.Zone.class,
+                        CreateZoneFromZoneFileResponse.Builder::zone)
+                .handleResponseHeaderString("etag", CreateZoneFromZoneFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "Location", CreateZoneFromZoneFileResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateZoneFromZoneFileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateZoneFromZoneFileResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainRecordsResponse> deleteDomainRecords(
             DeleteDomainRecordsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

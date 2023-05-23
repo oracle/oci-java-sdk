@@ -33,6 +33,7 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "freeformTags",
         "definedTags",
         "externalMasters",
+        "externalDownstreams",
         "self",
         "id",
         "timeCreated",
@@ -52,6 +53,7 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<ExternalMaster> externalMasters,
+            java.util.List<ExternalDownstream> externalDownstreams,
             String self,
             String id,
             java.util.Date timeCreated,
@@ -70,6 +72,7 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.externalMasters = externalMasters;
+        this.externalDownstreams = externalDownstreams;
         this.self = self;
         this.id = id;
         this.timeCreated = timeCreated;
@@ -234,6 +237,25 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         public Builder externalMasters(java.util.List<ExternalMaster> externalMasters) {
             this.externalMasters = externalMasters;
             this.__explicitlySet__.add("externalMasters");
+            return this;
+        }
+        /**
+         * External secondary servers for the zone. This field is currently not supported when
+         * {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
+        private java.util.List<ExternalDownstream> externalDownstreams;
+
+        /**
+         * External secondary servers for the zone. This field is currently not supported when
+         * {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         *
+         * @param externalDownstreams the value to set
+         * @return this builder
+         */
+        public Builder externalDownstreams(java.util.List<ExternalDownstream> externalDownstreams) {
+            this.externalDownstreams = externalDownstreams;
+            this.__explicitlySet__.add("externalDownstreams");
             return this;
         }
         /** The canonical absolute URL of the resource. */
@@ -402,6 +424,7 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.freeformTags,
                             this.definedTags,
                             this.externalMasters,
+                            this.externalDownstreams,
                             this.self,
                             this.id,
                             this.timeCreated,
@@ -442,6 +465,9 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("externalMasters")) {
                 this.externalMasters(model.getExternalMasters());
+            }
+            if (model.wasPropertyExplicitlySet("externalDownstreams")) {
+                this.externalDownstreams(model.getExternalDownstreams());
             }
             if (model.wasPropertyExplicitlySet("self")) {
                 this.self(model.getSelf());
@@ -668,6 +694,23 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return externalMasters;
     }
 
+    /**
+     * External secondary servers for the zone. This field is currently not supported when {@code
+     * zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
+    private final java.util.List<ExternalDownstream> externalDownstreams;
+
+    /**
+     * External secondary servers for the zone. This field is currently not supported when {@code
+     * zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     *
+     * @return the value
+     */
+    public java.util.List<ExternalDownstream> getExternalDownstreams() {
+        return externalDownstreams;
+    }
+
     /** The canonical absolute URL of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("self")
     private final String self;
@@ -874,6 +917,7 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
+        sb.append(", externalDownstreams=").append(String.valueOf(this.externalDownstreams));
         sb.append(", self=").append(String.valueOf(this.self));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -905,6 +949,7 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.externalMasters, other.externalMasters)
+                && java.util.Objects.equals(this.externalDownstreams, other.externalDownstreams)
                 && java.util.Objects.equals(this.self, other.self)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -933,6 +978,11 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDownstreams == null
+                                ? 43
+                                : this.externalDownstreams.hashCode());
         result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

@@ -35,10 +35,16 @@ public final class UnifiedAgentWindowsEventSource extends UnifiedAgentLoggingSou
             this.__explicitlySet__.add("name");
             return this;
         }
-
+        /** Windows event log channels. */
         @com.fasterxml.jackson.annotation.JsonProperty("channels")
         private java.util.List<String> channels;
 
+        /**
+         * Windows event log channels.
+         *
+         * @param channels the value to set
+         * @return this builder
+         */
         public Builder channels(java.util.List<String> channels) {
             this.channels = channels;
             this.__explicitlySet__.add("channels");
@@ -84,9 +90,15 @@ public final class UnifiedAgentWindowsEventSource extends UnifiedAgentLoggingSou
         this.channels = channels;
     }
 
+    /** Windows event log channels. */
     @com.fasterxml.jackson.annotation.JsonProperty("channels")
     private final java.util.List<String> channels;
 
+    /**
+     * Windows event log channels.
+     *
+     * @return the value
+     */
     public java.util.List<String> getChannels() {
         return channels;
     }

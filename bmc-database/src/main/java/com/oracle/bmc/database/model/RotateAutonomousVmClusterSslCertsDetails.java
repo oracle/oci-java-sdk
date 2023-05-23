@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The details for configuring the ORDS certificates on Autonomous VM Cluster <br>
+ * Details for configuring the ORDS certificates on Autonomous Exadata VM Cluster <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -44,14 +44,14 @@ public final class RotateAutonomousVmClusterSslCertsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring
+         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring
          * your own certificate.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
         private CertificateGenerationType certificateGenerationType;
 
         /**
-         * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring
+         * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring
          * your own certificate.
          *
          * @param certificateGenerationType the value to set
@@ -165,8 +165,8 @@ public final class RotateAutonomousVmClusterSslCertsDetails
     }
 
     /**
-     * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring
-     * your own certificate.
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your
+     * own certificate.
      */
     public enum CertificateGenerationType implements com.oracle.bmc.http.internal.BmcEnum {
         System("SYSTEM"),
@@ -201,15 +201,15 @@ public final class RotateAutonomousVmClusterSslCertsDetails
         }
     };
     /**
-     * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring
-     * your own certificate.
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your
+     * own certificate.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateGenerationType")
     private final CertificateGenerationType certificateGenerationType;
 
     /**
-     * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring
-     * your own certificate.
+     * Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your
+     * own certificate.
      *
      * @return the value
      */

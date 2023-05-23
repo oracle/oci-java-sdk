@@ -47,6 +47,7 @@ public final class VmClusterSummary
         "sshPublicKeys",
         "licenseModel",
         "dbServers",
+        "availabilityDomain",
         "freeformTags",
         "definedTags",
         "dataCollectionOptions"
@@ -76,6 +77,7 @@ public final class VmClusterSummary
             java.util.List<String> sshPublicKeys,
             LicenseModel licenseModel,
             java.util.List<String> dbServers,
+            String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             DataCollectionOptions dataCollectionOptions) {
@@ -104,6 +106,7 @@ public final class VmClusterSummary
         this.sshPublicKeys = sshPublicKeys;
         this.licenseModel = licenseModel;
         this.dbServers = dbServers;
+        this.availabilityDomain = availabilityDomain;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
@@ -515,6 +518,21 @@ public final class VmClusterSummary
             this.__explicitlySet__.add("dbServers");
             return this;
         }
+        /** The name of the availability domain that the VM cluster is located in. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The name of the availability domain that the VM cluster is located in.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -602,6 +620,7 @@ public final class VmClusterSummary
                             this.sshPublicKeys,
                             this.licenseModel,
                             this.dbServers,
+                            this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags,
                             this.dataCollectionOptions);
@@ -684,6 +703,9 @@ public final class VmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1156,6 +1178,19 @@ public final class VmClusterSummary
         return dbServers;
     }
 
+    /** The name of the availability domain that the VM cluster is located in. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The name of the availability domain that the VM cluster is located in.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -1247,6 +1282,7 @@ public final class VmClusterSummary
         sb.append(", sshPublicKeys=").append(String.valueOf(this.sshPublicKeys));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
@@ -1292,6 +1328,7 @@ public final class VmClusterSummary
                 && java.util.Objects.equals(this.sshPublicKeys, other.sshPublicKeys)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
@@ -1370,6 +1407,11 @@ public final class VmClusterSummary
                         + (this.sshPublicKeys == null ? 43 : this.sshPublicKeys.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

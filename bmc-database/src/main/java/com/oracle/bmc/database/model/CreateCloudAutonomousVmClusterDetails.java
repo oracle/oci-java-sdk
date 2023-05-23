@@ -212,12 +212,20 @@ public final class CreateCloudAutonomousVmClusterDetails
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /** The amount of memory (in GBs) to be enabled per each CPU core. */
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+         * Autonomous Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per each CPU core.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+         * Autonomous Database on Dedicated Exadata
+         * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
@@ -695,12 +703,20 @@ public final class CreateCloudAutonomousVmClusterDetails
         return cpuCoreCountPerNode;
     }
 
-    /** The amount of memory (in GBs) to be enabled per each CPU core. */
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+     * Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in
+     * Autonomous Database on Dedicated Exadata
+     * Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */

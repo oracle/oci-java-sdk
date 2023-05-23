@@ -33,10 +33,10 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
-    /** Resource name */
+    /** Resource name. */
     private String displayName;
 
-    /** Resource name */
+    /** Resource name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -207,11 +207,11 @@ public class ListLogGroupsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Resource name */
+        /** Resource name. */
         private String displayName = null;
 
         /**
-         * Resource name
+         * Resource name.
          *
          * @param displayName the value to set
          * @return this builder instance

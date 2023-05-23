@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.15.0 - 2023-05-23
+### Added
+- Support for CRI-O parsing in the Logging service
+- Support for retrieving the resource availability domain when getting Exadata infrastructure or VM clusters in the Database service
+- Support for specifying database servers when creating dedicated autonomous databases in the Database service
+- Support for secondary egress zones in the DNS service
+ 
+### Breaking Changes
+ - Method `public com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse getLogIncludedSearch(com.oracle.bmc.logging.requests.GetLogIncludedSearchRequest)` has been removed from `com.oracle.bmc.logging.LoggingManagement` in the Logging service
+ - Method `public com.oracle.bmc.logging.responses.ListLogIncludedSearchesResponse listLogIncludedSearches(com.oracle.bmc.logging.requests.ListLogIncludedSearchesRequest)` has been removed from `com.oracle.bmc.logging.LoggingManagement` in the Logging service
+ - Method `public java.lang.Iterable listLogIncludedSearchesRecordIterator(com.oracle.bmc.logging.requests.ListLogIncludedSearchesRequest)` has been removed from `com.oracle.bmc.logging.LoggingManagementPaginators` in the Logging service
+ - Method `public java.lang.Iterable listLogIncludedSearchesResponseIterator(com.oracle.bmc.logging.requests.ListLogIncludedSearchesRequest)` has been removed from `com.oracle.bmc.logging.LoggingManagementPaginators` in the Logging service
+ - Class `com.oracle.bmc.logging.model.LogIncludedSearch` has been removed from the Logging service
+ - Class `com.oracle.bmc.logging.model.LogIncludedSearchSummary` has been removed from the Logging service
+ - Class `com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection` has been removed from the Logging service
+ - Class `com.oracle.bmc.logging.requests.GetLogIncludedSearchRequest` has been removed from the Logging service
+ - Class `com.oracle.bmc.logging.requests.ListLogIncludedSearchesRequest` has been removed from the Logging service
+ - Class `com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse` has been removed from the Logging service
+ - Class `com.oracle.bmc.logging.responses.ListLogIncludedSearchesResponse` has been removed from the Logging service
+
 ## 3.14.0 - 2023-05-16
 ### Added
 - Support for self-service integration in the Fusion Apps as a Service service

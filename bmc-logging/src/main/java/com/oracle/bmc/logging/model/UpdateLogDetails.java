@@ -131,12 +131,12 @@ public final class UpdateLogDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** Log retention duration in 30-day increments (30, 60, 90 and so on). */
+        /** Log retention duration in 30-day increments (30, 60, 90 and so on until 180). */
         @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
         private Integer retentionDuration;
 
         /**
-         * Log retention duration in 30-day increments (30, 60, 90 and so on).
+         * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
          *
          * @param retentionDuration the value to set
          * @return this builder
@@ -281,12 +281,12 @@ public final class UpdateLogDetails
         return freeformTags;
     }
 
-    /** Log retention duration in 30-day increments (30, 60, 90 and so on). */
+    /** Log retention duration in 30-day increments (30, 60, 90 and so on until 180). */
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
     private final Integer retentionDuration;
 
     /**
-     * Log retention duration in 30-day increments (30, 60, 90 and so on).
+     * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      *
      * @return the value
      */

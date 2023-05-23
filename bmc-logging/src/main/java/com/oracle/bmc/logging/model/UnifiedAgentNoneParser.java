@@ -89,10 +89,16 @@ public final class UnifiedAgentNoneParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-
+        /** Specifies the field name to contain logs. */
         @com.fasterxml.jackson.annotation.JsonProperty("messageKey")
         private String messageKey;
 
+        /**
+         * Specifies the field name to contain logs.
+         *
+         * @param messageKey the value to set
+         * @return this builder
+         */
         public Builder messageKey(String messageKey) {
             this.messageKey = messageKey;
             this.__explicitlySet__.add("messageKey");
@@ -179,9 +185,15 @@ public final class UnifiedAgentNoneParser extends UnifiedAgentParser {
         this.messageKey = messageKey;
     }
 
+    /** Specifies the field name to contain logs. */
     @com.fasterxml.jackson.annotation.JsonProperty("messageKey")
     private final String messageKey;
 
+    /**
+     * Specifies the field name to contain logs.
+     *
+     * @return the value
+     */
     public String getMessageKey() {
         return messageKey;
     }

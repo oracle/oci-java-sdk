@@ -14,10 +14,10 @@ import com.oracle.bmc.logging.model.*;
 public class DeleteLogSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of the logSavedSearch */
+    /** OCID of the logSavedSearch. */
     private String logSavedSearchId;
 
-    /** OCID of the logSavedSearch */
+    /** OCID of the logSavedSearch. */
     public String getLogSavedSearchId() {
         return logSavedSearchId;
     }
@@ -58,11 +58,11 @@ public class DeleteLogSavedSearchRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of the logSavedSearch */
+        /** OCID of the logSavedSearch. */
         private String logSavedSearchId = null;
 
         /**
-         * OCID of the logSavedSearch
+         * OCID of the logSavedSearch.
          *
          * @param logSavedSearchId the value to set
          * @return this builder instance

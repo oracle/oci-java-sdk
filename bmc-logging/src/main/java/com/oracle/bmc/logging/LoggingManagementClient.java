@@ -570,36 +570,6 @@ public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
-    public GetLogIncludedSearchResponse getLogIncludedSearch(GetLogIncludedSearchRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Validate.notBlank(
-                request.getLogIncludedSearchId(), "logIncludedSearchId must not be blank");
-
-        return clientCall(request, GetLogIncludedSearchResponse::builder)
-                .logger(LOG, "getLogIncludedSearch")
-                .serviceDetails(
-                        "LoggingManagement",
-                        "GetLogIncludedSearch",
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLogIncludedSearchRequest::builder)
-                .basePath("/20200531")
-                .appendPathParam("logIncludedSearch")
-                .appendPathParam(request.getLogIncludedSearchId())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.logging.model.LogIncludedSearch.class,
-                        GetLogIncludedSearchResponse.Builder::logIncludedSearch)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLogIncludedSearchResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", GetLogIncludedSearchResponse.Builder::etag)
-                .callSync();
-    }
-
-    @Override
     public GetLogSavedSearchResponse getLogSavedSearch(GetLogSavedSearchRequest request) {
 
         Validate.notBlank(request.getLogSavedSearchId(), "logSavedSearchId must not be blank");
@@ -723,43 +693,6 @@ public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
-    public ListLogIncludedSearchesResponse listLogIncludedSearches(
-            ListLogIncludedSearchesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListLogIncludedSearchesResponse::builder)
-                .logger(LOG, "listLogIncludedSearches")
-                .serviceDetails(
-                        "LoggingManagement",
-                        "ListLogIncludedSearches",
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLogIncludedSearchesRequest::builder)
-                .basePath("/20200531")
-                .appendPathParam("logIncludedSearches")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("logIncludedSearchId", request.getLogIncludedSearchId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection.class,
-                        ListLogIncludedSearchesResponse.Builder::logIncludedSearchSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLogIncludedSearchesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-previous-page",
-                        ListLogIncludedSearchesResponse.Builder::opcPreviousPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLogIncludedSearchesResponse.Builder::opcRequestId)
-                .callSync();
-    }
-
-    @Override
     public ListLogSavedSearchesResponse listLogSavedSearches(ListLogSavedSearchesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -848,6 +781,7 @@ public class LoggingManagementClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam("v2")
                 .appendPathParam("registry")
                 .appendPathParam("services")
+                .appendQueryParam("serviceStage", request.getServiceStage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
