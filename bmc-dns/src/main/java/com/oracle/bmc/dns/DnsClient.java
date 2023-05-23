@@ -997,6 +997,81 @@ public class DnsClient implements Dns {
     }
 
     @Override
+    public CreateZoneFromZoneFileResponse createZoneFromZoneFile(
+            CreateZoneFromZoneFileRequest request) {
+        LOG.trace("Called createZoneFromZoneFile");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, CreateZoneFromZoneFileRequest.builder());
+            }
+            final CreateZoneFromZoneFileRequest interceptedRequest =
+                    CreateZoneFromZoneFileConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    CreateZoneFromZoneFileConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "Dns",
+                            "CreateZoneFromZoneFile",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/CreateZoneFromZoneFile");
+            java.util.function.Function<javax.ws.rs.core.Response, CreateZoneFromZoneFileResponse>
+                    transformer =
+                            CreateZoneFromZoneFileConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getCreateZoneFromZoneFileDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getCreateZoneFromZoneFileDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getCreateZoneFromZoneFileDetails());
+        }
+    }
+
+    @Override
     public DeleteDomainRecordsResponse deleteDomainRecords(DeleteDomainRecordsRequest request) {
         LOG.trace("Called deleteDomainRecords");
         final DeleteDomainRecordsRequest interceptedRequest =
@@ -2488,5 +2563,31 @@ public class DnsClient implements Dns {
     @Override
     public DnsPaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

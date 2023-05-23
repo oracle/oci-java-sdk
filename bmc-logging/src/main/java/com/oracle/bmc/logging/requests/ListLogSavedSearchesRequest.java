@@ -28,25 +28,25 @@ public class ListLogSavedSearchesRequest
         return compartmentId;
     }
     /**
-     * OCID of the LogSavedSearch
+     * OCID of the LogSavedSearch.
      *
      */
     private String logSavedSearchId;
 
     /**
-     * OCID of the LogSavedSearch
+     * OCID of the LogSavedSearch.
      *
      */
     public String getLogSavedSearchId() {
         return logSavedSearchId;
     }
     /**
-     * Resource name
+     * Resource name.
      */
     private String name;
 
     /**
-     * Resource name
+     * Resource name.
      */
     public String getName() {
         return name;
@@ -225,13 +225,13 @@ public class ListLogSavedSearchesRequest
         }
 
         /**
-         * OCID of the LogSavedSearch
+         * OCID of the LogSavedSearch.
          *
          */
         private String logSavedSearchId = null;
 
         /**
-         * OCID of the LogSavedSearch
+         * OCID of the LogSavedSearch.
          *
          * @param logSavedSearchId the value to set
          * @return this builder instance
@@ -242,12 +242,12 @@ public class ListLogSavedSearchesRequest
         }
 
         /**
-         * Resource name
+         * Resource name.
          */
         private String name = null;
 
         /**
-         * Resource name
+         * Resource name.
          * @param name the value to set
          * @return this builder instance
          */

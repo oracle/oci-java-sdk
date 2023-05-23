@@ -1213,53 +1213,6 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<GetLogIncludedSearchResponse> getLogIncludedSearch(
-            GetLogIncludedSearchRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>
-                    handler) {
-        LOG.trace("Called async getLogIncludedSearch");
-        final GetLogIncludedSearchRequest interceptedRequest =
-                GetLogIncludedSearchConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLogIncludedSearchConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoggingManagement",
-                        "GetLogIncludedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetLogIncludedSearchResponse>
-                transformer =
-                        GetLogIncludedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>,
-                        java.util.concurrent.Future<GetLogIncludedSearchResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetLogIncludedSearchRequest, GetLogIncludedSearchResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<GetLogSavedSearchResponse> getLogSavedSearch(
             GetLogSavedSearchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1433,54 +1386,6 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListLogGroupsRequest, ListLogGroupsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListLogIncludedSearchesResponse> listLogIncludedSearches(
-            ListLogIncludedSearchesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>
-                    handler) {
-        LOG.trace("Called async listLogIncludedSearches");
-        final ListLogIncludedSearchesRequest interceptedRequest =
-                ListLogIncludedSearchesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLogIncludedSearchesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoggingManagement",
-                        "ListLogIncludedSearches",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListLogIncludedSearchesResponse>
-                transformer =
-                        ListLogIncludedSearchesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>,
-                        java.util.concurrent.Future<ListLogIncludedSearchesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListLogIncludedSearchesRequest, ListLogIncludedSearchesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

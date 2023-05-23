@@ -140,6 +140,26 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             this.__explicitlySet__.add("externalMasters");
             return this;
         }
+        /**
+         * External secondary servers for the zone.
+         * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
+        private java.util.List<ExternalDownstream> externalDownstreams;
+
+        /**
+         * External secondary servers for the zone.
+         * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         *
+         * @param externalDownstreams the value to set
+         * @return this builder
+         **/
+        public Builder externalDownstreams(java.util.List<ExternalDownstream> externalDownstreams) {
+            this.externalDownstreams = externalDownstreams;
+            this.__explicitlySet__.add("externalDownstreams");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -154,7 +174,8 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
                             this.zoneType,
                             this.viewId,
                             this.scope,
-                            this.externalMasters);
+                            this.externalMasters,
+                            this.externalDownstreams);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -187,6 +208,9 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             if (model.wasPropertyExplicitlySet("externalMasters")) {
                 this.externalMasters(model.getExternalMasters());
             }
+            if (model.wasPropertyExplicitlySet("externalDownstreams")) {
+                this.externalDownstreams(model.getExternalDownstreams());
+            }
             return this;
         }
     }
@@ -211,12 +235,14 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             ZoneType zoneType,
             String viewId,
             Scope scope,
-            java.util.List<ExternalMaster> externalMasters) {
+            java.util.List<ExternalMaster> externalMasters,
+            java.util.List<ExternalDownstream> externalDownstreams) {
         super(name, compartmentId, freeformTags, definedTags);
         this.zoneType = zoneType;
         this.viewId = viewId;
         this.scope = scope;
         this.externalMasters = externalMasters;
+        this.externalDownstreams = externalDownstreams;
     }
 
     /**
@@ -322,6 +348,24 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         return externalMasters;
     }
 
+    /**
+     * External secondary servers for the zone.
+     * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
+    private final java.util.List<ExternalDownstream> externalDownstreams;
+
+    /**
+     * External secondary servers for the zone.
+     * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     *
+     * @return the value
+     **/
+    public java.util.List<ExternalDownstream> getExternalDownstreams() {
+        return externalDownstreams;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -340,6 +384,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         sb.append(", viewId=").append(String.valueOf(this.viewId));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
+        sb.append(", externalDownstreams=").append(String.valueOf(this.externalDownstreams));
         sb.append(")");
         return sb.toString();
     }
@@ -358,6 +403,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
                 && java.util.Objects.equals(this.viewId, other.viewId)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.externalMasters, other.externalMasters)
+                && java.util.Objects.equals(this.externalDownstreams, other.externalDownstreams)
                 && super.equals(other);
     }
 
@@ -371,6 +417,11 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         result =
                 (result * PRIME)
                         + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalDownstreams == null
+                                ? 43
+                                : this.externalDownstreams.hashCode());
         return result;
     }
 }

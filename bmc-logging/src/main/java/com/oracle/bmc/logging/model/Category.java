@@ -46,13 +46,13 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Category display name.
+         * Category display name. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Category display name.
+         * Category display name. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -130,13 +130,13 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Category display name.
+     * Category display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Category display name.
+     * Category display name. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {

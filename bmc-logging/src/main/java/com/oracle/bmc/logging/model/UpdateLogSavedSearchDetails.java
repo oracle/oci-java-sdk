@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * The update details to update a log saved search.
+ * The update details to update a LogSavedSearch.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

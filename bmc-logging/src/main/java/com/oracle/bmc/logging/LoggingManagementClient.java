@@ -1146,43 +1146,6 @@ public class LoggingManagementClient implements LoggingManagement {
     }
 
     @Override
-    public GetLogIncludedSearchResponse getLogIncludedSearch(GetLogIncludedSearchRequest request) {
-        LOG.trace("Called getLogIncludedSearch");
-        final GetLogIncludedSearchRequest interceptedRequest =
-                GetLogIncludedSearchConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLogIncludedSearchConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoggingManagement",
-                        "GetLogIncludedSearch",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
-        java.util.function.Function<javax.ws.rs.core.Response, GetLogIncludedSearchResponse>
-                transformer =
-                        GetLogIncludedSearchConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public GetLogSavedSearchResponse getLogSavedSearch(GetLogSavedSearchRequest request) {
         LOG.trace("Called getLogSavedSearch");
         final GetLogSavedSearchRequest interceptedRequest =
@@ -1312,44 +1275,6 @@ public class LoggingManagementClient implements LoggingManagement {
                         "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups");
         java.util.function.Function<javax.ws.rs.core.Response, ListLogGroupsResponse> transformer =
                 ListLogGroupsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public ListLogIncludedSearchesResponse listLogIncludedSearches(
-            ListLogIncludedSearchesRequest request) {
-        LOG.trace("Called listLogIncludedSearches");
-        final ListLogIncludedSearchesRequest interceptedRequest =
-                ListLogIncludedSearchesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLogIncludedSearchesConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "LoggingManagement",
-                        "ListLogIncludedSearches",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
-        java.util.function.Function<javax.ws.rs.core.Response, ListLogIncludedSearchesResponse>
-                transformer =
-                        ListLogIncludedSearchesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -103,13 +103,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The work request\u2019s compartment OCID.
+         * The work request's compartment OCID.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The work request\u2019s compartment OCID.
+         * The work request's compartment OCID.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -307,13 +307,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The work request\u2019s compartment OCID.
+     * The work request's compartment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The work request\u2019s compartment OCID.
+     * The work request's compartment OCID.
      * @return the value
      **/
     public String getCompartmentId() {
