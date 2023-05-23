@@ -89,19 +89,33 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeoutInMilliseconds");
             return this;
         }
-
+        /**
+         * Regex pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
+        /**
+         * Regex pattern.
+         * @param expression the value to set
+         * @return this builder
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-
+        /**
+         * Time format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
         private String timeFormat;
 
+        /**
+         * Time format.
+         * @param timeFormat the value to set
+         * @return this builder
+         **/
         public Builder timeFormat(String timeFormat) {
             this.timeFormat = timeFormat;
             this.__explicitlySet__.add("timeFormat");
@@ -196,16 +210,30 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         this.timeFormat = timeFormat;
     }
 
+    /**
+     * Regex pattern.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
+    /**
+     * Regex pattern.
+     * @return the value
+     **/
     public String getExpression() {
         return expression;
     }
 
+    /**
+     * Time format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFormat")
     private final String timeFormat;
 
+    /**
+     * Time format.
+     * @return the value
+     **/
     public String getTimeFormat() {
         return timeFormat;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * A summary of a log saved search that can be used to save and share a given search result.
+ * A summary of a LogSavedSearch that can be used to save and share a given search result.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

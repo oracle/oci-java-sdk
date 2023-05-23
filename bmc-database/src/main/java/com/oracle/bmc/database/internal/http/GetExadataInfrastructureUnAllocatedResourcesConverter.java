@@ -2,50 +2,59 @@
  * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.logging.internal.http;
+package com.oracle.bmc.database.internal.http;
 
 import com.oracle.bmc.http.internal.ResponseHelper;
-import com.oracle.bmc.logging.model.*;
-import com.oracle.bmc.logging.requests.*;
-import com.oracle.bmc.logging.responses.*;
+import com.oracle.bmc.database.model.*;
+import com.oracle.bmc.database.requests.*;
+import com.oracle.bmc.database.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-public class GetLogIncludedSearchConverter {
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public class GetExadataInfrastructureUnAllocatedResourcesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(GetLogIncludedSearchConverter.class);
+            org.slf4j.LoggerFactory.getLogger(
+                    GetExadataInfrastructureUnAllocatedResourcesConverter.class);
 
-    public static com.oracle.bmc.logging.requests.GetLogIncludedSearchRequest interceptRequest(
-            com.oracle.bmc.logging.requests.GetLogIncludedSearchRequest request) {
+    public static com.oracle.bmc.database.requests
+                    .GetExadataInfrastructureUnAllocatedResourcesRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests
+                                    .GetExadataInfrastructureUnAllocatedResourcesRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            com.oracle.bmc.logging.requests.GetLogIncludedSearchRequest request) {
+            com.oracle.bmc.database.requests.GetExadataInfrastructureUnAllocatedResourcesRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notBlank(
-                request.getLogIncludedSearchId(), "logIncludedSearchId must not be blank");
+                request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20200531")
-                        .path("logIncludedSearch")
+                        .path("/20160918")
+                        .path("exadataInfrastructures")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
-                                        request.getLogIncludedSearchId()));
+                                        request.getExadataInfrastructureId()))
+                        .path("unAllocatedResources");
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getDbServers() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "dbServers",
+                            request.getDbServers(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
@@ -63,61 +72,81 @@ public class GetLogIncludedSearchConverter {
 
     public static java.util.function.Function<
                     javax.ws.rs.core.Response,
-                    com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse>
+                    com.oracle.bmc.database.responses
+                            .GetExadataInfrastructureUnAllocatedResourcesResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
     public static java.util.function.Function<
                     javax.ws.rs.core.Response,
-                    com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse>
+                    com.oracle.bmc.database.responses
+                            .GetExadataInfrastructureUnAllocatedResourcesResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
-                        com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse>
+                        com.oracle.bmc.database.responses
+                                .GetExadataInfrastructureUnAllocatedResourcesResponse>
                 transformer =
                         new java.util.function.Function<
                                 javax.ws.rs.core.Response,
-                                com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .GetExadataInfrastructureUnAllocatedResourcesResponse>() {
                             @Override
-                            public com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse
+                            public com.oracle.bmc.database.responses
+                                            .GetExadataInfrastructureUnAllocatedResourcesResponse
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetExadataInfrastructureUnAllocatedResourcesResponse");
                                 final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        com.oracle.bmc.logging.model
-                                                                .LogIncludedSearch>>
+                                                        com.oracle.bmc.database.model
+                                                                .ExadataInfrastructureUnAllocatedResources>>
                                         responseFn;
                                 if (serviceDetails.isPresent()) {
                                     responseFn =
                                             RESPONSE_CONVERSION_FACTORY.create(
-                                                    com.oracle.bmc.logging.model.LogIncludedSearch
+                                                    com.oracle.bmc.database.model
+                                                                    .ExadataInfrastructureUnAllocatedResources
                                                             .class,
                                                     serviceDetails.get());
                                 } else {
                                     responseFn =
                                             RESPONSE_CONVERSION_FACTORY.create(
-                                                    com.oracle.bmc.logging.model.LogIncludedSearch
+                                                    com.oracle.bmc.database.model
+                                                                    .ExadataInfrastructureUnAllocatedResources
                                                             .class);
                                 }
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                com.oracle.bmc.logging.model.LogIncludedSearch>
+                                                com.oracle.bmc.database.model
+                                                        .ExadataInfrastructureUnAllocatedResources>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse
+                                com.oracle.bmc.database.responses
+                                                .GetExadataInfrastructureUnAllocatedResourcesResponse
                                                 .Builder
                                         builder =
-                                                com.oracle.bmc.logging.responses
-                                                        .GetLogIncludedSearchResponse.builder()
+                                                com.oracle.bmc.database.responses
+                                                        .GetExadataInfrastructureUnAllocatedResourcesResponse
+                                                        .builder()
                                                         .__httpStatusCode__(rawResponse.getStatus())
                                                         .headers(headers);
 
-                                builder.logIncludedSearch(response.getItem());
+                                builder.exadataInfrastructureUnAllocatedResources(
+                                        response.getItem());
+
+                                java.util.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
+                                }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
@@ -130,16 +159,8 @@ public class GetLogIncludedSearchConverter {
                                                     String.class));
                                 }
 
-                                java.util.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
-                                                headers, "etag");
-                                if (etagHeader.isPresent()) {
-                                    builder.etag(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "etag", etagHeader.get().get(0), String.class));
-                                }
-
-                                com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse
+                                com.oracle.bmc.database.responses
+                                                .GetExadataInfrastructureUnAllocatedResourcesResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

@@ -269,6 +269,23 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateZoneRequest, CreateZoneResponse> handler);
 
     /**
+     * Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateZoneFromZoneFileResponse> createZoneFromZoneFile(
+            CreateZoneFromZoneFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateZoneFromZoneFileRequest, CreateZoneFromZoneFileResponse>
+                    handler);
+
+    /**
      * Deletes all records at the specified zone and domain.
      * <p>
      * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter

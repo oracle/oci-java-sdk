@@ -2219,6 +2219,21 @@ public interface Database extends AutoCloseable {
             GetExadataInfrastructureOcpusRequest request);
 
     /**
+     * Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureUnAllocatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructureUnAllocatedResources API.
+     */
+    GetExadataInfrastructureUnAllocatedResourcesResponse
+            getExadataInfrastructureUnAllocatedResources(
+                    GetExadataInfrastructureUnAllocatedResourcesRequest request);
+
+    /**
      * Gets the IORM configuration settings for the specified cloud Exadata DB system.
      * All Exadata service instances have default IORM settings.
      * <p>

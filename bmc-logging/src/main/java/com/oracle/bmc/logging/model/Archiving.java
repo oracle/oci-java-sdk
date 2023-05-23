@@ -28,13 +28,13 @@ public final class Archiving extends com.oracle.bmc.http.internal.ExplicitlySetB
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+         * True if archiving enabled. This field is now deprecated, you should use Service Connector Hub to enable archiving.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+         * True if archiving enabled. This field is now deprecated, you should use Service Connector Hub to enable archiving.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -76,13 +76,13 @@ public final class Archiving extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+     * True if archiving enabled. This field is now deprecated, you should use Service Connector Hub to enable archiving.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+     * True if archiving enabled. This field is now deprecated, you should use Service Connector Hub to enable archiving.
      * @return the value
      **/
     public Boolean getIsEnabled() {
