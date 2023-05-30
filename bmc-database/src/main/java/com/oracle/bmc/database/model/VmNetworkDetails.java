@@ -216,6 +216,7 @@ public final class VmNetworkDetails extends com.oracle.bmc.http.internal.Explici
     public enum NetworkType {
         Client("CLIENT"),
         Backup("BACKUP"),
+        DisasterRecovery("DISASTER_RECOVERY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

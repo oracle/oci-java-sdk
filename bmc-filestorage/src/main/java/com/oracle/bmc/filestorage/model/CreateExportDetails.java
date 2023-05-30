@@ -44,8 +44,12 @@ public final class CreateExportDetails extends com.oracle.bmc.http.internal.Expl
          *          {
          *             "source" : "0.0.0.0/0",
          *             "requirePrivilegedSourcePort" : false,
-         *             "access" : "READ_WRITE",
-         *             "identitySquash" : "NONE"
+         *             "access": "READ_WRITE",
+         *             "identitySquash": "NONE",
+         *             "anonymousUid": 65534,
+         *             "anonymousGid": 65534,
+         *             "isAnonymousAccessAllowed": false,
+         *             "allowedAuth": ["SYS"]
          *           }
          *        ]
          * <p>
@@ -72,8 +76,12 @@ public final class CreateExportDetails extends com.oracle.bmc.http.internal.Expl
          *          {
          *             "source" : "0.0.0.0/0",
          *             "requirePrivilegedSourcePort" : false,
-         *             "access" : "READ_WRITE",
-         *             "identitySquash" : "NONE"
+         *             "access": "READ_WRITE",
+         *             "identitySquash": "NONE",
+         *             "anonymousUid": 65534,
+         *             "anonymousGid": 65534,
+         *             "isAnonymousAccessAllowed": false,
+         *             "allowedAuth": ["SYS"]
          *           }
          *        ]
          * <p>
@@ -205,8 +213,12 @@ public final class CreateExportDetails extends com.oracle.bmc.http.internal.Expl
      *          {
      *             "source" : "0.0.0.0/0",
      *             "requirePrivilegedSourcePort" : false,
-     *             "access" : "READ_WRITE",
-     *             "identitySquash" : "NONE"
+     *             "access": "READ_WRITE",
+     *             "identitySquash": "NONE",
+     *             "anonymousUid": 65534,
+     *             "anonymousGid": 65534,
+     *             "isAnonymousAccessAllowed": false,
+     *             "allowedAuth": ["SYS"]
      *           }
      *        ]
      * <p>
@@ -233,8 +245,12 @@ public final class CreateExportDetails extends com.oracle.bmc.http.internal.Expl
      *          {
      *             "source" : "0.0.0.0/0",
      *             "requirePrivilegedSourcePort" : false,
-     *             "access" : "READ_WRITE",
-     *             "identitySquash" : "NONE"
+     *             "access": "READ_WRITE",
+     *             "identitySquash": "NONE",
+     *             "anonymousUid": 65534,
+     *             "anonymousGid": 65534,
+     *             "isAnonymousAccessAllowed": false,
+     *             "allowedAuth": ["SYS"]
      *           }
      *        ]
      * <p>

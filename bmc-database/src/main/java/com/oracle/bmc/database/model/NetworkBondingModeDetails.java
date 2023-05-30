@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+ * Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -23,13 +23,19 @@ package com.oracle.bmc.database.model;
 public final class NetworkBondingModeDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"clientNetworkBondingMode", "backupNetworkBondingMode"})
+    @java.beans.ConstructorProperties({
+        "clientNetworkBondingMode",
+        "backupNetworkBondingMode",
+        "drNetworkBondingMode"
+    })
     public NetworkBondingModeDetails(
             ClientNetworkBondingMode clientNetworkBondingMode,
-            BackupNetworkBondingMode backupNetworkBondingMode) {
+            BackupNetworkBondingMode backupNetworkBondingMode,
+            DrNetworkBondingMode drNetworkBondingMode) {
         super();
         this.clientNetworkBondingMode = clientNetworkBondingMode;
         this.backupNetworkBondingMode = backupNetworkBondingMode;
+        this.drNetworkBondingMode = drNetworkBondingMode;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -66,6 +72,22 @@ public final class NetworkBondingModeDetails
             this.__explicitlySet__.add("backupNetworkBondingMode");
             return this;
         }
+        /**
+         * The network bonding mode for the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("drNetworkBondingMode")
+        private DrNetworkBondingMode drNetworkBondingMode;
+
+        /**
+         * The network bonding mode for the Exadata infrastructure.
+         * @param drNetworkBondingMode the value to set
+         * @return this builder
+         **/
+        public Builder drNetworkBondingMode(DrNetworkBondingMode drNetworkBondingMode) {
+            this.drNetworkBondingMode = drNetworkBondingMode;
+            this.__explicitlySet__.add("drNetworkBondingMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -73,7 +95,9 @@ public final class NetworkBondingModeDetails
         public NetworkBondingModeDetails build() {
             NetworkBondingModeDetails model =
                     new NetworkBondingModeDetails(
-                            this.clientNetworkBondingMode, this.backupNetworkBondingMode);
+                            this.clientNetworkBondingMode,
+                            this.backupNetworkBondingMode,
+                            this.drNetworkBondingMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +111,9 @@ public final class NetworkBondingModeDetails
             }
             if (model.wasPropertyExplicitlySet("backupNetworkBondingMode")) {
                 this.backupNetworkBondingMode(model.getBackupNetworkBondingMode());
+            }
+            if (model.wasPropertyExplicitlySet("drNetworkBondingMode")) {
+                this.drNetworkBondingMode(model.getDrNetworkBondingMode());
             }
             return this;
         }
@@ -227,6 +254,68 @@ public final class NetworkBondingModeDetails
         return backupNetworkBondingMode;
     }
 
+    /**
+     * The network bonding mode for the Exadata infrastructure.
+     **/
+    public enum DrNetworkBondingMode {
+        ActiveBackup("ACTIVE_BACKUP"),
+        Lacp("LACP"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DrNetworkBondingMode.class);
+
+        private final String value;
+        private static java.util.Map<String, DrNetworkBondingMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DrNetworkBondingMode v : DrNetworkBondingMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DrNetworkBondingMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DrNetworkBondingMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DrNetworkBondingMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The network bonding mode for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drNetworkBondingMode")
+    private final DrNetworkBondingMode drNetworkBondingMode;
+
+    /**
+     * The network bonding mode for the Exadata infrastructure.
+     * @return the value
+     **/
+    public DrNetworkBondingMode getDrNetworkBondingMode() {
+        return drNetworkBondingMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -245,6 +334,7 @@ public final class NetworkBondingModeDetails
                 .append(String.valueOf(this.clientNetworkBondingMode));
         sb.append(", backupNetworkBondingMode=")
                 .append(String.valueOf(this.backupNetworkBondingMode));
+        sb.append(", drNetworkBondingMode=").append(String.valueOf(this.drNetworkBondingMode));
         sb.append(")");
         return sb.toString();
     }
@@ -263,6 +353,7 @@ public final class NetworkBondingModeDetails
                         this.clientNetworkBondingMode, other.clientNetworkBondingMode)
                 && java.util.Objects.equals(
                         this.backupNetworkBondingMode, other.backupNetworkBondingMode)
+                && java.util.Objects.equals(this.drNetworkBondingMode, other.drNetworkBondingMode)
                 && super.equals(other);
     }
 
@@ -280,6 +371,11 @@ public final class NetworkBondingModeDetails
                         + (this.backupNetworkBondingMode == null
                                 ? 43
                                 : this.backupNetworkBondingMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drNetworkBondingMode == null
+                                ? 43
+                                : this.drNetworkBondingMode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

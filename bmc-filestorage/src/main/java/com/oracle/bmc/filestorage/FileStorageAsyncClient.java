@@ -514,6 +514,68 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeFilesystemSnapshotPolicyCompartmentResponse>
+            changeFilesystemSnapshotPolicyCompartment(
+                    ChangeFilesystemSnapshotPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeFilesystemSnapshotPolicyCompartmentRequest,
+                                    ChangeFilesystemSnapshotPolicyCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeFilesystemSnapshotPolicyCompartment");
+        final ChangeFilesystemSnapshotPolicyCompartmentRequest interceptedRequest =
+                ChangeFilesystemSnapshotPolicyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeFilesystemSnapshotPolicyCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ChangeFilesystemSnapshotPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/ChangeFilesystemSnapshotPolicyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeFilesystemSnapshotPolicyCompartmentResponse>
+                transformer =
+                        ChangeFilesystemSnapshotPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeFilesystemSnapshotPolicyCompartmentRequest,
+                        ChangeFilesystemSnapshotPolicyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeFilesystemSnapshotPolicyCompartmentRequest,
+                                ChangeFilesystemSnapshotPolicyCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeFilesystemSnapshotPolicyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeFilesystemSnapshotPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeFilesystemSnapshotPolicyCompartmentRequest,
+                    ChangeFilesystemSnapshotPolicyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeMountTargetCompartmentResponse>
             changeMountTargetCompartment(
                     ChangeMountTargetCompartmentRequest request,
@@ -715,6 +777,64 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateFileSystemRequest, CreateFileSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFilesystemSnapshotPolicyResponse>
+            createFilesystemSnapshotPolicy(
+                    CreateFilesystemSnapshotPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateFilesystemSnapshotPolicyRequest,
+                                    CreateFilesystemSnapshotPolicyResponse>
+                            handler) {
+        LOG.trace("Called async createFilesystemSnapshotPolicy");
+        final CreateFilesystemSnapshotPolicyRequest interceptedRequest =
+                CreateFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "CreateFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/CreateFilesystemSnapshotPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateFilesystemSnapshotPolicyResponse>
+                transformer =
+                        CreateFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateFilesystemSnapshotPolicyRequest,
+                        CreateFilesystemSnapshotPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateFilesystemSnapshotPolicyRequest,
+                                CreateFilesystemSnapshotPolicyResponse>,
+                        java.util.concurrent.Future<CreateFilesystemSnapshotPolicyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFilesystemSnapshotPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateFilesystemSnapshotPolicyRequest, CreateFilesystemSnapshotPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -960,6 +1080,58 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteFileSystemRequest, DeleteFileSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFilesystemSnapshotPolicyResponse>
+            deleteFilesystemSnapshotPolicy(
+                    DeleteFilesystemSnapshotPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteFilesystemSnapshotPolicyRequest,
+                                    DeleteFilesystemSnapshotPolicyResponse>
+                            handler) {
+        LOG.trace("Called async deleteFilesystemSnapshotPolicy");
+        final DeleteFilesystemSnapshotPolicyRequest interceptedRequest =
+                DeleteFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DeleteFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/DeleteFilesystemSnapshotPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteFilesystemSnapshotPolicyResponse>
+                transformer =
+                        DeleteFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteFilesystemSnapshotPolicyRequest,
+                        DeleteFilesystemSnapshotPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteFilesystemSnapshotPolicyRequest,
+                                DeleteFilesystemSnapshotPolicyResponse>,
+                        java.util.concurrent.Future<DeleteFilesystemSnapshotPolicyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteFilesystemSnapshotPolicyRequest, DeleteFilesystemSnapshotPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1335,6 +1507,57 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetFilesystemSnapshotPolicyResponse>
+            getFilesystemSnapshotPolicy(
+                    GetFilesystemSnapshotPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetFilesystemSnapshotPolicyRequest,
+                                    GetFilesystemSnapshotPolicyResponse>
+                            handler) {
+        LOG.trace("Called async getFilesystemSnapshotPolicy");
+        final GetFilesystemSnapshotPolicyRequest interceptedRequest =
+                GetFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "GetFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/GetFilesystemSnapshotPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetFilesystemSnapshotPolicyResponse>
+                transformer =
+                        GetFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetFilesystemSnapshotPolicyRequest, GetFilesystemSnapshotPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetFilesystemSnapshotPolicyRequest,
+                                GetFilesystemSnapshotPolicyResponse>,
+                        java.util.concurrent.Future<GetFilesystemSnapshotPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetFilesystemSnapshotPolicyRequest, GetFilesystemSnapshotPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMountTargetResponse> getMountTarget(
             GetMountTargetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1651,6 +1874,58 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListFilesystemSnapshotPoliciesResponse>
+            listFilesystemSnapshotPolicies(
+                    ListFilesystemSnapshotPoliciesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListFilesystemSnapshotPoliciesRequest,
+                                    ListFilesystemSnapshotPoliciesResponse>
+                            handler) {
+        LOG.trace("Called async listFilesystemSnapshotPolicies");
+        final ListFilesystemSnapshotPoliciesRequest interceptedRequest =
+                ListFilesystemSnapshotPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFilesystemSnapshotPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ListFilesystemSnapshotPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicySummary/ListFilesystemSnapshotPolicies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListFilesystemSnapshotPoliciesResponse>
+                transformer =
+                        ListFilesystemSnapshotPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFilesystemSnapshotPoliciesRequest,
+                        ListFilesystemSnapshotPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFilesystemSnapshotPoliciesRequest,
+                                ListFilesystemSnapshotPoliciesResponse>,
+                        java.util.concurrent.Future<ListFilesystemSnapshotPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFilesystemSnapshotPoliciesRequest, ListFilesystemSnapshotPoliciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMountTargetsResponse> listMountTargets(
             ListMountTargetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1834,6 +2109,110 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PauseFilesystemSnapshotPolicyResponse>
+            pauseFilesystemSnapshotPolicy(
+                    PauseFilesystemSnapshotPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PauseFilesystemSnapshotPolicyRequest,
+                                    PauseFilesystemSnapshotPolicyResponse>
+                            handler) {
+        LOG.trace("Called async pauseFilesystemSnapshotPolicy");
+        final PauseFilesystemSnapshotPolicyRequest interceptedRequest =
+                PauseFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PauseFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "PauseFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/PauseFilesystemSnapshotPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PauseFilesystemSnapshotPolicyResponse>
+                transformer =
+                        PauseFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PauseFilesystemSnapshotPolicyRequest, PauseFilesystemSnapshotPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PauseFilesystemSnapshotPolicyRequest,
+                                PauseFilesystemSnapshotPolicyResponse>,
+                        java.util.concurrent.Future<PauseFilesystemSnapshotPolicyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PauseFilesystemSnapshotPolicyRequest, PauseFilesystemSnapshotPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnpauseFilesystemSnapshotPolicyResponse>
+            unpauseFilesystemSnapshotPolicy(
+                    UnpauseFilesystemSnapshotPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UnpauseFilesystemSnapshotPolicyRequest,
+                                    UnpauseFilesystemSnapshotPolicyResponse>
+                            handler) {
+        LOG.trace("Called async unpauseFilesystemSnapshotPolicy");
+        final UnpauseFilesystemSnapshotPolicyRequest interceptedRequest =
+                UnpauseFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnpauseFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UnpauseFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UnpauseFilesystemSnapshotPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UnpauseFilesystemSnapshotPolicyResponse>
+                transformer =
+                        UnpauseFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UnpauseFilesystemSnapshotPolicyRequest,
+                        UnpauseFilesystemSnapshotPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UnpauseFilesystemSnapshotPolicyRequest,
+                                UnpauseFilesystemSnapshotPolicyResponse>,
+                        java.util.concurrent.Future<UnpauseFilesystemSnapshotPolicyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UnpauseFilesystemSnapshotPolicyRequest,
+                    UnpauseFilesystemSnapshotPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExportResponse> updateExport(
             UpdateExportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateExportRequest, UpdateExportResponse>
@@ -1972,6 +2351,63 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateFileSystemRequest, UpdateFileSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFilesystemSnapshotPolicyResponse>
+            updateFilesystemSnapshotPolicy(
+                    UpdateFilesystemSnapshotPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateFilesystemSnapshotPolicyRequest,
+                                    UpdateFilesystemSnapshotPolicyResponse>
+                            handler) {
+        LOG.trace("Called async updateFilesystemSnapshotPolicy");
+        final UpdateFilesystemSnapshotPolicyRequest interceptedRequest =
+                UpdateFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UpdateFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UpdateFilesystemSnapshotPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateFilesystemSnapshotPolicyResponse>
+                transformer =
+                        UpdateFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateFilesystemSnapshotPolicyRequest,
+                        UpdateFilesystemSnapshotPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateFilesystemSnapshotPolicyRequest,
+                                UpdateFilesystemSnapshotPolicyResponse>,
+                        java.util.concurrent.Future<UpdateFilesystemSnapshotPolicyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFilesystemSnapshotPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateFilesystemSnapshotPolicyRequest, UpdateFilesystemSnapshotPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -45,7 +45,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         "isHydrated",
         "lifecycleDetails",
         "isTargetable",
-        "replicationTargetId"
+        "replicationTargetId",
+        "filesystemSnapshotPolicyId"
     })
     public FileSystem(
             String availabilityDomain,
@@ -63,7 +64,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             Boolean isHydrated,
             String lifecycleDetails,
             Boolean isTargetable,
-            String replicationTargetId) {
+            String replicationTargetId,
+            String filesystemSnapshotPolicyId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -81,6 +83,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         this.lifecycleDetails = lifecycleDetails;
         this.isTargetable = isTargetable;
         this.replicationTargetId = replicationTargetId;
+        this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -405,6 +408,26 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("replicationTargetId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+         * controls the frequency of snapshot creation and retention period of the taken snapshots.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("filesystemSnapshotPolicyId")
+        private String filesystemSnapshotPolicyId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+         * controls the frequency of snapshot creation and retention period of the taken snapshots.
+         *
+         * @param filesystemSnapshotPolicyId the value to set
+         * @return this builder
+         **/
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            this.__explicitlySet__.add("filesystemSnapshotPolicyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -427,7 +450,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.isHydrated,
                             this.lifecycleDetails,
                             this.isTargetable,
-                            this.replicationTargetId);
+                            this.replicationTargetId,
+                            this.filesystemSnapshotPolicyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -483,6 +507,9 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("replicationTargetId")) {
                 this.replicationTargetId(model.getReplicationTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
+                this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
             }
             return this;
         }
@@ -837,6 +864,24 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         return replicationTargetId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+     * controls the frequency of snapshot creation and retention period of the taken snapshots.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filesystemSnapshotPolicyId")
+    private final String filesystemSnapshotPolicyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+     * controls the frequency of snapshot creation and retention period of the taken snapshots.
+     *
+     * @return the value
+     **/
+    public String getFilesystemSnapshotPolicyId() {
+        return filesystemSnapshotPolicyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -867,6 +912,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", isTargetable=").append(String.valueOf(this.isTargetable));
         sb.append(", replicationTargetId=").append(String.valueOf(this.replicationTargetId));
+        sb.append(", filesystemSnapshotPolicyId=")
+                .append(String.valueOf(this.filesystemSnapshotPolicyId));
         sb.append(")");
         return sb.toString();
     }
@@ -897,6 +944,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.isTargetable, other.isTargetable)
                 && java.util.Objects.equals(this.replicationTargetId, other.replicationTargetId)
+                && java.util.Objects.equals(
+                        this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
                 && super.equals(other);
     }
 
@@ -938,6 +987,11 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.replicationTargetId == null
                                 ? 43
                                 : this.replicationTargetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filesystemSnapshotPolicyId == null
+                                ? 43
+                                : this.filesystemSnapshotPolicyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
