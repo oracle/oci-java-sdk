@@ -30,6 +30,7 @@ public final class SnapshotSummary
         "timeCreated",
         "snapshotType",
         "snapshotTime",
+        "expirationTime",
         "provenanceId",
         "isCloneSource",
         "lifecycleDetails",
@@ -44,6 +45,7 @@ public final class SnapshotSummary
             java.util.Date timeCreated,
             SnapshotType snapshotType,
             java.util.Date snapshotTime,
+            java.util.Date expirationTime,
             String provenanceId,
             Boolean isCloneSource,
             String lifecycleDetails,
@@ -57,6 +59,7 @@ public final class SnapshotSummary
         this.timeCreated = timeCreated;
         this.snapshotType = snapshotType;
         this.snapshotTime = snapshotTime;
+        this.expirationTime = expirationTime;
         this.provenanceId = provenanceId;
         this.isCloneSource = isCloneSource;
         this.lifecycleDetails = lifecycleDetails;
@@ -211,6 +214,21 @@ public final class SnapshotSummary
             this.__explicitlySet__.add("snapshotTime");
             return this;
         }
+        /** The time when this snapshot will be deleted. */
+        @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+        private java.util.Date expirationTime;
+
+        /**
+         * The time when this snapshot will be deleted.
+         *
+         * @param expirationTime the value to set
+         * @return this builder
+         */
+        public Builder expirationTime(java.util.Date expirationTime) {
+            this.expirationTime = expirationTime;
+            this.__explicitlySet__.add("expirationTime");
+            return this;
+        }
         /**
          * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
          * identifying the parent from which this snapshot was cloned. If this snapshot was not
@@ -333,6 +351,7 @@ public final class SnapshotSummary
                             this.timeCreated,
                             this.snapshotType,
                             this.snapshotTime,
+                            this.expirationTime,
                             this.provenanceId,
                             this.isCloneSource,
                             this.lifecycleDetails,
@@ -366,6 +385,9 @@ public final class SnapshotSummary
             }
             if (model.wasPropertyExplicitlySet("snapshotTime")) {
                 this.snapshotTime(model.getSnapshotTime());
+            }
+            if (model.wasPropertyExplicitlySet("expirationTime")) {
+                this.expirationTime(model.getExpirationTime());
             }
             if (model.wasPropertyExplicitlySet("provenanceId")) {
                 this.provenanceId(model.getProvenanceId());
@@ -621,6 +643,19 @@ public final class SnapshotSummary
         return snapshotTime;
     }
 
+    /** The time when this snapshot will be deleted. */
+    @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+    private final java.util.Date expirationTime;
+
+    /**
+     * The time when this snapshot will be deleted.
+     *
+     * @return the value
+     */
+    public java.util.Date getExpirationTime() {
+        return expirationTime;
+    }
+
     /**
      * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying
      * the parent from which this snapshot was cloned. If this snapshot was not cloned, then the
@@ -738,6 +773,7 @@ public final class SnapshotSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", snapshotType=").append(String.valueOf(this.snapshotType));
         sb.append(", snapshotTime=").append(String.valueOf(this.snapshotTime));
+        sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
         sb.append(", provenanceId=").append(String.valueOf(this.provenanceId));
         sb.append(", isCloneSource=").append(String.valueOf(this.isCloneSource));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -764,6 +800,7 @@ public final class SnapshotSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.snapshotType, other.snapshotType)
                 && java.util.Objects.equals(this.snapshotTime, other.snapshotTime)
+                && java.util.Objects.equals(this.expirationTime, other.expirationTime)
                 && java.util.Objects.equals(this.provenanceId, other.provenanceId)
                 && java.util.Objects.equals(this.isCloneSource, other.isCloneSource)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -785,6 +822,9 @@ public final class SnapshotSummary
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.snapshotType == null ? 43 : this.snapshotType.hashCode());
         result = (result * PRIME) + (this.snapshotTime == null ? 43 : this.snapshotTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
         result = (result * PRIME) + (this.provenanceId == null ? 43 : this.provenanceId.hashCode());
         result =
                 (result * PRIME)

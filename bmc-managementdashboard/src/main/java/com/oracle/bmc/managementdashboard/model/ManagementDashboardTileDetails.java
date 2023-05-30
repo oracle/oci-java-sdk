@@ -173,12 +173,16 @@ public final class ManagementDashboardTileDetails
             this.__explicitlySet__.add("nls");
             return this;
         }
-        /** JSON that contains user interface options. */
+        /**
+         * It defines the visualization type of the widget saved search, the UI options of that
+         * visualization type, the binding of data to the visualization.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
         /**
-         * JSON that contains user interface options.
+         * It defines the visualization type of the widget saved search, the UI options of that
+         * visualization type, the binding of data to the visualization.
          *
          * @param uiConfig the value to set
          * @return this builder
@@ -188,12 +192,16 @@ public final class ManagementDashboardTileDetails
             this.__explicitlySet__.add("uiConfig");
             return this;
         }
-        /** Array of JSON that contain data source options. */
+        /**
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+         * examples on how it can be constructed for various data sources.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
         /**
-         * Array of JSON that contain data source options.
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+         * examples on how it can be constructed for various data sources.
          *
          * @param dataConfig the value to set
          * @return this builder
@@ -415,12 +423,16 @@ public final class ManagementDashboardTileDetails
         return nls;
     }
 
-    /** JSON that contains user interface options. */
+    /**
+     * It defines the visualization type of the widget saved search, the UI options of that
+     * visualization type, the binding of data to the visualization.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
     /**
-     * JSON that contains user interface options.
+     * It defines the visualization type of the widget saved search, the UI options of that
+     * visualization type, the binding of data to the visualization.
      *
      * @return the value
      */
@@ -428,12 +440,16 @@ public final class ManagementDashboardTileDetails
         return uiConfig;
     }
 
-    /** Array of JSON that contain data source options. */
+    /**
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+     * examples on how it can be constructed for various data sources.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
     /**
-     * Array of JSON that contain data source options.
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+     * examples on how it can be constructed for various data sources.
      *
      * @return the value
      */

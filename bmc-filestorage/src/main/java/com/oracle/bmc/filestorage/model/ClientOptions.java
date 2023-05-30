@@ -97,14 +97,14 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * Type of access to grant clients using the file system through this export. If unspecified
-         * defaults to {@code READ_ONLY}.
+         * defaults to {@code READ_WRITE}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("access")
         private Access access;
 
         /**
          * Type of access to grant clients using the file system through this export. If unspecified
-         * defaults to {@code READ_ONLY}.
+         * defaults to {@code READ_WRITE}.
          *
          * @param access the value to set
          * @return this builder
@@ -271,7 +271,7 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Type of access to grant clients using the file system through this export. If unspecified
-     * defaults to {@code READ_ONLY}.
+     * defaults to {@code READ_WRITE}.
      */
     public enum Access implements com.oracle.bmc.http.internal.BmcEnum {
         ReadWrite("READ_WRITE"),
@@ -319,14 +319,14 @@ public final class ClientOptions extends com.oracle.bmc.http.client.internal.Exp
     };
     /**
      * Type of access to grant clients using the file system through this export. If unspecified
-     * defaults to {@code READ_ONLY}.
+     * defaults to {@code READ_WRITE}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("access")
     private final Access access;
 
     /**
      * Type of access to grant clients using the file system through this export. If unspecified
-     * defaults to {@code READ_ONLY}.
+     * defaults to {@code READ_WRITE}.
      *
      * @return the value
      */

@@ -43,6 +43,7 @@ public final class ManagementSavedSearchForImportDetails
         "freeformTags",
         "definedTags",
         "parametersConfig",
+        "featuresConfig",
         "drilldownConfig"
     })
     public ManagementSavedSearchForImportDetails(
@@ -65,6 +66,7 @@ public final class ManagementSavedSearchForImportDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Object> parametersConfig,
+            Object featuresConfig,
             java.util.List<Object> drilldownConfig) {
         super();
         this.id = id;
@@ -86,6 +88,7 @@ public final class ManagementSavedSearchForImportDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.parametersConfig = parametersConfig;
+        this.featuresConfig = featuresConfig;
         this.drilldownConfig = drilldownConfig;
     }
 
@@ -140,12 +143,18 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("providerId");
             return this;
         }
-        /** Version of the service that owns this saved search. */
+        /**
+         * The version of the metadata of the provider. This is useful for provider to version its
+         * features and metadata. Any newly created saved search (or dashboard) should use
+         * providerVersion 3.0.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
         /**
-         * Version of the service that owns this saved search.
+         * The version of the metadata of the provider. This is useful for provider to version its
+         * features and metadata. Any newly created saved search (or dashboard) should use
+         * providerVersion 3.0.0.
          *
          * @param providerVersion the value to set
          * @return this builder
@@ -155,12 +164,16 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("providerVersion");
             return this;
         }
-        /** Name of the service (for example, Logging Analytics) that owns the saved search. */
+        /**
+         * The user friendly name of the service (for example, Logging Analytics) that owns the
+         * saved search.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
         /**
-         * Name of the service (for example, Logging Analytics) that owns the saved search.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the
+         * saved search.
          *
          * @param providerName the value to set
          * @return this builder
@@ -249,12 +262,16 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** JSON that contains user interface options. */
+        /**
+         * It defines the visualization type of the widget saved search, the UI options of that
+         * visualization type, the binding of data to the visualization.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
         /**
-         * JSON that contains user interface options.
+         * It defines the visualization type of the widget saved search, the UI options of that
+         * visualization type, the binding of data to the visualization.
          *
          * @param uiConfig the value to set
          * @return this builder
@@ -264,12 +281,16 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("uiConfig");
             return this;
         }
-        /** Array of JSON that contain data source options. */
+        /**
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+         * examples on how it can be constructed for various data sources.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
         /**
-         * Array of JSON that contain data source options.
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+         * examples on how it can be constructed for various data sources.
          *
          * @param dataConfig the value to set
          * @return this builder
@@ -294,12 +315,16 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("screenImage");
             return this;
         }
-        /** Version of the metadata. */
+        /**
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
          *
          * @param metadataVersion the value to set
          * @return this builder
@@ -309,12 +334,12 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("metadataVersion");
             return this;
         }
-        /** Reference to the HTML file of the widget. */
+        /** The UI template that the saved search uses to render itself. */
         @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
         private String widgetTemplate;
 
         /**
-         * Reference to the HTML file of the widget.
+         * The UI template that the saved search uses to render itself.
          *
          * @param widgetTemplate the value to set
          * @return this builder
@@ -324,12 +349,12 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("widgetTemplate");
             return this;
         }
-        /** Reference to the view model of the widget. */
+        /** The View Model that the saved search uses to render itself. */
         @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
         private String widgetVM;
 
         /**
-         * Reference to the view model of the widget.
+         * The View Model that the saved search uses to render itself.
          *
          * @param widgetVM the value to set
          * @return this builder
@@ -393,6 +418,21 @@ public final class ManagementSavedSearchForImportDetails
             this.__explicitlySet__.add("parametersConfig");
             return this;
         }
+        /** Contains configuration for enabling features. */
+        @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+        private Object featuresConfig;
+
+        /**
+         * Contains configuration for enabling features.
+         *
+         * @param featuresConfig the value to set
+         * @return this builder
+         */
+        public Builder featuresConfig(Object featuresConfig) {
+            this.featuresConfig = featuresConfig;
+            this.__explicitlySet__.add("featuresConfig");
+            return this;
+        }
         /** Drill-down configuration to define the destination of a drill-down action. */
         @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
         private java.util.List<Object> drilldownConfig;
@@ -434,6 +474,7 @@ public final class ManagementSavedSearchForImportDetails
                             this.freeformTags,
                             this.definedTags,
                             this.parametersConfig,
+                            this.featuresConfig,
                             this.drilldownConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -500,6 +541,9 @@ public final class ManagementSavedSearchForImportDetails
             if (model.wasPropertyExplicitlySet("parametersConfig")) {
                 this.parametersConfig(model.getParametersConfig());
             }
+            if (model.wasPropertyExplicitlySet("featuresConfig")) {
+                this.featuresConfig(model.getFeaturesConfig());
+            }
             if (model.wasPropertyExplicitlySet("drilldownConfig")) {
                 this.drilldownConfig(model.getDrilldownConfig());
             }
@@ -559,12 +603,18 @@ public final class ManagementSavedSearchForImportDetails
         return providerId;
     }
 
-    /** Version of the service that owns this saved search. */
+    /**
+     * The version of the metadata of the provider. This is useful for provider to version its
+     * features and metadata. Any newly created saved search (or dashboard) should use
+     * providerVersion 3.0.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
     /**
-     * Version of the service that owns this saved search.
+     * The version of the metadata of the provider. This is useful for provider to version its
+     * features and metadata. Any newly created saved search (or dashboard) should use
+     * providerVersion 3.0.0.
      *
      * @return the value
      */
@@ -572,12 +622,16 @@ public final class ManagementSavedSearchForImportDetails
         return providerVersion;
     }
 
-    /** Name of the service (for example, Logging Analytics) that owns the saved search. */
+    /**
+     * The user friendly name of the service (for example, Logging Analytics) that owns the saved
+     * search.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the saved search.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the saved
+     * search.
      *
      * @return the value
      */
@@ -654,12 +708,16 @@ public final class ManagementSavedSearchForImportDetails
         return type;
     }
 
-    /** JSON that contains user interface options. */
+    /**
+     * It defines the visualization type of the widget saved search, the UI options of that
+     * visualization type, the binding of data to the visualization.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
     /**
-     * JSON that contains user interface options.
+     * It defines the visualization type of the widget saved search, the UI options of that
+     * visualization type, the binding of data to the visualization.
      *
      * @return the value
      */
@@ -667,12 +725,16 @@ public final class ManagementSavedSearchForImportDetails
         return uiConfig;
     }
 
-    /** Array of JSON that contain data source options. */
+    /**
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+     * examples on how it can be constructed for various data sources.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
     /**
-     * Array of JSON that contain data source options.
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+     * examples on how it can be constructed for various data sources.
      *
      * @return the value
      */
@@ -693,12 +755,16 @@ public final class ManagementSavedSearchForImportDetails
         return screenImage;
     }
 
-    /** Version of the metadata. */
+    /**
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
      *
      * @return the value
      */
@@ -706,12 +772,12 @@ public final class ManagementSavedSearchForImportDetails
         return metadataVersion;
     }
 
-    /** Reference to the HTML file of the widget. */
+    /** The UI template that the saved search uses to render itself. */
     @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
     private final String widgetTemplate;
 
     /**
-     * Reference to the HTML file of the widget.
+     * The UI template that the saved search uses to render itself.
      *
      * @return the value
      */
@@ -719,12 +785,12 @@ public final class ManagementSavedSearchForImportDetails
         return widgetTemplate;
     }
 
-    /** Reference to the view model of the widget. */
+    /** The View Model that the saved search uses to render itself. */
     @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
     private final String widgetVM;
 
     /**
-     * Reference to the view model of the widget.
+     * The View Model that the saved search uses to render itself.
      *
      * @return the value
      */
@@ -779,6 +845,19 @@ public final class ManagementSavedSearchForImportDetails
         return parametersConfig;
     }
 
+    /** Contains configuration for enabling features. */
+    @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+    private final Object featuresConfig;
+
+    /**
+     * Contains configuration for enabling features.
+     *
+     * @return the value
+     */
+    public Object getFeaturesConfig() {
+        return featuresConfig;
+    }
+
     /** Drill-down configuration to define the destination of a drill-down action. */
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
     private final java.util.List<Object> drilldownConfig;
@@ -826,6 +905,7 @@ public final class ManagementSavedSearchForImportDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
+        sb.append(", featuresConfig=").append(String.valueOf(this.featuresConfig));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
         sb.append(")");
         return sb.toString();
@@ -860,6 +940,7 @@ public final class ManagementSavedSearchForImportDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
+                && java.util.Objects.equals(this.featuresConfig, other.featuresConfig)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
                 && super.equals(other);
     }
@@ -899,6 +980,9 @@ public final class ManagementSavedSearchForImportDetails
         result =
                 (result * PRIME)
                         + (this.parametersConfig == null ? 43 : this.parametersConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featuresConfig == null ? 43 : this.featuresConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());

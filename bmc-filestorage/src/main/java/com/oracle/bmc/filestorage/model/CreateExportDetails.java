@@ -41,8 +41,9 @@ public final class CreateExportDetails
         /**
          * Export options for the new export. If left unspecified, defaults to:
          *
-         * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access" :
-         * "READ_WRITE", "identitySquash" : "NONE" } ]
+         * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access":
+         * "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
+         * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
          *
          * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will
          * not be reachable from the Internet, even if an associated {@code ClientOptions} item has
@@ -59,8 +60,9 @@ public final class CreateExportDetails
         /**
          * Export options for the new export. If left unspecified, defaults to:
          *
-         * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access" :
-         * "READ_WRITE", "identitySquash" : "NONE" } ]
+         * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access":
+         * "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
+         * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
          *
          * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will
          * not be reachable from the Internet, even if an associated {@code ClientOptions} item has
@@ -186,8 +188,9 @@ public final class CreateExportDetails
     /**
      * Export options for the new export. If left unspecified, defaults to:
      *
-     * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access" :
-     * "READ_WRITE", "identitySquash" : "NONE" } ]
+     * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE",
+     * "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
+     * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
      *
      * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will not
      * be reachable from the Internet, even if an associated {@code ClientOptions} item has a source
@@ -204,8 +207,9 @@ public final class CreateExportDetails
     /**
      * Export options for the new export. If left unspecified, defaults to:
      *
-     * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access" :
-     * "READ_WRITE", "identitySquash" : "NONE" } ]
+     * <p>[ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE",
+     * "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534,
+     * "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
      *
      * <p>*Note:** Mount targets do not have Internet-routable IP addresses. Therefore they will not
      * be reachable from the Internet, even if an associated {@code ClientOptions} item has a source

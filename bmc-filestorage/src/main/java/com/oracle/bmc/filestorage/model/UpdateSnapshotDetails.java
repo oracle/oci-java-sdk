@@ -23,13 +23,15 @@ package com.oracle.bmc.filestorage.model;
 public final class UpdateSnapshotDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({"freeformTags", "definedTags", "expirationTime"})
     public UpdateSnapshotDetails(
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Date expirationTime) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.expirationTime = expirationTime;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -81,13 +83,37 @@ public final class UpdateSnapshotDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The UTC time when this snapshot will be deleted. To remove the expiration time, set this
+         * field to the minimum date-time value using Date(0).
+         *
+         * <p>Example: {@code Thu Jan 01 01:00:00 GMT 1970}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+        private java.util.Date expirationTime;
+
+        /**
+         * The UTC time when this snapshot will be deleted. To remove the expiration time, set this
+         * field to the minimum date-time value using Date(0).
+         *
+         * <p>Example: {@code Thu Jan 01 01:00:00 GMT 1970}
+         *
+         * @param expirationTime the value to set
+         * @return this builder
+         */
+        public Builder expirationTime(java.util.Date expirationTime) {
+            this.expirationTime = expirationTime;
+            this.__explicitlySet__.add("expirationTime");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSnapshotDetails build() {
             UpdateSnapshotDetails model =
-                    new UpdateSnapshotDetails(this.freeformTags, this.definedTags);
+                    new UpdateSnapshotDetails(
+                            this.freeformTags, this.definedTags, this.expirationTime);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +127,9 @@ public final class UpdateSnapshotDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("expirationTime")) {
+                this.expirationTime(model.getExpirationTime());
             }
             return this;
         }
@@ -157,6 +186,27 @@ public final class UpdateSnapshotDetails
         return definedTags;
     }
 
+    /**
+     * The UTC time when this snapshot will be deleted. To remove the expiration time, set this
+     * field to the minimum date-time value using Date(0).
+     *
+     * <p>Example: {@code Thu Jan 01 01:00:00 GMT 1970}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+    private final java.util.Date expirationTime;
+
+    /**
+     * The UTC time when this snapshot will be deleted. To remove the expiration time, set this
+     * field to the minimum date-time value using Date(0).
+     *
+     * <p>Example: {@code Thu Jan 01 01:00:00 GMT 1970}
+     *
+     * @return the value
+     */
+    public java.util.Date getExpirationTime() {
+        return expirationTime;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -174,6 +224,7 @@ public final class UpdateSnapshotDetails
         sb.append("super=").append(super.toString());
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +241,7 @@ public final class UpdateSnapshotDetails
         UpdateSnapshotDetails other = (UpdateSnapshotDetails) o;
         return java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.expirationTime, other.expirationTime)
                 && super.equals(other);
     }
 
@@ -199,6 +251,9 @@ public final class UpdateSnapshotDetails
         int result = 1;
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

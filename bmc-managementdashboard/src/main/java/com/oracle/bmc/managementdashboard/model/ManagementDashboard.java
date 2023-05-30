@@ -51,6 +51,7 @@ public final class ManagementDashboard
         "lifecycleState",
         "parametersConfig",
         "drilldownConfig",
+        "featuresConfig",
         "freeformTags",
         "definedTags"
     })
@@ -82,6 +83,7 @@ public final class ManagementDashboard
             LifecycleStates lifecycleState,
             java.util.List<Object> parametersConfig,
             java.util.List<Object> drilldownConfig,
+            Object featuresConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -112,6 +114,7 @@ public final class ManagementDashboard
         this.lifecycleState = lifecycleState;
         this.parametersConfig = parametersConfig;
         this.drilldownConfig = drilldownConfig;
+        this.featuresConfig = featuresConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -351,12 +354,16 @@ public final class ManagementDashboard
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Version of the metadata. */
+        /**
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
          *
          * @param metadataVersion the value to set
          * @return this builder
@@ -531,6 +538,21 @@ public final class ManagementDashboard
             this.__explicitlySet__.add("drilldownConfig");
             return this;
         }
+        /** Contains configuration for enabling features. */
+        @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+        private Object featuresConfig;
+
+        /**
+         * Contains configuration for enabling features.
+         *
+         * @param featuresConfig the value to set
+         * @return this builder
+         */
+        public Builder featuresConfig(Object featuresConfig) {
+            this.featuresConfig = featuresConfig;
+            this.__explicitlySet__.add("featuresConfig");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -604,6 +626,7 @@ public final class ManagementDashboard
                             this.lifecycleState,
                             this.parametersConfig,
                             this.drilldownConfig,
+                            this.featuresConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -694,6 +717,9 @@ public final class ManagementDashboard
             }
             if (model.wasPropertyExplicitlySet("drilldownConfig")) {
                 this.drilldownConfig(model.getDrilldownConfig());
+            }
+            if (model.wasPropertyExplicitlySet("featuresConfig")) {
+                this.featuresConfig(model.getFeaturesConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -917,12 +943,16 @@ public final class ManagementDashboard
         return timeUpdated;
     }
 
-    /** Version of the metadata. */
+    /**
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
      *
      * @return the value
      */
@@ -1073,6 +1103,19 @@ public final class ManagementDashboard
         return drilldownConfig;
     }
 
+    /** Contains configuration for enabling features. */
+    @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+    private final Object featuresConfig;
+
+    /**
+     * Contains configuration for enabling features.
+     *
+     * @return the value
+     */
+    public Object getFeaturesConfig() {
+        return featuresConfig;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1149,6 +1192,7 @@ public final class ManagementDashboard
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
+        sb.append(", featuresConfig=").append(String.valueOf(this.featuresConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1192,6 +1236,7 @@ public final class ManagementDashboard
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
+                && java.util.Objects.equals(this.featuresConfig, other.featuresConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1246,6 +1291,9 @@ public final class ManagementDashboard
         result =
                 (result * PRIME)
                         + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featuresConfig == null ? 43 : this.featuresConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

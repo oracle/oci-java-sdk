@@ -41,6 +41,7 @@ public final class ManagementDashboardSummary
         "screenImage",
         "nls",
         "type",
+        "featuresConfig",
         "lifecycleState",
         "freeformTags",
         "definedTags"
@@ -63,6 +64,7 @@ public final class ManagementDashboardSummary
             String screenImage,
             Object nls,
             String type,
+            Object featuresConfig,
             LifecycleStates lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -84,6 +86,7 @@ public final class ManagementDashboardSummary
         this.screenImage = screenImage;
         this.nls = nls;
         this.type = type;
+        this.featuresConfig = featuresConfig;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -185,12 +188,16 @@ public final class ManagementDashboardSummary
             this.__explicitlySet__.add("providerId");
             return this;
         }
-        /** Name of the service (for example, Logging Analytics) that owns the dashboard. */
+        /**
+         * The user friendly name of the service (for example, Logging Analytics) that owns the
+         * dashboard.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
         /**
-         * Name of the service (for example, Logging Analytics) that owns the dashboard.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the
+         * dashboard.
          *
          * @param providerName the value to set
          * @return this builder
@@ -200,12 +207,18 @@ public final class ManagementDashboardSummary
             this.__explicitlySet__.add("providerName");
             return this;
         }
-        /** Version of the service that owns the dashboard. */
+        /**
+         * The version of the metadata of the provider. This is useful for provider to version its
+         * features and metadata. Any newly created saved search (or dashboard) should use
+         * providerVersion 3.0.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
         /**
-         * Version of the service that owns the dashboard.
+         * The version of the metadata of the provider. This is useful for provider to version its
+         * features and metadata. Any newly created saved search (or dashboard) should use
+         * providerVersion 3.0.0.
          *
          * @param providerVersion the value to set
          * @return this builder
@@ -294,12 +307,16 @@ public final class ManagementDashboardSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Version of the metadata. */
+        /**
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
          *
          * @param metadataVersion the value to set
          * @return this builder
@@ -352,6 +369,21 @@ public final class ManagementDashboardSummary
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+        /** Contains configuration for enabling features. */
+        @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+        private Object featuresConfig;
+
+        /**
+         * Contains configuration for enabling features.
+         *
+         * @param featuresConfig the value to set
+         * @return this builder
+         */
+        public Builder featuresConfig(Object featuresConfig) {
+            this.featuresConfig = featuresConfig;
+            this.__explicitlySet__.add("featuresConfig");
             return this;
         }
         /** Current lifecycle state of the dashboard. */
@@ -432,6 +464,7 @@ public final class ManagementDashboardSummary
                             this.screenImage,
                             this.nls,
                             this.type,
+                            this.featuresConfig,
                             this.lifecycleState,
                             this.freeformTags,
                             this.definedTags);
@@ -493,6 +526,9 @@ public final class ManagementDashboardSummary
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("featuresConfig")) {
+                this.featuresConfig(model.getFeaturesConfig());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -598,12 +634,16 @@ public final class ManagementDashboardSummary
         return providerId;
     }
 
-    /** Name of the service (for example, Logging Analytics) that owns the dashboard. */
+    /**
+     * The user friendly name of the service (for example, Logging Analytics) that owns the
+     * dashboard.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the dashboard.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the
+     * dashboard.
      *
      * @return the value
      */
@@ -611,12 +651,18 @@ public final class ManagementDashboardSummary
         return providerName;
     }
 
-    /** Version of the service that owns the dashboard. */
+    /**
+     * The version of the metadata of the provider. This is useful for provider to version its
+     * features and metadata. Any newly created saved search (or dashboard) should use
+     * providerVersion 3.0.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
     /**
-     * Version of the service that owns the dashboard.
+     * The version of the metadata of the provider. This is useful for provider to version its
+     * features and metadata. Any newly created saved search (or dashboard) should use
+     * providerVersion 3.0.0.
      *
      * @return the value
      */
@@ -693,12 +739,16 @@ public final class ManagementDashboardSummary
         return timeUpdated;
     }
 
-    /** Version of the metadata. */
+    /**
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
      *
      * @return the value
      */
@@ -743,6 +793,19 @@ public final class ManagementDashboardSummary
      */
     public String getType() {
         return type;
+    }
+
+    /** Contains configuration for enabling features. */
+    @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+    private final Object featuresConfig;
+
+    /**
+     * Contains configuration for enabling features.
+     *
+     * @return the value
+     */
+    public Object getFeaturesConfig() {
+        return featuresConfig;
     }
 
     /** Current lifecycle state of the dashboard. */
@@ -824,6 +887,7 @@ public final class ManagementDashboardSummary
         sb.append(", screenImage=").append(String.valueOf(this.screenImage));
         sb.append(", nls=").append(String.valueOf(this.nls));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", featuresConfig=").append(String.valueOf(this.featuresConfig));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -858,6 +922,7 @@ public final class ManagementDashboardSummary
                 && java.util.Objects.equals(this.screenImage, other.screenImage)
                 && java.util.Objects.equals(this.nls, other.nls)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.featuresConfig, other.featuresConfig)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -893,6 +958,9 @@ public final class ManagementDashboardSummary
         result = (result * PRIME) + (this.screenImage == null ? 43 : this.screenImage.hashCode());
         result = (result * PRIME) + (this.nls == null ? 43 : this.nls.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featuresConfig == null ? 43 : this.featuresConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

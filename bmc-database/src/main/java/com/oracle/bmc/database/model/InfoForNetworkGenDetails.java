@@ -218,6 +218,7 @@ public final class InfoForNetworkGenDetails
     public enum NetworkType implements com.oracle.bmc.http.internal.BmcEnum {
         Client("CLIENT"),
         Backup("BACKUP"),
+        DisasterRecovery("DISASTER_RECOVERY"),
         ;
 
         private final String value;
