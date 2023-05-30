@@ -30,6 +30,7 @@ public final class VmClusterNetworkDetails
         "dns",
         "ntp",
         "vmNetworks",
+        "drScans",
         "freeformTags",
         "definedTags"
     })
@@ -40,6 +41,7 @@ public final class VmClusterNetworkDetails
             java.util.List<String> dns,
             java.util.List<String> ntp,
             java.util.List<VmNetworkDetails> vmNetworks,
+            java.util.List<DrScanDetails> drScans,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +51,7 @@ public final class VmClusterNetworkDetails
         this.dns = dns;
         this.ntp = ntp;
         this.vmNetworks = vmNetworks;
+        this.drScans = drScans;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -153,6 +156,21 @@ public final class VmClusterNetworkDetails
             this.__explicitlySet__.add("vmNetworks");
             return this;
         }
+        /** The SCAN details for DR network */
+        @com.fasterxml.jackson.annotation.JsonProperty("drScans")
+        private java.util.List<DrScanDetails> drScans;
+
+        /**
+         * The SCAN details for DR network
+         *
+         * @param drScans the value to set
+         * @return this builder
+         */
+        public Builder drScans(java.util.List<DrScanDetails> drScans) {
+            this.drScans = drScans;
+            this.__explicitlySet__.add("drScans");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -213,6 +231,7 @@ public final class VmClusterNetworkDetails
                             this.dns,
                             this.ntp,
                             this.vmNetworks,
+                            this.drScans,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -240,6 +259,9 @@ public final class VmClusterNetworkDetails
             }
             if (model.wasPropertyExplicitlySet("vmNetworks")) {
                 this.vmNetworks(model.getVmNetworks());
+            }
+            if (model.wasPropertyExplicitlySet("drScans")) {
+                this.drScans(model.getDrScans());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -346,6 +368,19 @@ public final class VmClusterNetworkDetails
         return vmNetworks;
     }
 
+    /** The SCAN details for DR network */
+    @com.fasterxml.jackson.annotation.JsonProperty("drScans")
+    private final java.util.List<DrScanDetails> drScans;
+
+    /**
+     * The SCAN details for DR network
+     *
+     * @return the value
+     */
+    public java.util.List<DrScanDetails> getDrScans() {
+        return drScans;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -409,6 +444,7 @@ public final class VmClusterNetworkDetails
         sb.append(", dns=").append(String.valueOf(this.dns));
         sb.append(", ntp=").append(String.valueOf(this.ntp));
         sb.append(", vmNetworks=").append(String.valueOf(this.vmNetworks));
+        sb.append(", drScans=").append(String.valueOf(this.drScans));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -431,6 +467,7 @@ public final class VmClusterNetworkDetails
                 && java.util.Objects.equals(this.dns, other.dns)
                 && java.util.Objects.equals(this.ntp, other.ntp)
                 && java.util.Objects.equals(this.vmNetworks, other.vmNetworks)
+                && java.util.Objects.equals(this.drScans, other.drScans)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -448,6 +485,7 @@ public final class VmClusterNetworkDetails
         result = (result * PRIME) + (this.dns == null ? 43 : this.dns.hashCode());
         result = (result * PRIME) + (this.ntp == null ? 43 : this.ntp.hashCode());
         result = (result * PRIME) + (this.vmNetworks == null ? 43 : this.vmNetworks.hashCode());
+        result = (result * PRIME) + (this.drScans == null ? 43 : this.drScans.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

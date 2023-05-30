@@ -33,6 +33,7 @@ public final class VmClusterNetworkSummary
         "dns",
         "ntp",
         "vmNetworks",
+        "drScans",
         "lifecycleState",
         "timeCreated",
         "lifecycleDetails",
@@ -49,6 +50,7 @@ public final class VmClusterNetworkSummary
             java.util.List<String> dns,
             java.util.List<String> ntp,
             java.util.List<VmNetworkDetails> vmNetworks,
+            java.util.List<DrScanDetails> drScans,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String lifecycleDetails,
@@ -64,6 +66,7 @@ public final class VmClusterNetworkSummary
         this.dns = dns;
         this.ntp = ntp;
         this.vmNetworks = vmNetworks;
+        this.drScans = drScans;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.lifecycleDetails = lifecycleDetails;
@@ -226,6 +229,21 @@ public final class VmClusterNetworkSummary
             this.__explicitlySet__.add("vmNetworks");
             return this;
         }
+        /** The SCAN details for DR network */
+        @com.fasterxml.jackson.annotation.JsonProperty("drScans")
+        private java.util.List<DrScanDetails> drScans;
+
+        /**
+         * The SCAN details for DR network
+         *
+         * @param drScans the value to set
+         * @return this builder
+         */
+        public Builder drScans(java.util.List<DrScanDetails> drScans) {
+            this.drScans = drScans;
+            this.__explicitlySet__.add("drScans");
+            return this;
+        }
         /**
          * The current state of the VM cluster network. CREATING - The resource is being created
          * REQUIRES_VALIDATION - The resource is created and may not be usable until it is
@@ -356,6 +374,7 @@ public final class VmClusterNetworkSummary
                             this.dns,
                             this.ntp,
                             this.vmNetworks,
+                            this.drScans,
                             this.lifecycleState,
                             this.timeCreated,
                             this.lifecycleDetails,
@@ -395,6 +414,9 @@ public final class VmClusterNetworkSummary
             }
             if (model.wasPropertyExplicitlySet("vmNetworks")) {
                 this.vmNetworks(model.getVmNetworks());
+            }
+            if (model.wasPropertyExplicitlySet("drScans")) {
+                this.drScans(model.getDrScans());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -555,6 +577,19 @@ public final class VmClusterNetworkSummary
      */
     public java.util.List<VmNetworkDetails> getVmNetworks() {
         return vmNetworks;
+    }
+
+    /** The SCAN details for DR network */
+    @com.fasterxml.jackson.annotation.JsonProperty("drScans")
+    private final java.util.List<DrScanDetails> drScans;
+
+    /**
+     * The SCAN details for DR network
+     *
+     * @return the value
+     */
+    public java.util.List<DrScanDetails> getDrScans() {
+        return drScans;
     }
 
     /**
@@ -749,6 +784,7 @@ public final class VmClusterNetworkSummary
         sb.append(", dns=").append(String.valueOf(this.dns));
         sb.append(", ntp=").append(String.valueOf(this.ntp));
         sb.append(", vmNetworks=").append(String.valueOf(this.vmNetworks));
+        sb.append(", drScans=").append(String.valueOf(this.drScans));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -778,6 +814,7 @@ public final class VmClusterNetworkSummary
                 && java.util.Objects.equals(this.dns, other.dns)
                 && java.util.Objects.equals(this.ntp, other.ntp)
                 && java.util.Objects.equals(this.vmNetworks, other.vmNetworks)
+                && java.util.Objects.equals(this.drScans, other.drScans)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -805,6 +842,7 @@ public final class VmClusterNetworkSummary
         result = (result * PRIME) + (this.dns == null ? 43 : this.dns.hashCode());
         result = (result * PRIME) + (this.ntp == null ? 43 : this.ntp.hashCode());
         result = (result * PRIME) + (this.vmNetworks == null ? 43 : this.vmNetworks.hashCode());
+        result = (result * PRIME) + (this.drScans == null ? 43 : this.drScans.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

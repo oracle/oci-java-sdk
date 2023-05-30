@@ -33,7 +33,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         "isCloneSource",
         "lifecycleDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "expirationTime",
+        "filesystemSnapshotPolicyId"
     })
     public Snapshot(
             String fileSystemId,
@@ -47,7 +49,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
             Boolean isCloneSource,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Date expirationTime,
+            String filesystemSnapshotPolicyId) {
         super();
         this.fileSystemId = fileSystemId;
         this.id = id;
@@ -61,6 +65,8 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.expirationTime = expirationTime;
+        this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -318,6 +324,40 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** The time when this snapshot will be deleted. */
+        @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+        private java.util.Date expirationTime;
+
+        /**
+         * The time when this snapshot will be deleted.
+         *
+         * @param expirationTime the value to set
+         * @return this builder
+         */
+        public Builder expirationTime(java.util.Date expirationTime) {
+            this.expirationTime = expirationTime;
+            this.__explicitlySet__.add("expirationTime");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * file system snapshot policy that created this snapshot.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("filesystemSnapshotPolicyId")
+        private String filesystemSnapshotPolicyId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * file system snapshot policy that created this snapshot.
+         *
+         * @param filesystemSnapshotPolicyId the value to set
+         * @return this builder
+         */
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            this.__explicitlySet__.add("filesystemSnapshotPolicyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -336,7 +376,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
                             this.isCloneSource,
                             this.lifecycleDetails,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.expirationTime,
+                            this.filesystemSnapshotPolicyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -380,6 +422,12 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("expirationTime")) {
+                this.expirationTime(model.getExpirationTime());
+            }
+            if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
+                this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
             }
             return this;
         }
@@ -715,6 +763,36 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         return definedTags;
     }
 
+    /** The time when this snapshot will be deleted. */
+    @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+    private final java.util.Date expirationTime;
+
+    /**
+     * The time when this snapshot will be deleted.
+     *
+     * @return the value
+     */
+    public java.util.Date getExpirationTime() {
+        return expirationTime;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * file system snapshot policy that created this snapshot.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("filesystemSnapshotPolicyId")
+    private final String filesystemSnapshotPolicyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * file system snapshot policy that created this snapshot.
+     *
+     * @return the value
+     */
+    public String getFilesystemSnapshotPolicyId() {
+        return filesystemSnapshotPolicyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -742,6 +820,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
+        sb.append(", filesystemSnapshotPolicyId=")
+                .append(String.valueOf(this.filesystemSnapshotPolicyId));
         sb.append(")");
         return sb.toString();
     }
@@ -768,6 +849,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.expirationTime, other.expirationTime)
+                && java.util.Objects.equals(
+                        this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
                 && super.equals(other);
     }
 
@@ -793,6 +877,14 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filesystemSnapshotPolicyId == null
+                                ? 43
+                                : this.filesystemSnapshotPolicyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

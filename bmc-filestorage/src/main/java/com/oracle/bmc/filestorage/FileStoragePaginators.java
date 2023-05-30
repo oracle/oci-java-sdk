@@ -385,6 +385,136 @@ public class FileStoragePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listFilesystemSnapshotPolicies operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListFilesystemSnapshotPoliciesResponse>
+            listFilesystemSnapshotPoliciesResponseIterator(
+                    final ListFilesystemSnapshotPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListFilesystemSnapshotPoliciesRequest.Builder,
+                ListFilesystemSnapshotPoliciesRequest,
+                ListFilesystemSnapshotPoliciesResponse>(
+                new java.util.function.Supplier<ListFilesystemSnapshotPoliciesRequest.Builder>() {
+                    @Override
+                    public ListFilesystemSnapshotPoliciesRequest.Builder get() {
+                        return ListFilesystemSnapshotPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFilesystemSnapshotPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListFilesystemSnapshotPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFilesystemSnapshotPoliciesRequest.Builder>,
+                        ListFilesystemSnapshotPoliciesRequest>() {
+                    @Override
+                    public ListFilesystemSnapshotPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFilesystemSnapshotPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFilesystemSnapshotPoliciesRequest,
+                        ListFilesystemSnapshotPoliciesResponse>() {
+                    @Override
+                    public ListFilesystemSnapshotPoliciesResponse apply(
+                            ListFilesystemSnapshotPoliciesRequest request) {
+                        return client.listFilesystemSnapshotPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} objects contained in
+     * responses from the listFilesystemSnapshotPolicies operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary>
+            listFilesystemSnapshotPoliciesRecordIterator(
+                    final ListFilesystemSnapshotPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListFilesystemSnapshotPoliciesRequest.Builder,
+                ListFilesystemSnapshotPoliciesRequest,
+                ListFilesystemSnapshotPoliciesResponse,
+                com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary>(
+                new java.util.function.Supplier<ListFilesystemSnapshotPoliciesRequest.Builder>() {
+                    @Override
+                    public ListFilesystemSnapshotPoliciesRequest.Builder get() {
+                        return ListFilesystemSnapshotPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFilesystemSnapshotPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListFilesystemSnapshotPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFilesystemSnapshotPoliciesRequest.Builder>,
+                        ListFilesystemSnapshotPoliciesRequest>() {
+                    @Override
+                    public ListFilesystemSnapshotPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFilesystemSnapshotPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFilesystemSnapshotPoliciesRequest,
+                        ListFilesystemSnapshotPoliciesResponse>() {
+                    @Override
+                    public ListFilesystemSnapshotPoliciesResponse apply(
+                            ListFilesystemSnapshotPoliciesRequest request) {
+                        return client.listFilesystemSnapshotPolicies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListFilesystemSnapshotPoliciesResponse,
+                        java.util.List<
+                                com.oracle.bmc.filestorage.model
+                                        .FilesystemSnapshotPolicySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.filestorage.model
+                                            .FilesystemSnapshotPolicySummary>
+                            apply(ListFilesystemSnapshotPoliciesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listMountTargets operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

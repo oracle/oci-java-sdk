@@ -152,6 +152,41 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ChangeFilesystemSnapshotPolicyCompartmentResponse
+            changeFilesystemSnapshotPolicyCompartment(
+                    ChangeFilesystemSnapshotPolicyCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeFilesystemSnapshotPolicyCompartmentDetails(),
+                "changeFilesystemSnapshotPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeFilesystemSnapshotPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeFilesystemSnapshotPolicyCompartment")
+                .serviceDetails(
+                        "FileStorage",
+                        "ChangeFilesystemSnapshotPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/ChangeFilesystemSnapshotPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeFilesystemSnapshotPolicyCompartmentRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeFilesystemSnapshotPolicyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request) {
 
@@ -267,6 +302,38 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateFileSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateFileSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateFilesystemSnapshotPolicyResponse createFilesystemSnapshotPolicy(
+            CreateFilesystemSnapshotPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateFilesystemSnapshotPolicyDetails(),
+                "createFilesystemSnapshotPolicyDetails is required");
+
+        return clientCall(request, CreateFilesystemSnapshotPolicyResponse::builder)
+                .logger(LOG, "createFilesystemSnapshotPolicy")
+                .serviceDetails(
+                        "FileStorage",
+                        "CreateFilesystemSnapshotPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/CreateFilesystemSnapshotPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateFilesystemSnapshotPolicyRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        CreateFilesystemSnapshotPolicyResponse.Builder::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "etag", CreateFilesystemSnapshotPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -399,6 +466,34 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFileSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteFilesystemSnapshotPolicyResponse deleteFilesystemSnapshotPolicy(
+            DeleteFilesystemSnapshotPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+
+        return clientCall(request, DeleteFilesystemSnapshotPolicyResponse::builder)
+                .logger(LOG, "deleteFilesystemSnapshotPolicy")
+                .serviceDetails(
+                        "FileStorage",
+                        "DeleteFilesystemSnapshotPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/DeleteFilesystemSnapshotPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFilesystemSnapshotPolicyRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -614,6 +709,37 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public GetFilesystemSnapshotPolicyResponse getFilesystemSnapshotPolicy(
+            GetFilesystemSnapshotPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+
+        return clientCall(request, GetFilesystemSnapshotPolicyResponse::builder)
+                .logger(LOG, "getFilesystemSnapshotPolicy")
+                .serviceDetails(
+                        "FileStorage",
+                        "GetFilesystemSnapshotPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/GetFilesystemSnapshotPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFilesystemSnapshotPolicyRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        GetFilesystemSnapshotPolicyResponse.Builder::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "etag", GetFilesystemSnapshotPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetMountTargetResponse getMountTarget(GetMountTargetRequest request) {
 
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
@@ -818,6 +944,8 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("sourceSnapshotId", request.getSourceSnapshotId())
                 .appendQueryParam("parentFileSystemId", request.getParentFileSystemId())
+                .appendQueryParam(
+                        "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
@@ -829,6 +957,46 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListFileSystemsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListFileSystemsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListFilesystemSnapshotPoliciesResponse listFilesystemSnapshotPolicies(
+            ListFilesystemSnapshotPoliciesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListFilesystemSnapshotPoliciesResponse::builder)
+                .logger(LOG, "listFilesystemSnapshotPolicies")
+                .serviceDetails(
+                        "FileStorage",
+                        "ListFilesystemSnapshotPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicySummary/ListFilesystemSnapshotPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFilesystemSnapshotPoliciesRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary.class,
+                        ListFilesystemSnapshotPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListFilesystemSnapshotPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListFilesystemSnapshotPoliciesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -948,7 +1116,6 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     @Override
     public ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request) {
-        Objects.requireNonNull(request.getFileSystemId(), "fileSystemId is required");
 
         return clientCall(request, ListSnapshotsResponse::builder)
                 .logger(LOG, "listSnapshots")
@@ -964,6 +1131,9 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("id", request.getId())
+                .appendQueryParam(
+                        "filesystemSnapshotPolicyId", request.getFilesystemSnapshotPolicyId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("fileSystemId", request.getFileSystemId())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
@@ -975,6 +1145,76 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListSnapshotsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSnapshotsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public PauseFilesystemSnapshotPolicyResponse pauseFilesystemSnapshotPolicy(
+            PauseFilesystemSnapshotPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+
+        return clientCall(request, PauseFilesystemSnapshotPolicyResponse::builder)
+                .logger(LOG, "pauseFilesystemSnapshotPolicy")
+                .serviceDetails(
+                        "FileStorage",
+                        "PauseFilesystemSnapshotPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/PauseFilesystemSnapshotPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PauseFilesystemSnapshotPolicyRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("pause")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        PauseFilesystemSnapshotPolicyResponse.Builder::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PauseFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PauseFilesystemSnapshotPolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UnpauseFilesystemSnapshotPolicyResponse unpauseFilesystemSnapshotPolicy(
+            UnpauseFilesystemSnapshotPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+
+        return clientCall(request, UnpauseFilesystemSnapshotPolicyResponse::builder)
+                .logger(LOG, "unpauseFilesystemSnapshotPolicy")
+                .serviceDetails(
+                        "FileStorage",
+                        "UnpauseFilesystemSnapshotPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UnpauseFilesystemSnapshotPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UnpauseFilesystemSnapshotPolicyRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("unpause")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        UnpauseFilesystemSnapshotPolicyResponse.Builder::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UnpauseFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UnpauseFilesystemSnapshotPolicyResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1067,6 +1307,43 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateFileSystemResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFileSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateFilesystemSnapshotPolicyResponse updateFilesystemSnapshotPolicy(
+            UpdateFilesystemSnapshotPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateFilesystemSnapshotPolicyDetails(),
+                "updateFilesystemSnapshotPolicyDetails is required");
+
+        return clientCall(request, UpdateFilesystemSnapshotPolicyResponse::builder)
+                .logger(LOG, "updateFilesystemSnapshotPolicy")
+                .serviceDetails(
+                        "FileStorage",
+                        "UpdateFilesystemSnapshotPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UpdateFilesystemSnapshotPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateFilesystemSnapshotPolicyRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        UpdateFilesystemSnapshotPolicyResponse.Builder::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "etag", UpdateFilesystemSnapshotPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
                 .callSync();
     }
 

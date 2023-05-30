@@ -208,6 +208,7 @@ public final class VmNetworkDetails
     public enum NetworkType implements com.oracle.bmc.http.internal.BmcEnum {
         Client("CLIENT"),
         Backup("BACKUP"),
+        DisasterRecovery("DISASTER_RECOVERY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -87,6 +87,25 @@ public interface FileStorage extends AutoCloseable {
             ChangeFileSystemCompartmentRequest request);
 
     /**
+     * Moves a file system snapshot policy into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeFilesystemSnapshotPolicyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeFilesystemSnapshotPolicyCompartment API.
+     */
+    ChangeFilesystemSnapshotPolicyCompartmentResponse changeFilesystemSnapshotPolicyCompartment(
+            ChangeFilesystemSnapshotPolicyCompartmentRequest request);
+
+    /**
      * Moves a mount target and its associated export set into a different compartment within the
      * same tenancy. For information about moving resources between compartments, see [Moving
      * Resources to a Different
@@ -180,6 +199,26 @@ public interface FileStorage extends AutoCloseable {
      *     API.
      */
     CreateFileSystemResponse createFileSystem(CreateFileSystemRequest request);
+
+    /**
+     * Creates a new file system snapshot policy in the specified compartment and availability
+     * domain.
+     *
+     * <p>After you create a file system snapshot policy, you can associate it with file systems.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFilesystemSnapshotPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateFilesystemSnapshotPolicy API.
+     */
+    CreateFilesystemSnapshotPolicyResponse createFilesystemSnapshotPolicy(
+            CreateFilesystemSnapshotPolicyRequest request);
 
     /**
      * Creates a new mount target in the specified compartment and subnet. You can associate a file
@@ -311,6 +350,23 @@ public interface FileStorage extends AutoCloseable {
     DeleteFileSystemResponse deleteFileSystem(DeleteFileSystemRequest request);
 
     /**
+     * Deletes the specified file system snapshot policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteFilesystemSnapshotPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteFilesystemSnapshotPolicy API.
+     */
+    DeleteFilesystemSnapshotPolicyResponse deleteFilesystemSnapshotPolicy(
+            DeleteFilesystemSnapshotPolicyRequest request);
+
+    /**
      * Deletes the specified mount target. This operation also deletes the mount target's VNICs.
      *
      * @param request The request object containing the details to send
@@ -438,6 +494,23 @@ public interface FileStorage extends AutoCloseable {
     GetFileSystemResponse getFileSystem(GetFileSystemRequest request);
 
     /**
+     * Gets the specified file system snapshot policy's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetFilesystemSnapshotPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetFilesystemSnapshotPolicy API.
+     */
+    GetFilesystemSnapshotPolicyResponse getFilesystemSnapshotPolicy(
+            GetFilesystemSnapshotPolicyRequest request);
+
+    /**
      * Gets the specified mount target's information.
      *
      * @param request The request object containing the details to send
@@ -530,7 +603,8 @@ public interface FileStorage extends AutoCloseable {
     ListExportsResponse listExports(ListExportsRequest request);
 
     /**
-     * Lists the file system resources in the specified compartment.
+     * Lists the file system resources in the specified compartment, or by the specified compartment
+     * and file system snapshot policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -544,6 +618,23 @@ public interface FileStorage extends AutoCloseable {
      *     API.
      */
     ListFileSystemsResponse listFileSystems(ListFileSystemsRequest request);
+
+    /**
+     * Lists file system snapshot policies in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFilesystemSnapshotPoliciesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListFilesystemSnapshotPolicies API.
+     */
+    ListFilesystemSnapshotPoliciesResponse listFilesystemSnapshotPolicies(
+            ListFilesystemSnapshotPoliciesRequest request);
 
     /**
      * Lists the mount target resources in the specified compartment.
@@ -594,7 +685,11 @@ public interface FileStorage extends AutoCloseable {
     ListReplicationsResponse listReplications(ListReplicationsRequest request);
 
     /**
-     * Lists snapshots of the specified file system.
+     * Lists snapshots of the specified file system, or by file system snapshot policy and
+     * compartment, or by file system snapshot policy and file system.
+     *
+     * <p>If file system ID is not specified, a file system snapshot policy ID and compartment ID
+     * must be specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -607,6 +702,55 @@ public interface FileStorage extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSnapshots API.
      */
     ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request);
+
+    /**
+     * This operation pauses the scheduled snapshot creation and snapshot deletion of the policy and
+     * updates the lifecycle state of the file system snapshot policy from ACTIVE to INACTIVE. When
+     * a file system snapshot policy is paused, file systems that are associated with the policy
+     * will not have scheduled snapshots created or deleted.
+     *
+     * <p>If the policy is already paused, or in the INACTIVE state, you cannot pause it again. You
+     * can't pause a policy that is in a DELETING, DELETED, FAILED, CREATING or INACTIVE state;
+     * attempts to pause a policy in these states result in a 409 conflict error.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/PauseFilesystemSnapshotPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PauseFilesystemSnapshotPolicy API.
+     */
+    PauseFilesystemSnapshotPolicyResponse pauseFilesystemSnapshotPolicy(
+            PauseFilesystemSnapshotPolicyRequest request);
+
+    /**
+     * This operation unpauses a paused file system snapshot policy and updates the lifecycle state
+     * of the file system snapshot policy from INACTIVE to ACTIVE. By default, file system snapshot
+     * policies are in the ACTIVE state. When a file system snapshot policy is not paused, or in the
+     * ACTIVE state, file systems that are associated with the policy will have snapshots created
+     * and deleted according to the schedules defined in the policy.
+     *
+     * <p>If the policy is already in the ACTIVE state, you cannot unpause it. You can't unpause a
+     * policy that is in a DELETING, DELETED, FAILED, CREATING, or ACTIVE state; attempts to unpause
+     * a policy in these states result in a 409 conflict error.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UnpauseFilesystemSnapshotPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UnpauseFilesystemSnapshotPolicy API.
+     */
+    UnpauseFilesystemSnapshotPolicyResponse unpauseFilesystemSnapshotPolicy(
+            UnpauseFilesystemSnapshotPolicyRequest request);
 
     /**
      * Updates the specified export's information.
@@ -655,6 +799,23 @@ public interface FileStorage extends AutoCloseable {
      *     API.
      */
     UpdateFileSystemResponse updateFileSystem(UpdateFileSystemRequest request);
+
+    /**
+     * Updates the specified file system snapshot policy's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFilesystemSnapshotPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateFilesystemSnapshotPolicy API.
+     */
+    UpdateFilesystemSnapshotPolicyResponse updateFilesystemSnapshotPolicy(
+            UpdateFilesystemSnapshotPolicyRequest request);
 
     /**
      * Updates the specified mount target's information.

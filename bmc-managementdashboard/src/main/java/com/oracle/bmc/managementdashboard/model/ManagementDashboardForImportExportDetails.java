@@ -44,6 +44,7 @@ public final class ManagementDashboardForImportExportDetails
         "isFavorite",
         "savedSearches",
         "parametersConfig",
+        "featuresConfig",
         "drilldownConfig",
         "freeformTags",
         "definedTags"
@@ -69,6 +70,7 @@ public final class ManagementDashboardForImportExportDetails
             Boolean isFavorite,
             java.util.List<ManagementSavedSearchForImportDetails> savedSearches,
             java.util.List<Object> parametersConfig,
+            Object featuresConfig,
             java.util.List<Object> drilldownConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -93,6 +95,7 @@ public final class ManagementDashboardForImportExportDetails
         this.isFavorite = isFavorite;
         this.savedSearches = savedSearches;
         this.parametersConfig = parametersConfig;
+        this.featuresConfig = featuresConfig;
         this.drilldownConfig = drilldownConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -134,12 +137,16 @@ public final class ManagementDashboardForImportExportDetails
             this.__explicitlySet__.add("providerId");
             return this;
         }
-        /** Name of the service (for example, Logging Analytics) that owns the dashboard. */
+        /**
+         * The user friendly name of the service (for example, Logging Analytics) that owns the
+         * dashboard.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
         /**
-         * Name of the service (for example, Logging Analytics) that owns the dashboard.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the
+         * dashboard.
          *
          * @param providerName the value to set
          * @return this builder
@@ -149,12 +156,18 @@ public final class ManagementDashboardForImportExportDetails
             this.__explicitlySet__.add("providerName");
             return this;
         }
-        /** Version of the service that owns the dashboard. */
+        /**
+         * The version of the metadata of the provider. This is useful for provider to version its
+         * features and metadata. Any newly created saved search (or dashboard) should use
+         * providerVersion 3.0.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
         /**
-         * Version of the service that owns the dashboard.
+         * The version of the metadata of the provider. This is useful for provider to version its
+         * features and metadata. Any newly created saved search (or dashboard) should use
+         * providerVersion 3.0.0.
          *
          * @param providerVersion the value to set
          * @return this builder
@@ -258,12 +271,16 @@ public final class ManagementDashboardForImportExportDetails
             this.__explicitlySet__.add("isShowInHome");
             return this;
         }
-        /** Version of the metadata. */
+        /**
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by
+         * dashboard server. Currently it is 2.0.
          *
          * @param metadataVersion the value to set
          * @return this builder
@@ -318,12 +335,16 @@ public final class ManagementDashboardForImportExportDetails
             this.__explicitlySet__.add("nls");
             return this;
         }
-        /** JSON that contains user interface options. */
+        /**
+         * It defines the visualization type of the widget saved search, the UI options of that
+         * visualization type, the binding of data to the visualization.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
         /**
-         * JSON that contains user interface options.
+         * It defines the visualization type of the widget saved search, the UI options of that
+         * visualization type, the binding of data to the visualization.
          *
          * @param uiConfig the value to set
          * @return this builder
@@ -333,12 +354,16 @@ public final class ManagementDashboardForImportExportDetails
             this.__explicitlySet__.add("uiConfig");
             return this;
         }
-        /** Array of JSON that contain data source options. */
+        /**
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+         * examples on how it can be constructed for various data sources.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
         /**
-         * Array of JSON that contain data source options.
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+         * examples on how it can be constructed for various data sources.
          *
          * @param dataConfig the value to set
          * @return this builder
@@ -407,6 +432,21 @@ public final class ManagementDashboardForImportExportDetails
         public Builder parametersConfig(java.util.List<Object> parametersConfig) {
             this.parametersConfig = parametersConfig;
             this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+        /** Contains configuration for enabling features. */
+        @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+        private Object featuresConfig;
+
+        /**
+         * Contains configuration for enabling features.
+         *
+         * @param featuresConfig the value to set
+         * @return this builder
+         */
+        public Builder featuresConfig(Object featuresConfig) {
+            this.featuresConfig = featuresConfig;
+            this.__explicitlySet__.add("featuresConfig");
             return this;
         }
         /** Drill-down configuration to define the destination of a drill-down action. */
@@ -490,6 +530,7 @@ public final class ManagementDashboardForImportExportDetails
                             this.isFavorite,
                             this.savedSearches,
                             this.parametersConfig,
+                            this.featuresConfig,
                             this.drilldownConfig,
                             this.freeformTags,
                             this.definedTags);
@@ -561,6 +602,9 @@ public final class ManagementDashboardForImportExportDetails
             if (model.wasPropertyExplicitlySet("parametersConfig")) {
                 this.parametersConfig(model.getParametersConfig());
             }
+            if (model.wasPropertyExplicitlySet("featuresConfig")) {
+                this.featuresConfig(model.getFeaturesConfig());
+            }
             if (model.wasPropertyExplicitlySet("drilldownConfig")) {
                 this.drilldownConfig(model.getDrilldownConfig());
             }
@@ -613,12 +657,16 @@ public final class ManagementDashboardForImportExportDetails
         return providerId;
     }
 
-    /** Name of the service (for example, Logging Analytics) that owns the dashboard. */
+    /**
+     * The user friendly name of the service (for example, Logging Analytics) that owns the
+     * dashboard.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the dashboard.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the
+     * dashboard.
      *
      * @return the value
      */
@@ -626,12 +674,18 @@ public final class ManagementDashboardForImportExportDetails
         return providerName;
     }
 
-    /** Version of the service that owns the dashboard. */
+    /**
+     * The version of the metadata of the provider. This is useful for provider to version its
+     * features and metadata. Any newly created saved search (or dashboard) should use
+     * providerVersion 3.0.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
     /**
-     * Version of the service that owns the dashboard.
+     * The version of the metadata of the provider. This is useful for provider to version its
+     * features and metadata. Any newly created saved search (or dashboard) should use
+     * providerVersion 3.0.0.
      *
      * @return the value
      */
@@ -721,12 +775,16 @@ public final class ManagementDashboardForImportExportDetails
         return isShowInHome;
     }
 
-    /** Version of the metadata. */
+    /**
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard
+     * server. Currently it is 2.0.
      *
      * @return the value
      */
@@ -773,12 +831,16 @@ public final class ManagementDashboardForImportExportDetails
         return nls;
     }
 
-    /** JSON that contains user interface options. */
+    /**
+     * It defines the visualization type of the widget saved search, the UI options of that
+     * visualization type, the binding of data to the visualization.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
     /**
-     * JSON that contains user interface options.
+     * It defines the visualization type of the widget saved search, the UI options of that
+     * visualization type, the binding of data to the visualization.
      *
      * @return the value
      */
@@ -786,12 +848,16 @@ public final class ManagementDashboardForImportExportDetails
         return uiConfig;
     }
 
-    /** Array of JSON that contain data source options. */
+    /**
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+     * examples on how it can be constructed for various data sources.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
     /**
-     * Array of JSON that contain data source options.
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See
+     * examples on how it can be constructed for various data sources.
      *
      * @return the value
      */
@@ -849,6 +915,19 @@ public final class ManagementDashboardForImportExportDetails
      */
     public java.util.List<Object> getParametersConfig() {
         return parametersConfig;
+    }
+
+    /** Contains configuration for enabling features. */
+    @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+    private final Object featuresConfig;
+
+    /**
+     * Contains configuration for enabling features.
+     *
+     * @return the value
+     */
+    public Object getFeaturesConfig() {
+        return featuresConfig;
     }
 
     /** Drill-down configuration to define the destination of a drill-down action. */
@@ -933,6 +1012,7 @@ public final class ManagementDashboardForImportExportDetails
         sb.append(", isFavorite=").append(String.valueOf(this.isFavorite));
         sb.append(", savedSearches=").append(String.valueOf(this.savedSearches));
         sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
+        sb.append(", featuresConfig=").append(String.valueOf(this.featuresConfig));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -971,6 +1051,7 @@ public final class ManagementDashboardForImportExportDetails
                 && java.util.Objects.equals(this.isFavorite, other.isFavorite)
                 && java.util.Objects.equals(this.savedSearches, other.savedSearches)
                 && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
+                && java.util.Objects.equals(this.featuresConfig, other.featuresConfig)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1015,6 +1096,9 @@ public final class ManagementDashboardForImportExportDetails
         result =
                 (result * PRIME)
                         + (this.parametersConfig == null ? 43 : this.parametersConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featuresConfig == null ? 43 : this.featuresConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());
