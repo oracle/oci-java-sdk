@@ -60,13 +60,17 @@ public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port.
          * The SCAN TCPIP port. Default is 1521.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
+         * **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port.
          * The SCAN TCPIP port. Default is 1521.
+         *
          * @param port the value to set
          * @return this builder
          **/
@@ -188,13 +192,17 @@ public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port.
      * The SCAN TCPIP port. Default is 1521.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
+     * **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port.
      * The SCAN TCPIP port. Default is 1521.
+     *
      * @return the value
      **/
     public Integer getPort() {

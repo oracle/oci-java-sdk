@@ -103,6 +103,14 @@ public class ListFileSystemsConverter {
                                     request.getParentFileSystemId()));
         }
 
+        if (request.getFilesystemSnapshotPolicyId() != null) {
+            target =
+                    target.queryParam(
+                            "filesystemSnapshotPolicyId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFilesystemSnapshotPolicyId()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(

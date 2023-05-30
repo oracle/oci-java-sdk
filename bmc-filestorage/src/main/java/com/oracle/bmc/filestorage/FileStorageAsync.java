@@ -78,6 +78,25 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a file system snapshot policy into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeFilesystemSnapshotPolicyCompartmentResponse>
+            changeFilesystemSnapshotPolicyCompartment(
+                    ChangeFilesystemSnapshotPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeFilesystemSnapshotPolicyCompartmentRequest,
+                                    ChangeFilesystemSnapshotPolicyCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a mount target and its associated export set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      *
@@ -174,6 +193,29 @@ public interface FileStorageAsync extends AutoCloseable {
             CreateFileSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResponse>
                     handler);
+
+    /**
+     * Creates a new file system snapshot policy in the specified compartment and
+     * availability domain.
+     * <p>
+     * After you create a file system snapshot policy, you can associate it with
+     * file systems.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateFilesystemSnapshotPolicyResponse>
+            createFilesystemSnapshotPolicy(
+                    CreateFilesystemSnapshotPolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateFilesystemSnapshotPolicyRequest,
+                                    CreateFilesystemSnapshotPolicyResponse>
+                            handler);
 
     /**
      * Creates a new mount target in the specified compartment and
@@ -318,6 +360,25 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified file system snapshot policy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteFilesystemSnapshotPolicyResponse>
+            deleteFilesystemSnapshotPolicy(
+                    DeleteFilesystemSnapshotPolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteFilesystemSnapshotPolicyRequest,
+                                    DeleteFilesystemSnapshotPolicyResponse>
+                            handler);
+
+    /**
      * Deletes the specified mount target. This operation also deletes the
      * mount target's VNICs.
      *
@@ -450,6 +511,22 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified file system snapshot policy's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFilesystemSnapshotPolicyResponse> getFilesystemSnapshotPolicy(
+            GetFilesystemSnapshotPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFilesystemSnapshotPolicyRequest, GetFilesystemSnapshotPolicyResponse>
+                    handler);
+
+    /**
      * Gets the specified mount target's information.
      *
      * @param request The request object containing the details to send
@@ -543,7 +620,8 @@ public interface FileStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListExportsRequest, ListExportsResponse> handler);
 
     /**
-     * Lists the file system resources in the specified compartment.
+     * Lists the file system resources in the specified compartment, or by the specified compartment and
+     * file system snapshot policy.
      *
      *
      * @param request The request object containing the details to send
@@ -557,6 +635,25 @@ public interface FileStorageAsync extends AutoCloseable {
             ListFileSystemsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFileSystemsRequest, ListFileSystemsResponse>
                     handler);
+
+    /**
+     * Lists file system snapshot policies in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFilesystemSnapshotPoliciesResponse>
+            listFilesystemSnapshotPolicies(
+                    ListFilesystemSnapshotPoliciesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListFilesystemSnapshotPoliciesRequest,
+                                    ListFilesystemSnapshotPoliciesResponse>
+                            handler);
 
     /**
      * Lists the mount target resources in the specified compartment.
@@ -608,7 +705,10 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists snapshots of the specified file system.
+     * Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
+     * or by file system snapshot policy and file system.
+     * <p>
+     * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
      *
      *
      * @param request The request object containing the details to send
@@ -622,6 +722,53 @@ public interface FileStorageAsync extends AutoCloseable {
             ListSnapshotsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListSnapshotsRequest, ListSnapshotsResponse>
                     handler);
+
+    /**
+     * This operation pauses the scheduled snapshot creation and snapshot deletion of the policy and updates the lifecycle state of the file system
+     * snapshot policy from ACTIVE to INACTIVE. When a file system snapshot policy is paused, file systems that are associated with the
+     * policy will not have scheduled snapshots created or deleted.
+     * <p>
+     * If the policy is already paused, or in the INACTIVE state, you cannot pause it again. You can't pause a policy
+     * that is in a DELETING, DELETED, FAILED, CREATING or INACTIVE state; attempts to pause a policy in these states result in a 409 conflict error.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PauseFilesystemSnapshotPolicyResponse>
+            pauseFilesystemSnapshotPolicy(
+                    PauseFilesystemSnapshotPolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PauseFilesystemSnapshotPolicyRequest,
+                                    PauseFilesystemSnapshotPolicyResponse>
+                            handler);
+
+    /**
+     * This operation unpauses a paused file system snapshot policy and updates the lifecycle state of the file system snapshot policy from
+     * INACTIVE to ACTIVE. By default, file system snapshot policies are in the ACTIVE state. When a file system snapshot policy is not paused, or in the ACTIVE state, file systems that are associated with the
+     * policy will have snapshots created and deleted according to the schedules defined in the policy.
+     * <p>
+     * If the policy is already in the ACTIVE state, you cannot unpause it. You can't unpause a policy that is in a DELETING, DELETED, FAILED, CREATING, or ACTIVE state; attempts to unpause a policy in these states result in a 409 conflict error.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnpauseFilesystemSnapshotPolicyResponse>
+            unpauseFilesystemSnapshotPolicy(
+                    UnpauseFilesystemSnapshotPolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UnpauseFilesystemSnapshotPolicyRequest,
+                                    UnpauseFilesystemSnapshotPolicyResponse>
+                            handler);
 
     /**
      * Updates the specified export's information.
@@ -669,6 +816,24 @@ public interface FileStorageAsync extends AutoCloseable {
             UpdateFileSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResponse>
                     handler);
+
+    /**
+     * Updates the specified file system snapshot policy's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateFilesystemSnapshotPolicyResponse>
+            updateFilesystemSnapshotPolicy(
+                    UpdateFilesystemSnapshotPolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateFilesystemSnapshotPolicyRequest,
+                                    UpdateFilesystemSnapshotPolicyResponse>
+                            handler);
 
     /**
      * Updates the specified mount target's information.

@@ -22,15 +22,23 @@ package com.oracle.bmc.filestorage.model;
 public final class CreateSnapshotDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"fileSystemId", "name", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "fileSystemId",
+        "name",
+        "expirationTime",
+        "freeformTags",
+        "definedTags"
+    })
     public CreateSnapshotDetails(
             String fileSystemId,
             String name,
+            java.util.Date expirationTime,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.fileSystemId = fileSystemId;
         this.name = name;
+        this.expirationTime = expirationTime;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -81,6 +89,22 @@ public final class CreateSnapshotDetails
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /**
+         * The time when this snapshot will be deleted.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+        private java.util.Date expirationTime;
+
+        /**
+         * The time when this snapshot will be deleted.
+         * @param expirationTime the value to set
+         * @return this builder
+         **/
+        public Builder expirationTime(java.util.Date expirationTime) {
+            this.expirationTime = expirationTime;
+            this.__explicitlySet__.add("expirationTime");
             return this;
         }
         /**
@@ -137,7 +161,11 @@ public final class CreateSnapshotDetails
         public CreateSnapshotDetails build() {
             CreateSnapshotDetails model =
                     new CreateSnapshotDetails(
-                            this.fileSystemId, this.name, this.freeformTags, this.definedTags);
+                            this.fileSystemId,
+                            this.name,
+                            this.expirationTime,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -151,6 +179,9 @@ public final class CreateSnapshotDetails
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("expirationTime")) {
+                this.expirationTime(model.getExpirationTime());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -216,6 +247,20 @@ public final class CreateSnapshotDetails
     }
 
     /**
+     * The time when this snapshot will be deleted.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+    private final java.util.Date expirationTime;
+
+    /**
+     * The time when this snapshot will be deleted.
+     * @return the value
+     **/
+    public java.util.Date getExpirationTime() {
+        return expirationTime;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -273,6 +318,7 @@ public final class CreateSnapshotDetails
         sb.append("super=").append(super.toString());
         sb.append("fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -291,6 +337,7 @@ public final class CreateSnapshotDetails
         CreateSnapshotDetails other = (CreateSnapshotDetails) o;
         return java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.expirationTime, other.expirationTime)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -302,6 +349,9 @@ public final class CreateSnapshotDetails
         int result = 1;
         result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expirationTime == null ? 43 : this.expirationTime.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
