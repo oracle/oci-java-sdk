@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.64.0 - 2023-05-30
+### Added
+- Support for policy-based snapshots in the File Storage service
+- Support for creating and updating a VM cluster network with disaster recovery network support in the Database service
+- Support for setting a management dashboard or saved search to be shared across OCI Observability & Management services in the Management Dashboard service
+ 
+### Breaking Changes
+- Field `port` has been deprecated and made optional in the model `com.oracle.bmc.database.model.ScanDetails` in the Database service
+
 ## 2.63.0 - 2023-05-23
 ### Added
 - Support for CRI-O parsing in the Logging service

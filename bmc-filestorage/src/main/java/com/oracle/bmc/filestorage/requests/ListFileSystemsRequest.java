@@ -198,6 +198,21 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return parentFileSystemId;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy
+     * that is associated with the file systems.
+     *
+     */
+    private String filesystemSnapshotPolicyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy
+     * that is associated with the file systems.
+     *
+     */
+    public String getFilesystemSnapshotPolicyId() {
+        return filesystemSnapshotPolicyId;
+    }
+    /**
      * The field to sort by. You can provide either value, but not both.
      * By default, when you sort by time created, results are shown
      * in descending order. When you sort by display name, results are
@@ -517,6 +532,25 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy
+         * that is associated with the file systems.
+         *
+         */
+        private String filesystemSnapshotPolicyId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy
+         * that is associated with the file systems.
+         *
+         * @param filesystemSnapshotPolicyId the value to set
+         * @return this builder instance
+         */
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            return this;
+        }
+
+        /**
          * The field to sort by. You can provide either value, but not both.
          * By default, when you sort by time created, results are shown
          * in descending order. When you sort by display name, results are
@@ -616,6 +650,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
             id(o.getId());
             sourceSnapshotId(o.getSourceSnapshotId());
             parentFileSystemId(o.getParentFileSystemId());
+            filesystemSnapshotPolicyId(o.getFilesystemSnapshotPolicyId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             opcRequestId(o.getOpcRequestId());
@@ -660,11 +695,12 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.id = id;
             request.sourceSnapshotId = sourceSnapshotId;
             request.parentFileSystemId = parentFileSystemId;
+            request.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFileSystemsRequest(compartmentId, availabilityDomain, limit, page, displayName, lifecycleState, id, sourceSnapshotId, parentFileSystemId, sortBy, sortOrder, opcRequestId);
+            // new ListFileSystemsRequest(compartmentId, availabilityDomain, limit, page, displayName, lifecycleState, id, sourceSnapshotId, parentFileSystemId, filesystemSnapshotPolicyId, sortBy, sortOrder, opcRequestId);
         }
     }
 
@@ -683,6 +719,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .id(id)
                 .sourceSnapshotId(sourceSnapshotId)
                 .parentFileSystemId(parentFileSystemId)
+                .filesystemSnapshotPolicyId(filesystemSnapshotPolicyId)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .opcRequestId(opcRequestId);
@@ -710,6 +747,8 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
         sb.append(",parentFileSystemId=").append(String.valueOf(this.parentFileSystemId));
+        sb.append(",filesystemSnapshotPolicyId=")
+                .append(String.valueOf(this.filesystemSnapshotPolicyId));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -737,6 +776,8 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
                 && java.util.Objects.equals(this.parentFileSystemId, other.parentFileSystemId)
+                && java.util.Objects.equals(
+                        this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -769,6 +810,11 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
                         + (this.parentFileSystemId == null
                                 ? 43
                                 : this.parentFileSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filesystemSnapshotPolicyId == null
+                                ? 43
+                                : this.filesystemSnapshotPolicyId.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

@@ -42,6 +42,7 @@ public final class CreateManagementDashboardDetails
         "type",
         "isFavorite",
         "parametersConfig",
+        "featuresConfig",
         "drilldownConfig",
         "freeformTags",
         "definedTags"
@@ -66,6 +67,7 @@ public final class CreateManagementDashboardDetails
             String type,
             Boolean isFavorite,
             java.util.List<Object> parametersConfig,
+            Object featuresConfig,
             java.util.List<Object> drilldownConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -89,6 +91,7 @@ public final class CreateManagementDashboardDetails
         this.type = type;
         this.isFavorite = isFavorite;
         this.parametersConfig = parametersConfig;
+        this.featuresConfig = featuresConfig;
         this.drilldownConfig = drilldownConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -129,13 +132,13 @@ public final class CreateManagementDashboardDetails
             return this;
         }
         /**
-         * Name of the service (for example, Logging Analytics) that owns the dashboard.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
         /**
-         * Name of the service (for example, Logging Analytics) that owns the dashboard.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
          * @param providerName the value to set
          * @return this builder
          **/
@@ -145,13 +148,13 @@ public final class CreateManagementDashboardDetails
             return this;
         }
         /**
-         * Version of the service that owns the dashboard.
+         * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
         /**
-         * Version of the service that owns the dashboard.
+         * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
          * @param providerVersion the value to set
          * @return this builder
          **/
@@ -257,13 +260,13 @@ public final class CreateManagementDashboardDetails
             return this;
         }
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
          * @param metadataVersion the value to set
          * @return this builder
          **/
@@ -401,6 +404,22 @@ public final class CreateManagementDashboardDetails
             return this;
         }
         /**
+         * Contains configuration for enabling features.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+        private Object featuresConfig;
+
+        /**
+         * Contains configuration for enabling features.
+         * @param featuresConfig the value to set
+         * @return this builder
+         **/
+        public Builder featuresConfig(Object featuresConfig) {
+            this.featuresConfig = featuresConfig;
+            this.__explicitlySet__.add("featuresConfig");
+            return this;
+        }
+        /**
          * Drill-down configuration to define the destination of a drill-down action.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
@@ -483,6 +502,7 @@ public final class CreateManagementDashboardDetails
                             this.type,
                             this.isFavorite,
                             this.parametersConfig,
+                            this.featuresConfig,
                             this.drilldownConfig,
                             this.freeformTags,
                             this.definedTags);
@@ -551,6 +571,9 @@ public final class CreateManagementDashboardDetails
             if (model.wasPropertyExplicitlySet("parametersConfig")) {
                 this.parametersConfig(model.getParametersConfig());
             }
+            if (model.wasPropertyExplicitlySet("featuresConfig")) {
+                this.featuresConfig(model.getFeaturesConfig());
+            }
             if (model.wasPropertyExplicitlySet("drilldownConfig")) {
                 this.drilldownConfig(model.getDrilldownConfig());
             }
@@ -604,13 +627,13 @@ public final class CreateManagementDashboardDetails
     }
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the dashboard.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the dashboard.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
      * @return the value
      **/
     public String getProviderName() {
@@ -618,13 +641,13 @@ public final class CreateManagementDashboardDetails
     }
 
     /**
-     * Version of the service that owns the dashboard.
+     * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
     /**
-     * Version of the service that owns the dashboard.
+     * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
      * @return the value
      **/
     public String getProviderVersion() {
@@ -716,13 +739,13 @@ public final class CreateManagementDashboardDetails
     }
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
      * @return the value
      **/
     public String getMetadataVersion() {
@@ -842,6 +865,20 @@ public final class CreateManagementDashboardDetails
     }
 
     /**
+     * Contains configuration for enabling features.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+    private final Object featuresConfig;
+
+    /**
+     * Contains configuration for enabling features.
+     * @return the value
+     **/
+    public Object getFeaturesConfig() {
+        return featuresConfig;
+    }
+
+    /**
      * Drill-down configuration to define the destination of a drill-down action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
@@ -924,6 +961,7 @@ public final class CreateManagementDashboardDetails
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isFavorite=").append(String.valueOf(this.isFavorite));
         sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
+        sb.append(", featuresConfig=").append(String.valueOf(this.featuresConfig));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -960,6 +998,7 @@ public final class CreateManagementDashboardDetails
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isFavorite, other.isFavorite)
                 && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
+                && java.util.Objects.equals(this.featuresConfig, other.featuresConfig)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1001,6 +1040,9 @@ public final class CreateManagementDashboardDetails
         result =
                 (result * PRIME)
                         + (this.parametersConfig == null ? 43 : this.parametersConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featuresConfig == null ? 43 : this.featuresConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());

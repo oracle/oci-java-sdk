@@ -29,7 +29,6 @@ public class ListSnapshotsConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.filestorage.requests.ListSnapshotsRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getFileSystemId(), "fileSystemId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20171215").path("snapshots");
@@ -66,11 +65,29 @@ public class ListSnapshotsConverter {
                                     request.getId()));
         }
 
-        target =
-                target.queryParam(
-                        "fileSystemId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getFileSystemId()));
+        if (request.getFilesystemSnapshotPolicyId() != null) {
+            target =
+                    target.queryParam(
+                            "filesystemSnapshotPolicyId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFilesystemSnapshotPolicyId()));
+        }
+
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
+        if (request.getFileSystemId() != null) {
+            target =
+                    target.queryParam(
+                            "fileSystemId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFileSystemId()));
+        }
 
         if (request.getSortOrder() != null) {
             target =

@@ -228,6 +228,7 @@ public final class InfoForNetworkGenDetails
     public enum NetworkType {
         Client("CLIENT"),
         Backup("BACKUP"),
+        DisasterRecovery("DISASTER_RECOVERY"),
         ;
 
         private final String value;

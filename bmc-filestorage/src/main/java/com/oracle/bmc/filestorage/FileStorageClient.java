@@ -590,6 +590,53 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public ChangeFilesystemSnapshotPolicyCompartmentResponse
+            changeFilesystemSnapshotPolicyCompartment(
+                    ChangeFilesystemSnapshotPolicyCompartmentRequest request) {
+        LOG.trace("Called changeFilesystemSnapshotPolicyCompartment");
+        final ChangeFilesystemSnapshotPolicyCompartmentRequest interceptedRequest =
+                ChangeFilesystemSnapshotPolicyCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeFilesystemSnapshotPolicyCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ChangeFilesystemSnapshotPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/ChangeFilesystemSnapshotPolicyCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeFilesystemSnapshotPolicyCompartmentResponse>
+                transformer =
+                        ChangeFilesystemSnapshotPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeFilesystemSnapshotPolicyCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request) {
         LOG.trace("Called changeMountTargetCompartment");
@@ -751,6 +798,51 @@ public class FileStorageClient implements FileStorage {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateFileSystemDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateFilesystemSnapshotPolicyResponse createFilesystemSnapshotPolicy(
+            CreateFilesystemSnapshotPolicyRequest request) {
+        LOG.trace("Called createFilesystemSnapshotPolicy");
+        final CreateFilesystemSnapshotPolicyRequest interceptedRequest =
+                CreateFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "CreateFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/CreateFilesystemSnapshotPolicy");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateFilesystemSnapshotPolicyResponse>
+                transformer =
+                        CreateFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateFilesystemSnapshotPolicyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -938,6 +1030,46 @@ public class FileStorageClient implements FileStorage {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
                 transformer =
                         DeleteFileSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteFilesystemSnapshotPolicyResponse deleteFilesystemSnapshotPolicy(
+            DeleteFilesystemSnapshotPolicyRequest request) {
+        LOG.trace("Called deleteFilesystemSnapshotPolicy");
+        final DeleteFilesystemSnapshotPolicyRequest interceptedRequest =
+                DeleteFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DeleteFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/DeleteFilesystemSnapshotPolicy");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteFilesystemSnapshotPolicyResponse>
+                transformer =
+                        DeleteFilesystemSnapshotPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1249,6 +1381,44 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public GetFilesystemSnapshotPolicyResponse getFilesystemSnapshotPolicy(
+            GetFilesystemSnapshotPolicyRequest request) {
+        LOG.trace("Called getFilesystemSnapshotPolicy");
+        final GetFilesystemSnapshotPolicyRequest interceptedRequest =
+                GetFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "GetFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/GetFilesystemSnapshotPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFilesystemSnapshotPolicyResponse>
+                transformer =
+                        GetFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetMountTargetResponse getMountTarget(GetMountTargetRequest request) {
         LOG.trace("Called getMountTarget");
         final GetMountTargetRequest interceptedRequest =
@@ -1498,6 +1668,45 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public ListFilesystemSnapshotPoliciesResponse listFilesystemSnapshotPolicies(
+            ListFilesystemSnapshotPoliciesRequest request) {
+        LOG.trace("Called listFilesystemSnapshotPolicies");
+        final ListFilesystemSnapshotPoliciesRequest interceptedRequest =
+                ListFilesystemSnapshotPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFilesystemSnapshotPoliciesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ListFilesystemSnapshotPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicySummary/ListFilesystemSnapshotPolicies");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListFilesystemSnapshotPoliciesResponse>
+                transformer =
+                        ListFilesystemSnapshotPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListMountTargetsResponse listMountTargets(ListMountTargetsRequest request) {
         LOG.trace("Called listMountTargets");
         final ListMountTargetsRequest interceptedRequest =
@@ -1645,6 +1854,86 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public PauseFilesystemSnapshotPolicyResponse pauseFilesystemSnapshotPolicy(
+            PauseFilesystemSnapshotPolicyRequest request) {
+        LOG.trace("Called pauseFilesystemSnapshotPolicy");
+        final PauseFilesystemSnapshotPolicyRequest interceptedRequest =
+                PauseFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PauseFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "PauseFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/PauseFilesystemSnapshotPolicy");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, PauseFilesystemSnapshotPolicyResponse>
+                transformer =
+                        PauseFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UnpauseFilesystemSnapshotPolicyResponse unpauseFilesystemSnapshotPolicy(
+            UnpauseFilesystemSnapshotPolicyRequest request) {
+        LOG.trace("Called unpauseFilesystemSnapshotPolicy");
+        final UnpauseFilesystemSnapshotPolicyRequest interceptedRequest =
+                UnpauseFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnpauseFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UnpauseFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UnpauseFilesystemSnapshotPolicy");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UnpauseFilesystemSnapshotPolicyResponse>
+                transformer =
+                        UnpauseFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateExportResponse updateExport(UpdateExportRequest request) {
         LOG.trace("Called updateExport");
         final UpdateExportRequest interceptedRequest =
@@ -1759,6 +2048,50 @@ public class FileStorageClient implements FileStorage {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateFileSystemDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateFilesystemSnapshotPolicyResponse updateFilesystemSnapshotPolicy(
+            UpdateFilesystemSnapshotPolicyRequest request) {
+        LOG.trace("Called updateFilesystemSnapshotPolicy");
+        final UpdateFilesystemSnapshotPolicyRequest interceptedRequest =
+                UpdateFilesystemSnapshotPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFilesystemSnapshotPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UpdateFilesystemSnapshotPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/UpdateFilesystemSnapshotPolicy");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateFilesystemSnapshotPolicyResponse>
+                transformer =
+                        UpdateFilesystemSnapshotPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateFilesystemSnapshotPolicyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

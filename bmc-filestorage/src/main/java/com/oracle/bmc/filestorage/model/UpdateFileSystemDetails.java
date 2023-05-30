@@ -22,17 +22,25 @@ package com.oracle.bmc.filestorage.model;
 public final class UpdateFileSystemDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "freeformTags", "definedTags", "kmsKeyId"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "freeformTags",
+        "definedTags",
+        "kmsKeyId",
+        "filesystemSnapshotPolicyId"
+    })
     public UpdateFileSystemDetails(
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String kmsKeyId) {
+            String kmsKeyId,
+            String filesystemSnapshotPolicyId) {
         super();
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
+        this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -136,6 +144,30 @@ public final class UpdateFileSystemDetails
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+         * controls the frequency of snapshot creation and retention period of the taken snapshots.
+         * <p>
+         * If string is empty, the policy reference (if any) would be removed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("filesystemSnapshotPolicyId")
+        private String filesystemSnapshotPolicyId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+         * controls the frequency of snapshot creation and retention period of the taken snapshots.
+         * <p>
+         * If string is empty, the policy reference (if any) would be removed.
+         *
+         * @param filesystemSnapshotPolicyId the value to set
+         * @return this builder
+         **/
+        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            this.__explicitlySet__.add("filesystemSnapshotPolicyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -143,7 +175,11 @@ public final class UpdateFileSystemDetails
         public UpdateFileSystemDetails build() {
             UpdateFileSystemDetails model =
                     new UpdateFileSystemDetails(
-                            this.displayName, this.freeformTags, this.definedTags, this.kmsKeyId);
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kmsKeyId,
+                            this.filesystemSnapshotPolicyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -163,6 +199,9 @@ public final class UpdateFileSystemDetails
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
+                this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
             }
             return this;
         }
@@ -269,6 +308,28 @@ public final class UpdateFileSystemDetails
         return kmsKeyId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+     * controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * <p>
+     * If string is empty, the policy reference (if any) would be removed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filesystemSnapshotPolicyId")
+    private final String filesystemSnapshotPolicyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+     * controls the frequency of snapshot creation and retention period of the taken snapshots.
+     * <p>
+     * If string is empty, the policy reference (if any) would be removed.
+     *
+     * @return the value
+     **/
+    public String getFilesystemSnapshotPolicyId() {
+        return filesystemSnapshotPolicyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -287,6 +348,8 @@ public final class UpdateFileSystemDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", filesystemSnapshotPolicyId=")
+                .append(String.valueOf(this.filesystemSnapshotPolicyId));
         sb.append(")");
         return sb.toString();
     }
@@ -305,6 +368,8 @@ public final class UpdateFileSystemDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(
+                        this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
                 && super.equals(other);
     }
 
@@ -316,6 +381,11 @@ public final class UpdateFileSystemDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filesystemSnapshotPolicyId == null
+                                ? 43
+                                : this.filesystemSnapshotPolicyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

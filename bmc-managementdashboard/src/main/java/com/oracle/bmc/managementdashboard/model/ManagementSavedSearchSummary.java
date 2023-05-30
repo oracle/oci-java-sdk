@@ -45,6 +45,7 @@ public final class ManagementSavedSearchSummary
         "widgetVM",
         "lifecycleState",
         "parametersConfig",
+        "featuresConfig",
         "freeformTags",
         "definedTags"
     })
@@ -71,6 +72,7 @@ public final class ManagementSavedSearchSummary
             String widgetVM,
             LifecycleStates lifecycleState,
             java.util.List<Object> parametersConfig,
+            Object featuresConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -96,6 +98,7 @@ public final class ManagementSavedSearchSummary
         this.widgetVM = widgetVM;
         this.lifecycleState = lifecycleState;
         this.parametersConfig = parametersConfig;
+        this.featuresConfig = featuresConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -183,13 +186,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Version of the service that owns this saved search.
+         * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
         private String providerVersion;
 
         /**
-         * Version of the service that owns this saved search.
+         * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
          * @param providerVersion the value to set
          * @return this builder
          **/
@@ -199,13 +202,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Name of the service (for example, Logging Analytics) that owns the saved search.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
         /**
-         * Name of the service (for example, Logging Analytics) that owns the saved search.
+         * The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
          * @param providerName the value to set
          * @return this builder
          **/
@@ -263,13 +266,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * JSON that contains user interface options.
+         * It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
         private Object uiConfig;
 
         /**
-         * JSON that contains user interface options.
+         * It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
          * @param uiConfig the value to set
          * @return this builder
          **/
@@ -279,13 +282,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Array of JSON that contain data source options.
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
         private java.util.List<Object> dataConfig;
 
         /**
-         * Array of JSON that contain data source options.
+         * It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
          * @param dataConfig the value to set
          * @return this builder
          **/
@@ -295,13 +298,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * User who created the saved search.
+         * The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * User who created the saved search.
+         * The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
          * @param createdBy the value to set
          * @return this builder
          **/
@@ -311,13 +314,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * User who updated the saved search.
+         * The principle id of the user that updated this saved search
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
         /**
-         * User who updated the saved search.
+         * The principle id of the user that updated this saved search
          * @param updatedBy the value to set
          * @return this builder
          **/
@@ -375,13 +378,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
         private String metadataVersion;
 
         /**
-         * Version of the metadata.
+         * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
          * @param metadataVersion the value to set
          * @return this builder
          **/
@@ -391,13 +394,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Reference to the HTML file of the widget.
+         * The UI template that the saved search uses to render itself.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
         private String widgetTemplate;
 
         /**
-         * Reference to the HTML file of the widget.
+         * The UI template that the saved search uses to render itself.
          * @param widgetTemplate the value to set
          * @return this builder
          **/
@@ -407,13 +410,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Reference to the view model of the widget.
+         * The View Model that the saved search uses to render itself.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
         private String widgetVM;
 
         /**
-         * Reference to the view model of the widget.
+         * The View Model that the saved search uses to render itself.
          * @param widgetVM the value to set
          * @return this builder
          **/
@@ -423,13 +426,13 @@ public final class ManagementSavedSearchSummary
             return this;
         }
         /**
-         * Current lifecycle state of the saved search.
+         * OCI lifecycle status. This is automatically managed by the system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
-         * Current lifecycle state of the saved search.
+         * OCI lifecycle status. This is automatically managed by the system.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -452,6 +455,22 @@ public final class ManagementSavedSearchSummary
         public Builder parametersConfig(java.util.List<Object> parametersConfig) {
             this.parametersConfig = parametersConfig;
             this.__explicitlySet__.add("parametersConfig");
+            return this;
+        }
+        /**
+         * Contains configuration for enabling features.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+        private Object featuresConfig;
+
+        /**
+         * Contains configuration for enabling features.
+         * @param featuresConfig the value to set
+         * @return this builder
+         **/
+        public Builder featuresConfig(Object featuresConfig) {
+            this.featuresConfig = featuresConfig;
+            this.__explicitlySet__.add("featuresConfig");
             return this;
         }
         /**
@@ -524,6 +543,7 @@ public final class ManagementSavedSearchSummary
                             this.widgetVM,
                             this.lifecycleState,
                             this.parametersConfig,
+                            this.featuresConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -599,6 +619,9 @@ public final class ManagementSavedSearchSummary
             }
             if (model.wasPropertyExplicitlySet("parametersConfig")) {
                 this.parametersConfig(model.getParametersConfig());
+            }
+            if (model.wasPropertyExplicitlySet("featuresConfig")) {
+                this.featuresConfig(model.getFeaturesConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -692,13 +715,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Version of the service that owns this saved search.
+     * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     private final String providerVersion;
 
     /**
-     * Version of the service that owns this saved search.
+     * The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
      * @return the value
      **/
     public String getProviderVersion() {
@@ -706,13 +729,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the saved search.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     private final String providerName;
 
     /**
-     * Name of the service (for example, Logging Analytics) that owns the saved search.
+     * The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
      * @return the value
      **/
     public String getProviderName() {
@@ -762,13 +785,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * JSON that contains user interface options.
+     * It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     private final Object uiConfig;
 
     /**
-     * JSON that contains user interface options.
+     * It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
      * @return the value
      **/
     public Object getUiConfig() {
@@ -776,13 +799,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Array of JSON that contain data source options.
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     private final java.util.List<Object> dataConfig;
 
     /**
-     * Array of JSON that contain data source options.
+     * It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
      * @return the value
      **/
     public java.util.List<Object> getDataConfig() {
@@ -790,13 +813,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * User who created the saved search.
+     * The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * User who created the saved search.
+     * The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
      * @return the value
      **/
     public String getCreatedBy() {
@@ -804,13 +827,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * User who updated the saved search.
+     * The principle id of the user that updated this saved search
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
-     * User who updated the saved search.
+     * The principle id of the user that updated this saved search
      * @return the value
      **/
     public String getUpdatedBy() {
@@ -860,13 +883,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataVersion")
     private final String metadataVersion;
 
     /**
-     * Version of the metadata.
+     * The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
      * @return the value
      **/
     public String getMetadataVersion() {
@@ -874,13 +897,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Reference to the HTML file of the widget.
+     * The UI template that the saved search uses to render itself.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
     private final String widgetTemplate;
 
     /**
-     * Reference to the HTML file of the widget.
+     * The UI template that the saved search uses to render itself.
      * @return the value
      **/
     public String getWidgetTemplate() {
@@ -888,13 +911,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Reference to the view model of the widget.
+     * The View Model that the saved search uses to render itself.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
     private final String widgetVM;
 
     /**
-     * Reference to the view model of the widget.
+     * The View Model that the saved search uses to render itself.
      * @return the value
      **/
     public String getWidgetVM() {
@@ -902,13 +925,13 @@ public final class ManagementSavedSearchSummary
     }
 
     /**
-     * Current lifecycle state of the saved search.
+     * OCI lifecycle status. This is automatically managed by the system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
-     * Current lifecycle state of the saved search.
+     * OCI lifecycle status. This is automatically managed by the system.
      * @return the value
      **/
     public LifecycleStates getLifecycleState() {
@@ -927,6 +950,20 @@ public final class ManagementSavedSearchSummary
      **/
     public java.util.List<Object> getParametersConfig() {
         return parametersConfig;
+    }
+
+    /**
+     * Contains configuration for enabling features.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("featuresConfig")
+    private final Object featuresConfig;
+
+    /**
+     * Contains configuration for enabling features.
+     * @return the value
+     **/
+    public Object getFeaturesConfig() {
+        return featuresConfig;
     }
 
     /**
@@ -1001,6 +1038,7 @@ public final class ManagementSavedSearchSummary
         sb.append(", widgetVM=").append(String.valueOf(this.widgetVM));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
+        sb.append(", featuresConfig=").append(String.valueOf(this.featuresConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1039,6 +1077,7 @@ public final class ManagementSavedSearchSummary
                 && java.util.Objects.equals(this.widgetVM, other.widgetVM)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
+                && java.util.Objects.equals(this.featuresConfig, other.featuresConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1084,6 +1123,9 @@ public final class ManagementSavedSearchSummary
         result =
                 (result * PRIME)
                         + (this.parametersConfig == null ? 43 : this.parametersConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featuresConfig == null ? 43 : this.featuresConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
