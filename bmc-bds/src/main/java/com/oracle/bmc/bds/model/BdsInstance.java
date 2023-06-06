@@ -28,6 +28,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         "isHighAvailability",
         "isSecure",
         "isCloudSqlConfigured",
+        "isKafkaConfigured",
         "networkConfig",
         "clusterDetails",
         "nodes",
@@ -51,6 +52,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             Boolean isHighAvailability,
             Boolean isSecure,
             Boolean isCloudSqlConfigured,
+            Boolean isKafkaConfigured,
             NetworkConfig networkConfig,
             ClusterDetails clusterDetails,
             java.util.List<Node> nodes,
@@ -73,6 +75,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
         this.isCloudSqlConfigured = isCloudSqlConfigured;
+        this.isKafkaConfigured = isKafkaConfigured;
         this.networkConfig = networkConfig;
         this.clusterDetails = clusterDetails;
         this.nodes = nodes;
@@ -216,6 +219,22 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
             this.isCloudSqlConfigured = isCloudSqlConfigured;
             this.__explicitlySet__.add("isCloudSqlConfigured");
+            return this;
+        }
+        /**
+         * Boolean flag specifying whether or not Kafka should be configured.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isKafkaConfigured")
+        private Boolean isKafkaConfigured;
+
+        /**
+         * Boolean flag specifying whether or not Kafka should be configured.
+         * @param isKafkaConfigured the value to set
+         * @return this builder
+         **/
+        public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
+            this.isKafkaConfigured = isKafkaConfigured;
+            this.__explicitlySet__.add("isKafkaConfigured");
             return this;
         }
 
@@ -429,6 +448,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.isHighAvailability,
                             this.isSecure,
                             this.isCloudSqlConfigured,
+                            this.isKafkaConfigured,
                             this.networkConfig,
                             this.clusterDetails,
                             this.nodes,
@@ -473,6 +493,9 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("isCloudSqlConfigured")) {
                 this.isCloudSqlConfigured(model.getIsCloudSqlConfigured());
+            }
+            if (model.wasPropertyExplicitlySet("isKafkaConfigured")) {
+                this.isKafkaConfigured(model.getIsKafkaConfigured());
             }
             if (model.wasPropertyExplicitlySet("networkConfig")) {
                 this.networkConfig(model.getNetworkConfig());
@@ -747,6 +770,20 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         return isCloudSqlConfigured;
     }
 
+    /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isKafkaConfigured")
+    private final Boolean isKafkaConfigured;
+
+    /**
+     * Boolean flag specifying whether or not Kafka should be configured.
+     * @return the value
+     **/
+    public Boolean getIsKafkaConfigured() {
+        return isKafkaConfigured;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfig")
     private final NetworkConfig networkConfig;
 
@@ -912,6 +949,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         Spark("SPARK"),
         Hbase("HBASE"),
         Trino("TRINO"),
+        Kafka("KAFKA"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -990,6 +1028,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", isCloudSqlConfigured=").append(String.valueOf(this.isCloudSqlConfigured));
+        sb.append(", isKafkaConfigured=").append(String.valueOf(this.isKafkaConfigured));
         sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));
         sb.append(", clusterDetails=").append(String.valueOf(this.clusterDetails));
         sb.append(", nodes=").append(String.valueOf(this.nodes));
@@ -1025,6 +1064,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
                 && java.util.Objects.equals(this.isCloudSqlConfigured, other.isCloudSqlConfigured)
+                && java.util.Objects.equals(this.isKafkaConfigured, other.isKafkaConfigured)
                 && java.util.Objects.equals(this.networkConfig, other.networkConfig)
                 && java.util.Objects.equals(this.clusterDetails, other.clusterDetails)
                 && java.util.Objects.equals(this.nodes, other.nodes)
@@ -1067,6 +1107,9 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.isCloudSqlConfigured == null
                                 ? 43
                                 : this.isCloudSqlConfigured.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKafkaConfigured == null ? 43 : this.isKafkaConfigured.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkConfig == null ? 43 : this.networkConfig.hashCode());

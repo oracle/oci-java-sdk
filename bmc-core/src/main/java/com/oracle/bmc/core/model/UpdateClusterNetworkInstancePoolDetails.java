@@ -135,6 +135,10 @@ public final class UpdateClusterNetworkInstancePoolDetails
         }
         /**
          * The number of instances that should be in the instance pool.
+         * <p>
+         * To determine whether capacity is available for a specific shape before you resize an instance pool,
+         * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+         * operation.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("size")
@@ -142,6 +146,10 @@ public final class UpdateClusterNetworkInstancePoolDetails
 
         /**
          * The number of instances that should be in the instance pool.
+         * <p>
+         * To determine whether capacity is available for a specific shape before you resize an instance pool,
+         * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+         * operation.
          *
          * @param size the value to set
          * @return this builder
@@ -301,6 +309,10 @@ public final class UpdateClusterNetworkInstancePoolDetails
 
     /**
      * The number of instances that should be in the instance pool.
+     * <p>
+     * To determine whether capacity is available for a specific shape before you resize an instance pool,
+     * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+     * operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
@@ -308,6 +320,10 @@ public final class UpdateClusterNetworkInstancePoolDetails
 
     /**
      * The number of instances that should be in the instance pool.
+     * <p>
+     * To determine whether capacity is available for a specific shape before you resize an instance pool,
+     * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+     * operation.
      *
      * @return the value
      **/

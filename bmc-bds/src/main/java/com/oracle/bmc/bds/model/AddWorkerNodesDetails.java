@@ -228,6 +228,7 @@ public final class AddWorkerNodesDetails
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
         Edge("EDGE"),
+        KafkaBroker("KAFKA_BROKER"),
         ;
 
         private final String value;

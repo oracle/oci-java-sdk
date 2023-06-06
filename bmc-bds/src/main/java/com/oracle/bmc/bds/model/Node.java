@@ -602,6 +602,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         Utility("UTILITY"),
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
+        KafkaBroker("KAFKA_BROKER"),
         Bursting("BURSTING"),
         CloudSql("CLOUD_SQL"),
 

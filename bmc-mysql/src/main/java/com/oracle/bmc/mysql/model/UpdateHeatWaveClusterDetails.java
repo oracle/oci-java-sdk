@@ -23,11 +23,13 @@ package com.oracle.bmc.mysql.model;
 public final class UpdateHeatWaveClusterDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"shapeName", "clusterSize"})
-    public UpdateHeatWaveClusterDetails(String shapeName, Integer clusterSize) {
+    @java.beans.ConstructorProperties({"shapeName", "clusterSize", "isLakehouseEnabled"})
+    public UpdateHeatWaveClusterDetails(
+            String shapeName, Integer clusterSize, Boolean isLakehouseEnabled) {
         super();
         this.shapeName = shapeName;
         this.clusterSize = clusterSize;
+        this.isLakehouseEnabled = isLakehouseEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -84,13 +86,30 @@ public final class UpdateHeatWaveClusterDetails
             this.__explicitlySet__.add("clusterSize");
             return this;
         }
+        /**
+         * Enable/disable Lakehouse for the HeatWave cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+        private Boolean isLakehouseEnabled;
+
+        /**
+         * Enable/disable Lakehouse for the HeatWave cluster.
+         * @param isLakehouseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
+            this.__explicitlySet__.add("isLakehouseEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateHeatWaveClusterDetails build() {
             UpdateHeatWaveClusterDetails model =
-                    new UpdateHeatWaveClusterDetails(this.shapeName, this.clusterSize);
+                    new UpdateHeatWaveClusterDetails(
+                            this.shapeName, this.clusterSize, this.isLakehouseEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,6 +123,9 @@ public final class UpdateHeatWaveClusterDetails
             }
             if (model.wasPropertyExplicitlySet("clusterSize")) {
                 this.clusterSize(model.getClusterSize());
+            }
+            if (model.wasPropertyExplicitlySet("isLakehouseEnabled")) {
+                this.isLakehouseEnabled(model.getIsLakehouseEnabled());
             }
             return this;
         }
@@ -168,6 +190,20 @@ public final class UpdateHeatWaveClusterDetails
         return clusterSize;
     }
 
+    /**
+     * Enable/disable Lakehouse for the HeatWave cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+    private final Boolean isLakehouseEnabled;
+
+    /**
+     * Enable/disable Lakehouse for the HeatWave cluster.
+     * @return the value
+     **/
+    public Boolean getIsLakehouseEnabled() {
+        return isLakehouseEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -184,6 +220,7 @@ public final class UpdateHeatWaveClusterDetails
         sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", isLakehouseEnabled=").append(String.valueOf(this.isLakehouseEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -200,6 +237,7 @@ public final class UpdateHeatWaveClusterDetails
         UpdateHeatWaveClusterDetails other = (UpdateHeatWaveClusterDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(this.isLakehouseEnabled, other.isLakehouseEnabled)
                 && super.equals(other);
     }
 
@@ -209,6 +247,11 @@ public final class UpdateHeatWaveClusterDetails
         int result = 1;
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLakehouseEnabled == null
+                                ? 43
+                                : this.isLakehouseEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
