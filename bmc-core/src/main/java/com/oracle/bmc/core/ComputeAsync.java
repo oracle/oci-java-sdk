@@ -326,6 +326,28 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates a report of the host capacity within an availability domain that is available for you
+     * to create compute instances. Host capacity is the physical infrastructure that resources such as compute
+     * instances run on.
+     * <p>
+     * Use the capacity report to determine whether sufficient capacity is available for a shape before
+     * you create an instance or change the shape of an instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeCapacityReportResponse> createComputeCapacityReport(
+            CreateComputeCapacityReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateComputeCapacityReportRequest, CreateComputeCapacityReportResponse>
+                    handler);
+
+    /**
      * Creates a new compute capacity reservation in the specified compartment and availability domain.
      * Compute capacity reservations let you reserve instances in a compartment.
      * When you launch an instance using this reservation, you are assured that you have enough space for your instance,
@@ -1159,6 +1181,10 @@ public interface ComputeAsync extends AutoCloseable {
      * Then, call {@link #createAppCatalogSubscription(CreateAppCatalogSubscriptionRequest, Consumer, Consumer) createAppCatalogSubscription}
      * with the signature. To get the image ID for the LaunchInstance operation, call
      * {@link #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest, Consumer, Consumer) getAppCatalogListingResourceVersion}.
+     * <p>
+     * To determine whether capacity is available for a specific shape before you create an instance,
+     * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest, Consumer, Consumer) createComputeCapacityReport}
+     * operation.
      *
      *
      * @param request The request object containing the details to send

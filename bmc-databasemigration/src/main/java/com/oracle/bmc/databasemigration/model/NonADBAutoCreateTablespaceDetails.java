@@ -82,6 +82,24 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
             this.__explicitlySet__.add("extendSizeInMBs");
             return this;
         }
+        /**
+         * Size of Oracle database blocks in KB.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("blockSizeInKBs")
+        private DataPumpTablespaceBlockSizesInKb blockSizeInKBs;
+
+        /**
+         * Size of Oracle database blocks in KB.
+         *
+         * @param blockSizeInKBs the value to set
+         * @return this builder
+         **/
+        public Builder blockSizeInKBs(DataPumpTablespaceBlockSizesInKb blockSizeInKBs) {
+            this.blockSizeInKBs = blockSizeInKBs;
+            this.__explicitlySet__.add("blockSizeInKBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -89,7 +107,10 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         public NonADBAutoCreateTablespaceDetails build() {
             NonADBAutoCreateTablespaceDetails model =
                     new NonADBAutoCreateTablespaceDetails(
-                            this.isAutoCreate, this.isBigFile, this.extendSizeInMBs);
+                            this.isAutoCreate,
+                            this.isBigFile,
+                            this.extendSizeInMBs,
+                            this.blockSizeInKBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -106,6 +127,9 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
             }
             if (model.wasPropertyExplicitlySet("extendSizeInMBs")) {
                 this.extendSizeInMBs(model.getExtendSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("blockSizeInKBs")) {
+                this.blockSizeInKBs(model.getBlockSizeInKBs());
             }
             return this;
         }
@@ -124,11 +148,15 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
 
     @Deprecated
     public NonADBAutoCreateTablespaceDetails(
-            Boolean isAutoCreate, Boolean isBigFile, Integer extendSizeInMBs) {
+            Boolean isAutoCreate,
+            Boolean isBigFile,
+            Integer extendSizeInMBs,
+            DataPumpTablespaceBlockSizesInKb blockSizeInKBs) {
         super();
         this.isAutoCreate = isAutoCreate;
         this.isBigFile = isBigFile;
         this.extendSizeInMBs = extendSizeInMBs;
+        this.blockSizeInKBs = blockSizeInKBs;
     }
 
     /**
@@ -179,6 +207,22 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         return extendSizeInMBs;
     }
 
+    /**
+     * Size of Oracle database blocks in KB.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("blockSizeInKBs")
+    private final DataPumpTablespaceBlockSizesInKb blockSizeInKBs;
+
+    /**
+     * Size of Oracle database blocks in KB.
+     *
+     * @return the value
+     **/
+    public DataPumpTablespaceBlockSizesInKb getBlockSizeInKBs() {
+        return blockSizeInKBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -196,6 +240,7 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         sb.append(", isAutoCreate=").append(String.valueOf(this.isAutoCreate));
         sb.append(", isBigFile=").append(String.valueOf(this.isBigFile));
         sb.append(", extendSizeInMBs=").append(String.valueOf(this.extendSizeInMBs));
+        sb.append(", blockSizeInKBs=").append(String.valueOf(this.blockSizeInKBs));
         sb.append(")");
         return sb.toString();
     }
@@ -213,6 +258,7 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         return java.util.Objects.equals(this.isAutoCreate, other.isAutoCreate)
                 && java.util.Objects.equals(this.isBigFile, other.isBigFile)
                 && java.util.Objects.equals(this.extendSizeInMBs, other.extendSizeInMBs)
+                && java.util.Objects.equals(this.blockSizeInKBs, other.blockSizeInKBs)
                 && super.equals(other);
     }
 
@@ -225,6 +271,9 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         result =
                 (result * PRIME)
                         + (this.extendSizeInMBs == null ? 43 : this.extendSizeInMBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.blockSizeInKBs == null ? 43 : this.blockSizeInKBs.hashCode());
         return result;
     }
 }

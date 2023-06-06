@@ -27,10 +27,17 @@ package com.oracle.bmc.bds.model;
 public final class DayBasedVerticalScalingScheduleDetails extends VerticalScalingScheduleDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /**
+         * Time of day and vertical scaling configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAndVerticalScalingConfig")
         private java.util.List<TimeAndVerticalScalingConfig> timeAndVerticalScalingConfig;
 
+        /**
+         * Time of day and vertical scaling configuration
+         * @param timeAndVerticalScalingConfig the value to set
+         * @return this builder
+         **/
         public Builder timeAndVerticalScalingConfig(
                 java.util.List<TimeAndVerticalScalingConfig> timeAndVerticalScalingConfig) {
             this.timeAndVerticalScalingConfig = timeAndVerticalScalingConfig;
@@ -77,9 +84,16 @@ public final class DayBasedVerticalScalingScheduleDetails extends VerticalScalin
         this.timeAndVerticalScalingConfig = timeAndVerticalScalingConfig;
     }
 
+    /**
+     * Time of day and vertical scaling configuration
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAndVerticalScalingConfig")
     private final java.util.List<TimeAndVerticalScalingConfig> timeAndVerticalScalingConfig;
 
+    /**
+     * Time of day and vertical scaling configuration
+     * @return the value
+     **/
     public java.util.List<TimeAndVerticalScalingConfig> getTimeAndVerticalScalingConfig() {
         return timeAndVerticalScalingConfig;
     }

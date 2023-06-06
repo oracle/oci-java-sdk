@@ -70,13 +70,13 @@ public final class AddBlockStorageDetails
             return this;
         }
         /**
-         * Worker node types, can either be Worker Data node or Compute only worker node.
+         * Worker node types.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private NodeType nodeType;
 
         /**
-         * Worker node types, can either be Worker Data node or Compute only worker node.
+         * Worker node types.
          * @param nodeType the value to set
          * @return this builder
          **/
@@ -158,11 +158,12 @@ public final class AddBlockStorageDetails
     }
 
     /**
-     * Worker node types, can either be Worker Data node or Compute only worker node.
+     * Worker node types.
      **/
     public enum NodeType {
         Worker("WORKER"),
         ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
+        KafkaBroker("KAFKA_BROKER"),
         ;
 
         private final String value;
@@ -193,13 +194,13 @@ public final class AddBlockStorageDetails
         }
     };
     /**
-     * Worker node types, can either be Worker Data node or Compute only worker node.
+     * Worker node types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final NodeType nodeType;
 
     /**
-     * Worker node types, can either be Worker Data node or Compute only worker node.
+     * Worker node types.
      * @return the value
      **/
     public NodeType getNodeType() {

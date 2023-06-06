@@ -38,6 +38,8 @@ public enum OperationTypes {
     PatchOdh("PATCH_ODH"),
     StopBds("STOP_BDS"),
     StartBds("START_BDS"),
+    AddKafka("ADD_KAFKA"),
+    RemoveKafka("REMOVE_KAFKA"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

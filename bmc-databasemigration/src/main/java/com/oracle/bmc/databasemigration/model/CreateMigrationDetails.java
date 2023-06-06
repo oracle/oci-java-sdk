@@ -37,6 +37,7 @@ public final class CreateMigrationDetails
         "advisorSettings",
         "excludeObjects",
         "includeObjects",
+        "csvText",
         "goldenGateDetails",
         "vaultDetails",
         "freeformTags",
@@ -56,6 +57,7 @@ public final class CreateMigrationDetails
             CreateAdvisorSettings advisorSettings,
             java.util.List<DatabaseObject> excludeObjects,
             java.util.List<DatabaseObject> includeObjects,
+            String csvText,
             CreateGoldenGateDetails goldenGateDetails,
             CreateVaultDetails vaultDetails,
             java.util.Map<String, String> freeformTags,
@@ -74,6 +76,7 @@ public final class CreateMigrationDetails
         this.advisorSettings = advisorSettings;
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
+        this.csvText = csvText;
         this.goldenGateDetails = goldenGateDetails;
         this.vaultDetails = vaultDetails;
         this.freeformTags = freeformTags;
@@ -284,6 +287,24 @@ public final class CreateMigrationDetails
             this.__explicitlySet__.add("includeObjects");
             return this;
         }
+        /**
+         * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("csvText")
+        private String csvText;
+
+        /**
+         * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+         *
+         * @param csvText the value to set
+         * @return this builder
+         **/
+        public Builder csvText(String csvText) {
+            this.csvText = csvText;
+            this.__explicitlySet__.add("csvText");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
         private CreateGoldenGateDetails goldenGateDetails;
@@ -363,6 +384,7 @@ public final class CreateMigrationDetails
                             this.advisorSettings,
                             this.excludeObjects,
                             this.includeObjects,
+                            this.csvText,
                             this.goldenGateDetails,
                             this.vaultDetails,
                             this.freeformTags,
@@ -414,6 +436,9 @@ public final class CreateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("includeObjects")) {
                 this.includeObjects(model.getIncludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("csvText")) {
+                this.csvText(model.getCsvText());
             }
             if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
                 this.goldenGateDetails(model.getGoldenGateDetails());
@@ -616,6 +641,22 @@ public final class CreateMigrationDetails
         return includeObjects;
     }
 
+    /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("csvText")
+    private final String csvText;
+
+    /**
+     * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+     *
+     * @return the value
+     **/
+    public String getCsvText() {
+        return csvText;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
     private final CreateGoldenGateDetails goldenGateDetails;
 
@@ -697,6 +738,7 @@ public final class CreateMigrationDetails
         sb.append(", advisorSettings=").append(String.valueOf(this.advisorSettings));
         sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
+        sb.append(", csvText=").append(String.valueOf(this.csvText));
         sb.append(", goldenGateDetails=").append(String.valueOf(this.goldenGateDetails));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -733,6 +775,7 @@ public final class CreateMigrationDetails
                 && java.util.Objects.equals(this.advisorSettings, other.advisorSettings)
                 && java.util.Objects.equals(this.excludeObjects, other.excludeObjects)
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
+                && java.util.Objects.equals(this.csvText, other.csvText)
                 && java.util.Objects.equals(this.goldenGateDetails, other.goldenGateDetails)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -787,6 +830,7 @@ public final class CreateMigrationDetails
         result =
                 (result * PRIME)
                         + (this.includeObjects == null ? 43 : this.includeObjects.hashCode());
+        result = (result * PRIME) + (this.csvText == null ? 43 : this.csvText.hashCode());
         result =
                 (result * PRIME)
                         + (this.goldenGateDetails == null ? 43 : this.goldenGateDetails.hashCode());
