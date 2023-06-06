@@ -538,6 +538,36 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public CreateComputeCapacityReportResponse createComputeCapacityReport(
+            CreateComputeCapacityReportRequest request) {
+        Objects.requireNonNull(
+                request.getCreateComputeCapacityReportDetails(),
+                "createComputeCapacityReportDetails is required");
+
+        return clientCall(request, CreateComputeCapacityReportResponse::builder)
+                .logger(LOG, "createComputeCapacityReport")
+                .serviceDetails(
+                        "Compute",
+                        "CreateComputeCapacityReport",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReport/CreateComputeCapacityReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeCapacityReportRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeCapacityReports")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeCapacityReport.class,
+                        CreateComputeCapacityReportResponse.Builder::computeCapacityReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateComputeCapacityReportResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateComputeCapacityReservationResponse createComputeCapacityReservation(
             CreateComputeCapacityReservationRequest request) {
         Objects.requireNonNull(

@@ -64,10 +64,9 @@ public class DnsExample {
         final String profile = "DEFAULT";
 
         // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
-        // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
+        // config file "~/.oci/config", and a profile in that config with the name "DEFAULT". Make
+        // changes to the following line if needed and use
+        // ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
@@ -88,7 +87,6 @@ public class DnsExample {
         final CreateZoneResponse createZoneResponse =
                 client.createZone(
                         CreateZoneRequest.builder()
-                                .compartmentId(compartmentId)
                                 .createZoneDetails(
                                         CreateZoneDetails.builder()
                                                 .name(zoneName)
@@ -170,22 +168,18 @@ public class DnsExample {
     private static void updateZoneRecords(
             final Dns client, final String zoneName, final String compartmentId) {
         // Here we get all NS records in the zone so that we can preserve them on update. Note that
-        // getting
-        // zones records is a paginated operation and we're also applying filters to narrow down our
-        // records
+        // getting zones records is a paginated operation and we're also applying filters to narrow
+        // down our records
         final List<Record> originalNsRecords =
                 getZoneRecords(
                         client,
                         GetZoneRecordsRequest.builder()
                                 .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
                                 .domain(zoneName)
-                                .compartmentId(compartmentId)
                                 .rtype("NS"));
 
-        // Now we prepare our update - this will contain the NS records  we retrieved, as well as a
-        // TXT record
-        // for the top level domain and an A record for a subdomain
+        // Now we prepare our update - this will contain the NS records we retrieved, as well as a
+        // TXT record for the top level domain and an A record for a subdomain
         final List<RecordDetails> updateZoneRecordItems = new ArrayList<>();
         for (Record r : originalNsRecords) {
             updateZoneRecordItems.add(
@@ -193,10 +187,7 @@ public class DnsExample {
                             .domain(zoneName)
                             .ttl(r.getTtl())
                             .rtype("NS")
-                            .recordHash(r.getRecordHash())
                             .rdata(r.getRdata())
-                            .rrsetVersion(r.getRrsetVersion())
-                            .isProtected(true)
                             .build());
         }
         updateZoneRecordItems.add(
@@ -217,7 +208,6 @@ public class DnsExample {
         client.updateZoneRecords(
                 UpdateZoneRecordsRequest.builder()
                         .zoneNameOrId(zoneName)
-                        .compartmentId(compartmentId)
                         .updateZoneRecordsDetails(
                                 UpdateZoneRecordsDetails.builder()
                                         .items(updateZoneRecordItems)
@@ -225,10 +215,9 @@ public class DnsExample {
                         .build());
 
         // When retrieving records, we can optionally specify what version of the zone we want
-        // records for. In this case,
-        // we explicitly want the latest version, which we can get by retrieving the zone and then
-        // interrogating its
-        // version. Specifying different versions is also possible
+        // records for. In this case, we explicitly want the latest version, which we can get by
+        // retrieving the zone and then interrogating its version. Specifying different versions is
+        // also possible
         final List<Record> allZoneRecordsAfterUpdate =
                 getZoneRecords(
                         client,
@@ -249,11 +238,7 @@ public class DnsExample {
     private static void patchZoneRecords(
             final Dns client, final String zoneName, final String compartmentId) {
         final List<Record> allZoneRecords =
-                getZoneRecords(
-                        client,
-                        GetZoneRecordsRequest.builder()
-                                .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion()));
+                getZoneRecords(client, GetZoneRecordsRequest.builder().zoneNameOrId(zoneName));
 
         Record txtRecord = null;
         for (Record r : allZoneRecords) {
@@ -282,13 +267,12 @@ public class DnsExample {
                         .rtype("TXT")
                         .rdata("Patch add new data")
                         .ttl(60)
-                        .operation(RecordOperation.Operation.Remove)
+                        .operation(RecordOperation.Operation.Add)
                         .build());
 
         client.patchZoneRecords(
                 PatchZoneRecordsRequest.builder()
                         .zoneNameOrId(zoneName)
-                        .compartmentId(compartmentId)
                         .patchZoneRecordsDetails(
                                 PatchZoneRecordsDetails.builder()
                                         .items(patchAddRemoveTxtRecord)
@@ -296,23 +280,18 @@ public class DnsExample {
                         .build());
 
         final List<Record> recordsAfterPatch =
-                getZoneRecords(
-                        client,
-                        GetZoneRecordsRequest.builder()
-                                .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion()));
+                getZoneRecords(client, GetZoneRecordsRequest.builder().zoneNameOrId(zoneName));
         System.out.println();
         System.out.println("Zone records after patch");
         System.out.println("==========================");
         System.out.println(recordsAfterPatch);
 
         // As part of patch operations, we can also specify preconditions (REQUIRE - data must be
-        // present, and
-        // PROHIBIT - data must not be present) which must be met for the operation to succeed.
+        // present, and PROHIBIT - data must not be present) which must be met for the operation to
+        // succeed.
         //
-        // Note that currently (as of 6 February 2018) sending through rdata or a record hash as
-        // part of a
-        // precondition is not supported
+        // Note that currently (as of 6 February 2018) sending rdata as part of a precondition is
+        // not supported
 
         final List<RecordOperation> failingPatchOperation = new ArrayList<>();
         failingPatchOperation.add( // This will fail as nothing matches this criteria
@@ -348,10 +327,11 @@ public class DnsExample {
         }
 
         // This operation will succeed since we're asking that something matching the criteria
-        // doesn't exist (PROHIBIT). Note
-        // also that the TTL will be applied to all other A records in the domain (i.e. our existing
-        // A record will have its
-        // TTL changed to 2100)
+        // doesn't exist (PROHIBIT).
+        //
+        // Note also that the new TTL will be applied to all other A records in the rrset (i.e. our
+        // existing A record will have its TTL changed to 2100), as all records in a rrset must
+        // have the same TTL.
         final List<RecordOperation> successfulPatchOperation = new ArrayList<>();
         successfulPatchOperation.add(
                 RecordOperation.builder()
@@ -372,7 +352,6 @@ public class DnsExample {
         client.patchZoneRecords(
                 PatchZoneRecordsRequest.builder()
                         .zoneNameOrId(zoneName)
-                        .compartmentId(compartmentId)
                         .patchZoneRecordsDetails(
                                 PatchZoneRecordsDetails.builder()
                                         .items(patchAddRemoveTxtRecord)
@@ -380,11 +359,7 @@ public class DnsExample {
                         .build());
 
         final List<Record> recordsAfterPatchWithPreconditions =
-                getZoneRecords(
-                        client,
-                        GetZoneRecordsRequest.builder()
-                                .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion()));
+                getZoneRecords(client, GetZoneRecordsRequest.builder().zoneNameOrId(zoneName));
         System.out.println();
         System.out.println("Zone records after patch with preconditions");
         System.out.println("==========================");
@@ -393,17 +368,16 @@ public class DnsExample {
 
     /**
      * We can also do update and patch operations at the domain level. This can handle records with
-     * different rtypes but they must all be in the same domain
+     * different rtypes, but they must all have the same domain (FQDN).
      */
     private static void updateAndPatchDomainRecords(
             final Dns client, final String zoneName, final String compartmentId) {
         final String subdomain = "testsubdomain2." + zoneName;
 
         // When retrieving records, we can optionally specify what version of the zone we want
-        // records for. In this case,
-        // we explicitly want the latest version, which we can get by retrieving the zone and then
-        // interrogating its
-        // version. Specifying different versions is also possible
+        // records for. In this case, we explicitly want the latest version, which we can get by
+        // retrieving the zone and then interrogating its version. Specifying different versions is
+        // also possible
         final List<Record> originalDomainRecords =
                 getDomainRecords(
                         client,
@@ -436,7 +410,6 @@ public class DnsExample {
                 UpdateDomainRecordsRequest.builder()
                         .zoneNameOrId(zoneName)
                         .domain(subdomain)
-                        .compartmentId(compartmentId)
                         .updateDomainRecordsDetails(
                                 UpdateDomainRecordsDetails.builder()
                                         .items(updateDomainRecords)
@@ -446,10 +419,7 @@ public class DnsExample {
         final List<Record> updatedDomainRecords =
                 getDomainRecords(
                         client,
-                        GetDomainRecordsRequest.builder()
-                                .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
-                                .domain(subdomain));
+                        GetDomainRecordsRequest.builder().zoneNameOrId(zoneName).domain(subdomain));
         System.out.println();
         System.out.println("Domain records after update");
         System.out.println("==========================");
@@ -470,8 +440,9 @@ public class DnsExample {
         }
 
         /*
-         * Patch operations at the domain level function similarly to patch operations at the zone level, in that we can send through
-         * partial updates (additions and removals) and also specify preconditions
+         * Patch operations at the domain level function similarly to patch operations at the zone
+         * level, in that we can send through partial updates (additions and removals) and also
+         * specify preconditions
          *
          * Here we specify two preconditions (which should succeed):
          *      - TXT records match the given RRSet version
@@ -507,7 +478,6 @@ public class DnsExample {
                 PatchDomainRecordsRequest.builder()
                         .zoneNameOrId(zoneName)
                         .domain(subdomain)
-                        .compartmentId(compartmentId)
                         .patchDomainRecordsDetails(
                                 PatchDomainRecordsDetails.builder()
                                         .items(domainPatchOperations)
@@ -517,10 +487,7 @@ public class DnsExample {
         final List<Record> domainRecordsAfterPatch =
                 getDomainRecords(
                         client,
-                        GetDomainRecordsRequest.builder()
-                                .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
-                                .domain(subdomain));
+                        GetDomainRecordsRequest.builder().zoneNameOrId(zoneName).domain(subdomain));
         System.out.println();
         System.out.println("Domain records after patch");
         System.out.println("==========================");
@@ -536,10 +503,7 @@ public class DnsExample {
         final List<Record> domainRecordsAfterDelete =
                 getDomainRecords(
                         client,
-                        GetDomainRecordsRequest.builder()
-                                .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
-                                .domain(subdomain));
+                        GetDomainRecordsRequest.builder().zoneNameOrId(zoneName).domain(subdomain));
         System.out.println();
         System.out.println("Domain records after delete");
         System.out.println("==========================");
@@ -548,23 +512,20 @@ public class DnsExample {
 
     /**
      * We can also do update and patch operations at the RRSet level. This is scoped to a particular
-     * domain and rtype.
+     * domain (FQDN) and rtype.
      */
     private static void updateAndPatchRRSet(
             final Dns client, final String zoneName, final String compartmentId) {
         final String subdomain = "testsubdomain3." + zoneName;
 
         // When retrieving records, we can optionally specify what version of the zone we want
-        // records for. In this case,
-        // we explicitly want the latest version, which we can get by retrieving the zone and then
-        // interrogating its
-        // version. Specifying different versions is also possible
+        // records for. In this case, we explicitly want the latest version, which is the default
+        // behavior. Specifying different versions is also possible.
         final List<Record> originalRRSetRecords =
                 getRRSetRecords(
                         client,
                         GetRRSetRequest.builder()
                                 .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
                                 .domain(subdomain)
                                 .rtype("TXT"));
         System.out.println();
@@ -593,7 +554,6 @@ public class DnsExample {
         client.updateRRSet(
                 UpdateRRSetRequest.builder()
                         .zoneNameOrId(zoneName)
-                        .compartmentId(compartmentId)
                         .domain(subdomain)
                         .rtype("TXT")
                         .updateRRSetDetails(
@@ -605,7 +565,6 @@ public class DnsExample {
                         client,
                         GetRRSetRequest.builder()
                                 .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
                                 .domain(subdomain)
                                 .rtype("TXT"));
         System.out.println();
@@ -654,7 +613,6 @@ public class DnsExample {
                         .zoneNameOrId(zoneName)
                         .domain(subdomain)
                         .rtype("TXT")
-                        .compartmentId(compartmentId)
                         .patchRRSetDetails(
                                 PatchRRSetDetails.builder().items(patchRRSetOperations).build())
                         .build());
@@ -664,7 +622,6 @@ public class DnsExample {
                         client,
                         GetRRSetRequest.builder()
                                 .zoneNameOrId(zoneName)
-                                .zoneVersion(getZone(client, zoneName).getVersion())
                                 .domain(subdomain)
                                 .rtype("TXT"));
         System.out.println();

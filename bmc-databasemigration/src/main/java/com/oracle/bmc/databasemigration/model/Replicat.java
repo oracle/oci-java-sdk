@@ -22,13 +22,18 @@ package com.oracle.bmc.databasemigration.model;
 public final class Replicat extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "performanceProfile",
         "mapParallelism",
         "minApplyParallelism",
         "maxApplyParallelism"
     })
     public Replicat(
-            Integer mapParallelism, Integer minApplyParallelism, Integer maxApplyParallelism) {
+            ReplicatPerformanceProfile performanceProfile,
+            Integer mapParallelism,
+            Integer minApplyParallelism,
+            Integer maxApplyParallelism) {
         super();
+        this.performanceProfile = performanceProfile;
         this.mapParallelism = mapParallelism;
         this.minApplyParallelism = minApplyParallelism;
         this.maxApplyParallelism = maxApplyParallelism;
@@ -36,6 +41,21 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** Replicat performance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
+        private ReplicatPerformanceProfile performanceProfile;
+
+        /**
+         * Replicat performance.
+         *
+         * @param performanceProfile the value to set
+         * @return this builder
+         */
+        public Builder performanceProfile(ReplicatPerformanceProfile performanceProfile) {
+            this.performanceProfile = performanceProfile;
+            this.__explicitlySet__.add("performanceProfile");
+            return this;
+        }
         /** Number of threads used to read trail files (valid for Parallel Replicat) */
         @com.fasterxml.jackson.annotation.JsonProperty("mapParallelism")
         private Integer mapParallelism;
@@ -96,6 +116,7 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
         public Replicat build() {
             Replicat model =
                     new Replicat(
+                            this.performanceProfile,
                             this.mapParallelism,
                             this.minApplyParallelism,
                             this.maxApplyParallelism);
@@ -107,6 +128,9 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Replicat model) {
+            if (model.wasPropertyExplicitlySet("performanceProfile")) {
+                this.performanceProfile(model.getPerformanceProfile());
+            }
             if (model.wasPropertyExplicitlySet("mapParallelism")) {
                 this.mapParallelism(model.getMapParallelism());
             }
@@ -127,6 +151,19 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /** Replicat performance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
+    private final ReplicatPerformanceProfile performanceProfile;
+
+    /**
+     * Replicat performance.
+     *
+     * @return the value
+     */
+    public ReplicatPerformanceProfile getPerformanceProfile() {
+        return performanceProfile;
     }
 
     /** Number of threads used to read trail files (valid for Parallel Replicat) */
@@ -191,7 +228,8 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Replicat(");
         sb.append("super=").append(super.toString());
-        sb.append("mapParallelism=").append(String.valueOf(this.mapParallelism));
+        sb.append("performanceProfile=").append(String.valueOf(this.performanceProfile));
+        sb.append(", mapParallelism=").append(String.valueOf(this.mapParallelism));
         sb.append(", minApplyParallelism=").append(String.valueOf(this.minApplyParallelism));
         sb.append(", maxApplyParallelism=").append(String.valueOf(this.maxApplyParallelism));
         sb.append(")");
@@ -208,7 +246,8 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
         }
 
         Replicat other = (Replicat) o;
-        return java.util.Objects.equals(this.mapParallelism, other.mapParallelism)
+        return java.util.Objects.equals(this.performanceProfile, other.performanceProfile)
+                && java.util.Objects.equals(this.mapParallelism, other.mapParallelism)
                 && java.util.Objects.equals(this.minApplyParallelism, other.minApplyParallelism)
                 && java.util.Objects.equals(this.maxApplyParallelism, other.maxApplyParallelism)
                 && super.equals(other);
@@ -218,6 +257,11 @@ public final class Replicat extends com.oracle.bmc.http.client.internal.Explicit
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.performanceProfile == null
+                                ? 43
+                                : this.performanceProfile.hashCode());
         result =
                 (result * PRIME)
                         + (this.mapParallelism == null ? 43 : this.mapParallelism.hashCode());

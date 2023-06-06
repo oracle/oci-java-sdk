@@ -184,6 +184,11 @@ public interface ComputeManagementAsync extends AutoCloseable {
      * Creates a cluster network. For more information about cluster networks, see [Managing Cluster
      * Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
      *
+     * <p>To determine whether capacity is available for a specific shape before you create a
+     * cluster network, use the {@link
+     * #createComputeCapacityReport(CreateComputeCapacityReportRequest, Consumer, Consumer)
+     * createComputeCapacityReport} operation.
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
@@ -216,6 +221,11 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Creates an instance pool.
+     *
+     * <p>To determine whether capacity is available for a specific shape before you create an
+     * instance pool, use the {@link
+     * #createComputeCapacityReport(CreateComputeCapacityReportRequest, Consumer, Consumer)
+     * createComputeCapacityReport} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -366,6 +376,10 @@ public interface ComputeManagementAsync extends AutoCloseable {
      * create an instance, such as the availability domain and subnet ID, you must provide these
      * parameters when you create an instance from the instance configuration. For more information,
      * see the {@link InstanceConfiguration} resource.
+     *
+     * <p>To determine whether capacity is available for a specific shape before you create an
+     * instance, use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest,
+     * Consumer, Consumer) createComputeCapacityReport} operation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

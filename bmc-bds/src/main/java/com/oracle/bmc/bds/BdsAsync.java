@@ -132,6 +132,20 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AddCloudSqlRequest, AddCloudSqlResponse> handler);
 
     /**
+     * Adds Kafka to a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddKafkaResponse> addKafka(
+            AddKafkaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddKafkaRequest, AddKafkaResponse> handler);
+
+    /**
      * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added
      * worker nodes will have the same shape and will have the same amount of attached block storage
      * as other worker nodes in the cluster.
@@ -564,6 +578,20 @@ public interface BdsAsync extends AutoCloseable {
             RemoveCloudSqlRequest request,
             com.oracle.bmc.responses.AsyncHandler<RemoveCloudSqlRequest, RemoveCloudSqlResponse>
                     handler);
+
+    /**
+     * Remove Kafka from the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveKafkaResponse> removeKafka(
+            RemoveKafkaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveKafkaRequest, RemoveKafkaResponse> handler);
 
     /**
      * Remove a single node of a Big Data Service cluster

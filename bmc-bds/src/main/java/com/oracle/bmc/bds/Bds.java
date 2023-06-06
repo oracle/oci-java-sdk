@@ -137,6 +137,21 @@ public interface Bds extends AutoCloseable {
     AddCloudSqlResponse addCloudSql(AddCloudSqlRequest request);
 
     /**
+     * Adds Kafka to a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddKafkaExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddKafka API.
+     */
+    AddKafkaResponse addKafka(AddKafkaRequest request);
+
+    /**
      * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added
      * worker nodes will have the same shape and will have the same amount of attached block storage
      * as other worker nodes in the cluster.
@@ -571,6 +586,21 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCloudSql API.
      */
     RemoveCloudSqlResponse removeCloudSql(RemoveCloudSqlRequest request);
+
+    /**
+     * Remove Kafka from the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveKafkaExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveKafka API.
+     */
+    RemoveKafkaResponse removeKafka(RemoveKafkaRequest request);
 
     /**
      * Remove a single node of a Big Data Service cluster

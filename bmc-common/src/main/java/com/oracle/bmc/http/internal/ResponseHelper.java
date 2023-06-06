@@ -4,8 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.oracle.bmc.InternalSdk;
 
 import java.util.HashMap;
@@ -31,7 +29,6 @@ public class ResponseHelper {
         DEFAULT_ERROR_MESSAGES.put(412, "Precondition failed");
     }
 
-    @JsonDeserialize(builder = ErrorCodeAndMessage.Builder.class)
     public static final class ErrorCodeAndMessage {
         private final String code;
         private final String message;
@@ -39,7 +36,6 @@ public class ResponseHelper {
         private final String originalMessageTemplate;
         private final Map<String, String> messageArguments;
 
-        @JsonPOJOBuilder(withPrefix = "")
         public static class Builder {
             private String code;
             private String message;

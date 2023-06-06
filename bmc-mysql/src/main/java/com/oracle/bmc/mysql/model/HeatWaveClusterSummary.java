@@ -26,6 +26,7 @@ public final class HeatWaveClusterSummary
     @java.beans.ConstructorProperties({
         "shapeName",
         "clusterSize",
+        "isLakehouseEnabled",
         "lifecycleState",
         "timeCreated",
         "timeUpdated"
@@ -33,12 +34,14 @@ public final class HeatWaveClusterSummary
     public HeatWaveClusterSummary(
             String shapeName,
             Integer clusterSize,
+            Boolean isLakehouseEnabled,
             HeatWaveCluster.LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated) {
         super();
         this.shapeName = shapeName;
         this.clusterSize = clusterSize;
+        this.isLakehouseEnabled = isLakehouseEnabled;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -78,6 +81,21 @@ public final class HeatWaveClusterSummary
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
+            return this;
+        }
+        /** Lakehouse enabled status for the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+        private Boolean isLakehouseEnabled;
+
+        /**
+         * Lakehouse enabled status for the HeatWave cluster.
+         *
+         * @param isLakehouseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
+            this.__explicitlySet__.add("isLakehouseEnabled");
             return this;
         }
         /** The current state of the MySQL HeatWave cluster. */
@@ -142,6 +160,7 @@ public final class HeatWaveClusterSummary
                     new HeatWaveClusterSummary(
                             this.shapeName,
                             this.clusterSize,
+                            this.isLakehouseEnabled,
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated);
@@ -158,6 +177,9 @@ public final class HeatWaveClusterSummary
             }
             if (model.wasPropertyExplicitlySet("clusterSize")) {
                 this.clusterSize(model.getClusterSize());
+            }
+            if (model.wasPropertyExplicitlySet("isLakehouseEnabled")) {
+                this.isLakehouseEnabled(model.getIsLakehouseEnabled());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -209,6 +231,19 @@ public final class HeatWaveClusterSummary
      */
     public Integer getClusterSize() {
         return clusterSize;
+    }
+
+    /** Lakehouse enabled status for the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+    private final Boolean isLakehouseEnabled;
+
+    /**
+     * Lakehouse enabled status for the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public Boolean getIsLakehouseEnabled() {
+        return isLakehouseEnabled;
     }
 
     /** The current state of the MySQL HeatWave cluster. */
@@ -275,6 +310,7 @@ public final class HeatWaveClusterSummary
         sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", isLakehouseEnabled=").append(String.valueOf(this.isLakehouseEnabled));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -294,6 +330,7 @@ public final class HeatWaveClusterSummary
         HeatWaveClusterSummary other = (HeatWaveClusterSummary) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(this.isLakehouseEnabled, other.isLakehouseEnabled)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -306,6 +343,11 @@ public final class HeatWaveClusterSummary
         int result = 1;
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLakehouseEnabled == null
+                                ? 43
+                                : this.isLakehouseEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
