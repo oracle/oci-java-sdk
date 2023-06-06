@@ -16,7 +16,6 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.internal.AbstractFederationClient;

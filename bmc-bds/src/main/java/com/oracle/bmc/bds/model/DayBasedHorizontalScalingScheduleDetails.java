@@ -28,10 +28,16 @@ public final class DayBasedHorizontalScalingScheduleDetails
         extends HorizontalScalingScheduleDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** Time of day and horizontal scaling configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAndHorizontalScalingConfig")
         private java.util.List<TimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfig;
 
+        /**
+         * Time of day and horizontal scaling configuration.
+         *
+         * @param timeAndHorizontalScalingConfig the value to set
+         * @return this builder
+         */
         public Builder timeAndHorizontalScalingConfig(
                 java.util.List<TimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfig) {
             this.timeAndHorizontalScalingConfig = timeAndHorizontalScalingConfig;
@@ -77,9 +83,15 @@ public final class DayBasedHorizontalScalingScheduleDetails
         this.timeAndHorizontalScalingConfig = timeAndHorizontalScalingConfig;
     }
 
+    /** Time of day and horizontal scaling configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAndHorizontalScalingConfig")
     private final java.util.List<TimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfig;
 
+    /**
+     * Time of day and horizontal scaling configuration.
+     *
+     * @return the value
+     */
     public java.util.List<TimeAndHorizontalScalingConfig> getTimeAndHorizontalScalingConfig() {
         return timeAndHorizontalScalingConfig;
     }

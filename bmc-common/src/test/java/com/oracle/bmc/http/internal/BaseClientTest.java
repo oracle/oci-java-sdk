@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;

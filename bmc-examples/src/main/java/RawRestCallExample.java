@@ -5,16 +5,19 @@
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.Map;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.Response;
 
+import com.oracle.bmc.http.Priorities;
+import com.oracle.bmc.http.client.HttpClient;
+import com.oracle.bmc.http.client.HttpRequest;
+import com.oracle.bmc.http.client.HttpResponse;
+import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.client.jersey.JerseyHttpProvider;
 import com.oracle.bmc.http.signing.RequestSigningFilter;
 import com.oracle.bmc.http.internal.ParamEncoder;
 
@@ -27,33 +30,36 @@ public class RawRestCallExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Pre-Requirement: Allow setting of restricted headers
-        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
-
         // 1) Create a request signing filter instance
         RequestSigningFilter requestSigningFilter =
                 RequestSigningFilter.fromConfigFile(configurationFilePath, profile);
 
-        // 2) Create a Jersey client and register the request signing filter
-        Client client = ClientBuilder.newBuilder().build().register(requestSigningFilter);
+        // 2) Create an http client, register the request signing filter, and target an endpoint.
+        // You must ensure that path arguments and query params are escaped correctly yourself.
+        // NOTE: if jersey3 is required, import
+        // com.oracle.bmc.http.client.jersey3.Jersey3HttpProvider and replace
+        // JerseyHttpProvider with Jersey3HttpProvider.
+        HttpClient client =
+                JerseyHttpProvider.getInstance()
+                        .newBuilder()
+                        .registerRequestInterceptor(Priorities.AUTHENTICATION, requestSigningFilter)
+                        .baseUri(
+                                URI.create(
+                                        "https://iaas.us-phoenix-1.oraclecloud.com/20160918/instances/"
+                                                + ParamEncoder.encodePathParam(instanceId)))
+                        .build();
 
-        // 3) Target an endpoint. You must ensure that path arguments and query
-        // params are escaped correctly yourself
-        WebTarget target =
-                client.target("https://iaas.us-phoenix-1.oraclecloud.com")
-                        .path("20160918")
-                        .path("instances")
-                        .path(ParamEncoder.encodePathParam(instanceId));
+        // 3) Create a request and set the expected type header
+        HttpRequest request =
+                client.createRequest(Method.GET).header("accepts", MediaType.APPLICATION_JSON);
 
-        // 4) Set the expected type and invoke the call
-        Invocation.Builder ib = target.request();
-        ib.accept(MediaType.APPLICATION_JSON);
-        Response response = ib.get();
+        // 4) Invoke the call and get the response.
+        HttpResponse response = request.execute().toCompletableFuture().get();
 
         // 5) Print the response headers and the body (JSON) as a string
-        MultivaluedMap<String, Object> responseHeaders = response.getHeaders();
+        Map<String, List<String>> responseHeaders = response.headers();
         System.out.println(responseHeaders);
-        InputStream responseBody = (InputStream) response.getEntity();
+        InputStream responseBody = response.streamBody().toCompletableFuture().get();
         try (final BufferedReader reader =
                 new BufferedReader(new InputStreamReader(responseBody, StandardCharsets.UTF_8))) {
             StringBuilder jsonBody = new StringBuilder();

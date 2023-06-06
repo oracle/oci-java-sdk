@@ -257,6 +257,37 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public AddKafkaResponse addKafka(AddKafkaRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getAddKafkaDetails(), "addKafkaDetails is required");
+
+        return clientCall(request, AddKafkaResponse::builder)
+                .logger(LOG, "addKafka")
+                .serviceDetails(
+                        "Bds",
+                        "AddKafka",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddKafka")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddKafkaRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addKafka")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddKafkaResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddKafkaResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddWorkerNodesResponse addWorkerNodes(AddWorkerNodesRequest request) {
 
         Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
@@ -1140,6 +1171,37 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", RemoveCloudSqlResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RemoveCloudSqlResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveKafkaResponse removeKafka(RemoveKafkaRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getRemoveKafkaDetails(), "removeKafkaDetails is required");
+
+        return clientCall(request, RemoveKafkaResponse::builder)
+                .logger(LOG, "removeKafka")
+                .serviceDetails(
+                        "Bds",
+                        "RemoveKafka",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveKafka")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveKafkaRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeKafka")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveKafkaResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveKafkaResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

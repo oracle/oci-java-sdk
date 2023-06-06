@@ -28,6 +28,7 @@ public final class Realm implements Serializable, Comparable<Realm> {
     public static final Realm OC10 = new Realm("oc10", "oraclecloud10.com");
     public static final Realm OC14 = new Realm("oc14", "oraclecloud14.com");
     public static final Realm OC20 = new Realm("oc20", "oraclecloud20.com");
+    public static final Realm OC19 = new Realm("oc19", "oraclecloud.eu");
     private static final long serialVersionUID = -905344971L;
     /** The id of the realm. */
     private final String realmId;

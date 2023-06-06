@@ -34,7 +34,9 @@ public final class ChangeShapeNodes
         "cloudsql",
         "cloudsqlShapeConfig",
         "edge",
-        "edgeShapeConfig"
+        "edgeShapeConfig",
+        "kafkaBroker",
+        "kafkaBrokerShapeConfig"
     })
     public ChangeShapeNodes(
             String worker,
@@ -48,7 +50,9 @@ public final class ChangeShapeNodes
             String cloudsql,
             ShapeConfigDetails cloudsqlShapeConfig,
             String edge,
-            ShapeConfigDetails edgeShapeConfig) {
+            ShapeConfigDetails edgeShapeConfig,
+            String kafkaBroker,
+            ShapeConfigDetails kafkaBrokerShapeConfig) {
         super();
         this.worker = worker;
         this.workerShapeConfig = workerShapeConfig;
@@ -62,6 +66,8 @@ public final class ChangeShapeNodes
         this.cloudsqlShapeConfig = cloudsqlShapeConfig;
         this.edge = edge;
         this.edgeShapeConfig = edgeShapeConfig;
+        this.kafkaBroker = kafkaBroker;
+        this.kafkaBrokerShapeConfig = kafkaBrokerShapeConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -235,6 +241,34 @@ public final class ChangeShapeNodes
             this.__explicitlySet__.add("edgeShapeConfig");
             return this;
         }
+        /**
+         * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4
+         * Flex shapes are allowed here.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kafkaBroker")
+        private String kafkaBroker;
+
+        /**
+         * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4
+         * Flex shapes are allowed here.
+         *
+         * @param kafkaBroker the value to set
+         * @return this builder
+         */
+        public Builder kafkaBroker(String kafkaBroker) {
+            this.kafkaBroker = kafkaBroker;
+            this.__explicitlySet__.add("kafkaBroker");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kafkaBrokerShapeConfig")
+        private ShapeConfigDetails kafkaBrokerShapeConfig;
+
+        public Builder kafkaBrokerShapeConfig(ShapeConfigDetails kafkaBrokerShapeConfig) {
+            this.kafkaBrokerShapeConfig = kafkaBrokerShapeConfig;
+            this.__explicitlySet__.add("kafkaBrokerShapeConfig");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -253,7 +287,9 @@ public final class ChangeShapeNodes
                             this.cloudsql,
                             this.cloudsqlShapeConfig,
                             this.edge,
-                            this.edgeShapeConfig);
+                            this.edgeShapeConfig,
+                            this.kafkaBroker,
+                            this.kafkaBrokerShapeConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -297,6 +333,12 @@ public final class ChangeShapeNodes
             }
             if (model.wasPropertyExplicitlySet("edgeShapeConfig")) {
                 this.edgeShapeConfig(model.getEdgeShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("kafkaBroker")) {
+                this.kafkaBroker(model.getKafkaBroker());
+            }
+            if (model.wasPropertyExplicitlySet("kafkaBrokerShapeConfig")) {
+                this.kafkaBrokerShapeConfig(model.getKafkaBrokerShapeConfig());
             }
             return this;
         }
@@ -455,6 +497,30 @@ public final class ChangeShapeNodes
         return edgeShapeConfig;
     }
 
+    /**
+     * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex
+     * shapes are allowed here.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kafkaBroker")
+    private final String kafkaBroker;
+
+    /**
+     * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex
+     * shapes are allowed here.
+     *
+     * @return the value
+     */
+    public String getKafkaBroker() {
+        return kafkaBroker;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("kafkaBrokerShapeConfig")
+    private final ShapeConfigDetails kafkaBrokerShapeConfig;
+
+    public ShapeConfigDetails getKafkaBrokerShapeConfig() {
+        return kafkaBrokerShapeConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -483,6 +549,8 @@ public final class ChangeShapeNodes
         sb.append(", cloudsqlShapeConfig=").append(String.valueOf(this.cloudsqlShapeConfig));
         sb.append(", edge=").append(String.valueOf(this.edge));
         sb.append(", edgeShapeConfig=").append(String.valueOf(this.edgeShapeConfig));
+        sb.append(", kafkaBroker=").append(String.valueOf(this.kafkaBroker));
+        sb.append(", kafkaBrokerShapeConfig=").append(String.valueOf(this.kafkaBrokerShapeConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -510,6 +578,9 @@ public final class ChangeShapeNodes
                 && java.util.Objects.equals(this.cloudsqlShapeConfig, other.cloudsqlShapeConfig)
                 && java.util.Objects.equals(this.edge, other.edge)
                 && java.util.Objects.equals(this.edgeShapeConfig, other.edgeShapeConfig)
+                && java.util.Objects.equals(this.kafkaBroker, other.kafkaBroker)
+                && java.util.Objects.equals(
+                        this.kafkaBrokerShapeConfig, other.kafkaBrokerShapeConfig)
                 && super.equals(other);
     }
 
@@ -549,6 +620,12 @@ public final class ChangeShapeNodes
         result =
                 (result * PRIME)
                         + (this.edgeShapeConfig == null ? 43 : this.edgeShapeConfig.hashCode());
+        result = (result * PRIME) + (this.kafkaBroker == null ? 43 : this.kafkaBroker.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kafkaBrokerShapeConfig == null
+                                ? 43
+                                : this.kafkaBrokerShapeConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
