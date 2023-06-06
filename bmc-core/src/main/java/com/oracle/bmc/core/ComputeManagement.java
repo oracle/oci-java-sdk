@@ -162,6 +162,10 @@ public interface ComputeManagement extends AutoCloseable {
     /**
      * Creates a cluster network. For more information about cluster networks, see
      * [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     * <p>
+     * To determine whether capacity is available for a specific shape before you create a cluster network,
+     * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -190,6 +194,10 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Creates an instance pool.
+     * <p>
+     * To determine whether capacity is available for a specific shape before you create an instance pool,
+     * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -312,6 +320,10 @@ public interface ComputeManagement extends AutoCloseable {
      * provide these parameters when you create an instance from the instance configuration.
      * For more information, see the {@link InstanceConfiguration}
      * resource.
+     * <p>
+     * To determine whether capacity is available for a specific shape before you create an instance,
+     * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

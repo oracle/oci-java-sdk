@@ -23,10 +23,11 @@ package com.oracle.bmc.databasemigration.model;
 public final class MigrationObjectCollection
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"items"})
-    public MigrationObjectCollection(java.util.List<MigrationObjectSummary> items) {
+    @java.beans.ConstructorProperties({"items", "csvText"})
+    public MigrationObjectCollection(java.util.List<MigrationObjectSummary> items, String csvText) {
         super();
         this.items = items;
+        this.csvText = csvText;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -49,12 +50,31 @@ public final class MigrationObjectCollection
             this.__explicitlySet__.add("items");
             return this;
         }
+        /**
+         * Database objects to exclude/include from migration in CSV format. The items field will be ignored if this field is not null.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("csvText")
+        private String csvText;
+
+        /**
+         * Database objects to exclude/include from migration in CSV format. The items field will be ignored if this field is not null.
+         *
+         * @param csvText the value to set
+         * @return this builder
+         **/
+        public Builder csvText(String csvText) {
+            this.csvText = csvText;
+            this.__explicitlySet__.add("csvText");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrationObjectCollection build() {
-            MigrationObjectCollection model = new MigrationObjectCollection(this.items);
+            MigrationObjectCollection model =
+                    new MigrationObjectCollection(this.items, this.csvText);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -65,6 +85,9 @@ public final class MigrationObjectCollection
         public Builder copy(MigrationObjectCollection model) {
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("csvText")) {
+                this.csvText(model.getCsvText());
             }
             return this;
         }
@@ -97,6 +120,22 @@ public final class MigrationObjectCollection
         return items;
     }
 
+    /**
+     * Database objects to exclude/include from migration in CSV format. The items field will be ignored if this field is not null.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("csvText")
+    private final String csvText;
+
+    /**
+     * Database objects to exclude/include from migration in CSV format. The items field will be ignored if this field is not null.
+     *
+     * @return the value
+     **/
+    public String getCsvText() {
+        return csvText;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -112,6 +151,7 @@ public final class MigrationObjectCollection
         sb.append("MigrationObjectCollection(");
         sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", csvText=").append(String.valueOf(this.csvText));
         sb.append(")");
         return sb.toString();
     }
@@ -126,7 +166,9 @@ public final class MigrationObjectCollection
         }
 
         MigrationObjectCollection other = (MigrationObjectCollection) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.csvText, other.csvText)
+                && super.equals(other);
     }
 
     @Override
@@ -134,6 +176,7 @@ public final class MigrationObjectCollection
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.csvText == null ? 43 : this.csvText.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -47,10 +47,17 @@ public final class UpdateScheduleBasedHorizontalScalingPolicyDetails
             this.__explicitlySet__.add("timezone");
             return this;
         }
-
+        /**
+         * Details of a horizontal scaling schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
         private java.util.List<HorizontalScalingScheduleDetails> scheduleDetails;
 
+        /**
+         * Details of a horizontal scaling schedule.
+         * @param scheduleDetails the value to set
+         * @return this builder
+         **/
         public Builder scheduleDetails(
                 java.util.List<HorizontalScalingScheduleDetails> scheduleDetails) {
             this.scheduleDetails = scheduleDetails;
@@ -116,9 +123,16 @@ public final class UpdateScheduleBasedHorizontalScalingPolicyDetails
         return timezone;
     }
 
+    /**
+     * Details of a horizontal scaling schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
     private final java.util.List<HorizontalScalingScheduleDetails> scheduleDetails;
 
+    /**
+     * Details of a horizontal scaling schedule.
+     * @return the value
+     **/
     public java.util.List<HorizontalScalingScheduleDetails> getScheduleDetails() {
         return scheduleDetails;
     }

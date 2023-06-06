@@ -46,10 +46,17 @@ public final class AddScheduleBasedVerticalScalingPolicyDetails extends AddAutoS
             this.__explicitlySet__.add("timezone");
             return this;
         }
-
+        /**
+         * Details of a vertical scaling schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
         private java.util.List<VerticalScalingScheduleDetails> scheduleDetails;
 
+        /**
+         * Details of a vertical scaling schedule.
+         * @param scheduleDetails the value to set
+         * @return this builder
+         **/
         public Builder scheduleDetails(
                 java.util.List<VerticalScalingScheduleDetails> scheduleDetails) {
             this.scheduleDetails = scheduleDetails;
@@ -115,9 +122,16 @@ public final class AddScheduleBasedVerticalScalingPolicyDetails extends AddAutoS
         return timezone;
     }
 
+    /**
+     * Details of a vertical scaling schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
     private final java.util.List<VerticalScalingScheduleDetails> scheduleDetails;
 
+    /**
+     * Details of a vertical scaling schedule.
+     * @return the value
+     **/
     public java.util.List<VerticalScalingScheduleDetails> getScheduleDetails() {
         return scheduleDetails;
     }

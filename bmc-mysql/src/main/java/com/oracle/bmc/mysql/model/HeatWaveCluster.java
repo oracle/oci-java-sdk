@@ -24,6 +24,7 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
         "dbSystemId",
         "shapeName",
         "clusterSize",
+        "isLakehouseEnabled",
         "clusterNodes",
         "lifecycleState",
         "lifecycleDetails",
@@ -34,6 +35,7 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
             String dbSystemId,
             String shapeName,
             Integer clusterSize,
+            Boolean isLakehouseEnabled,
             java.util.List<HeatWaveNode> clusterNodes,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -43,6 +45,7 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
         this.dbSystemId = dbSystemId;
         this.shapeName = shapeName;
         this.clusterSize = clusterSize;
+        this.isLakehouseEnabled = isLakehouseEnabled;
         this.clusterNodes = clusterNodes;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -106,6 +109,22 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
+            return this;
+        }
+        /**
+         * Lakehouse enabled status for the HeatWave cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+        private Boolean isLakehouseEnabled;
+
+        /**
+         * Lakehouse enabled status for the HeatWave cluster.
+         * @param isLakehouseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
+            this.__explicitlySet__.add("isLakehouseEnabled");
             return this;
         }
         /**
@@ -206,6 +225,7 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
                             this.dbSystemId,
                             this.shapeName,
                             this.clusterSize,
+                            this.isLakehouseEnabled,
                             this.clusterNodes,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -227,6 +247,9 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("clusterSize")) {
                 this.clusterSize(model.getClusterSize());
+            }
+            if (model.wasPropertyExplicitlySet("isLakehouseEnabled")) {
+                this.isLakehouseEnabled(model.getIsLakehouseEnabled());
             }
             if (model.wasPropertyExplicitlySet("clusterNodes")) {
                 this.clusterNodes(model.getClusterNodes());
@@ -306,6 +329,20 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
      **/
     public Integer getClusterSize() {
         return clusterSize;
+    }
+
+    /**
+     * Lakehouse enabled status for the HeatWave cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+    private final Boolean isLakehouseEnabled;
+
+    /**
+     * Lakehouse enabled status for the HeatWave cluster.
+     * @return the value
+     **/
+    public Boolean getIsLakehouseEnabled() {
+        return isLakehouseEnabled;
     }
 
     /**
@@ -456,6 +493,7 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
         sb.append("dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
+        sb.append(", isLakehouseEnabled=").append(String.valueOf(this.isLakehouseEnabled));
         sb.append(", clusterNodes=").append(String.valueOf(this.clusterNodes));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -478,6 +516,7 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
         return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.clusterSize, other.clusterSize)
+                && java.util.Objects.equals(this.isLakehouseEnabled, other.isLakehouseEnabled)
                 && java.util.Objects.equals(this.clusterNodes, other.clusterNodes)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -493,6 +532,11 @@ public final class HeatWaveCluster extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLakehouseEnabled == null
+                                ? 43
+                                : this.isLakehouseEnabled.hashCode());
         result = (result * PRIME) + (this.clusterNodes == null ? 43 : this.clusterNodes.hashCode());
         result =
                 (result * PRIME)

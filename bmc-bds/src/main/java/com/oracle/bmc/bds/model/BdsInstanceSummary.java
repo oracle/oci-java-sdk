@@ -31,6 +31,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         "isHighAvailability",
         "isSecure",
         "isCloudSqlConfigured",
+        "isKafkaConfigured",
         "clusterProfile",
         "timeCreated",
         "freeformTags",
@@ -46,6 +47,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
             Boolean isHighAvailability,
             Boolean isSecure,
             Boolean isCloudSqlConfigured,
+            Boolean isKafkaConfigured,
             BdsInstance.ClusterProfile clusterProfile,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
@@ -60,6 +62,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
         this.isCloudSqlConfigured = isCloudSqlConfigured;
+        this.isKafkaConfigured = isKafkaConfigured;
         this.clusterProfile = clusterProfile;
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
@@ -213,6 +216,22 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * Boolean flag specifying whether Kafka is configured or not.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isKafkaConfigured")
+        private Boolean isKafkaConfigured;
+
+        /**
+         * Boolean flag specifying whether Kafka is configured or not.
+         * @param isKafkaConfigured the value to set
+         * @return this builder
+         **/
+        public Builder isKafkaConfigured(Boolean isKafkaConfigured) {
+            this.isKafkaConfigured = isKafkaConfigured;
+            this.__explicitlySet__.add("isKafkaConfigured");
+            return this;
+        }
+        /**
          * Profile of the Big Data Service cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
@@ -301,6 +320,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
                             this.isHighAvailability,
                             this.isSecure,
                             this.isCloudSqlConfigured,
+                            this.isKafkaConfigured,
                             this.clusterProfile,
                             this.timeCreated,
                             this.freeformTags,
@@ -339,6 +359,9 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("isCloudSqlConfigured")) {
                 this.isCloudSqlConfigured(model.getIsCloudSqlConfigured());
+            }
+            if (model.wasPropertyExplicitlySet("isKafkaConfigured")) {
+                this.isKafkaConfigured(model.getIsKafkaConfigured());
             }
             if (model.wasPropertyExplicitlySet("clusterProfile")) {
                 this.clusterProfile(model.getClusterProfile());
@@ -494,6 +517,20 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * Boolean flag specifying whether Kafka is configured or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isKafkaConfigured")
+    private final Boolean isKafkaConfigured;
+
+    /**
+     * Boolean flag specifying whether Kafka is configured or not.
+     * @return the value
+     **/
+    public Boolean getIsKafkaConfigured() {
+        return isKafkaConfigured;
+    }
+
+    /**
      * Profile of the Big Data Service cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterProfile")
@@ -580,6 +617,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", isCloudSqlConfigured=").append(String.valueOf(this.isCloudSqlConfigured));
+        sb.append(", isKafkaConfigured=").append(String.valueOf(this.isKafkaConfigured));
         sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -607,6 +645,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
                 && java.util.Objects.equals(this.isCloudSqlConfigured, other.isCloudSqlConfigured)
+                && java.util.Objects.equals(this.isKafkaConfigured, other.isKafkaConfigured)
                 && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -643,6 +682,9 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
                         + (this.isCloudSqlConfigured == null
                                 ? 43
                                 : this.isCloudSqlConfigured.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isKafkaConfigured == null ? 43 : this.isKafkaConfigured.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterProfile == null ? 43 : this.clusterProfile.hashCode());
