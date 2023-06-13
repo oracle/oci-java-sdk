@@ -68,23 +68,25 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
-     * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
-     * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-     * SUNOS, ZLINUX].
+     * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
+     * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
     private java.util.List<PlatformType> platformType;
 
     /**
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
-     * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
-     * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-     * SUNOS, ZLINUX].
+     * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
+     * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
         Zlinux("ZLINUX"),
+        Windows("WINDOWS"),
+        Aix("AIX"),
         ;
 
         private final String value;
@@ -117,9 +119,9 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
-     * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
-     * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-     * SUNOS, ZLINUX].
+     * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
+     * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
+     * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
     public java.util.List<PlatformType> getPlatformType() {
         return platformType;
@@ -387,17 +389,17 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
-         * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
-         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX].
+         * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
+         * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
          */
         private java.util.List<PlatformType> platformType = null;
 
         /**
          * Filter by one or more platform types. Supported platformType(s) for MACS-managed external
-         * host insight: [LINUX]. Supported platformType(s) for MACS-managed cloud host insight:
-         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
-         * SUNOS, ZLINUX].
+         * host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud
+         * host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight:
+         * [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
          *
          * @param platformType the value to set
          * @return this builder instance
@@ -409,9 +411,9 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Filter by one or more platform types. Supported platformType(s) for
-         * MACS-managed external host insight: [LINUX]. Supported platformType(s) for MACS-managed
-         * cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host
-         * insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s)
+         * for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed
+         * external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
          *
          * @param singularValue the singular value to set
          * @return this builder instance

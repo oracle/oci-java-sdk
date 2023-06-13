@@ -160,11 +160,20 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                         RequestEntityProcessing.BUFFERED);
             } else {
                 if (shouldUseApacheConnector()) {
+                    LOG.debug("Configuring non-buffering for ApacheConnectorProvider");
                     isApacheNonBufferingClient = true;
                 } else {
-                    properties.put(
-                            ClientProperties.REQUEST_ENTITY_PROCESSING,
-                            RequestEntityProcessing.CHUNKED);
+                    LOG.debug("Configuring non-buffering for HttpUrlConnectorProvider");
+                    properties.put(ClientProperties.REQUEST_ENTITY_PROCESSING, null);
+                    properties.put(ApacheClientProperties.RETRY_HANDLER, null);
+                    properties.put(ApacheClientProperties.REUSE_STRATEGY, null);
+                    properties.put(ApacheClientProperties.CONNECTION_MANAGER, null);
+                    properties.put(ApacheClientProperties.CONNECTION_CLOSING_STRATEGY, null);
+                    properties.put(ApacheClientProperties.CONNECTION_MANAGER_SHARED, null);
+
+                    // Use fixed length streaming when possible to allow large uploads without
+                    // buffering.
+                    properties.put(HttpUrlConnectorProvider.USE_FIXED_LENGTH_STREAMING, true);
                 }
             }
         } else if (key == StandardClientProperties.PROXY) {

@@ -31,12 +31,12 @@ public final class AdvancedUsageTracking
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** AdvancedUsageTracking flag to store enabled or disabled status */
+        /** AdvancedUsageTracking flag to store enabled or disabled status. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * AdvancedUsageTracking flag to store enabled or disabled status
+         * AdvancedUsageTracking flag to store enabled or disabled status.
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class AdvancedUsageTracking
         return new Builder().copy(this);
     }
 
-    /** AdvancedUsageTracking flag to store enabled or disabled status */
+    /** AdvancedUsageTracking flag to store enabled or disabled status. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * AdvancedUsageTracking flag to store enabled or disabled status
+     * AdvancedUsageTracking flag to store enabled or disabled status.
      *
      * @return the value
      */

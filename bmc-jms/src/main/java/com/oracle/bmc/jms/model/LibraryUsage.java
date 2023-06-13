@@ -162,12 +162,12 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("approximateApplicationCount");
             return this;
         }
-        /** The approximate count of Java server instances using the library. */
+        /** The approximate count of Java Server instances using the library. */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerInstanceCount")
         private Integer approximateJavaServerInstanceCount;
 
         /**
-         * The approximate count of Java server instances using the library.
+         * The approximate count of Java Server instances using the library.
          *
          * @param approximateJavaServerInstanceCount the value to set
          * @return this builder
@@ -457,12 +457,12 @@ public final class LibraryUsage extends com.oracle.bmc.http.client.internal.Expl
         return approximateApplicationCount;
     }
 
-    /** The approximate count of Java server instances using the library. */
+    /** The approximate count of Java Server instances using the library. */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerInstanceCount")
     private final Integer approximateJavaServerInstanceCount;
 
     /**
-     * The approximate count of Java server instances using the library.
+     * The approximate count of Java Server instances using the library.
      *
      * @return the value
      */

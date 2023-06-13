@@ -252,16 +252,16 @@ public final class CryptoAnalysisResultSummary
         }
         /**
          * Total number of non-compliant findings with the analysis. A non-compliant finding means
-         * the application won't work properly with the changes introduced by the crypto roadmap
-         * version used the the analysis.
+         * the application won't work properly with the changes introduced by the Crypto Roadmap
+         * version used by the analysis.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nonCompliantFindingCount")
         private Integer nonCompliantFindingCount;
 
         /**
          * Total number of non-compliant findings with the analysis. A non-compliant finding means
-         * the application won't work properly with the changes introduced by the crypto roadmap
-         * version used the the analysis.
+         * the application won't work properly with the changes introduced by the Crypto Roadmap
+         * version used by the analysis.
          *
          * @param nonCompliantFindingCount the value to set
          * @return this builder
@@ -587,16 +587,16 @@ public final class CryptoAnalysisResultSummary
 
     /**
      * Total number of non-compliant findings with the analysis. A non-compliant finding means the
-     * application won't work properly with the changes introduced by the crypto roadmap version
-     * used the the analysis.
+     * application won't work properly with the changes introduced by the Crypto Roadmap version
+     * used by the analysis.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nonCompliantFindingCount")
     private final Integer nonCompliantFindingCount;
 
     /**
      * Total number of non-compliant findings with the analysis. A non-compliant finding means the
-     * application won't work properly with the changes introduced by the crypto roadmap version
-     * used the the analysis.
+     * application won't work properly with the changes introduced by the Crypto Roadmap version
+     * used by the analysis.
      *
      * @return the value
      */

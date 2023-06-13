@@ -40,7 +40,8 @@ public final class PreauthenticatedRequest
         "bucketListingAction",
         "accessType",
         "timeExpires",
-        "timeCreated"
+        "timeCreated",
+        "fullPath"
     })
     public PreauthenticatedRequest(
             String id,
@@ -50,7 +51,8 @@ public final class PreauthenticatedRequest
             BucketListingAction bucketListingAction,
             AccessType accessType,
             java.util.Date timeExpires,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            String fullPath) {
         super();
         this.id = id;
         this.name = name;
@@ -60,6 +62,7 @@ public final class PreauthenticatedRequest
         this.accessType = accessType;
         this.timeExpires = timeExpires;
         this.timeCreated = timeCreated;
+        this.fullPath = fullPath;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -206,6 +209,21 @@ public final class PreauthenticatedRequest
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** The full Path for the object. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fullPath")
+        private String fullPath;
+
+        /**
+         * The full Path for the object.
+         *
+         * @param fullPath the value to set
+         * @return this builder
+         */
+        public Builder fullPath(String fullPath) {
+            this.fullPath = fullPath;
+            this.__explicitlySet__.add("fullPath");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -220,7 +238,8 @@ public final class PreauthenticatedRequest
                             this.bucketListingAction,
                             this.accessType,
                             this.timeExpires,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.fullPath);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -252,6 +271,9 @@ public final class PreauthenticatedRequest
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("fullPath")) {
+                this.fullPath(model.getFullPath());
             }
             return this;
         }
@@ -492,6 +514,19 @@ public final class PreauthenticatedRequest
         return timeCreated;
     }
 
+    /** The full Path for the object. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fullPath")
+    private final String fullPath;
+
+    /**
+     * The full Path for the object.
+     *
+     * @return the value
+     */
+    public String getFullPath() {
+        return fullPath;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -515,6 +550,7 @@ public final class PreauthenticatedRequest
         sb.append(", accessType=").append(String.valueOf(this.accessType));
         sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", fullPath=").append(String.valueOf(this.fullPath));
         sb.append(")");
         return sb.toString();
     }
@@ -537,6 +573,7 @@ public final class PreauthenticatedRequest
                 && java.util.Objects.equals(this.accessType, other.accessType)
                 && java.util.Objects.equals(this.timeExpires, other.timeExpires)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.fullPath, other.fullPath)
                 && super.equals(other);
     }
 
@@ -556,6 +593,7 @@ public final class PreauthenticatedRequest
         result = (result * PRIME) + (this.accessType == null ? 43 : this.accessType.hashCode());
         result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.fullPath == null ? 43 : this.fullPath.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

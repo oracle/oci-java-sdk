@@ -73,17 +73,19 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
             return this;
         }
         /**
-         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
-         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
+         * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
+         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+         * SUNOS, ZLINUX, WINDOWS, AIX].
          */
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
         /**
-         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
-         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
+         * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight:
+         * [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS,
+         * SUNOS, ZLINUX, WINDOWS, AIX].
          *
          * @param platformType the value to set
          * @return this builder
@@ -171,15 +173,18 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
     }
 
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
-     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
+     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
+     * ZLINUX, WINDOWS, AIX].
      */
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
         Zlinux("ZLINUX"),
+        Windows("WINDOWS"),
+        Aix("AIX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -223,17 +228,19 @@ public final class CloudImportableComputeEntitySummary extends ImportableCompute
         }
     };
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
-     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
+     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
+     * ZLINUX, WINDOWS, AIX].
      */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
-     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
+     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
+     * ZLINUX, WINDOWS, AIX].
      *
      * @return the value
      */

@@ -13,6 +13,13 @@ public enum PostInstallationActions implements com.oracle.bmc.http.internal.BmcE
     ChangeMinimumKeyLengthForRsaSignedJars("CHANGE_MINIMUM_KEY_LENGTH_FOR_RSA_SIGNED_JARS"),
     DisableTls("DISABLE_TLS"),
     UseOsCacerts("USE_OS_CACERTS"),
+    UseSystemProxies("USE_SYSTEM_PROXIES"),
+    SetupHttpProxy("SETUP_HTTP_PROXY"),
+    SetupHttpsProxy("SETUP_HTTPS_PROXY"),
+    SetupFtpProxy("SETUP_FTP_PROXY"),
+    SetupSocksProxy("SETUP_SOCKS_PROXY"),
+    AddFileHandler("ADD_FILE_HANDLER"),
+    LoggingLevel("LOGGING_LEVEL"),
     ;
 
     private final String value;

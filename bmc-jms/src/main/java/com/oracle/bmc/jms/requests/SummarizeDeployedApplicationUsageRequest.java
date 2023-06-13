@@ -35,10 +35,10 @@ public class SummarizeDeployedApplicationUsageRequest
     public String getServerKey() {
         return serverKey;
     }
-    /** The Java server instance key. */
+    /** The Java Server instance key. */
     private String serverInstanceKey;
 
-    /** The Java server instance key. */
+    /** The Java Server instance key. */
     public String getServerInstanceKey() {
         return serverInstanceKey;
     }
@@ -131,14 +131,14 @@ public class SummarizeDeployedApplicationUsageRequest
         return sortOrder;
     }
     /**
-     * The field to sort deployed applications. Only one sort order may be provided. If no value is
-     * specified _timeLastSeen_ is default.
+     * The field to sort the deployed applications. Only one sort order can be provided. If no value
+     * is specified _timeLastSeen_ is default.
      */
     private com.oracle.bmc.jms.model.DeployedApplicationSortBy sortBy;
 
     /**
-     * The field to sort deployed applications. Only one sort order may be provided. If no value is
-     * specified _timeLastSeen_ is default.
+     * The field to sort the deployed applications. Only one sort order can be provided. If no value
+     * is specified _timeLastSeen_ is default.
      */
     public com.oracle.bmc.jms.model.DeployedApplicationSortBy getSortBy() {
         return sortBy;
@@ -189,11 +189,11 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The Java server instance key. */
+        /** The Java Server instance key. */
         private String serverInstanceKey = null;
 
         /**
-         * The Java server instance key.
+         * The Java Server instance key.
          *
          * @param serverInstanceKey the value to set
          * @return this builder instance
@@ -356,14 +356,14 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * The field to sort deployed applications. Only one sort order may be provided. If no value
-         * is specified _timeLastSeen_ is default.
+         * The field to sort the deployed applications. Only one sort order can be provided. If no
+         * value is specified _timeLastSeen_ is default.
          */
         private com.oracle.bmc.jms.model.DeployedApplicationSortBy sortBy = null;
 
         /**
-         * The field to sort deployed applications. Only one sort order may be provided. If no value
-         * is specified _timeLastSeen_ is default.
+         * The field to sort the deployed applications. Only one sort order can be provided. If no
+         * value is specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance

@@ -42,13 +42,28 @@ public final class DocumentClassificationFeature extends DocumentFeature {
             this.__explicitlySet__.add("maxResults");
             return this;
         }
+        /** The custom model ID. */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * The custom model ID.
+         *
+         * @param modelId the value to set
+         * @return this builder
+         */
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentClassificationFeature build() {
             DocumentClassificationFeature model =
-                    new DocumentClassificationFeature(this.maxResults);
+                    new DocumentClassificationFeature(this.maxResults, this.modelId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,6 +74,9 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         public Builder copy(DocumentClassificationFeature model) {
             if (model.wasPropertyExplicitlySet("maxResults")) {
                 this.maxResults(model.getMaxResults());
+            }
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
             }
             return this;
         }
@@ -74,9 +92,10 @@ public final class DocumentClassificationFeature extends DocumentFeature {
     }
 
     @Deprecated
-    public DocumentClassificationFeature(Integer maxResults) {
+    public DocumentClassificationFeature(Integer maxResults, String modelId) {
         super();
         this.maxResults = maxResults;
+        this.modelId = modelId;
     }
 
     /** The maximum number of results to return. */
@@ -90,6 +109,19 @@ public final class DocumentClassificationFeature extends DocumentFeature {
      */
     public Integer getMaxResults() {
         return maxResults;
+    }
+
+    /** The custom model ID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * The custom model ID.
+     *
+     * @return the value
+     */
+    public String getModelId() {
+        return modelId;
     }
 
     @Override
@@ -108,6 +140,7 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         sb.append("DocumentClassificationFeature(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", maxResults=").append(String.valueOf(this.maxResults));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +155,9 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         }
 
         DocumentClassificationFeature other = (DocumentClassificationFeature) o;
-        return java.util.Objects.equals(this.maxResults, other.maxResults) && super.equals(other);
+        return java.util.Objects.equals(this.maxResults, other.maxResults)
+                && java.util.Objects.equals(this.modelId, other.modelId)
+                && super.equals(other);
     }
 
     @Override
@@ -130,6 +165,7 @@ public final class DocumentClassificationFeature extends DocumentFeature {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.maxResults == null ? 43 : this.maxResults.hashCode());
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         return result;
     }
 }

@@ -29,11 +29,11 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
     public String getFleetId() {
         return fleetId;
     }
-    /** Update advanced feature configurations with new fields */
+    /** Update advanced feature configurations with new fields. */
     private com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails
             updateFleetAdvancedFeatureConfigurationDetails;
 
-    /** Update advanced feature configurations with new fields */
+    /** Update advanced feature configurations with new fields. */
     public com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails
             getUpdateFleetAdvancedFeatureConfigurationDetails() {
         return updateFleetAdvancedFeatureConfigurationDetails;
@@ -118,12 +118,12 @@ public class UpdateFleetAdvancedFeatureConfigurationRequest
             return this;
         }
 
-        /** Update advanced feature configurations with new fields */
+        /** Update advanced feature configurations with new fields. */
         private com.oracle.bmc.jms.model.UpdateFleetAdvancedFeatureConfigurationDetails
                 updateFleetAdvancedFeatureConfigurationDetails = null;
 
         /**
-         * Update advanced feature configurations with new fields
+         * Update advanced feature configurations with new fields.
          *
          * @param updateFleetAdvancedFeatureConfigurationDetails the value to set
          * @return this builder instance

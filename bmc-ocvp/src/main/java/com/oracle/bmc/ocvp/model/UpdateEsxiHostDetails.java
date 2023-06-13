@@ -23,15 +23,23 @@ package com.oracle.bmc.ocvp.model;
 public final class UpdateEsxiHostDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "nextSku", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "nextSku",
+        "billingDonorHostId",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateEsxiHostDetails(
             String displayName,
             Sku nextSku,
+            String billingDonorHostId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.nextSku = nextSku;
+        this.billingDonorHostId = billingDonorHostId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -82,6 +90,25 @@ public final class UpdateEsxiHostDetails
         public Builder nextSku(Sku nextSku) {
             this.nextSku = nextSku;
             this.__explicitlySet__.add("nextSku");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deleted ESXi Host with LeftOver billing cycle.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
+        private String billingDonorHostId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deleted ESXi Host with LeftOver billing cycle.
+         *
+         * @param billingDonorHostId the value to set
+         * @return this builder
+         */
+        public Builder billingDonorHostId(String billingDonorHostId) {
+            this.billingDonorHostId = billingDonorHostId;
+            this.__explicitlySet__.add("billingDonorHostId");
             return this;
         }
         /**
@@ -142,7 +169,11 @@ public final class UpdateEsxiHostDetails
         public UpdateEsxiHostDetails build() {
             UpdateEsxiHostDetails model =
                     new UpdateEsxiHostDetails(
-                            this.displayName, this.nextSku, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.nextSku,
+                            this.billingDonorHostId,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +187,9 @@ public final class UpdateEsxiHostDetails
             }
             if (model.wasPropertyExplicitlySet("nextSku")) {
                 this.nextSku(model.getNextSku());
+            }
+            if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
+                this.billingDonorHostId(model.getBillingDonorHostId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -216,6 +250,23 @@ public final class UpdateEsxiHostDetails
      */
     public Sku getNextSku() {
         return nextSku;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deleted ESXi Host with LeftOver billing cycle.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
+    private final String billingDonorHostId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deleted ESXi Host with LeftOver billing cycle.
+     *
+     * @return the value
+     */
+    public String getBillingDonorHostId() {
+        return billingDonorHostId;
     }
 
     /**
@@ -281,6 +332,7 @@ public final class UpdateEsxiHostDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", nextSku=").append(String.valueOf(this.nextSku));
+        sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -299,6 +351,7 @@ public final class UpdateEsxiHostDetails
         UpdateEsxiHostDetails other = (UpdateEsxiHostDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.nextSku, other.nextSku)
+                && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -310,6 +363,11 @@ public final class UpdateEsxiHostDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billingDonorHostId == null
+                                ? 43
+                                : this.billingDonorHostId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

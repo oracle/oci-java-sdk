@@ -33,14 +33,14 @@ public final class WorkRequestError
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed at [API
+         * A machine-usable code for the error that occurred. Error codes are listed at [API
          * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed at [API
+         * A machine-usable code for the error that occurred. Error codes are listed at [API
          * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
@@ -122,14 +122,14 @@ public final class WorkRequestError
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed at [API
+     * A machine-usable code for the error that occurred. Error codes are listed at [API
      * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed at [API
+     * A machine-usable code for the error that occurred. Error codes are listed at [API
      * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      *
      * @return the value

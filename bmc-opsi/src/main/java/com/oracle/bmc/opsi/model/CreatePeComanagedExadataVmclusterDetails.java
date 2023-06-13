@@ -28,17 +28,20 @@ public final class CreatePeComanagedExadataVmclusterDetails
     @java.beans.ConstructorProperties({
         "vmclusterId",
         "opsiPrivateEndpointId",
+        "dbmPrivateEndpointId",
         "memberDatabaseDetails",
         "compartmentId"
     })
     public CreatePeComanagedExadataVmclusterDetails(
             String vmclusterId,
             String opsiPrivateEndpointId,
+            String dbmPrivateEndpointId,
             java.util.List<CreatePeComanagedDatabaseInsightDetails> memberDatabaseDetails,
             String compartmentId) {
         super();
         this.vmclusterId = vmclusterId;
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
+        this.dbmPrivateEndpointId = dbmPrivateEndpointId;
         this.memberDatabaseDetails = memberDatabaseDetails;
         this.compartmentId = compartmentId;
     }
@@ -81,6 +84,25 @@ public final class CreatePeComanagedExadataVmclusterDetails
         public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             this.__explicitlySet__.add("opsiPrivateEndpointId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Database Management private endpoint
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbmPrivateEndpointId")
+        private String dbmPrivateEndpointId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Database Management private endpoint
+         *
+         * @param dbmPrivateEndpointId the value to set
+         * @return this builder
+         */
+        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            this.__explicitlySet__.add("dbmPrivateEndpointId");
             return this;
         }
         /** The databases that belong to the VM Cluster */
@@ -127,6 +149,7 @@ public final class CreatePeComanagedExadataVmclusterDetails
                     new CreatePeComanagedExadataVmclusterDetails(
                             this.vmclusterId,
                             this.opsiPrivateEndpointId,
+                            this.dbmPrivateEndpointId,
                             this.memberDatabaseDetails,
                             this.compartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -142,6 +165,9 @@ public final class CreatePeComanagedExadataVmclusterDetails
             }
             if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
                 this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("dbmPrivateEndpointId")) {
+                this.dbmPrivateEndpointId(model.getDbmPrivateEndpointId());
             }
             if (model.wasPropertyExplicitlySet("memberDatabaseDetails")) {
                 this.memberDatabaseDetails(model.getMemberDatabaseDetails());
@@ -196,6 +222,23 @@ public final class CreatePeComanagedExadataVmclusterDetails
         return opsiPrivateEndpointId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Database Management private endpoint
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbmPrivateEndpointId")
+    private final String dbmPrivateEndpointId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Database Management private endpoint
+     *
+     * @return the value
+     */
+    public String getDbmPrivateEndpointId() {
+        return dbmPrivateEndpointId;
+    }
+
     /** The databases that belong to the VM Cluster */
     @com.fasterxml.jackson.annotation.JsonProperty("memberDatabaseDetails")
     private final java.util.List<CreatePeComanagedDatabaseInsightDetails> memberDatabaseDetails;
@@ -243,6 +286,7 @@ public final class CreatePeComanagedExadataVmclusterDetails
         sb.append("super=").append(super.toString());
         sb.append("vmclusterId=").append(String.valueOf(this.vmclusterId));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
+        sb.append(", dbmPrivateEndpointId=").append(String.valueOf(this.dbmPrivateEndpointId));
         sb.append(", memberDatabaseDetails=").append(String.valueOf(this.memberDatabaseDetails));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
@@ -262,6 +306,7 @@ public final class CreatePeComanagedExadataVmclusterDetails
                 (CreatePeComanagedExadataVmclusterDetails) o;
         return java.util.Objects.equals(this.vmclusterId, other.vmclusterId)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
+                && java.util.Objects.equals(this.dbmPrivateEndpointId, other.dbmPrivateEndpointId)
                 && java.util.Objects.equals(this.memberDatabaseDetails, other.memberDatabaseDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && super.equals(other);
@@ -277,6 +322,11 @@ public final class CreatePeComanagedExadataVmclusterDetails
                         + (this.opsiPrivateEndpointId == null
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbmPrivateEndpointId == null
+                                ? 43
+                                : this.dbmPrivateEndpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.memberDatabaseDetails == null

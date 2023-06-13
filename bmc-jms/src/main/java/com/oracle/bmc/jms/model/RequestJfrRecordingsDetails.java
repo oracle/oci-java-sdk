@@ -6,7 +6,7 @@ package com.oracle.bmc.jms.model;
 
 /**
  * Details of the request to start JFR recordings. When the targets aren't specified, then all
- * managed instances currently in the fleet are selected. <br>
+ * managed instances currently in the Fleet are selected. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,7 +30,8 @@ public final class RequestJfrRecordingsDetails
         "jfcV1",
         "jfcV2",
         "recordingDurationInMinutes",
-        "recordingSizeInMb"
+        "recordingSizeInMb",
+        "waitingPeriodInMinutes"
     })
     public RequestJfrRecordingsDetails(
             java.util.List<JfrAttachmentTarget> targets,
@@ -38,7 +39,8 @@ public final class RequestJfrRecordingsDetails
             String jfcV1,
             String jfcV2,
             Integer recordingDurationInMinutes,
-            Integer recordingSizeInMb) {
+            Integer recordingSizeInMb,
+            Integer waitingPeriodInMinutes) {
         super();
         this.targets = targets;
         this.jfcProfileName = jfcProfileName;
@@ -46,6 +48,7 @@ public final class RequestJfrRecordingsDetails
         this.jfcV2 = jfcV2;
         this.recordingDurationInMinutes = recordingDurationInMinutes;
         this.recordingSizeInMb = recordingSizeInMb;
+        this.waitingPeriodInMinutes = waitingPeriodInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -150,6 +153,29 @@ public final class RequestJfrRecordingsDetails
             this.__explicitlySet__.add("recordingSizeInMb");
             return this;
         }
+        /**
+         * Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+         * JVM started within the waiting period will also be attached for JFR. The value should be
+         * larger than the agent polling interval setting for the fleet to ensure agent can get the
+         * instructions. If not specified, the agent polling interval for the fleet is used.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("waitingPeriodInMinutes")
+        private Integer waitingPeriodInMinutes;
+
+        /**
+         * Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+         * JVM started within the waiting period will also be attached for JFR. The value should be
+         * larger than the agent polling interval setting for the fleet to ensure agent can get the
+         * instructions. If not specified, the agent polling interval for the fleet is used.
+         *
+         * @param waitingPeriodInMinutes the value to set
+         * @return this builder
+         */
+        public Builder waitingPeriodInMinutes(Integer waitingPeriodInMinutes) {
+            this.waitingPeriodInMinutes = waitingPeriodInMinutes;
+            this.__explicitlySet__.add("waitingPeriodInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -162,7 +188,8 @@ public final class RequestJfrRecordingsDetails
                             this.jfcV1,
                             this.jfcV2,
                             this.recordingDurationInMinutes,
-                            this.recordingSizeInMb);
+                            this.recordingSizeInMb,
+                            this.waitingPeriodInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -188,6 +215,9 @@ public final class RequestJfrRecordingsDetails
             }
             if (model.wasPropertyExplicitlySet("recordingSizeInMb")) {
                 this.recordingSizeInMb(model.getRecordingSizeInMb());
+            }
+            if (model.wasPropertyExplicitlySet("waitingPeriodInMinutes")) {
+                this.waitingPeriodInMinutes(model.getWaitingPeriodInMinutes());
             }
             return this;
         }
@@ -290,6 +320,27 @@ public final class RequestJfrRecordingsDetails
         return recordingSizeInMb;
     }
 
+    /**
+     * Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM
+     * started within the waiting period will also be attached for JFR. The value should be larger
+     * than the agent polling interval setting for the fleet to ensure agent can get the
+     * instructions. If not specified, the agent polling interval for the fleet is used.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("waitingPeriodInMinutes")
+    private final Integer waitingPeriodInMinutes;
+
+    /**
+     * Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM
+     * started within the waiting period will also be attached for JFR. The value should be larger
+     * than the agent polling interval setting for the fleet to ensure agent can get the
+     * instructions. If not specified, the agent polling interval for the fleet is used.
+     *
+     * @return the value
+     */
+    public Integer getWaitingPeriodInMinutes() {
+        return waitingPeriodInMinutes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -312,6 +363,7 @@ public final class RequestJfrRecordingsDetails
         sb.append(", recordingDurationInMinutes=")
                 .append(String.valueOf(this.recordingDurationInMinutes));
         sb.append(", recordingSizeInMb=").append(String.valueOf(this.recordingSizeInMb));
+        sb.append(", waitingPeriodInMinutes=").append(String.valueOf(this.waitingPeriodInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -333,6 +385,8 @@ public final class RequestJfrRecordingsDetails
                 && java.util.Objects.equals(
                         this.recordingDurationInMinutes, other.recordingDurationInMinutes)
                 && java.util.Objects.equals(this.recordingSizeInMb, other.recordingSizeInMb)
+                && java.util.Objects.equals(
+                        this.waitingPeriodInMinutes, other.waitingPeriodInMinutes)
                 && super.equals(other);
     }
 
@@ -354,6 +408,11 @@ public final class RequestJfrRecordingsDetails
         result =
                 (result * PRIME)
                         + (this.recordingSizeInMb == null ? 43 : this.recordingSizeInMb.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.waitingPeriodInMinutes == null
+                                ? 43
+                                : this.waitingPeriodInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

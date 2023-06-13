@@ -53,6 +53,9 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateOpsiConfiguration("CREATE_OPSI_CONFIGURATION"),
     MoveOpsiConfiguration("MOVE_OPSI_CONFIGURATION"),
     DeleteOpsiConfiguration("DELETE_OPSI_CONFIGURATION"),
+    EnableAdbAdvancedFeatures("ENABLE_ADB_ADVANCED_FEATURES"),
+    DisableAdbAdvancedFeatures("DISABLE_ADB_ADVANCED_FEATURES"),
+    UpdateAdbAdvancedFeatures("UPDATE_ADB_ADVANCED_FEATURES"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

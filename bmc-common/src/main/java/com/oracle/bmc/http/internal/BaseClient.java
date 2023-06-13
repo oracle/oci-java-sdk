@@ -128,6 +128,7 @@ abstract class BaseClient implements AutoCloseable {
             RegionProvider provider = (RegionProvider) this.authenticationDetailsProvider;
 
             if (provider.getRegion() != null) {
+                region = provider.getRegion();
                 this.setRegion(provider.getRegion());
                 if (endpoint != null) {
                     logger.info(
@@ -142,9 +143,10 @@ abstract class BaseClient implements AutoCloseable {
             setEndpoint(endpoint);
         }
         if (builder instanceof RegionalClientBuilder) {
-            region = InternalBuilderAccess.getRegion((RegionalClientBuilder) builder);
-            if (region != null) {
-                setRegion(region);
+            Region regionFromBuilder =
+                    InternalBuilderAccess.getRegion((RegionalClientBuilder) builder);
+            if (regionFromBuilder != null) {
+                setRegion(regionFromBuilder);
             }
         }
     }

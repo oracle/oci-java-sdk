@@ -177,6 +177,37 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public com.oracle.bmc.ocvp.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
+    /**
+     * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     */
+    private Boolean isBillingDonorsOnly;
+
+    /**
+     * If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
+     */
+    public Boolean getIsBillingDonorsOnly() {
+        return isBillingDonorsOnly;
+    }
+    /** If this flag/param is set to True, we return only active hosts. */
+    private Boolean isSwapBillingOnly;
+
+    /** If this flag/param is set to True, we return only active hosts. */
+    public Boolean getIsSwapBillingOnly() {
+        return isSwapBillingOnly;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment as optional parameter.
+     */
+    private String compartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment as optional parameter.
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -357,6 +388,56 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * If this flag/param is set to True, we return only deleted hosts with LeftOver
+         * billingCycle.
+         */
+        private Boolean isBillingDonorsOnly = null;
+
+        /**
+         * If this flag/param is set to True, we return only deleted hosts with LeftOver
+         * billingCycle.
+         *
+         * @param isBillingDonorsOnly the value to set
+         * @return this builder instance
+         */
+        public Builder isBillingDonorsOnly(Boolean isBillingDonorsOnly) {
+            this.isBillingDonorsOnly = isBillingDonorsOnly;
+            return this;
+        }
+
+        /** If this flag/param is set to True, we return only active hosts. */
+        private Boolean isSwapBillingOnly = null;
+
+        /**
+         * If this flag/param is set to True, we return only active hosts.
+         *
+         * @param isSwapBillingOnly the value to set
+         * @return this builder instance
+         */
+        public Builder isSwapBillingOnly(Boolean isSwapBillingOnly) {
+            this.isSwapBillingOnly = isSwapBillingOnly;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment as optional parameter.
+         */
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment as optional parameter.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -395,6 +476,9 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
+            isBillingDonorsOnly(o.getIsBillingDonorsOnly());
+            isSwapBillingOnly(o.getIsSwapBillingOnly());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -438,9 +522,13 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
+            request.isBillingDonorsOnly = isBillingDonorsOnly;
+            request.isSwapBillingOnly = isSwapBillingOnly;
+            request.compartmentId = compartmentId;
             return request;
             // new ListEsxiHostsRequest(sddcId, computeInstanceId, displayName, limit, page,
-            // sortOrder, sortBy, opcRequestId, lifecycleState);
+            // sortOrder, sortBy, opcRequestId, lifecycleState, isBillingDonorsOnly,
+            // isSwapBillingOnly, compartmentId);
         }
     }
 
@@ -459,7 +547,10 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .lifecycleState(lifecycleState);
+                .lifecycleState(lifecycleState)
+                .isBillingDonorsOnly(isBillingDonorsOnly)
+                .isSwapBillingOnly(isSwapBillingOnly)
+                .compartmentId(compartmentId);
     }
 
     /**
@@ -485,6 +576,9 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",isBillingDonorsOnly=").append(String.valueOf(this.isBillingDonorsOnly));
+        sb.append(",isSwapBillingOnly=").append(String.valueOf(this.isSwapBillingOnly));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -508,7 +602,10 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isBillingDonorsOnly, other.isBillingDonorsOnly)
+                && java.util.Objects.equals(this.isSwapBillingOnly, other.isSwapBillingOnly)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
     }
 
     @Override
@@ -528,6 +625,17 @@ public class ListEsxiHostsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBillingDonorsOnly == null
+                                ? 43
+                                : this.isBillingDonorsOnly.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSwapBillingOnly == null ? 43 : this.isSwapBillingOnly.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         return result;
     }
 }

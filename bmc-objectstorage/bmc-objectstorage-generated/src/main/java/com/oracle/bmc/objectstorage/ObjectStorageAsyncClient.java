@@ -34,6 +34,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                     .serviceName("OBJECTSTORAGE")
                     .serviceEndpointPrefix("objectstorage")
                     .serviceEndpointTemplate("https://objectstorage.{region}.{secondLevelDomain}")
+                    .addServiceEndpointTemplateForRealm(
+                            "oc1",
+                            "https://{namespaceName+Dot}objectstorage.{region}.oci.customer-oci.com")
+                    .endpointServiceName("objectstorage")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -138,6 +142,13 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
         Objects.requireNonNull(request.getUploadId(), "uploadId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        requiredParametersMap.put("uploadId", request.getUploadId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, AbortMultipartUploadResponse::builder)
                 .logger(LOG, "abortMultipartUpload")
                 .serviceDetails(
@@ -172,6 +183,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                     handler) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
@@ -211,6 +226,13 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(
                 request.getCommitMultipartUploadDetails(),
                 "commitMultipartUploadDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        requiredParametersMap.put("uploadId", request.getUploadId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CommitMultipartUploadResponse::builder)
                 .logger(LOG, "commitMultipartUpload")
@@ -262,6 +284,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
         Objects.requireNonNull(request.getCopyObjectDetails(), "copyObjectDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, CopyObjectResponse::builder)
                 .logger(LOG, "copyObject")
                 .serviceDetails(
@@ -309,6 +336,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Objects.requireNonNull(request.getCreateBucketDetails(), "createBucketDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, CreateBucketResponse::builder)
                 .logger(LOG, "createBucket")
                 .serviceDetails(
@@ -352,6 +383,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(
                 request.getCreateMultipartUploadDetails(),
                 "createMultipartUploadDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateMultipartUploadResponse::builder)
                 .logger(LOG, "createMultipartUpload")
@@ -405,6 +441,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 request.getCreatePreauthenticatedRequestDetails(),
                 "createPreauthenticatedRequestDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, CreatePreauthenticatedRequestResponse::builder)
                 .logger(LOG, "createPreauthenticatedRequest")
                 .serviceDetails(
@@ -448,6 +489,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 request.getCreateReplicationPolicyDetails(),
                 "createReplicationPolicyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, CreateReplicationPolicyResponse::builder)
                 .logger(LOG, "createReplicationPolicy")
                 .serviceDetails(
@@ -489,6 +535,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(
                 request.getCreateRetentionRuleDetails(), "createRetentionRuleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, CreateRetentionRuleResponse::builder)
                 .logger(LOG, "createRetentionRule")
                 .serviceDetails(
@@ -528,6 +579,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, DeleteBucketResponse::builder)
                 .logger(LOG, "deleteBucket")
                 .serviceDetails(
@@ -562,6 +618,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, DeleteObjectResponse::builder)
                 .logger(LOG, "deleteObject")
@@ -607,6 +669,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, DeleteObjectLifecyclePolicyResponse::builder)
                 .logger(LOG, "deleteObjectLifecyclePolicy")
                 .serviceDetails(
@@ -647,6 +714,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getParId(), "parId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("parId", request.getParId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, DeletePreauthenticatedRequestResponse::builder)
                 .logger(LOG, "deletePreauthenticatedRequest")
                 .serviceDetails(
@@ -686,6 +759,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, DeleteReplicationPolicyResponse::builder)
                 .logger(LOG, "deleteReplicationPolicy")
                 .serviceDetails(
@@ -724,6 +803,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getRetentionRuleId(), "retentionRuleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, DeleteRetentionRuleResponse::builder)
                 .logger(LOG, "deleteRetentionRule")
                 .serviceDetails(
@@ -759,6 +844,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetBucketResponse::builder)
                 .logger(LOG, "getBucket")
@@ -798,6 +888,9 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
             final com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, GetNamespaceResponse::builder)
                 .logger(LOG, "getNamespace")
                 .serviceDetails(
@@ -823,6 +916,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                     handler) {
 
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetNamespaceMetadataResponse::builder)
                 .logger(LOG, "getNamespaceMetadata")
@@ -859,6 +956,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetObjectResponse::builder)
                 .logger(LOG, "getObject")
@@ -946,6 +1049,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, GetObjectLifecyclePolicyResponse::builder)
                 .logger(LOG, "getObjectLifecyclePolicy")
                 .serviceDetails(
@@ -989,6 +1097,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getParId(), "parId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("parId", request.getParId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, GetPreauthenticatedRequestResponse::builder)
                 .logger(LOG, "getPreauthenticatedRequest")
                 .serviceDetails(
@@ -1029,6 +1143,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("replicationId", request.getReplicationId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetReplicationPolicyResponse::builder)
                 .logger(LOG, "getReplicationPolicy")
@@ -1071,6 +1191,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getRetentionRuleId(), "retentionRuleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, GetRetentionRuleResponse::builder)
                 .logger(LOG, "getRetentionRule")
                 .serviceDetails(
@@ -1111,6 +1237,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
                 .serviceDetails(
@@ -1145,6 +1275,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, HeadBucketResponse::builder)
                 .logger(LOG, "headBucket")
@@ -1182,6 +1317,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, HeadObjectResponse::builder)
                 .logger(LOG, "headObject")
@@ -1253,6 +1394,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListBucketsResponse::builder)
                 .logger(LOG, "listBuckets")
                 .serviceDetails(
@@ -1300,6 +1446,13 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
         Objects.requireNonNull(request.getUploadId(), "uploadId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        requiredParametersMap.put("uploadId", request.getUploadId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListMultipartUploadPartsResponse::builder)
                 .logger(LOG, "listMultipartUploadParts")
                 .serviceDetails(
@@ -1344,6 +1497,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListMultipartUploadsResponse::builder)
                 .logger(LOG, "listMultipartUploads")
                 .serviceDetails(
@@ -1385,6 +1543,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListObjectVersionsResponse::builder)
                 .logger(LOG, "listObjectVersions")
@@ -1433,6 +1596,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListObjectsResponse::builder)
                 .logger(LOG, "listObjects")
                 .serviceDetails(
@@ -1479,6 +1647,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListPreauthenticatedRequestsResponse::builder)
                 .logger(LOG, "listPreauthenticatedRequests")
                 .serviceDetails(
@@ -1523,6 +1696,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListReplicationPoliciesResponse::builder)
                 .logger(LOG, "listReplicationPolicies")
                 .serviceDetails(
@@ -1564,6 +1742,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListReplicationSourcesResponse::builder)
                 .logger(LOG, "listReplicationSources")
@@ -1607,6 +1790,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListRetentionRulesResponse::builder)
                 .logger(LOG, "listRetentionRules")
                 .serviceDetails(
@@ -1644,6 +1832,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                     handler) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
@@ -1683,6 +1875,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
                 .serviceDetails(
@@ -1719,6 +1915,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
@@ -1758,6 +1958,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, MakeBucketWritableResponse::builder)
                 .logger(LOG, "makeBucketWritable")
@@ -1799,6 +2004,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
         Objects.requireNonNull(request.getPutObjectBody(), "putObjectBody is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, PutObjectResponse::builder)
                 .logger(LOG, "putObject")
@@ -1862,6 +2073,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 request.getPutObjectLifecyclePolicyDetails(),
                 "putObjectLifecyclePolicyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, PutObjectLifecyclePolicyResponse::builder)
                 .logger(LOG, "putObjectLifecyclePolicy")
                 .serviceDetails(
@@ -1903,6 +2119,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ReencryptBucketResponse::builder)
                 .logger(LOG, "reencryptBucket")
@@ -1946,6 +2167,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(
                 request.getReencryptObjectDetails(), "reencryptObjectDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, ReencryptObjectResponse::builder)
                 .logger(LOG, "reencryptObject")
                 .serviceDetails(
@@ -1984,6 +2211,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
         Objects.requireNonNull(request.getRenameObjectDetails(), "renameObjectDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, RenameObjectResponse::builder)
                 .logger(LOG, "renameObject")
@@ -2027,6 +2259,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(
                 request.getRestoreObjectsDetails(), "restoreObjectsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, RestoreObjectsResponse::builder)
                 .logger(LOG, "restoreObjects")
                 .serviceDetails(
@@ -2062,6 +2299,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
 
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
         Objects.requireNonNull(request.getUpdateBucketDetails(), "updateBucketDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateBucketResponse::builder)
                 .logger(LOG, "updateBucket")
@@ -2103,6 +2345,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 request.getUpdateNamespaceMetadataDetails(),
                 "updateNamespaceMetadataDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
+
         return clientCall(request, UpdateNamespaceMetadataResponse::builder)
                 .logger(LOG, "updateNamespaceMetadata")
                 .serviceDetails(
@@ -2141,6 +2387,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(
                 request.getUpdateObjectStorageTierDetails(),
                 "updateObjectStorageTierDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateObjectStorageTierResponse::builder)
                 .logger(LOG, "updateObjectStorageTier")
@@ -2182,6 +2433,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Validate.notBlank(request.getRetentionRuleId(), "retentionRuleId must not be blank");
         Objects.requireNonNull(
                 request.getUpdateRetentionRuleDetails(), "updateRetentionRuleDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateRetentionRuleResponse::builder)
                 .logger(LOG, "updateRetentionRule")
@@ -2230,6 +2487,14 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
         Objects.requireNonNull(request.getUploadPartNum(), "uploadPartNum is required");
 
         Objects.requireNonNull(request.getUploadPartBody(), "uploadPartBody is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        requiredParametersMap.put("uploadId", request.getUploadId());
+        requiredParametersMap.put("uploadPartNum", request.getUploadPartNum());
+        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UploadPartResponse::builder)
                 .logger(LOG, "uploadPart")
