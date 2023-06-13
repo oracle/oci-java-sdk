@@ -90,12 +90,12 @@ public class SummarizeApplicationUsageRequest
         return jreVersion;
     }
     /**
-     * The file system path of the installation.
+     * The file system path of the Java Runtime installation.
      */
     private String installationPath;
 
     /**
-     * The file system path of the installation.
+     * The file system path of the Java Runtime installation.
      */
     public String getInstallationPath() {
         return installationPath;
@@ -366,12 +366,12 @@ public class SummarizeApplicationUsageRequest
         }
 
         /**
-         * The file system path of the installation.
+         * The file system path of the Java Runtime installation.
          */
         private String installationPath = null;
 
         /**
-         * The file system path of the installation.
+         * The file system path of the Java Runtime installation.
          * @param installationPath the value to set
          * @return this builder instance
          */

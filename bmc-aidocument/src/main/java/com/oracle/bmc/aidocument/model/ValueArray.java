@@ -60,10 +60,17 @@ public final class ValueArray extends FieldValue {
             this.__explicitlySet__.add("wordIndexes");
             return this;
         }
-
+        /**
+         * The array of values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DocumentField> items;
 
+        /**
+         * The array of values.
+         * @param items the value to set
+         * @return this builder
+         **/
         public Builder items(java.util.List<DocumentField> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -130,9 +137,16 @@ public final class ValueArray extends FieldValue {
         this.items = items;
     }
 
+    /**
+     * The array of values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DocumentField> items;
 
+    /**
+     * The array of values.
+     * @return the value
+     **/
     public java.util.List<DocumentField> getItems() {
         return items;
     }

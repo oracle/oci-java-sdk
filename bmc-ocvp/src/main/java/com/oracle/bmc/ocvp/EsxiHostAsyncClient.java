@@ -642,6 +642,51 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SwapBillingResponse> swapBilling(
+            SwapBillingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SwapBillingRequest, SwapBillingResponse>
+                    handler) {
+        LOG.trace("Called async swapBilling");
+        final SwapBillingRequest interceptedRequest =
+                SwapBillingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwapBillingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EsxiHost",
+                        "SwapBilling",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling");
+        final java.util.function.Function<javax.ws.rs.core.Response, SwapBillingResponse>
+                transformer =
+                        SwapBillingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SwapBillingRequest, SwapBillingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SwapBillingRequest, SwapBillingResponse>,
+                        java.util.concurrent.Future<SwapBillingResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SwapBillingRequest, SwapBillingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateEsxiHostResponse> updateEsxiHost(
             UpdateEsxiHostRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -31,6 +31,10 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                     .serviceName("OBJECTSTORAGE")
                     .serviceEndpointPrefix("objectstorage")
                     .serviceEndpointTemplate("https://objectstorage.{region}.{secondLevelDomain}")
+                    .addServiceEndpointTemplateForRealm(
+                            "oc1",
+                            "https://{namespaceName+Dot}objectstorage.{region}.oci.customer-oci.com")
+                    .endpointServiceName("objectstorage")
                     .build();
 
     private static final org.slf4j.Logger LOG =

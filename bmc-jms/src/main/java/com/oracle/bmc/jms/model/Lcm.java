@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Enable lifecycle management and set post action configurations
+ * Enable lifecycle management and set post action configurations.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,13 @@ public final class Lcm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Lcm flag to store enabled or disabled status
+         * Lifecycle management flag to store enabled or disabled status.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Lcm flag to store enabled or disabled status
+         * Lifecycle management flag to store enabled or disabled status.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -90,13 +90,13 @@ public final class Lcm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * Lcm flag to store enabled or disabled status
+     * Lifecycle management flag to store enabled or disabled status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Lcm flag to store enabled or disabled status
+     * Lifecycle management flag to store enabled or disabled status.
      * @return the value
      **/
     public Boolean getIsEnabled() {

@@ -35,8 +35,16 @@ public class UpdateRetentionRuleConverter {
         Validate.notNull(
                 request.getUpdateRetentionRuleDetails(), "updateRetentionRuleDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("retentionRuleId", request.getRetentionRuleId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/")
                         .path("n")
                         .path(

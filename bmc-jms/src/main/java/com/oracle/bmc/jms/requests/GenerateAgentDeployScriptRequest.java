@@ -25,13 +25,13 @@ public class GenerateAgentDeployScriptRequest
         return fleetId;
     }
     /**
-     * Attributes to generate agent deploy script for a Fleet.
+     * Attributes to generate the agent deploy script for a Fleet.
      */
     private com.oracle.bmc.jms.model.GenerateAgentDeployScriptDetails
             generateAgentDeployScriptDetails;
 
     /**
-     * Attributes to generate agent deploy script for a Fleet.
+     * Attributes to generate the agent deploy script for a Fleet.
      */
     public com.oracle.bmc.jms.model.GenerateAgentDeployScriptDetails
             getGenerateAgentDeployScriptDetails() {
@@ -83,13 +83,13 @@ public class GenerateAgentDeployScriptRequest
         }
 
         /**
-         * Attributes to generate agent deploy script for a Fleet.
+         * Attributes to generate the agent deploy script for a Fleet.
          */
         private com.oracle.bmc.jms.model.GenerateAgentDeployScriptDetails
                 generateAgentDeployScriptDetails = null;
 
         /**
-         * Attributes to generate agent deploy script for a Fleet.
+         * Attributes to generate the agent deploy script for a Fleet.
          * @param generateAgentDeployScriptDetails the value to set
          * @return this builder instance
          */

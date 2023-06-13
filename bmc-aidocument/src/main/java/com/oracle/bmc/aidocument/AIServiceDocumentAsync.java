@@ -76,6 +76,69 @@ public interface AIServiceDocumentAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancel the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler);
+
+    /**
+     * Moves a model from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeModelCompartmentResponse> changeModelCompartment(
+            ChangeModelCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
+                    handler);
+
+    /**
+     * Move a project from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeProjectCompartmentResponse> changeProjectCompartment(
+            ChangeProjectCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
+                    handler);
+
+    /**
+     * Create a new model.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateModelResponse> createModel(
+            CreateModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse> handler);
+
+    /**
      * Create a processor job for document analysis.
      *
      *
@@ -93,6 +156,65 @@ public interface AIServiceDocumentAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a new project.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateProjectResponse> createProject(
+            CreateProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
+                    handler);
+
+    /**
+     * Delete a model by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteModelResponse> deleteModel(
+            DeleteModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
+
+    /**
+     * Delete a project by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteProjectResponse> deleteProject(
+            DeleteProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
+                    handler);
+
+    /**
+     * Get a model by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetModelResponse> getModel(
+            GetModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handler);
+
+    /**
      * Get the details of a processor job.
      *
      *
@@ -106,5 +228,144 @@ public interface AIServiceDocumentAsync extends AutoCloseable {
     java.util.concurrent.Future<GetProcessorJobResponse> getProcessorJob(
             GetProcessorJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetProcessorJobRequest, GetProcessorJobResponse>
+                    handler);
+
+    /**
+     * Get a project by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProjectResponse> getProject(
+            GetProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handler);
+
+    /**
+     * Gets the status of the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Returns a list of models in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListModelsResponse> listModels(
+            ListModelsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handler);
+
+    /**
+     * Returns a list of projects.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProjectsResponse> listProjects(
+            ListProjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
+                    handler);
+
+    /**
+     * Returns a (paginated) list of errors for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Return a (paginated) list of logs for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Updates the model metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateModelResponse> updateModel(
+            UpdateModelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
+
+    /**
+     * Update the project metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateProjectResponse> updateProject(
+            UpdateProjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                     handler);
 }

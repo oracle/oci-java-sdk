@@ -36,6 +36,10 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "billingDonorHostId",
+        "swapBillingHostId",
+        "isBillingContinuationInProgress",
+        "isBillingSwappingInProgress",
         "currentSku",
         "nextSku",
         "billingContractEndDate",
@@ -61,6 +65,10 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleStates lifecycleState,
+            String billingDonorHostId,
+            String swapBillingHostId,
+            Boolean isBillingContinuationInProgress,
+            Boolean isBillingSwappingInProgress,
             Sku currentSku,
             Sku nextSku,
             java.util.Date billingContractEndDate,
@@ -85,6 +93,10 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.billingDonorHostId = billingDonorHostId;
+        this.swapBillingHostId = swapBillingHostId;
+        this.isBillingContinuationInProgress = isBillingContinuationInProgress;
+        this.isBillingSwappingInProgress = isBillingSwappingInProgress;
         this.currentSku = currentSku;
         this.nextSku = nextSku;
         this.billingContractEndDate = billingContractEndDate;
@@ -262,6 +274,78 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
+        private String billingDonorHostId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         *
+         * @param billingDonorHostId the value to set
+         * @return this builder
+         **/
+        public Builder billingDonorHostId(String billingDonorHostId) {
+            this.billingDonorHostId = billingDonorHostId;
+            this.__explicitlySet__.add("billingDonorHostId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("swapBillingHostId")
+        private String swapBillingHostId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+         *
+         * @param swapBillingHostId the value to set
+         * @return this builder
+         **/
+        public Builder swapBillingHostId(String swapBillingHostId) {
+            this.swapBillingHostId = swapBillingHostId;
+            this.__explicitlySet__.add("swapBillingHostId");
+            return this;
+        }
+        /**
+         * Indicates whether this host is in the progress of billing continuation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBillingContinuationInProgress")
+        private Boolean isBillingContinuationInProgress;
+
+        /**
+         * Indicates whether this host is in the progress of billing continuation.
+         *
+         * @param isBillingContinuationInProgress the value to set
+         * @return this builder
+         **/
+        public Builder isBillingContinuationInProgress(Boolean isBillingContinuationInProgress) {
+            this.isBillingContinuationInProgress = isBillingContinuationInProgress;
+            this.__explicitlySet__.add("isBillingContinuationInProgress");
+            return this;
+        }
+        /**
+         * Indicates whether this host is in the progress of swapping billing.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBillingSwappingInProgress")
+        private Boolean isBillingSwappingInProgress;
+
+        /**
+         * Indicates whether this host is in the progress of swapping billing.
+         *
+         * @param isBillingSwappingInProgress the value to set
+         * @return this builder
+         **/
+        public Builder isBillingSwappingInProgress(Boolean isBillingSwappingInProgress) {
+            this.isBillingSwappingInProgress = isBillingSwappingInProgress;
+            this.__explicitlySet__.add("isBillingSwappingInProgress");
             return this;
         }
         /**
@@ -584,6 +668,10 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.billingDonorHostId,
+                            this.swapBillingHostId,
+                            this.isBillingContinuationInProgress,
+                            this.isBillingSwappingInProgress,
                             this.currentSku,
                             this.nextSku,
                             this.billingContractEndDate,
@@ -630,6 +718,18 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
+                this.billingDonorHostId(model.getBillingDonorHostId());
+            }
+            if (model.wasPropertyExplicitlySet("swapBillingHostId")) {
+                this.swapBillingHostId(model.getSwapBillingHostId());
+            }
+            if (model.wasPropertyExplicitlySet("isBillingContinuationInProgress")) {
+                this.isBillingContinuationInProgress(model.getIsBillingContinuationInProgress());
+            }
+            if (model.wasPropertyExplicitlySet("isBillingSwappingInProgress")) {
+                this.isBillingSwappingInProgress(model.getIsBillingSwappingInProgress());
             }
             if (model.wasPropertyExplicitlySet("currentSku")) {
                 this.currentSku(model.getCurrentSku());
@@ -833,6 +933,70 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
+    private final String billingDonorHostId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     *
+     * @return the value
+     **/
+    public String getBillingDonorHostId() {
+        return billingDonorHostId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("swapBillingHostId")
+    private final String swapBillingHostId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     *
+     * @return the value
+     **/
+    public String getSwapBillingHostId() {
+        return swapBillingHostId;
+    }
+
+    /**
+     * Indicates whether this host is in the progress of billing continuation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBillingContinuationInProgress")
+    private final Boolean isBillingContinuationInProgress;
+
+    /**
+     * Indicates whether this host is in the progress of billing continuation.
+     *
+     * @return the value
+     **/
+    public Boolean getIsBillingContinuationInProgress() {
+        return isBillingContinuationInProgress;
+    }
+
+    /**
+     * Indicates whether this host is in the progress of swapping billing.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBillingSwappingInProgress")
+    private final Boolean isBillingSwappingInProgress;
+
+    /**
+     * Indicates whether this host is in the progress of swapping billing.
+     *
+     * @return the value
+     **/
+    public Boolean getIsBillingSwappingInProgress() {
+        return isBillingSwappingInProgress;
     }
 
     /**
@@ -1131,6 +1295,12 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
+        sb.append(", swapBillingHostId=").append(String.valueOf(this.swapBillingHostId));
+        sb.append(", isBillingContinuationInProgress=")
+                .append(String.valueOf(this.isBillingContinuationInProgress));
+        sb.append(", isBillingSwappingInProgress=")
+                .append(String.valueOf(this.isBillingSwappingInProgress));
         sb.append(", currentSku=").append(String.valueOf(this.currentSku));
         sb.append(", nextSku=").append(String.valueOf(this.nextSku));
         sb.append(", billingContractEndDate=").append(String.valueOf(this.billingContractEndDate));
@@ -1170,6 +1340,12 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
+                && java.util.Objects.equals(this.swapBillingHostId, other.swapBillingHostId)
+                && java.util.Objects.equals(
+                        this.isBillingContinuationInProgress, other.isBillingContinuationInProgress)
+                && java.util.Objects.equals(
+                        this.isBillingSwappingInProgress, other.isBillingSwappingInProgress)
                 && java.util.Objects.equals(this.currentSku, other.currentSku)
                 && java.util.Objects.equals(this.nextSku, other.nextSku)
                 && java.util.Objects.equals(
@@ -1209,6 +1385,24 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billingDonorHostId == null
+                                ? 43
+                                : this.billingDonorHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.swapBillingHostId == null ? 43 : this.swapBillingHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBillingContinuationInProgress == null
+                                ? 43
+                                : this.isBillingContinuationInProgress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBillingSwappingInProgress == null
+                                ? 43
+                                : this.isBillingSwappingInProgress.hashCode());
         result = (result * PRIME) + (this.currentSku == null ? 43 : this.currentSku.hashCode());
         result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
         result =

@@ -104,14 +104,14 @@ public final class JavaServerInstanceUsage
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related Fleet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related Fleet.
          *
          * @param fleetId the value to set
          * @return this builder
@@ -536,14 +536,14 @@ public final class JavaServerInstanceUsage
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related Fleet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related Fleet.
      *
      * @return the value
      **/

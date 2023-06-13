@@ -6,7 +6,7 @@ package com.oracle.bmc.jms.model;
 
 /**
  * Details of the request to start a JFR analysis.
- * When the targets aren't specified, then all managed instances currently in the fleet are selected.
+ * When the targets aren't specified, then all managed instances currently in the Fleet are selected.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -24,12 +24,19 @@ package com.oracle.bmc.jms.model;
 public final class RequestCryptoAnalysesDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targets", "recordingDurationInMinutes"})
+    @java.beans.ConstructorProperties({
+        "targets",
+        "recordingDurationInMinutes",
+        "waitingPeriodInMinutes"
+    })
     public RequestCryptoAnalysesDetails(
-            java.util.List<JfrAttachmentTarget> targets, Integer recordingDurationInMinutes) {
+            java.util.List<JfrAttachmentTarget> targets,
+            Integer recordingDurationInMinutes,
+            Integer waitingPeriodInMinutes) {
         super();
         this.targets = targets;
         this.recordingDurationInMinutes = recordingDurationInMinutes;
+        this.waitingPeriodInMinutes = waitingPeriodInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -66,13 +73,40 @@ public final class RequestCryptoAnalysesDetails
             this.__explicitlySet__.add("recordingDurationInMinutes");
             return this;
         }
+        /**
+         * Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+         * JVM started within the waiting period will also be attached for JFR. The value should be
+         * larger than the agent polling interval setting for the fleet to ensure agent can get the
+         * instructions. If not specified, the agent polling interval for the fleet is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("waitingPeriodInMinutes")
+        private Integer waitingPeriodInMinutes;
+
+        /**
+         * Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+         * JVM started within the waiting period will also be attached for JFR. The value should be
+         * larger than the agent polling interval setting for the fleet to ensure agent can get the
+         * instructions. If not specified, the agent polling interval for the fleet is used.
+         *
+         * @param waitingPeriodInMinutes the value to set
+         * @return this builder
+         **/
+        public Builder waitingPeriodInMinutes(Integer waitingPeriodInMinutes) {
+            this.waitingPeriodInMinutes = waitingPeriodInMinutes;
+            this.__explicitlySet__.add("waitingPeriodInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RequestCryptoAnalysesDetails build() {
             RequestCryptoAnalysesDetails model =
-                    new RequestCryptoAnalysesDetails(this.targets, this.recordingDurationInMinutes);
+                    new RequestCryptoAnalysesDetails(
+                            this.targets,
+                            this.recordingDurationInMinutes,
+                            this.waitingPeriodInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -86,6 +120,9 @@ public final class RequestCryptoAnalysesDetails
             }
             if (model.wasPropertyExplicitlySet("recordingDurationInMinutes")) {
                 this.recordingDurationInMinutes(model.getRecordingDurationInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("waitingPeriodInMinutes")) {
+                this.waitingPeriodInMinutes(model.getWaitingPeriodInMinutes());
             }
             return this;
         }
@@ -130,6 +167,28 @@ public final class RequestCryptoAnalysesDetails
         return recordingDurationInMinutes;
     }
 
+    /**
+     * Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+     * JVM started within the waiting period will also be attached for JFR. The value should be
+     * larger than the agent polling interval setting for the fleet to ensure agent can get the
+     * instructions. If not specified, the agent polling interval for the fleet is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("waitingPeriodInMinutes")
+    private final Integer waitingPeriodInMinutes;
+
+    /**
+     * Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+     * JVM started within the waiting period will also be attached for JFR. The value should be
+     * larger than the agent polling interval setting for the fleet to ensure agent can get the
+     * instructions. If not specified, the agent polling interval for the fleet is used.
+     *
+     * @return the value
+     **/
+    public Integer getWaitingPeriodInMinutes() {
+        return waitingPeriodInMinutes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -147,6 +206,7 @@ public final class RequestCryptoAnalysesDetails
         sb.append("targets=").append(String.valueOf(this.targets));
         sb.append(", recordingDurationInMinutes=")
                 .append(String.valueOf(this.recordingDurationInMinutes));
+        sb.append(", waitingPeriodInMinutes=").append(String.valueOf(this.waitingPeriodInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -164,6 +224,8 @@ public final class RequestCryptoAnalysesDetails
         return java.util.Objects.equals(this.targets, other.targets)
                 && java.util.Objects.equals(
                         this.recordingDurationInMinutes, other.recordingDurationInMinutes)
+                && java.util.Objects.equals(
+                        this.waitingPeriodInMinutes, other.waitingPeriodInMinutes)
                 && super.equals(other);
     }
 
@@ -177,6 +239,11 @@ public final class RequestCryptoAnalysesDetails
                         + (this.recordingDurationInMinutes == null
                                 ? 43
                                 : this.recordingDurationInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.waitingPeriodInMinutes == null
+                                ? 43
+                                : this.waitingPeriodInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

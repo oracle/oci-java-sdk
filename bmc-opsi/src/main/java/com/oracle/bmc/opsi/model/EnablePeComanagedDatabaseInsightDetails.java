@@ -84,6 +84,15 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+        private PeComanagedDatabaseConnectionDetails connectionDetails;
+
+        public Builder connectionDetails(PeComanagedDatabaseConnectionDetails connectionDetails) {
+            this.connectionDetails = connectionDetails;
+            this.__explicitlySet__.add("connectionDetails");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
@@ -156,6 +165,7 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
                             this.opsiPrivateEndpointId,
                             this.serviceName,
                             this.credentialDetails,
+                            this.connectionDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -178,6 +188,9 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
             }
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("connectionDetails")) {
+                this.connectionDetails(model.getConnectionDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -209,6 +222,7 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
             String opsiPrivateEndpointId,
             String serviceName,
             CredentialDetails credentialDetails,
+            PeComanagedDatabaseConnectionDetails connectionDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -217,6 +231,7 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
         this.serviceName = serviceName;
         this.credentialDetails = credentialDetails;
+        this.connectionDetails = connectionDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -269,6 +284,13 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
 
     public CredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+    private final PeComanagedDatabaseConnectionDetails connectionDetails;
+
+    public PeComanagedDatabaseConnectionDetails getConnectionDetails() {
+        return connectionDetails;
     }
 
     /**
@@ -343,6 +365,7 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", connectionDetails=").append(String.valueOf(this.connectionDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -364,6 +387,7 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.connectionDetails, other.connectionDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -386,6 +410,9 @@ public final class EnablePeComanagedDatabaseInsightDetails extends EnableDatabas
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionDetails == null ? 43 : this.connectionDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

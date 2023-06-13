@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The LCM work request for a JVM installation site.
+ * Work item to complete a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -23,6 +23,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
         "id",
         "workRequestId",
         "installationSite",
+        "details",
         "status",
         "retryCount",
         "timeLastUpdated"
@@ -31,6 +32,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
             String id,
             String workRequestId,
             InstallationSite installationSite,
+            WorkItemDetails details,
             WorkItemStatus status,
             Integer retryCount,
             java.util.Date timeLastUpdated) {
@@ -38,6 +40,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
         this.id = id;
         this.workRequestId = workRequestId;
         this.installationSite = installationSite;
+        this.details = details;
         this.status = status;
         this.retryCount = retryCount;
         this.timeLastUpdated = timeLastUpdated;
@@ -84,6 +87,15 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder installationSite(InstallationSite installationSite) {
             this.installationSite = installationSite;
             this.__explicitlySet__.add("installationSite");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("details")
+        private WorkItemDetails details;
+
+        public Builder details(WorkItemDetails details) {
+            this.details = details;
+            this.__explicitlySet__.add("details");
             return this;
         }
         /**
@@ -146,6 +158,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
                             this.id,
                             this.workRequestId,
                             this.installationSite,
+                            this.details,
                             this.status,
                             this.retryCount,
                             this.timeLastUpdated);
@@ -165,6 +178,9 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("installationSite")) {
                 this.installationSite(model.getInstallationSite());
+            }
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
@@ -223,6 +239,13 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
 
     public InstallationSite getInstallationSite() {
         return installationSite;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("details")
+    private final WorkItemDetails details;
+
+    public WorkItemDetails getDetails() {
+        return details;
     }
 
     /**
@@ -286,6 +309,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(", installationSite=").append(String.valueOf(this.installationSite));
+        sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", retryCount=").append(String.valueOf(this.retryCount));
         sb.append(", timeLastUpdated=").append(String.valueOf(this.timeLastUpdated));
@@ -306,6 +330,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && java.util.Objects.equals(this.installationSite, other.installationSite)
+                && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.retryCount, other.retryCount)
                 && java.util.Objects.equals(this.timeLastUpdated, other.timeLastUpdated)
@@ -323,6 +348,7 @@ public final class WorkItemSummary extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.installationSite == null ? 43 : this.installationSite.hashCode());
+        result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.retryCount == null ? 43 : this.retryCount.hashCode());
         result =

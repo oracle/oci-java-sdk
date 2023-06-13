@@ -62,9 +62,9 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         }
         /**
          * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
          * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
@@ -72,9 +72,9 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
 
         /**
          * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
          * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
          *
          * @param platformType the value to set
          * @return this builder
@@ -157,9 +157,9 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
 
     /**
      * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
      * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      *
      **/
     public enum PlatformType {
@@ -167,6 +167,8 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
         Zlinux("ZLINUX"),
+        Windows("WINDOWS"),
+        Aix("AIX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -211,9 +213,9 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
     };
     /**
      * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
      * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
@@ -221,9 +223,9 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
 
     /**
      * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
      * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      *
      * @return the value
      **/

@@ -1,0 +1,250 @@
+/**
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.aidocument.model;
+
+/**
+ * Confidence Entry.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = DocumentClassificationConfidenceEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DocumentClassificationConfidenceEntry
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({"threshold", "precision", "recall", "f1Score"})
+    public DocumentClassificationConfidenceEntry(
+            Float threshold, Float precision, Float recall, Float f1Score) {
+        super();
+        this.threshold = threshold;
+        this.precision = precision;
+        this.recall = recall;
+        this.f1Score = f1Score;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /**
+         * Threshold used to calculate precision and recall.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("threshold")
+        private Float threshold;
+
+        /**
+         * Threshold used to calculate precision and recall.
+         * @param threshold the value to set
+         * @return this builder
+         **/
+        public Builder threshold(Float threshold) {
+            this.threshold = threshold;
+            this.__explicitlySet__.add("threshold");
+            return this;
+        }
+        /**
+         * Precision under the threshold
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("precision")
+        private Float precision;
+
+        /**
+         * Precision under the threshold
+         * @param precision the value to set
+         * @return this builder
+         **/
+        public Builder precision(Float precision) {
+            this.precision = precision;
+            this.__explicitlySet__.add("precision");
+            return this;
+        }
+        /**
+         * Recall under the threshold
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("recall")
+        private Float recall;
+
+        /**
+         * Recall under the threshold
+         * @param recall the value to set
+         * @return this builder
+         **/
+        public Builder recall(Float recall) {
+            this.recall = recall;
+            this.__explicitlySet__.add("recall");
+            return this;
+        }
+        /**
+         * f1Score under the threshold
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("f1Score")
+        private Float f1Score;
+
+        /**
+         * f1Score under the threshold
+         * @param f1Score the value to set
+         * @return this builder
+         **/
+        public Builder f1Score(Float f1Score) {
+            this.f1Score = f1Score;
+            this.__explicitlySet__.add("f1Score");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public DocumentClassificationConfidenceEntry build() {
+            DocumentClassificationConfidenceEntry model =
+                    new DocumentClassificationConfidenceEntry(
+                            this.threshold, this.precision, this.recall, this.f1Score);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(DocumentClassificationConfidenceEntry model) {
+            if (model.wasPropertyExplicitlySet("threshold")) {
+                this.threshold(model.getThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("precision")) {
+                this.precision(model.getPrecision());
+            }
+            if (model.wasPropertyExplicitlySet("recall")) {
+                this.recall(model.getRecall());
+            }
+            if (model.wasPropertyExplicitlySet("f1Score")) {
+                this.f1Score(model.getF1Score());
+            }
+            return this;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /**
+     * Threshold used to calculate precision and recall.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("threshold")
+    private final Float threshold;
+
+    /**
+     * Threshold used to calculate precision and recall.
+     * @return the value
+     **/
+    public Float getThreshold() {
+        return threshold;
+    }
+
+    /**
+     * Precision under the threshold
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("precision")
+    private final Float precision;
+
+    /**
+     * Precision under the threshold
+     * @return the value
+     **/
+    public Float getPrecision() {
+        return precision;
+    }
+
+    /**
+     * Recall under the threshold
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recall")
+    private final Float recall;
+
+    /**
+     * Recall under the threshold
+     * @return the value
+     **/
+    public Float getRecall() {
+        return recall;
+    }
+
+    /**
+     * f1Score under the threshold
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("f1Score")
+    private final Float f1Score;
+
+    /**
+     * f1Score under the threshold
+     * @return the value
+     **/
+    public Float getF1Score() {
+        return f1Score;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("DocumentClassificationConfidenceEntry(");
+        sb.append("super=").append(super.toString());
+        sb.append("threshold=").append(String.valueOf(this.threshold));
+        sb.append(", precision=").append(String.valueOf(this.precision));
+        sb.append(", recall=").append(String.valueOf(this.recall));
+        sb.append(", f1Score=").append(String.valueOf(this.f1Score));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof DocumentClassificationConfidenceEntry)) {
+            return false;
+        }
+
+        DocumentClassificationConfidenceEntry other = (DocumentClassificationConfidenceEntry) o;
+        return java.util.Objects.equals(this.threshold, other.threshold)
+                && java.util.Objects.equals(this.precision, other.precision)
+                && java.util.Objects.equals(this.recall, other.recall)
+                && java.util.Objects.equals(this.f1Score, other.f1Score)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
+        result = (result * PRIME) + (this.precision == null ? 43 : this.precision.hashCode());
+        result = (result * PRIME) + (this.recall == null ? 43 : this.recall.hashCode());
+        result = (result * PRIME) + (this.f1Score == null ? 43 : this.f1Score.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

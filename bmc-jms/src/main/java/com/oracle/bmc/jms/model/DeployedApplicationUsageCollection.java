@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Results of a deployed application usage search.  Contains deployed application usage items.
+ * Results of a deployed application usage search. Contains deployed application usage items.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

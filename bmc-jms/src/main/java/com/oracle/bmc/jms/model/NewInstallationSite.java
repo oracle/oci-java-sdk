@@ -24,16 +24,25 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
     @java.beans.ConstructorProperties({
         "managedInstanceId",
         "releaseVersion",
-        "artifactContentType"
+        "artifactContentType",
+        "installationPath",
+        "headlessMode",
+        "forceInstall"
     })
     public NewInstallationSite(
             String managedInstanceId,
             String releaseVersion,
-            ArtifactContentType artifactContentType) {
+            ArtifactContentType artifactContentType,
+            String installationPath,
+            Boolean headlessMode,
+            Boolean forceInstall) {
         super();
         this.managedInstanceId = managedInstanceId;
         this.releaseVersion = releaseVersion;
         this.artifactContentType = artifactContentType;
+        this.installationPath = installationPath;
+        this.headlessMode = headlessMode;
+        this.forceInstall = forceInstall;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -88,6 +97,54 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("artifactContentType");
             return this;
         }
+        /**
+         * Custom path to install new Java installation site.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("installationPath")
+        private String installationPath;
+
+        /**
+         * Custom path to install new Java installation site.
+         * @param installationPath the value to set
+         * @return this builder
+         **/
+        public Builder installationPath(String installationPath) {
+            this.installationPath = installationPath;
+            this.__explicitlySet__.add("installationPath");
+            return this;
+        }
+        /**
+         * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("headlessMode")
+        private Boolean headlessMode;
+
+        /**
+         * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+         * @param headlessMode the value to set
+         * @return this builder
+         **/
+        public Builder headlessMode(Boolean headlessMode) {
+            this.headlessMode = headlessMode;
+            this.__explicitlySet__.add("headlessMode");
+            return this;
+        }
+        /**
+         * Forces the installation request even if a more recent release is already present in the host.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("forceInstall")
+        private Boolean forceInstall;
+
+        /**
+         * Forces the installation request even if a more recent release is already present in the host.
+         * @param forceInstall the value to set
+         * @return this builder
+         **/
+        public Builder forceInstall(Boolean forceInstall) {
+            this.forceInstall = forceInstall;
+            this.__explicitlySet__.add("forceInstall");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -95,7 +152,12 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
         public NewInstallationSite build() {
             NewInstallationSite model =
                     new NewInstallationSite(
-                            this.managedInstanceId, this.releaseVersion, this.artifactContentType);
+                            this.managedInstanceId,
+                            this.releaseVersion,
+                            this.artifactContentType,
+                            this.installationPath,
+                            this.headlessMode,
+                            this.forceInstall);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -112,6 +174,15 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("artifactContentType")) {
                 this.artifactContentType(model.getArtifactContentType());
+            }
+            if (model.wasPropertyExplicitlySet("installationPath")) {
+                this.installationPath(model.getInstallationPath());
+            }
+            if (model.wasPropertyExplicitlySet("headlessMode")) {
+                this.headlessMode(model.getHeadlessMode());
+            }
+            if (model.wasPropertyExplicitlySet("forceInstall")) {
+                this.forceInstall(model.getForceInstall());
             }
             return this;
         }
@@ -172,6 +243,48 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
         return artifactContentType;
     }
 
+    /**
+     * Custom path to install new Java installation site.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("installationPath")
+    private final String installationPath;
+
+    /**
+     * Custom path to install new Java installation site.
+     * @return the value
+     **/
+    public String getInstallationPath() {
+        return installationPath;
+    }
+
+    /**
+     * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("headlessMode")
+    private final Boolean headlessMode;
+
+    /**
+     * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+     * @return the value
+     **/
+    public Boolean getHeadlessMode() {
+        return headlessMode;
+    }
+
+    /**
+     * Forces the installation request even if a more recent release is already present in the host.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("forceInstall")
+    private final Boolean forceInstall;
+
+    /**
+     * Forces the installation request even if a more recent release is already present in the host.
+     * @return the value
+     **/
+    public Boolean getForceInstall() {
+        return forceInstall;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -189,6 +302,9 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
         sb.append("managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(", releaseVersion=").append(String.valueOf(this.releaseVersion));
         sb.append(", artifactContentType=").append(String.valueOf(this.artifactContentType));
+        sb.append(", installationPath=").append(String.valueOf(this.installationPath));
+        sb.append(", headlessMode=").append(String.valueOf(this.headlessMode));
+        sb.append(", forceInstall=").append(String.valueOf(this.forceInstall));
         sb.append(")");
         return sb.toString();
     }
@@ -206,6 +322,9 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
         return java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
                 && java.util.Objects.equals(this.releaseVersion, other.releaseVersion)
                 && java.util.Objects.equals(this.artifactContentType, other.artifactContentType)
+                && java.util.Objects.equals(this.installationPath, other.installationPath)
+                && java.util.Objects.equals(this.headlessMode, other.headlessMode)
+                && java.util.Objects.equals(this.forceInstall, other.forceInstall)
                 && super.equals(other);
     }
 
@@ -224,6 +343,11 @@ public final class NewInstallationSite extends com.oracle.bmc.http.internal.Expl
                         + (this.artifactContentType == null
                                 ? 43
                                 : this.artifactContentType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.installationPath == null ? 43 : this.installationPath.hashCode());
+        result = (result * PRIME) + (this.headlessMode == null ? 43 : this.headlessMode.hashCode());
+        result = (result * PRIME) + (this.forceInstall == null ? 43 : this.forceInstall.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

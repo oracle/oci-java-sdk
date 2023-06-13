@@ -26,16 +26,25 @@ public final class PostInstallationActionSettings
     @java.beans.ConstructorProperties({
         "disabledTlsVersions",
         "shouldReplaceCertificatesOperatingSystem",
-        "minimumKeySizeSettings"
+        "minimumKeySizeSettings",
+        "addLoggingHandler",
+        "globalLoggingLevel",
+        "proxies"
     })
     public PostInstallationActionSettings(
             java.util.List<TlsVersions> disabledTlsVersions,
             Boolean shouldReplaceCertificatesOperatingSystem,
-            MinimumKeySizeSettings minimumKeySizeSettings) {
+            MinimumKeySizeSettings minimumKeySizeSettings,
+            Boolean addLoggingHandler,
+            GlobalLoggingLevel globalLoggingLevel,
+            Proxies proxies) {
         super();
         this.disabledTlsVersions = disabledTlsVersions;
         this.shouldReplaceCertificatesOperatingSystem = shouldReplaceCertificatesOperatingSystem;
         this.minimumKeySizeSettings = minimumKeySizeSettings;
+        this.addLoggingHandler = addLoggingHandler;
+        this.globalLoggingLevel = globalLoggingLevel;
+        this.proxies = proxies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,7 +72,7 @@ public final class PostInstallationActionSettings
         /**
          * Restores JDK root certificates with the certificates that are available in the operating system.
          * The following action is supported by the field:
-         * - Replace JDK root certificates with a list provided by the operating system
+         * - Replace JDK root certificates with a list provided by the operating system.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldReplaceCertificatesOperatingSystem")
@@ -72,7 +81,7 @@ public final class PostInstallationActionSettings
         /**
          * Restores JDK root certificates with the certificates that are available in the operating system.
          * The following action is supported by the field:
-         * - Replace JDK root certificates with a list provided by the operating system
+         * - Replace JDK root certificates with a list provided by the operating system.
          *
          * @param shouldReplaceCertificatesOperatingSystem the value to set
          * @return this builder
@@ -93,6 +102,51 @@ public final class PostInstallationActionSettings
             this.__explicitlySet__.add("minimumKeySizeSettings");
             return this;
         }
+        /**
+         * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("addLoggingHandler")
+        private Boolean addLoggingHandler;
+
+        /**
+         * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+         *
+         * @param addLoggingHandler the value to set
+         * @return this builder
+         **/
+        public Builder addLoggingHandler(Boolean addLoggingHandler) {
+            this.addLoggingHandler = addLoggingHandler;
+            this.__explicitlySet__.add("addLoggingHandler");
+            return this;
+        }
+        /**
+         * Sets the logging level in logging.properties file.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("globalLoggingLevel")
+        private GlobalLoggingLevel globalLoggingLevel;
+
+        /**
+         * Sets the logging level in logging.properties file.
+         *
+         * @param globalLoggingLevel the value to set
+         * @return this builder
+         **/
+        public Builder globalLoggingLevel(GlobalLoggingLevel globalLoggingLevel) {
+            this.globalLoggingLevel = globalLoggingLevel;
+            this.__explicitlySet__.add("globalLoggingLevel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("proxies")
+        private Proxies proxies;
+
+        public Builder proxies(Proxies proxies) {
+            this.proxies = proxies;
+            this.__explicitlySet__.add("proxies");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -102,7 +156,10 @@ public final class PostInstallationActionSettings
                     new PostInstallationActionSettings(
                             this.disabledTlsVersions,
                             this.shouldReplaceCertificatesOperatingSystem,
-                            this.minimumKeySizeSettings);
+                            this.minimumKeySizeSettings,
+                            this.addLoggingHandler,
+                            this.globalLoggingLevel,
+                            this.proxies);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -120,6 +177,15 @@ public final class PostInstallationActionSettings
             }
             if (model.wasPropertyExplicitlySet("minimumKeySizeSettings")) {
                 this.minimumKeySizeSettings(model.getMinimumKeySizeSettings());
+            }
+            if (model.wasPropertyExplicitlySet("addLoggingHandler")) {
+                this.addLoggingHandler(model.getAddLoggingHandler());
+            }
+            if (model.wasPropertyExplicitlySet("globalLoggingLevel")) {
+                this.globalLoggingLevel(model.getGlobalLoggingLevel());
+            }
+            if (model.wasPropertyExplicitlySet("proxies")) {
+                this.proxies(model.getProxies());
             }
             return this;
         }
@@ -157,7 +223,7 @@ public final class PostInstallationActionSettings
     /**
      * Restores JDK root certificates with the certificates that are available in the operating system.
      * The following action is supported by the field:
-     * - Replace JDK root certificates with a list provided by the operating system
+     * - Replace JDK root certificates with a list provided by the operating system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldReplaceCertificatesOperatingSystem")
@@ -166,7 +232,7 @@ public final class PostInstallationActionSettings
     /**
      * Restores JDK root certificates with the certificates that are available in the operating system.
      * The following action is supported by the field:
-     * - Replace JDK root certificates with a list provided by the operating system
+     * - Replace JDK root certificates with a list provided by the operating system.
      *
      * @return the value
      **/
@@ -179,6 +245,45 @@ public final class PostInstallationActionSettings
 
     public MinimumKeySizeSettings getMinimumKeySizeSettings() {
         return minimumKeySizeSettings;
+    }
+
+    /**
+     * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("addLoggingHandler")
+    private final Boolean addLoggingHandler;
+
+    /**
+     * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+     *
+     * @return the value
+     **/
+    public Boolean getAddLoggingHandler() {
+        return addLoggingHandler;
+    }
+
+    /**
+     * Sets the logging level in logging.properties file.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("globalLoggingLevel")
+    private final GlobalLoggingLevel globalLoggingLevel;
+
+    /**
+     * Sets the logging level in logging.properties file.
+     *
+     * @return the value
+     **/
+    public GlobalLoggingLevel getGlobalLoggingLevel() {
+        return globalLoggingLevel;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("proxies")
+    private final Proxies proxies;
+
+    public Proxies getProxies() {
+        return proxies;
     }
 
     @Override
@@ -199,6 +304,9 @@ public final class PostInstallationActionSettings
         sb.append(", shouldReplaceCertificatesOperatingSystem=")
                 .append(String.valueOf(this.shouldReplaceCertificatesOperatingSystem));
         sb.append(", minimumKeySizeSettings=").append(String.valueOf(this.minimumKeySizeSettings));
+        sb.append(", addLoggingHandler=").append(String.valueOf(this.addLoggingHandler));
+        sb.append(", globalLoggingLevel=").append(String.valueOf(this.globalLoggingLevel));
+        sb.append(", proxies=").append(String.valueOf(this.proxies));
         sb.append(")");
         return sb.toString();
     }
@@ -219,6 +327,9 @@ public final class PostInstallationActionSettings
                         other.shouldReplaceCertificatesOperatingSystem)
                 && java.util.Objects.equals(
                         this.minimumKeySizeSettings, other.minimumKeySizeSettings)
+                && java.util.Objects.equals(this.addLoggingHandler, other.addLoggingHandler)
+                && java.util.Objects.equals(this.globalLoggingLevel, other.globalLoggingLevel)
+                && java.util.Objects.equals(this.proxies, other.proxies)
                 && super.equals(other);
     }
 
@@ -241,6 +352,15 @@ public final class PostInstallationActionSettings
                         + (this.minimumKeySizeSettings == null
                                 ? 43
                                 : this.minimumKeySizeSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.addLoggingHandler == null ? 43 : this.addLoggingHandler.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.globalLoggingLevel == null
+                                ? 43
+                                : this.globalLoggingLevel.hashCode());
+        result = (result * PRIME) + (this.proxies == null ? 43 : this.proxies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

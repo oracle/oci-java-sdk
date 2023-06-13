@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Advanced feature metadata for the fleet
+ * Metadata for the advanced features in the Fleet.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,6 +29,8 @@ public final class FleetAdvancedFeatureConfiguration
         "cryptoEventAnalysis",
         "advancedUsageTracking",
         "jfrRecording",
+        "performanceTuningAnalysis",
+        "javaMigrationAnalysis",
         "timeLastModified"
     })
     public FleetAdvancedFeatureConfiguration(
@@ -38,6 +40,8 @@ public final class FleetAdvancedFeatureConfiguration
             CryptoEventAnalysis cryptoEventAnalysis,
             AdvancedUsageTracking advancedUsageTracking,
             JfrRecording jfrRecording,
+            PerformanceTuningAnalysis performanceTuningAnalysis,
+            JavaMigrationAnalysis javaMigrationAnalysis,
             java.util.Date timeLastModified) {
         super();
         this.analyticNamespace = analyticNamespace;
@@ -46,19 +50,21 @@ public final class FleetAdvancedFeatureConfiguration
         this.cryptoEventAnalysis = cryptoEventAnalysis;
         this.advancedUsageTracking = advancedUsageTracking;
         this.jfrRecording = jfrRecording;
+        this.performanceTuningAnalysis = performanceTuningAnalysis;
+        this.javaMigrationAnalysis = javaMigrationAnalysis;
         this.timeLastModified = timeLastModified;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Namespace for the fleet advanced feature
+         * Namespace for the Fleet advanced feature.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("analyticNamespace")
         private String analyticNamespace;
 
         /**
-         * Namespace for the fleet advanced feature
+         * Namespace for the Fleet advanced feature.
          * @param analyticNamespace the value to set
          * @return this builder
          **/
@@ -68,13 +74,13 @@ public final class FleetAdvancedFeatureConfiguration
             return this;
         }
         /**
-         * Bucket name required to store jfr and related data
+         * Bucket name required to store JFR and related data.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("analyticBucketName")
         private String analyticBucketName;
 
         /**
-         * Bucket name required to store jfr and related data
+         * Bucket name required to store JFR and related data.
          * @param analyticBucketName the value to set
          * @return this builder
          **/
@@ -119,6 +125,25 @@ public final class FleetAdvancedFeatureConfiguration
             this.__explicitlySet__.add("jfrRecording");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("performanceTuningAnalysis")
+        private PerformanceTuningAnalysis performanceTuningAnalysis;
+
+        public Builder performanceTuningAnalysis(
+                PerformanceTuningAnalysis performanceTuningAnalysis) {
+            this.performanceTuningAnalysis = performanceTuningAnalysis;
+            this.__explicitlySet__.add("performanceTuningAnalysis");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("javaMigrationAnalysis")
+        private JavaMigrationAnalysis javaMigrationAnalysis;
+
+        public Builder javaMigrationAnalysis(JavaMigrationAnalysis javaMigrationAnalysis) {
+            this.javaMigrationAnalysis = javaMigrationAnalysis;
+            this.__explicitlySet__.add("javaMigrationAnalysis");
+            return this;
+        }
         /**
          * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
@@ -150,6 +175,8 @@ public final class FleetAdvancedFeatureConfiguration
                             this.cryptoEventAnalysis,
                             this.advancedUsageTracking,
                             this.jfrRecording,
+                            this.performanceTuningAnalysis,
+                            this.javaMigrationAnalysis,
                             this.timeLastModified);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -177,6 +204,12 @@ public final class FleetAdvancedFeatureConfiguration
             if (model.wasPropertyExplicitlySet("jfrRecording")) {
                 this.jfrRecording(model.getJfrRecording());
             }
+            if (model.wasPropertyExplicitlySet("performanceTuningAnalysis")) {
+                this.performanceTuningAnalysis(model.getPerformanceTuningAnalysis());
+            }
+            if (model.wasPropertyExplicitlySet("javaMigrationAnalysis")) {
+                this.javaMigrationAnalysis(model.getJavaMigrationAnalysis());
+            }
             if (model.wasPropertyExplicitlySet("timeLastModified")) {
                 this.timeLastModified(model.getTimeLastModified());
             }
@@ -196,13 +229,13 @@ public final class FleetAdvancedFeatureConfiguration
     }
 
     /**
-     * Namespace for the fleet advanced feature
+     * Namespace for the Fleet advanced feature.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("analyticNamespace")
     private final String analyticNamespace;
 
     /**
-     * Namespace for the fleet advanced feature
+     * Namespace for the Fleet advanced feature.
      * @return the value
      **/
     public String getAnalyticNamespace() {
@@ -210,13 +243,13 @@ public final class FleetAdvancedFeatureConfiguration
     }
 
     /**
-     * Bucket name required to store jfr and related data
+     * Bucket name required to store JFR and related data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("analyticBucketName")
     private final String analyticBucketName;
 
     /**
-     * Bucket name required to store jfr and related data
+     * Bucket name required to store JFR and related data.
      * @return the value
      **/
     public String getAnalyticBucketName() {
@@ -249,6 +282,20 @@ public final class FleetAdvancedFeatureConfiguration
 
     public JfrRecording getJfrRecording() {
         return jfrRecording;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("performanceTuningAnalysis")
+    private final PerformanceTuningAnalysis performanceTuningAnalysis;
+
+    public PerformanceTuningAnalysis getPerformanceTuningAnalysis() {
+        return performanceTuningAnalysis;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("javaMigrationAnalysis")
+    private final JavaMigrationAnalysis javaMigrationAnalysis;
+
+    public JavaMigrationAnalysis getJavaMigrationAnalysis() {
+        return javaMigrationAnalysis;
     }
 
     /**
@@ -287,6 +334,9 @@ public final class FleetAdvancedFeatureConfiguration
         sb.append(", cryptoEventAnalysis=").append(String.valueOf(this.cryptoEventAnalysis));
         sb.append(", advancedUsageTracking=").append(String.valueOf(this.advancedUsageTracking));
         sb.append(", jfrRecording=").append(String.valueOf(this.jfrRecording));
+        sb.append(", performanceTuningAnalysis=")
+                .append(String.valueOf(this.performanceTuningAnalysis));
+        sb.append(", javaMigrationAnalysis=").append(String.valueOf(this.javaMigrationAnalysis));
         sb.append(", timeLastModified=").append(String.valueOf(this.timeLastModified));
         sb.append(")");
         return sb.toString();
@@ -308,6 +358,9 @@ public final class FleetAdvancedFeatureConfiguration
                 && java.util.Objects.equals(this.cryptoEventAnalysis, other.cryptoEventAnalysis)
                 && java.util.Objects.equals(this.advancedUsageTracking, other.advancedUsageTracking)
                 && java.util.Objects.equals(this.jfrRecording, other.jfrRecording)
+                && java.util.Objects.equals(
+                        this.performanceTuningAnalysis, other.performanceTuningAnalysis)
+                && java.util.Objects.equals(this.javaMigrationAnalysis, other.javaMigrationAnalysis)
                 && java.util.Objects.equals(this.timeLastModified, other.timeLastModified)
                 && super.equals(other);
     }
@@ -336,6 +389,16 @@ public final class FleetAdvancedFeatureConfiguration
                                 ? 43
                                 : this.advancedUsageTracking.hashCode());
         result = (result * PRIME) + (this.jfrRecording == null ? 43 : this.jfrRecording.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.performanceTuningAnalysis == null
+                                ? 43
+                                : this.performanceTuningAnalysis.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.javaMigrationAnalysis == null
+                                ? 43
+                                : this.javaMigrationAnalysis.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeLastModified == null ? 43 : this.timeLastModified.hashCode());
