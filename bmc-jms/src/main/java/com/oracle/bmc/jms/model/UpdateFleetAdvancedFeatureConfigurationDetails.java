@@ -5,9 +5,9 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Details object containing advanced feature configurations to be updated Ensure that the namespace
- * and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis
- * feature <br>
+ * Details object containing advanced feature configurations to be updated. Ensure that the
+ * namespace and bucket storage are created prior to turning on the JfrRecording or
+ * CryptoEventAnalysis feature. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,7 +31,9 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
         "lcm",
         "cryptoEventAnalysis",
         "advancedUsageTracking",
-        "jfrRecording"
+        "jfrRecording",
+        "performanceTuningAnalysis",
+        "javaMigrationAnalysis"
     })
     public UpdateFleetAdvancedFeatureConfigurationDetails(
             String analyticNamespace,
@@ -39,7 +41,9 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
             Lcm lcm,
             CryptoEventAnalysis cryptoEventAnalysis,
             AdvancedUsageTracking advancedUsageTracking,
-            JfrRecording jfrRecording) {
+            JfrRecording jfrRecording,
+            PerformanceTuningAnalysis performanceTuningAnalysis,
+            JavaMigrationAnalysis javaMigrationAnalysis) {
         super();
         this.analyticNamespace = analyticNamespace;
         this.analyticBucketName = analyticBucketName;
@@ -47,16 +51,18 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
         this.cryptoEventAnalysis = cryptoEventAnalysis;
         this.advancedUsageTracking = advancedUsageTracking;
         this.jfrRecording = jfrRecording;
+        this.performanceTuningAnalysis = performanceTuningAnalysis;
+        this.javaMigrationAnalysis = javaMigrationAnalysis;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Namespace for the fleet advanced feature */
+        /** Namespace for the Fleet advanced feature. */
         @com.fasterxml.jackson.annotation.JsonProperty("analyticNamespace")
         private String analyticNamespace;
 
         /**
-         * Namespace for the fleet advanced feature
+         * Namespace for the Fleet advanced feature.
          *
          * @param analyticNamespace the value to set
          * @return this builder
@@ -66,12 +72,12 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
             this.__explicitlySet__.add("analyticNamespace");
             return this;
         }
-        /** Bucket name required to store jfr and related data */
+        /** Bucket name required to store JFR and related data. */
         @com.fasterxml.jackson.annotation.JsonProperty("analyticBucketName")
         private String analyticBucketName;
 
         /**
-         * Bucket name required to store jfr and related data
+         * Bucket name required to store JFR and related data.
          *
          * @param analyticBucketName the value to set
          * @return this builder
@@ -118,6 +124,25 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("performanceTuningAnalysis")
+        private PerformanceTuningAnalysis performanceTuningAnalysis;
+
+        public Builder performanceTuningAnalysis(
+                PerformanceTuningAnalysis performanceTuningAnalysis) {
+            this.performanceTuningAnalysis = performanceTuningAnalysis;
+            this.__explicitlySet__.add("performanceTuningAnalysis");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("javaMigrationAnalysis")
+        private JavaMigrationAnalysis javaMigrationAnalysis;
+
+        public Builder javaMigrationAnalysis(JavaMigrationAnalysis javaMigrationAnalysis) {
+            this.javaMigrationAnalysis = javaMigrationAnalysis;
+            this.__explicitlySet__.add("javaMigrationAnalysis");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -129,7 +154,9 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
                             this.lcm,
                             this.cryptoEventAnalysis,
                             this.advancedUsageTracking,
-                            this.jfrRecording);
+                            this.jfrRecording,
+                            this.performanceTuningAnalysis,
+                            this.javaMigrationAnalysis);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +183,12 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
             if (model.wasPropertyExplicitlySet("jfrRecording")) {
                 this.jfrRecording(model.getJfrRecording());
             }
+            if (model.wasPropertyExplicitlySet("performanceTuningAnalysis")) {
+                this.performanceTuningAnalysis(model.getPerformanceTuningAnalysis());
+            }
+            if (model.wasPropertyExplicitlySet("javaMigrationAnalysis")) {
+                this.javaMigrationAnalysis(model.getJavaMigrationAnalysis());
+            }
             return this;
         }
     }
@@ -169,12 +202,12 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** Namespace for the fleet advanced feature */
+    /** Namespace for the Fleet advanced feature. */
     @com.fasterxml.jackson.annotation.JsonProperty("analyticNamespace")
     private final String analyticNamespace;
 
     /**
-     * Namespace for the fleet advanced feature
+     * Namespace for the Fleet advanced feature.
      *
      * @return the value
      */
@@ -182,12 +215,12 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
         return analyticNamespace;
     }
 
-    /** Bucket name required to store jfr and related data */
+    /** Bucket name required to store JFR and related data. */
     @com.fasterxml.jackson.annotation.JsonProperty("analyticBucketName")
     private final String analyticBucketName;
 
     /**
-     * Bucket name required to store jfr and related data
+     * Bucket name required to store JFR and related data.
      *
      * @return the value
      */
@@ -223,6 +256,20 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
         return jfrRecording;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("performanceTuningAnalysis")
+    private final PerformanceTuningAnalysis performanceTuningAnalysis;
+
+    public PerformanceTuningAnalysis getPerformanceTuningAnalysis() {
+        return performanceTuningAnalysis;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("javaMigrationAnalysis")
+    private final JavaMigrationAnalysis javaMigrationAnalysis;
+
+    public JavaMigrationAnalysis getJavaMigrationAnalysis() {
+        return javaMigrationAnalysis;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -244,6 +291,9 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
         sb.append(", cryptoEventAnalysis=").append(String.valueOf(this.cryptoEventAnalysis));
         sb.append(", advancedUsageTracking=").append(String.valueOf(this.advancedUsageTracking));
         sb.append(", jfrRecording=").append(String.valueOf(this.jfrRecording));
+        sb.append(", performanceTuningAnalysis=")
+                .append(String.valueOf(this.performanceTuningAnalysis));
+        sb.append(", javaMigrationAnalysis=").append(String.valueOf(this.javaMigrationAnalysis));
         sb.append(")");
         return sb.toString();
     }
@@ -265,6 +315,9 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
                 && java.util.Objects.equals(this.cryptoEventAnalysis, other.cryptoEventAnalysis)
                 && java.util.Objects.equals(this.advancedUsageTracking, other.advancedUsageTracking)
                 && java.util.Objects.equals(this.jfrRecording, other.jfrRecording)
+                && java.util.Objects.equals(
+                        this.performanceTuningAnalysis, other.performanceTuningAnalysis)
+                && java.util.Objects.equals(this.javaMigrationAnalysis, other.javaMigrationAnalysis)
                 && super.equals(other);
     }
 
@@ -292,6 +345,16 @@ public final class UpdateFleetAdvancedFeatureConfigurationDetails
                                 ? 43
                                 : this.advancedUsageTracking.hashCode());
         result = (result * PRIME) + (this.jfrRecording == null ? 43 : this.jfrRecording.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.performanceTuningAnalysis == null
+                                ? 43
+                                : this.performanceTuningAnalysis.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.javaMigrationAnalysis == null
+                                ? 43
+                                : this.javaMigrationAnalysis.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -71,12 +71,12 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /** The reason for why the operation is blocklisted */
+        /** The reason why the operation is blocklisted. */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
-         * The reason for why the operation is blocklisted
+         * The reason why the operation is blocklisted.
          *
          * @param reason the value to set
          * @return this builder
@@ -158,12 +158,12 @@ public final class Blocklist extends com.oracle.bmc.http.client.internal.Explici
         return operation;
     }
 
-    /** The reason for why the operation is blocklisted */
+    /** The reason why the operation is blocklisted. */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
-     * The reason for why the operation is blocklisted
+     * The reason why the operation is blocklisted.
      *
      * @return the value
      */

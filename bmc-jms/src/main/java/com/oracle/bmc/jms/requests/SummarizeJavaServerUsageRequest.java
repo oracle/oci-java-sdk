@@ -110,14 +110,14 @@ public class SummarizeJavaServerUsageRequest
         return sortOrder;
     }
     /**
-     * The field to sort Java servers. Only one sort order may be provided. If no value is specified
-     * _timeLastSeen_ is default.
+     * The field to sort a Java Server. Only one sort order can be provided. If no value is
+     * specified _timeLastSeen_ is default.
      */
     private com.oracle.bmc.jms.model.JavaServerSortBy sortBy;
 
     /**
-     * The field to sort Java servers. Only one sort order may be provided. If no value is specified
-     * _timeLastSeen_ is default.
+     * The field to sort a Java Server. Only one sort order can be provided. If no value is
+     * specified _timeLastSeen_ is default.
      */
     public com.oracle.bmc.jms.model.JavaServerSortBy getSortBy() {
         return sortBy;
@@ -293,13 +293,13 @@ public class SummarizeJavaServerUsageRequest
         }
 
         /**
-         * The field to sort Java servers. Only one sort order may be provided. If no value is
+         * The field to sort a Java Server. Only one sort order can be provided. If no value is
          * specified _timeLastSeen_ is default.
          */
         private com.oracle.bmc.jms.model.JavaServerSortBy sortBy = null;
 
         /**
-         * The field to sort Java servers. Only one sort order may be provided. If no value is
+         * The field to sort a Java Server. Only one sort order can be provided. If no value is
          * specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set

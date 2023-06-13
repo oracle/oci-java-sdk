@@ -35,10 +35,10 @@ public class SummarizeJavaServerInstanceUsageRequest
     public String getServerKey() {
         return serverKey;
     }
-    /** The Java server instance key. */
+    /** The Java Server instance key. */
     private String serverInstanceKey;
 
-    /** The Java server instance key. */
+    /** The Java Server instance key. */
     public String getServerInstanceKey() {
         return serverInstanceKey;
     }
@@ -63,17 +63,17 @@ public class SummarizeJavaServerInstanceUsageRequest
     public String getLibraryKey() {
         return libraryKey;
     }
-    /** Filter the list with Java server instance name contains the given value. */
+    /** Filter the list with the Java Server instance name contains the given value. */
     private String serverInstanceNameContains;
 
-    /** Filter the list with Java server instance name contains the given value. */
+    /** Filter the list with the Java Server instance name contains the given value. */
     public String getServerInstanceNameContains() {
         return serverInstanceNameContains;
     }
-    /** The Java server instance name. */
+    /** The Java Server instance name. */
     private String serverInstanceName;
 
-    /** The Java server instance name. */
+    /** The Java Server instance name. */
     public String getServerInstanceName() {
         return serverInstanceName;
     }
@@ -131,14 +131,14 @@ public class SummarizeJavaServerInstanceUsageRequest
         return sortOrder;
     }
     /**
-     * The field to sort Java server instances. Only one sort order may be provided. If no value is
-     * specified _timeLastSeen_ is default.
+     * The field to sort the Java Server instances. Only one sort order can be provided. If no value
+     * is specified _timeLastSeen_ is default.
      */
     private com.oracle.bmc.jms.model.JavaServerInstanceSortBy sortBy;
 
     /**
-     * The field to sort Java server instances. Only one sort order may be provided. If no value is
-     * specified _timeLastSeen_ is default.
+     * The field to sort the Java Server instances. Only one sort order can be provided. If no value
+     * is specified _timeLastSeen_ is default.
      */
     public com.oracle.bmc.jms.model.JavaServerInstanceSortBy getSortBy() {
         return sortBy;
@@ -189,11 +189,11 @@ public class SummarizeJavaServerInstanceUsageRequest
             return this;
         }
 
-        /** The Java server instance key. */
+        /** The Java Server instance key. */
         private String serverInstanceKey = null;
 
         /**
-         * The Java server instance key.
+         * The Java Server instance key.
          *
          * @param serverInstanceKey the value to set
          * @return this builder instance
@@ -245,11 +245,11 @@ public class SummarizeJavaServerInstanceUsageRequest
             return this;
         }
 
-        /** Filter the list with Java server instance name contains the given value. */
+        /** Filter the list with the Java Server instance name contains the given value. */
         private String serverInstanceNameContains = null;
 
         /**
-         * Filter the list with Java server instance name contains the given value.
+         * Filter the list with the Java Server instance name contains the given value.
          *
          * @param serverInstanceNameContains the value to set
          * @return this builder instance
@@ -259,11 +259,11 @@ public class SummarizeJavaServerInstanceUsageRequest
             return this;
         }
 
-        /** The Java server instance name. */
+        /** The Java Server instance name. */
         private String serverInstanceName = null;
 
         /**
-         * The Java server instance name.
+         * The Java Server instance name.
          *
          * @param serverInstanceName the value to set
          * @return this builder instance
@@ -356,14 +356,14 @@ public class SummarizeJavaServerInstanceUsageRequest
         }
 
         /**
-         * The field to sort Java server instances. Only one sort order may be provided. If no value
-         * is specified _timeLastSeen_ is default.
+         * The field to sort the Java Server instances. Only one sort order can be provided. If no
+         * value is specified _timeLastSeen_ is default.
          */
         private com.oracle.bmc.jms.model.JavaServerInstanceSortBy sortBy = null;
 
         /**
-         * The field to sort Java server instances. Only one sort order may be provided. If no value
-         * is specified _timeLastSeen_ is default.
+         * The field to sort the Java Server instances. Only one sort order can be provided. If no
+         * value is specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance

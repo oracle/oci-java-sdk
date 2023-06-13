@@ -109,12 +109,12 @@ public final class OperatingSystem
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /** Number of instances running the operating system */
+        /** Number of instances running the operating system. */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
         private Integer managedInstanceCount;
 
         /**
-         * Number of instances running the operating system
+         * Number of instances running the operating system.
          *
          * @param managedInstanceCount the value to set
          * @return this builder
@@ -224,12 +224,12 @@ public final class OperatingSystem
         return architecture;
     }
 
-    /** Number of instances running the operating system */
+    /** Number of instances running the operating system. */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
     private final Integer managedInstanceCount;
 
     /**
-     * Number of instances running the operating system
+     * Number of instances running the operating system.
      *
      * @return the value
      */

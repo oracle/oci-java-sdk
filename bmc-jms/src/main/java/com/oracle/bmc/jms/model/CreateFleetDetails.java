@@ -125,15 +125,15 @@ public final class CreateFleetDetails
             return this;
         }
         /**
-         * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-         * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+         * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+         * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
         private Boolean isAdvancedFeaturesEnabled;
 
         /**
-         * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-         * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+         * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+         * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
          *
          * @param isAdvancedFeaturesEnabled the value to set
          * @return this builder
@@ -166,7 +166,7 @@ public final class CreateFleetDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
          * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
@@ -175,7 +175,7 @@ public final class CreateFleetDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
          * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
@@ -306,15 +306,15 @@ public final class CreateFleetDetails
     }
 
     /**
-     * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-     * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+     * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+     * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
     private final Boolean isAdvancedFeaturesEnabled;
 
     /**
-     * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-     * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+     * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+     * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
      *
      * @return the value
      */
@@ -342,7 +342,7 @@ public final class CreateFleetDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
      * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
@@ -350,7 +350,7 @@ public final class CreateFleetDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
      * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *

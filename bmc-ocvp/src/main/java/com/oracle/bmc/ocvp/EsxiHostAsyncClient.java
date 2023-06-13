@@ -206,6 +206,9 @@ public class EsxiHostAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("isBillingDonorsOnly", request.getIsBillingDonorsOnly())
+                .appendQueryParam("isSwapBillingOnly", request.getIsSwapBillingOnly())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -215,6 +218,40 @@ public class EsxiHostAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListEsxiHostsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEsxiHostsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwapBillingResponse> swapBilling(
+            SwapBillingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SwapBillingRequest, SwapBillingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEsxiHostId(), "esxiHostId must not be blank");
+        Objects.requireNonNull(request.getSwapBillingHostId(), "swapBillingHostId is required");
+
+        return clientCall(request, SwapBillingResponse::builder)
+                .logger(LOG, "swapBilling")
+                .serviceDetails(
+                        "EsxiHost",
+                        "SwapBilling",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwapBillingRequest::builder)
+                .basePath("/20200501")
+                .appendPathParam("esxiHosts")
+                .appendPathParam(request.getEsxiHostId())
+                .appendPathParam("actions")
+                .appendPathParam("swapBilling")
+                .appendQueryParam("swapBillingHostId", request.getSwapBillingHostId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SwapBillingResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwapBillingResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

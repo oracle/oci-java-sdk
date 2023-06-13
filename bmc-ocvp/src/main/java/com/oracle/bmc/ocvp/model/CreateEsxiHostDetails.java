@@ -26,6 +26,7 @@ public final class CreateEsxiHostDetails
     @java.beans.ConstructorProperties({
         "sddcId",
         "displayName",
+        "billingDonorHostId",
         "currentSku",
         "nextSku",
         "computeAvailabilityDomain",
@@ -40,6 +41,7 @@ public final class CreateEsxiHostDetails
     public CreateEsxiHostDetails(
             String sddcId,
             String displayName,
+            String billingDonorHostId,
             Sku currentSku,
             Sku nextSku,
             String computeAvailabilityDomain,
@@ -53,6 +55,7 @@ public final class CreateEsxiHostDetails
         super();
         this.sddcId = sddcId;
         this.displayName = displayName;
+        this.billingDonorHostId = billingDonorHostId;
         this.currentSku = currentSku;
         this.nextSku = nextSku;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
@@ -119,6 +122,25 @@ public final class CreateEsxiHostDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deleted ESXi Host with LeftOver billing cycle.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
+        private String billingDonorHostId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * deleted ESXi Host with LeftOver billing cycle.
+         *
+         * @param billingDonorHostId the value to set
+         * @return this builder
+         */
+        public Builder billingDonorHostId(String billingDonorHostId) {
+            this.billingDonorHostId = billingDonorHostId;
+            this.__explicitlySet__.add("billingDonorHostId");
             return this;
         }
         /**
@@ -349,6 +371,7 @@ public final class CreateEsxiHostDetails
                     new CreateEsxiHostDetails(
                             this.sddcId,
                             this.displayName,
+                            this.billingDonorHostId,
                             this.currentSku,
                             this.nextSku,
                             this.computeAvailabilityDomain,
@@ -372,6 +395,9 @@ public final class CreateEsxiHostDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
+                this.billingDonorHostId(model.getBillingDonorHostId());
             }
             if (model.wasPropertyExplicitlySet("currentSku")) {
                 this.currentSku(model.getCurrentSku());
@@ -464,6 +490,23 @@ public final class CreateEsxiHostDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deleted ESXi Host with LeftOver billing cycle.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
+    private final String billingDonorHostId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * deleted ESXi Host with LeftOver billing cycle.
+     *
+     * @return the value
+     */
+    public String getBillingDonorHostId() {
+        return billingDonorHostId;
     }
 
     /**
@@ -679,6 +722,7 @@ public final class CreateEsxiHostDetails
         sb.append("super=").append(super.toString());
         sb.append("sddcId=").append(String.valueOf(this.sddcId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
         sb.append(", currentSku=").append(String.valueOf(this.currentSku));
         sb.append(", nextSku=").append(String.valueOf(this.nextSku));
         sb.append(", computeAvailabilityDomain=")
@@ -706,6 +750,7 @@ public final class CreateEsxiHostDetails
         CreateEsxiHostDetails other = (CreateEsxiHostDetails) o;
         return java.util.Objects.equals(this.sddcId, other.sddcId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
                 && java.util.Objects.equals(this.currentSku, other.currentSku)
                 && java.util.Objects.equals(this.nextSku, other.nextSku)
                 && java.util.Objects.equals(
@@ -726,6 +771,11 @@ public final class CreateEsxiHostDetails
         int result = 1;
         result = (result * PRIME) + (this.sddcId == null ? 43 : this.sddcId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.billingDonorHostId == null
+                                ? 43
+                                : this.billingDonorHostId.hashCode());
         result = (result * PRIME) + (this.currentSku == null ? 43 : this.currentSku.hashCode());
         result = (result * PRIME) + (this.nextSku == null ? 43 : this.nextSku.hashCode());
         result =

@@ -151,7 +151,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and is not taken into account when
+         * This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
@@ -159,7 +159,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and is not taken into account when
+         * This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          *
          * @param approximateJreCount the value to set
@@ -172,7 +172,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique Java installations in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and is not taken into account when
+         * days. This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
@@ -180,7 +180,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * The approximate count of all unique Java installations in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and is not taken into account when
+         * days. This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          *
          * @param approximateInstallationCount the value to set
@@ -193,7 +193,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique applications in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and is not taken into account when
+         * This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
@@ -201,7 +201,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * The approximate count of all unique applications in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and is not taken into account when
+         * This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          *
          * @param approximateApplicationCount the value to set
@@ -214,7 +214,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique managed instances in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and is not taken into account when
+         * days. This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
@@ -222,7 +222,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * The approximate count of all unique managed instances in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and is not taken into account when
+         * days. This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          *
          * @param approximateManagedInstanceCount the value to set
@@ -235,7 +235,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique Java servers in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and is not taken into account when
+         * This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerCount")
@@ -243,7 +243,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * The approximate count of all unique Java servers in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and is not taken into account when
+         * This metric is provided on a best-effort manner, and isn't taken into account when
          * computing the resource ETag.
          *
          * @param approximateJavaServerCount the value to set
@@ -273,15 +273,15 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-         * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+         * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+         * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
         private Boolean isAdvancedFeaturesEnabled;
 
         /**
-         * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-         * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+         * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+         * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
          *
          * @param isAdvancedFeaturesEnabled the value to set
          * @return this builder
@@ -348,7 +348,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
          * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
@@ -357,7 +357,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
          * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
@@ -555,7 +555,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and is not taken into account when computing the
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
      * resource ETag.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
@@ -563,7 +563,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and is not taken into account when computing the
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
      * resource ETag.
      *
      * @return the value
@@ -574,7 +574,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and is not taken into account when computing
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing
      * the resource ETag.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
@@ -582,7 +582,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and is not taken into account when computing
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing
      * the resource ETag.
      *
      * @return the value
@@ -593,7 +593,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique applications in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and is not taken into account when computing the
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
      * resource ETag.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
@@ -601,7 +601,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique applications in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and is not taken into account when computing the
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
      * resource ETag.
      *
      * @return the value
@@ -612,7 +612,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and is not taken into account when computing
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing
      * the resource ETag.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
@@ -620,7 +620,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and is not taken into account when computing
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing
      * the resource ETag.
      *
      * @return the value
@@ -631,7 +631,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and is not taken into account when computing the
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
      * resource ETag.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerCount")
@@ -639,7 +639,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and is not taken into account when computing the
+     * metric is provided on a best-effort manner, and isn't taken into account when computing the
      * resource ETag.
      *
      * @return the value
@@ -663,15 +663,15 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-     * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+     * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+     * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
     private final Boolean isAdvancedFeaturesEnabled;
 
     /**
-     * Whether or not advanced features are enabled in this fleet. Deprecated, use {@code
-     * /fleets/{fleetId}/advanceFeatureConfiguration} api instead.
+     * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
+     * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
      *
      * @return the value
      */
@@ -729,7 +729,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
      * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
@@ -737,7 +737,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
      * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *

@@ -7,5 +7,12 @@ package com.oracle.bmc.usage;
 import com.oracle.bmc.SdkClients;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-@SdkClients({RewardsAsyncClient.class, RewardsClient.class})
+@SdkClients({
+    ResourcesAsyncClient.class,
+    ResourcesClient.class,
+    RewardsAsyncClient.class,
+    RewardsClient.class,
+    UsagelimitsAsyncClient.class,
+    UsagelimitsClient.class
+})
 public final class SdkClientsMetadata {}

@@ -32,12 +32,12 @@ public final class CryptoEventAnalysis
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** CryptoEventAnalysis flag to store enabled or disabled status */
+        /** CryptoEventAnalysis flag to store enabled or disabled status. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * CryptoEventAnalysis flag to store enabled or disabled status
+         * CryptoEventAnalysis flag to store enabled or disabled status.
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -90,12 +90,12 @@ public final class CryptoEventAnalysis
         return new Builder().copy(this);
     }
 
-    /** CryptoEventAnalysis flag to store enabled or disabled status */
+    /** CryptoEventAnalysis flag to store enabled or disabled status. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * CryptoEventAnalysis flag to store enabled or disabled status
+     * CryptoEventAnalysis flag to store enabled or disabled status.
      *
      * @return the value
      */

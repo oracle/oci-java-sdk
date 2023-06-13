@@ -23,12 +23,21 @@ package com.oracle.bmc.opsi.model;
 public final class ChangePeComanagedDatabaseInsightDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"serviceName", "credentialDetails", "opsiPrivateEndpointId"})
+    @java.beans.ConstructorProperties({
+        "serviceName",
+        "credentialDetails",
+        "connectionDetails",
+        "opsiPrivateEndpointId"
+    })
     public ChangePeComanagedDatabaseInsightDetails(
-            String serviceName, CredentialDetails credentialDetails, String opsiPrivateEndpointId) {
+            String serviceName,
+            CredentialDetails credentialDetails,
+            PeComanagedDatabaseConnectionDetails connectionDetails,
+            String opsiPrivateEndpointId) {
         super();
         this.serviceName = serviceName;
         this.credentialDetails = credentialDetails;
+        this.connectionDetails = connectionDetails;
         this.opsiPrivateEndpointId = opsiPrivateEndpointId;
     }
 
@@ -58,6 +67,15 @@ public final class ChangePeComanagedDatabaseInsightDetails
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+        private PeComanagedDatabaseConnectionDetails connectionDetails;
+
+        public Builder connectionDetails(PeComanagedDatabaseConnectionDetails connectionDetails) {
+            this.connectionDetails = connectionDetails;
+            this.__explicitlySet__.add("connectionDetails");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * of the OPSI private endpoint
@@ -84,7 +102,10 @@ public final class ChangePeComanagedDatabaseInsightDetails
         public ChangePeComanagedDatabaseInsightDetails build() {
             ChangePeComanagedDatabaseInsightDetails model =
                     new ChangePeComanagedDatabaseInsightDetails(
-                            this.serviceName, this.credentialDetails, this.opsiPrivateEndpointId);
+                            this.serviceName,
+                            this.credentialDetails,
+                            this.connectionDetails,
+                            this.opsiPrivateEndpointId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -98,6 +119,9 @@ public final class ChangePeComanagedDatabaseInsightDetails
             }
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("connectionDetails")) {
+                this.connectionDetails(model.getConnectionDetails());
             }
             if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
                 this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
@@ -135,6 +159,13 @@ public final class ChangePeComanagedDatabaseInsightDetails
         return credentialDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+    private final PeComanagedDatabaseConnectionDetails connectionDetails;
+
+    public PeComanagedDatabaseConnectionDetails getConnectionDetails() {
+        return connectionDetails;
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the OPSI private endpoint
@@ -169,6 +200,7 @@ public final class ChangePeComanagedDatabaseInsightDetails
         sb.append("super=").append(super.toString());
         sb.append("serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", connectionDetails=").append(String.valueOf(this.connectionDetails));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(")");
         return sb.toString();
@@ -186,6 +218,7 @@ public final class ChangePeComanagedDatabaseInsightDetails
         ChangePeComanagedDatabaseInsightDetails other = (ChangePeComanagedDatabaseInsightDetails) o;
         return java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.connectionDetails, other.connectionDetails)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && super.equals(other);
     }
@@ -198,6 +231,9 @@ public final class ChangePeComanagedDatabaseInsightDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionDetails == null ? 43 : this.connectionDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.opsiPrivateEndpointId == null

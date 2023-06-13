@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Management Agent Configuration for a Fleet. Includes JRE scanning frequency and list of
+ * Management Agent Configuration for a Fleet. Includes JRE scanning frequency and a list of
  * include/exclude file system paths. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

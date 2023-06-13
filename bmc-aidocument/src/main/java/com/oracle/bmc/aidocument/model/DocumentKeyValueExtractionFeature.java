@@ -27,12 +27,28 @@ package com.oracle.bmc.aidocument.model;
 public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** The custom model ID. */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * The custom model ID.
+         *
+         * @param modelId the value to set
+         * @return this builder
+         */
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentKeyValueExtractionFeature build() {
-            DocumentKeyValueExtractionFeature model = new DocumentKeyValueExtractionFeature();
+            DocumentKeyValueExtractionFeature model =
+                    new DocumentKeyValueExtractionFeature(this.modelId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -41,6 +57,9 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DocumentKeyValueExtractionFeature model) {
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
             return this;
         }
     }
@@ -55,8 +74,22 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
     }
 
     @Deprecated
-    public DocumentKeyValueExtractionFeature() {
+    public DocumentKeyValueExtractionFeature(String modelId) {
         super();
+        this.modelId = modelId;
+    }
+
+    /** The custom model ID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * The custom model ID.
+     *
+     * @return the value
+     */
+    public String getModelId() {
+        return modelId;
     }
 
     @Override
@@ -74,6 +107,7 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DocumentKeyValueExtractionFeature(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(")");
         return sb.toString();
     }
@@ -88,13 +122,14 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
         }
 
         DocumentKeyValueExtractionFeature other = (DocumentKeyValueExtractionFeature) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.modelId, other.modelId) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         return result;
     }
 }

@@ -110,6 +110,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.objectstorage.SdkClientsMetadata",
     "com.oracle.bmc.ocb.SdkClientsMetadata",
     "com.oracle.bmc.oce.SdkClientsMetadata",
+    "com.oracle.bmc.ocicontrolcenter.SdkClientsMetadata",
     "com.oracle.bmc.ocmdis.SdkClientsMetadata",
     "com.oracle.bmc.ocminv.SdkClientsMetadata",
     "com.oracle.bmc.ocmmigrationapi.SdkClientsMetadata",

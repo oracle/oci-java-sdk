@@ -152,6 +152,15 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+        private PeComanagedDatabaseConnectionDetails connectionDetails;
+
+        public Builder connectionDetails(PeComanagedDatabaseConnectionDetails connectionDetails) {
+            this.connectionDetails = connectionDetails;
+            this.__explicitlySet__.add("connectionDetails");
+            return this;
+        }
         /** Database Deployment Type */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
@@ -202,6 +211,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                             this.dbmPrivateEndpointId,
                             this.serviceName,
                             this.credentialDetails,
+                            this.connectionDetails,
                             this.deploymentType,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -239,6 +249,9 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
             }
+            if (model.wasPropertyExplicitlySet("connectionDetails")) {
+                this.connectionDetails(model.getConnectionDetails());
+            }
             if (model.wasPropertyExplicitlySet("deploymentType")) {
                 this.deploymentType(model.getDeploymentType());
             }
@@ -269,6 +282,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
             String dbmPrivateEndpointId,
             String serviceName,
             CredentialDetails credentialDetails,
+            PeComanagedDatabaseConnectionDetails connectionDetails,
             DeploymentType deploymentType,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super(compartmentId, freeformTags, definedTags);
@@ -278,6 +292,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         this.dbmPrivateEndpointId = dbmPrivateEndpointId;
         this.serviceName = serviceName;
         this.credentialDetails = credentialDetails;
+        this.connectionDetails = connectionDetails;
         this.deploymentType = deploymentType;
         this.systemTags = systemTags;
     }
@@ -366,6 +381,13 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         return credentialDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
+    private final PeComanagedDatabaseConnectionDetails connectionDetails;
+
+    public PeComanagedDatabaseConnectionDetails getConnectionDetails() {
+        return connectionDetails;
+    }
+
     /** Database Deployment Type */
     public enum DeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
         VirtualMachine("VIRTUAL_MACHINE"),
@@ -451,6 +473,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         sb.append(", dbmPrivateEndpointId=").append(String.valueOf(this.dbmPrivateEndpointId));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", connectionDetails=").append(String.valueOf(this.connectionDetails));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
@@ -473,6 +496,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                 && java.util.Objects.equals(this.dbmPrivateEndpointId, other.dbmPrivateEndpointId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.connectionDetails, other.connectionDetails)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
@@ -502,6 +526,9 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionDetails == null ? 43 : this.connectionDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());

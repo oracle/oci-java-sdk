@@ -68,14 +68,14 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return sortOrder;
     }
     /**
-     * The field to sort blocklist records. Only one sort order may be provided. Default order for
-     * _operation_ is **ascending**. If no value is specified _operation_ is default.
+     * The field used to sort blocklist records. Only one sort order may be provided. Default order
+     * for _operation_ is **ascending**. If no value is specified, _operation_ is default.
      */
     private com.oracle.bmc.jms.model.BlocklistSortBy sortBy;
 
     /**
-     * The field to sort blocklist records. Only one sort order may be provided. Default order for
-     * _operation_ is **ascending**. If no value is specified _operation_ is default.
+     * The field used to sort blocklist records. Only one sort order may be provided. Default order
+     * for _operation_ is **ascending**. If no value is specified, _operation_ is default.
      */
     public com.oracle.bmc.jms.model.BlocklistSortBy getSortBy() {
         return sortBy;
@@ -187,14 +187,14 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort blocklist records. Only one sort order may be provided. Default order
-         * for _operation_ is **ascending**. If no value is specified _operation_ is default.
+         * The field used to sort blocklist records. Only one sort order may be provided. Default
+         * order for _operation_ is **ascending**. If no value is specified, _operation_ is default.
          */
         private com.oracle.bmc.jms.model.BlocklistSortBy sortBy = null;
 
         /**
-         * The field to sort blocklist records. Only one sort order may be provided. Default order
-         * for _operation_ is **ascending**. If no value is specified _operation_ is default.
+         * The field used to sort blocklist records. Only one sort order may be provided. Default
+         * order for _operation_ is **ascending**. If no value is specified, _operation_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
