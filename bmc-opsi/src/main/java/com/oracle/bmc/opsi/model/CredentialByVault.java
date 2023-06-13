@@ -68,6 +68,22 @@ public final class CredentialByVault extends CredentialDetails {
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+        private String walletSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+         * @param walletSecretId the value to set
+         * @return this builder
+         **/
+        public Builder walletSecretId(String walletSecretId) {
+            this.walletSecretId = walletSecretId;
+            this.__explicitlySet__.add("walletSecretId");
+            return this;
+        }
+        /**
          * database user role.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
@@ -93,6 +109,7 @@ public final class CredentialByVault extends CredentialDetails {
                             this.credentialSourceName,
                             this.userName,
                             this.passwordSecretId,
+                            this.walletSecretId,
                             this.role);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -110,6 +127,9 @@ public final class CredentialByVault extends CredentialDetails {
             }
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("walletSecretId")) {
+                this.walletSecretId(model.getWalletSecretId());
             }
             if (model.wasPropertyExplicitlySet("role")) {
                 this.role(model.getRole());
@@ -131,10 +151,15 @@ public final class CredentialByVault extends CredentialDetails {
 
     @Deprecated
     public CredentialByVault(
-            String credentialSourceName, String userName, String passwordSecretId, Role role) {
+            String credentialSourceName,
+            String userName,
+            String passwordSecretId,
+            String walletSecretId,
+            Role role) {
         super(credentialSourceName);
         this.userName = userName;
         this.passwordSecretId = passwordSecretId;
+        this.walletSecretId = walletSecretId;
         this.role = role;
     }
 
@@ -164,6 +189,20 @@ public final class CredentialByVault extends CredentialDetails {
      **/
     public String getPasswordSecretId() {
         return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
+    private final String walletSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+     * @return the value
+     **/
+    public String getWalletSecretId() {
+        return walletSecretId;
     }
 
     /**
@@ -241,6 +280,7 @@ public final class CredentialByVault extends CredentialDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", walletSecretId=").append(String.valueOf(this.walletSecretId));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(")");
         return sb.toString();
@@ -258,6 +298,7 @@ public final class CredentialByVault extends CredentialDetails {
         CredentialByVault other = (CredentialByVault) o;
         return java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.walletSecretId, other.walletSecretId)
                 && java.util.Objects.equals(this.role, other.role)
                 && super.equals(other);
     }
@@ -270,6 +311,9 @@ public final class CredentialByVault extends CredentialDetails {
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletSecretId == null ? 43 : this.walletSecretId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
         return result;
     }

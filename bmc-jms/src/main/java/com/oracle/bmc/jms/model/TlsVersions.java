@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * List of tls versions to be disabled
+ * List of TLS versions to be disabled.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum TlsVersions {

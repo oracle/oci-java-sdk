@@ -248,12 +248,12 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * VersionId of the object requested
+     * VersionId of the object
      */
     private String versionId;
 
     /**
-     * VersionId of the object requested
+     * VersionId of the object
      * @return the value
      */
     public String getVersionId() {
@@ -671,12 +671,12 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * VersionId of the object requested
+         * VersionId of the object
          */
         private String versionId;
 
         /**
-         * VersionId of the object requested
+         * VersionId of the object
          * @param versionId the value to set
          * @return this builder
          */

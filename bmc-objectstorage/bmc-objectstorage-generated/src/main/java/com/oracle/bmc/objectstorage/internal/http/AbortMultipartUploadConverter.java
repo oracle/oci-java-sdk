@@ -35,8 +35,17 @@ public class AbortMultipartUploadConverter {
         Validate.notBlank(request.getObjectName(), "objectName must not be blank");
         Validate.notNull(request.getUploadId(), "uploadId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        requiredParametersMap.put("objectName", request.getObjectName());
+        requiredParametersMap.put("uploadId", request.getUploadId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/")
                         .path("n")
                         .path(

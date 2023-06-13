@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * List of supported algorithms for minimum key size update
+ * List of supported algorithms for minimum key size update.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum Algorithms {

@@ -9,6 +9,7 @@ package com.oracle.bmc.jms.model;
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum JreSecurityStatus {
+    EarlyAccess("EARLY_ACCESS"),
     Unknown("UNKNOWN"),
     UpToDate("UP_TO_DATE"),
     UpdateRequired("UPDATE_REQUIRED"),

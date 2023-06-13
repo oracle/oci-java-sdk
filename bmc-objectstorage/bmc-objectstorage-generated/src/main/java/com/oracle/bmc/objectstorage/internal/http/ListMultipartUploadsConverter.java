@@ -33,8 +33,15 @@ public class ListMultipartUploadsConverter {
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("namespaceName", request.getNamespaceName());
+        requiredParametersMap.put("bucketName", request.getBucketName());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/")
                         .path("n")
                         .path(

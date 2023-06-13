@@ -28,13 +28,13 @@ public final class JfrRecording extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * JfrRecording flag to store enabled or disabled status
+         * JfrRecording flag to store enabled or disabled status.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * JfrRecording flag to store enabled or disabled status
+         * JfrRecording flag to store enabled or disabled status.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -76,13 +76,13 @@ public final class JfrRecording extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * JfrRecording flag to store enabled or disabled status
+     * JfrRecording flag to store enabled or disabled status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * JfrRecording flag to store enabled or disabled status
+     * JfrRecording flag to store enabled or disabled status.
      * @return the value
      **/
     public Boolean getIsEnabled() {

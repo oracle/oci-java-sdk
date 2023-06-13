@@ -134,14 +134,14 @@ public final class DeployedApplicationUsage
             return this;
         }
         /**
-         * Whether or not deployed application is clustered.
+         * Whether or not the deployed application is clustered.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClustered")
         private Boolean isClustered;
 
         /**
-         * Whether or not deployed application is clustered.
+         * Whether or not the deployed application is clustered.
          *
          * @param isClustered the value to set
          * @return this builder
@@ -152,14 +152,14 @@ public final class DeployedApplicationUsage
             return this;
         }
         /**
-         * The approximate count of Java server instances running the deployed application.
+         * The approximate count of Java Server instances running the deployed application.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerInstanceCount")
         private Integer approximateJavaServerInstanceCount;
 
         /**
-         * The approximate count of Java server instances running the deployed application.
+         * The approximate count of Java Server instances running the deployed application.
          *
          * @param approximateJavaServerInstanceCount the value to set
          * @return this builder
@@ -386,14 +386,14 @@ public final class DeployedApplicationUsage
     }
 
     /**
-     * Whether or not deployed application is clustered.
+     * Whether or not the deployed application is clustered.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClustered")
     private final Boolean isClustered;
 
     /**
-     * Whether or not deployed application is clustered.
+     * Whether or not the deployed application is clustered.
      *
      * @return the value
      **/
@@ -402,14 +402,14 @@ public final class DeployedApplicationUsage
     }
 
     /**
-     * The approximate count of Java server instances running the deployed application.
+     * The approximate count of Java Server instances running the deployed application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerInstanceCount")
     private final Integer approximateJavaServerInstanceCount;
 
     /**
-     * The approximate count of Java server instances running the deployed application.
+     * The approximate count of Java Server instances running the deployed application.
      *
      * @return the value
      **/

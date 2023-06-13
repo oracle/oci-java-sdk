@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Metadata of a Crypto Event Analysis result. The analysis result is stored as the Object Storage object.
+ * Metadata for the result of a crypto event analysis. The analysis result is stored in an Object Storage bucket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -258,8 +258,8 @@ public final class CryptoAnalysisResult extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * Total number of non-compliant findings with the analysis. A non-compliant finding means the
-         * application won't work properly with the changes introduced by the crypto roadmap version
-         * used the the analysis.
+         * application won't work properly with the changes introduced by the Crypto Roadmap version
+         * used by the analysis.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonCompliantFindingCount")
@@ -267,8 +267,8 @@ public final class CryptoAnalysisResult extends com.oracle.bmc.http.internal.Exp
 
         /**
          * Total number of non-compliant findings with the analysis. A non-compliant finding means the
-         * application won't work properly with the changes introduced by the crypto roadmap version
-         * used the the analysis.
+         * application won't work properly with the changes introduced by the Crypto Roadmap version
+         * used by the analysis.
          *
          * @param nonCompliantFindingCount the value to set
          * @return this builder
@@ -612,8 +612,8 @@ public final class CryptoAnalysisResult extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Total number of non-compliant findings with the analysis. A non-compliant finding means the
-     * application won't work properly with the changes introduced by the crypto roadmap version
-     * used the the analysis.
+     * application won't work properly with the changes introduced by the Crypto Roadmap version
+     * used by the analysis.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonCompliantFindingCount")
@@ -621,8 +621,8 @@ public final class CryptoAnalysisResult extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Total number of non-compliant findings with the analysis. A non-compliant finding means the
-     * application won't work properly with the changes introduced by the crypto roadmap version
-     * used the the analysis.
+     * application won't work properly with the changes introduced by the Crypto Roadmap version
+     * used by the analysis.
      *
      * @return the value
      **/

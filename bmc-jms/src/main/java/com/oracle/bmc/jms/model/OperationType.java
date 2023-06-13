@@ -18,6 +18,8 @@ public enum OperationType {
     CreateJavaInstallation("CREATE_JAVA_INSTALLATION"),
     CollectJfr("COLLECT_JFR"),
     RequestCryptoEventAnalysis("REQUEST_CRYPTO_EVENT_ANALYSIS"),
+    RequestPerformanceTuningAnalysis("REQUEST_PERFORMANCE_TUNING_ANALYSIS"),
+    RequestJavaMigrationAnalysis("REQUEST_JAVA_MIGRATION_ANALYSIS"),
     ScanJavaServerUsage("SCAN_JAVA_SERVER_USAGE"),
     ScanLibraryUsage("SCAN_LIBRARY_USAGE"),
 
