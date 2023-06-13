@@ -31,6 +31,103 @@ public class AIServiceDocumentWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetModelRequest, GetModelResponse> forModel(
+            GetModelRequest request,
+            com.oracle.bmc.aidocument.model.Model.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forModel(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetModelRequest, GetModelResponse> forModel(
+            GetModelRequest request,
+            com.oracle.bmc.aidocument.model.Model.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forModel(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetModelRequest, GetModelResponse> forModel(
+            GetModelRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.aidocument.model.Model.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forModel(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Model.
+    private com.oracle.bmc.waiter.Waiter<GetModelRequest, GetModelResponse> forModel(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetModelRequest request,
+            final com.oracle.bmc.aidocument.model.Model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.aidocument.model.Model.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetModelRequest, GetModelResponse>() {
+                            @Override
+                            public GetModelResponse apply(GetModelRequest request) {
+                                return client.getModel(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetModelResponse>() {
+                            @Override
+                            public boolean test(GetModelResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getModel().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.aidocument.model.Model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetProcessorJobRequest, GetProcessorJobResponse>
             forProcessorJob(
                     GetProcessorJobRequest request,
@@ -120,6 +217,159 @@ public class AIServiceDocumentWaiters {
                             public boolean test(GetProcessorJobResponse response) {
                                 return targetStatesSet.contains(
                                         response.getProcessorJob().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetProjectRequest, GetProjectResponse> forProject(
+            GetProjectRequest request,
+            com.oracle.bmc.aidocument.model.Project.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forProject(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetProjectRequest, GetProjectResponse> forProject(
+            GetProjectRequest request,
+            com.oracle.bmc.aidocument.model.Project.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forProject(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetProjectRequest, GetProjectResponse> forProject(
+            GetProjectRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.aidocument.model.Project.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forProject(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Project.
+    private com.oracle.bmc.waiter.Waiter<GetProjectRequest, GetProjectResponse> forProject(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetProjectRequest request,
+            final com.oracle.bmc.aidocument.model.Project.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.aidocument.model.Project.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<GetProjectRequest, GetProjectResponse>() {
+                            @Override
+                            public GetProjectResponse apply(GetProjectRequest request) {
+                                return client.getProject(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetProjectResponse>() {
+                            @Override
+                            public boolean test(GetProjectResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getProject().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.aidocument.model.Project.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
+            forWorkRequest(GetWorkRequestRequest request) {
+        return forWorkRequest(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@linkcom.oracle.bmc.waiter. DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
+            forWorkRequest(
+                    GetWorkRequestRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forWorkRequest(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request);
+    }
+
+    // Helper method to create a new Waiter for WorkRequest.
+    private com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
+            forWorkRequest(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetWorkRequestRequest request) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetWorkRequestRequest, GetWorkRequestResponse>() {
+                            @Override
+                            public GetWorkRequestResponse apply(GetWorkRequestRequest request) {
+                                return client.getWorkRequest(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetWorkRequestResponse>() {
+                            @Override
+                            public boolean test(GetWorkRequestResponse response) {
+                                // work requests are complete once the time finished is available
+                                return response.getWorkRequest().getTimeFinished() != null;
                             }
                         },
                         false),

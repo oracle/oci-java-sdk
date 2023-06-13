@@ -31,13 +31,13 @@ public final class CryptoEventAnalysis extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * CryptoEventAnalysis flag to store enabled or disabled status
+         * CryptoEventAnalysis flag to store enabled or disabled status.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * CryptoEventAnalysis flag to store enabled or disabled status
+         * CryptoEventAnalysis flag to store enabled or disabled status.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -92,13 +92,13 @@ public final class CryptoEventAnalysis extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * CryptoEventAnalysis flag to store enabled or disabled status
+     * CryptoEventAnalysis flag to store enabled or disabled status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * CryptoEventAnalysis flag to store enabled or disabled status
+     * CryptoEventAnalysis flag to store enabled or disabled status.
      * @return the value
      **/
     public Boolean getIsEnabled() {

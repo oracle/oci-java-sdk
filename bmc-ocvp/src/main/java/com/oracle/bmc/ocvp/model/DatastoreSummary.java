@@ -22,9 +22,7 @@ public final class DatastoreSummary extends com.oracle.bmc.http.internal.Explici
     @Deprecated
     @java.beans.ConstructorProperties({"blockVolumeIds", "datastoreType", "capacity"})
     public DatastoreSummary(
-            java.util.List<String> blockVolumeIds,
-            DatastoreTypes datastoreType,
-            java.math.BigDecimal capacity) {
+            java.util.List<String> blockVolumeIds, DatastoreTypes datastoreType, Double capacity) {
         super();
         this.blockVolumeIds = blockVolumeIds;
         this.datastoreType = datastoreType;
@@ -69,14 +67,14 @@ public final class DatastoreSummary extends com.oracle.bmc.http.internal.Explici
          * Size of the Block Storage Volume in GB.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-        private java.math.BigDecimal capacity;
+        private Double capacity;
 
         /**
          * Size of the Block Storage Volume in GB.
          * @param capacity the value to set
          * @return this builder
          **/
-        public Builder capacity(java.math.BigDecimal capacity) {
+        public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
@@ -152,13 +150,13 @@ public final class DatastoreSummary extends com.oracle.bmc.http.internal.Explici
      * Size of the Block Storage Volume in GB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
-    private final java.math.BigDecimal capacity;
+    private final Double capacity;
 
     /**
      * Size of the Block Storage Volume in GB.
      * @return the value
      **/
-    public java.math.BigDecimal getCapacity() {
+    public Double getCapacity() {
         return capacity;
     }
 

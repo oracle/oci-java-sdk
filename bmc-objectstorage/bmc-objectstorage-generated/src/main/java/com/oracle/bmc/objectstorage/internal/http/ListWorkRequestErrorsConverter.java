@@ -32,8 +32,14 @@ public class ListWorkRequestErrorsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/")
                         .path("workRequests")
                         .path(

@@ -87,6 +87,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.nosql.SdkClientsMetadata",
     "com.oracle.bmc.objectstorage.SdkClientsMetadata",
     "com.oracle.bmc.oce.SdkClientsMetadata",
+    "com.oracle.bmc.ocicontrolcenter.SdkClientsMetadata",
     "com.oracle.bmc.ocvp.SdkClientsMetadata",
     "com.oracle.bmc.oda.SdkClientsMetadata",
     "com.oracle.bmc.onesubscription.SdkClientsMetadata",

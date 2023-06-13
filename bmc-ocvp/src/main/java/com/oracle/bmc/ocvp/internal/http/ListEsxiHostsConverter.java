@@ -97,6 +97,30 @@ public class ListEsxiHostsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getIsBillingDonorsOnly() != null) {
+            target =
+                    target.queryParam(
+                            "isBillingDonorsOnly",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsBillingDonorsOnly()));
+        }
+
+        if (request.getIsSwapBillingOnly() != null) {
+            target =
+                    target.queryParam(
+                            "isSwapBillingOnly",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsSwapBillingOnly()));
+        }
+
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

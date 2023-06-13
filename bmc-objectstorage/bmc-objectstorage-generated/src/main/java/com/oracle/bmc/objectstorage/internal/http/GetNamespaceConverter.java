@@ -30,8 +30,12 @@ public class GetNamespaceConverter {
             com.oracle.bmc.objectstorage.requests.GetNamespaceRequest request) {
         Validate.notNull(request, "request instance is required");
 
-        com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/").path("n");
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
+        com.oracle.bmc.http.internal.WrappedWebTarget target = newBaseTarget.path("/").path("n");
 
         if (request.getCompartmentId() != null) {
             target =

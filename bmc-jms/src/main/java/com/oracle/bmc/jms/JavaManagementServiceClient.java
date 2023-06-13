@@ -874,6 +874,87 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public DeleteJavaMigrationAnalysisResultResponse deleteJavaMigrationAnalysisResult(
+            DeleteJavaMigrationAnalysisResultRequest request) {
+        LOG.trace("Called deleteJavaMigrationAnalysisResult");
+        final DeleteJavaMigrationAnalysisResultRequest interceptedRequest =
+                DeleteJavaMigrationAnalysisResultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteJavaMigrationAnalysisResultConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "DeleteJavaMigrationAnalysisResult",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/DeleteJavaMigrationAnalysisResult");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteJavaMigrationAnalysisResultResponse>
+                transformer =
+                        DeleteJavaMigrationAnalysisResultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeletePerformanceTuningAnalysisResultResponse deletePerformanceTuningAnalysisResult(
+            DeletePerformanceTuningAnalysisResultRequest request) {
+        LOG.trace("Called deletePerformanceTuningAnalysisResult");
+        final DeletePerformanceTuningAnalysisResultRequest interceptedRequest =
+                DeletePerformanceTuningAnalysisResultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePerformanceTuningAnalysisResultConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "DeletePerformanceTuningAnalysisResult",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/DeletePerformanceTuningAnalysisResult");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeletePerformanceTuningAnalysisResultResponse>
+                transformer =
+                        DeletePerformanceTuningAnalysisResultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GenerateAgentDeployScriptResponse generateAgentDeployScript(
             GenerateAgentDeployScriptRequest request) {
         LOG.trace("Called generateAgentDeployScript");
@@ -1102,6 +1183,45 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public GetJavaMigrationAnalysisResultResponse getJavaMigrationAnalysisResult(
+            GetJavaMigrationAnalysisResultRequest request) {
+        LOG.trace("Called getJavaMigrationAnalysisResult");
+        final GetJavaMigrationAnalysisResultRequest interceptedRequest =
+                GetJavaMigrationAnalysisResultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaMigrationAnalysisResultConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "GetJavaMigrationAnalysisResult",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/GetJavaMigrationAnalysisResult");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetJavaMigrationAnalysisResultResponse>
+                transformer =
+                        GetJavaMigrationAnalysisResultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetJavaReleaseResponse getJavaRelease(GetJavaReleaseRequest request) {
         LOG.trace("Called getJavaRelease");
         final GetJavaReleaseRequest interceptedRequest =
@@ -1137,6 +1257,45 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public GetPerformanceTuningAnalysisResultResponse getPerformanceTuningAnalysisResult(
+            GetPerformanceTuningAnalysisResultRequest request) {
+        LOG.trace("Called getPerformanceTuningAnalysisResult");
+        final GetPerformanceTuningAnalysisResultRequest interceptedRequest =
+                GetPerformanceTuningAnalysisResultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPerformanceTuningAnalysisResultConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "GetPerformanceTuningAnalysisResult",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/GetPerformanceTuningAnalysisResult");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetPerformanceTuningAnalysisResultResponse>
+                transformer =
+                        GetPerformanceTuningAnalysisResultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         final GetWorkRequestRequest interceptedRequest =
@@ -1156,6 +1315,43 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request) {
+        LOG.trace("Called listAnnouncements");
+        final ListAnnouncementsRequest interceptedRequest =
+                ListAnnouncementsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAnnouncementsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListAnnouncements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AnnouncementCollection/ListAnnouncements");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
+                transformer =
+                        ListAnnouncementsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1228,6 +1424,43 @@ public class JavaManagementServiceClient implements JavaManagementService {
         java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAnalysisResultsResponse>
                 transformer =
                         ListCryptoAnalysisResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListFleetDiagnosesResponse listFleetDiagnoses(ListFleetDiagnosesRequest request) {
+        LOG.trace("Called listFleetDiagnoses");
+        final ListFleetDiagnosesRequest interceptedRequest =
+                ListFleetDiagnosesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetDiagnosesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListFleetDiagnoses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetDiagnosisSummary/ListFleetDiagnoses");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetDiagnosesResponse>
+                transformer =
+                        ListFleetDiagnosesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1354,6 +1587,45 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public ListJavaMigrationAnalysisResultsResponse listJavaMigrationAnalysisResults(
+            ListJavaMigrationAnalysisResultsRequest request) {
+        LOG.trace("Called listJavaMigrationAnalysisResults");
+        final ListJavaMigrationAnalysisResultsRequest interceptedRequest =
+                ListJavaMigrationAnalysisResultsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaMigrationAnalysisResultsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListJavaMigrationAnalysisResults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/ListJavaMigrationAnalysisResults");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListJavaMigrationAnalysisResultsResponse>
+                transformer =
+                        ListJavaMigrationAnalysisResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListJavaReleasesResponse listJavaReleases(ListJavaReleasesRequest request) {
         LOG.trace("Called listJavaReleases");
         final ListJavaReleasesRequest interceptedRequest =
@@ -1410,6 +1682,46 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage");
         java.util.function.Function<javax.ws.rs.core.Response, ListJreUsageResponse> transformer =
                 ListJreUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPerformanceTuningAnalysisResultsResponse listPerformanceTuningAnalysisResults(
+            ListPerformanceTuningAnalysisResultsRequest request) {
+        LOG.trace("Called listPerformanceTuningAnalysisResults");
+        final ListPerformanceTuningAnalysisResultsRequest interceptedRequest =
+                ListPerformanceTuningAnalysisResultsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPerformanceTuningAnalysisResultsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListPerformanceTuningAnalysisResults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/ListPerformanceTuningAnalysisResults");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListPerformanceTuningAnalysisResultsResponse>
+                transformer =
+                        ListPerformanceTuningAnalysisResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1659,6 +1971,49 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public RequestJavaMigrationAnalysesResponse requestJavaMigrationAnalyses(
+            RequestJavaMigrationAnalysesRequest request) {
+        LOG.trace("Called requestJavaMigrationAnalyses");
+        final RequestJavaMigrationAnalysesRequest interceptedRequest =
+                RequestJavaMigrationAnalysesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestJavaMigrationAnalysesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "RequestJavaMigrationAnalyses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJavaMigrationAnalyses");
+        java.util.function.Function<javax.ws.rs.core.Response, RequestJavaMigrationAnalysesResponse>
+                transformer =
+                        RequestJavaMigrationAnalysesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRequestJavaMigrationAnalysesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RequestJfrRecordingsResponse requestJfrRecordings(RequestJfrRecordingsRequest request) {
         LOG.trace("Called requestJfrRecordings");
         final RequestJfrRecordingsRequest interceptedRequest =
@@ -1693,6 +2048,50 @@ public class JavaManagementServiceClient implements JavaManagementService {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getRequestJfrRecordingsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RequestPerformanceTuningAnalysesResponse requestPerformanceTuningAnalyses(
+            RequestPerformanceTuningAnalysesRequest request) {
+        LOG.trace("Called requestPerformanceTuningAnalyses");
+        final RequestPerformanceTuningAnalysesRequest interceptedRequest =
+                RequestPerformanceTuningAnalysesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestPerformanceTuningAnalysesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "RequestPerformanceTuningAnalyses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestPerformanceTuningAnalyses");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestPerformanceTuningAnalysesResponse>
+                transformer =
+                        RequestPerformanceTuningAnalysesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRequestPerformanceTuningAnalysesDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1784,6 +2183,46 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public SummarizeApplicationInstallationUsageResponse summarizeApplicationInstallationUsage(
+            SummarizeApplicationInstallationUsageRequest request) {
+        LOG.trace("Called summarizeApplicationInstallationUsage");
+        final SummarizeApplicationInstallationUsageRequest interceptedRequest =
+                SummarizeApplicationInstallationUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeApplicationInstallationUsageConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "SummarizeApplicationInstallationUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationInstallationUsageSummary/SummarizeApplicationInstallationUsage");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeApplicationInstallationUsageResponse>
+                transformer =
+                        SummarizeApplicationInstallationUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SummarizeApplicationUsageResponse summarizeApplicationUsage(
             SummarizeApplicationUsageRequest request) {
         LOG.trace("Called summarizeApplicationUsage");
@@ -1805,6 +2244,48 @@ public class JavaManagementServiceClient implements JavaManagementService {
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeApplicationUsageResponse>
                 transformer =
                         SummarizeApplicationUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeDeployedApplicationInstallationUsageResponse
+            summarizeDeployedApplicationInstallationUsage(
+                    SummarizeDeployedApplicationInstallationUsageRequest request) {
+        LOG.trace("Called summarizeDeployedApplicationInstallationUsage");
+        final SummarizeDeployedApplicationInstallationUsageRequest interceptedRequest =
+                SummarizeDeployedApplicationInstallationUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeDeployedApplicationInstallationUsageConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "SummarizeDeployedApplicationInstallationUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationInstallationUsageSummary/SummarizeDeployedApplicationInstallationUsage");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeDeployedApplicationInstallationUsageResponse>
+                transformer =
+                        SummarizeDeployedApplicationInstallationUsageConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

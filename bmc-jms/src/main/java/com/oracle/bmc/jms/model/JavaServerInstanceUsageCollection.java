@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Results of an Java Server instance usage search.  Contains Java Server usage items.
+ * Results of a Java Server instance usage search. Contains Java Server usage items.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

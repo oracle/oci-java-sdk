@@ -17,6 +17,7 @@ public enum OperationTypes {
     DowngradeHcx("DOWNGRADE_HCX"),
     CancelDowngradeHcx("CANCEL_DOWNGRADE_HCX"),
     RefreshHcxLicenseStatus("REFRESH_HCX_LICENSE_STATUS"),
+    SwapBilling("SWAP_BILLING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

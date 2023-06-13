@@ -117,7 +117,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work requests should be scoped to
          * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-         * and those resources are not in the same compartment, it is up to the service team to pick the primary
+         * and those resources aren't in the same compartment, it's up to the service team to pick the primary
          * resource whose compartment should be used.
          *
          **/
@@ -127,7 +127,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work requests should be scoped to
          * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-         * and those resources are not in the same compartment, it is up to the service team to pick the primary
+         * and those resources aren't in the same compartment, it's up to the service team to pick the primary
          * resource whose compartment should be used.
          *
          * @param compartmentId the value to set
@@ -410,7 +410,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-     * and those resources are not in the same compartment, it is up to the service team to pick the primary
+     * and those resources aren't in the same compartment, it's up to the service team to pick the primary
      * resource whose compartment should be used.
      *
      **/
@@ -420,7 +420,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-     * and those resources are not in the same compartment, it is up to the service team to pick the primary
+     * and those resources aren't in the same compartment, it's up to the service team to pick the primary
      * resource whose compartment should be used.
      *
      * @return the value

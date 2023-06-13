@@ -24,13 +24,13 @@ public class SummarizeLibraryUsageRequest
         return fleetId;
     }
     /**
-     * The Java server instance key.
+     * The Java Server instance key.
      *
      */
     private String serverInstanceKey;
 
     /**
-     * The Java server instance key.
+     * The Java Server instance key.
      *
      */
     public String getServerInstanceKey() {
@@ -204,13 +204,13 @@ public class SummarizeLibraryUsageRequest
         }
 
         /**
-         * The Java server instance key.
+         * The Java Server instance key.
          *
          */
         private String serverInstanceKey = null;
 
         /**
-         * The Java server instance key.
+         * The Java Server instance key.
          *
          * @param serverInstanceKey the value to set
          * @return this builder instance
