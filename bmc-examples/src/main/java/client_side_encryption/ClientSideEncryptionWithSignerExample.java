@@ -8,6 +8,7 @@ import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.*;
 import com.oracle.bmc.util.internal.StringUtils;
+import org.apache.http.conn.ConnectTimeoutException;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -50,7 +51,8 @@ public class ClientSideEncryptionWithSignerExample {
             provider = InstancePrincipalsAuthenticationDetailsProvider.builder().build();
         } catch (Exception e) {
             if (e.getCause() instanceof SocketTimeoutException
-                    || e.getCause() instanceof ConnectException) {
+                    || e.getCause() instanceof ConnectException
+                    || e.getCause() instanceof ConnectTimeoutException) {
                 System.out.println(
                         "This sample only works when running on an OCI instance. Are you sure you’re running on an OCI instance? For more info see: https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm");
                 return;

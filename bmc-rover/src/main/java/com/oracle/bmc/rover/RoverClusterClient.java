@@ -306,6 +306,42 @@ public class RoverClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public RequestAdditionalNodesResponse requestAdditionalNodes(
+            RequestAdditionalNodesRequest request) {
+
+        Validate.notBlank(request.getRoverClusterId(), "roverClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getRequestAdditionalNodesDetails(),
+                "requestAdditionalNodesDetails is required");
+
+        return clientCall(request, RequestAdditionalNodesResponse::builder)
+                .logger(LOG, "requestAdditionalNodes")
+                .serviceDetails(
+                        "RoverCluster",
+                        "RequestAdditionalNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/RequestAdditionalNodes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestAdditionalNodesRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverClusters")
+                .appendPathParam(request.getRoverClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("requestAdditionalNodes")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestAdditionalNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RequestAdditionalNodesResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public UpdateRoverClusterResponse updateRoverCluster(UpdateRoverClusterRequest request) {
 
         Validate.notBlank(request.getRoverClusterId(), "roverClusterId must not be blank");

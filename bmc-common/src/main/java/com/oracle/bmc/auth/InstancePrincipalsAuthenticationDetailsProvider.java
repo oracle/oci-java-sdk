@@ -119,5 +119,21 @@ public class InstancePrincipalsAuthenticationDetailsProvider
             // clients will bind to this, not the one in the superclass
             return super.leafCertificateSupplier(leafCertificateSupplier);
         }
+
+        @Override
+        public InstancePrincipalsAuthenticationDetailsProviderBuilder detectEndpointRetries(
+                int detectEndpointRetries) {
+            // Do not remove this method. Due to compile time resolution, older generated
+            // clients will bind to this, not the one in the superclass
+            return super.detectEndpointRetries(detectEndpointRetries);
+        }
+
+        @Override
+        public InstancePrincipalsAuthenticationDetailsProviderBuilder timeoutForEachRetry(
+                int timeoutForEachRetry) {
+            // Do not remove this method. Due to compile time resolution, older generated
+            // clients will bind to this, not the one in the superclass
+            return super.timeoutForEachRetry(timeoutForEachRetry);
+        }
     }
 }

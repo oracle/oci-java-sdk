@@ -174,6 +174,22 @@ public interface DataLabelingManagement extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Imports records and annotations from dataset files into existing Dataset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ImportPreAnnotatedDataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ImportPreAnnotatedData API.
+     */
+    ImportPreAnnotatedDataResponse importPreAnnotatedData(ImportPreAnnotatedDataRequest request);
+
+    /**
      * These are a static list in a given region.
      *
      * @param request The request object containing the details to send

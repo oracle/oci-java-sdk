@@ -192,7 +192,7 @@ public final class NetworkSources
             return this;
         }
         /**
-         * Date and time the group was created, in the format defined by RFC3339.
+         * Date and time the network source was created, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          */
@@ -200,7 +200,7 @@ public final class NetworkSources
         private java.util.Date timeCreated;
 
         /**
-         * Date and time the group was created, in the format defined by RFC3339.
+         * Date and time the network source was created, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -475,7 +475,7 @@ public final class NetworkSources
     }
 
     /**
-     * Date and time the group was created, in the format defined by RFC3339.
+     * Date and time the network source was created, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      */
@@ -483,7 +483,7 @@ public final class NetworkSources
     private final java.util.Date timeCreated;
 
     /**
-     * Date and time the group was created, in the format defined by RFC3339.
+     * Date and time the network source was created, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *

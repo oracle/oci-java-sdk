@@ -47,6 +47,12 @@ public final class UpdateRoverNodeDetails
         "importFileBucket",
         "dataValidationCode",
         "publicKey",
+        "certificateAuthorityId",
+        "timeCertValidityEnd",
+        "commonName",
+        "certCompartmentId",
+        "certKeyAlgorithm",
+        "certSignatureAlgorithm",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -75,6 +81,12 @@ public final class UpdateRoverNodeDetails
             String importFileBucket,
             String dataValidationCode,
             String publicKey,
+            String certificateAuthorityId,
+            java.util.Date timeCertValidityEnd,
+            String commonName,
+            String certCompartmentId,
+            CertKeyAlgorithm certKeyAlgorithm,
+            CertSignatureAlgorithm certSignatureAlgorithm,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -102,6 +114,12 @@ public final class UpdateRoverNodeDetails
         this.importFileBucket = importFileBucket;
         this.dataValidationCode = dataValidationCode;
         this.publicKey = publicKey;
+        this.certificateAuthorityId = certificateAuthorityId;
+        this.timeCertValidityEnd = timeCertValidityEnd;
+        this.commonName = commonName;
+        this.certCompartmentId = certCompartmentId;
+        this.certKeyAlgorithm = certKeyAlgorithm;
+        this.certSignatureAlgorithm = certSignatureAlgorithm;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -462,6 +480,96 @@ public final class UpdateRoverNodeDetails
             this.__explicitlySet__.add("publicKey");
             return this;
         }
+        /** The certificateAuthorityId of subordinate/intermediate certificate authority. */
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
+        private String certificateAuthorityId;
+
+        /**
+         * The certificateAuthorityId of subordinate/intermediate certificate authority.
+         *
+         * @param certificateAuthorityId the value to set
+         * @return this builder
+         */
+        public Builder certificateAuthorityId(String certificateAuthorityId) {
+            this.certificateAuthorityId = certificateAuthorityId;
+            this.__explicitlySet__.add("certificateAuthorityId");
+            return this;
+        }
+        /** The time after which leaf certificate will invalid. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCertValidityEnd")
+        private java.util.Date timeCertValidityEnd;
+
+        /**
+         * The time after which leaf certificate will invalid.
+         *
+         * @param timeCertValidityEnd the value to set
+         * @return this builder
+         */
+        public Builder timeCertValidityEnd(java.util.Date timeCertValidityEnd) {
+            this.timeCertValidityEnd = timeCertValidityEnd;
+            this.__explicitlySet__.add("timeCertValidityEnd");
+            return this;
+        }
+        /** The common name for the leaf certificate. */
+        @com.fasterxml.jackson.annotation.JsonProperty("commonName")
+        private String commonName;
+
+        /**
+         * The common name for the leaf certificate.
+         *
+         * @param commonName the value to set
+         * @return this builder
+         */
+        public Builder commonName(String commonName) {
+            this.commonName = commonName;
+            this.__explicitlySet__.add("commonName");
+            return this;
+        }
+        /** The compartmentId of the leaf certificate. */
+        @com.fasterxml.jackson.annotation.JsonProperty("certCompartmentId")
+        private String certCompartmentId;
+
+        /**
+         * The compartmentId of the leaf certificate.
+         *
+         * @param certCompartmentId the value to set
+         * @return this builder
+         */
+        public Builder certCompartmentId(String certCompartmentId) {
+            this.certCompartmentId = certCompartmentId;
+            this.__explicitlySet__.add("certCompartmentId");
+            return this;
+        }
+        /** key algorithm for issuing leaf certificate. */
+        @com.fasterxml.jackson.annotation.JsonProperty("certKeyAlgorithm")
+        private CertKeyAlgorithm certKeyAlgorithm;
+
+        /**
+         * key algorithm for issuing leaf certificate.
+         *
+         * @param certKeyAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder certKeyAlgorithm(CertKeyAlgorithm certKeyAlgorithm) {
+            this.certKeyAlgorithm = certKeyAlgorithm;
+            this.__explicitlySet__.add("certKeyAlgorithm");
+            return this;
+        }
+        /** signature algorithm for issuing leaf certificate. */
+        @com.fasterxml.jackson.annotation.JsonProperty("certSignatureAlgorithm")
+        private CertSignatureAlgorithm certSignatureAlgorithm;
+
+        /**
+         * signature algorithm for issuing leaf certificate.
+         *
+         * @param certSignatureAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder certSignatureAlgorithm(CertSignatureAlgorithm certSignatureAlgorithm) {
+            this.certSignatureAlgorithm = certSignatureAlgorithm;
+            this.__explicitlySet__.add("certSignatureAlgorithm");
+            return this;
+        }
         /**
          * The freeform tags associated with this resource, if any. Each tag is a simple key-value
          * pair with no predefined name, type, or namespace. For more information, see [Resource
@@ -564,6 +672,12 @@ public final class UpdateRoverNodeDetails
                             this.importFileBucket,
                             this.dataValidationCode,
                             this.publicKey,
+                            this.certificateAuthorityId,
+                            this.timeCertValidityEnd,
+                            this.commonName,
+                            this.certCompartmentId,
+                            this.certKeyAlgorithm,
+                            this.certSignatureAlgorithm,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -643,6 +757,24 @@ public final class UpdateRoverNodeDetails
             }
             if (model.wasPropertyExplicitlySet("publicKey")) {
                 this.publicKey(model.getPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("certificateAuthorityId")) {
+                this.certificateAuthorityId(model.getCertificateAuthorityId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCertValidityEnd")) {
+                this.timeCertValidityEnd(model.getTimeCertValidityEnd());
+            }
+            if (model.wasPropertyExplicitlySet("commonName")) {
+                this.commonName(model.getCommonName());
+            }
+            if (model.wasPropertyExplicitlySet("certCompartmentId")) {
+                this.certCompartmentId(model.getCertCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("certKeyAlgorithm")) {
+                this.certKeyAlgorithm(model.getCertKeyAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("certSignatureAlgorithm")) {
+                this.certSignatureAlgorithm(model.getCertSignatureAlgorithm());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1002,6 +1134,84 @@ public final class UpdateRoverNodeDetails
         return publicKey;
     }
 
+    /** The certificateAuthorityId of subordinate/intermediate certificate authority. */
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
+    private final String certificateAuthorityId;
+
+    /**
+     * The certificateAuthorityId of subordinate/intermediate certificate authority.
+     *
+     * @return the value
+     */
+    public String getCertificateAuthorityId() {
+        return certificateAuthorityId;
+    }
+
+    /** The time after which leaf certificate will invalid. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCertValidityEnd")
+    private final java.util.Date timeCertValidityEnd;
+
+    /**
+     * The time after which leaf certificate will invalid.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCertValidityEnd() {
+        return timeCertValidityEnd;
+    }
+
+    /** The common name for the leaf certificate. */
+    @com.fasterxml.jackson.annotation.JsonProperty("commonName")
+    private final String commonName;
+
+    /**
+     * The common name for the leaf certificate.
+     *
+     * @return the value
+     */
+    public String getCommonName() {
+        return commonName;
+    }
+
+    /** The compartmentId of the leaf certificate. */
+    @com.fasterxml.jackson.annotation.JsonProperty("certCompartmentId")
+    private final String certCompartmentId;
+
+    /**
+     * The compartmentId of the leaf certificate.
+     *
+     * @return the value
+     */
+    public String getCertCompartmentId() {
+        return certCompartmentId;
+    }
+
+    /** key algorithm for issuing leaf certificate. */
+    @com.fasterxml.jackson.annotation.JsonProperty("certKeyAlgorithm")
+    private final CertKeyAlgorithm certKeyAlgorithm;
+
+    /**
+     * key algorithm for issuing leaf certificate.
+     *
+     * @return the value
+     */
+    public CertKeyAlgorithm getCertKeyAlgorithm() {
+        return certKeyAlgorithm;
+    }
+
+    /** signature algorithm for issuing leaf certificate. */
+    @com.fasterxml.jackson.annotation.JsonProperty("certSignatureAlgorithm")
+    private final CertSignatureAlgorithm certSignatureAlgorithm;
+
+    /**
+     * signature algorithm for issuing leaf certificate.
+     *
+     * @return the value
+     */
+    public CertSignatureAlgorithm getCertSignatureAlgorithm() {
+        return certSignatureAlgorithm;
+    }
+
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace. For more information, see [Resource
@@ -1108,6 +1318,12 @@ public final class UpdateRoverNodeDetails
         sb.append(", importFileBucket=").append(String.valueOf(this.importFileBucket));
         sb.append(", dataValidationCode=").append(String.valueOf(this.dataValidationCode));
         sb.append(", publicKey=").append(String.valueOf(this.publicKey));
+        sb.append(", certificateAuthorityId=").append(String.valueOf(this.certificateAuthorityId));
+        sb.append(", timeCertValidityEnd=").append(String.valueOf(this.timeCertValidityEnd));
+        sb.append(", commonName=").append(String.valueOf(this.commonName));
+        sb.append(", certCompartmentId=").append(String.valueOf(this.certCompartmentId));
+        sb.append(", certKeyAlgorithm=").append(String.valueOf(this.certKeyAlgorithm));
+        sb.append(", certSignatureAlgorithm=").append(String.valueOf(this.certSignatureAlgorithm));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1152,6 +1368,14 @@ public final class UpdateRoverNodeDetails
                 && java.util.Objects.equals(this.importFileBucket, other.importFileBucket)
                 && java.util.Objects.equals(this.dataValidationCode, other.dataValidationCode)
                 && java.util.Objects.equals(this.publicKey, other.publicKey)
+                && java.util.Objects.equals(
+                        this.certificateAuthorityId, other.certificateAuthorityId)
+                && java.util.Objects.equals(this.timeCertValidityEnd, other.timeCertValidityEnd)
+                && java.util.Objects.equals(this.commonName, other.commonName)
+                && java.util.Objects.equals(this.certCompartmentId, other.certCompartmentId)
+                && java.util.Objects.equals(this.certKeyAlgorithm, other.certKeyAlgorithm)
+                && java.util.Objects.equals(
+                        this.certSignatureAlgorithm, other.certSignatureAlgorithm)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1243,6 +1467,28 @@ public final class UpdateRoverNodeDetails
                                 ? 43
                                 : this.dataValidationCode.hashCode());
         result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certificateAuthorityId == null
+                                ? 43
+                                : this.certificateAuthorityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCertValidityEnd == null
+                                ? 43
+                                : this.timeCertValidityEnd.hashCode());
+        result = (result * PRIME) + (this.commonName == null ? 43 : this.commonName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certCompartmentId == null ? 43 : this.certCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certKeyAlgorithm == null ? 43 : this.certKeyAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.certSignatureAlgorithm == null
+                                ? 43
+                                : this.certSignatureAlgorithm.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

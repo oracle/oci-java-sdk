@@ -1663,6 +1663,9 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateConsoleConnectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateConsoleConnectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateConsoleConnectionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -2476,6 +2479,9 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteConsoleConnectionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteConsoleConnectionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -10047,6 +10053,47 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public UpdateConsoleConnectionResponse updateConsoleConnection(
+            UpdateConsoleConnectionRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+
+        Validate.notBlank(
+                request.getConsoleConnectionId(), "consoleConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateConsoleConnectionDetails(),
+                "updateConsoleConnectionDetails is required");
+
+        return clientCall(request, UpdateConsoleConnectionResponse::builder)
+                .logger(LOG, "updateConsoleConnection")
+                .serviceDetails(
+                        "Database",
+                        "UpdateConsoleConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/UpdateConsoleConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateConsoleConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .appendPathParam("consoleConnections")
+                .appendPathParam(request.getConsoleConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ConsoleConnection.class,
+                        UpdateConsoleConnectionResponse.Builder::consoleConnection)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateConsoleConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateConsoleConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateConsoleConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateDataGuardAssociationResponse updateDataGuardAssociation(
             UpdateDataGuardAssociationRequest request) {
 
@@ -10182,6 +10229,38 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateDbHomeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDbHomeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateDbNodeResponse updateDbNode(UpdateDbNodeRequest request) {
+
+        Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
+        Objects.requireNonNull(request.getUpdateDbNodeDetails(), "updateDbNodeDetails is required");
+
+        return clientCall(request, UpdateDbNodeResponse::builder)
+                .logger(LOG, "updateDbNode")
+                .serviceDetails(
+                        "Database",
+                        "UpdateDbNode",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/UpdateDbNode")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDbNodeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dbNodes")
+                .appendPathParam(request.getDbNodeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.DbNode.class,
+                        UpdateDbNodeResponse.Builder::dbNode)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDbNodeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateDbNodeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDbNodeResponse.Builder::opcRequestId)
                 .callSync();
     }
 

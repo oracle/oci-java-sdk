@@ -216,12 +216,12 @@ public final class ShippingAddress
             this.__explicitlySet__.add("country");
             return this;
         }
-        /** recepient phone number. */
+        /** recipient phone number. */
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
 
         /**
-         * recepient phone number.
+         * recipient phone number.
          *
          * @param phoneNumber the value to set
          * @return this builder
@@ -231,12 +231,12 @@ public final class ShippingAddress
             this.__explicitlySet__.add("phoneNumber");
             return this;
         }
-        /** recepient email address. */
+        /** recipient email address. */
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
-         * recepient email address.
+         * recipient email address.
          *
          * @param email the value to set
          * @return this builder
@@ -452,12 +452,12 @@ public final class ShippingAddress
         return country;
     }
 
-    /** recepient phone number. */
+    /** recipient phone number. */
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
 
     /**
-     * recepient phone number.
+     * recipient phone number.
      *
      * @return the value
      */
@@ -465,12 +465,12 @@ public final class ShippingAddress
         return phoneNumber;
     }
 
-    /** recepient email address. */
+    /** recipient email address. */
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
-     * recepient email address.
+     * recipient email address.
      *
      * @return the value
      */

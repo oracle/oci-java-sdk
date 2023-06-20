@@ -47,6 +47,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
         "ownerPrincipalId",
         "ownerUserName",
         "parameters",
+        "poolId",
         "privateEndpointId",
         "sparkVersion",
         "timeCreated",
@@ -82,6 +83,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
             String ownerPrincipalId,
             String ownerUserName,
             java.util.List<ApplicationParameter> parameters,
+            String poolId,
             String privateEndpointId,
             String sparkVersion,
             java.util.Date timeCreated,
@@ -116,6 +118,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
         this.ownerPrincipalId = ownerPrincipalId;
         this.ownerUserName = ownerUserName;
         this.parameters = parameters;
+        this.poolId = poolId;
         this.privateEndpointId = privateEndpointId;
         this.sparkVersion = sparkVersion;
         this.timeCreated = timeCreated;
@@ -586,6 +589,21 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("parameters");
             return this;
         }
+        /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+        private String poolId;
+
+        /**
+         * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         *
+         * @param poolId the value to set
+         * @return this builder
+         */
+        public Builder poolId(String poolId) {
+            this.poolId = poolId;
+            this.__explicitlySet__.add("poolId");
+            return this;
+        }
         /** The OCID of a private endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
@@ -617,7 +635,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -625,7 +643,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
         private java.util.Date timeCreated;
 
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -638,7 +656,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The date and time a application was updated, expressed in [RFC
+         * The date and time the resource was updated, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -646,7 +664,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time a application was updated, expressed in [RFC
+         * The date and time the resource was updated, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -768,6 +786,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
                             this.ownerPrincipalId,
                             this.ownerUserName,
                             this.parameters,
+                            this.poolId,
                             this.privateEndpointId,
                             this.sparkVersion,
                             this.timeCreated,
@@ -858,6 +877,9 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("parameters")) {
                 this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("poolId")) {
+                this.poolId(model.getPoolId());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
@@ -1301,6 +1323,19 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
         return parameters;
     }
 
+    /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+    private final String poolId;
+
+    /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     *
+     * @return the value
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
     /** The OCID of a private endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
@@ -1328,7 +1363,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -1336,7 +1371,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *
@@ -1347,7 +1382,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The date and time a application was updated, expressed in [RFC
+     * The date and time the resource was updated, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -1355,7 +1390,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time a application was updated, expressed in [RFC
+     * The date and time the resource was updated, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *
@@ -1475,6 +1510,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
         sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", poolId=").append(String.valueOf(this.poolId));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1522,6 +1558,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
                 && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
                 && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.poolId, other.poolId)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1586,6 +1623,7 @@ public final class Application extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.poolId == null ? 43 : this.poolId.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());

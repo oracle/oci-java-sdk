@@ -333,6 +333,44 @@ public class DataLabelingManagementAsyncClient extends com.oracle.bmc.http.inter
     }
 
     @Override
+    public java.util.concurrent.Future<ImportPreAnnotatedDataResponse> importPreAnnotatedData(
+            ImportPreAnnotatedDataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportPreAnnotatedDataRequest, ImportPreAnnotatedDataResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatasetId(), "datasetId must not be blank");
+        Objects.requireNonNull(
+                request.getImportPreAnnotatedDataDetails(),
+                "importPreAnnotatedDataDetails is required");
+
+        return clientCall(request, ImportPreAnnotatedDataResponse::builder)
+                .logger(LOG, "importPreAnnotatedData")
+                .serviceDetails(
+                        "DataLabelingManagement",
+                        "ImportPreAnnotatedData",
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/ImportPreAnnotatedData")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportPreAnnotatedDataRequest::builder)
+                .basePath("/20211001")
+                .appendPathParam("datasets")
+                .appendPathParam(request.getDatasetId())
+                .appendPathParam("actions")
+                .appendPathParam("importPreAnnotatedData")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportPreAnnotatedDataResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportPreAnnotatedDataResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAnnotationFormatsResponse> listAnnotationFormats(
             ListAnnotationFormatsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

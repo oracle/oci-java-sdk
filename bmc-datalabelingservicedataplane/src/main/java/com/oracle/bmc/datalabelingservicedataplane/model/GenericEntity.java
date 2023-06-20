@@ -27,6 +27,15 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public final class GenericEntity extends Entity {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("documentEntityMetadata")
+        private DocumentEntityMetadata documentEntityMetadata;
+
+        public Builder documentEntityMetadata(DocumentEntityMetadata documentEntityMetadata) {
+            this.documentEntityMetadata = documentEntityMetadata;
+            this.__explicitlySet__.add("documentEntityMetadata");
+            return this;
+        }
         /** A collection of label entities. */
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<Label> labels;
@@ -66,7 +75,9 @@ public final class GenericEntity extends Entity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenericEntity build() {
-            GenericEntity model = new GenericEntity(this.labels, this.extendedMetadata);
+            GenericEntity model =
+                    new GenericEntity(
+                            this.documentEntityMetadata, this.labels, this.extendedMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -75,6 +86,9 @@ public final class GenericEntity extends Entity {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(GenericEntity model) {
+            if (model.wasPropertyExplicitlySet("documentEntityMetadata")) {
+                this.documentEntityMetadata(model.getDocumentEntityMetadata());
+            }
             if (model.wasPropertyExplicitlySet("labels")) {
                 this.labels(model.getLabels());
             }
@@ -96,10 +110,20 @@ public final class GenericEntity extends Entity {
 
     @Deprecated
     public GenericEntity(
-            java.util.List<Label> labels, java.util.Map<String, String> extendedMetadata) {
+            DocumentEntityMetadata documentEntityMetadata,
+            java.util.List<Label> labels,
+            java.util.Map<String, String> extendedMetadata) {
         super();
+        this.documentEntityMetadata = documentEntityMetadata;
         this.labels = labels;
         this.extendedMetadata = extendedMetadata;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("documentEntityMetadata")
+    private final DocumentEntityMetadata documentEntityMetadata;
+
+    public DocumentEntityMetadata getDocumentEntityMetadata() {
+        return documentEntityMetadata;
     }
 
     /** A collection of label entities. */
@@ -147,6 +171,7 @@ public final class GenericEntity extends Entity {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenericEntity(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", documentEntityMetadata=").append(String.valueOf(this.documentEntityMetadata));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(")");
@@ -163,7 +188,8 @@ public final class GenericEntity extends Entity {
         }
 
         GenericEntity other = (GenericEntity) o;
-        return java.util.Objects.equals(this.labels, other.labels)
+        return java.util.Objects.equals(this.documentEntityMetadata, other.documentEntityMetadata)
+                && java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && super.equals(other);
     }
@@ -172,6 +198,11 @@ public final class GenericEntity extends Entity {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.documentEntityMetadata == null
+                                ? 43
+                                : this.documentEntityMetadata.hashCode());
         result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
         result =
                 (result * PRIME)

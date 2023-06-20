@@ -32,6 +32,7 @@ public final class CreateDatasetDetails
         "datasetSourceDetails",
         "datasetFormatDetails",
         "initialRecordGenerationConfiguration",
+        "initialImportDatasetConfiguration",
         "labelSet",
         "labelingInstructions",
         "freeformTags",
@@ -45,6 +46,7 @@ public final class CreateDatasetDetails
             DatasetSourceDetails datasetSourceDetails,
             DatasetFormatDetails datasetFormatDetails,
             InitialRecordGenerationConfiguration initialRecordGenerationConfiguration,
+            InitialImportDatasetConfiguration initialImportDatasetConfiguration,
             LabelSet labelSet,
             String labelingInstructions,
             java.util.Map<String, String> freeformTags,
@@ -57,6 +59,7 @@ public final class CreateDatasetDetails
         this.datasetSourceDetails = datasetSourceDetails;
         this.datasetFormatDetails = datasetFormatDetails;
         this.initialRecordGenerationConfiguration = initialRecordGenerationConfiguration;
+        this.initialImportDatasetConfiguration = initialImportDatasetConfiguration;
         this.labelSet = labelSet;
         this.labelingInstructions = labelingInstructions;
         this.freeformTags = freeformTags;
@@ -154,6 +157,16 @@ public final class CreateDatasetDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initialImportDatasetConfiguration")
+        private InitialImportDatasetConfiguration initialImportDatasetConfiguration;
+
+        public Builder initialImportDatasetConfiguration(
+                InitialImportDatasetConfiguration initialImportDatasetConfiguration) {
+            this.initialImportDatasetConfiguration = initialImportDatasetConfiguration;
+            this.__explicitlySet__.add("initialImportDatasetConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("labelSet")
         private LabelSet labelSet;
 
@@ -230,6 +243,7 @@ public final class CreateDatasetDetails
                             this.datasetSourceDetails,
                             this.datasetFormatDetails,
                             this.initialRecordGenerationConfiguration,
+                            this.initialImportDatasetConfiguration,
                             this.labelSet,
                             this.labelingInstructions,
                             this.freeformTags,
@@ -263,6 +277,10 @@ public final class CreateDatasetDetails
             if (model.wasPropertyExplicitlySet("initialRecordGenerationConfiguration")) {
                 this.initialRecordGenerationConfiguration(
                         model.getInitialRecordGenerationConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("initialImportDatasetConfiguration")) {
+                this.initialImportDatasetConfiguration(
+                        model.getInitialImportDatasetConfiguration());
             }
             if (model.wasPropertyExplicitlySet("labelSet")) {
                 this.labelSet(model.getLabelSet());
@@ -362,6 +380,13 @@ public final class CreateDatasetDetails
         return initialRecordGenerationConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("initialImportDatasetConfiguration")
+    private final InitialImportDatasetConfiguration initialImportDatasetConfiguration;
+
+    public InitialImportDatasetConfiguration getInitialImportDatasetConfiguration() {
+        return initialImportDatasetConfiguration;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("labelSet")
     private final LabelSet labelSet;
 
@@ -439,6 +464,8 @@ public final class CreateDatasetDetails
         sb.append(", datasetFormatDetails=").append(String.valueOf(this.datasetFormatDetails));
         sb.append(", initialRecordGenerationConfiguration=")
                 .append(String.valueOf(this.initialRecordGenerationConfiguration));
+        sb.append(", initialImportDatasetConfiguration=")
+                .append(String.valueOf(this.initialImportDatasetConfiguration));
         sb.append(", labelSet=").append(String.valueOf(this.labelSet));
         sb.append(", labelingInstructions=").append(String.valueOf(this.labelingInstructions));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -466,6 +493,9 @@ public final class CreateDatasetDetails
                 && java.util.Objects.equals(
                         this.initialRecordGenerationConfiguration,
                         other.initialRecordGenerationConfiguration)
+                && java.util.Objects.equals(
+                        this.initialImportDatasetConfiguration,
+                        other.initialImportDatasetConfiguration)
                 && java.util.Objects.equals(this.labelSet, other.labelSet)
                 && java.util.Objects.equals(this.labelingInstructions, other.labelingInstructions)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -500,6 +530,11 @@ public final class CreateDatasetDetails
                         + (this.initialRecordGenerationConfiguration == null
                                 ? 43
                                 : this.initialRecordGenerationConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialImportDatasetConfiguration == null
+                                ? 43
+                                : this.initialImportDatasetConfiguration.hashCode());
         result = (result * PRIME) + (this.labelSet == null ? 43 : this.labelSet.hashCode());
         result =
                 (result * PRIME)

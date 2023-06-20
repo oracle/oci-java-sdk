@@ -85,6 +85,25 @@ public interface DataFlow extends AutoCloseable {
             ChangeApplicationCompartmentRequest request);
 
     /**
+     * Moves a pool into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource. Associated resources, like historical metrics, will not be
+     * automatically moved. The pool must be in a terminal state (STOPPED, FAILED) in order for it
+     * to be moved to a different compartment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangePoolCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangePoolCompartment API.
+     */
+    ChangePoolCompartmentResponse changePoolCompartment(ChangePoolCompartmentRequest request);
+
+    /**
      * Moves a private endpoint into a different compartment. When provided, If-Match is checked
      * against ETag values of the resource.
      *
@@ -136,6 +155,21 @@ public interface DataFlow extends AutoCloseable {
      *     API.
      */
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
+
+    /**
+     * Create a pool to be used by dataflow runs or applications.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePool API.
+     */
+    CreatePoolResponse createPool(CreatePoolRequest request);
 
     /**
      * Creates a private endpoint to be used by applications.
@@ -201,6 +235,21 @@ public interface DataFlow extends AutoCloseable {
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
     /**
+     * Deletes a pool using a `poolId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeletePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePool API.
+     */
+    DeletePoolResponse deletePool(DeletePoolRequest request);
+
+    /**
      * Deletes a private endpoint using a `privateEndpointId`.
      *
      * @param request The request object containing the details to send
@@ -262,6 +311,21 @@ public interface DataFlow extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
      */
     GetApplicationResponse getApplication(GetApplicationRequest request);
+
+    /**
+     * Retrieves a pool using a `poolId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPool API.
+     */
+    GetPoolResponse getPool(GetPoolRequest request);
 
     /**
      * Retrieves an private endpoint using a `privateEndpointId`.
@@ -358,6 +422,23 @@ public interface DataFlow extends AutoCloseable {
      *     API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
+
+    /**
+     * Lists all pools in the specified compartment. The query must include compartmentId. The query
+     * may also include one other parameter. If the query does not include compartmentId, or
+     * includes compartmentId, but with two or more other parameters, an error is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListPoolsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPools API.
+     */
+    ListPoolsResponse listPools(ListPoolsRequest request);
 
     /**
      * Lists all private endpoints in the specified compartment. The query must include
@@ -475,6 +556,38 @@ public interface DataFlow extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Starts the dataflow pool for a given `poolId`. When provided, If-Match is checked against
+     * ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StartPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPool API.
+     */
+    StartPoolResponse startPool(StartPoolRequest request);
+
+    /**
+     * Stops the dataflow pool for a given `poolId`. When provided, If-Match is checked against ETag
+     * values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StopPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPool API.
+     */
+    StopPoolResponse stopPool(StopPoolRequest request);
+
+    /**
      * Updates an application using an `applicationId`.
      *
      * @param request The request object containing the details to send
@@ -489,6 +602,23 @@ public interface DataFlow extends AutoCloseable {
      *     API.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
+
+    /**
+     * Updates a pool using a `poolId`.If changes to a pool doesn't match a previously defined
+     * pool,then a 409 status code will be returned.This indicates that a conflict has been
+     * detected.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdatePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePool API.
+     */
+    UpdatePoolResponse updatePool(UpdatePoolRequest request);
 
     /**
      * Updates a private endpoint using a `privateEndpointId`. If changes to a private endpoint

@@ -366,6 +366,41 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public RoverNodeActionRetrieveCaBundleResponse roverNodeActionRetrieveCaBundle(
+            RoverNodeActionRetrieveCaBundleRequest request) {
+
+        Validate.notBlank(request.getRoverNodeId(), "roverNodeId must not be blank");
+
+        return clientCall(request, RoverNodeActionRetrieveCaBundleResponse::builder)
+                .logger(LOG, "roverNodeActionRetrieveCaBundle")
+                .serviceDetails(
+                        "RoverNode",
+                        "RoverNodeActionRetrieveCaBundle",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeActionRetrieveCaBundle")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RoverNodeActionRetrieveCaBundleRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverNodes")
+                .appendPathParam(request.getRoverNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveCaBundle")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.rover.model.CaBundleResponse.class,
+                        RoverNodeActionRetrieveCaBundleResponse.Builder::caBundleResponse)
+                .handleResponseHeaderString(
+                        "etag", RoverNodeActionRetrieveCaBundleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RoverNodeActionRetrieveCaBundleResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public RoverNodeActionSetKeyResponse roverNodeActionSetKey(
             RoverNodeActionSetKeyRequest request) {
 
@@ -401,6 +436,157 @@ public class RoverNodeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", RoverNodeActionSetKeyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RoverNodeActionSetKeyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public RoverNodeGenerateCertificateResponse roverNodeGenerateCertificate(
+            RoverNodeGenerateCertificateRequest request) {
+        Objects.requireNonNull(
+                request.getRoverNodeGenerateCertificateDetails(),
+                "roverNodeGenerateCertificateDetails is required");
+
+        Validate.notBlank(request.getRoverNodeId(), "roverNodeId must not be blank");
+
+        return clientCall(request, RoverNodeGenerateCertificateResponse::builder)
+                .logger(LOG, "roverNodeGenerateCertificate")
+                .serviceDetails(
+                        "RoverNode",
+                        "RoverNodeGenerateCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeGenerateCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RoverNodeGenerateCertificateRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverNodes")
+                .appendPathParam(request.getRoverNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("generateCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.rover.model.GenerateCertificateResponse.class,
+                        RoverNodeGenerateCertificateResponse.Builder::generateCertificateResponse)
+                .handleResponseHeaderString(
+                        "etag", RoverNodeGenerateCertificateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RoverNodeGenerateCertificateResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public RoverNodeRenewCertificateResponse roverNodeRenewCertificate(
+            RoverNodeRenewCertificateRequest request) {
+        Objects.requireNonNull(
+                request.getRoverNodeRenewCertificateDetails(),
+                "roverNodeRenewCertificateDetails is required");
+
+        Validate.notBlank(request.getRoverNodeId(), "roverNodeId must not be blank");
+
+        return clientCall(request, RoverNodeRenewCertificateResponse::builder)
+                .logger(LOG, "roverNodeRenewCertificate")
+                .serviceDetails(
+                        "RoverNode",
+                        "RoverNodeRenewCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeRenewCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RoverNodeRenewCertificateRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverNodes")
+                .appendPathParam(request.getRoverNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("renewCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.rover.model.RenewCertificateResponse.class,
+                        RoverNodeRenewCertificateResponse.Builder::renewCertificateResponse)
+                .handleResponseHeaderString("etag", RoverNodeRenewCertificateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RoverNodeRenewCertificateResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public RoverNodeReplaceCertificateAuthorityResponse roverNodeReplaceCertificateAuthority(
+            RoverNodeReplaceCertificateAuthorityRequest request) {
+        Objects.requireNonNull(
+                request.getRoverNodeReplaceCertificateAuthorityDetails(),
+                "roverNodeReplaceCertificateAuthorityDetails is required");
+
+        Validate.notBlank(request.getRoverNodeId(), "roverNodeId must not be blank");
+
+        return clientCall(request, RoverNodeReplaceCertificateAuthorityResponse::builder)
+                .logger(LOG, "roverNodeReplaceCertificateAuthority")
+                .serviceDetails(
+                        "RoverNode",
+                        "RoverNodeReplaceCertificateAuthority",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeReplaceCertificateAuthority")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RoverNodeReplaceCertificateAuthorityRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverNodes")
+                .appendPathParam(request.getRoverNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("replaceCertificateAuthority")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.rover.model.ReplaceCertificateAuthorityResponse.class,
+                        RoverNodeReplaceCertificateAuthorityResponse.Builder
+                                ::replaceCertificateAuthorityResponse)
+                .handleResponseHeaderString(
+                        "etag", RoverNodeReplaceCertificateAuthorityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RoverNodeReplaceCertificateAuthorityResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public RoverNodeRetrieveLeafCertificateResponse roverNodeRetrieveLeafCertificate(
+            RoverNodeRetrieveLeafCertificateRequest request) {
+
+        Validate.notBlank(request.getRoverNodeId(), "roverNodeId must not be blank");
+
+        return clientCall(request, RoverNodeRetrieveLeafCertificateResponse::builder)
+                .logger(LOG, "roverNodeRetrieveLeafCertificate")
+                .serviceDetails(
+                        "RoverNode",
+                        "RoverNodeRetrieveLeafCertificate",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeRetrieveLeafCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RoverNodeRetrieveLeafCertificateRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverNodes")
+                .appendPathParam(request.getRoverNodeId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveLeafCertificate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.rover.model.LeafCertificateResponse.class,
+                        RoverNodeRetrieveLeafCertificateResponse.Builder::leafCertificateResponse)
+                .handleResponseHeaderString(
+                        "etag", RoverNodeRetrieveLeafCertificateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RoverNodeRetrieveLeafCertificateResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }

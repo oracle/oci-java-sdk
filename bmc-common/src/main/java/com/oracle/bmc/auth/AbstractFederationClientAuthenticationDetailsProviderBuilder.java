@@ -28,6 +28,7 @@ import java.net.URL;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -81,6 +82,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /** The federation endpoint url. */
     protected String federationEndpoint;
 
+    /** The number of retries for auto-detecting endpoint. */
+    protected int detectEndpointRetries = 8;
+
+    /** The custom timeout for each retry for auto-detecting endpoint. */
+    protected int timeoutForEachRetry = 0;
+
     /** Flag to ensure fallback logic executed only once. */
     private volatile boolean wasFallbackCheckExecuted = false;
 
@@ -121,6 +128,28 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     public B federationEndpoint(String federationEndpoint) {
         this.federationEndpoint = federationEndpoint;
+        return (B) this;
+    }
+
+    /**
+     * Configures the custom retries to use for detecting endpoint.
+     *
+     * @param detectEndpointRetries the number of retries
+     * @return this builder
+     */
+    public B detectEndpointRetries(int detectEndpointRetries) {
+        this.detectEndpointRetries = detectEndpointRetries;
+        return (B) this;
+    }
+
+    /**
+     * Configures the custom timeout for each retry to use for detecting endpoint.
+     *
+     * @param timeoutForEachRetry the custom timeout
+     * @return this builder
+     */
+    public B timeoutForEachRetry(int timeoutForEachRetry) {
+        this.timeoutForEachRetry = timeoutForEachRetry;
         return (B) this;
     }
 
@@ -311,6 +340,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 HttpProvider.getDefault()
                         .newBuilder()
                         .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
+                        .property(
+                                StandardClientProperties.CONNECT_TIMEOUT,
+                                Duration.ofMillis(timeoutForEachRetry))
                         .baseUri(URI.create(getMetadataBaseUrl() + "instance/"))
                         .build()) {
 
@@ -319,10 +351,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             WaiterConfiguration.WaitContext context =
                     new WaiterConfiguration.WaitContext(System.currentTimeMillis());
 
-            for (int retry = 0; retry < 8; retry++) {
+            for (int retry = 0; retry < detectEndpointRetries; retry++) {
                 try {
                     SyncFutureWaiter waiter = new SyncFutureWaiter();
-
                     try (HttpResponse response =
                             waiter.listenForResult(
                                     client.createRequest(Method.GET)
