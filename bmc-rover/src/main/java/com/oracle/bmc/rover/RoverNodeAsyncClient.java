@@ -846,6 +846,60 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RoverNodeActionRetrieveCaBundleResponse>
+            roverNodeActionRetrieveCaBundle(
+                    RoverNodeActionRetrieveCaBundleRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeActionRetrieveCaBundleRequest,
+                                    RoverNodeActionRetrieveCaBundleResponse>
+                            handler) {
+        LOG.trace("Called async roverNodeActionRetrieveCaBundle");
+        final RoverNodeActionRetrieveCaBundleRequest interceptedRequest =
+                RoverNodeActionRetrieveCaBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RoverNodeActionRetrieveCaBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverNode",
+                        "RoverNodeActionRetrieveCaBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeActionRetrieveCaBundle");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RoverNodeActionRetrieveCaBundleResponse>
+                transformer =
+                        RoverNodeActionRetrieveCaBundleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RoverNodeActionRetrieveCaBundleRequest,
+                        RoverNodeActionRetrieveCaBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RoverNodeActionRetrieveCaBundleRequest,
+                                RoverNodeActionRetrieveCaBundleResponse>,
+                        java.util.concurrent.Future<RoverNodeActionRetrieveCaBundleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RoverNodeActionRetrieveCaBundleRequest,
+                    RoverNodeActionRetrieveCaBundleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RoverNodeActionSetKeyResponse> roverNodeActionSetKey(
             RoverNodeActionSetKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -886,6 +940,232 @@ public class RoverNodeAsyncClient implements RoverNodeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RoverNodeActionSetKeyRequest, RoverNodeActionSetKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RoverNodeGenerateCertificateResponse>
+            roverNodeGenerateCertificate(
+                    RoverNodeGenerateCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeGenerateCertificateRequest,
+                                    RoverNodeGenerateCertificateResponse>
+                            handler) {
+        LOG.trace("Called async roverNodeGenerateCertificate");
+        final RoverNodeGenerateCertificateRequest interceptedRequest =
+                RoverNodeGenerateCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RoverNodeGenerateCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverNode",
+                        "RoverNodeGenerateCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeGenerateCertificate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RoverNodeGenerateCertificateResponse>
+                transformer =
+                        RoverNodeGenerateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RoverNodeGenerateCertificateRequest, RoverNodeGenerateCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RoverNodeGenerateCertificateRequest,
+                                RoverNodeGenerateCertificateResponse>,
+                        java.util.concurrent.Future<RoverNodeGenerateCertificateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRoverNodeGenerateCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RoverNodeGenerateCertificateRequest, RoverNodeGenerateCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RoverNodeRenewCertificateResponse> roverNodeRenewCertificate(
+            RoverNodeRenewCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RoverNodeRenewCertificateRequest, RoverNodeRenewCertificateResponse>
+                    handler) {
+        LOG.trace("Called async roverNodeRenewCertificate");
+        final RoverNodeRenewCertificateRequest interceptedRequest =
+                RoverNodeRenewCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RoverNodeRenewCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverNode",
+                        "RoverNodeRenewCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeRenewCertificate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RoverNodeRenewCertificateResponse>
+                transformer =
+                        RoverNodeRenewCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RoverNodeRenewCertificateRequest, RoverNodeRenewCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RoverNodeRenewCertificateRequest,
+                                RoverNodeRenewCertificateResponse>,
+                        java.util.concurrent.Future<RoverNodeRenewCertificateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRoverNodeRenewCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RoverNodeRenewCertificateRequest, RoverNodeRenewCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RoverNodeReplaceCertificateAuthorityResponse>
+            roverNodeReplaceCertificateAuthority(
+                    RoverNodeReplaceCertificateAuthorityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeReplaceCertificateAuthorityRequest,
+                                    RoverNodeReplaceCertificateAuthorityResponse>
+                            handler) {
+        LOG.trace("Called async roverNodeReplaceCertificateAuthority");
+        final RoverNodeReplaceCertificateAuthorityRequest interceptedRequest =
+                RoverNodeReplaceCertificateAuthorityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RoverNodeReplaceCertificateAuthorityConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverNode",
+                        "RoverNodeReplaceCertificateAuthority",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeReplaceCertificateAuthority");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RoverNodeReplaceCertificateAuthorityResponse>
+                transformer =
+                        RoverNodeReplaceCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RoverNodeReplaceCertificateAuthorityRequest,
+                        RoverNodeReplaceCertificateAuthorityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RoverNodeReplaceCertificateAuthorityRequest,
+                                RoverNodeReplaceCertificateAuthorityResponse>,
+                        java.util.concurrent.Future<RoverNodeReplaceCertificateAuthorityResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRoverNodeReplaceCertificateAuthorityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RoverNodeReplaceCertificateAuthorityRequest,
+                    RoverNodeReplaceCertificateAuthorityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RoverNodeRetrieveLeafCertificateResponse>
+            roverNodeRetrieveLeafCertificate(
+                    RoverNodeRetrieveLeafCertificateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeRetrieveLeafCertificateRequest,
+                                    RoverNodeRetrieveLeafCertificateResponse>
+                            handler) {
+        LOG.trace("Called async roverNodeRetrieveLeafCertificate");
+        final RoverNodeRetrieveLeafCertificateRequest interceptedRequest =
+                RoverNodeRetrieveLeafCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RoverNodeRetrieveLeafCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverNode",
+                        "RoverNodeRetrieveLeafCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/RoverNodeRetrieveLeafCertificate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RoverNodeRetrieveLeafCertificateResponse>
+                transformer =
+                        RoverNodeRetrieveLeafCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RoverNodeRetrieveLeafCertificateRequest,
+                        RoverNodeRetrieveLeafCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RoverNodeRetrieveLeafCertificateRequest,
+                                RoverNodeRetrieveLeafCertificateResponse>,
+                        java.util.concurrent.Future<RoverNodeRetrieveLeafCertificateResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RoverNodeRetrieveLeafCertificateRequest,
+                    RoverNodeRetrieveLeafCertificateResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

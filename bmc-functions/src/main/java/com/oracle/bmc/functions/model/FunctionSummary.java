@@ -29,6 +29,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
         "image",
         "imageDigest",
         "sourceDetails",
+        "shape",
         "memoryInMBs",
         "timeoutInSeconds",
         "provisionedConcurrencyConfig",
@@ -48,6 +49,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
             String image,
             String imageDigest,
             FunctionSourceDetails sourceDetails,
+            Shape shape,
             Long memoryInMBs,
             Integer timeoutInSeconds,
             FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig,
@@ -66,6 +68,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
         this.image = image;
         this.imageDigest = imageDigest;
         this.sourceDetails = sourceDetails;
+        this.shape = shape;
         this.memoryInMBs = memoryInMBs;
         this.timeoutInSeconds = timeoutInSeconds;
         this.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
@@ -218,6 +221,24 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder sourceDetails(FunctionSourceDetails sourceDetails) {
             this.sourceDetails = sourceDetails;
             this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
+        /**
+         * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private Shape shape;
+
+        /**
+         * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
+        public Builder shape(Shape shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
             return this;
         }
         /**
@@ -399,6 +420,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
                             this.image,
                             this.imageDigest,
                             this.sourceDetails,
+                            this.shape,
                             this.memoryInMBs,
                             this.timeoutInSeconds,
                             this.provisionedConcurrencyConfig,
@@ -439,6 +461,9 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("sourceDetails")) {
                 this.sourceDetails(model.getSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
             }
             if (model.wasPropertyExplicitlySet("memoryInMBs")) {
                 this.memoryInMBs(model.getMemoryInMBs());
@@ -608,6 +633,71 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+     *
+     **/
+    public enum Shape {
+        GenericX86("GENERIC_X86"),
+        GenericArm("GENERIC_ARM"),
+        GenericX86Arm("GENERIC_X86_ARM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Shape.class);
+
+        private final String value;
+        private static java.util.Map<String, Shape> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Shape v : Shape.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Shape(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Shape create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Shape', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final Shape shape;
+
+    /**
+     * The processor shape ({@code GENERIC_X86}/{@code GENERIC_ARM}) on which to run functions in the application, extracted from the image manifest.
+     *
+     * @return the value
+     **/
+    public Shape getShape() {
+        return shape;
+    }
+
+    /**
      * Maximum usable memory for the function (MiB).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
@@ -773,6 +863,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
+        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", memoryInMBs=").append(String.valueOf(this.memoryInMBs));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", provisionedConcurrencyConfig=")
@@ -805,6 +896,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.image, other.image)
                 && java.util.Objects.equals(this.imageDigest, other.imageDigest)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
+                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.memoryInMBs, other.memoryInMBs)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(
@@ -838,6 +930,7 @@ public final class FunctionSummary extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.memoryInMBs == null ? 43 : this.memoryInMBs.hashCode());
         result =
                 (result * PRIME)

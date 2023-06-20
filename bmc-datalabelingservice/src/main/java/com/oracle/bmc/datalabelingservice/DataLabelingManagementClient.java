@@ -821,6 +821,49 @@ public class DataLabelingManagementClient implements DataLabelingManagement {
     }
 
     @Override
+    public ImportPreAnnotatedDataResponse importPreAnnotatedData(
+            ImportPreAnnotatedDataRequest request) {
+        LOG.trace("Called importPreAnnotatedData");
+        final ImportPreAnnotatedDataRequest interceptedRequest =
+                ImportPreAnnotatedDataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportPreAnnotatedDataConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ImportPreAnnotatedData",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/ImportPreAnnotatedData");
+        java.util.function.Function<javax.ws.rs.core.Response, ImportPreAnnotatedDataResponse>
+                transformer =
+                        ImportPreAnnotatedDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportPreAnnotatedDataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListAnnotationFormatsResponse listAnnotationFormats(
             ListAnnotationFormatsRequest request) {
         LOG.trace("Called listAnnotationFormats");

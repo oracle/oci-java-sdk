@@ -15431,6 +15431,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateConsoleConnectionResponse> updateConsoleConnection(
+            UpdateConsoleConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsoleConnectionRequest, UpdateConsoleConnectionResponse>
+                    handler) {
+        LOG.trace("Called async updateConsoleConnection");
+        final UpdateConsoleConnectionRequest interceptedRequest =
+                UpdateConsoleConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/UpdateConsoleConnection");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateConsoleConnectionResponse>
+                transformer =
+                        UpdateConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateConsoleConnectionRequest, UpdateConsoleConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateConsoleConnectionRequest, UpdateConsoleConnectionResponse>,
+                        java.util.concurrent.Future<UpdateConsoleConnectionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConsoleConnectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateConsoleConnectionRequest, UpdateConsoleConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDataGuardAssociationResponse>
             updateDataGuardAssociation(
                     UpdateDataGuardAssociationRequest request,
@@ -15629,6 +15682,55 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateDbHomeRequest, UpdateDbHomeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDbNodeResponse> updateDbNode(
+            UpdateDbNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateDbNodeRequest, UpdateDbNodeResponse>
+                    handler) {
+        LOG.trace("Called async updateDbNode");
+        final UpdateDbNodeRequest interceptedRequest =
+                UpdateDbNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDbNodeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDbNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/UpdateDbNode");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDbNodeResponse>
+                transformer =
+                        UpdateDbNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateDbNodeRequest, UpdateDbNodeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDbNodeRequest, UpdateDbNodeResponse>,
+                        java.util.concurrent.Future<UpdateDbNodeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDbNodeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDbNodeRequest, UpdateDbNodeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

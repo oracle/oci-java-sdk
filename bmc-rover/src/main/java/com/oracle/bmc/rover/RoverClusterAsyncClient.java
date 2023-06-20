@@ -757,6 +757,59 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RequestAdditionalNodesResponse> requestAdditionalNodes(
+            RequestAdditionalNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestAdditionalNodesRequest, RequestAdditionalNodesResponse>
+                    handler) {
+        LOG.trace("Called async requestAdditionalNodes");
+        final RequestAdditionalNodesRequest interceptedRequest =
+                RequestAdditionalNodesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestAdditionalNodesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RoverCluster",
+                        "RequestAdditionalNodes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/RequestAdditionalNodes");
+        final java.util.function.Function<javax.ws.rs.core.Response, RequestAdditionalNodesResponse>
+                transformer =
+                        RequestAdditionalNodesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestAdditionalNodesRequest, RequestAdditionalNodesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestAdditionalNodesRequest, RequestAdditionalNodesResponse>,
+                        java.util.concurrent.Future<RequestAdditionalNodesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestAdditionalNodesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestAdditionalNodesRequest, RequestAdditionalNodesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRoverClusterResponse> updateRoverCluster(
             UpdateRoverClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

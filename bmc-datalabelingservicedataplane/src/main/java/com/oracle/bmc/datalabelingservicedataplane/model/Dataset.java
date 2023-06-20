@@ -29,15 +29,18 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "lifecycleSubstate",
         "annotationFormat",
         "datasetSourceDetails",
         "datasetFormatDetails",
         "labelSet",
         "initialRecordGenerationConfiguration",
+        "initialImportDatasetConfiguration",
         "labelingInstructions",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "additionalProperties"
     })
     public Dataset(
             String id,
@@ -48,15 +51,18 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            LifecycleSubstate lifecycleSubstate,
             String annotationFormat,
             DatasetSourceDetails datasetSourceDetails,
             DatasetFormatDetails datasetFormatDetails,
             LabelSet labelSet,
             InitialRecordGenerationConfiguration initialRecordGenerationConfiguration,
+            InitialImportDatasetConfiguration initialImportDatasetConfiguration,
             String labelingInstructions,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.Map<String, String> additionalProperties) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -66,15 +72,18 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.lifecycleSubstate = lifecycleSubstate;
         this.annotationFormat = annotationFormat;
         this.datasetSourceDetails = datasetSourceDetails;
         this.datasetFormatDetails = datasetFormatDetails;
         this.labelSet = labelSet;
         this.initialRecordGenerationConfiguration = initialRecordGenerationConfiguration;
+        this.initialImportDatasetConfiguration = initialImportDatasetConfiguration;
         this.labelingInstructions = labelingInstructions;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.additionalProperties = additionalProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -224,6 +233,26 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * The sub-state of the dataset.
+         * IMPORT_DATASET - The dataset is being imported.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubstate")
+        private LifecycleSubstate lifecycleSubstate;
+
+        /**
+         * The sub-state of the dataset.
+         * IMPORT_DATASET - The dataset is being imported.
+         *
+         * @param lifecycleSubstate the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleSubstate(LifecycleSubstate lifecycleSubstate) {
+            this.lifecycleSubstate = lifecycleSubstate;
+            this.__explicitlySet__.add("lifecycleSubstate");
+            return this;
+        }
+        /**
          * The annotation format name required for labeling records.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
@@ -274,6 +303,16 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 InitialRecordGenerationConfiguration initialRecordGenerationConfiguration) {
             this.initialRecordGenerationConfiguration = initialRecordGenerationConfiguration;
             this.__explicitlySet__.add("initialRecordGenerationConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("initialImportDatasetConfiguration")
+        private InitialImportDatasetConfiguration initialImportDatasetConfiguration;
+
+        public Builder initialImportDatasetConfiguration(
+                InitialImportDatasetConfiguration initialImportDatasetConfiguration) {
+            this.initialImportDatasetConfiguration = initialImportDatasetConfiguration;
+            this.__explicitlySet__.add("initialImportDatasetConfiguration");
             return this;
         }
         /**
@@ -353,6 +392,26 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
+        private java.util.Map<String, String> additionalProperties;
+
+        /**
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         * @param additionalProperties the value to set
+         * @return this builder
+         **/
+        public Builder additionalProperties(java.util.Map<String, String> additionalProperties) {
+            this.additionalProperties = additionalProperties;
+            this.__explicitlySet__.add("additionalProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -368,15 +427,18 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.lifecycleSubstate,
                             this.annotationFormat,
                             this.datasetSourceDetails,
                             this.datasetFormatDetails,
                             this.labelSet,
                             this.initialRecordGenerationConfiguration,
+                            this.initialImportDatasetConfiguration,
                             this.labelingInstructions,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.additionalProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -409,6 +471,9 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("lifecycleSubstate")) {
+                this.lifecycleSubstate(model.getLifecycleSubstate());
+            }
             if (model.wasPropertyExplicitlySet("annotationFormat")) {
                 this.annotationFormat(model.getAnnotationFormat());
             }
@@ -425,6 +490,10 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 this.initialRecordGenerationConfiguration(
                         model.getInitialRecordGenerationConfiguration());
             }
+            if (model.wasPropertyExplicitlySet("initialImportDatasetConfiguration")) {
+                this.initialImportDatasetConfiguration(
+                        model.getInitialImportDatasetConfiguration());
+            }
             if (model.wasPropertyExplicitlySet("labelingInstructions")) {
                 this.labelingInstructions(model.getLabelingInstructions());
             }
@@ -436,6 +505,9 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("additionalProperties")) {
+                this.additionalProperties(model.getAdditionalProperties());
             }
             return this;
         }
@@ -642,6 +714,73 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * The sub-state of the dataset.
+     * IMPORT_DATASET - The dataset is being imported.
+     *
+     **/
+    public enum LifecycleSubstate {
+        ImportDataset("IMPORT_DATASET"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleSubstate.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleSubstate> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleSubstate v : LifecycleSubstate.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleSubstate(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleSubstate create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleSubstate', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The sub-state of the dataset.
+     * IMPORT_DATASET - The dataset is being imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubstate")
+    private final LifecycleSubstate lifecycleSubstate;
+
+    /**
+     * The sub-state of the dataset.
+     * IMPORT_DATASET - The dataset is being imported.
+     *
+     * @return the value
+     **/
+    public LifecycleSubstate getLifecycleSubstate() {
+        return lifecycleSubstate;
+    }
+
+    /**
      * The annotation format name required for labeling records.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("annotationFormat")
@@ -681,6 +820,13 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     public InitialRecordGenerationConfiguration getInitialRecordGenerationConfiguration() {
         return initialRecordGenerationConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("initialImportDatasetConfiguration")
+    private final InitialImportDatasetConfiguration initialImportDatasetConfiguration;
+
+    public InitialImportDatasetConfiguration getInitialImportDatasetConfiguration() {
+        return initialImportDatasetConfiguration;
     }
 
     /**
@@ -751,6 +897,24 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return systemTags;
     }
 
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalProperties")
+    private final java.util.Map<String, String> additionalProperties;
+
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -773,16 +937,20 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lifecycleSubstate=").append(String.valueOf(this.lifecycleSubstate));
         sb.append(", annotationFormat=").append(String.valueOf(this.annotationFormat));
         sb.append(", datasetSourceDetails=").append(String.valueOf(this.datasetSourceDetails));
         sb.append(", datasetFormatDetails=").append(String.valueOf(this.datasetFormatDetails));
         sb.append(", labelSet=").append(String.valueOf(this.labelSet));
         sb.append(", initialRecordGenerationConfiguration=")
                 .append(String.valueOf(this.initialRecordGenerationConfiguration));
+        sb.append(", initialImportDatasetConfiguration=")
+                .append(String.valueOf(this.initialImportDatasetConfiguration));
         sb.append(", labelingInstructions=").append(String.valueOf(this.labelingInstructions));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", additionalProperties=").append(String.valueOf(this.additionalProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -805,6 +973,7 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.lifecycleSubstate, other.lifecycleSubstate)
                 && java.util.Objects.equals(this.annotationFormat, other.annotationFormat)
                 && java.util.Objects.equals(this.datasetSourceDetails, other.datasetSourceDetails)
                 && java.util.Objects.equals(this.datasetFormatDetails, other.datasetFormatDetails)
@@ -812,10 +981,14 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(
                         this.initialRecordGenerationConfiguration,
                         other.initialRecordGenerationConfiguration)
+                && java.util.Objects.equals(
+                        this.initialImportDatasetConfiguration,
+                        other.initialImportDatasetConfiguration)
                 && java.util.Objects.equals(this.labelingInstructions, other.labelingInstructions)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.additionalProperties, other.additionalProperties)
                 && super.equals(other);
     }
 
@@ -839,6 +1012,9 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.lifecycleSubstate == null ? 43 : this.lifecycleSubstate.hashCode());
+        result =
+                (result * PRIME)
                         + (this.annotationFormat == null ? 43 : this.annotationFormat.hashCode());
         result =
                 (result * PRIME)
@@ -858,12 +1034,22 @@ public final class Dataset extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                                 : this.initialRecordGenerationConfiguration.hashCode());
         result =
                 (result * PRIME)
+                        + (this.initialImportDatasetConfiguration == null
+                                ? 43
+                                : this.initialImportDatasetConfiguration.hashCode());
+        result =
+                (result * PRIME)
                         + (this.labelingInstructions == null
                                 ? 43
                                 : this.labelingInstructions.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalProperties == null
+                                ? 43
+                                : this.additionalProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

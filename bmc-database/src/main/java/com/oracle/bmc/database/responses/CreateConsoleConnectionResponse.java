@@ -39,6 +39,21 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * The returned ConsoleConnection instance.
      */
     private com.oracle.bmc.database.model.ConsoleConnection consoleConnection;
@@ -56,6 +71,7 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
         "headers",
         "etag",
         "opcRequestId",
+        "opcWorkRequestId",
         "consoleConnection"
     })
     private CreateConsoleConnectionResponse(
@@ -63,10 +79,12 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.database.model.ConsoleConnection consoleConnection) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.consoleConnection = consoleConnection;
     }
 
@@ -120,6 +138,23 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * The returned ConsoleConnection instance.
          */
         private com.oracle.bmc.database.model.ConsoleConnection consoleConnection;
@@ -144,6 +179,7 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             consoleConnection(o.getConsoleConnection());
 
             return this;
@@ -155,7 +191,12 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
          */
         public CreateConsoleConnectionResponse build() {
             return new CreateConsoleConnectionResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, consoleConnection);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    consoleConnection);
         }
     }
 
@@ -174,6 +215,7 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",consoleConnection=").append(String.valueOf(consoleConnection));
         sb.append(")");
         return sb.toString();
@@ -192,6 +234,7 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.consoleConnection, other.consoleConnection);
     }
 
@@ -201,6 +244,9 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.consoleConnection == null ? 43 : this.consoleConnection.hashCode());
