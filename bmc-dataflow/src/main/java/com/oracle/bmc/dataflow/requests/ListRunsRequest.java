@@ -53,6 +53,19 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return applicationId;
     }
     /**
+     * The ID of the pool.
+     *
+     */
+    private String poolId;
+
+    /**
+     * The ID of the pool.
+     *
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+    /**
      * The OCID of the user who created the resource.
      *
      */
@@ -312,6 +325,23 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
+         * The ID of the pool.
+         *
+         */
+        private String poolId = null;
+
+        /**
+         * The ID of the pool.
+         *
+         * @param poolId the value to set
+         * @return this builder instance
+         */
+        public Builder poolId(String poolId) {
+            this.poolId = poolId;
+            return this;
+        }
+
+        /**
          * The OCID of the user who created the resource.
          *
          */
@@ -498,6 +528,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             applicationId(o.getApplicationId());
+            poolId(o.getPoolId());
             ownerPrincipalId(o.getOwnerPrincipalId());
             displayNameStartsWith(o.getDisplayNameStartsWith());
             lifecycleState(o.getLifecycleState());
@@ -542,6 +573,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
             request.applicationId = applicationId;
+            request.poolId = poolId;
             request.ownerPrincipalId = ownerPrincipalId;
             request.displayNameStartsWith = displayNameStartsWith;
             request.lifecycleState = lifecycleState;
@@ -552,7 +584,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.sortOrder = sortOrder;
             request.displayName = displayName;
             return request;
-            // new ListRunsRequest(compartmentId, opcRequestId, applicationId, ownerPrincipalId, displayNameStartsWith, lifecycleState, timeCreatedGreaterThan, limit, page, sortBy, sortOrder, displayName);
+            // new ListRunsRequest(compartmentId, opcRequestId, applicationId, poolId, ownerPrincipalId, displayNameStartsWith, lifecycleState, timeCreatedGreaterThan, limit, page, sortBy, sortOrder, displayName);
         }
     }
 
@@ -565,6 +597,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
                 .applicationId(applicationId)
+                .poolId(poolId)
                 .ownerPrincipalId(ownerPrincipalId)
                 .displayNameStartsWith(displayNameStartsWith)
                 .lifecycleState(lifecycleState)
@@ -592,6 +625,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(",poolId=").append(String.valueOf(this.poolId));
         sb.append(",ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
         sb.append(",displayNameStartsWith=").append(String.valueOf(this.displayNameStartsWith));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -619,6 +653,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(this.poolId, other.poolId)
                 && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
                 && java.util.Objects.equals(this.displayNameStartsWith, other.displayNameStartsWith)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -642,6 +677,7 @@ public class ListRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         result =
                 (result * PRIME)
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result = (result * PRIME) + (this.poolId == null ? 43 : this.poolId.hashCode());
         result =
                 (result * PRIME)
                         + (this.ownerPrincipalId == null ? 43 : this.ownerPrincipalId.hashCode());

@@ -146,6 +146,115 @@ public class DataFlowPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listPools operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPoolsResponse> listPoolsResponseIterator(final ListPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPoolsRequest.Builder, ListPoolsRequest, ListPoolsResponse>(
+                new java.util.function.Supplier<ListPoolsRequest.Builder>() {
+                    @Override
+                    public ListPoolsRequest.Builder get() {
+                        return ListPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPoolsRequest.Builder>,
+                        ListPoolsRequest>() {
+                    @Override
+                    public ListPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPoolsRequest, ListPoolsResponse>() {
+                    @Override
+                    public ListPoolsResponse apply(ListPoolsRequest request) {
+                        return client.listPools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataflow.model.PoolSummary} objects
+     * contained in responses from the listPools operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataflow.model.PoolSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataflow.model.PoolSummary> listPoolsRecordIterator(
+            final ListPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPoolsRequest.Builder, ListPoolsRequest, ListPoolsResponse,
+                com.oracle.bmc.dataflow.model.PoolSummary>(
+                new java.util.function.Supplier<ListPoolsRequest.Builder>() {
+                    @Override
+                    public ListPoolsRequest.Builder get() {
+                        return ListPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPoolsRequest.Builder>,
+                        ListPoolsRequest>() {
+                    @Override
+                    public ListPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPoolsRequest, ListPoolsResponse>() {
+                    @Override
+                    public ListPoolsResponse apply(ListPoolsRequest request) {
+                        return client.listPools(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPoolsResponse,
+                        java.util.List<com.oracle.bmc.dataflow.model.PoolSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataflow.model.PoolSummary> apply(
+                            ListPoolsResponse response) {
+                        return response.getPoolCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPrivateEndpoints operation. This iterable
      * will fetch more data from the server as needed.
      *

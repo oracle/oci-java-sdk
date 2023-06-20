@@ -12138,6 +12138,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public UpdateConsoleConnectionResponse updateConsoleConnection(
+            UpdateConsoleConnectionRequest request) {
+        LOG.trace("Called updateConsoleConnection");
+        final UpdateConsoleConnectionRequest interceptedRequest =
+                UpdateConsoleConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateConsoleConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/UpdateConsoleConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateConsoleConnectionResponse>
+                transformer =
+                        UpdateConsoleConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateConsoleConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateDataGuardAssociationResponse updateDataGuardAssociation(
             UpdateDataGuardAssociationRequest request) {
         LOG.trace("Called updateDataGuardAssociation");
@@ -12295,6 +12337,45 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateDbHomeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateDbNodeResponse updateDbNode(UpdateDbNodeRequest request) {
+        LOG.trace("Called updateDbNode");
+        final UpdateDbNodeRequest interceptedRequest =
+                UpdateDbNodeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDbNodeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDbNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/UpdateDbNode");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDbNodeResponse> transformer =
+                UpdateDbNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDbNodeDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

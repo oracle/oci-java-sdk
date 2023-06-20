@@ -33,6 +33,7 @@ public final class NetworkSourcesSummary
         "publicSourceList",
         "virtualSourceList",
         "services",
+        "lifecycleState",
         "timeCreated",
         "freeformTags",
         "definedTags"
@@ -45,6 +46,7 @@ public final class NetworkSourcesSummary
             java.util.List<String> publicSourceList,
             java.util.List<NetworkSources_virtualSourceList> virtualSourceList,
             java.util.List<String> services,
+            NetworkSources.LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -56,6 +58,7 @@ public final class NetworkSourcesSummary
         this.publicSourceList = publicSourceList;
         this.virtualSourceList = virtualSourceList;
         this.services = services;
+        this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -189,7 +192,27 @@ public final class NetworkSourcesSummary
             return this;
         }
         /**
-         * Date and time the group was created, in the format defined by RFC3339.
+         * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private NetworkSources.LifecycleState lifecycleState;
+
+        /**
+         * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+         * ACTIVE before using it.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(NetworkSources.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Date and time the network source was created, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -198,7 +221,7 @@ public final class NetworkSourcesSummary
         private java.util.Date timeCreated;
 
         /**
-         * Date and time the group was created, in the format defined by RFC3339.
+         * Date and time the network source was created, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -269,6 +292,7 @@ public final class NetworkSourcesSummary
                             this.publicSourceList,
                             this.virtualSourceList,
                             this.services,
+                            this.lifecycleState,
                             this.timeCreated,
                             this.freeformTags,
                             this.definedTags);
@@ -300,6 +324,9 @@ public final class NetworkSourcesSummary
             }
             if (model.wasPropertyExplicitlySet("services")) {
                 this.services(model.getServices());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -436,7 +463,25 @@ public final class NetworkSourcesSummary
     }
 
     /**
-     * Date and time the group was created, in the format defined by RFC3339.
+     * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final NetworkSources.LifecycleState lifecycleState;
+
+    /**
+     * The network source object's current state. After creating a network source, make sure its {@code lifecycleState} changes from CREATING to
+     * ACTIVE before using it.
+     *
+     * @return the value
+     **/
+    public NetworkSources.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * Date and time the network source was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -445,7 +490,7 @@ public final class NetworkSourcesSummary
     private final java.util.Date timeCreated;
 
     /**
-     * Date and time the group was created, in the format defined by RFC3339.
+     * Date and time the network source was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -516,6 +561,7 @@ public final class NetworkSourcesSummary
         sb.append(", publicSourceList=").append(String.valueOf(this.publicSourceList));
         sb.append(", virtualSourceList=").append(String.valueOf(this.virtualSourceList));
         sb.append(", services=").append(String.valueOf(this.services));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -540,6 +586,7 @@ public final class NetworkSourcesSummary
                 && java.util.Objects.equals(this.publicSourceList, other.publicSourceList)
                 && java.util.Objects.equals(this.virtualSourceList, other.virtualSourceList)
                 && java.util.Objects.equals(this.services, other.services)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -563,6 +610,9 @@ public final class NetworkSourcesSummary
                 (result * PRIME)
                         + (this.virtualSourceList == null ? 43 : this.virtualSourceList.hashCode());
         result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

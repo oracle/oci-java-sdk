@@ -48,6 +48,14 @@ public class ListRunsConverter {
                                     request.getApplicationId()));
         }
 
+        if (request.getPoolId() != null) {
+            target =
+                    target.queryParam(
+                            "poolId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPoolId()));
+        }
+
         if (request.getOwnerPrincipalId() != null) {
             target =
                     target.queryParam(

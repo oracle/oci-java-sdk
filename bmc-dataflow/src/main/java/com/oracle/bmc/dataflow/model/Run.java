@@ -50,6 +50,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "ownerPrincipalId",
         "ownerUserName",
         "parameters",
+        "poolId",
         "privateEndpointDnsZones",
         "privateEndpointMaxHostCount",
         "privateEndpointNsgIds",
@@ -95,6 +96,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             String ownerPrincipalId,
             String ownerUserName,
             java.util.List<ApplicationParameter> parameters,
+            String poolId,
             java.util.List<String> privateEndpointDnsZones,
             Integer privateEndpointMaxHostCount,
             java.util.List<String> privateEndpointNsgIds,
@@ -139,6 +141,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.ownerPrincipalId = ownerPrincipalId;
         this.ownerUserName = ownerUserName;
         this.parameters = parameters;
+        this.poolId = poolId;
         this.privateEndpointDnsZones = privateEndpointDnsZones;
         this.privateEndpointMaxHostCount = privateEndpointMaxHostCount;
         this.privateEndpointNsgIds = privateEndpointNsgIds;
@@ -706,6 +709,24 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
+         * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+        private String poolId;
+
+        /**
+         * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         *
+         * @param poolId the value to set
+         * @return this builder
+         **/
+        public Builder poolId(String poolId) {
+            this.poolId = poolId;
+            this.__explicitlySet__.add("poolId");
+            return this;
+        }
+        /**
          * An array of DNS zone names.
          * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
          *
@@ -840,7 +861,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          **/
@@ -848,7 +869,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         private java.util.Date timeCreated;
 
         /**
-         * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          * @param timeCreated the value to set
@@ -860,7 +881,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          **/
@@ -868,7 +889,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
@@ -1013,6 +1034,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.ownerPrincipalId,
                             this.ownerUserName,
                             this.parameters,
+                            this.poolId,
                             this.privateEndpointDnsZones,
                             this.privateEndpointMaxHostCount,
                             this.privateEndpointNsgIds,
@@ -1121,6 +1143,9 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             }
             if (model.wasPropertyExplicitlySet("parameters")) {
                 this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("poolId")) {
+                this.poolId(model.getPoolId());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointDnsZones")) {
                 this.privateEndpointDnsZones(model.getPrivateEndpointDnsZones());
@@ -1669,6 +1694,22 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+    private final String poolId;
+
+    /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     *
+     * @return the value
+     **/
+    public String getPoolId() {
+        return poolId;
+    }
+
+    /**
      * An array of DNS zone names.
      * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
      *
@@ -1789,7 +1830,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
@@ -1797,7 +1838,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      * @return the value
@@ -1807,7 +1848,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      **/
@@ -1815,7 +1856,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      * @return the value
@@ -1955,6 +1996,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
         sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", poolId=").append(String.valueOf(this.poolId));
         sb.append(", privateEndpointDnsZones=")
                 .append(String.valueOf(this.privateEndpointDnsZones));
         sb.append(", privateEndpointMaxHostCount=")
@@ -2016,6 +2058,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
                 && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
                 && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.poolId, other.poolId)
                 && java.util.Objects.equals(
                         this.privateEndpointDnsZones, other.privateEndpointDnsZones)
                 && java.util.Objects.equals(
@@ -2104,6 +2147,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 (result * PRIME)
                         + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.poolId == null ? 43 : this.poolId.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointDnsZones == null

@@ -28,6 +28,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         "displayName",
         "lifecycleState",
         "subnetIds",
+        "shape",
         "networkSecurityGroupIds",
         "traceConfig",
         "freeformTags",
@@ -42,6 +43,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             String displayName,
             Application.LifecycleState lifecycleState,
             java.util.List<String> subnetIds,
+            Shape shape,
             java.util.List<String> networkSecurityGroupIds,
             ApplicationTraceConfig traceConfig,
             java.util.Map<String, String> freeformTags,
@@ -55,6 +57,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         this.displayName = displayName;
         this.lifecycleState = lifecycleState;
         this.subnetIds = subnetIds;
+        this.shape = shape;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.traceConfig = traceConfig;
         this.freeformTags = freeformTags;
@@ -154,6 +157,32 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         public Builder subnetIds(java.util.List<String> subnetIds) {
             this.subnetIds = subnetIds;
             this.__explicitlySet__.add("subnetIds");
+            return this;
+        }
+        /**
+         * Valid values are {@code GENERIC_X86}, {@code GENERIC_ARM} and {@code GENERIC_X86_ARM}. Default is {@code GENERIC_X86}. Setting this to {@code GENERIC_X86}, will run the functions in the application on X86 processor architecture.
+         * Setting this to {@code GENERIC_ARM}, will run the functions in the application on ARM processor architecture.
+         * When set to {@code GENERIC_X86_ARM}, functions in the application are run on either X86 or ARM processor architecture.
+         * Accepted values are:
+         * {@code GENERIC_X86}, {@code GENERIC_ARM}, {@code GENERIC_X86_ARM}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private Shape shape;
+
+        /**
+         * Valid values are {@code GENERIC_X86}, {@code GENERIC_ARM} and {@code GENERIC_X86_ARM}. Default is {@code GENERIC_X86}. Setting this to {@code GENERIC_X86}, will run the functions in the application on X86 processor architecture.
+         * Setting this to {@code GENERIC_ARM}, will run the functions in the application on ARM processor architecture.
+         * When set to {@code GENERIC_X86_ARM}, functions in the application are run on either X86 or ARM processor architecture.
+         * Accepted values are:
+         * {@code GENERIC_X86}, {@code GENERIC_ARM}, {@code GENERIC_X86_ARM}
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
+        public Builder shape(Shape shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
             return this;
         }
         /**
@@ -297,6 +326,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
                             this.displayName,
                             this.lifecycleState,
                             this.subnetIds,
+                            this.shape,
                             this.networkSecurityGroupIds,
                             this.traceConfig,
                             this.freeformTags,
@@ -326,6 +356,9 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("subnetIds")) {
                 this.subnetIds(model.getSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
             }
             if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
                 this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
@@ -441,6 +474,83 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
      **/
     public java.util.List<String> getSubnetIds() {
         return subnetIds;
+    }
+
+    /**
+     * Valid values are {@code GENERIC_X86}, {@code GENERIC_ARM} and {@code GENERIC_X86_ARM}. Default is {@code GENERIC_X86}. Setting this to {@code GENERIC_X86}, will run the functions in the application on X86 processor architecture.
+     * Setting this to {@code GENERIC_ARM}, will run the functions in the application on ARM processor architecture.
+     * When set to {@code GENERIC_X86_ARM}, functions in the application are run on either X86 or ARM processor architecture.
+     * Accepted values are:
+     * {@code GENERIC_X86}, {@code GENERIC_ARM}, {@code GENERIC_X86_ARM}
+     *
+     **/
+    public enum Shape {
+        GenericX86("GENERIC_X86"),
+        GenericArm("GENERIC_ARM"),
+        GenericX86Arm("GENERIC_X86_ARM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Shape.class);
+
+        private final String value;
+        private static java.util.Map<String, Shape> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Shape v : Shape.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Shape(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Shape create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Shape', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Valid values are {@code GENERIC_X86}, {@code GENERIC_ARM} and {@code GENERIC_X86_ARM}. Default is {@code GENERIC_X86}. Setting this to {@code GENERIC_X86}, will run the functions in the application on X86 processor architecture.
+     * Setting this to {@code GENERIC_ARM}, will run the functions in the application on ARM processor architecture.
+     * When set to {@code GENERIC_X86_ARM}, functions in the application are run on either X86 or ARM processor architecture.
+     * Accepted values are:
+     * {@code GENERIC_X86}, {@code GENERIC_ARM}, {@code GENERIC_X86_ARM}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final Shape shape;
+
+    /**
+     * Valid values are {@code GENERIC_X86}, {@code GENERIC_ARM} and {@code GENERIC_X86_ARM}. Default is {@code GENERIC_X86}. Setting this to {@code GENERIC_X86}, will run the functions in the application on X86 processor architecture.
+     * Setting this to {@code GENERIC_ARM}, will run the functions in the application on ARM processor architecture.
+     * When set to {@code GENERIC_X86_ARM}, functions in the application are run on either X86 or ARM processor architecture.
+     * Accepted values are:
+     * {@code GENERIC_X86}, {@code GENERIC_ARM}, {@code GENERIC_X86_ARM}
+     *
+     * @return the value
+     **/
+    public Shape getShape() {
+        return shape;
     }
 
     /**
@@ -576,6 +686,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", subnetIds=").append(String.valueOf(this.subnetIds));
+        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
@@ -603,6 +714,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.subnetIds, other.subnetIds)
+                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.traceConfig, other.traceConfig)
@@ -627,6 +739,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.subnetIds == null ? 43 : this.subnetIds.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkSecurityGroupIds == null
