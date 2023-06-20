@@ -29,6 +29,10 @@ public final class ConsoleConnection
         "dbNodeId",
         "connectionString",
         "fingerprint",
+        "serviceHostKeyFingerprint",
+        "freeformTags",
+        "definedTags",
+        "lifecycleDetails",
         "lifecycleState"
     })
     public ConsoleConnection(
@@ -37,6 +41,10 @@ public final class ConsoleConnection
             String dbNodeId,
             String connectionString,
             String fingerprint,
+            String serviceHostKeyFingerprint,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String lifecycleDetails,
             LifecycleState lifecycleState) {
         super();
         this.id = id;
@@ -44,6 +52,10 @@ public final class ConsoleConnection
         this.dbNodeId = dbNodeId;
         this.connectionString = connectionString;
         this.fingerprint = fingerprint;
+        this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.lifecycleDetails = lifecycleDetails;
         this.lifecycleState = lifecycleState;
     }
 
@@ -124,6 +136,83 @@ public final class ConsoleConnection
             this.__explicitlySet__.add("fingerprint");
             return this;
         }
+        /** The SSH public key's fingerprint for the console connection service host. */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceHostKeyFingerprint")
+        private String serviceHostKeyFingerprint;
+
+        /**
+         * The SSH public key's fingerprint for the console connection service host.
+         *
+         * @param serviceHostKeyFingerprint the value to set
+         * @return this builder
+         */
+        public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
+            this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+            this.__explicitlySet__.add("serviceHostKeyFingerprint");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /** Information about the current lifecycle state. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Information about the current lifecycle state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
         /** The current state of the console connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -151,6 +240,10 @@ public final class ConsoleConnection
                             this.dbNodeId,
                             this.connectionString,
                             this.fingerprint,
+                            this.serviceHostKeyFingerprint,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lifecycleDetails,
                             this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -174,6 +267,18 @@ public final class ConsoleConnection
             }
             if (model.wasPropertyExplicitlySet("fingerprint")) {
                 this.fingerprint(model.getFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("serviceHostKeyFingerprint")) {
+                this.serviceHostKeyFingerprint(model.getServiceHostKeyFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -254,6 +359,74 @@ public final class ConsoleConnection
      */
     public String getFingerprint() {
         return fingerprint;
+    }
+
+    /** The SSH public key's fingerprint for the console connection service host. */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceHostKeyFingerprint")
+    private final String serviceHostKeyFingerprint;
+
+    /**
+     * The SSH public key's fingerprint for the console connection service host.
+     *
+     * @return the value
+     */
+    public String getServiceHostKeyFingerprint() {
+        return serviceHostKeyFingerprint;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /** Information about the current lifecycle state. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Information about the current lifecycle state.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /** The current state of the console connection. */
@@ -338,6 +511,11 @@ public final class ConsoleConnection
         sb.append(", dbNodeId=").append(String.valueOf(this.dbNodeId));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
+        sb.append(", serviceHostKeyFingerprint=")
+                .append(String.valueOf(this.serviceHostKeyFingerprint));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
@@ -358,6 +536,11 @@ public final class ConsoleConnection
                 && java.util.Objects.equals(this.dbNodeId, other.dbNodeId)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.fingerprint, other.fingerprint)
+                && java.util.Objects.equals(
+                        this.serviceHostKeyFingerprint, other.serviceHostKeyFingerprint)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
@@ -375,6 +558,16 @@ public final class ConsoleConnection
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
         result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceHostKeyFingerprint == null
+                                ? 43
+                                : this.serviceHostKeyFingerprint.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

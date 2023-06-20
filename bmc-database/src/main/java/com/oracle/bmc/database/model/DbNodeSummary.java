@@ -47,6 +47,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         "timeMaintenanceWindowStart",
         "timeMaintenanceWindowEnd",
         "additionalDetails",
+        "freeformTags",
+        "definedTags",
+        "lifecycleDetails",
         "cpuCoreCount",
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
@@ -70,6 +73,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             java.util.Date timeMaintenanceWindowStart,
             java.util.Date timeMaintenanceWindowEnd,
             String additionalDetails,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String lifecycleDetails,
             Integer cpuCoreCount,
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
@@ -92,6 +98,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         this.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
         this.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
         this.additionalDetails = additionalDetails;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.lifecycleDetails = lifecycleDetails;
         this.cpuCoreCount = cpuCoreCount;
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
@@ -419,6 +428,68 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /** Information about the current lifecycle state. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Information about the current lifecycle state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
         /** The number of CPU cores enabled on the Db node. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
@@ -507,6 +578,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.timeMaintenanceWindowStart,
                             this.timeMaintenanceWindowEnd,
                             this.additionalDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lifecycleDetails,
                             this.cpuCoreCount,
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
@@ -569,6 +643,15 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("additionalDetails")) {
                 this.additionalDetails(model.getAdditionalDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
@@ -978,6 +1061,61 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         return additionalDetails;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /** Information about the current lifecycle state. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Information about the current lifecycle state.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     /** The number of CPU cores enabled on the Db node. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
@@ -1069,6 +1207,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", timeMaintenanceWindowEnd=")
                 .append(String.valueOf(this.timeMaintenanceWindowEnd));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
@@ -1107,6 +1248,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(
                         this.timeMaintenanceWindowEnd, other.timeMaintenanceWindowEnd)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
@@ -1156,6 +1300,11 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =
                 (result * PRIME)

@@ -45,6 +45,7 @@ public final class UpdateApplicationDetails
         "metastoreId",
         "numExecutors",
         "parameters",
+        "poolId",
         "privateEndpointId",
         "warehouseBucketUri",
         "maxDurationInMinutes",
@@ -72,6 +73,7 @@ public final class UpdateApplicationDetails
             String metastoreId,
             Integer numExecutors,
             java.util.List<ApplicationParameter> parameters,
+            String poolId,
             String privateEndpointId,
             String warehouseBucketUri,
             Long maxDurationInMinutes,
@@ -98,6 +100,7 @@ public final class UpdateApplicationDetails
         this.metastoreId = metastoreId;
         this.numExecutors = numExecutors;
         this.parameters = parameters;
+        this.poolId = poolId;
         this.privateEndpointId = privateEndpointId;
         this.warehouseBucketUri = warehouseBucketUri;
         this.maxDurationInMinutes = maxDurationInMinutes;
@@ -502,6 +505,21 @@ public final class UpdateApplicationDetails
             this.__explicitlySet__.add("parameters");
             return this;
         }
+        /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+        private String poolId;
+
+        /**
+         * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         *
+         * @param poolId the value to set
+         * @return this builder
+         */
+        public Builder poolId(String poolId) {
+            this.poolId = poolId;
+            this.__explicitlySet__.add("poolId");
+            return this;
+        }
         /** The OCID of a private endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
@@ -608,6 +626,7 @@ public final class UpdateApplicationDetails
                             this.metastoreId,
                             this.numExecutors,
                             this.parameters,
+                            this.poolId,
                             this.privateEndpointId,
                             this.warehouseBucketUri,
                             this.maxDurationInMinutes,
@@ -682,6 +701,9 @@ public final class UpdateApplicationDetails
             }
             if (model.wasPropertyExplicitlySet("parameters")) {
                 this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("poolId")) {
+                this.poolId(model.getPoolId());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
@@ -1057,6 +1079,19 @@ public final class UpdateApplicationDetails
         return parameters;
     }
 
+    /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+    private final String poolId;
+
+    /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     *
+     * @return the value
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
     /** The OCID of a private endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
@@ -1163,6 +1198,7 @@ public final class UpdateApplicationDetails
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", numExecutors=").append(String.valueOf(this.numExecutors));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", poolId=").append(String.valueOf(this.poolId));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
         sb.append(", maxDurationInMinutes=").append(String.valueOf(this.maxDurationInMinutes));
@@ -1202,6 +1238,7 @@ public final class UpdateApplicationDetails
                 && java.util.Objects.equals(this.metastoreId, other.metastoreId)
                 && java.util.Objects.equals(this.numExecutors, other.numExecutors)
                 && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.poolId, other.poolId)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
                 && java.util.Objects.equals(this.maxDurationInMinutes, other.maxDurationInMinutes)
@@ -1250,6 +1287,7 @@ public final class UpdateApplicationDetails
         result = (result * PRIME) + (this.metastoreId == null ? 43 : this.metastoreId.hashCode());
         result = (result * PRIME) + (this.numExecutors == null ? 43 : this.numExecutors.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.poolId == null ? 43 : this.poolId.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());

@@ -180,6 +180,39 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangePoolCompartmentResponse changePoolCompartment(
+            ChangePoolCompartmentRequest request) {
+
+        Validate.notBlank(request.getPoolId(), "poolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePoolCompartmentDetails(),
+                "changePoolCompartmentDetails is required");
+
+        return clientCall(request, ChangePoolCompartmentResponse::builder)
+                .logger(LOG, "changePoolCompartment")
+                .serviceDetails(
+                        "DataFlow",
+                        "ChangePoolCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/ChangePoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePoolCompartmentRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendPathParam(request.getPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePoolCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ChangePrivateEndpointCompartmentResponse changePrivateEndpointCompartment(
             ChangePrivateEndpointCompartmentRequest request) {
 
@@ -270,6 +303,33 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreatePoolResponse createPool(CreatePoolRequest request) {
+        Objects.requireNonNull(request.getCreatePoolDetails(), "createPoolDetails is required");
+
+        return clientCall(request, CreatePoolResponse::builder)
+                .logger(LOG, "createPool")
+                .serviceDetails("DataFlow", "CreatePool", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePoolRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataflow.model.Pool.class, CreatePoolResponse.Builder::pool)
+                .handleResponseHeaderString("etag", CreatePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreatePoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("Location", CreatePoolResponse.Builder::location)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -386,6 +446,30 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeletePoolResponse deletePool(DeletePoolRequest request) {
+
+        Validate.notBlank(request.getPoolId(), "poolId must not be blank");
+
+        return clientCall(request, DeletePoolResponse::builder)
+                .logger(LOG, "deletePool")
+                .serviceDetails(
+                        "DataFlow",
+                        "DeletePool",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/DeletePool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePoolRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendPathParam(request.getPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePoolResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeletePrivateEndpointResponse deletePrivateEndpoint(
             DeletePrivateEndpointRequest request) {
 
@@ -490,6 +574,31 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetApplicationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetPoolResponse getPool(GetPoolRequest request) {
+
+        Validate.notBlank(request.getPoolId(), "poolId must not be blank");
+
+        return clientCall(request, GetPoolResponse::builder)
+                .logger(LOG, "getPool")
+                .serviceDetails(
+                        "DataFlow",
+                        "GetPool",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/GetPool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPoolRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendPathParam(request.getPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.dataflow.model.Pool.class, GetPoolResponse.Builder::pool)
+                .handleResponseHeaderString("etag", GetPoolResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetPoolResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -681,6 +790,42 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListPoolsResponse listPools(ListPoolsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPoolsResponse::builder)
+                .logger(LOG, "listPools")
+                .serviceDetails(
+                        "DataFlow",
+                        "ListPools",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/ListPools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPoolsRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("ownerPrincipalId", request.getOwnerPrincipalId())
+                .appendQueryParam("displayNameStartsWith", request.getDisplayNameStartsWith())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataflow.model.PoolCollection.class,
+                        ListPoolsResponse.Builder::poolCollection)
+                .handleResponseHeaderString("opc-prev-page", ListPoolsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString("opc-next-page", ListPoolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPoolsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -768,6 +913,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("runs")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("poolId", request.getPoolId())
                 .appendQueryParam("ownerPrincipalId", request.getOwnerPrincipalId())
                 .appendQueryParam("displayNameStartsWith", request.getDisplayNameStartsWith())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -929,6 +1075,66 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public StartPoolResponse startPool(StartPoolRequest request) {
+
+        Validate.notBlank(request.getPoolId(), "poolId must not be blank");
+
+        return clientCall(request, StartPoolResponse::builder)
+                .logger(LOG, "startPool")
+                .serviceDetails(
+                        "DataFlow",
+                        "StartPool",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/StartPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartPoolRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendPathParam(request.getPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", StartPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartPoolResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public StopPoolResponse stopPool(StopPoolRequest request) {
+
+        Validate.notBlank(request.getPoolId(), "poolId must not be blank");
+
+        return clientCall(request, StopPoolResponse::builder)
+                .logger(LOG, "stopPool")
+                .serviceDetails(
+                        "DataFlow",
+                        "StopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/StopPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopPoolRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendPathParam(request.getPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", StopPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopPoolResponse.Builder::opcWorkRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public UpdateApplicationResponse updateApplication(UpdateApplicationRequest request) {
         Objects.requireNonNull(
                 request.getUpdateApplicationDetails(), "updateApplicationDetails is required");
@@ -956,6 +1162,34 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdatePoolResponse updatePool(UpdatePoolRequest request) {
+        Objects.requireNonNull(request.getUpdatePoolDetails(), "updatePoolDetails is required");
+
+        Validate.notBlank(request.getPoolId(), "poolId must not be blank");
+
+        return clientCall(request, UpdatePoolResponse::builder)
+                .logger(LOG, "updatePool")
+                .serviceDetails(
+                        "DataFlow",
+                        "UpdatePool",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/UpdatePool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePoolRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("pools")
+                .appendPathParam(request.getPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdatePoolResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

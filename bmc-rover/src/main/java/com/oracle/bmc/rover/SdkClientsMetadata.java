@@ -8,6 +8,8 @@ import com.oracle.bmc.SdkClients;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @SdkClients({
+    RoverBundleAsyncClient.class,
+    RoverBundleClient.class,
     RoverClusterAsyncClient.class,
     RoverClusterClient.class,
     RoverEntitlementAsyncClient.class,
@@ -15,6 +17,8 @@ import com.oracle.bmc.SdkClients;
     RoverNodeAsyncClient.class,
     RoverNodeClient.class,
     ShapeAsyncClient.class,
-    ShapeClient.class
+    ShapeClient.class,
+    WorkRequestsAsyncClient.class,
+    WorkRequestsClient.class
 })
 public final class SdkClientsMetadata {}

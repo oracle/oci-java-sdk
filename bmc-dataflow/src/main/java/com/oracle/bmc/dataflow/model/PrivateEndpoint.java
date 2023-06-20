@@ -352,7 +352,7 @@ public final class PrivateEndpoint
             return this;
         }
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -360,7 +360,7 @@ public final class PrivateEndpoint
         private java.util.Date timeCreated;
 
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -373,7 +373,7 @@ public final class PrivateEndpoint
             return this;
         }
         /**
-         * The date and time a application was updated, expressed in [RFC
+         * The date and time the resource was updated, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -381,7 +381,7 @@ public final class PrivateEndpoint
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time a application was updated, expressed in [RFC
+         * The date and time the resource was updated, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -727,7 +727,7 @@ public final class PrivateEndpoint
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -735,7 +735,7 @@ public final class PrivateEndpoint
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *
@@ -746,7 +746,7 @@ public final class PrivateEndpoint
     }
 
     /**
-     * The date and time a application was updated, expressed in [RFC
+     * The date and time the resource was updated, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -754,7 +754,7 @@ public final class PrivateEndpoint
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time a application was updated, expressed in [RFC
+     * The date and time the resource was updated, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *

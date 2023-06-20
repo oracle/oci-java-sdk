@@ -5218,6 +5218,22 @@ public interface Database extends AutoCloseable {
             UpdateCloudVmClusterIormConfigRequest request);
 
     /**
+     * Updates the specified database node console connection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateConsoleConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateConsoleConnection API.
+     */
+    UpdateConsoleConnectionResponse updateConsoleConnection(UpdateConsoleConnectionRequest request);
+
+    /**
      * Updates the Data Guard association the specified database. This API can be used to change the
      * `protectionMode` and `transportType` of the Data Guard association.
      *
@@ -5281,6 +5297,21 @@ public interface Database extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbHome API.
      */
     UpdateDbHomeResponse updateDbHome(UpdateDbHomeRequest request);
+
+    /**
+     * Updates the specified database node.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbNode API.
+     */
+    UpdateDbNodeResponse updateDbNode(UpdateDbNodeRequest request);
 
     /**
      * Updates the properties of the specified DB system.

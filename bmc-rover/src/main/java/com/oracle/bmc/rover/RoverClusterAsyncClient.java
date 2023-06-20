@@ -298,6 +298,44 @@ public class RoverClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<RequestAdditionalNodesResponse> requestAdditionalNodes(
+            RequestAdditionalNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestAdditionalNodesRequest, RequestAdditionalNodesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRoverClusterId(), "roverClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getRequestAdditionalNodesDetails(),
+                "requestAdditionalNodesDetails is required");
+
+        return clientCall(request, RequestAdditionalNodesResponse::builder)
+                .logger(LOG, "requestAdditionalNodes")
+                .serviceDetails(
+                        "RoverCluster",
+                        "RequestAdditionalNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/RequestAdditionalNodes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RequestAdditionalNodesRequest::builder)
+                .basePath("/20201210")
+                .appendPathParam("roverClusters")
+                .appendPathParam(request.getRoverClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("requestAdditionalNodes")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RequestAdditionalNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RequestAdditionalNodesResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRoverClusterResponse> updateRoverCluster(
             UpdateRoverClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

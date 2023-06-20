@@ -8,9 +8,18 @@ import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
 /**
- * APIs for managing users, groups, compartments, policies, and identity domains. This service
- * client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no
- * circuit breaker configuration is defined by the user.
+ * Use the Identity and Access Management Service API to manage users, groups, identity domains,
+ * compartments, policies, tagging, and limits. For information about managing users, groups,
+ * compartments, and policies, see [Identity and Access Management (without identity
+ * domains)](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For
+ * information about tagging and service limits, see
+ * [Tagging](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) and
+ * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+ * For information about creating, modifying, and deleting identity domains, see [Identity and
+ * Access Management (with identity
+ * domains)](https://docs.cloud.oracle.com/iaas/Content/Identity/home.htm). This service client uses
+ * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
+ * breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Identity extends AutoCloseable {
@@ -201,10 +210,12 @@ public interface Identity extends AutoCloseable {
      * tags from all resources in your tenancy. The tag key definitions must be within the same tag
      * namespace.
      *
-     * <p>The following actions happen immediately: \u00A0 * If the tag is a cost-tracking tag, the
-     * tag no longer counts against your 10 cost-tracking tags limit, even if you do not disable the
-     * tag before running this operation. * If the tag is used with dynamic groups, the rules that
-     * contain the tag are no longer evaluated against the tag.
+     * <p>The following actions happen immediately:
+     *
+     * <p>If the tag is a cost-tracking tag, the tag no longer counts against your 10 cost-tracking
+     * tags limit, even if you do not disable the tag before running this operation. * If the tag is
+     * used with dynamic groups, the rules that contain the tag are no longer evaluated against the
+     * tag.
      *
      * <p>After you start this operation, the state of the tag changes to DELETING, and tag removal
      * from resources begins. This process can take up to 48 hours depending on the number of
@@ -1446,9 +1457,8 @@ public interface Identity extends AutoCloseable {
     GenerateTotpSeedResponse generateTotpSeed(GenerateTotpSeedRequest request);
 
     /**
-     * Gets the authentication policy for the given tenancy. You must specify your tenant\u2019s
-     * OCID as the value for the compartment ID (remember that the tenancy is simply the root
-     * compartment).
+     * Gets the authentication policy for the given tenancy. You must specify your tenant's OCID as
+     * the value for the compartment ID (remember that the tenancy is simply the root compartment).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

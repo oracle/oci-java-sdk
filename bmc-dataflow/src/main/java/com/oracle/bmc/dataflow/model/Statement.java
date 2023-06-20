@@ -138,7 +138,7 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -146,7 +146,7 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
         private java.util.Date timeCreated;
 
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -312,7 +312,7 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -320,7 +320,7 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *

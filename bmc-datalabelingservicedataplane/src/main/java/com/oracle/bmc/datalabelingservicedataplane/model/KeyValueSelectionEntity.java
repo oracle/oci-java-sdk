@@ -97,6 +97,21 @@ public final class KeyValueSelectionEntity extends Entity {
             this.__explicitlySet__.add("confidence");
             return this;
         }
+        /** Integer value. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
+        private java.math.BigDecimal pageNumber;
+
+        /**
+         * Integer value.
+         *
+         * @param pageNumber the value to set
+         * @return this builder
+         */
+        public Builder pageNumber(java.math.BigDecimal pageNumber) {
+            this.pageNumber = pageNumber;
+            this.__explicitlySet__.add("pageNumber");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -108,7 +123,8 @@ public final class KeyValueSelectionEntity extends Entity {
                             this.labels,
                             this.boundingPolygon,
                             this.rotation,
-                            this.confidence);
+                            this.confidence,
+                            this.pageNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -132,6 +148,9 @@ public final class KeyValueSelectionEntity extends Entity {
             if (model.wasPropertyExplicitlySet("confidence")) {
                 this.confidence(model.getConfidence());
             }
+            if (model.wasPropertyExplicitlySet("pageNumber")) {
+                this.pageNumber(model.getPageNumber());
+            }
             return this;
         }
     }
@@ -151,13 +170,15 @@ public final class KeyValueSelectionEntity extends Entity {
             java.util.List<Label> labels,
             BoundingPolygon boundingPolygon,
             java.math.BigDecimal rotation,
-            Float confidence) {
+            Float confidence,
+            java.math.BigDecimal pageNumber) {
         super();
         this.text = text;
         this.labels = labels;
         this.boundingPolygon = boundingPolygon;
         this.rotation = rotation;
         this.confidence = confidence;
+        this.pageNumber = pageNumber;
     }
 
     /** Entity Name. */
@@ -219,6 +240,19 @@ public final class KeyValueSelectionEntity extends Entity {
         return confidence;
     }
 
+    /** Integer value. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
+    private final java.math.BigDecimal pageNumber;
+
+    /**
+     * Integer value.
+     *
+     * @return the value
+     */
+    public java.math.BigDecimal getPageNumber() {
+        return pageNumber;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -239,6 +273,7 @@ public final class KeyValueSelectionEntity extends Entity {
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
         sb.append(", rotation=").append(String.valueOf(this.rotation));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
+        sb.append(", pageNumber=").append(String.valueOf(this.pageNumber));
         sb.append(")");
         return sb.toString();
     }
@@ -258,6 +293,7 @@ public final class KeyValueSelectionEntity extends Entity {
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
                 && java.util.Objects.equals(this.rotation, other.rotation)
                 && java.util.Objects.equals(this.confidence, other.confidence)
+                && java.util.Objects.equals(this.pageNumber, other.pageNumber)
                 && super.equals(other);
     }
 
@@ -272,6 +308,7 @@ public final class KeyValueSelectionEntity extends Entity {
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
         result = (result * PRIME) + (this.rotation == null ? 43 : this.rotation.hashCode());
         result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
+        result = (result * PRIME) + (this.pageNumber == null ? 43 : this.pageNumber.hashCode());
         return result;
     }
 }

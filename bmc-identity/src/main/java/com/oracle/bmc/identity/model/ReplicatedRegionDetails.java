@@ -24,11 +24,12 @@ package com.oracle.bmc.identity.model;
 public final class ReplicatedRegionDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"region", "url", "state"})
-    public ReplicatedRegionDetails(String region, String url, State state) {
+    @java.beans.ConstructorProperties({"region", "url", "regionalUrl", "state"})
+    public ReplicatedRegionDetails(String region, String url, String regionalUrl, State state) {
         super();
         this.region = region;
         this.url = url;
+        this.regionalUrl = regionalUrl;
         this.state = state;
     }
 
@@ -70,6 +71,21 @@ public final class ReplicatedRegionDetails
             this.__explicitlySet__.add("url");
             return this;
         }
+        /** Region-specific identity domain URL. */
+        @com.fasterxml.jackson.annotation.JsonProperty("regionalUrl")
+        private String regionalUrl;
+
+        /**
+         * Region-specific identity domain URL.
+         *
+         * @param regionalUrl the value to set
+         * @return this builder
+         */
+        public Builder regionalUrl(String regionalUrl) {
+            this.regionalUrl = regionalUrl;
+            this.__explicitlySet__.add("regionalUrl");
+            return this;
+        }
         /** The IDCS-replicated region state. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
@@ -91,7 +107,8 @@ public final class ReplicatedRegionDetails
 
         public ReplicatedRegionDetails build() {
             ReplicatedRegionDetails model =
-                    new ReplicatedRegionDetails(this.region, this.url, this.state);
+                    new ReplicatedRegionDetails(
+                            this.region, this.url, this.regionalUrl, this.state);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +122,9 @@ public final class ReplicatedRegionDetails
             }
             if (model.wasPropertyExplicitlySet("url")) {
                 this.url(model.getUrl());
+            }
+            if (model.wasPropertyExplicitlySet("regionalUrl")) {
+                this.regionalUrl(model.getRegionalUrl());
             }
             if (model.wasPropertyExplicitlySet("state")) {
                 this.state(model.getState());
@@ -152,6 +172,19 @@ public final class ReplicatedRegionDetails
      */
     public String getUrl() {
         return url;
+    }
+
+    /** Region-specific identity domain URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("regionalUrl")
+    private final String regionalUrl;
+
+    /**
+     * Region-specific identity domain URL.
+     *
+     * @return the value
+     */
+    public String getRegionalUrl() {
+        return regionalUrl;
     }
 
     /** The IDCS-replicated region state. */
@@ -232,6 +265,7 @@ public final class ReplicatedRegionDetails
         sb.append("super=").append(super.toString());
         sb.append("region=").append(String.valueOf(this.region));
         sb.append(", url=").append(String.valueOf(this.url));
+        sb.append(", regionalUrl=").append(String.valueOf(this.regionalUrl));
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(")");
         return sb.toString();
@@ -249,6 +283,7 @@ public final class ReplicatedRegionDetails
         ReplicatedRegionDetails other = (ReplicatedRegionDetails) o;
         return java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.url, other.url)
+                && java.util.Objects.equals(this.regionalUrl, other.regionalUrl)
                 && java.util.Objects.equals(this.state, other.state)
                 && super.equals(other);
     }
@@ -259,6 +294,7 @@ public final class ReplicatedRegionDetails
         int result = 1;
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
+        result = (result * PRIME) + (this.regionalUrl == null ? 43 : this.regionalUrl.hashCode());
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

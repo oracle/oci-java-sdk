@@ -33,6 +33,7 @@ public final class ApplicationSummary
         "lifecycleState",
         "ownerPrincipalId",
         "ownerUserName",
+        "poolId",
         "sparkVersion",
         "timeCreated",
         "timeUpdated",
@@ -48,6 +49,7 @@ public final class ApplicationSummary
             ApplicationLifecycleState lifecycleState,
             String ownerPrincipalId,
             String ownerUserName,
+            String poolId,
             String sparkVersion,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -62,6 +64,7 @@ public final class ApplicationSummary
         this.lifecycleState = lifecycleState;
         this.ownerPrincipalId = ownerPrincipalId;
         this.ownerUserName = ownerUserName;
+        this.poolId = poolId;
         this.sparkVersion = sparkVersion;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -228,6 +231,21 @@ public final class ApplicationSummary
             this.__explicitlySet__.add("ownerUserName");
             return this;
         }
+        /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+        private String poolId;
+
+        /**
+         * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         *
+         * @param poolId the value to set
+         * @return this builder
+         */
+        public Builder poolId(String poolId) {
+            this.poolId = poolId;
+            this.__explicitlySet__.add("poolId");
+            return this;
+        }
         /** The Spark version utilized to run the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
@@ -244,7 +262,7 @@ public final class ApplicationSummary
             return this;
         }
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -252,7 +270,7 @@ public final class ApplicationSummary
         private java.util.Date timeCreated;
 
         /**
-         * The date and time a application was created, expressed in [RFC
+         * The date and time the resource was created, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -265,7 +283,7 @@ public final class ApplicationSummary
             return this;
         }
         /**
-         * The date and time a application was updated, expressed in [RFC
+         * The date and time the resource was updated, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          */
@@ -273,7 +291,7 @@ public final class ApplicationSummary
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time a application was updated, expressed in [RFC
+         * The date and time the resource was updated, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2018-04-03T21:10:29.600Z}
          *
@@ -316,6 +334,7 @@ public final class ApplicationSummary
                             this.lifecycleState,
                             this.ownerPrincipalId,
                             this.ownerUserName,
+                            this.poolId,
                             this.sparkVersion,
                             this.timeCreated,
                             this.timeUpdated,
@@ -354,6 +373,9 @@ public final class ApplicationSummary
             }
             if (model.wasPropertyExplicitlySet("ownerUserName")) {
                 this.ownerUserName(model.getOwnerUserName());
+            }
+            if (model.wasPropertyExplicitlySet("poolId")) {
+                this.poolId(model.getPoolId());
             }
             if (model.wasPropertyExplicitlySet("sparkVersion")) {
                 this.sparkVersion(model.getSparkVersion());
@@ -519,6 +541,19 @@ public final class ApplicationSummary
         return ownerUserName;
     }
 
+    /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+    private final String poolId;
+
+    /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     *
+     * @return the value
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
     /** The Spark version utilized to run the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
     private final String sparkVersion;
@@ -533,7 +568,7 @@ public final class ApplicationSummary
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -541,7 +576,7 @@ public final class ApplicationSummary
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time a application was created, expressed in [RFC
+     * The date and time the resource was created, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *
@@ -552,7 +587,7 @@ public final class ApplicationSummary
     }
 
     /**
-     * The date and time a application was updated, expressed in [RFC
+     * The date and time the resource was updated, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      */
@@ -560,7 +595,7 @@ public final class ApplicationSummary
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time a application was updated, expressed in [RFC
+     * The date and time the resource was updated, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2018-04-03T21:10:29.600Z}
      *
@@ -607,6 +642,7 @@ public final class ApplicationSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", ownerPrincipalId=").append(String.valueOf(this.ownerPrincipalId));
         sb.append(", ownerUserName=").append(String.valueOf(this.ownerUserName));
+        sb.append(", poolId=").append(String.valueOf(this.poolId));
         sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -634,6 +670,7 @@ public final class ApplicationSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.ownerPrincipalId, other.ownerPrincipalId)
                 && java.util.Objects.equals(this.ownerUserName, other.ownerUserName)
+                && java.util.Objects.equals(this.poolId, other.poolId)
                 && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -662,6 +699,7 @@ public final class ApplicationSummary
         result =
                 (result * PRIME)
                         + (this.ownerUserName == null ? 43 : this.ownerUserName.hashCode());
+        result = (result * PRIME) + (this.poolId == null ? 43 : this.poolId.hashCode());
         result = (result * PRIME) + (this.sparkVersion == null ? 43 : this.sparkVersion.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());

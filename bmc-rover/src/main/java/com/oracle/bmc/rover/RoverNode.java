@@ -192,6 +192,23 @@ public interface RoverNode extends AutoCloseable {
     ListRoverNodesResponse listRoverNodes(ListRoverNodesRequest request);
 
     /**
+     * Retrieve Ca Bundle for a rover node
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionRetrieveCaBundleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RoverNodeActionRetrieveCaBundle API.
+     */
+    RoverNodeActionRetrieveCaBundleResponse roverNodeActionRetrieveCaBundle(
+            RoverNodeActionRetrieveCaBundleRequest request);
+
+    /**
      * Get the resource principal public key for a rover node
      *
      * @param request The request object containing the details to send
@@ -206,6 +223,74 @@ public interface RoverNode extends AutoCloseable {
      *     RoverNodeActionSetKey API.
      */
     RoverNodeActionSetKeyResponse roverNodeActionSetKey(RoverNodeActionSetKeyRequest request);
+
+    /**
+     * Request to generate certificate for a roverNode.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeGenerateCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RoverNodeGenerateCertificate API.
+     */
+    RoverNodeGenerateCertificateResponse roverNodeGenerateCertificate(
+            RoverNodeGenerateCertificateRequest request);
+
+    /**
+     * Request to renew certificate for a roverNode.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeRenewCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RoverNodeRenewCertificate API.
+     */
+    RoverNodeRenewCertificateResponse roverNodeRenewCertificate(
+            RoverNodeRenewCertificateRequest request);
+
+    /**
+     * Request to replace certificate authority for a roverNode.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeReplaceCertificateAuthorityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RoverNodeReplaceCertificateAuthority API.
+     */
+    RoverNodeReplaceCertificateAuthorityResponse roverNodeReplaceCertificateAuthority(
+            RoverNodeReplaceCertificateAuthorityRequest request);
+
+    /**
+     * Retrieve the leaf certificate info for a rover node
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeRetrieveLeafCertificateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RoverNodeRetrieveLeafCertificate API.
+     */
+    RoverNodeRetrieveLeafCertificateResponse roverNodeRetrieveLeafCertificate(
+            RoverNodeRetrieveLeafCertificateRequest request);
 
     /**
      * Updates the RoverNode

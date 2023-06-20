@@ -60,6 +60,7 @@ public final class CreateRunDetails
         "metastoreId",
         "numExecutors",
         "parameters",
+        "poolId",
         "sparkVersion",
         "type",
         "warehouseBucketUri",
@@ -85,6 +86,7 @@ public final class CreateRunDetails
             String metastoreId,
             Integer numExecutors,
             java.util.List<ApplicationParameter> parameters,
+            String poolId,
             String sparkVersion,
             ApplicationType type,
             String warehouseBucketUri,
@@ -109,6 +111,7 @@ public final class CreateRunDetails
         this.metastoreId = metastoreId;
         this.numExecutors = numExecutors;
         this.parameters = parameters;
+        this.poolId = poolId;
         this.sparkVersion = sparkVersion;
         this.type = type;
         this.warehouseBucketUri = warehouseBucketUri;
@@ -473,6 +476,21 @@ public final class CreateRunDetails
             this.__explicitlySet__.add("parameters");
             return this;
         }
+        /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+        private String poolId;
+
+        /**
+         * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+         *
+         * @param poolId the value to set
+         * @return this builder
+         */
+        public Builder poolId(String poolId) {
+            this.poolId = poolId;
+            this.__explicitlySet__.add("poolId");
+            return this;
+        }
         /**
          * The Spark version utilized to run the application. This value may be set if applicationId
          * is not since the Spark version will be taken from the associated application.
@@ -595,6 +613,7 @@ public final class CreateRunDetails
                             this.metastoreId,
                             this.numExecutors,
                             this.parameters,
+                            this.poolId,
                             this.sparkVersion,
                             this.type,
                             this.warehouseBucketUri,
@@ -661,6 +680,9 @@ public final class CreateRunDetails
             }
             if (model.wasPropertyExplicitlySet("parameters")) {
                 this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("poolId")) {
+                this.poolId(model.getPoolId());
             }
             if (model.wasPropertyExplicitlySet("sparkVersion")) {
                 this.sparkVersion(model.getSparkVersion());
@@ -1006,6 +1028,19 @@ public final class CreateRunDetails
         return parameters;
     }
 
+    /** The OCID of a pool. Unique Id to indentify a dataflow pool resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("poolId")
+    private final String poolId;
+
+    /**
+     * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+     *
+     * @return the value
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
     /**
      * The Spark version utilized to run the application. This value may be set if applicationId is
      * not since the Spark version will be taken from the associated application.
@@ -1126,6 +1161,7 @@ public final class CreateRunDetails
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", numExecutors=").append(String.valueOf(this.numExecutors));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", poolId=").append(String.valueOf(this.poolId));
         sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
@@ -1163,6 +1199,7 @@ public final class CreateRunDetails
                 && java.util.Objects.equals(this.metastoreId, other.metastoreId)
                 && java.util.Objects.equals(this.numExecutors, other.numExecutors)
                 && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.poolId, other.poolId)
                 && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
@@ -1213,6 +1250,7 @@ public final class CreateRunDetails
         result = (result * PRIME) + (this.metastoreId == null ? 43 : this.metastoreId.hashCode());
         result = (result * PRIME) + (this.numExecutors == null ? 43 : this.numExecutors.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.poolId == null ? 43 : this.poolId.hashCode());
         result = (result * PRIME) + (this.sparkVersion == null ? 43 : this.sparkVersion.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result =

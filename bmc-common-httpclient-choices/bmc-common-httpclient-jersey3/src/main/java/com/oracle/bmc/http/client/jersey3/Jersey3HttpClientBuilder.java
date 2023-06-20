@@ -196,8 +196,11 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                         ClientProperties.PROXY_URI,
                         new URI(
                                 scheme,
+                                null,
                                 address.getHostString(),
-                                Integer.toString(address.getPort()),
+                                address.getPort(),
+                                null,
+                                null,
                                 null));
             } catch (URISyntaxException e) {
                 throw new IllegalArgumentException(e);

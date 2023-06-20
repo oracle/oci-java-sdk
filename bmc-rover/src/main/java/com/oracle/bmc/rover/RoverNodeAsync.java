@@ -184,6 +184,24 @@ public interface RoverNodeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieve Ca Bundle for a rover node
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RoverNodeActionRetrieveCaBundleResponse>
+            roverNodeActionRetrieveCaBundle(
+                    RoverNodeActionRetrieveCaBundleRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeActionRetrieveCaBundleRequest,
+                                    RoverNodeActionRetrieveCaBundleResponse>
+                            handler);
+
+    /**
      * Get the resource principal public key for a rover node
      *
      * @param request The request object containing the details to send
@@ -198,6 +216,75 @@ public interface RoverNodeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RoverNodeActionSetKeyRequest, RoverNodeActionSetKeyResponse>
                     handler);
+
+    /**
+     * Request to generate certificate for a roverNode.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RoverNodeGenerateCertificateResponse> roverNodeGenerateCertificate(
+            RoverNodeGenerateCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RoverNodeGenerateCertificateRequest,
+                            RoverNodeGenerateCertificateResponse>
+                    handler);
+
+    /**
+     * Request to renew certificate for a roverNode.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RoverNodeRenewCertificateResponse> roverNodeRenewCertificate(
+            RoverNodeRenewCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RoverNodeRenewCertificateRequest, RoverNodeRenewCertificateResponse>
+                    handler);
+
+    /**
+     * Request to replace certificate authority for a roverNode.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RoverNodeReplaceCertificateAuthorityResponse>
+            roverNodeReplaceCertificateAuthority(
+                    RoverNodeReplaceCertificateAuthorityRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeReplaceCertificateAuthorityRequest,
+                                    RoverNodeReplaceCertificateAuthorityResponse>
+                            handler);
+
+    /**
+     * Retrieve the leaf certificate info for a rover node
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RoverNodeRetrieveLeafCertificateResponse>
+            roverNodeRetrieveLeafCertificate(
+                    RoverNodeRetrieveLeafCertificateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RoverNodeRetrieveLeafCertificateRequest,
+                                    RoverNodeRetrieveLeafCertificateResponse>
+                            handler);
 
     /**
      * Updates the RoverNode
