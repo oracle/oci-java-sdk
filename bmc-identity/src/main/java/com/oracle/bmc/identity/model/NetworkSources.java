@@ -192,7 +192,7 @@ public final class NetworkSources extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Date and time the group was created, in the format defined by RFC3339.
+         * Date and time the network source was created, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -201,7 +201,7 @@ public final class NetworkSources extends com.oracle.bmc.http.internal.Explicitl
         private java.util.Date timeCreated;
 
         /**
-         * Date and time the group was created, in the format defined by RFC3339.
+         * Date and time the network source was created, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -483,7 +483,7 @@ public final class NetworkSources extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Date and time the group was created, in the format defined by RFC3339.
+     * Date and time the network source was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -492,7 +492,7 @@ public final class NetworkSources extends com.oracle.bmc.http.internal.Explicitl
     private final java.util.Date timeCreated;
 
     /**
-     * Date and time the group was created, in the format defined by RFC3339.
+     * Date and time the network source was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *

@@ -520,6 +520,59 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePoolCompartmentResponse> changePoolCompartment(
+            ChangePoolCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePoolCompartmentRequest, ChangePoolCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changePoolCompartment");
+        final ChangePoolCompartmentRequest interceptedRequest =
+                ChangePoolCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePoolCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "ChangePoolCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/ChangePoolCompartment");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangePoolCompartmentResponse>
+                transformer =
+                        ChangePoolCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePoolCompartmentRequest, ChangePoolCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePoolCompartmentRequest, ChangePoolCompartmentResponse>,
+                        java.util.concurrent.Future<ChangePoolCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePoolCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePoolCompartmentRequest, ChangePoolCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangePrivateEndpointCompartmentResponse>
             changePrivateEndpointCompartment(
                     ChangePrivateEndpointCompartmentRequest request,
@@ -670,6 +723,52 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateApplicationRequest, CreateApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePoolResponse> createPool(
+            CreatePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreatePoolRequest, CreatePoolResponse>
+                    handler) {
+        LOG.trace("Called async createPool");
+        final CreatePoolRequest interceptedRequest = CreatePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow", "CreatePool", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePoolResponse>
+                transformer =
+                        CreatePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreatePoolRequest, CreatePoolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePoolRequest, CreatePoolResponse>,
+                        java.util.concurrent.Future<CreatePoolResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePoolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePoolRequest, CreatePoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -878,6 +977,49 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePoolResponse> deletePool(
+            DeletePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeletePoolRequest, DeletePoolResponse>
+                    handler) {
+        LOG.trace("Called async deletePool");
+        final DeletePoolRequest interceptedRequest = DeletePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "DeletePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/DeletePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeletePoolResponse>
+                transformer =
+                        DeletePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeletePoolRequest, DeletePoolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePoolRequest, DeletePoolResponse>,
+                        java.util.concurrent.Future<DeletePoolResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePoolRequest, DeletePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
             DeletePrivateEndpointRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1045,6 +1187,46 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetApplicationRequest, GetApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPoolResponse> getPool(
+            GetPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetPoolRequest, GetPoolResponse> handler) {
+        LOG.trace("Called async getPool");
+        final GetPoolRequest interceptedRequest = GetPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "GetPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/GetPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPoolResponse> transformer =
+                GetPoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetPoolRequest, GetPoolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetPoolRequest, GetPoolResponse>,
+                        java.util.concurrent.Future<GetPoolResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPoolRequest, GetPoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1307,6 +1489,48 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListApplicationsRequest, ListApplicationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoolsResponse> listPools(
+            ListPoolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPoolsRequest, ListPoolsResponse>
+                    handler) {
+        LOG.trace("Called async listPools");
+        final ListPoolsRequest interceptedRequest = ListPoolsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPoolsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "ListPools",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/ListPools");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPoolsResponse>
+                transformer =
+                        ListPoolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListPoolsRequest, ListPoolsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListPoolsRequest, ListPoolsResponse>,
+                        java.util.concurrent.Future<ListPoolsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPoolsRequest, ListPoolsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1637,6 +1861,91 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartPoolResponse> startPool(
+            StartPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StartPoolRequest, StartPoolResponse>
+                    handler) {
+        LOG.trace("Called async startPool");
+        final StartPoolRequest interceptedRequest = StartPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "StartPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/StartPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartPoolResponse>
+                transformer =
+                        StartPoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartPoolRequest, StartPoolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<StartPoolRequest, StartPoolResponse>,
+                        java.util.concurrent.Future<StartPoolResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartPoolRequest, StartPoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopPoolResponse> stopPool(
+            StopPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse>
+                    handler) {
+        LOG.trace("Called async stopPool");
+        final StopPoolRequest interceptedRequest = StopPoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopPoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "StopPool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/StopPool");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopPoolResponse> transformer =
+                StopPoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse>,
+                        java.util.concurrent.Future<StopPoolResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopPoolRequest, StopPoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApplicationResponse> updateApplication(
             UpdateApplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1675,6 +1984,54 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateApplicationRequest, UpdateApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePoolResponse> updatePool(
+            UpdatePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdatePoolRequest, UpdatePoolResponse>
+                    handler) {
+        LOG.trace("Called async updatePool");
+        final UpdatePoolRequest interceptedRequest = UpdatePoolConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePoolConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "UpdatePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Pool/UpdatePool");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePoolResponse>
+                transformer =
+                        UpdatePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdatePoolRequest, UpdatePoolResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePoolRequest, UpdatePoolResponse>,
+                        java.util.concurrent.Future<UpdatePoolResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePoolDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePoolRequest, UpdatePoolResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

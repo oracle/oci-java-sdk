@@ -79,6 +79,26 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a pool into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource. Associated resources, like historical metrics, will not be
+     * automatically moved. The pool must be in a terminal state (STOPPED, FAILED) in
+     * order for it to be moved to a different compartment
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePoolCompartmentResponse> changePoolCompartment(
+            ChangePoolCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePoolCompartmentRequest, ChangePoolCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a private endpoint into a different compartment. When provided, If-Match is checked against ETag values of the resource.
      *
      *
@@ -133,6 +153,21 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateApplicationRequest, CreateApplicationResponse>
                     handler);
+
+    /**
+     * Create a pool to be used by dataflow runs or applications.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePoolResponse> createPool(
+            CreatePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePoolRequest, CreatePoolResponse> handler);
 
     /**
      * Creates a private endpoint to be used by applications.
@@ -200,6 +235,21 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a pool using a `poolId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePoolResponse> deletePool(
+            DeletePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePoolRequest, DeletePoolResponse> handler);
+
+    /**
      * Deletes a private endpoint using a `privateEndpointId`.
      *
      *
@@ -263,6 +313,21 @@ public interface DataFlowAsync extends AutoCloseable {
             GetApplicationRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
                     handler);
+
+    /**
+     * Retrieves a pool using a `poolId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPoolResponse> getPool(
+            GetPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPoolRequest, GetPoolResponse> handler);
 
     /**
      * Retrieves an private endpoint using a `privateEndpointId`.
@@ -358,6 +423,21 @@ public interface DataFlowAsync extends AutoCloseable {
             ListApplicationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListApplicationsRequest, ListApplicationsResponse>
                     handler);
+
+    /**
+     * Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPoolsResponse> listPools(
+            ListPoolsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPoolsRequest, ListPoolsResponse> handler);
 
     /**
      * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
@@ -473,6 +553,36 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts the dataflow pool for a given `poolId`. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartPoolResponse> startPool(
+            StartPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartPoolRequest, StartPoolResponse> handler);
+
+    /**
+     * Stops the dataflow pool for a given `poolId`. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StopPoolResponse> stopPool(
+            StopPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse> handler);
+
+    /**
      * Updates an application using an `applicationId`.
      *
      *
@@ -488,6 +598,23 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateApplicationRequest, UpdateApplicationResponse>
                     handler);
+
+    /**
+     * Updates a pool using a `poolId`.If changes to a pool doesn't match
+     * a previously defined pool,then a 409 status code will be returned.This indicates
+     * that a conflict has been detected.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePoolResponse> updatePool(
+            UpdatePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePoolRequest, UpdatePoolResponse> handler);
 
     /**
      * Updates a private endpoint using a `privateEndpointId`.  If changes to a private endpoint match

@@ -800,6 +800,59 @@ public class DataLabelingManagementAsyncClient implements DataLabelingManagement
     }
 
     @Override
+    public java.util.concurrent.Future<ImportPreAnnotatedDataResponse> importPreAnnotatedData(
+            ImportPreAnnotatedDataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportPreAnnotatedDataRequest, ImportPreAnnotatedDataResponse>
+                    handler) {
+        LOG.trace("Called async importPreAnnotatedData");
+        final ImportPreAnnotatedDataRequest interceptedRequest =
+                ImportPreAnnotatedDataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportPreAnnotatedDataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataLabelingManagement",
+                        "ImportPreAnnotatedData",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/ImportPreAnnotatedData");
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportPreAnnotatedDataResponse>
+                transformer =
+                        ImportPreAnnotatedDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ImportPreAnnotatedDataRequest, ImportPreAnnotatedDataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImportPreAnnotatedDataRequest, ImportPreAnnotatedDataResponse>,
+                        java.util.concurrent.Future<ImportPreAnnotatedDataResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportPreAnnotatedDataDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImportPreAnnotatedDataRequest, ImportPreAnnotatedDataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAnnotationFormatsResponse> listAnnotationFormats(
             ListAnnotationFormatsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
