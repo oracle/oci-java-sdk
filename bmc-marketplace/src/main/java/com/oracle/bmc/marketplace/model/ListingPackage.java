@@ -40,7 +40,8 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         "pricing",
         "resourceId",
         "timeCreated",
-        "operatingSystem"
+        "operatingSystem",
+        "regions"
     })
     protected ListingPackage(
             String description,
@@ -49,7 +50,8 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
             PricingModel pricing,
             String resourceId,
             java.util.Date timeCreated,
-            OperatingSystem operatingSystem) {
+            OperatingSystem operatingSystem,
+            java.util.List<Region> regions) {
         super();
         this.description = description;
         this.listingId = listingId;
@@ -58,6 +60,7 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         this.resourceId = resourceId;
         this.timeCreated = timeCreated;
         this.operatingSystem = operatingSystem;
+        this.regions = regions;
     }
 
     /** Description of this package. */
@@ -147,6 +150,23 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         return operatingSystem;
     }
 
+    /**
+     * The regions where you can deploy the listing package. (Some packages have restrictions that
+     * limit their deployment to United States regions only.)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("regions")
+    private final java.util.List<Region> regions;
+
+    /**
+     * The regions where you can deploy the listing package. (Some packages have restrictions that
+     * limit their deployment to United States regions only.)
+     *
+     * @return the value
+     */
+    public java.util.List<Region> getRegions() {
+        return regions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -169,6 +189,7 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
+        sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +211,7 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && java.util.Objects.equals(this.regions, other.regions)
                 && super.equals(other);
     }
 
@@ -206,6 +228,7 @@ public class ListingPackage extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

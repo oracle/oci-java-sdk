@@ -31,6 +31,7 @@ public final class ExternalDbSystem
         "isCluster",
         "homeDirectory",
         "databaseManagementConfig",
+        "stackMonitoringConfig",
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
@@ -45,6 +46,7 @@ public final class ExternalDbSystem
             Boolean isCluster,
             String homeDirectory,
             ExternalDbSystemDatabaseManagementConfigDetails databaseManagementConfig,
+            ExternalDbSystemStackMonitoringConfigDetails stackMonitoringConfig,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
@@ -58,6 +60,7 @@ public final class ExternalDbSystem
         this.isCluster = isCluster;
         this.homeDirectory = homeDirectory;
         this.databaseManagementConfig = databaseManagementConfig;
+        this.stackMonitoringConfig = stackMonitoringConfig;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
@@ -201,6 +204,16 @@ public final class ExternalDbSystem
             this.__explicitlySet__.add("databaseManagementConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
+        private ExternalDbSystemStackMonitoringConfigDetails stackMonitoringConfig;
+
+        public Builder stackMonitoringConfig(
+                ExternalDbSystemStackMonitoringConfigDetails stackMonitoringConfig) {
+            this.stackMonitoringConfig = stackMonitoringConfig;
+            this.__explicitlySet__.add("stackMonitoringConfig");
+            return this;
+        }
         /** The current lifecycle state of the external DB system resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -276,6 +289,7 @@ public final class ExternalDbSystem
                             this.isCluster,
                             this.homeDirectory,
                             this.databaseManagementConfig,
+                            this.stackMonitoringConfig,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
@@ -311,6 +325,9 @@ public final class ExternalDbSystem
             }
             if (model.wasPropertyExplicitlySet("databaseManagementConfig")) {
                 this.databaseManagementConfig(model.getDatabaseManagementConfig());
+            }
+            if (model.wasPropertyExplicitlySet("stackMonitoringConfig")) {
+                this.stackMonitoringConfig(model.getStackMonitoringConfig());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -455,6 +472,13 @@ public final class ExternalDbSystem
         return databaseManagementConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
+    private final ExternalDbSystemStackMonitoringConfigDetails stackMonitoringConfig;
+
+    public ExternalDbSystemStackMonitoringConfigDetails getStackMonitoringConfig() {
+        return stackMonitoringConfig;
+    }
+
     /** The current lifecycle state of the external DB system resource. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
@@ -581,6 +605,7 @@ public final class ExternalDbSystem
         sb.append(", homeDirectory=").append(String.valueOf(this.homeDirectory));
         sb.append(", databaseManagementConfig=")
                 .append(String.valueOf(this.databaseManagementConfig));
+        sb.append(", stackMonitoringConfig=").append(String.valueOf(this.stackMonitoringConfig));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -608,6 +633,7 @@ public final class ExternalDbSystem
                 && java.util.Objects.equals(this.homeDirectory, other.homeDirectory)
                 && java.util.Objects.equals(
                         this.databaseManagementConfig, other.databaseManagementConfig)
+                && java.util.Objects.equals(this.stackMonitoringConfig, other.stackMonitoringConfig)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -641,6 +667,11 @@ public final class ExternalDbSystem
                         + (this.databaseManagementConfig == null
                                 ? 43
                                 : this.databaseManagementConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stackMonitoringConfig == null
+                                ? 43
+                                : this.stackMonitoringConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

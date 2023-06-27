@@ -30,12 +30,12 @@ public class ChangeExternalExadataInfrastructureCompartmentRequest
     public String getExternalExadataInfrastructureId() {
         return externalExadataInfrastructureId;
     }
-    /** The details required to change the compartment for the Exadata infrastructure. */
+    /** The details required to move the Exadata infrastructure from one compartment to another. */
     private com.oracle.bmc.databasemanagement.model
                     .ChangeExternalExadataInfrastructureCompartmentDetails
             changeExternalExadataInfrastructureCompartmentDetails;
 
-    /** The details required to change the compartment for the Exadata infrastructure. */
+    /** The details required to move the Exadata infrastructure from one compartment to another. */
     public com.oracle.bmc.databasemanagement.model
                     .ChangeExternalExadataInfrastructureCompartmentDetails
             getChangeExternalExadataInfrastructureCompartmentDetails() {
@@ -124,13 +124,15 @@ public class ChangeExternalExadataInfrastructureCompartmentRequest
             return this;
         }
 
-        /** The details required to change the compartment for the Exadata infrastructure. */
+        /**
+         * The details required to move the Exadata infrastructure from one compartment to another.
+         */
         private com.oracle.bmc.databasemanagement.model
                         .ChangeExternalExadataInfrastructureCompartmentDetails
                 changeExternalExadataInfrastructureCompartmentDetails = null;
 
         /**
-         * The details required to change the compartment for the Exadata infrastructure.
+         * The details required to move the Exadata infrastructure from one compartment to another.
          *
          * @param changeExternalExadataInfrastructureCompartmentDetails the value to set
          * @return this builder instance

@@ -180,8 +180,8 @@ public interface DbManagement extends AutoCloseable {
             ChangeExternalDbSystemCompartmentRequest request);
 
     /**
-     * Moves the Exadata infrastructure and its related resources (storage server, storage server
-     * connectors and storage server grid) to the specified compartment.
+     * Moves the Exadata infrastructure and its related resources (Exadata storage server, Exadata
+     * storage server connectors and Exadata storage server grid) to the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -233,6 +233,59 @@ public interface DbManagement extends AutoCloseable {
             ChangeManagedDatabaseGroupCompartmentRequest request);
 
     /**
+     * Changes the retention period of unused plans. The period can range between 5 and 523 weeks.
+     *
+     * <p>The database purges plans that have not been used for longer than the plan retention
+     * period.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangePlanRetentionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePlanRetention
+     *     API.
+     */
+    ChangePlanRetentionResponse changePlanRetention(ChangePlanRetentionRequest request);
+
+    /**
+     * Changes the disk space limit for the SQL Management Base. The allowable range for this limit
+     * is between 1% and 50%.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeSpaceBudgetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSpaceBudget
+     *     API.
+     */
+    ChangeSpaceBudgetResponse changeSpaceBudget(ChangeSpaceBudgetRequest request);
+
+    /**
+     * Changes one or more attributes of a single plan or all plans associated with a SQL statement.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeSqlPlanBaselinesAttributesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSqlPlanBaselinesAttributes API.
+     */
+    ChangeSqlPlanBaselinesAttributesResponse changeSqlPlanBaselinesAttributes(
+            ChangeSqlPlanBaselinesAttributesRequest request);
+
+    /**
      * Checks the status of the external DB system component connection specified in this connector.
      * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
      *
@@ -252,7 +305,7 @@ public interface DbManagement extends AutoCloseable {
                     CheckExternalDbSystemConnectorConnectionStatusRequest request);
 
     /**
-     * Check the status of the Exadata storage server connection specified by
+     * Checks the status of the Exadata storage server connection specified by
      * exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
@@ -268,6 +321,42 @@ public interface DbManagement extends AutoCloseable {
      */
     CheckExternalExadataStorageConnectorResponse checkExternalExadataStorageConnector(
             CheckExternalExadataStorageConnectorRequest request);
+
+    /**
+     * Configures automatic capture filters to capture only those statements that match the filter
+     * criteria.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ConfigureAutomaticCaptureFiltersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConfigureAutomaticCaptureFilters API.
+     */
+    ConfigureAutomaticCaptureFiltersResponse configureAutomaticCaptureFilters(
+            ConfigureAutomaticCaptureFiltersRequest request);
+
+    /**
+     * Configures the Automatic SPM Evolve Advisor task `SYS_AUTO_SPM_EVOLVE_TASK` by specifying
+     * task parameters. As the task is owned by `SYS`, only `SYS` can set task parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ConfigureAutomaticSpmEvolveAdvisorTaskExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConfigureAutomaticSpmEvolveAdvisorTask API.
+     */
+    ConfigureAutomaticSpmEvolveAdvisorTaskResponse configureAutomaticSpmEvolveAdvisorTask(
+            ConfigureAutomaticSpmEvolveAdvisorTaskRequest request);
 
     /**
      * Creates a new Database Management private endpoint.
@@ -337,8 +426,8 @@ public interface DbManagement extends AutoCloseable {
             CreateExternalDbSystemDiscoveryRequest request);
 
     /**
-     * Creates an OCI resource for the Exadata infrastructure and enable monitoring service on the
-     * exadata infrastructure. The following resource/subresources are created: Infrastructure
+     * Creates an OCI resource for the Exadata infrastructure and enables the Monitoring service for
+     * the Exadata infrastructure. The following resource/subresources are created: Infrastructure
      * Storage server connectors Storage servers Storage grids
      *
      * @param request The request object containing the details to send
@@ -356,10 +445,7 @@ public interface DbManagement extends AutoCloseable {
             CreateExternalExadataInfrastructureRequest request);
 
     /**
-     * Create the storage server connector after validating the connection information. Or only
-     * validates the connection information for creating the connection to the storage server. The
-     * connector for one storage server is associated with the Exadata infrastructure discovery or
-     * existing Exadata infrastructure.
+     * Creates the Exadata storage server connector after validating the connection information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -494,7 +580,7 @@ public interface DbManagement extends AutoCloseable {
             DeleteExternalDbSystemDiscoveryRequest request);
 
     /**
-     * Deletes the the Exadata infrastructure specified by externalExadataInfrastructureId.
+     * Deletes the Exadata infrastructure specified by externalExadataInfrastructureId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -511,7 +597,7 @@ public interface DbManagement extends AutoCloseable {
             DeleteExternalExadataInfrastructureRequest request);
 
     /**
-     * Deletes the storage server connector specified by exadataStorageConnectorId.
+     * Deletes the Exadata storage server connector specified by exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -578,6 +664,43 @@ public interface DbManagement extends AutoCloseable {
             DeletePreferredCredentialRequest request);
 
     /**
+     * Disables automatic initial plan capture.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableAutomaticInitialPlanCaptureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableAutomaticInitialPlanCapture API.
+     */
+    DisableAutomaticInitialPlanCaptureResponse disableAutomaticInitialPlanCapture(
+            DisableAutomaticInitialPlanCaptureRequest request);
+
+    /**
+     * Disables the Automatic SPM Evolve Advisor task.
+     *
+     * <p>One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
+     * Thus, the same task enables or disables both.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableAutomaticSpmEvolveAdvisorTaskExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableAutomaticSpmEvolveAdvisorTask API.
+     */
+    DisableAutomaticSpmEvolveAdvisorTaskResponse disableAutomaticSpmEvolveAdvisorTask(
+            DisableAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
      * Disables Database Management service for all the components of the specified external DB
      * system (except databases).
      *
@@ -596,10 +719,31 @@ public interface DbManagement extends AutoCloseable {
             DisableExternalDbSystemDatabaseManagementRequest request);
 
     /**
-     * Disables Database Management service for the Exadata infrastructure specified by
-     * externalExadataInfrastructureId. It covers the following components Exadata infrastructure
-     * Exadata storage grid Exadata storage server Database systems within the Exdata infrastructure
-     * will not be impacted and should be disabled explicitly if needed.
+     * Disables Stack Monitoring for all the components of the specified external DB system (except
+     * databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalDbSystemStackMonitoringExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableExternalDbSystemStackMonitoring API.
+     */
+    DisableExternalDbSystemStackMonitoringResponse disableExternalDbSystemStackMonitoring(
+            DisableExternalDbSystemStackMonitoringRequest request);
+
+    /**
+     * Disables Database Management for the Exadata infrastructure specified by
+     * externalExadataInfrastructureId. It covers the following components:
+     *
+     * <p>- Exadata infrastructure - Exadata storage grid - Exadata storage server
+     *
+     * <p>Note that Database Management will not be disabled for the DB systems within the Exadata
+     * infrastructure and should be disabled explicitly, if required.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -617,21 +761,66 @@ public interface DbManagement extends AutoCloseable {
                     DisableExternalExadataInfrastructureManagementRequest request);
 
     /**
-     * Completes the Exadata system prechecking on the following: Verifies if the database systems
-     * are valid RAC database systems. Otherwise, return 400 status code with
-     * NON_RAC_DATABASE_SYSTEM error code. Verifies if the ASM connectors defined for each database
-     * system. Otherwise, return 400 status code with CONNECTOR_NOT_DEFINED error code. Verifies if
-     * the agents associated with ASM are valid and could be used for the storage servers.
-     * Otherwise, return 400 status code with INVALID_AGENT error code. Verifies if it is an Exadata
-     * system. Otherwise, return 400 status code with INVALID_EXADATA_SYSTEM error code.
+     * Disables the high-frequency Automatic SPM Evolve Advisor task.
      *
-     * <p>Starts the discovery process for the Exadata system infrastructure.The following
-     * resources/components could be discovered storage servers from each database systems storage
-     * grid for all storage server exadata infrastructure The same API covers both new discovery and
-     * re-discovery cases. For the new discovery case, new managed resources/sub-resources are
-     * created or override the existing one. For re-discovery case, the existing managed
-     * resources/sub-resources are checked to find out which ones should be added or which one
-     * should be removed based on the unique key defined for each resource/sub-resource.
+     * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
+     * Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableHighFrequencyAutomaticSpmEvolveAdvisorTask API.
+     */
+    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
+            disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Disables the use of SQL plan baselines stored in SQL Management Base.
+     *
+     * <p>When disabled, the optimizer does not use any SQL plan baselines.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableSqlPlanBaselinesUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableSqlPlanBaselinesUsage API.
+     */
+    DisableSqlPlanBaselinesUsageResponse disableSqlPlanBaselinesUsage(
+            DisableSqlPlanBaselinesUsageRequest request);
+
+    /**
+     * Completes the Exadata system prechecking on the following:
+     *
+     * <p>- Verifies if the DB systems are valid RAC DB systems or return 400 status code with
+     * NON_RAC_DATABASE_SYSTEM error code. - Verifies if the ASM connector defined for each DB
+     * system or return 400 status code with CONNECTOR_NOT_DEFINED error code. - Verifies if the
+     * agents associated with ASM are valid and could be used for the Exadata storage servers or
+     * return 400 status code with INVALID_AGENT error code. - Verifies if it is an Exadata system
+     * or return 400 status code with INVALID_EXADATA_SYSTEM error code.
+     *
+     * <p>Starts the discovery process for the Exadata system infrastructure. The following
+     * resources/components are discovered
+     *
+     * <p>- Exadata storage servers from each DB systems - Exadata storage grid for all Exadata
+     * storage servers - Exadata infrastructure
+     *
+     * <p>The same API covers both new discovery and rediscovery cases. For the new discovery case,
+     * new managed resources/sub-resources are created or the existing ones are overridden. For
+     * rediscovery case, the existing managed resources/sub-resources are checked to find out which
+     * ones should be added or which ones should be removed based on the unique key defined for each
+     * resource/sub-resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -648,6 +837,22 @@ public interface DbManagement extends AutoCloseable {
             DiscoverExternalExadataInfrastructureRequest request);
 
     /**
+     * Drops a single plan or all plans associated with a SQL statement.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlPlanBaselinesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DropSqlPlanBaselines API.
+     */
+    DropSqlPlanBaselinesResponse dropSqlPlanBaselines(DropSqlPlanBaselinesRequest request);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by
      * managedDatabaseId.
      *
@@ -662,6 +867,58 @@ public interface DbManagement extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropTablespace API.
      */
     DropTablespaceResponse dropTablespace(DropTablespaceRequest request);
+
+    /**
+     * Enables automatic initial plan capture. When enabled, the database checks whether executed
+     * SQL statements are eligible for automatic capture. It creates initial plan baselines for
+     * eligible statements.
+     *
+     * <p>By default, the database creates a SQL plan baseline for every eligible repeatable
+     * statement, including all recursive SQL and monitoring SQL. Thus, automatic capture may result
+     * in the creation of an extremely large number of plan baselines. To limit the statements that
+     * are eligible for plan baselines, configure filters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableAutomaticInitialPlanCaptureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableAutomaticInitialPlanCapture API.
+     */
+    EnableAutomaticInitialPlanCaptureResponse enableAutomaticInitialPlanCapture(
+            EnableAutomaticInitialPlanCaptureRequest request);
+
+    /**
+     * Enables the Automatic SPM Evolve Advisor task. By default, the automatic task
+     * `SYS_AUTO_SPM_EVOLVE_TASK` runs every day in the scheduled maintenance window.
+     *
+     * <p>The SPM Evolve Advisor performs the following tasks:
+     *
+     * <p>- Checks AWR for top SQL - Looks for alternative plans in all available sources - Adds
+     * unaccepted plans to the plan history - Tests the execution of as many plans as possible
+     * during the maintenance window - Adds the alternative plan to the baseline if it performs
+     * better than the current plan
+     *
+     * <p>One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
+     * Thus, the same task enables or disables both.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableAutomaticSpmEvolveAdvisorTaskExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableAutomaticSpmEvolveAdvisorTask API.
+     */
+    EnableAutomaticSpmEvolveAdvisorTaskResponse enableAutomaticSpmEvolveAdvisorTask(
+            EnableAutomaticSpmEvolveAdvisorTaskRequest request);
 
     /**
      * Enables Database Management service for all the components of the specified external DB
@@ -682,9 +939,28 @@ public interface DbManagement extends AutoCloseable {
             EnableExternalDbSystemDatabaseManagementRequest request);
 
     /**
-     * Enables Database Management service for the exadata infrastructure specified by
-     * externalExadataInfrastructureId. It covers the following components Exadata infrastructure
-     * Exadata storage grid Exadata storage server
+     * Enables Stack Monitoring for all the components of the specified external DB system (except
+     * databases).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalDbSystemStackMonitoringExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableExternalDbSystemStackMonitoring API.
+     */
+    EnableExternalDbSystemStackMonitoringResponse enableExternalDbSystemStackMonitoring(
+            EnableExternalDbSystemStackMonitoringRequest request);
+
+    /**
+     * Enables Database Management for the Exadata infrastructure specified by
+     * externalExadataInfrastructureId. It covers the following components:
+     *
+     * <p>- Exadata infrastructure - Exadata storage grid - Exadata storage server
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -700,6 +976,51 @@ public interface DbManagement extends AutoCloseable {
     EnableExternalExadataInfrastructureManagementResponse
             enableExternalExadataInfrastructureManagement(
                     EnableExternalExadataInfrastructureManagementRequest request);
+
+    /**
+     * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency task runs
+     * every hour and runs for no longer than 30 minutes. These settings are not configurable.
+     *
+     * <p>The high-frequency task complements the standard Automatic SPM Evolve Advisor task. They
+     * are independent and are scheduled through two different frameworks.
+     *
+     * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
+     * Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableHighFrequencyAutomaticSpmEvolveAdvisorTask API.
+     */
+    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
+            enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Enables the use of SQL plan baselines stored in SQL Management Base.
+     *
+     * <p>When enabled, the optimizer uses SQL plan baselines to select plans to avoid potential
+     * performance regressions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableSqlPlanBaselinesUsageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableSqlPlanBaselinesUsage API.
+     */
+    EnableSqlPlanBaselinesUsageResponse enableSqlPlanBaselinesUsage(
+            EnableSqlPlanBaselinesUsageRequest request);
 
     /**
      * Creates an AWR snapshot for the target database.
@@ -984,9 +1305,8 @@ public interface DbManagement extends AutoCloseable {
             GetExternalDbSystemDiscoveryRequest request);
 
     /**
-     * Gets the details for the the Exadata infrastructure specified by
-     * externalExadataInfrastructureId. It includes the database systems and storage grid within the
-     * Exadata infrastructure.
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId.
+     * It includes the DB systems and storage grid within the Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1003,7 +1323,8 @@ public interface DbManagement extends AutoCloseable {
             GetExternalExadataInfrastructureRequest request);
 
     /**
-     * Gets the details for the storage server connector specified by exadataStorageConnectorId.
+     * Gets the details for the Exadata storage server connector specified by
+     * exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1020,7 +1341,7 @@ public interface DbManagement extends AutoCloseable {
             GetExternalExadataStorageConnectorRequest request);
 
     /**
-     * Gets the details for the storage server grid specified by exadataStorageGridId.
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1037,7 +1358,7 @@ public interface DbManagement extends AutoCloseable {
             GetExternalExadataStorageGridRequest request);
 
     /**
-     * Gets the summary for the storage server specified by exadataStorageServerId.
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1070,7 +1391,7 @@ public interface DbManagement extends AutoCloseable {
     GetExternalListenerResponse getExternalListener(GetExternalListenerRequest request);
 
     /**
-     * Get the IORM plan from the specific exadata storage server.
+     * Get the IORM plan from the specific Exadata storage server.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1163,7 +1484,7 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
 
     /**
-     * Get open alerts from storage server.
+     * Gets the open alerts from the specified Exadata storage server.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1268,6 +1589,41 @@ public interface DbManagement extends AutoCloseable {
     GetPreferredCredentialResponse getPreferredCredential(GetPreferredCredentialRequest request);
 
     /**
+     * Gets the SQL plan baseline details for the specified planName.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlPlanBaselineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlPlanBaseline
+     *     API.
+     */
+    GetSqlPlanBaselineResponse getSqlPlanBaseline(GetSqlPlanBaselineRequest request);
+
+    /**
+     * Gets the configuration details of SQL plan baselines for the specified Managed Database. The
+     * details include the settings for the capture and use of SQL plan baselines, SPM Evolve
+     * Advisor task, and SQL Management Base.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlPlanBaselineConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSqlPlanBaselineConfiguration API.
+     */
+    GetSqlPlanBaselineConfigurationResponse getSqlPlanBaselineConfiguration(
+            GetSqlPlanBaselineConfigurationRequest request);
+
+    /**
      * Gets the details of the tablespace specified by tablespaceName within the Managed Database
      * specified by managedDatabaseId.
      *
@@ -1284,7 +1640,7 @@ public interface DbManagement extends AutoCloseable {
     GetTablespaceResponse getTablespace(GetTablespaceRequest request);
 
     /**
-     * Get SQL ID with top cpu activity from storage server.
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1428,6 +1784,23 @@ public interface DbManagement extends AutoCloseable {
      */
     ListConsumerGroupPrivilegesResponse listConsumerGroupPrivileges(
             ListConsumerGroupPrivilegesRequest request);
+
+    /**
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListCursorCacheStatementsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCursorCacheStatements API.
+     */
+    ListCursorCacheStatementsResponse listCursorCacheStatements(
+            ListCursorCacheStatementsRequest request);
 
     /**
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS
@@ -1679,7 +2052,7 @@ public interface DbManagement extends AutoCloseable {
     ListExternalDbSystemsResponse listExternalDbSystems(ListExternalDbSystemsRequest request);
 
     /**
-     * Lists the Exadata infrastructures for a specific compartment.
+     * Lists the Exadata infrastructure resources in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1696,7 +2069,7 @@ public interface DbManagement extends AutoCloseable {
             ListExternalExadataInfrastructuresRequest request);
 
     /**
-     * Lists the connectors for the specific Exadata infrastructures.
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1713,7 +2086,7 @@ public interface DbManagement extends AutoCloseable {
             ListExternalExadataStorageConnectorsRequest request);
 
     /**
-     * Lists all the storage servers for the exadata infrastructure or storage grid.
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2014,6 +2387,39 @@ public interface DbManagement extends AutoCloseable {
     ListRolesResponse listRoles(ListRolesRequest request);
 
     /**
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed
+     * Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlPlanBaselineJobsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSqlPlanBaselineJobs API.
+     */
+    ListSqlPlanBaselineJobsResponse listSqlPlanBaselineJobs(ListSqlPlanBaselineJobsRequest request);
+
+    /**
+     * Lists the SQL plan baselines for the specified Managed Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlPlanBaselinesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSqlPlanBaselines API.
+     */
+    ListSqlPlanBaselinesResponse listSqlPlanBaselines(ListSqlPlanBaselinesRequest request);
+
+    /**
      * Gets the list of system privileges granted to a specific user.
      *
      * @param request The request object containing the details to send
@@ -2124,6 +2530,45 @@ public interface DbManagement extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Loads plans from Automatic Workload Repository (AWR) snapshots. You must specify the
+     * beginning and ending of the snapshot range. Optionally, you can apply a filter to load only
+     * plans that meet specified criteria. By default, the optimizer uses the loaded plans the next
+     * time that the database executes the SQL statements.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/LoadSqlPlanBaselinesFromAwrExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     LoadSqlPlanBaselinesFromAwr API.
+     */
+    LoadSqlPlanBaselinesFromAwrResponse loadSqlPlanBaselinesFromAwr(
+            LoadSqlPlanBaselinesFromAwrRequest request);
+
+    /**
+     * Loads plans for statements directly from the shared SQL area, also called the cursor cache.
+     * By applying a filter on the module name, the schema, or the SQL ID you identify the SQL
+     * statement or set of SQL statements to load.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/LoadSqlPlanBaselinesFromCursorCacheExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     LoadSqlPlanBaselinesFromCursorCache API.
+     */
+    LoadSqlPlanBaselinesFromCursorCacheResponse loadSqlPlanBaselinesFromCursorCache(
+            LoadSqlPlanBaselinesFromCursorCacheRequest request);
 
     /**
      * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
@@ -2528,6 +2973,40 @@ public interface DbManagement extends AutoCloseable {
             SummarizeManagedDatabaseAvailabilityMetricsRequest request);
 
     /**
+     * Gets the number of SQL plan baselines aggregated by their attributes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeSqlPlanBaselinesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeSqlPlanBaselines API.
+     */
+    SummarizeSqlPlanBaselinesResponse summarizeSqlPlanBaselines(
+            SummarizeSqlPlanBaselinesRequest request);
+
+    /**
+     * Gets the number of SQL plan baselines aggregated by the age of their last execution in weeks.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeSqlPlanBaselinesByLastExecutionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeSqlPlanBaselinesByLastExecution API.
+     */
+    SummarizeSqlPlanBaselinesByLastExecutionResponse summarizeSqlPlanBaselinesByLastExecution(
+            SummarizeSqlPlanBaselinesByLastExecutionRequest request);
+
+    /**
      * Tests the preferred credential.
      *
      * @param request The request object containing the details to send
@@ -2676,7 +3155,7 @@ public interface DbManagement extends AutoCloseable {
             UpdateExternalDbSystemDiscoveryRequest request);
 
     /**
-     * Updates the details for the the Exadata infrastructure specified by
+     * Updates the details for the Exadata infrastructure specified by
      * externalExadataInfrastructureId.
      *
      * @param request The request object containing the details to send
@@ -2694,7 +3173,7 @@ public interface DbManagement extends AutoCloseable {
             UpdateExternalExadataInfrastructureRequest request);
 
     /**
-     * Updates the details for the storage server connector specified by exadataStorageConnectorId.
+     * Updates the Exadata storage server connector specified by exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

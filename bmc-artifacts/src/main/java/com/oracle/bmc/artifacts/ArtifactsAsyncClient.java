@@ -1031,6 +1031,84 @@ public class ArtifactsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateContainerImageResponse> updateContainerImage(
+            UpdateContainerImageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateContainerImageRequest, UpdateContainerImageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateContainerImageDetails(),
+                "updateContainerImageDetails is required");
+
+        return clientCall(request, UpdateContainerImageResponse::builder)
+                .logger(LOG, "updateContainerImage")
+                .serviceDetails(
+                        "Artifacts",
+                        "UpdateContainerImage",
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/UpdateContainerImage")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateContainerImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImage.class,
+                        UpdateContainerImageResponse.Builder::containerImage)
+                .handleResponseHeaderString("etag", UpdateContainerImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateContainerImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContainerImageSignatureResponse>
+            updateContainerImageSignature(
+                    UpdateContainerImageSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateContainerImageSignatureRequest,
+                                    UpdateContainerImageSignatureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getImageSignatureId(), "imageSignatureId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateContainerImageSignatureDetails(),
+                "updateContainerImageSignatureDetails is required");
+
+        return clientCall(request, UpdateContainerImageSignatureResponse::builder)
+                .logger(LOG, "updateContainerImageSignature")
+                .serviceDetails(
+                        "Artifacts",
+                        "UpdateContainerImageSignature",
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/UpdateContainerImageSignature")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateContainerImageSignatureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("imageSignatures")
+                .appendPathParam(request.getImageSignatureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImageSignature.class,
+                        UpdateContainerImageSignatureResponse.Builder::containerImageSignature)
+                .handleResponseHeaderString(
+                        "etag", UpdateContainerImageSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateContainerImageSignatureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateContainerRepositoryResponse> updateContainerRepository(
             UpdateContainerRepositoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

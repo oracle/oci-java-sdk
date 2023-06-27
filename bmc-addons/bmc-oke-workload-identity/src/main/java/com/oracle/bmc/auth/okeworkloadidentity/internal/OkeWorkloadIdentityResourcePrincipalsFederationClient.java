@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.auth.ServiceAccountTokenSupplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.internal.AbstractFederationClient;
 import com.oracle.bmc.auth.internal.AuthUtils;
@@ -55,6 +56,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     private static final String JWT_FORMAT = "Bearer %s";
     private static final String KUBERNETES_SERVICE_HOST = "KUBERNETES_SERVICE_HOST";
     private static final int PROXYMUX_SERVER_PORT = 12250;
+    private final ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
     /** The authentication provider to sign the internal requests. */
     private final OkeTenancyOnlyAuthenticationDetailsProvider provider;
@@ -69,6 +71,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
      */
     public OkeWorkloadIdentityResourcePrincipalsFederationClient(
             SessionKeySupplier sessionKeySupplier,
+            ServiceAccountTokenSupplier serviceAccountTokenSupplier,
             OkeTenancyOnlyAuthenticationDetailsProvider okeTenancyOnlyAuthenticationDetailsProvider,
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration,
@@ -84,6 +87,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
                 circuitBreakerConfiguration,
                 additionalClientConfigurators);
 
+        this.serviceAccountTokenSupplier = serviceAccountTokenSupplier;
         this.provider = okeTenancyOnlyAuthenticationDetailsProvider;
     }
 
@@ -95,15 +99,18 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
      */
     @Override
     public String getSecurityToken() {
+        SecurityTokenAdapter securityTokenAdapter = getSecurityTokenAdapter();
         try {
             Duration time = Duration.ZERO;
-            if (getSecurityTokenAdapter().isValid()) {
-                time = getSecurityTokenAdapter().getTokenValidDuration().dividedBy(2);
+            if (securityTokenAdapter.isValid()) {
+                if (securityTokenAdapter.getTokenValidDuration() != null) {
+                    time = securityTokenAdapter.getTokenValidDuration().dividedBy(2);
+                }
             }
             return refreshAndGetSecurityTokenIfExpiringWithin(time);
         } catch (Exception e) {
             LOG.info("Refresh RPST token failed, use cached RPST token.", e);
-            return getSecurityTokenAdapter().getSecurityToken();
+            return securityTokenAdapter.getSecurityToken();
         }
     }
 
@@ -153,15 +160,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     protected SecurityTokenAdapter getSecurityTokenFromServer() {
         LOG.info("Getting security token from the proxymux server");
         // Get service account token.
-        String token = null;
-        try {
-            token =
-                    new String(
-                            Files.readAllBytes(Paths.get(KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH)));
-        } catch (IOException e) {
-            throw new IllegalArgumentException(
-                    "Kubernetes service account token doesn't exist.", e);
-        }
+        String token = serviceAccountTokenSupplier.getServiceAccountToken();
 
         // Generate private/public key pair.
         KeyPair keyPair = sessionKeySupplier.getKeyPair();

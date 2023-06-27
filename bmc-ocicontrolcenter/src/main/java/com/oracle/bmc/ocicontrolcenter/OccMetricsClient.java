@@ -95,7 +95,10 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListMetricPropertiesResponse::builder)
                 .logger(LOG, "listMetricProperties")
-                .serviceDetails("OccMetrics", "ListMetricProperties", "")
+                .serviceDetails(
+                        "OccMetrics",
+                        "ListMetricProperties",
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/MetricPropertyCollection/ListMetricProperties")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMetricPropertiesRequest::builder)
                 .basePath("/20230515")
@@ -123,7 +126,10 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, ListNamespacesResponse::builder)
                 .logger(LOG, "listNamespaces")
-                .serviceDetails("OccMetrics", "ListNamespaces", "")
+                .serviceDetails(
+                        "OccMetrics",
+                        "ListNamespaces",
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/NamespaceCollection/ListNamespaces")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNamespacesRequest::builder)
                 .basePath("/20230515")
@@ -153,7 +159,10 @@ public class OccMetricsClient extends com.oracle.bmc.http.internal.BaseSyncClien
 
         return clientCall(request, RequestSummarizedMetricDataResponse::builder)
                 .logger(LOG, "requestSummarizedMetricData")
-                .serviceDetails("OccMetrics", "RequestSummarizedMetricData", "")
+                .serviceDetails(
+                        "OccMetrics",
+                        "RequestSummarizedMetricData",
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/SummarizedMetricDataCollection/RequestSummarizedMetricData")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestSummarizedMetricDataRequest::builder)
                 .basePath("/20230515")

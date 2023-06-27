@@ -209,7 +209,7 @@ An example of configuring a proxy can be found [here](https://github.com/oracle/
 calling close on the stream object if doing partial read or if not reading at all. If the stream is read completely, then the SDK will try to
 auto-close the stream to release the connection from the connection pool. 
 To manually close the stream in case of partial read of stream/no read. Please call close on the stream.
-For example - `GetObjectReponse.getInputStream().close()` or
+For example - `GetObjectResponse.getInputStream().close()` or
 use try-with-resources. Otherwise, a partial read without closing will lead to the connection not being released from 
 the pool and results in hanging for an indefinite time.
 

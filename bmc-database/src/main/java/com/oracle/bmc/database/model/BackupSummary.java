@@ -44,7 +44,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         "version",
         "kmsKeyId",
         "kmsKeyVersionId",
-        "vaultId"
+        "vaultId",
+        "keyStoreId",
+        "keyStoreWalletName"
     })
     public BackupSummary(
             String id,
@@ -63,7 +65,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             String version,
             String kmsKeyId,
             String kmsKeyVersionId,
-            String vaultId) {
+            String vaultId,
+            String keyStoreId,
+            String keyStoreWalletName) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -82,6 +86,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.vaultId = vaultId;
+        this.keyStoreId = keyStoreId;
+        this.keyStoreWalletName = keyStoreWalletName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -371,6 +377,40 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("vaultId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * key store.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+        private String keyStoreId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * key store.
+         *
+         * @param keyStoreId the value to set
+         * @return this builder
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
+        /** The wallet name for Oracle Key Vault. */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
+        private String keyStoreWalletName;
+
+        /**
+         * The wallet name for Oracle Key Vault.
+         *
+         * @param keyStoreWalletName the value to set
+         * @return this builder
+         */
+        public Builder keyStoreWalletName(String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
+            this.__explicitlySet__.add("keyStoreWalletName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -394,7 +434,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.version,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
-                            this.vaultId);
+                            this.vaultId,
+                            this.keyStoreId,
+                            this.keyStoreWalletName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -453,6 +495,12 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
+                this.keyStoreWalletName(model.getKeyStoreWalletName());
             }
             return this;
         }
@@ -861,6 +909,36 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return vaultId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * store.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+    private final String keyStoreId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * store.
+     *
+     * @return the value
+     */
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
+
+    /** The wallet name for Oracle Key Vault. */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
+    private final String keyStoreWalletName;
+
+    /**
+     * The wallet name for Oracle Key Vault.
+     *
+     * @return the value
+     */
+    public String getKeyStoreWalletName() {
+        return keyStoreWalletName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -893,6 +971,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
         sb.append(")");
         return sb.toString();
     }
@@ -924,6 +1004,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
                 && super.equals(other);
     }
 
@@ -964,6 +1046,12 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreWalletName == null
+                                ? 43
+                                : this.keyStoreWalletName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

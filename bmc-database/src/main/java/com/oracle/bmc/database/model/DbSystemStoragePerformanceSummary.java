@@ -40,12 +40,12 @@ public final class DbSystemStoragePerformanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ShapeType of the DbSystems INTEL , AMD or INTEL_FLEX_X9 */
+        /** ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1 */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
         private ShapeType shapeType;
 
         /**
-         * ShapeType of the DbSystems INTEL , AMD or INTEL_FLEX_X9
+         * ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1
          *
          * @param shapeType the value to set
          * @return this builder
@@ -127,11 +127,12 @@ public final class DbSystemStoragePerformanceSummary
         return new Builder().copy(this);
     }
 
-    /** ShapeType of the DbSystems INTEL , AMD or INTEL_FLEX_X9 */
+    /** ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1 */
     public enum ShapeType implements com.oracle.bmc.http.internal.BmcEnum {
         Amd("AMD"),
         Intel("INTEL"),
         IntelFlexX9("INTEL_FLEX_X9"),
+        AmpereFlexA1("AMPERE_FLEX_A1"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -174,12 +175,12 @@ public final class DbSystemStoragePerformanceSummary
             return UnknownEnumValue;
         }
     };
-    /** ShapeType of the DbSystems INTEL , AMD or INTEL_FLEX_X9 */
+    /** ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1 */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
     private final ShapeType shapeType;
 
     /**
-     * ShapeType of the DbSystems INTEL , AMD or INTEL_FLEX_X9
+     * ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1
      *
      * @return the value
      */

@@ -141,6 +141,24 @@ public interface DataFlow extends AutoCloseable {
     ChangeRunCompartmentResponse changeRunCompartment(ChangeRunCompartmentRequest request);
 
     /**
+     * Moves an Sql Endpoint from one compartment to another. When provided, If-Match is checked
+     * against ETag values of the Sql Endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeSqlEndpointCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSqlEndpointCompartment API.
+     */
+    ChangeSqlEndpointCompartmentResponse changeSqlEndpointCompartment(
+            ChangeSqlEndpointCompartmentRequest request);
+
+    /**
      * Creates an application.
      *
      * @param request The request object containing the details to send
@@ -201,6 +219,22 @@ public interface DataFlow extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRun API.
      */
     CreateRunResponse createRun(CreateRunRequest request);
+
+    /**
+     * Create a new Sql Endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateSqlEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSqlEndpoint
+     *     API.
+     */
+    CreateSqlEndpointResponse createSqlEndpoint(CreateSqlEndpointRequest request);
 
     /**
      * Executes a statement for a Session run.
@@ -280,6 +314,22 @@ public interface DataFlow extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRun API.
      */
     DeleteRunResponse deleteRun(DeleteRunRequest request);
+
+    /**
+     * Delete a Sql Endpoint resource, identified by the SqlEndpoint id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteSqlEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSqlEndpoint
+     *     API.
+     */
+    DeleteSqlEndpointResponse deleteSqlEndpoint(DeleteSqlEndpointRequest request);
 
     /**
      * Cancels the specified statement for a Session run.
@@ -372,6 +422,21 @@ public interface DataFlow extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunLog API.
      */
     GetRunLogResponse getRunLog(GetRunLogRequest request);
+
+    /**
+     * Retrieves a SQL Endpoint using a sqlEndpointId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetSqlEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlEndpoint API.
+     */
+    GetSqlEndpointResponse getSqlEndpoint(GetSqlEndpointRequest request);
 
     /**
      * Retrieves the statement corresponding to the `statementId` for a Session run specified by
@@ -491,6 +556,24 @@ public interface DataFlow extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuns API.
      */
     ListRunsResponse listRuns(ListRunsRequest request);
+
+    /**
+     * Lists all Sql Endpoints in the specified compartment. The query must include compartmentId or
+     * sqlEndpointId. If the query does not include either compartmentId or sqlEndpointId, an error
+     * is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListSqlEndpointsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlEndpoints
+     *     API.
+     */
+    ListSqlEndpointsResponse listSqlEndpoints(ListSqlEndpointsRequest request);
 
     /**
      * Lists all statements for a Session run.
@@ -652,6 +735,22 @@ public interface DataFlow extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRun API.
      */
     UpdateRunResponse updateRun(UpdateRunRequest request);
+
+    /**
+     * Update a Sql Endpoint resource, identified by the SqlEndpoint id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateSqlEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSqlEndpoint
+     *     API.
+     */
+    UpdateSqlEndpointResponse updateSqlEndpoint(UpdateSqlEndpointRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

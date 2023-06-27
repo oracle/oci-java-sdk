@@ -89,6 +89,15 @@ public final class OrchestrationListingPackage extends ListingPackage {
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("regions")
+        private java.util.List<Region> regions;
+
+        public Builder regions(java.util.List<Region> regions) {
+            this.regions = regions;
+            this.__explicitlySet__.add("regions");
+            return this;
+        }
         /** Link to the orchestration resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
         private String resourceLink;
@@ -119,25 +128,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
             this.__explicitlySet__.add("variables");
             return this;
         }
-        /**
-         * The regions where you can deploy this listing package. (Some packages have restrictions
-         * that limit their deployment to United States regions only.)
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("regions")
-        private java.util.List<Region> regions;
-
-        /**
-         * The regions where you can deploy this listing package. (Some packages have restrictions
-         * that limit their deployment to United States regions only.)
-         *
-         * @param regions the value to set
-         * @return this builder
-         */
-        public Builder regions(java.util.List<Region> regions) {
-            this.regions = regions;
-            this.__explicitlySet__.add("regions");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -152,9 +142,9 @@ public final class OrchestrationListingPackage extends ListingPackage {
                             this.resourceId,
                             this.timeCreated,
                             this.operatingSystem,
+                            this.regions,
                             this.resourceLink,
-                            this.variables,
-                            this.regions);
+                            this.variables);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -184,14 +174,14 @@ public final class OrchestrationListingPackage extends ListingPackage {
             if (model.wasPropertyExplicitlySet("operatingSystem")) {
                 this.operatingSystem(model.getOperatingSystem());
             }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
             if (model.wasPropertyExplicitlySet("resourceLink")) {
                 this.resourceLink(model.getResourceLink());
             }
             if (model.wasPropertyExplicitlySet("variables")) {
                 this.variables(model.getVariables());
-            }
-            if (model.wasPropertyExplicitlySet("regions")) {
-                this.regions(model.getRegions());
             }
             return this;
         }
@@ -215,13 +205,20 @@ public final class OrchestrationListingPackage extends ListingPackage {
             String resourceId,
             java.util.Date timeCreated,
             OperatingSystem operatingSystem,
+            java.util.List<Region> regions,
             String resourceLink,
-            java.util.List<OrchestrationVariable> variables,
-            java.util.List<Region> regions) {
-        super(description, listingId, version, pricing, resourceId, timeCreated, operatingSystem);
+            java.util.List<OrchestrationVariable> variables) {
+        super(
+                description,
+                listingId,
+                version,
+                pricing,
+                resourceId,
+                timeCreated,
+                operatingSystem,
+                regions);
         this.resourceLink = resourceLink;
         this.variables = variables;
-        this.regions = regions;
     }
 
     /** Link to the orchestration resource. */
@@ -250,23 +247,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
         return variables;
     }
 
-    /**
-     * The regions where you can deploy this listing package. (Some packages have restrictions that
-     * limit their deployment to United States regions only.)
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    private final java.util.List<Region> regions;
-
-    /**
-     * The regions where you can deploy this listing package. (Some packages have restrictions that
-     * limit their deployment to United States regions only.)
-     *
-     * @return the value
-     */
-    public java.util.List<Region> getRegions() {
-        return regions;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -284,7 +264,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", resourceLink=").append(String.valueOf(this.resourceLink));
         sb.append(", variables=").append(String.valueOf(this.variables));
-        sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(")");
         return sb.toString();
     }
@@ -301,7 +280,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
         OrchestrationListingPackage other = (OrchestrationListingPackage) o;
         return java.util.Objects.equals(this.resourceLink, other.resourceLink)
                 && java.util.Objects.equals(this.variables, other.variables)
-                && java.util.Objects.equals(this.regions, other.regions)
                 && super.equals(other);
     }
 
@@ -311,7 +289,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
         int result = super.hashCode();
         result = (result * PRIME) + (this.resourceLink == null ? 43 : this.resourceLink.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
-        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         return result;
     }
 }

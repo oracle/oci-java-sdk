@@ -177,8 +177,8 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the Exadata infrastructure and its related resources (storage server, storage server
-     * connectors and storage server grid) to the specified compartment.
+     * Moves the Exadata infrastructure and its related resources (Exadata storage server, Exadata
+     * storage server connectors and Exadata storage server grid) to the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -231,6 +231,60 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Changes the retention period of unused plans. The period can range between 5 and 523 weeks.
+     *
+     * <p>The database purges plans that have not been used for longer than the plan retention
+     * period.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePlanRetentionResponse> changePlanRetention(
+            ChangePlanRetentionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePlanRetentionRequest, ChangePlanRetentionResponse>
+                    handler);
+
+    /**
+     * Changes the disk space limit for the SQL Management Base. The allowable range for this limit
+     * is between 1% and 50%.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSpaceBudgetResponse> changeSpaceBudget(
+            ChangeSpaceBudgetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSpaceBudgetRequest, ChangeSpaceBudgetResponse>
+                    handler);
+
+    /**
+     * Changes one or more attributes of a single plan or all plans associated with a SQL statement.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSqlPlanBaselinesAttributesResponse>
+            changeSqlPlanBaselinesAttributes(
+                    ChangeSqlPlanBaselinesAttributesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSqlPlanBaselinesAttributesRequest,
+                                    ChangeSqlPlanBaselinesAttributesResponse>
+                            handler);
+
+    /**
      * Checks the status of the external DB system component connection specified in this connector.
      * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
      *
@@ -250,7 +304,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Check the status of the Exadata storage server connection specified by
+     * Checks the status of the Exadata storage server connection specified by
      * exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
@@ -266,6 +320,44 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CheckExternalExadataStorageConnectorRequest,
                                     CheckExternalExadataStorageConnectorResponse>
+                            handler);
+
+    /**
+     * Configures automatic capture filters to capture only those statements that match the filter
+     * criteria.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureAutomaticCaptureFiltersResponse>
+            configureAutomaticCaptureFilters(
+                    ConfigureAutomaticCaptureFiltersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureAutomaticCaptureFiltersRequest,
+                                    ConfigureAutomaticCaptureFiltersResponse>
+                            handler);
+
+    /**
+     * Configures the Automatic SPM Evolve Advisor task `SYS_AUTO_SPM_EVOLVE_TASK` by specifying
+     * task parameters. As the task is owned by `SYS`, only `SYS` can set task parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfigureAutomaticSpmEvolveAdvisorTaskResponse>
+            configureAutomaticSpmEvolveAdvisorTask(
+                    ConfigureAutomaticSpmEvolveAdvisorTaskRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureAutomaticSpmEvolveAdvisorTaskRequest,
+                                    ConfigureAutomaticSpmEvolveAdvisorTaskResponse>
                             handler);
 
     /**
@@ -339,8 +431,8 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates an OCI resource for the Exadata infrastructure and enable monitoring service on the
-     * exadata infrastructure. The following resource/subresources are created: Infrastructure
+     * Creates an OCI resource for the Exadata infrastructure and enables the Monitoring service for
+     * the Exadata infrastructure. The following resource/subresources are created: Infrastructure
      * Storage server connectors Storage servers Storage grids
      *
      * @param request The request object containing the details to send
@@ -359,10 +451,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create the storage server connector after validating the connection information. Or only
-     * validates the connection information for creating the connection to the storage server. The
-     * connector for one storage server is associated with the Exadata infrastructure discovery or
-     * existing Exadata infrastructure.
+     * Creates the Exadata storage server connector after validating the connection information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -498,7 +587,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the the Exadata infrastructure specified by externalExadataInfrastructureId.
+     * Deletes the Exadata infrastructure specified by externalExadataInfrastructureId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -516,7 +605,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the storage server connector specified by exadataStorageConnectorId.
+     * Deletes the Exadata storage server connector specified by exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -581,6 +670,45 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disables automatic initial plan capture.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableAutomaticInitialPlanCaptureResponse>
+            disableAutomaticInitialPlanCapture(
+                    DisableAutomaticInitialPlanCaptureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutomaticInitialPlanCaptureRequest,
+                                    DisableAutomaticInitialPlanCaptureResponse>
+                            handler);
+
+    /**
+     * Disables the Automatic SPM Evolve Advisor task.
+     *
+     * <p>One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
+     * Thus, the same task enables or disables both.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableAutomaticSpmEvolveAdvisorTaskResponse>
+            disableAutomaticSpmEvolveAdvisorTask(
+                    DisableAutomaticSpmEvolveAdvisorTaskRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutomaticSpmEvolveAdvisorTaskRequest,
+                                    DisableAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler);
+
+    /**
      * Disables Database Management service for all the components of the specified external DB
      * system (except databases).
      *
@@ -600,10 +728,32 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables Database Management service for the Exadata infrastructure specified by
-     * externalExadataInfrastructureId. It covers the following components Exadata infrastructure
-     * Exadata storage grid Exadata storage server Database systems within the Exdata infrastructure
-     * will not be impacted and should be disabled explicitly if needed.
+     * Disables Stack Monitoring for all the components of the specified external DB system (except
+     * databases).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalDbSystemStackMonitoringResponse>
+            disableExternalDbSystemStackMonitoring(
+                    DisableExternalDbSystemStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalDbSystemStackMonitoringRequest,
+                                    DisableExternalDbSystemStackMonitoringResponse>
+                            handler);
+
+    /**
+     * Disables Database Management for the Exadata infrastructure specified by
+     * externalExadataInfrastructureId. It covers the following components:
+     *
+     * <p>- Exadata infrastructure - Exadata storage grid - Exadata storage server
+     *
+     * <p>Note that Database Management will not be disabled for the DB systems within the Exadata
+     * infrastructure and should be disabled explicitly, if required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -621,21 +771,66 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Completes the Exadata system prechecking on the following: Verifies if the database systems
-     * are valid RAC database systems. Otherwise, return 400 status code with
-     * NON_RAC_DATABASE_SYSTEM error code. Verifies if the ASM connectors defined for each database
-     * system. Otherwise, return 400 status code with CONNECTOR_NOT_DEFINED error code. Verifies if
-     * the agents associated with ASM are valid and could be used for the storage servers.
-     * Otherwise, return 400 status code with INVALID_AGENT error code. Verifies if it is an Exadata
-     * system. Otherwise, return 400 status code with INVALID_EXADATA_SYSTEM error code.
+     * Disables the high-frequency Automatic SPM Evolve Advisor task.
      *
-     * <p>Starts the discovery process for the Exadata system infrastructure.The following
-     * resources/components could be discovered storage servers from each database systems storage
-     * grid for all storage server exadata infrastructure The same API covers both new discovery and
-     * re-discovery cases. For the new discovery case, new managed resources/sub-resources are
-     * created or override the existing one. For re-discovery case, the existing managed
-     * resources/sub-resources are checked to find out which ones should be added or which one
-     * should be removed based on the unique key defined for each resource/sub-resource.
+     * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
+     * Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+            disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest,
+                                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler);
+
+    /**
+     * Disables the use of SQL plan baselines stored in SQL Management Base.
+     *
+     * <p>When disabled, the optimizer does not use any SQL plan baselines.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableSqlPlanBaselinesUsageResponse> disableSqlPlanBaselinesUsage(
+            DisableSqlPlanBaselinesUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableSqlPlanBaselinesUsageRequest,
+                            DisableSqlPlanBaselinesUsageResponse>
+                    handler);
+
+    /**
+     * Completes the Exadata system prechecking on the following:
+     *
+     * <p>- Verifies if the DB systems are valid RAC DB systems or return 400 status code with
+     * NON_RAC_DATABASE_SYSTEM error code. - Verifies if the ASM connector defined for each DB
+     * system or return 400 status code with CONNECTOR_NOT_DEFINED error code. - Verifies if the
+     * agents associated with ASM are valid and could be used for the Exadata storage servers or
+     * return 400 status code with INVALID_AGENT error code. - Verifies if it is an Exadata system
+     * or return 400 status code with INVALID_EXADATA_SYSTEM error code.
+     *
+     * <p>Starts the discovery process for the Exadata system infrastructure. The following
+     * resources/components are discovered
+     *
+     * <p>- Exadata storage servers from each DB systems - Exadata storage grid for all Exadata
+     * storage servers - Exadata infrastructure
+     *
+     * <p>The same API covers both new discovery and rediscovery cases. For the new discovery case,
+     * new managed resources/sub-resources are created or the existing ones are overridden. For
+     * rediscovery case, the existing managed resources/sub-resources are checked to find out which
+     * ones should be added or which ones should be removed based on the unique key defined for each
+     * resource/sub-resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -653,6 +848,22 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Drops a single plan or all plans associated with a SQL statement.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DropSqlPlanBaselinesResponse> dropSqlPlanBaselines(
+            DropSqlPlanBaselinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlPlanBaselinesRequest, DropSqlPlanBaselinesResponse>
+                    handler);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by
      * managedDatabaseId.
      *
@@ -667,6 +878,60 @@ public interface DbManagementAsync extends AutoCloseable {
             DropTablespaceRequest request,
             com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
                     handler);
+
+    /**
+     * Enables automatic initial plan capture. When enabled, the database checks whether executed
+     * SQL statements are eligible for automatic capture. It creates initial plan baselines for
+     * eligible statements.
+     *
+     * <p>By default, the database creates a SQL plan baseline for every eligible repeatable
+     * statement, including all recursive SQL and monitoring SQL. Thus, automatic capture may result
+     * in the creation of an extremely large number of plan baselines. To limit the statements that
+     * are eligible for plan baselines, configure filters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableAutomaticInitialPlanCaptureResponse>
+            enableAutomaticInitialPlanCapture(
+                    EnableAutomaticInitialPlanCaptureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutomaticInitialPlanCaptureRequest,
+                                    EnableAutomaticInitialPlanCaptureResponse>
+                            handler);
+
+    /**
+     * Enables the Automatic SPM Evolve Advisor task. By default, the automatic task
+     * `SYS_AUTO_SPM_EVOLVE_TASK` runs every day in the scheduled maintenance window.
+     *
+     * <p>The SPM Evolve Advisor performs the following tasks:
+     *
+     * <p>- Checks AWR for top SQL - Looks for alternative plans in all available sources - Adds
+     * unaccepted plans to the plan history - Tests the execution of as many plans as possible
+     * during the maintenance window - Adds the alternative plan to the baseline if it performs
+     * better than the current plan
+     *
+     * <p>One client controls both Automatic SQL Tuning Advisor and Automatic SPM Evolve Advisor.
+     * Thus, the same task enables or disables both.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableAutomaticSpmEvolveAdvisorTaskResponse>
+            enableAutomaticSpmEvolveAdvisorTask(
+                    EnableAutomaticSpmEvolveAdvisorTaskRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutomaticSpmEvolveAdvisorTaskRequest,
+                                    EnableAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler);
 
     /**
      * Enables Database Management service for all the components of the specified external DB
@@ -688,9 +953,29 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables Database Management service for the exadata infrastructure specified by
-     * externalExadataInfrastructureId. It covers the following components Exadata infrastructure
-     * Exadata storage grid Exadata storage server
+     * Enables Stack Monitoring for all the components of the specified external DB system (except
+     * databases).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalDbSystemStackMonitoringResponse>
+            enableExternalDbSystemStackMonitoring(
+                    EnableExternalDbSystemStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalDbSystemStackMonitoringRequest,
+                                    EnableExternalDbSystemStackMonitoringResponse>
+                            handler);
+
+    /**
+     * Enables Database Management for the Exadata infrastructure specified by
+     * externalExadataInfrastructureId. It covers the following components:
+     *
+     * <p>- Exadata infrastructure - Exadata storage grid - Exadata storage server
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -706,6 +991,50 @@ public interface DbManagementAsync extends AutoCloseable {
                                     EnableExternalExadataInfrastructureManagementRequest,
                                     EnableExternalExadataInfrastructureManagementResponse>
                             handler);
+
+    /**
+     * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency task runs
+     * every hour and runs for no longer than 30 minutes. These settings are not configurable.
+     *
+     * <p>The high-frequency task complements the standard Automatic SPM Evolve Advisor task. They
+     * are independent and are scheduled through two different frameworks.
+     *
+     * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
+     * Service (ExaCS) and Oracle Database Exadata Cloud@Customer (ExaCC).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+            enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest,
+                                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler);
+
+    /**
+     * Enables the use of SQL plan baselines stored in SQL Management Base.
+     *
+     * <p>When enabled, the optimizer uses SQL plan baselines to select plans to avoid potential
+     * performance regressions.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableSqlPlanBaselinesUsageResponse> enableSqlPlanBaselinesUsage(
+            EnableSqlPlanBaselinesUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableSqlPlanBaselinesUsageRequest, EnableSqlPlanBaselinesUsageResponse>
+                    handler);
 
     /**
      * Creates an AWR snapshot for the target database.
@@ -990,9 +1319,8 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details for the the Exadata infrastructure specified by
-     * externalExadataInfrastructureId. It includes the database systems and storage grid within the
-     * Exadata infrastructure.
+     * Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId.
+     * It includes the DB systems and storage grid within the Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1010,7 +1338,8 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details for the storage server connector specified by exadataStorageConnectorId.
+     * Gets the details for the Exadata storage server connector specified by
+     * exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1028,7 +1357,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details for the storage server grid specified by exadataStorageGridId.
+     * Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1046,7 +1375,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the summary for the storage server specified by exadataStorageServerId.
+     * Gets the summary for the Exadata storage server specified by exadataStorageServerId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1080,7 +1409,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get the IORM plan from the specific exadata storage server.
+     * Get the IORM plan from the specific Exadata storage server.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1169,7 +1498,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get open alerts from storage server.
+     * Gets the open alerts from the specified Exadata storage server.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1276,6 +1605,42 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the SQL plan baseline details for the specified planName.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSqlPlanBaselineResponse> getSqlPlanBaseline(
+            GetSqlPlanBaselineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlPlanBaselineRequest, GetSqlPlanBaselineResponse>
+                    handler);
+
+    /**
+     * Gets the configuration details of SQL plan baselines for the specified Managed Database. The
+     * details include the settings for the capture and use of SQL plan baselines, SPM Evolve
+     * Advisor task, and SQL Management Base.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSqlPlanBaselineConfigurationResponse>
+            getSqlPlanBaselineConfiguration(
+                    GetSqlPlanBaselineConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetSqlPlanBaselineConfigurationRequest,
+                                    GetSqlPlanBaselineConfigurationResponse>
+                            handler);
+
+    /**
      * Gets the details of the tablespace specified by tablespaceName within the Managed Database
      * specified by managedDatabaseId.
      *
@@ -1292,7 +1657,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get SQL ID with top cpu activity from storage server.
+     * Gets the SQL IDs with the top CPU activity from the Exadata storage server.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1432,6 +1797,22 @@ public interface DbManagementAsync extends AutoCloseable {
             ListConsumerGroupPrivilegesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>
+                    handler);
+
+    /**
+     * Lists the SQL statements from shared SQL area, also called the cursor cache.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCursorCacheStatementsResponse> listCursorCacheStatements(
+            ListCursorCacheStatementsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCursorCacheStatementsRequest, ListCursorCacheStatementsResponse>
                     handler);
 
     /**
@@ -1683,7 +2064,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the Exadata infrastructures for a specific compartment.
+     * Lists the Exadata infrastructure resources in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1701,7 +2082,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the connectors for the specific Exadata infrastructures.
+     * Lists the Exadata storage server connectors for the specified Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1719,7 +2100,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists all the storage servers for the exadata infrastructure or storage grid.
+     * Lists the Exadata storage servers for the specified Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2018,6 +2399,39 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handler);
 
     /**
+     * Lists the database jobs used for loading SQL plan baselines in the specified Managed
+     * Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSqlPlanBaselineJobsResponse> listSqlPlanBaselineJobs(
+            ListSqlPlanBaselineJobsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlPlanBaselineJobsRequest, ListSqlPlanBaselineJobsResponse>
+                    handler);
+
+    /**
+     * Lists the SQL plan baselines for the specified Managed Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSqlPlanBaselinesResponse> listSqlPlanBaselines(
+            ListSqlPlanBaselinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlPlanBaselinesRequest, ListSqlPlanBaselinesResponse>
+                    handler);
+
+    /**
      * Gets the list of system privileges granted to a specific user.
      *
      * @param request The request object containing the details to send
@@ -2125,6 +2539,45 @@ public interface DbManagementAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Loads plans from Automatic Workload Repository (AWR) snapshots. You must specify the
+     * beginning and ending of the snapshot range. Optionally, you can apply a filter to load only
+     * plans that meet specified criteria. By default, the optimizer uses the loaded plans the next
+     * time that the database executes the SQL statements.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<LoadSqlPlanBaselinesFromAwrResponse> loadSqlPlanBaselinesFromAwr(
+            LoadSqlPlanBaselinesFromAwrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            LoadSqlPlanBaselinesFromAwrRequest, LoadSqlPlanBaselinesFromAwrResponse>
+                    handler);
+
+    /**
+     * Loads plans for statements directly from the shared SQL area, also called the cursor cache.
+     * By applying a filter on the module name, the schema, or the SQL ID you identify the SQL
+     * statement or set of SQL statements to load.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<LoadSqlPlanBaselinesFromCursorCacheResponse>
+            loadSqlPlanBaselinesFromCursorCache(
+                    LoadSqlPlanBaselinesFromCursorCacheRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    LoadSqlPlanBaselinesFromCursorCacheRequest,
+                                    LoadSqlPlanBaselinesFromCursorCacheResponse>
+                            handler);
 
     /**
      * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
@@ -2532,6 +2985,40 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the number of SQL plan baselines aggregated by their attributes.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeSqlPlanBaselinesResponse> summarizeSqlPlanBaselines(
+            SummarizeSqlPlanBaselinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeSqlPlanBaselinesRequest, SummarizeSqlPlanBaselinesResponse>
+                    handler);
+
+    /**
+     * Gets the number of SQL plan baselines aggregated by the age of their last execution in weeks.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeSqlPlanBaselinesByLastExecutionResponse>
+            summarizeSqlPlanBaselinesByLastExecution(
+                    SummarizeSqlPlanBaselinesByLastExecutionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeSqlPlanBaselinesByLastExecutionRequest,
+                                    SummarizeSqlPlanBaselinesByLastExecutionResponse>
+                            handler);
+
+    /**
      * Tests the preferred credential.
      *
      * @param request The request object containing the details to send
@@ -2684,7 +3171,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the details for the the Exadata infrastructure specified by
+     * Updates the details for the Exadata infrastructure specified by
      * externalExadataInfrastructureId.
      *
      * @param request The request object containing the details to send
@@ -2703,7 +3190,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the details for the storage server connector specified by exadataStorageConnectorId.
+     * Updates the Exadata storage server connector specified by exadataStorageConnectorId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

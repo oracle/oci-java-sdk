@@ -12,6 +12,7 @@ import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import com.oracle.bmc.http.client.jersey.internal.ApacheDuplicatableInputStreamEntity;
 import com.oracle.bmc.http.client.jersey.internal.ApacheInputStreamEntity;
+import com.oracle.bmc.http.client.jersey.io.internal.LengthLimitedInputStream;
 import com.oracle.bmc.serialization.jackson.JacksonSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -131,6 +132,7 @@ final class JerseyHttpRequest implements HttpRequest {
     @Override
     public HttpRequest body(InputStream body, long contentLength) {
         logAvailable(body);
+        InputStream limitedStream = new LengthLimitedInputStream(body, contentLength);
         if (client.isApacheNonBufferingClient && contentLength > 0) {
             // Customization for providing Apache HTTP Entity instead of InputStream. This is
             // required to avoid
@@ -142,7 +144,7 @@ final class JerseyHttpRequest implements HttpRequest {
                         new ApacheDuplicatableInputStreamEntity(
                                 (DuplicatableInputStream) body, contentLength);
             } else {
-                processedBody = new ApacheInputStreamEntity((InputStream) body, contentLength);
+                processedBody = new ApacheInputStreamEntity(limitedStream, contentLength);
             }
         } else {
             processedBody = body;

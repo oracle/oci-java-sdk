@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The connection information and the discovery options for the Exadata discovery. <br>
+ * The connection details and the discovery options for the Exadata discovery. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -44,14 +44,14 @@ public final class DiscoverExternalExadataInfrastructureDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -62,12 +62,12 @@ public final class DiscoverExternalExadataInfrastructureDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The type of the discovery. */
+        /** The type of discovery. */
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
         private DiscoveryType discoveryType;
 
         /**
-         * The type of the discovery.
+         * The type of discovery.
          *
          * @param discoveryType the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class DiscoverExternalExadataInfrastructureDetails
             this.__explicitlySet__.add("discoveryType");
             return this;
         }
-        /** The list of the database system identifiers. */
+        /** The list of the DB system identifiers. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemIds")
         private java.util.List<String> dbSystemIds;
 
         /**
-         * The list of the database system identifiers.
+         * The list of the DB system identifiers.
          *
          * @param dbSystemIds the value to set
          * @return this builder
@@ -93,15 +93,15 @@ public final class DiscoverExternalExadataInfrastructureDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * Exadata infrastructure system. For rediscover only.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure. This is applicable for rediscovery only.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * Exadata infrastructure system. For rediscover only.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure. This is applicable for rediscovery only.
          *
          * @param exadataInfrastructureId the value to set
          * @return this builder
@@ -156,14 +156,14 @@ public final class DiscoverExternalExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -172,7 +172,7 @@ public final class DiscoverExternalExadataInfrastructureDetails
         return compartmentId;
     }
 
-    /** The type of the discovery. */
+    /** The type of discovery. */
     public enum DiscoveryType implements com.oracle.bmc.http.internal.BmcEnum {
         New("NEW"),
         Override("OVERRIDE"),
@@ -205,12 +205,12 @@ public final class DiscoverExternalExadataInfrastructureDetails
             throw new IllegalArgumentException("Invalid DiscoveryType: " + key);
         }
     };
-    /** The type of the discovery. */
+    /** The type of discovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryType")
     private final DiscoveryType discoveryType;
 
     /**
-     * The type of the discovery.
+     * The type of discovery.
      *
      * @return the value
      */
@@ -218,12 +218,12 @@ public final class DiscoverExternalExadataInfrastructureDetails
         return discoveryType;
     }
 
-    /** The list of the database system identifiers. */
+    /** The list of the DB system identifiers. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemIds")
     private final java.util.List<String> dbSystemIds;
 
     /**
-     * The list of the database system identifiers.
+     * The list of the DB system identifiers.
      *
      * @return the value
      */
@@ -232,15 +232,15 @@ public final class DiscoverExternalExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata
-     * infrastructure system. For rediscover only.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure. This is applicable for rediscovery only.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata
-     * infrastructure system. For rediscover only.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure. This is applicable for rediscovery only.
      *
      * @return the value
      */

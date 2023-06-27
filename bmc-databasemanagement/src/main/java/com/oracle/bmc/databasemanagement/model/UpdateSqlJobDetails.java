@@ -78,6 +78,24 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("inBinds")
+        private JobInBindsDetails inBinds;
+
+        public Builder inBinds(JobInBindsDetails inBinds) {
+            this.inBinds = inBinds;
+            this.__explicitlySet__.add("inBinds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outBinds")
+        private JobOutBindsDetails outBinds;
+
+        public Builder outBinds(JobOutBindsDetails outBinds) {
+            this.outBinds = outBinds;
+            this.__explicitlySet__.add("outBinds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
         private SqlJob.SqlType sqlType;
 
@@ -172,6 +190,8 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
                             this.resultLocation,
                             this.scheduleDetails,
                             this.sqlText,
+                            this.inBinds,
+                            this.outBinds,
                             this.sqlType,
                             this.userName,
                             this.password,
@@ -199,6 +219,12 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             }
             if (model.wasPropertyExplicitlySet("sqlText")) {
                 this.sqlText(model.getSqlText());
+            }
+            if (model.wasPropertyExplicitlySet("inBinds")) {
+                this.inBinds(model.getInBinds());
+            }
+            if (model.wasPropertyExplicitlySet("outBinds")) {
+                this.outBinds(model.getOutBinds());
             }
             if (model.wasPropertyExplicitlySet("sqlType")) {
                 this.sqlType(model.getSqlType());
@@ -235,6 +261,8 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             JobExecutionResultLocation resultLocation,
             JobScheduleDetails scheduleDetails,
             String sqlText,
+            JobInBindsDetails inBinds,
+            JobOutBindsDetails outBinds,
             SqlJob.SqlType sqlType,
             String userName,
             String password,
@@ -242,6 +270,8 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             SqlJob.Role role) {
         super(description, timeout, resultLocation, scheduleDetails);
         this.sqlText = sqlText;
+        this.inBinds = inBinds;
+        this.outBinds = outBinds;
         this.sqlType = sqlType;
         this.userName = userName;
         this.password = password;
@@ -260,6 +290,20 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
      */
     public String getSqlText() {
         return sqlText;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inBinds")
+    private final JobInBindsDetails inBinds;
+
+    public JobInBindsDetails getInBinds() {
+        return inBinds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outBinds")
+    private final JobOutBindsDetails outBinds;
+
+    public JobOutBindsDetails getOutBinds() {
+        return outBinds;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
@@ -351,6 +395,8 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         sb.append("UpdateSqlJobDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sqlText=").append(String.valueOf(this.sqlText));
+        sb.append(", inBinds=").append(String.valueOf(this.inBinds));
+        sb.append(", outBinds=").append(String.valueOf(this.outBinds));
         sb.append(", sqlType=").append(String.valueOf(this.sqlType));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", password=").append(String.valueOf(this.password));
@@ -371,6 +417,8 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
 
         UpdateSqlJobDetails other = (UpdateSqlJobDetails) o;
         return java.util.Objects.equals(this.sqlText, other.sqlText)
+                && java.util.Objects.equals(this.inBinds, other.inBinds)
+                && java.util.Objects.equals(this.outBinds, other.outBinds)
                 && java.util.Objects.equals(this.sqlType, other.sqlType)
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.password, other.password)
@@ -384,6 +432,8 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sqlText == null ? 43 : this.sqlText.hashCode());
+        result = (result * PRIME) + (this.inBinds == null ? 43 : this.inBinds.hashCode());
+        result = (result * PRIME) + (this.outBinds == null ? 43 : this.outBinds.hashCode());
         result = (result * PRIME) + (this.sqlType == null ? 43 : this.sqlType.hashCode());
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());

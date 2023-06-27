@@ -48,6 +48,9 @@ There is no HTTP client library configured by default. The OCI Java SDK offers t
           <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
         </dependency>
 
+### Serializer/Deserializer is pluggable
+- The serializer is now pluggable and determined by the `HttpProvider`. For the Jersey 2 and Jersey 3 HTTP clients, Jackson continues to be used as the serializer
+- As part of the pluggable Serializer changes, when using the Jersey and Jersey 3 HTTP clients, the underlying Jackson `ObjectMapper` can now be obtained using `com.oracle.bmc.serialization.jackson.JacksonSerializer.getDefaultObjectMapper()`. The `com.oracle.bmc.http.client.Serialization.getObjectMapper()` method does not exist anymore.
 
 ### Invocation callbacks
 Instead of using `com.oracle.bmc.util.internal.Consumer<Invocation.Builder>` to register invocation callbacks, use `com.oracle.bmc.http.client.RequestInterceptor` instead, to decouple the implementation from the choice of the HTTP client.
@@ -157,18 +160,19 @@ There were numerous changes to decouple the implementation from the choice of th
 
 ### Moved classes
   - Class `com.oracle.bmc.Options` was moved to `com.oracle.bmc.http.client.Options`
-  - Class `com.oracle.bmc.http.Serialization` was moved to `com.oracle.bmc.http.client.Serialization`
+  - Class `com.oracle.bmc.http.Serialization` was moved to `com.oracle.bmc.http.client.Serialization` and is available from OCI Java SDK versions `3.0.0` to `3.13.1`
   - Class `com.oracle.bmc.io.DuplicatableInputStream` was moved to `com.oracle.bmc.http.client.io.DuplicatableInputStream`
 
 ### Long deprecated code was removed
   - The signing strategy `OBJECT_STORAGE` was removed from `com.oracle.bmc.http.signing.SigningStrategy`; it had been deprecated for years and had been replaced by `EXCLUDE_BODY`.
   - The `getPublicKey()` and `getPrivateKey()` methods were removed from `com.oracle.bmc.auth.SessionKeySupplier` and implementing classes; they had been deprecated for years and had been replaced by the `getKeyPair()` method.
 
-
 ### Removed code
   - The `setInstanceMetadataServiceClientConfig` method in `com.oracle.bmc.Region` was removed; it never had any effect.
   - `AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry` method has been removed without replacement, since it is not needed in the OCI Java SDK 3.0.0 and higher.
-    - You can copy and paste the [previous implementation](https://github.com/oracle/oci-java-sdk/blob/v2.47.0/bmc-common/src/main/java/com/oracle/bmc/auth/AbstractFederationClientAuthenticationDetailsProviderBuilder.java#L494-L528) if you need it.
+  - You can copy and paste the [previous implementation](https://github.com/oracle/oci-java-sdk/blob/v2.47.0/bmc-common/src/main/java/com/oracle/bmc/auth/AbstractFederationClientAuthenticationDetailsProviderBuilder.java#L494-L528) if you need it.
+  - Starting OCI Java SDK version `3.14.0`, class `com.oracle.bmc.http.client.Serialization` has been removed.
+  
 
 ### Removed dependencies on the following third-party libraries
 - Guava: Guava types have been replaced with JDK types:

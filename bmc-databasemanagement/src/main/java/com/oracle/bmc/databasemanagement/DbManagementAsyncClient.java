@@ -447,6 +447,109 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePlanRetentionResponse> changePlanRetention(
+            ChangePlanRetentionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangePlanRetentionRequest, ChangePlanRetentionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePlanRetentionDetails(), "changePlanRetentionDetails is required");
+
+        return clientCall(request, ChangePlanRetentionResponse::builder)
+                .logger(LOG, "changePlanRetention")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangePlanRetention",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangePlanRetention")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePlanRetentionRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("changePlanRetention")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePlanRetentionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSpaceBudgetResponse> changeSpaceBudget(
+            ChangeSpaceBudgetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSpaceBudgetRequest, ChangeSpaceBudgetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSpaceBudgetDetails(), "changeSpaceBudgetDetails is required");
+
+        return clientCall(request, ChangeSpaceBudgetResponse::builder)
+                .logger(LOG, "changeSpaceBudget")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeSpaceBudget",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeSpaceBudget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSpaceBudgetRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("changeSpaceBudget")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeSpaceBudgetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSqlPlanBaselinesAttributesResponse>
+            changeSqlPlanBaselinesAttributes(
+                    ChangeSqlPlanBaselinesAttributesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSqlPlanBaselinesAttributesRequest,
+                                    ChangeSqlPlanBaselinesAttributesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSqlPlanBaselinesAttributesDetails(),
+                "changeSqlPlanBaselinesAttributesDetails is required");
+
+        return clientCall(request, ChangeSqlPlanBaselinesAttributesResponse::builder)
+                .logger(LOG, "changeSqlPlanBaselinesAttributes")
+                .serviceDetails(
+                        "DbManagement",
+                        "ChangeSqlPlanBaselinesAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeSqlPlanBaselinesAttributes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSqlPlanBaselinesAttributesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("changeSqlPlanBaselinesAttributes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSqlPlanBaselinesAttributesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckExternalDbSystemConnectorConnectionStatusResponse>
             checkExternalDbSystemConnectorConnectionStatus(
                     CheckExternalDbSystemConnectorConnectionStatusRequest request,
@@ -531,6 +634,80 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id",
                         CheckExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureAutomaticCaptureFiltersResponse>
+            configureAutomaticCaptureFilters(
+                    ConfigureAutomaticCaptureFiltersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureAutomaticCaptureFiltersRequest,
+                                    ConfigureAutomaticCaptureFiltersResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureAutomaticCaptureFiltersDetails(),
+                "configureAutomaticCaptureFiltersDetails is required");
+
+        return clientCall(request, ConfigureAutomaticCaptureFiltersResponse::builder)
+                .logger(LOG, "configureAutomaticCaptureFilters")
+                .serviceDetails(
+                        "DbManagement",
+                        "ConfigureAutomaticCaptureFilters",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ConfigureAutomaticCaptureFilters")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureAutomaticCaptureFiltersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("configureAutomaticCaptureFilters")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfigureAutomaticCaptureFiltersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureAutomaticSpmEvolveAdvisorTaskResponse>
+            configureAutomaticSpmEvolveAdvisorTask(
+                    ConfigureAutomaticSpmEvolveAdvisorTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureAutomaticSpmEvolveAdvisorTaskRequest,
+                                    ConfigureAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureAutomaticSpmEvolveAdvisorTaskDetails(),
+                "configureAutomaticSpmEvolveAdvisorTaskDetails is required");
+
+        return clientCall(request, ConfigureAutomaticSpmEvolveAdvisorTaskResponse::builder)
+                .logger(LOG, "configureAutomaticSpmEvolveAdvisorTask")
+                .serviceDetails(
+                        "DbManagement",
+                        "ConfigureAutomaticSpmEvolveAdvisorTask",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ConfigureAutomaticSpmEvolveAdvisorTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureAutomaticSpmEvolveAdvisorTaskRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("configureAutomaticSpmEvolveAdvisorTask")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfigureAutomaticSpmEvolveAdvisorTaskResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1172,6 +1349,80 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAutomaticInitialPlanCaptureResponse>
+            disableAutomaticInitialPlanCapture(
+                    DisableAutomaticInitialPlanCaptureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutomaticInitialPlanCaptureRequest,
+                                    DisableAutomaticInitialPlanCaptureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableAutomaticInitialPlanCaptureDetails(),
+                "disableAutomaticInitialPlanCaptureDetails is required");
+
+        return clientCall(request, DisableAutomaticInitialPlanCaptureResponse::builder)
+                .logger(LOG, "disableAutomaticInitialPlanCapture")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableAutomaticInitialPlanCapture",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutomaticInitialPlanCapture")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAutomaticInitialPlanCaptureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("disableAutomaticInitialPlanCapture")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableAutomaticInitialPlanCaptureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAutomaticSpmEvolveAdvisorTaskResponse>
+            disableAutomaticSpmEvolveAdvisorTask(
+                    DisableAutomaticSpmEvolveAdvisorTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutomaticSpmEvolveAdvisorTaskRequest,
+                                    DisableAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableAutomaticSpmEvolveAdvisorTaskDetails(),
+                "disableAutomaticSpmEvolveAdvisorTaskDetails is required");
+
+        return clientCall(request, DisableAutomaticSpmEvolveAdvisorTaskResponse::builder)
+                .logger(LOG, "disableAutomaticSpmEvolveAdvisorTask")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableAutomaticSpmEvolveAdvisorTask",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutomaticSpmEvolveAdvisorTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAutomaticSpmEvolveAdvisorTaskRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("disableAutomaticSpmEvolveAdvisorTask")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableAutomaticSpmEvolveAdvisorTaskResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableExternalDbSystemDatabaseManagementResponse>
             disableExternalDbSystemDatabaseManagement(
                     DisableExternalDbSystemDatabaseManagementRequest request,
@@ -1205,6 +1456,43 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DisableExternalDbSystemDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalDbSystemStackMonitoringResponse>
+            disableExternalDbSystemStackMonitoring(
+                    DisableExternalDbSystemStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalDbSystemStackMonitoringRequest,
+                                    DisableExternalDbSystemStackMonitoringResponse>
+                            handler) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+
+        return clientCall(request, DisableExternalDbSystemStackMonitoringResponse::builder)
+                .logger(LOG, "disableExternalDbSystemStackMonitoring")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalDbSystemStackMonitoring",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/DisableExternalDbSystemStackMonitoring")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalDbSystemStackMonitoringRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("disableStackMonitoring")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalDbSystemStackMonitoringResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1246,6 +1534,82 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-work-request-id",
                         DisableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+            disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest,
+                                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails(),
+                "disableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails is required");
+
+        return clientCall(
+                        request, DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse::builder)
+                .logger(LOG, "disableHighFrequencyAutomaticSpmEvolveAdvisorTask")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableHighFrequencyAutomaticSpmEvolveAdvisorTask",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableHighFrequencyAutomaticSpmEvolveAdvisorTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("disableHighFrequencyAutomaticSpmEvolveAdvisorTask")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableSqlPlanBaselinesUsageResponse>
+            disableSqlPlanBaselinesUsage(
+                    DisableSqlPlanBaselinesUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableSqlPlanBaselinesUsageRequest,
+                                    DisableSqlPlanBaselinesUsageResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableSqlPlanBaselinesUsageDetails(),
+                "disableSqlPlanBaselinesUsageDetails is required");
+
+        return clientCall(request, DisableSqlPlanBaselinesUsageResponse::builder)
+                .logger(LOG, "disableSqlPlanBaselinesUsage")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableSqlPlanBaselinesUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableSqlPlanBaselinesUsage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableSqlPlanBaselinesUsageRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("disableSqlPlanBaselinesUsage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableSqlPlanBaselinesUsageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1292,6 +1656,40 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DropSqlPlanBaselinesResponse> dropSqlPlanBaselines(
+            DropSqlPlanBaselinesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlPlanBaselinesRequest, DropSqlPlanBaselinesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDropSqlPlanBaselinesDetails(),
+                "dropSqlPlanBaselinesDetails is required");
+
+        return clientCall(request, DropSqlPlanBaselinesResponse::builder)
+                .logger(LOG, "dropSqlPlanBaselines")
+                .serviceDetails(
+                        "DbManagement",
+                        "DropSqlPlanBaselines",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DropSqlPlanBaselines")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DropSqlPlanBaselinesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("dropSqlPlanBaselines")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DropSqlPlanBaselinesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
             DropTablespaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1328,6 +1726,80 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         DropTablespaceResponse.Builder::tablespaceAdminStatus)
                 .handleResponseHeaderString(
                         "opc-request-id", DropTablespaceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAutomaticInitialPlanCaptureResponse>
+            enableAutomaticInitialPlanCapture(
+                    EnableAutomaticInitialPlanCaptureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutomaticInitialPlanCaptureRequest,
+                                    EnableAutomaticInitialPlanCaptureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAutomaticInitialPlanCaptureDetails(),
+                "enableAutomaticInitialPlanCaptureDetails is required");
+
+        return clientCall(request, EnableAutomaticInitialPlanCaptureResponse::builder)
+                .logger(LOG, "enableAutomaticInitialPlanCapture")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableAutomaticInitialPlanCapture",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutomaticInitialPlanCapture")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAutomaticInitialPlanCaptureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("enableAutomaticInitialPlanCapture")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableAutomaticInitialPlanCaptureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAutomaticSpmEvolveAdvisorTaskResponse>
+            enableAutomaticSpmEvolveAdvisorTask(
+                    EnableAutomaticSpmEvolveAdvisorTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutomaticSpmEvolveAdvisorTaskRequest,
+                                    EnableAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAutomaticSpmEvolveAdvisorTaskDetails(),
+                "enableAutomaticSpmEvolveAdvisorTaskDetails is required");
+
+        return clientCall(request, EnableAutomaticSpmEvolveAdvisorTaskResponse::builder)
+                .logger(LOG, "enableAutomaticSpmEvolveAdvisorTask")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableAutomaticSpmEvolveAdvisorTask",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutomaticSpmEvolveAdvisorTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAutomaticSpmEvolveAdvisorTaskRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("enableAutomaticSpmEvolveAdvisorTask")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableAutomaticSpmEvolveAdvisorTaskResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1373,6 +1845,47 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<EnableExternalDbSystemStackMonitoringResponse>
+            enableExternalDbSystemStackMonitoring(
+                    EnableExternalDbSystemStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalDbSystemStackMonitoringRequest,
+                                    EnableExternalDbSystemStackMonitoringResponse>
+                            handler) {
+
+        Validate.notBlank(request.getExternalDbSystemId(), "externalDbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalDbSystemStackMonitoringDetails(),
+                "enableExternalDbSystemStackMonitoringDetails is required");
+
+        return clientCall(request, EnableExternalDbSystemStackMonitoringResponse::builder)
+                .logger(LOG, "enableExternalDbSystemStackMonitoring")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalDbSystemStackMonitoring",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/EnableExternalDbSystemStackMonitoring")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalDbSystemStackMonitoringRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbSystems")
+                .appendPathParam(request.getExternalDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("enableStackMonitoring")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalDbSystemStackMonitoringResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalDbSystemStackMonitoringResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableExternalExadataInfrastructureManagementResponse>
             enableExternalExadataInfrastructureManagement(
                     EnableExternalExadataInfrastructureManagementRequest request,
@@ -1413,6 +1926,81 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-work-request-id",
                         EnableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+            enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest,
+                                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails(),
+                "enableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails is required");
+
+        return clientCall(
+                        request, EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse::builder)
+                .logger(LOG, "enableHighFrequencyAutomaticSpmEvolveAdvisorTask")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableHighFrequencyAutomaticSpmEvolveAdvisorTask",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableHighFrequencyAutomaticSpmEvolveAdvisorTask")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("enableHighFrequencyAutomaticSpmEvolveAdvisorTask")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableSqlPlanBaselinesUsageResponse>
+            enableSqlPlanBaselinesUsage(
+                    EnableSqlPlanBaselinesUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableSqlPlanBaselinesUsageRequest,
+                                    EnableSqlPlanBaselinesUsageResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableSqlPlanBaselinesUsageDetails(),
+                "enableSqlPlanBaselinesUsageDetails is required");
+
+        return clientCall(request, EnableSqlPlanBaselinesUsageResponse::builder)
+                .logger(LOG, "enableSqlPlanBaselinesUsage")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableSqlPlanBaselinesUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableSqlPlanBaselinesUsage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableSqlPlanBaselinesUsageRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("enableSqlPlanBaselinesUsage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableSqlPlanBaselinesUsageResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2616,6 +3204,75 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetSqlPlanBaselineResponse> getSqlPlanBaseline(
+            GetSqlPlanBaselineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlPlanBaselineRequest, GetSqlPlanBaselineResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getPlanName(), "planName must not be blank");
+
+        return clientCall(request, GetSqlPlanBaselineResponse::builder)
+                .logger(LOG, "getSqlPlanBaseline")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetSqlPlanBaseline",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlPlanBaseline")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlPlanBaselineRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam(request.getPlanName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaseline.class,
+                        GetSqlPlanBaselineResponse.Builder::sqlPlanBaseline)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSqlPlanBaselineResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlPlanBaselineConfigurationResponse>
+            getSqlPlanBaselineConfiguration(
+                    GetSqlPlanBaselineConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSqlPlanBaselineConfigurationRequest,
+                                    GetSqlPlanBaselineConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GetSqlPlanBaselineConfigurationResponse::builder)
+                .logger(LOG, "getSqlPlanBaselineConfiguration")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetSqlPlanBaselineConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlPlanBaselineConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlPlanBaselineConfigurationRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselineConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineConfiguration.class,
+                        GetSqlPlanBaselineConfigurationResponse.Builder
+                                ::sqlPlanBaselineConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetSqlPlanBaselineConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTablespaceResponse> getTablespace(
             GetTablespaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
@@ -3001,6 +3658,45 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-next-page", ListConsumerGroupPrivilegesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListConsumerGroupPrivilegesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCursorCacheStatementsResponse> listCursorCacheStatements(
+            ListCursorCacheStatementsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCursorCacheStatementsRequest, ListCursorCacheStatementsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListCursorCacheStatementsResponse::builder)
+                .logger(LOG, "listCursorCacheStatements")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListCursorCacheStatements",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListCursorCacheStatements")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCursorCacheStatementsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("cursorCacheStatements")
+                .appendQueryParam("sqlText", request.getSqlText())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.CursorCacheStatementCollection
+                                .class,
+                        ListCursorCacheStatementsResponse.Builder::cursorCacheStatementCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCursorCacheStatementsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCursorCacheStatementsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -4334,6 +5030,90 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListSqlPlanBaselineJobsResponse> listSqlPlanBaselineJobs(
+            ListSqlPlanBaselineJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlPlanBaselineJobsRequest, ListSqlPlanBaselineJobsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListSqlPlanBaselineJobsResponse::builder)
+                .logger(LOG, "listSqlPlanBaselineJobs")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListSqlPlanBaselineJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlPlanBaselineJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlPlanBaselineJobsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselineJobs")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobCollection.class,
+                        ListSqlPlanBaselineJobsResponse.Builder::sqlPlanBaselineJobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlPlanBaselineJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlPlanBaselineJobsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlPlanBaselinesResponse> listSqlPlanBaselines(
+            ListSqlPlanBaselinesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlPlanBaselinesRequest, ListSqlPlanBaselinesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListSqlPlanBaselinesResponse::builder)
+                .logger(LOG, "listSqlPlanBaselines")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListSqlPlanBaselines",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlPlanBaselines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlPlanBaselinesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendQueryParam("planName", request.getPlanName())
+                .appendQueryParam("sqlHandle", request.getSqlHandle())
+                .appendQueryParam("sqlText", request.getSqlText())
+                .appendQueryParam("isEnabled", request.getIsEnabled())
+                .appendQueryParam("isAccepted", request.getIsAccepted())
+                .appendQueryParam("isReproduced", request.getIsReproduced())
+                .appendQueryParam("isFixed", request.getIsFixed())
+                .appendQueryParam("isAdaptive", request.getIsAdaptive())
+                .appendEnumQueryParam("origin", request.getOrigin())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineCollection.class,
+                        ListSqlPlanBaselinesResponse.Builder::sqlPlanBaselineCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlPlanBaselinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlPlanBaselinesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSystemPrivilegesResponse> listSystemPrivileges(
             ListSystemPrivilegesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4589,6 +5369,85 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LoadSqlPlanBaselinesFromAwrResponse>
+            loadSqlPlanBaselinesFromAwr(
+                    LoadSqlPlanBaselinesFromAwrRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    LoadSqlPlanBaselinesFromAwrRequest,
+                                    LoadSqlPlanBaselinesFromAwrResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getLoadSqlPlanBaselinesFromAwrDetails(),
+                "loadSqlPlanBaselinesFromAwrDetails is required");
+
+        return clientCall(request, LoadSqlPlanBaselinesFromAwrResponse::builder)
+                .logger(LOG, "loadSqlPlanBaselinesFromAwr")
+                .serviceDetails(
+                        "DbManagement",
+                        "LoadSqlPlanBaselinesFromAwr",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/LoadSqlPlanBaselinesFromAwr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(LoadSqlPlanBaselinesFromAwrRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("loadSqlPlanBaselinesFromAwr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJob.class,
+                        LoadSqlPlanBaselinesFromAwrResponse.Builder::sqlPlanBaselineJob)
+                .handleResponseHeaderString(
+                        "opc-request-id", LoadSqlPlanBaselinesFromAwrResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LoadSqlPlanBaselinesFromCursorCacheResponse>
+            loadSqlPlanBaselinesFromCursorCache(
+                    LoadSqlPlanBaselinesFromCursorCacheRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    LoadSqlPlanBaselinesFromCursorCacheRequest,
+                                    LoadSqlPlanBaselinesFromCursorCacheResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getLoadSqlPlanBaselinesFromCursorCacheDetails(),
+                "loadSqlPlanBaselinesFromCursorCacheDetails is required");
+
+        return clientCall(request, LoadSqlPlanBaselinesFromCursorCacheResponse::builder)
+                .logger(LOG, "loadSqlPlanBaselinesFromCursorCache")
+                .serviceDetails(
+                        "DbManagement",
+                        "LoadSqlPlanBaselinesFromCursorCache",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/LoadSqlPlanBaselinesFromCursorCache")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(LoadSqlPlanBaselinesFromCursorCacheRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselines")
+                .appendPathParam("actions")
+                .appendPathParam("loadSqlPlanBaselinesFromCursorCache")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJob.class,
+                        LoadSqlPlanBaselinesFromCursorCacheResponse.Builder::sqlPlanBaselineJob)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        LoadSqlPlanBaselinesFromCursorCacheResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5629,6 +6488,82 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeManagedDatabaseAvailabilityMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeSqlPlanBaselinesResponse> summarizeSqlPlanBaselines(
+            SummarizeSqlPlanBaselinesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeSqlPlanBaselinesRequest, SummarizeSqlPlanBaselinesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, SummarizeSqlPlanBaselinesResponse::builder)
+                .logger(LOG, "summarizeSqlPlanBaselines")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeSqlPlanBaselines",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeSqlPlanBaselines")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeSqlPlanBaselinesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselineStats")
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
+                                .class,
+                        SummarizeSqlPlanBaselinesResponse.Builder
+                                ::sqlPlanBaselineAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeSqlPlanBaselinesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeSqlPlanBaselinesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeSqlPlanBaselinesByLastExecutionResponse>
+            summarizeSqlPlanBaselinesByLastExecution(
+                    SummarizeSqlPlanBaselinesByLastExecutionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeSqlPlanBaselinesByLastExecutionRequest,
+                                    SummarizeSqlPlanBaselinesByLastExecutionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, SummarizeSqlPlanBaselinesByLastExecutionResponse::builder)
+                .logger(LOG, "summarizeSqlPlanBaselinesByLastExecution")
+                .serviceDetails(
+                        "DbManagement",
+                        "SummarizeSqlPlanBaselinesByLastExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeSqlPlanBaselinesByLastExecution")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeSqlPlanBaselinesByLastExecutionRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("sqlPlanBaselineExecutionStats")
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SqlPlanBaselineAggregationCollection
+                                .class,
+                        SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder
+                                ::sqlPlanBaselineAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeSqlPlanBaselinesByLastExecutionResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

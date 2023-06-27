@@ -89,6 +89,15 @@ public final class ImageListingPackage extends ListingPackage {
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("regions")
+        private java.util.List<Region> regions;
+
+        public Builder regions(java.util.List<Region> regions) {
+            this.regions = regions;
+            this.__explicitlySet__.add("regions");
+            return this;
+        }
         /**
          * The ID of the listing resource associated with this listing package. For more
          * information, see
@@ -142,25 +151,6 @@ public final class ImageListingPackage extends ListingPackage {
             this.__explicitlySet__.add("imageId");
             return this;
         }
-        /**
-         * The regions where you can deploy the listing package. (Some packages have restrictions
-         * that limit their deployment to United States regions only.)
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("regions")
-        private java.util.List<Region> regions;
-
-        /**
-         * The regions where you can deploy the listing package. (Some packages have restrictions
-         * that limit their deployment to United States regions only.)
-         *
-         * @param regions the value to set
-         * @return this builder
-         */
-        public Builder regions(java.util.List<Region> regions) {
-            this.regions = regions;
-            this.__explicitlySet__.add("regions");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -175,10 +165,10 @@ public final class ImageListingPackage extends ListingPackage {
                             this.resourceId,
                             this.timeCreated,
                             this.operatingSystem,
+                            this.regions,
                             this.appCatalogListingId,
                             this.appCatalogListingResourceVersion,
-                            this.imageId,
-                            this.regions);
+                            this.imageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -208,6 +198,9 @@ public final class ImageListingPackage extends ListingPackage {
             if (model.wasPropertyExplicitlySet("operatingSystem")) {
                 this.operatingSystem(model.getOperatingSystem());
             }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
             if (model.wasPropertyExplicitlySet("appCatalogListingId")) {
                 this.appCatalogListingId(model.getAppCatalogListingId());
             }
@@ -216,9 +209,6 @@ public final class ImageListingPackage extends ListingPackage {
             }
             if (model.wasPropertyExplicitlySet("imageId")) {
                 this.imageId(model.getImageId());
-            }
-            if (model.wasPropertyExplicitlySet("regions")) {
-                this.regions(model.getRegions());
             }
             return this;
         }
@@ -242,15 +232,22 @@ public final class ImageListingPackage extends ListingPackage {
             String resourceId,
             java.util.Date timeCreated,
             OperatingSystem operatingSystem,
+            java.util.List<Region> regions,
             String appCatalogListingId,
             String appCatalogListingResourceVersion,
-            String imageId,
-            java.util.List<Region> regions) {
-        super(description, listingId, version, pricing, resourceId, timeCreated, operatingSystem);
+            String imageId) {
+        super(
+                description,
+                listingId,
+                version,
+                pricing,
+                resourceId,
+                timeCreated,
+                operatingSystem,
+                regions);
         this.appCatalogListingId = appCatalogListingId;
         this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
         this.imageId = imageId;
-        this.regions = regions;
     }
 
     /**
@@ -300,23 +297,6 @@ public final class ImageListingPackage extends ListingPackage {
         return imageId;
     }
 
-    /**
-     * The regions where you can deploy the listing package. (Some packages have restrictions that
-     * limit their deployment to United States regions only.)
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("regions")
-    private final java.util.List<Region> regions;
-
-    /**
-     * The regions where you can deploy the listing package. (Some packages have restrictions that
-     * limit their deployment to United States regions only.)
-     *
-     * @return the value
-     */
-    public java.util.List<Region> getRegions() {
-        return regions;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -336,7 +316,6 @@ public final class ImageListingPackage extends ListingPackage {
         sb.append(", appCatalogListingResourceVersion=")
                 .append(String.valueOf(this.appCatalogListingResourceVersion));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
-        sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(")");
         return sb.toString();
     }
@@ -356,7 +335,6 @@ public final class ImageListingPackage extends ListingPackage {
                         this.appCatalogListingResourceVersion,
                         other.appCatalogListingResourceVersion)
                 && java.util.Objects.equals(this.imageId, other.imageId)
-                && java.util.Objects.equals(this.regions, other.regions)
                 && super.equals(other);
     }
 
@@ -375,7 +353,6 @@ public final class ImageListingPackage extends ListingPackage {
                                 ? 43
                                 : this.appCatalogListingResourceVersion.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
-        result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         return result;
     }
 }

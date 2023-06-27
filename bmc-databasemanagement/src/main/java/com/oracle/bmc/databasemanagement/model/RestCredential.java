@@ -75,12 +75,12 @@ public final class RestCredential
             this.__explicitlySet__.add("password");
             return this;
         }
-        /** The SSL trust store type. */
+        /** The SSL truststore type. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreType")
         private SslTrustStoreType sslTrustStoreType;
 
         /**
-         * The SSL trust store type.
+         * The SSL truststore type.
          *
          * @param sslTrustStoreType the value to set
          * @return this builder
@@ -90,12 +90,12 @@ public final class RestCredential
             this.__explicitlySet__.add("sslTrustStoreType");
             return this;
         }
-        /** The full path of the SSL trust store Location in the agent. */
+        /** The full path of the SSL truststore location in the agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreLocation")
         private String sslTrustStoreLocation;
 
         /**
-         * The full path of the SSL trust store Location in the agent.
+         * The full path of the SSL truststore location in the agent.
          *
          * @param sslTrustStoreLocation the value to set
          * @return this builder
@@ -105,12 +105,12 @@ public final class RestCredential
             this.__explicitlySet__.add("sslTrustStoreLocation");
             return this;
         }
-        /** The password of the SSL trust store Location in the agent. */
+        /** The password of the SSL truststore location in the agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
         private String sslTrustStorePassword;
 
         /**
-         * The password of the SSL trust store Location in the agent.
+         * The password of the SSL truststore location in the agent.
          *
          * @param sslTrustStorePassword the value to set
          * @return this builder
@@ -194,7 +194,7 @@ public final class RestCredential
         return password;
     }
 
-    /** The SSL trust store type. */
+    /** The SSL truststore type. */
     public enum SslTrustStoreType implements com.oracle.bmc.http.internal.BmcEnum {
         Jks("JKS"),
         Bcfks("BCFKS"),
@@ -227,12 +227,12 @@ public final class RestCredential
             throw new IllegalArgumentException("Invalid SslTrustStoreType: " + key);
         }
     };
-    /** The SSL trust store type. */
+    /** The SSL truststore type. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreType")
     private final SslTrustStoreType sslTrustStoreType;
 
     /**
-     * The SSL trust store type.
+     * The SSL truststore type.
      *
      * @return the value
      */
@@ -240,12 +240,12 @@ public final class RestCredential
         return sslTrustStoreType;
     }
 
-    /** The full path of the SSL trust store Location in the agent. */
+    /** The full path of the SSL truststore location in the agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreLocation")
     private final String sslTrustStoreLocation;
 
     /**
-     * The full path of the SSL trust store Location in the agent.
+     * The full path of the SSL truststore location in the agent.
      *
      * @return the value
      */
@@ -253,12 +253,12 @@ public final class RestCredential
         return sslTrustStoreLocation;
     }
 
-    /** The password of the SSL trust store Location in the agent. */
+    /** The password of the SSL truststore location in the agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
     private final String sslTrustStorePassword;
 
     /**
-     * The password of the SSL trust store Location in the agent.
+     * The password of the SSL truststore location in the agent.
      *
      * @return the value
      */

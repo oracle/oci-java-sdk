@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The base discover entity. <br>
+ * The details of the base entity discovery. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,15 +79,15 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Null for
-     * new discover case.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * entity discovered.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Null for
-     * new discover case.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * entity discovered.
      *
      * @return the value
      */
@@ -97,14 +97,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * agent could be used for monitoring.
+     * agent used for monitoring.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * agent could be used for monitoring.
+     * agent used for monitoring.
      *
      * @return the value
      */
@@ -155,12 +155,12 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         return version;
     }
 
-    /** The internal identifier. */
+    /** The internal identifier of the entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("internalId")
     private final String internalId;
 
     /**
-     * The internal identifier.
+     * The internal identifier of the entity.
      *
      * @return the value
      */
@@ -181,7 +181,7 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         return status;
     }
 
-    /** The status of the entity discover. */
+    /** The status of the entity discovery. */
     public enum DiscoverStatus implements com.oracle.bmc.http.internal.BmcEnum {
         PrevDiscovered("PREV_DISCOVERED"),
         NewDiscovered("NEW_DISCOVERED"),
@@ -216,12 +216,12 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             throw new IllegalArgumentException("Invalid DiscoverStatus: " + key);
         }
     };
-    /** The status of the entity discover. */
+    /** The status of the entity discovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("discoverStatus")
     private final DiscoverStatus discoverStatus;
 
     /**
-     * The status of the entity discover.
+     * The status of the entity discovery.
      *
      * @return the value
      */
@@ -229,12 +229,12 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         return discoverStatus;
     }
 
-    /** The error code of the discovery on the resource */
+    /** The error code of the discovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("discoverErrorCode")
     private final String discoverErrorCode;
 
     /**
-     * The error code of the discovery on the resource
+     * The error code of the discovery.
      *
      * @return the value
      */
@@ -242,12 +242,12 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         return discoverErrorCode;
     }
 
-    /** The error message of the discovery on the resource */
+    /** The error message of the discovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("discoverErrorMsg")
     private final String discoverErrorMsg;
 
     /**
-     * The error message of the discovery on the resource
+     * The error message of the discovery.
      *
      * @return the value
      */

@@ -491,6 +491,41 @@ public interface ArtifactsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Modify the properties of a container image. Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateContainerImageResponse> updateContainerImage(
+            UpdateContainerImageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateContainerImageRequest, UpdateContainerImageResponse>
+                    handler);
+
+    /**
+     * Modify the properties of a container image signature. Avoid entering confidential
+     * information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateContainerImageSignatureResponse>
+            updateContainerImageSignature(
+                    UpdateContainerImageSignatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateContainerImageSignatureRequest,
+                                    UpdateContainerImageSignatureResponse>
+                            handler);
+
+    /**
      * Modify the properties of a container repository. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
