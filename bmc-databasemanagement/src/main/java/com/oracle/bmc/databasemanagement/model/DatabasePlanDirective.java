@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Manage resource allocations among databases. Besides name, need to have at least one other property.
+ * Manages resource allocation among databases. Besides the name, at least one other property must be available.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -102,7 +102,7 @@ public final class DatabasePlanDirective
             return this;
         }
         /**
-         * The relative priority a database in the database plan. A higher share value implies
+         * The relative priority of a database in the database plan. A higher share value implies
          * higher priority and more access to the I/O resources.
          * Use either share or (level, allocation). All plan directives in a database plan
          * should use the same setting.
@@ -113,7 +113,7 @@ public final class DatabasePlanDirective
         private Integer share;
 
         /**
-         * The relative priority a database in the database plan. A higher share value implies
+         * The relative priority of a database in the database plan. A higher share value implies
          * higher priority and more access to the I/O resources.
          * Use either share or (level, allocation). All plan directives in a database plan
          * should use the same setting.
@@ -456,28 +456,30 @@ public final class DatabasePlanDirective
             return this;
         }
         /**
-         * Enables you to create a profile, or template, to ease management and configuration of resource plans
+         * Enables you to create a profile or template, to ease management and configuration of resource plans
          * in environments with many databases.
-         * type=database: Specifies a directive that applies to a specific database.
+         * <p>
+         * - type=database: Specifies a directive that applies to a specific database.
          * If type in not specified, then the directive defaults to the database type.
-         * type=profile: Specifies a directive that applies to a profile rather than a specific database.
-         *   To associate a database with an IORM profile, you must set the database initialization
-         *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile i
-         *   nherit the settings specified in the profile.
+         * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+         * <p>
+         * To associate a database with an IORM profile, you must set the database initialization
+         *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DatabasePlanTypeEnum type;
 
         /**
-         * Enables you to create a profile, or template, to ease management and configuration of resource plans
+         * Enables you to create a profile or template, to ease management and configuration of resource plans
          * in environments with many databases.
-         * type=database: Specifies a directive that applies to a specific database.
+         * <p>
+         * - type=database: Specifies a directive that applies to a specific database.
          * If type in not specified, then the directive defaults to the database type.
-         * type=profile: Specifies a directive that applies to a profile rather than a specific database.
-         *   To associate a database with an IORM profile, you must set the database initialization
-         *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile i
-         *   nherit the settings specified in the profile.
+         * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+         * <p>
+         * To associate a database with an IORM profile, you must set the database initialization
+         *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
          *
          * @param type the value to set
          * @return this builder
@@ -488,14 +490,14 @@ public final class DatabasePlanDirective
             return this;
         }
         /**
-         * Enables you specify different plan directives based on the Oracle Data Guard database role.
+         * Enables you to specify different plan directives based on the Oracle Data Guard database role.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private DatabasePlanRoleEnum role;
 
         /**
-         * Enables you specify different plan directives based on the Oracle Data Guard database role.
+         * Enables you to specify different plan directives based on the Oracle Data Guard database role.
          *
          * @param role the value to set
          * @return this builder
@@ -622,7 +624,7 @@ public final class DatabasePlanDirective
     }
 
     /**
-     * The relative priority a database in the database plan. A higher share value implies
+     * The relative priority of a database in the database plan. A higher share value implies
      * higher priority and more access to the I/O resources.
      * Use either share or (level, allocation). All plan directives in a database plan
      * should use the same setting.
@@ -633,7 +635,7 @@ public final class DatabasePlanDirective
     private final Integer share;
 
     /**
-     * The relative priority a database in the database plan. A higher share value implies
+     * The relative priority of a database in the database plan. A higher share value implies
      * higher priority and more access to the I/O resources.
      * Use either share or (level, allocation). All plan directives in a database plan
      * should use the same setting.
@@ -946,28 +948,30 @@ public final class DatabasePlanDirective
     }
 
     /**
-     * Enables you to create a profile, or template, to ease management and configuration of resource plans
+     * Enables you to create a profile or template, to ease management and configuration of resource plans
      * in environments with many databases.
-     * type=database: Specifies a directive that applies to a specific database.
+     * <p>
+     * - type=database: Specifies a directive that applies to a specific database.
      * If type in not specified, then the directive defaults to the database type.
-     * type=profile: Specifies a directive that applies to a profile rather than a specific database.
-     *   To associate a database with an IORM profile, you must set the database initialization
-     *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile i
-     *   nherit the settings specified in the profile.
+     * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+     * <p>
+     * To associate a database with an IORM profile, you must set the database initialization
+     *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DatabasePlanTypeEnum type;
 
     /**
-     * Enables you to create a profile, or template, to ease management and configuration of resource plans
+     * Enables you to create a profile or template, to ease management and configuration of resource plans
      * in environments with many databases.
-     * type=database: Specifies a directive that applies to a specific database.
+     * <p>
+     * - type=database: Specifies a directive that applies to a specific database.
      * If type in not specified, then the directive defaults to the database type.
-     * type=profile: Specifies a directive that applies to a profile rather than a specific database.
-     *   To associate a database with an IORM profile, you must set the database initialization
-     *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile i
-     *   nherit the settings specified in the profile.
+     * - type=profile: Specifies a directive that applies to a profile rather than a specific database.
+     * <p>
+     * To associate a database with an IORM profile, you must set the database initialization
+     *   parameter db_performance_profile to the value of the profile name. Databases that map to a profile inherit the settings specified in the profile.
      *
      * @return the value
      **/
@@ -976,14 +980,14 @@ public final class DatabasePlanDirective
     }
 
     /**
-     * Enables you specify different plan directives based on the Oracle Data Guard database role.
+     * Enables you to specify different plan directives based on the Oracle Data Guard database role.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final DatabasePlanRoleEnum role;
 
     /**
-     * Enables you specify different plan directives based on the Oracle Data Guard database role.
+     * Enables you to specify different plan directives based on the Oracle Data Guard database role.
      *
      * @return the value
      **/

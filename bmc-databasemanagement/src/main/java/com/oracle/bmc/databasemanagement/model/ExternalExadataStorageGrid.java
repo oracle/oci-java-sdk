@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The Exadata storage grid details.
+ * The details of the Exadata storage server grid.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -117,13 +117,13 @@ public final class ExternalExadataStorageGrid extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          * @param exadataInfrastructureId the value to set
          * @return this builder
          **/
@@ -133,13 +133,13 @@ public final class ExternalExadataStorageGrid extends DbmResource {
             return this;
         }
         /**
-         * The number of the storage servers in the Exadata infrastructure.
+         * The number of Exadata storage servers in the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serverCount")
         private java.math.BigDecimal serverCount;
 
         /**
-         * The number of the storage servers in the Exadata infrastructure.
+         * The number of Exadata storage servers in the Exadata infrastructure.
          * @param serverCount the value to set
          * @return this builder
          **/
@@ -149,13 +149,13 @@ public final class ExternalExadataStorageGrid extends DbmResource {
             return this;
         }
         /**
-         * A list of monitored Exadata storage server.
+         * A list of monitored Exadata storage servers.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageServers")
         private java.util.List<ExternalExadataStorageServerSummary> storageServers;
 
         /**
-         * A list of monitored Exadata storage server.
+         * A list of monitored Exadata storage servers.
          * @param storageServers the value to set
          * @return this builder
          **/
@@ -279,13 +279,13 @@ public final class ExternalExadataStorageGrid extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * @return the value
      **/
     public String getExadataInfrastructureId() {
@@ -293,13 +293,13 @@ public final class ExternalExadataStorageGrid extends DbmResource {
     }
 
     /**
-     * The number of the storage servers in the Exadata infrastructure.
+     * The number of Exadata storage servers in the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverCount")
     private final java.math.BigDecimal serverCount;
 
     /**
-     * The number of the storage servers in the Exadata infrastructure.
+     * The number of Exadata storage servers in the Exadata infrastructure.
      * @return the value
      **/
     public java.math.BigDecimal getServerCount() {
@@ -307,13 +307,13 @@ public final class ExternalExadataStorageGrid extends DbmResource {
     }
 
     /**
-     * A list of monitored Exadata storage server.
+     * A list of monitored Exadata storage servers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageServers")
     private final java.util.List<ExternalExadataStorageServerSummary> storageServers;
 
     /**
-     * A list of monitored Exadata storage server.
+     * A list of monitored Exadata storage servers.
      * @return the value
      **/
     public java.util.List<ExternalExadataStorageServerSummary> getStorageServers() {

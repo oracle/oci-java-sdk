@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The connector details of the storage server to be updated.
+ * The connector details of the Exadata storage server to be updated.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,13 +34,13 @@ public final class UpdateExternalExadataStorageConnectorDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The connector name if OCI connector is created.
+         * The name of the Exadata storage server connector.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorName")
         private String connectorName;
 
         /**
-         * The connector name if OCI connector is created.
+         * The name of the Exadata storage server connector.
          * @param connectorName the value to set
          * @return this builder
          **/
@@ -50,13 +50,13 @@ public final class UpdateExternalExadataStorageConnectorDetails
             return this;
         }
         /**
-         * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+         * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionUri")
         private String connectionUri;
 
         /**
-         * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+         * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
          * @param connectionUri the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class UpdateExternalExadataStorageConnectorDetails
     }
 
     /**
-     * The connector name if OCI connector is created.
+     * The name of the Exadata storage server connector.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorName")
     private final String connectorName;
 
     /**
-     * The connector name if OCI connector is created.
+     * The name of the Exadata storage server connector.
      * @return the value
      **/
     public String getConnectorName() {
@@ -129,13 +129,13 @@ public final class UpdateExternalExadataStorageConnectorDetails
     }
 
     /**
-     * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+     * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUri")
     private final String connectionUri;
 
     /**
-     * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+     * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
      * @return the value
      **/
     public String getConnectionUri() {

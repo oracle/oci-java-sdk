@@ -15,13 +15,13 @@ public class CreateExternalExadataStorageConnectorRequest
                         .CreateExternalExadataStorageConnectorDetails> {
 
     /**
-     * The details required to add connections to the storage servers.
+     * The details required to add connections to the Exadata storage servers.
      */
     private com.oracle.bmc.databasemanagement.model.CreateExternalExadataStorageConnectorDetails
             createExternalExadataStorageConnectorDetails;
 
     /**
-     * The details required to add connections to the storage servers.
+     * The details required to add connections to the Exadata storage servers.
      */
     public com.oracle.bmc.databasemanagement.model.CreateExternalExadataStorageConnectorDetails
             getCreateExternalExadataStorageConnectorDetails() {
@@ -81,13 +81,13 @@ public class CreateExternalExadataStorageConnectorRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The details required to add connections to the storage servers.
+         * The details required to add connections to the Exadata storage servers.
          */
         private com.oracle.bmc.databasemanagement.model.CreateExternalExadataStorageConnectorDetails
                 createExternalExadataStorageConnectorDetails = null;
 
         /**
-         * The details required to add connections to the storage servers.
+         * The details required to add connections to the Exadata storage servers.
          * @param createExternalExadataStorageConnectorDetails the value to set
          * @return this builder instance
          */

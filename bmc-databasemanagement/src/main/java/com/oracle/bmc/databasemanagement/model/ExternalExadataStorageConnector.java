@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The connector of the storage server.
+ * The details of the Exadata storage server connector.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -117,13 +117,13 @@ public final class ExternalExadataStorageConnector extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          * @param exadataInfrastructureId the value to set
          * @return this builder
          **/
@@ -149,13 +149,13 @@ public final class ExternalExadataStorageConnector extends DbmResource {
             return this;
         }
         /**
-         * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+         * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionUri")
         private String connectionUri;
 
         /**
-         * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+         * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
          * @param connectionUri the value to set
          * @return this builder
          **/
@@ -300,13 +300,13 @@ public final class ExternalExadataStorageConnector extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Exadata infrastructure system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * @return the value
      **/
     public String getExadataInfrastructureId() {
@@ -328,13 +328,13 @@ public final class ExternalExadataStorageConnector extends DbmResource {
     }
 
     /**
-     * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+     * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUri")
     private final String connectionUri;
 
     /**
-     * The unique connection string of the connection. For example, "https://slcm21celadm02.us.oracle.com:443/MS/RESTService/".
+     * The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
      * @return the value
      **/
     public String getConnectionUri() {

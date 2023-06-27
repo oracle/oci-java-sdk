@@ -20,10 +20,6 @@ import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
-import com.oracle.bmc.io.internal.WrappedResponseInputStream;
-import com.oracle.bmc.model.BmcException;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.instanceOf;

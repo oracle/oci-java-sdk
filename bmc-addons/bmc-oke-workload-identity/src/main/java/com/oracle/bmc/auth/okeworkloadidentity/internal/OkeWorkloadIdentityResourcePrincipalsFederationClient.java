@@ -6,6 +6,7 @@ package com.oracle.bmc.auth.okeworkloadidentity.internal;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.auth.ServiceAccountTokenSupplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.internal.AbstractFederationClient;
 import com.oracle.bmc.auth.internal.AuthUtils;
@@ -41,13 +42,12 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(
                     OkeWorkloadIdentityResourcePrincipalsFederationClient.class);
-    private final String KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH =
-            "/var/run/secrets/kubernetes.io/serviceaccount/token";
     private final String AUTHORIZATION_HEADER = "Authorization";
     private final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final String JWT_FORMAT = "Bearer %s";
     private final String KUBERNETES_SERVICE_HOST = "KUBERNETES_SERVICE_HOST";
     private final int PROXYMUX_SERVER_PORT = 12250;
+    private final ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
     /**
      * The authentication provider to sign the internal requests.
@@ -64,6 +64,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     public OkeWorkloadIdentityResourcePrincipalsFederationClient(
             String federationEndpoint,
             SessionKeySupplier sessionKeySupplier,
+            ServiceAccountTokenSupplier serviceAccountTokenSupplier,
             OkeTenancyOnlyAuthenticationDetailsProvider okeTenancyOnlyAuthenticationDetailsProvider,
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration) {
@@ -76,7 +77,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
                 okeTenancyOnlyAuthenticationDetailsProvider,
                 clientConfigurator,
                 circuitBreakerConfiguration);
-
+        this.serviceAccountTokenSupplier = serviceAccountTokenSupplier;
         this.provider = okeTenancyOnlyAuthenticationDetailsProvider;
     }
 
@@ -88,15 +89,18 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
      */
     @Override
     public String getSecurityToken() {
+        SecurityTokenAdapter securityTokenAdapter = getSecurityTokenAdapter();
         try {
             Duration time = Duration.ZERO;
-            if (getSecurityTokenAdapter().isValid()) {
-                time = getSecurityTokenAdapter().getTokenValidDuration().dividedBy(2);
+            if (securityTokenAdapter.isValid()) {
+                if (securityTokenAdapter.getTokenValidDuration() != null) {
+                    time = securityTokenAdapter.getTokenValidDuration().dividedBy(2);
+                }
             }
             return refreshAndGetSecurityTokenIfExpiringWithin(time);
         } catch (Exception e) {
             LOG.info("Refresh RPST token failed, use cached RPST token.", e);
-            return getSecurityTokenAdapter().getSecurityToken();
+            return securityTokenAdapter.getSecurityToken();
         }
     }
 
@@ -123,14 +127,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
     protected SecurityTokenAdapter getSecurityTokenFromServer() {
         LOG.info("Getting security token from the proxymux server");
         //Get service account token.
-        String token = null;
-        try {
-            token =
-                    new String(
-                            Files.readAllBytes(Paths.get(KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH)));
-        } catch (IOException e) {
-            throw new IllegalArgumentException("Kubernetesservice account token doesn't exist.", e);
-        }
+        String token = serviceAccountTokenSupplier.getServiceAccountToken();
 
         //Generate private/public key pair.
         KeyPair keyPair = sessionKeySupplier.getKeyPair();
@@ -182,7 +179,7 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
             // Remove duplicated "ST$" for the token.
             String jwtToken = getOkeResourcePrincipalSessionTokenResponse.getToken().substring(3);
 
-            // Create security token based on the reponse.
+            // Create security token based on the response.
             X509FederationClient.SecurityToken securityToken =
                     new X509FederationClient.SecurityToken(jwtToken);
             return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);

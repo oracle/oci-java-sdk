@@ -26,18 +26,21 @@ public final class CreateExternalDbSystemDetails
         "displayName",
         "compartmentId",
         "dbSystemDiscoveryId",
-        "databaseManagementConfig"
+        "databaseManagementConfig",
+        "stackMonitoringConfig"
     })
     public CreateExternalDbSystemDetails(
             String displayName,
             String compartmentId,
             String dbSystemDiscoveryId,
-            ExternalDbSystemDatabaseManagementConfigDetails databaseManagementConfig) {
+            ExternalDbSystemDatabaseManagementConfigDetails databaseManagementConfig,
+            AssociatedServiceDetails stackMonitoringConfig) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.dbSystemDiscoveryId = dbSystemDiscoveryId;
         this.databaseManagementConfig = databaseManagementConfig;
+        this.stackMonitoringConfig = stackMonitoringConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -101,6 +104,15 @@ public final class CreateExternalDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
+        private AssociatedServiceDetails stackMonitoringConfig;
+
+        public Builder stackMonitoringConfig(AssociatedServiceDetails stackMonitoringConfig) {
+            this.stackMonitoringConfig = stackMonitoringConfig;
+            this.__explicitlySet__.add("stackMonitoringConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -110,7 +122,8 @@ public final class CreateExternalDbSystemDetails
                             this.displayName,
                             this.compartmentId,
                             this.dbSystemDiscoveryId,
-                            this.databaseManagementConfig);
+                            this.databaseManagementConfig,
+                            this.stackMonitoringConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +143,9 @@ public final class CreateExternalDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("databaseManagementConfig")) {
                 this.databaseManagementConfig(model.getDatabaseManagementConfig());
+            }
+            if (model.wasPropertyExplicitlySet("stackMonitoringConfig")) {
+                this.stackMonitoringConfig(model.getStackMonitoringConfig());
             }
             return this;
         }
@@ -195,6 +211,13 @@ public final class CreateExternalDbSystemDetails
         return databaseManagementConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
+    private final AssociatedServiceDetails stackMonitoringConfig;
+
+    public AssociatedServiceDetails getStackMonitoringConfig() {
+        return stackMonitoringConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -214,6 +237,7 @@ public final class CreateExternalDbSystemDetails
         sb.append(", dbSystemDiscoveryId=").append(String.valueOf(this.dbSystemDiscoveryId));
         sb.append(", databaseManagementConfig=")
                 .append(String.valueOf(this.databaseManagementConfig));
+        sb.append(", stackMonitoringConfig=").append(String.valueOf(this.stackMonitoringConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -233,6 +257,7 @@ public final class CreateExternalDbSystemDetails
                 && java.util.Objects.equals(this.dbSystemDiscoveryId, other.dbSystemDiscoveryId)
                 && java.util.Objects.equals(
                         this.databaseManagementConfig, other.databaseManagementConfig)
+                && java.util.Objects.equals(this.stackMonitoringConfig, other.stackMonitoringConfig)
                 && super.equals(other);
     }
 
@@ -254,6 +279,11 @@ public final class CreateExternalDbSystemDetails
                         + (this.databaseManagementConfig == null
                                 ? 43
                                 : this.databaseManagementConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stackMonitoringConfig == null
+                                ? 43
+                                : this.stackMonitoringConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

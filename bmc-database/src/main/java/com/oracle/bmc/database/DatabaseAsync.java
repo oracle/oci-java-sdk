@@ -529,6 +529,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Changes encryption key management type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeKeyStoreTypeResponse> changeKeyStoreType(
+            ChangeKeyStoreTypeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>
+                    handler);
+
+    /**
      * Move the one-off patch to the specified compartment.
      *
      *
@@ -4717,6 +4733,24 @@ public interface DatabaseAsync extends AutoCloseable {
             RotateOrdsCertsRequest request,
             com.oracle.bmc.responses.AsyncHandler<RotateOrdsCertsRequest, RotateOrdsCertsResponse>
                     handler);
+
+    /**
+     * Create a new version of the existing encryption key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotatePluggableDatabaseEncryptionKeyResponse>
+            rotatePluggableDatabaseEncryptionKey(
+                    RotatePluggableDatabaseEncryptionKeyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotatePluggableDatabaseEncryptionKeyRequest,
+                                    RotatePluggableDatabaseEncryptionKeyResponse>
+                            handler);
 
     /**
      * **Deprecated.** Use the {@link #rotateCloudAutonomousVmClusterSslCerts(RotateCloudAutonomousVmClusterSslCertsRequest, Consumer, Consumer) rotateCloudAutonomousVmClusterSslCerts} to rotate SSL certs for an Autonomous Exadata VM cluster instead.

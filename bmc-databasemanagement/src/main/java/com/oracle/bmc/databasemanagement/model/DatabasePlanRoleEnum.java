@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The role of database in DataGuard environment.
- * The value OTHER is to temporarily handle the case when exadata side adds new value, should not be used as input
+ * The role of the database in DataGuard environment.
+ * The value OTHER is to temporarily handle the case when Exadata side adds new value, should not be used as input
  * when to make change to IORM plan.
  *
  **/

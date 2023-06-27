@@ -133,13 +133,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL} or {@code INTEL_FLEX_X9}.
+         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
         private ShapeType shapeType;
 
         /**
-         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL} or {@code INTEL_FLEX_X9}.
+         * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
          * @param shapeType the value to set
          * @return this builder
          **/
@@ -601,12 +601,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL} or {@code INTEL_FLEX_X9}.
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
      **/
     public enum ShapeType {
         Amd("AMD"),
         Intel("INTEL"),
         IntelFlexX9("INTEL_FLEX_X9"),
+        AmpereFlexA1("AMPERE_FLEX_A1"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -650,13 +651,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         }
     };
     /**
-     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL} or {@code INTEL_FLEX_X9}.
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeType")
     private final ShapeType shapeType;
 
     /**
-     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL} or {@code INTEL_FLEX_X9}.
+     * The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are {@code AMD} , {@code INTEL}, {@code INTEL_FLEX_X9} or {@code AMPERE_FLEX_A1}.
      * @return the value
      **/
     public ShapeType getShapeType() {

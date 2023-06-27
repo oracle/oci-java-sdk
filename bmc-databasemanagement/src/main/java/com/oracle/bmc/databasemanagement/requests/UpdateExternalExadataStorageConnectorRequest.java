@@ -26,13 +26,13 @@ public class UpdateExternalExadataStorageConnectorRequest
         return externalExadataStorageConnectorId;
     }
     /**
-     * The details required to add connections to the storage servers.
+     * The details required to update connections to the Exadata storage servers.
      */
     private com.oracle.bmc.databasemanagement.model.UpdateExternalExadataStorageConnectorDetails
             updateExternalExadataStorageConnectorDetails;
 
     /**
-     * The details required to add connections to the storage servers.
+     * The details required to update connections to the Exadata storage servers.
      */
     public com.oracle.bmc.databasemanagement.model.UpdateExternalExadataStorageConnectorDetails
             getUpdateExternalExadataStorageConnectorDetails() {
@@ -107,13 +107,13 @@ public class UpdateExternalExadataStorageConnectorRequest
         }
 
         /**
-         * The details required to add connections to the storage servers.
+         * The details required to update connections to the Exadata storage servers.
          */
         private com.oracle.bmc.databasemanagement.model.UpdateExternalExadataStorageConnectorDetails
                 updateExternalExadataStorageConnectorDetails = null;
 
         /**
-         * The details required to add connections to the storage servers.
+         * The details required to update connections to the Exadata storage servers.
          * @param updateExternalExadataStorageConnectorDetails the value to set
          * @return this builder instance
          */

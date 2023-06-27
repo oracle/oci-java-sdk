@@ -1633,6 +1633,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeKeyStoreTypeResponse changeKeyStoreType(ChangeKeyStoreTypeRequest request) {
+        LOG.trace("Called changeKeyStoreType");
+        final ChangeKeyStoreTypeRequest interceptedRequest =
+                ChangeKeyStoreTypeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeKeyStoreTypeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeKeyStoreType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ChangeKeyStoreType");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeKeyStoreTypeResponse>
+                transformer =
+                        ChangeKeyStoreTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeKeyStoreTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeOneoffPatchCompartmentResponse changeOneoffPatchCompartment(
             ChangeOneoffPatchCompartmentRequest request) {
         LOG.trace("Called changeOneoffPatchCompartment");
@@ -10986,6 +11028,48 @@ public class DatabaseClient implements Database {
         java.util.function.Function<javax.ws.rs.core.Response, RotateOrdsCertsResponse>
                 transformer =
                         RotateOrdsCertsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RotatePluggableDatabaseEncryptionKeyResponse rotatePluggableDatabaseEncryptionKey(
+            RotatePluggableDatabaseEncryptionKeyRequest request) {
+        LOG.trace("Called rotatePluggableDatabaseEncryptionKey");
+        final RotatePluggableDatabaseEncryptionKeyRequest interceptedRequest =
+                RotatePluggableDatabaseEncryptionKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotatePluggableDatabaseEncryptionKeyConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotatePluggableDatabaseEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RotatePluggableDatabaseEncryptionKey");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RotatePluggableDatabaseEncryptionKeyResponse>
+                transformer =
+                        RotatePluggableDatabaseEncryptionKeyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
