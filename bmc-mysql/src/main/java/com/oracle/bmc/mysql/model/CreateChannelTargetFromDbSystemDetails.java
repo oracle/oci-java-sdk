@@ -99,6 +99,49 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
             this.__explicitlySet__.add("filters");
             return this;
         }
+        /**
+         * Specifies how a replication channel handles the creation and alteration of tables
+         * that do not have a primary key. The default value is set to ALLOW.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tablesWithoutPrimaryKeyHandling")
+        private ChannelTargetDbSystem.TablesWithoutPrimaryKeyHandling
+                tablesWithoutPrimaryKeyHandling;
+
+        /**
+         * Specifies how a replication channel handles the creation and alteration of tables
+         * that do not have a primary key. The default value is set to ALLOW.
+         *
+         * @param tablesWithoutPrimaryKeyHandling the value to set
+         * @return this builder
+         **/
+        public Builder tablesWithoutPrimaryKeyHandling(
+                ChannelTargetDbSystem.TablesWithoutPrimaryKeyHandling
+                        tablesWithoutPrimaryKeyHandling) {
+            this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+            this.__explicitlySet__.add("tablesWithoutPrimaryKeyHandling");
+            return this;
+        }
+        /**
+         * Specifies the amount of time, in seconds, that the channel waits before
+         * applying a transaction received from the source.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("delayInSeconds")
+        private Integer delayInSeconds;
+
+        /**
+         * Specifies the amount of time, in seconds, that the channel waits before
+         * applying a transaction received from the source.
+         *
+         * @param delayInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder delayInSeconds(Integer delayInSeconds) {
+            this.delayInSeconds = delayInSeconds;
+            this.__explicitlySet__.add("delayInSeconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,7 +149,12 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         public CreateChannelTargetFromDbSystemDetails build() {
             CreateChannelTargetFromDbSystemDetails model =
                     new CreateChannelTargetFromDbSystemDetails(
-                            this.dbSystemId, this.channelName, this.applierUsername, this.filters);
+                            this.dbSystemId,
+                            this.channelName,
+                            this.applierUsername,
+                            this.filters,
+                            this.tablesWithoutPrimaryKeyHandling,
+                            this.delayInSeconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -126,6 +174,12 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
             }
             if (model.wasPropertyExplicitlySet("filters")) {
                 this.filters(model.getFilters());
+            }
+            if (model.wasPropertyExplicitlySet("tablesWithoutPrimaryKeyHandling")) {
+                this.tablesWithoutPrimaryKeyHandling(model.getTablesWithoutPrimaryKeyHandling());
+            }
+            if (model.wasPropertyExplicitlySet("delayInSeconds")) {
+                this.delayInSeconds(model.getDelayInSeconds());
             }
             return this;
         }
@@ -147,12 +201,16 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
             String dbSystemId,
             String channelName,
             String applierUsername,
-            java.util.List<ChannelFilter> filters) {
+            java.util.List<ChannelFilter> filters,
+            ChannelTargetDbSystem.TablesWithoutPrimaryKeyHandling tablesWithoutPrimaryKeyHandling,
+            Integer delayInSeconds) {
         super();
         this.dbSystemId = dbSystemId;
         this.channelName = channelName;
         this.applierUsername = applierUsername;
         this.filters = filters;
+        this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+        this.delayInSeconds = delayInSeconds;
     }
 
     /**
@@ -219,6 +277,44 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         return filters;
     }
 
+    /**
+     * Specifies how a replication channel handles the creation and alteration of tables
+     * that do not have a primary key. The default value is set to ALLOW.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tablesWithoutPrimaryKeyHandling")
+    private final ChannelTargetDbSystem.TablesWithoutPrimaryKeyHandling
+            tablesWithoutPrimaryKeyHandling;
+
+    /**
+     * Specifies how a replication channel handles the creation and alteration of tables
+     * that do not have a primary key. The default value is set to ALLOW.
+     *
+     * @return the value
+     **/
+    public ChannelTargetDbSystem.TablesWithoutPrimaryKeyHandling
+            getTablesWithoutPrimaryKeyHandling() {
+        return tablesWithoutPrimaryKeyHandling;
+    }
+
+    /**
+     * Specifies the amount of time, in seconds, that the channel waits before
+     * applying a transaction received from the source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("delayInSeconds")
+    private final Integer delayInSeconds;
+
+    /**
+     * Specifies the amount of time, in seconds, that the channel waits before
+     * applying a transaction received from the source.
+     *
+     * @return the value
+     **/
+    public Integer getDelayInSeconds() {
+        return delayInSeconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -237,6 +333,9 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
         sb.append(", channelName=").append(String.valueOf(this.channelName));
         sb.append(", applierUsername=").append(String.valueOf(this.applierUsername));
         sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append(", tablesWithoutPrimaryKeyHandling=")
+                .append(String.valueOf(this.tablesWithoutPrimaryKeyHandling));
+        sb.append(", delayInSeconds=").append(String.valueOf(this.delayInSeconds));
         sb.append(")");
         return sb.toString();
     }
@@ -255,6 +354,9 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
                 && java.util.Objects.equals(this.channelName, other.channelName)
                 && java.util.Objects.equals(this.applierUsername, other.applierUsername)
                 && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(
+                        this.tablesWithoutPrimaryKeyHandling, other.tablesWithoutPrimaryKeyHandling)
+                && java.util.Objects.equals(this.delayInSeconds, other.delayInSeconds)
                 && super.equals(other);
     }
 
@@ -268,6 +370,14 @@ public final class CreateChannelTargetFromDbSystemDetails extends CreateChannelT
                 (result * PRIME)
                         + (this.applierUsername == null ? 43 : this.applierUsername.hashCode());
         result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablesWithoutPrimaryKeyHandling == null
+                                ? 43
+                                : this.tablesWithoutPrimaryKeyHandling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.delayInSeconds == null ? 43 : this.delayInSeconds.hashCode());
         return result;
     }
 }

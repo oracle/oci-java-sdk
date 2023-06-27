@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of creating external Exadata infrastructure.
+ * The details required to create the external Exadata infrastructure.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,13 +83,13 @@ public final class CreateExternalExadataInfrastructureDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class CreateExternalExadataInfrastructureDetails
             return this;
         }
         /**
-         * The list of all the rac database system OCIDs.
+         * The list of DB systems in the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemIds")
         private java.util.List<String> dbSystemIds;
 
         /**
-         * The list of all the rac database system OCIDs.
+         * The list of DB systems in the Exadata infrastructure.
          * @param dbSystemIds the value to set
          * @return this builder
          **/
@@ -131,13 +131,13 @@ public final class CreateExternalExadataInfrastructureDetails
             return this;
         }
         /**
-         * The list of all the storage server names to be included for monitoering purpose. If not specified, all the storage servers associated with the database systems are included.
+         * The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageServerNames")
         private java.util.List<String> storageServerNames;
 
         /**
-         * The list of all the storage server names to be included for monitoering purpose. If not specified, all the storage servers associated with the database systems are included.
+         * The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
          * @param storageServerNames the value to set
          * @return this builder
          **/
@@ -267,13 +267,13 @@ public final class CreateExternalExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -295,13 +295,13 @@ public final class CreateExternalExadataInfrastructureDetails
     }
 
     /**
-     * The list of all the rac database system OCIDs.
+     * The list of DB systems in the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemIds")
     private final java.util.List<String> dbSystemIds;
 
     /**
-     * The list of all the rac database system OCIDs.
+     * The list of DB systems in the Exadata infrastructure.
      * @return the value
      **/
     public java.util.List<String> getDbSystemIds() {
@@ -309,13 +309,13 @@ public final class CreateExternalExadataInfrastructureDetails
     }
 
     /**
-     * The list of all the storage server names to be included for monitoering purpose. If not specified, all the storage servers associated with the database systems are included.
+     * The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageServerNames")
     private final java.util.List<String> storageServerNames;
 
     /**
-     * The list of all the storage server names to be included for monitoering purpose. If not specified, all the storage servers associated with the database systems are included.
+     * The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      * @return the value
      **/
     public java.util.List<String> getStorageServerNames() {

@@ -10,6 +10,7 @@ package com.oracle.bmc.licensemanager.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public enum ResourceUnit {
     Ocpu("OCPU"),
+    Ecpu("ECPU"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

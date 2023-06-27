@@ -587,6 +587,118 @@ public class DataFlowPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSqlEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSqlEndpointsResponse> listSqlEndpointsResponseIterator(
+            final ListSqlEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSqlEndpointsRequest.Builder, ListSqlEndpointsRequest, ListSqlEndpointsResponse>(
+                new java.util.function.Supplier<ListSqlEndpointsRequest.Builder>() {
+                    @Override
+                    public ListSqlEndpointsRequest.Builder get() {
+                        return ListSqlEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSqlEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListSqlEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlEndpointsRequest.Builder>,
+                        ListSqlEndpointsRequest>() {
+                    @Override
+                    public ListSqlEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlEndpointsRequest, ListSqlEndpointsResponse>() {
+                    @Override
+                    public ListSqlEndpointsResponse apply(ListSqlEndpointsRequest request) {
+                        return client.listSqlEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataflow.model.SqlEndpointSummary} objects
+     * contained in responses from the listSqlEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataflow.model.SqlEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataflow.model.SqlEndpointSummary>
+            listSqlEndpointsRecordIterator(final ListSqlEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSqlEndpointsRequest.Builder, ListSqlEndpointsRequest, ListSqlEndpointsResponse,
+                com.oracle.bmc.dataflow.model.SqlEndpointSummary>(
+                new java.util.function.Supplier<ListSqlEndpointsRequest.Builder>() {
+                    @Override
+                    public ListSqlEndpointsRequest.Builder get() {
+                        return ListSqlEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSqlEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListSqlEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlEndpointsRequest.Builder>,
+                        ListSqlEndpointsRequest>() {
+                    @Override
+                    public ListSqlEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlEndpointsRequest, ListSqlEndpointsResponse>() {
+                    @Override
+                    public ListSqlEndpointsResponse apply(ListSqlEndpointsRequest request) {
+                        return client.listSqlEndpoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlEndpointsResponse,
+                        java.util.List<com.oracle.bmc.dataflow.model.SqlEndpointSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataflow.model.SqlEndpointSummary> apply(
+                            ListSqlEndpointsResponse response) {
+                        return response.getSqlEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listStatements operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -18,7 +18,7 @@ import java.io.OutputStream;
  * Apache connector in Jersey v2.32 supports passing an HttpEntity as the body. In this case Apache connector will not
  * read entire data into memory. Content length is a must to use this conversion.
  */
-class ApacheInputStreamEntity extends FilterInputStream implements HttpEntity {
+public class ApacheInputStreamEntity extends FilterInputStream implements HttpEntity {
 
     private final long contentLength;
 

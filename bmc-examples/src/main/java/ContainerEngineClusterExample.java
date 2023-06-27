@@ -418,11 +418,11 @@ public class ContainerEngineClusterExample {
     private static void deleteCluster(ContainerEngineClient containerEngineClient, String clusterId)
             throws Exception {
 
-        DeleteClusterResponse deleteClusterReponse =
+        DeleteClusterResponse deleteClusterResponse =
                 containerEngineClient.deleteCluster(
                         DeleteClusterRequest.builder().clusterId(clusterId).build());
 
-        String workRequestId = deleteClusterReponse.getOpcWorkRequestId();
+        String workRequestId = deleteClusterResponse.getOpcWorkRequestId();
         GetWorkRequestResponse workRequestResponse =
                 waitForWorkRequestFinished(containerEngineClient, workRequestId);
 

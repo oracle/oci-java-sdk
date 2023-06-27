@@ -53,7 +53,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         "databaseSoftwareImageId",
         "isCdb",
         "databaseManagementConfig",
-        "sidPrefix"
+        "sidPrefix",
+        "keyStoreId",
+        "keyStoreWalletName"
     })
     public DatabaseSummary(
             String id,
@@ -84,7 +86,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             String databaseSoftwareImageId,
             Boolean isCdb,
             CloudDatabaseManagementConfig databaseManagementConfig,
-            String sidPrefix) {
+            String sidPrefix,
+            String keyStoreId,
+            String keyStoreWalletName) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -116,6 +120,8 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         this.isCdb = isCdb;
         this.databaseManagementConfig = databaseManagementConfig;
         this.sidPrefix = sidPrefix;
+        this.keyStoreId = keyStoreId;
+        this.keyStoreWalletName = keyStoreWalletName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -600,6 +606,38 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("sidPrefix");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+        private String keyStoreId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * @param keyStoreId the value to set
+         * @return this builder
+         **/
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
+        /**
+         * The wallet name for Oracle Key Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
+        private String keyStoreWalletName;
+
+        /**
+         * The wallet name for Oracle Key Vault.
+         * @param keyStoreWalletName the value to set
+         * @return this builder
+         **/
+        public Builder keyStoreWalletName(String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
+            this.__explicitlySet__.add("keyStoreWalletName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -635,7 +673,9 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                             this.databaseSoftwareImageId,
                             this.isCdb,
                             this.databaseManagementConfig,
-                            this.sidPrefix);
+                            this.sidPrefix,
+                            this.keyStoreId,
+                            this.keyStoreWalletName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -731,6 +771,12 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("sidPrefix")) {
                 this.sidPrefix(model.getSidPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
+                this.keyStoreWalletName(model.getKeyStoreWalletName());
             }
             return this;
         }
@@ -1221,6 +1267,34 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         return sidPrefix;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+    private final String keyStoreId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     * @return the value
+     **/
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
+
+    /**
+     * The wallet name for Oracle Key Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
+    private final String keyStoreWalletName;
+
+    /**
+     * The wallet name for Oracle Key Vault.
+     * @return the value
+     **/
+    public String getKeyStoreWalletName() {
+        return keyStoreWalletName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1269,6 +1343,8 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", databaseManagementConfig=")
                 .append(String.valueOf(this.databaseManagementConfig));
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
         sb.append(")");
         return sb.toString();
     }
@@ -1318,6 +1394,8 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(
                         this.databaseManagementConfig, other.databaseManagementConfig)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
                 && super.equals(other);
     }
 
@@ -1392,6 +1470,12 @@ public final class DatabaseSummary extends com.oracle.bmc.http.internal.Explicit
                                 ? 43
                                 : this.databaseManagementConfig.hashCode());
         result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreWalletName == null
+                                ? 43
+                                : this.keyStoreWalletName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

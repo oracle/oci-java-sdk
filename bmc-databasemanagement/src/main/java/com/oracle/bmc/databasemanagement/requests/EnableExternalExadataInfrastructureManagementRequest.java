@@ -26,14 +26,14 @@ public class EnableExternalExadataInfrastructureManagementRequest
         return externalExadataInfrastructureId;
     }
     /**
-     * The details required to enable the management for the Exadata infrastructure.
+     * The details required to enable management for the Exadata infrastructure.
      */
     private com.oracle.bmc.databasemanagement.model
                     .EnableExternalExadataInfrastructureManagementDetails
             enableExternalExadataInfrastructureManagementDetails;
 
     /**
-     * The details required to enable the management for the Exadata infrastructure.
+     * The details required to enable management for the Exadata infrastructure.
      */
     public com.oracle.bmc.databasemanagement.model
                     .EnableExternalExadataInfrastructureManagementDetails
@@ -131,14 +131,14 @@ public class EnableExternalExadataInfrastructureManagementRequest
         }
 
         /**
-         * The details required to enable the management for the Exadata infrastructure.
+         * The details required to enable management for the Exadata infrastructure.
          */
         private com.oracle.bmc.databasemanagement.model
                         .EnableExternalExadataInfrastructureManagementDetails
                 enableExternalExadataInfrastructureManagementDetails = null;
 
         /**
-         * The details required to enable the management for the Exadata infrastructure.
+         * The details required to enable management for the Exadata infrastructure.
          * @param enableExternalExadataInfrastructureManagementDetails the value to set
          * @return this builder instance
          */

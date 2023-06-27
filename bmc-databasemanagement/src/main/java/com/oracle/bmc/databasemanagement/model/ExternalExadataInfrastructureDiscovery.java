@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The discovery result of the Exadata infrastructure.
+ * The result of the Exadata infrastructure discovery.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -151,13 +151,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -183,13 +183,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
             return this;
         }
         /**
-         * The Oracle home path of the infrastructure.
+         * The Oracle home path of the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridHomePath")
         private String gridHomePath;
 
         /**
-         * The Oracle home path of the infrastructure.
+         * The Oracle home path of the Exadata infrastructure.
          * @param gridHomePath the value to set
          * @return this builder
          **/
@@ -199,13 +199,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
             return this;
         }
         /**
-         * The list of all the rac database systems.
+         * The list of DB systems in the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystems")
         private java.util.List<ExternalDatabaseSystemDiscoverySummary> dbSystems;
 
         /**
-         * The list of all the rac database systems.
+         * The list of DB systems in the Exadata infrastructure.
          * @param dbSystems the value to set
          * @return this builder
          **/
@@ -224,13 +224,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
             return this;
         }
         /**
-         * The list of all the storage servers.
+         * The list of storage servers in the Exadata infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageServers")
         private java.util.List<ExternalStorageServerDiscoverySummary> storageServers;
 
         /**
-         * The list of all the storage servers.
+         * The list of storage servers in the Exadata infrastructure.
          * @param storageServers the value to set
          * @return this builder
          **/
@@ -463,13 +463,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -542,13 +542,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
     }
 
     /**
-     * The Oracle home path of the infrastructure.
+     * The Oracle home path of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridHomePath")
     private final String gridHomePath;
 
     /**
-     * The Oracle home path of the infrastructure.
+     * The Oracle home path of the Exadata infrastructure.
      * @return the value
      **/
     public String getGridHomePath() {
@@ -556,13 +556,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
     }
 
     /**
-     * The list of all the rac database systems.
+     * The list of DB systems in the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystems")
     private final java.util.List<ExternalDatabaseSystemDiscoverySummary> dbSystems;
 
     /**
-     * The list of all the rac database systems.
+     * The list of DB systems in the Exadata infrastructure.
      * @return the value
      **/
     public java.util.List<ExternalDatabaseSystemDiscoverySummary> getDbSystems() {
@@ -577,13 +577,13 @@ public final class ExternalExadataInfrastructureDiscovery extends EntityDiscover
     }
 
     /**
-     * The list of all the storage servers.
+     * The list of storage servers in the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageServers")
     private final java.util.List<ExternalStorageServerDiscoverySummary> storageServers;
 
     /**
-     * The list of all the storage servers.
+     * The list of storage servers in the Exadata infrastructure.
      * @return the value
      **/
     public java.util.List<ExternalStorageServerDiscoverySummary> getStorageServers() {

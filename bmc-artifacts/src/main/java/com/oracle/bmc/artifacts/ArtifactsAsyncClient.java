@@ -1763,6 +1763,114 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateContainerImageResponse> updateContainerImage(
+            UpdateContainerImageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateContainerImageRequest, UpdateContainerImageResponse>
+                    handler) {
+        LOG.trace("Called async updateContainerImage");
+        final UpdateContainerImageRequest interceptedRequest =
+                UpdateContainerImageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateContainerImageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateContainerImage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/UpdateContainerImage");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateContainerImageResponse>
+                transformer =
+                        UpdateContainerImageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateContainerImageRequest, UpdateContainerImageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateContainerImageRequest, UpdateContainerImageResponse>,
+                        java.util.concurrent.Future<UpdateContainerImageResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateContainerImageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateContainerImageRequest, UpdateContainerImageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContainerImageSignatureResponse>
+            updateContainerImageSignature(
+                    UpdateContainerImageSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateContainerImageSignatureRequest,
+                                    UpdateContainerImageSignatureResponse>
+                            handler) {
+        LOG.trace("Called async updateContainerImageSignature");
+        final UpdateContainerImageSignatureRequest interceptedRequest =
+                UpdateContainerImageSignatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Artifacts",
+                        "UpdateContainerImageSignature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/UpdateContainerImageSignature");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateContainerImageSignatureResponse>
+                transformer =
+                        UpdateContainerImageSignatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateContainerImageSignatureRequest, UpdateContainerImageSignatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateContainerImageSignatureRequest,
+                                UpdateContainerImageSignatureResponse>,
+                        java.util.concurrent.Future<UpdateContainerImageSignatureResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateContainerImageSignatureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateContainerImageSignatureRequest, UpdateContainerImageSignatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateContainerRepositoryResponse> updateContainerRepository(
             UpdateContainerRepositoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

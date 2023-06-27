@@ -32,6 +32,7 @@ import javax.ws.rs.client.ResponseProcessingException;
 import javax.ws.rs.client.RxInvoker;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import java.io.ByteArrayInputStream;
@@ -39,6 +40,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.Future;
 import java.util.function.Function;
@@ -932,8 +934,16 @@ public class RestClient implements AutoCloseable {
             setRequestUri(ib.getRequestUri().toString());
         }
         try {
-            Entity<?> requestBody =
-                    this.entityFactory.forPut(request, attemptToSerialize(request, body));
+            Entity<?> requestBody;
+            List<Object> contentLengthHeader = ib.getHeaders().get(HttpHeaders.CONTENT_LENGTH);
+            if (contentLengthHeader != null && contentLengthHeader.size() > 0) {
+                long contentLength = Long.parseLong(contentLengthHeader.get(0).toString());
+                requestBody =
+                        this.entityFactory.forPut(
+                                request, attemptToSerialize(request, body), contentLength);
+            } else {
+                requestBody = this.entityFactory.forPut(request, attemptToSerialize(request, body));
+            }
             return decorateSupplier(() -> ib.put(requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);

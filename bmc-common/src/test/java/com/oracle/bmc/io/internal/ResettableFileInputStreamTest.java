@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.io.internal;
 
-import com.oracle.bmc.io.internal.WrappedFileInputStream;
 import org.junit.Test;
 
 import java.io.FileInputStream;

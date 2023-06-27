@@ -98,6 +98,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.opsi.SdkClientsMetadata",
     "com.oracle.bmc.optimizer.SdkClientsMetadata",
     "com.oracle.bmc.osmanagement.SdkClientsMetadata",
+    "com.oracle.bmc.osmanagementhub.SdkClientsMetadata",
     "com.oracle.bmc.ospgateway.SdkClientsMetadata",
     "com.oracle.bmc.osubbillingschedule.SdkClientsMetadata",
     "com.oracle.bmc.osuborganizationsubscription.SdkClientsMetadata",
