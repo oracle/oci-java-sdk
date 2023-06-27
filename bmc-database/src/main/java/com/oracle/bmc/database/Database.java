@@ -422,6 +422,18 @@ public interface Database extends AutoCloseable {
             ChangeKeyStoreCompartmentRequest request);
 
     /**
+     * Changes encryption key management type
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeKeyStoreTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyStoreType API.
+     */
+    ChangeKeyStoreTypeResponse changeKeyStoreType(ChangeKeyStoreTypeRequest request);
+
+    /**
      * Move the one-off patch to the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -3681,6 +3693,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateOrdsCerts API.
      */
     RotateOrdsCertsResponse rotateOrdsCerts(RotateOrdsCertsRequest request);
+
+    /**
+     * Create a new version of the existing encryption key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotatePluggableDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotatePluggableDatabaseEncryptionKey API.
+     */
+    RotatePluggableDatabaseEncryptionKeyResponse rotatePluggableDatabaseEncryptionKey(
+            RotatePluggableDatabaseEncryptionKeyRequest request);
 
     /**
      * **Deprecated.** Use the {@link #rotateCloudAutonomousVmClusterSslCerts(RotateCloudAutonomousVmClusterSslCertsRequest) rotateCloudAutonomousVmClusterSslCerts} to rotate SSL certs for an Autonomous Exadata VM cluster instead.

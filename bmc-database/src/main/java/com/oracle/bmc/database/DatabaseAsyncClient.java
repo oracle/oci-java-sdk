@@ -1871,6 +1871,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeKeyStoreTypeResponse> changeKeyStoreType(
+            ChangeKeyStoreTypeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>
+                    handler) {
+        LOG.trace("Called async changeKeyStoreType");
+        final ChangeKeyStoreTypeRequest interceptedRequest =
+                ChangeKeyStoreTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeKeyStoreTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeKeyStoreType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ChangeKeyStoreType");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeKeyStoreTypeResponse>
+                transformer =
+                        ChangeKeyStoreTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>,
+                        java.util.concurrent.Future<ChangeKeyStoreTypeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeKeyStoreTypeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeOneoffPatchCompartmentResponse>
             changeOneoffPatchCompartment(
                     ChangeOneoffPatchCompartmentRequest request,
@@ -13969,6 +14021,61 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RotateOrdsCertsRequest, RotateOrdsCertsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotatePluggableDatabaseEncryptionKeyResponse>
+            rotatePluggableDatabaseEncryptionKey(
+                    RotatePluggableDatabaseEncryptionKeyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RotatePluggableDatabaseEncryptionKeyRequest,
+                                    RotatePluggableDatabaseEncryptionKeyResponse>
+                            handler) {
+        LOG.trace("Called async rotatePluggableDatabaseEncryptionKey");
+        final RotatePluggableDatabaseEncryptionKeyRequest interceptedRequest =
+                RotatePluggableDatabaseEncryptionKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotatePluggableDatabaseEncryptionKeyConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RotatePluggableDatabaseEncryptionKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RotatePluggableDatabaseEncryptionKey");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RotatePluggableDatabaseEncryptionKeyResponse>
+                transformer =
+                        RotatePluggableDatabaseEncryptionKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RotatePluggableDatabaseEncryptionKeyRequest,
+                        RotatePluggableDatabaseEncryptionKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotatePluggableDatabaseEncryptionKeyRequest,
+                                RotatePluggableDatabaseEncryptionKeyResponse>,
+                        java.util.concurrent.Future<RotatePluggableDatabaseEncryptionKeyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotatePluggableDatabaseEncryptionKeyRequest,
+                    RotatePluggableDatabaseEncryptionKeyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

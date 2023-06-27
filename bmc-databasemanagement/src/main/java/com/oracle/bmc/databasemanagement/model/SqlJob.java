@@ -201,6 +201,24 @@ public final class SqlJob extends Job {
             this.__explicitlySet__.add("sqlText");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inBinds")
+        private JobInBindsDetails inBinds;
+
+        public Builder inBinds(JobInBindsDetails inBinds) {
+            this.inBinds = inBinds;
+            this.__explicitlySet__.add("inBinds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outBinds")
+        private JobOutBindsDetails outBinds;
+
+        public Builder outBinds(JobOutBindsDetails outBinds) {
+            this.outBinds = outBinds;
+            this.__explicitlySet__.add("outBinds");
+            return this;
+        }
         /**
          * The SQL operation type.
          **/
@@ -278,6 +296,8 @@ public final class SqlJob extends Job {
                             this.timeUpdated,
                             this.sqlType,
                             this.sqlText,
+                            this.inBinds,
+                            this.outBinds,
                             this.operationType,
                             this.userName,
                             this.role);
@@ -343,6 +363,12 @@ public final class SqlJob extends Job {
             if (model.wasPropertyExplicitlySet("sqlText")) {
                 this.sqlText(model.getSqlText());
             }
+            if (model.wasPropertyExplicitlySet("inBinds")) {
+                this.inBinds(model.getInBinds());
+            }
+            if (model.wasPropertyExplicitlySet("outBinds")) {
+                this.outBinds(model.getOutBinds());
+            }
             if (model.wasPropertyExplicitlySet("operationType")) {
                 this.operationType(model.getOperationType());
             }
@@ -387,6 +413,8 @@ public final class SqlJob extends Job {
             java.util.Date timeUpdated,
             SqlType sqlType,
             String sqlText,
+            JobInBindsDetails inBinds,
+            JobOutBindsDetails outBinds,
             OperationType operationType,
             String userName,
             Role role) {
@@ -409,6 +437,8 @@ public final class SqlJob extends Job {
                 timeUpdated);
         this.sqlType = sqlType;
         this.sqlText = sqlText;
+        this.inBinds = inBinds;
+        this.outBinds = outBinds;
         this.operationType = operationType;
         this.userName = userName;
         this.role = role;
@@ -490,6 +520,20 @@ public final class SqlJob extends Job {
      **/
     public String getSqlText() {
         return sqlText;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inBinds")
+    private final JobInBindsDetails inBinds;
+
+    public JobInBindsDetails getInBinds() {
+        return inBinds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outBinds")
+    private final JobOutBindsDetails outBinds;
+
+    public JobOutBindsDetails getOutBinds() {
+        return outBinds;
     }
 
     /**
@@ -647,6 +691,8 @@ public final class SqlJob extends Job {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sqlType=").append(String.valueOf(this.sqlType));
         sb.append(", sqlText=").append(String.valueOf(this.sqlText));
+        sb.append(", inBinds=").append(String.valueOf(this.inBinds));
+        sb.append(", outBinds=").append(String.valueOf(this.outBinds));
         sb.append(", operationType=").append(String.valueOf(this.operationType));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", role=").append(String.valueOf(this.role));
@@ -666,6 +712,8 @@ public final class SqlJob extends Job {
         SqlJob other = (SqlJob) o;
         return java.util.Objects.equals(this.sqlType, other.sqlType)
                 && java.util.Objects.equals(this.sqlText, other.sqlText)
+                && java.util.Objects.equals(this.inBinds, other.inBinds)
+                && java.util.Objects.equals(this.outBinds, other.outBinds)
                 && java.util.Objects.equals(this.operationType, other.operationType)
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.role, other.role)
@@ -678,6 +726,8 @@ public final class SqlJob extends Job {
         int result = super.hashCode();
         result = (result * PRIME) + (this.sqlType == null ? 43 : this.sqlType.hashCode());
         result = (result * PRIME) + (this.sqlText == null ? 43 : this.sqlText.hashCode());
+        result = (result * PRIME) + (this.inBinds == null ? 43 : this.inBinds.hashCode());
+        result = (result * PRIME) + (this.outBinds == null ? 43 : this.outBinds.hashCode());
         result =
                 (result * PRIME)
                         + (this.operationType == null ? 43 : this.operationType.hashCode());

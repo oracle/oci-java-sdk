@@ -483,11 +483,11 @@ public class ContainerEngineNodePoolExample {
     private static void deleteCluster(
             ContainerEngineClient containerEngineClient, String clusterId) {
         try {
-            DeleteClusterResponse deleteClusterReponse =
+            DeleteClusterResponse deleteClusterResponse =
                     containerEngineClient.deleteCluster(
                             DeleteClusterRequest.builder().clusterId(clusterId).build());
 
-            String workRequestId = deleteClusterReponse.getOpcWorkRequestId();
+            String workRequestId = deleteClusterResponse.getOpcWorkRequestId();
             GetWorkRequestResponse workRequestResponse =
                     waitForWorkRequestFinished(containerEngineClient, workRequestId);
 
@@ -619,11 +619,11 @@ public class ContainerEngineNodePoolExample {
     private static void deleteNodePool(
             ContainerEngineClient containerEngineClient, String nodePoolId) {
         try {
-            DeleteNodePoolResponse deleteNodePoolReponse =
+            DeleteNodePoolResponse deleteNodePoolResponse =
                     containerEngineClient.deleteNodePool(
                             DeleteNodePoolRequest.builder().nodePoolId(nodePoolId).build());
 
-            String workRequestId = deleteNodePoolReponse.getOpcWorkRequestId();
+            String workRequestId = deleteNodePoolResponse.getOpcWorkRequestId();
             waitForWorkRequestFinished(containerEngineClient, workRequestId);
         } catch (Exception e) {
             System.err.println("Caught Exception while delete node pool: " + e.getMessage());

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * An alert from storage server.
+ * An alert from the Exadata storage server.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -51,13 +51,13 @@ public final class OpenAlertSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The type of the alert.
+         * The type of alert.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AlertTypeEnum type;
 
         /**
-         * The type of the alert.
+         * The type of alert.
          * @param type the value to set
          * @return this builder
          **/
@@ -155,13 +155,13 @@ public final class OpenAlertSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The type of the alert.
+     * The type of alert.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AlertTypeEnum type;
 
     /**
-     * The type of the alert.
+     * The type of alert.
      * @return the value
      **/
     public AlertTypeEnum getType() {

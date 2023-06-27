@@ -75,13 +75,13 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The SSL trust store type.
+         * The SSL truststore type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreType")
         private SslTrustStoreType sslTrustStoreType;
 
         /**
-         * The SSL trust store type.
+         * The SSL truststore type.
          * @param sslTrustStoreType the value to set
          * @return this builder
          **/
@@ -91,13 +91,13 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The full path of the SSL trust store Location in the agent.
+         * The full path of the SSL truststore location in the agent.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreLocation")
         private String sslTrustStoreLocation;
 
         /**
-         * The full path of the SSL trust store Location in the agent.
+         * The full path of the SSL truststore location in the agent.
          * @param sslTrustStoreLocation the value to set
          * @return this builder
          **/
@@ -107,13 +107,13 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The password of the SSL trust store Location in the agent.
+         * The password of the SSL truststore location in the agent.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
         private String sslTrustStorePassword;
 
         /**
-         * The password of the SSL trust store Location in the agent.
+         * The password of the SSL truststore location in the agent.
          * @param sslTrustStorePassword the value to set
          * @return this builder
          **/
@@ -201,7 +201,7 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The SSL trust store type.
+     * The SSL truststore type.
      **/
     public enum SslTrustStoreType {
         Jks("JKS"),
@@ -236,13 +236,13 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
         }
     };
     /**
-     * The SSL trust store type.
+     * The SSL truststore type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreType")
     private final SslTrustStoreType sslTrustStoreType;
 
     /**
-     * The SSL trust store type.
+     * The SSL truststore type.
      * @return the value
      **/
     public SslTrustStoreType getSslTrustStoreType() {
@@ -250,13 +250,13 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The full path of the SSL trust store Location in the agent.
+     * The full path of the SSL truststore location in the agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStoreLocation")
     private final String sslTrustStoreLocation;
 
     /**
-     * The full path of the SSL trust store Location in the agent.
+     * The full path of the SSL truststore location in the agent.
      * @return the value
      **/
     public String getSslTrustStoreLocation() {
@@ -264,13 +264,13 @@ public final class RestCredential extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The password of the SSL trust store Location in the agent.
+     * The password of the SSL truststore location in the agent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslTrustStorePassword")
     private final String sslTrustStorePassword;
 
     /**
-     * The password of the SSL trust store Location in the agent.
+     * The password of the SSL truststore location in the agent.
      * @return the value
      **/
     public String getSslTrustStorePassword() {

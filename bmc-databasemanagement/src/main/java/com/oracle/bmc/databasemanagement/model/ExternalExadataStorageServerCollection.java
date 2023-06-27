@@ -32,13 +32,13 @@ public final class ExternalExadataStorageServerCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of Exadata storage server.
+         * A list of Exadata storage servers.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ExternalExadataStorageServerSummary> items;
 
         /**
-         * A list of Exadata storage server.
+         * A list of Exadata storage servers.
          * @param items the value to set
          * @return this builder
          **/
@@ -81,13 +81,13 @@ public final class ExternalExadataStorageServerCollection
     }
 
     /**
-     * A list of Exadata storage server.
+     * A list of Exadata storage servers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ExternalExadataStorageServerSummary> items;
 
     /**
-     * A list of Exadata storage server.
+     * A list of Exadata storage servers.
      * @return the value
      **/
     public java.util.List<ExternalExadataStorageServerSummary> getItems() {

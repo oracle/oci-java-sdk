@@ -15,13 +15,13 @@ public class DiscoverExternalExadataInfrastructureRequest
                         .DiscoverExternalExadataInfrastructureDetails> {
 
     /**
-     * The details required to discover and monitor the Exadata system infrastructure.
+     * The details required to discover and monitor the Exadata infrastructure.
      */
     private com.oracle.bmc.databasemanagement.model.DiscoverExternalExadataInfrastructureDetails
             discoverExternalExadataInfrastructureDetails;
 
     /**
-     * The details required to discover and monitor the Exadata system infrastructure.
+     * The details required to discover and monitor the Exadata infrastructure.
      */
     public com.oracle.bmc.databasemanagement.model.DiscoverExternalExadataInfrastructureDetails
             getDiscoverExternalExadataInfrastructureDetails() {
@@ -102,13 +102,13 @@ public class DiscoverExternalExadataInfrastructureRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The details required to discover and monitor the Exadata system infrastructure.
+         * The details required to discover and monitor the Exadata infrastructure.
          */
         private com.oracle.bmc.databasemanagement.model.DiscoverExternalExadataInfrastructureDetails
                 discoverExternalExadataInfrastructureDetails = null;
 
         /**
-         * The details required to discover and monitor the Exadata system infrastructure.
+         * The details required to discover and monitor the Exadata infrastructure.
          * @param discoverExternalExadataInfrastructureDetails the value to set
          * @return this builder instance
          */

@@ -940,6 +940,132 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public ChangePlanRetentionResponse changePlanRetention(ChangePlanRetentionRequest request) {
+        LOG.trace("Called changePlanRetention");
+        final ChangePlanRetentionRequest interceptedRequest =
+                ChangePlanRetentionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePlanRetentionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ChangePlanRetention",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangePlanRetention");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangePlanRetentionResponse>
+                transformer =
+                        ChangePlanRetentionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangePlanRetentionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSpaceBudgetResponse changeSpaceBudget(ChangeSpaceBudgetRequest request) {
+        LOG.trace("Called changeSpaceBudget");
+        final ChangeSpaceBudgetRequest interceptedRequest =
+                ChangeSpaceBudgetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSpaceBudgetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ChangeSpaceBudget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeSpaceBudget");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeSpaceBudgetResponse>
+                transformer =
+                        ChangeSpaceBudgetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeSpaceBudgetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSqlPlanBaselinesAttributesResponse changeSqlPlanBaselinesAttributes(
+            ChangeSqlPlanBaselinesAttributesRequest request) {
+        LOG.trace("Called changeSqlPlanBaselinesAttributes");
+        final ChangeSqlPlanBaselinesAttributesRequest interceptedRequest =
+                ChangeSqlPlanBaselinesAttributesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSqlPlanBaselinesAttributesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ChangeSqlPlanBaselinesAttributes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeSqlPlanBaselinesAttributes");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSqlPlanBaselinesAttributesResponse>
+                transformer =
+                        ChangeSqlPlanBaselinesAttributesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSqlPlanBaselinesAttributesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CheckExternalDbSystemConnectorConnectionStatusResponse
             checkExternalDbSystemConnectorConnectionStatus(
                     CheckExternalDbSystemConnectorConnectionStatusRequest request) {
@@ -1020,6 +1146,95 @@ public class DbManagementClient implements DbManagement {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ConfigureAutomaticCaptureFiltersResponse configureAutomaticCaptureFilters(
+            ConfigureAutomaticCaptureFiltersRequest request) {
+        LOG.trace("Called configureAutomaticCaptureFilters");
+        final ConfigureAutomaticCaptureFiltersRequest interceptedRequest =
+                ConfigureAutomaticCaptureFiltersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureAutomaticCaptureFiltersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ConfigureAutomaticCaptureFilters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ConfigureAutomaticCaptureFilters");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ConfigureAutomaticCaptureFiltersResponse>
+                transformer =
+                        ConfigureAutomaticCaptureFiltersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getConfigureAutomaticCaptureFiltersDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ConfigureAutomaticSpmEvolveAdvisorTaskResponse configureAutomaticSpmEvolveAdvisorTask(
+            ConfigureAutomaticSpmEvolveAdvisorTaskRequest request) {
+        LOG.trace("Called configureAutomaticSpmEvolveAdvisorTask");
+        final ConfigureAutomaticSpmEvolveAdvisorTaskRequest interceptedRequest =
+                ConfigureAutomaticSpmEvolveAdvisorTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureAutomaticSpmEvolveAdvisorTaskConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ConfigureAutomaticSpmEvolveAdvisorTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ConfigureAutomaticSpmEvolveAdvisorTask");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ConfigureAutomaticSpmEvolveAdvisorTaskResponse>
+                transformer =
+                        ConfigureAutomaticSpmEvolveAdvisorTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getConfigureAutomaticSpmEvolveAdvisorTaskDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1775,6 +1990,95 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public DisableAutomaticInitialPlanCaptureResponse disableAutomaticInitialPlanCapture(
+            DisableAutomaticInitialPlanCaptureRequest request) {
+        LOG.trace("Called disableAutomaticInitialPlanCapture");
+        final DisableAutomaticInitialPlanCaptureRequest interceptedRequest =
+                DisableAutomaticInitialPlanCaptureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutomaticInitialPlanCaptureConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableAutomaticInitialPlanCapture",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutomaticInitialPlanCapture");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableAutomaticInitialPlanCaptureResponse>
+                transformer =
+                        DisableAutomaticInitialPlanCaptureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisableAutomaticInitialPlanCaptureDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableAutomaticSpmEvolveAdvisorTaskResponse disableAutomaticSpmEvolveAdvisorTask(
+            DisableAutomaticSpmEvolveAdvisorTaskRequest request) {
+        LOG.trace("Called disableAutomaticSpmEvolveAdvisorTask");
+        final DisableAutomaticSpmEvolveAdvisorTaskRequest interceptedRequest =
+                DisableAutomaticSpmEvolveAdvisorTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutomaticSpmEvolveAdvisorTaskConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableAutomaticSpmEvolveAdvisorTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutomaticSpmEvolveAdvisorTask");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableAutomaticSpmEvolveAdvisorTaskResponse>
+                transformer =
+                        DisableAutomaticSpmEvolveAdvisorTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisableAutomaticSpmEvolveAdvisorTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableExternalDbSystemDatabaseManagementResponse
             disableExternalDbSystemDatabaseManagement(
                     DisableExternalDbSystemDatabaseManagementRequest request) {
@@ -1801,6 +2105,48 @@ public class DbManagementClient implements DbManagement {
                         DisableExternalDbSystemDatabaseManagementResponse>
                 transformer =
                         DisableExternalDbSystemDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableExternalDbSystemStackMonitoringResponse disableExternalDbSystemStackMonitoring(
+            DisableExternalDbSystemStackMonitoringRequest request) {
+        LOG.trace("Called disableExternalDbSystemStackMonitoring");
+        final DisableExternalDbSystemStackMonitoringRequest interceptedRequest =
+                DisableExternalDbSystemStackMonitoringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalDbSystemStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableExternalDbSystemStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/DisableExternalDbSystemStackMonitoring");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableExternalDbSystemStackMonitoringResponse>
+                transformer =
+                        DisableExternalDbSystemStackMonitoringConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1863,6 +2209,97 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
+            disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request) {
+        LOG.trace("Called disableHighFrequencyAutomaticSpmEvolveAdvisorTask");
+        final DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest interceptedRequest =
+                DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableHighFrequencyAutomaticSpmEvolveAdvisorTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableHighFrequencyAutomaticSpmEvolveAdvisorTask");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                transformer =
+                        DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableSqlPlanBaselinesUsageResponse disableSqlPlanBaselinesUsage(
+            DisableSqlPlanBaselinesUsageRequest request) {
+        LOG.trace("Called disableSqlPlanBaselinesUsage");
+        final DisableSqlPlanBaselinesUsageRequest interceptedRequest =
+                DisableSqlPlanBaselinesUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableSqlPlanBaselinesUsageConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableSqlPlanBaselinesUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableSqlPlanBaselinesUsage");
+        java.util.function.Function<javax.ws.rs.core.Response, DisableSqlPlanBaselinesUsageResponse>
+                transformer =
+                        DisableSqlPlanBaselinesUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisableSqlPlanBaselinesUsageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DiscoverExternalExadataInfrastructureResponse discoverExternalExadataInfrastructure(
             DiscoverExternalExadataInfrastructureRequest request) {
         LOG.trace("Called discoverExternalExadataInfrastructure");
@@ -1909,6 +2346,47 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public DropSqlPlanBaselinesResponse dropSqlPlanBaselines(DropSqlPlanBaselinesRequest request) {
+        LOG.trace("Called dropSqlPlanBaselines");
+        final DropSqlPlanBaselinesRequest interceptedRequest =
+                DropSqlPlanBaselinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropSqlPlanBaselinesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DropSqlPlanBaselines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DropSqlPlanBaselines");
+        java.util.function.Function<javax.ws.rs.core.Response, DropSqlPlanBaselinesResponse>
+                transformer =
+                        DropSqlPlanBaselinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDropSqlPlanBaselinesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DropTablespaceResponse dropTablespace(DropTablespaceRequest request) {
         LOG.trace("Called dropTablespace");
         final DropTablespaceRequest interceptedRequest =
@@ -1942,6 +2420,95 @@ public class DbManagementClient implements DbManagement {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getDropTablespaceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableAutomaticInitialPlanCaptureResponse enableAutomaticInitialPlanCapture(
+            EnableAutomaticInitialPlanCaptureRequest request) {
+        LOG.trace("Called enableAutomaticInitialPlanCapture");
+        final EnableAutomaticInitialPlanCaptureRequest interceptedRequest =
+                EnableAutomaticInitialPlanCaptureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutomaticInitialPlanCaptureConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableAutomaticInitialPlanCapture",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutomaticInitialPlanCapture");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableAutomaticInitialPlanCaptureResponse>
+                transformer =
+                        EnableAutomaticInitialPlanCaptureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableAutomaticInitialPlanCaptureDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableAutomaticSpmEvolveAdvisorTaskResponse enableAutomaticSpmEvolveAdvisorTask(
+            EnableAutomaticSpmEvolveAdvisorTaskRequest request) {
+        LOG.trace("Called enableAutomaticSpmEvolveAdvisorTask");
+        final EnableAutomaticSpmEvolveAdvisorTaskRequest interceptedRequest =
+                EnableAutomaticSpmEvolveAdvisorTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutomaticSpmEvolveAdvisorTaskConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableAutomaticSpmEvolveAdvisorTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutomaticSpmEvolveAdvisorTask");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableAutomaticSpmEvolveAdvisorTaskResponse>
+                transformer =
+                        EnableAutomaticSpmEvolveAdvisorTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableAutomaticSpmEvolveAdvisorTaskDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1996,6 +2563,52 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public EnableExternalDbSystemStackMonitoringResponse enableExternalDbSystemStackMonitoring(
+            EnableExternalDbSystemStackMonitoringRequest request) {
+        LOG.trace("Called enableExternalDbSystemStackMonitoring");
+        final EnableExternalDbSystemStackMonitoringRequest interceptedRequest =
+                EnableExternalDbSystemStackMonitoringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalDbSystemStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableExternalDbSystemStackMonitoring",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbSystem/EnableExternalDbSystemStackMonitoring");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableExternalDbSystemStackMonitoringResponse>
+                transformer =
+                        EnableExternalDbSystemStackMonitoringConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalDbSystemStackMonitoringDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableExternalExadataInfrastructureManagementResponse
             enableExternalExadataInfrastructureManagement(
                     EnableExternalExadataInfrastructureManagementRequest request) {
@@ -2037,6 +2650,96 @@ public class DbManagementClient implements DbManagement {
                                                 ib,
                                                 retriedRequest
                                                         .getEnableExternalExadataInfrastructureManagementDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
+            enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
+                    EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request) {
+        LOG.trace("Called enableHighFrequencyAutomaticSpmEvolveAdvisorTask");
+        final EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest interceptedRequest =
+                EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableHighFrequencyAutomaticSpmEvolveAdvisorTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableHighFrequencyAutomaticSpmEvolveAdvisorTask");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                transformer =
+                        EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableSqlPlanBaselinesUsageResponse enableSqlPlanBaselinesUsage(
+            EnableSqlPlanBaselinesUsageRequest request) {
+        LOG.trace("Called enableSqlPlanBaselinesUsage");
+        final EnableSqlPlanBaselinesUsageRequest interceptedRequest =
+                EnableSqlPlanBaselinesUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableSqlPlanBaselinesUsageConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableSqlPlanBaselinesUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableSqlPlanBaselinesUsage");
+        java.util.function.Function<javax.ws.rs.core.Response, EnableSqlPlanBaselinesUsageResponse>
+                transformer =
+                        EnableSqlPlanBaselinesUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableSqlPlanBaselinesUsageDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -3326,6 +4029,82 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public GetSqlPlanBaselineResponse getSqlPlanBaseline(GetSqlPlanBaselineRequest request) {
+        LOG.trace("Called getSqlPlanBaseline");
+        final GetSqlPlanBaselineRequest interceptedRequest =
+                GetSqlPlanBaselineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlPlanBaselineConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetSqlPlanBaseline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlPlanBaseline");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSqlPlanBaselineResponse>
+                transformer =
+                        GetSqlPlanBaselineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSqlPlanBaselineConfigurationResponse getSqlPlanBaselineConfiguration(
+            GetSqlPlanBaselineConfigurationRequest request) {
+        LOG.trace("Called getSqlPlanBaselineConfiguration");
+        final GetSqlPlanBaselineConfigurationRequest interceptedRequest =
+                GetSqlPlanBaselineConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlPlanBaselineConfigurationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetSqlPlanBaselineConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlPlanBaselineConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSqlPlanBaselineConfigurationResponse>
+                transformer =
+                        GetSqlPlanBaselineConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetTablespaceResponse getTablespace(GetTablespaceRequest request) {
         LOG.trace("Called getTablespace");
         final GetTablespaceRequest interceptedRequest =
@@ -3684,6 +4463,44 @@ public class DbManagementClient implements DbManagement {
         java.util.function.Function<javax.ws.rs.core.Response, ListConsumerGroupPrivilegesResponse>
                 transformer =
                         ListConsumerGroupPrivilegesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCursorCacheStatementsResponse listCursorCacheStatements(
+            ListCursorCacheStatementsRequest request) {
+        LOG.trace("Called listCursorCacheStatements");
+        final ListCursorCacheStatementsRequest interceptedRequest =
+                ListCursorCacheStatementsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCursorCacheStatementsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListCursorCacheStatements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListCursorCacheStatements");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCursorCacheStatementsResponse>
+                transformer =
+                        ListCursorCacheStatementsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4950,6 +5767,81 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public ListSqlPlanBaselineJobsResponse listSqlPlanBaselineJobs(
+            ListSqlPlanBaselineJobsRequest request) {
+        LOG.trace("Called listSqlPlanBaselineJobs");
+        final ListSqlPlanBaselineJobsRequest interceptedRequest =
+                ListSqlPlanBaselineJobsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlPlanBaselineJobsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListSqlPlanBaselineJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlPlanBaselineJobs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlPlanBaselineJobsResponse>
+                transformer =
+                        ListSqlPlanBaselineJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlPlanBaselinesResponse listSqlPlanBaselines(ListSqlPlanBaselinesRequest request) {
+        LOG.trace("Called listSqlPlanBaselines");
+        final ListSqlPlanBaselinesRequest interceptedRequest =
+                ListSqlPlanBaselinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlPlanBaselinesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListSqlPlanBaselines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlPlanBaselines");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlPlanBaselinesResponse>
+                transformer =
+                        ListSqlPlanBaselinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListSystemPrivilegesResponse listSystemPrivileges(ListSystemPrivilegesRequest request) {
         LOG.trace("Called listSystemPrivileges");
         final ListSystemPrivilegesRequest interceptedRequest =
@@ -5201,6 +6093,94 @@ public class DbManagementClient implements DbManagement {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public LoadSqlPlanBaselinesFromAwrResponse loadSqlPlanBaselinesFromAwr(
+            LoadSqlPlanBaselinesFromAwrRequest request) {
+        LOG.trace("Called loadSqlPlanBaselinesFromAwr");
+        final LoadSqlPlanBaselinesFromAwrRequest interceptedRequest =
+                LoadSqlPlanBaselinesFromAwrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LoadSqlPlanBaselinesFromAwrConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "LoadSqlPlanBaselinesFromAwr",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/LoadSqlPlanBaselinesFromAwr");
+        java.util.function.Function<javax.ws.rs.core.Response, LoadSqlPlanBaselinesFromAwrResponse>
+                transformer =
+                        LoadSqlPlanBaselinesFromAwrConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getLoadSqlPlanBaselinesFromAwrDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public LoadSqlPlanBaselinesFromCursorCacheResponse loadSqlPlanBaselinesFromCursorCache(
+            LoadSqlPlanBaselinesFromCursorCacheRequest request) {
+        LOG.trace("Called loadSqlPlanBaselinesFromCursorCache");
+        final LoadSqlPlanBaselinesFromCursorCacheRequest interceptedRequest =
+                LoadSqlPlanBaselinesFromCursorCacheConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LoadSqlPlanBaselinesFromCursorCacheConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "LoadSqlPlanBaselinesFromCursorCache",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/LoadSqlPlanBaselinesFromCursorCache");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, LoadSqlPlanBaselinesFromCursorCacheResponse>
+                transformer =
+                        LoadSqlPlanBaselinesFromCursorCacheConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getLoadSqlPlanBaselinesFromCursorCacheDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -6078,6 +7058,85 @@ public class DbManagementClient implements DbManagement {
                         SummarizeManagedDatabaseAvailabilityMetricsResponse>
                 transformer =
                         SummarizeManagedDatabaseAvailabilityMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeSqlPlanBaselinesResponse summarizeSqlPlanBaselines(
+            SummarizeSqlPlanBaselinesRequest request) {
+        LOG.trace("Called summarizeSqlPlanBaselines");
+        final SummarizeSqlPlanBaselinesRequest interceptedRequest =
+                SummarizeSqlPlanBaselinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeSqlPlanBaselinesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeSqlPlanBaselines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeSqlPlanBaselines");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeSqlPlanBaselinesResponse>
+                transformer =
+                        SummarizeSqlPlanBaselinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeSqlPlanBaselinesByLastExecutionResponse
+            summarizeSqlPlanBaselinesByLastExecution(
+                    SummarizeSqlPlanBaselinesByLastExecutionRequest request) {
+        LOG.trace("Called summarizeSqlPlanBaselinesByLastExecution");
+        final SummarizeSqlPlanBaselinesByLastExecutionRequest interceptedRequest =
+                SummarizeSqlPlanBaselinesByLastExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeSqlPlanBaselinesByLastExecutionConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "SummarizeSqlPlanBaselinesByLastExecution",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeSqlPlanBaselinesByLastExecution");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeSqlPlanBaselinesByLastExecutionResponse>
+                transformer =
+                        SummarizeSqlPlanBaselinesByLastExecutionConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

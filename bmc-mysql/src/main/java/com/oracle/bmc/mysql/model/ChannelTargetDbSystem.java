@@ -99,6 +99,47 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
             this.__explicitlySet__.add("filters");
             return this;
         }
+        /**
+         * Specifies how a replication channel handles the creation and alteration of tables
+         * that do not have a primary key.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tablesWithoutPrimaryKeyHandling")
+        private TablesWithoutPrimaryKeyHandling tablesWithoutPrimaryKeyHandling;
+
+        /**
+         * Specifies how a replication channel handles the creation and alteration of tables
+         * that do not have a primary key.
+         *
+         * @param tablesWithoutPrimaryKeyHandling the value to set
+         * @return this builder
+         **/
+        public Builder tablesWithoutPrimaryKeyHandling(
+                TablesWithoutPrimaryKeyHandling tablesWithoutPrimaryKeyHandling) {
+            this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+            this.__explicitlySet__.add("tablesWithoutPrimaryKeyHandling");
+            return this;
+        }
+        /**
+         * Specifies the amount of time, in seconds, that the channel waits before
+         * applying a transaction received from the source.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("delayInSeconds")
+        private Integer delayInSeconds;
+
+        /**
+         * Specifies the amount of time, in seconds, that the channel waits before
+         * applying a transaction received from the source.
+         *
+         * @param delayInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder delayInSeconds(Integer delayInSeconds) {
+            this.delayInSeconds = delayInSeconds;
+            this.__explicitlySet__.add("delayInSeconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,7 +147,12 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         public ChannelTargetDbSystem build() {
             ChannelTargetDbSystem model =
                     new ChannelTargetDbSystem(
-                            this.dbSystemId, this.channelName, this.applierUsername, this.filters);
+                            this.dbSystemId,
+                            this.channelName,
+                            this.applierUsername,
+                            this.filters,
+                            this.tablesWithoutPrimaryKeyHandling,
+                            this.delayInSeconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -126,6 +172,12 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
             }
             if (model.wasPropertyExplicitlySet("filters")) {
                 this.filters(model.getFilters());
+            }
+            if (model.wasPropertyExplicitlySet("tablesWithoutPrimaryKeyHandling")) {
+                this.tablesWithoutPrimaryKeyHandling(model.getTablesWithoutPrimaryKeyHandling());
+            }
+            if (model.wasPropertyExplicitlySet("delayInSeconds")) {
+                this.delayInSeconds(model.getDelayInSeconds());
             }
             return this;
         }
@@ -147,12 +199,16 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
             String dbSystemId,
             String channelName,
             String applierUsername,
-            java.util.List<ChannelFilter> filters) {
+            java.util.List<ChannelFilter> filters,
+            TablesWithoutPrimaryKeyHandling tablesWithoutPrimaryKeyHandling,
+            Integer delayInSeconds) {
         super();
         this.dbSystemId = dbSystemId;
         this.channelName = channelName;
         this.applierUsername = applierUsername;
         this.filters = filters;
+        this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+        this.delayInSeconds = delayInSeconds;
     }
 
     /**
@@ -219,6 +275,93 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         return filters;
     }
 
+    /**
+     * Specifies how a replication channel handles the creation and alteration of tables
+     * that do not have a primary key.
+     *
+     **/
+    public enum TablesWithoutPrimaryKeyHandling {
+        RaiseError("RAISE_ERROR"),
+        Allow("ALLOW"),
+        GenerateImplicitPrimaryKey("GENERATE_IMPLICIT_PRIMARY_KEY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TablesWithoutPrimaryKeyHandling.class);
+
+        private final String value;
+        private static java.util.Map<String, TablesWithoutPrimaryKeyHandling> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TablesWithoutPrimaryKeyHandling v : TablesWithoutPrimaryKeyHandling.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TablesWithoutPrimaryKeyHandling(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TablesWithoutPrimaryKeyHandling create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TablesWithoutPrimaryKeyHandling', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies how a replication channel handles the creation and alteration of tables
+     * that do not have a primary key.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tablesWithoutPrimaryKeyHandling")
+    private final TablesWithoutPrimaryKeyHandling tablesWithoutPrimaryKeyHandling;
+
+    /**
+     * Specifies how a replication channel handles the creation and alteration of tables
+     * that do not have a primary key.
+     *
+     * @return the value
+     **/
+    public TablesWithoutPrimaryKeyHandling getTablesWithoutPrimaryKeyHandling() {
+        return tablesWithoutPrimaryKeyHandling;
+    }
+
+    /**
+     * Specifies the amount of time, in seconds, that the channel waits before
+     * applying a transaction received from the source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("delayInSeconds")
+    private final Integer delayInSeconds;
+
+    /**
+     * Specifies the amount of time, in seconds, that the channel waits before
+     * applying a transaction received from the source.
+     *
+     * @return the value
+     **/
+    public Integer getDelayInSeconds() {
+        return delayInSeconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -237,6 +380,9 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         sb.append(", channelName=").append(String.valueOf(this.channelName));
         sb.append(", applierUsername=").append(String.valueOf(this.applierUsername));
         sb.append(", filters=").append(String.valueOf(this.filters));
+        sb.append(", tablesWithoutPrimaryKeyHandling=")
+                .append(String.valueOf(this.tablesWithoutPrimaryKeyHandling));
+        sb.append(", delayInSeconds=").append(String.valueOf(this.delayInSeconds));
         sb.append(")");
         return sb.toString();
     }
@@ -255,6 +401,9 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
                 && java.util.Objects.equals(this.channelName, other.channelName)
                 && java.util.Objects.equals(this.applierUsername, other.applierUsername)
                 && java.util.Objects.equals(this.filters, other.filters)
+                && java.util.Objects.equals(
+                        this.tablesWithoutPrimaryKeyHandling, other.tablesWithoutPrimaryKeyHandling)
+                && java.util.Objects.equals(this.delayInSeconds, other.delayInSeconds)
                 && super.equals(other);
     }
 
@@ -268,6 +417,14 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
                 (result * PRIME)
                         + (this.applierUsername == null ? 43 : this.applierUsername.hashCode());
         result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablesWithoutPrimaryKeyHandling == null
+                                ? 43
+                                : this.tablesWithoutPrimaryKeyHandling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.delayInSeconds == null ? 43 : this.delayInSeconds.hashCode());
         return result;
     }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The objective of the IORM plan of a storage server. The following is excerpt from Exadata document:
+ * The objective of the IORM plan of an Exadata storage server. The following is an excerpt from Exadata documentation:
  * auto - Use this setting for IORM to determine the best mode based on active workloads and resource plans.
  *        IORM continuously and dynamically determines the optimization objective, based on the observed workloads
  *        and enabled resource plans. This is the recommended value for most use cases, and starting with
@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
  *       low_latency to achieve a balance between latency and throughput.
  * basic - Use this setting to limit the maximum small I/O latency and otherwise disable I/O prioritization.
  *       This is the default setting in Oracle Exadata System Software release 20.1.0 and earlier.
- * other - Temporarily handle the case when exadata side adds new value, should not be used as input
+ * other - Temporarily handle the case when Exadata side adds new value, should not be used as input
  *       when to make change to IORM plan.
  *
  **/

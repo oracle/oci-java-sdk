@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The base exadata resource.
+ * The base Exadata resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -113,13 +113,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The name of the resource. English letters, numbers, "-", "_" and "." only.
+     * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the resource. English letters, numbers, "-", "_" and "." only.
+     * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      * @return the value
      **/
     public String getDisplayName() {
@@ -127,13 +127,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The version of the resource.
+     * The version of the Exadata resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * The version of the resource.
+     * The version of the Exadata resource.
      * @return the value
      **/
     public String getVersion() {
@@ -141,13 +141,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The internal ID.
+     * The internal ID of the Exadata resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalId")
     private final String internalId;
 
     /**
-     * The internal ID.
+     * The internal ID of the Exadata resource.
      * @return the value
      **/
     public String getInternalId() {
@@ -155,13 +155,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The status of the entity.
+     * The status of the Exadata resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
-     * The status of the entity.
+     * The status of the Exadata resource.
      * @return the value
      **/
     public String getStatus() {
@@ -223,13 +223,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The timestamp of the creation.
+     * The timestamp of the creation of the Exadata resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The timestamp of the creation.
+     * The timestamp of the creation of the Exadata resource.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -237,13 +237,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The timestamp of the last update.
+     * The timestamp of the last update of the Exadata resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The timestamp of the last update.
+     * The timestamp of the last update of the Exadata resource.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -251,13 +251,13 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The details of the lifecycle state.
+     * The details of the lifecycle state of the Exadata resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * The details of the lifecycle state.
+     * The details of the lifecycle state of the Exadata resource.
      * @return the value
      **/
     public String getLifecycleDetails() {
@@ -358,7 +358,7 @@ public class DbmResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The type of resource.
+     * The type of Exadata resource.
      **/
     public enum ResourceType {
         InfrastructureSummary("INFRASTRUCTURE_SUMMARY"),

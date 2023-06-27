@@ -81,12 +81,12 @@ public class UserEmailExample {
 
         //Get user details with email
         GetUserRequest getUserRequest = GetUserRequest.builder().userId(userId).build();
-        GetUserResponse getUserReponse = identityClient.getUser(getUserRequest);
+        GetUserResponse getUserResponse = identityClient.getUser(getUserRequest);
 
         System.out.println(
                 "Get user: "
-                        + getUserReponse.getUser().getName()
+                        + getUserResponse.getUser().getName()
                         + " and got email: "
-                        + getUserReponse.getUser().getEmail());
+                        + getUserResponse.getUser().getEmail());
     }
 }
