@@ -43,6 +43,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
         "timeCompleted",
         "userName",
         "sqlText",
+        "inBinds",
+        "outBinds",
         "scheduleDetails"
     })
     public JobExecution(
@@ -67,6 +69,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeCompleted,
             String userName,
             String sqlText,
+            JobInBindsDetails inBinds,
+            JobOutBindsDetails outBinds,
             JobScheduleDetails scheduleDetails) {
         super();
         this.id = id;
@@ -90,6 +94,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
         this.timeCompleted = timeCompleted;
         this.userName = userName;
         this.sqlText = sqlText;
+        this.inBinds = inBinds;
+        this.outBinds = outBinds;
         this.scheduleDetails = scheduleDetails;
     }
 
@@ -429,6 +435,24 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("inBinds")
+        private JobInBindsDetails inBinds;
+
+        public Builder inBinds(JobInBindsDetails inBinds) {
+            this.inBinds = inBinds;
+            this.__explicitlySet__.add("inBinds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outBinds")
+        private JobOutBindsDetails outBinds;
+
+        public Builder outBinds(JobOutBindsDetails outBinds) {
+            this.outBinds = outBinds;
+            this.__explicitlySet__.add("outBinds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
         private JobScheduleDetails scheduleDetails;
 
@@ -465,6 +489,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
                             this.timeCompleted,
                             this.userName,
                             this.sqlText,
+                            this.inBinds,
+                            this.outBinds,
                             this.scheduleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -536,6 +562,12 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("sqlText")) {
                 this.sqlText(model.getSqlText());
+            }
+            if (model.wasPropertyExplicitlySet("inBinds")) {
+                this.inBinds(model.getInBinds());
+            }
+            if (model.wasPropertyExplicitlySet("outBinds")) {
+                this.outBinds(model.getOutBinds());
             }
             if (model.wasPropertyExplicitlySet("scheduleDetails")) {
                 this.scheduleDetails(model.getScheduleDetails());
@@ -890,6 +922,20 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
         return sqlText;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("inBinds")
+    private final JobInBindsDetails inBinds;
+
+    public JobInBindsDetails getInBinds() {
+        return inBinds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outBinds")
+    private final JobOutBindsDetails outBinds;
+
+    public JobOutBindsDetails getOutBinds() {
+        return outBinds;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleDetails")
     private final JobScheduleDetails scheduleDetails;
 
@@ -933,6 +979,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeCompleted=").append(String.valueOf(this.timeCompleted));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", sqlText=").append(String.valueOf(this.sqlText));
+        sb.append(", inBinds=").append(String.valueOf(this.inBinds));
+        sb.append(", outBinds=").append(String.valueOf(this.outBinds));
         sb.append(", scheduleDetails=").append(String.valueOf(this.scheduleDetails));
         sb.append(")");
         return sb.toString();
@@ -970,6 +1018,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.timeCompleted, other.timeCompleted)
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.sqlText, other.sqlText)
+                && java.util.Objects.equals(this.inBinds, other.inBinds)
+                && java.util.Objects.equals(this.outBinds, other.outBinds)
                 && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails)
                 && super.equals(other);
     }
@@ -1019,6 +1069,8 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
                         + (this.timeCompleted == null ? 43 : this.timeCompleted.hashCode());
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.sqlText == null ? 43 : this.sqlText.hashCode());
+        result = (result * PRIME) + (this.inBinds == null ? 43 : this.inBinds.hashCode());
+        result = (result * PRIME) + (this.outBinds == null ? 43 : this.outBinds.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());

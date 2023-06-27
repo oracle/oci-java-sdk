@@ -31,12 +31,12 @@ public final class TopSqlCpuActivity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of sql cpu activity. */
+        /** A list of sql CPU activity. */
         @com.fasterxml.jackson.annotation.JsonProperty("activity")
         private java.util.List<SqlCpuActivity> activity;
 
         /**
-         * A list of sql cpu activity.
+         * A list of sql CPU activity.
          *
          * @param activity the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class TopSqlCpuActivity
         return new Builder().copy(this);
     }
 
-    /** A list of sql cpu activity. */
+    /** A list of sql CPU activity. */
     @com.fasterxml.jackson.annotation.JsonProperty("activity")
     private final java.util.List<SqlCpuActivity> activity;
 
     /**
-     * A list of sql cpu activity.
+     * A list of sql CPU activity.
      *
      * @return the value
      */

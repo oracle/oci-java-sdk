@@ -16,14 +16,12 @@ public class UpdateHttpRedirectRequest
                 com.oracle.bmc.waas.model.UpdateHttpRedirectDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * HTTP Redirect.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
      */
     private String httpRedirectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * HTTP Redirect.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
      */
     public String getHttpRedirectId() {
         return httpRedirectId;
@@ -104,14 +102,14 @@ public class UpdateHttpRedirectRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * HTTP Redirect.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP
+         * Redirect.
          */
         private String httpRedirectId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * HTTP Redirect.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP
+         * Redirect.
          *
          * @param httpRedirectId the value to set
          * @return this builder instance

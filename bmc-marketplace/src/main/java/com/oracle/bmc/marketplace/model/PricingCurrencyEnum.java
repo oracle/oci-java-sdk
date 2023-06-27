@@ -14,6 +14,10 @@ public enum PricingCurrencyEnum implements com.oracle.bmc.http.internal.BmcEnum 
     Brl("BRL"),
     Jpy("JPY"),
     Omr("OMR"),
+    Eur("EUR"),
+    Chf("CHF"),
+    Mxn("MXN"),
+    Clp("CLP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

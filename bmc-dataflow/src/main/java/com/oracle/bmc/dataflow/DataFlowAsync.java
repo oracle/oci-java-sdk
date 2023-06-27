@@ -139,6 +139,24 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves an Sql Endpoint from one compartment to another. When provided, If-Match is checked
+     * against ETag values of the Sql Endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSqlEndpointCompartmentResponse> changeSqlEndpointCompartment(
+            ChangeSqlEndpointCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSqlEndpointCompartmentRequest,
+                            ChangeSqlEndpointCompartmentResponse>
+                    handler);
+
+    /**
      * Creates an application.
      *
      * @param request The request object containing the details to send
@@ -197,6 +215,22 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateRunResponse> createRun(
             CreateRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateRunRequest, CreateRunResponse> handler);
+
+    /**
+     * Create a new Sql Endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSqlEndpointResponse> createSqlEndpoint(
+            CreateSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSqlEndpointRequest, CreateSqlEndpointResponse>
+                    handler);
 
     /**
      * Executes a statement for a Session run.
@@ -273,6 +307,22 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteRunResponse> deleteRun(
             DeleteRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteRunRequest, DeleteRunResponse> handler);
+
+    /**
+     * Delete a Sql Endpoint resource, identified by the SqlEndpoint id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSqlEndpointResponse> deleteSqlEndpoint(
+            DeleteSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlEndpointRequest, DeleteSqlEndpointResponse>
+                    handler);
 
     /**
      * Cancels the specified statement for a Session run.
@@ -361,6 +411,21 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<GetRunLogResponse> getRunLog(
             GetRunLogRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetRunLogRequest, GetRunLogResponse> handler);
+
+    /**
+     * Retrieves a SQL Endpoint using a sqlEndpointId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSqlEndpointResponse> getSqlEndpoint(
+            GetSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSqlEndpointRequest, GetSqlEndpointResponse>
+                    handler);
 
     /**
      * Retrieves the statement corresponding to the `statementId` for a Session run specified by
@@ -476,6 +541,23 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<ListRunsResponse> listRuns(
             ListRunsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListRunsRequest, ListRunsResponse> handler);
+
+    /**
+     * Lists all Sql Endpoints in the specified compartment. The query must include compartmentId or
+     * sqlEndpointId. If the query does not include either compartmentId or sqlEndpointId, an error
+     * is returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSqlEndpointsResponse> listSqlEndpoints(
+            ListSqlEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSqlEndpointsRequest, ListSqlEndpointsResponse>
+                    handler);
 
     /**
      * Lists all statements for a Session run.
@@ -632,4 +714,20 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateRunResponse> updateRun(
             UpdateRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateRunRequest, UpdateRunResponse> handler);
+
+    /**
+     * Update a Sql Endpoint resource, identified by the SqlEndpoint id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSqlEndpointResponse> updateSqlEndpoint(
+            UpdateSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSqlEndpointRequest, UpdateSqlEndpointResponse>
+                    handler);
 }

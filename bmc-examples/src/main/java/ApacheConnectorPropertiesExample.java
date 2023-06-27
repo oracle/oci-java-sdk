@@ -21,8 +21,8 @@ import java.io.IOException;
  * <p>Note: Apache Configurator by default configures a connection pool with default values for
  * defaultMaxConnectionsPerRoute and maximum open connections. Please make sure to close all
  * InputStreams obtained from the response object by calling close on the stream object. For example
- * - GetObjectReponse.getInputStream().close or try-with-resources. Otherwise, the connection is not
- * released from the pool and results in hanging for an indefinite time
+ * - GetObjectResponse.getInputStream().close or try-with-resources. Otherwise, the connection is
+ * not released from the pool and results in hanging for an indefinite time
  */
 public class ApacheConnectorPropertiesExample {
 

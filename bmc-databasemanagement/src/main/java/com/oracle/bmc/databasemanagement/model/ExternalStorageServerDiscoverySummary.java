@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The Exadata storage server. <br>
+ * The summary of the Exadata storage server discovery. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -116,12 +116,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
             this.__explicitlySet__.add("discoverErrorMsg");
             return this;
         }
-        /** The IP address of the storage server. */
+        /** The IP address of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The IP address of the storage server.
+         * The IP address of the Exadata storage server.
          *
          * @param ipAddress the value to set
          * @return this builder
@@ -131,12 +131,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The make model of the storage server. */
+        /** The make model of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
         private String makeModel;
 
         /**
-         * The make model of the storage server.
+         * The make model of the Exadata storage server.
          *
          * @param makeModel the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
             this.__explicitlySet__.add("makeModel");
             return this;
         }
-        /** The cpu count of the storage server. */
+        /** The CPU count of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private Integer cpuCount;
 
         /**
-         * The cpu count of the storage server.
+         * The CPU count of the Exadata storage server.
          *
          * @param cpuCount the value to set
          * @return this builder
@@ -161,12 +161,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-        /** The memory size in GB of the storage server. */
+        /** The memory size in GB of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
         private Double memoryGB;
 
         /**
-         * The memory size in GB of the storage server.
+         * The memory size in GB of the Exadata storage server.
          *
          * @param memoryGB the value to set
          * @return this builder
@@ -176,12 +176,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
             this.__explicitlySet__.add("memoryGB");
             return this;
         }
-        /** The connector name of the storage server in rediscovery case. */
+        /** The name of the Exadata storage server connector in case of rediscovery. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorName")
         private String connectorName;
 
         /**
-         * The connector name of the storage server in rediscovery case.
+         * The name of the Exadata storage server connector in case of rediscovery.
          *
          * @param connectorName the value to set
          * @return this builder
@@ -314,12 +314,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         this.connectorName = connectorName;
     }
 
-    /** The IP address of the storage server. */
+    /** The IP address of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The IP address of the storage server.
+     * The IP address of the Exadata storage server.
      *
      * @return the value
      */
@@ -327,12 +327,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         return ipAddress;
     }
 
-    /** The make model of the storage server. */
+    /** The make model of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
     private final String makeModel;
 
     /**
-     * The make model of the storage server.
+     * The make model of the Exadata storage server.
      *
      * @return the value
      */
@@ -340,12 +340,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         return makeModel;
     }
 
-    /** The cpu count of the storage server. */
+    /** The CPU count of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final Integer cpuCount;
 
     /**
-     * The cpu count of the storage server.
+     * The CPU count of the Exadata storage server.
      *
      * @return the value
      */
@@ -353,12 +353,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         return cpuCount;
     }
 
-    /** The memory size in GB of the storage server. */
+    /** The memory size in GB of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
     private final Double memoryGB;
 
     /**
-     * The memory size in GB of the storage server.
+     * The memory size in GB of the Exadata storage server.
      *
      * @return the value
      */
@@ -366,12 +366,12 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         return memoryGB;
     }
 
-    /** The connector name of the storage server in rediscovery case. */
+    /** The name of the Exadata storage server connector in case of rediscovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorName")
     private final String connectorName;
 
     /**
-     * The connector name of the storage server in rediscovery case.
+     * The name of the Exadata storage server connector in case of rediscovery.
      *
      * @return the value
      */

@@ -8,10 +8,13 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
 import com.oracle.bmc.auth.AbstractRequestingAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.AuthCachingPolicy;
+import com.oracle.bmc.auth.DefaultServiceAccountTokenProvider;
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.auth.RegionProvider;
+import com.oracle.bmc.auth.ServiceAccountTokenSupplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
+import com.oracle.bmc.auth.SuppliedServiceAccountTokenProvider;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeTenancyOnlyAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.okeworkloadidentity.internal.OkeWorkloadIdentityResourcePrincipalsFederationClient;
@@ -62,13 +65,13 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
      */
     private final Region region;
 
-    /** Path for reading Kubernetes service account cert. */
-    private static final String KUBERNETES_SERVICE_ACCOUNT_CERT_PATH =
+    /** Default path for reading Kubernetes service account cert. */
+    private static final String DEFAULT_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH =
             "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt";
 
-    private static final Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(
-                    OkeWorkloadIdentityAuthenticationDetailsProvider.class);
+    /** Environment variable of the path for Kubernetes service account cert. */
+    private static final String KUBERNETES_SERVICE_ACCOUNT_CERT_PATH_ENV =
+            "OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH";
     /**
      * Constructor of OkeWorkloadIdentityAuthenticationDetailsProvider.
      *
@@ -137,6 +140,12 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         /** The configuration for the circuit breaker. */
         private CircuitBreakerConfiguration circuitBreakerConfig;
 
+        private ServiceAccountTokenSupplier serviceAccountTokenSupplier;
+
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder() {
+            this.serviceAccountTokenSupplier = new DefaultServiceAccountTokenProvider();
+        }
+
         /**
          * Configures the tenancyId to use. Used for constructing
          * KeyPairAuthenticationDetailsProvider, it is not used by actual.
@@ -153,6 +162,25 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
         public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder circuitBreakerConfig(
                 CircuitBreakerConfiguration circuitBreakerConfig) {
             this.circuitBreakerConfig = circuitBreakerConfig;
+            return this;
+        }
+
+        /** Sets value for the kubernetes service account token */
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder token(String token) {
+            this.serviceAccountTokenSupplier = new SuppliedServiceAccountTokenProvider(token);
+            return this;
+        }
+
+        /** Sets value for the path of kubernetes service account token */
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder tokenPath(String tokenPath) {
+            this.serviceAccountTokenSupplier = new DefaultServiceAccountTokenProvider(tokenPath);
+            return this;
+        }
+
+        /** Sets the kubernetes service account token supplier */
+        public OkeWorkloadIdentityAuthenticationDetailsProviderBuilder tokenPath(
+                ServiceAccountTokenSupplier serviceAccountTokenSupplier) {
+            this.serviceAccountTokenSupplier = serviceAccountTokenSupplier;
             return this;
         }
 
@@ -175,12 +203,14 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
 
             // Set ca cert when talking to proxymux using https.
             SSLContext sslCtx;
-            if (Files.exists(Paths.get(KUBERNETES_SERVICE_ACCOUNT_CERT_PATH))) {
+            String kubernetesCaCertPath =
+                    System.getenv(KUBERNETES_SERVICE_ACCOUNT_CERT_PATH_ENV) != null
+                            ? System.getenv(KUBERNETES_SERVICE_ACCOUNT_CERT_PATH_ENV)
+                            : DEFAULT_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH;
+            if (Files.exists(Paths.get(kubernetesCaCertPath))) {
                 InputStream inputStream = null;
                 try {
-                    inputStream =
-                            new FileInputStream(
-                                    Paths.get(KUBERNETES_SERVICE_ACCOUNT_CERT_PATH).toFile());
+                    inputStream = new FileInputStream(Paths.get(kubernetesCaCertPath).toFile());
                     CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
                     X509Certificate certificate =
                             (X509Certificate) certFactory.generateCertificate(inputStream);
@@ -258,6 +288,7 @@ public class OkeWorkloadIdentityAuthenticationDetailsProvider
             // create federation client
             return new OkeWorkloadIdentityResourcePrincipalsFederationClient(
                     sessionKeySupplier,
+                    serviceAccountTokenSupplier,
                     provider,
                     configurator,
                     circuitBreakerConfig,

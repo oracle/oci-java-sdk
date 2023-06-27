@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The Exadata infrastructure list. <br>
+ * A list of the Exadata infrastructure resources. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class ExternalExadataInfrastructureCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of Exadata infrastructure. */
+        /** A list of Exadata infrastructures. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ExternalExadataInfrastructureSummary> items;
 
         /**
-         * A list of Exadata infrastructure.
+         * A list of Exadata infrastructures.
          *
          * @param items the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class ExternalExadataInfrastructureCollection
         return new Builder().copy(this);
     }
 
-    /** A list of Exadata infrastructure. */
+    /** A list of Exadata infrastructures. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ExternalExadataInfrastructureSummary> items;
 
     /**
-     * A list of Exadata infrastructure.
+     * A list of Exadata infrastructures.
      *
      * @return the value
      */

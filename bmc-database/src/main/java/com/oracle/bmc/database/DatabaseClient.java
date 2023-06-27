@@ -1086,6 +1086,38 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeKeyStoreTypeResponse changeKeyStoreType(ChangeKeyStoreTypeRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeKeyStoreTypeDetails(), "changeKeyStoreTypeDetails is required");
+
+        return clientCall(request, ChangeKeyStoreTypeResponse::builder)
+                .logger(LOG, "changeKeyStoreType")
+                .serviceDetails(
+                        "Database",
+                        "ChangeKeyStoreType",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ChangeKeyStoreType")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeKeyStoreTypeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeKeyStoreType")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ChangeKeyStoreTypeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeKeyStoreTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeOneoffPatchCompartmentResponse changeOneoffPatchCompartment(
             ChangeOneoffPatchCompartmentRequest request) {
         Objects.requireNonNull(
@@ -9045,6 +9077,39 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id", RotateOrdsCertsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RotateOrdsCertsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RotatePluggableDatabaseEncryptionKeyResponse rotatePluggableDatabaseEncryptionKey(
+            RotatePluggableDatabaseEncryptionKeyRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+
+        return clientCall(request, RotatePluggableDatabaseEncryptionKeyResponse::builder)
+                .logger(LOG, "rotatePluggableDatabaseEncryptionKey")
+                .serviceDetails(
+                        "Database",
+                        "RotatePluggableDatabaseEncryptionKey",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RotatePluggableDatabaseEncryptionKey")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RotatePluggableDatabaseEncryptionKeyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("rotateKey")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RotatePluggableDatabaseEncryptionKeyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RotatePluggableDatabaseEncryptionKeyResponse.Builder::opcRequestId)
                 .callSync();
     }
 

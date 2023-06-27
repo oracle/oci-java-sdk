@@ -153,6 +153,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC19
     public static final Region EU_MADRID_2 = register("eu-madrid-2", Realm.OC19, "vll");
+    public static final Region EU_FRANKFURT_2 = register("eu-frankfurt-2", Realm.OC19, "str");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

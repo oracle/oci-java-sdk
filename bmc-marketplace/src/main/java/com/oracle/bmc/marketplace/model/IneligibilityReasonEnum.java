@@ -16,7 +16,15 @@ public enum IneligibilityReasonEnum implements com.oracle.bmc.http.internal.BmcE
     IneligibleAccountInternal("INELIGIBLE_ACCOUNT_INTERNAL"),
     IneligibleAccountGovSubscription("INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION"),
     IneligiblePaidListingThrottled("INELIGIBLE_PAID_LISTING_THROTTLED"),
+    IneligibleAccountNotAvailable("INELIGIBLE_ACCOUNT_NOT_AVAILABLE"),
+    IneligibleAccountNotMonthlyInclusive("INELIGIBLE_ACCOUNT_NOT_MONTHLY_INCLUSIVE"),
+    ImageMetaDataSo("IMAGE_META_DATA_SO"),
+    IneligibleAccountTenancyNotAllowedAccessImage(
+            "INELIGIBLE_ACCOUNT_TENANCY_NOT_ALLOWED_ACCESS_IMAGE"),
+    IneligibleAccountGovLaunchNonGovListing("INELIGIBLE_ACCOUNT_GOV_LAUNCH_NON_GOV_LISTING"),
+    AgreementNotAccepted("AGREEMENT_NOT_ACCEPTED"),
     NotAuthorized("NOT_AUTHORIZED"),
+    Eligible("ELIGIBLE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

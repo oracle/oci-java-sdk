@@ -418,6 +418,133 @@ public class DbManagementPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listCursorCacheStatements operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCursorCacheStatementsResponse> listCursorCacheStatementsResponseIterator(
+            final ListCursorCacheStatementsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCursorCacheStatementsRequest.Builder,
+                ListCursorCacheStatementsRequest,
+                ListCursorCacheStatementsResponse>(
+                new java.util.function.Supplier<ListCursorCacheStatementsRequest.Builder>() {
+                    @Override
+                    public ListCursorCacheStatementsRequest.Builder get() {
+                        return ListCursorCacheStatementsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCursorCacheStatementsResponse, String>() {
+                    @Override
+                    public String apply(ListCursorCacheStatementsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCursorCacheStatementsRequest.Builder>,
+                        ListCursorCacheStatementsRequest>() {
+                    @Override
+                    public ListCursorCacheStatementsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCursorCacheStatementsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCursorCacheStatementsRequest, ListCursorCacheStatementsResponse>() {
+                    @Override
+                    public ListCursorCacheStatementsResponse apply(
+                            ListCursorCacheStatementsRequest request) {
+                        return client.listCursorCacheStatements(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.CursorCacheStatementSummary} objects contained in
+     * responses from the listCursorCacheStatements operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.CursorCacheStatementSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.CursorCacheStatementSummary>
+            listCursorCacheStatementsRecordIterator(
+                    final ListCursorCacheStatementsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCursorCacheStatementsRequest.Builder,
+                ListCursorCacheStatementsRequest,
+                ListCursorCacheStatementsResponse,
+                com.oracle.bmc.databasemanagement.model.CursorCacheStatementSummary>(
+                new java.util.function.Supplier<ListCursorCacheStatementsRequest.Builder>() {
+                    @Override
+                    public ListCursorCacheStatementsRequest.Builder get() {
+                        return ListCursorCacheStatementsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCursorCacheStatementsResponse, String>() {
+                    @Override
+                    public String apply(ListCursorCacheStatementsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCursorCacheStatementsRequest.Builder>,
+                        ListCursorCacheStatementsRequest>() {
+                    @Override
+                    public ListCursorCacheStatementsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCursorCacheStatementsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCursorCacheStatementsRequest, ListCursorCacheStatementsResponse>() {
+                    @Override
+                    public ListCursorCacheStatementsResponse apply(
+                            ListCursorCacheStatementsRequest request) {
+                        return client.listCursorCacheStatements(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCursorCacheStatementsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .CursorCacheStatementSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .CursorCacheStatementSummary>
+                            apply(ListCursorCacheStatementsResponse response) {
+                        return response.getCursorCacheStatementCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDataAccessContainers operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -4177,6 +4304,253 @@ public class DbManagementPaginators {
                     public java.util.List<com.oracle.bmc.databasemanagement.model.RoleSummary>
                             apply(ListRolesResponse response) {
                         return response.getRoleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSqlPlanBaselineJobs operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSqlPlanBaselineJobsResponse> listSqlPlanBaselineJobsResponseIterator(
+            final ListSqlPlanBaselineJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSqlPlanBaselineJobsRequest.Builder,
+                ListSqlPlanBaselineJobsRequest,
+                ListSqlPlanBaselineJobsResponse>(
+                new java.util.function.Supplier<ListSqlPlanBaselineJobsRequest.Builder>() {
+                    @Override
+                    public ListSqlPlanBaselineJobsRequest.Builder get() {
+                        return ListSqlPlanBaselineJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSqlPlanBaselineJobsResponse, String>() {
+                    @Override
+                    public String apply(ListSqlPlanBaselineJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlPlanBaselineJobsRequest.Builder>,
+                        ListSqlPlanBaselineJobsRequest>() {
+                    @Override
+                    public ListSqlPlanBaselineJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlPlanBaselineJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlPlanBaselineJobsRequest, ListSqlPlanBaselineJobsResponse>() {
+                    @Override
+                    public ListSqlPlanBaselineJobsResponse apply(
+                            ListSqlPlanBaselineJobsRequest request) {
+                        return client.listSqlPlanBaselineJobs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobSummary} objects contained in
+     * responses from the listSqlPlanBaselineJobs operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobSummary>
+            listSqlPlanBaselineJobsRecordIterator(final ListSqlPlanBaselineJobsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSqlPlanBaselineJobsRequest.Builder,
+                ListSqlPlanBaselineJobsRequest,
+                ListSqlPlanBaselineJobsResponse,
+                com.oracle.bmc.databasemanagement.model.SqlPlanBaselineJobSummary>(
+                new java.util.function.Supplier<ListSqlPlanBaselineJobsRequest.Builder>() {
+                    @Override
+                    public ListSqlPlanBaselineJobsRequest.Builder get() {
+                        return ListSqlPlanBaselineJobsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSqlPlanBaselineJobsResponse, String>() {
+                    @Override
+                    public String apply(ListSqlPlanBaselineJobsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlPlanBaselineJobsRequest.Builder>,
+                        ListSqlPlanBaselineJobsRequest>() {
+                    @Override
+                    public ListSqlPlanBaselineJobsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlPlanBaselineJobsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlPlanBaselineJobsRequest, ListSqlPlanBaselineJobsResponse>() {
+                    @Override
+                    public ListSqlPlanBaselineJobsResponse apply(
+                            ListSqlPlanBaselineJobsRequest request) {
+                        return client.listSqlPlanBaselineJobs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlPlanBaselineJobsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .SqlPlanBaselineJobSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .SqlPlanBaselineJobSummary>
+                            apply(ListSqlPlanBaselineJobsResponse response) {
+                        return response.getSqlPlanBaselineJobCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSqlPlanBaselines operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSqlPlanBaselinesResponse> listSqlPlanBaselinesResponseIterator(
+            final ListSqlPlanBaselinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSqlPlanBaselinesRequest.Builder,
+                ListSqlPlanBaselinesRequest,
+                ListSqlPlanBaselinesResponse>(
+                new java.util.function.Supplier<ListSqlPlanBaselinesRequest.Builder>() {
+                    @Override
+                    public ListSqlPlanBaselinesRequest.Builder get() {
+                        return ListSqlPlanBaselinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSqlPlanBaselinesResponse, String>() {
+                    @Override
+                    public String apply(ListSqlPlanBaselinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlPlanBaselinesRequest.Builder>,
+                        ListSqlPlanBaselinesRequest>() {
+                    @Override
+                    public ListSqlPlanBaselinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlPlanBaselinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlPlanBaselinesRequest, ListSqlPlanBaselinesResponse>() {
+                    @Override
+                    public ListSqlPlanBaselinesResponse apply(ListSqlPlanBaselinesRequest request) {
+                        return client.listSqlPlanBaselines(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary} objects contained in
+     * responses from the listSqlPlanBaselines operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary>
+            listSqlPlanBaselinesRecordIterator(final ListSqlPlanBaselinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSqlPlanBaselinesRequest.Builder,
+                ListSqlPlanBaselinesRequest,
+                ListSqlPlanBaselinesResponse,
+                com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary>(
+                new java.util.function.Supplier<ListSqlPlanBaselinesRequest.Builder>() {
+                    @Override
+                    public ListSqlPlanBaselinesRequest.Builder get() {
+                        return ListSqlPlanBaselinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSqlPlanBaselinesResponse, String>() {
+                    @Override
+                    public String apply(ListSqlPlanBaselinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSqlPlanBaselinesRequest.Builder>,
+                        ListSqlPlanBaselinesRequest>() {
+                    @Override
+                    public ListSqlPlanBaselinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSqlPlanBaselinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlPlanBaselinesRequest, ListSqlPlanBaselinesResponse>() {
+                    @Override
+                    public ListSqlPlanBaselinesResponse apply(ListSqlPlanBaselinesRequest request) {
+                        return client.listSqlPlanBaselines(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSqlPlanBaselinesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary>
+                            apply(ListSqlPlanBaselinesResponse response) {
+                        return response.getSqlPlanBaselineCollection().getItems();
                     }
                 });
     }

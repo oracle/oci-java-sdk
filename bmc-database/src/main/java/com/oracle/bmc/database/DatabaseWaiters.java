@@ -1524,6 +1524,63 @@ public class DatabaseWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>
+            forChangeKeyStoreType(ChangeKeyStoreTypeRequest request) {
+        return forChangeKeyStoreType(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<ChangeKeyStoreTypeRequest, ChangeKeyStoreTypeResponse>
+            forChangeKeyStoreType(
+                    ChangeKeyStoreTypeRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeKeyStoreTypeResponse>() {
+                    @Override
+                    public ChangeKeyStoreTypeResponse call() throws Exception {
+                        final ChangeKeyStoreTypeResponse response =
+                                client.changeKeyStoreType(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     ChangeOneoffPatchCompartmentRequest, ChangeOneoffPatchCompartmentResponse>
             forChangeOneoffPatchCompartment(ChangeOneoffPatchCompartmentRequest request) {
@@ -12375,6 +12432,68 @@ public class DatabaseWaiters {
                     @Override
                     public RotateOrdsCertsResponse call() throws Exception {
                         final RotateOrdsCertsResponse response = client.rotateOrdsCerts(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RotatePluggableDatabaseEncryptionKeyRequest,
+                    RotatePluggableDatabaseEncryptionKeyResponse>
+            forRotatePluggableDatabaseEncryptionKey(
+                    RotatePluggableDatabaseEncryptionKeyRequest request) {
+        return forRotatePluggableDatabaseEncryptionKey(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RotatePluggableDatabaseEncryptionKeyRequest,
+                    RotatePluggableDatabaseEncryptionKeyResponse>
+            forRotatePluggableDatabaseEncryptionKey(
+                    RotatePluggableDatabaseEncryptionKeyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RotatePluggableDatabaseEncryptionKeyResponse>() {
+                    @Override
+                    public RotatePluggableDatabaseEncryptionKeyResponse call() throws Exception {
+                        final RotatePluggableDatabaseEncryptionKeyResponse response =
+                                client.rotatePluggableDatabaseEncryptionKey(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The storage server grid of the Exadata infrastructure. <br>
+ * The Exadata storage server grid of the Exadata infrastructure. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -116,12 +116,12 @@ public final class ExternalExadataStorageGridSummary extends DbmResource {
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
-        /** The number of the storage servers in the Exadata infrastructure. */
+        /** The number of Exadata storage servers in the Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("serverCount")
         private java.math.BigDecimal serverCount;
 
         /**
-         * The number of the storage servers in the Exadata infrastructure.
+         * The number of Exadata storage servers in the Exadata infrastructure.
          *
          * @param serverCount the value to set
          * @return this builder
@@ -230,12 +230,12 @@ public final class ExternalExadataStorageGridSummary extends DbmResource {
         this.serverCount = serverCount;
     }
 
-    /** The number of the storage servers in the Exadata infrastructure. */
+    /** The number of Exadata storage servers in the Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("serverCount")
     private final java.math.BigDecimal serverCount;
 
     /**
-     * The number of the storage servers in the Exadata infrastructure.
+     * The number of Exadata storage servers in the Exadata infrastructure.
      *
      * @return the value
      */

@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Type of the database plan directive. The value OTHER is to temporarily handle the case when
- * exadata side adds new value, should not be used as input when to make change to IORM plan.
+ * The type of the database plan directive. The value OTHER is to temporarily handle the case when
+ * Exadata side adds new value, should not be used as input when to make change to IORM plan.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DatabasePlanTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {

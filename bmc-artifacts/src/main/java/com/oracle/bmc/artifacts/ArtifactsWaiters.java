@@ -141,6 +141,121 @@ public class ArtifactsWaiters {
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
+            forContainerImageSignature(
+                    GetContainerImageSignatureRequest request,
+                    com.oracle.bmc.artifacts.model.ContainerImageSignature.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forContainerImageSignature(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
+            forContainerImageSignature(
+                    GetContainerImageSignatureRequest request,
+                    com.oracle.bmc.artifacts.model.ContainerImageSignature.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forContainerImageSignature(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
+            forContainerImageSignature(
+                    GetContainerImageSignatureRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.artifacts.model.ContainerImageSignature.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forContainerImageSignature(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ContainerImageSignature.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
+            forContainerImageSignature(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetContainerImageSignatureRequest request,
+                    final com.oracle.bmc.artifacts.model.ContainerImageSignature.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.artifacts.model.ContainerImageSignature.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetContainerImageSignatureRequest,
+                                GetContainerImageSignatureResponse>() {
+                            @Override
+                            public GetContainerImageSignatureResponse apply(
+                                    GetContainerImageSignatureRequest request) {
+                                return client.getContainerImageSignature(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetContainerImageSignatureResponse>() {
+                            @Override
+                            public boolean test(GetContainerImageSignatureResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getContainerImageSignature().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.artifacts.model.ContainerImageSignature
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetContainerRepositoryRequest, GetContainerRepositoryResponse>
             forContainerRepository(
                     GetContainerRepositoryRequest request,

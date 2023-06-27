@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Stateful alerts are automatically cleared on severity transition to normal. Stateless alerts are
- * never cleared. You can change the alert by setting the examinedBy attribute.
+ * The type of alert. Stateful alerts are automatically cleared on severity transition to normal.
+ * Stateless alerts are never cleared. You can change the alert by setting the examinedBy attribute.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum AlertTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {

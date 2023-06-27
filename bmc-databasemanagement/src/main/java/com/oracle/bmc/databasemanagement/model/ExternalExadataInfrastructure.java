@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The Exadata infrastructure details. <br>
+ * The details of the Exadata infrastructure. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -132,14 +132,14 @@ public final class ExternalExadataInfrastructure extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -174,12 +174,12 @@ public final class ExternalExadataInfrastructure extends DbmResource {
             this.__explicitlySet__.add("storageGrid");
             return this;
         }
-        /** A list of database systems. */
+        /** A list of DB systems. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSystems")
         private java.util.List<ExternalExadataDatabaseSystemSummary> databaseSystems;
 
         /**
-         * A list of database systems.
+         * A list of DB systems.
          *
          * @param databaseSystems the value to set
          * @return this builder
@@ -193,7 +193,7 @@ public final class ExternalExadataInfrastructure extends DbmResource {
         /**
          * The list of [OCIDs]
          * (https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartments
+         * compartments.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseCompartments")
         private java.util.List<String> databaseCompartments;
@@ -201,7 +201,7 @@ public final class ExternalExadataInfrastructure extends DbmResource {
         /**
          * The list of [OCIDs]
          * (https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * compartments
+         * compartments.
          *
          * @param databaseCompartments the value to set
          * @return this builder
@@ -402,14 +402,14 @@ public final class ExternalExadataInfrastructure extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -484,12 +484,12 @@ public final class ExternalExadataInfrastructure extends DbmResource {
         return storageGrid;
     }
 
-    /** A list of database systems. */
+    /** A list of DB systems. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSystems")
     private final java.util.List<ExternalExadataDatabaseSystemSummary> databaseSystems;
 
     /**
-     * A list of database systems.
+     * A list of DB systems.
      *
      * @return the value
      */
@@ -499,14 +499,14 @@ public final class ExternalExadataInfrastructure extends DbmResource {
 
     /**
      * The list of [OCIDs] (https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the compartments
+     * of the compartments.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseCompartments")
     private final java.util.List<String> databaseCompartments;
 
     /**
      * The list of [OCIDs] (https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the compartments
+     * of the compartments.
      *
      * @return the value
      */

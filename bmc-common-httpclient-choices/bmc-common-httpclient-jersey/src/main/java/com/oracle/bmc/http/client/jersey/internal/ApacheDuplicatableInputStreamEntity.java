@@ -5,6 +5,7 @@
 package com.oracle.bmc.http.client.jersey.internal;
 
 import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.jersey.io.internal.LengthLimitedInputStream;
 
 import java.io.InputStream;
 
@@ -17,7 +18,7 @@ public class ApacheDuplicatableInputStreamEntity extends ApacheInputStreamEntity
         implements DuplicatableInputStream {
 
     public ApacheDuplicatableInputStreamEntity(DuplicatableInputStream in, Long contentLength) {
-        super((InputStream) in, contentLength);
+        super(new LengthLimitedInputStream((InputStream) in, contentLength), contentLength);
     }
 
     @Override

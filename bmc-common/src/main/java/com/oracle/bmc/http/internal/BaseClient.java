@@ -136,6 +136,10 @@ abstract class BaseClient implements AutoCloseable {
                             provider.getRegion(),
                             endpoint);
                 }
+            } else {
+                logger.warn(
+                        "Region not specified for the provider. Proceeding without setting a region. "
+                                + "Please make sure to set a region before making an API call. Failure to do so will result in endpoint being null.");
             }
         }
 

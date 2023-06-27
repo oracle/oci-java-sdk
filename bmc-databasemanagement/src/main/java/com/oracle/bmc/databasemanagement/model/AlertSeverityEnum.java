@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The severity level for the alert. */
+/** The severity level of the alert. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum AlertSeverityEnum implements com.oracle.bmc.http.internal.BmcEnum {
     Clear("CLEAR"),

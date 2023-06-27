@@ -279,6 +279,42 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeSqlEndpointCompartmentResponse changeSqlEndpointCompartment(
+            ChangeSqlEndpointCompartmentRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSqlEndpointCompartmentDetails(),
+                "changeSqlEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeSqlEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeSqlEndpointCompartment")
+                .serviceDetails(
+                        "DataFlow",
+                        "ChangeSqlEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/ChangeSqlEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSqlEndpointCompartmentRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSqlEndpointCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSqlEndpointCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateApplicationResponse createApplication(CreateApplicationRequest request) {
         Objects.requireNonNull(
                 request.getCreateApplicationDetails(), "createApplicationDetails is required");
@@ -387,6 +423,33 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreateRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateSqlEndpointResponse createSqlEndpoint(CreateSqlEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSqlEndpointDetails(), "createSqlEndpointDetails is required");
+
+        return clientCall(request, CreateSqlEndpointResponse::builder)
+                .logger(LOG, "createSqlEndpoint")
+                .serviceDetails("DataFlow", "CreateSqlEndpoint", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataflow.model.SqlEndpoint.class,
+                        CreateSqlEndpointResponse.Builder::sqlEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateSqlEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSqlEndpointResponse.Builder::etag)
                 .callSync();
     }
 
@@ -518,6 +581,32 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSqlEndpointResponse deleteSqlEndpoint(DeleteSqlEndpointRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, DeleteSqlEndpointResponse::builder)
+                .logger(LOG, "deleteSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "DeleteSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/DeleteSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteSqlEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -688,6 +777,34 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "content-encoding", GetRunLogResponse.Builder::contentEncoding)
                 .handleResponseHeadersMap("opc-meta-", GetRunLogResponse.Builder::opcMeta)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public GetSqlEndpointResponse getSqlEndpoint(GetSqlEndpointRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, GetSqlEndpointResponse::builder)
+                .logger(LOG, "getSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "GetSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/GetSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataflow.model.SqlEndpoint.class,
+                        GetSqlEndpointResponse.Builder::sqlEndpoint)
+                .handleResponseHeaderString("etag", GetSqlEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSqlEndpointResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -932,6 +1049,40 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("opc-next-page", ListRunsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListRunsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public ListSqlEndpointsResponse listSqlEndpoints(ListSqlEndpointsRequest request) {
+
+        return clientCall(request, ListSqlEndpointsResponse::builder)
+                .logger(LOG, "listSqlEndpoints")
+                .serviceDetails(
+                        "DataFlow",
+                        "ListSqlEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpointCollection/ListSqlEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSqlEndpointsRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("sqlEndpointId", request.getSqlEndpointId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataflow.model.SqlEndpointCollection.class,
+                        ListSqlEndpointsResponse.Builder::sqlEndpointCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSqlEndpointsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSqlEndpointsResponse.Builder::opcRequestId)
                 .operationUsesDefaultRetries()
                 .callSync();
     }
@@ -1250,6 +1401,35 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdateRunResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRunResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSqlEndpointResponse updateSqlEndpoint(UpdateSqlEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateSqlEndpointDetails(), "updateSqlEndpointDetails is required");
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, UpdateSqlEndpointResponse::builder)
+                .logger(LOG, "updateSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "UpdateSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/UpdateSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateSqlEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

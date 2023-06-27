@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The storage server of the Exadata infrastructure. <br>
+ * The Exadata storage server of the Exadata infrastructure. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -116,12 +116,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
-        /** The make model of the storage server. */
+        /** The make model of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
         private String makeModel;
 
         /**
-         * The make model of the storage server.
+         * The make model of the Exadata storage server.
          *
          * @param makeModel the value to set
          * @return this builder
@@ -131,12 +131,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("makeModel");
             return this;
         }
-        /** The IP address of the storage server. */
+        /** The IP address of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The IP address of the storage server.
+         * The IP address of the Exadata storage server.
          *
          * @param ipAddress the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The CPU count of the storage server */
+        /** The CPU count of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private java.math.BigDecimal cpuCount;
 
         /**
-         * The CPU count of the storage server
+         * The CPU count of the Exadata storage server.
          *
          * @param cpuCount the value to set
          * @return this builder
@@ -161,12 +161,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-        /** The storage server memory size in GB */
+        /** The Exadata storage server memory size in GB. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
         private Double memoryGB;
 
         /**
-         * The storage server memory size in GB
+         * The Exadata storage server memory size in GB.
          *
          * @param memoryGB the value to set
          * @return this builder
@@ -176,12 +176,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("memoryGB");
             return this;
         }
-        /** The maximum hard disk IO operations per second of the storage server */
+        /** The maximum hard disk IO operations per second of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskIOPS")
         private Integer maxHardDiskIOPS;
 
         /**
-         * The maximum hard disk IO operations per second of the storage server
+         * The maximum hard disk IO operations per second of the Exadata storage server.
          *
          * @param maxHardDiskIOPS the value to set
          * @return this builder
@@ -191,12 +191,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("maxHardDiskIOPS");
             return this;
         }
-        /** The maximum hard disk IO throughput in MB/s of the storage server */
+        /** The maximum hard disk IO throughput in MB/s of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskThroughput")
         private Integer maxHardDiskThroughput;
 
         /**
-         * The maximum hard disk IO throughput in MB/s of the storage server
+         * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
          *
          * @param maxHardDiskThroughput the value to set
          * @return this builder
@@ -206,12 +206,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("maxHardDiskThroughput");
             return this;
         }
-        /** The maximum flash disk IO operations per second of the storage server */
+        /** The maximum flash disk IO operations per second of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskIOPS")
         private Integer maxFlashDiskIOPS;
 
         /**
-         * The maximum flash disk IO operations per second of the storage server
+         * The maximum flash disk IO operations per second of the Exadata storage server.
          *
          * @param maxFlashDiskIOPS the value to set
          * @return this builder
@@ -221,12 +221,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             this.__explicitlySet__.add("maxFlashDiskIOPS");
             return this;
         }
-        /** The maximum flash disk IO throughput in MB/s of the storage server */
+        /** The maximum flash disk IO throughput in MB/s of the Exadata storage server. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskThroughput")
         private Integer maxFlashDiskThroughput;
 
         /**
-         * The maximum flash disk IO throughput in MB/s of the storage server
+         * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
          *
          * @param maxFlashDiskThroughput the value to set
          * @return this builder
@@ -237,14 +237,14 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * connector.
          *
          * @param connectorId the value to set
@@ -402,12 +402,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         this.connectorId = connectorId;
     }
 
-    /** The make model of the storage server. */
+    /** The make model of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
     private final String makeModel;
 
     /**
-     * The make model of the storage server.
+     * The make model of the Exadata storage server.
      *
      * @return the value
      */
@@ -415,12 +415,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return makeModel;
     }
 
-    /** The IP address of the storage server. */
+    /** The IP address of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The IP address of the storage server.
+     * The IP address of the Exadata storage server.
      *
      * @return the value
      */
@@ -428,12 +428,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return ipAddress;
     }
 
-    /** The CPU count of the storage server */
+    /** The CPU count of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final java.math.BigDecimal cpuCount;
 
     /**
-     * The CPU count of the storage server
+     * The CPU count of the Exadata storage server.
      *
      * @return the value
      */
@@ -441,12 +441,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return cpuCount;
     }
 
-    /** The storage server memory size in GB */
+    /** The Exadata storage server memory size in GB. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
     private final Double memoryGB;
 
     /**
-     * The storage server memory size in GB
+     * The Exadata storage server memory size in GB.
      *
      * @return the value
      */
@@ -454,12 +454,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return memoryGB;
     }
 
-    /** The maximum hard disk IO operations per second of the storage server */
+    /** The maximum hard disk IO operations per second of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskIOPS")
     private final Integer maxHardDiskIOPS;
 
     /**
-     * The maximum hard disk IO operations per second of the storage server
+     * The maximum hard disk IO operations per second of the Exadata storage server.
      *
      * @return the value
      */
@@ -467,12 +467,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return maxHardDiskIOPS;
     }
 
-    /** The maximum hard disk IO throughput in MB/s of the storage server */
+    /** The maximum hard disk IO throughput in MB/s of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxHardDiskThroughput")
     private final Integer maxHardDiskThroughput;
 
     /**
-     * The maximum hard disk IO throughput in MB/s of the storage server
+     * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
      *
      * @return the value
      */
@@ -480,12 +480,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return maxHardDiskThroughput;
     }
 
-    /** The maximum flash disk IO operations per second of the storage server */
+    /** The maximum flash disk IO operations per second of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskIOPS")
     private final Integer maxFlashDiskIOPS;
 
     /**
-     * The maximum flash disk IO operations per second of the storage server
+     * The maximum flash disk IO operations per second of the Exadata storage server.
      *
      * @return the value
      */
@@ -493,12 +493,12 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
         return maxFlashDiskIOPS;
     }
 
-    /** The maximum flash disk IO throughput in MB/s of the storage server */
+    /** The maximum flash disk IO throughput in MB/s of the Exadata storage server. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxFlashDiskThroughput")
     private final Integer maxFlashDiskThroughput;
 
     /**
-     * The maximum flash disk IO throughput in MB/s of the storage server
+     * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
      *
      * @return the value
      */
@@ -507,14 +507,14 @@ public final class ExternalExadataStorageServerSummary extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * connector.
      *
      * @return the value

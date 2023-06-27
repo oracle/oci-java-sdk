@@ -140,6 +140,9 @@ public class SecurityTokenAdapter {
      * @return token validity duration
      */
     public Duration getTokenValidDuration() {
+        if (!jwt.isPresent()) {
+            return null;
+        }
         return Duration.ofMillis(
                 jwt.get().getExpirationTime().getTime() - jwt.get().getIssueTime().getTime());
     }
