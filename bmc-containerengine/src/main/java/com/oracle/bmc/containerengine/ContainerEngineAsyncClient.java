@@ -282,6 +282,43 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkloadMappingResponse> createWorkloadMapping(
+            CreateWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateWorkloadMappingDetails(),
+                "createWorkloadMappingDetails is required");
+
+        return clientCall(request, CreateWorkloadMappingResponse::builder)
+                .logger(LOG, "createWorkloadMapping")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "CreateWorkloadMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/CreateWorkloadMapping")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateWorkloadMappingRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("workloadMappings")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.WorkloadMapping.class,
+                        CreateWorkloadMappingResponse.Builder::workloadMapping)
+                .handleResponseHeaderString("etag", CreateWorkloadMappingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateWorkloadMappingResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResponse> deleteCluster(
             DeleteClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteClusterRequest, DeleteClusterResponse>
@@ -446,6 +483,38 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteWorkRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkloadMappingResponse> deleteWorkloadMapping(
+            DeleteWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getWorkloadMappingId(), "workloadMappingId must not be blank");
+
+        return clientCall(request, DeleteWorkloadMappingResponse::builder)
+                .logger(LOG, "deleteWorkloadMapping")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "DeleteWorkloadMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/DeleteWorkloadMapping")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteWorkloadMappingRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("workloadMappings")
+                .appendPathParam(request.getWorkloadMappingId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteWorkloadMappingResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -774,6 +843,41 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkloadMappingResponse> getWorkloadMapping(
+            GetWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkloadMappingRequest, GetWorkloadMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getWorkloadMappingId(), "workloadMappingId must not be blank");
+
+        return clientCall(request, GetWorkloadMappingResponse::builder)
+                .logger(LOG, "getWorkloadMapping")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "GetWorkloadMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/GetWorkloadMapping")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkloadMappingRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("workloadMappings")
+                .appendPathParam(request.getWorkloadMappingId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.WorkloadMapping.class,
+                        GetWorkloadMappingResponse.Builder::workloadMapping)
+                .handleResponseHeaderString("etag", GetWorkloadMappingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkloadMappingResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1185,6 +1289,43 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkloadMappingsResponse> listWorkloadMappings(
+            ListWorkloadMappingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        return clientCall(request, ListWorkloadMappingsResponse::builder)
+                .logger(LOG, "listWorkloadMappings")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "ListWorkloadMappings",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMappingSummary/ListWorkloadMappings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkloadMappingsRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("workloadMappings")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.containerengine.model.WorkloadMappingSummary.class,
+                        ListWorkloadMappingsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkloadMappingsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkloadMappingsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
             UpdateAddonRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
@@ -1360,6 +1501,46 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
                         UpdateVirtualNodePoolResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateVirtualNodePoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkloadMappingResponse> updateWorkloadMapping(
+            UpdateWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>
+                    handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getWorkloadMappingId(), "workloadMappingId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateWorkloadMappingDetails(),
+                "updateWorkloadMappingDetails is required");
+
+        return clientCall(request, UpdateWorkloadMappingResponse::builder)
+                .logger(LOG, "updateWorkloadMapping")
+                .serviceDetails(
+                        "ContainerEngine",
+                        "UpdateWorkloadMapping",
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/UpdateWorkloadMapping")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWorkloadMappingRequest::builder)
+                .basePath("/20180222")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("workloadMappings")
+                .appendPathParam(request.getWorkloadMappingId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.containerengine.model.WorkloadMapping.class,
+                        UpdateWorkloadMappingResponse.Builder::workloadMapping)
+                .handleResponseHeaderString("etag", UpdateWorkloadMappingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWorkloadMappingResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

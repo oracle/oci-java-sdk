@@ -8,6 +8,10 @@ import com.oracle.bmc.SdkClients;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @SdkClients({
+    AddressRuleServiceAsyncClient.class,
+    AddressRuleServiceClient.class,
+    AddressServiceAsyncClient.class,
+    AddressServiceClient.class,
     InvoiceServiceAsyncClient.class,
     InvoiceServiceClient.class,
     SubscriptionServiceAsyncClient.class,

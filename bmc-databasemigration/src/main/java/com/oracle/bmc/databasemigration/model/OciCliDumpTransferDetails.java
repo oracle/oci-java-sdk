@@ -27,6 +27,14 @@ package com.oracle.bmc.databasemigration.model;
 public final class OciCliDumpTransferDetails extends HostDumpTransferDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("walletLocation")
+        private String walletLocation;
+
+        public Builder walletLocation(String walletLocation) {
+            this.walletLocation = walletLocation;
+            this.__explicitlySet__.add("walletLocation");
+            return this;
+        }
         /** Path to the OCI CLI installation in the node. */
         @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
         private String ociHome;
@@ -47,7 +55,8 @@ public final class OciCliDumpTransferDetails extends HostDumpTransferDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OciCliDumpTransferDetails build() {
-            OciCliDumpTransferDetails model = new OciCliDumpTransferDetails(this.ociHome);
+            OciCliDumpTransferDetails model =
+                    new OciCliDumpTransferDetails(this.walletLocation, this.ociHome);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -56,6 +65,9 @@ public final class OciCliDumpTransferDetails extends HostDumpTransferDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(OciCliDumpTransferDetails model) {
+            if (model.wasPropertyExplicitlySet("walletLocation")) {
+                this.walletLocation(model.getWalletLocation());
+            }
             if (model.wasPropertyExplicitlySet("ociHome")) {
                 this.ociHome(model.getOciHome());
             }
@@ -73,8 +85,8 @@ public final class OciCliDumpTransferDetails extends HostDumpTransferDetails {
     }
 
     @Deprecated
-    public OciCliDumpTransferDetails(String ociHome) {
-        super();
+    public OciCliDumpTransferDetails(String walletLocation, String ociHome) {
+        super(walletLocation);
         this.ociHome = ociHome;
     }
 

@@ -142,7 +142,14 @@ public final class Dimensions extends com.oracle.bmc.http.client.internal.Explic
     public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
         Pixel("PIXEL"),
         Inch("INCH"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Unit.class);
 
         private final String value;
         private static java.util.Map<String, Unit> map;
@@ -150,7 +157,9 @@ public final class Dimensions extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (Unit v : Unit.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -168,7 +177,9 @@ public final class Dimensions extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Unit: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Unit', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
         }
     };
     /** The unit of length. */

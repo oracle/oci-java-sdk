@@ -26,6 +26,9 @@ package com.oracle.bmc.dataintegration.model;
             value = DataEntitySummaryFromFile.class,
             name = "FILE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataEntitySummaryFromObject.class,
+            name = "OBJECT_ENTITY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DataEntitySummaryFromTable.class,
             name = "TABLE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -103,6 +106,7 @@ public class DataEntitySummary extends com.oracle.bmc.http.client.internal.Expli
         TableEntity("TABLE_ENTITY"),
         FileEntity("FILE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        ObjectEntity("OBJECT_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
 
         /**

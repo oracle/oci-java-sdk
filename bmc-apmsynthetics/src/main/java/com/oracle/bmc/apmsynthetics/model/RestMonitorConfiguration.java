@@ -44,12 +44,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("dnsConfiguration");
             return this;
         }
-        /** If redirection enabled, then redirects will be allowed while accessing target URL. */
+        /** If redirection is enabled, then redirects will be allowed while accessing target URL. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRedirectionEnabled")
         private Boolean isRedirectionEnabled;
 
         /**
-         * If redirection enabled, then redirects will be allowed while accessing target URL.
+         * If redirection is enabled, then redirects will be allowed while accessing target URL.
          *
          * @param isRedirectionEnabled the value to set
          * @return this builder
@@ -59,12 +59,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("isRedirectionEnabled");
             return this;
         }
-        /** If certificate validation enabled, then call will fail for certificate errors. */
+        /** If certificate validation is enabled, then call will fail for certificate errors. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
         private Boolean isCertificateValidationEnabled;
 
         /**
-         * If certificate validation enabled, then call will fail for certificate errors.
+         * If certificate validation is enabled, then call will fail for certificate errors.
          *
          * @param isCertificateValidationEnabled the value to set
          * @return this builder
@@ -89,12 +89,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("requestMethod");
             return this;
         }
-        /** Request http authentication scheme. */
+        /** Request HTTP authentication scheme. */
         @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
         private RequestAuthenticationSchemes reqAuthenticationScheme;
 
         /**
-         * Request http authentication scheme.
+         * Request HTTP authentication scheme.
          *
          * @param reqAuthenticationScheme the value to set
          * @return this builder
@@ -113,6 +113,15 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                 RequestAuthenticationDetails reqAuthenticationDetails) {
             this.reqAuthenticationDetails = reqAuthenticationDetails;
             this.__explicitlySet__.add("reqAuthenticationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clientCertificateDetails")
+        private ClientCertificateDetails clientCertificateDetails;
+
+        public Builder clientCertificateDetails(ClientCertificateDetails clientCertificateDetails) {
+            this.clientCertificateDetails = clientCertificateDetails;
+            this.__explicitlySet__.add("clientCertificateDetails");
             return this;
         }
         /**
@@ -225,6 +234,7 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                             this.requestMethod,
                             this.reqAuthenticationScheme,
                             this.reqAuthenticationDetails,
+                            this.clientCertificateDetails,
                             this.requestHeaders,
                             this.requestQueryParams,
                             this.requestPostBody,
@@ -259,6 +269,9 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             }
             if (model.wasPropertyExplicitlySet("reqAuthenticationDetails")) {
                 this.reqAuthenticationDetails(model.getReqAuthenticationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("clientCertificateDetails")) {
+                this.clientCertificateDetails(model.getClientCertificateDetails());
             }
             if (model.wasPropertyExplicitlySet("requestHeaders")) {
                 this.requestHeaders(model.getRequestHeaders());
@@ -300,6 +313,7 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             RequestMethods requestMethod,
             RequestAuthenticationSchemes reqAuthenticationScheme,
             RequestAuthenticationDetails reqAuthenticationDetails,
+            ClientCertificateDetails clientCertificateDetails,
             java.util.List<Header> requestHeaders,
             java.util.List<RequestQueryParam> requestQueryParams,
             String requestPostBody,
@@ -312,6 +326,7 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
         this.requestMethod = requestMethod;
         this.reqAuthenticationScheme = reqAuthenticationScheme;
         this.reqAuthenticationDetails = reqAuthenticationDetails;
+        this.clientCertificateDetails = clientCertificateDetails;
         this.requestHeaders = requestHeaders;
         this.requestQueryParams = requestQueryParams;
         this.requestPostBody = requestPostBody;
@@ -320,12 +335,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
         this.networkConfiguration = networkConfiguration;
     }
 
-    /** If redirection enabled, then redirects will be allowed while accessing target URL. */
+    /** If redirection is enabled, then redirects will be allowed while accessing target URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRedirectionEnabled")
     private final Boolean isRedirectionEnabled;
 
     /**
-     * If redirection enabled, then redirects will be allowed while accessing target URL.
+     * If redirection is enabled, then redirects will be allowed while accessing target URL.
      *
      * @return the value
      */
@@ -333,12 +348,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
         return isRedirectionEnabled;
     }
 
-    /** If certificate validation enabled, then call will fail for certificate errors. */
+    /** If certificate validation is enabled, then call will fail for certificate errors. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCertificateValidationEnabled")
     private final Boolean isCertificateValidationEnabled;
 
     /**
-     * If certificate validation enabled, then call will fail for certificate errors.
+     * If certificate validation is enabled, then call will fail for certificate errors.
      *
      * @return the value
      */
@@ -359,12 +374,12 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
         return requestMethod;
     }
 
-    /** Request http authentication scheme. */
+    /** Request HTTP authentication scheme. */
     @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
     private final RequestAuthenticationSchemes reqAuthenticationScheme;
 
     /**
-     * Request http authentication scheme.
+     * Request HTTP authentication scheme.
      *
      * @return the value
      */
@@ -377,6 +392,13 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
 
     public RequestAuthenticationDetails getReqAuthenticationDetails() {
         return reqAuthenticationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clientCertificateDetails")
+    private final ClientCertificateDetails clientCertificateDetails;
+
+    public ClientCertificateDetails getClientCertificateDetails() {
+        return clientCertificateDetails;
     }
 
     /**
@@ -486,6 +508,8 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                 .append(String.valueOf(this.reqAuthenticationScheme));
         sb.append(", reqAuthenticationDetails=")
                 .append(String.valueOf(this.reqAuthenticationDetails));
+        sb.append(", clientCertificateDetails=")
+                .append(String.valueOf(this.clientCertificateDetails));
         sb.append(", requestHeaders=").append(String.valueOf(this.requestHeaders));
         sb.append(", requestQueryParams=").append(String.valueOf(this.requestQueryParams));
         sb.append(", requestPostBody=").append(String.valueOf(this.requestPostBody));
@@ -514,6 +538,8 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                         this.reqAuthenticationScheme, other.reqAuthenticationScheme)
                 && java.util.Objects.equals(
                         this.reqAuthenticationDetails, other.reqAuthenticationDetails)
+                && java.util.Objects.equals(
+                        this.clientCertificateDetails, other.clientCertificateDetails)
                 && java.util.Objects.equals(this.requestHeaders, other.requestHeaders)
                 && java.util.Objects.equals(this.requestQueryParams, other.requestQueryParams)
                 && java.util.Objects.equals(this.requestPostBody, other.requestPostBody)
@@ -550,6 +576,11 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                         + (this.reqAuthenticationDetails == null
                                 ? 43
                                 : this.reqAuthenticationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientCertificateDetails == null
+                                ? 43
+                                : this.clientCertificateDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.requestHeaders == null ? 43 : this.requestHeaders.hashCode());

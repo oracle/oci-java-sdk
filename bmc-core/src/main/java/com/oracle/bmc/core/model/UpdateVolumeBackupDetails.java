@@ -23,15 +23,17 @@ package com.oracle.bmc.core.model;
 public final class UpdateVolumeBackupDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags"})
+    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags", "kmsKeyId"})
     public UpdateVolumeBackupDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            String kmsKeyId) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.kmsKeyId = kmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -106,6 +108,33 @@ public final class UpdateVolumeBackupDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume
+         * backup. For more information about the Vault service and encryption keys, see [Overview
+         * of Vault
+         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+         * and [Using
+         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume
+         * backup. For more information about the Vault service and encryption keys, see [Overview
+         * of Vault
+         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+         * and [Using
+         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -113,7 +142,7 @@ public final class UpdateVolumeBackupDetails
         public UpdateVolumeBackupDetails build() {
             UpdateVolumeBackupDetails model =
                     new UpdateVolumeBackupDetails(
-                            this.definedTags, this.displayName, this.freeformTags);
+                            this.definedTags, this.displayName, this.freeformTags, this.kmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +159,9 @@ public final class UpdateVolumeBackupDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
             }
             return this;
         }
@@ -207,6 +239,29 @@ public final class UpdateVolumeBackupDetails
         return freeformTags;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume backup.
+     * For more information about the Vault service and encryption keys, see [Overview of Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * and [Using
+     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume backup.
+     * For more information about the Vault service and encryption keys, see [Overview of Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * and [Using
+     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -225,6 +280,7 @@ public final class UpdateVolumeBackupDetails
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -242,6 +298,7 @@ public final class UpdateVolumeBackupDetails
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && super.equals(other);
     }
 
@@ -252,6 +309,7 @@ public final class UpdateVolumeBackupDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

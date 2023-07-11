@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * aggregated network data. <br>
+ * Details of the aggregated network data. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +46,12 @@ public final class AggregatedNetworkData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** state of the result */
+        /** Status of the aggregated network data result. */
         @com.fasterxml.jackson.annotation.JsonProperty("resultState")
         private ResultState resultState;
 
         /**
-         * state of the result
+         * Status of the aggregated network data result.
          *
          * @param resultState the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class AggregatedNetworkData
             this.__explicitlySet__.add("resultState");
             return this;
         }
-        /** List of VantagePointNode items. */
+        /** List of vantage point nodes. */
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNodes")
         private java.util.List<VantagePointNode> vantagePointNodes;
 
         /**
-         * List of VantagePointNode items.
+         * List of vantage point nodes.
          *
          * @param vantagePointNodes the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class AggregatedNetworkData
             this.__explicitlySet__.add("vantagePointNodes");
             return this;
         }
-        /** 2d array of nodes where each internal array corresponds to 1 level */
+        /** An array of node arrays where each internal array corresponds to nodes at one level. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodesByLevel")
         private java.util.List<java.util.List<Node>> nodesByLevel;
 
         /**
-         * 2d array of nodes where each internal array corresponds to 1 level
+         * An array of node arrays where each internal array corresponds to nodes at one level.
          *
          * @param nodesByLevel the value to set
          * @return this builder
@@ -91,12 +91,12 @@ public final class AggregatedNetworkData
             this.__explicitlySet__.add("nodesByLevel");
             return this;
         }
-        /** map of Link objects */
+        /** Map of link objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("links")
         private java.util.Map<String, Link> links;
 
         /**
-         * map of Link objects
+         * Map of link objects.
          *
          * @param links the value to set
          * @return this builder
@@ -106,12 +106,12 @@ public final class AggregatedNetworkData
             this.__explicitlySet__.add("links");
             return this;
         }
-        /** string contaiing error details */
+        /** String containing error details. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
         private String errorDetails;
 
         /**
-         * string contaiing error details
+         * String containing error details.
          *
          * @param errorDetails the value to set
          * @return this builder
@@ -169,7 +169,7 @@ public final class AggregatedNetworkData
         return new Builder().copy(this);
     }
 
-    /** state of the result */
+    /** Status of the aggregated network data result. */
     public enum ResultState implements com.oracle.bmc.http.internal.BmcEnum {
         Success("SUCCESS"),
         Failure("FAILURE"),
@@ -216,12 +216,12 @@ public final class AggregatedNetworkData
             return UnknownEnumValue;
         }
     };
-    /** state of the result */
+    /** Status of the aggregated network data result. */
     @com.fasterxml.jackson.annotation.JsonProperty("resultState")
     private final ResultState resultState;
 
     /**
-     * state of the result
+     * Status of the aggregated network data result.
      *
      * @return the value
      */
@@ -229,12 +229,12 @@ public final class AggregatedNetworkData
         return resultState;
     }
 
-    /** List of VantagePointNode items. */
+    /** List of vantage point nodes. */
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNodes")
     private final java.util.List<VantagePointNode> vantagePointNodes;
 
     /**
-     * List of VantagePointNode items.
+     * List of vantage point nodes.
      *
      * @return the value
      */
@@ -242,12 +242,12 @@ public final class AggregatedNetworkData
         return vantagePointNodes;
     }
 
-    /** 2d array of nodes where each internal array corresponds to 1 level */
+    /** An array of node arrays where each internal array corresponds to nodes at one level. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodesByLevel")
     private final java.util.List<java.util.List<Node>> nodesByLevel;
 
     /**
-     * 2d array of nodes where each internal array corresponds to 1 level
+     * An array of node arrays where each internal array corresponds to nodes at one level.
      *
      * @return the value
      */
@@ -255,12 +255,12 @@ public final class AggregatedNetworkData
         return nodesByLevel;
     }
 
-    /** map of Link objects */
+    /** Map of link objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("links")
     private final java.util.Map<String, Link> links;
 
     /**
-     * map of Link objects
+     * Map of link objects.
      *
      * @return the value
      */
@@ -268,12 +268,12 @@ public final class AggregatedNetworkData
         return links;
     }
 
-    /** string contaiing error details */
+    /** String containing error details. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
     private final String errorDetails;
 
     /**
-     * string contaiing error details
+     * String containing error details.
      *
      * @return the value
      */

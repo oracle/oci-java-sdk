@@ -146,6 +146,22 @@ public interface ContainerEngine extends AutoCloseable {
     CreateVirtualNodePoolResponse createVirtualNodePool(CreateVirtualNodePoolRequest request);
 
     /**
+     * Create the specified workloadMapping for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateWorkloadMappingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateWorkloadMapping API.
+     */
+    CreateWorkloadMappingResponse createWorkloadMapping(CreateWorkloadMappingRequest request);
+
+    /**
      * Delete a cluster.
      *
      * @param request The request object containing the details to send
@@ -221,6 +237,22 @@ public interface ContainerEngine extends AutoCloseable {
      *     API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
+
+    /**
+     * Delete workloadMapping for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteWorkloadMappingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteWorkloadMapping API.
+     */
+    DeleteWorkloadMappingResponse deleteWorkloadMapping(DeleteWorkloadMappingRequest request);
 
     /**
      * Disable addon for a provisioned cluster.
@@ -376,6 +408,22 @@ public interface ContainerEngine extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Get the specified workloadMapping for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetWorkloadMappingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkloadMapping
+     *     API.
+     */
+    GetWorkloadMappingResponse getWorkloadMapping(GetWorkloadMappingRequest request);
 
     /**
      * Install the specified addon for a cluster.
@@ -549,6 +597,22 @@ public interface ContainerEngine extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * List workloadMappings for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListWorkloadMappingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListWorkloadMappings API.
+     */
+    ListWorkloadMappingsResponse listWorkloadMappings(ListWorkloadMappingsRequest request);
+
+    /**
      * Update addon details for a cluster.
      *
      * @param request The request object containing the details to send
@@ -625,6 +689,22 @@ public interface ContainerEngine extends AutoCloseable {
      *     UpdateVirtualNodePool API.
      */
     UpdateVirtualNodePoolResponse updateVirtualNodePool(UpdateVirtualNodePoolRequest request);
+
+    /**
+     * Update workloadMapping details for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateWorkloadMappingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateWorkloadMapping API.
+     */
+    UpdateWorkloadMappingResponse updateWorkloadMapping(UpdateWorkloadMappingRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -65,6 +65,22 @@ public interface AIServiceDocument extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Perform different types of document analysis.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AnalyzeDocumentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AnalyzeDocument
+     *     API.
+     */
+    AnalyzeDocumentResponse analyzeDocument(AnalyzeDocumentRequest request);
+
+    /**
      * Cancel a processor job.
      *
      * @param request The request object containing the details to send
@@ -345,6 +361,21 @@ public interface AIServiceDocument extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Updates the model metadata only selected path parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/PatchModelExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchModel API.
+     */
+    PatchModelResponse patchModel(PatchModelRequest request);
 
     /**
      * Updates the model metadata.

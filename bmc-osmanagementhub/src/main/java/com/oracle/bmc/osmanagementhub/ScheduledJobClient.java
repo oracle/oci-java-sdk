@@ -127,7 +127,10 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateScheduledJobResponse::builder)
                 .logger(LOG, "createScheduledJob")
-                .serviceDetails("ScheduledJob", "CreateScheduledJob", "")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "CreateScheduledJob",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/CreateScheduledJob")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateScheduledJobRequest::builder)
                 .basePath("/20220901")
@@ -155,7 +158,10 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteScheduledJobResponse::builder)
                 .logger(LOG, "deleteScheduledJob")
-                .serviceDetails("ScheduledJob", "DeleteScheduledJob", "")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "DeleteScheduledJob",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/DeleteScheduledJob")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteScheduledJobRequest::builder)
                 .basePath("/20220901")
@@ -177,7 +183,10 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetScheduledJobResponse::builder)
                 .logger(LOG, "getScheduledJob")
-                .serviceDetails("ScheduledJob", "GetScheduledJob", "")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "GetScheduledJob",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/GetScheduledJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetScheduledJobRequest::builder)
                 .basePath("/20220901")
@@ -202,7 +211,10 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListScheduledJobsResponse::builder)
                 .logger(LOG, "listScheduledJobs")
-                .serviceDetails("ScheduledJob", "ListScheduledJobs", "")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "ListScheduledJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ListScheduledJobs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListScheduledJobsRequest::builder)
                 .basePath("/20220901")
@@ -246,7 +258,10 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, RunScheduledJobNowResponse::builder)
                 .logger(LOG, "runScheduledJobNow")
-                .serviceDetails("ScheduledJob", "RunScheduledJobNow", "")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "RunScheduledJobNow",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/RunScheduledJobNow")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RunScheduledJobNowRequest::builder)
                 .basePath("/20220901")
@@ -273,7 +288,10 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateScheduledJobResponse::builder)
                 .logger(LOG, "updateScheduledJob")
-                .serviceDetails("ScheduledJob", "UpdateScheduledJob", "")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "UpdateScheduledJob",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/UpdateScheduledJob")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateScheduledJobRequest::builder)
                 .basePath("/20220901")

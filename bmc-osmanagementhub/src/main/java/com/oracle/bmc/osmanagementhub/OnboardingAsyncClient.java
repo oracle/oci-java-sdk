@@ -102,7 +102,10 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
 
         return clientCall(request, CreateProfileResponse::builder)
                 .logger(LOG, "createProfile")
-                .serviceDetails("Onboarding", "CreateProfile", "")
+                .serviceDetails(
+                        "Onboarding",
+                        "CreateProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/CreateProfile")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateProfileRequest::builder)
                 .basePath("/20220901")
@@ -130,7 +133,10 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
 
         return clientCall(request, DeleteProfileResponse::builder)
                 .logger(LOG, "deleteProfile")
-                .serviceDetails("Onboarding", "DeleteProfile", "")
+                .serviceDetails(
+                        "Onboarding",
+                        "DeleteProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DeleteProfile")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteProfileRequest::builder)
                 .basePath("/20220901")
@@ -154,7 +160,10 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
 
         return clientCall(request, GetProfileResponse::builder)
                 .logger(LOG, "getProfile")
-                .serviceDetails("Onboarding", "GetProfile", "")
+                .serviceDetails(
+                        "Onboarding",
+                        "GetProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/GetProfile")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetProfileRequest::builder)
                 .basePath("/20220901")
@@ -179,7 +188,10 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
 
         return clientCall(request, ListProfilesResponse::builder)
                 .logger(LOG, "listProfiles")
-                .serviceDetails("Onboarding", "ListProfiles", "")
+                .serviceDetails(
+                        "Onboarding",
+                        "ListProfiles",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ListProfiles")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListProfilesRequest::builder)
                 .basePath("/20220901")
@@ -227,7 +239,10 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
 
         return clientCall(request, UpdateProfileResponse::builder)
                 .logger(LOG, "updateProfile")
-                .serviceDetails("Onboarding", "UpdateProfile", "")
+                .serviceDetails(
+                        "Onboarding",
+                        "UpdateProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/UpdateProfile")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateProfileRequest::builder)
                 .basePath("/20220901")

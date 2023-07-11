@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Network node <br>
+ * Details of the network node. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -59,12 +59,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** id of node */
+        /** ID of the network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * id of node
+         * ID of the network node.
          *
          * @param id the value to set
          * @return this builder
@@ -74,12 +74,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** ip address of node */
+        /** IP address of the network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * ip address of node
+         * IP address of the network node.
          *
          * @param ipAddress the value to set
          * @return this builder
@@ -89,12 +89,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** display name of node */
+        /** Display name of the network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * display name of node
+         * Display name of the network node.
          *
          * @param displayName the value to set
          * @return this builder
@@ -104,12 +104,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** geo info */
+        /** Geographical information of the network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
         private String geoInfo;
 
         /**
-         * geo info
+         * Geographical information of the network node.
          *
          * @param geoInfo the value to set
          * @return this builder
@@ -119,12 +119,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("geoInfo");
             return this;
         }
-        /** links outgoing from this node */
+        /** Outgoing links from the network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
         private java.util.List<String> outgoingLinks;
 
         /**
-         * links outgoing from this node
+         * Outgoing links from the network node.
          *
          * @param outgoingLinks the value to set
          * @return this builder
@@ -134,12 +134,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("outgoingLinks");
             return this;
         }
-        /** consecutive anonymous node count */
+        /** Number of consecutive anonymous network nodes. */
         @com.fasterxml.jackson.annotation.JsonProperty("consecutiveAnonymousCount")
         private Integer consecutiveAnonymousCount;
 
         /**
-         * consecutive anonymous node count
+         * Number of consecutive anonymous network nodes.
          *
          * @param consecutiveAnonymousCount the value to set
          * @return this builder
@@ -149,12 +149,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("consecutiveAnonymousCount");
             return this;
         }
-        /** level of this node */
+        /** Level of the network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Integer level;
 
         /**
-         * level of this node
+         * Level of the network node.
          *
          * @param level the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("level");
             return this;
         }
-        /** average packet response time in milli seconds */
+        /** Average packet response time in milliseconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("avgPacketResponseTimeInMs")
         private Double avgPacketResponseTimeInMs;
 
         /**
-         * average packet response time in milli seconds
+         * Average packet response time in milliseconds.
          *
          * @param avgPacketResponseTimeInMs the value to set
          * @return this builder
@@ -179,12 +179,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("avgPacketResponseTimeInMs");
             return this;
         }
-        /** average packet loss percentage */
+        /** Percentage of the average packet loss. */
         @com.fasterxml.jackson.annotation.JsonProperty("avgPacketLossPercent")
         private Double avgPacketLossPercent;
 
         /**
-         * average packet loss percentage
+         * Percentage of the average packet loss.
          *
          * @param avgPacketLossPercent the value to set
          * @return this builder
@@ -194,12 +194,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("avgPacketLossPercent");
             return this;
         }
-        /** type of node */
+        /** Type of network node. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * type of node
+         * Type of network node.
          *
          * @param type the value to set
          * @return this builder
@@ -277,12 +277,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** id of node */
+    /** ID of the network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * id of node
+     * ID of the network node.
      *
      * @return the value
      */
@@ -290,12 +290,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return id;
     }
 
-    /** ip address of node */
+    /** IP address of the network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * ip address of node
+     * IP address of the network node.
      *
      * @return the value
      */
@@ -303,12 +303,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return ipAddress;
     }
 
-    /** display name of node */
+    /** Display name of the network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * display name of node
+     * Display name of the network node.
      *
      * @return the value
      */
@@ -316,12 +316,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return displayName;
     }
 
-    /** geo info */
+    /** Geographical information of the network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
     private final String geoInfo;
 
     /**
-     * geo info
+     * Geographical information of the network node.
      *
      * @return the value
      */
@@ -329,12 +329,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return geoInfo;
     }
 
-    /** links outgoing from this node */
+    /** Outgoing links from the network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
     private final java.util.List<String> outgoingLinks;
 
     /**
-     * links outgoing from this node
+     * Outgoing links from the network node.
      *
      * @return the value
      */
@@ -342,12 +342,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return outgoingLinks;
     }
 
-    /** consecutive anonymous node count */
+    /** Number of consecutive anonymous network nodes. */
     @com.fasterxml.jackson.annotation.JsonProperty("consecutiveAnonymousCount")
     private final Integer consecutiveAnonymousCount;
 
     /**
-     * consecutive anonymous node count
+     * Number of consecutive anonymous network nodes.
      *
      * @return the value
      */
@@ -355,12 +355,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return consecutiveAnonymousCount;
     }
 
-    /** level of this node */
+    /** Level of the network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Integer level;
 
     /**
-     * level of this node
+     * Level of the network node.
      *
      * @return the value
      */
@@ -368,12 +368,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return level;
     }
 
-    /** average packet response time in milli seconds */
+    /** Average packet response time in milliseconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("avgPacketResponseTimeInMs")
     private final Double avgPacketResponseTimeInMs;
 
     /**
-     * average packet response time in milli seconds
+     * Average packet response time in milliseconds.
      *
      * @return the value
      */
@@ -381,12 +381,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return avgPacketResponseTimeInMs;
     }
 
-    /** average packet loss percentage */
+    /** Percentage of the average packet loss. */
     @com.fasterxml.jackson.annotation.JsonProperty("avgPacketLossPercent")
     private final Double avgPacketLossPercent;
 
     /**
-     * average packet loss percentage
+     * Percentage of the average packet loss.
      *
      * @return the value
      */
@@ -394,7 +394,7 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return avgPacketLossPercent;
     }
 
-    /** type of node */
+    /** Type of network node. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Source("SOURCE"),
         Destination("DESTINATION"),
@@ -441,12 +441,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** type of node */
+    /** Type of network node. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * type of node
+     * Type of network node.
      *
      * @return the value
      */

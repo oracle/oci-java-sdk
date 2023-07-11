@@ -26,14 +26,20 @@ package com.oracle.bmc.dataintegration.model;
             value = UpdateDataAssetFromRest.class,
             name = "REST_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateDataAssetFromAtp.class,
-            name = "ORACLE_ATP_DATA_ASSET"),
+            value = UpdateDataAssetFromMySqlHeatWave.class,
+            name = "MYSQL_HEATWAVE_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDataAssetFromOracleEbs.class,
+            name = "ORACLE_EBS_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDataAssetFromAdwc.class,
             name = "ORACLE_ADWC_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateDataAssetFromJdbc.class,
-            name = "GENERIC_JDBC_DATA_ASSET"),
+            value = UpdateDataAssetFromHdfs.class,
+            name = "HDFS_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDataAssetFromOraclePeopleSoft.class,
+            name = "ORACLE_PEOPLESOFT_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDataAssetFromObjectStorage.class,
             name = "ORACLE_OBJECT_STORAGE_DATA_ASSET"),
@@ -41,17 +47,26 @@ package com.oracle.bmc.dataintegration.model;
             value = UpdateDataAssetFromAmazonS3.class,
             name = "AMAZON_S3_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateDataAssetFromFusionApp.class,
-            name = "FUSION_APP_DATA_ASSET"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDataAssetFromMySQL.class,
             name = "MYSQL_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateDataAssetFromOracle.class,
-            name = "ORACLE_DATA_ASSET"),
+            value = UpdateDataAssetFromOracleSiebel.class,
+            name = "ORACLE_SIEBEL_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDataAssetFromLake.class,
-            name = "LAKE_DATA_ASSET")
+            name = "LAKE_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDataAssetFromAtp.class,
+            name = "ORACLE_ATP_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDataAssetFromJdbc.class,
+            name = "GENERIC_JDBC_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDataAssetFromFusionApp.class,
+            name = "FUSION_APP_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDataAssetFromOracle.class,
+            name = "ORACLE_DATA_ASSET")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -317,6 +332,11 @@ public class UpdateDataAssetDetails
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
         LakeDataAsset("LAKE_DATA_ASSET"),
+        OraclePeoplesoftDataAsset("ORACLE_PEOPLESOFT_DATA_ASSET"),
+        OracleSiebelDataAsset("ORACLE_SIEBEL_DATA_ASSET"),
+        OracleEbsDataAsset("ORACLE_EBS_DATA_ASSET"),
+        HdfsDataAsset("HDFS_DATA_ASSET"),
+        MysqlHeatwaveDataAsset("MYSQL_HEATWAVE_DATA_ASSET"),
         RestDataAsset("REST_DATA_ASSET"),
         ;
 

@@ -333,12 +333,12 @@ public final class UpdateMonitorDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** If isRunNow is enabled, then the monitor will run now. */
+        /** If isRunNow is enabled, then the monitor will run immediately. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
         private Boolean isRunNow;
 
         /**
-         * If isRunNow is enabled, then the monitor will run now.
+         * If isRunNow is enabled, then the monitor will run immediately.
          *
          * @param isRunNow the value to set
          * @return this builder
@@ -348,12 +348,12 @@ public final class UpdateMonitorDetails
             this.__explicitlySet__.add("isRunNow");
             return this;
         }
-        /** Scheduling policy on Vantage points. */
+        /** Scheduling policy to decide the distribution of monitor executions on vantage points. */
         @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
         private SchedulingPolicy schedulingPolicy;
 
         /**
-         * Scheduling policy on Vantage points.
+         * Scheduling policy to decide the distribution of monitor executions on vantage points.
          *
          * @param schedulingPolicy the value to set
          * @return this builder
@@ -364,14 +364,14 @@ public final class UpdateMonitorDetails
             return this;
         }
         /**
-         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy -
+         * Time interval between two runs in round robin batch mode (SchedulingPolicy -
          * BATCHED_ROUND_ROBIN).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
         private Integer batchIntervalInSeconds;
 
         /**
-         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy -
+         * Time interval between two runs in round robin batch mode (SchedulingPolicy -
          * BATCHED_ROUND_ROBIN).
          *
          * @param batchIntervalInSeconds the value to set
@@ -694,12 +694,12 @@ public final class UpdateMonitorDetails
         return definedTags;
     }
 
-    /** If isRunNow is enabled, then the monitor will run now. */
+    /** If isRunNow is enabled, then the monitor will run immediately. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
     private final Boolean isRunNow;
 
     /**
-     * If isRunNow is enabled, then the monitor will run now.
+     * If isRunNow is enabled, then the monitor will run immediately.
      *
      * @return the value
      */
@@ -707,12 +707,12 @@ public final class UpdateMonitorDetails
         return isRunNow;
     }
 
-    /** Scheduling policy on Vantage points. */
+    /** Scheduling policy to decide the distribution of monitor executions on vantage points. */
     @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
     private final SchedulingPolicy schedulingPolicy;
 
     /**
-     * Scheduling policy on Vantage points.
+     * Scheduling policy to decide the distribution of monitor executions on vantage points.
      *
      * @return the value
      */
@@ -721,14 +721,14 @@ public final class UpdateMonitorDetails
     }
 
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy -
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy -
      * BATCHED_ROUND_ROBIN).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
     private final Integer batchIntervalInSeconds;
 
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy -
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy -
      * BATCHED_ROUND_ROBIN).
      *
      * @return the value

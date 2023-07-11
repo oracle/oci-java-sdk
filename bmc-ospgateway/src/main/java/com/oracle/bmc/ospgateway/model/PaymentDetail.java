@@ -23,6 +23,9 @@ package com.oracle.bmc.ospgateway.model;
         defaultImpl = PaymentDetail.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = EcheckPaymentDetail.class,
+            name = "ECHECK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OtherPaymentDetail.class,
             name = "OTHER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -137,6 +140,7 @@ public class PaymentDetail extends com.oracle.bmc.http.client.internal.Explicitl
     public enum PaymentMethod implements com.oracle.bmc.http.internal.BmcEnum {
         CreditCard("CREDIT_CARD"),
         Paypal("PAYPAL"),
+        Echeck("ECHECK"),
         Other("OTHER"),
 
         /**

@@ -136,7 +136,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, AttachManagedInstancesToManagedInstanceGroupResponse::builder)
                 .logger(LOG, "attachManagedInstancesToManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "AttachManagedInstancesToManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "AttachManagedInstancesToManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachManagedInstancesToManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachManagedInstancesToManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -174,7 +176,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, AttachSoftwareSourcesToManagedInstanceGroupResponse::builder)
                 .logger(LOG, "attachSoftwareSourcesToManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "AttachSoftwareSourcesToManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "AttachSoftwareSourcesToManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachSoftwareSourcesToManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachSoftwareSourcesToManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -203,7 +207,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateManagedInstanceGroupResponse::builder)
                 .logger(LOG, "createManagedInstanceGroup")
-                .serviceDetails("ManagedInstanceGroup", "CreateManagedInstanceGroup", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "CreateManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/CreateManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -232,7 +239,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteManagedInstanceGroupResponse::builder)
                 .logger(LOG, "deleteManagedInstanceGroup")
-                .serviceDetails("ManagedInstanceGroup", "DeleteManagedInstanceGroup", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "DeleteManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DeleteManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -263,7 +273,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "ManagedInstanceGroup",
                         "DetachManagedInstancesFromManagedInstanceGroup",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachManagedInstancesFromManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachManagedInstancesFromManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -298,7 +308,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, DetachSoftwareSourcesFromManagedInstanceGroupResponse::builder)
                 .logger(LOG, "detachSoftwareSourcesFromManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "DetachSoftwareSourcesFromManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "DetachSoftwareSourcesFromManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachSoftwareSourcesFromManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachSoftwareSourcesFromManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -332,7 +344,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, DisableModuleStreamOnManagedInstanceGroupResponse::builder)
                 .logger(LOG, "disableModuleStreamOnManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "DisableModuleStreamOnManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "DisableModuleStreamOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DisableModuleStreamOnManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableModuleStreamOnManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -369,7 +383,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, EnableModuleStreamOnManagedInstanceGroupResponse::builder)
                 .logger(LOG, "enableModuleStreamOnManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "EnableModuleStreamOnManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "EnableModuleStreamOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/EnableModuleStreamOnManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableModuleStreamOnManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -401,7 +417,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetManagedInstanceGroupResponse::builder)
                 .logger(LOG, "getManagedInstanceGroup")
-                .serviceDetails("ManagedInstanceGroup", "GetManagedInstanceGroup", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "GetManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/GetManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -436,7 +455,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "ManagedInstanceGroup",
                         "InstallModuleStreamProfileOnManagedInstanceGroup",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallModuleStreamProfileOnManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallModuleStreamProfileOnManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -473,7 +492,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, InstallPackagesOnManagedInstanceGroupResponse::builder)
                 .logger(LOG, "installPackagesOnManagedInstanceGroup")
-                .serviceDetails("ManagedInstanceGroup", "InstallPackagesOnManagedInstanceGroup", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "InstallPackagesOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallPackagesOnManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallPackagesOnManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -507,7 +529,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, ListManagedInstanceGroupAvailableModulesResponse::builder)
                 .logger(LOG, "listManagedInstanceGroupAvailableModules")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "ListManagedInstanceGroupAvailableModules", "")
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroupAvailableModules",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableModules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupAvailableModulesRequest::builder)
                 .basePath("/20220901")
@@ -549,7 +573,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, ListManagedInstanceGroupAvailablePackagesResponse::builder)
                 .logger(LOG, "listManagedInstanceGroupAvailablePackages")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "ListManagedInstanceGroupAvailablePackages", "")
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroupAvailablePackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailablePackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupAvailablePackagesRequest::builder)
                 .basePath("/20220901")
@@ -598,7 +624,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailableSoftwareSources",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableSoftwareSources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupAvailableSoftwareSourcesRequest::builder)
                 .basePath("/20220901")
@@ -645,7 +671,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, ListManagedInstanceGroupInstalledPackagesResponse::builder)
                 .logger(LOG, "listManagedInstanceGroupInstalledPackages")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "ListManagedInstanceGroupInstalledPackages", "")
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroupInstalledPackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupInstalledPackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupInstalledPackagesRequest::builder)
                 .basePath("/20220901")
@@ -690,7 +718,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListManagedInstanceGroupModulesResponse::builder)
                 .logger(LOG, "listManagedInstanceGroupModules")
-                .serviceDetails("ManagedInstanceGroup", "ListManagedInstanceGroupModules", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroupModules",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupModules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupModulesRequest::builder)
                 .basePath("/20220901")
@@ -731,7 +762,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListManagedInstanceGroupsResponse::builder)
                 .logger(LOG, "listManagedInstanceGroups")
-                .serviceDetails("ManagedInstanceGroup", "ListManagedInstanceGroups", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "ListManagedInstanceGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceGroupsRequest::builder)
                 .basePath("/20220901")
@@ -778,7 +812,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, ManageModuleStreamsOnManagedInstanceGroupResponse::builder)
                 .logger(LOG, "manageModuleStreamsOnManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "ManageModuleStreamsOnManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "ManageModuleStreamsOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ManageModuleStreamsOnManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ManageModuleStreamsOnManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -818,7 +854,7 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "ManagedInstanceGroup",
                         "RemoveModuleStreamProfileFromManagedInstanceGroup",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemoveModuleStreamProfileFromManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveModuleStreamProfileFromManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -856,7 +892,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, RemovePackagesFromManagedInstanceGroupResponse::builder)
                 .logger(LOG, "removePackagesFromManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "RemovePackagesFromManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "RemovePackagesFromManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemovePackagesFromManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemovePackagesFromManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -892,7 +930,9 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
         return clientCall(request, UpdateAllPackagesOnManagedInstanceGroupResponse::builder)
                 .logger(LOG, "updateAllPackagesOnManagedInstanceGroup")
                 .serviceDetails(
-                        "ManagedInstanceGroup", "UpdateAllPackagesOnManagedInstanceGroup", "")
+                        "ManagedInstanceGroup",
+                        "UpdateAllPackagesOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateAllPackagesOnManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateAllPackagesOnManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")
@@ -927,7 +967,10 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateManagedInstanceGroupResponse::builder)
                 .logger(LOG, "updateManagedInstanceGroup")
-                .serviceDetails("ManagedInstanceGroup", "UpdateManagedInstanceGroup", "")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "UpdateManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateManagedInstanceGroup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagedInstanceGroupRequest::builder)
                 .basePath("/20220901")

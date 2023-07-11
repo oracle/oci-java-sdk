@@ -125,6 +125,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                         AuthorizeSubscriptionPaymentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", AuthorizeSubscriptionPaymentResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -154,6 +155,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", GetSubscriptionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSubscriptionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -187,6 +189,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListSubscriptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListSubscriptionsResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -223,6 +226,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id", PaySubscriptionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PaySubscriptionResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,6 +261,7 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", UpdateSubscriptionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSubscriptionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

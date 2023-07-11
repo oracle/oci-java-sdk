@@ -133,7 +133,10 @@ public class ReportingManagedInstanceAsyncClient
 
         return clientCall(request, GetManagedInstanceAnalyticContentResponse::builder)
                 .logger(LOG, "getManagedInstanceAnalyticContent")
-                .serviceDetails("ReportingManagedInstance", "GetManagedInstanceAnalyticContent", "")
+                .serviceDetails(
+                        "ReportingManagedInstance",
+                        "GetManagedInstanceAnalyticContent",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstanceAnalyticContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceAnalyticContentRequest::builder)
                 .basePath("/20220901")
@@ -188,7 +191,10 @@ public class ReportingManagedInstanceAsyncClient
 
         return clientCall(request, GetManagedInstanceContentResponse::builder)
                 .logger(LOG, "getManagedInstanceContent")
-                .serviceDetails("ReportingManagedInstance", "GetManagedInstanceContent", "")
+                .serviceDetails(
+                        "ReportingManagedInstance",
+                        "GetManagedInstanceContent",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstanceContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceContentRequest::builder)
                 .basePath("/20220901")
@@ -227,7 +233,10 @@ public class ReportingManagedInstanceAsyncClient
 
         return clientCall(request, SummarizeManagedInstanceAnalyticsResponse::builder)
                 .logger(LOG, "summarizeManagedInstanceAnalytics")
-                .serviceDetails("ReportingManagedInstance", "SummarizeManagedInstanceAnalytics", "")
+                .serviceDetails(
+                        "ReportingManagedInstance",
+                        "SummarizeManagedInstanceAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceAnalyticCollection/SummarizeManagedInstanceAnalytics")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeManagedInstanceAnalyticsRequest::builder)
                 .basePath("/20220901")

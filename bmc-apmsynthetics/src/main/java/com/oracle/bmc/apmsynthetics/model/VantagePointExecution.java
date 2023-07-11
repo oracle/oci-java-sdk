@@ -32,12 +32,12 @@ public final class VantagePointExecution
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Vantage point name. */
+        /** Name of the vantage point. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Vantage point name.
+         * Name of the vantage point.
          *
          * @param name the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class VantagePointExecution
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** list of execution times in milli seconds. */
+        /** List of execution times in milliseconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("executions")
         private java.util.List<Long> executions;
 
         /**
-         * list of execution times in milli seconds.
+         * List of execution times in milliseconds.
          *
          * @param executions the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class VantagePointExecution
         return new Builder().copy(this);
     }
 
-    /** Vantage point name. */
+    /** Name of the vantage point. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Vantage point name.
+     * Name of the vantage point.
      *
      * @return the value
      */
@@ -108,12 +108,12 @@ public final class VantagePointExecution
         return name;
     }
 
-    /** list of execution times in milli seconds. */
+    /** List of execution times in milliseconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("executions")
     private final java.util.List<Long> executions;
 
     /**
-     * list of execution times in milli seconds.
+     * List of execution times in milliseconds.
      *
      * @return the value
      */

@@ -27,6 +27,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "description",
         "compartmentId",
         "modelType",
+        "tenancyId",
+        "aliasName",
         "labels",
         "isQuickMode",
         "maxTrainingTimeInHours",
@@ -34,6 +36,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "trainingDataset",
         "testingDataset",
         "validationDataset",
+        "componentModels",
+        "isComposedModel",
         "modelVersion",
         "projectId",
         "timeCreated",
@@ -51,6 +55,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             String description,
             String compartmentId,
             ModelType modelType,
+            String tenancyId,
+            String aliasName,
             java.util.List<String> labels,
             Boolean isQuickMode,
             Double maxTrainingTimeInHours,
@@ -58,6 +64,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             Dataset trainingDataset,
             Dataset testingDataset,
             Dataset validationDataset,
+            java.util.List<ComponentModel> componentModels,
+            Boolean isComposedModel,
             String modelVersion,
             String projectId,
             java.util.Date timeCreated,
@@ -74,6 +82,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.description = description;
         this.compartmentId = compartmentId;
         this.modelType = modelType;
+        this.tenancyId = tenancyId;
+        this.aliasName = aliasName;
         this.labels = labels;
         this.isQuickMode = isQuickMode;
         this.maxTrainingTimeInHours = maxTrainingTimeInHours;
@@ -81,6 +91,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.trainingDataset = trainingDataset;
         this.testingDataset = testingDataset;
         this.validationDataset = validationDataset;
+        this.componentModels = componentModels;
+        this.isComposedModel = isComposedModel;
         this.modelVersion = modelVersion;
         this.projectId = projectId;
         this.timeCreated = timeCreated;
@@ -168,6 +180,36 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         public Builder modelType(ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
+            return this;
+        }
+        /** The tenancy id of the model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+        private String tenancyId;
+
+        /**
+         * The tenancy id of the model.
+         *
+         * @param tenancyId the value to set
+         * @return this builder
+         */
+        public Builder tenancyId(String tenancyId) {
+            this.tenancyId = tenancyId;
+            this.__explicitlySet__.add("tenancyId");
+            return this;
+        }
+        /** the alias name of the model. */
+        @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
+        private String aliasName;
+
+        /**
+         * the alias name of the model.
+         *
+         * @param aliasName the value to set
+         * @return this builder
+         */
+        public Builder aliasName(String aliasName) {
+            this.aliasName = aliasName;
+            this.__explicitlySet__.add("aliasName");
             return this;
         }
         /** The collection of labels used to train the custom model. */
@@ -259,6 +301,40 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         public Builder validationDataset(Dataset validationDataset) {
             this.validationDataset = validationDataset;
             this.__explicitlySet__.add("validationDataset");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * collection of active custom Key Value models that need to be composed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("componentModels")
+        private java.util.List<ComponentModel> componentModels;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * collection of active custom Key Value models that need to be composed.
+         *
+         * @param componentModels the value to set
+         * @return this builder
+         */
+        public Builder componentModels(java.util.List<ComponentModel> componentModels) {
+            this.componentModels = componentModels;
+            this.__explicitlySet__.add("componentModels");
+            return this;
+        }
+        /** Set to true when the model is created by using multiple key value extraction models. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isComposedModel")
+        private Boolean isComposedModel;
+
+        /**
+         * Set to true when the model is created by using multiple key value extraction models.
+         *
+         * @param isComposedModel the value to set
+         * @return this builder
+         */
+        public Builder isComposedModel(Boolean isComposedModel) {
+            this.isComposedModel = isComposedModel;
+            this.__explicitlySet__.add("isComposedModel");
             return this;
         }
         /** The version of the model. */
@@ -438,6 +514,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.description,
                             this.compartmentId,
                             this.modelType,
+                            this.tenancyId,
+                            this.aliasName,
                             this.labels,
                             this.isQuickMode,
                             this.maxTrainingTimeInHours,
@@ -445,6 +523,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.trainingDataset,
                             this.testingDataset,
                             this.validationDataset,
+                            this.componentModels,
+                            this.isComposedModel,
                             this.modelVersion,
                             this.projectId,
                             this.timeCreated,
@@ -478,6 +558,12 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("modelType")) {
                 this.modelType(model.getModelType());
             }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("aliasName")) {
+                this.aliasName(model.getAliasName());
+            }
             if (model.wasPropertyExplicitlySet("labels")) {
                 this.labels(model.getLabels());
             }
@@ -498,6 +584,12 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("validationDataset")) {
                 this.validationDataset(model.getValidationDataset());
+            }
+            if (model.wasPropertyExplicitlySet("componentModels")) {
+                this.componentModels(model.getComponentModels());
+            }
+            if (model.wasPropertyExplicitlySet("isComposedModel")) {
+                this.isComposedModel(model.getIsComposedModel());
             }
             if (model.wasPropertyExplicitlySet("modelVersion")) {
                 this.modelVersion(model.getModelVersion());
@@ -653,6 +745,32 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return modelType;
     }
 
+    /** The tenancy id of the model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
+    private final String tenancyId;
+
+    /**
+     * The tenancy id of the model.
+     *
+     * @return the value
+     */
+    public String getTenancyId() {
+        return tenancyId;
+    }
+
+    /** the alias name of the model. */
+    @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
+    private final String aliasName;
+
+    /**
+     * the alias name of the model.
+     *
+     * @return the value
+     */
+    public String getAliasName() {
+        return aliasName;
+    }
+
     /** The collection of labels used to train the custom model. */
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
@@ -728,6 +846,36 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     public Dataset getValidationDataset() {
         return validationDataset;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * collection of active custom Key Value models that need to be composed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("componentModels")
+    private final java.util.List<ComponentModel> componentModels;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * collection of active custom Key Value models that need to be composed.
+     *
+     * @return the value
+     */
+    public java.util.List<ComponentModel> getComponentModels() {
+        return componentModels;
+    }
+
+    /** Set to true when the model is created by using multiple key value extraction models. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isComposedModel")
+    private final Boolean isComposedModel;
+
+    /**
+     * Set to true when the model is created by using multiple key value extraction models.
+     *
+     * @return the value
+     */
+    public Boolean getIsComposedModel() {
+        return isComposedModel;
     }
 
     /** The version of the model. */
@@ -944,6 +1092,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
+        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
+        sb.append(", aliasName=").append(String.valueOf(this.aliasName));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", isQuickMode=").append(String.valueOf(this.isQuickMode));
         sb.append(", maxTrainingTimeInHours=").append(String.valueOf(this.maxTrainingTimeInHours));
@@ -951,6 +1101,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", trainingDataset=").append(String.valueOf(this.trainingDataset));
         sb.append(", testingDataset=").append(String.valueOf(this.testingDataset));
         sb.append(", validationDataset=").append(String.valueOf(this.validationDataset));
+        sb.append(", componentModels=").append(String.valueOf(this.componentModels));
+        sb.append(", isComposedModel=").append(String.valueOf(this.isComposedModel));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -980,6 +1132,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.modelType, other.modelType)
+                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
+                && java.util.Objects.equals(this.aliasName, other.aliasName)
                 && java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.isQuickMode, other.isQuickMode)
                 && java.util.Objects.equals(
@@ -988,6 +1142,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.trainingDataset, other.trainingDataset)
                 && java.util.Objects.equals(this.testingDataset, other.testingDataset)
                 && java.util.Objects.equals(this.validationDataset, other.validationDataset)
+                && java.util.Objects.equals(this.componentModels, other.componentModels)
+                && java.util.Objects.equals(this.isComposedModel, other.isComposedModel)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1012,6 +1168,8 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
+        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
+        result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
         result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
         result = (result * PRIME) + (this.isQuickMode == null ? 43 : this.isQuickMode.hashCode());
         result =
@@ -1033,6 +1191,12 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.validationDataset == null ? 43 : this.validationDataset.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.componentModels == null ? 43 : this.componentModels.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isComposedModel == null ? 43 : this.isComposedModel.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

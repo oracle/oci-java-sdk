@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details used to schedule maintenance window. <br>
+ * Details required to schedule maintenance window. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,7 +33,7 @@ public final class MaintenanceWindowSchedule
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Start time for the maintenance window, expressed in [RFC
+         * Start time of the maintenance window, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2020-02-12T22:47:12.613Z}
          */
@@ -41,7 +41,7 @@ public final class MaintenanceWindowSchedule
         private java.util.Date timeStarted;
 
         /**
-         * Start time for the maintenance window, expressed in [RFC
+         * Start time of the maintenance window, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2020-02-12T22:47:12.613Z}
          *
@@ -54,7 +54,7 @@ public final class MaintenanceWindowSchedule
             return this;
         }
         /**
-         * End time for the maintenance window, expressed in [RFC
+         * End time of the maintenance window, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2020-02-12T22:47:12.613Z}
          */
@@ -62,7 +62,7 @@ public final class MaintenanceWindowSchedule
         private java.util.Date timeEnded;
 
         /**
-         * End time for the maintenance window, expressed in [RFC
+         * End time of the maintenance window, expressed in [RFC
          * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
          * 2020-02-12T22:47:12.613Z}
          *
@@ -109,7 +109,7 @@ public final class MaintenanceWindowSchedule
     }
 
     /**
-     * Start time for the maintenance window, expressed in [RFC
+     * Start time of the maintenance window, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2020-02-12T22:47:12.613Z}
      */
@@ -117,7 +117,7 @@ public final class MaintenanceWindowSchedule
     private final java.util.Date timeStarted;
 
     /**
-     * Start time for the maintenance window, expressed in [RFC
+     * Start time of the maintenance window, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2020-02-12T22:47:12.613Z}
      *
@@ -128,7 +128,7 @@ public final class MaintenanceWindowSchedule
     }
 
     /**
-     * End time for the maintenance window, expressed in [RFC
+     * End time of the maintenance window, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2020-02-12T22:47:12.613Z}
      */
@@ -136,7 +136,7 @@ public final class MaintenanceWindowSchedule
     private final java.util.Date timeEnded;
 
     /**
-     * End time for the maintenance window, expressed in [RFC
+     * End time of the maintenance window, expressed in [RFC
      * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
      * 2020-02-12T22:47:12.613Z}
      *

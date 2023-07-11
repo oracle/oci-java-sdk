@@ -23,18 +23,6 @@ package com.oracle.bmc.dataintegration.model;
         defaultImpl = Connection.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromObjectStorage.class,
-            name = "ORACLE_OBJECT_STORAGE_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromAdwc.class,
-            name = "ORACLE_ADWC_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromAtp.class,
-            name = "ORACLE_ATP_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromOracle.class,
-            name = "ORACLEDB_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromAmazonS3.class,
             name = "AMAZON_S3_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -50,14 +38,41 @@ package com.oracle.bmc.dataintegration.model;
             value = ConnectionFromBICC.class,
             name = "BICC_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromMySqlHeatWave.class,
+            name = "MYSQL_HEATWAVE_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromRestBasicAuth.class,
+            name = "REST_BASIC_AUTH_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromObjectStorage.class,
+            name = "ORACLE_OBJECT_STORAGE_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromAdwc.class,
+            name = "ORACLE_ADWC_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromAtp.class,
+            name = "ORACLE_ATP_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromOracle.class,
+            name = "ORACLEDB_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromOraclePeopleSoft.class,
+            name = "ORACLE_PEOPLESOFT_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromHdfs.class,
+            name = "HDFS_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromOracleEbs.class,
+            name = "ORACLE_EBS_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ConnectionFromOracleSiebel.class,
+            name = "ORACLE_SIEBEL_CONNECTION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromRestNoAuth.class,
             name = "REST_NO_AUTH_CONNECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ConnectionFromLake.class,
-            name = "LAKE_CONNECTION"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromRestBasicAuth.class,
-            name = "REST_BASIC_AUTH_CONNECTION")
+            name = "LAKE_CONNECTION")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -378,6 +393,11 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
         BipConnection("BIP_CONNECTION"),
         LakeConnection("LAKE_CONNECTION"),
+        OraclePeoplesoftConnection("ORACLE_PEOPLESOFT_CONNECTION"),
+        OracleEbsConnection("ORACLE_EBS_CONNECTION"),
+        OracleSiebelConnection("ORACLE_SIEBEL_CONNECTION"),
+        HdfsConnection("HDFS_CONNECTION"),
+        MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
 
