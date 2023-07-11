@@ -160,7 +160,15 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         Number("NUMBER"),
         Integer("INTEGER"),
         Array("ARRAY"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ValueType.class);
 
         private final String value;
         private static java.util.Map<String, ValueType> map;
@@ -168,7 +176,9 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
         static {
             map = new java.util.HashMap<>();
             for (ValueType v : ValueType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -186,7 +196,10 @@ public class FieldValue extends com.oracle.bmc.http.client.internal.ExplicitlySe
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ValueType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ValueType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

@@ -36,12 +36,16 @@ public final class AvailabilityConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Intervals with failed runs more than this value will be classified as UNAVAILABLE. */
+        /**
+         * Maximum number of failed runs allowed in an interval. If an interval has more failed runs
+         * than the specified value, then the interval will be classified as UNAVAILABLE.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAllowedFailuresPerInterval")
         private Integer maxAllowedFailuresPerInterval;
 
         /**
-         * Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+         * Maximum number of failed runs allowed in an interval. If an interval has more failed runs
+         * than the specified value, then the interval will be classified as UNAVAILABLE.
          *
          * @param maxAllowedFailuresPerInterval the value to set
          * @return this builder
@@ -52,15 +56,17 @@ public final class AvailabilityConfiguration
             return this;
         }
         /**
-         * Intervals with runs less than this value will be classified as UNKNOWN and excluded from
-         * the availability calculations.
+         * Minimum number of runs allowed in an interval. If an interval has fewer runs than the
+         * specified value, then the interval will be classified as UNKNOWN and will be excluded
+         * from the availability calculations.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("minAllowedRunsPerInterval")
         private Integer minAllowedRunsPerInterval;
 
         /**
-         * Intervals with runs less than this value will be classified as UNKNOWN and excluded from
-         * the availability calculations.
+         * Minimum number of runs allowed in an interval. If an interval has fewer runs than the
+         * specified value, then the interval will be classified as UNKNOWN and will be excluded
+         * from the availability calculations.
          *
          * @param minAllowedRunsPerInterval the value to set
          * @return this builder
@@ -105,12 +111,16 @@ public final class AvailabilityConfiguration
         return new Builder().copy(this);
     }
 
-    /** Intervals with failed runs more than this value will be classified as UNAVAILABLE. */
+    /**
+     * Maximum number of failed runs allowed in an interval. If an interval has more failed runs
+     * than the specified value, then the interval will be classified as UNAVAILABLE.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAllowedFailuresPerInterval")
     private final Integer maxAllowedFailuresPerInterval;
 
     /**
-     * Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+     * Maximum number of failed runs allowed in an interval. If an interval has more failed runs
+     * than the specified value, then the interval will be classified as UNAVAILABLE.
      *
      * @return the value
      */
@@ -119,15 +129,17 @@ public final class AvailabilityConfiguration
     }
 
     /**
-     * Intervals with runs less than this value will be classified as UNKNOWN and excluded from the
-     * availability calculations.
+     * Minimum number of runs allowed in an interval. If an interval has fewer runs than the
+     * specified value, then the interval will be classified as UNKNOWN and will be excluded from
+     * the availability calculations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("minAllowedRunsPerInterval")
     private final Integer minAllowedRunsPerInterval;
 
     /**
-     * Intervals with runs less than this value will be classified as UNKNOWN and excluded from the
-     * availability calculations.
+     * Minimum number of runs allowed in an interval. If an interval has fewer runs than the
+     * specified value, then the interval will be classified as UNKNOWN and will be excluded from
+     * the availability calculations.
      *
      * @return the value
      */

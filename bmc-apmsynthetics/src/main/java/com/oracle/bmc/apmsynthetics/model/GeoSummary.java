@@ -113,12 +113,12 @@ public final class GeoSummary extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("countryName");
             return this;
         }
-        /** Degrees north of the Equator. */
+        /** Degrees north of the equator. */
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
 
         /**
-         * Degrees north of the Equator.
+         * Degrees north of the equator.
          *
          * @param latitude the value to set
          * @return this builder
@@ -253,12 +253,12 @@ public final class GeoSummary extends com.oracle.bmc.http.client.internal.Explic
         return countryName;
     }
 
-    /** Degrees north of the Equator. */
+    /** Degrees north of the equator. */
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Double latitude;
 
     /**
-     * Degrees north of the Equator.
+     * Degrees north of the equator.
      *
      * @return the value
      */

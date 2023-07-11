@@ -129,7 +129,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ChangeAvailabilityOfSoftwareSourcesResponse::builder)
                 .logger(LOG, "changeAvailabilityOfSoftwareSources")
-                .serviceDetails("SoftwareSource", "ChangeAvailabilityOfSoftwareSources", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ChangeAvailabilityOfSoftwareSources",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeAvailabilityOfSoftwareSources")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeAvailabilityOfSoftwareSourcesRequest::builder)
                 .basePath("/20220901")
@@ -154,7 +157,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CreateEntitlementResponse::builder)
                 .logger(LOG, "createEntitlement")
-                .serviceDetails("SoftwareSource", "CreateEntitlement", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "CreateEntitlement",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateEntitlement")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateEntitlementRequest::builder)
                 .basePath("/20220901")
@@ -177,7 +183,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CreateSoftwareSourceResponse::builder)
                 .logger(LOG, "createSoftwareSource")
-                .serviceDetails("SoftwareSource", "CreateSoftwareSource", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "CreateSoftwareSource",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateSoftwareSource")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSoftwareSourceRequest::builder)
                 .basePath("/20220901")
@@ -208,7 +217,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, DeleteSoftwareSourceResponse::builder)
                 .logger(LOG, "deleteSoftwareSource")
-                .serviceDetails("SoftwareSource", "DeleteSoftwareSource", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "DeleteSoftwareSource",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/DeleteSoftwareSource")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSoftwareSourceRequest::builder)
                 .basePath("/20220901")
@@ -231,7 +243,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetErratumResponse::builder)
                 .logger(LOG, "getErratum")
-                .serviceDetails("SoftwareSource", "GetErratum", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetErratum",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/GetErratum")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetErratumRequest::builder)
                 .basePath("/20220901")
@@ -259,7 +274,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetModuleStreamResponse::builder)
                 .logger(LOG, "getModuleStream")
-                .serviceDetails("SoftwareSource", "GetModuleStream", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetModuleStream",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStream/GetModuleStream")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModuleStreamRequest::builder)
                 .basePath("/20220901")
@@ -292,7 +310,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetModuleStreamProfileResponse::builder)
                 .logger(LOG, "getModuleStreamProfile")
-                .serviceDetails("SoftwareSource", "GetModuleStreamProfile", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetModuleStreamProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStreamProfile/GetModuleStreamProfile")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetModuleStreamProfileRequest::builder)
                 .basePath("/20220901")
@@ -322,7 +343,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetPackageGroupResponse::builder)
                 .logger(LOG, "getPackageGroup")
-                .serviceDetails("SoftwareSource", "GetPackageGroup", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetPackageGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/PackageGroup/GetPackageGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPackageGroupRequest::builder)
                 .basePath("/20220901")
@@ -351,7 +375,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetSoftwarePackageResponse::builder)
                 .logger(LOG, "getSoftwarePackage")
-                .serviceDetails("SoftwareSource", "GetSoftwarePackage", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetSoftwarePackage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSoftwarePackageRequest::builder)
                 .basePath("/20220901")
@@ -377,7 +404,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetSoftwareSourceResponse::builder)
                 .logger(LOG, "getSoftwareSource")
-                .serviceDetails("SoftwareSource", "GetSoftwareSource", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetSoftwareSource",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSource")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSoftwareSourceRequest::builder)
                 .basePath("/20220901")
@@ -403,7 +433,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListEntitlementsResponse::builder)
                 .logger(LOG, "listEntitlements")
-                .serviceDetails("SoftwareSource", "ListEntitlements", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListEntitlements",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListEntitlements")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEntitlementsRequest::builder)
                 .basePath("/20220901")
@@ -434,7 +467,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListErrataResponse::builder)
                 .logger(LOG, "listErrata")
-                .serviceDetails("SoftwareSource", "ListErrata", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListErrata",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/ListErrata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListErrataRequest::builder)
                 .basePath("/20220901")
@@ -481,7 +517,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListModuleStreamProfilesResponse::builder)
                 .logger(LOG, "listModuleStreamProfiles")
-                .serviceDetails("SoftwareSource", "ListModuleStreamProfiles", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListModuleStreamProfiles",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreamProfiles")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModuleStreamProfilesRequest::builder)
                 .basePath("/20220901")
@@ -515,7 +554,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListModuleStreamsResponse::builder)
                 .logger(LOG, "listModuleStreams")
-                .serviceDetails("SoftwareSource", "ListModuleStreams", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListModuleStreams",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreams")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListModuleStreamsRequest::builder)
                 .basePath("/20220901")
@@ -550,7 +592,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListPackageGroupsResponse::builder)
                 .logger(LOG, "listPackageGroups")
-                .serviceDetails("SoftwareSource", "ListPackageGroups", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListPackageGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListPackageGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPackageGroupsRequest::builder)
                 .basePath("/20220901")
@@ -588,7 +633,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListSoftwarePackagesResponse::builder)
                 .logger(LOG, "listSoftwarePackages")
-                .serviceDetails("SoftwareSource", "ListSoftwarePackages", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListSoftwarePackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSoftwarePackagesRequest::builder)
                 .basePath("/20220901")
@@ -622,7 +670,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListSoftwareSourceVendorsResponse::builder)
                 .logger(LOG, "listSoftwareSourceVendors")
-                .serviceDetails("SoftwareSource", "ListSoftwareSourceVendors", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListSoftwareSourceVendors",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSourceVendors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSoftwareSourceVendorsRequest::builder)
                 .basePath("/20220901")
@@ -647,7 +698,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListSoftwareSourcesResponse::builder)
                 .logger(LOG, "listSoftwareSources")
-                .serviceDetails("SoftwareSource", "ListSoftwareSources", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListSoftwareSources",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSoftwareSourcesRequest::builder)
                 .basePath("/20220901")
@@ -707,7 +761,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, SearchSoftwareSourceModuleStreamsResponse::builder)
                 .logger(LOG, "searchSoftwareSourceModuleStreams")
-                .serviceDetails("SoftwareSource", "SearchSoftwareSourceModuleStreams", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "SearchSoftwareSourceModuleStreams",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModuleStreams")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSoftwareSourceModuleStreamsRequest::builder)
                 .basePath("/20220901")
@@ -741,7 +798,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, SearchSoftwareSourceModulesResponse::builder)
                 .logger(LOG, "searchSoftwareSourceModules")
-                .serviceDetails("SoftwareSource", "SearchSoftwareSourceModules", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "SearchSoftwareSourceModules",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModules")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSoftwareSourceModulesRequest::builder)
                 .basePath("/20220901")
@@ -773,7 +833,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, SearchSoftwareSourcePackageGroupsResponse::builder)
                 .logger(LOG, "searchSoftwareSourcePackageGroups")
-                .serviceDetails("SoftwareSource", "SearchSoftwareSourcePackageGroups", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "SearchSoftwareSourcePackageGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourcePackageGroups")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchSoftwareSourcePackageGroupsRequest::builder)
                 .basePath("/20220901")
@@ -808,7 +871,10 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, UpdateSoftwareSourceResponse::builder)
                 .logger(LOG, "updateSoftwareSource")
-                .serviceDetails("SoftwareSource", "UpdateSoftwareSource", "")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "UpdateSoftwareSource",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSource")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSoftwareSourceRequest::builder)
                 .basePath("/20220901")

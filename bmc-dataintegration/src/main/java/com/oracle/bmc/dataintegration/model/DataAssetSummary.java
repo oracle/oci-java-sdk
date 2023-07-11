@@ -23,20 +23,23 @@ package com.oracle.bmc.dataintegration.model;
         defaultImpl = DataAssetSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromOracleSiebel.class,
+            name = "ORACLE_SIEBEL_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromMySqlHeatWave.class,
+            name = "MYSQL_HEATWAVE_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DataAssetSummaryFromMySQL.class,
             name = "MYSQL_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DataAssetSummaryFromAtp.class,
-            name = "ORACLE_ATP_DATA_ASSET"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DataAssetSummaryFromAdwc.class,
-            name = "ORACLE_ADWC_DATA_ASSET"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DataAssetSummaryFromJdbc.class,
-            name = "GENERIC_JDBC_DATA_ASSET"),
+            value = DataAssetSummaryFromHdfs.class,
+            name = "HDFS_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DataAssetSummaryFromAmazonS3.class,
             name = "AMAZON_S3_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromOraclePeopleSoft.class,
+            name = "ORACLE_PEOPLESOFT_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DataAssetSummaryFromObjectStorage.class,
             name = "ORACLE_OBJECT_STORAGE_DATA_ASSET"),
@@ -49,6 +52,18 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DataAssetSummaryFromOracle.class,
             name = "ORACLE_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromAtp.class,
+            name = "ORACLE_ATP_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromAdwc.class,
+            name = "ORACLE_ADWC_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromJdbc.class,
+            name = "GENERIC_JDBC_DATA_ASSET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DataAssetSummaryFromOracleEbs.class,
+            name = "ORACLE_EBS_DATA_ASSET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DataAssetSummaryFromFusionApp.class,
             name = "FUSION_APP_DATA_ASSET")
@@ -342,6 +357,11 @@ public class DataAssetSummary extends com.oracle.bmc.http.client.internal.Explic
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
         LakeDataAsset("LAKE_DATA_ASSET"),
+        OraclePeoplesoftDataAsset("ORACLE_PEOPLESOFT_DATA_ASSET"),
+        OracleSiebelDataAsset("ORACLE_SIEBEL_DATA_ASSET"),
+        OracleEbsDataAsset("ORACLE_EBS_DATA_ASSET"),
+        HdfsDataAsset("HDFS_DATA_ASSET"),
+        MysqlHeatwaveDataAsset("MYSQL_HEATWAVE_DATA_ASSET"),
         RestDataAsset("REST_DATA_ASSET"),
 
         /**

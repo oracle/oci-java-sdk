@@ -362,12 +362,18 @@ public final class ClusterSummary
             this.__explicitlySet__.add("clusterPodNetworkOptions");
             return this;
         }
-        /** Type of cluster */
+        /**
+         * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information,
+         * see [Cluster
+         * Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ClusterType type;
 
         /**
-         * Type of cluster
+         * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information,
+         * see [Cluster
+         * Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
          *
          * @param type the value to set
          * @return this builder
@@ -718,12 +724,18 @@ public final class ClusterSummary
         return clusterPodNetworkOptions;
     }
 
-    /** Type of cluster */
+    /**
+     * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see
+     * [Cluster
+     * Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ClusterType type;
 
     /**
-     * Type of cluster
+     * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see
+     * [Cluster
+     * Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      *
      * @return the value
      */

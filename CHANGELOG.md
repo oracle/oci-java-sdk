@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.19.0 - 2023-07-11
+### Added
+- Support for specifying default snapshot enablement, verified response codes, client certificate details, and request authentication schemes when creating or updating synthetic monitors in the Application Performance Monitoring service
+- Support for address rules, address verification, and requesting addresses in the OSP Gateway service
+- Support for synchronous operations in the Document Understanding service
+- Support for migration without SSH to database hosts (DMS) in the Database Migration service
+- Support for processing workload mappings in the Container Engine for Kubernetes service
+- Support for Salesforce, MySQL HeatWave, and Oracle EBS, Sieble, and PeopleSoft connectors in the Data Integration service
+- Support for updating the envelope key of a volume backup in the Block Volume service
+ 
+### Breaking Changes
+- Model `com.oracle.bmc.ospgateway.model.BillingAddress` has been removed from the OSP Gateway service
+- Return type of method `public com.oracle.bmc.ospgateway.model.BillingAddress getBillingAddress()` has been changed to `com.oracle.bmc.ospgateway.model.Address` in the model `com.oracle.bmc.ospgateway.model.Subscription` in the OSP Gateway service
+- Return type of method `public com.oracle.bmc.ospgateway.model.BillingAddress getBillingAddress()` has been changed to `com.oracle.bmc.ospgateway.model.Address` in the model `com.oracle.bmc.ospgateway.model.SubscriptionSummary` in the OSP Gateway service
+- Support for retries by default on operations of the OSP Gateway service
+
 ## 3.18.0 - 2023-06-27
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-frankfurt-2 region

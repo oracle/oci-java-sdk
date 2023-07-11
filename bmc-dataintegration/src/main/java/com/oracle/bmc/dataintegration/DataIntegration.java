@@ -279,6 +279,22 @@ public interface DataIntegration extends AutoCloseable {
     CreateEntityShapeResponse createEntityShape(CreateEntityShapeRequest request);
 
     /**
+     * Export Metadata Object
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExportRequest
+     *     API.
+     */
+    CreateExportRequestResponse createExportRequest(CreateExportRequestRequest request);
+
+    /**
      * Publish a DataFlow in a OCI DataFlow application.
      *
      * @param request The request object containing the details to send
@@ -345,6 +361,22 @@ public interface DataIntegration extends AutoCloseable {
      *     CreateFunctionLibrary API.
      */
     CreateFunctionLibraryResponse createFunctionLibrary(CreateFunctionLibraryRequest request);
+
+    /**
+     * Import Metadata Object
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateImportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImportRequest
+     *     API.
+     */
+    CreateImportRequestResponse createImportRequest(CreateImportRequestRequest request);
 
     /**
      * Creates a patch in an application.
@@ -706,6 +738,22 @@ public interface DataIntegration extends AutoCloseable {
             DeleteDisApplicationDetailedDescriptionRequest request);
 
     /**
+     * Delete export object request using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExportRequest
+     *     API.
+     */
+    DeleteExportRequestResponse deleteExportRequest(DeleteExportRequestRequest request);
+
+    /**
      * Removes a published object using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -769,6 +817,22 @@ public interface DataIntegration extends AutoCloseable {
      *     DeleteFunctionLibrary API.
      */
     DeleteFunctionLibraryResponse deleteFunctionLibrary(DeleteFunctionLibraryRequest request);
+
+    /**
+     * Delete import object request using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteImportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImportRequest
+     *     API.
+     */
+    DeleteImportRequestResponse deleteImportRequest(DeleteImportRequestRequest request);
 
     /**
      * Removes a patch using the specified identifier.
@@ -992,6 +1056,22 @@ public interface DataIntegration extends AutoCloseable {
             GetApplicationDetailedDescriptionRequest request);
 
     /**
+     * This endpoint can be used to get composite state for a given aggregator
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCompositeStateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompositeState
+     *     API.
+     */
+    GetCompositeStateResponse getCompositeState(GetCompositeStateRequest request);
+
+    /**
      * Retrieves the connection details using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -1166,6 +1246,22 @@ public interface DataIntegration extends AutoCloseable {
             GetDisApplicationDetailedDescriptionRequest request);
 
     /**
+     * This endpoint can be used to get the summary/details of object being exported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportRequest
+     *     API.
+     */
+    GetExportRequestResponse getExportRequest(GetExportRequestRequest request);
+
+    /**
      * Retrieves a publshed object in an task using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -1228,6 +1324,22 @@ public interface DataIntegration extends AutoCloseable {
      *     API.
      */
     GetFunctionLibraryResponse getFunctionLibrary(GetFunctionLibraryRequest request);
+
+    /**
+     * This endpoint can be used to get the summary/details of object being imported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetImportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImportRequest
+     *     API.
+     */
+    GetImportRequestResponse getImportRequest(GetImportRequestRequest request);
 
     /**
      * Retrieves a patch in an application using the specified identifier.
@@ -1701,6 +1813,22 @@ public interface DataIntegration extends AutoCloseable {
     ListDisApplicationsResponse listDisApplications(ListDisApplicationsRequest request);
 
     /**
+     * This endpoint can be used to get the list of export object requests.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExportRequestsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExportRequests
+     *     API.
+     */
+    ListExportRequestsResponse listExportRequests(ListExportRequestsRequest request);
+
+    /**
      * Retrieves a lists of external publication validations in a workspace and provides options to
      * filter the list.
      *
@@ -1766,6 +1894,22 @@ public interface DataIntegration extends AutoCloseable {
      *     ListFunctionLibraries API.
      */
     ListFunctionLibrariesResponse listFunctionLibraries(ListFunctionLibrariesRequest request);
+
+    /**
+     * This endpoint can be used to get the list of import object requests.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListImportRequestsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImportRequests
+     *     API.
+     */
+    ListImportRequestsResponse listImportRequests(ListImportRequestsRequest request);
 
     /**
      * Retrieves a list of patches in an application and provides options to filter the list.
@@ -2306,6 +2450,22 @@ public interface DataIntegration extends AutoCloseable {
             UpdateDisApplicationDetailedDescriptionRequest request);
 
     /**
+     * Updates the status of a export object request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateExportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportRequest
+     *     API.
+     */
+    UpdateExportRequestResponse updateExportRequest(UpdateExportRequestRequest request);
+
+    /**
      * Updates the external publication object.
      *
      * @param request The request object containing the details to send
@@ -2352,6 +2512,22 @@ public interface DataIntegration extends AutoCloseable {
      *     UpdateFunctionLibrary API.
      */
     UpdateFunctionLibraryResponse updateFunctionLibrary(UpdateFunctionLibraryRequest request);
+
+    /**
+     * Updates the status of a import object request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateImportRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImportRequest
+     *     API.
+     */
+    UpdateImportRequestResponse updateImportRequest(UpdateImportRequestRequest request);
 
     /**
      * Updates a specific pipeline.

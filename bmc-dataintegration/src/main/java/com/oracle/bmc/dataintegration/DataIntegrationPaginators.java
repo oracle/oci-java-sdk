@@ -1366,6 +1366,126 @@ public class DataIntegrationPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listExportRequests operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExportRequestsResponse> listExportRequestsResponseIterator(
+            final ListExportRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExportRequestsRequest.Builder,
+                ListExportRequestsRequest,
+                ListExportRequestsResponse>(
+                new java.util.function.Supplier<ListExportRequestsRequest.Builder>() {
+                    @Override
+                    public ListExportRequestsRequest.Builder get() {
+                        return ListExportRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExportRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListExportRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExportRequestsRequest.Builder>,
+                        ListExportRequestsRequest>() {
+                    @Override
+                    public ListExportRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExportRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExportRequestsRequest, ListExportRequestsResponse>() {
+                    @Override
+                    public ListExportRequestsResponse apply(ListExportRequestsRequest request) {
+                        return client.listExportRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataintegration.model.ExportRequestSummary} objects contained in responses
+     * from the listExportRequests operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataintegration.model.ExportRequestSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.ExportRequestSummary>
+            listExportRequestsRecordIterator(final ListExportRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExportRequestsRequest.Builder,
+                ListExportRequestsRequest,
+                ListExportRequestsResponse,
+                com.oracle.bmc.dataintegration.model.ExportRequestSummary>(
+                new java.util.function.Supplier<ListExportRequestsRequest.Builder>() {
+                    @Override
+                    public ListExportRequestsRequest.Builder get() {
+                        return ListExportRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExportRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListExportRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExportRequestsRequest.Builder>,
+                        ListExportRequestsRequest>() {
+                    @Override
+                    public ListExportRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExportRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExportRequestsRequest, ListExportRequestsResponse>() {
+                    @Override
+                    public ListExportRequestsResponse apply(ListExportRequestsRequest request) {
+                        return client.listExportRequests(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExportRequestsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.ExportRequestSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.ExportRequestSummary>
+                            apply(ListExportRequestsResponse response) {
+                        return response.getExportRequestSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listExternalPublicationValidations operation. This iterable will fetch more data from the
      * server as needed.
      *
@@ -1858,6 +1978,126 @@ public class DataIntegrationPaginators {
                                     com.oracle.bmc.dataintegration.model.FunctionLibrarySummary>
                             apply(ListFunctionLibrariesResponse response) {
                         return response.getFunctionLibrarySummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listImportRequests operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListImportRequestsResponse> listImportRequestsResponseIterator(
+            final ListImportRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListImportRequestsRequest.Builder,
+                ListImportRequestsRequest,
+                ListImportRequestsResponse>(
+                new java.util.function.Supplier<ListImportRequestsRequest.Builder>() {
+                    @Override
+                    public ListImportRequestsRequest.Builder get() {
+                        return ListImportRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListImportRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListImportRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportRequestsRequest.Builder>,
+                        ListImportRequestsRequest>() {
+                    @Override
+                    public ListImportRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportRequestsRequest, ListImportRequestsResponse>() {
+                    @Override
+                    public ListImportRequestsResponse apply(ListImportRequestsRequest request) {
+                        return client.listImportRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dataintegration.model.ImportRequestSummary} objects contained in responses
+     * from the listImportRequests operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dataintegration.model.ImportRequestSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.ImportRequestSummary>
+            listImportRequestsRecordIterator(final ListImportRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListImportRequestsRequest.Builder,
+                ListImportRequestsRequest,
+                ListImportRequestsResponse,
+                com.oracle.bmc.dataintegration.model.ImportRequestSummary>(
+                new java.util.function.Supplier<ListImportRequestsRequest.Builder>() {
+                    @Override
+                    public ListImportRequestsRequest.Builder get() {
+                        return ListImportRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListImportRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListImportRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportRequestsRequest.Builder>,
+                        ListImportRequestsRequest>() {
+                    @Override
+                    public ListImportRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportRequestsRequest, ListImportRequestsResponse>() {
+                    @Override
+                    public ListImportRequestsResponse apply(ListImportRequestsRequest request) {
+                        return client.listImportRequests(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportRequestsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.ImportRequestSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.ImportRequestSummary>
+                            apply(ListImportRequestsResponse response) {
+                        return response.getImportRequestSummaryCollection().getItems();
                     }
                 });
     }

@@ -606,6 +606,42 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExportRequestResponse> createExportRequest(
+            CreateExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExportRequestRequest, CreateExportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateExportRequestDetails(), "createExportRequestDetails is required");
+
+        return clientCall(request, CreateExportRequestResponse::builder)
+                .logger(LOG, "createExportRequest")
+                .serviceDetails("DataIntegration", "CreateExportRequest", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("exportRequests")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExportRequest.class,
+                        CreateExportRequestResponse.Builder::exportRequest)
+                .handleResponseHeaderString("etag", CreateExportRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExportRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExportRequestResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExternalPublicationResponse> createExternalPublication(
             CreateExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -760,6 +796,42 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", CreateFunctionLibraryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImportRequestResponse> createImportRequest(
+            CreateImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateImportRequestRequest, CreateImportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateImportRequestDetails(), "createImportRequestDetails is required");
+
+        return clientCall(request, CreateImportRequestResponse::builder)
+                .logger(LOG, "createImportRequest")
+                .serviceDetails("DataIntegration", "CreateImportRequest", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateImportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("importRequests")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ImportRequest.class,
+                        CreateImportRequestResponse.Builder::importRequest)
+                .handleResponseHeaderString("etag", CreateImportRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateImportRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateImportRequestResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1542,6 +1614,38 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteExportRequestResponse> deleteExportRequest(
+            DeleteExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExportRequestRequest, DeleteExportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getExportRequestKey(), "exportRequestKey must not be blank");
+
+        return clientCall(request, DeleteExportRequestResponse::builder)
+                .logger(LOG, "deleteExportRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "DeleteExportRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteExportRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("exportRequests")
+                .appendPathParam(request.getExportRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExportRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteExternalPublicationResponse> deleteExternalPublication(
             DeleteExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1679,6 +1783,38 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportRequestResponse> deleteImportRequest(
+            DeleteImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteImportRequestRequest, DeleteImportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getImportRequestKey(), "importRequestKey must not be blank");
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, DeleteImportRequestResponse::builder)
+                .logger(LOG, "deleteImportRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "DeleteImportRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteImportRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteImportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("importRequests")
+                .appendPathParam(request.getImportRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteImportRequestResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2161,6 +2297,43 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetCompositeStateResponse> getCompositeState(
+            GetCompositeStateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCompositeStateRequest, GetCompositeStateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getApplicationKey(), "applicationKey must not be blank");
+        Objects.requireNonNull(request.getAggregatorKey(), "aggregatorKey is required");
+
+        return clientCall(request, GetCompositeStateResponse::builder)
+                .logger(LOG, "getCompositeState")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetCompositeState",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CompositeState/GetCompositeState")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCompositeStateRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationKey())
+                .appendPathParam("compositeState")
+                .appendQueryParam("aggregatorKey", request.getAggregatorKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.CompositeState.class,
+                        GetCompositeStateResponse.Builder::compositeState)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCompositeStateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -2563,6 +2736,41 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportRequestResponse> getExportRequest(
+            GetExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExportRequestRequest, GetExportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getExportRequestKey(), "exportRequestKey must not be blank");
+
+        return clientCall(request, GetExportRequestResponse::builder)
+                .logger(LOG, "getExportRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetExportRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExportRequest/GetExportRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("exportRequests")
+                .appendPathParam(request.getExportRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExportRequest.class,
+                        GetExportRequestResponse.Builder::exportRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExportRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetExportRequestResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExternalPublicationResponse> getExternalPublication(
             GetExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2722,6 +2930,43 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", GetFunctionLibraryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportRequestResponse> getImportRequest(
+            GetImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetImportRequestRequest, GetImportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getImportRequestKey(), "importRequestKey must not be blank");
+
+        return clientCall(request, GetImportRequestResponse::builder)
+                .logger(LOG, "getImportRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "GetImportRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ImportRequest/GetImportRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetImportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("importRequests")
+                .appendPathParam(request.getImportRequestKey())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ImportRequest.class,
+                        GetImportRequestResponse.Builder::importRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetImportRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetImportRequestResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -4006,6 +4251,48 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListExportRequestsResponse> listExportRequests(
+            ListExportRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExportRequestsRequest, ListExportRequestsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListExportRequestsResponse::builder)
+                .logger(LOG, "listExportRequests")
+                .serviceDetails(
+                        "DataIntegration",
+                        "ListExportRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExportRequestSummaryCollection/ListExportRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExportRequestsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("exportRequests")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("exportStatus", request.getExportStatus())
+                .appendEnumQueryParam("projection", request.getProjection())
+                .appendQueryParam("timeStartedInMillis", request.getTimeStartedInMillis())
+                .appendQueryParam("timeEndedInMillis", request.getTimeEndedInMillis())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExportRequestSummaryCollection.class,
+                        ListExportRequestsResponse.Builder::exportRequestSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExportRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExportRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExternalPublicationValidationsResponse>
             listExternalPublicationValidations(
                     ListExternalPublicationValidationsRequest request,
@@ -4218,6 +4505,48 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-prev-page", ListFunctionLibrariesResponse.Builder::opcPrevPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListFunctionLibrariesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportRequestsResponse> listImportRequests(
+            ListImportRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListImportRequestsRequest, ListImportRequestsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        return clientCall(request, ListImportRequestsResponse::builder)
+                .logger(LOG, "listImportRequests")
+                .serviceDetails(
+                        "DataIntegration",
+                        "ListImportRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ImportRequestSummaryCollection/ListImportRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListImportRequestsRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("importRequests")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("importStatus", request.getImportStatus())
+                .appendEnumQueryParam("projection", request.getProjection())
+                .appendQueryParam("timeStartedInMillis", request.getTimeStartedInMillis())
+                .appendQueryParam("timeEndedInMillis", request.getTimeEndedInMillis())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ImportRequestSummaryCollection.class,
+                        ListImportRequestsResponse.Builder::importRequestSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListImportRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListImportRequestsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -5855,6 +6184,45 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExportRequestResponse> updateExportRequest(
+            UpdateExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExportRequestRequest, UpdateExportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getExportRequestKey(), "exportRequestKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExportRequestDetails(), "updateExportRequestDetails is required");
+
+        return clientCall(request, UpdateExportRequestResponse::builder)
+                .logger(LOG, "updateExportRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "UpdateExportRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateExportRequest")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("exportRequests")
+                .appendPathParam(request.getExportRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ExportRequest.class,
+                        UpdateExportRequestResponse.Builder::exportRequest)
+                .handleResponseHeaderString("etag", UpdateExportRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExportRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExternalPublicationResponse> updateExternalPublication(
             UpdateExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5973,6 +6341,45 @@ public class DataIntegrationAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", UpdateFunctionLibraryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFunctionLibraryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImportRequestResponse> updateImportRequest(
+            UpdateImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateImportRequestRequest, UpdateImportRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkspaceId(), "workspaceId must not be blank");
+
+        Validate.notBlank(request.getImportRequestKey(), "importRequestKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateImportRequestDetails(), "updateImportRequestDetails is required");
+
+        return clientCall(request, UpdateImportRequestResponse::builder)
+                .logger(LOG, "updateImportRequest")
+                .serviceDetails(
+                        "DataIntegration",
+                        "UpdateImportRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateImportRequest")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateImportRequestRequest::builder)
+                .basePath("/20200430")
+                .appendPathParam("workspaces")
+                .appendPathParam(request.getWorkspaceId())
+                .appendPathParam("importRequests")
+                .appendPathParam(request.getImportRequestKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dataintegration.model.ImportRequest.class,
+                        UpdateImportRequestResponse.Builder::importRequest)
+                .handleResponseHeaderString("etag", UpdateImportRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateImportRequestResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

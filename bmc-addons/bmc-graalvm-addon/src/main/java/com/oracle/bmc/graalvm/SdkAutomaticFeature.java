@@ -11,7 +11,6 @@ import com.oracle.bmc.SdkClients;
 import com.oracle.bmc.graalvm.utils.ReflectionUtils;
 import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.svm.core.annotate.Alias;
-import com.oracle.svm.core.annotate.AutomaticFeature;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 import org.glassfish.hk2.utilities.DescriptorImpl;
@@ -32,7 +31,6 @@ import java.util.List;
 import java.util.ServiceLoader;
 import java.util.Set;
 
-@AutomaticFeature
 final class SdkAutomaticFeature implements Feature {
     @Override
     public void beforeAnalysis(BeforeAnalysisAccess access) {

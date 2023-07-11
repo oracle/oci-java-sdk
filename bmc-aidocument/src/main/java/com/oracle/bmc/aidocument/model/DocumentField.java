@@ -125,7 +125,15 @@ public final class DocumentField extends com.oracle.bmc.http.client.internal.Exp
         LineItem("LINE_ITEM"),
         LineItemField("LINE_ITEM_FIELD"),
         KeyValue("KEY_VALUE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FieldType.class);
 
         private final String value;
         private static java.util.Map<String, FieldType> map;
@@ -133,7 +141,9 @@ public final class DocumentField extends com.oracle.bmc.http.client.internal.Exp
         static {
             map = new java.util.HashMap<>();
             for (FieldType v : FieldType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -151,7 +161,10 @@ public final class DocumentField extends com.oracle.bmc.http.client.internal.Exp
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid FieldType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FieldType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The field type. */

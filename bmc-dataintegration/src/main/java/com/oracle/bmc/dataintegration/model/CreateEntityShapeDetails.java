@@ -23,6 +23,9 @@ package com.oracle.bmc.dataintegration.model;
         defaultImpl = CreateEntityShapeDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateEntityShapeFromObject.class,
+            name = "OBJECT_ENTITY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateEntityShapeFromSQL.class,
             name = "SQL_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -83,6 +86,7 @@ public class CreateEntityShapeDetails
     public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         FileEntity("FILE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        ObjectEntity("OBJECT_ENTITY"),
         ;
 
         private final String value;

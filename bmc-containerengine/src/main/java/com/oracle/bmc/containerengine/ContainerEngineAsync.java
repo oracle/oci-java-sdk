@@ -141,6 +141,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create the specified workloadMapping for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateWorkloadMappingResponse> createWorkloadMapping(
+            CreateWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>
+                    handler);
+
+    /**
      * Delete a cluster.
      *
      * @param request The request object containing the details to send
@@ -214,6 +230,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
             DeleteWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteWorkRequestRequest, DeleteWorkRequestResponse>
+                    handler);
+
+    /**
+     * Delete workloadMapping for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteWorkloadMappingResponse> deleteWorkloadMapping(
+            DeleteWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>
                     handler);
 
     /**
@@ -367,6 +399,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Get the specified workloadMapping for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkloadMappingResponse> getWorkloadMapping(
+            GetWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkloadMappingRequest, GetWorkloadMappingResponse>
                     handler);
 
     /**
@@ -537,6 +585,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List workloadMappings for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkloadMappingsResponse> listWorkloadMappings(
+            ListWorkloadMappingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>
+                    handler);
+
+    /**
      * Update addon details for a cluster.
      *
      * @param request The request object containing the details to send
@@ -610,5 +674,21 @@ public interface ContainerEngineAsync extends AutoCloseable {
             UpdateVirtualNodePoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>
+                    handler);
+
+    /**
+     * Update workloadMapping details for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateWorkloadMappingResponse> updateWorkloadMapping(
+            UpdateWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>
                     handler);
 }

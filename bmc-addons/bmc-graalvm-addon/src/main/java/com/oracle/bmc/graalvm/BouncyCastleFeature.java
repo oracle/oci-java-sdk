@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.graalvm;
 
-import com.oracle.svm.core.annotate.AutomaticFeature;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.graalvm.nativeimage.ImageSingletons;
 import org.graalvm.nativeimage.hosted.Feature;
@@ -14,7 +13,6 @@ import org.graalvm.nativeimage.impl.RuntimeClassInitializationSupport;
 import java.security.Security;
 
 /** Configures bouncy castle. */
-@AutomaticFeature
 final class BouncyCastleFeature implements Feature {
 
     @Override

@@ -27,12 +27,20 @@ package com.oracle.bmc.databasemigration.model;
 public final class CreateCurlTransferDetails extends CreateHostDumpTransferDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("walletLocation")
+        private String walletLocation;
+
+        public Builder walletLocation(String walletLocation) {
+            this.walletLocation = walletLocation;
+            this.__explicitlySet__.add("walletLocation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCurlTransferDetails build() {
-            CreateCurlTransferDetails model = new CreateCurlTransferDetails();
+            CreateCurlTransferDetails model = new CreateCurlTransferDetails(this.walletLocation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -41,6 +49,9 @@ public final class CreateCurlTransferDetails extends CreateHostDumpTransferDetai
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCurlTransferDetails model) {
+            if (model.wasPropertyExplicitlySet("walletLocation")) {
+                this.walletLocation(model.getWalletLocation());
+            }
             return this;
         }
     }
@@ -55,8 +66,8 @@ public final class CreateCurlTransferDetails extends CreateHostDumpTransferDetai
     }
 
     @Deprecated
-    public CreateCurlTransferDetails() {
-        super();
+    public CreateCurlTransferDetails(String walletLocation) {
+        super(walletLocation);
     }
 
     @Override

@@ -110,7 +110,9 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
         return clientCall(request, AttachManagedInstancesToLifecycleStageResponse::builder)
                 .logger(LOG, "attachManagedInstancesToLifecycleStage")
                 .serviceDetails(
-                        "LifecycleEnvironment", "AttachManagedInstancesToLifecycleStage", "")
+                        "LifecycleEnvironment",
+                        "AttachManagedInstancesToLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/AttachManagedInstancesToLifecycleStage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachManagedInstancesToLifecycleStageRequest::builder)
                 .basePath("/20220901")
@@ -146,7 +148,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CreateLifecycleEnvironmentResponse::builder)
                 .logger(LOG, "createLifecycleEnvironment")
-                .serviceDetails("LifecycleEnvironment", "CreateLifecycleEnvironment", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "CreateLifecycleEnvironment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/CreateLifecycleEnvironment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLifecycleEnvironmentRequest::builder)
                 .basePath("/20220901")
@@ -179,7 +184,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, DeleteLifecycleEnvironmentResponse::builder)
                 .logger(LOG, "deleteLifecycleEnvironment")
-                .serviceDetails("LifecycleEnvironment", "DeleteLifecycleEnvironment", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "DeleteLifecycleEnvironment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/DeleteLifecycleEnvironment")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLifecycleEnvironmentRequest::builder)
                 .basePath("/20220901")
@@ -210,7 +218,9 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
         return clientCall(request, DetachManagedInstancesFromLifecycleStageResponse::builder)
                 .logger(LOG, "detachManagedInstancesFromLifecycleStage")
                 .serviceDetails(
-                        "LifecycleEnvironment", "DetachManagedInstancesFromLifecycleStage", "")
+                        "LifecycleEnvironment",
+                        "DetachManagedInstancesFromLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/DetachManagedInstancesFromLifecycleStage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachManagedInstancesFromLifecycleStageRequest::builder)
                 .basePath("/20220901")
@@ -244,7 +254,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetLifecycleEnvironmentResponse::builder)
                 .logger(LOG, "getLifecycleEnvironment")
-                .serviceDetails("LifecycleEnvironment", "GetLifecycleEnvironment", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "GetLifecycleEnvironment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/GetLifecycleEnvironment")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLifecycleEnvironmentRequest::builder)
                 .basePath("/20220901")
@@ -272,7 +285,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetLifecycleStageResponse::builder)
                 .logger(LOG, "getLifecycleStage")
-                .serviceDetails("LifecycleEnvironment", "GetLifecycleStage", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "GetLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/GetLifecycleStage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLifecycleStageRequest::builder)
                 .basePath("/20220901")
@@ -298,7 +314,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListLifecycleEnvironmentsResponse::builder)
                 .logger(LOG, "listLifecycleEnvironments")
-                .serviceDetails("LifecycleEnvironment", "ListLifecycleEnvironments", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "ListLifecycleEnvironments",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ListLifecycleEnvironments")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLifecycleEnvironmentsRequest::builder)
                 .basePath("/20220901")
@@ -342,7 +361,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListLifecycleStageInstalledPackagesResponse::builder)
                 .logger(LOG, "listLifecycleStageInstalledPackages")
-                .serviceDetails("LifecycleEnvironment", "ListLifecycleStageInstalledPackages", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "ListLifecycleStageInstalledPackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStageInstalledPackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLifecycleStageInstalledPackagesRequest::builder)
                 .basePath("/20220901")
@@ -384,7 +406,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListLifecycleStagesResponse::builder)
                 .logger(LOG, "listLifecycleStages")
-                .serviceDetails("LifecycleEnvironment", "ListLifecycleStages", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "ListLifecycleStages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLifecycleStagesRequest::builder)
                 .basePath("/20220901")
@@ -432,7 +457,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, PromoteSoftwareSourceToLifecycleStageResponse::builder)
                 .logger(LOG, "promoteSoftwareSourceToLifecycleStage")
-                .serviceDetails("LifecycleEnvironment", "PromoteSoftwareSourceToLifecycleStage", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "PromoteSoftwareSourceToLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/PromoteSoftwareSourceToLifecycleStage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PromoteSoftwareSourceToLifecycleStageRequest::builder)
                 .basePath("/20220901")
@@ -472,7 +500,10 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdateLifecycleEnvironmentResponse::builder)
                 .logger(LOG, "updateLifecycleEnvironment")
-                .serviceDetails("LifecycleEnvironment", "UpdateLifecycleEnvironment", "")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "UpdateLifecycleEnvironment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/UpdateLifecycleEnvironment")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLifecycleEnvironmentRequest::builder)
                 .basePath("/20220901")

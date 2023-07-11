@@ -97,7 +97,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, AttachSoftwareSourcesToManagedInstanceResponse::builder)
                 .logger(LOG, "attachSoftwareSourcesToManagedInstance")
-                .serviceDetails("ManagedInstance", "AttachSoftwareSourcesToManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "AttachSoftwareSourcesToManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachSoftwareSourcesToManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachSoftwareSourcesToManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -132,7 +135,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DetachSoftwareSourcesFromManagedInstanceResponse::builder)
                 .logger(LOG, "detachSoftwareSourcesFromManagedInstance")
-                .serviceDetails("ManagedInstance", "DetachSoftwareSourcesFromManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "DetachSoftwareSourcesFromManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachSoftwareSourcesFromManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachSoftwareSourcesFromManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -166,7 +172,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DisableModuleStreamOnManagedInstanceResponse::builder)
                 .logger(LOG, "disableModuleStreamOnManagedInstance")
-                .serviceDetails("ManagedInstance", "DisableModuleStreamOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "DisableModuleStreamOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DisableModuleStreamOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableModuleStreamOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -200,7 +209,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, EnableModuleStreamOnManagedInstanceResponse::builder)
                 .logger(LOG, "enableModuleStreamOnManagedInstance")
-                .serviceDetails("ManagedInstance", "EnableModuleStreamOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "EnableModuleStreamOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/EnableModuleStreamOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableModuleStreamOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -230,7 +242,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetManagedInstanceResponse::builder)
                 .logger(LOG, "getManagedInstance")
-                .serviceDetails("ManagedInstance", "GetManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "GetManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -263,7 +278,9 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
         return clientCall(request, InstallModuleStreamProfileOnManagedInstanceResponse::builder)
                 .logger(LOG, "installModuleStreamProfileOnManagedInstance")
                 .serviceDetails(
-                        "ManagedInstance", "InstallModuleStreamProfileOnManagedInstance", "")
+                        "ManagedInstance",
+                        "InstallModuleStreamProfileOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallModuleStreamProfileOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallModuleStreamProfileOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -298,7 +315,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, InstallPackagesOnManagedInstanceResponse::builder)
                 .logger(LOG, "installPackagesOnManagedInstance")
-                .serviceDetails("ManagedInstance", "InstallPackagesOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "InstallPackagesOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallPackagesOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallPackagesOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -329,7 +349,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListManagedInstanceAvailablePackagesResponse::builder)
                 .logger(LOG, "listManagedInstanceAvailablePackages")
-                .serviceDetails("ManagedInstance", "ListManagedInstanceAvailablePackages", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceAvailablePackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailablePackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceAvailablePackagesRequest::builder)
                 .basePath("/20220901")
@@ -372,7 +395,9 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
         return clientCall(request, ListManagedInstanceAvailableSoftwareSourcesResponse::builder)
                 .logger(LOG, "listManagedInstanceAvailableSoftwareSources")
                 .serviceDetails(
-                        "ManagedInstance", "ListManagedInstanceAvailableSoftwareSources", "")
+                        "ManagedInstance",
+                        "ListManagedInstanceAvailableSoftwareSources",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableSoftwareSources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceAvailableSoftwareSourcesRequest::builder)
                 .basePath("/20220901")
@@ -414,7 +439,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListManagedInstanceErrataResponse::builder)
                 .logger(LOG, "listManagedInstanceErrata")
-                .serviceDetails("ManagedInstance", "ListManagedInstanceErrata", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceErrata",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceErrata")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceErrataRequest::builder)
                 .basePath("/20220901")
@@ -458,7 +486,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListManagedInstanceInstalledPackagesResponse::builder)
                 .logger(LOG, "listManagedInstanceInstalledPackages")
-                .serviceDetails("ManagedInstance", "ListManagedInstanceInstalledPackages", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceInstalledPackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledPackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceInstalledPackagesRequest::builder)
                 .basePath("/20220901")
@@ -501,7 +532,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListManagedInstanceModulesResponse::builder)
                 .logger(LOG, "listManagedInstanceModules")
-                .serviceDetails("ManagedInstance", "ListManagedInstanceModules", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceModules",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceModules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceModulesRequest::builder)
                 .basePath("/20220901")
@@ -539,7 +573,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListManagedInstanceUpdatablePackagesResponse::builder)
                 .logger(LOG, "listManagedInstanceUpdatablePackages")
-                .serviceDetails("ManagedInstance", "ListManagedInstanceUpdatablePackages", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceUpdatablePackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceUpdatablePackages")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceUpdatablePackagesRequest::builder)
                 .basePath("/20220901")
@@ -585,7 +622,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListManagedInstancesResponse::builder)
                 .logger(LOG, "listManagedInstances")
-                .serviceDetails("ManagedInstance", "ListManagedInstances", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstancesRequest::builder)
                 .basePath("/20220901")
@@ -650,7 +690,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ManageModuleStreamsOnManagedInstanceResponse::builder)
                 .logger(LOG, "manageModuleStreamsOnManagedInstance")
-                .serviceDetails("ManagedInstance", "ManageModuleStreamsOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "ManageModuleStreamsOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ManageModuleStreamsOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ManageModuleStreamsOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -681,7 +724,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, RefreshSoftwareOnManagedInstanceResponse::builder)
                 .logger(LOG, "refreshSoftwareOnManagedInstance")
-                .serviceDetails("ManagedInstance", "RefreshSoftwareOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "RefreshSoftwareOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RefreshSoftwareOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshSoftwareOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -716,7 +762,9 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
         return clientCall(request, RemoveModuleStreamProfileFromManagedInstanceResponse::builder)
                 .logger(LOG, "removeModuleStreamProfileFromManagedInstance")
                 .serviceDetails(
-                        "ManagedInstance", "RemoveModuleStreamProfileFromManagedInstance", "")
+                        "ManagedInstance",
+                        "RemoveModuleStreamProfileFromManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveModuleStreamProfileFromManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveModuleStreamProfileFromManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -751,7 +799,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, RemovePackagesFromManagedInstanceResponse::builder)
                 .logger(LOG, "removePackagesFromManagedInstance")
-                .serviceDetails("ManagedInstance", "RemovePackagesFromManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "RemovePackagesFromManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemovePackagesFromManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemovePackagesFromManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -785,7 +836,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, SwitchModuleStreamOnManagedInstanceResponse::builder)
                 .logger(LOG, "switchModuleStreamOnManagedInstance")
-                .serviceDetails("ManagedInstance", "SwitchModuleStreamOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "SwitchModuleStreamOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchModuleStreamOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SwitchModuleStreamOnManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -820,7 +874,9 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         request, UpdateAllPackagesOnManagedInstancesInCompartmentResponse::builder)
                 .logger(LOG, "updateAllPackagesOnManagedInstancesInCompartment")
                 .serviceDetails(
-                        "ManagedInstance", "UpdateAllPackagesOnManagedInstancesInCompartment", "")
+                        "ManagedInstance",
+                        "UpdateAllPackagesOnManagedInstancesInCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdateAllPackagesOnManagedInstancesInCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateAllPackagesOnManagedInstancesInCompartmentRequest::builder)
                 .basePath("/20220901")
@@ -855,7 +911,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, UpdateManagedInstanceResponse::builder)
                 .logger(LOG, "updateManagedInstance")
-                .serviceDetails("ManagedInstance", "UpdateManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "UpdateManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdateManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagedInstanceRequest::builder)
                 .basePath("/20220901")
@@ -886,7 +945,10 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, UpdatePackagesOnManagedInstanceResponse::builder)
                 .logger(LOG, "updatePackagesOnManagedInstance")
-                .serviceDetails("ManagedInstance", "UpdatePackagesOnManagedInstance", "")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "UpdatePackagesOnManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdatePackagesOnManagedInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdatePackagesOnManagedInstanceRequest::builder)
                 .basePath("/20220901")

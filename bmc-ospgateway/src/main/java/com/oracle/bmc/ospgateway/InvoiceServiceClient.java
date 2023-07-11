@@ -145,6 +145,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "Content-Type", DownloadPdfContentResponse.Builder::contentType)
                 .handleResponseHeaderInteger(
                         "Content-Length", DownloadPdfContentResponse.Builder::contentLength)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -174,6 +175,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", GetInvoiceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetInvoiceResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -210,6 +212,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListInvoiceLinesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListInvoiceLinesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -257,6 +260,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListInvoicesResponse.Builder::opcNextPage)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListInvoicesResponse.Builder::opcTotalItems)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -292,6 +296,7 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString(
                         "opc-request-id", PayInvoiceResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PayInvoiceResponse.Builder::etag)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

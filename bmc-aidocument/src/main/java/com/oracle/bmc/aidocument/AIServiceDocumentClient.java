@@ -123,6 +123,39 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public AnalyzeDocumentResponse analyzeDocument(AnalyzeDocumentRequest request) {
+        Objects.requireNonNull(
+                request.getAnalyzeDocumentDetails(), "analyzeDocumentDetails is required");
+
+        return clientCall(request, AnalyzeDocumentResponse::builder)
+                .logger(LOG, "analyzeDocument")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "AnalyzeDocument",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/AnalyzeDocumentResult/AnalyzeDocument")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AnalyzeDocumentRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("actions")
+                .appendPathParam("analyzeDocument")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.AnalyzeDocumentResult.class,
+                        AnalyzeDocumentResponse.Builder::analyzeDocumentResult)
+                .handleResponseHeaderString(
+                        "Content-Location", AnalyzeDocumentResponse.Builder::contentLocation)
+                .handleResponseHeaderString("location", AnalyzeDocumentResponse.Builder::location)
+                .handleResponseHeaderString("etag", AnalyzeDocumentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AnalyzeDocumentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CancelProcessorJobResponse cancelProcessorJob(CancelProcessorJobRequest request) {
 
         Validate.notBlank(request.getProcessorJobId(), "processorJobId must not be blank");
@@ -659,6 +692,38 @@ public class AIServiceDocumentClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
+    public PatchModelResponse patchModel(PatchModelRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getPatchModelDetails(), "patchModelDetails is required");
+
+        return clientCall(request, PatchModelResponse::builder)
+                .logger(LOG, "patchModel")
+                .serviceDetails(
+                        "AIServiceDocument",
+                        "PatchModel",
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/PatchModel")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchModelRequest::builder)
+                .basePath("/20221109")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aidocument.model.PatchResponseMessage.class,
+                        PatchModelResponse.Builder::patchResponseMessage)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PatchModelResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchModelResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PatchModelResponse.Builder::etag)
                 .callSync();
     }
 

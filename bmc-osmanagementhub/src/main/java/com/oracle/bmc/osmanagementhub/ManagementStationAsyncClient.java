@@ -105,7 +105,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, CreateManagementStationResponse::builder)
                 .logger(LOG, "createManagementStation")
-                .serviceDetails("ManagementStation", "CreateManagementStation", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "CreateManagementStation",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/CreateManagementStation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateManagementStationRequest::builder)
                 .basePath("/20220901")
@@ -135,7 +138,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, DeleteManagementStationResponse::builder)
                 .logger(LOG, "deleteManagementStation")
-                .serviceDetails("ManagementStation", "DeleteManagementStation", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "DeleteManagementStation",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/DeleteManagementStation")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteManagementStationRequest::builder)
                 .basePath("/20220901")
@@ -161,7 +167,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, GetManagementStationResponse::builder)
                 .logger(LOG, "getManagementStation")
-                .serviceDetails("ManagementStation", "GetManagementStation", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "GetManagementStation",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/GetManagementStation")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagementStationRequest::builder)
                 .basePath("/20220901")
@@ -189,7 +198,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListManagementStationsResponse::builder)
                 .logger(LOG, "listManagementStations")
-                .serviceDetails("ManagementStation", "ListManagementStations", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "ListManagementStations",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ListManagementStations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagementStationsRequest::builder)
                 .basePath("/20220901")
@@ -227,7 +239,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, ListMirrorsResponse::builder)
                 .logger(LOG, "listMirrors")
-                .serviceDetails("ManagementStation", "ListMirrors", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "ListMirrors",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/MirrorsCollection/ListMirrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMirrorsRequest::builder)
                 .basePath("/20220901")
@@ -270,7 +285,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, SynchronizeMirrorsResponse::builder)
                 .logger(LOG, "synchronizeMirrors")
-                .serviceDetails("ManagementStation", "SynchronizeMirrors", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "SynchronizeMirrors",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/SynchronizeMirrors")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SynchronizeMirrorsRequest::builder)
                 .basePath("/20220901")
@@ -304,7 +322,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, SynchronizeSingleMirrorsResponse::builder)
                 .logger(LOG, "synchronizeSingleMirrors")
-                .serviceDetails("ManagementStation", "SynchronizeSingleMirrors", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "SynchronizeSingleMirrors",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/SynchronizeSingleMirrors")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SynchronizeSingleMirrorsRequest::builder)
                 .basePath("/20220901")
@@ -341,7 +362,10 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
 
         return clientCall(request, UpdateManagementStationResponse::builder)
                 .logger(LOG, "updateManagementStation")
-                .serviceDetails("ManagementStation", "UpdateManagementStation", "")
+                .serviceDetails(
+                        "ManagementStation",
+                        "UpdateManagementStation",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/UpdateManagementStation")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagementStationRequest::builder)
                 .basePath("/20220901")

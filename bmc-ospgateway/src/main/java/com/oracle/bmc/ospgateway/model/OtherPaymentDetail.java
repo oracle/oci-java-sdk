@@ -241,6 +241,9 @@ public final class OtherPaymentDetail extends PaymentDetail {
         Jcb("JCB"),
         Diner("DINER"),
         Elo("ELO"),
+        Saving("SAVING"),
+        Checking("CHECKING"),
+        CorporateChecking("CORPORATE_CHECKING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

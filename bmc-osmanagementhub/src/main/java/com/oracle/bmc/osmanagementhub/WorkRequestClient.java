@@ -127,7 +127,10 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("WorkRequest", "GetWorkRequest", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220901")
@@ -155,7 +158,10 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("WorkRequest", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220901")
@@ -186,7 +192,10 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("WorkRequest", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220901")
@@ -215,7 +224,10 @@ public class WorkRequestClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("WorkRequest", "ListWorkRequests", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220901")
