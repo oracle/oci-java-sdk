@@ -6,7 +6,7 @@ package com.oracle.bmc.containerinstances.model;
 
 /**
  * Allow customers to define DNS settings for containers. If this is not provided, the containers
- * will use the default DNS settings of the subnet. <br>
+ * use the default DNS settings of the subnet. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,16 +39,16 @@ public final class CreateContainerDnsConfigDetails
     public static class Builder {
         /**
          * IP address of a name server that the resolver should query, either an IPv4 address (in
-         * dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will
-         * use nameservers from subnet dhcpDnsOptions.
+         * dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
+         * nameservers from subnet dhcpDnsOptions.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
         private java.util.List<String> nameservers;
 
         /**
          * IP address of a name server that the resolver should query, either an IPv4 address (in
-         * dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will
-         * use nameservers from subnet dhcpDnsOptions.
+         * dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
+         * nameservers from subnet dhcpDnsOptions.
          *
          * @param nameservers the value to set
          * @return this builder
@@ -80,7 +80,7 @@ public final class CreateContainerDnsConfigDetails
         /**
          * Options allows certain internal resolver variables to be modified. Options are a list of
          * objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples:
-         * ["ndots:n", "edns0"]
+         * ["ndots:n", "edns0"].
          */
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private java.util.List<String> options;
@@ -88,7 +88,7 @@ public final class CreateContainerDnsConfigDetails
         /**
          * Options allows certain internal resolver variables to be modified. Options are a list of
          * objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples:
-         * ["ndots:n", "edns0"]
+         * ["ndots:n", "edns0"].
          *
          * @param options the value to set
          * @return this builder
@@ -138,16 +138,16 @@ public final class CreateContainerDnsConfigDetails
 
     /**
      * IP address of a name server that the resolver should query, either an IPv4 address (in dot
-     * notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
-     * nameservers from subnet dhcpDnsOptions.
+     * notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers
+     * from subnet dhcpDnsOptions.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
     private final java.util.List<String> nameservers;
 
     /**
      * IP address of a name server that the resolver should query, either an IPv4 address (in dot
-     * notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
-     * nameservers from subnet dhcpDnsOptions.
+     * notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers
+     * from subnet dhcpDnsOptions.
      *
      * @return the value
      */
@@ -173,7 +173,7 @@ public final class CreateContainerDnsConfigDetails
     /**
      * Options allows certain internal resolver variables to be modified. Options are a list of
      * objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n",
-     * "edns0"]
+     * "edns0"].
      */
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final java.util.List<String> options;
@@ -181,7 +181,7 @@ public final class CreateContainerDnsConfigDetails
     /**
      * Options allows certain internal resolver variables to be modified. Options are a list of
      * objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n",
-     * "edns0"]
+     * "edns0"].
      *
      * @return the value
      */

@@ -5,8 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Container Health Check is using for checking container status and taking appropriate actions on
- * behalf of customers. <br>
+ * Container Health Check is used to check and report the status of a container. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

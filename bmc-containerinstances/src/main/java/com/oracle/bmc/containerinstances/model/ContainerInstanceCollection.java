@@ -5,8 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Results of a containerInstance search. Contains boh ContainerInstanceSummary items and other
- * information, such as metadata. <br>
+ * Summary information about a list of container instances. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +31,12 @@ public final class ContainerInstanceCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of containerInstances. */
+        /** List of container instances. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ContainerInstanceSummary> items;
 
         /**
-         * List of containerInstances.
+         * List of container instances.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +76,12 @@ public final class ContainerInstanceCollection
         return new Builder().copy(this);
     }
 
-    /** List of containerInstances. */
+    /** List of container instances. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ContainerInstanceSummary> items;
 
     /**
-     * List of containerInstances.
+     * List of container instances.
      *
      * @return the value
      */

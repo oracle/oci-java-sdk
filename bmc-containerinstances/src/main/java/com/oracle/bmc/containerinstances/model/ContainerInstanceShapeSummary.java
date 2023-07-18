@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Details about a shape for a container Instance. <br>
+ * Details about a shape for a container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -61,12 +61,12 @@ public final class ContainerInstanceShapeSummary
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A short description of the Instance's processor (CPU). */
+        /** A short description of the container instance's processor (CPU). */
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
         /**
-         * A short description of the Instance's processor (CPU).
+         * A short description of the container instance's processor (CPU).
          *
          * @param processorDescription the value to set
          * @return this builder
@@ -165,12 +165,12 @@ public final class ContainerInstanceShapeSummary
         return name;
     }
 
-    /** A short description of the Instance's processor (CPU). */
+    /** A short description of the container instance's processor (CPU). */
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
     /**
-     * A short description of the Instance's processor (CPU).
+     * A short description of the container instance's processor (CPU).
      *
      * @return the value
      */

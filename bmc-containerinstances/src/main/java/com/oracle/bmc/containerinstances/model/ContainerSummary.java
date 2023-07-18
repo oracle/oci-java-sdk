@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A reduced set of details about a single Container returned by list APIs. <br>
+ * Summary information about a container. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -78,12 +78,16 @@ public final class ContainerSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container.
          *
          * @param id the value to set
          * @return this builder
@@ -93,12 +97,16 @@ public final class ContainerSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name for the Container. Can be renamed. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the Container. Can be renamed.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -108,12 +116,16 @@ public final class ContainerSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -144,14 +156,14 @@ public final class ContainerSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -164,14 +176,14 @@ public final class ContainerSummary
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
@@ -181,12 +193,12 @@ public final class ContainerSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Availability Domain where the Container's Instance is running. */
+        /** The availability domain where the container instance that hosts this container runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain where the Container's Instance is running.
+         * The availability domain where the container instance that hosts this container runs.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -196,12 +208,12 @@ public final class ContainerSummary
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** Fault Domain where the Container's Instance is running. */
+        /** The fault domain where the container instance that hosts the container runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * Fault Domain where the Container's Instance is running.
+         * The fault domain where the container instance that hosts the container runs.
          *
          * @param faultDomain the value to set
          * @return this builder
@@ -211,12 +223,12 @@ public final class ContainerSummary
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The current state of the Container. */
+        /** The current state of the container. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Container.LifecycleState lifecycleState;
 
         /**
-         * The current state of the Container.
+         * The current state of the container.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -227,15 +239,15 @@ public final class ContainerSummary
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used
+         * to provide actionable information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used
+         * to provide actionable information.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -245,12 +257,16 @@ public final class ContainerSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The time the the Container was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the the container was created in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Container was created. An RFC3339 formatted datetime string
+         * The time the the container was created in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -260,12 +276,16 @@ public final class ContainerSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Container was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time the container was updated in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Container was updated. An RFC3339 formatted datetime string
+         * The time the container was updated in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -275,12 +295,16 @@ public final class ContainerSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The identifier of the Container Instance on which this container is running. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container instance on which the container is running.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("containerInstanceId")
         private String containerInstanceId;
 
         /**
-         * The identifier of the Container Instance on which this container is running.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container instance on which the container is running.
          *
          * @param containerInstanceId the value to set
          * @return this builder
@@ -300,23 +324,25 @@ public final class ContainerSummary
             return this;
         }
         /**
-         * The container image information. Currently only support public docker registry. Can be
-         * either image name, e.g {@code containerImage}, image name with version, e.g {@code
-         * containerImage:v1} or complete docker image Url e.g {@code
-         * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-         * registry to public docker hub {@code docker.io/library}. The registry used for container
-         * image must be reachable over the Container Instance's VNIC.
+         * A URL identifying the image that the container runs in, such as
+         * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+         * latest.
+         *
+         * <p>If no registry is provided, will default the registry to public docker hub {@code
+         * docker.io/library}. The registry used for container image must be reachable over the
+         * Container Instance's VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("imageUrl")
         private String imageUrl;
 
         /**
-         * The container image information. Currently only support public docker registry. Can be
-         * either image name, e.g {@code containerImage}, image name with version, e.g {@code
-         * containerImage:v1} or complete docker image Url e.g {@code
-         * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-         * registry to public docker hub {@code docker.io/library}. The registry used for container
-         * image must be reachable over the Container Instance's VNIC.
+         * A URL identifying the image that the container runs in, such as
+         * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+         * latest.
+         *
+         * <p>If no registry is provided, will default the registry to public docker hub {@code
+         * docker.io/library}. The registry used for container image must be reachable over the
+         * Container Instance's VNIC.
          *
          * @param imageUrl the value to set
          * @return this builder
@@ -327,19 +353,23 @@ public final class ContainerSummary
             return this;
         }
         /**
-         * Determines if the Container will have access to the Container Instance Resource
-         * Principal. This method utilizes resource principal version 2.2. Please refer to
-         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-         * for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines whether the container will have access to the container instance resource
+         * principal.
+         *
+         * <p>This method utilizes resource principal version 2.2. For information on how to use the
+         * exposed resource principal elements, see
+         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isResourcePrincipalDisabled")
         private Boolean isResourcePrincipalDisabled;
 
         /**
-         * Determines if the Container will have access to the Container Instance Resource
-         * Principal. This method utilizes resource principal version 2.2. Please refer to
-         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-         * for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines whether the container will have access to the container instance resource
+         * principal.
+         *
+         * <p>This method utilizes resource principal version 2.2. For information on how to use the
+         * exposed resource principal elements, see
+         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          *
          * @param isResourcePrincipalDisabled the value to set
          * @return this builder
@@ -441,12 +471,16 @@ public final class ContainerSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container.
      *
      * @return the value
      */
@@ -454,12 +488,16 @@ public final class ContainerSummary
         return id;
     }
 
-    /** Display name for the Container. Can be renamed. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the Container. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -467,12 +505,16 @@ public final class ContainerSummary
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /**
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -499,14 +541,14 @@ public final class ContainerSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      */
@@ -516,14 +558,14 @@ public final class ContainerSummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
      */
@@ -531,12 +573,12 @@ public final class ContainerSummary
         return systemTags;
     }
 
-    /** Availability Domain where the Container's Instance is running. */
+    /** The availability domain where the container instance that hosts this container runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain where the Container's Instance is running.
+     * The availability domain where the container instance that hosts this container runs.
      *
      * @return the value
      */
@@ -544,12 +586,12 @@ public final class ContainerSummary
         return availabilityDomain;
     }
 
-    /** Fault Domain where the Container's Instance is running. */
+    /** The fault domain where the container instance that hosts the container runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * Fault Domain where the Container's Instance is running.
+     * The fault domain where the container instance that hosts the container runs.
      *
      * @return the value
      */
@@ -557,12 +599,12 @@ public final class ContainerSummary
         return faultDomain;
     }
 
-    /** The current state of the Container. */
+    /** The current state of the container. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Container.LifecycleState lifecycleState;
 
     /**
-     * The current state of the Container.
+     * The current state of the container.
      *
      * @return the value
      */
@@ -571,15 +613,15 @@ public final class ContainerSummary
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to
+     * provide actionable information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to
+     * provide actionable information.
      *
      * @return the value
      */
@@ -587,12 +629,16 @@ public final class ContainerSummary
         return lifecycleDetails;
     }
 
-    /** The time the the Container was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the the container was created in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Container was created. An RFC3339 formatted datetime string
+     * The time the the container was created in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */
@@ -600,12 +646,16 @@ public final class ContainerSummary
         return timeCreated;
     }
 
-    /** The time the Container was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time the container was updated in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Container was updated. An RFC3339 formatted datetime string
+     * The time the container was updated in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */
@@ -613,12 +663,16 @@ public final class ContainerSummary
         return timeUpdated;
     }
 
-    /** The identifier of the Container Instance on which this container is running. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container instance on which the container is running.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("containerInstanceId")
     private final String containerInstanceId;
 
     /**
-     * The identifier of the Container Instance on which this container is running.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container instance on which the container is running.
      *
      * @return the value
      */
@@ -634,23 +688,25 @@ public final class ContainerSummary
     }
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either
-     * image name, e.g {@code containerImage}, image name with version, e.g {@code
-     * containerImage:v1} or complete docker image Url e.g {@code
-     * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-     * registry to public docker hub {@code docker.io/library}. The registry used for container
-     * image must be reachable over the Container Instance's VNIC.
+     * A URL identifying the image that the container runs in, such as
+     * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+     * latest.
+     *
+     * <p>If no registry is provided, will default the registry to public docker hub {@code
+     * docker.io/library}. The registry used for container image must be reachable over the
+     * Container Instance's VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("imageUrl")
     private final String imageUrl;
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either
-     * image name, e.g {@code containerImage}, image name with version, e.g {@code
-     * containerImage:v1} or complete docker image Url e.g {@code
-     * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-     * registry to public docker hub {@code docker.io/library}. The registry used for container
-     * image must be reachable over the Container Instance's VNIC.
+     * A URL identifying the image that the container runs in, such as
+     * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+     * latest.
+     *
+     * <p>If no registry is provided, will default the registry to public docker hub {@code
+     * docker.io/library}. The registry used for container image must be reachable over the
+     * Container Instance's VNIC.
      *
      * @return the value
      */
@@ -659,19 +715,23 @@ public final class ContainerSummary
     }
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.
-     * This method utilizes resource principal version 2.2. Please refer to
-     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-     * for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines whether the container will have access to the container instance resource
+     * principal.
+     *
+     * <p>This method utilizes resource principal version 2.2. For information on how to use the
+     * exposed resource principal elements, see
+     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isResourcePrincipalDisabled")
     private final Boolean isResourcePrincipalDisabled;
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.
-     * This method utilizes resource principal version 2.2. Please refer to
-     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-     * for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines whether the container will have access to the container instance resource
+     * principal.
+     *
+     * <p>This method utilizes resource principal version 2.2. For information on how to use the
+     * exposed resource principal elements, see
+     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      *
      * @return the value
      */

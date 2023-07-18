@@ -25,14 +25,14 @@ public class ListContainersResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * Pagination of a list of items. When paging through a list, if this header appears in the
      * response, then a partial list might have been returned. Include this value as the {@code
      * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * Pagination of a list of items. When paging through a list, if this header appears in the
      * response, then a partial list might have been returned. Include this value as the {@code
      * page} parameter for the subsequent GET request to get the next batch of items.
      *
@@ -110,16 +110,16 @@ public class ListContainersResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * Pagination of a list of items. When paging through a list, if this header appears in the
+         * response, then a partial list might have been returned. Include this value as the {@code
+         * page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * Pagination of a list of items. When paging through a list, if this header appears in the
+         * response, then a partial list might have been returned. Include this value as the {@code
+         * page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder

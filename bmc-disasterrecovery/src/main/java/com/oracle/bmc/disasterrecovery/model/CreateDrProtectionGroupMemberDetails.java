@@ -23,6 +23,12 @@ package com.oracle.bmc.disasterrecovery.model;
         defaultImpl = CreateDrProtectionGroupMemberDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberComputeInstanceMovableDetails.class,
+            name = "COMPUTE_INSTANCE_MOVABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberComputeInstanceNonMovableDetails.class,
+            name = "COMPUTE_INSTANCE_NON_MOVABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberComputeInstanceDetails.class,
             name = "COMPUTE_INSTANCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -49,7 +55,7 @@ public class CreateDrProtectionGroupMemberDetails
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
@@ -57,7 +63,7 @@ public class CreateDrProtectionGroupMemberDetails
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
      *
      * @return the value
      */

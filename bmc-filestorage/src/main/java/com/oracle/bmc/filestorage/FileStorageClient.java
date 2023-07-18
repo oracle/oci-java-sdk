@@ -219,6 +219,39 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ChangeOutboundConnectorCompartmentResponse changeOutboundConnectorCompartment(
+            ChangeOutboundConnectorCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeOutboundConnectorCompartmentDetails(),
+                "changeOutboundConnectorCompartmentDetails is required");
+
+        return clientCall(request, ChangeOutboundConnectorCompartmentResponse::builder)
+                .logger(LOG, "changeOutboundConnectorCompartment")
+                .serviceDetails(
+                        "FileStorage",
+                        "ChangeOutboundConnectorCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/ChangeOutboundConnectorCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOutboundConnectorCompartmentRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendPathParam(request.getOutboundConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOutboundConnectorCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeReplicationCompartmentResponse changeReplicationCompartment(
             ChangeReplicationCompartmentRequest request) {
 
@@ -362,6 +395,36 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", CreateMountTargetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateMountTargetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateOutboundConnectorResponse createOutboundConnector(
+            CreateOutboundConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOutboundConnectorDetails(),
+                "createOutboundConnectorDetails is required");
+
+        return clientCall(request, CreateOutboundConnectorResponse::builder)
+                .logger(LOG, "createOutboundConnector")
+                .serviceDetails(
+                        "FileStorage",
+                        "CreateOutboundConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/CreateOutboundConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOutboundConnectorRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.OutboundConnector.class,
+                        CreateOutboundConnectorResponse.Builder::outboundConnector)
+                .handleResponseHeaderString("etag", CreateOutboundConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOutboundConnectorResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -518,6 +581,32 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteMountTargetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteOutboundConnectorResponse deleteOutboundConnector(
+            DeleteOutboundConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
+
+        return clientCall(request, DeleteOutboundConnectorResponse::builder)
+                .logger(LOG, "deleteOutboundConnector")
+                .serviceDetails(
+                        "FileStorage",
+                        "DeleteOutboundConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/DeleteOutboundConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOutboundConnectorRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendPathParam(request.getOutboundConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOutboundConnectorResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -763,6 +852,34 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", GetMountTargetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMountTargetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetOutboundConnectorResponse getOutboundConnector(GetOutboundConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
+
+        return clientCall(request, GetOutboundConnectorResponse::builder)
+                .logger(LOG, "getOutboundConnector")
+                .serviceDetails(
+                        "FileStorage",
+                        "GetOutboundConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/GetOutboundConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOutboundConnectorRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendPathParam(request.getOutboundConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.OutboundConnector.class,
+                        GetOutboundConnectorResponse.Builder::outboundConnector)
+                .handleResponseHeaderString("etag", GetOutboundConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOutboundConnectorResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1035,6 +1152,44 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListMountTargetsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListMountTargetsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListOutboundConnectorsResponse listOutboundConnectors(
+            ListOutboundConnectorsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getAvailabilityDomain(), "availabilityDomain is required");
+
+        return clientCall(request, ListOutboundConnectorsResponse::builder)
+                .logger(LOG, "listOutboundConnectors")
+                .serviceDetails(
+                        "FileStorage",
+                        "ListOutboundConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnectorSummary/ListOutboundConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOutboundConnectorsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.OutboundConnectorSummary.class,
+                        ListOutboundConnectorsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOutboundConnectorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOutboundConnectorsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1379,6 +1534,40 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public UpdateOutboundConnectorResponse updateOutboundConnector(
+            UpdateOutboundConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOutboundConnectorDetails(),
+                "updateOutboundConnectorDetails is required");
+
+        return clientCall(request, UpdateOutboundConnectorResponse::builder)
+                .logger(LOG, "updateOutboundConnector")
+                .serviceDetails(
+                        "FileStorage",
+                        "UpdateOutboundConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/UpdateOutboundConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOutboundConnectorRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendPathParam(request.getOutboundConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.OutboundConnector.class,
+                        UpdateOutboundConnectorResponse.Builder::outboundConnector)
+                .handleResponseHeaderString("etag", UpdateOutboundConnectorResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOutboundConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateReplicationResponse updateReplication(UpdateReplicationRequest request) {
 
         Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
@@ -1437,6 +1626,34 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateSnapshotResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ValidateKeyTabsResponse validateKeyTabs(ValidateKeyTabsRequest request) {
+        Objects.requireNonNull(
+                request.getValidateKeyTabsDetails(), "validateKeyTabsDetails is required");
+
+        return clientCall(request, ValidateKeyTabsResponse::builder)
+                .logger(LOG, "validateKeyTabs")
+                .serviceDetails(
+                        "FileStorage",
+                        "ValidateKeyTabs",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ValidateKeyTabs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateKeyTabsRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam("actions")
+                .appendPathParam("validateKeyTabs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.ValidateKeyTabsResponseDetails.class,
+                        ValidateKeyTabsResponse.Builder::validateKeyTabsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateKeyTabsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

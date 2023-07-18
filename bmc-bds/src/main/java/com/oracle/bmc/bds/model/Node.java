@@ -40,7 +40,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "ocpus",
         "memoryInGBs",
         "nvmes",
-        "localDisksTotalSizeInGBs"
+        "localDisksTotalSizeInGBs",
+        "timeMaintenanceRebootDue"
     })
     public Node(
             String instanceId,
@@ -61,7 +62,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             Integer ocpus,
             Integer memoryInGBs,
             Integer nvmes,
-            Double localDisksTotalSizeInGBs) {
+            Double localDisksTotalSizeInGBs,
+            java.util.Date timeMaintenanceRebootDue) {
         super();
         this.instanceId = instanceId;
         this.displayName = displayName;
@@ -82,6 +84,7 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.memoryInGBs = memoryInGBs;
         this.nvmes = nvmes;
         this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
+        this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -378,6 +381,25 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("localDisksTotalSizeInGBs");
             return this;
         }
+        /**
+         * The date and time the instance is expected to be stopped / started, in the format defined
+         * by RFC3339.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+        private java.util.Date timeMaintenanceRebootDue;
+
+        /**
+         * The date and time the instance is expected to be stopped / started, in the format defined
+         * by RFC3339.
+         *
+         * @param timeMaintenanceRebootDue the value to set
+         * @return this builder
+         */
+        public Builder timeMaintenanceRebootDue(java.util.Date timeMaintenanceRebootDue) {
+            this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            this.__explicitlySet__.add("timeMaintenanceRebootDue");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -403,7 +425,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.ocpus,
                             this.memoryInGBs,
                             this.nvmes,
-                            this.localDisksTotalSizeInGBs);
+                            this.localDisksTotalSizeInGBs,
+                            this.timeMaintenanceRebootDue);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -468,6 +491,9 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("localDisksTotalSizeInGBs")) {
                 this.localDisksTotalSizeInGBs(model.getLocalDisksTotalSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenanceRebootDue")) {
+                this.timeMaintenanceRebootDue(model.getTimeMaintenanceRebootDue());
             }
             return this;
         }
@@ -839,6 +865,23 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return localDisksTotalSizeInGBs;
     }
 
+    /**
+     * The date and time the instance is expected to be stopped / started, in the format defined by
+     * RFC3339.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+    private final java.util.Date timeMaintenanceRebootDue;
+
+    /**
+     * The date and time the instance is expected to be stopped / started, in the format defined by
+     * RFC3339.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMaintenanceRebootDue() {
+        return timeMaintenanceRebootDue;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -874,6 +917,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", nvmes=").append(String.valueOf(this.nvmes));
         sb.append(", localDisksTotalSizeInGBs=")
                 .append(String.valueOf(this.localDisksTotalSizeInGBs));
+        sb.append(", timeMaintenanceRebootDue=")
+                .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(")");
         return sb.toString();
     }
@@ -908,6 +953,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.nvmes, other.nvmes)
                 && java.util.Objects.equals(
                         this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
+                && java.util.Objects.equals(
+                        this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && super.equals(other);
     }
 
@@ -950,6 +997,11 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
                         + (this.localDisksTotalSizeInGBs == null
                                 ? 43
                                 : this.localDisksTotalSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceRebootDue == null
+                                ? 43
+                                : this.timeMaintenanceRebootDue.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

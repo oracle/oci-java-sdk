@@ -104,7 +104,10 @@ public class DataplaneAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
 
         return clientCall(request, GenerateScopedAccessTokenResponse::builder)
                 .logger(LOG, "generateScopedAccessToken")
-                .serviceDetails("Dataplane", "GenerateScopedAccessToken", "")
+                .serviceDetails(
+                        "Dataplane",
+                        "GenerateScopedAccessToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-dp/v1/SecurityToken/GenerateScopedAccessToken")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateScopedAccessTokenRequest::builder)
                 .basePath("/v1")
@@ -117,6 +120,40 @@ public class DataplaneAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
                         GenerateScopedAccessTokenResponse.Builder::securityToken)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateScopedAccessTokenResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateUserSecurityTokenResponse> generateUserSecurityToken(
+            GenerateUserSecurityTokenRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateUserSecurityTokenRequest, GenerateUserSecurityTokenResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getGenerateUserSecurityTokenDetails(),
+                "generateUserSecurityTokenDetails is required");
+
+        return clientCall(request, GenerateUserSecurityTokenResponse::builder)
+                .logger(LOG, "generateUserSecurityToken")
+                .serviceDetails(
+                        "Dataplane",
+                        "GenerateUserSecurityToken",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-dp/v1/SecurityToken/GenerateUserSecurityToken")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateUserSecurityTokenRequest::builder)
+                .basePath("/v1")
+                .appendPathParam("token")
+                .appendPathParam("upst")
+                .appendPathParam("actions")
+                .appendPathParam("GenerateUpst")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydataplane.model.SecurityToken.class,
+                        GenerateUserSecurityTokenResponse.Builder::securityToken)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateUserSecurityTokenResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

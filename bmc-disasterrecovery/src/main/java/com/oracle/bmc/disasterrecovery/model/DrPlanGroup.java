@@ -36,7 +36,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The unique id of this group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..examplegroupsgid}
+         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -44,7 +44,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The unique id of this group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..examplegroupsgid}
+         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
          *
          * @param id the value to set
          * @return this builder
@@ -147,7 +147,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The unique id of this group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..examplegroupsgid}
+     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
@@ -155,7 +155,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The unique id of this group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..examplegroupsgid}
+     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
      *
      * @return the value
      */

@@ -28,7 +28,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A flag indicating whether a precheck was executed before the plan.
+         * A flag indicating whether prechecks should be executed before the plan execution.
          *
          * <p>Example: {@code false}
          */
@@ -36,7 +36,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
         private Boolean arePrechecksEnabled;
 
         /**
-         * A flag indicating whether a precheck was executed before the plan.
+         * A flag indicating whether prechecks should be executed before the plan execution.
          *
          * <p>Example: {@code false}
          *
@@ -49,7 +49,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
             return this;
         }
         /**
-         * A flag indicating whether warnigs was ignored during the switchover.
+         * A flag indicating whether warnings should be ignored during the plan execution.
          *
          * <p>Example: {@code true}
          */
@@ -57,7 +57,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
         private Boolean areWarningsIgnored;
 
         /**
-         * A flag indicating whether warnigs was ignored during the switchover.
+         * A flag indicating whether warnings should be ignored during the plan execution.
          *
          * <p>Example: {@code true}
          *
@@ -112,7 +112,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     }
 
     /**
-     * A flag indicating whether a precheck was executed before the plan.
+     * A flag indicating whether prechecks should be executed before the plan execution.
      *
      * <p>Example: {@code false}
      */
@@ -120,7 +120,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     private final Boolean arePrechecksEnabled;
 
     /**
-     * A flag indicating whether a precheck was executed before the plan.
+     * A flag indicating whether prechecks should be executed before the plan execution.
      *
      * <p>Example: {@code false}
      *
@@ -131,7 +131,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     }
 
     /**
-     * A flag indicating whether warnigs was ignored during the switchover.
+     * A flag indicating whether warnings should be ignored during the plan execution.
      *
      * <p>Example: {@code true}
      */
@@ -139,7 +139,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     private final Boolean areWarningsIgnored;
 
     /**
-     * A flag indicating whether warnigs was ignored during the switchover.
+     * A flag indicating whether warnings should be ignored during the plan execution.
      *
      * <p>Example: {@code true}
      *

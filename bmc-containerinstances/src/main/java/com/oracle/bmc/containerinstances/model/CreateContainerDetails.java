@@ -5,13 +5,13 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Information to create a new Container within a ContainerInstance.
+ * Information to create a new container within a container instance.
  *
- * <p>The Container created by this call will contain both the tags specified in this object as well
- * as any tags specified in the parent ContainerInstance object.
+ * <p>The container created by this call contains both the tags specified in this object and any
+ * tags specified in the parent container instance.
  *
- * <p>The Container will be created with the same {@code compartmentId}, {@code availabilityDomain},
- * and {@code faultDomain} as the parent ContainerInstance object. <br>
+ * <p>The container is created in the same compartment, availability domain, and fault domain as its
+ * container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,7 +34,6 @@ public final class CreateContainerDetails
         "imageUrl",
         "command",
         "arguments",
-        "additionalCapabilities",
         "workingDirectory",
         "environmentVariables",
         "volumeMounts",
@@ -49,7 +48,6 @@ public final class CreateContainerDetails
             String imageUrl,
             java.util.List<String> command,
             java.util.List<String> arguments,
-            java.util.List<ContainerCapability> additionalCapabilities,
             String workingDirectory,
             java.util.Map<String, String> environmentVariables,
             java.util.List<CreateVolumeMountDetails> volumeMounts,
@@ -63,7 +61,6 @@ public final class CreateContainerDetails
         this.imageUrl = imageUrl;
         this.command = command;
         this.arguments = arguments;
-        this.additionalCapabilities = additionalCapabilities;
         this.workingDirectory = workingDirectory;
         this.environmentVariables = environmentVariables;
         this.volumeMounts = volumeMounts;
@@ -77,15 +74,19 @@ public final class CreateContainerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Display name for the Container. There are no guarantees of uniqueness for this name. If
-         * none is provided, it will be calculated automatically.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         *
+         * <p>If you don't provide a name, a name is generated automatically.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the Container. There are no guarantees of uniqueness for this name. If
-         * none is provided, it will be calculated automatically.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         *
+         * <p>If you don't provide a name, a name is generated automatically.
          *
          * @param displayName the value to set
          * @return this builder
@@ -96,23 +97,29 @@ public final class CreateContainerDetails
             return this;
         }
         /**
-         * The container image information. Currently only support public docker registry. Can be
-         * either image name, e.g {@code containerImage}, image name with version, e.g {@code
-         * containerImage:v1} or complete docker image Url e.g {@code
-         * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-         * registry to public docker hub {@code docker.io/library}. The registry used for container
-         * image must be reachable over the Container Instance's VNIC.
+         * A URL identifying the image that the container runs in, such as
+         * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+         * latest.
+         *
+         * <p>If no registry is provided, will default the registry to public docker hub {@code
+         * docker.io/library}.
+         *
+         * <p>The registry used for container image must be reachable over the Container Instance's
+         * VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("imageUrl")
         private String imageUrl;
 
         /**
-         * The container image information. Currently only support public docker registry. Can be
-         * either image name, e.g {@code containerImage}, image name with version, e.g {@code
-         * containerImage:v1} or complete docker image Url e.g {@code
-         * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-         * registry to public docker hub {@code docker.io/library}. The registry used for container
-         * image must be reachable over the Container Instance's VNIC.
+         * A URL identifying the image that the container runs in, such as
+         * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+         * latest.
+         *
+         * <p>If no registry is provided, will default the registry to public docker hub {@code
+         * docker.io/library}.
+         *
+         * <p>The registry used for container image must be reachable over the Container Instance's
+         * VNIC.
          *
          * @param imageUrl the value to set
          * @return this builder
@@ -123,15 +130,15 @@ public final class CreateContainerDetails
             return this;
         }
         /**
-         * This command will override the container's entrypoint process. If not specified, the
-         * existing entrypoint process defined in the image will be used.
+         * An optional command that overrides the ENTRYPOINT process. If you do not provide a value,
+         * the existing ENTRYPOINT process defined in the image is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private java.util.List<String> command;
 
         /**
-         * This command will override the container's entrypoint process. If not specified, the
-         * existing entrypoint process defined in the image will be used.
+         * An optional command that overrides the ENTRYPOINT process. If you do not provide a value,
+         * the existing ENTRYPOINT process defined in the image is used.
          *
          * @param command the value to set
          * @return this builder
@@ -142,25 +149,23 @@ public final class CreateContainerDetails
             return this;
         }
         /**
-         * A list of string arguments for a container's entrypoint process.
+         * A list of string arguments for a container's ENTRYPOINT process.
          *
-         * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash.
-         * For such containers, this argument list can also be used to specify the main command in
-         * the container process.
+         * <p>Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those
+         * containers, this argument list specifies the main command in the container process.
          *
-         * <p>All arguments together must be 64KB or smaller.
+         * <p>The total size of all arguments combined must be 64 KB or smaller.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
         /**
-         * A list of string arguments for a container's entrypoint process.
+         * A list of string arguments for a container's ENTRYPOINT process.
          *
-         * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash.
-         * For such containers, this argument list can also be used to specify the main command in
-         * the container process.
+         * <p>Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those
+         * containers, this argument list specifies the main command in the container process.
          *
-         * <p>All arguments together must be 64KB or smaller.
+         * <p>The total size of all arguments combined must be 64 KB or smaller.
          *
          * @param arguments the value to set
          * @return this builder
@@ -170,32 +175,16 @@ public final class CreateContainerDetails
             this.__explicitlySet__.add("arguments");
             return this;
         }
-        /** A list of additional capabilities for the container. */
-        @com.fasterxml.jackson.annotation.JsonProperty("additionalCapabilities")
-        private java.util.List<ContainerCapability> additionalCapabilities;
-
         /**
-         * A list of additional capabilities for the container.
-         *
-         * @param additionalCapabilities the value to set
-         * @return this builder
-         */
-        public Builder additionalCapabilities(
-                java.util.List<ContainerCapability> additionalCapabilities) {
-            this.additionalCapabilities = additionalCapabilities;
-            this.__explicitlySet__.add("additionalCapabilities");
-            return this;
-        }
-        /**
-         * The working directory within the Container's filesystem for the Container process. If
-         * none is set, the Container will run in the working directory set by the container image.
+         * The working directory within the container's filesystem for the container process. If not
+         * specified, the default working directory from the image is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
         private String workingDirectory;
 
         /**
-         * The working directory within the Container's filesystem for the Container process. If
-         * none is set, the Container will run in the working directory set by the container image.
+         * The working directory within the container's filesystem for the container process. If not
+         * specified, the default working directory from the image is used.
          *
          * @param workingDirectory the value to set
          * @return this builder
@@ -207,20 +196,22 @@ public final class CreateContainerDetails
         }
         /**
          * A map of additional environment variables to set in the environment of the container's
-         * entrypoint process. These variables are in addition to any variables already defined in
+         * ENTRYPOINT process. These variables are in addition to any variables already defined in
          * the container's image.
          *
-         * <p>All environment variables together, name and values, must be 64KB or smaller.
+         * <p>The total size of all environment variables combined, name and values, must be 64 KB
+         * or smaller.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
         private java.util.Map<String, String> environmentVariables;
 
         /**
          * A map of additional environment variables to set in the environment of the container's
-         * entrypoint process. These variables are in addition to any variables already defined in
+         * ENTRYPOINT process. These variables are in addition to any variables already defined in
          * the container's image.
          *
-         * <p>All environment variables together, name and values, must be 64KB or smaller.
+         * <p>The total size of all environment variables combined, name and values, must be 64 KB
+         * or smaller.
          *
          * @param environmentVariables the value to set
          * @return this builder
@@ -246,19 +237,23 @@ public final class CreateContainerDetails
             return this;
         }
         /**
-         * Determines if the Container will have access to the Container Instance Resource
-         * Principal. This method utilizes resource principal version 2.2. Please refer to
-         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-         * for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines if the container will have access to the container instance resource
+         * principal.
+         *
+         * <p>This method utilizes resource principal version 2.2. For information on how to use the
+         * exposed resource principal elements, see
+         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isResourcePrincipalDisabled")
         private Boolean isResourcePrincipalDisabled;
 
         /**
-         * Determines if the Container will have access to the Container Instance Resource
-         * Principal. This method utilizes resource principal version 2.2. Please refer to
-         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-         * for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines if the container will have access to the container instance resource
+         * principal.
+         *
+         * <p>This method utilizes resource principal version 2.2. For information on how to use the
+         * exposed resource principal elements, see
+         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          *
          * @param isResourcePrincipalDisabled the value to set
          * @return this builder
@@ -320,14 +315,14 @@ public final class CreateContainerDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -349,7 +344,6 @@ public final class CreateContainerDetails
                             this.imageUrl,
                             this.command,
                             this.arguments,
-                            this.additionalCapabilities,
                             this.workingDirectory,
                             this.environmentVariables,
                             this.volumeMounts,
@@ -377,9 +371,6 @@ public final class CreateContainerDetails
             }
             if (model.wasPropertyExplicitlySet("arguments")) {
                 this.arguments(model.getArguments());
-            }
-            if (model.wasPropertyExplicitlySet("additionalCapabilities")) {
-                this.additionalCapabilities(model.getAdditionalCapabilities());
             }
             if (model.wasPropertyExplicitlySet("workingDirectory")) {
                 this.workingDirectory(model.getWorkingDirectory());
@@ -419,15 +410,19 @@ public final class CreateContainerDetails
     }
 
     /**
-     * Display name for the Container. There are no guarantees of uniqueness for this name. If none
-     * is provided, it will be calculated automatically.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     *
+     * <p>If you don't provide a name, a name is generated automatically.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the Container. There are no guarantees of uniqueness for this name. If none
-     * is provided, it will be calculated automatically.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     *
+     * <p>If you don't provide a name, a name is generated automatically.
      *
      * @return the value
      */
@@ -436,23 +431,29 @@ public final class CreateContainerDetails
     }
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either
-     * image name, e.g {@code containerImage}, image name with version, e.g {@code
-     * containerImage:v1} or complete docker image Url e.g {@code
-     * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-     * registry to public docker hub {@code docker.io/library}. The registry used for container
-     * image must be reachable over the Container Instance's VNIC.
+     * A URL identifying the image that the container runs in, such as
+     * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+     * latest.
+     *
+     * <p>If no registry is provided, will default the registry to public docker hub {@code
+     * docker.io/library}.
+     *
+     * <p>The registry used for container image must be reachable over the Container Instance's
+     * VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("imageUrl")
     private final String imageUrl;
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either
-     * image name, e.g {@code containerImage}, image name with version, e.g {@code
-     * containerImage:v1} or complete docker image Url e.g {@code
-     * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-     * registry to public docker hub {@code docker.io/library}. The registry used for container
-     * image must be reachable over the Container Instance's VNIC.
+     * A URL identifying the image that the container runs in, such as
+     * docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to
+     * latest.
+     *
+     * <p>If no registry is provided, will default the registry to public docker hub {@code
+     * docker.io/library}.
+     *
+     * <p>The registry used for container image must be reachable over the Container Instance's
+     * VNIC.
      *
      * @return the value
      */
@@ -461,15 +462,15 @@ public final class CreateContainerDetails
     }
 
     /**
-     * This command will override the container's entrypoint process. If not specified, the existing
-     * entrypoint process defined in the image will be used.
+     * An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the
+     * existing ENTRYPOINT process defined in the image is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("command")
     private final java.util.List<String> command;
 
     /**
-     * This command will override the container's entrypoint process. If not specified, the existing
-     * entrypoint process defined in the image will be used.
+     * An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the
+     * existing ENTRYPOINT process defined in the image is used.
      *
      * @return the value
      */
@@ -478,25 +479,23 @@ public final class CreateContainerDetails
     }
 
     /**
-     * A list of string arguments for a container's entrypoint process.
+     * A list of string arguments for a container's ENTRYPOINT process.
      *
-     * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For
-     * such containers, this argument list can also be used to specify the main command in the
-     * container process.
+     * <p>Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those
+     * containers, this argument list specifies the main command in the container process.
      *
-     * <p>All arguments together must be 64KB or smaller.
+     * <p>The total size of all arguments combined must be 64 KB or smaller.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<String> arguments;
 
     /**
-     * A list of string arguments for a container's entrypoint process.
+     * A list of string arguments for a container's ENTRYPOINT process.
      *
-     * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For
-     * such containers, this argument list can also be used to specify the main command in the
-     * container process.
+     * <p>Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those
+     * containers, this argument list specifies the main command in the container process.
      *
-     * <p>All arguments together must be 64KB or smaller.
+     * <p>The total size of all arguments combined must be 64 KB or smaller.
      *
      * @return the value
      */
@@ -504,29 +503,16 @@ public final class CreateContainerDetails
         return arguments;
     }
 
-    /** A list of additional capabilities for the container. */
-    @com.fasterxml.jackson.annotation.JsonProperty("additionalCapabilities")
-    private final java.util.List<ContainerCapability> additionalCapabilities;
-
     /**
-     * A list of additional capabilities for the container.
-     *
-     * @return the value
-     */
-    public java.util.List<ContainerCapability> getAdditionalCapabilities() {
-        return additionalCapabilities;
-    }
-
-    /**
-     * The working directory within the Container's filesystem for the Container process. If none is
-     * set, the Container will run in the working directory set by the container image.
+     * The working directory within the container's filesystem for the container process. If not
+     * specified, the default working directory from the image is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     private final String workingDirectory;
 
     /**
-     * The working directory within the Container's filesystem for the Container process. If none is
-     * set, the Container will run in the working directory set by the container image.
+     * The working directory within the container's filesystem for the container process. If not
+     * specified, the default working directory from the image is used.
      *
      * @return the value
      */
@@ -536,20 +522,22 @@ public final class CreateContainerDetails
 
     /**
      * A map of additional environment variables to set in the environment of the container's
-     * entrypoint process. These variables are in addition to any variables already defined in the
+     * ENTRYPOINT process. These variables are in addition to any variables already defined in the
      * container's image.
      *
-     * <p>All environment variables together, name and values, must be 64KB or smaller.
+     * <p>The total size of all environment variables combined, name and values, must be 64 KB or
+     * smaller.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
     private final java.util.Map<String, String> environmentVariables;
 
     /**
      * A map of additional environment variables to set in the environment of the container's
-     * entrypoint process. These variables are in addition to any variables already defined in the
+     * ENTRYPOINT process. These variables are in addition to any variables already defined in the
      * container's image.
      *
-     * <p>All environment variables together, name and values, must be 64KB or smaller.
+     * <p>The total size of all environment variables combined, name and values, must be 64 KB or
+     * smaller.
      *
      * @return the value
      */
@@ -571,19 +559,21 @@ public final class CreateContainerDetails
     }
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.
-     * This method utilizes resource principal version 2.2. Please refer to
-     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-     * for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines if the container will have access to the container instance resource principal.
+     *
+     * <p>This method utilizes resource principal version 2.2. For information on how to use the
+     * exposed resource principal elements, see
+     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isResourcePrincipalDisabled")
     private final Boolean isResourcePrincipalDisabled;
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.
-     * This method utilizes resource principal version 2.2. Please refer to
-     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-     * for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines if the container will have access to the container instance resource principal.
+     *
+     * <p>This method utilizes resource principal version 2.2. For information on how to use the
+     * exposed resource principal elements, see
+     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      *
      * @return the value
      */
@@ -636,14 +626,14 @@ public final class CreateContainerDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      */
@@ -670,7 +660,6 @@ public final class CreateContainerDetails
         sb.append(", imageUrl=").append(String.valueOf(this.imageUrl));
         sb.append(", command=").append(String.valueOf(this.command));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
-        sb.append(", additionalCapabilities=").append(String.valueOf(this.additionalCapabilities));
         sb.append(", workingDirectory=").append(String.valueOf(this.workingDirectory));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
         sb.append(", volumeMounts=").append(String.valueOf(this.volumeMounts));
@@ -698,8 +687,6 @@ public final class CreateContainerDetails
                 && java.util.Objects.equals(this.imageUrl, other.imageUrl)
                 && java.util.Objects.equals(this.command, other.command)
                 && java.util.Objects.equals(this.arguments, other.arguments)
-                && java.util.Objects.equals(
-                        this.additionalCapabilities, other.additionalCapabilities)
                 && java.util.Objects.equals(this.workingDirectory, other.workingDirectory)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
                 && java.util.Objects.equals(this.volumeMounts, other.volumeMounts)
@@ -720,11 +707,6 @@ public final class CreateContainerDetails
         result = (result * PRIME) + (this.imageUrl == null ? 43 : this.imageUrl.hashCode());
         result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
         result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.additionalCapabilities == null
-                                ? 43
-                                : this.additionalCapabilities.hashCode());
         result =
                 (result * PRIME)
                         + (this.workingDirectory == null ? 43 : this.workingDirectory.hashCode());

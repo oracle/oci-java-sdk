@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The information about new ContainerInstance. <br>
+ * Information to create a container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -77,15 +77,15 @@ public final class CreateContainerInstanceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Human-readable name for the ContainerInstance. If none is provided, OCI will select one
-         * for you.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information. If you don't provide a name, a name is generated automatically.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Human-readable name for the ContainerInstance. If none is provided, OCI will select one
-         * for you.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information. If you don't provide a name, a name is generated automatically.
          *
          * @param displayName the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class CreateContainerInstanceDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /** The compartment OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The compartment OCID.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -110,12 +110,12 @@ public final class CreateContainerInstanceDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Availability Domain where the ContainerInstance should be created. */
+        /** The availability domain where the container instance runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain where the ContainerInstance should be created.
+         * The availability domain where the container instance runs.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -125,12 +125,12 @@ public final class CreateContainerInstanceDetails
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** Fault Domain where the ContainerInstance should run. */
+        /** The fault domain where the container instance runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * Fault Domain where the ContainerInstance should run.
+         * The fault domain where the container instance runs.
          *
          * @param faultDomain the value to set
          * @return this builder
@@ -141,15 +141,15 @@ public final class CreateContainerInstanceDetails
             return this;
         }
         /**
-         * The shape of the Container Instance. The shape determines the resources available to the
-         * Container Instance.
+         * The shape of the container instance. The shape determines the resources available to the
+         * container instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the Container Instance. The shape determines the resources available to the
-         * Container Instance.
+         * The shape of the container instance. The shape determines the resources available to the
+         * container instance.
          *
          * @param shape the value to set
          * @return this builder
@@ -169,15 +169,19 @@ public final class CreateContainerInstanceDetails
             return this;
         }
         /**
-         * A Volume represents a directory with data that is accessible across multiple containers
-         * in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+         * A volume is a directory with data that is accessible across multiple containers in a
+         * container instance.
+         *
+         * <p>You can attach up to 32 volumes to single container instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("volumes")
         private java.util.List<CreateContainerVolumeDetails> volumes;
 
         /**
-         * A Volume represents a directory with data that is accessible across multiple containers
-         * in a ContainerInstance. Up to 32 volumes can be attached to single container instance.
+         * A volume is a directory with data that is accessible across multiple containers in a
+         * container instance.
+         *
+         * <p>You can attach up to 32 volumes to single container instance.
          *
          * @param volumes the value to set
          * @return this builder
@@ -187,12 +191,12 @@ public final class CreateContainerInstanceDetails
             this.__explicitlySet__.add("volumes");
             return this;
         }
-        /** The Containers to create on this Instance. */
+        /** The containers to create on this container instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("containers")
         private java.util.List<CreateContainerDetails> containers;
 
         /**
-         * The Containers to create on this Instance.
+         * The containers to create on this container instance.
          *
          * @param containers the value to set
          * @return this builder
@@ -202,12 +206,12 @@ public final class CreateContainerInstanceDetails
             this.__explicitlySet__.add("containers");
             return this;
         }
-        /** The networks to make available to containers on this Instance. */
+        /** The networks available to containers on this container instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("vnics")
         private java.util.List<CreateContainerVnicDetails> vnics;
 
         /**
-         * The networks to make available to containers on this Instance.
+         * The networks available to containers on this container instance.
          *
          * @param vnics the value to set
          * @return this builder
@@ -227,19 +231,17 @@ public final class CreateContainerInstanceDetails
             return this;
         }
         /**
-         * Duration in seconds processes within a Container have to gracefully terminate. This
-         * applies whenever a Container must be halted, such as when the Container Instance is
-         * deleted. Processes will first be sent a termination signal. After this timeout is
-         * reached, the processes will be sent a termination signal.
+         * The amount of time that processes in a container have to gracefully end when the
+         * container must be stopped. For example, when you delete a container instance. After the
+         * timeout is reached, the processes are sent a signal to be deleted.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
         private Long gracefulShutdownTimeoutInSeconds;
 
         /**
-         * Duration in seconds processes within a Container have to gracefully terminate. This
-         * applies whenever a Container must be halted, such as when the Container Instance is
-         * deleted. Processes will first be sent a termination signal. After this timeout is
-         * reached, the processes will be sent a termination signal.
+         * The amount of time that processes in a container have to gracefully end when the
+         * container must be stopped. For example, when you delete a container instance. After the
+         * timeout is reached, the processes are sent a signal to be deleted.
          *
          * @param gracefulShutdownTimeoutInSeconds the value to set
          * @return this builder
@@ -249,12 +251,12 @@ public final class CreateContainerInstanceDetails
             this.__explicitlySet__.add("gracefulShutdownTimeoutInSeconds");
             return this;
         }
-        /** The image pull secrets for accessing private registry to pull images for containers */
+        /** The image pulls secrets so you can access private registry to pull container images. */
         @com.fasterxml.jackson.annotation.JsonProperty("imagePullSecrets")
         private java.util.List<CreateImagePullSecretDetails> imagePullSecrets;
 
         /**
-         * The image pull secrets for accessing private registry to pull images for containers
+         * The image pulls secrets so you can access private registry to pull container images.
          *
          * @param imagePullSecrets the value to set
          * @return this builder
@@ -302,14 +304,14 @@ public final class CreateContainerInstanceDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -409,15 +411,15 @@ public final class CreateContainerInstanceDetails
     }
 
     /**
-     * Human-readable name for the ContainerInstance. If none is provided, OCI will select one for
-     * you.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information. If you don't provide a name, a name is generated automatically.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Human-readable name for the ContainerInstance. If none is provided, OCI will select one for
-     * you.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information. If you don't provide a name, a name is generated automatically.
      *
      * @return the value
      */
@@ -425,12 +427,12 @@ public final class CreateContainerInstanceDetails
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /** The compartment OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The compartment OCID.
      *
      * @return the value
      */
@@ -438,12 +440,12 @@ public final class CreateContainerInstanceDetails
         return compartmentId;
     }
 
-    /** Availability Domain where the ContainerInstance should be created. */
+    /** The availability domain where the container instance runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain where the ContainerInstance should be created.
+     * The availability domain where the container instance runs.
      *
      * @return the value
      */
@@ -451,12 +453,12 @@ public final class CreateContainerInstanceDetails
         return availabilityDomain;
     }
 
-    /** Fault Domain where the ContainerInstance should run. */
+    /** The fault domain where the container instance runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * Fault Domain where the ContainerInstance should run.
+     * The fault domain where the container instance runs.
      *
      * @return the value
      */
@@ -465,15 +467,15 @@ public final class CreateContainerInstanceDetails
     }
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the
-     * Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the
+     * container instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the
-     * Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the
+     * container instance.
      *
      * @return the value
      */
@@ -489,15 +491,19 @@ public final class CreateContainerInstanceDetails
     }
 
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a
-     * ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a
+     * container instance.
+     *
+     * <p>You can attach up to 32 volumes to single container instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("volumes")
     private final java.util.List<CreateContainerVolumeDetails> volumes;
 
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a
-     * ContainerInstance. Up to 32 volumes can be attached to single container instance.
+     * A volume is a directory with data that is accessible across multiple containers in a
+     * container instance.
+     *
+     * <p>You can attach up to 32 volumes to single container instance.
      *
      * @return the value
      */
@@ -505,12 +511,12 @@ public final class CreateContainerInstanceDetails
         return volumes;
     }
 
-    /** The Containers to create on this Instance. */
+    /** The containers to create on this container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("containers")
     private final java.util.List<CreateContainerDetails> containers;
 
     /**
-     * The Containers to create on this Instance.
+     * The containers to create on this container instance.
      *
      * @return the value
      */
@@ -518,12 +524,12 @@ public final class CreateContainerInstanceDetails
         return containers;
     }
 
-    /** The networks to make available to containers on this Instance. */
+    /** The networks available to containers on this container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("vnics")
     private final java.util.List<CreateContainerVnicDetails> vnics;
 
     /**
-     * The networks to make available to containers on this Instance.
+     * The networks available to containers on this container instance.
      *
      * @return the value
      */
@@ -539,19 +545,17 @@ public final class CreateContainerInstanceDetails
     }
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies
-     * whenever a Container must be halted, such as when the Container Instance is deleted.
-     * Processes will first be sent a termination signal. After this timeout is reached, the
-     * processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container
+     * must be stopped. For example, when you delete a container instance. After the timeout is
+     * reached, the processes are sent a signal to be deleted.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
     private final Long gracefulShutdownTimeoutInSeconds;
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies
-     * whenever a Container must be halted, such as when the Container Instance is deleted.
-     * Processes will first be sent a termination signal. After this timeout is reached, the
-     * processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container
+     * must be stopped. For example, when you delete a container instance. After the timeout is
+     * reached, the processes are sent a signal to be deleted.
      *
      * @return the value
      */
@@ -559,12 +563,12 @@ public final class CreateContainerInstanceDetails
         return gracefulShutdownTimeoutInSeconds;
     }
 
-    /** The image pull secrets for accessing private registry to pull images for containers */
+    /** The image pulls secrets so you can access private registry to pull container images. */
     @com.fasterxml.jackson.annotation.JsonProperty("imagePullSecrets")
     private final java.util.List<CreateImagePullSecretDetails> imagePullSecrets;
 
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      *
      * @return the value
      */
@@ -604,14 +608,14 @@ public final class CreateContainerInstanceDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      */

@@ -5,10 +5,10 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A single container on a Container Instance.
+ * A single container on a container instance.
  *
- * <p>If this Container is DELETED, the record will remain visible for a short period of time before
- * being permanently removed. <br>
+ * <p>If you delete a container, the record remains visible for a short period of time before being
+ * permanently removed. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,7 +43,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         "imageUrl",
         "command",
         "arguments",
-        "additionalCapabilities",
         "workingDirectory",
         "environmentVariables",
         "volumeMounts",
@@ -71,7 +70,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             String imageUrl,
             java.util.List<String> command,
             java.util.List<String> arguments,
-            java.util.List<ContainerCapability> additionalCapabilities,
             String workingDirectory,
             java.util.Map<String, String> environmentVariables,
             java.util.List<VolumeMount> volumeMounts,
@@ -98,7 +96,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         this.imageUrl = imageUrl;
         this.command = command;
         this.arguments = arguments;
-        this.additionalCapabilities = additionalCapabilities;
         this.workingDirectory = workingDirectory;
         this.environmentVariables = environmentVariables;
         this.volumeMounts = volumeMounts;
@@ -110,12 +107,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container.
          *
          * @param id the value to set
          * @return this builder
@@ -125,12 +126,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name for the Container. Can be renamed. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the Container. Can be renamed.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -140,12 +145,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /** The OCID of the compartment that contains the container. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The OCID of the compartment that contains the container.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -176,14 +181,14 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -196,14 +201,14 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
@@ -213,12 +218,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Availability Domain where the Container's Instance is running. */
+        /** The availability domain where the container instance that hosts the container runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain where the Container's Instance is running.
+         * The availability domain where the container instance that hosts the container runs.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -228,12 +233,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** Fault Domain where the Container's Instance is running. */
+        /** The fault domain of the container instance that hosts the container runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * Fault Domain where the Container's Instance is running.
+         * The fault domain of the container instance that hosts the container runs.
          *
          * @param faultDomain the value to set
          * @return this builder
@@ -243,12 +248,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The current state of the Container. */
+        /** The current state of the container. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Container.
+         * The current state of the container.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -259,15 +264,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used
+         * to provide actionable information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used
+         * to provide actionable information.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -277,12 +282,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The exit code of the container process if it has stopped executing. */
+        /** The exit code of the container process when it stopped running. */
         @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
         private Integer exitCode;
 
         /**
-         * The exit code of the container process if it has stopped executing.
+         * The exit code of the container process when it stopped running.
          *
          * @param exitCode the value to set
          * @return this builder
@@ -292,12 +297,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("exitCode");
             return this;
         }
-        /** Time at which the container last terminated. An RFC3339 formatted datetime string */
+        /**
+         * The time when the container last deleted (terminated), in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
         private java.util.Date timeTerminated;
 
         /**
-         * Time at which the container last terminated. An RFC3339 formatted datetime string
+         * The time when the container last deleted (terminated), in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeTerminated the value to set
          * @return this builder
@@ -307,12 +316,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("timeTerminated");
             return this;
         }
-        /** The time the the Container was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the container was created, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Container was created. An RFC3339 formatted datetime string
+         * The time the container was created, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -322,12 +335,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Container was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time the container was updated, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Container was updated. An RFC3339 formatted datetime string
+         * The time the container was updated, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -337,12 +354,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The identifier of the Container Instance on which this container is running. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container instance that the container is running on.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("containerInstanceId")
         private String containerInstanceId;
 
         /**
-         * The identifier of the Container Instance on which this container is running.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container instance that the container is running on.
          *
          * @param containerInstanceId the value to set
          * @return this builder
@@ -353,23 +374,29 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The container image information. Currently only support public docker registry. Can be
-         * either image name, e.g {@code containerImage}, image name with version, e.g {@code
-         * containerImage:v1} or complete docker image Url e.g {@code
-         * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-         * registry to public docker hub {@code docker.io/library}. The registry used for container
-         * image must be reachable over the Container Instance's VNIC.
+         * The container image information. Currently only supports public Docker registry.
+         *
+         * <p>You can provide either the image name (containerImage), image name with version
+         * (containerImagev1), or complete Docker image URL {@code
+         * docker.io/library/containerImage:latest}.
+         *
+         * <p>If you do not provide a registry, the registry defaults to public Docker hub {@code
+         * docker.io/library}. The registry used for the container image must be reachable over the
+         * VNIC of the container instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("imageUrl")
         private String imageUrl;
 
         /**
-         * The container image information. Currently only support public docker registry. Can be
-         * either image name, e.g {@code containerImage}, image name with version, e.g {@code
-         * containerImage:v1} or complete docker image Url e.g {@code
-         * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-         * registry to public docker hub {@code docker.io/library}. The registry used for container
-         * image must be reachable over the Container Instance's VNIC.
+         * The container image information. Currently only supports public Docker registry.
+         *
+         * <p>You can provide either the image name (containerImage), image name with version
+         * (containerImagev1), or complete Docker image URL {@code
+         * docker.io/library/containerImage:latest}.
+         *
+         * <p>If you do not provide a registry, the registry defaults to public Docker hub {@code
+         * docker.io/library}. The registry used for the container image must be reachable over the
+         * VNIC of the container instance.
          *
          * @param imageUrl the value to set
          * @return this builder
@@ -380,15 +407,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * This command will override the container's entrypoint process. If not specified, the
-         * existing entrypoint process defined in the image will be used.
+         * This command overrides ENTRYPOINT process of the container. If you do not specify this
+         * command, the existing ENTRYPOINT process defined in the image is the default.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private java.util.List<String> command;
 
         /**
-         * This command will override the container's entrypoint process. If not specified, the
-         * existing entrypoint process defined in the image will be used.
+         * This command overrides ENTRYPOINT process of the container. If you do not specify this
+         * command, the existing ENTRYPOINT process defined in the image is the default.
          *
          * @param command the value to set
          * @return this builder
@@ -399,21 +426,21 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * A list of string arguments for a Container's entrypoint process.
+         * A list of string arguments for the ENTRYPOINT process of the container.
          *
-         * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash.
-         * For such containers, this argument list can also be used to specify the main command in
-         * the container process.
+         * <p>Many containers use an ENTRYPOINT process pointing to a shell {@code /bin/bash}. For
+         * those containers, you can use the argument list to specify the main command in the
+         * container process.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
         /**
-         * A list of string arguments for a Container's entrypoint process.
+         * A list of string arguments for the ENTRYPOINT process of the container.
          *
-         * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash.
-         * For such containers, this argument list can also be used to specify the main command in
-         * the container process.
+         * <p>Many containers use an ENTRYPOINT process pointing to a shell {@code /bin/bash}. For
+         * those containers, you can use the argument list to specify the main command in the
+         * container process.
          *
          * @param arguments the value to set
          * @return this builder
@@ -423,32 +450,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("arguments");
             return this;
         }
-        /** A list of additional configurable container capabilities */
-        @com.fasterxml.jackson.annotation.JsonProperty("additionalCapabilities")
-        private java.util.List<ContainerCapability> additionalCapabilities;
-
         /**
-         * A list of additional configurable container capabilities
-         *
-         * @param additionalCapabilities the value to set
-         * @return this builder
-         */
-        public Builder additionalCapabilities(
-                java.util.List<ContainerCapability> additionalCapabilities) {
-            this.additionalCapabilities = additionalCapabilities;
-            this.__explicitlySet__.add("additionalCapabilities");
-            return this;
-        }
-        /**
-         * The working directory within the Container's filesystem for the Container process. If
-         * this is not present, the default working directory from the image will be used.
+         * The working directory within the container's filesystem for the container process. If not
+         * specified, the default working directory from the image is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
         private String workingDirectory;
 
         /**
-         * The working directory within the Container's filesystem for the Container process. If
-         * this is not present, the default working directory from the image will be used.
+         * The working directory within the container's filesystem for the container process. If not
+         * specified, the default working directory from the image is used.
          *
          * @param workingDirectory the value to set
          * @return this builder
@@ -459,17 +470,17 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * A map of additional environment variables to set in the environment of the container's
-         * entrypoint process. These variables are in addition to any variables already defined in
-         * the container's image.
+         * A map of additional environment variables to set in the environment of the ENTRYPOINT
+         * process of the container. These variables are in addition to any variables already
+         * defined in the container's image.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
         private java.util.Map<String, String> environmentVariables;
 
         /**
-         * A map of additional environment variables to set in the environment of the container's
-         * entrypoint process. These variables are in addition to any variables already defined in
-         * the container's image.
+         * A map of additional environment variables to set in the environment of the ENTRYPOINT
+         * process of the container. These variables are in addition to any variables already
+         * defined in the container's image.
          *
          * @param environmentVariables the value to set
          * @return this builder
@@ -510,19 +521,23 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * Determines if the Container will have access to the Container Instance Resource
-         * Principal. This method utilizes resource principal version 2.2. Please refer to
-         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-         * for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines if the container will have access to the container instance resource
+         * principal.
+         *
+         * <p>This method utilizes resource principal version 2.2. For more information on how to
+         * use the exposed resource principal elements, see
+         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isResourcePrincipalDisabled")
         private Boolean isResourcePrincipalDisabled;
 
         /**
-         * Determines if the Container will have access to the Container Instance Resource
-         * Principal. This method utilizes resource principal version 2.2. Please refer to
-         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-         * for detailed explanation of how to leverage the exposed resource principal elements.
+         * Determines if the container will have access to the container instance resource
+         * principal.
+         *
+         * <p>This method utilizes resource principal version 2.2. For more information on how to
+         * use the exposed resource principal elements, see
+         * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
          *
          * @param isResourcePrincipalDisabled the value to set
          * @return this builder
@@ -542,15 +557,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * The number of container restart attempts. A restart may be attempted after a health check
-         * failure or a container exit, based on the restart policy.
+         * The number of container restart attempts. Depending on the restart policy, a restart
+         * might be attempted after a health check failure or a container exit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("containerRestartAttemptCount")
         private Integer containerRestartAttemptCount;
 
         /**
-         * The number of container restart attempts. A restart may be attempted after a health check
-         * failure or a container exit, based on the restart policy.
+         * The number of container restart attempts. Depending on the restart policy, a restart
+         * might be attempted after a health check failure or a container exit.
          *
          * @param containerRestartAttemptCount the value to set
          * @return this builder
@@ -585,7 +600,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
                             this.imageUrl,
                             this.command,
                             this.arguments,
-                            this.additionalCapabilities,
                             this.workingDirectory,
                             this.environmentVariables,
                             this.volumeMounts,
@@ -655,9 +669,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("arguments")) {
                 this.arguments(model.getArguments());
             }
-            if (model.wasPropertyExplicitlySet("additionalCapabilities")) {
-                this.additionalCapabilities(model.getAdditionalCapabilities());
-            }
             if (model.wasPropertyExplicitlySet("workingDirectory")) {
                 this.workingDirectory(model.getWorkingDirectory());
             }
@@ -692,12 +703,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container.
      *
      * @return the value
      */
@@ -705,12 +720,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return id;
     }
 
-    /** Display name for the Container. Can be renamed. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the Container. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -718,12 +737,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /** The OCID of the compartment that contains the container. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment that contains the container.
      *
      * @return the value
      */
@@ -750,14 +769,14 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      */
@@ -767,14 +786,14 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
      */
@@ -782,12 +801,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return systemTags;
     }
 
-    /** Availability Domain where the Container's Instance is running. */
+    /** The availability domain where the container instance that hosts the container runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain where the Container's Instance is running.
+     * The availability domain where the container instance that hosts the container runs.
      *
      * @return the value
      */
@@ -795,12 +814,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return availabilityDomain;
     }
 
-    /** Fault Domain where the Container's Instance is running. */
+    /** The fault domain of the container instance that hosts the container runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * Fault Domain where the Container's Instance is running.
+     * The fault domain of the container instance that hosts the container runs.
      *
      * @return the value
      */
@@ -808,7 +827,7 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return faultDomain;
     }
 
-    /** The current state of the Container. */
+    /** The current state of the container. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -859,12 +878,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Container. */
+    /** The current state of the container. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Container.
+     * The current state of the container.
      *
      * @return the value
      */
@@ -873,15 +892,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to
+     * provide actionable information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to
+     * provide actionable information.
      *
      * @return the value
      */
@@ -889,12 +908,12 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return lifecycleDetails;
     }
 
-    /** The exit code of the container process if it has stopped executing. */
+    /** The exit code of the container process when it stopped running. */
     @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
     private final Integer exitCode;
 
     /**
-     * The exit code of the container process if it has stopped executing.
+     * The exit code of the container process when it stopped running.
      *
      * @return the value
      */
@@ -902,12 +921,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return exitCode;
     }
 
-    /** Time at which the container last terminated. An RFC3339 formatted datetime string */
+    /**
+     * The time when the container last deleted (terminated), in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeTerminated")
     private final java.util.Date timeTerminated;
 
     /**
-     * Time at which the container last terminated. An RFC3339 formatted datetime string
+     * The time when the container last deleted (terminated), in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */
@@ -915,12 +938,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return timeTerminated;
     }
 
-    /** The time the the Container was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the container was created, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Container was created. An RFC3339 formatted datetime string
+     * The time the container was created, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */
@@ -928,12 +955,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return timeCreated;
     }
 
-    /** The time the Container was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time the container was updated, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Container was updated. An RFC3339 formatted datetime string
+     * The time the container was updated, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */
@@ -941,12 +972,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return timeUpdated;
     }
 
-    /** The identifier of the Container Instance on which this container is running. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container instance that the container is running on.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("containerInstanceId")
     private final String containerInstanceId;
 
     /**
-     * The identifier of the Container Instance on which this container is running.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container instance that the container is running on.
      *
      * @return the value
      */
@@ -955,23 +990,29 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either
-     * image name, e.g {@code containerImage}, image name with version, e.g {@code
-     * containerImage:v1} or complete docker image Url e.g {@code
-     * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-     * registry to public docker hub {@code docker.io/library}. The registry used for container
-     * image must be reachable over the Container Instance's VNIC.
+     * The container image information. Currently only supports public Docker registry.
+     *
+     * <p>You can provide either the image name (containerImage), image name with version
+     * (containerImagev1), or complete Docker image URL {@code
+     * docker.io/library/containerImage:latest}.
+     *
+     * <p>If you do not provide a registry, the registry defaults to public Docker hub {@code
+     * docker.io/library}. The registry used for the container image must be reachable over the VNIC
+     * of the container instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("imageUrl")
     private final String imageUrl;
 
     /**
-     * The container image information. Currently only support public docker registry. Can be either
-     * image name, e.g {@code containerImage}, image name with version, e.g {@code
-     * containerImage:v1} or complete docker image Url e.g {@code
-     * docker.io/library/containerImage:latest}. If no registry is provided, will default the
-     * registry to public docker hub {@code docker.io/library}. The registry used for container
-     * image must be reachable over the Container Instance's VNIC.
+     * The container image information. Currently only supports public Docker registry.
+     *
+     * <p>You can provide either the image name (containerImage), image name with version
+     * (containerImagev1), or complete Docker image URL {@code
+     * docker.io/library/containerImage:latest}.
+     *
+     * <p>If you do not provide a registry, the registry defaults to public Docker hub {@code
+     * docker.io/library}. The registry used for the container image must be reachable over the VNIC
+     * of the container instance.
      *
      * @return the value
      */
@@ -980,15 +1021,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * This command will override the container's entrypoint process. If not specified, the existing
-     * entrypoint process defined in the image will be used.
+     * This command overrides ENTRYPOINT process of the container. If you do not specify this
+     * command, the existing ENTRYPOINT process defined in the image is the default.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("command")
     private final java.util.List<String> command;
 
     /**
-     * This command will override the container's entrypoint process. If not specified, the existing
-     * entrypoint process defined in the image will be used.
+     * This command overrides ENTRYPOINT process of the container. If you do not specify this
+     * command, the existing ENTRYPOINT process defined in the image is the default.
      *
      * @return the value
      */
@@ -997,21 +1038,21 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * A list of string arguments for a Container's entrypoint process.
+     * A list of string arguments for the ENTRYPOINT process of the container.
      *
-     * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For
-     * such containers, this argument list can also be used to specify the main command in the
-     * container process.
+     * <p>Many containers use an ENTRYPOINT process pointing to a shell {@code /bin/bash}. For those
+     * containers, you can use the argument list to specify the main command in the container
+     * process.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<String> arguments;
 
     /**
-     * A list of string arguments for a Container's entrypoint process.
+     * A list of string arguments for the ENTRYPOINT process of the container.
      *
-     * <p>Many containers use an entrypoint process pointing to a shell, for example /bin/bash. For
-     * such containers, this argument list can also be used to specify the main command in the
-     * container process.
+     * <p>Many containers use an ENTRYPOINT process pointing to a shell {@code /bin/bash}. For those
+     * containers, you can use the argument list to specify the main command in the container
+     * process.
      *
      * @return the value
      */
@@ -1019,29 +1060,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         return arguments;
     }
 
-    /** A list of additional configurable container capabilities */
-    @com.fasterxml.jackson.annotation.JsonProperty("additionalCapabilities")
-    private final java.util.List<ContainerCapability> additionalCapabilities;
-
     /**
-     * A list of additional configurable container capabilities
-     *
-     * @return the value
-     */
-    public java.util.List<ContainerCapability> getAdditionalCapabilities() {
-        return additionalCapabilities;
-    }
-
-    /**
-     * The working directory within the Container's filesystem for the Container process. If this is
-     * not present, the default working directory from the image will be used.
+     * The working directory within the container's filesystem for the container process. If not
+     * specified, the default working directory from the image is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     private final String workingDirectory;
 
     /**
-     * The working directory within the Container's filesystem for the Container process. If this is
-     * not present, the default working directory from the image will be used.
+     * The working directory within the container's filesystem for the container process. If not
+     * specified, the default working directory from the image is used.
      *
      * @return the value
      */
@@ -1050,16 +1078,16 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * A map of additional environment variables to set in the environment of the container's
-     * entrypoint process. These variables are in addition to any variables already defined in the
+     * A map of additional environment variables to set in the environment of the ENTRYPOINT process
+     * of the container. These variables are in addition to any variables already defined in the
      * container's image.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentVariables")
     private final java.util.Map<String, String> environmentVariables;
 
     /**
-     * A map of additional environment variables to set in the environment of the container's
-     * entrypoint process. These variables are in addition to any variables already defined in the
+     * A map of additional environment variables to set in the environment of the ENTRYPOINT process
+     * of the container. These variables are in addition to any variables already defined in the
      * container's image.
      *
      * @return the value
@@ -1095,19 +1123,21 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.
-     * This method utilizes resource principal version 2.2. Please refer to
-     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-     * for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines if the container will have access to the container instance resource principal.
+     *
+     * <p>This method utilizes resource principal version 2.2. For more information on how to use
+     * the exposed resource principal elements, see
+     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isResourcePrincipalDisabled")
     private final Boolean isResourcePrincipalDisabled;
 
     /**
-     * Determines if the Container will have access to the Container Instance Resource Principal.
-     * This method utilizes resource principal version 2.2. Please refer to
-     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-     * for detailed explanation of how to leverage the exposed resource principal elements.
+     * Determines if the container will have access to the container instance resource principal.
+     *
+     * <p>This method utilizes resource principal version 2.2. For more information on how to use
+     * the exposed resource principal elements, see
+     * https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
      *
      * @return the value
      */
@@ -1123,15 +1153,15 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The number of container restart attempts. A restart may be attempted after a health check
-     * failure or a container exit, based on the restart policy.
+     * The number of container restart attempts. Depending on the restart policy, a restart might be
+     * attempted after a health check failure or a container exit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("containerRestartAttemptCount")
     private final Integer containerRestartAttemptCount;
 
     /**
-     * The number of container restart attempts. A restart may be attempted after a health check
-     * failure or a container exit, based on the restart policy.
+     * The number of container restart attempts. Depending on the restart policy, a restart might be
+     * attempted after a health check failure or a container exit.
      *
      * @return the value
      */
@@ -1172,7 +1202,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", imageUrl=").append(String.valueOf(this.imageUrl));
         sb.append(", command=").append(String.valueOf(this.command));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
-        sb.append(", additionalCapabilities=").append(String.valueOf(this.additionalCapabilities));
         sb.append(", workingDirectory=").append(String.valueOf(this.workingDirectory));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
         sb.append(", volumeMounts=").append(String.valueOf(this.volumeMounts));
@@ -1214,8 +1243,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.imageUrl, other.imageUrl)
                 && java.util.Objects.equals(this.command, other.command)
                 && java.util.Objects.equals(this.arguments, other.arguments)
-                && java.util.Objects.equals(
-                        this.additionalCapabilities, other.additionalCapabilities)
                 && java.util.Objects.equals(this.workingDirectory, other.workingDirectory)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
                 && java.util.Objects.equals(this.volumeMounts, other.volumeMounts)
@@ -1266,11 +1293,6 @@ public final class Container extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.imageUrl == null ? 43 : this.imageUrl.hashCode());
         result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
         result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.additionalCapabilities == null
-                                ? 43
-                                : this.additionalCapabilities.hashCode());
         result =
                 (result * PRIME)
                         + (this.workingDirectory == null ? 43 : this.workingDirectory.hashCode());

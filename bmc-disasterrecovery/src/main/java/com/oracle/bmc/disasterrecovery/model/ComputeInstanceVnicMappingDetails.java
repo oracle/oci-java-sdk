@@ -26,15 +26,21 @@ public final class ComputeInstanceVnicMappingDetails
     @java.beans.ConstructorProperties({
         "sourceVnicId",
         "destinationSubnetId",
+        "destinationPrimaryPrivateIpAddress",
+        "destinationPrimaryPrivateIpHostnameLabel",
         "destinationNsgIdList"
     })
     public ComputeInstanceVnicMappingDetails(
             String sourceVnicId,
             String destinationSubnetId,
+            String destinationPrimaryPrivateIpAddress,
+            String destinationPrimaryPrivateIpHostnameLabel,
             java.util.List<String> destinationNsgIdList) {
         super();
         this.sourceVnicId = sourceVnicId;
         this.destinationSubnetId = destinationSubnetId;
+        this.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
+        this.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
         this.destinationNsgIdList = destinationNsgIdList;
     }
 
@@ -43,7 +49,7 @@ public final class ComputeInstanceVnicMappingDetails
         /**
          * The OCID of the VNIC.
          *
-         * <p>Example: {@code ocid1.vnic.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
         private String sourceVnicId;
@@ -51,7 +57,7 @@ public final class ComputeInstanceVnicMappingDetails
         /**
          * The OCID of the VNIC.
          *
-         * <p>Example: {@code ocid1.vnic.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
          *
          * @param sourceVnicId the value to set
          * @return this builder
@@ -64,7 +70,7 @@ public final class ComputeInstanceVnicMappingDetails
         /**
          * The OCID of the destination (remote) subnet to which this VNIC should connect.
          *
-         * <p>Example: {@code ocid1.subnet.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
         private String destinationSubnetId;
@@ -72,7 +78,7 @@ public final class ComputeInstanceVnicMappingDetails
         /**
          * The OCID of the destination (remote) subnet to which this VNIC should connect.
          *
-         * <p>Example: {@code ocid1.subnet.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
          *
          * @param destinationSubnetId the value to set
          * @return this builder
@@ -83,21 +89,72 @@ public final class ComputeInstanceVnicMappingDetails
             return this;
         }
         /**
-         * A list of destination region's network security group (NSG) Ids which this VNIC should
-         * use.
+         * The primary private IP address to assign. This address must belong to the destination
+         * subnet.
          *
-         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.abcd1,
-         * ocid1.networksecuritygroup.oc1.iad.wxyz2 ]}
+         * <p>Example: {@code 10.0.3.3}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationPrimaryPrivateIpAddress")
+        private String destinationPrimaryPrivateIpAddress;
+
+        /**
+         * The primary private IP address to assign. This address must belong to the destination
+         * subnet.
+         *
+         * <p>Example: {@code 10.0.3.3}
+         *
+         * @param destinationPrimaryPrivateIpAddress the value to set
+         * @return this builder
+         */
+        public Builder destinationPrimaryPrivateIpAddress(
+                String destinationPrimaryPrivateIpAddress) {
+            this.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
+            this.__explicitlySet__.add("destinationPrimaryPrivateIpAddress");
+            return this;
+        }
+        /**
+         * The hostname to assign for this primary private IP. The value is the hostname portion of
+         * the private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
+         * bminstance1.subnet123.vcn1.oraclevcn.com).
+         *
+         * <p>Example: {@code bminstance1}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationPrimaryPrivateIpHostnameLabel")
+        private String destinationPrimaryPrivateIpHostnameLabel;
+
+        /**
+         * The hostname to assign for this primary private IP. The value is the hostname portion of
+         * the private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
+         * bminstance1.subnet123.vcn1.oraclevcn.com).
+         *
+         * <p>Example: {@code bminstance1}
+         *
+         * @param destinationPrimaryPrivateIpHostnameLabel the value to set
+         * @return this builder
+         */
+        public Builder destinationPrimaryPrivateIpHostnameLabel(
+                String destinationPrimaryPrivateIpHostnameLabel) {
+            this.destinationPrimaryPrivateIpHostnameLabel =
+                    destinationPrimaryPrivateIpHostnameLabel;
+            this.__explicitlySet__.add("destinationPrimaryPrivateIpHostnameLabel");
+            return this;
+        }
+        /**
+         * A list of network security group (NSG) IDs in the destination region which this VNIC
+         * should use.
+         *
+         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
+         * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
         private java.util.List<String> destinationNsgIdList;
 
         /**
-         * A list of destination region's network security group (NSG) Ids which this VNIC should
-         * use.
+         * A list of network security group (NSG) IDs in the destination region which this VNIC
+         * should use.
          *
-         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.abcd1,
-         * ocid1.networksecuritygroup.oc1.iad.wxyz2 ]}
+         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
+         * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
          *
          * @param destinationNsgIdList the value to set
          * @return this builder
@@ -114,7 +171,11 @@ public final class ComputeInstanceVnicMappingDetails
         public ComputeInstanceVnicMappingDetails build() {
             ComputeInstanceVnicMappingDetails model =
                     new ComputeInstanceVnicMappingDetails(
-                            this.sourceVnicId, this.destinationSubnetId, this.destinationNsgIdList);
+                            this.sourceVnicId,
+                            this.destinationSubnetId,
+                            this.destinationPrimaryPrivateIpAddress,
+                            this.destinationPrimaryPrivateIpHostnameLabel,
+                            this.destinationNsgIdList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -128,6 +189,14 @@ public final class ComputeInstanceVnicMappingDetails
             }
             if (model.wasPropertyExplicitlySet("destinationSubnetId")) {
                 this.destinationSubnetId(model.getDestinationSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationPrimaryPrivateIpAddress")) {
+                this.destinationPrimaryPrivateIpAddress(
+                        model.getDestinationPrimaryPrivateIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("destinationPrimaryPrivateIpHostnameLabel")) {
+                this.destinationPrimaryPrivateIpHostnameLabel(
+                        model.getDestinationPrimaryPrivateIpHostnameLabel());
             }
             if (model.wasPropertyExplicitlySet("destinationNsgIdList")) {
                 this.destinationNsgIdList(model.getDestinationNsgIdList());
@@ -148,7 +217,7 @@ public final class ComputeInstanceVnicMappingDetails
     /**
      * The OCID of the VNIC.
      *
-     * <p>Example: {@code ocid1.vnic.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
     private final String sourceVnicId;
@@ -156,7 +225,7 @@ public final class ComputeInstanceVnicMappingDetails
     /**
      * The OCID of the VNIC.
      *
-     * <p>Example: {@code ocid1.vnic.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.vnic.oc1.phx.&lt;unique_id&gt;}
      *
      * @return the value
      */
@@ -167,7 +236,7 @@ public final class ComputeInstanceVnicMappingDetails
     /**
      * The OCID of the destination (remote) subnet to which this VNIC should connect.
      *
-     * <p>Example: {@code ocid1.subnet.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
     private final String destinationSubnetId;
@@ -175,7 +244,7 @@ public final class ComputeInstanceVnicMappingDetails
     /**
      * The OCID of the destination (remote) subnet to which this VNIC should connect.
      *
-     * <p>Example: {@code ocid1.subnet.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.subnet.oc1.iad.&lt;unique_id&gt;}
      *
      * @return the value
      */
@@ -184,19 +253,63 @@ public final class ComputeInstanceVnicMappingDetails
     }
 
     /**
-     * A list of destination region's network security group (NSG) Ids which this VNIC should use.
+     * The primary private IP address to assign. This address must belong to the destination subnet.
      *
-     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.abcd1,
-     * ocid1.networksecuritygroup.oc1.iad.wxyz2 ]}
+     * <p>Example: {@code 10.0.3.3}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationPrimaryPrivateIpAddress")
+    private final String destinationPrimaryPrivateIpAddress;
+
+    /**
+     * The primary private IP address to assign. This address must belong to the destination subnet.
+     *
+     * <p>Example: {@code 10.0.3.3}
+     *
+     * @return the value
+     */
+    public String getDestinationPrimaryPrivateIpAddress() {
+        return destinationPrimaryPrivateIpAddress;
+    }
+
+    /**
+     * The hostname to assign for this primary private IP. The value is the hostname portion of the
+     * private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
+     * bminstance1.subnet123.vcn1.oraclevcn.com).
+     *
+     * <p>Example: {@code bminstance1}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationPrimaryPrivateIpHostnameLabel")
+    private final String destinationPrimaryPrivateIpHostnameLabel;
+
+    /**
+     * The hostname to assign for this primary private IP. The value is the hostname portion of the
+     * private IP's fully qualified domain name (FQDN) (for example, bminstance1 in FQDN
+     * bminstance1.subnet123.vcn1.oraclevcn.com).
+     *
+     * <p>Example: {@code bminstance1}
+     *
+     * @return the value
+     */
+    public String getDestinationPrimaryPrivateIpHostnameLabel() {
+        return destinationPrimaryPrivateIpHostnameLabel;
+    }
+
+    /**
+     * A list of network security group (NSG) IDs in the destination region which this VNIC should
+     * use.
+     *
+     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
+     * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
     private final java.util.List<String> destinationNsgIdList;
 
     /**
-     * A list of destination region's network security group (NSG) Ids which this VNIC should use.
+     * A list of network security group (NSG) IDs in the destination region which this VNIC should
+     * use.
      *
-     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.abcd1,
-     * ocid1.networksecuritygroup.oc1.iad.wxyz2 ]}
+     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;,
+     * ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]}
      *
      * @return the value
      */
@@ -221,6 +334,10 @@ public final class ComputeInstanceVnicMappingDetails
         sb.append("super=").append(super.toString());
         sb.append("sourceVnicId=").append(String.valueOf(this.sourceVnicId));
         sb.append(", destinationSubnetId=").append(String.valueOf(this.destinationSubnetId));
+        sb.append(", destinationPrimaryPrivateIpAddress=")
+                .append(String.valueOf(this.destinationPrimaryPrivateIpAddress));
+        sb.append(", destinationPrimaryPrivateIpHostnameLabel=")
+                .append(String.valueOf(this.destinationPrimaryPrivateIpHostnameLabel));
         sb.append(", destinationNsgIdList=").append(String.valueOf(this.destinationNsgIdList));
         sb.append(")");
         return sb.toString();
@@ -238,6 +355,12 @@ public final class ComputeInstanceVnicMappingDetails
         ComputeInstanceVnicMappingDetails other = (ComputeInstanceVnicMappingDetails) o;
         return java.util.Objects.equals(this.sourceVnicId, other.sourceVnicId)
                 && java.util.Objects.equals(this.destinationSubnetId, other.destinationSubnetId)
+                && java.util.Objects.equals(
+                        this.destinationPrimaryPrivateIpAddress,
+                        other.destinationPrimaryPrivateIpAddress)
+                && java.util.Objects.equals(
+                        this.destinationPrimaryPrivateIpHostnameLabel,
+                        other.destinationPrimaryPrivateIpHostnameLabel)
                 && java.util.Objects.equals(this.destinationNsgIdList, other.destinationNsgIdList)
                 && super.equals(other);
     }
@@ -252,6 +375,16 @@ public final class ComputeInstanceVnicMappingDetails
                         + (this.destinationSubnetId == null
                                 ? 43
                                 : this.destinationSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationPrimaryPrivateIpAddress == null
+                                ? 43
+                                : this.destinationPrimaryPrivateIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationPrimaryPrivateIpHostnameLabel == null
+                                ? 43
+                                : this.destinationPrimaryPrivateIpHostnameLabel.hashCode());
         result =
                 (result * PRIME)
                         + (this.destinationNsgIdList == null

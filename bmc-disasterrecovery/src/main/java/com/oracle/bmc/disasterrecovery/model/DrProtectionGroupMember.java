@@ -26,11 +26,17 @@ package com.oracle.bmc.disasterrecovery.model;
             value = DrProtectionGroupMemberVolumeGroup.class,
             name = "VOLUME_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberComputeInstanceMovable.class,
+            name = "COMPUTE_INSTANCE_MOVABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberAutonomousDatabase.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberComputeInstance.class,
             name = "COMPUTE_INSTANCE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberComputeInstanceNonMovable.class,
+            name = "COMPUTE_INSTANCE_NON_MOVABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberDatabase.class,
             name = "DATABASE")
@@ -49,7 +55,7 @@ public class DrProtectionGroupMember
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
@@ -57,7 +63,7 @@ public class DrProtectionGroupMember
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
      *
      * @return the value
      */

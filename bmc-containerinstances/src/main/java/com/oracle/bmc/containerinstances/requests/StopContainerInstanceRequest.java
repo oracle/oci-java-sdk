@@ -15,10 +15,16 @@ import com.oracle.bmc.containerinstances.model.*;
 public class StopContainerInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The system-generated unique identifier for the ContainerInstance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container instance.
+     */
     private String containerInstanceId;
 
-    /** The system-generated unique identifier for the ContainerInstance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container instance.
+     */
     public String getContainerInstanceId() {
         return containerInstanceId;
     }
@@ -39,10 +45,16 @@ public class StopContainerInstanceRequest
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -53,11 +65,15 @@ public class StopContainerInstanceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The system-generated unique identifier for the ContainerInstance. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container instance.
+         */
         private String containerInstanceId = null;
 
         /**
-         * The system-generated unique identifier for the ContainerInstance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container instance.
          *
          * @param containerInstanceId the value to set
          * @return this builder instance
@@ -89,11 +105,15 @@ public class StopContainerInstanceRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance

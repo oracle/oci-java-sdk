@@ -32,6 +32,12 @@ package com.oracle.bmc.disasterrecovery.model;
             value = UpdateDrProtectionGroupMemberVolumeGroupDetails.class,
             name = "VOLUME_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.class,
+            name = "COMPUTE_INSTANCE_NON_MOVABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.class,
+            name = "COMPUTE_INSTANCE_MOVABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDrProtectionGroupMemberDatabaseDetails.class,
             name = "DATABASE")
 })
@@ -49,7 +55,7 @@ public class UpdateDrProtectionGroupMemberDetails
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.database.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.database.oc1.phx.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
@@ -57,7 +63,7 @@ public class UpdateDrProtectionGroupMemberDetails
     /**
      * The OCID of the member.
      *
-     * <p>Example: {@code ocid1.database.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.database.oc1.phx.&lt;unique_id&gt;}
      *
      * @return the value
      */

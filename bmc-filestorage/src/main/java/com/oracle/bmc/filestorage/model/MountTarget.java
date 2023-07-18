@@ -32,7 +32,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         "lifecycleState",
         "privateIpIds",
         "subnetId",
+        "idmapType",
+        "ldapIdmap",
         "nsgIds",
+        "kerberos",
         "timeCreated",
         "freeformTags",
         "definedTags"
@@ -47,7 +50,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             LifecycleState lifecycleState,
             java.util.List<String> privateIpIds,
             String subnetId,
+            IdmapType idmapType,
+            LdapIdmap ldapIdmap,
             java.util.List<String> nsgIds,
+            Kerberos kerberos,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -61,7 +67,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         this.lifecycleState = lifecycleState;
         this.privateIpIds = privateIpIds;
         this.subnetId = subnetId;
+        this.idmapType = idmapType;
+        this.ldapIdmap = ldapIdmap;
         this.nsgIds = nsgIds;
+        this.kerberos = kerberos;
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -237,6 +246,34 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
+         * The method used to map a Unix UID to secondary groups. If NONE, the mount target will not
+         * use the Unix UID for ID mapping.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("idmapType")
+        private IdmapType idmapType;
+
+        /**
+         * The method used to map a Unix UID to secondary groups. If NONE, the mount target will not
+         * use the Unix UID for ID mapping.
+         *
+         * @param idmapType the value to set
+         * @return this builder
+         */
+        public Builder idmapType(IdmapType idmapType) {
+            this.idmapType = idmapType;
+            this.__explicitlySet__.add("idmapType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ldapIdmap")
+        private LdapIdmap ldapIdmap;
+
+        public Builder ldapIdmap(LdapIdmap ldapIdmap) {
+            this.ldapIdmap = ldapIdmap;
+            this.__explicitlySet__.add("ldapIdmap");
+            return this;
+        }
+        /**
          * A list of Network Security Group
          * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
          * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
@@ -261,6 +298,15 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kerberos")
+        private Kerberos kerberos;
+
+        public Builder kerberos(Kerberos kerberos) {
+            this.kerberos = kerberos;
+            this.__explicitlySet__.add("kerberos");
             return this;
         }
         /**
@@ -349,7 +395,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                             this.lifecycleState,
                             this.privateIpIds,
                             this.subnetId,
+                            this.idmapType,
+                            this.ldapIdmap,
                             this.nsgIds,
+                            this.kerberos,
                             this.timeCreated,
                             this.freeformTags,
                             this.definedTags);
@@ -388,8 +437,17 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("idmapType")) {
+                this.idmapType(model.getIdmapType());
+            }
+            if (model.wasPropertyExplicitlySet("ldapIdmap")) {
+                this.ldapIdmap(model.getLdapIdmap());
+            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("kerberos")) {
+                this.kerberos(model.getKerberos());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -612,6 +670,79 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
+     * The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use
+     * the Unix UID for ID mapping.
+     */
+    public enum IdmapType implements com.oracle.bmc.http.internal.BmcEnum {
+        Ldap("LDAP"),
+        None("NONE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IdmapType.class);
+
+        private final String value;
+        private static java.util.Map<String, IdmapType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IdmapType v : IdmapType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IdmapType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IdmapType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IdmapType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use
+     * the Unix UID for ID mapping.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("idmapType")
+    private final IdmapType idmapType;
+
+    /**
+     * The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use
+     * the Unix UID for ID mapping.
+     *
+     * @return the value
+     */
+    public IdmapType getIdmapType() {
+        return idmapType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ldapIdmap")
+    private final LdapIdmap ldapIdmap;
+
+    public LdapIdmap getLdapIdmap() {
+        return ldapIdmap;
+    }
+
+    /**
      * A list of Network Security Group
      * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
@@ -632,6 +763,13 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("kerberos")
+    private final Kerberos kerberos;
+
+    public Kerberos getKerberos() {
+        return kerberos;
     }
 
     /**
@@ -721,7 +859,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", idmapType=").append(String.valueOf(this.idmapType));
+        sb.append(", ldapIdmap=").append(String.valueOf(this.ldapIdmap));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", kerberos=").append(String.valueOf(this.kerberos));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -748,7 +889,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.idmapType, other.idmapType)
+                && java.util.Objects.equals(this.ldapIdmap, other.ldapIdmap)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.kerberos, other.kerberos)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -778,7 +922,10 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.idmapType == null ? 43 : this.idmapType.hashCode());
+        result = (result * PRIME) + (this.ldapIdmap == null ? 43 : this.ldapIdmap.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

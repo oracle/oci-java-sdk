@@ -40,14 +40,14 @@ public final class ClusterConfigDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the HpcIsland.
+         * of the HPC island.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
         private String hpcIslandId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the HpcIsland.
+         * of the HPC island.
          *
          * @param hpcIslandId the value to set
          * @return this builder
@@ -57,12 +57,12 @@ public final class ClusterConfigDetails
             this.__explicitlySet__.add("hpcIslandId");
             return this;
         }
-        /** The list of OCID of the network blocks. */
+        /** The list of OCIDs of the network blocks. */
         @com.fasterxml.jackson.annotation.JsonProperty("networkBlockIds")
         private java.util.List<String> networkBlockIds;
 
         /**
-         * The list of OCID of the network blocks.
+         * The list of OCIDs of the network blocks.
          *
          * @param networkBlockIds the value to set
          * @return this builder
@@ -108,14 +108,14 @@ public final class ClusterConfigDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the HpcIsland.
+     * the HPC island.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
     private final String hpcIslandId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the HpcIsland.
+     * the HPC island.
      *
      * @return the value
      */
@@ -123,12 +123,12 @@ public final class ClusterConfigDetails
         return hpcIslandId;
     }
 
-    /** The list of OCID of the network blocks. */
+    /** The list of OCIDs of the network blocks. */
     @com.fasterxml.jackson.annotation.JsonProperty("networkBlockIds")
     private final java.util.List<String> networkBlockIds;
 
     /**
-     * The list of OCID of the network blocks.
+     * The list of OCIDs of the network blocks.
      *
      * @return the value
      */

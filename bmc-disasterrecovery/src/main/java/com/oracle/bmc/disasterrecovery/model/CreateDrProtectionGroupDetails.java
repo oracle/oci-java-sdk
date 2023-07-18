@@ -55,7 +55,7 @@ public final class CreateDrProtectionGroupDetails
         /**
          * The OCID of the compartment in which to create the DR Protection Group.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -63,7 +63,7 @@ public final class CreateDrProtectionGroupDetails
         /**
          * The OCID of the compartment in which to create the DR Protection Group.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -225,7 +225,7 @@ public final class CreateDrProtectionGroupDetails
     /**
      * The OCID of the compartment in which to create the DR Protection Group.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
@@ -233,7 +233,7 @@ public final class CreateDrProtectionGroupDetails
     /**
      * The OCID of the compartment in which to create the DR Protection Group.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
      *
      * @return the value
      */

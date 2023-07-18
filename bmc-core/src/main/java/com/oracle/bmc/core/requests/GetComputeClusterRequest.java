@@ -15,17 +15,17 @@ public class GetComputeClusterRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group.
-     * For more information, see [Compute
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * the compute cluster. A [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
      */
     private String computeClusterId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group.
-     * For more information, see [Compute
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * the compute cluster. A [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
      */
     public String getComputeClusterId() {
         return computeClusterId;
@@ -52,17 +52,17 @@ public class GetComputeClusterRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network
-         * group. For more information, see [Compute
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+         * of the compute cluster. A [compute
+         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+         * is a remote direct memory access (RDMA) network group.
          */
         private String computeClusterId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network
-         * group. For more information, see [Compute
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+         * of the compute cluster. A [compute
+         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+         * is a remote direct memory access (RDMA) network group.
          *
          * @param computeClusterId the value to set
          * @return this builder instance

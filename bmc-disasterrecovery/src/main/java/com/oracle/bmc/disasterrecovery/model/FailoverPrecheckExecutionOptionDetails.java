@@ -28,7 +28,7 @@ public final class FailoverPrecheckExecutionOptionDetails extends DrPlanExecutio
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A flag indicating whether warnigs should be ignored during the failover.
+         * A flag indicating whether warnings should be ignored during the failover precheck.
          *
          * <p>Example: {@code false}
          */
@@ -36,7 +36,7 @@ public final class FailoverPrecheckExecutionOptionDetails extends DrPlanExecutio
         private Boolean areWarningsIgnored;
 
         /**
-         * A flag indicating whether warnigs should be ignored during the failover.
+         * A flag indicating whether warnings should be ignored during the failover precheck.
          *
          * <p>Example: {@code false}
          *
@@ -86,7 +86,7 @@ public final class FailoverPrecheckExecutionOptionDetails extends DrPlanExecutio
     }
 
     /**
-     * A flag indicating whether warnigs should be ignored during the failover.
+     * A flag indicating whether warnings should be ignored during the failover precheck.
      *
      * <p>Example: {@code false}
      */
@@ -94,7 +94,7 @@ public final class FailoverPrecheckExecutionOptionDetails extends DrPlanExecutio
     private final Boolean areWarningsIgnored;
 
     /**
-     * A flag indicating whether warnigs should be ignored during the failover.
+     * A flag indicating whether warnings should be ignored during the failover precheck.
      *
      * <p>Example: {@code false}
      *

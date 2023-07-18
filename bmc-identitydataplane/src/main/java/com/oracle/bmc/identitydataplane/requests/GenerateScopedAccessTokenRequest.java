@@ -16,11 +16,11 @@ public class GenerateScopedAccessTokenRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails> {
 
-    /** Scoped Access token request */
+    /** Scoped access token request */
     private com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
             generateScopedAccessTokenDetails;
 
-    /** Scoped Access token request */
+    /** Scoped access token request */
     public com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
             getGenerateScopedAccessTokenDetails() {
         return generateScopedAccessTokenDetails;
@@ -44,12 +44,12 @@ public class GenerateScopedAccessTokenRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Scoped Access token request */
+        /** Scoped access token request */
         private com.oracle.bmc.identitydataplane.model.GenerateScopedAccessTokenDetails
                 generateScopedAccessTokenDetails = null;
 
         /**
-         * Scoped Access token request
+         * Scoped access token request
          *
          * @param generateScopedAccessTokenDetails the value to set
          * @return this builder instance

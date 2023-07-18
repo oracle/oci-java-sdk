@@ -108,15 +108,15 @@ public final class ContainerCommandHealthCheck extends ContainerHealthCheck {
             return this;
         }
         /**
-         * The list of strings which will be concatenated to a single command for checking
-         * container's status.
+         * The list of strings that will be simplified to a single command for checking the status
+         * of the container.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private java.util.List<String> command;
 
         /**
-         * The list of strings which will be concatenated to a single command for checking
-         * container's status.
+         * The list of strings that will be simplified to a single command for checking the status
+         * of the container.
          *
          * @param command the value to set
          * @return this builder
@@ -220,15 +220,15 @@ public final class ContainerCommandHealthCheck extends ContainerHealthCheck {
     }
 
     /**
-     * The list of strings which will be concatenated to a single command for checking container's
-     * status.
+     * The list of strings that will be simplified to a single command for checking the status of
+     * the container.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("command")
     private final java.util.List<String> command;
 
     /**
-     * The list of strings which will be concatenated to a single command for checking container's
-     * status.
+     * The list of strings that will be simplified to a single command for checking the status of
+     * the container.
      *
      * @return the value
      */

@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration of a bare metal instance that uses a GPU shape on the AMD Milan
- * platform. <br>
+ * The platform configuration used when launching a bare metal GPU instance with the following
+ * shape: BM.GPU.GM4.8 (also named BM.GPU.A100-v2.8) (the AMD Milan platform). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

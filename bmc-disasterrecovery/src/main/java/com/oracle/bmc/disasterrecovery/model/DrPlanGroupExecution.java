@@ -61,7 +61,7 @@ public final class DrPlanGroupExecution
         /**
          * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..examplegroupsgid}
+         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
@@ -69,7 +69,7 @@ public final class DrPlanGroupExecution
         /**
          * The unique id of the group. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..examplegroupsgid}
+         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
          *
          * @param groupId the value to set
          * @return this builder
@@ -296,7 +296,7 @@ public final class DrPlanGroupExecution
     /**
      * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..examplegroupsgid}
+     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
@@ -304,7 +304,7 @@ public final class DrPlanGroupExecution
     /**
      * The unique id of the group. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..examplegroupsgid}
+     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
      *
      * @return the value
      */

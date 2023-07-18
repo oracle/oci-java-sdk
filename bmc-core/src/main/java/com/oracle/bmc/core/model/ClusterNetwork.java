@@ -5,11 +5,18 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A cluster network is a group of high performance computing (HPC) bare metal instances that are
- * connected with an ultra low latency network. For more information about cluster networks, see
- * [Managing Cluster
- * Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
- * <br>
+ * A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+ * instances that are connected with an ultra low-latency remote direct memory access (RDMA)
+ * network. [Cluster networks with instance
+ * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm) use
+ * instance pools to manage groups of identical instances.
+ *
+ * <p>Use cluster networks with instance pools when you want predictable capacity for a specific
+ * number of identical instances that are managed as a group.
+ *
+ * <p>If you want to manage instances in the RDMA network independently of each other or use
+ * different types of instances in the network group, use compute clusters instead. For details, see
+ * {@link ComputeCluster}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -110,14 +117,14 @@ public final class ClusterNetwork
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the hpc island used by the cluster network.
+         * of the HPC island used by the cluster network.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
         private String hpcIslandId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the hpc island used by the cluster network.
+         * of the HPC island used by the cluster network.
          *
          * @param hpcIslandId the value to set
          * @return this builder
@@ -416,14 +423,14 @@ public final class ClusterNetwork
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the hpc island used by the cluster network.
+     * the HPC island used by the cluster network.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
     private final String hpcIslandId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the hpc island used by the cluster network.
+     * the HPC island used by the cluster network.
      *
      * @return the value
      */

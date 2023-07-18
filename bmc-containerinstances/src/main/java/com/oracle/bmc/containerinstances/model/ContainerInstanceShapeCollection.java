@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A collection of Container Instance Shapes. <br>
+ * A collection of container instance shapes. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class ContainerInstanceShapeCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of shapes. */
+        /** A list of shapes. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ContainerInstanceShapeSummary> items;
 
         /**
-         * List of shapes.
+         * A list of shapes.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ContainerInstanceShapeCollection
         return new Builder().copy(this);
     }
 
-    /** List of shapes. */
+    /** A list of shapes. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ContainerInstanceShapeSummary> items;
 
     /**
-     * List of shapes.
+     * A list of shapes.
      *
      * @return the value
      */

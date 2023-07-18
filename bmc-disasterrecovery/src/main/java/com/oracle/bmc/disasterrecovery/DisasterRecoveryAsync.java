@@ -65,8 +65,8 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Create an association the DR Protection Group identified by *drProtectionGroupId* and another
-     * DR Protection Group in a different region.
+     * Create an association between the DR Protection Group identified by *drProtectionGroupId* and
+     * another DR Protection Group in a different region.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

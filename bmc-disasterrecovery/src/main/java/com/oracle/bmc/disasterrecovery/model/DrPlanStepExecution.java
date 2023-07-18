@@ -64,7 +64,7 @@ public final class DrPlanStepExecution
         /**
          * The unique id of this step. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.step..examplestepsgid}
+         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private String stepId;
@@ -72,7 +72,7 @@ public final class DrPlanStepExecution
         /**
          * The unique id of this step. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.step..examplestepsgid}
+         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
          *
          * @param stepId the value to set
          * @return this builder
@@ -100,7 +100,7 @@ public final class DrPlanStepExecution
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..examplegroupsgid}
+         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
@@ -108,7 +108,7 @@ public final class DrPlanStepExecution
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
          *
-         * <p>Example: {@code sgid1.group..examplegroupsgid}
+         * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
          *
          * @param groupId the value to set
          * @return this builder
@@ -318,7 +318,7 @@ public final class DrPlanStepExecution
     /**
      * The unique id of this step. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.step..examplestepsgid}
+     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final String stepId;
@@ -326,7 +326,7 @@ public final class DrPlanStepExecution
     /**
      * The unique id of this step. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.step..examplestepsgid}
+     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
      *
      * @return the value
      */
@@ -350,7 +350,7 @@ public final class DrPlanStepExecution
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..examplegroupsgid}
+     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
@@ -358,7 +358,7 @@ public final class DrPlanStepExecution
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
      *
-     * <p>Example: {@code sgid1.group..examplegroupsgid}
+     * <p>Example: {@code sgid1.group..&lt;unique_id&gt;}
      *
      * @return the value
      */

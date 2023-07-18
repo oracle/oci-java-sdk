@@ -52,7 +52,7 @@ public final class UpdateDrPlanStepDetails
         /**
          * The unique id of this step.
          *
-         * <p>Example: {@code sgid1.step..examplestepsgid}
+         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -60,7 +60,7 @@ public final class UpdateDrPlanStepDetails
         /**
          * The unique id of this step.
          *
-         * <p>Example: {@code sgid1.step..examplestepsgid}
+         * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
          *
          * @param id the value to set
          * @return this builder
@@ -212,7 +212,7 @@ public final class UpdateDrPlanStepDetails
     /**
      * The unique id of this step.
      *
-     * <p>Example: {@code sgid1.step..examplestepsgid}
+     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
@@ -220,7 +220,7 @@ public final class UpdateDrPlanStepDetails
     /**
      * The unique id of this step.
      *
-     * <p>Example: {@code sgid1.step..examplestepsgid}
+     * <p>Example: {@code sgid1.step..&lt;unique_id&gt;}
      *
      * @return the value
      */

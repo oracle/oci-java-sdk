@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A reduced set of details about a single ContainerInstance returned by list APIs. <br>
+ * A set of details about a single container instance returned by list APIs. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -85,12 +85,12 @@ public final class ContainerInstanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** OCID that cannot be changed. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * OCID that cannot be changed.
          *
          * @param id the value to set
          * @return this builder
@@ -100,12 +100,16 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name for the ContainerInstance. Can be renamed. */
+        /**
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the ContainerInstance. Can be renamed.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -115,12 +119,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /** The OCID of the compartment to create the container instance in. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The OCID of the compartment to create the container instance in.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -151,14 +155,14 @@ public final class ContainerInstanceSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -171,14 +175,14 @@ public final class ContainerInstanceSummary
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
@@ -188,12 +192,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Availability Domain where the ContainerInstance is running. */
+        /** The availability domain where the container instance runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain where the ContainerInstance is running.
+         * The availability domain where the container instance runs.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -203,12 +207,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** Fault Domain where the ContainerInstance is running. */
+        /** The fault domain where the container instance runs. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * Fault Domain where the ContainerInstance is running.
+         * The fault domain where the container instance runs.
          *
          * @param faultDomain the value to set
          * @return this builder
@@ -218,12 +222,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The current state of the ContainerInstance. */
+        /** The current state of the container instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ContainerInstance.LifecycleState lifecycleState;
 
         /**
-         * The current state of the ContainerInstance.
+         * The current state of the container instance.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -234,15 +238,15 @@ public final class ContainerInstanceSummary
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container instance in more detail. Can
+         * be used to provide actionable information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message that describes the current state of the container instance in more detail. Can
+         * be used to provide actionable information.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -252,12 +256,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The time the the ContainerInstance was created. An RFC3339 formatted datetime string */
+        /** The time the container instance was created, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+         * The time the container instance was created, in the format defined by RFC3339.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -267,12 +271,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the ContainerInstance was updated. An RFC3339 formatted datetime string */
+        /** The time the container instance was updated, in the format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+         * The time the container instance was updated, in the format defined by RFC3339.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -283,15 +287,15 @@ public final class ContainerInstanceSummary
             return this;
         }
         /**
-         * The shape of the Container Instance. The shape determines the resources available to the
-         * Container Instance.
+         * The shape of the container instance. The shape determines the resources available to the
+         * container instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the Container Instance. The shape determines the resources available to the
-         * Container Instance.
+         * The shape of the container instance. The shape determines the resources available to the
+         * container instance.
          *
          * @param shape the value to set
          * @return this builder
@@ -310,12 +314,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("shapeConfig");
             return this;
         }
-        /** The number of containers on this Instance */
+        /** The number of containers in the container instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
         private Integer containerCount;
 
         /**
-         * The number of containers on this Instance
+         * The number of containers in the container instance.
          *
          * @param containerCount the value to set
          * @return this builder
@@ -326,19 +330,17 @@ public final class ContainerInstanceSummary
             return this;
         }
         /**
-         * Duration in seconds processes within a Container have to gracefully terminate. This
-         * applies whenever a Container must be halted, such as when the Container Instance is
-         * deleted. Processes will first be sent a termination signal. After this timeout is
-         * reached, the processes will be sent a termination signal.
+         * The amount of time that processes in a container have to gracefully end when the
+         * container must be stopped. For example, when you delete a container instance. After the
+         * timeout is reached, the processes are sent a signal to be deleted.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
         private Long gracefulShutdownTimeoutInSeconds;
 
         /**
-         * Duration in seconds processes within a Container have to gracefully terminate. This
-         * applies whenever a Container must be halted, such as when the Container Instance is
-         * deleted. Processes will first be sent a termination signal. After this timeout is
-         * reached, the processes will be sent a termination signal.
+         * The amount of time that processes in a container have to gracefully end when the
+         * container must be stopped. For example, when you delete a container instance. After the
+         * timeout is reached, the processes are sent a signal to be deleted.
          *
          * @param gracefulShutdownTimeoutInSeconds the value to set
          * @return this builder
@@ -348,12 +350,12 @@ public final class ContainerInstanceSummary
             this.__explicitlySet__.add("gracefulShutdownTimeoutInSeconds");
             return this;
         }
-        /** The number of volumes that attached to this Instance */
+        /** The number of volumes that are attached to the container instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeCount")
         private Integer volumeCount;
 
         /**
-         * The number of volumes that attached to this Instance
+         * The number of volumes that are attached to the container instance.
          *
          * @param volumeCount the value to set
          * @return this builder
@@ -479,12 +481,12 @@ public final class ContainerInstanceSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** OCID that cannot be changed. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * OCID that cannot be changed.
      *
      * @return the value
      */
@@ -492,12 +494,16 @@ public final class ContainerInstanceSummary
         return id;
     }
 
-    /** Display name for the ContainerInstance. Can be renamed. */
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the ContainerInstance. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -505,12 +511,12 @@ public final class ContainerInstanceSummary
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /** The OCID of the compartment to create the container instance in. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment to create the container instance in.
      *
      * @return the value
      */
@@ -537,14 +543,14 @@ public final class ContainerInstanceSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      */
@@ -554,14 +560,14 @@ public final class ContainerInstanceSummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
      */
@@ -569,12 +575,12 @@ public final class ContainerInstanceSummary
         return systemTags;
     }
 
-    /** Availability Domain where the ContainerInstance is running. */
+    /** The availability domain where the container instance runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain where the ContainerInstance is running.
+     * The availability domain where the container instance runs.
      *
      * @return the value
      */
@@ -582,12 +588,12 @@ public final class ContainerInstanceSummary
         return availabilityDomain;
     }
 
-    /** Fault Domain where the ContainerInstance is running. */
+    /** The fault domain where the container instance runs. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * Fault Domain where the ContainerInstance is running.
+     * The fault domain where the container instance runs.
      *
      * @return the value
      */
@@ -595,12 +601,12 @@ public final class ContainerInstanceSummary
         return faultDomain;
     }
 
-    /** The current state of the ContainerInstance. */
+    /** The current state of the container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ContainerInstance.LifecycleState lifecycleState;
 
     /**
-     * The current state of the ContainerInstance.
+     * The current state of the container instance.
      *
      * @return the value
      */
@@ -609,15 +615,15 @@ public final class ContainerInstanceSummary
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container instance in more detail. Can be
+     * used to provide actionable information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container instance in more detail. Can be
+     * used to provide actionable information.
      *
      * @return the value
      */
@@ -625,12 +631,12 @@ public final class ContainerInstanceSummary
         return lifecycleDetails;
     }
 
-    /** The time the the ContainerInstance was created. An RFC3339 formatted datetime string */
+    /** The time the container instance was created, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by RFC3339.
      *
      * @return the value
      */
@@ -638,12 +644,12 @@ public final class ContainerInstanceSummary
         return timeCreated;
     }
 
-    /** The time the ContainerInstance was updated. An RFC3339 formatted datetime string */
+    /** The time the container instance was updated, in the format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by RFC3339.
      *
      * @return the value
      */
@@ -652,15 +658,15 @@ public final class ContainerInstanceSummary
     }
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the
-     * Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the
+     * container instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the
-     * Container Instance.
+     * The shape of the container instance. The shape determines the resources available to the
+     * container instance.
      *
      * @return the value
      */
@@ -675,12 +681,12 @@ public final class ContainerInstanceSummary
         return shapeConfig;
     }
 
-    /** The number of containers on this Instance */
+    /** The number of containers in the container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
     private final Integer containerCount;
 
     /**
-     * The number of containers on this Instance
+     * The number of containers in the container instance.
      *
      * @return the value
      */
@@ -689,19 +695,17 @@ public final class ContainerInstanceSummary
     }
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies
-     * whenever a Container must be halted, such as when the Container Instance is deleted.
-     * Processes will first be sent a termination signal. After this timeout is reached, the
-     * processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container
+     * must be stopped. For example, when you delete a container instance. After the timeout is
+     * reached, the processes are sent a signal to be deleted.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
     private final Long gracefulShutdownTimeoutInSeconds;
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies
-     * whenever a Container must be halted, such as when the Container Instance is deleted.
-     * Processes will first be sent a termination signal. After this timeout is reached, the
-     * processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container
+     * must be stopped. For example, when you delete a container instance. After the timeout is
+     * reached, the processes are sent a signal to be deleted.
      *
      * @return the value
      */
@@ -709,12 +713,12 @@ public final class ContainerInstanceSummary
         return gracefulShutdownTimeoutInSeconds;
     }
 
-    /** The number of volumes that attached to this Instance */
+    /** The number of volumes that are attached to the container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeCount")
     private final Integer volumeCount;
 
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      *
      * @return the value
      */

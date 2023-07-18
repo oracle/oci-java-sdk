@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A description of workrequest status <br>
+ * A description of the work request status. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -56,12 +56,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the work request */
+        /** Type of work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
-         * Type of the work request
+         * Type of work request.
          *
          * @param operationType the value to set
          * @return this builder
@@ -86,12 +86,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The id of the work request. */
+        /** The ID of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the work request.
+         * The ID of the work request.
          *
          * @param id the value to set
          * @return this builder
@@ -102,21 +102,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * The OCID of the compartment that contains the work request. Work requests should be
+         * scoped to the same compartment as the resource the work request affects.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * The OCID of the compartment that contains the work request. Work requests should be
+         * scoped to the same compartment as the resource the work request affects.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -277,12 +271,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Type of the work request */
+    /** Type of work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
-     * Type of the work request
+     * Type of work request.
      *
      * @return the value
      */
@@ -303,12 +297,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return status;
     }
 
-    /** The id of the work request. */
+    /** The ID of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      *
      * @return the value
      */
@@ -317,19 +311,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
+     * the same compartment as the resource the work request affects.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
+     * the same compartment as the resource the work request affects.
      *
      * @return the value
      */

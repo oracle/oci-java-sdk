@@ -35,7 +35,8 @@ public final class InstanceShapeConfig
         "gpuDescription",
         "localDisks",
         "localDisksTotalSizeInGBs",
-        "localDiskDescription"
+        "localDiskDescription",
+        "vcpus"
     })
     public InstanceShapeConfig(
             Float ocpus,
@@ -48,7 +49,8 @@ public final class InstanceShapeConfig
             String gpuDescription,
             Integer localDisks,
             Float localDisksTotalSizeInGBs,
-            String localDiskDescription) {
+            String localDiskDescription,
+            Integer vcpus) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
@@ -61,6 +63,7 @@ public final class InstanceShapeConfig
         this.localDisks = localDisks;
         this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
         this.localDiskDescription = localDiskDescription;
+        this.vcpus = vcpus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -264,6 +267,27 @@ public final class InstanceShapeConfig
             this.__explicitlySet__.add("localDiskDescription");
             return this;
         }
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+         * in which case the actual number of OCPUs will be calculated based on this value and the
+         * actual hardware. This must be a multiple of 2.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
+        private Integer vcpus;
+
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+         * in which case the actual number of OCPUs will be calculated based on this value and the
+         * actual hardware. This must be a multiple of 2.
+         *
+         * @param vcpus the value to set
+         * @return this builder
+         */
+        public Builder vcpus(Integer vcpus) {
+            this.vcpus = vcpus;
+            this.__explicitlySet__.add("vcpus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -281,7 +305,8 @@ public final class InstanceShapeConfig
                             this.gpuDescription,
                             this.localDisks,
                             this.localDisksTotalSizeInGBs,
-                            this.localDiskDescription);
+                            this.localDiskDescription,
+                            this.vcpus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -322,6 +347,9 @@ public final class InstanceShapeConfig
             }
             if (model.wasPropertyExplicitlySet("localDiskDescription")) {
                 this.localDiskDescription(model.getLocalDiskDescription());
+            }
+            if (model.wasPropertyExplicitlySet("vcpus")) {
+                this.vcpus(model.getVcpus());
             }
             return this;
         }
@@ -563,6 +591,25 @@ public final class InstanceShapeConfig
         return localDiskDescription;
     }
 
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in
+     * which case the actual number of OCPUs will be calculated based on this value and the actual
+     * hardware. This must be a multiple of 2.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
+    private final Integer vcpus;
+
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in
+     * which case the actual number of OCPUs will be calculated based on this value and the actual
+     * hardware. This must be a multiple of 2.
+     *
+     * @return the value
+     */
+    public Integer getVcpus() {
+        return vcpus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -592,6 +639,7 @@ public final class InstanceShapeConfig
         sb.append(", localDisksTotalSizeInGBs=")
                 .append(String.valueOf(this.localDisksTotalSizeInGBs));
         sb.append(", localDiskDescription=").append(String.valueOf(this.localDiskDescription));
+        sb.append(", vcpus=").append(String.valueOf(this.vcpus));
         sb.append(")");
         return sb.toString();
     }
@@ -620,6 +668,7 @@ public final class InstanceShapeConfig
                 && java.util.Objects.equals(
                         this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
                 && java.util.Objects.equals(this.localDiskDescription, other.localDiskDescription)
+                && java.util.Objects.equals(this.vcpus, other.vcpus)
                 && super.equals(other);
     }
 
@@ -664,6 +713,7 @@ public final class InstanceShapeConfig
                         + (this.localDiskDescription == null
                                 ? 43
                                 : this.localDiskDescription.hashCode());
+        result = (result * PRIME) + (this.vcpus == null ? 43 : this.vcpus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

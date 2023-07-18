@@ -282,6 +282,78 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<AddMasterNodesResponse> addMasterNodes(
+            AddMasterNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMasterNodesRequest, AddMasterNodesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddMasterNodesDetails(), "addMasterNodesDetails is required");
+
+        return clientCall(request, AddMasterNodesResponse::builder)
+                .logger(LOG, "addMasterNodes")
+                .serviceDetails(
+                        "Bds",
+                        "AddMasterNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddMasterNodes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMasterNodesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addMasterNodes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMasterNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddMasterNodesResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddUtilityNodesResponse> addUtilityNodes(
+            AddUtilityNodesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddUtilityNodesRequest, AddUtilityNodesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddUtilityNodesDetails(), "addUtilityNodesDetails is required");
+
+        return clientCall(request, AddUtilityNodesResponse::builder)
+                .logger(LOG, "addUtilityNodes")
+                .serviceDetails(
+                        "Bds",
+                        "AddUtilityNodes",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddUtilityNodes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddUtilityNodesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addUtilityNodes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddUtilityNodesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddUtilityNodesResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<AddWorkerNodesResponse> addWorkerNodes(
             AddWorkerNodesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -780,6 +852,43 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetOsPatchDetailsResponse> getOsPatchDetails(
+            GetOsPatchDetailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOsPatchDetailsRequest, GetOsPatchDetailsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getOsPatchVersion(), "osPatchVersion is required");
+
+        return clientCall(request, GetOsPatchDetailsResponse::builder)
+                .logger(LOG, "getOsPatchDetails")
+                .serviceDetails(
+                        "Bds",
+                        "GetOsPatchDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetOsPatchDetails")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetOsPatchDetailsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("getOsPatch")
+                .appendQueryParam("osPatchVersion", request.getOsPatchVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.bds.model.OsPatchDetails.class,
+                        GetOsPatchDetailsResponse.Builder::osPatchDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOsPatchDetailsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetOsPatchDetailsResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -808,6 +917,42 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderBigDecimal(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallOsPatchResponse> installOsPatch(
+            InstallOsPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            InstallOsPatchRequest, InstallOsPatchResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getInstallOsPatchDetails(), "installOsPatchDetails is required");
+
+        return clientCall(request, InstallOsPatchResponse::builder)
+                .logger(LOG, "installOsPatch")
+                .serviceDetails(
+                        "Bds",
+                        "InstallOsPatch",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallOsPatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallOsPatchRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("installOsPatch")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", InstallOsPatchResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InstallOsPatchResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1013,6 +1158,46 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListOsPatchesResponse> listOsPatches(
+            ListOsPatchesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListOsPatchesRequest, ListOsPatchesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListOsPatchesResponse::builder)
+                .logger(LOG, "listOsPatches")
+                .serviceDetails(
+                        "Bds",
+                        "ListOsPatches",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListOsPatches")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ListOsPatchesRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("listOsPatches")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.OsPatchSummary.class,
+                        ListOsPatchesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOsPatchesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOsPatchesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ListOsPatchesResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPatchHistoriesResponse> listPatchHistories(
             ListPatchHistoriesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1039,6 +1224,7 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("patchType", request.getPatchType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

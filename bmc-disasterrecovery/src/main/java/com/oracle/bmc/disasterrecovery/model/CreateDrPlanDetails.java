@@ -85,7 +85,7 @@ public final class CreateDrPlanDetails
         /**
          * The OCID of the DR Protection Group to which this DR Plan belongs.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
         private String drProtectionGroupId;
@@ -93,7 +93,7 @@ public final class CreateDrPlanDetails
         /**
          * The OCID of the DR Protection Group to which this DR Plan belongs.
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder
@@ -225,7 +225,7 @@ public final class CreateDrPlanDetails
     /**
      * The OCID of the DR Protection Group to which this DR Plan belongs.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
     private final String drProtectionGroupId;
@@ -233,7 +233,7 @@ public final class CreateDrPlanDetails
     /**
      * The OCID of the DR Protection Group to which this DR Plan belongs.
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;}
      *
      * @return the value
      */

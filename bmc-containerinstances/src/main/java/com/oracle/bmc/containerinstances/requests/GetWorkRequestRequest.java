@@ -20,10 +20,16 @@ public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -48,11 +54,15 @@ public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance

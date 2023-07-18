@@ -32,12 +32,12 @@ public final class HealthCheckHttpHeader
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Container Http header Key. */
+        /** Container HTTP header Key. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Container Http header Key.
+         * Container HTTP header Key.
          *
          * @param name the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class HealthCheckHttpHeader
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Container Http header value. */
+        /** Container HTTP header value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Container Http header value.
+         * Container HTTP header value.
          *
          * @param value the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class HealthCheckHttpHeader
         return new Builder().copy(this);
     }
 
-    /** Container Http header Key. */
+    /** Container HTTP header Key. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Container Http header Key.
+     * Container HTTP header Key.
      *
      * @return the value
      */
@@ -108,12 +108,12 @@ public final class HealthCheckHttpHeader
         return name;
     }
 
-    /** Container Http header value. */
+    /** Container HTTP header value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Container Http header value.
+     * Container HTTP header value.
      *
      * @return the value
      */

@@ -201,8 +201,9 @@ public interface Compute extends AutoCloseable {
             ChangeComputeCapacityReservationCompartmentRequest request);
 
     /**
-     * Moves a compute cluster into a different compartment within the same tenancy. A compute
-     * cluster is a remote direct memory access (RDMA) network group.
+     * Moves a compute cluster into a different compartment within the same tenancy. A [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
      *
      * <p>For information about moving resources between compartments, see [Moving Resources to a
      * Different
@@ -362,15 +363,21 @@ public interface Compute extends AutoCloseable {
             CreateComputeCapacityReservationRequest request);
 
     /**
-     * Creates an empty compute cluster, which is a remote direct memory access (RDMA) network
-     * group. After the compute cluster is created, you can use the compute cluster's OCID with the
-     * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
-     * in the compute cluster. For more information, see [Compute
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * Creates an empty [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
+     * compute cluster is a remote direct memory access (RDMA) network group.
      *
-     * <p>To create a cluster network that uses intance pools to manage groups of identical
-     * instances, see {@link #createClusterNetwork(CreateClusterNetworkRequest)
-     * createClusterNetwork}.
+     * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
+     * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
+     * in the compute cluster. The instances must be created in the same compartment and
+     * availability domain as the cluster.
+     *
+     * <p>Use compute clusters when you want to manage instances in the cluster individually, or
+     * when you want to use different types of instances in the RDMA network group.
+     *
+     * <p>If you want predictable capacity for a specific number of identical instances that are
+     * managed as a group, create a cluster network that uses instance pools by using the {@link
+     * #createClusterNetwork(CreateClusterNetworkRequest) createClusterNetwork} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -522,8 +529,12 @@ public interface Compute extends AutoCloseable {
             DeleteComputeCapacityReservationRequest request);
 
     /**
-     * Deletes the compute cluster, which is a remote direct memory access (RDMA) network group. To
-     * delete a compute cluster, all instances in the cluster must be deleted first.
+     * Deletes a compute cluster. A [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
+     *
+     * <p>Before you delete a compute cluster, first delete all instances in the cluster by using
+     * the {@link #terminateInstance(TerminateInstanceRequest) terminateInstance} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -796,7 +807,9 @@ public interface Compute extends AutoCloseable {
             GetComputeCapacityReservationRequest request);
 
     /**
-     * Gets information about the specified compute cluster.
+     * Gets information about a compute cluster. A [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1652,8 +1665,8 @@ public interface Compute extends AutoCloseable {
             RemoveImageShapeCompatibilityEntryRequest request);
 
     /**
-     * Terminates (deletes) the specified instance. Any attached VNICs and volumes are automatically
-     * detached when the instance terminates.
+     * Permanently terminates (deletes) the specified instance. Any attached VNICs and volumes are
+     * automatically detached when the instance terminates.
      *
      * <p>To preserve the boot volume associated with the instance, specify `true` for
      * `PreserveBootVolumeQueryParam`. To delete the boot volume when the instance is deleted,
@@ -1697,7 +1710,15 @@ public interface Compute extends AutoCloseable {
             UpdateComputeCapacityReservationRequest request);
 
     /**
-     * Updates the specified compute cluster.
+     * Updates a compute cluster. A [compute
+     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
+     *
+     * <p>To create instances within a compute cluster, use the {@link
+     * #launchInstance(LaunchInstanceRequest) launchInstance} operation.
+     *
+     * <p>To delete instances from a compute cluster, use the {@link
+     * #terminateInstance(TerminateInstanceRequest) terminateInstance} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

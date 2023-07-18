@@ -23,17 +23,25 @@ package com.oracle.bmc.filestorage.model;
 public final class CreateExportDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"exportOptions", "exportSetId", "fileSystemId", "path"})
+    @java.beans.ConstructorProperties({
+        "exportOptions",
+        "exportSetId",
+        "fileSystemId",
+        "path",
+        "isIdmapGroupsForSysAuth"
+    })
     public CreateExportDetails(
             java.util.List<ClientOptions> exportOptions,
             String exportSetId,
             String fileSystemId,
-            String path) {
+            String path,
+            Boolean isIdmapGroupsForSysAuth) {
         super();
         this.exportOptions = exportOptions;
         this.exportSetId = exportSetId;
         this.fileSystemId = fileSystemId;
         this.path = path;
+        this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -144,6 +152,37 @@ public final class CreateExportDetails
             this.__explicitlySet__.add("path");
             return this;
         }
+        /**
+         * Whether or not the export should use ID mapping for Unix groups rather than the group
+         * list provided within an NFS request's RPC header. When this flag is true the Unix UID
+         * from the RPC header is used to retrieve the list of secondary groups from a the ID
+         * mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is
+         * not configured, incorrectly configured, unavailable, or cannot be used to determine a
+         * list of secondary groups then an empty secondary group list is used for authorization. If
+         * the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is
+         * truncated to the first 256 groups read.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
+        private Boolean isIdmapGroupsForSysAuth;
+
+        /**
+         * Whether or not the export should use ID mapping for Unix groups rather than the group
+         * list provided within an NFS request's RPC header. When this flag is true the Unix UID
+         * from the RPC header is used to retrieve the list of secondary groups from a the ID
+         * mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is
+         * not configured, incorrectly configured, unavailable, or cannot be used to determine a
+         * list of secondary groups then an empty secondary group list is used for authorization. If
+         * the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is
+         * truncated to the first 256 groups read.
+         *
+         * @param isIdmapGroupsForSysAuth the value to set
+         * @return this builder
+         */
+        public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
+            this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
+            this.__explicitlySet__.add("isIdmapGroupsForSysAuth");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -151,7 +190,11 @@ public final class CreateExportDetails
         public CreateExportDetails build() {
             CreateExportDetails model =
                     new CreateExportDetails(
-                            this.exportOptions, this.exportSetId, this.fileSystemId, this.path);
+                            this.exportOptions,
+                            this.exportSetId,
+                            this.fileSystemId,
+                            this.path,
+                            this.isIdmapGroupsForSysAuth);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -171,6 +214,9 @@ public final class CreateExportDetails
             }
             if (model.wasPropertyExplicitlySet("path")) {
                 this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("isIdmapGroupsForSysAuth")) {
+                this.isIdmapGroupsForSysAuth(model.getIsIdmapGroupsForSysAuth());
             }
             return this;
         }
@@ -283,6 +329,33 @@ public final class CreateExportDetails
         return path;
     }
 
+    /**
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list
+     * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
+     * header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The
+     * primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly
+     * configured, unavailable, or cannot be used to determine a list of secondary groups then an
+     * empty secondary group list is used for authorization. If the number of groups exceeds the
+     * limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
+    private final Boolean isIdmapGroupsForSysAuth;
+
+    /**
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list
+     * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
+     * header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The
+     * primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly
+     * configured, unavailable, or cannot be used to determine a list of secondary groups then an
+     * empty secondary group list is used for authorization. If the number of groups exceeds the
+     * limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     *
+     * @return the value
+     */
+    public Boolean getIsIdmapGroupsForSysAuth() {
+        return isIdmapGroupsForSysAuth;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -302,6 +375,8 @@ public final class CreateExportDetails
         sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
         sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", isIdmapGroupsForSysAuth=")
+                .append(String.valueOf(this.isIdmapGroupsForSysAuth));
         sb.append(")");
         return sb.toString();
     }
@@ -320,6 +395,8 @@ public final class CreateExportDetails
                 && java.util.Objects.equals(this.exportSetId, other.exportSetId)
                 && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(
+                        this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
                 && super.equals(other);
     }
 
@@ -333,6 +410,11 @@ public final class CreateExportDetails
         result = (result * PRIME) + (this.exportSetId == null ? 43 : this.exportSetId.hashCode());
         result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIdmapGroupsForSysAuth == null
+                                ? 43
+                                : this.isIdmapGroupsForSysAuth.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

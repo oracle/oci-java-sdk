@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The resource configuration for a Container. The resource configuration determines the guaranteed
+ * The resource configuration for a container. The resource configuration determines the amount of
  * resources allocated to the container and the maximum allowed resources for a container. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -34,19 +34,25 @@ public final class ContainerResourceConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The maximum amount of CPU utilization which may be consumed by the Container's process.
-         * If no value is provided, then the process may consume all CPU resources on the Instance.
-         * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value
-         * on an E3 ContainerInstance with 1 OCPU is 2.0.
+         * The maximum amount of CPUs that can be consumed by the container's process.
+         *
+         * <p>If you do not set a value, then the process may use all available CPU resources on the
+         * container instance.
+         *
+         * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible
+         * value on an E3 ContainerInstance with 1 OCPU is 2.0.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcpusLimit")
         private Float vcpusLimit;
 
         /**
-         * The maximum amount of CPU utilization which may be consumed by the Container's process.
-         * If no value is provided, then the process may consume all CPU resources on the Instance.
-         * CPU usage is defined in terms of logical CPUs. This means that the maximum possible value
-         * on an E3 ContainerInstance with 1 OCPU is 2.0.
+         * The maximum amount of CPUs that can be consumed by the container's process.
+         *
+         * <p>If you do not set a value, then the process may use all available CPU resources on the
+         * container instance.
+         *
+         * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible
+         * value on an E3 ContainerInstance with 1 OCPU is 2.0.
          *
          * @param vcpusLimit the value to set
          * @return this builder
@@ -57,15 +63,15 @@ public final class ContainerResourceConfig
             return this;
         }
         /**
-         * The maximum amount of memory which may be consumed by the Container's process. If no
-         * value is provided, then the process may use all available memory on the Instance.
+         * The maximum amount of memory that can be consumed by the container's process. If you do
+         * not set a value, then the process may use all available memory on the instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryLimitInGBs")
         private Float memoryLimitInGBs;
 
         /**
-         * The maximum amount of memory which may be consumed by the Container's process. If no
-         * value is provided, then the process may use all available memory on the Instance.
+         * The maximum amount of memory that can be consumed by the container's process. If you do
+         * not set a value, then the process may use all available memory on the instance.
          *
          * @param memoryLimitInGBs the value to set
          * @return this builder
@@ -110,19 +116,25 @@ public final class ContainerResourceConfig
     }
 
     /**
-     * The maximum amount of CPU utilization which may be consumed by the Container's process. If no
-     * value is provided, then the process may consume all CPU resources on the Instance. CPU usage
-     * is defined in terms of logical CPUs. This means that the maximum possible value on an E3
-     * ContainerInstance with 1 OCPU is 2.0.
+     * The maximum amount of CPUs that can be consumed by the container's process.
+     *
+     * <p>If you do not set a value, then the process may use all available CPU resources on the
+     * container instance.
+     *
+     * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible value
+     * on an E3 ContainerInstance with 1 OCPU is 2.0.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcpusLimit")
     private final Float vcpusLimit;
 
     /**
-     * The maximum amount of CPU utilization which may be consumed by the Container's process. If no
-     * value is provided, then the process may consume all CPU resources on the Instance. CPU usage
-     * is defined in terms of logical CPUs. This means that the maximum possible value on an E3
-     * ContainerInstance with 1 OCPU is 2.0.
+     * The maximum amount of CPUs that can be consumed by the container's process.
+     *
+     * <p>If you do not set a value, then the process may use all available CPU resources on the
+     * container instance.
+     *
+     * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible value
+     * on an E3 ContainerInstance with 1 OCPU is 2.0.
      *
      * @return the value
      */
@@ -131,15 +143,15 @@ public final class ContainerResourceConfig
     }
 
     /**
-     * The maximum amount of memory which may be consumed by the Container's process. If no value is
-     * provided, then the process may use all available memory on the Instance.
+     * The maximum amount of memory that can be consumed by the container's process. If you do not
+     * set a value, then the process may use all available memory on the instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryLimitInGBs")
     private final Float memoryLimitInGBs;
 
     /**
-     * The maximum amount of memory which may be consumed by the Container's process. If no value is
-     * provided, then the process may use all available memory on the Instance.
+     * The maximum amount of memory that can be consumed by the container's process. If you do not
+     * set a value, then the process may use all available memory on the instance.
      *
      * @return the value
      */

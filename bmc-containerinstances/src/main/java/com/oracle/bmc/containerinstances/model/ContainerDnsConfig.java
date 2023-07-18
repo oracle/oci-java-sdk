@@ -36,12 +36,12 @@ public final class ContainerDnsConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name server IP address */
+        /** IP address of the name server.. */
         @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
         private java.util.List<String> nameservers;
 
         /**
-         * Name server IP address
+         * IP address of the name server..
          *
          * @param nameservers the value to set
          * @return this builder
@@ -51,12 +51,12 @@ public final class ContainerDnsConfig
             this.__explicitlySet__.add("nameservers");
             return this;
         }
-        /** Search list for host-name lookup. */
+        /** Search list for hostname lookup. */
         @com.fasterxml.jackson.annotation.JsonProperty("searches")
         private java.util.List<String> searches;
 
         /**
-         * Search list for host-name lookup.
+         * Search list for hostname lookup.
          *
          * @param searches the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class ContainerDnsConfig
         return new Builder().copy(this);
     }
 
-    /** Name server IP address */
+    /** IP address of the name server.. */
     @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
     private final java.util.List<String> nameservers;
 
     /**
-     * Name server IP address
+     * IP address of the name server..
      *
      * @return the value
      */
@@ -131,12 +131,12 @@ public final class ContainerDnsConfig
         return nameservers;
     }
 
-    /** Search list for host-name lookup. */
+    /** Search list for hostname lookup. */
     @com.fasterxml.jackson.annotation.JsonProperty("searches")
     private final java.util.List<String> searches;
 
     /**
-     * Search list for host-name lookup.
+     * Search list for hostname lookup.
      *
      * @return the value
      */

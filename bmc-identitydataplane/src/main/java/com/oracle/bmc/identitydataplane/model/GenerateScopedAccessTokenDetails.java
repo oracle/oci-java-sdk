@@ -49,7 +49,7 @@ public final class GenerateScopedAccessTokenDetails
         }
         /**
          * A temporary public key, owned by the service. The service also owns the corresponding
-         * private key. This public key will by put inside the security token by the auth service
+         * private key. This public key will be put inside the security token by the auth service
          * after successful validation of the certificate.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
@@ -57,7 +57,7 @@ public final class GenerateScopedAccessTokenDetails
 
         /**
          * A temporary public key, owned by the service. The service also owns the corresponding
-         * private key. This public key will by put inside the security token by the auth service
+         * private key. This public key will be put inside the security token by the auth service
          * after successful validation of the certificate.
          *
          * @param publicKey the value to set
@@ -117,7 +117,7 @@ public final class GenerateScopedAccessTokenDetails
 
     /**
      * A temporary public key, owned by the service. The service also owns the corresponding private
-     * key. This public key will by put inside the security token by the auth service after
+     * key. This public key will be put inside the security token by the auth service after
      * successful validation of the certificate.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
@@ -125,7 +125,7 @@ public final class GenerateScopedAccessTokenDetails
 
     /**
      * A temporary public key, owned by the service. The service also owns the corresponding private
-     * key. This public key will by put inside the security token by the auth service after
+     * key. This public key will be put inside the security token by the auth service after
      * successful validation of the certificate.
      *
      * @return the value
