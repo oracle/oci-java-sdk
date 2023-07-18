@@ -30,7 +30,7 @@ public final class RunLocalScriptUserDefinedStep extends DrPlanUserDefinedStep {
         /**
          * The OCID of the instance where this script or command should be executed.
          *
-         * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
         private String runOnInstanceId;
@@ -38,7 +38,7 @@ public final class RunLocalScriptUserDefinedStep extends DrPlanUserDefinedStep {
         /**
          * The OCID of the instance where this script or command should be executed.
          *
-         * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
          *
          * @param runOnInstanceId the value to set
          * @return this builder
@@ -171,7 +171,7 @@ public final class RunLocalScriptUserDefinedStep extends DrPlanUserDefinedStep {
     /**
      * The OCID of the instance where this script or command should be executed.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("runOnInstanceId")
     private final String runOnInstanceId;
@@ -179,7 +179,7 @@ public final class RunLocalScriptUserDefinedStep extends DrPlanUserDefinedStep {
     /**
      * The OCID of the instance where this script or command should be executed.
      *
-     * <p>Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.instance.oc1.phx.&lt;unique_id&gt;}
      *
      * @return the value
      */

@@ -36,7 +36,7 @@ public final class TrailFileSummary
     public TrailFileSummary(
             String trailFileId,
             String displayName,
-            java.math.BigDecimal sizeInBytes,
+            Long sizeInBytes,
             java.util.Date timeLastUpdated,
             Integer numberOfSequences,
             String minSequenceNumber,
@@ -89,7 +89,7 @@ public final class TrailFileSummary
         }
         /** The size of the backup stored in object storage (in bytes) */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-        private java.math.BigDecimal sizeInBytes;
+        private Long sizeInBytes;
 
         /**
          * The size of the backup stored in object storage (in bytes)
@@ -97,7 +97,7 @@ public final class TrailFileSummary
          * @param sizeInBytes the value to set
          * @return this builder
          */
-        public Builder sizeInBytes(java.math.BigDecimal sizeInBytes) {
+        public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
@@ -288,14 +288,14 @@ public final class TrailFileSummary
 
     /** The size of the backup stored in object storage (in bytes) */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    private final java.math.BigDecimal sizeInBytes;
+    private final Long sizeInBytes;
 
     /**
      * The size of the backup stored in object storage (in bytes)
      *
      * @return the value
      */
-    public java.math.BigDecimal getSizeInBytes() {
+    public Long getSizeInBytes() {
         return sizeInBytes;
     }
 

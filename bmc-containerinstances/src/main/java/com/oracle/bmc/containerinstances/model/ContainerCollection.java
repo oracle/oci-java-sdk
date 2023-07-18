@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A list of matching Containers. <br>
+ * A list of containers. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class ContainerCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Containers. */
+        /** List of containers. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ContainerSummary> items;
 
         /**
-         * List of Containers.
+         * List of containers.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class ContainerCollection
         return new Builder().copy(this);
     }
 
-    /** List of Containers. */
+    /** List of containers. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ContainerSummary> items;
 
     /**
-     * List of Containers.
+     * List of containers.
      *
      * @return the value
      */

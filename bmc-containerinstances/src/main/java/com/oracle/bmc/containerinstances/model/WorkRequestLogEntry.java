@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A log message from the execution of a work request. <br>
+ * A log message from a work request. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,12 +47,16 @@ public final class WorkRequestLogEntry
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the log message was written. An RFC3339 formatted datetime string */
+        /**
+         * The time the log message was written, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written. An RFC3339 formatted datetime string
+         * The time the log message was written, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timestamp the value to set
          * @return this builder
@@ -108,12 +112,16 @@ public final class WorkRequestLogEntry
         return message;
     }
 
-    /** The time the log message was written. An RFC3339 formatted datetime string */
+    /**
+     * The time the log message was written, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * The time the log message was written, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */

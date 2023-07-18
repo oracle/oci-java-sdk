@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * An interface to a virtual network available to Containers on a Container Instance. <br>
+ * An interface to a virtual network available to containers on a container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,15 +30,15 @@ public final class ContainerVnic extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this
-         * network can communicate with the larger Virtual Client Network.
+         * The identifier of the virtual network interface card (VNIC) over which the containers
+         * accessing this network can communicate with the larger virtual cloud network.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this
-         * network can communicate with the larger Virtual Client Network.
+         * The identifier of the virtual network interface card (VNIC) over which the containers
+         * accessing this network can communicate with the larger virtual cloud network.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -79,15 +79,15 @@ public final class ContainerVnic extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this
-     * network can communicate with the larger Virtual Client Network.
+     * The identifier of the virtual network interface card (VNIC) over which the containers
+     * accessing this network can communicate with the larger virtual cloud network.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The ID of the Virtual Network Interface Card (VNIC) over which Containers accessing this
-     * network can communicate with the larger Virtual Client Network.
+     * The identifier of the virtual network interface card (VNIC) over which the containers
+     * accessing this network can communicate with the larger virtual cloud network.
      *
      * @return the value
      */

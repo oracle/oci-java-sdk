@@ -33,15 +33,17 @@ public final class WorkRequestError
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occured. See [API
+         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+         * error codes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occured. See [API
+         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+         * error codes.
          *
          * @param code the value to set
          * @return this builder
@@ -51,12 +53,12 @@ public final class WorkRequestError
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** A human readable description of the issue encountered. */
+        /** A description of the issue encountered. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A human readable description of the issue encountered.
+         * A description of the issue encountered.
          *
          * @param message the value to set
          * @return this builder
@@ -66,12 +68,16 @@ public final class WorkRequestError
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the error occured. An RFC3339 formatted datetime string. */
+        /**
+         * The time the error occured, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occured, in the format defined by [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timestamp the value to set
          * @return this builder
@@ -118,15 +124,17 @@ public final class WorkRequestError
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. See [API
+     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+     * error codes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. See [API
+     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+     * error codes.
      *
      * @return the value
      */
@@ -134,12 +142,12 @@ public final class WorkRequestError
         return code;
     }
 
-    /** A human readable description of the issue encountered. */
+    /** A description of the issue encountered. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A human readable description of the issue encountered.
+     * A description of the issue encountered.
      *
      * @return the value
      */
@@ -147,12 +155,16 @@ public final class WorkRequestError
         return message;
     }
 
-    /** The time the error occured. An RFC3339 formatted datetime string. */
+    /**
+     * The time the error occured, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occured, in the format defined by [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
      */

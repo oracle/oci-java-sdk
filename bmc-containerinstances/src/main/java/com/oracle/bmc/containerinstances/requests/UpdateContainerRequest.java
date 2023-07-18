@@ -15,10 +15,16 @@ public class UpdateContainerRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerinstances.model.UpdateContainerDetails> {
 
-    /** The unique identifier for the Container. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container.
+     */
     private String containerId;
 
-    /** The unique identifier for the Container. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container.
+     */
     public String getContainerId() {
         return containerId;
     }
@@ -47,10 +53,16 @@ public class UpdateContainerRequest
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,11 +85,15 @@ public class UpdateContainerRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier for the Container. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container.
+         */
         private String containerId = null;
 
         /**
-         * The unique identifier for the Container.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container.
          *
          * @param containerId the value to set
          * @return this builder instance
@@ -126,11 +142,15 @@ public class UpdateContainerRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance

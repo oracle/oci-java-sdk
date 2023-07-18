@@ -107,12 +107,12 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
             this.__explicitlySet__.add("failureAction");
             return this;
         }
-        /** Container health check Http's path */
+        /** Container health check HTTP path. */
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
-         * Container health check Http's path
+         * Container health check HTTP path.
          *
          * @param path the value to set
          * @return this builder
@@ -122,12 +122,12 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** Container health check Http's port */
+        /** Container health check HTTP port. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
-         * Container health check Http's port
+         * Container health check HTTP port.
          *
          * @param port the value to set
          * @return this builder
@@ -137,12 +137,12 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** Container health check Http's headers. */
+        /** Container health check HTTP headers. */
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HealthCheckHttpHeader> headers;
 
         /**
-         * Container health check Http's headers.
+         * Container health check HTTP headers.
          *
          * @param headers the value to set
          * @return this builder
@@ -257,12 +257,12 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
         this.headers = headers;
     }
 
-    /** Container health check Http's path */
+    /** Container health check HTTP path. */
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
-     * Container health check Http's path
+     * Container health check HTTP path.
      *
      * @return the value
      */
@@ -270,12 +270,12 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
         return path;
     }
 
-    /** Container health check Http's port */
+    /** Container health check HTTP port. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
-     * Container health check Http's port
+     * Container health check HTTP port.
      *
      * @return the value
      */
@@ -283,12 +283,12 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
         return port;
     }
 
-    /** Container health check Http's headers. */
+    /** Container health check HTTP headers. */
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<HealthCheckHttpHeader> headers;
 
     /**
-     * Container health check Http's headers.
+     * Container health check HTTP headers.
      *
      * @return the value
      */

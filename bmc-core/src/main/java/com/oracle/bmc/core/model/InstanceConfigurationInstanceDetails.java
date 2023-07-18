@@ -23,6 +23,9 @@ package com.oracle.bmc.core.model;
         defaultImpl = InstanceConfigurationInstanceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ComputeInstanceOptions.class,
+            name = "instance_options"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ComputeInstanceDetails.class,
             name = "compute")
 })

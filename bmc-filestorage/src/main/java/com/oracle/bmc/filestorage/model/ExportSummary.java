@@ -27,6 +27,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         "id",
         "lifecycleState",
         "path",
+        "isIdmapGroupsForSysAuth",
         "timeCreated"
     })
     public ExportSummary(
@@ -35,6 +36,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
             String id,
             LifecycleState lifecycleState,
             String path,
+            Boolean isIdmapGroupsForSysAuth,
             java.util.Date timeCreated) {
         super();
         this.exportSetId = exportSetId;
@@ -42,6 +44,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.path = path;
+        this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
         this.timeCreated = timeCreated;
     }
 
@@ -145,6 +148,37 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
+         * Whether or not the export should use ID mapping for Unix groups rather than the group
+         * list provided within an NFS request's RPC header. When this flag is true the Unix UID
+         * from the RPC header is used to retrieve the list of secondary groups from a the ID
+         * mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is
+         * not configured, incorrectly configured, unavailable, or cannot be used to determine a
+         * list of secondary groups then an empty secondary group list is used for authorization. If
+         * the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is
+         * truncated to the first 256 groups read.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
+        private Boolean isIdmapGroupsForSysAuth;
+
+        /**
+         * Whether or not the export should use ID mapping for Unix groups rather than the group
+         * list provided within an NFS request's RPC header. When this flag is true the Unix UID
+         * from the RPC header is used to retrieve the list of secondary groups from a the ID
+         * mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is
+         * not configured, incorrectly configured, unavailable, or cannot be used to determine a
+         * list of secondary groups then an empty secondary group list is used for authorization. If
+         * the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is
+         * truncated to the first 256 groups read.
+         *
+         * @param isIdmapGroupsForSysAuth the value to set
+         * @return this builder
+         */
+        public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
+            this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
+            this.__explicitlySet__.add("isIdmapGroupsForSysAuth");
+            return this;
+        }
+        /**
          * The date and time the export was created, expressed in [RFC
          * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
          *
@@ -179,6 +213,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.id,
                             this.lifecycleState,
                             this.path,
+                            this.isIdmapGroupsForSysAuth,
                             this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -202,6 +237,9 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("path")) {
                 this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("isIdmapGroupsForSysAuth")) {
+                this.isIdmapGroupsForSysAuth(model.getIsIdmapGroupsForSysAuth());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -355,6 +393,33 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list
+     * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
+     * header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The
+     * primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly
+     * configured, unavailable, or cannot be used to determine a list of secondary groups then an
+     * empty secondary group list is used for authorization. If the number of groups exceeds the
+     * limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
+    private final Boolean isIdmapGroupsForSysAuth;
+
+    /**
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list
+     * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
+     * header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The
+     * primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly
+     * configured, unavailable, or cannot be used to determine a list of secondary groups then an
+     * empty secondary group list is used for authorization. If the number of groups exceeds the
+     * limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     *
+     * @return the value
+     */
+    public Boolean getIsIdmapGroupsForSysAuth() {
+        return isIdmapGroupsForSysAuth;
+    }
+
+    /**
      * The date and time the export was created, expressed in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      *
@@ -395,6 +460,8 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", isIdmapGroupsForSysAuth=")
+                .append(String.valueOf(this.isIdmapGroupsForSysAuth));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
         return sb.toString();
@@ -415,6 +482,8 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(
+                        this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
     }
@@ -430,6 +499,11 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIdmapGroupsForSysAuth == null
+                                ? 43
+                                : this.isIdmapGroupsForSysAuth.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -39,7 +39,7 @@ public final class CreateDrProtectionGroupMemberDatabaseDetails
         /**
          * The OCID of the vault secret where the database password is stored.
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
         private String passwordVaultSecretId;
@@ -47,7 +47,7 @@ public final class CreateDrProtectionGroupMemberDatabaseDetails
         /**
          * The OCID of the vault secret where the database password is stored.
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+         * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
          *
          * @param passwordVaultSecretId the value to set
          * @return this builder
@@ -102,7 +102,7 @@ public final class CreateDrProtectionGroupMemberDatabaseDetails
     /**
      * The OCID of the vault secret where the database password is stored.
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
     private final String passwordVaultSecretId;
@@ -110,7 +110,7 @@ public final class CreateDrProtectionGroupMemberDatabaseDetails
     /**
      * The OCID of the vault secret where the database password is stored.
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+     * <p>Example: {@code ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;}
      *
      * @return the value
      */

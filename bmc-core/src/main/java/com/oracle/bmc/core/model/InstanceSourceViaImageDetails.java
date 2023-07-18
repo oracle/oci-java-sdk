@@ -128,6 +128,16 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceSourceImageFilterDetails")
+        private InstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+
+        public Builder instanceSourceImageFilterDetails(
+                InstanceSourceImageFilterDetails instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            this.__explicitlySet__.add("instanceSourceImageFilterDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -137,7 +147,8 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
                             this.bootVolumeSizeInGBs,
                             this.imageId,
                             this.kmsKeyId,
-                            this.bootVolumeVpusPerGB);
+                            this.bootVolumeVpusPerGB,
+                            this.instanceSourceImageFilterDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -158,6 +169,9 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
             if (model.wasPropertyExplicitlySet("bootVolumeVpusPerGB")) {
                 this.bootVolumeVpusPerGB(model.getBootVolumeVpusPerGB());
             }
+            if (model.wasPropertyExplicitlySet("instanceSourceImageFilterDetails")) {
+                this.instanceSourceImageFilterDetails(model.getInstanceSourceImageFilterDetails());
+            }
             return this;
         }
     }
@@ -173,12 +187,17 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
 
     @Deprecated
     public InstanceSourceViaImageDetails(
-            Long bootVolumeSizeInGBs, String imageId, String kmsKeyId, Long bootVolumeVpusPerGB) {
+            Long bootVolumeSizeInGBs,
+            String imageId,
+            String kmsKeyId,
+            Long bootVolumeVpusPerGB,
+            InstanceSourceImageFilterDetails instanceSourceImageFilterDetails) {
         super();
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
         this.kmsKeyId = kmsKeyId;
         this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
+        this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
     }
 
     /**
@@ -271,6 +290,13 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         return bootVolumeVpusPerGB;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceSourceImageFilterDetails")
+    private final InstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+
+    public InstanceSourceImageFilterDetails getInstanceSourceImageFilterDetails() {
+        return instanceSourceImageFilterDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +316,8 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", bootVolumeVpusPerGB=").append(String.valueOf(this.bootVolumeVpusPerGB));
+        sb.append(", instanceSourceImageFilterDetails=")
+                .append(String.valueOf(this.instanceSourceImageFilterDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -308,6 +336,9 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.bootVolumeVpusPerGB, other.bootVolumeVpusPerGB)
+                && java.util.Objects.equals(
+                        this.instanceSourceImageFilterDetails,
+                        other.instanceSourceImageFilterDetails)
                 && super.equals(other);
     }
 
@@ -327,6 +358,11 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
                         + (this.bootVolumeVpusPerGB == null
                                 ? 43
                                 : this.bootVolumeVpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceSourceImageFilterDetails == null
+                                ? 43
+                                : this.instanceSourceImageFilterDetails.hashCode());
         return result;
     }
 }

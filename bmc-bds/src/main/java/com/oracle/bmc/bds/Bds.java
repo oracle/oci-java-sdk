@@ -152,6 +152,41 @@ public interface Bds extends AutoCloseable {
     AddKafkaResponse addKafka(AddKafkaRequest request);
 
     /**
+     * Increases the size (scales out) of a cluster by adding master nodes. The added master nodes
+     * will have the same shape and will have the same amount of attached block storage as other
+     * master nodes in the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddMasterNodesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMasterNodes API.
+     */
+    AddMasterNodesResponse addMasterNodes(AddMasterNodesRequest request);
+
+    /**
+     * Increases the size (scales out) of a cluster by adding utility nodes. The added utility nodes
+     * will have the same shape and will have the same amount of attached block storage as other
+     * utility nodes in the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddUtilityNodesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddUtilityNodes
+     *     API.
+     */
+    AddUtilityNodesResponse addUtilityNodes(AddUtilityNodesRequest request);
+
+    /**
      * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added
      * worker nodes will have the same shape and will have the same amount of attached block storage
      * as other worker nodes in the cluster.
@@ -382,6 +417,22 @@ public interface Bds extends AutoCloseable {
             GetBdsMetastoreConfigurationRequest request);
 
     /**
+     * Get the details of an os patch
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetOsPatchDetailsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOsPatchDetails
+     *     API.
+     */
+    GetOsPatchDetailsResponse getOsPatchDetails(GetOsPatchDetailsRequest request);
+
+    /**
      * Returns the status of the work request identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -395,6 +446,21 @@ public interface Bds extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Install an os patch on a cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallOsPatchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallOsPatch API.
+     */
+    InstallOsPatchResponse installOsPatch(InstallOsPatchRequest request);
 
     /**
      * Install the specified patch to this cluster.
@@ -475,6 +541,21 @@ public interface Bds extends AutoCloseable {
      */
     ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
             ListBdsMetastoreConfigurationsRequest request);
+
+    /**
+     * List all available os patches for a given cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListOsPatchesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOsPatches API.
+     */
+    ListOsPatchesResponse listOsPatches(ListOsPatchesRequest request);
 
     /**
      * List the patch history of this cluster.

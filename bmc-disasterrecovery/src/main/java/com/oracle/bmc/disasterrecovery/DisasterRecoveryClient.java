@@ -154,6 +154,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         AssociateDrProtectionGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", AssociateDrProtectionGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -189,6 +190,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         CancelDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CancelDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -213,6 +215,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -250,6 +253,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDrProtectionGroupCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -280,6 +284,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-work-request-id", CreateDrPlanResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDrPlanResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -315,6 +320,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         CreateDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -350,6 +356,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         CreateDrProtectionGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDrProtectionGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -374,6 +381,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDrPlanResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -402,6 +410,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         DeleteDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -431,6 +440,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         DeleteDrProtectionGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDrProtectionGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -468,6 +478,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DisassociateDrProtectionGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -495,6 +506,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", GetDrPlanResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDrPlanResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -522,6 +534,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", GetDrPlanExecutionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -550,6 +563,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString("etag", GetDrProtectionGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDrProtectionGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -579,6 +593,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -614,6 +629,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         IgnoreDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", IgnoreDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -649,6 +665,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListDrPlanExecutionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDrPlanExecutionsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -684,6 +701,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListDrPlansResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDrPlansResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -710,6 +728,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("role", request.getRole())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -719,6 +738,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListDrProtectionGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDrProtectionGroupsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -753,6 +773,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -786,6 +807,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -819,6 +841,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -853,6 +876,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         PauseDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PauseDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -888,6 +912,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         ResumeDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", ResumeDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -922,6 +947,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         RetryDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RetryDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -950,6 +976,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-work-request-id", UpdateDrPlanResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDrPlanResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -982,6 +1009,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         UpdateDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDrPlanExecutionResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1015,6 +1043,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         UpdateDrProtectionGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDrProtectionGroupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 
@@ -1051,6 +1080,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         UpdateDrProtectionGroupRoleResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDrProtectionGroupRoleResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
                 .callSync();
     }
 

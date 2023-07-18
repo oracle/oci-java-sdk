@@ -71,7 +71,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "timeCreated",
         "agentConfig",
         "timeMaintenanceRebootDue",
-        "platformConfig"
+        "platformConfig",
+        "instanceConfigurationId"
     })
     public Instance(
             String availabilityDomain,
@@ -102,7 +103,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeCreated,
             InstanceAgentConfig agentConfig,
             java.util.Date timeMaintenanceRebootDue,
-            PlatformConfig platformConfig) {
+            PlatformConfig platformConfig,
+            String instanceConfigurationId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -133,6 +135,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.agentConfig = agentConfig;
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.platformConfig = platformConfig;
+        this.instanceConfigurationId = instanceConfigurationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -698,6 +701,27 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("platformConfig");
             return this;
         }
+        /**
+         * The OCID of the Instance Configuration used to source launch details for this instance.
+         * Any other fields supplied in the instance launch request override the details stored in
+         * the Instance Configuration for this instance launch.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+        private String instanceConfigurationId;
+
+        /**
+         * The OCID of the Instance Configuration used to source launch details for this instance.
+         * Any other fields supplied in the instance launch request override the details stored in
+         * the Instance Configuration for this instance launch.
+         *
+         * @param instanceConfigurationId the value to set
+         * @return this builder
+         */
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
+            this.__explicitlySet__.add("instanceConfigurationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -733,7 +757,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.timeCreated,
                             this.agentConfig,
                             this.timeMaintenanceRebootDue,
-                            this.platformConfig);
+                            this.platformConfig,
+                            this.instanceConfigurationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -828,6 +853,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("platformConfig")) {
                 this.platformConfig(model.getPlatformConfig());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
             }
             return this;
         }
@@ -1448,6 +1476,25 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return platformConfig;
     }
 
+    /**
+     * The OCID of the Instance Configuration used to source launch details for this instance. Any
+     * other fields supplied in the instance launch request override the details stored in the
+     * Instance Configuration for this instance launch.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+    private final String instanceConfigurationId;
+
+    /**
+     * The OCID of the Instance Configuration used to source launch details for this instance. Any
+     * other fields supplied in the instance launch request override the details stored in the
+     * Instance Configuration for this instance launch.
+     *
+     * @return the value
+     */
+    public String getInstanceConfigurationId() {
+        return instanceConfigurationId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1494,6 +1541,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", timeMaintenanceRebootDue=")
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append(", instanceConfigurationId=")
+                .append(String.valueOf(this.instanceConfigurationId));
         sb.append(")");
         return sb.toString();
     }
@@ -1539,6 +1588,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(
+                        this.instanceConfigurationId, other.instanceConfigurationId)
                 && super.equals(other);
     }
 
@@ -1613,6 +1664,11 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceConfigurationId == null
+                                ? 43
+                                : this.instanceConfigurationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

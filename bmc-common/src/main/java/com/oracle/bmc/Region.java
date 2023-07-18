@@ -116,6 +116,7 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region MX_QUERETARO_1 = register("mx-queretaro-1", Realm.OC1, "qro");
     public static final Region EU_MADRID_1 = register("eu-madrid-1", Realm.OC1, "mad");
     public static final Region US_CHICAGO_1 = register("us-chicago-1", Realm.OC1, "ord");
+    public static final Region MX_MONTERREY_1 = register("mx-monterrey-1", Realm.OC1, "mty");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");

@@ -28,7 +28,7 @@ public final class SwitchoverPrecheckExecutionOptionDetails extends DrPlanExecut
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A flag indicating whether warnigs should be ignored during the switchover.
+         * A flag indicating whether warnings should be ignored during the switchover precheck.
          *
          * <p>Example: {@code true}
          */
@@ -36,7 +36,7 @@ public final class SwitchoverPrecheckExecutionOptionDetails extends DrPlanExecut
         private Boolean areWarningsIgnored;
 
         /**
-         * A flag indicating whether warnigs should be ignored during the switchover.
+         * A flag indicating whether warnings should be ignored during the switchover precheck.
          *
          * <p>Example: {@code true}
          *
@@ -86,7 +86,7 @@ public final class SwitchoverPrecheckExecutionOptionDetails extends DrPlanExecut
     }
 
     /**
-     * A flag indicating whether warnigs should be ignored during the switchover.
+     * A flag indicating whether warnings should be ignored during the switchover precheck.
      *
      * <p>Example: {@code true}
      */
@@ -94,7 +94,7 @@ public final class SwitchoverPrecheckExecutionOptionDetails extends DrPlanExecut
     private final Boolean areWarningsIgnored;
 
     /**
-     * A flag indicating whether warnigs should be ignored during the switchover.
+     * A flag indicating whether warnings should be ignored during the switchover precheck.
      *
      * <p>Example: {@code true}
      *

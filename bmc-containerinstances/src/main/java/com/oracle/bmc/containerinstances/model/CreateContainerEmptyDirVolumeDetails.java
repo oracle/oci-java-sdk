@@ -5,7 +5,7 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The empty directory for container instance <br>
+ * The empty directory for the container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,16 +35,12 @@ public final class CreateContainerEmptyDirVolumeDetails extends CreateContainerV
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Volume type that we are using for empty dir where it could be either File Storage or
-         * Memory
-         */
+        /** The volume type of the empty directory, can be either File Storage or Memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("backingStore")
         private ContainerEmptyDirVolume.BackingStore backingStore;
 
         /**
-         * Volume type that we are using for empty dir where it could be either File Storage or
-         * Memory
+         * The volume type of the empty directory, can be either File Storage or Memory.
          *
          * @param backingStore the value to set
          * @return this builder
@@ -95,14 +91,12 @@ public final class CreateContainerEmptyDirVolumeDetails extends CreateContainerV
         this.backingStore = backingStore;
     }
 
-    /**
-     * Volume type that we are using for empty dir where it could be either File Storage or Memory
-     */
+    /** The volume type of the empty directory, can be either File Storage or Memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("backingStore")
     private final ContainerEmptyDirVolume.BackingStore backingStore;
 
     /**
-     * Volume type that we are using for empty dir where it could be either File Storage or Memory
+     * The volume type of the empty directory, can be either File Storage or Memory.
      *
      * @return the value
      */

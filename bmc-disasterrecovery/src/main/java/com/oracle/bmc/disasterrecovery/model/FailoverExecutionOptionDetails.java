@@ -28,7 +28,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A flag indicating whether a precheck should be executed before the plan.
+         * A flag indicating whether prechecks should be executed before the plan execution.
          *
          * <p>Example: {@code true}
          */
@@ -36,7 +36,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
         private Boolean arePrechecksEnabled;
 
         /**
-         * A flag indicating whether a precheck should be executed before the plan.
+         * A flag indicating whether prechecks should be executed before the plan execution.
          *
          * <p>Example: {@code true}
          *
@@ -49,7 +49,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
             return this;
         }
         /**
-         * A flag indicating whether warnigs should be ignored during the failover.
+         * A flag indicating whether warnings should be ignored during the failover.
          *
          * <p>Example: {@code false}
          */
@@ -57,7 +57,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
         private Boolean areWarningsIgnored;
 
         /**
-         * A flag indicating whether warnigs should be ignored during the failover.
+         * A flag indicating whether warnings should be ignored during the failover.
          *
          * <p>Example: {@code false}
          *
@@ -112,7 +112,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
     }
 
     /**
-     * A flag indicating whether a precheck should be executed before the plan.
+     * A flag indicating whether prechecks should be executed before the plan execution.
      *
      * <p>Example: {@code true}
      */
@@ -120,7 +120,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
     private final Boolean arePrechecksEnabled;
 
     /**
-     * A flag indicating whether a precheck should be executed before the plan.
+     * A flag indicating whether prechecks should be executed before the plan execution.
      *
      * <p>Example: {@code true}
      *
@@ -131,7 +131,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
     }
 
     /**
-     * A flag indicating whether warnigs should be ignored during the failover.
+     * A flag indicating whether warnings should be ignored during the failover.
      *
      * <p>Example: {@code false}
      */
@@ -139,7 +139,7 @@ public final class FailoverExecutionOptionDetails extends DrPlanExecutionOptionD
     private final Boolean areWarningsIgnored;
 
     /**
-     * A flag indicating whether warnigs should be ignored during the failover.
+     * A flag indicating whether warnings should be ignored during the failover.
      *
      * <p>Example: {@code false}
      *

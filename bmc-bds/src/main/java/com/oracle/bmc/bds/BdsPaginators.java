@@ -526,6 +526,120 @@ public class BdsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOsPatches
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOsPatchesResponse> listOsPatchesResponseIterator(
+            final ListOsPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOsPatchesRequest.Builder, ListOsPatchesRequest, ListOsPatchesResponse>(
+                new java.util.function.Supplier<ListOsPatchesRequest.Builder>() {
+                    @Override
+                    public ListOsPatchesRequest.Builder get() {
+                        return ListOsPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListOsPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOsPatchesRequest.Builder>,
+                        ListOsPatchesRequest>() {
+                    @Override
+                    public ListOsPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOsPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesRequest, ListOsPatchesResponse>() {
+                    @Override
+                    public ListOsPatchesResponse apply(ListOsPatchesRequest request) {
+                        return client.listOsPatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.bds.model.OsPatchSummary} objects contained in responses from the
+     * listOsPatches operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.bds.model.OsPatchSummary} objects contained in responses received from the
+     *     service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.OsPatchSummary> listOsPatchesRecordIterator(
+            final ListOsPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOsPatchesRequest.Builder,
+                ListOsPatchesRequest,
+                ListOsPatchesResponse,
+                com.oracle.bmc.bds.model.OsPatchSummary>(
+                new java.util.function.Supplier<ListOsPatchesRequest.Builder>() {
+                    @Override
+                    public ListOsPatchesRequest.Builder get() {
+                        return ListOsPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListOsPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOsPatchesRequest.Builder>,
+                        ListOsPatchesRequest>() {
+                    @Override
+                    public ListOsPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOsPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesRequest, ListOsPatchesResponse>() {
+                    @Override
+                    public ListOsPatchesResponse apply(ListOsPatchesRequest request) {
+                        return client.listOsPatches(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOsPatchesResponse,
+                        java.util.List<com.oracle.bmc.bds.model.OsPatchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.OsPatchSummary> apply(
+                            ListOsPatchesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listPatchHistories operation. This iterable will fetch more data from the server as needed.
      *

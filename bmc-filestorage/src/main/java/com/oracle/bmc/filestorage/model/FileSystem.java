@@ -366,7 +366,11 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * Specifies whether the file system can be used as a target file system for replication.
-         * For more information, see [Using
+         * The system sets this value to {@code true} if the file system is unexported, hasn't yet
+         * been specified as a target file system in any replication resource, and has no user
+         * snapshots. After the file system has been specified as a target in a replication, or if
+         * the file system contains user snapshots, the system sets this value to {@code false}. For
+         * more information, see [Using
          * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isTargetable")
@@ -374,7 +378,11 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
 
         /**
          * Specifies whether the file system can be used as a target file system for replication.
-         * For more information, see [Using
+         * The system sets this value to {@code true} if the file system is unexported, hasn't yet
+         * been specified as a target file system in any replication resource, and has no user
+         * snapshots. After the file system has been specified as a target in a replication, or if
+         * the file system contains user snapshots, the system sets this value to {@code false}. For
+         * more information, see [Using
          * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          *
          * @param isTargetable the value to set
@@ -821,16 +829,24 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * Specifies whether the file system can be used as a target file system for replication. For
-     * more information, see [Using
+     * Specifies whether the file system can be used as a target file system for replication. The
+     * system sets this value to {@code true} if the file system is unexported, hasn't yet been
+     * specified as a target file system in any replication resource, and has no user snapshots.
+     * After the file system has been specified as a target in a replication, or if the file system
+     * contains user snapshots, the system sets this value to {@code false}. For more information,
+     * see [Using
      * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isTargetable")
     private final Boolean isTargetable;
 
     /**
-     * Specifies whether the file system can be used as a target file system for replication. For
-     * more information, see [Using
+     * Specifies whether the file system can be used as a target file system for replication. The
+     * system sets this value to {@code true} if the file system is unexported, hasn't yet been
+     * specified as a target file system in any replication resource, and has no user snapshots.
+     * After the file system has been specified as a target in a replication, or if the file system
+     * contains user snapshots, the system sets this value to {@code false}. For more information,
+     * see [Using
      * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      *
      * @return the value

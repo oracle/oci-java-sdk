@@ -183,6 +183,13 @@ public class ListDrProtectionGroupsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** The DR Protection Group Role. */
+    private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole role;
+
+    /** The DR Protection Group Role. */
+    public com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole getRole() {
+        return role;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -371,6 +378,20 @@ public class ListDrProtectionGroupsRequest
             return this;
         }
 
+        /** The DR Protection Group Role. */
+        private com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole role = null;
+
+        /**
+         * The DR Protection Group Role.
+         *
+         * @param role the value to set
+         * @return this builder instance
+         */
+        public Builder role(com.oracle.bmc.disasterrecovery.model.DrProtectionGroupRole role) {
+            this.role = role;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -410,6 +431,7 @@ public class ListDrProtectionGroupsRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            role(o.getRole());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -453,9 +475,10 @@ public class ListDrProtectionGroupsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.role = role;
             return request;
             // new ListDrProtectionGroupsRequest(compartmentId, lifecycleState, drProtectionGroupId,
-            // displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // displayName, limit, page, sortOrder, sortBy, opcRequestId, role);
         }
     }
 
@@ -474,7 +497,8 @@ public class ListDrProtectionGroupsRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .role(role);
     }
 
     /**
@@ -500,6 +524,7 @@ public class ListDrProtectionGroupsRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",role=").append(String.valueOf(this.role));
         sb.append(")");
         return sb.toString();
     }
@@ -523,7 +548,8 @@ public class ListDrProtectionGroupsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.role, other.role);
     }
 
     @Override
@@ -547,6 +573,7 @@ public class ListDrProtectionGroupsRequest
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
         return result;
     }
 }

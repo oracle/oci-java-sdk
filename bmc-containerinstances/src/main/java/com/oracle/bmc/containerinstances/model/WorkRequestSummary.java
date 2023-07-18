@@ -58,12 +58,12 @@ public final class WorkRequestSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the work request */
+        /** Type of work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
-         * Type of the work request
+         * Type of work request.
          *
          * @param operationType the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The id of the work request. */
+        /** The ID of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the work request.
+         * The ID of the work request.
          *
          * @param id the value to set
          * @return this builder
@@ -104,21 +104,15 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * The OCID of the compartment that contains the work request. Work requests should be
+         * scoped to the same compartment as the resource the work request affects.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * The OCID of the compartment that contains the work request. Work requests should be
+         * scoped to the same compartment as the resource the work request affects.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -279,12 +273,12 @@ public final class WorkRequestSummary
         return new Builder().copy(this);
     }
 
-    /** Type of the work request */
+    /** Type of work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
-     * Type of the work request
+     * Type of work request.
      *
      * @return the value
      */
@@ -305,12 +299,12 @@ public final class WorkRequestSummary
         return status;
     }
 
-    /** The id of the work request. */
+    /** The ID of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      *
      * @return the value
      */
@@ -319,19 +313,15 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
+     * the same compartment as the resource the work request affects.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
+     * the same compartment as the resource the work request affects.
      *
      * @return the value
      */

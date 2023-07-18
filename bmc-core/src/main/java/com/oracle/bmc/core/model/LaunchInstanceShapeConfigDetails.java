@@ -30,14 +30,22 @@ package com.oracle.bmc.core.model;
 public final class LaunchInstanceShapeConfigDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "baselineOcpuUtilization", "nvmes"})
+    @java.beans.ConstructorProperties({
+        "ocpus",
+        "vcpus",
+        "memoryInGBs",
+        "baselineOcpuUtilization",
+        "nvmes"
+    })
     public LaunchInstanceShapeConfigDetails(
             Float ocpus,
+            Integer vcpus,
             Float memoryInGBs,
             BaselineOcpuUtilization baselineOcpuUtilization,
             Integer nvmes) {
         super();
         this.ocpus = ocpus;
+        this.vcpus = vcpus;
         this.memoryInGBs = memoryInGBs;
         this.baselineOcpuUtilization = baselineOcpuUtilization;
         this.nvmes = nvmes;
@@ -58,6 +66,27 @@ public final class LaunchInstanceShapeConfigDetails
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
+            return this;
+        }
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+         * in which case the actual number of OCPUs will be calculated based on this value and the
+         * actual hardware. This must be a multiple of 2.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
+        private Integer vcpus;
+
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+         * in which case the actual number of OCPUs will be calculated based on this value and the
+         * actual hardware. This must be a multiple of 2.
+         *
+         * @param vcpus the value to set
+         * @return this builder
+         */
+        public Builder vcpus(Integer vcpus) {
+            this.vcpus = vcpus;
+            this.__explicitlySet__.add("vcpus");
             return this;
         }
         /** The total amount of memory available to the instance, in gigabytes. */
@@ -130,7 +159,11 @@ public final class LaunchInstanceShapeConfigDetails
         public LaunchInstanceShapeConfigDetails build() {
             LaunchInstanceShapeConfigDetails model =
                     new LaunchInstanceShapeConfigDetails(
-                            this.ocpus, this.memoryInGBs, this.baselineOcpuUtilization, this.nvmes);
+                            this.ocpus,
+                            this.vcpus,
+                            this.memoryInGBs,
+                            this.baselineOcpuUtilization,
+                            this.nvmes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -141,6 +174,9 @@ public final class LaunchInstanceShapeConfigDetails
         public Builder copy(LaunchInstanceShapeConfigDetails model) {
             if (model.wasPropertyExplicitlySet("ocpus")) {
                 this.ocpus(model.getOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("vcpus")) {
+                this.vcpus(model.getVcpus());
             }
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
@@ -175,6 +211,25 @@ public final class LaunchInstanceShapeConfigDetails
      */
     public Float getOcpus() {
         return ocpus;
+    }
+
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in
+     * which case the actual number of OCPUs will be calculated based on this value and the actual
+     * hardware. This must be a multiple of 2.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
+    private final Integer vcpus;
+
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in
+     * which case the actual number of OCPUs will be calculated based on this value and the actual
+     * hardware. This must be a multiple of 2.
+     *
+     * @return the value
+     */
+    public Integer getVcpus() {
+        return vcpus;
     }
 
     /** The total amount of memory available to the instance, in gigabytes. */
@@ -285,6 +340,7 @@ public final class LaunchInstanceShapeConfigDetails
         sb.append("LaunchInstanceShapeConfigDetails(");
         sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", vcpus=").append(String.valueOf(this.vcpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", baselineOcpuUtilization=")
                 .append(String.valueOf(this.baselineOcpuUtilization));
@@ -304,6 +360,7 @@ public final class LaunchInstanceShapeConfigDetails
 
         LaunchInstanceShapeConfigDetails other = (LaunchInstanceShapeConfigDetails) o;
         return java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.vcpus, other.vcpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && java.util.Objects.equals(
                         this.baselineOcpuUtilization, other.baselineOcpuUtilization)
@@ -316,6 +373,7 @@ public final class LaunchInstanceShapeConfigDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.vcpus == null ? 43 : this.vcpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
         result =
                 (result * PRIME)

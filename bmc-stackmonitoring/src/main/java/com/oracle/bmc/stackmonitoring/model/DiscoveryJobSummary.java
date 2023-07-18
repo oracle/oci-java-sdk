@@ -409,6 +409,7 @@ public final class DiscoveryJobSummary
         OciOraclePdb("OCI_ORACLE_PDB"),
         Host("HOST"),
         OraclePsft("ORACLE_PSFT"),
+        OracleMft("ORACLE_MFT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

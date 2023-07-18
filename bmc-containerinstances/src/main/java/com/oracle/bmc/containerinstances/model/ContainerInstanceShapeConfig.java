@@ -5,8 +5,8 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The shape configuration for a Container Instance. The shape configuration determines the
- * resources allocated to the Instance and it's containers. <br>
+ * The shape configuration for a container instance. The shape configuration determines the
+ * resources thats are available to the container instance and its containers. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -44,12 +44,12 @@ public final class ContainerInstanceShapeConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The total number of OCPUs available to the instance. */
+        /** The total number of OCPUs available to the container instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
         /**
-         * The total number of OCPUs available to the instance.
+         * The total number of OCPUs available to the container instance.
          *
          * @param ocpus the value to set
          * @return this builder
@@ -59,12 +59,12 @@ public final class ContainerInstanceShapeConfig
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /** The total amount of memory available to the instance, in gigabytes. */
+        /** The total amount of memory available to the container instance, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
         /**
-         * The total amount of memory available to the instance, in gigabytes.
+         * The total amount of memory available to the container instance, in gigabytes.
          *
          * @param memoryInGBs the value to set
          * @return this builder
@@ -74,12 +74,12 @@ public final class ContainerInstanceShapeConfig
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-        /** A short description of the instance's processor (CPU). */
+        /** A short description of the container instance's processor (CPU). */
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
         /**
-         * A short description of the instance's processor (CPU).
+         * A short description of the container instance's processor (CPU).
          *
          * @param processorDescription the value to set
          * @return this builder
@@ -89,12 +89,12 @@ public final class ContainerInstanceShapeConfig
             this.__explicitlySet__.add("processorDescription");
             return this;
         }
-        /** The networking bandwidth available to the instance, in gigabits per second. */
+        /** The networking bandwidth available to the container instance, in gigabits per second. */
         @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
         private Float networkingBandwidthInGbps;
 
         /**
-         * The networking bandwidth available to the instance, in gigabits per second.
+         * The networking bandwidth available to the container instance, in gigabits per second.
          *
          * @param networkingBandwidthInGbps the value to set
          * @return this builder
@@ -148,12 +148,12 @@ public final class ContainerInstanceShapeConfig
         return new Builder().copy(this);
     }
 
-    /** The total number of OCPUs available to the instance. */
+    /** The total number of OCPUs available to the container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
     /**
-     * The total number of OCPUs available to the instance.
+     * The total number of OCPUs available to the container instance.
      *
      * @return the value
      */
@@ -161,12 +161,12 @@ public final class ContainerInstanceShapeConfig
         return ocpus;
     }
 
-    /** The total amount of memory available to the instance, in gigabytes. */
+    /** The total amount of memory available to the container instance, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
     /**
-     * The total amount of memory available to the instance, in gigabytes.
+     * The total amount of memory available to the container instance, in gigabytes.
      *
      * @return the value
      */
@@ -174,12 +174,12 @@ public final class ContainerInstanceShapeConfig
         return memoryInGBs;
     }
 
-    /** A short description of the instance's processor (CPU). */
+    /** A short description of the container instance's processor (CPU). */
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
     /**
-     * A short description of the instance's processor (CPU).
+     * A short description of the container instance's processor (CPU).
      *
      * @return the value
      */
@@ -187,12 +187,12 @@ public final class ContainerInstanceShapeConfig
         return processorDescription;
     }
 
-    /** The networking bandwidth available to the instance, in gigabits per second. */
+    /** The networking bandwidth available to the container instance, in gigabits per second. */
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
     private final Float networkingBandwidthInGbps;
 
     /**
-     * The networking bandwidth available to the instance, in gigabits per second.
+     * The networking bandwidth available to the container instance, in gigabits per second.
      *
      * @return the value
      */

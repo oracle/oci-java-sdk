@@ -5,9 +5,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Summary information for a [compute
- * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm), which is
- * a remote direct memory access (RDMA) network group. <br>
+ * Summary information for a compute cluster. A [compute
+ * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+ * remote direct memory access (RDMA) network group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -58,13 +58,17 @@ public final class ComputeClusterSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain the compute cluster is running in. Example: {@code Uocm:PHX-AD-1}
+         * The availability domain the compute cluster is running in.
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain the compute cluster is running in. Example: {@code Uocm:PHX-AD-1}
+         * The availability domain the compute cluster is running in.
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -76,14 +80,14 @@ public final class ComputeClusterSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains this compute cluster.
+         * of the compartment that contains the compute cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains this compute cluster.
+         * of the compartment that contains the compute cluster.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -114,14 +118,14 @@ public final class ComputeClusterSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this compute cluster.
+         * of the compute cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this compute cluster.
+         * of the compute cluster.
          *
          * @param id the value to set
          * @return this builder
@@ -148,14 +152,18 @@ public final class ComputeClusterSummary
         }
         /**
          * The date and time the compute cluster was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the compute cluster was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -276,12 +284,18 @@ public final class ComputeClusterSummary
         return new Builder().copy(this);
     }
 
-    /** The availability domain the compute cluster is running in. Example: {@code Uocm:PHX-AD-1} */
+    /**
+     * The availability domain the compute cluster is running in.
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain the compute cluster is running in. Example: {@code Uocm:PHX-AD-1}
+     * The availability domain the compute cluster is running in.
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
      */
@@ -291,14 +305,14 @@ public final class ComputeClusterSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains this compute cluster.
+     * the compartment that contains the compute cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains this compute cluster.
+     * the compartment that contains the compute cluster.
      *
      * @return the value
      */
@@ -325,14 +339,14 @@ public final class ComputeClusterSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this compute cluster.
+     * the compute cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this compute cluster.
+     * the compute cluster.
      *
      * @return the value
      */
@@ -355,14 +369,18 @@ public final class ComputeClusterSummary
 
     /**
      * The date and time the compute cluster was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the compute cluster was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
      */

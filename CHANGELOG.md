@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.20.0 - 2023-07-18
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the mx-monterrey-1 region
+- Support for Kerberos and LDAP with NFSv3 in the File Storage service
+- Support for capacity reservation checks for movable compute instances in the Disaster Recovery service
+- Support for Oracle MFT monitoring in the Stack Monitoring service
+- Support for OS patching in the Big Data service
+- Support for master and utility nodes in the Big Data service
+- Support for connectivity testing in the GoldenGate service
+ 
+### Breaking Changes
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.DeploymentBackup` in the GoldenGate service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.DeploymentBackupSummary` in the GoldenGate service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.TrailFileSummary` in the GoldenGate service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.TrailSequenceSummary` in the GoldenGate service
+- Method `public java.util.List getAdditionalCapabilities()` has been removed from the model `com.oracle.bmc.containerinstances.model.Container` in the Container Instances service
+- Field `UnknownEnumValue` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerCapability` in the Container Instances service
+- Method `public java.util.List getAdditionalCapabilities()` has been removed from the model `com.oracle.bmc.containerinstances.model.CreateContainerDetails` in the Container Instances service
+
 ## 3.19.0 - 2023-07-11
 ### Added
 - Support for specifying default snapshot enablement, verified response codes, client certificate details, and request authentication schemes when creating or updating synthetic monitors in the Application Performance Monitoring service

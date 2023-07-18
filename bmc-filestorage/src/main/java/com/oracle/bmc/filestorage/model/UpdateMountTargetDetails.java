@@ -23,15 +23,29 @@ package com.oracle.bmc.filestorage.model;
 public final class UpdateMountTargetDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "nsgIds", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "idmapType",
+        "ldapIdmap",
+        "nsgIds",
+        "kerberos",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateMountTargetDetails(
             String displayName,
+            MountTarget.IdmapType idmapType,
+            UpdateLdapIdmapDetails ldapIdmap,
             java.util.List<String> nsgIds,
+            UpdateKerberosDetails kerberos,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.idmapType = idmapType;
+        this.ldapIdmap = ldapIdmap;
         this.nsgIds = nsgIds;
+        this.kerberos = kerberos;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -61,6 +75,30 @@ public final class UpdateMountTargetDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /** The method used to map a Unix UID to secondary groups, if any. */
+        @com.fasterxml.jackson.annotation.JsonProperty("idmapType")
+        private MountTarget.IdmapType idmapType;
+
+        /**
+         * The method used to map a Unix UID to secondary groups, if any.
+         *
+         * @param idmapType the value to set
+         * @return this builder
+         */
+        public Builder idmapType(MountTarget.IdmapType idmapType) {
+            this.idmapType = idmapType;
+            this.__explicitlySet__.add("idmapType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ldapIdmap")
+        private UpdateLdapIdmapDetails ldapIdmap;
+
+        public Builder ldapIdmap(UpdateLdapIdmapDetails ldapIdmap) {
+            this.ldapIdmap = ldapIdmap;
+            this.__explicitlySet__.add("ldapIdmap");
+            return this;
+        }
         /**
          * A list of Network Security Group
          * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
@@ -86,6 +124,15 @@ public final class UpdateMountTargetDetails
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kerberos")
+        private UpdateKerberosDetails kerberos;
+
+        public Builder kerberos(UpdateKerberosDetails kerberos) {
+            this.kerberos = kerberos;
+            this.__explicitlySet__.add("kerberos");
             return this;
         }
         /**
@@ -142,7 +189,13 @@ public final class UpdateMountTargetDetails
         public UpdateMountTargetDetails build() {
             UpdateMountTargetDetails model =
                     new UpdateMountTargetDetails(
-                            this.displayName, this.nsgIds, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.idmapType,
+                            this.ldapIdmap,
+                            this.nsgIds,
+                            this.kerberos,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -154,8 +207,17 @@ public final class UpdateMountTargetDetails
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
+            if (model.wasPropertyExplicitlySet("idmapType")) {
+                this.idmapType(model.getIdmapType());
+            }
+            if (model.wasPropertyExplicitlySet("ldapIdmap")) {
+                this.ldapIdmap(model.getLdapIdmap());
+            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("kerberos")) {
+                this.kerberos(model.getKerberos());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -197,6 +259,26 @@ public final class UpdateMountTargetDetails
         return displayName;
     }
 
+    /** The method used to map a Unix UID to secondary groups, if any. */
+    @com.fasterxml.jackson.annotation.JsonProperty("idmapType")
+    private final MountTarget.IdmapType idmapType;
+
+    /**
+     * The method used to map a Unix UID to secondary groups, if any.
+     *
+     * @return the value
+     */
+    public MountTarget.IdmapType getIdmapType() {
+        return idmapType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ldapIdmap")
+    private final UpdateLdapIdmapDetails ldapIdmap;
+
+    public UpdateLdapIdmapDetails getLdapIdmap() {
+        return ldapIdmap;
+    }
+
     /**
      * A list of Network Security Group
      * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
@@ -218,6 +300,13 @@ public final class UpdateMountTargetDetails
      */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("kerberos")
+    private final UpdateKerberosDetails kerberos;
+
+    public UpdateKerberosDetails getKerberos() {
+        return kerberos;
     }
 
     /**
@@ -278,7 +367,10 @@ public final class UpdateMountTargetDetails
         sb.append("UpdateMountTargetDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", idmapType=").append(String.valueOf(this.idmapType));
+        sb.append(", ldapIdmap=").append(String.valueOf(this.ldapIdmap));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", kerberos=").append(String.valueOf(this.kerberos));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -296,7 +388,10 @@ public final class UpdateMountTargetDetails
 
         UpdateMountTargetDetails other = (UpdateMountTargetDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.idmapType, other.idmapType)
+                && java.util.Objects.equals(this.ldapIdmap, other.ldapIdmap)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.kerberos, other.kerberos)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -307,7 +402,10 @@ public final class UpdateMountTargetDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.idmapType == null ? 43 : this.idmapType.hashCode());
+        result = (result * PRIME) + (this.ldapIdmap == null ? 43 : this.ldapIdmap.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

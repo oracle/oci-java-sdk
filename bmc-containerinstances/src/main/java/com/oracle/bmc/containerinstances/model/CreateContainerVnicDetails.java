@@ -5,14 +5,15 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Create a Virtual Network Interface Card (VNIC) which gives Containers on this Container Instance
- * access to a Virtual Client Network (VCN).
+ * Information to create a virtual network interface card (VNIC) which gives the containers on this
+ * container instance access to a virtual client network (VCN).
  *
- * <p>This VNIC will be created in the same compartment as the specified subnet on behalf of the
- * customer.
+ * <p>You use this object when creating the primary VNIC during container instance launch or when
+ * creating a secondary VNIC. This VNIC is created in the same compartment as the specified subnet
+ * on behalf of the customer.
  *
- * <p>The VNIC created by this call will contain both the tags specified in this object as well as
- * any tags specified in the parent ContainerInstance object. <br>
+ * <p>The VNIC created by this call contains both the tags specified in this object as well as any
+ * tags specified in the parent container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -84,12 +85,12 @@ public final class CreateContainerVnicDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The hostname for the VNIC's primary private IP. */
+        /** The hostname for the VNIC's primary private IP. Used for DNS. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
-         * The hostname for the VNIC's primary private IP.
+         * The hostname for the VNIC's primary private IP. Used for DNS.
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -199,14 +200,14 @@ public final class CreateContainerVnicDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -298,12 +299,12 @@ public final class CreateContainerVnicDetails
         return displayName;
     }
 
-    /** The hostname for the VNIC's primary private IP. */
+    /** The hostname for the VNIC's primary private IP. Used for DNS. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
-     * The hostname for the VNIC's primary private IP.
+     * The hostname for the VNIC's primary private IP. Used for DNS.
      *
      * @return the value
      */
@@ -399,14 +400,14 @@ public final class CreateContainerVnicDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      */

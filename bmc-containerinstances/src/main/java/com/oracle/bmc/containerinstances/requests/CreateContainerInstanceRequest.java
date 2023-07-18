@@ -16,11 +16,11 @@ public class CreateContainerInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails> {
 
-    /** Details for the new ContainerInstance. */
+    /** Details for the new container instance. */
     private com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails
             createContainerInstanceDetails;
 
-    /** Details for the new ContainerInstance. */
+    /** Details for the new container instance. */
     public com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails
             getCreateContainerInstanceDetails() {
         return createContainerInstanceDetails;
@@ -44,10 +44,16 @@ public class CreateContainerInstanceRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -70,12 +76,12 @@ public class CreateContainerInstanceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new ContainerInstance. */
+        /** Details for the new container instance. */
         private com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails
                 createContainerInstanceDetails = null;
 
         /**
-         * Details for the new ContainerInstance.
+         * Details for the new container instance.
          *
          * @param createContainerInstanceDetails the value to set
          * @return this builder instance
@@ -111,11 +117,15 @@ public class CreateContainerInstanceRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance

@@ -33,6 +33,12 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     VolumeGroupRemove("VOLUME_GROUP_REMOVE"),
     VolumeGroupTerminate("VOLUME_GROUP_TERMINATE"),
     UserDefined("USER_DEFINED"),
+    ComputeCapacityReservationSwitchoverPrecheck(
+            "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK"),
+    ComputeCapacityReservationFailoverPrecheck("COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK"),
+    ComputeCapacityAvailabilitySwitchoverPrecheck(
+            "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK"),
+    ComputeCapacityAvailabilityFailoverPrecheck("COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

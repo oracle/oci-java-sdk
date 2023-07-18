@@ -70,7 +70,7 @@ public final class CreateDrPlanExecutionDetails
         /**
          * The OCID of the DR Plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("planId")
         private String planId;
@@ -78,7 +78,7 @@ public final class CreateDrPlanExecutionDetails
         /**
          * The OCID of the DR Plan.
          *
-         * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
          *
          * @param planId the value to set
          * @return this builder
@@ -206,7 +206,7 @@ public final class CreateDrPlanExecutionDetails
     /**
      * The OCID of the DR Plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("planId")
     private final String planId;
@@ -214,7 +214,7 @@ public final class CreateDrPlanExecutionDetails
     /**
      * The OCID of the DR Plan.
      *
-     * <p>Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.drplan.oc1.iad.&lt;unique_id&gt;}
      *
      * @return the value
      */

@@ -5,14 +5,19 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data for creating a compute cluster, which is an empty remote direct memory access (RDMA)
- * network group. After the compute cluster is created, you can use the compute cluster's OCID with
- * the {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
- * in the compute cluster. Compute clusters allow you to manage instances in the cluster
- * individually. For more information, see [Compute
- * Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+ * The data for creating a [compute
+ * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
+ * compute cluster is an empty remote direct memory access (RDMA) network group
  *
- * <p>For details about creating a cluster network that uses intance pools to manage groups of
+ * <p>After the compute cluster is created, you can use the compute cluster's OCID with the {@link
+ * #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the
+ * compute cluster. The instances must be created in the same compartment and availability domain as
+ * the cluster.
+ *
+ * <p>Use compute clusters when you want to manage instances in the cluster individually, or when
+ * you want to use different types of instances in the RDMA network group.
+ *
+ * <p>For details about creating a cluster network that uses instance pools to manage groups of
  * identical instances, see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest)
  * createClusterNetworkDetails}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
@@ -56,15 +61,17 @@ public final class CreateComputeClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain that the compute cluster is running in. Example: {@code
-         * Uocm:PHX-AD-1}
+         * The availability domain to place the compute cluster in.
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain that the compute cluster is running in. Example: {@code
-         * Uocm:PHX-AD-1}
+         * The availability domain to place the compute cluster in.
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -76,14 +83,14 @@ public final class CreateComputeClusterDetails
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains this compute cluster.
+         * of the compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains this compute cluster.
+         * of the compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -212,15 +219,17 @@ public final class CreateComputeClusterDetails
     }
 
     /**
-     * The availability domain that the compute cluster is running in. Example: {@code
-     * Uocm:PHX-AD-1}
+     * The availability domain to place the compute cluster in.
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain that the compute cluster is running in. Example: {@code
-     * Uocm:PHX-AD-1}
+     * The availability domain to place the compute cluster in.
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
      */
@@ -230,14 +239,14 @@ public final class CreateComputeClusterDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains this compute cluster.
+     * the compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains this compute cluster.
+     * the compartment.
      *
      * @return the value
      */

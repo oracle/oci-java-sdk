@@ -5,7 +5,16 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to create a cluster network. <br>
+ * The data to create a [cluster network with instance
+ * pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ *
+ * <p>Use cluster networks with instance pools when you want predictable capacity for a specific
+ * number of identical instances that are managed as a group.
+ *
+ * <p>For details about creating compute clusters, which let you manage instances in the RDMA
+ * network independently of each other or use different types of instances in the network group, see
+ * {@link #createComputeClusterDetails(CreateComputeClusterDetailsRequest)
+ * createComputeClusterDetails}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

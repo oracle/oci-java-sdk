@@ -75,7 +75,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
         /**
          * The OCID of the compartment for this compute instance in the destination region.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
         private String destinationCompartmentId;
@@ -83,7 +83,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
         /**
          * The OCID of the compartment for this compute instance in the destination region.
          *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
          *
          * @param destinationCompartmentId the value to set
          * @return this builder
@@ -97,7 +97,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
          * The OCID of the dedicated VM Host in the destination region where this compute instance
          * should be launched
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
         private String destinationDedicatedVmHostId;
@@ -106,7 +106,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
          * The OCID of the dedicated VM Host in the destination region where this compute instance
          * should be launched
          *
-         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid2}
+         * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
          *
          * @param destinationDedicatedVmHostId the value to set
          * @return this builder
@@ -213,7 +213,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
     /**
      * The OCID of the compartment for this compute instance in the destination region.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
     private final String destinationCompartmentId;
@@ -221,7 +221,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
     /**
      * The OCID of the compartment for this compute instance in the destination region.
      *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * <p>Example: {@code ocid1.compartment.oc1..&lt;unique_id&gt;}
      *
      * @return the value
      */
@@ -233,7 +233,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
      * The OCID of the dedicated VM Host in the destination region where this compute instance
      * should be launched
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationDedicatedVmHostId")
     private final String destinationDedicatedVmHostId;
@@ -242,7 +242,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceDetails
      * The OCID of the dedicated VM Host in the destination region where this compute instance
      * should be launched
      *
-     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.exampleocid2}
+     * <p>Example: {@code ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;}
      *
      * @return the value
      */

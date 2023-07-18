@@ -1807,6 +1807,46 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<TestConnectionAssignmentResponse> testConnectionAssignment(
+            TestConnectionAssignmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            TestConnectionAssignmentRequest, TestConnectionAssignmentResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getConnectionAssignmentId(), "connectionAssignmentId must not be blank");
+        Objects.requireNonNull(
+                request.getTestConnectionAssignmentDetails(),
+                "testConnectionAssignmentDetails is required");
+
+        return clientCall(request, TestConnectionAssignmentResponse::builder)
+                .logger(LOG, "testConnectionAssignment")
+                .serviceDetails(
+                        "GoldenGate",
+                        "TestConnectionAssignment",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/ConnectionAssignment/TestConnectionAssignment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestConnectionAssignmentRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connectionAssignments")
+                .appendPathParam(request.getConnectionAssignmentId())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.TestConnectionAssignmentResult.class,
+                        TestConnectionAssignmentResponse.Builder::testConnectionAssignmentResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestConnectionAssignmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", TestConnectionAssignmentResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
             UpdateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

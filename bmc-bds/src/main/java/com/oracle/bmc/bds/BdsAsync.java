@@ -146,6 +146,40 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AddKafkaRequest, AddKafkaResponse> handler);
 
     /**
+     * Increases the size (scales out) of a cluster by adding master nodes. The added master nodes
+     * will have the same shape and will have the same amount of attached block storage as other
+     * master nodes in the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMasterNodesResponse> addMasterNodes(
+            AddMasterNodesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddMasterNodesRequest, AddMasterNodesResponse>
+                    handler);
+
+    /**
+     * Increases the size (scales out) of a cluster by adding utility nodes. The added utility nodes
+     * will have the same shape and will have the same amount of attached block storage as other
+     * utility nodes in the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddUtilityNodesResponse> addUtilityNodes(
+            AddUtilityNodesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddUtilityNodesRequest, AddUtilityNodesResponse>
+                    handler);
+
+    /**
      * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added
      * worker nodes will have the same shape and will have the same amount of attached block storage
      * as other worker nodes in the cluster.
@@ -374,6 +408,22 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the details of an os patch
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOsPatchDetailsResponse> getOsPatchDetails(
+            GetOsPatchDetailsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOsPatchDetailsRequest, GetOsPatchDetailsResponse>
+                    handler);
+
+    /**
      * Returns the status of the work request identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -386,6 +436,21 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Install an os patch on a cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallOsPatchResponse> installOsPatch(
+            InstallOsPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InstallOsPatchRequest, InstallOsPatchResponse>
                     handler);
 
     /**
@@ -468,6 +533,21 @@ public interface BdsAsync extends AutoCloseable {
                                     ListBdsMetastoreConfigurationsRequest,
                                     ListBdsMetastoreConfigurationsResponse>
                             handler);
+
+    /**
+     * List all available os patches for a given cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOsPatchesResponse> listOsPatches(
+            ListOsPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListOsPatchesRequest, ListOsPatchesResponse>
+                    handler);
 
     /**
      * List the patch history of this cluster.

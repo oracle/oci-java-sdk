@@ -5,8 +5,8 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A Volume represents a directory with data that is accessible across multiple containers in a
- * ContainerInstance. <br>
+ * A volume represents a directory with data that is accessible across multiple containers in a
+ * container instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -40,12 +40,12 @@ public class ContainerVolume extends com.oracle.bmc.http.client.internal.Explici
         this.name = name;
     }
 
-    /** The name of the volume. This has be unique cross single ContainerInstance. */
+    /** The name of the volume. This must be unique within a single container instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the volume. This has be unique cross single ContainerInstance.
+     * The name of the volume. This must be unique within a single container instance.
      *
      * @return the value
      */
