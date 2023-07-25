@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /** A subject an invitation can contain. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public enum InvitationSubject implements com.oracle.bmc.http.internal.BmcEnum {
     Link("LINK"),
     Governance("GOVERNANCE"),

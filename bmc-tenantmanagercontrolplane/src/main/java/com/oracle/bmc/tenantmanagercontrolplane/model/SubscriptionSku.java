@@ -15,7 +15,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SubscriptionSku.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -60,12 +60,12 @@ public final class SubscriptionSku
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Stock keeping unit ID. */
+        /** Stock Keeping Unit (SKU) ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("sku")
         private String sku;
 
         /**
-         * Stock keeping unit ID.
+         * Stock Keeping Unit (SKU) ID.
          *
          * @param sku the value to set
          * @return this builder
@@ -150,12 +150,12 @@ public final class SubscriptionSku
             this.__explicitlySet__.add("metricName");
             return this;
         }
-        /** Denotes if the SKU is considered as a parent or child. */
+        /** Specifies if the SKU is considered as a parent or child. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBaseServiceComponent")
         private Boolean isBaseServiceComponent;
 
         /**
-         * Denotes if the SKU is considered as a parent or child.
+         * Specifies if the SKU is considered as a parent or child.
          *
          * @param isBaseServiceComponent the value to set
          * @return this builder
@@ -165,12 +165,12 @@ public final class SubscriptionSku
             this.__explicitlySet__.add("isBaseServiceComponent");
             return this;
         }
-        /** Denotes if an additional test instance can be provisioned by the SAAS application. */
+        /** Specifies if an additional test instance can be provisioned by the SaaS application. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAdditionalInstance")
         private Boolean isAdditionalInstance;
 
         /**
-         * Denotes if an additional test instance can be provisioned by the SAAS application.
+         * Specifies if an additional test instance can be provisioned by the SaaS application.
          *
          * @param isAdditionalInstance the value to set
          * @return this builder
@@ -180,12 +180,12 @@ public final class SubscriptionSku
             this.__explicitlySet__.add("isAdditionalInstance");
             return this;
         }
-        /** Date-time when the SKU was created. */
+        /** Date and time when the SKU was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
         /**
-         * Date-time when the SKU was created.
+         * Date and time when the SKU was created.
          *
          * @param startDate the value to set
          * @return this builder
@@ -195,12 +195,12 @@ public final class SubscriptionSku
             this.__explicitlySet__.add("startDate");
             return this;
         }
-        /** Date-time when the SKU ended. */
+        /** Date and time when the SKU ended. */
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
         /**
-         * Date-time when the SKU ended.
+         * Date and time when the SKU ended.
          *
          * @param endDate the value to set
          * @return this builder
@@ -278,12 +278,12 @@ public final class SubscriptionSku
         return new Builder().copy(this);
     }
 
-    /** Stock keeping unit ID. */
+    /** Stock Keeping Unit (SKU) ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("sku")
     private final String sku;
 
     /**
-     * Stock keeping unit ID.
+     * Stock Keeping Unit (SKU) ID.
      *
      * @return the value
      */
@@ -356,12 +356,12 @@ public final class SubscriptionSku
         return metricName;
     }
 
-    /** Denotes if the SKU is considered as a parent or child. */
+    /** Specifies if the SKU is considered as a parent or child. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseServiceComponent")
     private final Boolean isBaseServiceComponent;
 
     /**
-     * Denotes if the SKU is considered as a parent or child.
+     * Specifies if the SKU is considered as a parent or child.
      *
      * @return the value
      */
@@ -369,12 +369,12 @@ public final class SubscriptionSku
         return isBaseServiceComponent;
     }
 
-    /** Denotes if an additional test instance can be provisioned by the SAAS application. */
+    /** Specifies if an additional test instance can be provisioned by the SaaS application. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAdditionalInstance")
     private final Boolean isAdditionalInstance;
 
     /**
-     * Denotes if an additional test instance can be provisioned by the SAAS application.
+     * Specifies if an additional test instance can be provisioned by the SaaS application.
      *
      * @return the value
      */
@@ -382,12 +382,12 @@ public final class SubscriptionSku
         return isAdditionalInstance;
     }
 
-    /** Date-time when the SKU was created. */
+    /** Date and time when the SKU was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
     /**
-     * Date-time when the SKU was created.
+     * Date and time when the SKU was created.
      *
      * @return the value
      */
@@ -395,12 +395,12 @@ public final class SubscriptionSku
         return startDate;
     }
 
-    /** Date-time when the SKU ended. */
+    /** Date and time when the SKU ended. */
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
     /**
-     * Date-time when the SKU ended.
+     * Date and time when the SKU ended.
      *
      * @return the value
      */

@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements RecipientInvitationAsync {
     /** Service instance for RecipientInvitation. */
@@ -109,10 +109,10 @@ public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "RecipientInvitation",
                         "AcceptRecipientInvitation",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/AcceptRecipientInvitation")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/AcceptRecipientInvitation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AcceptRecipientInvitationRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("recipientInvitations")
                 .appendPathParam(request.getRecipientInvitationId())
                 .appendPathParam("actions")
@@ -144,10 +144,10 @@ public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "RecipientInvitation",
                         "GetRecipientInvitation",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/GetRecipientInvitation")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/GetRecipientInvitation")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRecipientInvitationRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("recipientInvitations")
                 .appendPathParam(request.getRecipientInvitationId())
                 .accept("application/json")
@@ -176,10 +176,10 @@ public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "RecipientInvitation",
                         "IgnoreRecipientInvitation",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/IgnoreRecipientInvitation")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/IgnoreRecipientInvitation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IgnoreRecipientInvitationRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("recipientInvitations")
                 .appendPathParam(request.getRecipientInvitationId())
                 .appendPathParam("actions")
@@ -210,10 +210,10 @@ public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "RecipientInvitation",
                         "ListRecipientInvitations",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/ListRecipientInvitations")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/ListRecipientInvitations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRecipientInvitationsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("recipientInvitations")
                 .appendQueryParam("senderTenancyId", request.getSenderTenancyId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -251,10 +251,10 @@ public class RecipientInvitationAsyncClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "RecipientInvitation",
                         "UpdateRecipientInvitation",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/UpdateRecipientInvitation")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/UpdateRecipientInvitation")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRecipientInvitationRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("recipientInvitations")
                 .appendPathParam(request.getRecipientInvitationId())
                 .accept("application/json")

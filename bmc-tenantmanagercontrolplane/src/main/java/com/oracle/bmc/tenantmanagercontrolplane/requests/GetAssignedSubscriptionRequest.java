@@ -11,14 +11,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetAssignedSubscriptionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class GetAssignedSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of the assigned subscription. */
+    /** OCID of the assigned Oracle Cloud Subscription. */
     private String assignedSubscriptionId;
 
-    /** OCID of the assigned subscription. */
+    /** OCID of the assigned Oracle Cloud Subscription. */
     public String getAssignedSubscriptionId() {
         return assignedSubscriptionId;
     }
@@ -36,11 +36,11 @@ public class GetAssignedSubscriptionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of the assigned subscription. */
+        /** OCID of the assigned Oracle Cloud Subscription. */
         private String assignedSubscriptionId = null;
 
         /**
-         * OCID of the assigned subscription.
+         * OCID of the assigned Oracle Cloud Subscription.
          *
          * @param assignedSubscriptionId the value to set
          * @return this builder instance

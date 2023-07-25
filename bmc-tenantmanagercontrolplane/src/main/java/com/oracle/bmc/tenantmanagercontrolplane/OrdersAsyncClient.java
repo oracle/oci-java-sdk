@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class OrdersAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements OrdersAsync {
     /** Service instance for Orders. */
@@ -108,10 +108,10 @@ public class OrdersAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails(
                         "Orders",
                         "ActivateOrder",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Order/ActivateOrder")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateOrderRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("orders")
                 .appendPathParam(request.getActivationToken())
                 .appendPathParam("actions")
@@ -140,10 +140,10 @@ public class OrdersAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails(
                         "Orders",
                         "GetOrder",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Order/GetOrder")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOrderRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("orders")
                 .appendPathParam(request.getActivationToken())
                 .accept("application/json")

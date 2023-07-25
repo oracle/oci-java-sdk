@@ -15,7 +15,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = WorkRequestResource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -51,7 +51,7 @@ public final class WorkRequestResource
             return this;
         }
         /**
-         * The way in which this resource is affected by the work tracked in the work request. A
+         * Indicates how the resource is affected by the work tracked in the work request. A
          * resource being created, updated, or deleted will remain in the IN_PROGRESS state until
          * work is complete for that resource, at which point it will transition to CREATED,
          * UPDATED, or DELETED, respectively.
@@ -60,7 +60,7 @@ public final class WorkRequestResource
         private ActionType actionType;
 
         /**
-         * The way in which this resource is affected by the work tracked in the work request. A
+         * Indicates how the resource is affected by the work tracked in the work request. A
          * resource being created, updated, or deleted will remain in the IN_PROGRESS state until
          * work is complete for that resource, at which point it will transition to CREATED,
          * UPDATED, or DELETED, respectively.
@@ -88,12 +88,12 @@ public final class WorkRequestResource
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** The URI path that the user can do a GET on to access the resource metadata. */
+        /** The URI path so that the user can do a GET to access the resource metadata. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
-         * The URI path that the user can do a GET on to access the resource metadata.
+         * The URI path so that the user can do a GET to access the resource metadata.
          *
          * @param entityUri the value to set
          * @return this builder
@@ -158,18 +158,18 @@ public final class WorkRequestResource
     }
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request. A
-     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
-     * is complete for that resource, at which point it will transition to CREATED, UPDATED, or
+     * Indicates how the resource is affected by the work tracked in the work request. A resource
+     * being created, updated, or deleted will remain in the IN_PROGRESS state until work is
+     * complete for that resource, at which point it will transition to CREATED, UPDATED, or
      * DELETED, respectively.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request. A
-     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
-     * is complete for that resource, at which point it will transition to CREATED, UPDATED, or
+     * Indicates how the resource is affected by the work tracked in the work request. A resource
+     * being created, updated, or deleted will remain in the IN_PROGRESS state until work is
+     * complete for that resource, at which point it will transition to CREATED, UPDATED, or
      * DELETED, respectively.
      *
      * @return the value
@@ -191,12 +191,12 @@ public final class WorkRequestResource
         return identifier;
     }
 
-    /** The URI path that the user can do a GET on to access the resource metadata. */
+    /** The URI path so that the user can do a GET to access the resource metadata. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata.
+     * The URI path so that the user can do a GET to access the resource metadata.
      *
      * @return the value
      */

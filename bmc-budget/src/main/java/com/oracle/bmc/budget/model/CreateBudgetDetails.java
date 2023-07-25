@@ -41,6 +41,8 @@ public final class CreateBudgetDetails
         "resetPeriod",
         "budgetProcessingPeriodStartOffset",
         "processingPeriodType",
+        "startDate",
+        "endDate",
         "targetType",
         "targets",
         "freeformTags",
@@ -55,6 +57,8 @@ public final class CreateBudgetDetails
             ResetPeriod resetPeriod,
             Integer budgetProcessingPeriodStartOffset,
             ProcessingPeriodType processingPeriodType,
+            java.util.Date startDate,
+            java.util.Date endDate,
             TargetType targetType,
             java.util.List<String> targets,
             java.util.Map<String, String> freeformTags,
@@ -68,6 +72,8 @@ public final class CreateBudgetDetails
         this.resetPeriod = resetPeriod;
         this.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
         this.processingPeriodType = processingPeriodType;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.targetType = targetType;
         this.targets = targets;
         this.freeformTags = freeformTags;
@@ -194,12 +200,16 @@ public final class CreateBudgetDetails
             this.__explicitlySet__.add("budgetProcessingPeriodStartOffset");
             return this;
         }
-        /** The type of the budget processing period. Valid values are INVOICE and MONTH. */
+        /**
+         * The type of the budget processing period. Valid values are INVOICE, MONTH, and
+         * SINGLE_USE.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
         private ProcessingPeriodType processingPeriodType;
 
         /**
-         * The type of the budget processing period. Valid values are INVOICE and MONTH.
+         * The type of the budget processing period. Valid values are INVOICE, MONTH, and
+         * SINGLE_USE.
          *
          * @param processingPeriodType the value to set
          * @return this builder
@@ -207,6 +217,48 @@ public final class CreateBudgetDetails
         public Builder processingPeriodType(ProcessingPeriodType processingPeriodType) {
             this.processingPeriodType = processingPeriodType;
             this.__explicitlySet__.add("processingPeriodType");
+            return this;
+        }
+        /**
+         * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
+         * format conforms to RFC 3339, and will be truncated to the starting point of the date
+         * provided after being converted to UTC time.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("startDate")
+        private java.util.Date startDate;
+
+        /**
+         * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
+         * format conforms to RFC 3339, and will be truncated to the starting point of the date
+         * provided after being converted to UTC time.
+         *
+         * @param startDate the value to set
+         * @return this builder
+         */
+        public Builder startDate(java.util.Date startDate) {
+            this.startDate = startDate;
+            this.__explicitlySet__.add("startDate");
+            return this;
+        }
+        /**
+         * The date when the one-time budget concludes. For example, {@code 2023-03-23}. The
+         * date-time format conforms to RFC 3339, and will be truncated to the starting point of the
+         * date provided after being converted to UTC time.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("endDate")
+        private java.util.Date endDate;
+
+        /**
+         * The date when the one-time budget concludes. For example, {@code 2023-03-23}. The
+         * date-time format conforms to RFC 3339, and will be truncated to the starting point of the
+         * date provided after being converted to UTC time.
+         *
+         * @param endDate the value to set
+         * @return this builder
+         */
+        public Builder endDate(java.util.Date endDate) {
+            this.endDate = endDate;
+            this.__explicitlySet__.add("endDate");
             return this;
         }
         /** The type of target on which the budget is applied. */
@@ -315,6 +367,8 @@ public final class CreateBudgetDetails
                             this.resetPeriod,
                             this.budgetProcessingPeriodStartOffset,
                             this.processingPeriodType,
+                            this.startDate,
+                            this.endDate,
                             this.targetType,
                             this.targets,
                             this.freeformTags,
@@ -351,6 +405,12 @@ public final class CreateBudgetDetails
             }
             if (model.wasPropertyExplicitlySet("processingPeriodType")) {
                 this.processingPeriodType(model.getProcessingPeriodType());
+            }
+            if (model.wasPropertyExplicitlySet("startDate")) {
+                this.startDate(model.getStartDate());
+            }
+            if (model.wasPropertyExplicitlySet("endDate")) {
+                this.endDate(model.getEndDate());
             }
             if (model.wasPropertyExplicitlySet("targetType")) {
                 this.targetType(model.getTargetType());
@@ -480,17 +540,57 @@ public final class CreateBudgetDetails
         return budgetProcessingPeriodStartOffset;
     }
 
-    /** The type of the budget processing period. Valid values are INVOICE and MONTH. */
+    /**
+     * The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
     private final ProcessingPeriodType processingPeriodType;
 
     /**
-     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     * The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      *
      * @return the value
      */
     public ProcessingPeriodType getProcessingPeriodType() {
         return processingPeriodType;
+    }
+
+    /**
+     * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
+     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
+     * after being converted to UTC time.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("startDate")
+    private final java.util.Date startDate;
+
+    /**
+     * The date when the one-time budget begins. For example, {@code 2023-03-23}. The date-time
+     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
+     * after being converted to UTC time.
+     *
+     * @return the value
+     */
+    public java.util.Date getStartDate() {
+        return startDate;
+    }
+
+    /**
+     * The date when the one-time budget concludes. For example, {@code 2023-03-23}. The date-time
+     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
+     * after being converted to UTC time.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("endDate")
+    private final java.util.Date endDate;
+
+    /**
+     * The date when the one-time budget concludes. For example, {@code 2023-03-23}. The date-time
+     * format conforms to RFC 3339, and will be truncated to the starting point of the date provided
+     * after being converted to UTC time.
+     *
+     * @return the value
+     */
+    public java.util.Date getEndDate() {
+        return endDate;
     }
 
     /** The type of target on which the budget is applied. */
@@ -597,6 +697,8 @@ public final class CreateBudgetDetails
         sb.append(", budgetProcessingPeriodStartOffset=")
                 .append(String.valueOf(this.budgetProcessingPeriodStartOffset));
         sb.append(", processingPeriodType=").append(String.valueOf(this.processingPeriodType));
+        sb.append(", startDate=").append(String.valueOf(this.startDate));
+        sb.append(", endDate=").append(String.valueOf(this.endDate));
         sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", targets=").append(String.valueOf(this.targets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -625,6 +727,8 @@ public final class CreateBudgetDetails
                         this.budgetProcessingPeriodStartOffset,
                         other.budgetProcessingPeriodStartOffset)
                 && java.util.Objects.equals(this.processingPeriodType, other.processingPeriodType)
+                && java.util.Objects.equals(this.startDate, other.startDate)
+                && java.util.Objects.equals(this.endDate, other.endDate)
                 && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.targets, other.targets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -658,6 +762,8 @@ public final class CreateBudgetDetails
                         + (this.processingPeriodType == null
                                 ? 43
                                 : this.processingPeriodType.hashCode());
+        result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
+        result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
         result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.targets == null ? 43 : this.targets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

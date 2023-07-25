@@ -15,7 +15,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = WorkRequestSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -73,12 +73,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Status of current work request. */
+        /** Status of the current work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
-         * Status of current work request.
+         * Status of the current work request.
          *
          * @param status the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The resources affected by this work request. */
+        /** The resources affected by the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
-         * The resources affected by this work request.
+         * The resources affected by the work request.
          *
          * @param resources the value to set
          * @return this builder
@@ -282,12 +282,12 @@ public final class WorkRequestSummary
         return operationType;
     }
 
-    /** Status of current work request. */
+    /** Status of the current work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
-     * Status of current work request.
+     * Status of the current work request.
      *
      * @return the value
      */
@@ -321,12 +321,12 @@ public final class WorkRequestSummary
         return compartmentId;
     }
 
-    /** The resources affected by this work request. */
+    /** The resources affected by the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
-     * The resources affected by this work request.
+     * The resources affected by the work request.
      *
      * @return the value
      */

@@ -29,7 +29,9 @@ public final class UpdateInstancePoolDetails
         "freeformTags",
         "instanceConfigurationId",
         "placementConfigurations",
-        "size"
+        "size",
+        "instanceDisplayNameFormatter",
+        "instanceHostnameFormatter"
     })
     public UpdateInstancePoolDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -37,7 +39,9 @@ public final class UpdateInstancePoolDetails
             java.util.Map<String, String> freeformTags,
             String instanceConfigurationId,
             java.util.List<UpdateInstancePoolPlacementConfigurationDetails> placementConfigurations,
-            Integer size) {
+            Integer size,
+            String instanceDisplayNameFormatter,
+            String instanceHostnameFormatter) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -45,6 +49,8 @@ public final class UpdateInstancePoolDetails
         this.instanceConfigurationId = instanceConfigurationId;
         this.placementConfigurations = placementConfigurations;
         this.size = size;
+        this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+        this.instanceHostnameFormatter = instanceHostnameFormatter;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -195,6 +201,48 @@ public final class UpdateInstancePoolDetails
             this.__explicitlySet__.add("size");
             return this;
         }
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
+         * the format. The formatter does not retroactively change instance's displaynames, only
+         * instance displaynames in the future follow the format
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNameFormatter")
+        private String instanceDisplayNameFormatter;
+
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
+         * the format. The formatter does not retroactively change instance's displaynames, only
+         * instance displaynames in the future follow the format
+         *
+         * @param instanceDisplayNameFormatter the value to set
+         * @return this builder
+         */
+        public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
+            this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            this.__explicitlySet__.add("instanceDisplayNameFormatter");
+            return this;
+        }
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance hostnames follow
+         * the format. The formatter does not retroactively change instance's hostnames, only
+         * instance hostnames in the future follow the format
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceHostnameFormatter")
+        private String instanceHostnameFormatter;
+
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance hostnames follow
+         * the format. The formatter does not retroactively change instance's hostnames, only
+         * instance hostnames in the future follow the format
+         *
+         * @param instanceHostnameFormatter the value to set
+         * @return this builder
+         */
+        public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
+            this.instanceHostnameFormatter = instanceHostnameFormatter;
+            this.__explicitlySet__.add("instanceHostnameFormatter");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -207,7 +255,9 @@ public final class UpdateInstancePoolDetails
                             this.freeformTags,
                             this.instanceConfigurationId,
                             this.placementConfigurations,
-                            this.size);
+                            this.size,
+                            this.instanceDisplayNameFormatter,
+                            this.instanceHostnameFormatter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -233,6 +283,12 @@ public final class UpdateInstancePoolDetails
             }
             if (model.wasPropertyExplicitlySet("size")) {
                 this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDisplayNameFormatter")) {
+                this.instanceDisplayNameFormatter(model.getInstanceDisplayNameFormatter());
+            }
+            if (model.wasPropertyExplicitlySet("instanceHostnameFormatter")) {
+                this.instanceHostnameFormatter(model.getInstanceHostnameFormatter());
             }
             return this;
         }
@@ -377,6 +433,44 @@ public final class UpdateInstancePoolDetails
         return size;
     }
 
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
+     * format. The formatter does not retroactively change instance's displaynames, only instance
+     * displaynames in the future follow the format
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNameFormatter")
+    private final String instanceDisplayNameFormatter;
+
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
+     * format. The formatter does not retroactively change instance's displaynames, only instance
+     * displaynames in the future follow the format
+     *
+     * @return the value
+     */
+    public String getInstanceDisplayNameFormatter() {
+        return instanceDisplayNameFormatter;
+    }
+
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance hostnames follow the
+     * format. The formatter does not retroactively change instance's hostnames, only instance
+     * hostnames in the future follow the format
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceHostnameFormatter")
+    private final String instanceHostnameFormatter;
+
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance hostnames follow the
+     * format. The formatter does not retroactively change instance's hostnames, only instance
+     * hostnames in the future follow the format
+     *
+     * @return the value
+     */
+    public String getInstanceHostnameFormatter() {
+        return instanceHostnameFormatter;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -400,6 +494,10 @@ public final class UpdateInstancePoolDetails
         sb.append(", placementConfigurations=")
                 .append(String.valueOf(this.placementConfigurations));
         sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", instanceDisplayNameFormatter=")
+                .append(String.valueOf(this.instanceDisplayNameFormatter));
+        sb.append(", instanceHostnameFormatter=")
+                .append(String.valueOf(this.instanceHostnameFormatter));
         sb.append(")");
         return sb.toString();
     }
@@ -422,6 +520,10 @@ public final class UpdateInstancePoolDetails
                 && java.util.Objects.equals(
                         this.placementConfigurations, other.placementConfigurations)
                 && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(
+                        this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
+                && java.util.Objects.equals(
+                        this.instanceHostnameFormatter, other.instanceHostnameFormatter)
                 && super.equals(other);
     }
 
@@ -443,6 +545,16 @@ public final class UpdateInstancePoolDetails
                                 ? 43
                                 : this.placementConfigurations.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceDisplayNameFormatter == null
+                                ? 43
+                                : this.instanceDisplayNameFormatter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceHostnameFormatter == null
+                                ? 43
+                                : this.instanceHostnameFormatter.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements Organization {
     /** Service instance for Organization. */
@@ -134,10 +134,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "ApproveOrganizationTenancyForTransfer",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/ApproveOrganizationTenancyForTransfer")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ApproveOrganizationTenancyForTransferRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizationTenancies")
                 .appendPathParam(request.getOrganizationTenancyId())
                 .appendPathParam("actions")
@@ -168,7 +168,7 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails("Organization", "CreateChildTenancy", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateChildTenancyRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("childTenancies")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -193,10 +193,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "DeleteOrganizationTenancy",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/DeleteOrganizationTenancy")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOrganizationTenancyRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizationTenancies")
                 .appendPathParam(request.getOrganizationTenancyId())
                 .accept("application/json")
@@ -221,10 +221,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "GetOrganization",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/GetOrganization")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOrganizationRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendPathParam(request.getOrganizationId())
                 .accept("application/json")
@@ -251,10 +251,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "GetOrganizationTenancy",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/GetOrganizationTenancy")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOrganizationTenancyRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendPathParam(request.getOrganizationId())
                 .appendPathParam("tenancies")
@@ -281,10 +281,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "ListOrganizationTenancies",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizationTenancies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOrganizationTenanciesRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendPathParam(request.getOrganizationId())
                 .appendPathParam("tenancies")
@@ -312,10 +312,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "ListOrganizations",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizations")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOrganizationsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("page", request.getPage())
@@ -344,10 +344,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "RestoreOrganizationTenancy",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/RestoreOrganizationTenancy")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreOrganizationTenancyRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizationTenancies")
                 .appendPathParam(request.getOrganizationTenancyId())
                 .appendPathParam("actions")
@@ -376,10 +376,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "UnapproveOrganizationTenancyForTransfer",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UnapproveOrganizationTenancyForTransferRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizationTenancies")
                 .appendPathParam(request.getOrganizationTenancyId())
                 .appendPathParam("actions")
@@ -413,10 +413,10 @@ public class OrganizationClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .serviceDetails(
                         "Organization",
                         "UpdateOrganization",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/UpdateOrganization")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOrganizationRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendPathParam(request.getOrganizationId())
                 .accept("application/json")

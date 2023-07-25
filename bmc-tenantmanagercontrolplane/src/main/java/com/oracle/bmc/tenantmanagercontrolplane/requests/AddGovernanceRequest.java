@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/AddGovernanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use AddGovernanceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class AddGovernanceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** OCID of the organization. */

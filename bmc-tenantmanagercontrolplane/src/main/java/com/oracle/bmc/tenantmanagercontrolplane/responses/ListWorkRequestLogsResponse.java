@@ -6,7 +6,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.responses;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the

@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements SubscriptionAsync {
     /** Service instance for Subscription. */
@@ -108,10 +108,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "CreateSubscriptionMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/CreateSubscriptionMapping")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSubscriptionMappingRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptionMappings")
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
@@ -145,10 +145,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "DeleteSubscriptionMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/DeleteSubscriptionMapping")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSubscriptionMappingRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptionMappings")
                 .appendPathParam(request.getSubscriptionMappingId())
                 .accept("application/json")
@@ -174,10 +174,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "GetAssignedSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscription/GetAssignedSubscription")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAssignedSubscriptionRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("assignedSubscriptions")
                 .appendPathParam(request.getAssignedSubscriptionId())
                 .accept("application/json")
@@ -205,10 +205,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "GetSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/GetSubscription")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubscriptionRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptions")
                 .appendPathParam(request.getSubscriptionId())
                 .accept("application/json")
@@ -237,10 +237,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "GetSubscriptionMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/GetSubscriptionMapping")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubscriptionMappingRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptionMappings")
                 .appendPathParam(request.getSubscriptionMappingId())
                 .accept("application/json")
@@ -251,6 +251,50 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", GetSubscriptionMappingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetSubscriptionMappingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssignedSubscriptionLineItemsResponse>
+            listAssignedSubscriptionLineItems(
+                    ListAssignedSubscriptionLineItemsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAssignedSubscriptionLineItemsRequest,
+                                    ListAssignedSubscriptionLineItemsResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAssignedSubscriptionId(), "assignedSubscriptionId must not be blank");
+
+        return clientCall(request, ListAssignedSubscriptionLineItemsResponse::builder)
+                .logger(LOG, "listAssignedSubscriptionLineItems")
+                .serviceDetails(
+                        "Subscription",
+                        "ListAssignedSubscriptionLineItems",
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscriptionLineItemSummary/ListAssignedSubscriptionLineItems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAssignedSubscriptionLineItemsRequest::builder)
+                .basePath("/20230401")
+                .appendPathParam("assignedSubscriptions")
+                .appendPathParam(request.getAssignedSubscriptionId())
+                .appendPathParam("assignedSubscriptionLineItems")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.tenantmanagercontrolplane.model
+                                .AssignedSubscriptionLineItemCollection.class,
+                        ListAssignedSubscriptionLineItemsResponse.Builder
+                                ::assignedSubscriptionLineItemCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAssignedSubscriptionLineItemsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAssignedSubscriptionLineItemsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -267,10 +311,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "ListAssignedSubscriptions",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscription/ListAssignedSubscriptions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAssignedSubscriptionsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("assignedSubscriptions")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
@@ -278,6 +322,7 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("entityVersion", request.getEntityVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -305,10 +350,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "ListAvailableRegions",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/ListAvailableRegions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAvailableRegionsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptions")
                 .appendPathParam(request.getSubscriptionId())
                 .appendPathParam("availableRegions")
@@ -327,6 +372,44 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListSubscriptionLineItemsResponse> listSubscriptionLineItems(
+            ListSubscriptionLineItemsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+
+        return clientCall(request, ListSubscriptionLineItemsResponse::builder)
+                .logger(LOG, "listSubscriptionLineItems")
+                .serviceDetails(
+                        "Subscription",
+                        "ListSubscriptionLineItems",
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionLineItemSummary/ListSubscriptionLineItems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubscriptionLineItemsRequest::builder)
+                .basePath("/20230401")
+                .appendPathParam("subscriptions")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("subscriptionLineItems")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.tenantmanagercontrolplane.model
+                                .SubscriptionLineItemCollection.class,
+                        ListSubscriptionLineItemsResponse.Builder::subscriptionLineItemCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubscriptionLineItemsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubscriptionLineItemsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSubscriptionMappingsResponse> listSubscriptionMappings(
             ListSubscriptionMappingsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -339,10 +422,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "ListSubscriptionMappings",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/ListSubscriptionMappings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSubscriptionMappingsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptionMappings")
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
                 .appendQueryParam("subscriptionMappingId", request.getSubscriptionMappingId())
@@ -377,10 +460,10 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .serviceDetails(
                         "Subscription",
                         "ListSubscriptions",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/ListSubscriptions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSubscriptionsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("subscriptions")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("subscriptionId", request.getSubscriptionId())
@@ -388,6 +471,7 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("limit", request.getLimit())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("entityVersion", request.getEntityVersion())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

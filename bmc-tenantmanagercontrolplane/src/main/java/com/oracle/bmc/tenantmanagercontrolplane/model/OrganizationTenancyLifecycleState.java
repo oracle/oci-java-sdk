@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /** Possible lifecycle states for the organization tenancy. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public enum OrganizationTenancyLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),

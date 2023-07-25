@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class GovernanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements GovernanceAsync {
     /** Service instance for Governance. */
@@ -109,10 +109,10 @@ public class GovernanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .serviceDetails(
                         "Governance",
                         "AddGovernance",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/AddGovernance")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/AddGovernance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddGovernanceRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendPathParam(request.getOrganizationId())
                 .appendPathParam("tenancies")
@@ -147,10 +147,10 @@ public class GovernanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .serviceDetails(
                         "Governance",
                         "RemoveGovernance",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RemoveGovernance")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/RemoveGovernance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveGovernanceRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("organizations")
                 .appendPathParam(request.getOrganizationId())
                 .appendPathParam("tenancies")

@@ -15,7 +15,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Promotion.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -89,14 +89,14 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * If a subscription is present, indicates the total amount of promotional subscription
-         * credit.
+         * credits.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("amount")
         private Float amount;
 
         /**
          * If a subscription is present, indicates the total amount of promotional subscription
-         * credit.
+         * credits.
          *
          * @param amount the value to set
          * @return this builder
@@ -274,13 +274,13 @@ public final class Promotion extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * If a subscription is present, indicates the total amount of promotional subscription credit.
+     * If a subscription is present, indicates the total amount of promotional subscription credits.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
     private final Float amount;
 
     /**
-     * If a subscription is present, indicates the total amount of promotional subscription credit.
+     * If a subscription is present, indicates the total amount of promotional subscription credits.
      *
      * @return the value
      */

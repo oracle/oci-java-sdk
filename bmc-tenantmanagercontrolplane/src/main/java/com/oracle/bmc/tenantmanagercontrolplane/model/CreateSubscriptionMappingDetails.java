@@ -16,7 +16,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateSubscriptionMappingDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -48,12 +48,12 @@ public final class CreateSubscriptionMappingDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of subscription. */
+        /** OCID of Subscription. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * OCID of subscription.
+         * OCID of Subscription.
          *
          * @param subscriptionId the value to set
          * @return this builder
@@ -110,12 +110,12 @@ public final class CreateSubscriptionMappingDetails
         return compartmentId;
     }
 
-    /** OCID of subscription. */
+    /** OCID of Subscription. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * OCID of subscription.
+     * OCID of Subscription.
      *
      * @return the value
      */

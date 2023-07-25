@@ -1,0 +1,345 @@
+/**
+ * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.tenantmanagercontrolplane.model;
+
+/**
+ * Summary of line items in a subscription. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = SubscriptionLineItemSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class SubscriptionLineItemSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "id",
+        "productCode",
+        "quantity",
+        "billingModel",
+        "timeStarted",
+        "timeEnded"
+    })
+    public SubscriptionLineItemSummary(
+            String id,
+            String productCode,
+            Float quantity,
+            BillingModel billingModel,
+            java.util.Date timeStarted,
+            java.util.Date timeEnded) {
+        super();
+        this.id = id;
+        this.productCode = productCode;
+        this.quantity = quantity;
+        this.billingModel = billingModel;
+        this.timeStarted = timeStarted;
+        this.timeEnded = timeEnded;
+    }
+
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /** Subscription line item identifier. */
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        /**
+         * Subscription line item identifier.
+         *
+         * @param id the value to set
+         * @return this builder
+         */
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+        /** Product code. */
+        @com.fasterxml.jackson.annotation.JsonProperty("productCode")
+        private String productCode;
+
+        /**
+         * Product code.
+         *
+         * @param productCode the value to set
+         * @return this builder
+         */
+        public Builder productCode(String productCode) {
+            this.productCode = productCode;
+            this.__explicitlySet__.add("productCode");
+            return this;
+        }
+        /** Product number. */
+        @com.fasterxml.jackson.annotation.JsonProperty("quantity")
+        private Float quantity;
+
+        /**
+         * Product number.
+         *
+         * @param quantity the value to set
+         * @return this builder
+         */
+        public Builder quantity(Float quantity) {
+            this.quantity = quantity;
+            this.__explicitlySet__.add("quantity");
+            return this;
+        }
+        /** Billing model supported by the associated line item. */
+        @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
+        private BillingModel billingModel;
+
+        /**
+         * Billing model supported by the associated line item.
+         *
+         * @param billingModel the value to set
+         * @return this builder
+         */
+        public Builder billingModel(BillingModel billingModel) {
+            this.billingModel = billingModel;
+            this.__explicitlySet__.add("billingModel");
+            return this;
+        }
+        /**
+         * The time the subscription item and associated products should start. An RFC 3339
+         * formatted date and time string.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+        private java.util.Date timeStarted;
+
+        /**
+         * The time the subscription item and associated products should start. An RFC 3339
+         * formatted date and time string.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         */
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            this.__explicitlySet__.add("timeStarted");
+            return this;
+        }
+        /**
+         * The time the subscription item and associated products should end. An RFC 3339 formatted
+         * date and time string.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+        private java.util.Date timeEnded;
+
+        /**
+         * The time the subscription item and associated products should end. An RFC 3339 formatted
+         * date and time string.
+         *
+         * @param timeEnded the value to set
+         * @return this builder
+         */
+        public Builder timeEnded(java.util.Date timeEnded) {
+            this.timeEnded = timeEnded;
+            this.__explicitlySet__.add("timeEnded");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public SubscriptionLineItemSummary build() {
+            SubscriptionLineItemSummary model =
+                    new SubscriptionLineItemSummary(
+                            this.id,
+                            this.productCode,
+                            this.quantity,
+                            this.billingModel,
+                            this.timeStarted,
+                            this.timeEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(SubscriptionLineItemSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("productCode")) {
+                this.productCode(model.getProductCode());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("billingModel")) {
+                this.billingModel(model.getBillingModel());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    /** Subscription line item identifier. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
+    /**
+     * Subscription line item identifier.
+     *
+     * @return the value
+     */
+    public String getId() {
+        return id;
+    }
+
+    /** Product code. */
+    @com.fasterxml.jackson.annotation.JsonProperty("productCode")
+    private final String productCode;
+
+    /**
+     * Product code.
+     *
+     * @return the value
+     */
+    public String getProductCode() {
+        return productCode;
+    }
+
+    /** Product number. */
+    @com.fasterxml.jackson.annotation.JsonProperty("quantity")
+    private final Float quantity;
+
+    /**
+     * Product number.
+     *
+     * @return the value
+     */
+    public Float getQuantity() {
+        return quantity;
+    }
+
+    /** Billing model supported by the associated line item. */
+    @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
+    private final BillingModel billingModel;
+
+    /**
+     * Billing model supported by the associated line item.
+     *
+     * @return the value
+     */
+    public BillingModel getBillingModel() {
+        return billingModel;
+    }
+
+    /**
+     * The time the subscription item and associated products should start. An RFC 3339 formatted
+     * date and time string.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    private final java.util.Date timeStarted;
+
+    /**
+     * The time the subscription item and associated products should start. An RFC 3339 formatted
+     * date and time string.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
+
+    /**
+     * The time the subscription item and associated products should end. An RFC 3339 formatted date
+     * and time string.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+    private final java.util.Date timeEnded;
+
+    /**
+     * The time the subscription item and associated products should end. An RFC 3339 formatted date
+     * and time string.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeEnded() {
+        return timeEnded;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("SubscriptionLineItemSummary(");
+        sb.append("super=").append(super.toString());
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", productCode=").append(String.valueOf(this.productCode));
+        sb.append(", quantity=").append(String.valueOf(this.quantity));
+        sb.append(", billingModel=").append(String.valueOf(this.billingModel));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
+        sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof SubscriptionLineItemSummary)) {
+            return false;
+        }
+
+        SubscriptionLineItemSummary other = (SubscriptionLineItemSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.productCode, other.productCode)
+                && java.util.Objects.equals(this.quantity, other.quantity)
+                && java.util.Objects.equals(this.billingModel, other.billingModel)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
+                && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.productCode == null ? 43 : this.productCode.hashCode());
+        result = (result * PRIME) + (this.quantity == null ? 43 : this.quantity.hashCode());
+        result = (result * PRIME) + (this.billingModel == null ? 43 : this.billingModel.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
+        result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + super.hashCode();
+        return result;
+    }
+}

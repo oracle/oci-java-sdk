@@ -6,7 +6,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.responses;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
     /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;

@@ -33,12 +33,148 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class SubscriptionPaginators {
     private final Subscription client;
 
     public SubscriptionPaginators(Subscription client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAssignedSubscriptionLineItems operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAssignedSubscriptionLineItemsResponse>
+            listAssignedSubscriptionLineItemsResponseIterator(
+                    final ListAssignedSubscriptionLineItemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAssignedSubscriptionLineItemsRequest.Builder,
+                ListAssignedSubscriptionLineItemsRequest,
+                ListAssignedSubscriptionLineItemsResponse>(
+                new java.util.function.Supplier<
+                        ListAssignedSubscriptionLineItemsRequest.Builder>() {
+                    @Override
+                    public ListAssignedSubscriptionLineItemsRequest.Builder get() {
+                        return ListAssignedSubscriptionLineItemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssignedSubscriptionLineItemsResponse, String>() {
+                    @Override
+                    public String apply(ListAssignedSubscriptionLineItemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssignedSubscriptionLineItemsRequest.Builder>,
+                        ListAssignedSubscriptionLineItemsRequest>() {
+                    @Override
+                    public ListAssignedSubscriptionLineItemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssignedSubscriptionLineItemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssignedSubscriptionLineItemsRequest,
+                        ListAssignedSubscriptionLineItemsResponse>() {
+                    @Override
+                    public ListAssignedSubscriptionLineItemsResponse apply(
+                            ListAssignedSubscriptionLineItemsRequest request) {
+                        return client.listAssignedSubscriptionLineItems(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionLineItemSummary} objects
+     * contained in responses from the listAssignedSubscriptionLineItems operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionLineItemSummary}
+     *     objects contained in responses received from the service.
+     */
+    public Iterable<
+                    com.oracle.bmc.tenantmanagercontrolplane.model
+                            .AssignedSubscriptionLineItemSummary>
+            listAssignedSubscriptionLineItemsRecordIterator(
+                    final ListAssignedSubscriptionLineItemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAssignedSubscriptionLineItemsRequest.Builder,
+                ListAssignedSubscriptionLineItemsRequest,
+                ListAssignedSubscriptionLineItemsResponse,
+                com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionLineItemSummary>(
+                new java.util.function.Supplier<
+                        ListAssignedSubscriptionLineItemsRequest.Builder>() {
+                    @Override
+                    public ListAssignedSubscriptionLineItemsRequest.Builder get() {
+                        return ListAssignedSubscriptionLineItemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssignedSubscriptionLineItemsResponse, String>() {
+                    @Override
+                    public String apply(ListAssignedSubscriptionLineItemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAssignedSubscriptionLineItemsRequest.Builder>,
+                        ListAssignedSubscriptionLineItemsRequest>() {
+                    @Override
+                    public ListAssignedSubscriptionLineItemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAssignedSubscriptionLineItemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssignedSubscriptionLineItemsRequest,
+                        ListAssignedSubscriptionLineItemsResponse>() {
+                    @Override
+                    public ListAssignedSubscriptionLineItemsResponse apply(
+                            ListAssignedSubscriptionLineItemsRequest request) {
+                        return client.listAssignedSubscriptionLineItems(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAssignedSubscriptionLineItemsResponse,
+                        java.util.List<
+                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                        .AssignedSubscriptionLineItemSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.tenantmanagercontrolplane.model
+                                            .AssignedSubscriptionLineItemSummary>
+                            apply(ListAssignedSubscriptionLineItemsResponse response) {
+                        return response.getAssignedSubscriptionLineItemCollection().getItems();
+                    }
+                });
     }
 
     /**
@@ -287,6 +423,133 @@ public class SubscriptionPaginators {
                                             .AvailableRegionSummary>
                             apply(ListAvailableRegionsResponse response) {
                         return response.getAvailableRegionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubscriptionLineItems operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubscriptionLineItemsResponse> listSubscriptionLineItemsResponseIterator(
+            final ListSubscriptionLineItemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubscriptionLineItemsRequest.Builder,
+                ListSubscriptionLineItemsRequest,
+                ListSubscriptionLineItemsResponse>(
+                new java.util.function.Supplier<ListSubscriptionLineItemsRequest.Builder>() {
+                    @Override
+                    public ListSubscriptionLineItemsRequest.Builder get() {
+                        return ListSubscriptionLineItemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubscriptionLineItemsResponse, String>() {
+                    @Override
+                    public String apply(ListSubscriptionLineItemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubscriptionLineItemsRequest.Builder>,
+                        ListSubscriptionLineItemsRequest>() {
+                    @Override
+                    public ListSubscriptionLineItemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubscriptionLineItemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>() {
+                    @Override
+                    public ListSubscriptionLineItemsResponse apply(
+                            ListSubscriptionLineItemsRequest request) {
+                        return client.listSubscriptionLineItems(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionLineItemSummary} objects contained
+     * in responses from the listSubscriptionLineItems operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionLineItemSummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionLineItemSummary>
+            listSubscriptionLineItemsRecordIterator(
+                    final ListSubscriptionLineItemsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubscriptionLineItemsRequest.Builder,
+                ListSubscriptionLineItemsRequest,
+                ListSubscriptionLineItemsResponse,
+                com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionLineItemSummary>(
+                new java.util.function.Supplier<ListSubscriptionLineItemsRequest.Builder>() {
+                    @Override
+                    public ListSubscriptionLineItemsRequest.Builder get() {
+                        return ListSubscriptionLineItemsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubscriptionLineItemsResponse, String>() {
+                    @Override
+                    public String apply(ListSubscriptionLineItemsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubscriptionLineItemsRequest.Builder>,
+                        ListSubscriptionLineItemsRequest>() {
+                    @Override
+                    public ListSubscriptionLineItemsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubscriptionLineItemsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>() {
+                    @Override
+                    public ListSubscriptionLineItemsResponse apply(
+                            ListSubscriptionLineItemsRequest request) {
+                        return client.listSubscriptionLineItems(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubscriptionLineItemsResponse,
+                        java.util.List<
+                                com.oracle.bmc.tenantmanagercontrolplane.model
+                                        .SubscriptionLineItemSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.tenantmanagercontrolplane.model
+                                            .SubscriptionLineItemSummary>
+                            apply(ListSubscriptionLineItemsResponse response) {
+                        return response.getSubscriptionLineItemCollection().getItems();
                     }
                 });
     }

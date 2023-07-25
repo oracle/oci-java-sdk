@@ -15,7 +15,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = WorkRequestLogEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -47,12 +47,12 @@ public final class WorkRequestLogEntry
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the log message was written. An RFC 3339-formatted date and time string. */
+        /** The time the log message was written. An RFC 3339 formatted date and time string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written. An RFC 3339-formatted date and time string.
+         * The time the log message was written. An RFC 3339 formatted date and time string.
          *
          * @param timestamp the value to set
          * @return this builder
@@ -108,12 +108,12 @@ public final class WorkRequestLogEntry
         return message;
     }
 
-    /** The time the log message was written. An RFC 3339-formatted date and time string. */
+    /** The time the log message was written. An RFC 3339 formatted date and time string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written. An RFC 3339-formatted date and time string.
+     * The time the log message was written. An RFC 3339 formatted date and time string.
      *
      * @return the value
      */
