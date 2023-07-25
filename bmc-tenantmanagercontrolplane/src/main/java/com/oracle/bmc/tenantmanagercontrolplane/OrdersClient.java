@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class OrdersClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Orders {
     /** Service instance for Orders. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -94,10 +94,10 @@ public class OrdersClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .serviceDetails(
                         "Orders",
                         "ActivateOrder",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Order/ActivateOrder")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateOrderRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("orders")
                 .appendPathParam(request.getActivationToken())
                 .appendPathParam("actions")
@@ -123,10 +123,10 @@ public class OrdersClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .serviceDetails(
                         "Orders",
                         "GetOrder",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Order/GetOrder")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOrderRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("orders")
                 .appendPathParam(request.getActivationToken())
                 .accept("application/json")

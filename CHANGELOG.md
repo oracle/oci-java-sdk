@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.21.0 - 2023-07-25
+### Added
+- Support for composing multiple document service custom key value models into one single model in Document Understanding Service
+- Support for custom hostname in the Compute service
+- Support for cloud subscription in the Organizations service
+- Support for automatic backup download in the GoldenGate service
+- Support for creating single use (non-recurring) budgets in the Budgets service
+  
+  
+### Breaking Changes
+- Default Retries enabled in Budgets service
+- The properties `classicSubscriptionId`, `isClassicSubscription`, `regionAssignment`, `lifecycleState`, `startDate` and `endDate` were removed from the models `AssignedSubscription`, `AssignedSubscriptionSummary`, `Subscription` and `SubscriptionSummary` in the Organizations service
+- The property `paymentModel` has been removed from `Subscription` and `SubscriptionSummary` models in the Organizations service
+- The properties `subscriptionTier`, `isGovernmentSubscription`, `promotion`, `purchaseEntitlementId`, `skus`, `csiNumber`, `cloudAmountCurrency`, `customerCountryCode, and `programType` have been removed from `AssignedSubscription` and `Subscription` models in the Organizations service
+- The property `orderIds` has been removed from `AssignedSubscription` model in the Organizations service
+- The EnumMembers `UPDATING`, `DELETING` and `DELETED` were removed from the enum `SubscriptionLifecycleState` in the Organizations service
+
 ## 3.20.0 - 2023-07-18
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the mx-monterrey-1 region

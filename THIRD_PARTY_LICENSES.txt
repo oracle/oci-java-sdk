@@ -196,11 +196,11 @@ org.apache.httpcomponents:httpclient
 * Copyright © 2005–2021 The Apache Software Foundation. All rights reserved.
 * License: Apache License 2.0
 
-org.bouncycastle:bcpkix-jdk15on
+org.bouncycastle:bcpkix-jdk15to18
 * Copyright © 2000-2021 The Legion of the Bouncy Castle Inc
 * License: MIT License
 
-org.bouncycastle:bcprov-jdk15on
+org.bouncycastle:bcprov-jdk15to18
 * Copyright © 2000-2021 The Legion of the Bouncy Castle Inc
 * License: MIT License
 

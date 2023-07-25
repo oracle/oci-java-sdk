@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DomainAsync {
     /** Service instance for Domain. */
@@ -105,7 +105,7 @@ public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails("Domain", "CreateDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDomainRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domains")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -135,10 +135,10 @@ public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails(
                         "Domain",
                         "DeleteDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/DeleteDomain")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDomainRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domains")
                 .appendPathParam(request.getDomainId())
                 .accept("application/json")
@@ -162,10 +162,10 @@ public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails(
                         "Domain",
                         "GetDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/GetDomain")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDomainRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domains")
                 .appendPathParam(request.getDomainId())
                 .accept("application/json")
@@ -191,10 +191,10 @@ public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails(
                         "Domain",
                         "ListDomains",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/ListDomains")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDomainsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domains")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("domainId", request.getDomainId())
@@ -231,10 +231,10 @@ public class DomainAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                 .serviceDetails(
                         "Domain",
                         "UpdateDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/UpdateDomain")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDomainRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domains")
                 .appendPathParam(request.getDomainId())
                 .accept("application/json")

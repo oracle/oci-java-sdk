@@ -371,6 +371,44 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CopyDeploymentBackupResponse> copyDeploymentBackup(
+            CopyDeploymentBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CopyDeploymentBackupRequest, CopyDeploymentBackupResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDeploymentBackupId(), "deploymentBackupId must not be blank");
+        Objects.requireNonNull(
+                request.getCopyDeploymentBackupDetails(),
+                "copyDeploymentBackupDetails is required");
+
+        return clientCall(request, CopyDeploymentBackupResponse::builder)
+                .logger(LOG, "copyDeploymentBackup")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CopyDeploymentBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CopyDeploymentBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyDeploymentBackupRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentBackups")
+                .appendPathParam(request.getDeploymentBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("copyToBucket")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CopyDeploymentBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyDeploymentBackupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /** Possible operation status. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),

@@ -13,7 +13,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * [Organization Management
  * Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public interface SubscriptionAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -113,7 +113,7 @@ public interface SubscriptionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the subscription details by subscriptionId.
+     * Gets the subscription details by subscription ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -142,6 +142,24 @@ public interface SubscriptionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetSubscriptionMappingRequest, GetSubscriptionMappingResponse>
                     handler);
+
+    /**
+     * List line item summaries that a assigned subscription owns.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAssignedSubscriptionLineItemsResponse>
+            listAssignedSubscriptionLineItems(
+                    ListAssignedSubscriptionLineItemsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAssignedSubscriptionLineItemsRequest,
+                                    ListAssignedSubscriptionLineItemsResponse>
+                            handler);
 
     /**
      * Lists subscriptions that are consumed by the compartment. Only the root compartment is
@@ -174,6 +192,22 @@ public interface SubscriptionAsync extends AutoCloseable {
             ListAvailableRegionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListAvailableRegionsRequest, ListAvailableRegionsResponse>
+                    handler);
+
+    /**
+     * Lists the line items in a subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubscriptionLineItemsResponse> listSubscriptionLineItems(
+            ListSubscriptionLineItemsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>
                     handler);
 
     /**

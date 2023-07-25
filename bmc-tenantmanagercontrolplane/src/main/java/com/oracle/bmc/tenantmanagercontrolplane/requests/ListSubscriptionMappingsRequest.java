@@ -11,14 +11,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListSubscriptionMappingsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class ListSubscriptionMappingsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the subscription to which the tenancy is associated. */
+    /** OCID of the subscription. */
     private String subscriptionId;
 
-    /** The ID of the subscription to which the tenancy is associated. */
+    /** OCID of the subscription. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -29,10 +29,10 @@ public class ListSubscriptionMappingsRequest
     public String getSubscriptionMappingId() {
         return subscriptionMappingId;
     }
-    /** OCID of the compartment. Always a tenancy OCID. */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** OCID of the compartment. Always a tenancy OCID. */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -139,11 +139,11 @@ public class ListSubscriptionMappingsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the subscription to which the tenancy is associated. */
+        /** OCID of the subscription. */
         private String subscriptionId = null;
 
         /**
-         * The ID of the subscription to which the tenancy is associated.
+         * OCID of the subscription.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -167,11 +167,11 @@ public class ListSubscriptionMappingsRequest
             return this;
         }
 
-        /** OCID of the compartment. Always a tenancy OCID. */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * OCID of the compartment. Always a tenancy OCID.
+         * The ID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance

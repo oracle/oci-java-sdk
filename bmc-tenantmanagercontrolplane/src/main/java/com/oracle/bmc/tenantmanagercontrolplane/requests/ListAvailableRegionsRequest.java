@@ -10,14 +10,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListAvailableRegionsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAvailableRegionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class ListAvailableRegionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the subscription to which the tenancy is associated. */
+    /** OCID of the subscription. */
     private String subscriptionId;
 
-    /** The ID of the subscription to which the tenancy is associated. */
+    /** OCID of the subscription. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -48,11 +48,11 @@ public class ListAvailableRegionsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the subscription to which the tenancy is associated. */
+        /** OCID of the subscription. */
         private String subscriptionId = null;
 
         /**
-         * The ID of the subscription to which the tenancy is associated.
+         * OCID of the subscription.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

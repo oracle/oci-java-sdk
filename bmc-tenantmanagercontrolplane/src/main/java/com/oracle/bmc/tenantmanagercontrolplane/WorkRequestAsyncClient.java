@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements WorkRequestAsync {
     /** Service instance for WorkRequest. */
@@ -107,10 +107,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .serviceDetails(
                         "WorkRequest",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
@@ -139,10 +139,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .serviceDetails(
                         "WorkRequest",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("errors")
@@ -176,10 +176,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .serviceDetails(
                         "WorkRequest",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("logs")
@@ -212,10 +212,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .serviceDetails(
                         "WorkRequest",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/WorkRequest/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("page", request.getPage())

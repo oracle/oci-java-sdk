@@ -7,7 +7,10 @@ package com.oracle.bmc.budget;
 import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
 
-/** Use the Budgets API to manage budgets and budget alerts. */
+/**
+ * Use the Budgets API to manage budgets and budget alerts. For more information, see [Budgets
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/budgetsoverview.htm).
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface BudgetAsync extends AutoCloseable {
 
@@ -172,8 +175,8 @@ public interface BudgetAsync extends AutoCloseable {
      * <p>To list all budgets, set the targetType query parameter to ALL (for example:
      * 'targetType=ALL').
      *
-     * <p>Additional targetTypes would be available in future releases. Clients should ignore new
-     * targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
+     * <p>Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK
+     * to handle new targetTypes.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

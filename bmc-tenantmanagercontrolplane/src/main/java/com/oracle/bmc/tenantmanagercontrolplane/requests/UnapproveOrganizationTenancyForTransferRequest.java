@@ -11,14 +11,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UnapproveOrganizationTenancyForTransferRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class UnapproveOrganizationTenancyForTransferRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of the compartment. Always a tenancy OCID. */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** OCID of the compartment. Always a tenancy OCID. */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -79,11 +79,11 @@ public class UnapproveOrganizationTenancyForTransferRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of the compartment. Always a tenancy OCID. */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * OCID of the compartment. Always a tenancy OCID.
+         * The ID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance

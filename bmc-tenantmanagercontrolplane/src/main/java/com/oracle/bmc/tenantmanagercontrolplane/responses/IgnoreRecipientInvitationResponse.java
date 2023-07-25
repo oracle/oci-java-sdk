@@ -6,7 +6,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.responses;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class IgnoreRecipientInvitationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

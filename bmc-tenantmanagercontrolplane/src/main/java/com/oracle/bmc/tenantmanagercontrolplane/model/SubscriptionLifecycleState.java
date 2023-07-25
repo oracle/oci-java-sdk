@@ -4,16 +4,14 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** Lifecycle state of the subscription. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+/** The current lifecycle state of the OCS subscription. */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public enum SubscriptionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
-    Creating("CREATING"),
+    NeedsAttention("NEEDS_ATTENTION"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),
-    Updating("UPDATING"),
-    Deleting("DELETING"),
-    Deleted("DELETED"),
     Failed("FAILED"),
+    Creating("CREATING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

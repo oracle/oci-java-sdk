@@ -373,6 +373,41 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public CopyDeploymentBackupResponse copyDeploymentBackup(CopyDeploymentBackupRequest request) {
+
+        Validate.notBlank(request.getDeploymentBackupId(), "deploymentBackupId must not be blank");
+        Objects.requireNonNull(
+                request.getCopyDeploymentBackupDetails(),
+                "copyDeploymentBackupDetails is required");
+
+        return clientCall(request, CopyDeploymentBackupResponse::builder)
+                .logger(LOG, "copyDeploymentBackup")
+                .serviceDetails(
+                        "GoldenGate",
+                        "CopyDeploymentBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CopyDeploymentBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyDeploymentBackupRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentBackups")
+                .appendPathParam(request.getDeploymentBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("copyToBucket")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CopyDeploymentBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyDeploymentBackupResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
+    }
+
+    @Override
     public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
         Objects.requireNonNull(
                 request.getCreateConnectionDetails(), "createConnectionDetails is required");

@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Link {
     /** Service instance for Link. */
     public static final com.oracle.bmc.Service SERVICE =
@@ -129,10 +129,10 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Link",
                         "DeleteLink",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/DeleteLink")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Link/DeleteLink")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLinkRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("links")
                 .appendPathParam(request.getLinkId())
                 .accept("application/json")
@@ -155,10 +155,10 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Link",
                         "GetLink",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/GetLink")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Link/GetLink")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLinkRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("links")
                 .appendPathParam(request.getLinkId())
                 .accept("application/json")
@@ -179,10 +179,10 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Link",
                         "ListLinks",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/ListLinks")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Link/ListLinks")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLinksRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("links")
                 .appendQueryParam("parentTenancyId", request.getParentTenancyId())
                 .appendQueryParam("childTenancyId", request.getChildTenancyId())

@@ -35,7 +35,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         "placementConfigurations",
         "size",
         "timeCreated",
-        "loadBalancers"
+        "loadBalancers",
+        "instanceDisplayNameFormatter",
+        "instanceHostnameFormatter"
     })
     public InstancePool(
             String id,
@@ -48,7 +50,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             java.util.List<InstancePoolPlacementConfiguration> placementConfigurations,
             Integer size,
             java.util.Date timeCreated,
-            java.util.List<InstancePoolLoadBalancerAttachment> loadBalancers) {
+            java.util.List<InstancePoolLoadBalancerAttachment> loadBalancers,
+            String instanceDisplayNameFormatter,
+            String instanceHostnameFormatter) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -61,6 +65,8 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         this.size = size;
         this.timeCreated = timeCreated;
         this.loadBalancers = loadBalancers;
+        this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+        this.instanceHostnameFormatter = instanceHostnameFormatter;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -273,6 +279,48 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("loadBalancers");
             return this;
         }
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
+         * the format. The formatter does not retroactively change instance's displaynames, only
+         * instance displaynames in the future follow the format
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNameFormatter")
+        private String instanceDisplayNameFormatter;
+
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
+         * the format. The formatter does not retroactively change instance's displaynames, only
+         * instance displaynames in the future follow the format
+         *
+         * @param instanceDisplayNameFormatter the value to set
+         * @return this builder
+         */
+        public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
+            this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            this.__explicitlySet__.add("instanceDisplayNameFormatter");
+            return this;
+        }
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance hostnames follow
+         * the format. The formatter does not retroactively change instance's hostnames, only
+         * instance hostnames in the future follow the format
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceHostnameFormatter")
+        private String instanceHostnameFormatter;
+
+        /**
+         * A user-friendly formatter for the instance pool's instances. Instance hostnames follow
+         * the format. The formatter does not retroactively change instance's hostnames, only
+         * instance hostnames in the future follow the format
+         *
+         * @param instanceHostnameFormatter the value to set
+         * @return this builder
+         */
+        public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
+            this.instanceHostnameFormatter = instanceHostnameFormatter;
+            this.__explicitlySet__.add("instanceHostnameFormatter");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -290,7 +338,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                             this.placementConfigurations,
                             this.size,
                             this.timeCreated,
-                            this.loadBalancers);
+                            this.loadBalancers,
+                            this.instanceDisplayNameFormatter,
+                            this.instanceHostnameFormatter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -331,6 +381,12 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("loadBalancers")) {
                 this.loadBalancers(model.getLoadBalancers());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDisplayNameFormatter")) {
+                this.instanceDisplayNameFormatter(model.getInstanceDisplayNameFormatter());
+            }
+            if (model.wasPropertyExplicitlySet("instanceHostnameFormatter")) {
+                this.instanceHostnameFormatter(model.getInstanceHostnameFormatter());
             }
             return this;
         }
@@ -580,6 +636,44 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         return loadBalancers;
     }
 
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
+     * format. The formatter does not retroactively change instance's displaynames, only instance
+     * displaynames in the future follow the format
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceDisplayNameFormatter")
+    private final String instanceDisplayNameFormatter;
+
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
+     * format. The formatter does not retroactively change instance's displaynames, only instance
+     * displaynames in the future follow the format
+     *
+     * @return the value
+     */
+    public String getInstanceDisplayNameFormatter() {
+        return instanceDisplayNameFormatter;
+    }
+
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance hostnames follow the
+     * format. The formatter does not retroactively change instance's hostnames, only instance
+     * hostnames in the future follow the format
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceHostnameFormatter")
+    private final String instanceHostnameFormatter;
+
+    /**
+     * A user-friendly formatter for the instance pool's instances. Instance hostnames follow the
+     * format. The formatter does not retroactively change instance's hostnames, only instance
+     * hostnames in the future follow the format
+     *
+     * @return the value
+     */
+    public String getInstanceHostnameFormatter() {
+        return instanceHostnameFormatter;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -608,6 +702,10 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", loadBalancers=").append(String.valueOf(this.loadBalancers));
+        sb.append(", instanceDisplayNameFormatter=")
+                .append(String.valueOf(this.instanceDisplayNameFormatter));
+        sb.append(", instanceHostnameFormatter=")
+                .append(String.valueOf(this.instanceHostnameFormatter));
         sb.append(")");
         return sb.toString();
     }
@@ -635,6 +733,10 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.loadBalancers, other.loadBalancers)
+                && java.util.Objects.equals(
+                        this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
+                && java.util.Objects.equals(
+                        this.instanceHostnameFormatter, other.instanceHostnameFormatter)
                 && super.equals(other);
     }
 
@@ -667,6 +769,16 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.loadBalancers == null ? 43 : this.loadBalancers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceDisplayNameFormatter == null
+                                ? 43
+                                : this.instanceDisplayNameFormatter.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceHostnameFormatter == null
+                                ? 43
+                                : this.instanceHostnameFormatter.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

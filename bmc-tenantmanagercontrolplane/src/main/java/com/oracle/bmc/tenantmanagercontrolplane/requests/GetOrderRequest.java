@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetOrderExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOrderRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /** Activation token containing an order ID. A JWT RFC 7519-formatted string. */

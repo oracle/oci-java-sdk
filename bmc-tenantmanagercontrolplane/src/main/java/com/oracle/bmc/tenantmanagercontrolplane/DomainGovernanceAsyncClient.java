@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DomainGovernanceAsync {
     /** Service instance for DomainGovernance. */
@@ -109,10 +109,10 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .serviceDetails(
                         "DomainGovernance",
                         "CreateDomainGovernance",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/CreateDomainGovernance")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/CreateDomainGovernance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDomainGovernanceRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domainGovernances")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -141,10 +141,10 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .serviceDetails(
                         "DomainGovernance",
                         "DeleteDomainGovernance",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/DeleteDomainGovernance")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/DeleteDomainGovernance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDomainGovernanceRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domainGovernances")
                 .appendPathParam(request.getDomainGovernanceId())
                 .accept("application/json")
@@ -169,10 +169,10 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .serviceDetails(
                         "DomainGovernance",
                         "GetDomainGovernance",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/GetDomainGovernance")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/GetDomainGovernance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDomainGovernanceRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domainGovernances")
                 .appendPathParam(request.getDomainGovernanceId())
                 .accept("application/json")
@@ -199,10 +199,10 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .serviceDetails(
                         "DomainGovernance",
                         "ListDomainGovernances",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/ListDomainGovernances")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/ListDomainGovernances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDomainGovernancesRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domainGovernances")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("domainId", request.getDomainId())
@@ -243,10 +243,10 @@ public class DomainGovernanceAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .serviceDetails(
                         "DomainGovernance",
                         "UpdateDomainGovernance",
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/UpdateDomainGovernance")
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/UpdateDomainGovernance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDomainGovernanceRequest::builder)
-                .basePath("/20200801")
+                .basePath("/20230401")
                 .appendPathParam("domainGovernances")
                 .appendPathParam(request.getDomainGovernanceId())
                 .accept("application/json")

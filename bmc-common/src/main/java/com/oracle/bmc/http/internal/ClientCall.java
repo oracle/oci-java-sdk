@@ -13,9 +13,9 @@ import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
-import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.RequestInterceptor;
+import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.model.Range;
@@ -33,9 +33,9 @@ import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterScheduler;
+import jakarta.annotation.Nullable;
 import org.slf4j.Logger;
 
-import jakarta.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
@@ -550,6 +550,14 @@ public final class ClientCall<
         return this;
     }
 
+    /**
+     * @deprecated This method has never worked properly and will be removed in the future. To
+     *     request deserialization of a complex parameterized type like {@code Map}, instead declare
+     *     a wrapper type that takes the complex type as the parameter of a constructor annotated
+     *     with {@code @JsonCreator(mode = DELEGATING)}. You can then pass the wrapper type to
+     *     {@link #handleBody(Class, BiConsumer)} and unwrap it in the {@code handle} lambda.
+     */
+    @Deprecated
     public <RESP_BODY> ClientCall<REQ, RESP, RESP_BUILDER> handleBodyMap(
             Class<RESP_BODY> type, BiConsumer<RESP_BUILDER, Map<String, RESP_BODY>> handle) {
         responseBodyList = true;
