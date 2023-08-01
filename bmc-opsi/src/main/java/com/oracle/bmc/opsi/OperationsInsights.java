@@ -176,6 +176,24 @@ public interface OperationsInsights extends AutoCloseable {
             ChangeHostInsightCompartmentRequest request);
 
     /**
+     * Moves a news report resource from one compartment identifier to another. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeNewsReportCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeNewsReportCompartment API.
+     */
+    ChangeNewsReportCompartmentResponse changeNewsReportCompartment(
+            ChangeNewsReportCompartmentRequest request);
+
+    /**
      * Moves a private endpoint from one compartment to another. When provided, If-Match is checked
      * against ETag values of the resource.
      *
@@ -313,6 +331,23 @@ public interface OperationsInsights extends AutoCloseable {
      *     API.
      */
     CreateHostInsightResponse createHostInsight(CreateHostInsightRequest request);
+
+    /**
+     * Create a news report in Operations Insights. The report will be enabled in Operations
+     * Insights. Insights will be emailed as per selected frequency.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateNewsReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNewsReport
+     *     API.
+     */
+    CreateNewsReportResponse createNewsReport(CreateNewsReportRequest request);
 
     /**
      * Create a private endpoint resource for the tenant in Operations Insights. This resource will
@@ -466,6 +501,22 @@ public interface OperationsInsights extends AutoCloseable {
      *     API.
      */
     DeleteHostInsightResponse deleteHostInsight(DeleteHostInsightRequest request);
+
+    /**
+     * Deletes a news report. The news report will be deleted and cannot be enabled again.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteNewsReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNewsReport
+     *     API.
+     */
+    DeleteNewsReportResponse deleteNewsReport(DeleteNewsReportRequest request);
 
     /**
      * Deletes a private endpoint.
@@ -821,6 +872,21 @@ public interface OperationsInsights extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostInsight API.
      */
     GetHostInsightResponse getHostInsight(GetHostInsightRequest request);
+
+    /**
+     * Gets details of a news report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetNewsReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNewsReport API.
+     */
+    GetNewsReportResponse getNewsReport(GetNewsReportRequest request);
 
     /**
      * Gets the details of the specified private endpoint.
@@ -1434,6 +1500,23 @@ public interface OperationsInsights extends AutoCloseable {
      */
     ListImportableEnterpriseManagerEntitiesResponse listImportableEnterpriseManagerEntities(
             ListImportableEnterpriseManagerEntitiesRequest request);
+
+    /**
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or
+     * id query parameter must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListNewsReportsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNewsReports
+     *     API.
+     */
+    ListNewsReportsResponse listNewsReports(ListNewsReportsRequest request);
 
     /**
      * Gets a list of Operation Insights private endpoints.
@@ -2738,6 +2821,22 @@ public interface OperationsInsights extends AutoCloseable {
      *     API.
      */
     UpdateHostInsightResponse updateHostInsight(UpdateHostInsightRequest request);
+
+    /**
+     * Updates the configuration of a news report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateNewsReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNewsReport
+     *     API.
+     */
+    UpdateNewsReportResponse updateNewsReport(UpdateNewsReportRequest request);
 
     /**
      * Updates one or more attributes of the specified private endpoint.

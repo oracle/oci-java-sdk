@@ -82,12 +82,12 @@ public final class DataObjectColumnMetadata
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** Type of a data object column. */
+        /** Type name of a data object column. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
         private DataTypeName dataTypeName;
 
         /**
-         * Type of a data object column.
+         * Type name of a data object column.
          *
          * @param dataTypeName the value to set
          * @return this builder
@@ -280,7 +280,7 @@ public final class DataObjectColumnMetadata
         return category;
     }
 
-    /** Type of a data object column. */
+    /** Type name of a data object column. */
     public enum DataTypeName implements com.oracle.bmc.http.internal.BmcEnum {
         Number("NUMBER"),
         Timestamp("TIMESTAMP"),
@@ -327,12 +327,12 @@ public final class DataObjectColumnMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of a data object column. */
+    /** Type name of a data object column. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
     private final DataTypeName dataTypeName;
 
     /**
-     * Type of a data object column.
+     * Type name of a data object column.
      *
      * @return the value
      */

@@ -31,7 +31,8 @@ public final class UpsertLogAnalyticsAssociation
         "entityName",
         "entityTypeName",
         "host",
-        "logGroupId"
+        "logGroupId",
+        "associationProperties"
     })
     public UpsertLogAnalyticsAssociation(
             String agentId,
@@ -41,7 +42,8 @@ public final class UpsertLogAnalyticsAssociation
             String entityName,
             String entityTypeName,
             String host,
-            String logGroupId) {
+            String logGroupId,
+            java.util.List<AssociationProperty> associationProperties) {
         super();
         this.agentId = agentId;
         this.sourceName = sourceName;
@@ -51,6 +53,7 @@ public final class UpsertLogAnalyticsAssociation
         this.entityTypeName = entityTypeName;
         this.host = host;
         this.logGroupId = logGroupId;
+        this.associationProperties = associationProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -175,6 +178,22 @@ public final class UpsertLogAnalyticsAssociation
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
+        /** A list of association properties. */
+        @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
+        private java.util.List<AssociationProperty> associationProperties;
+
+        /**
+         * A list of association properties.
+         *
+         * @param associationProperties the value to set
+         * @return this builder
+         */
+        public Builder associationProperties(
+                java.util.List<AssociationProperty> associationProperties) {
+            this.associationProperties = associationProperties;
+            this.__explicitlySet__.add("associationProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -189,7 +208,8 @@ public final class UpsertLogAnalyticsAssociation
                             this.entityName,
                             this.entityTypeName,
                             this.host,
-                            this.logGroupId);
+                            this.logGroupId,
+                            this.associationProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +241,9 @@ public final class UpsertLogAnalyticsAssociation
             }
             if (model.wasPropertyExplicitlySet("logGroupId")) {
                 this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("associationProperties")) {
+                this.associationProperties(model.getAssociationProperties());
             }
             return this;
         }
@@ -339,6 +362,19 @@ public final class UpsertLogAnalyticsAssociation
         return logGroupId;
     }
 
+    /** A list of association properties. */
+    @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
+    private final java.util.List<AssociationProperty> associationProperties;
+
+    /**
+     * A list of association properties.
+     *
+     * @return the value
+     */
+    public java.util.List<AssociationProperty> getAssociationProperties() {
+        return associationProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -362,6 +398,7 @@ public final class UpsertLogAnalyticsAssociation
         sb.append(", entityTypeName=").append(String.valueOf(this.entityTypeName));
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", associationProperties=").append(String.valueOf(this.associationProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +421,7 @@ public final class UpsertLogAnalyticsAssociation
                 && java.util.Objects.equals(this.entityTypeName, other.entityTypeName)
                 && java.util.Objects.equals(this.host, other.host)
                 && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.associationProperties, other.associationProperties)
                 && super.equals(other);
     }
 
@@ -403,6 +441,11 @@ public final class UpsertLogAnalyticsAssociation
                         + (this.entityTypeName == null ? 43 : this.entityTypeName.hashCode());
         result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
         result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationProperties == null
+                                ? 43
+                                : this.associationProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

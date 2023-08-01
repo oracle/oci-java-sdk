@@ -52,7 +52,9 @@ public final class UpsertLogAnalyticsSourceDetails
         "entityTypes",
         "isTimezoneOverride",
         "userParsers",
-        "categories"
+        "categories",
+        "endpoints",
+        "sourceProperties"
     })
     public UpsertLogAnalyticsSourceDetails(
             java.util.List<LogAnalyticsSourceLabelCondition> labelConditions,
@@ -83,7 +85,9 @@ public final class UpsertLogAnalyticsSourceDetails
             java.util.List<LogAnalyticsSourceEntityType> entityTypes,
             Boolean isTimezoneOverride,
             java.util.List<LogAnalyticsParser> userParsers,
-            java.util.List<LogAnalyticsCategory> categories) {
+            java.util.List<LogAnalyticsCategory> categories,
+            java.util.List<LogAnalyticsEndpoint> endpoints,
+            java.util.List<LogAnalyticsProperty> sourceProperties) {
         super();
         this.labelConditions = labelConditions;
         this.dataFilterDefinitions = dataFilterDefinitions;
@@ -114,6 +118,8 @@ public final class UpsertLogAnalyticsSourceDetails
         this.isTimezoneOverride = isTimezoneOverride;
         this.userParsers = userParsers;
         this.categories = categories;
+        this.endpoints = endpoints;
+        this.sourceProperties = sourceProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -567,6 +573,36 @@ public final class UpsertLogAnalyticsSourceDetails
             this.__explicitlySet__.add("categories");
             return this;
         }
+        /** An array of REST API endpoints for log collection. */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
+        private java.util.List<LogAnalyticsEndpoint> endpoints;
+
+        /**
+         * An array of REST API endpoints for log collection.
+         *
+         * @param endpoints the value to set
+         * @return this builder
+         */
+        public Builder endpoints(java.util.List<LogAnalyticsEndpoint> endpoints) {
+            this.endpoints = endpoints;
+            this.__explicitlySet__.add("endpoints");
+            return this;
+        }
+        /** A list of source properties. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceProperties")
+        private java.util.List<LogAnalyticsProperty> sourceProperties;
+
+        /**
+         * A list of source properties.
+         *
+         * @param sourceProperties the value to set
+         * @return this builder
+         */
+        public Builder sourceProperties(java.util.List<LogAnalyticsProperty> sourceProperties) {
+            this.sourceProperties = sourceProperties;
+            this.__explicitlySet__.add("sourceProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -602,7 +638,9 @@ public final class UpsertLogAnalyticsSourceDetails
                             this.entityTypes,
                             this.isTimezoneOverride,
                             this.userParsers,
-                            this.categories);
+                            this.categories,
+                            this.endpoints,
+                            this.sourceProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -697,6 +735,12 @@ public final class UpsertLogAnalyticsSourceDetails
             }
             if (model.wasPropertyExplicitlySet("categories")) {
                 this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("endpoints")) {
+                this.endpoints(model.getEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("sourceProperties")) {
+                this.sourceProperties(model.getSourceProperties());
             }
             return this;
         }
@@ -1097,6 +1141,32 @@ public final class UpsertLogAnalyticsSourceDetails
         return categories;
     }
 
+    /** An array of REST API endpoints for log collection. */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
+    private final java.util.List<LogAnalyticsEndpoint> endpoints;
+
+    /**
+     * An array of REST API endpoints for log collection.
+     *
+     * @return the value
+     */
+    public java.util.List<LogAnalyticsEndpoint> getEndpoints() {
+        return endpoints;
+    }
+
+    /** A list of source properties. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceProperties")
+    private final java.util.List<LogAnalyticsProperty> sourceProperties;
+
+    /**
+     * A list of source properties.
+     *
+     * @return the value
+     */
+    public java.util.List<LogAnalyticsProperty> getSourceProperties() {
+        return sourceProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1142,6 +1212,8 @@ public final class UpsertLogAnalyticsSourceDetails
         sb.append(", isTimezoneOverride=").append(String.valueOf(this.isTimezoneOverride));
         sb.append(", userParsers=").append(String.valueOf(this.userParsers));
         sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", endpoints=").append(String.valueOf(this.endpoints));
+        sb.append(", sourceProperties=").append(String.valueOf(this.sourceProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -1186,6 +1258,8 @@ public final class UpsertLogAnalyticsSourceDetails
                 && java.util.Objects.equals(this.isTimezoneOverride, other.isTimezoneOverride)
                 && java.util.Objects.equals(this.userParsers, other.userParsers)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.endpoints, other.endpoints)
+                && java.util.Objects.equals(this.sourceProperties, other.sourceProperties)
                 && super.equals(other);
     }
 
@@ -1250,6 +1324,10 @@ public final class UpsertLogAnalyticsSourceDetails
                                 : this.isTimezoneOverride.hashCode());
         result = (result * PRIME) + (this.userParsers == null ? 43 : this.userParsers.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.endpoints == null ? 43 : this.endpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceProperties == null ? 43 : this.sourceProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

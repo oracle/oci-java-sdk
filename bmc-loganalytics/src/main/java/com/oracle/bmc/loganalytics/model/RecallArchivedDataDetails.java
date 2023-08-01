@@ -29,7 +29,9 @@ public final class RecallArchivedDataDetails
         "timeDataStarted",
         "dataType",
         "logSets",
-        "query"
+        "query",
+        "purpose",
+        "isRecallNewDataOnly"
     })
     public RecallArchivedDataDetails(
             String compartmentId,
@@ -37,7 +39,9 @@ public final class RecallArchivedDataDetails
             java.util.Date timeDataStarted,
             StorageDataType dataType,
             String logSets,
-            String query) {
+            String query,
+            String purpose,
+            Boolean isRecallNewDataOnly) {
         super();
         this.compartmentId = compartmentId;
         this.timeDataEnded = timeDataEnded;
@@ -45,6 +49,8 @@ public final class RecallArchivedDataDetails
         this.dataType = dataType;
         this.logSets = logSets;
         this.query = query;
+        this.purpose = purpose;
+        this.isRecallNewDataOnly = isRecallNewDataOnly;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -139,6 +145,36 @@ public final class RecallArchivedDataDetails
             this.__explicitlySet__.add("query");
             return this;
         }
+        /** This is the purpose of the recall */
+        @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+        private String purpose;
+
+        /**
+         * This is the purpose of the recall
+         *
+         * @param purpose the value to set
+         * @return this builder
+         */
+        public Builder purpose(String purpose) {
+            this.purpose = purpose;
+            this.__explicitlySet__.add("purpose");
+            return this;
+        }
+        /** This indicates if only new data has to be recalled in this recall request */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
+        private Boolean isRecallNewDataOnly;
+
+        /**
+         * This indicates if only new data has to be recalled in this recall request
+         *
+         * @param isRecallNewDataOnly the value to set
+         * @return this builder
+         */
+        public Builder isRecallNewDataOnly(Boolean isRecallNewDataOnly) {
+            this.isRecallNewDataOnly = isRecallNewDataOnly;
+            this.__explicitlySet__.add("isRecallNewDataOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -151,7 +187,9 @@ public final class RecallArchivedDataDetails
                             this.timeDataStarted,
                             this.dataType,
                             this.logSets,
-                            this.query);
+                            this.query,
+                            this.purpose,
+                            this.isRecallNewDataOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +215,12 @@ public final class RecallArchivedDataDetails
             }
             if (model.wasPropertyExplicitlySet("query")) {
                 this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("purpose")) {
+                this.purpose(model.getPurpose());
+            }
+            if (model.wasPropertyExplicitlySet("isRecallNewDataOnly")) {
+                this.isRecallNewDataOnly(model.getIsRecallNewDataOnly());
             }
             return this;
         }
@@ -269,6 +313,32 @@ public final class RecallArchivedDataDetails
         return query;
     }
 
+    /** This is the purpose of the recall */
+    @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+    private final String purpose;
+
+    /**
+     * This is the purpose of the recall
+     *
+     * @return the value
+     */
+    public String getPurpose() {
+        return purpose;
+    }
+
+    /** This indicates if only new data has to be recalled in this recall request */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
+    private final Boolean isRecallNewDataOnly;
+
+    /**
+     * This indicates if only new data has to be recalled in this recall request
+     *
+     * @return the value
+     */
+    public Boolean getIsRecallNewDataOnly() {
+        return isRecallNewDataOnly;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +360,8 @@ public final class RecallArchivedDataDetails
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", logSets=").append(String.valueOf(this.logSets));
         sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", purpose=").append(String.valueOf(this.purpose));
+        sb.append(", isRecallNewDataOnly=").append(String.valueOf(this.isRecallNewDataOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -310,6 +382,8 @@ public final class RecallArchivedDataDetails
                 && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.logSets, other.logSets)
                 && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.purpose, other.purpose)
+                && java.util.Objects.equals(this.isRecallNewDataOnly, other.isRecallNewDataOnly)
                 && super.equals(other);
     }
 
@@ -329,6 +403,12 @@ public final class RecallArchivedDataDetails
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
         result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result = (result * PRIME) + (this.purpose == null ? 43 : this.purpose.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRecallNewDataOnly == null
+                                ? 43
+                                : this.isRecallNewDataOnly.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

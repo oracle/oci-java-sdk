@@ -60,7 +60,9 @@ public final class LogAnalyticsSource
         "userParsers",
         "timeUpdated",
         "eventTypes",
-        "categories"
+        "categories",
+        "endpoints",
+        "sourceProperties"
     })
     public LogAnalyticsSource(
             java.util.List<LogAnalyticsSourceLabelCondition> labelConditions,
@@ -99,7 +101,9 @@ public final class LogAnalyticsSource
             java.util.List<LogAnalyticsParser> userParsers,
             java.util.Date timeUpdated,
             java.util.List<EventType> eventTypes,
-            java.util.List<LogAnalyticsCategory> categories) {
+            java.util.List<LogAnalyticsCategory> categories,
+            java.util.List<LogAnalyticsEndpoint> endpoints,
+            java.util.List<LogAnalyticsProperty> sourceProperties) {
         super();
         this.labelConditions = labelConditions;
         this.associationCount = associationCount;
@@ -138,6 +142,8 @@ public final class LogAnalyticsSource
         this.timeUpdated = timeUpdated;
         this.eventTypes = eventTypes;
         this.categories = categories;
+        this.endpoints = endpoints;
+        this.sourceProperties = sourceProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -712,6 +718,36 @@ public final class LogAnalyticsSource
             this.__explicitlySet__.add("categories");
             return this;
         }
+        /** An array of REST API endpoints for log collection. */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
+        private java.util.List<LogAnalyticsEndpoint> endpoints;
+
+        /**
+         * An array of REST API endpoints for log collection.
+         *
+         * @param endpoints the value to set
+         * @return this builder
+         */
+        public Builder endpoints(java.util.List<LogAnalyticsEndpoint> endpoints) {
+            this.endpoints = endpoints;
+            this.__explicitlySet__.add("endpoints");
+            return this;
+        }
+        /** A list of source properties. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceProperties")
+        private java.util.List<LogAnalyticsProperty> sourceProperties;
+
+        /**
+         * A list of source properties.
+         *
+         * @param sourceProperties the value to set
+         * @return this builder
+         */
+        public Builder sourceProperties(java.util.List<LogAnalyticsProperty> sourceProperties) {
+            this.sourceProperties = sourceProperties;
+            this.__explicitlySet__.add("sourceProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -755,7 +791,9 @@ public final class LogAnalyticsSource
                             this.userParsers,
                             this.timeUpdated,
                             this.eventTypes,
-                            this.categories);
+                            this.categories,
+                            this.endpoints,
+                            this.sourceProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -874,6 +912,12 @@ public final class LogAnalyticsSource
             }
             if (model.wasPropertyExplicitlySet("categories")) {
                 this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("endpoints")) {
+                this.endpoints(model.getEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("sourceProperties")) {
+                this.sourceProperties(model.getSourceProperties());
             }
             return this;
         }
@@ -1378,6 +1422,32 @@ public final class LogAnalyticsSource
         return categories;
     }
 
+    /** An array of REST API endpoints for log collection. */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
+    private final java.util.List<LogAnalyticsEndpoint> endpoints;
+
+    /**
+     * An array of REST API endpoints for log collection.
+     *
+     * @return the value
+     */
+    public java.util.List<LogAnalyticsEndpoint> getEndpoints() {
+        return endpoints;
+    }
+
+    /** A list of source properties. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceProperties")
+    private final java.util.List<LogAnalyticsProperty> sourceProperties;
+
+    /**
+     * A list of source properties.
+     *
+     * @return the value
+     */
+    public java.util.List<LogAnalyticsProperty> getSourceProperties() {
+        return sourceProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1433,6 +1503,8 @@ public final class LogAnalyticsSource
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", eventTypes=").append(String.valueOf(this.eventTypes));
         sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", endpoints=").append(String.valueOf(this.endpoints));
+        sb.append(", sourceProperties=").append(String.valueOf(this.sourceProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -1487,6 +1559,8 @@ public final class LogAnalyticsSource
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.eventTypes, other.eventTypes)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.endpoints, other.endpoints)
+                && java.util.Objects.equals(this.sourceProperties, other.sourceProperties)
                 && super.equals(other);
     }
 
@@ -1573,6 +1647,10 @@ public final class LogAnalyticsSource
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.eventTypes == null ? 43 : this.eventTypes.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result = (result * PRIME) + (this.endpoints == null ? 43 : this.endpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceProperties == null ? 43 : this.sourceProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

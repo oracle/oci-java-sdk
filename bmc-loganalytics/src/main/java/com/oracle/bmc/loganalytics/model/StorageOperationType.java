@@ -11,6 +11,7 @@ public enum StorageOperationType implements com.oracle.bmc.http.internal.BmcEnum
     PurgeStorageData("PURGE_STORAGE_DATA"),
     RecallArchivedStorageData("RECALL_ARCHIVED_STORAGE_DATA"),
     ReleaseRecalledStorageData("RELEASE_RECALLED_STORAGE_DATA"),
+    PurgeArchivalData("PURGE_ARCHIVAL_DATA"),
     ArchiveStorageData("ARCHIVE_STORAGE_DATA"),
     CleanupArchivalStorageData("CLEANUP_ARCHIVAL_STORAGE_DATA"),
     EncryptActiveData("ENCRYPT_ACTIVE_DATA"),

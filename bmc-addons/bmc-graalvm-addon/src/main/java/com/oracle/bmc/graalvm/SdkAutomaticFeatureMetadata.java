@@ -73,6 +73,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.exascale.SdkClientsMetadata",
     "com.oracle.bmc.faaas.SdkClientsMetadata",
     "com.oracle.bmc.filestorage.SdkClientsMetadata",
+    "com.oracle.bmc.fleetsoftwareupdate.SdkClientsMetadata",
     "com.oracle.bmc.functions.SdkClientsMetadata",
     "com.oracle.bmc.fusionapps.SdkClientsMetadata",
     "com.oracle.bmc.genericartifactscontent.SdkClientsMetadata",

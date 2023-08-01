@@ -28,6 +28,7 @@ public final class ExadataInsightResourceForecastTrendSummary
         "id",
         "name",
         "daysToReachCapacity",
+        "selectedForecastAlgorithm",
         "pattern",
         "historicalData",
         "projectedData"
@@ -36,6 +37,7 @@ public final class ExadataInsightResourceForecastTrendSummary
             String id,
             String name,
             Integer daysToReachCapacity,
+            String selectedForecastAlgorithm,
             Pattern pattern,
             java.util.List<HistoricalDataItem> historicalData,
             java.util.List<ProjectedDataItem> projectedData) {
@@ -43,6 +45,7 @@ public final class ExadataInsightResourceForecastTrendSummary
         this.id = id;
         this.name = name;
         this.daysToReachCapacity = daysToReachCapacity;
+        this.selectedForecastAlgorithm = selectedForecastAlgorithm;
         this.pattern = pattern;
         this.historicalData = historicalData;
         this.projectedData = projectedData;
@@ -97,6 +100,21 @@ public final class ExadataInsightResourceForecastTrendSummary
         public Builder daysToReachCapacity(Integer daysToReachCapacity) {
             this.daysToReachCapacity = daysToReachCapacity;
             this.__explicitlySet__.add("daysToReachCapacity");
+            return this;
+        }
+        /** Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast. */
+        @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
+        private String selectedForecastAlgorithm;
+
+        /**
+         * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+         *
+         * @param selectedForecastAlgorithm the value to set
+         * @return this builder
+         */
+        public Builder selectedForecastAlgorithm(String selectedForecastAlgorithm) {
+            this.selectedForecastAlgorithm = selectedForecastAlgorithm;
+            this.__explicitlySet__.add("selectedForecastAlgorithm");
             return this;
         }
         /** Time series patterns used in the forecasting. */
@@ -154,6 +172,7 @@ public final class ExadataInsightResourceForecastTrendSummary
                             this.id,
                             this.name,
                             this.daysToReachCapacity,
+                            this.selectedForecastAlgorithm,
                             this.pattern,
                             this.historicalData,
                             this.projectedData);
@@ -173,6 +192,9 @@ public final class ExadataInsightResourceForecastTrendSummary
             }
             if (model.wasPropertyExplicitlySet("daysToReachCapacity")) {
                 this.daysToReachCapacity(model.getDaysToReachCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("selectedForecastAlgorithm")) {
+                this.selectedForecastAlgorithm(model.getSelectedForecastAlgorithm());
             }
             if (model.wasPropertyExplicitlySet("pattern")) {
                 this.pattern(model.getPattern());
@@ -237,6 +259,19 @@ public final class ExadataInsightResourceForecastTrendSummary
      */
     public Integer getDaysToReachCapacity() {
         return daysToReachCapacity;
+    }
+
+    /** Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast. */
+    @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
+    private final String selectedForecastAlgorithm;
+
+    /**
+     * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+     *
+     * @return the value
+     */
+    public String getSelectedForecastAlgorithm() {
+        return selectedForecastAlgorithm;
     }
 
     /** Time series patterns used in the forecasting. */
@@ -348,6 +383,8 @@ public final class ExadataInsightResourceForecastTrendSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", daysToReachCapacity=").append(String.valueOf(this.daysToReachCapacity));
+        sb.append(", selectedForecastAlgorithm=")
+                .append(String.valueOf(this.selectedForecastAlgorithm));
         sb.append(", pattern=").append(String.valueOf(this.pattern));
         sb.append(", historicalData=").append(String.valueOf(this.historicalData));
         sb.append(", projectedData=").append(String.valueOf(this.projectedData));
@@ -369,6 +406,8 @@ public final class ExadataInsightResourceForecastTrendSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.daysToReachCapacity, other.daysToReachCapacity)
+                && java.util.Objects.equals(
+                        this.selectedForecastAlgorithm, other.selectedForecastAlgorithm)
                 && java.util.Objects.equals(this.pattern, other.pattern)
                 && java.util.Objects.equals(this.historicalData, other.historicalData)
                 && java.util.Objects.equals(this.projectedData, other.projectedData)
@@ -386,6 +425,11 @@ public final class ExadataInsightResourceForecastTrendSummary
                         + (this.daysToReachCapacity == null
                                 ? 43
                                 : this.daysToReachCapacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selectedForecastAlgorithm == null
+                                ? 43
+                                : this.selectedForecastAlgorithm.hashCode());
         result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
         result =
                 (result * PRIME)

@@ -84,6 +84,23 @@ public interface ContainerEngine extends AutoCloseable {
             ClusterMigrateToNativeVcnRequest request);
 
     /**
+     * Complete cluster credential rotation. Retire old credentials from kubernetes components.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CompleteCredentialRotationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CompleteCredentialRotation API.
+     */
+    CompleteCredentialRotationResponse completeCredentialRotation(
+            CompleteCredentialRotationRequest request);
+
+    /**
      * Create a new cluster.
      *
      * @param request The request object containing the details to send
@@ -331,6 +348,23 @@ public interface ContainerEngine extends AutoCloseable {
      *     API.
      */
     GetClusterOptionsResponse getClusterOptions(GetClusterOptionsRequest request);
+
+    /**
+     * Get cluster credential rotation status.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetCredentialRotationStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCredentialRotationStatus API.
+     */
+    GetCredentialRotationStatusResponse getCredentialRotationStatus(
+            GetCredentialRotationStatusRequest request);
 
     /**
      * Get the details of a node pool.
@@ -611,6 +645,23 @@ public interface ContainerEngine extends AutoCloseable {
      *     ListWorkloadMappings API.
      */
     ListWorkloadMappingsResponse listWorkloadMappings(ListWorkloadMappingsRequest request);
+
+    /**
+     * Start cluster credential rotation by adding new credentials, old credentials will still work
+     * after this operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/StartCredentialRotationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     StartCredentialRotation API.
+     */
+    StartCredentialRotationResponse startCredentialRotation(StartCredentialRotationRequest request);
 
     /**
      * Update addon details for a cluster.

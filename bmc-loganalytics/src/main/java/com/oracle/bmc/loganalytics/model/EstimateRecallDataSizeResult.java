@@ -27,18 +27,27 @@ public final class EstimateRecallDataSizeResult
         "timeDataEnded",
         "timeDataStarted",
         "sizeInBytes",
-        "isOverlappingWithExistingRecalls"
+        "isOverlappingWithExistingRecalls",
+        "coreGroupCount",
+        "coreGroupCountLimit",
+        "sizeLimitInBytes"
     })
     public EstimateRecallDataSizeResult(
             java.util.Date timeDataEnded,
             java.util.Date timeDataStarted,
             Long sizeInBytes,
-            Boolean isOverlappingWithExistingRecalls) {
+            Boolean isOverlappingWithExistingRecalls,
+            Integer coreGroupCount,
+            Integer coreGroupCountLimit,
+            Long sizeLimitInBytes) {
         super();
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
         this.sizeInBytes = sizeInBytes;
         this.isOverlappingWithExistingRecalls = isOverlappingWithExistingRecalls;
+        this.coreGroupCount = coreGroupCount;
+        this.coreGroupCountLimit = coreGroupCountLimit;
+        this.sizeLimitInBytes = sizeLimitInBytes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -113,6 +122,51 @@ public final class EstimateRecallDataSizeResult
             this.__explicitlySet__.add("isOverlappingWithExistingRecalls");
             return this;
         }
+        /** This is the number of core groups estimated for this recall */
+        @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCount")
+        private Integer coreGroupCount;
+
+        /**
+         * This is the number of core groups estimated for this recall
+         *
+         * @param coreGroupCount the value to set
+         * @return this builder
+         */
+        public Builder coreGroupCount(Integer coreGroupCount) {
+            this.coreGroupCount = coreGroupCount;
+            this.__explicitlySet__.add("coreGroupCount");
+            return this;
+        }
+        /** This is the max number of core groups that is available for any recall */
+        @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCountLimit")
+        private Integer coreGroupCountLimit;
+
+        /**
+         * This is the max number of core groups that is available for any recall
+         *
+         * @param coreGroupCountLimit the value to set
+         * @return this builder
+         */
+        public Builder coreGroupCountLimit(Integer coreGroupCountLimit) {
+            this.coreGroupCountLimit = coreGroupCountLimit;
+            this.__explicitlySet__.add("coreGroupCountLimit");
+            return this;
+        }
+        /** This is the size limit in bytes */
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeLimitInBytes")
+        private Long sizeLimitInBytes;
+
+        /**
+         * This is the size limit in bytes
+         *
+         * @param sizeLimitInBytes the value to set
+         * @return this builder
+         */
+        public Builder sizeLimitInBytes(Long sizeLimitInBytes) {
+            this.sizeLimitInBytes = sizeLimitInBytes;
+            this.__explicitlySet__.add("sizeLimitInBytes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -123,7 +177,10 @@ public final class EstimateRecallDataSizeResult
                             this.timeDataEnded,
                             this.timeDataStarted,
                             this.sizeInBytes,
-                            this.isOverlappingWithExistingRecalls);
+                            this.isOverlappingWithExistingRecalls,
+                            this.coreGroupCount,
+                            this.coreGroupCountLimit,
+                            this.sizeLimitInBytes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -143,6 +200,15 @@ public final class EstimateRecallDataSizeResult
             }
             if (model.wasPropertyExplicitlySet("isOverlappingWithExistingRecalls")) {
                 this.isOverlappingWithExistingRecalls(model.getIsOverlappingWithExistingRecalls());
+            }
+            if (model.wasPropertyExplicitlySet("coreGroupCount")) {
+                this.coreGroupCount(model.getCoreGroupCount());
+            }
+            if (model.wasPropertyExplicitlySet("coreGroupCountLimit")) {
+                this.coreGroupCountLimit(model.getCoreGroupCountLimit());
+            }
+            if (model.wasPropertyExplicitlySet("sizeLimitInBytes")) {
+                this.sizeLimitInBytes(model.getSizeLimitInBytes());
             }
             return this;
         }
@@ -217,6 +283,45 @@ public final class EstimateRecallDataSizeResult
         return isOverlappingWithExistingRecalls;
     }
 
+    /** This is the number of core groups estimated for this recall */
+    @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCount")
+    private final Integer coreGroupCount;
+
+    /**
+     * This is the number of core groups estimated for this recall
+     *
+     * @return the value
+     */
+    public Integer getCoreGroupCount() {
+        return coreGroupCount;
+    }
+
+    /** This is the max number of core groups that is available for any recall */
+    @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCountLimit")
+    private final Integer coreGroupCountLimit;
+
+    /**
+     * This is the max number of core groups that is available for any recall
+     *
+     * @return the value
+     */
+    public Integer getCoreGroupCountLimit() {
+        return coreGroupCountLimit;
+    }
+
+    /** This is the size limit in bytes */
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeLimitInBytes")
+    private final Long sizeLimitInBytes;
+
+    /**
+     * This is the size limit in bytes
+     *
+     * @return the value
+     */
+    public Long getSizeLimitInBytes() {
+        return sizeLimitInBytes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -237,6 +342,9 @@ public final class EstimateRecallDataSizeResult
         sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
         sb.append(", isOverlappingWithExistingRecalls=")
                 .append(String.valueOf(this.isOverlappingWithExistingRecalls));
+        sb.append(", coreGroupCount=").append(String.valueOf(this.coreGroupCount));
+        sb.append(", coreGroupCountLimit=").append(String.valueOf(this.coreGroupCountLimit));
+        sb.append(", sizeLimitInBytes=").append(String.valueOf(this.sizeLimitInBytes));
         sb.append(")");
         return sb.toString();
     }
@@ -257,6 +365,9 @@ public final class EstimateRecallDataSizeResult
                 && java.util.Objects.equals(
                         this.isOverlappingWithExistingRecalls,
                         other.isOverlappingWithExistingRecalls)
+                && java.util.Objects.equals(this.coreGroupCount, other.coreGroupCount)
+                && java.util.Objects.equals(this.coreGroupCountLimit, other.coreGroupCountLimit)
+                && java.util.Objects.equals(this.sizeLimitInBytes, other.sizeLimitInBytes)
                 && super.equals(other);
     }
 
@@ -276,6 +387,17 @@ public final class EstimateRecallDataSizeResult
                         + (this.isOverlappingWithExistingRecalls == null
                                 ? 43
                                 : this.isOverlappingWithExistingRecalls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coreGroupCount == null ? 43 : this.coreGroupCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coreGroupCountLimit == null
+                                ? 43
+                                : this.coreGroupCountLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sizeLimitInBytes == null ? 43 : this.sizeLimitInBytes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

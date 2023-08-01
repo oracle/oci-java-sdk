@@ -36,6 +36,9 @@ package com.oracle.bmc.loganalytics.model;
             value = TailCommandDescriptor.class,
             name = "TAIL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OutlierCommandDescriptor.class,
+            name = "OUTLIER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DemoModeCommandDescriptor.class,
             name = "DEMO_MODE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -68,6 +71,9 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BucketCommandDescriptor.class,
             name = "BUCKET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = RareCommandDescriptor.class,
+            name = "RARE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AddInsightsCommandDescriptor.class,
             name = "ADD_INSIGHTS"),
@@ -125,6 +131,9 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ClusterSplitCommandDescriptor.class,
             name = "CLUSTER_SPLIT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = FrequentCommandDescriptor.class,
+            name = "FREQUENT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ClusterDetailsCommandDescriptor.class,
             name = "CLUSTER_DETAILS"),
@@ -407,6 +416,9 @@ public class AbstractCommandDescriptor
         Anomaly("ANOMALY"),
         Dedup("DEDUP"),
         TimeCluster("TIME_CLUSTER"),
+        Frequent("FREQUENT"),
+        Rare("RARE"),
+        Outlier("OUTLIER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
